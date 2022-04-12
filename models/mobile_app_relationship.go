@@ -8,15 +8,15 @@ import (
 type MobileAppRelationship struct {
     Entity
     // The target mobile app's display name.
-    targetDisplayName *string;
+    targetDisplayName *string
     // The target mobile app's display version.
-    targetDisplayVersion *string;
+    targetDisplayVersion *string
     // The target mobile app's app id.
-    targetId *string;
+    targetId *string
     // The target mobile app's publisher.
-    targetPublisher *string;
+    targetPublisher *string
     // The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.
-    targetType *MobileAppRelationshipType;
+    targetType *MobileAppRelationshipType
 }
 // NewMobileAppRelationship instantiates a new mobileAppRelationship and sets the default values.
 func NewMobileAppRelationship()(*MobileAppRelationship) {
@@ -30,9 +30,9 @@ func CreateMobileAppRelationshipFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewMobileAppRelationship(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["targetDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -42,7 +42,7 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["targetDisplayVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetDisplayVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["targetId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["targetPublisher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetPublisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["targetType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMobileAppRelationshipType)
         if err != nil {
             return err

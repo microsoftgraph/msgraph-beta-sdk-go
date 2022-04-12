@@ -7,13 +7,13 @@ import (
 // TeamworkLoginStatus 
 type TeamworkLoginStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Information about the Exchange connection.
-    exchangeConnection TeamworkConnectionable;
+    exchangeConnection TeamworkConnectionable
     // Information about the Skype for Business connection.
-    skypeConnection TeamworkConnectionable;
+    skypeConnection TeamworkConnectionable
     // Information about the Teams connection.
-    teamsConnection TeamworkConnectionable;
+    teamsConnection TeamworkConnectionable
 }
 // NewTeamworkLoginStatus instantiates a new teamworkLoginStatus and sets the default values.
 func NewTeamworkLoginStatus()(*TeamworkLoginStatus) {
@@ -43,9 +43,9 @@ func (m *TeamworkLoginStatus) GetExchangeConnection()(TeamworkConnectionable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkLoginStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["exchangeConnection"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkLoginStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["exchangeConnection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkConnectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *TeamworkLoginStatus) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["skypeConnection"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["skypeConnection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkConnectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *TeamworkLoginStatus) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["teamsConnection"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["teamsConnection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkConnectionFromDiscriminatorValue)
         if err != nil {
             return err

@@ -9,15 +9,15 @@ import (
 type ProviderTenantSetting struct {
     Entity
     // The azureTenantId property
-    azureTenantId *string;
+    azureTenantId *string
     // The enabled property
-    enabled *bool;
+    enabled *bool
     // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The provider property
-    provider *string;
+    provider *string
     // The vendor property
-    vendor_escaped *string;
+    vendor_escaped *string
 }
 // NewProviderTenantSetting instantiates a new providerTenantSetting and sets the default values.
 func NewProviderTenantSetting()(*ProviderTenantSetting) {
@@ -47,9 +47,9 @@ func (m *ProviderTenantSetting) GetEnabled()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["azureTenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["enabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["provider"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["provider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["vendor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vendor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

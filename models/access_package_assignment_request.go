@@ -9,33 +9,33 @@ import (
 type AccessPackageAssignmentRequest struct {
     Entity
     // The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
-    accessPackage AccessPackageable;
+    accessPackage AccessPackageable
     // For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
-    accessPackageAssignment AccessPackageAssignmentable;
+    accessPackageAssignment AccessPackageAssignmentable
     // Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
-    answers []AccessPackageAnswerable;
+    answers []AccessPackageAnswerable
     // The date of the end of processing, either successful or failure, of a request. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    completedDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    completedDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A collection of custom workflow extension instances being run on an assignment request. Read-only.
-    customExtensionHandlerInstances []CustomExtensionHandlerInstanceable;
+    customExtensionHandlerInstances []CustomExtensionHandlerInstanceable
     // The expirationDateTime property
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // True if the request is not to be processed for assignment.
-    isValidationOnly *bool;
+    isValidationOnly *bool
     // The requestor's supplied justification.
-    justification *string;
+    justification *string
     // The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
-    requestor AccessPackageSubjectable;
+    requestor AccessPackageSubjectable
     // One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted or Scheduled. Read-only.
-    requestState *string;
+    requestState *string
     // More information on the request processing status. Read-only.
-    requestStatus *string;
+    requestStatus *string
     // The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.
-    requestType *string;
+    requestType *string
     // The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
-    schedule RequestScheduleable;
+    schedule RequestScheduleable
 }
 // NewAccessPackageAssignmentRequest instantiates a new accessPackageAssignmentRequest and sets the default values.
 func NewAccessPackageAssignmentRequest()(*AccessPackageAssignmentRequest) {
@@ -105,9 +105,9 @@ func (m *AccessPackageAssignmentRequest) GetExpirationDateTime()(*i336074805fc85
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessPackage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["accessPackageAssignment"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageAssignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["answers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["answers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAnswerFromDiscriminatorValue)
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["completedDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["completedDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["customExtensionHandlerInstances"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customExtensionHandlerInstances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCustomExtensionHandlerInstanceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["isValidationOnly"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isValidationOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["justification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["justification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["requestor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageSubjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -215,7 +215,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["requestState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["requestStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -235,7 +235,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["requestType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -245,7 +245,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["schedule"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["schedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRequestScheduleFromDiscriminatorValue)
         if err != nil {
             return err

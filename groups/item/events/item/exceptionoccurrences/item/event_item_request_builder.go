@@ -27,49 +27,49 @@ import (
 // EventItemRequestBuilder provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
 type EventItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // EventItemRequestBuilderDeleteOptions options for Delete
 type EventItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // EventItemRequestBuilderGetOptions options for Get
 type EventItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *EventItemRequestBuilderGetQueryParameters;
+    QueryParameters *EventItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // EventItemRequestBuilderGetQueryParameters get exceptionOccurrences from groups
 type EventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // EventItemRequestBuilderPatchOptions options for Patch
 type EventItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Accept the accept property
 func (m *EventItemRequestBuilder) Accept()(*icf60a8e6df2767e998560595845b1f272d9f9e194f6473e114b8d7c6fc6d0bea.AcceptRequestBuilder) {
@@ -86,7 +86,7 @@ func (m *EventItemRequestBuilder) AttachmentsById(id string)(*ie56ffcf5015fb2fc0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["attachment_id"] = id
+        urlTplParams["attachment%2Did"] = id
     }
     return ie56ffcf5015fb2fc001270158e778df63af920cee01bb97f2eee4bc6da6c7f97.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -102,7 +102,7 @@ func (m *EventItemRequestBuilder) Cancel()(*i62577b4dadaa090eca88460c637ed911f14
 func NewEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EventItemRequestBuilder) {
     m := &EventItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group_id}/events/{event_id}/exceptionOccurrences/{event_id1}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/events/{event%2Did}/exceptionOccurrences/{event%2Did1}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -207,7 +207,7 @@ func (m *EventItemRequestBuilder) ExtensionsById(id string)(*i2e5b6a6924eb5cbc9a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["extension_id"] = id
+        urlTplParams["extension%2Did"] = id
     }
     return i2e5b6a6924eb5cbc9a6b15ad5c05de91721ae4de67dd7447a37dbc98b18a894c.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -242,7 +242,7 @@ func (m *EventItemRequestBuilder) InstancesById(id string)(*i1b5b8745445c4c02a9c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["event_id2"] = id
+        urlTplParams["event%2Did2"] = id
     }
     return i1b5b8745445c4c02a9c94937f36e007bd63773c8121e24bc84b5b9dbb274a5d4.NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -257,7 +257,7 @@ func (m *EventItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["multiValueLegacyExtendedProperty_id"] = id
+        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
     }
     return if5b70906256cbf7a0066c664c28f947f1263867315c750675f07f9d3f67052d4.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -288,7 +288,7 @@ func (m *EventItemRequestBuilder) SingleValueExtendedPropertiesById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["singleValueLegacyExtendedProperty_id"] = id
+        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
     }
     return i6e97d308af981e53de9342506001a0584abbc966e22837194cb53d1ca18f0257.NewSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

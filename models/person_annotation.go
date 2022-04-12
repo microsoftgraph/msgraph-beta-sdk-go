@@ -8,11 +8,11 @@ import (
 type PersonAnnotation struct {
     ItemFacet
     // Contains the detail of the note itself.
-    detail ItemBodyable;
+    detail ItemBodyable
     // Contains a friendly name for the note.
-    displayName *string;
+    displayName *string
     // The thumbnailUrl property
-    thumbnailUrl *string;
+    thumbnailUrl *string
 }
 // NewPersonAnnotation instantiates a new personAnnotation and sets the default values.
 func NewPersonAnnotation()(*PersonAnnotation) {
@@ -42,9 +42,9 @@ func (m *PersonAnnotation) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PersonAnnotation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PersonAnnotation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
-    res["detail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *PersonAnnotation) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *PersonAnnotation) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["thumbnailUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["thumbnailUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

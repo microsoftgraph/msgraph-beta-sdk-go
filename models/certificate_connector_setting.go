@@ -8,19 +8,19 @@ import (
 // CertificateConnectorSetting certificate connector settings.
 type CertificateConnectorSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Certificate expire time
-    certExpiryTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    certExpiryTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Version of certificate connector
-    connectorVersion *string;
+    connectorVersion *string
     // Certificate connector enrollment error
-    enrollmentError *string;
+    enrollmentError *string
     // Last time certificate connector connected
-    lastConnectorConnectionTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastConnectorConnectionTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Version of last uploaded certificate connector
-    lastUploadVersion *int64;
+    lastUploadVersion *int64
     // Certificate connector status
-    status *int32;
+    status *int32
 }
 // NewCertificateConnectorSetting instantiates a new certificateConnectorSetting and sets the default values.
 func NewCertificateConnectorSetting()(*CertificateConnectorSetting) {
@@ -66,9 +66,9 @@ func (m *CertificateConnectorSetting) GetEnrollmentError()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["certExpiryTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["certExpiryTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["connectorVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["connectorVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["enrollmentError"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enrollmentError"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["lastConnectorConnectionTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastConnectorConnectionTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["lastUploadVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastUploadVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

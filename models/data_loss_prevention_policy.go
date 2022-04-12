@@ -8,7 +8,7 @@ import (
 type DataLossPreventionPolicy struct {
     Entity
     // The name property
-    name *string;
+    name *string
 }
 // NewDataLossPreventionPolicy instantiates a new dataLossPreventionPolicy and sets the default values.
 func NewDataLossPreventionPolicy()(*DataLossPreventionPolicy) {
@@ -22,9 +22,9 @@ func CreateDataLossPreventionPolicyFromDiscriminatorValue(parseNode i878a80d2330
     return NewDataLossPreventionPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DataLossPreventionPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DataLossPreventionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

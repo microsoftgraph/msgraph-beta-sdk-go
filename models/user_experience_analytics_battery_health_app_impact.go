@@ -8,17 +8,17 @@ import (
 type UserExperienceAnalyticsBatteryHealthAppImpact struct {
     Entity
     // Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
-    activeDevices *int32;
+    activeDevices *int32
     // User friendly display name for the app. Eg: Outlook
-    appDisplayName *string;
+    appDisplayName *string
     // App name. Eg: oltk.exe
-    appName *string;
+    appName *string
     // App publisher. Eg: Microsoft Corporation
-    appPublisher *string;
+    appPublisher *string
     // The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    batteryUsagePercentage *float64;
+    batteryUsagePercentage *float64
     // true if the user had active interaction with the app.
-    isForegroundApp *bool;
+    isForegroundApp *bool
 }
 // NewUserExperienceAnalyticsBatteryHealthAppImpact instantiates a new userExperienceAnalyticsBatteryHealthAppImpact and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthAppImpact()(*UserExperienceAnalyticsBatteryHealthAppImpact) {
@@ -72,9 +72,9 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetBatteryUsagePercentag
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activeDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activeDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetFieldDeserializers()(
         }
         return nil
     }
-    res["appDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetFieldDeserializers()(
         }
         return nil
     }
-    res["appName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetFieldDeserializers()(
         }
         return nil
     }
-    res["appPublisher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appPublisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetFieldDeserializers()(
         }
         return nil
     }
-    res["batteryUsagePercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["batteryUsagePercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetFieldDeserializers()(
         }
         return nil
     }
-    res["isForegroundApp"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isForegroundApp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

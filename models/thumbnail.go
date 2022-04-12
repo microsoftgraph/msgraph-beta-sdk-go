@@ -7,17 +7,17 @@ import (
 // Thumbnail 
 type Thumbnail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The content stream for the thumbnail.
-    content []byte;
+    content []byte
     // The height of the thumbnail, in pixels.
-    height *int32;
+    height *int32
     // The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.
-    sourceItemId *string;
+    sourceItemId *string
     // The URL used to fetch the thumbnail content.
-    url *string;
+    url *string
     // The width of the thumbnail, in pixels.
-    width *int32;
+    width *int32
 }
 // NewThumbnail instantiates a new thumbnail and sets the default values.
 func NewThumbnail()(*Thumbnail) {
@@ -47,9 +47,9 @@ func (m *Thumbnail) GetContent()([]byte) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Thumbnail) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["content"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *Thumbnail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *Thumbnail) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["height"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["height"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *Thumbnail) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["sourceItemId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceItemId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *Thumbnail) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["url"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *Thumbnail) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["width"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["width"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

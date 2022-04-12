@@ -8,11 +8,11 @@ import (
 type ConditionalAccessRoot struct {
     Entity
     // Read-only. Nullable. Returns a collection of the specified authentication context class references.
-    authenticationContextClassReferences []AuthenticationContextClassReferenceable;
+    authenticationContextClassReferences []AuthenticationContextClassReferenceable
     // Read-only. Nullable. Returns a collection of the specified named locations.
-    namedLocations []NamedLocationable;
+    namedLocations []NamedLocationable
     // Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
-    policies []ConditionalAccessPolicyable;
+    policies []ConditionalAccessPolicyable
 }
 // NewConditionalAccessRoot instantiates a new conditionalAccessRoot and sets the default values.
 func NewConditionalAccessRoot()(*ConditionalAccessRoot) {
@@ -34,9 +34,9 @@ func (m *ConditionalAccessRoot) GetAuthenticationContextClassReferences()([]Auth
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["authenticationContextClassReferences"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["authenticationContextClassReferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAuthenticationContextClassReferenceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["namedLocations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["namedLocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateNamedLocationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["policies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue)
         if err != nil {
             return err

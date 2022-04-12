@@ -8,15 +8,15 @@ import (
 // UpdateRequestBody provides operations to call the update method.
 type UpdateRequestBody struct {
     // The addedPolicySetItems property
-    addedPolicySetItems []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetItemable;
+    addedPolicySetItems []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetItemable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The assignments property
-    assignments []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable;
+    assignments []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable
     // The deletedPolicySetItems property
-    deletedPolicySetItems []string;
+    deletedPolicySetItems []string
     // The updatedPolicySetItems property
-    updatedPolicySetItems []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetItemable;
+    updatedPolicySetItems []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetItemable
 }
 // NewUpdateRequestBody instantiates a new updateRequestBody and sets the default values.
 func NewUpdateRequestBody()(*UpdateRequestBody) {
@@ -62,9 +62,9 @@ func (m *UpdateRequestBody) GetDeletedPolicySetItems()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UpdateRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["addedPolicySetItems"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UpdateRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["addedPolicySetItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePolicySetItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *UpdateRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePolicySetAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *UpdateRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["deletedPolicySetItems"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deletedPolicySetItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *UpdateRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["updatedPolicySetItems"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["updatedPolicySetItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePolicySetItemFromDiscriminatorValue)
         if err != nil {
             return err

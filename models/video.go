@@ -7,27 +7,27 @@ import (
 // Video 
 type Video struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Number of audio bits per sample.
-    audioBitsPerSample *int32;
+    audioBitsPerSample *int32
     // Number of audio channels.
-    audioChannels *int32;
+    audioChannels *int32
     // Name of the audio format (AAC, MP3, etc.).
-    audioFormat *string;
+    audioFormat *string
     // Number of audio samples per second.
-    audioSamplesPerSecond *int32;
+    audioSamplesPerSecond *int32
     // Bit rate of the video in bits per second.
-    bitrate *int32;
+    bitrate *int32
     // Duration of the file in milliseconds.
-    duration *int64;
+    duration *int64
     // 'Four character code' name of the video format.
-    fourCC *string;
+    fourCC *string
     // Frame rate of the video.
-    frameRate *float64;
+    frameRate *float64
     // Height of the video, in pixels.
-    height *int32;
+    height *int32
     // Width of the video, in pixels.
-    width *int32;
+    width *int32
 }
 // NewVideo instantiates a new video and sets the default values.
 func NewVideo()(*Video) {
@@ -97,9 +97,9 @@ func (m *Video) GetDuration()(*int64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["audioBitsPerSample"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *Video) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["audioBitsPerSample"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["audioChannels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["audioChannels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["audioFormat"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["audioFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["audioSamplesPerSecond"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["audioSamplesPerSecond"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["bitrate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["bitrate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["duration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["duration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["fourCC"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fourCC"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["frameRate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["frameRate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["height"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["height"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *Video) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["width"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["width"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

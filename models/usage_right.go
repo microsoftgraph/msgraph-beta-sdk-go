@@ -8,11 +8,11 @@ import (
 type UsageRight struct {
     Entity
     // Product id corresponding to the usage right.
-    catalogId *string;
+    catalogId *string
     // Identifier of the service corresponding to the usage right.
-    serviceIdentifier *string;
+    serviceIdentifier *string
     // The state of the usage right. Possible values are: active, inactive, warning, suspended.
-    state *UsageRightState;
+    state *UsageRightState
 }
 // NewUsageRight instantiates a new usageRight and sets the default values.
 func NewUsageRight()(*UsageRight) {
@@ -34,9 +34,9 @@ func (m *UsageRight) GetCatalogId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UsageRight) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UsageRight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["catalogId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["catalogId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *UsageRight) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["serviceIdentifier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serviceIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *UsageRight) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUsageRightState)
         if err != nil {
             return err

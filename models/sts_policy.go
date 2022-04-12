@@ -8,11 +8,11 @@ import (
 type StsPolicy struct {
     PolicyBase
     // The appliesTo property
-    appliesTo []DirectoryObjectable;
+    appliesTo []DirectoryObjectable
     // A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
-    definition []string;
+    definition []string
     // If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
-    isOrganizationDefault *bool;
+    isOrganizationDefault *bool
 }
 // NewStsPolicy instantiates a new stsPolicy and sets the default values.
 func NewStsPolicy()(*StsPolicy) {
@@ -42,9 +42,9 @@ func (m *StsPolicy) GetDefinition()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *StsPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *StsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
-    res["appliesTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appliesTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *StsPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["definition"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["definition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *StsPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["isOrganizationDefault"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isOrganizationDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

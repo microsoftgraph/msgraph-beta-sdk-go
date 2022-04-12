@@ -9,27 +9,27 @@ import (
 type GovernanceResource struct {
     Entity
     // The display name of the resource.
-    displayName *string;
+    displayName *string
     // The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
-    externalId *string;
+    externalId *string
     // Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
-    parent GovernanceResourceable;
+    parent GovernanceResourceable
     // Represents the date time when the resource is registered in PIM.
-    registeredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    registeredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
-    registeredRoot *string;
+    registeredRoot *string
     // The collection of role assignment requests for the resource.
-    roleAssignmentRequests []GovernanceRoleAssignmentRequestable;
+    roleAssignmentRequests []GovernanceRoleAssignmentRequestable
     // The collection of role assignments for the resource.
-    roleAssignments []GovernanceRoleAssignmentable;
+    roleAssignments []GovernanceRoleAssignmentable
     // The collection of role defintions for the resource.
-    roleDefinitions []GovernanceRoleDefinitionable;
+    roleDefinitions []GovernanceRoleDefinitionable
     // The collection of role settings for the resource.
-    roleSettings []GovernanceRoleSettingable;
+    roleSettings []GovernanceRoleSettingable
     // The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
-    status *string;
+    status *string
     // Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
-    type_escaped *string;
+    type_escaped *string
 }
 // NewGovernanceResource instantiates a new governanceResource and sets the default values.
 func NewGovernanceResource()(*GovernanceResource) {
@@ -59,9 +59,9 @@ func (m *GovernanceResource) GetExternalId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["externalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["parent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGovernanceResourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["registeredDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["registeredDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["registeredRoot"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["registeredRoot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["roleAssignmentRequests"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleAssignmentRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGovernanceRoleAssignmentRequestFromDiscriminatorValue)
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["roleAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGovernanceRoleAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["roleDefinitions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGovernanceRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["roleSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGovernanceRoleSettingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

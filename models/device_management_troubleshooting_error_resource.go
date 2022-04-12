@@ -7,11 +7,11 @@ import (
 // DeviceManagementTroubleshootingErrorResource object representing a link to troubleshooting information, the link could be to the Azure Portal or a Microsoft doc.
 type DeviceManagementTroubleshootingErrorResource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
-    link *string;
+    link *string
     // Not yet documented
-    text *string;
+    text *string
 }
 // NewDeviceManagementTroubleshootingErrorResource instantiates a new deviceManagementTroubleshootingErrorResource and sets the default values.
 func NewDeviceManagementTroubleshootingErrorResource()(*DeviceManagementTroubleshootingErrorResource) {
@@ -33,9 +33,9 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetAdditionalData()(map[s
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementTroubleshootingErrorResource) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["link"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceManagementTroubleshootingErrorResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["link"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetFieldDeserializers()(m
         }
         return nil
     }
-    res["text"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["text"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

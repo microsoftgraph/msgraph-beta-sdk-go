@@ -8,13 +8,13 @@ import (
 // InnerError 
 type InnerError struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Client request Id as sent by the client application.
-    clientRequestId *string;
+    clientRequestId *string
     // Date when the error occured.
-    date *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    date *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Request Id as tracked internally by the service
-    requestId *string;
+    requestId *string
 }
 // NewInnerError instantiates a new InnerError and sets the default values.
 func NewInnerError()(*InnerError) {
@@ -52,19 +52,19 @@ func (m *InnerError) GetDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fe
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *InnerError) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["client-request-id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *InnerError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["client-request-id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClientRequestId(val)
+            m.SetClient-request-id(val)
         }
         return nil
     }
-    res["date"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["date"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -74,13 +74,13 @@ func (m *InnerError) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["request-id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["request-id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRequestId(val)
+            m.SetRequest-id(val)
         }
         return nil
     }
@@ -97,7 +97,7 @@ func (m *InnerError) GetRequestId()(*string) {
 // Serialize serializes information the current object
 func (m *InnerError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("client-request-id", m.GetClientRequestId())
+        err := writer.WriteStringValue("client-request-id", m.GetClient-request-id())
         if err != nil {
             return err
         }
@@ -109,7 +109,7 @@ func (m *InnerError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err := writer.WriteStringValue("request-id", m.GetRequestId())
+        err := writer.WriteStringValue("request-id", m.GetRequest-id())
         if err != nil {
             return err
         }

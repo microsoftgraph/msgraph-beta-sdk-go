@@ -7,25 +7,25 @@ import (
 // HostSecurityState 
 type HostSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).
-    fqdn *string;
+    fqdn *string
     // The isAzureAdJoined property
-    isAzureAdJoined *bool;
+    isAzureAdJoined *bool
     // The isAzureAdRegistered property
-    isAzureAdRegistered *bool;
+    isAzureAdRegistered *bool
     // True if the host is domain joined to an on-premises Active Directory domain.
-    isHybridAzureDomainJoined *bool;
+    isHybridAzureDomainJoined *bool
     // The local host name, without the DNS domain name.
-    netBiosName *string;
+    netBiosName *string
     // Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
-    os *string;
+    os *string
     // Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.
-    privateIpAddress *string;
+    privateIpAddress *string
     // Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.
-    publicIpAddress *string;
+    publicIpAddress *string
     // Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.
-    riskScore *string;
+    riskScore *string
 }
 // NewHostSecurityState instantiates a new hostSecurityState and sets the default values.
 func NewHostSecurityState()(*HostSecurityState) {
@@ -47,9 +47,9 @@ func (m *HostSecurityState) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["fqdn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["fqdn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["isAzureAdJoined"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isAzureAdJoined"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["isAzureAdRegistered"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isAzureAdRegistered"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["isHybridAzureDomainJoined"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isHybridAzureDomainJoined"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["netBiosName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["netBiosName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["os"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["os"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["privateIpAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["privateIpAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["publicIpAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publicIpAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *HostSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["riskScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

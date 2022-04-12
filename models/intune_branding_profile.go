@@ -9,69 +9,69 @@ import (
 type IntuneBrandingProfile struct {
     Entity
     // The list of group assignments for the branding profile
-    assignments []IntuneBrandingProfileAssignmentable;
+    assignments []IntuneBrandingProfileAssignmentable
     // Collection of blocked actions on the company portal as per platform and device ownership types.
-    companyPortalBlockedActions []CompanyPortalBlockedActionable;
+    companyPortalBlockedActions []CompanyPortalBlockedActionable
     // E-mail address of the person/organization responsible for IT support
-    contactITEmailAddress *string;
+    contactITEmailAddress *string
     // Name of the person/organization responsible for IT support
-    contactITName *string;
+    contactITName *string
     // Text comments regarding the person/organization responsible for IT support
-    contactITNotes *string;
+    contactITNotes *string
     // Phone number of the person/organization responsible for IT support
-    contactITPhoneNumber *string;
+    contactITPhoneNumber *string
     // Time when the BrandingProfile was created
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Text comments regarding what the admin has access to on the device
-    customCanSeePrivacyMessage *string;
+    customCanSeePrivacyMessage *string
     // Text comments regarding what the admin doesn't have access to on the device
-    customCantSeePrivacyMessage *string;
+    customCantSeePrivacyMessage *string
     // Text comments regarding what the admin doesn't have access to on the device
-    customPrivacyMessage *string;
+    customPrivacyMessage *string
     // Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.
-    disableClientTelemetry *bool;
+    disableClientTelemetry *bool
     // Company/organization name that is displayed to end users
-    displayName *string;
+    displayName *string
     // Customized device enrollment flow displayed to the end user . Possible values are: availableWithPrompts, availableWithoutPrompts, unavailable.
-    enrollmentAvailability *EnrollmentAvailabilityOptions;
+    enrollmentAvailability *EnrollmentAvailabilityOptions
     // Boolean that represents whether the profile is used as default or not
-    isDefaultProfile *bool;
+    isDefaultProfile *bool
     // Boolean that represents whether the adminsistrator has disabled the 'Factory Reset' action on corporate owned devices.
-    isFactoryResetDisabled *bool;
+    isFactoryResetDisabled *bool
     // Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.
-    isRemoveDeviceDisabled *bool;
+    isRemoveDeviceDisabled *bool
     // Customized image displayed in Company Portal apps landing page
-    landingPageCustomizedImage MimeContentable;
+    landingPageCustomizedImage MimeContentable
     // Time when the BrandingProfile was last modified
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Logo image displayed in Company Portal apps which have a light background behind the logo
-    lightBackgroundLogo MimeContentable;
+    lightBackgroundLogo MimeContentable
     // Display name of the company/organization’s IT helpdesk site
-    onlineSupportSiteName *string;
+    onlineSupportSiteName *string
     // URL to the company/organization’s IT helpdesk site
-    onlineSupportSiteUrl *string;
+    onlineSupportSiteUrl *string
     // URL to the company/organization’s privacy policy
-    privacyUrl *string;
+    privacyUrl *string
     // Description of the profile
-    profileDescription *string;
+    profileDescription *string
     // Name of the profile
-    profileName *string;
+    profileName *string
     // List of scope tags assigned to the branding profile
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
-    sendDeviceOwnershipChangePushNotification *bool;
+    sendDeviceOwnershipChangePushNotification *bool
     // Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
-    showAzureADEnterpriseApps *bool;
+    showAzureADEnterpriseApps *bool
     // Boolean that represents whether the administrator-supplied display name will be shown next to the logo image or not
-    showDisplayNameNextToLogo *bool;
+    showDisplayNameNextToLogo *bool
     // Boolean that represents whether the administrator-supplied logo images are shown or not
-    showLogo *bool;
+    showLogo *bool
     // Boolean that indicates if Office WebApps will be shown in Company Portal
-    showOfficeWebApps *bool;
+    showOfficeWebApps *bool
     // Primary theme color used in the Company Portal applications and web portal
-    themeColor RgbColorable;
+    themeColor RgbColorable
     // Logo image displayed in Company Portal apps which have a theme color background behind the logo
-    themeColorLogo MimeContentable;
+    themeColorLogo MimeContentable
 }
 // NewIntuneBrandingProfile instantiates a new intuneBrandingProfile and sets the default values.
 func NewIntuneBrandingProfile()(*IntuneBrandingProfile) {
@@ -189,9 +189,9 @@ func (m *IntuneBrandingProfile) GetEnrollmentAvailability()(*EnrollmentAvailabil
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIntuneBrandingProfileAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["companyPortalBlockedActions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["companyPortalBlockedActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCompanyPortalBlockedActionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["contactITEmailAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contactITEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -229,7 +229,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["contactITName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contactITName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -239,7 +239,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["contactITNotes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contactITNotes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -249,7 +249,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["contactITPhoneNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contactITPhoneNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -259,7 +259,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -269,7 +269,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["customCanSeePrivacyMessage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customCanSeePrivacyMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -279,7 +279,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["customCantSeePrivacyMessage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customCantSeePrivacyMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -289,7 +289,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["customPrivacyMessage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customPrivacyMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -299,7 +299,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["disableClientTelemetry"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["disableClientTelemetry"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -309,7 +309,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -319,7 +319,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["enrollmentAvailability"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enrollmentAvailability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEnrollmentAvailabilityOptions)
         if err != nil {
             return err
@@ -329,7 +329,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["isDefaultProfile"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDefaultProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -339,7 +339,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["isFactoryResetDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isFactoryResetDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -349,7 +349,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["isRemoveDeviceDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isRemoveDeviceDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -359,7 +359,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["landingPageCustomizedImage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["landingPageCustomizedImage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -369,7 +369,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -379,7 +379,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["lightBackgroundLogo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lightBackgroundLogo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -389,7 +389,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["onlineSupportSiteName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onlineSupportSiteName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -399,7 +399,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["onlineSupportSiteUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onlineSupportSiteUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -409,7 +409,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["privacyUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["privacyUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -419,7 +419,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["profileDescription"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["profileDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -429,7 +429,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["profileName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["profileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -439,7 +439,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -453,7 +453,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["sendDeviceOwnershipChangePushNotification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sendDeviceOwnershipChangePushNotification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -463,7 +463,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["showAzureADEnterpriseApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["showAzureADEnterpriseApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -473,7 +473,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["showDisplayNameNextToLogo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["showDisplayNameNextToLogo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -483,7 +483,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["showLogo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["showLogo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -493,7 +493,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["showOfficeWebApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["showOfficeWebApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -503,7 +503,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["themeColor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["themeColor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRgbColorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -513,7 +513,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["themeColorLogo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["themeColorLogo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err

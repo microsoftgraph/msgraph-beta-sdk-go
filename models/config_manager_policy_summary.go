@@ -7,19 +7,19 @@ import (
 // ConfigManagerPolicySummary a ConfigManager policy summary.
 type ConfigManagerPolicySummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The number of devices evaluated to be compliant by the policy.
-    compliantDeviceCount *int32;
+    compliantDeviceCount *int32
     // The number of devices that have have been remediated by the policy.
-    enforcedDeviceCount *int32;
+    enforcedDeviceCount *int32
     // The number of devices that failed to be evaluated by the policy.
-    failedDeviceCount *int32;
+    failedDeviceCount *int32
     // The number of devices evaluated to be noncompliant by the policy.
-    nonCompliantDeviceCount *int32;
+    nonCompliantDeviceCount *int32
     // The number of devices that have acknowledged the policy but are pending evaluation.
-    pendingDeviceCount *int32;
+    pendingDeviceCount *int32
     // The number of devices targeted by the policy.
-    targetedDeviceCount *int32;
+    targetedDeviceCount *int32
 }
 // NewConfigManagerPolicySummary instantiates a new configManagerPolicySummary and sets the default values.
 func NewConfigManagerPolicySummary()(*ConfigManagerPolicySummary) {
@@ -65,9 +65,9 @@ func (m *ConfigManagerPolicySummary) GetFailedDeviceCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["compliantDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["compliantDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["enforcedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enforcedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["failedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["failedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["nonCompliantDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["nonCompliantDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["pendingDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pendingDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["targetedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

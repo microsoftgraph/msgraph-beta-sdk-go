@@ -7,27 +7,27 @@ import (
 // AccessPackageAssignmentRequestRequirements 
 type AccessPackageAssignmentRequestRequirements struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Answers that have already been provided.
-    existingAnswers []AccessPackageAnswerable;
+    existingAnswers []AccessPackageAnswerable
     // Indicates whether a request must be approved by an approver.
-    isApprovalRequired *bool;
+    isApprovalRequired *bool
     // Indicates whether approval is required when a user tries to extend their access.
-    isApprovalRequiredForExtension *bool;
+    isApprovalRequiredForExtension *bool
     // Indicates whether the requestor is allowed to set a custom schedule.
-    isCustomAssignmentScheduleAllowed *bool;
+    isCustomAssignmentScheduleAllowed *bool
     // Indicates whether a requestor must supply justification when submitting an assignment request.
-    isRequestorJustificationRequired *bool;
+    isRequestorJustificationRequired *bool
     // The description of the policy that the user is trying to request access using.
-    policyDescription *string;
+    policyDescription *string
     // The display name of the policy that the user is trying to request access using.
-    policyDisplayName *string;
+    policyDisplayName *string
     // The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.
-    policyId *string;
+    policyId *string
     // Questions that are configured on the policy. The questions can be required or optional; callers can determine whether a question is required or optional based on the isRequired property on accessPackageQuestion.
-    questions []AccessPackageQuestionable;
+    questions []AccessPackageQuestionable
     // Schedule restrictions enforced, if any.
-    schedule RequestScheduleable;
+    schedule RequestScheduleable
 }
 // NewAccessPackageAssignmentRequestRequirements instantiates a new accessPackageAssignmentRequestRequirements and sets the default values.
 func NewAccessPackageAssignmentRequestRequirements()(*AccessPackageAssignmentRequestRequirements) {
@@ -57,9 +57,9 @@ func (m *AccessPackageAssignmentRequestRequirements) GetExistingAnswers()([]Acce
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["existingAnswers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["existingAnswers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAnswerFromDiscriminatorValue)
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["isApprovalRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isApprovalRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["isApprovalRequiredForExtension"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isApprovalRequiredForExtension"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["isCustomAssignmentScheduleAllowed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isCustomAssignmentScheduleAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["isRequestorJustificationRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isRequestorJustificationRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["policyDescription"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["policyDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["policyId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["questions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["questions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageQuestionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *AccessPackageAssignmentRequestRequirements) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["schedule"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["schedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRequestScheduleFromDiscriminatorValue)
         if err != nil {
             return err

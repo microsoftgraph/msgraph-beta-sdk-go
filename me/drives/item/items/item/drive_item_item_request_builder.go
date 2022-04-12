@@ -24,49 +24,49 @@ import (
 // DriveItemItemRequestBuilder provides operations to manage the items property of the microsoft.graph.drive entity.
 type DriveItemItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // DriveItemItemRequestBuilderDeleteOptions options for Delete
 type DriveItemItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DriveItemItemRequestBuilderGetOptions options for Get
 type DriveItemItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *DriveItemItemRequestBuilderGetQueryParameters;
+    QueryParameters *DriveItemItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DriveItemItemRequestBuilderGetQueryParameters all items contained in the drive. Read-only. Nullable.
 type DriveItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // DriveItemItemRequestBuilderPatchOptions options for Patch
 type DriveItemItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Activities the activities property
 func (m *DriveItemItemRequestBuilder) Activities()(*if07779cafb32bcb954e8baa2fcdb6283357a647442af0a49aaa2643ddf7a2125.ActivitiesRequestBuilder) {
@@ -79,7 +79,7 @@ func (m *DriveItemItemRequestBuilder) ActivitiesById(id string)(*ida01d8a4830793
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["itemActivityOLD_id"] = id
+        urlTplParams["itemActivityOLD%2Did"] = id
     }
     return ida01d8a4830793c46212039d68a6eefd4dfcee0c4bbfeb15920c2e1eeba59306.NewItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -98,7 +98,7 @@ func (m *DriveItemItemRequestBuilder) ChildrenById(id string)(*i73ce730b8b40e7e7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["driveItem_id1"] = id
+        urlTplParams["driveItem%2Did1"] = id
     }
     return i73ce730b8b40e7e732bae3aa850e526852f4bbcfac2c62b18d895fb8c40cb028.NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -106,7 +106,7 @@ func (m *DriveItemItemRequestBuilder) ChildrenById(id string)(*i73ce730b8b40e7e7
 func NewDriveItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DriveItemItemRequestBuilder) {
     m := &DriveItemItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/drives/{drive_id}/items/{driveItem_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/me/drives/{drive%2Did}/items/{driveItem%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -243,7 +243,7 @@ func (m *DriveItemItemRequestBuilder) PermissionsById(id string)(*ie01afcc24bcb8
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["permission_id"] = id
+        urlTplParams["permission%2Did"] = id
     }
     return ie01afcc24bcb8de9f524e134f72f107f5d9980714d4b3f83b8b0a3d66372a5c4.NewPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -258,7 +258,7 @@ func (m *DriveItemItemRequestBuilder) SubscriptionsById(id string)(*i8b02ac8460c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["subscription_id"] = id
+        urlTplParams["subscription%2Did"] = id
     }
     return i8b02ac8460c4300fef83eeacf0e3a90fa6ad7e02a0ad5f87838abb6d5fb2ce82.NewSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -273,7 +273,7 @@ func (m *DriveItemItemRequestBuilder) ThumbnailsById(id string)(*ie8883816406be6
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["thumbnailSet_id"] = id
+        urlTplParams["thumbnailSet%2Did"] = id
     }
     return ie8883816406be65444fb3f248da99471dc749778a92112ecb2d943acde1ab3bc.NewThumbnailSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -288,7 +288,7 @@ func (m *DriveItemItemRequestBuilder) VersionsById(id string)(*ia7e12ef2cde2e1ce
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["driveItemVersion_id"] = id
+        urlTplParams["driveItemVersion%2Did"] = id
     }
     return ia7e12ef2cde2e1cee53c4ab5522f78d82906572a22510a1b2961ef668cc7a611.NewDriveItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -8,13 +8,13 @@ import (
 type UnsupportedGroupPolicyExtension struct {
     Entity
     // ExtensionType of the unsupported extension.
-    extensionType *string;
+    extensionType *string
     // Namespace Url of the unsupported extension.
-    namespaceUrl *string;
+    namespaceUrl *string
     // Node name of the unsupported extension.
-    nodeName *string;
+    nodeName *string
     // Setting Scope of the unsupported extension. Possible values are: unknown, device, user.
-    settingScope *GroupPolicySettingScope;
+    settingScope *GroupPolicySettingScope
 }
 // NewUnsupportedGroupPolicyExtension instantiates a new unsupportedGroupPolicyExtension and sets the default values.
 func NewUnsupportedGroupPolicyExtension()(*UnsupportedGroupPolicyExtension) {
@@ -36,9 +36,9 @@ func (m *UnsupportedGroupPolicyExtension) GetExtensionType()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["extensionType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["namespaceUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["namespaceUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["nodeName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["nodeName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["settingScope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseGroupPolicySettingScope)
         if err != nil {
             return err

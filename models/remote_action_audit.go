@@ -9,23 +9,23 @@ import (
 type RemoteActionAudit struct {
     Entity
     // The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.
-    action *RemoteAction;
+    action *RemoteAction
     // Action state. Possible values are: none, pending, canceled, active, done, failed, notSupported.
-    actionState *ActionState;
+    actionState *ActionState
     // Intune device name.
-    deviceDisplayName *string;
+    deviceDisplayName *string
     // IMEI of the device.
-    deviceIMEI *string;
+    deviceIMEI *string
     // Upn of the device owner.
-    deviceOwnerUserPrincipalName *string;
+    deviceOwnerUserPrincipalName *string
     // User who initiated the device action, format is UPN.
-    initiatedByUserPrincipalName *string;
+    initiatedByUserPrincipalName *string
     // Action target.
-    managedDeviceId *string;
+    managedDeviceId *string
     // Time when the action was issued, given in UTC.
-    requestDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    requestDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // [deprecated] Please use InitiatedByUserPrincipalName instead.
-    userName *string;
+    userName *string
 }
 // NewRemoteActionAudit instantiates a new remoteActionAudit and sets the default values.
 func NewRemoteActionAudit()(*RemoteActionAudit) {
@@ -79,9 +79,9 @@ func (m *RemoteActionAudit) GetDeviceOwnerUserPrincipalName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["action"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRemoteAction)
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["actionState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["actionState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseActionState)
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["deviceDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["deviceIMEI"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceIMEI"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["deviceOwnerUserPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceOwnerUserPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["initiatedByUserPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["initiatedByUserPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["managedDeviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["requestDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["userName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

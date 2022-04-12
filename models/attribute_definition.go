@@ -7,31 +7,31 @@ import (
 // AttributeDefinition 
 type AttributeDefinition struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
-    anchor *bool;
+    anchor *bool
     // The apiExpressions property
-    apiExpressions []StringKeyStringValuePairable;
+    apiExpressions []StringKeyStringValuePairable
     // true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
-    caseExact *bool;
+    caseExact *bool
     // The defaultValue property
-    defaultValue *string;
+    defaultValue *string
     // 'true' to allow null values for attributes.
-    flowNullValues *bool;
+    flowNullValues *bool
     // Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-    metadata []MetadataEntryable;
+    metadata []MetadataEntryable
     // true if an attribute can have multiple values. Default is false.
-    multivalued *bool;
+    multivalued *bool
     // An attribute's mutability. Possible values are:  ReadWrite, ReadOnly, Immutable, WriteOnly. Default is ReadWrite.
-    mutability *Mutability;
+    mutability *Mutability
     // Name of the attribute. Must be unique within the object definition. Not nullable.
-    name *string;
+    name *string
     // For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
-    referencedObjects []ReferencedObjectable;
+    referencedObjects []ReferencedObjectable
     // true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
-    required *bool;
+    required *bool
     // Attribute value type. Possible values are: String, Integer, Reference, Binary, Boolean,DateTime. Default is String.
-    type_escaped *AttributeType;
+    type_escaped *AttributeType
 }
 // NewAttributeDefinition instantiates a new attributeDefinition and sets the default values.
 func NewAttributeDefinition()(*AttributeDefinition) {
@@ -85,9 +85,9 @@ func (m *AttributeDefinition) GetDefaultValue()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["anchor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["anchor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["apiExpressions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["apiExpressions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateStringKeyStringValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["caseExact"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["caseExact"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["defaultValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["flowNullValues"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["flowNullValues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["metadata"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["metadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMetadataEntryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["multivalued"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["multivalued"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["mutability"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mutability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMutability)
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["referencedObjects"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["referencedObjects"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateReferencedObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["required"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["required"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttributeType)
         if err != nil {
             return err

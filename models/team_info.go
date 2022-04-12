@@ -7,12 +7,12 @@ import (
 // TeamInfo 
 type TeamInfo struct {
     Entity
-    // The displayName property
-    displayName *string;
+    // The name of the team.
+    displayName *string
     // The team property
-    team Teamable;
-    // The tenantId property
-    tenantId *string;
+    team Teamable
+    // The ID of the Azure Active Directory tenant.
+    tenantId *string
 }
 // NewTeamInfo instantiates a new teamInfo and sets the default values.
 func NewTeamInfo()(*TeamInfo) {
@@ -25,7 +25,7 @@ func NewTeamInfo()(*TeamInfo) {
 func CreateTeamInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamInfo(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the team.
 func (m *TeamInfo) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -34,9 +34,9 @@ func (m *TeamInfo) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TeamInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *TeamInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["team"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["team"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamFromDiscriminatorValue)
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *TeamInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *TeamInfo) GetTeam()(Teamable) {
         return m.team
     }
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *TeamInfo) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *TeamInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the team.
 func (m *TeamInfo) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
@@ -122,7 +122,7 @@ func (m *TeamInfo) SetTeam(value Teamable)() {
         m.team = value
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *TeamInfo) SetTenantId(value *string)() {
     if m != nil {
         m.tenantId = value

@@ -8,7 +8,7 @@ import (
 type ManagedAppConfiguration struct {
     ManagedAppPolicy
     // A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
-    customSettings []KeyValuePairable;
+    customSettings []KeyValuePairable
 }
 // NewManagedAppConfiguration instantiates a new managedAppConfiguration and sets the default values.
 func NewManagedAppConfiguration()(*ManagedAppConfiguration) {
@@ -30,9 +30,9 @@ func (m *ManagedAppConfiguration) GetCustomSettings()([]KeyValuePairable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagedAppConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagedAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
-    res["customSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err

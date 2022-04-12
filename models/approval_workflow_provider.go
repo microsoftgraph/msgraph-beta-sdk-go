@@ -8,13 +8,13 @@ import (
 type ApprovalWorkflowProvider struct {
     Entity
     // The businessFlows property
-    businessFlows []BusinessFlowable;
+    businessFlows []BusinessFlowable
     // The businessFlowsWithRequestsAwaitingMyDecision property
-    businessFlowsWithRequestsAwaitingMyDecision []BusinessFlowable;
+    businessFlowsWithRequestsAwaitingMyDecision []BusinessFlowable
     // The displayName property
-    displayName *string;
+    displayName *string
     // The policyTemplates property
-    policyTemplates []GovernancePolicyTemplateable;
+    policyTemplates []GovernancePolicyTemplateable
 }
 // NewApprovalWorkflowProvider instantiates a new approvalWorkflowProvider and sets the default values.
 func NewApprovalWorkflowProvider()(*ApprovalWorkflowProvider) {
@@ -52,9 +52,9 @@ func (m *ApprovalWorkflowProvider) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["businessFlows"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["businessFlows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBusinessFlowFromDiscriminatorValue)
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["businessFlowsWithRequestsAwaitingMyDecision"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["businessFlowsWithRequestsAwaitingMyDecision"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBusinessFlowFromDiscriminatorValue)
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["policyTemplates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGovernancePolicyTemplateFromDiscriminatorValue)
         if err != nil {
             return err

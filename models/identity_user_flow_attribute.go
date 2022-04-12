@@ -8,13 +8,13 @@ import (
 type IdentityUserFlowAttribute struct {
     Entity
     // The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.
-    dataType *IdentityUserFlowAttributeDataType;
+    dataType *IdentityUserFlowAttributeDataType
     // The description of the user flow attribute that's shown to the user at the time of sign-up.
-    description *string;
+    description *string
     // The display name of the user flow attribute.
-    displayName *string;
+    displayName *string
     // The type of the user flow attribute. This is a read-only attribute that is automatically set. Depending on the type of attribute, the values for this property will be builtIn, custom, or required.
-    userFlowAttributeType *IdentityUserFlowAttributeType;
+    userFlowAttributeType *IdentityUserFlowAttributeType
 }
 // NewIdentityUserFlowAttribute instantiates a new identityUserFlowAttribute and sets the default values.
 func NewIdentityUserFlowAttribute()(*IdentityUserFlowAttribute) {
@@ -52,9 +52,9 @@ func (m *IdentityUserFlowAttribute) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["dataType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseIdentityUserFlowAttributeDataType)
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *IdentityUserFlowAttribute) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["userFlowAttributeType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userFlowAttributeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseIdentityUserFlowAttributeType)
         if err != nil {
             return err

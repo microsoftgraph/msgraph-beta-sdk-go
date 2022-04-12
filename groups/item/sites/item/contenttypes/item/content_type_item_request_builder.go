@@ -23,49 +23,49 @@ import (
 // ContentTypeItemRequestBuilder provides operations to manage the contentTypes property of the microsoft.graph.site entity.
 type ContentTypeItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ContentTypeItemRequestBuilderDeleteOptions options for Delete
 type ContentTypeItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ContentTypeItemRequestBuilderGetOptions options for Get
 type ContentTypeItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ContentTypeItemRequestBuilderGetQueryParameters;
+    QueryParameters *ContentTypeItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ContentTypeItemRequestBuilderGetQueryParameters the collection of content types defined for this site.
 type ContentTypeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ContentTypeItemRequestBuilderPatchOptions options for Patch
 type ContentTypeItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AssociateWithHubSites the associateWithHubSites property
 func (m *ContentTypeItemRequestBuilder) AssociateWithHubSites()(*ic426e586ad0e202686674873cbdea7a8018e5b74cf6d66de10ed9573184cdd97.AssociateWithHubSitesRequestBuilder) {
@@ -86,7 +86,7 @@ func (m *ContentTypeItemRequestBuilder) BaseTypesById(id string)(*if47acb49fe28f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["contentType_id1"] = id
+        urlTplParams["contentType%2Did1"] = id
     }
     return if47acb49fe28f5ed2e47bb6c2bd5cb847ac5f03b74ad8571b28a23def60220c4.NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -101,7 +101,7 @@ func (m *ContentTypeItemRequestBuilder) ColumnLinksById(id string)(*i70ae4aef64d
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["columnLink_id"] = id
+        urlTplParams["columnLink%2Did"] = id
     }
     return i70ae4aef64d211900e5691042f2ac667a4a38c969183ce5df5980865df763382.NewColumnLinkItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -116,7 +116,7 @@ func (m *ContentTypeItemRequestBuilder) ColumnPositionsById(id string)(*i0c5d02e
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["columnDefinition_id"] = id
+        urlTplParams["columnDefinition%2Did"] = id
     }
     return i0c5d02e0200c8a34f0952dda3d6bed322ad1bf731eaa3dc3c37e94f37cc44a12.NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -131,7 +131,7 @@ func (m *ContentTypeItemRequestBuilder) ColumnsById(id string)(*i71496ba62ae8bd6
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["columnDefinition_id"] = id
+        urlTplParams["columnDefinition%2Did"] = id
     }
     return i71496ba62ae8bd6cc9c2a77d0a541c08ebf273eea9ecf422f1040c706f9de5ad.NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -139,7 +139,7 @@ func (m *ContentTypeItemRequestBuilder) ColumnsById(id string)(*i71496ba62ae8bd6
 func NewContentTypeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ContentTypeItemRequestBuilder) {
     m := &ContentTypeItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group_id}/sites/{site_id}/contentTypes/{contentType_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/contentTypes/{contentType%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

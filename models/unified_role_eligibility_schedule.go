@@ -8,9 +8,9 @@ import (
 type UnifiedRoleEligibilitySchedule struct {
     UnifiedRoleScheduleBase
     // Membership type of the eligible assignment. It can either be Inherited, Direct, or Group.
-    memberType *string;
+    memberType *string
     // The schedule object of the eligible role assignment request.
-    scheduleInfo RequestScheduleable;
+    scheduleInfo RequestScheduleable
 }
 // NewUnifiedRoleEligibilitySchedule instantiates a new unifiedRoleEligibilitySchedule and sets the default values.
 func NewUnifiedRoleEligibilitySchedule()(*UnifiedRoleEligibilitySchedule) {
@@ -24,9 +24,9 @@ func CreateUnifiedRoleEligibilityScheduleFromDiscriminatorValue(parseNode i878a8
     return NewUnifiedRoleEligibilitySchedule(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UnifiedRoleEligibilitySchedule) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UnifiedRoleEligibilitySchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleScheduleBase.GetFieldDeserializers()
-    res["memberType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["memberType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *UnifiedRoleEligibilitySchedule) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["scheduleInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scheduleInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRequestScheduleFromDiscriminatorValue)
         if err != nil {
             return err

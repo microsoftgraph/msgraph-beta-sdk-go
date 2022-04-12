@@ -6,6 +6,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i025773964677aae1b280d645edcafd7be2abcbf2d4e52db52a446e3624435c0d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/bulkreprovisioncloudpc"
     i0376a560b32355e38b49876a437f694bca534f547ea086c5232875988b209b18 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/executeaction"
+    i09dab353f35c6e8c23d8c077e3ae5ed0ae54c83a7bd6e2663817b587f499b3af "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/bulksetcloudpcreviewstatus"
     i2fa0a3981204d622a8e17b16cd6457fbd3f21735cada71cd2ec3e6dc48806633 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/bulkrestorecloudpc"
     i8d74a2aa0c51df791a2ec12c0b6d34c1f7541b2b112e11876a6a570c4da51784 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/movedevicestoou"
     i97d3e0c4b436b89b39e01602180f507b9e6f9fbb21bff9015709335c6ebe8051 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/count"
@@ -14,52 +15,52 @@ import (
 // ManagedDevicesRequestBuilder provides operations to manage the managedDevices property of the microsoft.graph.user entity.
 type ManagedDevicesRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ManagedDevicesRequestBuilderGetOptions options for Get
 type ManagedDevicesRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ManagedDevicesRequestBuilderGetQueryParameters;
+    QueryParameters *ManagedDevicesRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ManagedDevicesRequestBuilderGetQueryParameters the managed devices associated with the user.
 type ManagedDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool;
+    Count *bool `uriparametername:"%24count"`
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
-    Filter *string;
+    Filter *string `uriparametername:"%24filter"`
     // Order items by property values
-    Orderby []string;
+    Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
-    Search *string;
+    Search *string `uriparametername:"%24search"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32;
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32;
+    Top *int32 `uriparametername:"%24top"`
 }
 // ManagedDevicesRequestBuilderPostOptions options for Post
 type ManagedDevicesRequestBuilderPostOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // BulkReprovisionCloudPc the bulkReprovisionCloudPc property
 func (m *ManagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*i025773964677aae1b280d645edcafd7be2abcbf2d4e52db52a446e3624435c0d.BulkReprovisionCloudPcRequestBuilder) {
@@ -69,11 +70,15 @@ func (m *ManagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*i025773964677aa
 func (m *ManagedDevicesRequestBuilder) BulkRestoreCloudPc()(*i2fa0a3981204d622a8e17b16cd6457fbd3f21735cada71cd2ec3e6dc48806633.BulkRestoreCloudPcRequestBuilder) {
     return i2fa0a3981204d622a8e17b16cd6457fbd3f21735cada71cd2ec3e6dc48806633.NewBulkRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// BulkSetCloudPcReviewStatus the bulkSetCloudPcReviewStatus property
+func (m *ManagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*i09dab353f35c6e8c23d8c077e3ae5ed0ae54c83a7bd6e2663817b587f499b3af.BulkSetCloudPcReviewStatusRequestBuilder) {
+    return i09dab353f35c6e8c23d8c077e3ae5ed0ae54c83a7bd6e2663817b587f499b3af.NewBulkSetCloudPcReviewStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // NewManagedDevicesRequestBuilderInternal instantiates a new ManagedDevicesRequestBuilder and sets the default values.
 func NewManagedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesRequestBuilder) {
     m := &ManagedDevicesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/managedDevices{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/me/managedDevices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

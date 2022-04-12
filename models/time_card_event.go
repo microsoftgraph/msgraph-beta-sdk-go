@@ -8,13 +8,13 @@ import (
 // TimeCardEvent 
 type TimeCardEvent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates whether the entry was recorded at the approved location.
-    atApprovedLocation *bool;
+    atApprovedLocation *bool
     // The time the entry is recorded.
-    dateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    dateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Notes about the timeCardEvent.
-    notes ItemBodyable;
+    notes ItemBodyable
 }
 // NewTimeCardEvent instantiates a new timeCardEvent and sets the default values.
 func NewTimeCardEvent()(*TimeCardEvent) {
@@ -52,9 +52,9 @@ func (m *TimeCardEvent) GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TimeCardEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["atApprovedLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TimeCardEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["atApprovedLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *TimeCardEvent) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["dateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *TimeCardEvent) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["notes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err

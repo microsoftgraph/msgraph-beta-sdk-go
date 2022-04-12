@@ -9,15 +9,15 @@ import (
 type DelegatedAdminAccessAssignment struct {
     Entity
     // The accessContainer property
-    accessContainer DelegatedAdminAccessContainerable;
+    accessContainer DelegatedAdminAccessContainerable
     // The accessDetails property
-    accessDetails DelegatedAdminAccessDetailsable;
+    accessDetails DelegatedAdminAccessDetailsable
     // The date and time in ISO 8601 format and in UTC time when the access assignment was created. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The date and time in ISO 8601 and in UTC time when this access assignment was last modified. Read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The status of the access assignment. Read-only. The possible values are: pending, active, deleting, deleted, error, unknownFutureValue.
-    status *DelegatedAdminAccessAssignmentStatus;
+    status *DelegatedAdminAccessAssignmentStatus
 }
 // NewDelegatedAdminAccessAssignment instantiates a new delegatedAdminAccessAssignment and sets the default values.
 func NewDelegatedAdminAccessAssignment()(*DelegatedAdminAccessAssignment) {
@@ -55,9 +55,9 @@ func (m *DelegatedAdminAccessAssignment) GetCreatedDateTime()(*i336074805fc85398
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DelegatedAdminAccessAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DelegatedAdminAccessAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessContainer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessContainer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDelegatedAdminAccessContainerFromDiscriminatorValue)
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *DelegatedAdminAccessAssignment) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["accessDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDelegatedAdminAccessDetailsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *DelegatedAdminAccessAssignment) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *DelegatedAdminAccessAssignment) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *DelegatedAdminAccessAssignment) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDelegatedAdminAccessAssignmentStatus)
         if err != nil {
             return err

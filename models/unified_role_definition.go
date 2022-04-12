@@ -8,23 +8,23 @@ import (
 type UnifiedRoleDefinition struct {
     Entity
     // The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
-    description *string;
+    description *string
     // The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).
-    displayName *string;
+    displayName *string
     // Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-    inheritsPermissionsFrom []UnifiedRoleDefinitionable;
+    inheritsPermissionsFrom []UnifiedRoleDefinitionable
     // Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).
-    isBuiltIn *bool;
+    isBuiltIn *bool
     // Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
-    isEnabled *bool;
+    isEnabled *bool
     // List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
-    resourceScopes []string;
+    resourceScopes []string
     // List of permissions included in the role. Read-only when isBuiltIn is true. Required.
-    rolePermissions []UnifiedRolePermissionable;
+    rolePermissions []UnifiedRolePermissionable
     // Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
-    templateId *string;
+    templateId *string
     // Indicates version of the role definition. Read-only when isBuiltIn is true.
-    version *string;
+    version *string
 }
 // NewUnifiedRoleDefinition instantiates a new unifiedRoleDefinition and sets the default values.
 func NewUnifiedRoleDefinition()(*UnifiedRoleDefinition) {
@@ -54,9 +54,9 @@ func (m *UnifiedRoleDefinition) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["inheritsPermissionsFrom"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inheritsPermissionsFrom"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["isBuiltIn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isBuiltIn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["isEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["resourceScopes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["rolePermissions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rolePermissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRolePermissionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["templateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["templateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

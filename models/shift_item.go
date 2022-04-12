@@ -8,11 +8,11 @@ import (
 type ShiftItem struct {
     ScheduleEntity
     // An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
-    activities []ShiftActivityable;
+    activities []ShiftActivityable
     // The shift label of the shiftItem.
-    displayName *string;
+    displayName *string
     // The shift notes for the shiftItem.
-    notes *string;
+    notes *string
 }
 // NewShiftItem instantiates a new shiftItem and sets the default values.
 func NewShiftItem()(*ShiftItem) {
@@ -42,9 +42,9 @@ func (m *ShiftItem) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ShiftItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ShiftItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ScheduleEntity.GetFieldDeserializers()
-    res["activities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateShiftActivityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *ShiftItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *ShiftItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["notes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

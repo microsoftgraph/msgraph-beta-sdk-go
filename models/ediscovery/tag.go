@@ -10,19 +10,19 @@ import (
 type Tag struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
-    childSelectability *ChildSelectability;
+    childSelectability *ChildSelectability
     // Returns the tags that are a child of a tag.
-    childTags []Tagable;
+    childTags []Tagable
     // The user who created the tag.
-    createdBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable;
+    createdBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable
     // The description for the tag.
-    description *string;
+    description *string
     // Display name of the tag.
-    displayName *string;
+    displayName *string
     // The date and time the tag was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Returns the parent tag of the specified tag.
-    parent Tagable;
+    parent Tagable
 }
 // NewTag instantiates a new tag and sets the default values.
 func NewTag()(*Tag) {
@@ -76,9 +76,9 @@ func (m *Tag) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Tag) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Tag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["childSelectability"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["childSelectability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseChildSelectability)
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *Tag) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["childTags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["childTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTagFromDiscriminatorValue)
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *Tag) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *Tag) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *Tag) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *Tag) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *Tag) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["parent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTagFromDiscriminatorValue)
         if err != nil {
             return err

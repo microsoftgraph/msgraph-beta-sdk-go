@@ -8,19 +8,19 @@ import (
 type UserAppInstallStatus struct {
     Entity
     // The navigation link to the mobile app.
-    app MobileAppable;
+    app MobileAppable
     // The install state of the app on devices.
-    deviceStatuses []MobileAppInstallStatusable;
+    deviceStatuses []MobileAppInstallStatusable
     // Failed Device Count.
-    failedDeviceCount *int32;
+    failedDeviceCount *int32
     // Installed Device Count.
-    installedDeviceCount *int32;
+    installedDeviceCount *int32
     // Not installed device count.
-    notInstalledDeviceCount *int32;
+    notInstalledDeviceCount *int32
     // User name.
-    userName *string;
+    userName *string
     // User Principal Name.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewUserAppInstallStatus instantiates a new userAppInstallStatus and sets the default values.
 func NewUserAppInstallStatus()(*UserAppInstallStatus) {
@@ -58,9 +58,9 @@ func (m *UserAppInstallStatus) GetFailedDeviceCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["app"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["app"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMobileAppFromDiscriminatorValue)
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["deviceStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppInstallStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["failedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["failedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["installedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["installedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["notInstalledDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notInstalledDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["userName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -30,40 +30,40 @@ import (
 // DataClassificationRequestBuilder provides operations to manage the dataClassificationService singleton.
 type DataClassificationRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // DataClassificationRequestBuilderGetOptions options for Get
 type DataClassificationRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *DataClassificationRequestBuilderGetQueryParameters;
+    QueryParameters *DataClassificationRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DataClassificationRequestBuilderGetQueryParameters get dataClassification
 type DataClassificationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // DataClassificationRequestBuilderPatchOptions options for Patch
 type DataClassificationRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataClassificationServiceable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataClassificationServiceable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ClassifyExactMatches the classifyExactMatches property
 func (m *DataClassificationRequestBuilder) ClassifyExactMatches()(*i8fb53346ef40e76f80dc166fa4d90c7b83b5c39805b01bfbb5c0714b774ae860.ClassifyExactMatchesRequestBuilder) {
@@ -84,7 +84,7 @@ func (m *DataClassificationRequestBuilder) ClassifyFileJobsById(id string)(*i479
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["jobResponseBase_id"] = id
+        urlTplParams["jobResponseBase%2Did"] = id
     }
     return i4792e57c8d9125efc146f0b2e40e63e9de13f444548ccb305eb4736a1a5be3a5.NewJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -103,7 +103,7 @@ func (m *DataClassificationRequestBuilder) ClassifyTextJobsById(id string)(*i45c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["jobResponseBase_id"] = id
+        urlTplParams["jobResponseBase%2Did"] = id
     }
     return i45cfe1305c2a625c914638131757b68e2e595331b1cb835c1b30df24ea16f31f.NewJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -111,7 +111,7 @@ func (m *DataClassificationRequestBuilder) ClassifyTextJobsById(id string)(*i45c
 func NewDataClassificationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DataClassificationRequestBuilder) {
     m := &DataClassificationRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/dataClassification{?select,expand}";
+    m.urlTemplate = "{+baseurl}/dataClassification{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -175,7 +175,7 @@ func (m *DataClassificationRequestBuilder) EvaluateDlpPoliciesJobsById(id string
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["jobResponseBase_id"] = id
+        urlTplParams["jobResponseBase%2Did"] = id
     }
     return i4d55b1afcc01d53334597316e2857e2085d3a6c2a3947cdde8abd9a1f813161f.NewJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -190,7 +190,7 @@ func (m *DataClassificationRequestBuilder) EvaluateLabelJobsById(id string)(*id6
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["jobResponseBase_id"] = id
+        urlTplParams["jobResponseBase%2Did"] = id
     }
     return id639ff5c7f5dd2905bbbcf9dbcd6a7912904f3f8da7f947d8b3eec42a0d9bfd4.NewJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -205,7 +205,7 @@ func (m *DataClassificationRequestBuilder) ExactMatchDataStoresById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["exactMatchDataStore_id"] = id
+        urlTplParams["exactMatchDataStore%2Did"] = id
     }
     return i839259d04bc1e0752cd1dfcdc547564ab43c76e7472ad42df51a84e7b5459230.NewExactMatchDataStoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -220,7 +220,7 @@ func (m *DataClassificationRequestBuilder) ExactMatchUploadAgentsById(id string)
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["exactMatchUploadAgent_id"] = id
+        urlTplParams["exactMatchUploadAgent%2Did"] = id
     }
     return i6031e0e8286fe11a8cf1dce07b526e8cf9498b49a741cc2cc1f28e944ef6db8b.NewExactMatchUploadAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -251,7 +251,7 @@ func (m *DataClassificationRequestBuilder) JobsById(id string)(*i787f440e60431af
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["jobResponseBase_id"] = id
+        urlTplParams["jobResponseBase%2Did"] = id
     }
     return i787f440e60431af3738f5d22582c9098279e6cf44887787414a87feaede3518a.NewJobResponseBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -282,7 +282,7 @@ func (m *DataClassificationRequestBuilder) SensitiveTypesById(id string)(*i7eaf7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["sensitiveType_id"] = id
+        urlTplParams["sensitiveType%2Did"] = id
     }
     return i7eaf730996e637195332ee006d958f53fdc086a573ef5e8ccc04f904d293e94c.NewSensitiveTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -297,7 +297,7 @@ func (m *DataClassificationRequestBuilder) SensitivityLabelsById(id string)(*i27
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["sensitivityLabel_id"] = id
+        urlTplParams["sensitivityLabel%2Did"] = id
     }
     return i27eb8dd6f1e19fde6babe9ea8109f5b765c6eb4971d149bdf4ac63504c239dbf.NewSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

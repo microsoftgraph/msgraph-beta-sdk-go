@@ -9,15 +9,15 @@ import (
 type TeamworkDeviceActivity struct {
     Entity
     // The active peripheral devices attached to the device.
-    activePeripherals TeamworkActivePeripheralsable;
+    activePeripherals TeamworkActivePeripheralsable
     // Identity of the user who created the device activity document.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // The UTC date and time when the device activity document was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Identity of the user who last modified the device activity details.
-    lastModifiedBy IdentitySetable;
+    lastModifiedBy IdentitySetable
     // The UTC date and time when the device activity detail was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewTeamworkDeviceActivity instantiates a new teamworkDeviceActivity and sets the default values.
 func NewTeamworkDeviceActivity()(*TeamworkDeviceActivity) {
@@ -55,9 +55,9 @@ func (m *TeamworkDeviceActivity) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkDeviceActivity) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TeamworkDeviceActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activePeripherals"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activePeripherals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkActivePeripheralsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *TeamworkDeviceActivity) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *TeamworkDeviceActivity) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *TeamworkDeviceActivity) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["lastModifiedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *TeamworkDeviceActivity) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

@@ -7,29 +7,29 @@ import (
 // MessageRuleActions 
 type MessageRuleActions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A list of categories to be assigned to a message.
-    assignCategories []string;
+    assignCategories []string
     // The ID of a folder that a message is to be copied to.
-    copyToFolder *string;
+    copyToFolder *string
     // Indicates whether a message should be moved to the Deleted Items folder.
-    delete *bool;
+    delete *bool
     // The email addresses of the recipients to which a message should be forwarded as an attachment.
-    forwardAsAttachmentTo []Recipientable;
+    forwardAsAttachmentTo []Recipientable
     // The email addresses of the recipients to which a message should be forwarded.
-    forwardTo []Recipientable;
+    forwardTo []Recipientable
     // Indicates whether a message should be marked as read.
-    markAsRead *bool;
+    markAsRead *bool
     // Sets the importance of the message, which can be: low, normal, high.
-    markImportance *Importance;
+    markImportance *Importance
     // The ID of the folder that a message will be moved to.
-    moveToFolder *string;
+    moveToFolder *string
     // Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
-    permanentDelete *bool;
+    permanentDelete *bool
     // The email addresses to which a message should be redirected.
-    redirectTo []Recipientable;
+    redirectTo []Recipientable
     // Indicates whether subsequent rules should be evaluated.
-    stopProcessingRules *bool;
+    stopProcessingRules *bool
 }
 // NewMessageRuleActions instantiates a new messageRuleActions and sets the default values.
 func NewMessageRuleActions()(*MessageRuleActions) {
@@ -75,9 +75,9 @@ func (m *MessageRuleActions) GetDelete()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["assignCategories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["assignCategories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["copyToFolder"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["copyToFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["delete"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["delete"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["forwardAsAttachmentTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["forwardAsAttachmentTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["forwardTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["forwardTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["markAsRead"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["markAsRead"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["markImportance"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["markImportance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseImportance)
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["moveToFolder"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["moveToFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["permanentDelete"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["permanentDelete"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["redirectTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["redirectTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
@@ -193,7 +193,7 @@ func (m *MessageRuleActions) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["stopProcessingRules"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["stopProcessingRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

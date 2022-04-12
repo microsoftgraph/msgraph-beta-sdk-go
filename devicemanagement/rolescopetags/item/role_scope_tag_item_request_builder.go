@@ -12,49 +12,49 @@ import (
 // RoleScopeTagItemRequestBuilder provides operations to manage the roleScopeTags property of the microsoft.graph.deviceManagement entity.
 type RoleScopeTagItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // RoleScopeTagItemRequestBuilderDeleteOptions options for Delete
 type RoleScopeTagItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // RoleScopeTagItemRequestBuilderGetOptions options for Get
 type RoleScopeTagItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *RoleScopeTagItemRequestBuilderGetQueryParameters;
+    QueryParameters *RoleScopeTagItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // RoleScopeTagItemRequestBuilderGetQueryParameters the Role Scope Tags.
 type RoleScopeTagItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // RoleScopeTagItemRequestBuilderPatchOptions options for Patch
 type RoleScopeTagItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Assign the assign property
 func (m *RoleScopeTagItemRequestBuilder) Assign()(*i75b21611d6b6b96c1c95e37193e653d7c1be7468679cf5785af829f0827b9b05.AssignRequestBuilder) {
@@ -71,7 +71,7 @@ func (m *RoleScopeTagItemRequestBuilder) AssignmentsById(id string)(*ic12c5ef80a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["roleScopeTagAutoAssignment_id"] = id
+        urlTplParams["roleScopeTagAutoAssignment%2Did"] = id
     }
     return ic12c5ef80a8671db45da105570fcb6fe91462ab2daa7529a50e81a4c171aa147.NewRoleScopeTagAutoAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -79,7 +79,7 @@ func (m *RoleScopeTagItemRequestBuilder) AssignmentsById(id string)(*ic12c5ef80a
 func NewRoleScopeTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleScopeTagItemRequestBuilder) {
     m := &RoleScopeTagItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/roleScopeTags/{roleScopeTag_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/roleScopeTags/{roleScopeTag%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

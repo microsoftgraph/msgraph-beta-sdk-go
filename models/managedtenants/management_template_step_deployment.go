@@ -10,21 +10,21 @@ import (
 type ManagementTemplateStepDeployment struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The createdByUserId property
-    createdByUserId *string;
+    createdByUserId *string
     // The createdDateTime property
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The error property
-    error GraphAPIErrorDetailsable;
+    error GraphAPIErrorDetailsable
     // The lastActionByUserId property
-    lastActionByUserId *string;
+    lastActionByUserId *string
     // The lastActionDateTime property
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The status property
-    status *ManagementTemplateDeploymentStatus;
+    status *ManagementTemplateDeploymentStatus
     // The templateStepVersion property
-    templateStepVersion ManagementTemplateStepVersionable;
+    templateStepVersion ManagementTemplateStepVersionable
     // The tenantId property
-    tenantId *string;
+    tenantId *string
 }
 // NewManagementTemplateStepDeployment instantiates a new managementTemplateStepDeployment and sets the default values.
 func NewManagementTemplateStepDeployment()(*ManagementTemplateStepDeployment) {
@@ -62,9 +62,9 @@ func (m *ManagementTemplateStepDeployment) GetError()(GraphAPIErrorDetailsable) 
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["createdByUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdByUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["error"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGraphAPIErrorDetailsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["lastActionByUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastActionByUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["lastActionDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastActionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagementTemplateDeploymentStatus)
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["templateStepVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["templateStepVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateManagementTemplateStepVersionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

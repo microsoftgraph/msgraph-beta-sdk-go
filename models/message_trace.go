@@ -9,21 +9,21 @@ import (
 type MessageTrace struct {
     Entity
     // The destinationIPAddress property
-    destinationIPAddress *string;
+    destinationIPAddress *string
     // The messageId property
-    messageId *string;
+    messageId *string
     // The receivedDateTime property
-    receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The recipients property
-    recipients []MessageRecipientable;
+    recipients []MessageRecipientable
     // The senderEmail property
-    senderEmail *string;
+    senderEmail *string
     // The size property
-    size *int32;
+    size *int32
     // The sourceIPAddress property
-    sourceIPAddress *string;
+    sourceIPAddress *string
     // The subject property
-    subject *string;
+    subject *string
 }
 // NewMessageTrace instantiates a new messageTrace and sets the default values.
 func NewMessageTrace()(*MessageTrace) {
@@ -45,9 +45,9 @@ func (m *MessageTrace) GetDestinationIPAddress()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MessageTrace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["destinationIPAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["destinationIPAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["messageId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["messageId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["receivedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["receivedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["recipients"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recipients"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMessageRecipientFromDiscriminatorValue)
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["senderEmail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["senderEmail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["size"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["sourceIPAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceIPAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["subject"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

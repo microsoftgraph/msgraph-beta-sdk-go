@@ -7,11 +7,11 @@ import (
 // DateTimeTimeZone 
 type DateTimeTimeZone struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-    dateTime *string;
+    dateTime *string
     // Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
-    timeZone *string;
+    timeZone *string
 }
 // NewDateTimeTimeZone instantiates a new dateTimeTimeZone and sets the default values.
 func NewDateTimeTimeZone()(*DateTimeTimeZone) {
@@ -41,9 +41,9 @@ func (m *DateTimeTimeZone) GetDateTime()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DateTimeTimeZone) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["dateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DateTimeTimeZone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["dateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *DateTimeTimeZone) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["timeZone"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeZone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

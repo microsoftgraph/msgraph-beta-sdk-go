@@ -7,13 +7,13 @@ import (
 // AggregationOption 
 type AggregationOption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The bucketDefinition property
-    bucketDefinition BucketAggregationDefinitionable;
+    bucketDefinition BucketAggregationDefinitionable
     // Computes aggregation on the field while the field exists in current entity type. Required.
-    field *string;
+    field *string
     // The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
-    size *int32;
+    size *int32
 }
 // NewAggregationOption instantiates a new aggregationOption and sets the default values.
 func NewAggregationOption()(*AggregationOption) {
@@ -51,9 +51,9 @@ func (m *AggregationOption) GetField()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AggregationOption) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["bucketDefinition"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AggregationOption) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["bucketDefinition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateBucketAggregationDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *AggregationOption) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["field"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["field"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *AggregationOption) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["size"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

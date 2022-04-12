@@ -7,17 +7,17 @@ import (
 // BookingSchedulingPolicy this type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
 type BookingSchedulingPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // True if to allow customers to choose a specific person for the booking.
-    allowStaffSelection *bool;
+    allowStaffSelection *bool
     // Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
-    maximumAdvance *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    maximumAdvance *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
-    minimumLeadTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    minimumLeadTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
-    sendConfirmationsToOwner *bool;
+    sendConfirmationsToOwner *bool
     // Duration of each time slot, denoted in ISO 8601 format.
-    timeSlotInterval *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    timeSlotInterval *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 }
 // NewBookingSchedulingPolicy instantiates a new bookingSchedulingPolicy and sets the default values.
 func NewBookingSchedulingPolicy()(*BookingSchedulingPolicy) {
@@ -47,9 +47,9 @@ func (m *BookingSchedulingPolicy) GetAllowStaffSelection()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["allowStaffSelection"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["allowStaffSelection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["maximumAdvance"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maximumAdvance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["minimumLeadTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumLeadTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["sendConfirmationsToOwner"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sendConfirmationsToOwner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["timeSlotInterval"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeSlotInterval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err

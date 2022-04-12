@@ -7,17 +7,17 @@ import (
 // VisualInfo 
 type VisualInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Optional. JSON object used to represent an icon which represents the application used to generate the activity
-    attribution ImageInfoable;
+    attribution ImageInfoable
     // Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
-    backgroundColor *string;
+    backgroundColor *string
     // Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
-    content Jsonable;
+    content Jsonable
     // Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
-    description *string;
+    description *string
     // Required. Short text description of the user's unique activity (for example, document name in cases where an activity refers to document creation)
-    displayText *string;
+    displayText *string
 }
 // NewVisualInfo instantiates a new visualInfo and sets the default values.
 func NewVisualInfo()(*VisualInfo) {
@@ -79,9 +79,9 @@ func (m *VisualInfo) GetDisplayText()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *VisualInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["attribution"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *VisualInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["attribution"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateImageInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *VisualInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["backgroundColor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["backgroundColor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *VisualInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["content"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *VisualInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *VisualInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["displayText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

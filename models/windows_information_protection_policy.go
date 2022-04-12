@@ -8,29 +8,29 @@ import (
 type WindowsInformationProtectionPolicy struct {
     WindowsInformationProtection
     // Offline interval before app data is wiped (days)
-    daysWithoutContactBeforeUnenroll *int32;
+    daysWithoutContactBeforeUnenroll *int32
     // Enrollment url for the MDM
-    mdmEnrollmentUrl *string;
+    mdmEnrollmentUrl *string
     // Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 <= X <= 999.
-    minutesOfInactivityBeforeDeviceLock *int32;
+    minutesOfInactivityBeforeDeviceLock *int32
     // Integer value that specifies the number of past PINs that can be associated to a user account that can't be reused. The largest number you can configure for this policy setting is 50. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then storage of previous PINs is not required. This node was added in Windows 10, version 1511. Default is 0.
-    numberOfPastPinsRemembered *int32;
+    numberOfPastPinsRemembered *int32
     // The number of authentication failures allowed before the device will be wiped. A value of 0 disables device wipe functionality. Range is an integer X where 4 <= X <= 16 for desktop and 0 <= X <= 999 for mobile devices.
-    passwordMaximumAttemptCount *int32;
+    passwordMaximumAttemptCount *int32
     // Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user's PIN will never expire. This node was added in Windows 10, version 1511. Default is 0.
-    pinExpirationDays *int32;
+    pinExpirationDays *int32
     // Integer value that configures the use of lowercase letters in the Windows Hello for Business PIN. Default is NotAllow. Possible values are: notAllow, requireAtLeastOne, allow.
-    pinLowercaseLetters *WindowsInformationProtectionPinCharacterRequirements;
+    pinLowercaseLetters *WindowsInformationProtectionPinCharacterRequirements
     // Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.
-    pinMinimumLength *int32;
+    pinMinimumLength *int32
     // Integer value that configures the use of special characters in the Windows Hello for Business PIN. Valid special characters for Windows Hello for Business PIN gestures include: ! ' # $ % & ' ( )  + , - . / : ; < = > ? @ [ / ] ^  ` {
-    pinSpecialCharacters *WindowsInformationProtectionPinCharacterRequirements;
+    pinSpecialCharacters *WindowsInformationProtectionPinCharacterRequirements
     // Integer value that configures the use of uppercase letters in the Windows Hello for Business PIN. Default is NotAllow. Possible values are: notAllow, requireAtLeastOne, allow.
-    pinUppercaseLetters *WindowsInformationProtectionPinCharacterRequirements;
+    pinUppercaseLetters *WindowsInformationProtectionPinCharacterRequirements
     // New property in RS2, pending documentation
-    revokeOnMdmHandoffDisabled *bool;
+    revokeOnMdmHandoffDisabled *bool
     // Boolean value that sets Windows Hello for Business as a method for signing into Windows.
-    windowsHelloForBusinessBlocked *bool;
+    windowsHelloForBusinessBlocked *bool
 }
 // NewWindowsInformationProtectionPolicy instantiates a new windowsInformationProtectionPolicy and sets the default values.
 func NewWindowsInformationProtectionPolicy()(*WindowsInformationProtectionPolicy) {
@@ -52,9 +52,9 @@ func (m *WindowsInformationProtectionPolicy) GetDaysWithoutContactBeforeUnenroll
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsInformationProtection.GetFieldDeserializers()
-    res["daysWithoutContactBeforeUnenroll"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["daysWithoutContactBeforeUnenroll"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["mdmEnrollmentUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mdmEnrollmentUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["minutesOfInactivityBeforeDeviceLock"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minutesOfInactivityBeforeDeviceLock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["numberOfPastPinsRemembered"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfPastPinsRemembered"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["passwordMaximumAttemptCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordMaximumAttemptCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["pinExpirationDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pinExpirationDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["pinLowercaseLetters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pinLowercaseLetters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsInformationProtectionPinCharacterRequirements)
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["pinMinimumLength"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pinMinimumLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["pinSpecialCharacters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pinSpecialCharacters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsInformationProtectionPinCharacterRequirements)
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["pinUppercaseLetters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pinUppercaseLetters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsInformationProtectionPinCharacterRequirements)
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["revokeOnMdmHandoffDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["revokeOnMdmHandoffDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -164,7 +164,7 @@ func (m *WindowsInformationProtectionPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["windowsHelloForBusinessBlocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsHelloForBusinessBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

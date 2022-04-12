@@ -8,9 +8,9 @@ import (
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary struct {
     Entity
     // Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
-    deployedDeviceCount *int32;
+    deployedDeviceCount *int32
     // Number of Devices that have failed to deploy this WindowsDefenderApplicationControl supplemental policy.
-    failedDeviceCount *int32;
+    failedDeviceCount *int32
 }
 // NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary instantiates a new windowsDefenderApplicationControlSupplementalPolicyDeploymentSummary and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary()(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) {
@@ -40,9 +40,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) G
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deployedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deployedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) G
         }
         return nil
     }
-    res["failedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["failedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

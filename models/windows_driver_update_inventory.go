@@ -9,23 +9,23 @@ import (
 type WindowsDriverUpdateInventory struct {
     Entity
     // The number of devices for which this driver is applicable.
-    applicableDeviceCount *int32;
+    applicableDeviceCount *int32
     // The approval status for this driver. Possible values are: needsReview, declined, approved, suspended.
-    approvalStatus *DriverApprovalStatus;
+    approvalStatus *DriverApprovalStatus
     // The category for this driver. Possible values are: recommended, previouslyApproved, other.
-    category *DriverCategory;
+    category *DriverCategory
     // The date time when a driver should be deployed if approvalStatus is approved.
-    deployDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    deployDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The class of the driver.
-    driverClass *string;
+    driverClass *string
     // The manufacturer of the driver.
-    manufacturer *string;
+    manufacturer *string
     // The name of the driver.
-    name *string;
+    name *string
     // The release date time of the driver.
-    releaseDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    releaseDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The version of the driver.
-    version *string;
+    version *string
 }
 // NewWindowsDriverUpdateInventory instantiates a new windowsDriverUpdateInventory and sets the default values.
 func NewWindowsDriverUpdateInventory()(*WindowsDriverUpdateInventory) {
@@ -79,9 +79,9 @@ func (m *WindowsDriverUpdateInventory) GetDriverClass()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["applicableDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicableDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["approvalStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["approvalStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDriverApprovalStatus)
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["category"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDriverCategory)
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["deployDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deployDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["driverClass"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["driverClass"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["manufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["releaseDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["releaseDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -8,25 +8,25 @@ import (
 type CloudPcProvisioningPolicy struct {
     Entity
     // A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
-    assignments []CloudPcProvisioningPolicyAssignmentable;
+    assignments []CloudPcProvisioningPolicyAssignmentable
     // The provisioning policy description.
-    description *string;
+    description *string
     // The display name for the provisioning policy.
-    displayName *string;
+    displayName *string
     // Specifies how Cloud PCs will join Azure Active Directory.
-    domainJoinConfiguration CloudPcDomainJoinConfigurationable;
+    domainJoinConfiguration CloudPcDomainJoinConfigurationable
     // The display name for the OS image you’re provisioning.
-    imageDisplayName *string;
+    imageDisplayName *string
     // The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.
-    imageId *string;
+    imageId *string
     // The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
-    imageType *CloudPcProvisioningPolicyImageType;
+    imageType *CloudPcProvisioningPolicyImageType
     // The specific settings for the Microsoft Managed Desktop, which enables customers to get a managed device experience for the Cloud PC. Before you can enable Microsoft Managed Desktop, an admin must configure it.
-    microsoftManagedDesktop MicrosoftManagedDesktopable;
+    microsoftManagedDesktop MicrosoftManagedDesktopable
     // The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
-    onPremisesConnectionId *string;
+    onPremisesConnectionId *string
     // Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
-    windowsSettings CloudPcWindowsSettingsable;
+    windowsSettings CloudPcWindowsSettingsable
 }
 // NewCloudPcProvisioningPolicy instantiates a new cloudPcProvisioningPolicy and sets the default values.
 func NewCloudPcProvisioningPolicy()(*CloudPcProvisioningPolicy) {
@@ -72,9 +72,9 @@ func (m *CloudPcProvisioningPolicy) GetDomainJoinConfiguration()(CloudPcDomainJo
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcProvisioningPolicyAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["domainJoinConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["domainJoinConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcDomainJoinConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["imageDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["imageDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["imageId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["imageId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["imageType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["imageType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcProvisioningPolicyImageType)
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["microsoftManagedDesktop"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["microsoftManagedDesktop"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMicrosoftManagedDesktopFromDiscriminatorValue)
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["onPremisesConnectionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onPremisesConnectionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -168,7 +168,7 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["windowsSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcWindowsSettingsFromDiscriminatorValue)
         if err != nil {
             return err

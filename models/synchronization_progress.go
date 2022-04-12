@@ -8,15 +8,15 @@ import (
 // SynchronizationProgress 
 type SynchronizationProgress struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The numerator of a progress ratio; the number of units of changes already processed.
-    completedUnits *int64;
+    completedUnits *int64
     // The time of a progress observation as an offset in minutes from UTC.
-    progressObservationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    progressObservationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
-    totalUnits *int64;
+    totalUnits *int64
     // An optional description of the units.
-    units *string;
+    units *string
 }
 // NewSynchronizationProgress instantiates a new synchronizationProgress and sets the default values.
 func NewSynchronizationProgress()(*SynchronizationProgress) {
@@ -46,9 +46,9 @@ func (m *SynchronizationProgress) GetCompletedUnits()(*int64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SynchronizationProgress) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["completedUnits"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SynchronizationProgress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["completedUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *SynchronizationProgress) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["progressObservationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["progressObservationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *SynchronizationProgress) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["totalUnits"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *SynchronizationProgress) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["units"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["units"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

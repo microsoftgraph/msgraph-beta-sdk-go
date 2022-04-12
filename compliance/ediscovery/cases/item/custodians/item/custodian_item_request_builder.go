@@ -20,49 +20,49 @@ import (
 // CustodianItemRequestBuilder provides operations to manage the custodians property of the microsoft.graph.ediscovery.case entity.
 type CustodianItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // CustodianItemRequestBuilderDeleteOptions options for Delete
 type CustodianItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CustodianItemRequestBuilderGetOptions options for Get
 type CustodianItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *CustodianItemRequestBuilderGetQueryParameters;
+    QueryParameters *CustodianItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CustodianItemRequestBuilderGetQueryParameters returns a list of case custodian objects for this case.  Nullable.
 type CustodianItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // CustodianItemRequestBuilderPatchOptions options for Patch
 type CustodianItemRequestBuilderPatchOptions struct {
     // 
-    Body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable;
+    Body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Activate the activate property
 func (m *CustodianItemRequestBuilder) Activate()(*i3014ac2a78ae86bab98c7f6f34c813604de315db1e6bd4c290d1c414a901df01.ActivateRequestBuilder) {
@@ -76,7 +76,7 @@ func (m *CustodianItemRequestBuilder) ApplyHold()(*ib255c9099c18c5aeea4ac94ff834
 func NewCustodianItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CustodianItemRequestBuilder) {
     m := &CustodianItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case_id}/custodians/{custodian_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -213,7 +213,7 @@ func (m *CustodianItemRequestBuilder) SiteSourcesById(id string)(*i4309a7704e69f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["siteSource_id"] = id
+        urlTplParams["siteSource%2Did"] = id
     }
     return i4309a7704e69fe42095a6b193ab7c02498b7ed9dfb94dfb719874f17dc467566.NewSiteSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -228,7 +228,7 @@ func (m *CustodianItemRequestBuilder) UnifiedGroupSourcesById(id string)(*ifbc6f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedGroupSource_id"] = id
+        urlTplParams["unifiedGroupSource%2Did"] = id
     }
     return ifbc6f713aeb7024d6becb409b398d0478ce75f7c0d32d275eaf841964c28cf58.NewUnifiedGroupSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -247,7 +247,7 @@ func (m *CustodianItemRequestBuilder) UserSourcesById(id string)(*i6668e488b2563
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["userSource_id"] = id
+        urlTplParams["userSource%2Did"] = id
     }
     return i6668e488b256395a9fba0e7acad7a6ccc9d7c63da93011905dfe0a8b2ccc5ff9.NewUserSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

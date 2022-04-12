@@ -8,15 +8,15 @@ import (
 type DirectoryRole struct {
     DirectoryObject
     // The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
-    description *string;
+    description *string
     // The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
-    displayName *string;
+    displayName *string
     // Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
-    members []DirectoryObjectable;
+    members []DirectoryObjectable
     // The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
-    roleTemplateId *string;
+    roleTemplateId *string
     // Members of this directory role that are scoped to administrative units. Read-only. Nullable.
-    scopedMembers []ScopedRoleMembershipable;
+    scopedMembers []ScopedRoleMembershipable
 }
 // NewDirectoryRole instantiates a new directoryRole and sets the default values.
 func NewDirectoryRole()(*DirectoryRole) {
@@ -46,9 +46,9 @@ func (m *DirectoryRole) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["members"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["roleTemplateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *DirectoryRole) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["scopedMembers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scopedMembers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateScopedRoleMembershipFromDiscriminatorValue)
         if err != nil {
             return err

@@ -7,17 +7,17 @@ import (
 // PersonNamePronounciation 
 type PersonNamePronounciation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The displayName property
-    displayName *string;
+    displayName *string
     // The first property
-    first *string;
+    first *string
     // The last property
-    last *string;
+    last *string
     // The maiden property
-    maiden *string;
+    maiden *string
     // The middle property
-    middle *string;
+    middle *string
 }
 // NewPersonNamePronounciation instantiates a new personNamePronounciation and sets the default values.
 func NewPersonNamePronounciation()(*PersonNamePronounciation) {
@@ -47,9 +47,9 @@ func (m *PersonNamePronounciation) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["first"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["first"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["last"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["last"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["maiden"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maiden"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["middle"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["middle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

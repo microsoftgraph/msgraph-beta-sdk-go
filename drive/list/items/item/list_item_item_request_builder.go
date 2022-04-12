@@ -11,6 +11,8 @@ import (
     ia2b700d43ac5cd289f1eae1bb612360c49638c62dfb54b8c7e8228d6fd206e25 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/item/analytics"
     ic5c7e5c1201df8e08dd3c31a725a1b6b5c4b8c93b46ad9390ad32b9a00aa10a1 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/item/versions"
     icf63e1dabde99d58f91beae56e8ed47fc1a61a3ec747a3742ff506ffd784cb39 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/item/createlink"
+    id7e04dec07271eefedbc9911823f28ba29508ddb380a7a3a501a5f7f888905e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/item/documentsetversions"
+    i5d1a96d4205d20d609fdac7d4097b2ccb3a9aaca71b3808c13b8ce00cbe3ad03 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/item/documentsetversions/item"
     id15ff120ad8f053cfd1691895b73c567a4d9203be255a2354e8e1c0a99cce095 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/item/activities/item"
     ie00e09a3d9b974ec973d38ac015be59a09a07678fa7822e52487a59cc84f7610 "github.com/microsoftgraph/msgraph-beta-sdk-go/drive/list/items/item/versions/item"
 )
@@ -18,49 +20,49 @@ import (
 // ListItemItemRequestBuilder provides operations to manage the items property of the microsoft.graph.list entity.
 type ListItemItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ListItemItemRequestBuilderDeleteOptions options for Delete
 type ListItemItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ListItemItemRequestBuilderGetOptions options for Get
 type ListItemItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ListItemItemRequestBuilderGetQueryParameters;
+    QueryParameters *ListItemItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ListItemItemRequestBuilderGetQueryParameters all items contained in the list.
 type ListItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ListItemItemRequestBuilderPatchOptions options for Patch
 type ListItemItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Activities the activities property
 func (m *ListItemItemRequestBuilder) Activities()(*i5ba57fe34d693b4cded862b4e7ada5fe09f96c4be8b524c005dc2feda37966d7.ActivitiesRequestBuilder) {
@@ -73,7 +75,7 @@ func (m *ListItemItemRequestBuilder) ActivitiesById(id string)(*id15ff120ad8f053
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["itemActivityOLD_id"] = id
+        urlTplParams["itemActivityOLD%2Did"] = id
     }
     return id15ff120ad8f053cfd1691895b73c567a4d9203be255a2354e8e1c0a99cce095.NewItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -85,7 +87,7 @@ func (m *ListItemItemRequestBuilder) Analytics()(*ia2b700d43ac5cd289f1eae1bb6123
 func NewListItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ListItemItemRequestBuilder) {
     m := &ListItemItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/drive/list/items/{listItem_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/drive/list/items/{listItem%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -175,6 +177,21 @@ func (m *ListItemItemRequestBuilder) Delete(options *ListItemItemRequestBuilderD
     }
     return nil
 }
+// DocumentSetVersions the documentSetVersions property
+func (m *ListItemItemRequestBuilder) DocumentSetVersions()(*id7e04dec07271eefedbc9911823f28ba29508ddb380a7a3a501a5f7f888905e8.DocumentSetVersionsRequestBuilder) {
+    return id7e04dec07271eefedbc9911823f28ba29508ddb380a7a3a501a5f7f888905e8.NewDocumentSetVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// DocumentSetVersionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.drive.list.items.item.documentSetVersions.item collection
+func (m *ListItemItemRequestBuilder) DocumentSetVersionsById(id string)(*i5d1a96d4205d20d609fdac7d4097b2ccb3a9aaca71b3808c13b8ce00cbe3ad03.DocumentSetVersionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["documentSetVersion%2Did"] = id
+    }
+    return i5d1a96d4205d20d609fdac7d4097b2ccb3a9aaca71b3808c13b8ce00cbe3ad03.NewDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // DriveItem the driveItem property
 func (m *ListItemItemRequestBuilder) DriveItem()(*i58c8d16874aac3827dc40a3dbf2328fea48f08417c9c41debf67a58f919c2720.DriveItemRequestBuilder) {
     return i58c8d16874aac3827dc40a3dbf2328fea48f08417c9c41debf67a58f919c2720.NewDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -230,7 +247,7 @@ func (m *ListItemItemRequestBuilder) VersionsById(id string)(*ie00e09a3d9b974ec9
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["listItemVersion_id"] = id
+        urlTplParams["listItemVersion%2Did"] = id
     }
     return ie00e09a3d9b974ec973d38ac015be59a09a07678fa7822e52487a59cc84f7610.NewListItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

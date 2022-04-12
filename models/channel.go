@@ -9,33 +9,33 @@ import (
 type Channel struct {
     Entity
     // Read only. Timestamp at which the channel was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Optional textual description for the channel.
-    description *string;
+    description *string
     // Channel name as it will appear to the user in Microsoft Teams.
-    displayName *string;
+    displayName *string
     // The email address for sending messages to the channel. Read-only.
-    email *string;
+    email *string
     // Metadata for the location where the channel's files are stored.
-    filesFolder DriveItemable;
+    filesFolder DriveItemable
     // Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
-    isFavoriteByDefault *bool;
+    isFavoriteByDefault *bool
     // A collection of membership records associated with the channel.
-    members []ConversationMemberable;
+    members []ConversationMemberable
     // The type of the channel. Can be set during creation and can't be changed. Possible values are: standard - Channel inherits the list of members of the parent team; private - Channel can have members that are a subset of all the members on the parent team.
-    membershipType *ChannelMembershipType;
+    membershipType *ChannelMembershipType
     // A collection of all the messages in the channel. A navigation property. Nullable.
-    messages []ChatMessageable;
+    messages []ChatMessageable
     // Settings to configure channel moderation to control who can start new posts and reply to posts in that channel.
-    moderationSettings ChannelModerationSettingsable;
-    // The sharedWithTeams property
-    sharedWithTeams []SharedWithChannelTeamInfoable;
+    moderationSettings ChannelModerationSettingsable
+    // A collection of teams shared with the channel.
+    sharedWithTeams []SharedWithChannelTeamInfoable
     // A collection of all the tabs in the channel. A navigation property.
-    tabs []TeamsTabable;
-    // The tenantId property
-    tenantId *string;
+    tabs []TeamsTabable
+    // The ID of the Azure Active Directory tenant.
+    tenantId *string
     // A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-    webUrl *string;
+    webUrl *string
 }
 // NewChannel instantiates a new channel and sets the default values.
 func NewChannel()(*Channel) {
@@ -81,9 +81,9 @@ func (m *Channel) GetEmail()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["email"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["filesFolder"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["filesFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDriveItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["isFavoriteByDefault"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isFavoriteByDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["members"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue)
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["membershipType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["membershipType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseChannelMembershipType)
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["messages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["messages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateChatMessageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["moderationSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["moderationSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChannelModerationSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["sharedWithTeams"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharedWithTeams"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSharedWithChannelTeamInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["tabs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tabs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsTabFromDiscriminatorValue)
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -229,7 +229,7 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["webUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -289,7 +289,7 @@ func (m *Channel) GetModerationSettings()(ChannelModerationSettingsable) {
         return m.moderationSettings
     }
 }
-// GetSharedWithTeams gets the sharedWithTeams property value. The sharedWithTeams property
+// GetSharedWithTeams gets the sharedWithTeams property value. A collection of teams shared with the channel.
 func (m *Channel) GetSharedWithTeams()([]SharedWithChannelTeamInfoable) {
     if m == nil {
         return nil
@@ -305,7 +305,7 @@ func (m *Channel) GetTabs()([]TeamsTabable) {
         return m.tabs
     }
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *Channel) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -490,7 +490,7 @@ func (m *Channel) SetModerationSettings(value ChannelModerationSettingsable)() {
         m.moderationSettings = value
     }
 }
-// SetSharedWithTeams sets the sharedWithTeams property value. The sharedWithTeams property
+// SetSharedWithTeams sets the sharedWithTeams property value. A collection of teams shared with the channel.
 func (m *Channel) SetSharedWithTeams(value []SharedWithChannelTeamInfoable)() {
     if m != nil {
         m.sharedWithTeams = value
@@ -502,7 +502,7 @@ func (m *Channel) SetTabs(value []TeamsTabable)() {
         m.tabs = value
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *Channel) SetTenantId(value *string)() {
     if m != nil {
         m.tenantId = value

@@ -7,11 +7,11 @@ import (
 // SessionLifetimePolicy 
 type SessionLifetimePolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The human-readable details of the conditional access session management policy applied to the sign-in.
-    detail *string;
+    detail *string
     // If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.
-    expirationRequirement *ExpirationRequirement;
+    expirationRequirement *ExpirationRequirement
 }
 // NewSessionLifetimePolicy instantiates a new sessionLifetimePolicy and sets the default values.
 func NewSessionLifetimePolicy()(*SessionLifetimePolicy) {
@@ -49,9 +49,9 @@ func (m *SessionLifetimePolicy) GetExpirationRequirement()(*ExpirationRequiremen
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SessionLifetimePolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["detail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SessionLifetimePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *SessionLifetimePolicy) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["expirationRequirement"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationRequirement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseExpirationRequirement)
         if err != nil {
             return err

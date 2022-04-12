@@ -27,55 +27,55 @@ import (
 // ChatItemRequestBuilder provides operations to manage the collection of chat entities.
 type ChatItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ChatItemRequestBuilderDeleteOptions options for Delete
 type ChatItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ChatItemRequestBuilderGetOptions options for Get
 type ChatItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ChatItemRequestBuilderGetQueryParameters;
+    QueryParameters *ChatItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ChatItemRequestBuilderGetQueryParameters get entity from chats by key
 type ChatItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ChatItemRequestBuilderPatchOptions options for Patch
 type ChatItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Chatable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Chatable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewChatItemRequestBuilderInternal instantiates a new ChatItemRequestBuilder and sets the default values.
 func NewChatItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatItemRequestBuilder) {
     m := &ChatItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/chats/{chat_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/chats/{chat%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -192,7 +192,7 @@ func (m *ChatItemRequestBuilder) InstalledAppsById(id string)(*ie61dfb73c398f7de
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["teamsAppInstallation_id"] = id
+        urlTplParams["teamsAppInstallation%2Did"] = id
     }
     return ie61dfb73c398f7dead8cc5dd9db4a47ecb07aade0608fc8c54a8403b80033d16.NewTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -219,7 +219,7 @@ func (m *ChatItemRequestBuilder) MembersById(id string)(*ie0ebf374d51813131d325b
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["conversationMember_id"] = id
+        urlTplParams["conversationMember%2Did"] = id
     }
     return ie0ebf374d51813131d325ba2e354a6f6ad5ee1d5255e9f99cae418db4e0bece9.NewConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -234,7 +234,7 @@ func (m *ChatItemRequestBuilder) MessagesById(id string)(*i6df2ce3633ff2cfd4dfa5
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["chatMessage_id"] = id
+        urlTplParams["chatMessage%2Did"] = id
     }
     return i6df2ce3633ff2cfd4dfa5779c3abecf4c08acad5103f1c0967265043d3f020b9.NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -249,7 +249,7 @@ func (m *ChatItemRequestBuilder) OperationsById(id string)(*id4f1ff0b95f623eb5dd
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["teamsAsyncOperation_id"] = id
+        urlTplParams["teamsAsyncOperation%2Did"] = id
     }
     return id4f1ff0b95f623eb5dd88b3faaa90d8a8d15dc658762e14d6f20f043f7a41bd6.NewTeamsAsyncOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -280,7 +280,7 @@ func (m *ChatItemRequestBuilder) PermissionGrantsById(id string)(*id9d0b7bf8dee0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["resourceSpecificPermissionGrant_id"] = id
+        urlTplParams["resourceSpecificPermissionGrant%2Did"] = id
     }
     return id9d0b7bf8dee04396567860b43345e6dbc5dcecbe79ddf717e30dd368560da73.NewResourceSpecificPermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -299,7 +299,7 @@ func (m *ChatItemRequestBuilder) TabsById(id string)(*i77b0138be5c0e0924bfa917df
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["teamsTab_id"] = id
+        urlTplParams["teamsTab%2Did"] = id
     }
     return i77b0138be5c0e0924bfa917dfb3aaa7ceeb0f4b1a36c37a0e5a330c8386fded0.NewTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

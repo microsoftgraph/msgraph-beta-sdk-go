@@ -8,25 +8,25 @@ import (
 // RecordRequestBody provides operations to call the record method.
 type RecordRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The bargeInAllowed property
-    bargeInAllowed *bool;
+    bargeInAllowed *bool
     // The clientContext property
-    clientContext *string;
+    clientContext *string
     // The initialSilenceTimeoutInSeconds property
-    initialSilenceTimeoutInSeconds *int32;
+    initialSilenceTimeoutInSeconds *int32
     // The maxRecordDurationInSeconds property
-    maxRecordDurationInSeconds *int32;
+    maxRecordDurationInSeconds *int32
     // The maxSilenceTimeoutInSeconds property
-    maxSilenceTimeoutInSeconds *int32;
+    maxSilenceTimeoutInSeconds *int32
     // The playBeep property
-    playBeep *bool;
+    playBeep *bool
     // The prompts property
-    prompts []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Promptable;
+    prompts []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Promptable
     // The stopTones property
-    stopTones []string;
+    stopTones []string
     // The streamWhileRecording property
-    streamWhileRecording *bool;
+    streamWhileRecording *bool
 }
 // NewRecordRequestBody instantiates a new recordRequestBody and sets the default values.
 func NewRecordRequestBody()(*RecordRequestBody) {
@@ -64,9 +64,9 @@ func (m *RecordRequestBody) GetClientContext()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RecordRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["bargeInAllowed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *RecordRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["bargeInAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *RecordRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["clientContext"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clientContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *RecordRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["initialSilenceTimeoutInSeconds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["initialSilenceTimeoutInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *RecordRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["maxRecordDurationInSeconds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxRecordDurationInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *RecordRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["maxSilenceTimeoutInSeconds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxSilenceTimeoutInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *RecordRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["playBeep"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["playBeep"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *RecordRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["prompts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["prompts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePromptFromDiscriminatorValue)
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *RecordRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["stopTones"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["stopTones"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *RecordRequestBody) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["streamWhileRecording"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["streamWhileRecording"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

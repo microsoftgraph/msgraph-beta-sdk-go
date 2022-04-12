@@ -7,11 +7,11 @@ import (
 // CloudPcRestorePointSetting 
 type CloudPcRestorePointSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.
-    frequencyInHours *int32;
+    frequencyInHours *int32
     // If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.
-    userRestoreEnabled *bool;
+    userRestoreEnabled *bool
 }
 // NewCloudPcRestorePointSetting instantiates a new cloudPcRestorePointSetting and sets the default values.
 func NewCloudPcRestorePointSetting()(*CloudPcRestorePointSetting) {
@@ -33,9 +33,9 @@ func (m *CloudPcRestorePointSetting) GetAdditionalData()(map[string]interface{})
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPcRestorePointSetting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["frequencyInHours"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CloudPcRestorePointSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["frequencyInHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *CloudPcRestorePointSetting) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["userRestoreEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userRestoreEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

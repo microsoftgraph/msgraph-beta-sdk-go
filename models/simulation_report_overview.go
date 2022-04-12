@@ -7,15 +7,15 @@ import (
 // SimulationReportOverview 
 type SimulationReportOverview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
-    recommendedActions []RecommendedActionable;
+    recommendedActions []RecommendedActionable
     // Number of valid users in the attack simulation and training campaign.
-    resolvedTargetsCount *int32;
+    resolvedTargetsCount *int32
     // Summary of simulation events in the attack simulation and training campaign.
-    simulationEventsContent SimulationEventsContentable;
+    simulationEventsContent SimulationEventsContentable
     // Summary of assigned trainings in the attack simulation and training campaign.
-    trainingEventsContent TrainingEventsContentable;
+    trainingEventsContent TrainingEventsContentable
 }
 // NewSimulationReportOverview instantiates a new simulationReportOverview and sets the default values.
 func NewSimulationReportOverview()(*SimulationReportOverview) {
@@ -37,9 +37,9 @@ func (m *SimulationReportOverview) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["recommendedActions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["recommendedActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRecommendedActionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["resolvedTargetsCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resolvedTargetsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["simulationEventsContent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["simulationEventsContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSimulationEventsContentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *SimulationReportOverview) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["trainingEventsContent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["trainingEventsContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTrainingEventsContentFromDiscriminatorValue)
         if err != nil {
             return err

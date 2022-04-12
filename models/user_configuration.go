@@ -8,7 +8,7 @@ import (
 type UserConfiguration struct {
     Entity
     // The binaryData property
-    binaryData []byte;
+    binaryData []byte
 }
 // NewUserConfiguration instantiates a new userConfiguration and sets the default values.
 func NewUserConfiguration()(*UserConfiguration) {
@@ -30,9 +30,9 @@ func (m *UserConfiguration) GetBinaryData()([]byte) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["binaryData"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["binaryData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err

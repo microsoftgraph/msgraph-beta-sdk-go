@@ -8,7 +8,7 @@ import (
 type ListItemVersion struct {
     BaseItemVersion
     // A collection of the fields and values for this version of the list item.
-    fields FieldValueSetable;
+    fields FieldValueSetable
 }
 // NewListItemVersion instantiates a new listItemVersion and sets the default values.
 func NewListItemVersion()(*ListItemVersion) {
@@ -22,9 +22,9 @@ func CreateListItemVersionFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewListItemVersion(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ListItemVersion) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ListItemVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseItemVersion.GetFieldDeserializers()
-    res["fields"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fields"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateFieldValueSetFromDiscriminatorValue)
         if err != nil {
             return err

@@ -9,21 +9,21 @@ import (
 type ExactMatchSessionBase struct {
     ExactMatchJobBase
     // The dataStoreId property
-    dataStoreId *string;
+    dataStoreId *string
     // The processingCompletionDateTime property
-    processingCompletionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    processingCompletionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The remainingBlockCount property
-    remainingBlockCount *int32;
+    remainingBlockCount *int32
     // The remainingJobCount property
-    remainingJobCount *int32;
+    remainingJobCount *int32
     // The state property
-    state *string;
+    state *string
     // The totalBlockCount property
-    totalBlockCount *int32;
+    totalBlockCount *int32
     // The totalJobCount property
-    totalJobCount *int32;
+    totalJobCount *int32
     // The uploadCompletionDateTime property
-    uploadCompletionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    uploadCompletionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewExactMatchSessionBase instantiates a new exactMatchSessionBase and sets the default values.
 func NewExactMatchSessionBase()(*ExactMatchSessionBase) {
@@ -45,9 +45,9 @@ func (m *ExactMatchSessionBase) GetDataStoreId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ExactMatchJobBase.GetFieldDeserializers()
-    res["dataStoreId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataStoreId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["processingCompletionDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["processingCompletionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["remainingBlockCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remainingBlockCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["remainingJobCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remainingJobCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["totalBlockCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalBlockCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["totalJobCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalJobCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["uploadCompletionDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["uploadCompletionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

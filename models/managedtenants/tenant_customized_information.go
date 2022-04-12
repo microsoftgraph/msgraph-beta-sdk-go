@@ -9,13 +9,13 @@ import (
 type TenantCustomizedInformation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The collection of contacts for the managed tenant. Optional.
-    contacts []TenantContactInformationable;
+    contacts []TenantContactInformationable
     // The display name for the managed tenant. Required. Read-only.
-    displayName *string;
+    displayName *string
     // The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
-    tenantId *string;
+    tenantId *string
     // The website for the managed tenant. Required.
-    website *string;
+    website *string
 }
 // NewTenantCustomizedInformation instantiates a new tenantCustomizedInformation and sets the default values.
 func NewTenantCustomizedInformation()(*TenantCustomizedInformation) {
@@ -45,9 +45,9 @@ func (m *TenantCustomizedInformation) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["contacts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contacts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTenantContactInformationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["website"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["website"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -8,29 +8,29 @@ import (
 type DeviceManagementConfigurationPolicyTemplate struct {
     Entity
     // Allow unmanaged setting templates
-    allowUnmanagedSettings *bool;
+    allowUnmanagedSettings *bool
     // Template base identifier
-    baseId *string;
+    baseId *string
     // Template description
-    description *string;
+    description *string
     // Template display name
-    displayName *string;
+    displayName *string
     // Description of template version
-    displayVersion *string;
+    displayVersion *string
     // Indicate current lifecycle state of template. Possible values are: invalid, draft, active, superseded, deprecated, retired.
-    lifecycleState *DeviceManagementTemplateLifecycleState;
+    lifecycleState *DeviceManagementTemplateLifecycleState
     // Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
-    platforms *DeviceManagementConfigurationPlatforms;
+    platforms *DeviceManagementConfigurationPlatforms
     // Number of setting templates. Valid values 0 to 2147483647. This property is read-only.
-    settingTemplateCount *int32;
+    settingTemplateCount *int32
     // Setting templates
-    settingTemplates []DeviceManagementConfigurationSettingTemplateable;
+    settingTemplates []DeviceManagementConfigurationSettingTemplateable
     // Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
-    technologies *DeviceManagementConfigurationTechnologies;
+    technologies *DeviceManagementConfigurationTechnologies
     // TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
-    templateFamily *DeviceManagementConfigurationTemplateFamily;
+    templateFamily *DeviceManagementConfigurationTemplateFamily
     // Template version. Valid values 1 to 2147483647. This property is read-only.
-    version *int32;
+    version *int32
 }
 // NewDeviceManagementConfigurationPolicyTemplate instantiates a new deviceManagementConfigurationPolicyTemplate and sets the default values.
 func NewDeviceManagementConfigurationPolicyTemplate()(*DeviceManagementConfigurationPolicyTemplate) {
@@ -84,9 +84,9 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetDisplayVersion()(*strin
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["allowUnmanagedSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowUnmanagedSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["baseId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["baseId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["displayVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -136,7 +136,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["lifecycleState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lifecycleState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementTemplateLifecycleState)
         if err != nil {
             return err
@@ -146,7 +146,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["platforms"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["platforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationPlatforms)
         if err != nil {
             return err
@@ -156,7 +156,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["settingTemplateCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingTemplateCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -166,7 +166,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["settingTemplates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationSettingTemplateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -180,7 +180,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["technologies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["technologies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationTechnologies)
         if err != nil {
             return err
@@ -190,7 +190,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["templateFamily"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["templateFamily"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationTemplateFamily)
         if err != nil {
             return err
@@ -200,7 +200,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

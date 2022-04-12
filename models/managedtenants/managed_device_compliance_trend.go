@@ -9,23 +9,23 @@ import (
 type ManagedDeviceComplianceTrend struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The number of devices with a compliant status. Required. Read-only.
-    compliantDeviceCount *int32;
+    compliantDeviceCount *int32
     // The number of devices manged by Configuration Manager. Required. Read-only.
-    configManagerDeviceCount *int32;
+    configManagerDeviceCount *int32
     // The date and time compliance snapshot was performed. Required. Read-only.
-    countDateTime *string;
+    countDateTime *string
     // The number of devices with an error status. Required. Read-only.
-    errorDeviceCount *int32;
+    errorDeviceCount *int32
     // The number of devices that are in a grace period status. Required. Read-only.
-    inGracePeriodDeviceCount *int32;
+    inGracePeriodDeviceCount *int32
     // The number of devices that are in a non-compliant status. Required. Read-only.
-    noncompliantDeviceCount *int32;
+    noncompliantDeviceCount *int32
     // The display name for the managed tenant. Optional. Read-only.
-    tenantDisplayName *string;
+    tenantDisplayName *string
     // The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
-    tenantId *string;
+    tenantId *string
     // The number of devices in an unknown status. Required. Read-only.
-    unknownDeviceCount *int32;
+    unknownDeviceCount *int32
 }
 // NewManagedDeviceComplianceTrend instantiates a new managedDeviceComplianceTrend and sets the default values.
 func NewManagedDeviceComplianceTrend()(*ManagedDeviceComplianceTrend) {
@@ -71,9 +71,9 @@ func (m *ManagedDeviceComplianceTrend) GetErrorDeviceCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["compliantDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["compliantDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["configManagerDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["configManagerDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["countDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["errorDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["inGracePeriodDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inGracePeriodDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["noncompliantDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["noncompliantDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["tenantDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["unknownDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unknownDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

@@ -8,15 +8,15 @@ import (
 type Office365GroupsActivityGroupCounts struct {
     Entity
     // The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
-    active *int64;
+    active *int64
     // The date on which a number of groups were active.
-    reportDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    reportDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of days the report covers.
-    reportPeriod *string;
+    reportPeriod *string
     // The latest date of the content.
-    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The total number of groups.
-    total *int64;
+    total *int64
 }
 // NewOffice365GroupsActivityGroupCounts instantiates a new office365GroupsActivityGroupCounts and sets the default values.
 func NewOffice365GroupsActivityGroupCounts()(*Office365GroupsActivityGroupCounts) {
@@ -38,9 +38,9 @@ func (m *Office365GroupsActivityGroupCounts) GetActive()(*int64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Office365GroupsActivityGroupCounts) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Office365GroupsActivityGroupCounts) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["active"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["active"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *Office365GroupsActivityGroupCounts) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["reportDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *Office365GroupsActivityGroupCounts) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["reportPeriod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportPeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *Office365GroupsActivityGroupCounts) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["reportRefreshDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportRefreshDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *Office365GroupsActivityGroupCounts) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["total"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["total"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

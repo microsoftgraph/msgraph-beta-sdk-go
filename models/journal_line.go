@@ -9,29 +9,29 @@ import (
 type JournalLine struct {
     Entity
     // The account property
-    account Accountable;
+    account Accountable
     // The accountId property
-    accountId *string;
+    accountId *string
     // The accountNumber property
-    accountNumber *string;
+    accountNumber *string
     // The amount property
-    amount *float64;
+    amount *float64
     // The comment property
-    comment *string;
+    comment *string
     // The description property
-    description *string;
+    description *string
     // The documentNumber property
-    documentNumber *string;
+    documentNumber *string
     // The externalDocumentNumber property
-    externalDocumentNumber *string;
+    externalDocumentNumber *string
     // The journalDisplayName property
-    journalDisplayName *string;
+    journalDisplayName *string
     // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The lineNumber property
-    lineNumber *int32;
+    lineNumber *int32
     // The postingDate property
-    postingDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    postingDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
 // NewJournalLine instantiates a new journalLine and sets the default values.
 func NewJournalLine()(*JournalLine) {
@@ -109,9 +109,9 @@ func (m *JournalLine) GetExternalDocumentNumber()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *JournalLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["account"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["account"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccountFromDiscriminatorValue)
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["accountId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["accountNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accountNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["amount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["amount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["comment"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["documentNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["documentNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["externalDocumentNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalDocumentNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["journalDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["journalDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -201,7 +201,7 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -211,7 +211,7 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["lineNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lineNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -221,7 +221,7 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["postingDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["postingDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err

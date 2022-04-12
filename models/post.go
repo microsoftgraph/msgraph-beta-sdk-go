@@ -9,35 +9,35 @@ import (
 type Post struct {
     OutlookItem
     // Read-only. Nullable. Supports $expand.
-    attachments []Attachmentable;
+    attachments []Attachmentable
     // The contents of the post. This is a default property. This property can be null.
-    body ItemBodyable;
+    body ItemBodyable
     // Unique ID of the conversation. Read-only.
-    conversationId *string;
+    conversationId *string
     // Unique ID of the conversation thread. Read-only.
-    conversationThreadId *string;
+    conversationThreadId *string
     // The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-    extensions []Extensionable;
+    extensions []Extensionable
     // The from property
-    from Recipientable;
+    from Recipientable
     // Indicates whether the post has at least one attachment. This is a default property.
-    hasAttachments *bool;
+    hasAttachments *bool
     // The importance of a group post: low, normal, high.
-    importance *Importance;
+    importance *Importance
     // Read-only. Supports $expand.
-    inReplyTo Postable;
+    inReplyTo Postable
     // The mentions property
-    mentions []Mentionable;
+    mentions []Mentionable
     // The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
     // Conversation participants that were added to the thread as part of this post.
-    newParticipants []Recipientable;
+    newParticipants []Recipientable
     // Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Contains the address of the sender. The value of Sender is assumed to be the address of the authenticated user in the case when Sender is not specified. This is a default property.
-    sender Recipientable;
+    sender Recipientable
     // The collection of single-value extended properties defined for the post. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
 }
 // NewPost instantiates a new post and sets the default values.
 func NewPost()(*Post) {
@@ -91,9 +91,9 @@ func (m *Post) GetExtensions()([]Extensionable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Post) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OutlookItem.GetFieldDeserializers()
-    res["attachments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["attachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAttachmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["body"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["conversationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conversationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["conversationThreadId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conversationThreadId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["extensions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["from"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["from"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["hasAttachments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasAttachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["importance"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["importance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseImportance)
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["inReplyTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inReplyTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePostFromDiscriminatorValue)
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["mentions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mentions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMentionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["multiValueExtendedProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["multiValueExtendedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMultiValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["newParticipants"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["newParticipants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
@@ -233,7 +233,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["receivedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["receivedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -243,7 +243,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["sender"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sender"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
@@ -253,7 +253,7 @@ func (m *Post) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["singleValueExtendedProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["singleValueExtendedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err

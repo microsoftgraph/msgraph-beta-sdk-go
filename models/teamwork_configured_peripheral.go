@@ -7,11 +7,11 @@ import (
 // TeamworkConfiguredPeripheral 
 type TeamworkConfiguredPeripheral struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // True if the current peripheral is optional. If set to false, this property is also used as part of the calculation of the health state for the device.
-    isOptional *bool;
+    isOptional *bool
     // The peripheral property
-    peripheral TeamworkPeripheralable;
+    peripheral TeamworkPeripheralable
 }
 // NewTeamworkConfiguredPeripheral instantiates a new teamworkConfiguredPeripheral and sets the default values.
 func NewTeamworkConfiguredPeripheral()(*TeamworkConfiguredPeripheral) {
@@ -33,9 +33,9 @@ func (m *TeamworkConfiguredPeripheral) GetAdditionalData()(map[string]interface{
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkConfiguredPeripheral) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["isOptional"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkConfiguredPeripheral) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["isOptional"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *TeamworkConfiguredPeripheral) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["peripheral"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["peripheral"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err

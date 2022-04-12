@@ -7,15 +7,15 @@ import (
 // SharedAppleDeviceUser 
 type SharedAppleDeviceUser struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Data quota
-    dataQuota *int64;
+    dataQuota *int64
     // Data to sync
-    dataToSync *bool;
+    dataToSync *bool
     // Data quota
-    dataUsed *int64;
+    dataUsed *int64
     // User name
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewSharedAppleDeviceUser instantiates a new sharedAppleDeviceUser and sets the default values.
 func NewSharedAppleDeviceUser()(*SharedAppleDeviceUser) {
@@ -61,9 +61,9 @@ func (m *SharedAppleDeviceUser) GetDataUsed()(*int64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SharedAppleDeviceUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["dataQuota"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SharedAppleDeviceUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["dataQuota"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *SharedAppleDeviceUser) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["dataToSync"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataToSync"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *SharedAppleDeviceUser) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["dataUsed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataUsed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *SharedAppleDeviceUser) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

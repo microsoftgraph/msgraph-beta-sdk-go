@@ -9,25 +9,25 @@ import (
 type RiskyServicePrincipal struct {
     Entity
     // true if the service principal account is enabled; otherwise, false.
-    accountEnabled *bool;
+    accountEnabled *bool
     // The globally unique identifier for the associated application (its appId property), if any.
-    appId *string;
+    appId *string
     // The display name for the service principal.
-    displayName *string;
+    displayName *string
     // Represents the risk history of Azure AD service principals.
-    history []RiskyServicePrincipalHistoryItemable;
+    history []RiskyServicePrincipalHistoryItemable
     // Indicates whether Azure AD is currently processing the service principal's risky state.
-    isProcessing *bool;
+    isProcessing *bool
     // Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden,  adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
-    riskDetail *RiskDetail;
+    riskDetail *RiskDetail
     // The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).
-    riskLastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    riskLastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Level of the detected risky workload identity. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
-    riskLevel *RiskLevel;
+    riskLevel *RiskLevel
     // State of the service principal's risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-    riskState *RiskState;
+    riskState *RiskState
     // Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
-    servicePrincipalType *string;
+    servicePrincipalType *string
 }
 // NewRiskyServicePrincipal instantiates a new riskyServicePrincipal and sets the default values.
 func NewRiskyServicePrincipal()(*RiskyServicePrincipal) {
@@ -65,9 +65,9 @@ func (m *RiskyServicePrincipal) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accountEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accountEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["appId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["history"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["history"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRiskyServicePrincipalHistoryItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["isProcessing"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isProcessing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["riskDetail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRiskDetail)
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["riskLastUpdatedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskLastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["riskLevel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRiskLevel)
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["riskState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRiskState)
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["servicePrincipalType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["servicePrincipalType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

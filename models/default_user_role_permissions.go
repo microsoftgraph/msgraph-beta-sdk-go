@@ -7,13 +7,13 @@ import (
 // DefaultUserRolePermissions 
 type DefaultUserRolePermissions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates whether the default user role can create applications.
-    allowedToCreateApps *bool;
+    allowedToCreateApps *bool
     // Indicates whether the default user role can create security groups.
-    allowedToCreateSecurityGroups *bool;
+    allowedToCreateSecurityGroups *bool
     // Indicates whether the default user role can read other users.
-    allowedToReadOtherUsers *bool;
+    allowedToReadOtherUsers *bool
 }
 // NewDefaultUserRolePermissions instantiates a new defaultUserRolePermissions and sets the default values.
 func NewDefaultUserRolePermissions()(*DefaultUserRolePermissions) {
@@ -59,9 +59,9 @@ func (m *DefaultUserRolePermissions) GetAllowedToReadOtherUsers()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DefaultUserRolePermissions) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["allowedToCreateApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DefaultUserRolePermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["allowedToCreateApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *DefaultUserRolePermissions) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["allowedToCreateSecurityGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowedToCreateSecurityGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *DefaultUserRolePermissions) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["allowedToReadOtherUsers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowedToReadOtherUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

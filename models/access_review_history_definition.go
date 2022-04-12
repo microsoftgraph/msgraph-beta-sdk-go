@@ -9,29 +9,29 @@ import (
 type AccessReviewHistoryDefinition struct {
     Entity
     // The createdBy property
-    createdBy UserIdentityable;
+    createdBy UserIdentityable
     // Timestamp when the access review definition was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
-    decisions []AccessReviewHistoryDecisionFilter;
+    decisions []AccessReviewHistoryDecisionFilter
     // Name for the access review history data collection. Required.
-    displayName *string;
+    displayName *string
     // The downloadUri property
-    downloadUri *string;
+    downloadUri *string
     // The fulfilledDateTime property
-    fulfilledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    fulfilledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
-    instances []AccessReviewHistoryInstanceable;
+    instances []AccessReviewHistoryInstanceable
     // A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
-    reviewHistoryPeriodEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    reviewHistoryPeriodEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
-    reviewHistoryPeriodStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    reviewHistoryPeriodStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined.
-    scheduleSettings AccessReviewHistoryScheduleSettingsable;
+    scheduleSettings AccessReviewHistoryScheduleSettingsable
     // Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
-    scopes []AccessReviewScopeable;
+    scopes []AccessReviewScopeable
     // Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.
-    status *AccessReviewHistoryStatus;
+    status *AccessReviewHistoryStatus
 }
 // NewAccessReviewHistoryDefinition instantiates a new accessReviewHistoryDefinition and sets the default values.
 func NewAccessReviewHistoryDefinition()(*AccessReviewHistoryDefinition) {
@@ -85,9 +85,9 @@ func (m *AccessReviewHistoryDefinition) GetDownloadUri()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["decisions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["decisions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseAccessReviewHistoryDecisionFilter)
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["downloadUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["downloadUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["fulfilledDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fulfilledDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["instances"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["instances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewHistoryInstanceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["reviewHistoryPeriodEndDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reviewHistoryPeriodEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["reviewHistoryPeriodStartDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reviewHistoryPeriodStartDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["scheduleSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scheduleSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessReviewHistoryScheduleSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["scopes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewScopeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *AccessReviewHistoryDefinition) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAccessReviewHistoryStatus)
         if err != nil {
             return err

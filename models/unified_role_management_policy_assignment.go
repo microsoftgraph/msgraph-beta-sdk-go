@@ -8,15 +8,15 @@ import (
 type UnifiedRoleManagementPolicyAssignment struct {
     Entity
     // The policy for the assignment.
-    policy UnifiedRoleManagementPolicyable;
+    policy UnifiedRoleManagementPolicyable
     // The id of the policy.
-    policyId *string;
+    policyId *string
     // The id of the role definition where the policy applies. If not specified, the policy applies to all roles.
-    roleDefinitionId *string;
+    roleDefinitionId *string
     // The id of the scope where the policy is assigned. E.g. '/', groupId, etc.
-    scopeId *string;
+    scopeId *string
     // The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.
-    scopeType *string;
+    scopeType *string
 }
 // NewUnifiedRoleManagementPolicyAssignment instantiates a new unifiedRoleManagementPolicyAssignment and sets the default values.
 func NewUnifiedRoleManagementPolicyAssignment()(*UnifiedRoleManagementPolicyAssignment) {
@@ -30,9 +30,9 @@ func CreateUnifiedRoleManagementPolicyAssignmentFromDiscriminatorValue(parseNode
     return NewUnifiedRoleManagementPolicyAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UnifiedRoleManagementPolicyAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UnifiedRoleManagementPolicyAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["policy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUnifiedRoleManagementPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -42,7 +42,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["policyId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["roleDefinitionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleDefinitionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["scopeId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scopeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *UnifiedRoleManagementPolicyAssignment) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["scopeType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scopeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

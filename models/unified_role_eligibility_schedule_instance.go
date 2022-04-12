@@ -9,13 +9,13 @@ import (
 type UnifiedRoleEligibilityScheduleInstance struct {
     UnifiedRoleScheduleInstanceBase
     // Time that the roleEligibilityScheduleInstance will expire.
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Membership type of the assignment. It can either be Inherited, Direct, or Group.
-    memberType *string;
+    memberType *string
     // Identifier of the parent roleEligibilitySchedule for this instance.
-    roleEligibilityScheduleId *string;
+    roleEligibilityScheduleId *string
     // Time that the roleEligibilityScheduleInstance will start.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewUnifiedRoleEligibilityScheduleInstance instantiates a new unifiedRoleEligibilityScheduleInstance and sets the default values.
 func NewUnifiedRoleEligibilityScheduleInstance()(*UnifiedRoleEligibilityScheduleInstance) {
@@ -37,9 +37,9 @@ func (m *UnifiedRoleEligibilityScheduleInstance) GetEndDateTime()(*i336074805fc8
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UnifiedRoleEligibilityScheduleInstance) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UnifiedRoleEligibilityScheduleInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleScheduleInstanceBase.GetFieldDeserializers()
-    res["endDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *UnifiedRoleEligibilityScheduleInstance) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["memberType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["memberType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *UnifiedRoleEligibilityScheduleInstance) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["roleEligibilityScheduleId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleEligibilityScheduleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *UnifiedRoleEligibilityScheduleInstance) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

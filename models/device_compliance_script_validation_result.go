@@ -7,13 +7,13 @@ import (
 // DeviceComplianceScriptValidationResult 
 type DeviceComplianceScriptValidationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Errors in json for the script for rules.
-    ruleErrors []DeviceComplianceScriptRuleErrorable;
+    ruleErrors []DeviceComplianceScriptRuleErrorable
     // Parsed rules from json.
-    rules []DeviceComplianceScriptRuleable;
+    rules []DeviceComplianceScriptRuleable
     // Errors in json for the script.
-    scriptErrors []DeviceComplianceScriptErrorable;
+    scriptErrors []DeviceComplianceScriptErrorable
 }
 // NewDeviceComplianceScriptValidationResult instantiates a new deviceComplianceScriptValidationResult and sets the default values.
 func NewDeviceComplianceScriptValidationResult()(*DeviceComplianceScriptValidationResult) {
@@ -35,9 +35,9 @@ func (m *DeviceComplianceScriptValidationResult) GetAdditionalData()(map[string]
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceComplianceScriptValidationResult) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["ruleErrors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceComplianceScriptValidationResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["ruleErrors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceComplianceScriptRuleErrorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -51,7 +51,7 @@ func (m *DeviceComplianceScriptValidationResult) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["rules"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceComplianceScriptRuleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *DeviceComplianceScriptValidationResult) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["scriptErrors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scriptErrors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceComplianceScriptErrorFromDiscriminatorValue)
         if err != nil {
             return err

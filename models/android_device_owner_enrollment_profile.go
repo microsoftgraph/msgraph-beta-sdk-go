@@ -9,43 +9,43 @@ import (
 type AndroidDeviceOwnerEnrollmentProfile struct {
     Entity
     // Tenant GUID the enrollment profile belongs to.
-    accountId *string;
+    accountId *string
     // Date time the enrollment profile was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Description for the enrollment profile.
-    description *string;
+    description *string
     // Display name for the enrollment profile.
-    displayName *string;
+    displayName *string
     // Total number of Android devices that have enrolled using this enrollment profile.
-    enrolledDeviceCount *int32;
+    enrolledDeviceCount *int32
     // The enrollment mode of devices that use this enrollment profile. Possible values are: corporateOwnedDedicatedDevice, corporateOwnedFullyManaged, corporateOwnedWorkProfile, corporateOwnedAOSPUserlessDevice, corporateOwnedAOSPUserAssociatedDevice.
-    enrollmentMode *AndroidDeviceOwnerEnrollmentMode;
+    enrollmentMode *AndroidDeviceOwnerEnrollmentMode
     // The enrollment token type for an enrollment profile. Possible values are: default, corporateOwnedDedicatedDeviceWithAzureADSharedMode.
-    enrollmentTokenType *AndroidDeviceOwnerEnrollmentTokenType;
+    enrollmentTokenType *AndroidDeviceOwnerEnrollmentTokenType
     // Total number of AOSP devices that have enrolled using the current token.
-    enrollmentTokenUsageCount *int32;
+    enrollmentTokenUsageCount *int32
     // Date time the enrollment profile was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // String used to generate a QR code for the token.
-    qrCodeContent *string;
+    qrCodeContent *string
     // String used to generate a QR code for the token.
-    qrCodeImage MimeContentable;
+    qrCodeImage MimeContentable
     // List of Scope Tags for this Entity instance.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // Date time the most recently created token was created.
-    tokenCreationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    tokenCreationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Date time the most recently created token will expire.
-    tokenExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    tokenExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Value of the most recently created token for this enrollment profile.
-    tokenValue *string;
+    tokenValue *string
     // Boolean that indicates if hidden wifi networks are enabled
-    wifiHidden *bool;
+    wifiHidden *bool
     // String that contains the wi-fi login password
-    wifiPassword *string;
+    wifiPassword *string
     // String that contains the wi-fi security type. Possible values are: none, wpa, wep.
-    wifiSecurityType *AospWifiSecurityType;
+    wifiSecurityType *AospWifiSecurityType
     // String that contains the wi-fi login ssid
-    wifiSsid *string;
+    wifiSsid *string
 }
 // NewAndroidDeviceOwnerEnrollmentProfile instantiates a new androidDeviceOwnerEnrollmentProfile and sets the default values.
 func NewAndroidDeviceOwnerEnrollmentProfile()(*AndroidDeviceOwnerEnrollmentProfile) {
@@ -123,9 +123,9 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetEnrollmentTokenUsageCount()(*in
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accountId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["enrolledDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enrolledDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["enrollmentMode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enrollmentMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAndroidDeviceOwnerEnrollmentMode)
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["enrollmentTokenType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enrollmentTokenType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAndroidDeviceOwnerEnrollmentTokenType)
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["enrollmentTokenUsageCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enrollmentTokenUsageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -215,7 +215,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["qrCodeContent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["qrCodeContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["qrCodeImage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["qrCodeImage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -235,7 +235,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -249,7 +249,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["tokenCreationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenCreationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -259,7 +259,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["tokenExpirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenExpirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -269,7 +269,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["tokenValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -279,7 +279,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["wifiHidden"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiHidden"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -289,7 +289,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["wifiPassword"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiPassword"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -299,7 +299,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["wifiSecurityType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiSecurityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAospWifiSecurityType)
         if err != nil {
             return err
@@ -309,7 +309,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["wifiSsid"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wifiSsid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

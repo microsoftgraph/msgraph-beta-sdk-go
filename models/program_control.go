@@ -9,23 +9,23 @@ import (
 type ProgramControl struct {
     Entity
     // The controlId of the control, in particular the identifier of an access review. Required on create.
-    controlId *string;
+    controlId *string
     // The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
-    controlTypeId *string;
+    controlTypeId *string
     // The creation date and time of the program control.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The name of the control.
-    displayName *string;
+    displayName *string
     // The user who created the program control.
-    owner UserIdentityable;
+    owner UserIdentityable
     // The program this control is part of.
-    program Programable;
+    program Programable
     // The programId of the program this control is a part of. Required on create.
-    programId *string;
+    programId *string
     // The resource, a group or an app, targeted by this program control's access review.
-    resource ProgramResourceable;
+    resource ProgramResourceable
     // The life cycle status of the control.
-    status *string;
+    status *string
 }
 // NewProgramControl instantiates a new programControl and sets the default values.
 func NewProgramControl()(*ProgramControl) {
@@ -71,9 +71,9 @@ func (m *ProgramControl) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ProgramControl) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ProgramControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["controlId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["controlId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *ProgramControl) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["controlTypeId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["controlTypeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *ProgramControl) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *ProgramControl) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *ProgramControl) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["owner"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["owner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *ProgramControl) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["program"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["program"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateProgramFromDiscriminatorValue)
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *ProgramControl) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["programId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["programId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *ProgramControl) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["resource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateProgramResourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *ProgramControl) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

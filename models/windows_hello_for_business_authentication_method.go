@@ -9,13 +9,13 @@ import (
 type WindowsHelloForBusinessAuthenticationMethod struct {
     AuthenticationMethod
     // The date and time that this Windows Hello for Business key was registered.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
-    device Deviceable;
+    device Deviceable
     // The name of the device on which Windows Hello for Business is registered
-    displayName *string;
+    displayName *string
     // Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
-    keyStrength *AuthenticationMethodKeyStrength;
+    keyStrength *AuthenticationMethodKeyStrength
 }
 // NewWindowsHelloForBusinessAuthenticationMethod instantiates a new windowsHelloForBusinessAuthenticationMethod and sets the default values.
 func NewWindowsHelloForBusinessAuthenticationMethod()(*WindowsHelloForBusinessAuthenticationMethod) {
@@ -53,9 +53,9 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) GetDisplayName()(*string) 
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsHelloForBusinessAuthenticationMethod) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsHelloForBusinessAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["device"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["device"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *WindowsHelloForBusinessAuthenticationMethod) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["keyStrength"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["keyStrength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAuthenticationMethodKeyStrength)
         if err != nil {
             return err

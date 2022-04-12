@@ -8,21 +8,23 @@ import (
 type ListItem struct {
     BaseItem
     // The list of recent activities that took place on this item.
-    activities []ItemActivityOLDable;
+    activities []ItemActivityOLDable
     // Analytics about the view activities that took place on this item.
-    analytics ItemAnalyticsable;
+    analytics ItemAnalyticsable
     // The content type of this list item
-    contentType ContentTypeInfoable;
+    contentType ContentTypeInfoable
     // The deleted property
-    deleted Deletedable;
+    deleted Deletedable
+    // The documentSetVersions property
+    documentSetVersions []DocumentSetVersionable
     // For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
-    driveItem DriveItemable;
+    driveItem DriveItemable
     // The values of the columns set on this list item.
-    fields FieldValueSetable;
+    fields FieldValueSetable
     // Returns identifiers useful for SharePoint REST compatibility. Read-only.
-    sharepointIds SharepointIdsable;
+    sharepointIds SharepointIdsable
     // The list of previous versions of the list item.
-    versions []ListItemVersionable;
+    versions []ListItemVersionable
 }
 // NewListItem instantiates a new listItem and sets the default values.
 func NewListItem()(*ListItem) {
@@ -67,6 +69,14 @@ func (m *ListItem) GetDeleted()(Deletedable) {
         return m.deleted
     }
 }
+// GetDocumentSetVersions gets the documentSetVersions property value. The documentSetVersions property
+func (m *ListItem) GetDocumentSetVersions()([]DocumentSetVersionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.documentSetVersions
+    }
+}
 // GetDriveItem gets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 func (m *ListItem) GetDriveItem()(DriveItemable) {
     if m == nil {
@@ -76,9 +86,9 @@ func (m *ListItem) GetDriveItem()(DriveItemable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ListItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
-    res["activities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateItemActivityOLDFromDiscriminatorValue)
         if err != nil {
             return err
@@ -92,7 +102,7 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["analytics"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["analytics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemAnalyticsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -102,7 +112,7 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["contentType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateContentTypeInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -112,7 +122,7 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["deleted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deleted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeletedFromDiscriminatorValue)
         if err != nil {
             return err
@@ -122,7 +132,21 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["driveItem"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["documentSetVersions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDocumentSetVersionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DocumentSetVersionable, len(val))
+            for i, v := range val {
+                res[i] = v.(DocumentSetVersionable)
+            }
+            m.SetDocumentSetVersions(res)
+        }
+        return nil
+    }
+    res["driveItem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDriveItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -132,7 +156,7 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["fields"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fields"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateFieldValueSetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -142,7 +166,7 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["sharepointIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharepointIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharepointIdsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -152,7 +176,7 @@ func (m *ListItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["versions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["versions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateListItemVersionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -226,6 +250,16 @@ func (m *ListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    if m.GetDocumentSetVersions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDocumentSetVersions()))
+        for i, v := range m.GetDocumentSetVersions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("documentSetVersions", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("driveItem", m.GetDriveItem())
         if err != nil {
@@ -278,6 +312,12 @@ func (m *ListItem) SetContentType(value ContentTypeInfoable)() {
 func (m *ListItem) SetDeleted(value Deletedable)() {
     if m != nil {
         m.deleted = value
+    }
+}
+// SetDocumentSetVersions sets the documentSetVersions property value. The documentSetVersions property
+func (m *ListItem) SetDocumentSetVersions(value []DocumentSetVersionable)() {
+    if m != nil {
+        m.documentSetVersions = value
     }
 }
 // SetDriveItem sets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]

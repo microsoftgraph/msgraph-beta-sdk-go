@@ -9,115 +9,115 @@ import (
 type ServicePrincipal struct {
     DirectoryObject
     // true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
-    accountEnabled *bool;
+    accountEnabled *bool
     // Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
-    addIns []AddInable;
+    addIns []AddInable
     // Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
-    alternativeNames []string;
+    alternativeNames []string
     // The description exposed by the associated application.
-    appDescription *string;
+    appDescription *string
     // The display name exposed by the associated application.
-    appDisplayName *string;
+    appDisplayName *string
     // The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
-    appId *string;
+    appId *string
     // Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).
-    applicationTemplateId *string;
+    applicationTemplateId *string
     // The appManagementPolicy applied to this service principal.
-    appManagementPolicies []AppManagementPolicyable;
+    appManagementPolicies []AppManagementPolicyable
     // Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
-    appOwnerOrganizationId *string;
+    appOwnerOrganizationId *string
     // App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
-    appRoleAssignedTo []AppRoleAssignmentable;
+    appRoleAssignedTo []AppRoleAssignmentable
     // Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
-    appRoleAssignmentRequired *bool;
+    appRoleAssignmentRequired *bool
     // App role assignment for another app or service, granted to this service principal. Supports $expand.
-    appRoleAssignments []AppRoleAssignmentable;
+    appRoleAssignments []AppRoleAssignmentable
     // The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
-    appRoles []AppRoleable;
+    appRoles []AppRoleable
     // The claimsMappingPolicies assigned to this service principal. Supports $expand.
-    claimsMappingPolicies []ClaimsMappingPolicyable;
+    claimsMappingPolicies []ClaimsMappingPolicyable
     // Directory objects created by this service principal. Read-only. Nullable.
-    createdObjects []DirectoryObjectable;
+    createdObjects []DirectoryObjectable
     // An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith).
-    customSecurityAttributes CustomSecurityAttributeValueable;
+    customSecurityAttributes CustomSecurityAttributeValueable
     // The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
-    delegatedPermissionClassifications []DelegatedPermissionClassificationable;
+    delegatedPermissionClassifications []DelegatedPermissionClassificationable
     // Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
-    description *string;
+    description *string
     // Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
-    disabledByMicrosoftStatus *string;
+    disabledByMicrosoftStatus *string
     // The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-    displayName *string;
+    displayName *string
     // Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
-    endpoints []Endpointable;
+    endpoints []Endpointable
     // Deprecated. Don't use.
-    errorUrl *string;
+    errorUrl *string
     // The federatedIdentityCredentials property
-    federatedIdentityCredentials []FederatedIdentityCredentialable;
+    federatedIdentityCredentials []FederatedIdentityCredentialable
     // Home page or landing page of the application.
-    homepage *string;
+    homepage *string
     // The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
-    homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicyable;
+    homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicyable
     // Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
-    info InformationalUrlable;
+    info InformationalUrlable
     // The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).
-    keyCredentials []KeyCredentialable;
+    keyCredentials []KeyCredentialable
     // The licenseDetails property
-    licenseDetails []LicenseDetailsable;
+    licenseDetails []LicenseDetailsable
     // Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
-    loginUrl *string;
+    loginUrl *string
     // Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
-    logoutUrl *string;
+    logoutUrl *string
     // Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
-    memberOf []DirectoryObjectable;
+    memberOf []DirectoryObjectable
     // Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
-    notes *string;
+    notes *string
     // Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
-    notificationEmailAddresses []string;
+    notificationEmailAddresses []string
     // Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
-    oauth2PermissionGrants []OAuth2PermissionGrantable;
+    oauth2PermissionGrants []OAuth2PermissionGrantable
     // Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
-    ownedObjects []DirectoryObjectable;
+    ownedObjects []DirectoryObjectable
     // Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
-    owners []DirectoryObjectable;
+    owners []DirectoryObjectable
     // The collection of password credentials associated with the application. Not nullable.
-    passwordCredentials []PasswordCredentialable;
+    passwordCredentials []PasswordCredentialable
     // The collection for settings related to password single sign-on. Use $select=passwordSingleSignOnSettings to read the property. Read-only for applicationTemplates except for custom applicationTemplates.
-    passwordSingleSignOnSettings PasswordSingleSignOnSettingsable;
+    passwordSingleSignOnSettings PasswordSingleSignOnSettingsable
     // Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
-    preferredSingleSignOnMode *string;
+    preferredSingleSignOnMode *string
     // Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.
-    preferredTokenSigningKeyEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    preferredTokenSigningKeyEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
-    preferredTokenSigningKeyThumbprint *string;
+    preferredTokenSigningKeyThumbprint *string
     // The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
-    publishedPermissionScopes []PermissionScopeable;
+    publishedPermissionScopes []PermissionScopeable
     // The publisherName property
-    publisherName *string;
+    publisherName *string
     // The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
-    replyUrls []string;
+    replyUrls []string
     // The url where the service exposes SAML metadata for federation.
-    samlMetadataUrl *string;
+    samlMetadataUrl *string
     // The collection for settings related to saml single sign-on.
-    samlSingleSignOnSettings SamlSingleSignOnSettingsable;
+    samlSingleSignOnSettings SamlSingleSignOnSettingsable
     // Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
-    servicePrincipalNames []string;
+    servicePrincipalNames []string
     // Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
-    servicePrincipalType *string;
+    servicePrincipalType *string
     // Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
-    signInAudience *string;
+    signInAudience *string
     // The synchronization property
-    synchronization Synchronizationable;
+    synchronization Synchronizationable
     // Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
-    tags []string;
+    tags []string
     // Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
-    tokenEncryptionKeyId *string;
+    tokenEncryptionKeyId *string
     // The tokenIssuancePolicies assigned to this service principal.
-    tokenIssuancePolicies []TokenIssuancePolicyable;
+    tokenIssuancePolicies []TokenIssuancePolicyable
     // The tokenLifetimePolicies assigned to this service principal.
-    tokenLifetimePolicies []TokenLifetimePolicyable;
+    tokenLifetimePolicies []TokenLifetimePolicyable
     // The transitiveMemberOf property
-    transitiveMemberOf []DirectoryObjectable;
+    transitiveMemberOf []DirectoryObjectable
 }
 // NewServicePrincipal instantiates a new servicePrincipal and sets the default values.
 func NewServicePrincipal()(*ServicePrincipal) {
@@ -315,9 +315,9 @@ func (m *ServicePrincipal) GetFederatedIdentityCredentials()([]FederatedIdentity
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
-    res["accountEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accountEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -327,7 +327,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["addIns"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["addIns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAddInFromDiscriminatorValue)
         if err != nil {
             return err
@@ -341,7 +341,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["alternativeNames"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["alternativeNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -355,7 +355,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["appDescription"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -365,7 +365,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["appDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -375,7 +375,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["appId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -385,7 +385,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["applicationTemplateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicationTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -395,7 +395,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["appManagementPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appManagementPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAppManagementPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -409,7 +409,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["appOwnerOrganizationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appOwnerOrganizationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -419,7 +419,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["appRoleAssignedTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appRoleAssignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAppRoleAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -433,7 +433,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["appRoleAssignmentRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appRoleAssignmentRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -443,7 +443,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["appRoleAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appRoleAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAppRoleAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -457,7 +457,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["appRoles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAppRoleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -471,7 +471,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["claimsMappingPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["claimsMappingPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateClaimsMappingPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -485,7 +485,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["createdObjects"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdObjects"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -499,7 +499,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["customSecurityAttributes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customSecurityAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCustomSecurityAttributeValueFromDiscriminatorValue)
         if err != nil {
             return err
@@ -509,7 +509,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["delegatedPermissionClassifications"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["delegatedPermissionClassifications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDelegatedPermissionClassificationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -523,7 +523,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -533,7 +533,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["disabledByMicrosoftStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["disabledByMicrosoftStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -543,7 +543,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -553,7 +553,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["endpoints"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endpoints"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEndpointFromDiscriminatorValue)
         if err != nil {
             return err
@@ -567,7 +567,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["errorUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -577,7 +577,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["federatedIdentityCredentials"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["federatedIdentityCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateFederatedIdentityCredentialFromDiscriminatorValue)
         if err != nil {
             return err
@@ -591,7 +591,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["homepage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["homepage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -601,7 +601,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["homeRealmDiscoveryPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["homeRealmDiscoveryPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateHomeRealmDiscoveryPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -615,7 +615,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["info"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["info"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateInformationalUrlFromDiscriminatorValue)
         if err != nil {
             return err
@@ -625,7 +625,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["keyCredentials"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["keyCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyCredentialFromDiscriminatorValue)
         if err != nil {
             return err
@@ -639,7 +639,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["licenseDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["licenseDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLicenseDetailsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -653,7 +653,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["loginUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["loginUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -663,7 +663,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["logoutUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["logoutUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -673,7 +673,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["memberOf"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["memberOf"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -687,7 +687,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["notes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -697,7 +697,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["notificationEmailAddresses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notificationEmailAddresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -711,7 +711,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["oauth2PermissionGrants"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["oauth2PermissionGrants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOAuth2PermissionGrantFromDiscriminatorValue)
         if err != nil {
             return err
@@ -725,7 +725,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["ownedObjects"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ownedObjects"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -739,7 +739,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["owners"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["owners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -753,7 +753,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["passwordCredentials"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePasswordCredentialFromDiscriminatorValue)
         if err != nil {
             return err
@@ -767,7 +767,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["passwordSingleSignOnSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordSingleSignOnSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePasswordSingleSignOnSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -777,7 +777,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["preferredSingleSignOnMode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preferredSingleSignOnMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -787,7 +787,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["preferredTokenSigningKeyEndDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preferredTokenSigningKeyEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -797,7 +797,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["preferredTokenSigningKeyThumbprint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preferredTokenSigningKeyThumbprint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -807,7 +807,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["publishedPermissionScopes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publishedPermissionScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionScopeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -821,7 +821,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["publisherName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publisherName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -831,7 +831,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["replyUrls"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["replyUrls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -845,7 +845,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["samlMetadataUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["samlMetadataUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -855,7 +855,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["samlSingleSignOnSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["samlSingleSignOnSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSamlSingleSignOnSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -865,7 +865,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["servicePrincipalNames"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["servicePrincipalNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -879,7 +879,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["servicePrincipalType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["servicePrincipalType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -889,7 +889,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["signInAudience"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["signInAudience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -899,7 +899,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["synchronization"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["synchronization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSynchronizationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -909,7 +909,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["tags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -923,7 +923,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["tokenEncryptionKeyId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenEncryptionKeyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -933,7 +933,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["tokenIssuancePolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenIssuancePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTokenIssuancePolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -947,7 +947,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["tokenLifetimePolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenLifetimePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTokenLifetimePolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -961,7 +961,7 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["transitiveMemberOf"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["transitiveMemberOf"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err

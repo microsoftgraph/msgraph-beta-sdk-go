@@ -8,13 +8,13 @@ import (
 type TeamsApp struct {
     Entity
     // The details for each version of the app.
-    appDefinitions []TeamsAppDefinitionable;
+    appDefinitions []TeamsAppDefinitionable
     // The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
-    displayName *string;
+    displayName *string
     // The method of distribution for the app. Read-only.
-    distributionMethod *TeamsAppDistributionMethod;
+    distributionMethod *TeamsAppDistributionMethod
     // The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
-    externalId *string;
+    externalId *string
 }
 // NewTeamsApp instantiates a new teamsApp and sets the default values.
 func NewTeamsApp()(*TeamsApp) {
@@ -60,9 +60,9 @@ func (m *TeamsApp) GetExternalId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamsApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TeamsApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appDefinitions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsAppDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *TeamsApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *TeamsApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["distributionMethod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["distributionMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTeamsAppDistributionMethod)
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *TeamsApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["externalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

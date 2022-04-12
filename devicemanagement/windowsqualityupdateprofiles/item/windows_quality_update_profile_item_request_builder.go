@@ -12,49 +12,49 @@ import (
 // WindowsQualityUpdateProfileItemRequestBuilder provides operations to manage the windowsQualityUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 type WindowsQualityUpdateProfileItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // WindowsQualityUpdateProfileItemRequestBuilderDeleteOptions options for Delete
 type WindowsQualityUpdateProfileItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // WindowsQualityUpdateProfileItemRequestBuilderGetOptions options for Get
 type WindowsQualityUpdateProfileItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *WindowsQualityUpdateProfileItemRequestBuilderGetQueryParameters;
+    QueryParameters *WindowsQualityUpdateProfileItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // WindowsQualityUpdateProfileItemRequestBuilderGetQueryParameters a collection of windows quality update profiles
 type WindowsQualityUpdateProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // WindowsQualityUpdateProfileItemRequestBuilderPatchOptions options for Patch
 type WindowsQualityUpdateProfileItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Assign the assign property
 func (m *WindowsQualityUpdateProfileItemRequestBuilder) Assign()(*i36baea6ccabeba8dfb103008171c914e98a40320eea881bf06c1729f50cb81ce.AssignRequestBuilder) {
@@ -71,7 +71,7 @@ func (m *WindowsQualityUpdateProfileItemRequestBuilder) AssignmentsById(id strin
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["windowsQualityUpdateProfileAssignment_id"] = id
+        urlTplParams["windowsQualityUpdateProfileAssignment%2Did"] = id
     }
     return i04d128338563166ddbb410fea932b830e3e2b8799a8d363b4dbb0797203fe43d.NewWindowsQualityUpdateProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -79,7 +79,7 @@ func (m *WindowsQualityUpdateProfileItemRequestBuilder) AssignmentsById(id strin
 func NewWindowsQualityUpdateProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsQualityUpdateProfileItemRequestBuilder) {
     m := &WindowsQualityUpdateProfileItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/windowsQualityUpdateProfiles/{windowsQualityUpdateProfile_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/windowsQualityUpdateProfiles/{windowsQualityUpdateProfile%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

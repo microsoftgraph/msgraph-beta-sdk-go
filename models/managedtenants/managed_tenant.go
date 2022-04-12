@@ -9,53 +9,53 @@ import (
 type ManagedTenant struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Aggregate view of device compliance policies across managed tenants.
-    aggregatedPolicyCompliances []AggregatedPolicyComplianceable;
+    aggregatedPolicyCompliances []AggregatedPolicyComplianceable
     // The collection of audit events across managed tenants.
-    auditEvents []AuditEventable;
+    auditEvents []AuditEventable
     // The collection of cloud PC connections across managed tenants.
-    cloudPcConnections []CloudPcConnectionable;
+    cloudPcConnections []CloudPcConnectionable
     // The collection of cloud PC devices across managed tenants.
-    cloudPcDevices []CloudPcDeviceable;
+    cloudPcDevices []CloudPcDeviceable
     // Overview of cloud PC information across managed tenants.
-    cloudPcsOverview []CloudPcOverviewable;
+    cloudPcsOverview []CloudPcOverviewable
     // Aggregate view of conditional access policy coverage across managed tenants.
-    conditionalAccessPolicyCoverages []ConditionalAccessPolicyCoverageable;
+    conditionalAccessPolicyCoverages []ConditionalAccessPolicyCoverageable
     // Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-    credentialUserRegistrationsSummaries []CredentialUserRegistrationsSummaryable;
+    credentialUserRegistrationsSummaries []CredentialUserRegistrationsSummaryable
     // Summary information for device compliance policy setting states across managed tenants.
-    deviceCompliancePolicySettingStateSummaries []DeviceCompliancePolicySettingStateSummaryable;
+    deviceCompliancePolicySettingStateSummaries []DeviceCompliancePolicySettingStateSummaryable
     // The collection of compliance for managed devices across managed tenants.
-    managedDeviceCompliances []ManagedDeviceComplianceable;
+    managedDeviceCompliances []ManagedDeviceComplianceable
     // Trend insights for device compliance across managed tenants.
-    managedDeviceComplianceTrends []ManagedDeviceComplianceTrendable;
+    managedDeviceComplianceTrends []ManagedDeviceComplianceTrendable
     // The collection of baseline management actions across managed tenants.
-    managementActions []ManagementActionable;
+    managementActions []ManagementActionable
     // The tenant level status of management actions across managed tenants.
-    managementActionTenantDeploymentStatuses []ManagementActionTenantDeploymentStatusable;
+    managementActionTenantDeploymentStatuses []ManagementActionTenantDeploymentStatusable
     // The collection of baseline management intents across managed tenants.
-    managementIntents []ManagementIntentable;
+    managementIntents []ManagementIntentable
     // The managementTemplateCollections property
-    managementTemplateCollections []ManagementTemplateCollectionable;
+    managementTemplateCollections []ManagementTemplateCollectionable
     // The collection of baseline management templates across managed tenants.
-    managementTemplates []ManagementTemplateable;
+    managementTemplates []ManagementTemplateable
     // The managementTemplateSteps property
-    managementTemplateSteps []ManagementTemplateStepable;
+    managementTemplateSteps []ManagementTemplateStepable
     // The managementTemplateStepVersions property
-    managementTemplateStepVersions []ManagementTemplateStepVersionable;
+    managementTemplateStepVersions []ManagementTemplateStepVersionable
     // The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-    tenantGroups []TenantGroupable;
+    tenantGroups []TenantGroupable
     // The collection of tenants associated with the managing entity.
-    tenants []Tenantable;
+    tenants []Tenantable
     // The collection of tenant level customized information across managed tenants.
-    tenantsCustomizedInformation []TenantCustomizedInformationable;
+    tenantsCustomizedInformation []TenantCustomizedInformationable
     // The collection tenant level detailed information across managed tenants.
-    tenantsDetailedInformation []TenantDetailedInformationable;
+    tenantsDetailedInformation []TenantDetailedInformationable
     // The collection of tenant tags across managed tenants.
-    tenantTags []TenantTagable;
+    tenantTags []TenantTagable
     // The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
-    windowsDeviceMalwareStates []WindowsDeviceMalwareStateable;
+    windowsDeviceMalwareStates []WindowsDeviceMalwareStateable
     // The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
-    windowsProtectionStates []WindowsProtectionStateable;
+    windowsProtectionStates []WindowsProtectionStateable
 }
 // NewManagedTenant instantiates a new managedTenant and sets the default values.
 func NewManagedTenant()(*ManagedTenant) {
@@ -133,9 +133,9 @@ func (m *ManagedTenant) GetDeviceCompliancePolicySettingStateSummaries()([]Devic
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["aggregatedPolicyCompliances"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["aggregatedPolicyCompliances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAggregatedPolicyComplianceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["auditEvents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["auditEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAuditEventFromDiscriminatorValue)
         if err != nil {
             return err
@@ -163,7 +163,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["cloudPcConnections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudPcConnections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcConnectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["cloudPcDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudPcDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcDeviceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["cloudPcsOverview"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudPcsOverview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcOverviewFromDiscriminatorValue)
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["conditionalAccessPolicyCoverages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conditionalAccessPolicyCoverages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyCoverageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["credentialUserRegistrationsSummaries"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["credentialUserRegistrationsSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCredentialUserRegistrationsSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -233,7 +233,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["deviceCompliancePolicySettingStateSummaries"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceCompliancePolicySettingStateSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -247,7 +247,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["managedDeviceCompliances"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceCompliances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceComplianceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -261,7 +261,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["managedDeviceComplianceTrends"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceComplianceTrends"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceComplianceTrendFromDiscriminatorValue)
         if err != nil {
             return err
@@ -275,7 +275,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["managementActions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementActionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -289,7 +289,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["managementActionTenantDeploymentStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementActionTenantDeploymentStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -303,7 +303,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["managementIntents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementIntents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementIntentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -317,7 +317,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["managementTemplateCollections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementTemplateCollections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -331,7 +331,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["managementTemplates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -345,7 +345,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["managementTemplateSteps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementTemplateSteps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateStepFromDiscriminatorValue)
         if err != nil {
             return err
@@ -359,7 +359,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["managementTemplateStepVersions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementTemplateStepVersions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementTemplateStepVersionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -373,7 +373,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["tenantGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTenantGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -387,7 +387,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["tenants"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTenantFromDiscriminatorValue)
         if err != nil {
             return err
@@ -401,7 +401,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["tenantsCustomizedInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantsCustomizedInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTenantCustomizedInformationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -415,7 +415,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["tenantsDetailedInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantsDetailedInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTenantDetailedInformationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -429,7 +429,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["tenantTags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTenantTagFromDiscriminatorValue)
         if err != nil {
             return err
@@ -443,7 +443,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["windowsDeviceMalwareStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsDeviceMalwareStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsDeviceMalwareStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -457,7 +457,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["windowsProtectionStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsProtectionStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsProtectionStateFromDiscriminatorValue)
         if err != nil {
             return err

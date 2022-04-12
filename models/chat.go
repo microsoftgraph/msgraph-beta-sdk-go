@@ -9,35 +9,35 @@ import (
 type Chat struct {
     Entity
     // Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
-    chatType *ChatType;
+    chatType *ChatType
     // Date and time at which the chat was created. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A collection of all the apps in the chat. Nullable.
-    installedApps []TeamsAppInstallationable;
+    installedApps []TeamsAppInstallationable
     // Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
-    lastMessagePreview ChatMessageInfoable;
+    lastMessagePreview ChatMessageInfoable
     // Date and time at which the chat was renamed or list of members were last changed. Read-only.
-    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A collection of all the members in the chat. Nullable.
-    members []ConversationMemberable;
+    members []ConversationMemberable
     // A collection of all the messages in the chat. Nullable.
-    messages []ChatMessageable;
+    messages []ChatMessageable
     // Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
-    onlineMeetingInfo TeamworkOnlineMeetingInfoable;
+    onlineMeetingInfo TeamworkOnlineMeetingInfoable
     // A collection of all the Teams async operations that ran or are running on the chat. Nullable.
-    operations []TeamsAsyncOperationable;
+    operations []TeamsAsyncOperationable
     // A collection of permissions granted to apps for the chat.
-    permissionGrants []ResourceSpecificPermissionGrantable;
+    permissionGrants []ResourceSpecificPermissionGrantable
     // A collection of all the tabs in the chat. Nullable.
-    tabs []TeamsTabable;
+    tabs []TeamsTabable
     // The identifier of the tenant in which the chat was created. Read-only.
-    tenantId *string;
+    tenantId *string
     // (Optional) Subject or topic for the chat. Only available for group chats.
-    topic *string;
+    topic *string
     // Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
-    viewpoint ChatViewpointable;
+    viewpoint ChatViewpointable
     // The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
-    webUrl *string;
+    webUrl *string
 }
 // NewChat instantiates a new chat and sets the default values.
 func NewChat()(*Chat) {
@@ -67,9 +67,9 @@ func (m *Chat) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["chatType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["chatType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseChatType)
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["installedApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["installedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsAppInstallationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["lastMessagePreview"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastMessagePreview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChatMessageInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["lastUpdatedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["members"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue)
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["messages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["messages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateChatMessageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["onlineMeetingInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onlineMeetingInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkOnlineMeetingInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["operations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsAsyncOperationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["permissionGrants"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["permissionGrants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateResourceSpecificPermissionGrantFromDiscriminatorValue)
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["tabs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tabs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsTabFromDiscriminatorValue)
         if err != nil {
             return err
@@ -203,7 +203,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -213,7 +213,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["topic"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["topic"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -223,7 +223,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["viewpoint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["viewpoint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChatViewpointFromDiscriminatorValue)
         if err != nil {
             return err
@@ -233,7 +233,7 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["webUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

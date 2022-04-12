@@ -8,15 +8,15 @@ import (
 type ActivityStatistics struct {
     Entity
     // The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
-    activity *AnalyticsActivityType;
+    activity *AnalyticsActivityType
     // Total hours spent on the activity. The value is represented in ISO 8601 format for durations.
-    duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Date when the activity ended, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-03' that follows the YYYY-MM-DD format.
-    endDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    endDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // Date when the activity started, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-04' that follows the YYYY-MM-DD format.
-    startDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    startDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The time zone that the user sets in Microsoft Outlook is used for the computation. For example, the property value could be 'Pacific Standard Time.'
-    timeZoneUsed *string;
+    timeZoneUsed *string
 }
 // NewActivityStatistics instantiates a new activityStatistics and sets the default values.
 func NewActivityStatistics()(*ActivityStatistics) {
@@ -54,9 +54,9 @@ func (m *ActivityStatistics) GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b0
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAnalyticsActivityType)
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["duration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["duration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["endDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["startDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["timeZoneUsed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeZoneUsed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

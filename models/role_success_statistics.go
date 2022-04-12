@@ -7,25 +7,25 @@ import (
 // RoleSuccessStatistics 
 type RoleSuccessStatistics struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The permanentFail property
-    permanentFail *int64;
+    permanentFail *int64
     // The permanentSuccess property
-    permanentSuccess *int64;
+    permanentSuccess *int64
     // The removeFail property
-    removeFail *int64;
+    removeFail *int64
     // The removeSuccess property
-    removeSuccess *int64;
+    removeSuccess *int64
     // The roleId property
-    roleId *string;
+    roleId *string
     // The roleName property
-    roleName *string;
+    roleName *string
     // The temporaryFail property
-    temporaryFail *int64;
+    temporaryFail *int64
     // The temporarySuccess property
-    temporarySuccess *int64;
+    temporarySuccess *int64
     // The unknownFail property
-    unknownFail *int64;
+    unknownFail *int64
 }
 // NewRoleSuccessStatistics instantiates a new roleSuccessStatistics and sets the default values.
 func NewRoleSuccessStatistics()(*RoleSuccessStatistics) {
@@ -47,9 +47,9 @@ func (m *RoleSuccessStatistics) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["permanentFail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["permanentFail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["permanentSuccess"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["permanentSuccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["removeFail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["removeFail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["removeSuccess"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["removeSuccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["roleId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["roleName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["temporaryFail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["temporaryFail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["temporarySuccess"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["temporarySuccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["unknownFail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unknownFail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

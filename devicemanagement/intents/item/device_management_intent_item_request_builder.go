@@ -28,49 +28,49 @@ import (
 // DeviceManagementIntentItemRequestBuilder provides operations to manage the intents property of the microsoft.graph.deviceManagement entity.
 type DeviceManagementIntentItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // DeviceManagementIntentItemRequestBuilderDeleteOptions options for Delete
 type DeviceManagementIntentItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceManagementIntentItemRequestBuilderGetOptions options for Get
 type DeviceManagementIntentItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *DeviceManagementIntentItemRequestBuilderGetQueryParameters;
+    QueryParameters *DeviceManagementIntentItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceManagementIntentItemRequestBuilderGetQueryParameters the device management intents
 type DeviceManagementIntentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // DeviceManagementIntentItemRequestBuilderPatchOptions options for Patch
 type DeviceManagementIntentItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Assign the assign property
 func (m *DeviceManagementIntentItemRequestBuilder) Assign()(*i77dceab723bbe034f83895d00554f2801769e77222afcf5f03698bf9f20065f0.AssignRequestBuilder) {
@@ -87,7 +87,7 @@ func (m *DeviceManagementIntentItemRequestBuilder) AssignmentsById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementIntentAssignment_id"] = id
+        urlTplParams["deviceManagementIntentAssignment%2Did"] = id
     }
     return ie20d3efb9c88b7a4dececad1e9328ce5526d4cdbd23f6257aa72d18d9126ed81.NewDeviceManagementIntentAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -102,7 +102,7 @@ func (m *DeviceManagementIntentItemRequestBuilder) CategoriesById(id string)(*i0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementIntentSettingCategory_id"] = id
+        urlTplParams["deviceManagementIntentSettingCategory%2Did"] = id
     }
     return i050af1e40f4b04a3234cd6eaef05c2dba88a1a4304262e163378332314ce51be.NewDeviceManagementIntentSettingCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -114,7 +114,7 @@ func (m *DeviceManagementIntentItemRequestBuilder) CompareWithTemplateId(templat
 func NewDeviceManagementIntentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementIntentItemRequestBuilder) {
     m := &DeviceManagementIntentItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -215,7 +215,7 @@ func (m *DeviceManagementIntentItemRequestBuilder) DeviceSettingStateSummariesBy
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementIntentDeviceSettingStateSummary_id"] = id
+        urlTplParams["deviceManagementIntentDeviceSettingStateSummary%2Did"] = id
     }
     return i844844c782791d7d5f694de937d8ad00ac682c52a360e46aa3f1340df417d61c.NewDeviceManagementIntentDeviceSettingStateSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -230,7 +230,7 @@ func (m *DeviceManagementIntentItemRequestBuilder) DeviceStatesById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementIntentDeviceState_id"] = id
+        urlTplParams["deviceManagementIntentDeviceState%2Did"] = id
     }
     return ib490048065b539bfe5b6cfa49328e603b61cfae55d4624781d0df2de10463072.NewDeviceManagementIntentDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -285,7 +285,7 @@ func (m *DeviceManagementIntentItemRequestBuilder) SettingsById(id string)(*i52e
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementSettingInstance_id"] = id
+        urlTplParams["deviceManagementSettingInstance%2Did"] = id
     }
     return i52e44e28ad3f36bea30cd68ebb25b8657782d8b7b8c755f6add0e96288a7800a.NewDeviceManagementSettingInstanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -304,7 +304,7 @@ func (m *DeviceManagementIntentItemRequestBuilder) UserStatesById(id string)(*i2
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementIntentUserState_id"] = id
+        urlTplParams["deviceManagementIntentUserState%2Did"] = id
     }
     return i292492bc5eb43f5aa2fe6644e7c97af199a20c37d91e9b0991d9fbca2bb024de.NewDeviceManagementIntentUserStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

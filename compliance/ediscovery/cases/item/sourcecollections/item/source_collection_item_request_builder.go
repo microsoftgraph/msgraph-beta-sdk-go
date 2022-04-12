@@ -19,49 +19,49 @@ import (
 // SourceCollectionItemRequestBuilder provides operations to manage the sourceCollections property of the microsoft.graph.ediscovery.case entity.
 type SourceCollectionItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // SourceCollectionItemRequestBuilderDeleteOptions options for Delete
 type SourceCollectionItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // SourceCollectionItemRequestBuilderGetOptions options for Get
 type SourceCollectionItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *SourceCollectionItemRequestBuilderGetQueryParameters;
+    QueryParameters *SourceCollectionItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // SourceCollectionItemRequestBuilderGetQueryParameters returns a list of sourceCollection objects associated with this case.
 type SourceCollectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // SourceCollectionItemRequestBuilderPatchOptions options for Patch
 type SourceCollectionItemRequestBuilderPatchOptions struct {
     // 
-    Body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable;
+    Body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AdditionalSources the additionalSources property
 func (m *SourceCollectionItemRequestBuilder) AdditionalSources()(*i2c744ed9b76601b529ed40d577c487cc9b9cdba275f49afd6d038d45b275a597.AdditionalSourcesRequestBuilder) {
@@ -74,7 +74,7 @@ func (m *SourceCollectionItemRequestBuilder) AdditionalSourcesById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["dataSource_id"] = id
+        urlTplParams["dataSource%2Did"] = id
     }
     return id3fbc20e2aaca189e5a1a34399bb63266b91e90673fe015d4987e17f6eff56c3.NewDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -86,7 +86,7 @@ func (m *SourceCollectionItemRequestBuilder) AddToReviewSetOperation()(*i3bd4cbf
 func NewSourceCollectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SourceCollectionItemRequestBuilder) {
     m := &SourceCollectionItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case_id}/sourceCollections/{sourceCollection_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -167,7 +167,7 @@ func (m *SourceCollectionItemRequestBuilder) CustodianSourcesById(id string)(*i6
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["dataSource_id"] = id
+        urlTplParams["dataSource%2Did"] = id
     }
     return i68367f015eed592e4cb8c8ffbae9b14545f24cbd517163582e6f2b0ec13d383b.NewDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -222,7 +222,7 @@ func (m *SourceCollectionItemRequestBuilder) NoncustodialSourcesById(id string)(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["noncustodialDataSource_id"] = id
+        urlTplParams["noncustodialDataSource%2Did"] = id
     }
     return idb9eb7d4d565925a68fe0c31a5803668300d9310f130d86958e02c95d5021202.NewNoncustodialDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

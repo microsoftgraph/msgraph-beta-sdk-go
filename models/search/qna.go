@@ -10,23 +10,23 @@ import (
 type Qna struct {
     SearchAnswer
     // Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
-    availabilityEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    availabilityEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Timestamp of when the qna will start to appear as a search result. Set as null for always available.
-    availabilityStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    availabilityStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of security groups able to view this qna.
-    groupIds []string;
+    groupIds []string
     // True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
-    isSuggested *bool;
+    isSuggested *bool
     // Keywords that trigger this qna to appear in search results.
-    keywords AnswerKeywordable;
+    keywords AnswerKeywordable
     // A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{REGION}. As an example, en-US is English as used in the United States. See supported language tags for the list of possible values.
-    languageTags []string;
+    languageTags []string
     // List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
-    platforms []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType;
+    platforms []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType
     // State of the qna. Possible values are: published, draft, excluded, or unknownFutureValue.
-    state *AnswerState;
+    state *AnswerState
     // Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
-    targetedVariations []AnswerVariantable;
+    targetedVariations []AnswerVariantable
 }
 // NewQna instantiates a new qna and sets the default values.
 func NewQna()(*Qna) {
@@ -56,9 +56,9 @@ func (m *Qna) GetAvailabilityStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Qna) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Qna) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SearchAnswer.GetFieldDeserializers()
-    res["availabilityEndDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["availabilityEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *Qna) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["availabilityStartDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["availabilityStartDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *Qna) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["groupIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *Qna) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["isSuggested"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isSuggested"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *Qna) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["keywords"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["keywords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAnswerKeywordFromDiscriminatorValue)
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *Qna) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["languageTags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["languageTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *Qna) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["platforms"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["platforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseDevicePlatformType)
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *Qna) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAnswerState)
         if err != nil {
             return err
@@ -150,7 +150,7 @@ func (m *Qna) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["targetedVariations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetedVariations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAnswerVariantFromDiscriminatorValue)
         if err != nil {
             return err

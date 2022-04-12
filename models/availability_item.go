@@ -7,15 +7,15 @@ import (
 // AvailabilityItem 
 type AvailabilityItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The endDateTime property
-    endDateTime DateTimeTimeZoneable;
-    // The serviceId property
-    serviceId *string;
+    endDateTime DateTimeTimeZoneable
+    // Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
+    serviceId *string
     // The startDateTime property
-    startDateTime DateTimeTimeZoneable;
-    // The status property
-    status *BookingsAvailabilityStatus;
+    startDateTime DateTimeTimeZoneable
+    // The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
+    status *BookingsAvailabilityStatus
 }
 // NewAvailabilityItem instantiates a new availabilityItem and sets the default values.
 func NewAvailabilityItem()(*AvailabilityItem) {
@@ -45,9 +45,9 @@ func (m *AvailabilityItem) GetEndDateTime()(DateTimeTimeZoneable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AvailabilityItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["endDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AvailabilityItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *AvailabilityItem) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["serviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *AvailabilityItem) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *AvailabilityItem) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBookingsAvailabilityStatus)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *AvailabilityItem) GetFieldDeserializers()(map[string]func(interface{}, 
     }
     return res
 }
-// GetServiceId gets the serviceId property value. The serviceId property
+// GetServiceId gets the serviceId property value. Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
 func (m *AvailabilityItem) GetServiceId()(*string) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *AvailabilityItem) GetStartDateTime()(DateTimeTimeZoneable) {
         return m.startDateTime
     }
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
 func (m *AvailabilityItem) GetStatus()(*BookingsAvailabilityStatus) {
     if m == nil {
         return nil
@@ -160,7 +160,7 @@ func (m *AvailabilityItem) SetEndDateTime(value DateTimeTimeZoneable)() {
         m.endDateTime = value
     }
 }
-// SetServiceId sets the serviceId property value. The serviceId property
+// SetServiceId sets the serviceId property value. Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
 func (m *AvailabilityItem) SetServiceId(value *string)() {
     if m != nil {
         m.serviceId = value
@@ -172,7 +172,7 @@ func (m *AvailabilityItem) SetStartDateTime(value DateTimeTimeZoneable)() {
         m.startDateTime = value
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
 func (m *AvailabilityItem) SetStatus(value *BookingsAvailabilityStatus)() {
     if m != nil {
         m.status = value

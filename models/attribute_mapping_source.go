@@ -7,15 +7,15 @@ import (
 // AttributeMappingSource 
 type AttributeMappingSource struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The expression property
-    expression *string;
+    expression *string
     // The name property
-    name *string;
+    name *string
     // The parameters property
-    parameters []StringKeyAttributeMappingSourceValuePairable;
+    parameters []StringKeyAttributeMappingSourceValuePairable
     // The type property
-    type_escaped *AttributeMappingSourceType;
+    type_escaped *AttributeMappingSourceType
 }
 // NewAttributeMappingSource instantiates a new attributeMappingSource and sets the default values.
 func NewAttributeMappingSource()(*AttributeMappingSource) {
@@ -45,9 +45,9 @@ func (m *AttributeMappingSource) GetExpression()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["expression"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["expression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["parameters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateStringKeyAttributeMappingSourceValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttributeMappingSourceType)
         if err != nil {
             return err

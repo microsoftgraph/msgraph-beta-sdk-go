@@ -7,19 +7,19 @@ import (
 // AccessPackageResourceAttribute 
 type AccessPackageResourceAttribute struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.
-    attributeDestination AccessPackageResourceAttributeDestinationable;
+    attributeDestination AccessPackageResourceAttributeDestinationable
     // The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
-    attributeName *string;
+    attributeName *string
     // Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion object type.
-    attributeSource AccessPackageResourceAttributeSourceable;
+    attributeSource AccessPackageResourceAttributeSourceable
     // Unique identifier for the attribute on the access package resource. Read-only.
-    id *string;
+    id *string
     // Specifies whether or not an existing attribute value can be edited by the requester.
-    isEditable *bool;
+    isEditable *bool
     // Specifies whether the attribute will remain in the end system after an assignment ends.
-    isPersistedOnAssignmentRemoval *bool;
+    isPersistedOnAssignmentRemoval *bool
 }
 // NewAccessPackageResourceAttribute instantiates a new accessPackageResourceAttribute and sets the default values.
 func NewAccessPackageResourceAttribute()(*AccessPackageResourceAttribute) {
@@ -65,9 +65,9 @@ func (m *AccessPackageResourceAttribute) GetAttributeSource()(AccessPackageResou
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["attributeDestination"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["attributeDestination"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageResourceAttributeDestinationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["attributeName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["attributeName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["attributeSource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["attributeSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageResourceAttributeSourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["isEditable"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEditable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *AccessPackageResourceAttribute) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["isPersistedOnAssignmentRemoval"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isPersistedOnAssignmentRemoval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

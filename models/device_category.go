@@ -8,11 +8,11 @@ import (
 type DeviceCategory struct {
     Entity
     // Optional description for the device category.
-    description *string;
+    description *string
     // Display name for the device category.
-    displayName *string;
+    displayName *string
     // Optional role scope tags for the device category.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
 }
 // NewDeviceCategory instantiates a new deviceCategory and sets the default values.
 func NewDeviceCategory()(*DeviceCategory) {
@@ -42,9 +42,9 @@ func (m *DeviceCategory) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceCategory) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *DeviceCategory) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *DeviceCategory) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

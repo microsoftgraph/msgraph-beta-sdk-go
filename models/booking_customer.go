@@ -8,9 +8,9 @@ import (
 type BookingCustomer struct {
     BookingPerson
     // Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
-    addresses []PhysicalAddressable;
+    addresses []PhysicalAddressable
     // Phone numbers associated with the customer, including home, business and mobile numbers.
-    phones []Phoneable;
+    phones []Phoneable
 }
 // NewBookingCustomer instantiates a new bookingCustomer and sets the default values.
 func NewBookingCustomer()(*BookingCustomer) {
@@ -32,9 +32,9 @@ func (m *BookingCustomer) GetAddresses()([]PhysicalAddressable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BookingPerson.GetFieldDeserializers()
-    res["addresses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["addresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["phones"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["phones"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePhoneFromDiscriminatorValue)
         if err != nil {
             return err

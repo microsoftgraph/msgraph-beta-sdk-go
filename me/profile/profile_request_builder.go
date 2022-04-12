@@ -47,49 +47,49 @@ import (
 // ProfileRequestBuilder provides operations to manage the profile property of the microsoft.graph.user entity.
 type ProfileRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ProfileRequestBuilderDeleteOptions options for Delete
 type ProfileRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ProfileRequestBuilderGetOptions options for Get
 type ProfileRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ProfileRequestBuilderGetQueryParameters;
+    QueryParameters *ProfileRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ProfileRequestBuilderGetQueryParameters represents properties that are descriptive of a user in a tenant.
 type ProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ProfileRequestBuilderPatchOptions options for Patch
 type ProfileRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Profileable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Profileable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Account the account property
 func (m *ProfileRequestBuilder) Account()(*ibdb9324e3601482a2267b1d9c0949c7d55a8080f5a4519f50c9653dc218292c0.AccountRequestBuilder) {
@@ -102,7 +102,7 @@ func (m *ProfileRequestBuilder) AccountById(id string)(*i4833578e352a59b2b789284
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["userAccountInformation_id"] = id
+        urlTplParams["userAccountInformation%2Did"] = id
     }
     return i4833578e352a59b2b789284b4629d725d6ab0b3e30e29b40d1cb5c47837338b1.NewUserAccountInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -117,7 +117,7 @@ func (m *ProfileRequestBuilder) AddressesById(id string)(*i275a2397cc537d02a6de5
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["itemAddress_id"] = id
+        urlTplParams["itemAddress%2Did"] = id
     }
     return i275a2397cc537d02a6de5d369b78e7f403c669152aed225ff04fe014e548e2bb.NewItemAddressItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -132,7 +132,7 @@ func (m *ProfileRequestBuilder) AnniversariesById(id string)(*i2d0d6da11cb59700a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["personAnnualEvent_id"] = id
+        urlTplParams["personAnnualEvent%2Did"] = id
     }
     return i2d0d6da11cb59700ac3ab9dd6b295e2ff497574052fdc8dc8cb99cfc50b629df.NewPersonAnnualEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -147,7 +147,7 @@ func (m *ProfileRequestBuilder) AwardsById(id string)(*i277bbd8b071a4d604a140752
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["personAward_id"] = id
+        urlTplParams["personAward%2Did"] = id
     }
     return i277bbd8b071a4d604a140752a228f28f247bd56c8d6ae617cd3a07f842cb6bf9.NewPersonAwardItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -162,7 +162,7 @@ func (m *ProfileRequestBuilder) CertificationsById(id string)(*i5052f9ec51b905e9
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["personCertification_id"] = id
+        urlTplParams["personCertification%2Did"] = id
     }
     return i5052f9ec51b905e901e62b11f8a759a974f0cc7ab06fa1608d9d0c8d5fe5405b.NewPersonCertificationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -170,7 +170,7 @@ func (m *ProfileRequestBuilder) CertificationsById(id string)(*i5052f9ec51b905e9
 func NewProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProfileRequestBuilder) {
     m := &ProfileRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/profile{?select,expand}";
+    m.urlTemplate = "{+baseurl}/me/profile{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -267,7 +267,7 @@ func (m *ProfileRequestBuilder) EducationalActivitiesById(id string)(*i37b1fa517
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["educationalActivity_id"] = id
+        urlTplParams["educationalActivity%2Did"] = id
     }
     return i37b1fa517414e7c68dfd4a974844cbe1bf639c58cc2428815d70a432874a7634.NewEducationalActivityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -282,7 +282,7 @@ func (m *ProfileRequestBuilder) EmailsById(id string)(*i31cef5d667451b5423d56367
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["itemEmail_id"] = id
+        urlTplParams["itemEmail%2Did"] = id
     }
     return i31cef5d667451b5423d5636714b09b3604e36345dba29f9ef24b76262d978aa5.NewItemEmailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -313,7 +313,7 @@ func (m *ProfileRequestBuilder) InterestsById(id string)(*i6a6a22b5e119da36bfd8b
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["personInterest_id"] = id
+        urlTplParams["personInterest%2Did"] = id
     }
     return i6a6a22b5e119da36bfd8b745f8ed59696bcbb84cbfc7c4b034075d1c1251b1f0.NewPersonInterestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -328,7 +328,7 @@ func (m *ProfileRequestBuilder) LanguagesById(id string)(*i9ff4662c3294ee098e063
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["languageProficiency_id"] = id
+        urlTplParams["languageProficiency%2Did"] = id
     }
     return i9ff4662c3294ee098e0632304f1ef015fe0a686ef176fe16350508a3f9841068.NewLanguageProficiencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -343,7 +343,7 @@ func (m *ProfileRequestBuilder) NamesById(id string)(*i89842cc8c04e65e1b1e88f5b7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["personName_id"] = id
+        urlTplParams["personName%2Did"] = id
     }
     return i89842cc8c04e65e1b1e88f5b767cc55ce09a0f30cc2e56c4f131d32c16de1159.NewPersonNameItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -358,7 +358,7 @@ func (m *ProfileRequestBuilder) NotesById(id string)(*ifa892d3191635eb436fe2e0ea
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["personAnnotation_id"] = id
+        urlTplParams["personAnnotation%2Did"] = id
     }
     return ifa892d3191635eb436fe2e0ead51770cb25545dd430d2739450e3a0ab2fcff3a.NewPersonAnnotationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -389,7 +389,7 @@ func (m *ProfileRequestBuilder) PatentsById(id string)(*i6bbd51d2e2c2915bc291e64
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["itemPatent_id"] = id
+        urlTplParams["itemPatent%2Did"] = id
     }
     return i6bbd51d2e2c2915bc291e644b1546ce4e0decac456826169fb0b87161ca8409e.NewItemPatentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -404,7 +404,7 @@ func (m *ProfileRequestBuilder) PhonesById(id string)(*ia79fb7e80b53cbbeaf958a75
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["itemPhone_id"] = id
+        urlTplParams["itemPhone%2Did"] = id
     }
     return ia79fb7e80b53cbbeaf958a755dd5660915548586799859d56f03c9b38f615a9d.NewItemPhoneItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -419,7 +419,7 @@ func (m *ProfileRequestBuilder) PositionsById(id string)(*i59e9bd57c2f134047fa9d
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["workPosition_id"] = id
+        urlTplParams["workPosition%2Did"] = id
     }
     return i59e9bd57c2f134047fa9d3ccde515ff620af19f86e8137229ea2935f1d483683.NewWorkPositionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -434,7 +434,7 @@ func (m *ProfileRequestBuilder) ProjectsById(id string)(*ib1d4f89ea65a822d70151b
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["projectParticipation_id"] = id
+        urlTplParams["projectParticipation%2Did"] = id
     }
     return ib1d4f89ea65a822d70151ba9c171cd4c59a63443f8b798ab2f57a88825b43c6b.NewProjectParticipationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -449,7 +449,7 @@ func (m *ProfileRequestBuilder) PublicationsById(id string)(*i69ec9c16bbd15d4073
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["itemPublication_id"] = id
+        urlTplParams["itemPublication%2Did"] = id
     }
     return i69ec9c16bbd15d4073a76419fab5dc22c3bddfcd0d392900a5ce53a55c061e2f.NewItemPublicationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -464,7 +464,7 @@ func (m *ProfileRequestBuilder) SkillsById(id string)(*ib252e438900aca60fecae4f4
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["skillProficiency_id"] = id
+        urlTplParams["skillProficiency%2Did"] = id
     }
     return ib252e438900aca60fecae4f455e0915c86da07bd52b6015206b1a2debaf6ed36.NewSkillProficiencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -479,7 +479,7 @@ func (m *ProfileRequestBuilder) WebAccountsById(id string)(*i7058e34b903fc814067
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["webAccount_id"] = id
+        urlTplParams["webAccount%2Did"] = id
     }
     return i7058e34b903fc8140673df6d1d8a644b427bfd66ffd15315f8c31382480ed4f6.NewWebAccountItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -494,7 +494,7 @@ func (m *ProfileRequestBuilder) WebsitesById(id string)(*i5aa75bab3c02d7858a6beb
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["personWebsite_id"] = id
+        urlTplParams["personWebsite%2Did"] = id
     }
     return i5aa75bab3c02d7858a6bebecc29f8be43656cd44abcb0c3034d29e7461821067.NewPersonWebsiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

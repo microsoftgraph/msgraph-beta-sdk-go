@@ -8,19 +8,19 @@ import (
 type OutlookTaskFolder struct {
     Entity
     // The version of the task folder.
-    changeKey *string;
+    changeKey *string
     // True if the folder is the default task folder.
-    isDefaultFolder *bool;
+    isDefaultFolder *bool
     // The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
     // The name of the task folder.
-    name *string;
+    name *string
     // The unique GUID identifier for the task folder's parent group.
-    parentGroupKey *string;
+    parentGroupKey *string
     // The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
     // The tasks in this task folder. Read-only. Nullable.
-    tasks []OutlookTaskable;
+    tasks []OutlookTaskable
 }
 // NewOutlookTaskFolder instantiates a new outlookTaskFolder and sets the default values.
 func NewOutlookTaskFolder()(*OutlookTaskFolder) {
@@ -42,9 +42,9 @@ func (m *OutlookTaskFolder) GetChangeKey()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["changeKey"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["changeKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["isDefaultFolder"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDefaultFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["multiValueExtendedProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["multiValueExtendedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMultiValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["parentGroupKey"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parentGroupKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["singleValueExtendedProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["singleValueExtendedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["tasks"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOutlookTaskFromDiscriminatorValue)
         if err != nil {
             return err

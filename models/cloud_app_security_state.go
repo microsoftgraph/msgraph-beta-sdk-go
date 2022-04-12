@@ -7,13 +7,13 @@ import (
 // CloudAppSecurityState 
 type CloudAppSecurityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Destination IP Address of the connection to the cloud application/service.
-    destinationServiceIp *string;
+    destinationServiceIp *string
     // Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
-    destinationServiceName *string;
+    destinationServiceName *string
     // Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
-    riskScore *string;
+    riskScore *string
 }
 // NewCloudAppSecurityState instantiates a new cloudAppSecurityState and sets the default values.
 func NewCloudAppSecurityState()(*CloudAppSecurityState) {
@@ -51,9 +51,9 @@ func (m *CloudAppSecurityState) GetDestinationServiceName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["destinationServiceIp"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["destinationServiceIp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["destinationServiceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["destinationServiceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *CloudAppSecurityState) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["riskScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -16,49 +16,49 @@ import (
 // SetItemRequestBuilder provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
 type SetItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // SetItemRequestBuilderDeleteOptions options for Delete
 type SetItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // SetItemRequestBuilderGetOptions options for Get
 type SetItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *SetItemRequestBuilderGetQueryParameters;
+    QueryParameters *SetItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // SetItemRequestBuilderGetQueryParameters collection of all sets available in the term store.
 type SetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // SetItemRequestBuilderPatchOptions options for Patch
 type SetItemRequestBuilderPatchOptions struct {
     // 
-    Body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable;
+    Body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Children the children property
 func (m *SetItemRequestBuilder) Children()(*ib68e940b5c91c0899ffae7e529e330e092c8c17f617049423242c363373ec567.ChildrenRequestBuilder) {
@@ -71,7 +71,7 @@ func (m *SetItemRequestBuilder) ChildrenById(id string)(*i0d9b9b9cd2472b796e46b3
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["term_id"] = id
+        urlTplParams["term%2Did"] = id
     }
     return i0d9b9b9cd2472b796e46b377506082941cbd9afdf632cf6216e386ac455aae38.NewTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -79,7 +79,7 @@ func (m *SetItemRequestBuilder) ChildrenById(id string)(*i0d9b9b9cd2472b796e46b3
 func NewSetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SetItemRequestBuilder) {
     m := &SetItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/sites/{site_id}/termStore/sets/{set_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/sites/{site%2Did}/termStore/sets/{set%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -212,7 +212,7 @@ func (m *SetItemRequestBuilder) RelationsById(id string)(*i36d775ae30be636ca23bb
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["relation_id"] = id
+        urlTplParams["relation%2Did"] = id
     }
     return i36d775ae30be636ca23bb6a064d3de5e1f1722461bdb24649dba586dfb4181ce.NewRelationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -227,7 +227,7 @@ func (m *SetItemRequestBuilder) TermsById(id string)(*id049073a70a9b38a6f8a94285
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["term_id"] = id
+        urlTplParams["term%2Did"] = id
     }
     return id049073a70a9b38a6f8a94285b2dbcec1acb00a0e4dfd4863e659b573e369b55.NewTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

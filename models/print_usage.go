@@ -8,13 +8,13 @@ import (
 type PrintUsage struct {
     Entity
     // The completedBlackAndWhiteJobCount property
-    completedBlackAndWhiteJobCount *int64;
+    completedBlackAndWhiteJobCount *int64
     // The completedColorJobCount property
-    completedColorJobCount *int64;
+    completedColorJobCount *int64
     // The incompleteJobCount property
-    incompleteJobCount *int64;
+    incompleteJobCount *int64
     // The usageDate property
-    usageDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    usageDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
 // NewPrintUsage instantiates a new printUsage and sets the default values.
 func NewPrintUsage()(*PrintUsage) {
@@ -44,9 +44,9 @@ func (m *PrintUsage) GetCompletedColorJobCount()(*int64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PrintUsage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PrintUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["completedBlackAndWhiteJobCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["completedBlackAndWhiteJobCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["completedColorJobCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["completedColorJobCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["incompleteJobCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["incompleteJobCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *PrintUsage) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["usageDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["usageDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err

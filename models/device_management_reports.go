@@ -8,9 +8,9 @@ import (
 type DeviceManagementReports struct {
     Entity
     // Entity representing the configuration of a cached report
-    cachedReportConfigurations []DeviceManagementCachedReportConfigurationable;
+    cachedReportConfigurations []DeviceManagementCachedReportConfigurationable
     // Entity representing a job to export a report
-    exportJobs []DeviceManagementExportJobable;
+    exportJobs []DeviceManagementExportJobable
 }
 // NewDeviceManagementReports instantiates a new deviceManagementReports and sets the default values.
 func NewDeviceManagementReports()(*DeviceManagementReports) {
@@ -40,9 +40,9 @@ func (m *DeviceManagementReports) GetExportJobs()([]DeviceManagementExportJobabl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementReports) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementReports) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["cachedReportConfigurations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cachedReportConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementCachedReportConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *DeviceManagementReports) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["exportJobs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exportJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementExportJobFromDiscriminatorValue)
         if err != nil {
             return err

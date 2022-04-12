@@ -67,49 +67,49 @@ import (
 // ReportsRequestBuilder provides operations to manage the reports property of the microsoft.graph.deviceManagement entity.
 type ReportsRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ReportsRequestBuilderDeleteOptions options for Delete
 type ReportsRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ReportsRequestBuilderGetOptions options for Get
 type ReportsRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ReportsRequestBuilderGetQueryParameters;
+    QueryParameters *ReportsRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ReportsRequestBuilderGetQueryParameters reports singleton
 type ReportsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ReportsRequestBuilderPatchOptions options for Patch
 type ReportsRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CachedReportConfigurations the cachedReportConfigurations property
 func (m *ReportsRequestBuilder) CachedReportConfigurations()(*i2a7e95d28bcab38f85f05fe3f131357d5c408f5fbd47fb213b7aac8dbd71328a.CachedReportConfigurationsRequestBuilder) {
@@ -122,7 +122,7 @@ func (m *ReportsRequestBuilder) CachedReportConfigurationsById(id string)(*i2bf9
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementCachedReportConfiguration_id"] = id
+        urlTplParams["deviceManagementCachedReportConfiguration%2Did"] = id
     }
     return i2bf9ce7fb7bd0fa9fc75119c61d3de5e2e31a446f3ebba40eaf7f289544d9943.NewDeviceManagementCachedReportConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -130,7 +130,7 @@ func (m *ReportsRequestBuilder) CachedReportConfigurationsById(id string)(*i2bf9
 func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsRequestBuilder) {
     m := &ReportsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/reports{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/reports{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -227,7 +227,7 @@ func (m *ReportsRequestBuilder) ExportJobsById(id string)(*if607fcbf4c23ed3b14db
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementExportJob_id"] = id
+        urlTplParams["deviceManagementExportJob%2Did"] = id
     }
     return if607fcbf4c23ed3b14db77b88b46a29896a853e746acfffd003d215b0fb83a02.NewDeviceManagementExportJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

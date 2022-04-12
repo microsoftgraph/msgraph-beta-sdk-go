@@ -8,23 +8,23 @@ import (
 type UserExperienceAnalyticsNotAutopilotReadyDevice struct {
     Entity
     // The intune device's autopilotProfileAssigned.
-    autoPilotProfileAssigned *bool;
+    autoPilotProfileAssigned *bool
     // The intune device's autopilotRegistered.
-    autoPilotRegistered *bool;
+    autoPilotRegistered *bool
     // The intune device's azure Ad joinType.
-    azureAdJoinType *string;
+    azureAdJoinType *string
     // The intune device's azureAdRegistered.
-    azureAdRegistered *bool;
+    azureAdRegistered *bool
     // The intune device's name.
-    deviceName *string;
+    deviceName *string
     // The intune device's managed by.
-    managedBy *string;
+    managedBy *string
     // The intune device's manufacturer.
-    manufacturer *string;
+    manufacturer *string
     // The intune device's model.
-    model *string;
+    model *string
     // The intune device's serial number.
-    serialNumber *string;
+    serialNumber *string
 }
 // NewUserExperienceAnalyticsNotAutopilotReadyDevice instantiates a new userExperienceAnalyticsNotAutopilotReadyDevice and sets the default values.
 func NewUserExperienceAnalyticsNotAutopilotReadyDevice()(*UserExperienceAnalyticsNotAutopilotReadyDevice) {
@@ -78,9 +78,9 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetDeviceName()(*string
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["autoPilotProfileAssigned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["autoPilotProfileAssigned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()
         }
         return nil
     }
-    res["autoPilotRegistered"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["autoPilotRegistered"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()
         }
         return nil
     }
-    res["azureAdJoinType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureAdJoinType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()
         }
         return nil
     }
-    res["azureAdRegistered"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureAdRegistered"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()
         }
         return nil
     }
-    res["managedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()
         }
         return nil
     }
-    res["manufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -150,7 +150,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()
         }
         return nil
     }
-    res["model"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -160,7 +160,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()
         }
         return nil
     }
-    res["serialNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serialNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

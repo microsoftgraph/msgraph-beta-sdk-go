@@ -8,25 +8,25 @@ import (
 // UserSimulationDetails 
 type UserSimulationDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Number of trainings assigned to a user in an attack simulation and training campaign.
-    assignedTrainingsCount *int32;
+    assignedTrainingsCount *int32
     // Number of trainings completed by a user in an attack simulation and training campaign.
-    completedTrainingsCount *int32;
+    completedTrainingsCount *int32
     // Date and time of the compromising online action by a user in an attack simulation and training campaign.
-    compromisedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    compromisedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Number of trainings in progress by a user in an attack simulation and training campaign.
-    inProgressTrainingsCount *int32;
+    inProgressTrainingsCount *int32
     // Flag representing if user was compromised in an attack simulation and training campaign.
-    isCompromised *bool;
+    isCompromised *bool
     // Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
-    reportedPhishDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    reportedPhishDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of simulation events of a user in the attack simulation and training campaign.
-    simulationEvents []UserSimulationEventInfoable;
+    simulationEvents []UserSimulationEventInfoable
     // User in an attack simulation and training campaign.
-    simulationUser AttackSimulationUserable;
+    simulationUser AttackSimulationUserable
     // List of training events of a user in the attack simulation and training campaign.
-    trainingEvents []UserTrainingEventInfoable;
+    trainingEvents []UserTrainingEventInfoable
 }
 // NewUserSimulationDetails instantiates a new userSimulationDetails and sets the default values.
 func NewUserSimulationDetails()(*UserSimulationDetails) {
@@ -72,9 +72,9 @@ func (m *UserSimulationDetails) GetCompromisedDateTime()(*i336074805fc853987abe6
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["assignedTrainingsCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["assignedTrainingsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["completedTrainingsCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["completedTrainingsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["compromisedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["compromisedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["inProgressTrainingsCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inProgressTrainingsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["isCompromised"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isCompromised"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["reportedPhishDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportedPhishDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["simulationEvents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["simulationEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserSimulationEventInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["simulationUser"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["simulationUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAttackSimulationUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["trainingEvents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["trainingEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserTrainingEventInfoFromDiscriminatorValue)
         if err != nil {
             return err

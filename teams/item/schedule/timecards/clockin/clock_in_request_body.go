@@ -8,13 +8,13 @@ import (
 // ClockInRequestBody provides operations to call the clockIn method.
 type ClockInRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The atApprovedLocation property
-    atApprovedLocation *bool;
+    atApprovedLocation *bool
     // The notes property
-    notes ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable;
+    notes ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable
     // The onBehalfOfUserId property
-    onBehalfOfUserId *string;
+    onBehalfOfUserId *string
 }
 // NewClockInRequestBody instantiates a new clockInRequestBody and sets the default values.
 func NewClockInRequestBody()(*ClockInRequestBody) {
@@ -44,9 +44,9 @@ func (m *ClockInRequestBody) GetAtApprovedLocation()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ClockInRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["atApprovedLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ClockInRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["atApprovedLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *ClockInRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["notes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *ClockInRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["onBehalfOfUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onBehalfOfUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

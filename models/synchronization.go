@@ -8,11 +8,11 @@ import (
 type Synchronization struct {
     Entity
     // Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
-    jobs []SynchronizationJobable;
+    jobs []SynchronizationJobable
     // Represents a collection of credentials to access provisioned cloud applications.
-    secrets []SynchronizationSecretKeyStringValuePairable;
+    secrets []SynchronizationSecretKeyStringValuePairable
     // Pre-configured synchronization settings for a particular application.
-    templates []SynchronizationTemplateable;
+    templates []SynchronizationTemplateable
 }
 // NewSynchronization instantiates a new synchronization and sets the default values.
 func NewSynchronization()(*Synchronization) {
@@ -26,9 +26,9 @@ func CreateSynchronizationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewSynchronization(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Synchronization) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Synchronization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["jobs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["jobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSynchronizationJobFromDiscriminatorValue)
         if err != nil {
             return err
@@ -42,7 +42,7 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["secrets"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["secrets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["templates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["templates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSynchronizationTemplateFromDiscriminatorValue)
         if err != nil {
             return err

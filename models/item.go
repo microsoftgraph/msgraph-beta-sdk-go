@@ -9,39 +9,39 @@ import (
 type Item struct {
     Entity
     // The baseUnitOfMeasureId property
-    baseUnitOfMeasureId *string;
+    baseUnitOfMeasureId *string
     // The blocked property
-    blocked *bool;
+    blocked *bool
     // The displayName property
-    displayName *string;
+    displayName *string
     // The gtin property
-    gtin *string;
+    gtin *string
     // The inventory property
-    inventory *float64;
+    inventory *float64
     // The itemCategory property
-    itemCategory ItemCategoryable;
+    itemCategory ItemCategoryable
     // The itemCategoryCode property
-    itemCategoryCode *string;
+    itemCategoryCode *string
     // The itemCategoryId property
-    itemCategoryId *string;
+    itemCategoryId *string
     // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The number property
-    number *string;
+    number *string
     // The picture property
-    picture []Pictureable;
+    picture []Pictureable
     // The priceIncludesTax property
-    priceIncludesTax *bool;
+    priceIncludesTax *bool
     // The taxGroupCode property
-    taxGroupCode *string;
+    taxGroupCode *string
     // The taxGroupId property
-    taxGroupId *string;
+    taxGroupId *string
     // The type property
-    type_escaped *string;
+    type_escaped *string
     // The unitCost property
-    unitCost *float64;
+    unitCost *float64
     // The unitPrice property
-    unitPrice *float64;
+    unitPrice *float64
 }
 // NewItem instantiates a new item and sets the default values.
 func NewItem()(*Item) {
@@ -79,9 +79,9 @@ func (m *Item) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Item) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["baseUnitOfMeasureId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["baseUnitOfMeasureId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["blocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["blocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["gtin"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["gtin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["inventory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inventory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["itemCategory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["itemCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["itemCategoryCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["itemCategoryCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["itemCategoryId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["itemCategoryId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["number"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["number"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["picture"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["picture"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePictureFromDiscriminatorValue)
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["priceIncludesTax"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["priceIncludesTax"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["taxGroupCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["taxGroupCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -215,7 +215,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["taxGroupId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["taxGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -235,7 +235,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["unitCost"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unitCost"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -245,7 +245,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["unitPrice"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unitPrice"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err

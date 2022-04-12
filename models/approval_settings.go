@@ -7,17 +7,17 @@ import (
 // ApprovalSettings 
 type ApprovalSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // One of NoApproval, SingleStage or Serial. The NoApproval is used when isApprovalRequired is false.
-    approvalMode *string;
+    approvalMode *string
     // If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
-    approvalStages []ApprovalStageable;
+    approvalStages []ApprovalStageable
     // If false, then approval is not required for requests in this policy.
-    isApprovalRequired *bool;
+    isApprovalRequired *bool
     // If false, then approval is not required for a user who already has an assignment to extend their assignment.
-    isApprovalRequiredForExtension *bool;
+    isApprovalRequiredForExtension *bool
     // Indicates whether the requestor is required to supply a justification in their request.
-    isRequestorJustificationRequired *bool;
+    isRequestorJustificationRequired *bool
 }
 // NewApprovalSettings instantiates a new approvalSettings and sets the default values.
 func NewApprovalSettings()(*ApprovalSettings) {
@@ -55,9 +55,9 @@ func (m *ApprovalSettings) GetApprovalStages()([]ApprovalStageable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["approvalMode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["approvalMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["approvalStages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["approvalStages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateApprovalStageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["isApprovalRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isApprovalRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["isApprovalRequiredForExtension"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isApprovalRequiredForExtension"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["isRequestorJustificationRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isRequestorJustificationRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

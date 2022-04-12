@@ -9,13 +9,13 @@ import (
 type AppLogCollectionRequest struct {
     Entity
     // Time at which the upload log request reached a terminal state
-    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of log folders.
-    customLogFolders []string;
+    customLogFolders []string
     // Error message if any during the upload process
-    errorMessage *string;
+    errorMessage *string
     // Log upload status. Possible values are: pending, completed, failed.
-    status *AppLogUploadState;
+    status *AppLogUploadState
 }
 // NewAppLogCollectionRequest instantiates a new appLogCollectionRequest and sets the default values.
 func NewAppLogCollectionRequest()(*AppLogCollectionRequest) {
@@ -53,9 +53,9 @@ func (m *AppLogCollectionRequest) GetErrorMessage()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["completedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["completedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["customLogFolders"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customLogFolders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["errorMessage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAppLogUploadState)
         if err != nil {
             return err

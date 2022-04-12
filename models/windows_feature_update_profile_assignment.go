@@ -8,7 +8,7 @@ import (
 type WindowsFeatureUpdateProfileAssignment struct {
     Entity
     // The assignment target that the feature update profile is assigned to.
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewWindowsFeatureUpdateProfileAssignment instantiates a new windowsFeatureUpdateProfileAssignment and sets the default values.
 func NewWindowsFeatureUpdateProfileAssignment()(*WindowsFeatureUpdateProfileAssignment) {
@@ -22,9 +22,9 @@ func CreateWindowsFeatureUpdateProfileAssignmentFromDiscriminatorValue(parseNode
     return NewWindowsFeatureUpdateProfileAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsFeatureUpdateProfileAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsFeatureUpdateProfileAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["target"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
             return err

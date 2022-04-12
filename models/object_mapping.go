@@ -7,23 +7,23 @@ import (
 // ObjectMapping 
 type ObjectMapping struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
-    attributeMappings []AttributeMappingable;
+    attributeMappings []AttributeMappingable
     // When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
-    enabled *bool;
+    enabled *bool
     // Which flow types are enabled for this object mapping. Add creates new objects in the target directory, Update modifies existing objects, and Delete deprovisions existing users. The default is Add, Update, Delete.
-    flowTypes *ObjectFlowTypes;
+    flowTypes *ObjectFlowTypes
     // Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-    metadata []MetadataEntryable;
+    metadata []MetadataEntryable
     // Human-friendly name of the object mapping.
-    name *string;
+    name *string
     // Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.
-    scope Filterable;
+    scope Filterable
     // Name of the object in the source directory. Must match the object name from the source directory definition.
-    sourceObjectName *string;
+    sourceObjectName *string
     // Name of the object in target directory. Must match the object name from the target directory definition.
-    targetObjectName *string;
+    targetObjectName *string
 }
 // NewObjectMapping instantiates a new objectMapping and sets the default values.
 func NewObjectMapping()(*ObjectMapping) {
@@ -61,9 +61,9 @@ func (m *ObjectMapping) GetEnabled()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["attributeMappings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["attributeMappings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAttributeMappingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["enabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["flowTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["flowTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseObjectFlowTypes)
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["metadata"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["metadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMetadataEntryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["scope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateFilterFromDiscriminatorValue)
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["sourceObjectName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceObjectName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["targetObjectName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetObjectName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

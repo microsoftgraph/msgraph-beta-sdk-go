@@ -9,25 +9,25 @@ import (
 type AccessPackageResourceRequest struct {
     Entity
     // Nullable.
-    accessPackageResource AccessPackageResourceable;
+    accessPackageResource AccessPackageResourceable
     // The unique ID of the access package catalog.
-    catalogId *string;
+    catalogId *string
     // The executeImmediately property
-    executeImmediately *bool;
+    executeImmediately *bool
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // If set, does not add the resource.
-    isValidationOnly *bool;
+    isValidationOnly *bool
     // The requestor's justification for adding or removing the resource.
-    justification *string;
+    justification *string
     // Read-only. Nullable. Supports $expand.
-    requestor AccessPackageSubjectable;
+    requestor AccessPackageSubjectable
     // The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
-    requestState *string;
+    requestState *string
     // Read-only.
-    requestStatus *string;
+    requestStatus *string
     // Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.
-    requestType *string;
+    requestType *string
 }
 // NewAccessPackageResourceRequest instantiates a new accessPackageResourceRequest and sets the default values.
 func NewAccessPackageResourceRequest()(*AccessPackageResourceRequest) {
@@ -73,9 +73,9 @@ func (m *AccessPackageResourceRequest) GetExpirationDateTime()(*i336074805fc8539
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessPackageResource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageResource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageResourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["catalogId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["catalogId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["executeImmediately"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["executeImmediately"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["isValidationOnly"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isValidationOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["justification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["justification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["requestor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageSubjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["requestState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["requestStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["requestType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

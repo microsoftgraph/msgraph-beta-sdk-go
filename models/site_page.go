@@ -8,15 +8,15 @@ import (
 type SitePage struct {
     BaseItem
     // The content type of the page.
-    contentType ContentTypeInfoable;
+    contentType ContentTypeInfoable
     // The pageLayoutType property
-    pageLayoutType *string;
+    pageLayoutType *string
     // The publishingState property
-    publishingState PublicationFacetable;
+    publishingState PublicationFacetable
     // The title property
-    title *string;
+    title *string
     // The webParts property
-    webParts []WebPartable;
+    webParts []WebPartable
 }
 // NewSitePage instantiates a new sitePage and sets the default values.
 func NewSitePage()(*SitePage) {
@@ -38,9 +38,9 @@ func (m *SitePage) GetContentType()(ContentTypeInfoable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
-    res["contentType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateContentTypeInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["pageLayoutType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pageLayoutType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["publishingState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publishingState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePublicationFacetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["title"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["webParts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webParts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWebPartFromDiscriminatorValue)
         if err != nil {
             return err

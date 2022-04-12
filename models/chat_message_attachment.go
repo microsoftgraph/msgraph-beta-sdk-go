@@ -7,19 +7,21 @@ import (
 // ChatMessageAttachment 
 type ChatMessageAttachment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
-    content *string;
+    content *string
     // The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
-    contentType *string;
+    contentType *string
     // URL for the content of the attachment. Supported protocols: http, https, file and data.
-    contentUrl *string;
+    contentUrl *string
     // Read-only. Unique id of the attachment.
-    id *string;
+    id *string
     // Name of the attachment.
-    name *string;
+    name *string
+    // The teamsAppId property
+    teamsAppId *string
     // URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
-    thumbnailUrl *string;
+    thumbnailUrl *string
 }
 // NewChatMessageAttachment instantiates a new chatMessageAttachment and sets the default values.
 func NewChatMessageAttachment()(*ChatMessageAttachment) {
@@ -65,9 +67,9 @@ func (m *ChatMessageAttachment) GetContentUrl()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["content"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -77,7 +79,7 @@ func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["contentType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +89,7 @@ func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["contentUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -97,7 +99,7 @@ func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -107,7 +109,7 @@ func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +119,17 @@ func (m *ChatMessageAttachment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["thumbnailUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["teamsAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTeamsAppId(val)
+        }
+        return nil
+    }
+    res["thumbnailUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -143,6 +155,14 @@ func (m *ChatMessageAttachment) GetName()(*string) {
         return nil
     } else {
         return m.name
+    }
+}
+// GetTeamsAppId gets the teamsAppId property value. The teamsAppId property
+func (m *ChatMessageAttachment) GetTeamsAppId()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.teamsAppId
     }
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
@@ -181,6 +201,12 @@ func (m *ChatMessageAttachment) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("teamsAppId", m.GetTeamsAppId())
         if err != nil {
             return err
         }
@@ -233,6 +259,12 @@ func (m *ChatMessageAttachment) SetId(value *string)() {
 func (m *ChatMessageAttachment) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetTeamsAppId sets the teamsAppId property value. The teamsAppId property
+func (m *ChatMessageAttachment) SetTeamsAppId(value *string)() {
+    if m != nil {
+        m.teamsAppId = value
     }
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.

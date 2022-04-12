@@ -8,15 +8,15 @@ import (
 type DetectedSensitiveContent struct {
     DetectedSensitiveContentBase
     // The classificationAttributes property
-    classificationAttributes []ClassificationAttributeable;
+    classificationAttributes []ClassificationAttributeable
     // The classificationMethod property
-    classificationMethod *ClassificationMethod;
+    classificationMethod *ClassificationMethod
     // The matches property
-    matches []SensitiveContentLocationable;
+    matches []SensitiveContentLocationable
     // The scope property
-    scope *SensitiveTypeScope;
+    scope *SensitiveTypeScope
     // The sensitiveTypeSource property
-    sensitiveTypeSource *SensitiveTypeSource;
+    sensitiveTypeSource *SensitiveTypeSource
 }
 // NewDetectedSensitiveContent instantiates a new detectedSensitiveContent and sets the default values.
 func NewDetectedSensitiveContent()(*DetectedSensitiveContent) {
@@ -46,9 +46,9 @@ func (m *DetectedSensitiveContent) GetClassificationMethod()(*ClassificationMeth
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DetectedSensitiveContentBase.GetFieldDeserializers()
-    res["classificationAttributes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["classificationAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateClassificationAttributeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["classificationMethod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["classificationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseClassificationMethod)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["matches"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["matches"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSensitiveContentLocationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["scope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSensitiveTypeScope)
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["sensitiveTypeSource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sensitiveTypeSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSensitiveTypeSource)
         if err != nil {
             return err

@@ -7,13 +7,13 @@ import (
 // EvaluateLabelJobResult 
 type EvaluateLabelJobResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The responsiblePolicy property
-    responsiblePolicy ResponsiblePolicyable;
+    responsiblePolicy ResponsiblePolicyable
     // The responsibleSensitiveTypes property
-    responsibleSensitiveTypes []ResponsibleSensitiveTypeable;
+    responsibleSensitiveTypes []ResponsibleSensitiveTypeable
     // The sensitivityLabel property
-    sensitivityLabel MatchingLabelable;
+    sensitivityLabel MatchingLabelable
 }
 // NewEvaluateLabelJobResult instantiates a new evaluateLabelJobResult and sets the default values.
 func NewEvaluateLabelJobResult()(*EvaluateLabelJobResult) {
@@ -35,9 +35,9 @@ func (m *EvaluateLabelJobResult) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["responsiblePolicy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["responsiblePolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateResponsiblePolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["responsibleSensitiveTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["responsibleSensitiveTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateResponsibleSensitiveTypeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["sensitivityLabel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sensitivityLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMatchingLabelFromDiscriminatorValue)
         if err != nil {
             return err

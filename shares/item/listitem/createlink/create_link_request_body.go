@@ -9,19 +9,19 @@ import (
 // CreateLinkRequestBody provides operations to call the createLink method.
 type CreateLinkRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The expirationDateTime property
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The password property
-    password *string;
+    password *string
     // The recipients property
-    recipients []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRecipientable;
+    recipients []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRecipientable
     // The retainInheritedPermissions property
-    retainInheritedPermissions *bool;
+    retainInheritedPermissions *bool
     // The scope property
-    scope *string;
+    scope *string
     // The type property
-    type_escaped *string;
+    type_escaped *string
 }
 // NewCreateLinkRequestBody instantiates a new createLinkRequestBody and sets the default values.
 func NewCreateLinkRequestBody()(*CreateLinkRequestBody) {
@@ -51,9 +51,9 @@ func (m *CreateLinkRequestBody) GetExpirationDateTime()(*i336074805fc853987abe6f
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["password"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["password"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["recipients"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recipients"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDriveRecipientFromDiscriminatorValue)
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["retainInheritedPermissions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["retainInheritedPermissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["scope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *CreateLinkRequestBody) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

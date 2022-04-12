@@ -8,13 +8,13 @@ import (
 type LinkedResource_v2 struct {
     Entity
     // Field indicating the app name of the source that is sending the linkedResource.
-    applicationName *string;
+    applicationName *string
     // Field indicating the title of the linkedResource.
-    displayName *string;
+    displayName *string
     // Id of the object that is associated with this task on the third-party/partner system.
-    externalId *string;
+    externalId *string
     // Deep link to the linkedResource.
-    webUrl *string;
+    webUrl *string
 }
 // NewLinkedResource_v2 instantiates a new linkedResource_v2 and sets the default values.
 func NewLinkedResource_v2()(*LinkedResource_v2) {
@@ -52,9 +52,9 @@ func (m *LinkedResource_v2) GetExternalId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *LinkedResource_v2) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *LinkedResource_v2) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["applicationName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicationName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *LinkedResource_v2) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *LinkedResource_v2) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["externalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *LinkedResource_v2) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["webUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

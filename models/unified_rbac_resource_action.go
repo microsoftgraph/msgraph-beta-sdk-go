@@ -8,15 +8,15 @@ import (
 type UnifiedRbacResourceAction struct {
     Entity
     // HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
-    actionVerb *string;
+    actionVerb *string
     // Description for the action. Supports $filter (eq).
-    description *string;
+    description *string
     // Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
-    name *string;
+    name *string
     // The resourceScope property
-    resourceScope UnifiedRbacResourceScopeable;
+    resourceScope UnifiedRbacResourceScopeable
     // Not implemented.
-    resourceScopeId *string;
+    resourceScopeId *string
 }
 // NewUnifiedRbacResourceAction instantiates a new unifiedRbacResourceAction and sets the default values.
 func NewUnifiedRbacResourceAction()(*UnifiedRbacResourceAction) {
@@ -46,9 +46,9 @@ func (m *UnifiedRbacResourceAction) GetDescription()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["actionVerb"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["actionVerb"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["resourceScope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUnifiedRbacResourceScopeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *UnifiedRbacResourceAction) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["resourceScopeId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceScopeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

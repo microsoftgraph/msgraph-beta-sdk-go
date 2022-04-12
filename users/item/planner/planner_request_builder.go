@@ -21,49 +21,49 @@ import (
 // PlannerRequestBuilder provides operations to manage the planner property of the microsoft.graph.user entity.
 type PlannerRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // PlannerRequestBuilderDeleteOptions options for Delete
 type PlannerRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // PlannerRequestBuilderGetOptions options for Get
 type PlannerRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *PlannerRequestBuilderGetQueryParameters;
+    QueryParameters *PlannerRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // PlannerRequestBuilderGetQueryParameters entry-point to the Planner resource that might exist for a user. Read-only.
 type PlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // PlannerRequestBuilderPatchOptions options for Patch
 type PlannerRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // All the all property
 func (m *PlannerRequestBuilder) All()(*ibf58c71a094fcdfd1bc9c2e0c6c4a7f17629a13a38945c331ac2090bdd864963.AllRequestBuilder) {
@@ -76,7 +76,7 @@ func (m *PlannerRequestBuilder) AllById(id string)(*iea71824a70bb4972dcddc0b0569
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["plannerDelta_id"] = id
+        urlTplParams["plannerDelta%2Did"] = id
     }
     return iea71824a70bb4972dcddc0b056992a9f6c83b550f5c1191520345be2898bd0f2.NewPlannerDeltaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -84,7 +84,7 @@ func (m *PlannerRequestBuilder) AllById(id string)(*iea71824a70bb4972dcddc0b0569
 func NewPlannerRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlannerRequestBuilder) {
     m := &PlannerRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user_id}/planner{?select,expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/planner{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -181,7 +181,7 @@ func (m *PlannerRequestBuilder) FavoritePlansById(id string)(*ib8e4b0e29fa0bab4a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["plannerPlan_id"] = id
+        urlTplParams["plannerPlan%2Did"] = id
     }
     return ib8e4b0e29fa0bab4a12714aa2c4ba3540af7adea774b8f3bac0f193c1c83baa2.NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -228,7 +228,7 @@ func (m *PlannerRequestBuilder) PlansById(id string)(*i86f40f45c3011d5e68ca73d24
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["plannerPlan_id"] = id
+        urlTplParams["plannerPlan%2Did"] = id
     }
     return i86f40f45c3011d5e68ca73d248500d11e56081a192959e8099e5577b8ee31efd.NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -243,7 +243,7 @@ func (m *PlannerRequestBuilder) RecentPlansById(id string)(*i86017907c6216aa0164
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["plannerPlan_id"] = id
+        urlTplParams["plannerPlan%2Did"] = id
     }
     return i86017907c6216aa0164fd179d5714657602a4a6e42c45ca14763c542c6cbd85e.NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -258,7 +258,7 @@ func (m *PlannerRequestBuilder) RosterPlansById(id string)(*i723887d2b7bb1d5b453
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["plannerPlan_id"] = id
+        urlTplParams["plannerPlan%2Did"] = id
     }
     return i723887d2b7bb1d5b453d57c98fe83989e90f0efdf4225427a652314064664806.NewPlannerPlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -273,7 +273,7 @@ func (m *PlannerRequestBuilder) TasksById(id string)(*i75445737f77febd8e8ab6f9ab
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["plannerTask_id"] = id
+        urlTplParams["plannerTask%2Did"] = id
     }
     return i75445737f77febd8e8ab6f9ab4a51048a800000b3b33d3582945e735d9732587.NewPlannerTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

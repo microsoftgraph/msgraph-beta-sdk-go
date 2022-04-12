@@ -7,13 +7,13 @@ import (
 // TeamworkPeripheralHealth 
 type TeamworkPeripheralHealth struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The connected state and time since the peripheral device was connected.
-    connection TeamworkConnectionable;
+    connection TeamworkConnectionable
     // True if the peripheral is optional. Used for health computation.
-    isOptional *bool;
+    isOptional *bool
     // The peripheral property
-    peripheral TeamworkPeripheralable;
+    peripheral TeamworkPeripheralable
 }
 // NewTeamworkPeripheralHealth instantiates a new teamworkPeripheralHealth and sets the default values.
 func NewTeamworkPeripheralHealth()(*TeamworkPeripheralHealth) {
@@ -43,9 +43,9 @@ func (m *TeamworkPeripheralHealth) GetConnection()(TeamworkConnectionable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkPeripheralHealth) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["connection"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkPeripheralHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["connection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkConnectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *TeamworkPeripheralHealth) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isOptional"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isOptional"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *TeamworkPeripheralHealth) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["peripheral"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["peripheral"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err

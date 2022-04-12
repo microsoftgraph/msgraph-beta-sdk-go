@@ -8,27 +8,27 @@ import (
 type ManagedDeviceEncryptionState struct {
     Entity
     // Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
-    advancedBitLockerStates *AdvancedBitLockerState;
+    advancedBitLockerStates *AdvancedBitLockerState
     // Device name
-    deviceName *string;
+    deviceName *string
     // Platform of the device. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, blackberry, palm, unknown.
-    deviceType *DeviceTypes;
+    deviceType *DeviceTypes
     // Encryption policy setting state. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-    encryptionPolicySettingState *ComplianceStatus;
+    encryptionPolicySettingState *ComplianceStatus
     // Encryption readiness state. Possible values are: notReady, ready.
-    encryptionReadinessState *EncryptionReadinessState;
+    encryptionReadinessState *EncryptionReadinessState
     // Device encryption state. Possible values are: notEncrypted, encrypted.
-    encryptionState *EncryptionState;
+    encryptionState *EncryptionState
     // FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
-    fileVaultStates *FileVaultState;
+    fileVaultStates *FileVaultState
     // Operating system version of the device
-    osVersion *string;
+    osVersion *string
     // Policy Details
-    policyDetails []EncryptionReportPolicyDetailsable;
+    policyDetails []EncryptionReportPolicyDetailsable
     // Device TPM Version
-    tpmSpecificationVersion *string;
+    tpmSpecificationVersion *string
     // User name
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewManagedDeviceEncryptionState instantiates a new managedDeviceEncryptionState and sets the default values.
 func NewManagedDeviceEncryptionState()(*ManagedDeviceEncryptionState) {
@@ -90,9 +90,9 @@ func (m *ManagedDeviceEncryptionState) GetEncryptionState()(*EncryptionState) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["advancedBitLockerStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["advancedBitLockerStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAdvancedBitLockerState)
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["deviceType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceTypes)
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["encryptionPolicySettingState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["encryptionPolicySettingState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseComplianceStatus)
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["encryptionReadinessState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["encryptionReadinessState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEncryptionReadinessState)
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["encryptionState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["encryptionState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEncryptionState)
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["fileVaultStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileVaultStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseFileVaultState)
         if err != nil {
             return err
@@ -162,7 +162,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["osVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["policyDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEncryptionReportPolicyDetailsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -186,7 +186,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["tpmSpecificationVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tpmSpecificationVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -196,7 +196,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

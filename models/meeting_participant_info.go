@@ -7,13 +7,13 @@ import (
 // MeetingParticipantInfo 
 type MeetingParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Identity information of the participant.
-    identity IdentitySetable;
+    identity IdentitySetable
     // Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
-    role *OnlineMeetingRole;
+    role *OnlineMeetingRole
     // User principal name of the participant.
-    upn *string;
+    upn *string
 }
 // NewMeetingParticipantInfo instantiates a new meetingParticipantInfo and sets the default values.
 func NewMeetingParticipantInfo()(*MeetingParticipantInfo) {
@@ -35,9 +35,9 @@ func (m *MeetingParticipantInfo) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MeetingParticipantInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["identity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MeetingParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["identity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *MeetingParticipantInfo) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["role"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOnlineMeetingRole)
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *MeetingParticipantInfo) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["upn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["upn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

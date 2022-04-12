@@ -17,49 +17,49 @@ import (
 // BaseTaskItemRequestBuilder provides operations to manage the tasks property of the microsoft.graph.baseTaskList entity.
 type BaseTaskItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // BaseTaskItemRequestBuilderDeleteOptions options for Delete
 type BaseTaskItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // BaseTaskItemRequestBuilderGetOptions options for Get
 type BaseTaskItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *BaseTaskItemRequestBuilderGetQueryParameters;
+    QueryParameters *BaseTaskItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // BaseTaskItemRequestBuilderGetQueryParameters the tasks in this task list. Read-only. Nullable.
 type BaseTaskItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // BaseTaskItemRequestBuilderPatchOptions options for Patch
 type BaseTaskItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ChecklistItems the checklistItems property
 func (m *BaseTaskItemRequestBuilder) ChecklistItems()(*i7bfd138746038534bad1aac3dce035ec42cf5d70a13a1413d2f2e46892f38d09.ChecklistItemsRequestBuilder) {
@@ -72,7 +72,7 @@ func (m *BaseTaskItemRequestBuilder) ChecklistItemsById(id string)(*i6044c1d2eb0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["checklistItem_id"] = id
+        urlTplParams["checklistItem%2Did"] = id
     }
     return i6044c1d2eb01b0e0622e3b6c3849a33775aab29f024a15554528173596ac8f6b.NewChecklistItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -80,7 +80,7 @@ func (m *BaseTaskItemRequestBuilder) ChecklistItemsById(id string)(*i6044c1d2eb0
 func NewBaseTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BaseTaskItemRequestBuilder) {
     m := &BaseTaskItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/tasks/lists/{baseTaskList_id}/tasks/{baseTask_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/me/tasks/lists/{baseTaskList%2Did}/tasks/{baseTask%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -177,7 +177,7 @@ func (m *BaseTaskItemRequestBuilder) ExtensionsById(id string)(*i49f37fa0ca8dbd0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["extension_id"] = id
+        urlTplParams["extension%2Did"] = id
     }
     return i49f37fa0ca8dbd0779122380b5f0f7e39b7ff61cbc48e2b361a00f669235f391.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -208,7 +208,7 @@ func (m *BaseTaskItemRequestBuilder) LinkedResourcesById(id string)(*i34e9ef0b7e
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["linkedResource_v2_id"] = id
+        urlTplParams["linkedResource_v2%2Did"] = id
     }
     return i34e9ef0b7eef0d6704c833332ffa8d16c019e313b1def9f065f50d25a8f8068a.NewLinkedResource_v2ItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

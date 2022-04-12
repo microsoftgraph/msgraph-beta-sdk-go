@@ -10,11 +10,11 @@ import (
 // EventMessageRequestRequestBuilder builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.eventMessageRequest
 type EventMessageRequestRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // Accept the accept property
 func (m *EventMessageRequestRequestBuilder) Accept()(*i0899d26b0b0522b710df806f0454178eaf5c74fca4ec1761f9293365fb10a400.AcceptRequestBuilder) {
@@ -24,7 +24,7 @@ func (m *EventMessageRequestRequestBuilder) Accept()(*i0899d26b0b0522b710df806f0
 func NewEventMessageRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EventMessageRequestRequestBuilder) {
     m := &EventMessageRequestRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/mailFolders/{mailFolder_id}/messages/{message_id}/microsoft.graph.eventMessageRequest";
+    m.urlTemplate = "{+baseurl}/me/mailFolders/{mailFolder%2Did}/messages/{message%2Did}/microsoft.graph.eventMessageRequest";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

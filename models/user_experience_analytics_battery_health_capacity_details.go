@@ -9,15 +9,15 @@ import (
 type UserExperienceAnalyticsBatteryHealthCapacityDetails struct {
     Entity
     // Number of active devices within the tenant. Valid values -2147483648 to 2147483647
-    activeDevices *int32;
+    activeDevices *int32
     // Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647
-    batteryCapacityFair *int32;
+    batteryCapacityFair *int32
     // Number of devices whose battery maximum capacity is greater than 80%. Valid values -2147483648 to 2147483647
-    batteryCapacityGood *int32;
+    batteryCapacityGood *int32
     // Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647
-    batteryCapacityPoor *int32;
+    batteryCapacityPoor *int32
     // Recorded date time of this capacity details instance.
-    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewUserExperienceAnalyticsBatteryHealthCapacityDetails instantiates a new userExperienceAnalyticsBatteryHealthCapacityDetails and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthCapacityDetails()(*UserExperienceAnalyticsBatteryHealthCapacityDetails) {
@@ -63,9 +63,9 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetBatteryCapacity
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activeDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activeDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetFieldDeserializ
         }
         return nil
     }
-    res["batteryCapacityFair"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["batteryCapacityFair"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetFieldDeserializ
         }
         return nil
     }
-    res["batteryCapacityGood"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["batteryCapacityGood"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetFieldDeserializ
         }
         return nil
     }
-    res["batteryCapacityPoor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["batteryCapacityPoor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetFieldDeserializ
         }
         return nil
     }
-    res["lastRefreshedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastRefreshedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

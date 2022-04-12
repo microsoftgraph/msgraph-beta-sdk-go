@@ -15,49 +15,49 @@ import (
 // ApprovalWorkflowProviderItemRequestBuilder provides operations to manage the collection of approvalWorkflowProvider entities.
 type ApprovalWorkflowProviderItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ApprovalWorkflowProviderItemRequestBuilderDeleteOptions options for Delete
 type ApprovalWorkflowProviderItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ApprovalWorkflowProviderItemRequestBuilderGetOptions options for Get
 type ApprovalWorkflowProviderItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ApprovalWorkflowProviderItemRequestBuilderGetQueryParameters;
+    QueryParameters *ApprovalWorkflowProviderItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ApprovalWorkflowProviderItemRequestBuilderGetQueryParameters get entity from approvalWorkflowProviders by key
 type ApprovalWorkflowProviderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ApprovalWorkflowProviderItemRequestBuilderPatchOptions options for Patch
 type ApprovalWorkflowProviderItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // BusinessFlows the businessFlows property
 func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlows()(*i00b6268726a46fcf8e15e0ca3c5f8889dfdd53aaf48fe4ce2411243820496cf2.BusinessFlowsRequestBuilder) {
@@ -70,7 +70,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsById(id string
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["businessFlow_id"] = id
+        urlTplParams["businessFlow%2Did"] = id
     }
     return icdd8feb64f3d3f11cf1c42a81a0ec83a900ebf29181eae132e78625db81a1fa7.NewBusinessFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -85,7 +85,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsWithRequestsAw
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["businessFlow_id"] = id
+        urlTplParams["businessFlow%2Did"] = id
     }
     return id3e3e89c17dc1203ba2dba0acce89454c2eacc6063d8b15b83854c381c75fc28.NewBusinessFlowItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -93,7 +93,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsWithRequestsAw
 func NewApprovalWorkflowProviderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApprovalWorkflowProviderItemRequestBuilder) {
     m := &ApprovalWorkflowProviderItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -222,7 +222,7 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) PolicyTemplatesById(id stri
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["governancePolicyTemplate_id"] = id
+        urlTplParams["governancePolicyTemplate%2Did"] = id
     }
     return iad8cec4aa318577e66fff21478bdf279aabc1597d98a1031afe46ae7262c9daa.NewGovernancePolicyTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

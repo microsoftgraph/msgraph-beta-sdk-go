@@ -8,9 +8,9 @@ import (
 // ValidateComplianceScriptRequestBody provides operations to call the validateComplianceScript method.
 type ValidateComplianceScriptRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The deviceCompliancePolicyScript property
-    deviceCompliancePolicyScript ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCompliancePolicyScriptable;
+    deviceCompliancePolicyScript ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCompliancePolicyScriptable
 }
 // NewValidateComplianceScriptRequestBody instantiates a new validateComplianceScriptRequestBody and sets the default values.
 func NewValidateComplianceScriptRequestBody()(*ValidateComplianceScriptRequestBody) {
@@ -40,9 +40,9 @@ func (m *ValidateComplianceScriptRequestBody) GetDeviceCompliancePolicyScript()(
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ValidateComplianceScriptRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["deviceCompliancePolicyScript"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ValidateComplianceScriptRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["deviceCompliancePolicyScript"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceCompliancePolicyScriptFromDiscriminatorValue)
         if err != nil {
             return err

@@ -11,49 +11,49 @@ import (
 // CustomSecurityAttributeDefinitionItemRequestBuilder provides operations to manage the customSecurityAttributeDefinitions property of the microsoft.graph.directory entity.
 type CustomSecurityAttributeDefinitionItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // CustomSecurityAttributeDefinitionItemRequestBuilderDeleteOptions options for Delete
 type CustomSecurityAttributeDefinitionItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CustomSecurityAttributeDefinitionItemRequestBuilderGetOptions options for Get
 type CustomSecurityAttributeDefinitionItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *CustomSecurityAttributeDefinitionItemRequestBuilderGetQueryParameters;
+    QueryParameters *CustomSecurityAttributeDefinitionItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CustomSecurityAttributeDefinitionItemRequestBuilderGetQueryParameters schema of a custom security attributes (key-value pairs).
 type CustomSecurityAttributeDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // CustomSecurityAttributeDefinitionItemRequestBuilderPatchOptions options for Patch
 type CustomSecurityAttributeDefinitionItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AllowedValues the allowedValues property
 func (m *CustomSecurityAttributeDefinitionItemRequestBuilder) AllowedValues()(*iabb2c9c8d603422583bcb8f8258070d32341f88769a528bbf7389076f4dc84ab.AllowedValuesRequestBuilder) {
@@ -66,7 +66,7 @@ func (m *CustomSecurityAttributeDefinitionItemRequestBuilder) AllowedValuesById(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["allowedValue_id"] = id
+        urlTplParams["allowedValue%2Did"] = id
     }
     return i1fe7ff93f58439008a626f169f7eeff4e9a77d0871cc58d3033500a4d65a4a2c.NewAllowedValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -74,7 +74,7 @@ func (m *CustomSecurityAttributeDefinitionItemRequestBuilder) AllowedValuesById(
 func NewCustomSecurityAttributeDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CustomSecurityAttributeDefinitionItemRequestBuilder) {
     m := &CustomSecurityAttributeDefinitionItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directory/customSecurityAttributeDefinitions/{customSecurityAttributeDefinition_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/directory/customSecurityAttributeDefinitions/{customSecurityAttributeDefinition%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

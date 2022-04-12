@@ -8,31 +8,31 @@ import (
 type MailFolder struct {
     Entity
     // The number of immediate child mailFolders in the current mailFolder.
-    childFolderCount *int32;
+    childFolderCount *int32
     // The collection of child folders in the mailFolder.
-    childFolders []MailFolderable;
+    childFolders []MailFolderable
     // The mailFolder's display name.
-    displayName *string;
+    displayName *string
     // Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
-    isHidden *bool;
+    isHidden *bool
     // The collection of rules that apply to the user's Inbox folder.
-    messageRules []MessageRuleable;
+    messageRules []MessageRuleable
     // The collection of messages in the mailFolder.
-    messages []Messageable;
+    messages []Messageable
     // The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
     // The unique identifier for the mailFolder's parent mailFolder.
-    parentFolderId *string;
+    parentFolderId *string
     // The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
     // The number of items in the mailFolder.
-    totalItemCount *int32;
+    totalItemCount *int32
     // The number of items in the mailFolder marked as unread.
-    unreadItemCount *int32;
+    unreadItemCount *int32
     // The userConfigurations property
-    userConfigurations []UserConfigurationable;
+    userConfigurations []UserConfigurationable
     // The well-known folder name for the folder. The possible values are listed above. This property is only set for default folders created by Outlook. For other folders, this property is null.
-    wellKnownName *string;
+    wellKnownName *string
 }
 // NewMailFolder instantiates a new mailFolder and sets the default values.
 func NewMailFolder()(*MailFolder) {
@@ -70,9 +70,9 @@ func (m *MailFolder) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MailFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["childFolderCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["childFolderCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["childFolders"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["childFolders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMailFolderFromDiscriminatorValue)
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["isHidden"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isHidden"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["messageRules"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["messageRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMessageRuleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["messages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["messages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMessageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["multiValueExtendedProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["multiValueExtendedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMultiValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["parentFolderId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parentFolderId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -168,7 +168,7 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["singleValueExtendedProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["singleValueExtendedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -182,7 +182,7 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["totalItemCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalItemCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -192,7 +192,7 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["unreadItemCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unreadItemCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -202,7 +202,7 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["userConfigurations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -216,7 +216,7 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["wellKnownName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wellKnownName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

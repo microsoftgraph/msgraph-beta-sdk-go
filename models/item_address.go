@@ -8,11 +8,11 @@ import (
 type ItemAddress struct {
     ItemFacet
     // The detail property
-    detail PhysicalAddressable;
+    detail PhysicalAddressable
     // Friendly name the user has assigned to this address.
-    displayName *string;
+    displayName *string
     // The geocoordinates of the address.
-    geoCoordinates GeoCoordinatesable;
+    geoCoordinates GeoCoordinatesable
 }
 // NewItemAddress instantiates a new itemAddress and sets the default values.
 func NewItemAddress()(*ItemAddress) {
@@ -42,9 +42,9 @@ func (m *ItemAddress) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ItemAddress) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ItemAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
-    res["detail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *ItemAddress) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *ItemAddress) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["geoCoordinates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["geoCoordinates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGeoCoordinatesFromDiscriminatorValue)
         if err != nil {
             return err

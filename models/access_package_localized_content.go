@@ -7,11 +7,11 @@ import (
 // AccessPackageLocalizedContent 
 type AccessPackageLocalizedContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The fallback string, which is used when a requested localization is not available. Required.
-    defaultText *string;
+    defaultText *string
     // Content represented in a format for a specific locale.
-    localizedTexts []AccessPackageLocalizedTextable;
+    localizedTexts []AccessPackageLocalizedTextable
 }
 // NewAccessPackageLocalizedContent instantiates a new accessPackageLocalizedContent and sets the default values.
 func NewAccessPackageLocalizedContent()(*AccessPackageLocalizedContent) {
@@ -41,9 +41,9 @@ func (m *AccessPackageLocalizedContent) GetDefaultText()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackageLocalizedContent) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["defaultText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AccessPackageLocalizedContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["defaultText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *AccessPackageLocalizedContent) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["localizedTexts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["localizedTexts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageLocalizedTextFromDiscriminatorValue)
         if err != nil {
             return err

@@ -19,49 +19,49 @@ import (
 // DeviceShellScriptItemRequestBuilder provides operations to manage the deviceShellScripts property of the microsoft.graph.deviceManagement entity.
 type DeviceShellScriptItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // DeviceShellScriptItemRequestBuilderDeleteOptions options for Delete
 type DeviceShellScriptItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceShellScriptItemRequestBuilderGetOptions options for Get
 type DeviceShellScriptItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *DeviceShellScriptItemRequestBuilderGetQueryParameters;
+    QueryParameters *DeviceShellScriptItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceShellScriptItemRequestBuilderGetQueryParameters the list of device shell scripts associated with the tenant.
 type DeviceShellScriptItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // DeviceShellScriptItemRequestBuilderPatchOptions options for Patch
 type DeviceShellScriptItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceShellScriptable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceShellScriptable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Assign the assign property
 func (m *DeviceShellScriptItemRequestBuilder) Assign()(*ibc0bdc7d62407627f799f1887a2a83100a7295907f2203c9b7be0ceb05727fa8.AssignRequestBuilder) {
@@ -78,7 +78,7 @@ func (m *DeviceShellScriptItemRequestBuilder) AssignmentsById(id string)(*i60b1d
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementScriptAssignment_id"] = id
+        urlTplParams["deviceManagementScriptAssignment%2Did"] = id
     }
     return i60b1d872fe3c79385687ac815dc9a345c65cf3a1d7475fcd16834aa195d0ef49.NewDeviceManagementScriptAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -86,7 +86,7 @@ func (m *DeviceShellScriptItemRequestBuilder) AssignmentsById(id string)(*i60b1d
 func NewDeviceShellScriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceShellScriptItemRequestBuilder) {
     m := &DeviceShellScriptItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/deviceShellScripts/{deviceShellScript_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/deviceShellScripts/{deviceShellScript%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -183,7 +183,7 @@ func (m *DeviceShellScriptItemRequestBuilder) DeviceRunStatesById(id string)(*i4
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementScriptDeviceState_id"] = id
+        urlTplParams["deviceManagementScriptDeviceState%2Did"] = id
     }
     return i4e99eee29f4d27b3c3ed9b39a732efaaadc4e736ad51030857642293b548d3cb.NewDeviceManagementScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -214,7 +214,7 @@ func (m *DeviceShellScriptItemRequestBuilder) GroupAssignmentsById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementScriptGroupAssignment_id"] = id
+        urlTplParams["deviceManagementScriptGroupAssignment%2Did"] = id
     }
     return ib0522360ed077a6c16fe77b5b9aca7adca496e97d4d37f10bf42394220f94da8.NewDeviceManagementScriptGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -249,7 +249,7 @@ func (m *DeviceShellScriptItemRequestBuilder) UserRunStatesById(id string)(*i3af
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementScriptUserState_id"] = id
+        urlTplParams["deviceManagementScriptUserState%2Did"] = id
     }
     return i3afdf7675877765716ac7dd1dadedd54dc760d42e9a7d4d3f623971af61f9ddd.NewDeviceManagementScriptUserStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

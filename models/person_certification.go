@@ -8,25 +8,25 @@ import (
 type PersonCertification struct {
     ItemFacet
     // The referenceable identifier for the certification.
-    certificationId *string;
+    certificationId *string
     // Description of the certification.
-    description *string;
+    description *string
     // Title of the certification.
-    displayName *string;
+    displayName *string
     // The date that the certification expires.
-    endDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    endDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The date that the certification was issued.
-    issuedDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    issuedDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // Authority which granted the certification.
-    issuingAuthority *string;
+    issuingAuthority *string
     // Company which granted the certification.
-    issuingCompany *string;
+    issuingCompany *string
     // The date that the certification became valid.
-    startDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    startDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // URL referencing a thumbnail of the certification.
-    thumbnailUrl *string;
+    thumbnailUrl *string
     // URL referencing the certification.
-    webUrl *string;
+    webUrl *string
 }
 // NewPersonCertification instantiates a new personCertification and sets the default values.
 func NewPersonCertification()(*PersonCertification) {
@@ -72,9 +72,9 @@ func (m *PersonCertification) GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PersonCertification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
-    res["certificationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["endDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["issuedDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["issuedDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["issuingAuthority"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["issuingAuthority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["issuingCompany"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["issuingCompany"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["startDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["thumbnailUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["thumbnailUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -164,7 +164,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["webUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

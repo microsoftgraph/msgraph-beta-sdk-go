@@ -8,11 +8,11 @@ import (
 type DirectorySetting struct {
     Entity
     // Display name of this group of settings, which comes from the associated template. Read-only.
-    displayName *string;
+    displayName *string
     // Unique identifier for the template used to create this group of settings. Read-only.
-    templateId *string;
+    templateId *string
     // Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
-    values []SettingValueable;
+    values []SettingValueable
 }
 // NewDirectorySetting instantiates a new directorySetting and sets the default values.
 func NewDirectorySetting()(*DirectorySetting) {
@@ -34,9 +34,9 @@ func (m *DirectorySetting) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DirectorySetting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DirectorySetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *DirectorySetting) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["templateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["templateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *DirectorySetting) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["values"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSettingValueFromDiscriminatorValue)
         if err != nil {
             return err

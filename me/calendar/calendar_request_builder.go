@@ -21,47 +21,47 @@ import (
 // CalendarRequestBuilder provides operations to manage the calendar property of the microsoft.graph.user entity.
 type CalendarRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // CalendarRequestBuilderDeleteOptions options for Delete
 type CalendarRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CalendarRequestBuilderGetOptions options for Get
 type CalendarRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *CalendarRequestBuilderGetQueryParameters;
+    QueryParameters *CalendarRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CalendarRequestBuilderGetQueryParameters the user's primary calendar. Read-only.
 type CalendarRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // CalendarRequestBuilderPatchOptions options for Patch
 type CalendarRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AllowedCalendarSharingRolesWithUser provides operations to call the allowedCalendarSharingRoles method.
 func (m *CalendarRequestBuilder) AllowedCalendarSharingRolesWithUser(user *string)(*i85085bfff31dfdfaf3940c26b7428d4dd4f5f214e1afb26f8ff92de42666214c.AllowedCalendarSharingRolesWithUserRequestBuilder) {
@@ -78,7 +78,7 @@ func (m *CalendarRequestBuilder) CalendarPermissionsById(id string)(*icc49a296c7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["calendarPermission_id"] = id
+        urlTplParams["calendarPermission%2Did"] = id
     }
     return icc49a296c7df21a7cc4befcd6f1a34f299f25134015701387f39f2be77ec1b62.NewCalendarPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -93,7 +93,7 @@ func (m *CalendarRequestBuilder) CalendarViewById(id string)(*i32007971daba2b6bf
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["event_id"] = id
+        urlTplParams["event%2Did"] = id
     }
     return i32007971daba2b6bfd608251e3fa3037f0c6076b83bf11d1cebc0be6d191b58f.NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -101,7 +101,7 @@ func (m *CalendarRequestBuilder) CalendarViewById(id string)(*i32007971daba2b6bf
 func NewCalendarRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CalendarRequestBuilder) {
     m := &CalendarRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/calendar{?select}";
+    m.urlTemplate = "{+baseurl}/me/calendar{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -198,7 +198,7 @@ func (m *CalendarRequestBuilder) EventsById(id string)(*i7923064a9f4c4b75d44193b
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["event_id"] = id
+        urlTplParams["event%2Did"] = id
     }
     return i7923064a9f4c4b75d44193b15f31eea4e3de5a03a690127e925545ca3fcb8ce5.NewEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -233,7 +233,7 @@ func (m *CalendarRequestBuilder) MultiValueExtendedPropertiesById(id string)(*ie
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["multiValueLegacyExtendedProperty_id"] = id
+        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
     }
     return iec1f5e677b964978263004630240f212d437a10091543ccef2397757ae2b5c2e.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -264,7 +264,7 @@ func (m *CalendarRequestBuilder) SingleValueExtendedPropertiesById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["singleValueLegacyExtendedProperty_id"] = id
+        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
     }
     return i1339b57f4311b596f1e163d07c2af7ba9105f71396c487bac3b1051937b9a343.NewSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -9,31 +9,31 @@ import (
 type AgreementAcceptance struct {
     Entity
     // The identifier of the agreement file accepted by the user.
-    agreementFileId *string;
+    agreementFileId *string
     // The identifier of the agreement.
-    agreementId *string;
+    agreementId *string
     // The display name of the device used for accepting the agreement.
-    deviceDisplayName *string;
+    deviceDisplayName *string
     // The unique identifier of the device used for accepting the agreement.
-    deviceId *string;
+    deviceId *string
     // The operating system used to accept the agreement.
-    deviceOSType *string;
+    deviceOSType *string
     // The operating system version of the device used to accept the agreement.
-    deviceOSVersion *string;
+    deviceOSVersion *string
     // The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    recordedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    recordedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).
-    state *AgreementAcceptanceState;
+    state *AgreementAcceptanceState
     // Display name of the user when the acceptance was recorded.
-    userDisplayName *string;
+    userDisplayName *string
     // Email of the user when the acceptance was recorded.
-    userEmail *string;
+    userEmail *string
     // The identifier of the user who accepted the agreement.
-    userId *string;
+    userId *string
     // UPN of the user when the acceptance was recorded.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewAgreementAcceptance instantiates a new agreementAcceptance and sets the default values.
 func NewAgreementAcceptance()(*AgreementAcceptance) {
@@ -103,9 +103,9 @@ func (m *AgreementAcceptance) GetExpirationDateTime()(*i336074805fc853987abe6f7f
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["agreementFileId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["agreementFileId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["agreementId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["agreementId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["deviceDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["deviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["deviceOSType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceOSType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["deviceOSVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceOSVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["recordedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recordedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAgreementAcceptanceState)
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["userDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["userEmail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userEmail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -215,7 +215,7 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *AgreementAcceptance) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

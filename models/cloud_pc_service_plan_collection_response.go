@@ -7,11 +7,11 @@ import (
 // CloudPcServicePlanCollectionResponse 
 type CloudPcServicePlanCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The nextLink property
-    nextLink *string;
+    nextLink *string
     // The value property
-    value []CloudPcServicePlanable;
+    value []CloudPcServicePlanable
 }
 // NewCloudPcServicePlanCollectionResponse instantiates a new CloudPcServicePlanCollectionResponse and sets the default values.
 func NewCloudPcServicePlanCollectionResponse()(*CloudPcServicePlanCollectionResponse) {
@@ -33,19 +33,19 @@ func (m *CloudPcServicePlanCollectionResponse) GetAdditionalData()(map[string]in
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPcServicePlanCollectionResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["@odata.nextLink"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CloudPcServicePlanCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.nextLink"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNextLink(val)
+            m.Set@odata.nextLink(val)
         }
         return nil
     }
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcServicePlanFromDiscriminatorValue)
         if err != nil {
             return err
@@ -61,8 +61,8 @@ func (m *CloudPcServicePlanCollectionResponse) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetNextLink gets the @odata.nextLink property value. The nextLink property
-func (m *CloudPcServicePlanCollectionResponse) GetNextLink()(*string) {
+// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
+func (m *CloudPcServicePlanCollectionResponse) GetOdatanextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *CloudPcServicePlanCollectionResponse) GetValue()([]CloudPcServicePlanab
 // Serialize serializes information the current object
 func (m *CloudPcServicePlanCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
+        err := writer.WriteStringValue("@odata.nextLink", m.Get@odata.nextLink())
         if err != nil {
             return err
         }
@@ -109,8 +109,8 @@ func (m *CloudPcServicePlanCollectionResponse) SetAdditionalData(value map[strin
         m.additionalData = value
     }
 }
-// SetNextLink sets the @odata.nextLink property value. The nextLink property
-func (m *CloudPcServicePlanCollectionResponse) SetNextLink(value *string)() {
+// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
+func (m *CloudPcServicePlanCollectionResponse) SetOdatanextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }

@@ -8,15 +8,15 @@ import (
 type PrivilegedRoleSummary struct {
     Entity
     // The number of users that have the role assigned and the role is activated.
-    elevatedCount *int32;
+    elevatedCount *int32
     // The number of users that have the role assigned but the role is deactivated.
-    managedCount *int32;
+    managedCount *int32
     // true if the role activation requires MFA. false if the role activation doesn't require MFA.
-    mfaEnabled *bool;
+    mfaEnabled *bool
     // Possible values are: ok, bad. The value depends on the ratio of (managedCount / usersCount). If the ratio is less than a predefined threshold, ok is returned. Otherwise, bad is returned.
-    status *RoleSummaryStatus;
+    status *RoleSummaryStatus
     // The number of users that are assigned with the role.
-    usersCount *int32;
+    usersCount *int32
 }
 // NewPrivilegedRoleSummary instantiates a new privilegedRoleSummary and sets the default values.
 func NewPrivilegedRoleSummary()(*PrivilegedRoleSummary) {
@@ -38,9 +38,9 @@ func (m *PrivilegedRoleSummary) GetElevatedCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["elevatedCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["elevatedCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["managedCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["mfaEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mfaEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRoleSummaryStatus)
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["usersCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["usersCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

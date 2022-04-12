@@ -79,49 +79,49 @@ import (
 // CompanyItemRequestBuilder provides operations to manage the companies property of the microsoft.graph.financials entity.
 type CompanyItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // CompanyItemRequestBuilderDeleteOptions options for Delete
 type CompanyItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CompanyItemRequestBuilderGetOptions options for Get
 type CompanyItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *CompanyItemRequestBuilderGetQueryParameters;
+    QueryParameters *CompanyItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CompanyItemRequestBuilderGetQueryParameters get companies from financials
 type CompanyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // CompanyItemRequestBuilderPatchOptions options for Patch
 type CompanyItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Companyable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Companyable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Accounts the accounts property
 func (m *CompanyItemRequestBuilder) Accounts()(*ibe5eb65fe22e268725128bcf2845841605d9d1eef38f8068c89a3ccafdcb245d.AccountsRequestBuilder) {
@@ -134,7 +134,7 @@ func (m *CompanyItemRequestBuilder) AccountsById(id string)(*i8bb41f9aaafe2872cf
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["account_id"] = id
+        urlTplParams["account%2Did"] = id
     }
     return i8bb41f9aaafe2872cf4a7f16919a0ea7a6265e4e8c2dde4370cbb7a491e99b17.NewAccountItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -149,7 +149,7 @@ func (m *CompanyItemRequestBuilder) AgedAccountsPayableById(id string)(*i01ad7e6
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["agedAccountsPayable_id"] = id
+        urlTplParams["agedAccountsPayable%2Did"] = id
     }
     return i01ad7e647f48e5295cfff5c82ccc53fd72b8ef5ab7d7e8bd7198d016f9c95a92.NewAgedAccountsPayableItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -164,7 +164,7 @@ func (m *CompanyItemRequestBuilder) AgedAccountsReceivableById(id string)(*i438a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["agedAccountsReceivable_id"] = id
+        urlTplParams["agedAccountsReceivable%2Did"] = id
     }
     return i438a48ca92e539d9b6fb008ddf3127a7f528133e671c42432929f28d397e72b3.NewAgedAccountsReceivableItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -179,7 +179,7 @@ func (m *CompanyItemRequestBuilder) CompanyInformationById(id string)(*i35979601
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["companyInformation_id"] = id
+        urlTplParams["companyInformation%2Did"] = id
     }
     return i35979601231c435e27fd66cdf7e94aa3ff2c7ed6e60215138c38dddf7d8c728a.NewCompanyInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -187,7 +187,7 @@ func (m *CompanyItemRequestBuilder) CompanyInformationById(id string)(*i35979601
 func NewCompanyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompanyItemRequestBuilder) {
     m := &CompanyItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/financials/companies/{company_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/financials/companies/{company%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -213,7 +213,7 @@ func (m *CompanyItemRequestBuilder) CountriesRegionsById(id string)(*ib417325891
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["countryRegion_id"] = id
+        urlTplParams["countryRegion%2Did"] = id
     }
     return ib4173258919a2470076856e048a74747e88c26282e025907c42dbae5ec6030ca.NewCountryRegionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -283,7 +283,7 @@ func (m *CompanyItemRequestBuilder) CurrenciesById(id string)(*i10be44ffc518b9ff
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["currency_id"] = id
+        urlTplParams["currency%2Did"] = id
     }
     return i10be44ffc518b9ffebfc696f5c34a3302d87645d22fc12694c9904aca1044d58.NewCurrencyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -298,7 +298,7 @@ func (m *CompanyItemRequestBuilder) CustomerPaymentJournalsById(id string)(*i2fa
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["customerPaymentJournal_id"] = id
+        urlTplParams["customerPaymentJournal%2Did"] = id
     }
     return i2fa657acc59d6b7630ef46de77a50036226d4b074450ccaebde8cf00abc68dec.NewCustomerPaymentJournalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -313,7 +313,7 @@ func (m *CompanyItemRequestBuilder) CustomerPaymentsById(id string)(*i156a292586
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["customerPayment_id"] = id
+        urlTplParams["customerPayment%2Did"] = id
     }
     return i156a2925868947a7298582f37c6bf9442997ed01292975d5f12ae6a54051c565.NewCustomerPaymentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -328,7 +328,7 @@ func (m *CompanyItemRequestBuilder) CustomersById(id string)(*i0a22f9350aef91493
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["customer_id"] = id
+        urlTplParams["customer%2Did"] = id
     }
     return i0a22f9350aef914933c2bf7011f507fef010436ad65aed8403b06d3550b3f89d.NewCustomerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -359,7 +359,7 @@ func (m *CompanyItemRequestBuilder) DimensionsById(id string)(*ib663fe9a724ce0e5
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["dimension_id"] = id
+        urlTplParams["dimension%2Did"] = id
     }
     return ib663fe9a724ce0e5ad43315594f7b7c19a9e8e35fe77f81dc1945c6e3936fe2f.NewDimensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -374,7 +374,7 @@ func (m *CompanyItemRequestBuilder) DimensionValuesById(id string)(*i11e6e00b839
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["dimensionValue_id"] = id
+        urlTplParams["dimensionValue%2Did"] = id
     }
     return i11e6e00b839a93742244aa3549a6868991eeeed6ccefdbcf294e91fbbee4ff3a.NewDimensionValueItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -389,7 +389,7 @@ func (m *CompanyItemRequestBuilder) EmployeesById(id string)(*i1659c475e4793613c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["employee_id"] = id
+        urlTplParams["employee%2Did"] = id
     }
     return i1659c475e4793613cba0cab9ebd1d7cb4807826d1a70462923f4606aefaf2923.NewEmployeeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -404,7 +404,7 @@ func (m *CompanyItemRequestBuilder) GeneralLedgerEntriesById(id string)(*i3d03e8
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["generalLedgerEntry_id"] = id
+        urlTplParams["generalLedgerEntry%2Did"] = id
     }
     return i3d03e8e7981c4382b0b7fec2f585dcb2af2df5976ea20ae1de1c5ef9996f16ae.NewGeneralLedgerEntryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -435,7 +435,7 @@ func (m *CompanyItemRequestBuilder) ItemCategoriesById(id string)(*i86e272c59066
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["itemCategory_id"] = id
+        urlTplParams["itemCategory%2Did"] = id
     }
     return i86e272c5906623aaa71eb00713179597400af0b135903dd413a7d82af37200de.NewItemCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -450,7 +450,7 @@ func (m *CompanyItemRequestBuilder) ItemsById(id string)(*i301463334e1dbc7c5c319
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["item_id"] = id
+        urlTplParams["item%2Did"] = id
     }
     return i301463334e1dbc7c5c31947d397ff9c42f6aa8bb9cd25e2f928c02448534b4ce.NewItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -465,7 +465,7 @@ func (m *CompanyItemRequestBuilder) JournalLinesById(id string)(*i1e5b9e1d2db514
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["journalLine_id"] = id
+        urlTplParams["journalLine%2Did"] = id
     }
     return i1e5b9e1d2db51439f7c83d74f5933dd50bab82a742de2085d38ded8ed8ba25db.NewJournalLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -480,7 +480,7 @@ func (m *CompanyItemRequestBuilder) JournalsById(id string)(*ie72c90b132e5b7adcd
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["journal_id"] = id
+        urlTplParams["journal%2Did"] = id
     }
     return ie72c90b132e5b7adcd798955c629efd15447d563e9da1b63bdf14accfee955b3.NewJournalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -511,7 +511,7 @@ func (m *CompanyItemRequestBuilder) PaymentMethodsById(id string)(*i76069eb1d0c9
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["paymentMethod_id"] = id
+        urlTplParams["paymentMethod%2Did"] = id
     }
     return i76069eb1d0c9bbb6e1ddd559e78b0833a04dd47f1a8d9e0b257bb372e8385bbe.NewPaymentMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -526,7 +526,7 @@ func (m *CompanyItemRequestBuilder) PaymentTermsById(id string)(*iadc383c56ae6d9
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["paymentTerm_id"] = id
+        urlTplParams["paymentTerm%2Did"] = id
     }
     return iadc383c56ae6d955e657e8f3c19445f8290a6719a267f96792db35bd6b54360b.NewPaymentTermItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -541,7 +541,7 @@ func (m *CompanyItemRequestBuilder) PictureById(id string)(*ie240be3e672744bf836
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["picture_id"] = id
+        urlTplParams["picture%2Did"] = id
     }
     return ie240be3e672744bf8362b6142f61189bc65992996aa5e71bf520255c5fa98e0a.NewPictureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -556,7 +556,7 @@ func (m *CompanyItemRequestBuilder) PurchaseInvoiceLinesById(id string)(*ic1d69d
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["purchaseInvoiceLine_id"] = id
+        urlTplParams["purchaseInvoiceLine%2Did"] = id
     }
     return ic1d69dea9cc76c8f4fc048660687abdf627bd9aa0c48a4b0f12a4f51e369b3e5.NewPurchaseInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -571,7 +571,7 @@ func (m *CompanyItemRequestBuilder) PurchaseInvoicesById(id string)(*i7cb486a327
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["purchaseInvoice_id"] = id
+        urlTplParams["purchaseInvoice%2Did"] = id
     }
     return i7cb486a3270e9b712ce5b39298bcbfc2b57bf6b95bb368048dafb6ec20554fdc.NewPurchaseInvoiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -586,7 +586,7 @@ func (m *CompanyItemRequestBuilder) SalesCreditMemoLinesById(id string)(*ie940ae
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["salesCreditMemoLine_id"] = id
+        urlTplParams["salesCreditMemoLine%2Did"] = id
     }
     return ie940ae608019de62a242d937e70fdc6a489372a4d225a99b69483a2d8f07d28f.NewSalesCreditMemoLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -601,7 +601,7 @@ func (m *CompanyItemRequestBuilder) SalesCreditMemosById(id string)(*ia5d480bc2a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["salesCreditMemo_id"] = id
+        urlTplParams["salesCreditMemo%2Did"] = id
     }
     return ia5d480bc2a01a45ad601eaa1115f60ec63562dff910b91f3deaa3c8f23c43dba.NewSalesCreditMemoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -616,7 +616,7 @@ func (m *CompanyItemRequestBuilder) SalesInvoiceLinesById(id string)(*i9c35c34fc
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["salesInvoiceLine_id"] = id
+        urlTplParams["salesInvoiceLine%2Did"] = id
     }
     return i9c35c34fc619450ab198d055e4b3cf4a1cab7f96ff4114906a9df998e1d21369.NewSalesInvoiceLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -631,7 +631,7 @@ func (m *CompanyItemRequestBuilder) SalesInvoicesById(id string)(*i3978e2784e815
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["salesInvoice_id"] = id
+        urlTplParams["salesInvoice%2Did"] = id
     }
     return i3978e2784e815c55b4d52990268524305c63abc98ce85a086e22764f5fcffda4.NewSalesInvoiceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -646,7 +646,7 @@ func (m *CompanyItemRequestBuilder) SalesOrderLinesById(id string)(*i9846434aac0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["salesOrderLine_id"] = id
+        urlTplParams["salesOrderLine%2Did"] = id
     }
     return i9846434aac0b13311c51deaa6afdfc6e1fab10eda8f3d43f1bb2854df18aee02.NewSalesOrderLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -661,7 +661,7 @@ func (m *CompanyItemRequestBuilder) SalesOrdersById(id string)(*i4c029305791a428
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["salesOrder_id"] = id
+        urlTplParams["salesOrder%2Did"] = id
     }
     return i4c029305791a428f4d91149325952557c61cb631a48256abdb31d83808246516.NewSalesOrderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -676,7 +676,7 @@ func (m *CompanyItemRequestBuilder) SalesQuoteLinesById(id string)(*i5b30584ee16
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["salesQuoteLine_id"] = id
+        urlTplParams["salesQuoteLine%2Did"] = id
     }
     return i5b30584ee167dc3eb4b88ff0d3279d8a5281517c79e75344ae87f0c6fe4c7c80.NewSalesQuoteLineItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -691,7 +691,7 @@ func (m *CompanyItemRequestBuilder) SalesQuotesById(id string)(*iac037dfe92e14a8
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["salesQuote_id"] = id
+        urlTplParams["salesQuote%2Did"] = id
     }
     return iac037dfe92e14a8772fe5c3815a269ac463e8c4bca84adc7dbd464941fbe1577.NewSalesQuoteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -706,7 +706,7 @@ func (m *CompanyItemRequestBuilder) ShipmentMethodsById(id string)(*i58aeaf7a36a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["shipmentMethod_id"] = id
+        urlTplParams["shipmentMethod%2Did"] = id
     }
     return i58aeaf7a36a4d971a858c890c12bf007187d01813c9ad9fd928e8a479673214a.NewShipmentMethodItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -721,7 +721,7 @@ func (m *CompanyItemRequestBuilder) TaxAreasById(id string)(*id553a6763a1078b043
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["taxArea_id"] = id
+        urlTplParams["taxArea%2Did"] = id
     }
     return id553a6763a1078b0430a865a003eb6fc6d871225b59b6baa3a1e8c60e21486f7.NewTaxAreaItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -736,7 +736,7 @@ func (m *CompanyItemRequestBuilder) TaxGroupsById(id string)(*i390a707b0da26114f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["taxGroup_id"] = id
+        urlTplParams["taxGroup%2Did"] = id
     }
     return i390a707b0da26114fde002ae7c016ee59e47ebd9deaea17652eb6719aaa75ee4.NewTaxGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -751,7 +751,7 @@ func (m *CompanyItemRequestBuilder) UnitsOfMeasureById(id string)(*i43b91397b09a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unitOfMeasure_id"] = id
+        urlTplParams["unitOfMeasure%2Did"] = id
     }
     return i43b91397b09aeedb6d1e1bcb250e49ac7a93101a0d0ba2122cdf554aa68abba8.NewUnitOfMeasureItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -766,7 +766,7 @@ func (m *CompanyItemRequestBuilder) VendorsById(id string)(*i5e7a3640c332a9cd86f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["vendor_id"] = id
+        urlTplParams["vendor%2Did"] = id
     }
     return i5e7a3640c332a9cd86f5c015ca58ce4c450090db118feb1bc32ead77f958303f.NewVendorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

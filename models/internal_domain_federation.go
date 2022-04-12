@@ -8,19 +8,19 @@ import (
 type InternalDomainFederation struct {
     SamlOrWsFedProvider
     // The activeSignInUri property
-    activeSignInUri *string;
+    activeSignInUri *string
     // The federatedIdpMfaBehavior property
-    federatedIdpMfaBehavior *FederatedIdpMfaBehavior;
+    federatedIdpMfaBehavior *FederatedIdpMfaBehavior
     // The isSignedAuthenticationRequestRequired property
-    isSignedAuthenticationRequestRequired *bool;
+    isSignedAuthenticationRequestRequired *bool
     // The nextSigningCertificate property
-    nextSigningCertificate *string;
+    nextSigningCertificate *string
     // The promptLoginBehavior property
-    promptLoginBehavior *PromptLoginBehavior;
+    promptLoginBehavior *PromptLoginBehavior
     // The signingCertificateUpdateStatus property
-    signingCertificateUpdateStatus SigningCertificateUpdateStatusable;
+    signingCertificateUpdateStatus SigningCertificateUpdateStatusable
     // The signOutUri property
-    signOutUri *string;
+    signOutUri *string
 }
 // NewInternalDomainFederation instantiates a new internalDomainFederation and sets the default values.
 func NewInternalDomainFederation()(*InternalDomainFederation) {
@@ -50,9 +50,9 @@ func (m *InternalDomainFederation) GetFederatedIdpMfaBehavior()(*FederatedIdpMfa
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SamlOrWsFedProvider.GetFieldDeserializers()
-    res["activeSignInUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activeSignInUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["federatedIdpMfaBehavior"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["federatedIdpMfaBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseFederatedIdpMfaBehavior)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isSignedAuthenticationRequestRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isSignedAuthenticationRequestRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["nextSigningCertificate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["nextSigningCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["promptLoginBehavior"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["promptLoginBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePromptLoginBehavior)
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["signingCertificateUpdateStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["signingCertificateUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSigningCertificateUpdateStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["signOutUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["signOutUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

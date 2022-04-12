@@ -8,45 +8,45 @@ import (
 type Person struct {
     Entity
     // The person's birthday.
-    birthday *string;
+    birthday *string
     // The name of the person's company.
-    companyName *string;
+    companyName *string
     // The person's department.
-    department *string;
+    department *string
     // The person's display name.
-    displayName *string;
+    displayName *string
     // The person's email addresses.
-    emailAddresses []RankedEmailAddressable;
+    emailAddresses []RankedEmailAddressable
     // The person's given name.
-    givenName *string;
+    givenName *string
     // true if the user has flagged this person as a favorite.
-    isFavorite *bool;
+    isFavorite *bool
     // The type of mailbox that is represented by the person's email address.
-    mailboxType *string;
+    mailboxType *string
     // The location of the person's office.
-    officeLocation *string;
+    officeLocation *string
     // Free-form notes that the user has taken about this person.
-    personNotes *string;
+    personNotes *string
     // The type of person.
-    personType *string;
+    personType *string
     // The person's phone numbers.
-    phones []Phoneable;
+    phones []Phoneable
     // The person's addresses.
-    postalAddresses []Locationable;
+    postalAddresses []Locationable
     // The person's profession.
-    profession *string;
+    profession *string
     // The sources the user data comes from, for example Directory or Outlook Contacts.
-    sources []PersonDataSourceable;
+    sources []PersonDataSourceable
     // The person's surname.
-    surname *string;
+    surname *string
     // The person's title.
-    title *string;
+    title *string
     // The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person's email name. The general format is alias@domain.
-    userPrincipalName *string;
+    userPrincipalName *string
     // The person's websites.
-    websites []Websiteable;
+    websites []Websiteable
     // The phonetic Japanese name of the person's company.
-    yomiCompany *string;
+    yomiCompany *string
 }
 // NewPerson instantiates a new person and sets the default values.
 func NewPerson()(*Person) {
@@ -100,9 +100,9 @@ func (m *Person) GetEmailAddresses()([]RankedEmailAddressable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Person) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["birthday"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["birthday"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["companyName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["companyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["department"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["department"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["emailAddresses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emailAddresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRankedEmailAddressFromDiscriminatorValue)
         if err != nil {
             return err
@@ -156,7 +156,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["givenName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["givenName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -166,7 +166,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["isFavorite"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isFavorite"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -176,7 +176,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["mailboxType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mailboxType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -186,7 +186,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["officeLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["officeLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -196,7 +196,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["personNotes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["personNotes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -206,7 +206,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["personType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["personType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -216,7 +216,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["phones"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["phones"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePhoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -230,7 +230,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["postalAddresses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["postalAddresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLocationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -244,7 +244,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["profession"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["profession"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -254,7 +254,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["sources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePersonDataSourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -268,7 +268,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["surname"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["surname"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -278,7 +278,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["title"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -288,7 +288,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -298,7 +298,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["websites"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["websites"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWebsiteFromDiscriminatorValue)
         if err != nil {
             return err
@@ -312,7 +312,7 @@ func (m *Person) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["yomiCompany"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["yomiCompany"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

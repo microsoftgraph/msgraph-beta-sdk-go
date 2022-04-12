@@ -9,25 +9,25 @@ import (
 type WindowsFeatureUpdateProfile struct {
     Entity
     // The list of group assignments of the profile.
-    assignments []WindowsFeatureUpdateProfileAssignmentable;
+    assignments []WindowsFeatureUpdateProfileAssignmentable
     // The date time that the profile was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Friendly display name of the quality update profile deployable content
-    deployableContentDisplayName *string;
+    deployableContentDisplayName *string
     // The description of the profile which is specified by the user.
-    description *string;
+    description *string
     // The display name of the profile.
-    displayName *string;
+    displayName *string
     // The last supported date for a feature update
-    endOfSupportDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endOfSupportDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.
-    featureUpdateVersion *string;
+    featureUpdateVersion *string
     // The date time that the profile was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of Scope Tags for this Feature Update entity.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
-    rolloutSettings WindowsUpdateRolloutSettingsable;
+    rolloutSettings WindowsUpdateRolloutSettingsable
 }
 // NewWindowsFeatureUpdateProfile instantiates a new windowsFeatureUpdateProfile and sets the default values.
 func NewWindowsFeatureUpdateProfile()(*WindowsFeatureUpdateProfile) {
@@ -97,9 +97,9 @@ func (m *WindowsFeatureUpdateProfile) GetFeatureUpdateVersion()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsFeatureUpdateProfileAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["deployableContentDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deployableContentDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["endOfSupportDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endOfSupportDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -163,7 +163,7 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["featureUpdateVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["featureUpdateVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -183,7 +183,7 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["rolloutSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rolloutSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWindowsUpdateRolloutSettingsFromDiscriminatorValue)
         if err != nil {
             return err

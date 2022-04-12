@@ -8,19 +8,19 @@ import (
 // DeviceConfigurationTargetedUserAndDevice conflict summary for a set of device configuration policies.
 type DeviceConfigurationTargetedUserAndDevice struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The id of the device in the checkin.
-    deviceId *string;
+    deviceId *string
     // The name of the device in the checkin.
-    deviceName *string;
+    deviceName *string
     // Last checkin time for this user/device pair.
-    lastCheckinDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastCheckinDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The display name of the user in the checkin
-    userDisplayName *string;
+    userDisplayName *string
     // The id of the user in the checkin.
-    userId *string;
+    userId *string
     // The UPN of the user in the checkin.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewDeviceConfigurationTargetedUserAndDevice instantiates a new deviceConfigurationTargetedUserAndDevice and sets the default values.
 func NewDeviceConfigurationTargetedUserAndDevice()(*DeviceConfigurationTargetedUserAndDevice) {
@@ -58,9 +58,9 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetDeviceName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceConfigurationTargetedUserAndDevice) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["deviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceConfigurationTargetedUserAndDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["lastCheckinDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastCheckinDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["userDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

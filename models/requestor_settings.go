@@ -7,13 +7,13 @@ import (
 // RequestorSettings 
 type RequestorSettings struct {
     // Indicates whether new requests are accepted on this policy.
-    acceptRequests *bool;
+    acceptRequests *bool
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.
-    allowedRequestors []UserSetable;
+    allowedRequestors []UserSetable
     // Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.
-    scopeType *string;
+    scopeType *string
 }
 // NewRequestorSettings instantiates a new requestorSettings and sets the default values.
 func NewRequestorSettings()(*RequestorSettings) {
@@ -51,9 +51,9 @@ func (m *RequestorSettings) GetAllowedRequestors()([]UserSetable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RequestorSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["acceptRequests"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *RequestorSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["acceptRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *RequestorSettings) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["allowedRequestors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowedRequestors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserSetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *RequestorSettings) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["scopeType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scopeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -8,19 +8,19 @@ import (
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion struct {
     Entity
     // The number of crashes for the app. Valid values -2147483648 to 2147483647
-    appCrashCount *int32;
+    appCrashCount *int32
     // The friendly name of the application.
-    appDisplayName *string;
+    appDisplayName *string
     // The name of the application.
-    appName *string;
+    appName *string
     // The publisher of the application.
-    appPublisher *string;
+    appPublisher *string
     // The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
-    appUsageDuration *int32;
+    appUsageDuration *int32
     // The version of the application.
-    appVersion *string;
+    appVersion *string
     // The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
-    meanTimeToFailureInMinutes *int32;
+    meanTimeToFailureInMinutes *int32
 }
 // NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersion and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion()(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) {
@@ -82,9 +82,9 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppVersi
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appCrashCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appCrashCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDes
         }
         return nil
     }
-    res["appDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDes
         }
         return nil
     }
-    res["appName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDes
         }
         return nil
     }
-    res["appPublisher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appPublisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDes
         }
         return nil
     }
-    res["appUsageDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appUsageDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDes
         }
         return nil
     }
-    res["appVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDes
         }
         return nil
     }
-    res["meanTimeToFailureInMinutes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["meanTimeToFailureInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

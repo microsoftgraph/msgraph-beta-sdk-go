@@ -8,7 +8,7 @@ import (
 type AuthenticationMethodsRoot struct {
     Entity
     // Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
-    userRegistrationDetails []UserRegistrationDetailsable;
+    userRegistrationDetails []UserRegistrationDetailsable
 }
 // NewAuthenticationMethodsRoot instantiates a new authenticationMethodsRoot and sets the default values.
 func NewAuthenticationMethodsRoot()(*AuthenticationMethodsRoot) {
@@ -22,9 +22,9 @@ func CreateAuthenticationMethodsRootFromDiscriminatorValue(parseNode i878a80d233
     return NewAuthenticationMethodsRoot(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AuthenticationMethodsRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AuthenticationMethodsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["userRegistrationDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userRegistrationDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserRegistrationDetailsFromDiscriminatorValue)
         if err != nil {
             return err

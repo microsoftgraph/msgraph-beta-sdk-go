@@ -7,15 +7,15 @@ import (
 // LabelingOptions 
 type LabelingOptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Possible values are: standard, privileged, auto.
-    assignmentMethod *AssignmentMethod;
+    assignmentMethod *AssignmentMethod
     // The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
-    downgradeJustification DowngradeJustificationable;
+    downgradeJustification DowngradeJustificationable
     // Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.
-    extendedProperties []KeyValuePairable;
+    extendedProperties []KeyValuePairable
     // The GUID of the label that should be applied to the information.
-    labelId *string;
+    labelId *string
 }
 // NewLabelingOptions instantiates a new labelingOptions and sets the default values.
 func NewLabelingOptions()(*LabelingOptions) {
@@ -61,9 +61,9 @@ func (m *LabelingOptions) GetExtendedProperties()([]KeyValuePairable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["assignmentMethod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["assignmentMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAssignmentMethod)
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["downgradeJustification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["downgradeJustification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDowngradeJustificationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["extendedProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extendedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["labelId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["labelId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

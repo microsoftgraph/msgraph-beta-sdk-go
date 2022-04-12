@@ -9,27 +9,27 @@ import (
 type PrivilegedApproval struct {
     Entity
     // The approvalDuration property
-    approvalDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    approvalDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Possible values are: pending, approved, denied, aborted, canceled.
-    approvalState *ApprovalState;
+    approvalState *ApprovalState
     // The approvalType property
-    approvalType *string;
+    approvalType *string
     // The approverReason property
-    approverReason *string;
+    approverReason *string
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only. The role assignment request for this approval object
-    request PrivilegedRoleAssignmentRequestable;
+    request PrivilegedRoleAssignmentRequestable
     // The requestorReason property
-    requestorReason *string;
+    requestorReason *string
     // The roleId property
-    roleId *string;
+    roleId *string
     // Read-only. Nullable.
-    roleInfo PrivilegedRoleable;
+    roleInfo PrivilegedRoleable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The userId property
-    userId *string;
+    userId *string
 }
 // NewPrivilegedApproval instantiates a new privilegedApproval and sets the default values.
 func NewPrivilegedApproval()(*PrivilegedApproval) {
@@ -83,9 +83,9 @@ func (m *PrivilegedApproval) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["approvalDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["approvalDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["approvalState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["approvalState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseApprovalState)
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["approvalType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["approvalType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["approverReason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["approverReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["endDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["request"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["request"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrivilegedRoleAssignmentRequestFromDiscriminatorValue)
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["requestorReason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestorReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["roleId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["roleInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrivilegedRoleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

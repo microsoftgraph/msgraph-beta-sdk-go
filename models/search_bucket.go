@@ -7,13 +7,13 @@ import (
 // SearchBucket 
 type SearchBucket struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format '{field}:/'{aggregationFilterToken}/''. See an example.
-    aggregationFilterToken *string;
+    aggregationFilterToken *string
     // The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
-    count *int32;
+    count *int32
     // The discrete value of the field that an aggregation was computed on.
-    key *string;
+    key *string
 }
 // NewSearchBucket instantiates a new searchBucket and sets the default values.
 func NewSearchBucket()(*SearchBucket) {
@@ -51,9 +51,9 @@ func (m *SearchBucket) GetCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SearchBucket) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["aggregationFilterToken"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SearchBucket) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["aggregationFilterToken"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *SearchBucket) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["count"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["count"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *SearchBucket) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["key"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["key"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -8,13 +8,13 @@ import (
 type PrintDocument struct {
     Entity
     // The configuration property
-    configuration PrinterDocumentConfigurationable;
+    configuration PrinterDocumentConfigurationable
     // The document's content (MIME) type. Read-only.
-    contentType *string;
+    contentType *string
     // The document's name. Read-only.
-    displayName *string;
+    displayName *string
     // The document's size in bytes. Read-only.
-    size *int64;
+    size *int64
 }
 // NewPrintDocument instantiates a new printDocument and sets the default values.
 func NewPrintDocument()(*PrintDocument) {
@@ -52,9 +52,9 @@ func (m *PrintDocument) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PrintDocument) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PrintDocument) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["configuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["configuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrinterDocumentConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["contentType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["size"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

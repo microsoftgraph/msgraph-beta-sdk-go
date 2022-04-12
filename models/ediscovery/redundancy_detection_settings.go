@@ -7,15 +7,15 @@ import (
 // RedundancyDetectionSettings 
 type RedundancyDetectionSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates whether email threading and near duplicate detection are enabled.
-    isEnabled *bool;
+    isEnabled *bool
     // Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
-    maxWords *int32;
+    maxWords *int32
     // Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
-    minWords *int32;
+    minWords *int32
     // Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
-    similarityThreshold *int32;
+    similarityThreshold *int32
 }
 // NewRedundancyDetectionSettings instantiates a new redundancyDetectionSettings and sets the default values.
 func NewRedundancyDetectionSettings()(*RedundancyDetectionSettings) {
@@ -37,9 +37,9 @@ func (m *RedundancyDetectionSettings) GetAdditionalData()(map[string]interface{}
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["isEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["maxWords"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxWords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["minWords"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minWords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["similarityThreshold"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["similarityThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

@@ -8,15 +8,15 @@ import (
 type Office365GroupsActivityStorage struct {
     Entity
     // The storage used in group mailbox.
-    mailboxStorageUsedInBytes *int64;
+    mailboxStorageUsedInBytes *int64
     // The snapshot date for Exchange and SharePoint used storage.
-    reportDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    reportDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of days the report covers.
-    reportPeriod *string;
+    reportPeriod *string
     // The latest date of the content.
-    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The storage used in SharePoint document library.
-    siteStorageUsedInBytes *int64;
+    siteStorageUsedInBytes *int64
 }
 // NewOffice365GroupsActivityStorage instantiates a new office365GroupsActivityStorage and sets the default values.
 func NewOffice365GroupsActivityStorage()(*Office365GroupsActivityStorage) {
@@ -30,9 +30,9 @@ func CreateOffice365GroupsActivityStorageFromDiscriminatorValue(parseNode i878a8
     return NewOffice365GroupsActivityStorage(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["mailboxStorageUsedInBytes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mailboxStorageUsedInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -42,7 +42,7 @@ func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["reportDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["reportPeriod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportPeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["reportRefreshDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportRefreshDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["siteStorageUsedInBytes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["siteStorageUsedInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

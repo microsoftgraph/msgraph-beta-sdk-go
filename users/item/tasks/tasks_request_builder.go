@@ -13,49 +13,49 @@ import (
 // TasksRequestBuilder provides operations to manage the tasks property of the microsoft.graph.user entity.
 type TasksRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // TasksRequestBuilderDeleteOptions options for Delete
 type TasksRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TasksRequestBuilderGetOptions options for Get
 type TasksRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *TasksRequestBuilderGetQueryParameters;
+    QueryParameters *TasksRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TasksRequestBuilderGetQueryParameters get tasks from users
 type TasksRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // TasksRequestBuilderPatchOptions options for Patch
 type TasksRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Tasksable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Tasksable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Alltasks the alltasks property
 func (m *TasksRequestBuilder) Alltasks()(*i90b34d9fac7c1c269432ffb8ef49e89191ca62c8e46ec6738b64eb66e07584df.AlltasksRequestBuilder) {
@@ -68,7 +68,7 @@ func (m *TasksRequestBuilder) AlltasksById(id string)(*iac44614d1920235d24f5bb68
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["baseTask_id"] = id
+        urlTplParams["baseTask%2Did"] = id
     }
     return iac44614d1920235d24f5bb6840cdb65b41011ba10b25af8066e07d5a04b5756b.NewBaseTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -76,7 +76,7 @@ func (m *TasksRequestBuilder) AlltasksById(id string)(*iac44614d1920235d24f5bb68
 func NewTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TasksRequestBuilder) {
     m := &TasksRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user_id}/tasks{?select,expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/tasks{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -189,7 +189,7 @@ func (m *TasksRequestBuilder) ListsById(id string)(*i4893ddb283cf449295fe09b6fa5
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["baseTaskList_id"] = id
+        urlTplParams["baseTaskList%2Did"] = id
     }
     return i4893ddb283cf449295fe09b6fa55cc1a8378c1147be1d846f6bdcb3f69d51c00.NewBaseTaskListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

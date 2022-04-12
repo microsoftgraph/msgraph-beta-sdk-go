@@ -9,23 +9,23 @@ import (
 type WindowsQualityUpdateProfile struct {
     Entity
     // The list of group assignments of the profile.
-    assignments []WindowsQualityUpdateProfileAssignmentable;
+    assignments []WindowsQualityUpdateProfileAssignmentable
     // The date time that the profile was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Friendly display name of the quality update profile deployable content
-    deployableContentDisplayName *string;
+    deployableContentDisplayName *string
     // The description of the profile which is specified by the user.
-    description *string;
+    description *string
     // The display name for the profile.
-    displayName *string;
+    displayName *string
     // Expedited update settings.
-    expeditedUpdateSettings ExpeditedWindowsQualityUpdateSettingsable;
+    expeditedUpdateSettings ExpeditedWindowsQualityUpdateSettingsable
     // The date time that the profile was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Friendly release date to display for a Quality Update release
-    releaseDateDisplayName *string;
+    releaseDateDisplayName *string
     // List of Scope Tags for this Quality Update entity.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
 }
 // NewWindowsQualityUpdateProfile instantiates a new windowsQualityUpdateProfile and sets the default values.
 func NewWindowsQualityUpdateProfile()(*WindowsQualityUpdateProfile) {
@@ -87,9 +87,9 @@ func (m *WindowsQualityUpdateProfile) GetExpeditedUpdateSettings()(ExpeditedWind
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsQualityUpdateProfileAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["deployableContentDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deployableContentDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["expeditedUpdateSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expeditedUpdateSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateExpeditedWindowsQualityUpdateSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -163,7 +163,7 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["releaseDateDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["releaseDateDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

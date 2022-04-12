@@ -8,7 +8,7 @@ import (
 type ExactMatchDetectedSensitiveContent struct {
     DetectedSensitiveContentBase
     // The matches property
-    matches []SensitiveContentLocationable;
+    matches []SensitiveContentLocationable
 }
 // NewExactMatchDetectedSensitiveContent instantiates a new exactMatchDetectedSensitiveContent and sets the default values.
 func NewExactMatchDetectedSensitiveContent()(*ExactMatchDetectedSensitiveContent) {
@@ -22,9 +22,9 @@ func CreateExactMatchDetectedSensitiveContentFromDiscriminatorValue(parseNode i8
     return NewExactMatchDetectedSensitiveContent(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ExactMatchDetectedSensitiveContent) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ExactMatchDetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DetectedSensitiveContentBase.GetFieldDeserializers()
-    res["matches"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["matches"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSensitiveContentLocationFromDiscriminatorValue)
         if err != nil {
             return err

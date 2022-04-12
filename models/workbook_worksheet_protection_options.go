@@ -7,29 +7,29 @@ import (
 // WorkbookWorksheetProtectionOptions 
 type WorkbookWorksheetProtectionOptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Represents the worksheet protection option of allowing using auto filter feature.
-    allowAutoFilter *bool;
+    allowAutoFilter *bool
     // Represents the worksheet protection option of allowing deleting columns.
-    allowDeleteColumns *bool;
+    allowDeleteColumns *bool
     // Represents the worksheet protection option of allowing deleting rows.
-    allowDeleteRows *bool;
+    allowDeleteRows *bool
     // Represents the worksheet protection option of allowing formatting cells.
-    allowFormatCells *bool;
+    allowFormatCells *bool
     // Represents the worksheet protection option of allowing formatting columns.
-    allowFormatColumns *bool;
+    allowFormatColumns *bool
     // Represents the worksheet protection option of allowing formatting rows.
-    allowFormatRows *bool;
+    allowFormatRows *bool
     // Represents the worksheet protection option of allowing inserting columns.
-    allowInsertColumns *bool;
+    allowInsertColumns *bool
     // Represents the worksheet protection option of allowing inserting hyperlinks.
-    allowInsertHyperlinks *bool;
+    allowInsertHyperlinks *bool
     // Represents the worksheet protection option of allowing inserting rows.
-    allowInsertRows *bool;
+    allowInsertRows *bool
     // Represents the worksheet protection option of allowing using pivot table feature.
-    allowPivotTables *bool;
+    allowPivotTables *bool
     // Represents the worksheet protection option of allowing using sort feature.
-    allowSort *bool;
+    allowSort *bool
 }
 // NewWorkbookWorksheetProtectionOptions instantiates a new workbookWorksheetProtectionOptions and sets the default values.
 func NewWorkbookWorksheetProtectionOptions()(*WorkbookWorksheetProtectionOptions) {
@@ -139,9 +139,9 @@ func (m *WorkbookWorksheetProtectionOptions) GetAllowSort()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["allowAutoFilter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["allowAutoFilter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["allowDeleteColumns"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowDeleteColumns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["allowDeleteRows"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowDeleteRows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["allowFormatCells"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowFormatCells"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["allowFormatColumns"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowFormatColumns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["allowFormatRows"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowFormatRows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -201,7 +201,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["allowInsertColumns"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowInsertColumns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -211,7 +211,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["allowInsertHyperlinks"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowInsertHyperlinks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -221,7 +221,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["allowInsertRows"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowInsertRows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -231,7 +231,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["allowPivotTables"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowPivotTables"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -241,7 +241,7 @@ func (m *WorkbookWorksheetProtectionOptions) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["allowSort"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowSort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

@@ -8,25 +8,25 @@ import (
 // AssignmentReviewSettings 
 type AssignmentReviewSettings struct {
     // The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.
-    accessReviewTimeoutBehavior *AccessReviewTimeoutBehavior;
+    accessReviewTimeoutBehavior *AccessReviewTimeoutBehavior
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The number of days within which reviewers should provide input.
-    durationInDays *int32;
+    durationInDays *int32
     // Specifies whether to display recommendations to the reviewer. The default value is true
-    isAccessRecommendationEnabled *bool;
+    isAccessRecommendationEnabled *bool
     // Specifies whether the reviewer must provide justification for the approval. The default value is true.
-    isApprovalJustificationRequired *bool;
+    isApprovalJustificationRequired *bool
     // If true, access reviews are required for assignments from this policy.
-    isEnabled *bool;
+    isEnabled *bool
     // The interval for recurrence, such as monthly or quarterly.
-    recurrenceType *string;
+    recurrenceType *string
     // If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
-    reviewers []UserSetable;
+    reviewers []UserSetable
     // Who should be asked to do the review, either Self or Reviewers.
-    reviewerType *string;
+    reviewerType *string
     // When the first review should start.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewAssignmentReviewSettings instantiates a new assignmentReviewSettings and sets the default values.
 func NewAssignmentReviewSettings()(*AssignmentReviewSettings) {
@@ -64,9 +64,9 @@ func (m *AssignmentReviewSettings) GetDurationInDays()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["accessReviewTimeoutBehavior"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["accessReviewTimeoutBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAccessReviewTimeoutBehavior)
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["durationInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["durationInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isAccessRecommendationEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isAccessRecommendationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isApprovalJustificationRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isApprovalJustificationRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["recurrenceType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recurrenceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["reviewers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reviewers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserSetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["reviewerType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reviewerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -150,7 +150,7 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

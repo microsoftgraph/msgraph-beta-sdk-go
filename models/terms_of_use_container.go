@@ -8,9 +8,9 @@ import (
 type TermsOfUseContainer struct {
     Entity
     // Represents the current status of a user's response to a company's customizable terms of use agreement.
-    agreementAcceptances []AgreementAcceptanceable;
+    agreementAcceptances []AgreementAcceptanceable
     // Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
-    agreements []Agreementable;
+    agreements []Agreementable
 }
 // NewTermsOfUseContainer instantiates a new termsOfUseContainer and sets the default values.
 func NewTermsOfUseContainer()(*TermsOfUseContainer) {
@@ -40,9 +40,9 @@ func (m *TermsOfUseContainer) GetAgreements()([]Agreementable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TermsOfUseContainer) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TermsOfUseContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["agreementAcceptances"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["agreementAcceptances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAgreementAcceptanceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *TermsOfUseContainer) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["agreements"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["agreements"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAgreementFromDiscriminatorValue)
         if err != nil {
             return err

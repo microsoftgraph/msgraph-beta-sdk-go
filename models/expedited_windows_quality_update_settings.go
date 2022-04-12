@@ -7,11 +7,11 @@ import (
 // ExpeditedWindowsQualityUpdateSettings a complex type to store the expedited quality update settings such as release date and days until forced reboot.
 type ExpeditedWindowsQualityUpdateSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The number of days after installation that forced reboot will happen.
-    daysUntilForcedReboot *int32;
+    daysUntilForcedReboot *int32
     // The release date to identify a quality update.
-    qualityUpdateRelease *string;
+    qualityUpdateRelease *string
 }
 // NewExpeditedWindowsQualityUpdateSettings instantiates a new expeditedWindowsQualityUpdateSettings and sets the default values.
 func NewExpeditedWindowsQualityUpdateSettings()(*ExpeditedWindowsQualityUpdateSettings) {
@@ -41,9 +41,9 @@ func (m *ExpeditedWindowsQualityUpdateSettings) GetDaysUntilForcedReboot()(*int3
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ExpeditedWindowsQualityUpdateSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["daysUntilForcedReboot"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ExpeditedWindowsQualityUpdateSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["daysUntilForcedReboot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *ExpeditedWindowsQualityUpdateSettings) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["qualityUpdateRelease"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["qualityUpdateRelease"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

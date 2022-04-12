@@ -7,13 +7,13 @@ import (
 // ColumnValidation 
 type ColumnValidation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Default BCP 47 language tag for the description.
-    defaultLanguage *string;
+    defaultLanguage *string
     // Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
-    descriptions []DisplayNameLocalizationable;
+    descriptions []DisplayNameLocalizationable
     // The formula to validate column value. For examples, see Examples of common formulas in lists.
-    formula *string;
+    formula *string
 }
 // NewColumnValidation instantiates a new columnValidation and sets the default values.
 func NewColumnValidation()(*ColumnValidation) {
@@ -51,9 +51,9 @@ func (m *ColumnValidation) GetDescriptions()([]DisplayNameLocalizationable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["defaultLanguage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["defaultLanguage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["descriptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["descriptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDisplayNameLocalizationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *ColumnValidation) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["formula"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["formula"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

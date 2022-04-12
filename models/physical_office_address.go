@@ -7,19 +7,19 @@ import (
 // PhysicalOfficeAddress 
 type PhysicalOfficeAddress struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The city.
-    city *string;
+    city *string
     // The country or region. It's a free-format string value, for example, 'United States'.
-    countryOrRegion *string;
+    countryOrRegion *string
     // Office location such as building and office number for an organizational contact.
-    officeLocation *string;
+    officeLocation *string
     // The postal code.
-    postalCode *string;
+    postalCode *string
     // The state.
-    state *string;
+    state *string
     // The street.
-    street *string;
+    street *string
 }
 // NewPhysicalOfficeAddress instantiates a new physicalOfficeAddress and sets the default values.
 func NewPhysicalOfficeAddress()(*PhysicalOfficeAddress) {
@@ -57,9 +57,9 @@ func (m *PhysicalOfficeAddress) GetCountryOrRegion()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["city"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["city"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["countryOrRegion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countryOrRegion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["officeLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["officeLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["postalCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["postalCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *PhysicalOfficeAddress) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["street"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["street"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

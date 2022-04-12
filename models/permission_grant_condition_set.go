@@ -8,23 +8,23 @@ import (
 type PermissionGrantConditionSet struct {
     Entity
     // Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.
-    certifiedClientApplicationsOnly *bool;
+    certifiedClientApplicationsOnly *bool
     // A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
-    clientApplicationIds []string;
+    clientApplicationIds []string
     // A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
-    clientApplicationPublisherIds []string;
+    clientApplicationPublisherIds []string
     // Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
-    clientApplicationsFromVerifiedPublisherOnly *bool;
+    clientApplicationsFromVerifiedPublisherOnly *bool
     // A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
-    clientApplicationTenantIds []string;
+    clientApplicationTenantIds []string
     // The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
-    permissionClassification *string;
+    permissionClassification *string
     // The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
-    permissions []string;
+    permissions []string
     // The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
-    permissionType *PermissionType;
+    permissionType *PermissionType
     // The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
-    resourceApplication *string;
+    resourceApplication *string
 }
 // NewPermissionGrantConditionSet instantiates a new permissionGrantConditionSet and sets the default values.
 func NewPermissionGrantConditionSet()(*PermissionGrantConditionSet) {
@@ -78,9 +78,9 @@ func (m *PermissionGrantConditionSet) GetClientApplicationTenantIds()([]string) 
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["certifiedClientApplicationsOnly"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certifiedClientApplicationsOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["clientApplicationIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clientApplicationIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["clientApplicationPublisherIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clientApplicationPublisherIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["clientApplicationsFromVerifiedPublisherOnly"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clientApplicationsFromVerifiedPublisherOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["clientApplicationTenantIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clientApplicationTenantIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["permissionClassification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["permissionClassification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["permissions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["permissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -166,7 +166,7 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["permissionType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["permissionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePermissionType)
         if err != nil {
             return err
@@ -176,7 +176,7 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["resourceApplication"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceApplication"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

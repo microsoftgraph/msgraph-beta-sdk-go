@@ -9,43 +9,43 @@ import (
 type OrgContact struct {
     DirectoryObject
     // Postal addresses for this organizational contact. For now a contact can only have one physical address.
-    addresses []PhysicalOfficeAddressable;
+    addresses []PhysicalOfficeAddressable
     // Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    companyName *string;
+    companyName *string
     // The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    department *string;
+    department *string
     // The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
-    directReports []DirectoryObjectable;
+    directReports []DirectoryObjectable
     // Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-    displayName *string;
+    displayName *string
     // First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    givenName *string;
+    givenName *string
     // Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    jobTitle *string;
+    jobTitle *string
     // The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    mail *string;
+    mail *string
     // Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-    mailNickname *string;
+    mailNickname *string
     // The user or contact that is this contact's manager. Read-only. Supports $expand.
-    manager DirectoryObjectable;
+    manager DirectoryObjectable
     // Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
-    memberOf []DirectoryObjectable;
+    memberOf []DirectoryObjectable
     // Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, not, ge, le, in).
-    onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not).
-    onPremisesProvisioningErrors []OnPremisesProvisioningErrorable;
+    onPremisesProvisioningErrors []OnPremisesProvisioningErrorable
     // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq on null values).
-    onPremisesSyncEnabled *bool;
+    onPremisesSyncEnabled *bool
     // List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).
-    phones []Phoneable;
+    phones []Phoneable
     // For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith).
-    proxyAddresses []string;
+    proxyAddresses []string
     // Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
-    surname *string;
+    surname *string
     // The transitiveMemberOf property
-    transitiveMemberOf []DirectoryObjectable;
+    transitiveMemberOf []DirectoryObjectable
     // The transitive reports for a contact. Read-only.
-    transitiveReports []DirectoryObjectable;
+    transitiveReports []DirectoryObjectable
 }
 // NewOrgContact instantiates a new orgContact and sets the default values.
 func NewOrgContact()(*OrgContact) {
@@ -99,9 +99,9 @@ func (m *OrgContact) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OrgContact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
-    res["addresses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["addresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePhysicalOfficeAddressFromDiscriminatorValue)
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["companyName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["companyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["department"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["department"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["directReports"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["directReports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["givenName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["givenName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["jobTitle"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["jobTitle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["mail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["mailNickname"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mailNickname"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["manager"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manager"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["memberOf"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["memberOf"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -223,7 +223,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["onPremisesLastSyncDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onPremisesLastSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -233,7 +233,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["onPremisesProvisioningErrors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onPremisesProvisioningErrors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOnPremisesProvisioningErrorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -247,7 +247,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["onPremisesSyncEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onPremisesSyncEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -257,7 +257,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["phones"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["phones"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePhoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -271,7 +271,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["proxyAddresses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["proxyAddresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -285,7 +285,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["surname"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["surname"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -295,7 +295,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["transitiveMemberOf"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["transitiveMemberOf"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -309,7 +309,7 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["transitiveReports"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["transitiveReports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err

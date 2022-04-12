@@ -8,17 +8,17 @@ import (
 // Certification 
 type Certification struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // URL that shows certification details for the application.
-    certificationDetailsUrl *string;
+    certificationDetailsUrl *string
     // The timestamp when the current certification for the application will expire.
-    certificationExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    certificationExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Indicates whether the application is certified by Microsoft.
-    isCertifiedByMicrosoft *bool;
+    isCertifiedByMicrosoft *bool
     // Indicates whether the application has been self-attested by the application developer or the publisher.
-    isPublisherAttested *bool;
+    isPublisherAttested *bool
     // The timestamp when the certification for the application was most recently added or updated.
-    lastCertificationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastCertificationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewCertification instantiates a new certification and sets the default values.
 func NewCertification()(*Certification) {
@@ -56,9 +56,9 @@ func (m *Certification) GetCertificationExpirationDateTime()(*i336074805fc853987
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Certification) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["certificationDetailsUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *Certification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["certificationDetailsUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *Certification) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["certificationExpirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificationExpirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *Certification) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["isCertifiedByMicrosoft"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isCertifiedByMicrosoft"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *Certification) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["isPublisherAttested"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isPublisherAttested"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *Certification) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["lastCertificationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastCertificationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

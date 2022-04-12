@@ -9,19 +9,19 @@ import (
 type TemporaryAccessPassAuthenticationMethod struct {
     AuthenticationMethod
     // The date and time when the temporaryAccessPass was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The state of the authentication method that indicates whether it's currently usable by the user.
-    isUsable *bool;
+    isUsable *bool
     // Determines whether the pass is limited to a one time use. If true, the pass can be used once; if false, the pass can be used multiple times within the temporaryAccessPass lifetime.
-    isUsableOnce *bool;
+    isUsableOnce *bool
     // The lifetime of the temporaryAccessPass in minutes starting at startDateTime. Minimum 10, Maximum 43200 (equivalent to 30 days).
-    lifetimeInMinutes *int32;
+    lifetimeInMinutes *int32
     // Details about usability state (isUsable). Reasons can include: enabledByPolicy, disabledByPolicy, expired, notYetValid, oneTimeUsed.
-    methodUsabilityReason *string;
+    methodUsabilityReason *string
     // The date and time when the temporaryAccessPass becomes available to use.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The temporaryAccessPass used to authenticate. Returned only on creation of a new temporaryAccessPass; returned as NULL with GET.
-    temporaryAccessPass *string;
+    temporaryAccessPass *string
 }
 // NewTemporaryAccessPassAuthenticationMethod instantiates a new temporaryAccessPassAuthenticationMethod and sets the default values.
 func NewTemporaryAccessPassAuthenticationMethod()(*TemporaryAccessPassAuthenticationMethod) {
@@ -43,9 +43,9 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetCreatedDateTime()(*i3360748
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TemporaryAccessPassAuthenticationMethod) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TemporaryAccessPassAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["isUsable"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isUsable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["isUsableOnce"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isUsableOnce"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["lifetimeInMinutes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lifetimeInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["methodUsabilityReason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["methodUsabilityReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *TemporaryAccessPassAuthenticationMethod) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["temporaryAccessPass"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["temporaryAccessPass"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

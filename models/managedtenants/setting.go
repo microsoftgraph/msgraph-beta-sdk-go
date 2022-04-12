@@ -7,17 +7,17 @@ import (
 // Setting 
 type Setting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The display name for the setting. Required. Read-only.
-    displayName *string;
+    displayName *string
     // The value for the setting serialized as string of JSON. Required. Read-only.
-    jsonValue *string;
+    jsonValue *string
     // A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
-    overwriteAllowed *bool;
+    overwriteAllowed *bool
     // The settingId property
-    settingId *string;
+    settingId *string
     // The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
-    valueType *ManagementParameterValueType;
+    valueType *ManagementParameterValueType
 }
 // NewSetting instantiates a new setting and sets the default values.
 func NewSetting()(*Setting) {
@@ -47,9 +47,9 @@ func (m *Setting) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Setting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *Setting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *Setting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["jsonValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["jsonValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *Setting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["overwriteAllowed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["overwriteAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *Setting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["settingId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *Setting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["valueType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["valueType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagementParameterValueType)
         if err != nil {
             return err

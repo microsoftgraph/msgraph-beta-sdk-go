@@ -10,19 +10,19 @@ import (
 type DataSourceContainer struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Created date and time of the dataSourceContainer entity.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Display name of the dataSourceContainer entity.
-    displayName *string;
+    displayName *string
     // The holdStatus property
-    holdStatus *DataSourceHoldStatus;
+    holdStatus *DataSourceHoldStatus
     // The lastIndexOperation property
-    lastIndexOperation CaseIndexOperationable;
+    lastIndexOperation CaseIndexOperationable
     // Last modified date and time of the dataSourceContainer.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Date and time that the dataSourceContainer was released from the case.
-    releasedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    releasedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Latest status of the dataSourceContainer. Possible values are: Active, Released.
-    status *DataSourceContainerStatus;
+    status *DataSourceContainerStatus
 }
 // NewDataSourceContainer instantiates a new dataSourceContainer and sets the default values.
 func NewDataSourceContainer()(*DataSourceContainer) {
@@ -52,9 +52,9 @@ func (m *DataSourceContainer) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["holdStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["holdStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDataSourceHoldStatus)
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["lastIndexOperation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastIndexOperation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCaseIndexOperationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["releasedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["releasedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDataSourceContainerStatus)
         if err != nil {
             return err

@@ -7,11 +7,11 @@ import (
 // BookingWorkTimeSlot 
 type BookingWorkTimeSlot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The time of the day when work stops. For example, 17:00:00.0000000.
-    end *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly;
+    end *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // The time of the day when work starts. For example, 08:00:00.0000000.
-    start *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly;
+    start *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
 }
 // NewBookingWorkTimeSlot instantiates a new bookingWorkTimeSlot and sets the default values.
 func NewBookingWorkTimeSlot()(*BookingWorkTimeSlot) {
@@ -41,9 +41,9 @@ func (m *BookingWorkTimeSlot) GetEnd()(*i878a80d2330e89d26896388a3f487eef27b0a0e
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BookingWorkTimeSlot) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["end"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *BookingWorkTimeSlot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["end"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *BookingWorkTimeSlot) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["start"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["start"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err

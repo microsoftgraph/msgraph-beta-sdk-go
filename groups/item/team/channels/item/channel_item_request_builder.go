@@ -22,49 +22,49 @@ import (
 // ChannelItemRequestBuilder provides operations to manage the channels property of the microsoft.graph.team entity.
 type ChannelItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ChannelItemRequestBuilderDeleteOptions options for Delete
 type ChannelItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ChannelItemRequestBuilderGetOptions options for Get
 type ChannelItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ChannelItemRequestBuilderGetQueryParameters;
+    QueryParameters *ChannelItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ChannelItemRequestBuilderGetQueryParameters the collection of channels and messages associated with the team.
 type ChannelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ChannelItemRequestBuilderPatchOptions options for Patch
 type ChannelItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CompleteMigration the completeMigration property
 func (m *ChannelItemRequestBuilder) CompleteMigration()(*i7164a133c07ed245aaded02aa0ea05e0f0699c32d668c579eb4a326e743be552.CompleteMigrationRequestBuilder) {
@@ -74,7 +74,7 @@ func (m *ChannelItemRequestBuilder) CompleteMigration()(*i7164a133c07ed245aaded0
 func NewChannelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChannelItemRequestBuilder) {
     m := &ChannelItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group_id}/team/channels/{channel_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -161,8 +161,8 @@ func (m *ChannelItemRequestBuilder) Delete(options *ChannelItemRequestBuilderDel
     return nil
 }
 // DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName provides operations to call the doesUserHaveAccess method.
-func (m *ChannelItemRequestBuilder) DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName(tenantId *string, userId *string, userPrincipalName *string)(*ide7ba64a450154e1df13d6eb89f40b8db2d075fb2910e1ab8e2e618a974585ac.DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder) {
-    return ide7ba64a450154e1df13d6eb89f40b8db2d075fb2910e1ab8e2e618a974585ac.NewDoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter, tenantId, userId, userPrincipalName);
+func (m *ChannelItemRequestBuilder) DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalName()(*ide7ba64a450154e1df13d6eb89f40b8db2d075fb2910e1ab8e2e618a974585ac.DoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilder) {
+    return ide7ba64a450154e1df13d6eb89f40b8db2d075fb2910e1ab8e2e618a974585ac.NewDoesUserHaveAccessWithUserIdWithTenantIdWithUserPrincipalNameRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // FilesFolder the filesFolder property
 func (m *ChannelItemRequestBuilder) FilesFolder()(*i7a14e44089123d3294daf6fdf163348604cebc83dee8f9f2c1702c99c3a388ca.FilesFolderRequestBuilder) {
@@ -195,7 +195,7 @@ func (m *ChannelItemRequestBuilder) MembersById(id string)(*i833055126432577ccf7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["conversationMember_id"] = id
+        urlTplParams["conversationMember%2Did"] = id
     }
     return i833055126432577ccf7abb5c852b0232dd1f9933c3113ff1d863ba3fde085be2.NewConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -210,7 +210,7 @@ func (m *ChannelItemRequestBuilder) MessagesById(id string)(*i654c2adcf04d8630b1
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["chatMessage_id"] = id
+        urlTplParams["chatMessage%2Did"] = id
     }
     return i654c2adcf04d8630b1cb24e632177c047ce85757bf63c3ea55ed853f8c2c06da.NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -249,7 +249,7 @@ func (m *ChannelItemRequestBuilder) SharedWithTeamsById(id string)(*i1c349b81f3e
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["sharedWithChannelTeamInfo_id"] = id
+        urlTplParams["sharedWithChannelTeamInfo%2Did"] = id
     }
     return i1c349b81f3eac6900d6c57af5d7581e337b2ca590948d172e4adae3852bcc581.NewSharedWithChannelTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -264,7 +264,7 @@ func (m *ChannelItemRequestBuilder) TabsById(id string)(*i50b60f6b70ccabd2606495
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["teamsTab_id"] = id
+        urlTplParams["teamsTab%2Did"] = id
     }
     return i50b60f6b70ccabd26064958871bb043fc875c38b3cdd16b1828e04c8a5a21880.NewTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -7,13 +7,13 @@ import (
 // GovernanceRoleAssignmentRequestStatus 
 type GovernanceRoleAssignmentRequestStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The status of the role assignment request. The value can be InProgress or Closed.
-    status *string;
+    status *string
     // The details of the status of the role assignment request. It represents the evaluation results of different rules.
-    statusDetails []KeyValueable;
+    statusDetails []KeyValueable
     // The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
-    subStatus *string;
+    subStatus *string
 }
 // NewGovernanceRoleAssignmentRequestStatus instantiates a new governanceRoleAssignmentRequestStatus and sets the default values.
 func NewGovernanceRoleAssignmentRequestStatus()(*GovernanceRoleAssignmentRequestStatus) {
@@ -35,9 +35,9 @@ func (m *GovernanceRoleAssignmentRequestStatus) GetAdditionalData()(map[string]i
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GovernanceRoleAssignmentRequestStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *GovernanceRoleAssignmentRequestStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *GovernanceRoleAssignmentRequestStatus) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["statusDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["statusDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValueFromDiscriminatorValue)
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *GovernanceRoleAssignmentRequestStatus) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["subStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

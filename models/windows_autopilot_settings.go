@@ -9,11 +9,11 @@ import (
 type WindowsAutopilotSettings struct {
     Entity
     // Last data sync date time with DDS service.
-    lastManualSyncTriggerDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastManualSyncTriggerDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Last data sync date time with DDS service.
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Indicates the status of sync with Device data sync (DDS) service. Possible values are: unknown, inProgress, completed, failed.
-    syncStatus *WindowsAutopilotSyncStatus;
+    syncStatus *WindowsAutopilotSyncStatus
 }
 // NewWindowsAutopilotSettings instantiates a new windowsAutopilotSettings and sets the default values.
 func NewWindowsAutopilotSettings()(*WindowsAutopilotSettings) {
@@ -27,9 +27,9 @@ func CreateWindowsAutopilotSettingsFromDiscriminatorValue(parseNode i878a80d2330
     return NewWindowsAutopilotSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsAutopilotSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsAutopilotSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["lastManualSyncTriggerDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastManualSyncTriggerDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -39,7 +39,7 @@ func (m *WindowsAutopilotSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["lastSyncDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *WindowsAutopilotSettings) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["syncStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["syncStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsAutopilotSyncStatus)
         if err != nil {
             return err

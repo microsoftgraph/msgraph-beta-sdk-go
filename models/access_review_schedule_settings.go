@@ -7,33 +7,33 @@ import (
 // AccessReviewScheduleSettings 
 type AccessReviewScheduleSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
-    applyActions []AccessReviewApplyActionable;
+    applyActions []AccessReviewApplyActionable
     // Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
-    autoApplyDecisionsEnabled *bool;
+    autoApplyDecisionsEnabled *bool
     // Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).
-    decisionHistoriesForReviewersEnabled *bool;
+    decisionHistoriesForReviewersEnabled *bool
     // Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
-    defaultDecision *string;
+    defaultDecision *string
     // Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
-    defaultDecisionEnabled *bool;
+    defaultDecisionEnabled *bool
     // Duration of each recurrence of review (accessReviewInstance) in number of days.
-    instanceDurationInDays *int32;
+    instanceDurationInDays *int32
     // Indicates whether reviewers are required to provide justification with their decision. Default value is false.
-    justificationRequiredOnApproval *bool;
+    justificationRequiredOnApproval *bool
     // Indicates whether emails are enabled or disabled. Default value is false.
-    mailNotificationsEnabled *bool;
+    mailNotificationsEnabled *bool
     // Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
-    recommendationInsightSettings []AccessReviewRecommendationInsightSettingable;
+    recommendationInsightSettings []AccessReviewRecommendationInsightSettingable
     // Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
-    recommendationLookBackDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    recommendationLookBackDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Indicates whether decision recommendations are enabled or disabled.
-    recommendationsEnabled *bool;
+    recommendationsEnabled *bool
     // Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
-    recurrence PatternedRecurrenceable;
+    recurrence PatternedRecurrenceable
     // Indicates whether reminders are enabled or disabled. Default value is false.
-    reminderNotificationsEnabled *bool;
+    reminderNotificationsEnabled *bool
 }
 // NewAccessReviewScheduleSettings instantiates a new accessReviewScheduleSettings and sets the default values.
 func NewAccessReviewScheduleSettings()(*AccessReviewScheduleSettings) {
@@ -95,9 +95,9 @@ func (m *AccessReviewScheduleSettings) GetDefaultDecisionEnabled()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["applyActions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["applyActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewApplyActionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["autoApplyDecisionsEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["autoApplyDecisionsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["decisionHistoriesForReviewersEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["decisionHistoriesForReviewersEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["defaultDecision"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultDecision"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["defaultDecisionEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultDecisionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["instanceDurationInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["instanceDurationInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["justificationRequiredOnApproval"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["justificationRequiredOnApproval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["mailNotificationsEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mailNotificationsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["recommendationInsightSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recommendationInsightSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewRecommendationInsightSettingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["recommendationLookBackDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recommendationLookBackDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["recommendationsEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recommendationsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -215,7 +215,7 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["recurrence"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recurrence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePatternedRecurrenceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["reminderNotificationsEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reminderNotificationsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

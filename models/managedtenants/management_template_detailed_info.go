@@ -7,15 +7,15 @@ import (
 // ManagementTemplateDetailedInfo 
 type ManagementTemplateDetailedInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
-    category *ManagementCategory;
+    category *ManagementCategory
     // The display name for the management template. Required. Read-only.
-    displayName *string;
+    displayName *string
     // The unique identifier for the management template. Required. Read-only.
-    managementTemplateId *string;
+    managementTemplateId *string
     // The version property
-    version *int32;
+    version *int32
 }
 // NewManagementTemplateDetailedInfo instantiates a new managementTemplateDetailedInfo and sets the default values.
 func NewManagementTemplateDetailedInfo()(*ManagementTemplateDetailedInfo) {
@@ -53,9 +53,9 @@ func (m *ManagementTemplateDetailedInfo) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["category"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagementCategory)
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["managementTemplateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

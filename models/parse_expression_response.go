@@ -7,17 +7,17 @@ import (
 // ParseExpressionResponse 
 type ParseExpressionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Error details, if expression evaluation resulted in an error.
-    error PublicErrorable;
+    error PublicErrorable
     // A collection of values produced by the evaluation of the expression.
-    evaluationResult []string;
+    evaluationResult []string
     // true if the evaluation was successful.
-    evaluationSucceeded *bool;
+    evaluationSucceeded *bool
     // An attributeMappingSource object representing the parsed expression.
-    parsedExpression AttributeMappingSourceable;
+    parsedExpression AttributeMappingSourceable
     // true if the expression was parsed successfully.
-    parsingSucceeded *bool;
+    parsingSucceeded *bool
 }
 // NewParseExpressionResponse instantiates a new parseExpressionResponse and sets the default values.
 func NewParseExpressionResponse()(*ParseExpressionResponse) {
@@ -63,9 +63,9 @@ func (m *ParseExpressionResponse) GetEvaluationSucceeded()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["error"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePublicErrorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["evaluationResult"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["evaluationResult"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["evaluationSucceeded"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["evaluationSucceeded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["parsedExpression"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parsedExpression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAttributeMappingSourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["parsingSucceeded"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parsingSucceeded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

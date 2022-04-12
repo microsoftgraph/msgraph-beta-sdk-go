@@ -15,49 +15,49 @@ import (
 // ManagedAppRegistrationItemRequestBuilder provides operations to manage the managedAppRegistrations property of the microsoft.graph.deviceAppManagement entity.
 type ManagedAppRegistrationItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ManagedAppRegistrationItemRequestBuilderDeleteOptions options for Delete
 type ManagedAppRegistrationItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ManagedAppRegistrationItemRequestBuilderGetOptions options for Get
 type ManagedAppRegistrationItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ManagedAppRegistrationItemRequestBuilderGetQueryParameters;
+    QueryParameters *ManagedAppRegistrationItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ManagedAppRegistrationItemRequestBuilderGetQueryParameters the managed app registrations.
 type ManagedAppRegistrationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ManagedAppRegistrationItemRequestBuilderPatchOptions options for Patch
 type ManagedAppRegistrationItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AppliedPolicies the appliedPolicies property
 func (m *ManagedAppRegistrationItemRequestBuilder) AppliedPolicies()(*i56070fa6720bc0b45941309da76f8b33eaeab41361bc4d8deae7cf9b20365caa.AppliedPoliciesRequestBuilder) {
@@ -70,7 +70,7 @@ func (m *ManagedAppRegistrationItemRequestBuilder) AppliedPoliciesById(id string
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedAppPolicy_id"] = id
+        urlTplParams["managedAppPolicy%2Did"] = id
     }
     return i1c13dfabdff5dc012fd7d12bf25406e90dff95d5a2f3f2db4980cf2baccac50e.NewManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -78,7 +78,7 @@ func (m *ManagedAppRegistrationItemRequestBuilder) AppliedPoliciesById(id string
 func NewManagedAppRegistrationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedAppRegistrationItemRequestBuilder) {
     m := &ManagedAppRegistrationItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceAppManagement/managedAppRegistrations/{managedAppRegistration_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/managedAppRegistrations/{managedAppRegistration%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -191,7 +191,7 @@ func (m *ManagedAppRegistrationItemRequestBuilder) IntendedPoliciesById(id strin
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedAppPolicy_id"] = id
+        urlTplParams["managedAppPolicy%2Did"] = id
     }
     return id0b04ce4d5e56adfc6f008d1080876eacead82cead17447895ea3eb8353b96ac.NewManagedAppPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -206,7 +206,7 @@ func (m *ManagedAppRegistrationItemRequestBuilder) OperationsById(id string)(*i4
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedAppOperation_id"] = id
+        urlTplParams["managedAppOperation%2Did"] = id
     }
     return i4188f43081529892f83979f26fa2b9dca74e78bf1260dae80736bc3d6815fb36.NewManagedAppOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

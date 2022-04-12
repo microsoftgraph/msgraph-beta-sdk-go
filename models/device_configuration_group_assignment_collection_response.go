@@ -7,11 +7,11 @@ import (
 // DeviceConfigurationGroupAssignmentCollectionResponse 
 type DeviceConfigurationGroupAssignmentCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The nextLink property
-    nextLink *string;
+    nextLink *string
     // The value property
-    value []DeviceConfigurationGroupAssignmentable;
+    value []DeviceConfigurationGroupAssignmentable
 }
 // NewDeviceConfigurationGroupAssignmentCollectionResponse instantiates a new DeviceConfigurationGroupAssignmentCollectionResponse and sets the default values.
 func NewDeviceConfigurationGroupAssignmentCollectionResponse()(*DeviceConfigurationGroupAssignmentCollectionResponse) {
@@ -33,19 +33,19 @@ func (m *DeviceConfigurationGroupAssignmentCollectionResponse) GetAdditionalData
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceConfigurationGroupAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["@odata.nextLink"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceConfigurationGroupAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.nextLink"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNextLink(val)
+            m.Set@odata.nextLink(val)
         }
         return nil
     }
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationGroupAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -61,8 +61,8 @@ func (m *DeviceConfigurationGroupAssignmentCollectionResponse) GetFieldDeseriali
     }
     return res
 }
-// GetNextLink gets the @odata.nextLink property value. The nextLink property
-func (m *DeviceConfigurationGroupAssignmentCollectionResponse) GetNextLink()(*string) {
+// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
+func (m *DeviceConfigurationGroupAssignmentCollectionResponse) GetOdatanextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *DeviceConfigurationGroupAssignmentCollectionResponse) GetValue()([]Devi
 // Serialize serializes information the current object
 func (m *DeviceConfigurationGroupAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
+        err := writer.WriteStringValue("@odata.nextLink", m.Get@odata.nextLink())
         if err != nil {
             return err
         }
@@ -109,8 +109,8 @@ func (m *DeviceConfigurationGroupAssignmentCollectionResponse) SetAdditionalData
         m.additionalData = value
     }
 }
-// SetNextLink sets the @odata.nextLink property value. The nextLink property
-func (m *DeviceConfigurationGroupAssignmentCollectionResponse) SetNextLink(value *string)() {
+// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
+func (m *DeviceConfigurationGroupAssignmentCollectionResponse) SetOdatanextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }

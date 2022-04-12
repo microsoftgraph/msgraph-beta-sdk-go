@@ -8,11 +8,11 @@ import (
 type AppManagementPolicy struct {
     PolicyBase
     // The appliesTo property
-    appliesTo []DirectoryObjectable;
+    appliesTo []DirectoryObjectable
     // The isEnabled property
-    isEnabled *bool;
+    isEnabled *bool
     // The restrictions property
-    restrictions AppManagementConfigurationable;
+    restrictions AppManagementConfigurationable
 }
 // NewAppManagementPolicy instantiates a new appManagementPolicy and sets the default values.
 func NewAppManagementPolicy()(*AppManagementPolicy) {
@@ -34,9 +34,9 @@ func (m *AppManagementPolicy) GetAppliesTo()([]DirectoryObjectable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AppManagementPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AppManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
-    res["appliesTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appliesTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *AppManagementPolicy) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["isEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *AppManagementPolicy) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["restrictions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["restrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAppManagementConfigurationFromDiscriminatorValue)
         if err != nil {
             return err

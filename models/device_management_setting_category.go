@@ -8,11 +8,11 @@ import (
 type DeviceManagementSettingCategory struct {
     Entity
     // The category name
-    displayName *string;
+    displayName *string
     // The category contains top level required setting
-    hasRequiredSetting *bool;
+    hasRequiredSetting *bool
     // The setting definitions this category contains
-    settingDefinitions []DeviceManagementSettingDefinitionable;
+    settingDefinitions []DeviceManagementSettingDefinitionable
 }
 // NewDeviceManagementSettingCategory instantiates a new deviceManagementSettingCategory and sets the default values.
 func NewDeviceManagementSettingCategory()(*DeviceManagementSettingCategory) {
@@ -34,9 +34,9 @@ func (m *DeviceManagementSettingCategory) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["hasRequiredSetting"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasRequiredSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["settingDefinitions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementSettingDefinitionFromDiscriminatorValue)
         if err != nil {
             return err

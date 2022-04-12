@@ -9,19 +9,19 @@ import (
 type DeviceManagementResourceAccessProfileBase struct {
     Entity
     // The list of assignments for the device configuration profile.
-    assignments []DeviceManagementResourceAccessProfileAssignmentable;
+    assignments []DeviceManagementResourceAccessProfileAssignmentable
     // DateTime profile was created
-    creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Profile description
-    description *string;
+    description *string
     // Profile display name
-    displayName *string;
+    displayName *string
     // DateTime profile was last modified
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Scope Tags
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // Version of the profile
-    version *int32;
+    version *int32
 }
 // NewDeviceManagementResourceAccessProfileBase instantiates a new deviceManagementResourceAccessProfileBase and sets the default values.
 func NewDeviceManagementResourceAccessProfileBase()(*DeviceManagementResourceAccessProfileBase) {
@@ -67,9 +67,9 @@ func (m *DeviceManagementResourceAccessProfileBase) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementResourceAccessProfileAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["creationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["creationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

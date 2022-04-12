@@ -9,17 +9,17 @@ import (
 type CloudPCConnectivityIssue struct {
     Entity
     // The Intune DeviceId of the device the connection is associated with.
-    deviceId *string;
+    deviceId *string
     // The error code of the connectivity issue.
-    errorCode *string;
+    errorCode *string
     // The time that the connection initiated. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time.
-    errorDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    errorDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The detailed description of what went wrong.
-    errorDescription *string;
+    errorDescription *string
     // The recommended action to fix the corresponding error.
-    recommendedAction *string;
+    recommendedAction *string
     // The unique id of user who initialize the connection.
-    userId *string;
+    userId *string
 }
 // NewCloudPCConnectivityIssue instantiates a new cloudPCConnectivityIssue and sets the default values.
 func NewCloudPCConnectivityIssue()(*CloudPCConnectivityIssue) {
@@ -65,9 +65,9 @@ func (m *CloudPCConnectivityIssue) GetErrorDescription()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["errorCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["errorDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["errorDescription"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["recommendedAction"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recommendedAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

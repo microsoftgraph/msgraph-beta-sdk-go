@@ -8,43 +8,43 @@ import (
 type Office365GroupsActivityDetail struct {
     Entity
     // The storage used of the group mailbox.
-    exchangeMailboxStorageUsedInBytes *int64;
+    exchangeMailboxStorageUsedInBytes *int64
     // The number of items in the group mailbox.
-    exchangeMailboxTotalItemCount *int64;
+    exchangeMailboxTotalItemCount *int64
     // The number of email that the group mailbox received.
-    exchangeReceivedEmailCount *int64;
+    exchangeReceivedEmailCount *int64
     // The group external member count.
-    externalMemberCount *int64;
+    externalMemberCount *int64
     // The display name of the group.
-    groupDisplayName *string;
+    groupDisplayName *string
     // The group id.
-    groupId *string;
+    groupId *string
     // The group type. Possible values are: Public or Private.
-    groupType *string;
+    groupType *string
     // Whether this user has been deleted or soft deleted.
-    isDeleted *bool;
+    isDeleted *bool
     // The last activity date for the following scenarios:  group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
-    lastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    lastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The group member count.
-    memberCount *int64;
+    memberCount *int64
     // The group owner principal name.
-    ownerPrincipalName *string;
+    ownerPrincipalName *string
     // The number of days the report covers.
-    reportPeriod *string;
+    reportPeriod *string
     // The latest date of the content.
-    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of active files in SharePoint Group site.
-    sharePointActiveFileCount *int64;
+    sharePointActiveFileCount *int64
     // The storage used by SharePoint Group site.
-    sharePointSiteStorageUsedInBytes *int64;
+    sharePointSiteStorageUsedInBytes *int64
     // The total number of files in SharePoint Group site.
-    sharePointTotalFileCount *int64;
+    sharePointTotalFileCount *int64
     // The number of messages liked in Yammer groups.
-    yammerLikedMessageCount *int64;
+    yammerLikedMessageCount *int64
     // The number of messages posted to Yammer groups.
-    yammerPostedMessageCount *int64;
+    yammerPostedMessageCount *int64
     // The number of messages read in Yammer groups.
-    yammerReadMessageCount *int64;
+    yammerReadMessageCount *int64
 }
 // NewOffice365GroupsActivityDetail instantiates a new office365GroupsActivityDetail and sets the default values.
 func NewOffice365GroupsActivityDetail()(*Office365GroupsActivityDetail) {
@@ -90,9 +90,9 @@ func (m *Office365GroupsActivityDetail) GetExternalMemberCount()(*int64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["exchangeMailboxStorageUsedInBytes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exchangeMailboxStorageUsedInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["exchangeMailboxTotalItemCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exchangeMailboxTotalItemCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["exchangeReceivedEmailCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exchangeReceivedEmailCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["externalMemberCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalMemberCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["groupDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["groupId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["groupType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -162,7 +162,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["isDeleted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDeleted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["lastActivityDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastActivityDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -182,7 +182,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["memberCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["memberCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -192,7 +192,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["ownerPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ownerPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -202,7 +202,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["reportPeriod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportPeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -212,7 +212,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["reportRefreshDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportRefreshDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -222,7 +222,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["sharePointActiveFileCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharePointActiveFileCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -232,7 +232,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["sharePointSiteStorageUsedInBytes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharePointSiteStorageUsedInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -242,7 +242,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["sharePointTotalFileCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharePointTotalFileCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -252,7 +252,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["yammerLikedMessageCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["yammerLikedMessageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -262,7 +262,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["yammerPostedMessageCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["yammerPostedMessageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -272,7 +272,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["yammerReadMessageCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["yammerReadMessageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

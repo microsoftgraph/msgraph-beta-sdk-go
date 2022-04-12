@@ -7,19 +7,19 @@ import (
 // AttachmentItem 
 type AttachmentItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The type of attachment. Possible values are: file, item, reference. Required.
-    attachmentType *AttachmentType;
+    attachmentType *AttachmentType
     // The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
-    contentId *string;
+    contentId *string
     // The nature of the data in the attachment. Optional.
-    contentType *string;
+    contentType *string
     // true if the attachment is an inline attachment; otherwise, false. Optional.
-    isInline *bool;
+    isInline *bool
     // The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
-    name *string;
+    name *string
     // The length of the attachment in bytes. Required.
-    size *int64;
+    size *int64
 }
 // NewAttachmentItem instantiates a new attachmentItem and sets the default values.
 func NewAttachmentItem()(*AttachmentItem) {
@@ -65,9 +65,9 @@ func (m *AttachmentItem) GetContentType()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["attachmentType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["attachmentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttachmentType)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["contentId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["contentType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["isInline"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isInline"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *AttachmentItem) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["size"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

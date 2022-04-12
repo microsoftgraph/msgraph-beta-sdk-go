@@ -9,25 +9,25 @@ import (
 type UserExperienceAnalyticsBaseline struct {
     Entity
     // The user experience analytics app health metrics.
-    appHealthMetrics UserExperienceAnalyticsCategoryable;
+    appHealthMetrics UserExperienceAnalyticsCategoryable
     // The user experience analytics battery health metrics.
-    batteryHealthMetrics UserExperienceAnalyticsCategoryable;
+    batteryHealthMetrics UserExperienceAnalyticsCategoryable
     // The user experience analytics best practices metrics.
-    bestPracticesMetrics UserExperienceAnalyticsCategoryable;
+    bestPracticesMetrics UserExperienceAnalyticsCategoryable
     // The date the custom baseline was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The user experience analytics device boot performance metrics.
-    deviceBootPerformanceMetrics UserExperienceAnalyticsCategoryable;
+    deviceBootPerformanceMetrics UserExperienceAnalyticsCategoryable
     // The name of the user experience analytics baseline.
-    displayName *string;
+    displayName *string
     // Signifies if the current baseline is the commercial median baseline or a custom baseline.
-    isBuiltIn *bool;
+    isBuiltIn *bool
     // The user experience analytics reboot analytics metrics.
-    rebootAnalyticsMetrics UserExperienceAnalyticsCategoryable;
+    rebootAnalyticsMetrics UserExperienceAnalyticsCategoryable
     // The user experience analytics resource performance metrics.
-    resourcePerformanceMetrics UserExperienceAnalyticsCategoryable;
+    resourcePerformanceMetrics UserExperienceAnalyticsCategoryable
     // The user experience analytics work from anywhere metrics.
-    workFromAnywhereMetrics UserExperienceAnalyticsCategoryable;
+    workFromAnywhereMetrics UserExperienceAnalyticsCategoryable
 }
 // NewUserExperienceAnalyticsBaseline instantiates a new userExperienceAnalyticsBaseline and sets the default values.
 func NewUserExperienceAnalyticsBaseline()(*UserExperienceAnalyticsBaseline) {
@@ -89,9 +89,9 @@ func (m *UserExperienceAnalyticsBaseline) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appHealthMetrics"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appHealthMetrics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["batteryHealthMetrics"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["batteryHealthMetrics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["bestPracticesMetrics"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["bestPracticesMetrics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["deviceBootPerformanceMetrics"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceBootPerformanceMetrics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["isBuiltIn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isBuiltIn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["rebootAnalyticsMetrics"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rebootAnalyticsMetrics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["resourcePerformanceMetrics"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourcePerformanceMetrics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["workFromAnywhereMetrics"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["workFromAnywhereMetrics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue)
         if err != nil {
             return err

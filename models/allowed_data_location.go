@@ -8,13 +8,13 @@ import (
 type AllowedDataLocation struct {
     Entity
     // The appId property
-    appId *string;
+    appId *string
     // The domain property
-    domain *string;
+    domain *string
     // The isDefault property
-    isDefault *bool;
+    isDefault *bool
     // The location property
-    location *string;
+    location *string
 }
 // NewAllowedDataLocation instantiates a new allowedDataLocation and sets the default values.
 func NewAllowedDataLocation()(*AllowedDataLocation) {
@@ -44,9 +44,9 @@ func (m *AllowedDataLocation) GetDomain()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["domain"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["domain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["isDefault"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["location"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["location"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

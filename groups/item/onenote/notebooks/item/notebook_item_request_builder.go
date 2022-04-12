@@ -14,55 +14,55 @@ import (
 // NotebookItemRequestBuilder provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
 type NotebookItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // NotebookItemRequestBuilderDeleteOptions options for Delete
 type NotebookItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NotebookItemRequestBuilderGetOptions options for Get
 type NotebookItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *NotebookItemRequestBuilderGetQueryParameters;
+    QueryParameters *NotebookItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NotebookItemRequestBuilderGetQueryParameters the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
 type NotebookItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // NotebookItemRequestBuilderPatchOptions options for Patch
 type NotebookItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewNotebookItemRequestBuilderInternal instantiates a new NotebookItemRequestBuilder and sets the default values.
 func NewNotebookItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NotebookItemRequestBuilder) {
     m := &NotebookItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group_id}/onenote/notebooks/{notebook_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/onenote/notebooks/{notebook%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -195,7 +195,7 @@ func (m *NotebookItemRequestBuilder) SectionGroupsById(id string)(*i8c0c1cccb46e
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["sectionGroup_id"] = id
+        urlTplParams["sectionGroup%2Did"] = id
     }
     return i8c0c1cccb46ede336960e9bc9e30e28f1d0b03c22b304bcc9b4c015ff449625e.NewSectionGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -210,7 +210,7 @@ func (m *NotebookItemRequestBuilder) SectionsById(id string)(*i4e0c85405d8104211
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["onenoteSection_id"] = id
+        urlTplParams["onenoteSection%2Did"] = id
     }
     return i4e0c85405d8104211426a14e5e081e5618c5ddabddb25835ec8c34eeeca7eb1d.NewOnenoteSectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

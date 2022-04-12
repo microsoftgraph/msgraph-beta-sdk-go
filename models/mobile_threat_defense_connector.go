@@ -9,39 +9,39 @@ import (
 type MobileThreatDefenseConnector struct {
     Entity
     // For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune
-    allowPartnerToCollectIOSApplicationMetadata *bool;
+    allowPartnerToCollectIOSApplicationMetadata *bool
     // For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about personally installed applications from Intune
-    allowPartnerToCollectIOSPersonalApplicationMetadata *bool;
+    allowPartnerToCollectIOSPersonalApplicationMetadata *bool
     // For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
-    androidDeviceBlockedOnMissingPartnerData *bool;
+    androidDeviceBlockedOnMissingPartnerData *bool
     // For Android, set whether data from the data sync partner should be used during compliance evaluations
-    androidEnabled *bool;
+    androidEnabled *bool
     // For Android, set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.
-    androidMobileApplicationManagementEnabled *bool;
+    androidMobileApplicationManagementEnabled *bool
     // For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
-    iosDeviceBlockedOnMissingPartnerData *bool;
+    iosDeviceBlockedOnMissingPartnerData *bool
     // For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
-    iosEnabled *bool;
+    iosEnabled *bool
     // For IOS, get or set whether data from the data sync partner should be used during Mobile Application Management (MAM) evaluations. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation.
-    iosMobileApplicationManagementEnabled *bool;
+    iosMobileApplicationManagementEnabled *bool
     // DateTime of last Heartbeat recieved from the Data Sync Partner
-    lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // For Mac, get or set whether Intune must receive data from the data sync partner prior to marking a device compliant
-    macDeviceBlockedOnMissingPartnerData *bool;
+    macDeviceBlockedOnMissingPartnerData *bool
     // For Mac, get or set whether data from the data sync partner should be used during compliance evaluations
-    macEnabled *bool;
+    macEnabled *bool
     // When TRUE, configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, configuration profile management via Microsoft Defender for Endpoint is disabled.
-    microsoftDefenderForEndpointAttachEnabled *bool;
+    microsoftDefenderForEndpointAttachEnabled *bool
     // Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
-    partnerState *MobileThreatPartnerTenantState;
+    partnerState *MobileThreatPartnerTenantState
     // Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
-    partnerUnresponsivenessThresholdInDays *int32;
+    partnerUnresponsivenessThresholdInDays *int32
     // Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
-    partnerUnsupportedOsVersionBlocked *bool;
+    partnerUnsupportedOsVersionBlocked *bool
     // For Windows, set whether Intune must receive data from the data sync partner prior to marking a device compliant
-    windowsDeviceBlockedOnMissingPartnerData *bool;
+    windowsDeviceBlockedOnMissingPartnerData *bool
     // For Windows, get or set whether data from the data sync partner should be used during compliance evaluations
-    windowsEnabled *bool;
+    windowsEnabled *bool
 }
 // NewMobileThreatDefenseConnector instantiates a new mobileThreatDefenseConnector and sets the default values.
 func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {
@@ -95,9 +95,9 @@ func (m *MobileThreatDefenseConnector) GetAndroidMobileApplicationManagementEnab
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["allowPartnerToCollectIOSApplicationMetadata"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowPartnerToCollectIOSApplicationMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["allowPartnerToCollectIOSPersonalApplicationMetadata"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowPartnerToCollectIOSPersonalApplicationMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["androidDeviceBlockedOnMissingPartnerData"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["androidDeviceBlockedOnMissingPartnerData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["androidEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["androidEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["androidMobileApplicationManagementEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["androidMobileApplicationManagementEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["iosDeviceBlockedOnMissingPartnerData"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iosDeviceBlockedOnMissingPartnerData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["iosEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iosEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["iosMobileApplicationManagementEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iosMobileApplicationManagementEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["lastHeartbeatDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastHeartbeatDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -187,7 +187,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["macDeviceBlockedOnMissingPartnerData"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["macDeviceBlockedOnMissingPartnerData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["macEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["macEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -207,7 +207,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["microsoftDefenderForEndpointAttachEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["microsoftDefenderForEndpointAttachEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -217,7 +217,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["partnerState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["partnerState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMobileThreatPartnerTenantState)
         if err != nil {
             return err
@@ -227,7 +227,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["partnerUnresponsivenessThresholdInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["partnerUnresponsivenessThresholdInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -237,7 +237,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["partnerUnsupportedOsVersionBlocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["partnerUnsupportedOsVersionBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -247,7 +247,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["windowsDeviceBlockedOnMissingPartnerData"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsDeviceBlockedOnMissingPartnerData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -257,7 +257,7 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["windowsEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

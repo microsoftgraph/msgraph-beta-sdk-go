@@ -8,7 +8,7 @@ import (
 type Approval struct {
     Entity
     // The steps property
-    steps []ApprovalStepable;
+    steps []ApprovalStepable
 }
 // NewApproval instantiates a new approval and sets the default values.
 func NewApproval()(*Approval) {
@@ -22,9 +22,9 @@ func CreateApprovalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewApproval(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Approval) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Approval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["steps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["steps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateApprovalStepFromDiscriminatorValue)
         if err != nil {
             return err

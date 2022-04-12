@@ -21,6 +21,7 @@ import (
     i36fc8a6a1f1f21ea4c3b8e036968cd4b9f64fe509db56f6ee2a10b53e5e23daa "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/remotelock"
     i3776f24495e66930f2a43cb3ea8f98452ba8e71357481f30e1f01270eaebd89f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/createdevicelogcollectionrequest"
     i3801d66be73ebd80eac8d4afbb42c4a4b730ab7f2f26c6e5cd4dba5aa9d5482d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/setdevicename"
+    i3a451234d2b2a6a6387dc5a169c250dea302a38ca99f87e49d79cd06cafb5f4d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/setcloudpcreviewstatus"
     i3b897a8ccd665fdbe167f4e370c9723f97e54817cba754eb28388f5dd299a5c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/windowsdefenderupdatesignatures"
     i3c078ae2cc611b9ba288af4dd645655413e06a9d17701e150ea19af27569731f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/requestremoteassistance"
     i4ad2411bc4f698091cb4cddb8912e565be689d70f97726b35bf923595d409c66 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/logoutsharedappledeviceactiveuser"
@@ -35,6 +36,7 @@ import (
     i89c236eb4c587fbb0a24528cb0e513d10719fb9adcb5a8f1c90cbd0e5f6b6c4b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/syncdevice"
     i8f3dd0f37629f789adeb5e7d3157f12e9ff9e2054bf129c520ea0079258824e7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/getnoncompliantsettings"
     i943f0e8246505776fb92732c1b8002c02a1a683900dc017b18fa61b9a8c55865 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/getoemwarranty"
+    i9b6d8a4ba16e42bb61f37ca948b5f74c84d3f99fd30e04f0429b325d2da5c415 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/getcloudpcreviewstatus"
     ia4ee316c6c9eb7161a71f047d40762643af93b348a3b2896f494e510a93632b1 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/triggerconfigurationmanageraction"
     ia6866ca41722c5c1a3bb8d2a63452764f310f9bedb206627fbff9b413170d311 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/playlostmodesound"
     iaac25517cf1038417a09bf97f681ffe842dcbe5678bf131e589ee9fbac0c73b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/reprovisioncloudpc"
@@ -65,49 +67,49 @@ import (
 // ManagedDeviceItemRequestBuilder provides operations to manage the managedDevices property of the microsoft.graph.user entity.
 type ManagedDeviceItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ManagedDeviceItemRequestBuilderDeleteOptions options for Delete
 type ManagedDeviceItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ManagedDeviceItemRequestBuilderGetOptions options for Get
 type ManagedDeviceItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ManagedDeviceItemRequestBuilderGetQueryParameters;
+    QueryParameters *ManagedDeviceItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ManagedDeviceItemRequestBuilderGetQueryParameters the managed devices associated with the user.
 type ManagedDeviceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ManagedDeviceItemRequestBuilderPatchOptions options for Patch
 type ManagedDeviceItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ActivateDeviceEsim the activateDeviceEsim property
 func (m *ManagedDeviceItemRequestBuilder) ActivateDeviceEsim()(*i0630fe5357f055c4a869c7fec5dac47d8109b185d3e70c56c5c5d602d0bf2b49.ActivateDeviceEsimRequestBuilder) {
@@ -124,7 +126,7 @@ func (m *ManagedDeviceItemRequestBuilder) AssignmentFilterEvaluationStatusDetail
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["assignmentFilterEvaluationStatusDetails_id"] = id
+        urlTplParams["assignmentFilterEvaluationStatusDetails%2Did"] = id
     }
     return idad2f9d4b430a211b97b2722dfb0a947f9cbdee6e03d60f419b691db67fec1d7.NewAssignmentFilterEvaluationStatusDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -140,7 +142,7 @@ func (m *ManagedDeviceItemRequestBuilder) CleanWindowsDevice()(*ie9117b0fbaf882b
 func NewManagedDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDeviceItemRequestBuilder) {
     m := &ManagedDeviceItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/managedDevices/{managedDevice_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/me/managedDevices/{managedDevice%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -249,7 +251,7 @@ func (m *ManagedDeviceItemRequestBuilder) DetectedAppsById(id string)(*i578db475
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["detectedApp_id"] = id
+        urlTplParams["detectedApp%2Did"] = id
     }
     return i578db475d536dd6c248552b1ff9b6a95b1348d7941cff6a6948c720fdab0b754.NewDetectedAppItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -268,7 +270,7 @@ func (m *ManagedDeviceItemRequestBuilder) DeviceCompliancePolicyStatesById(id st
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceCompliancePolicyState_id"] = id
+        urlTplParams["deviceCompliancePolicyState%2Did"] = id
     }
     return i3b81ded3502653dd3172717ded2cc7fa51f906ee50a26f3fe4b8e0dad9677e3a.NewDeviceCompliancePolicyStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -283,7 +285,7 @@ func (m *ManagedDeviceItemRequestBuilder) DeviceConfigurationStatesById(id strin
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceConfigurationState_id"] = id
+        urlTplParams["deviceConfigurationState%2Did"] = id
     }
     return i66e1a9a592cf352f3ff5264cb51be3f84dee6770b52c256db783a3766f23fd2c.NewDeviceConfigurationStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -319,6 +321,10 @@ func (m *ManagedDeviceItemRequestBuilder) Get(options *ManagedDeviceItemRequestB
 func (m *ManagedDeviceItemRequestBuilder) GetCloudPcRemoteActionResults()(*id8bc634ccb989ff6228ca3386217960759b949d6d7a4a6dcaef53ec645ce0bb1.GetCloudPcRemoteActionResultsRequestBuilder) {
     return id8bc634ccb989ff6228ca3386217960759b949d6d7a4a6dcaef53ec645ce0bb1.NewGetCloudPcRemoteActionResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// GetCloudPcReviewStatus provides operations to call the getCloudPcReviewStatus method.
+func (m *ManagedDeviceItemRequestBuilder) GetCloudPcReviewStatus()(*i9b6d8a4ba16e42bb61f37ca948b5f74c84d3f99fd30e04f0429b325d2da5c415.GetCloudPcReviewStatusRequestBuilder) {
+    return i9b6d8a4ba16e42bb61f37ca948b5f74c84d3f99fd30e04f0429b325d2da5c415.NewGetCloudPcReviewStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetFileVaultKey provides operations to call the getFileVaultKey method.
 func (m *ManagedDeviceItemRequestBuilder) GetFileVaultKey()(*ic202d8cd388d07aa6342f443a778ec94ff0b70a0d7616cb1a86e888f74c73e98.GetFileVaultKeyRequestBuilder) {
     return ic202d8cd388d07aa6342f443a778ec94ff0b70a0d7616cb1a86e888f74c73e98.NewGetFileVaultKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -346,7 +352,7 @@ func (m *ManagedDeviceItemRequestBuilder) LogCollectionRequestsById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceLogCollectionResponse_id"] = id
+        urlTplParams["deviceLogCollectionResponse%2Did"] = id
     }
     return ia1c10427ec26c5213d3cb81c564d2ac164554b68fb635b97827129a4960420f1.NewDeviceLogCollectionResponseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -365,7 +371,7 @@ func (m *ManagedDeviceItemRequestBuilder) ManagedDeviceMobileAppConfigurationSta
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedDeviceMobileAppConfigurationState_id"] = id
+        urlTplParams["managedDeviceMobileAppConfigurationState%2Did"] = id
     }
     return i96054b50b70fc586b43b9fdad370e6044740fbb719443c11c6ce4fbb73f65207.NewManagedDeviceMobileAppConfigurationStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -456,13 +462,17 @@ func (m *ManagedDeviceItemRequestBuilder) SecurityBaselineStatesById(id string)(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["securityBaselineState_id"] = id
+        urlTplParams["securityBaselineState%2Did"] = id
     }
     return i7aec23a974d5a99eded144b4d6e593437866486632b1be4e531e0cbabb55685e.NewSecurityBaselineStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // SendCustomNotificationToCompanyPortal the sendCustomNotificationToCompanyPortal property
 func (m *ManagedDeviceItemRequestBuilder) SendCustomNotificationToCompanyPortal()(*ib9ddea00f470a770676c6891549ef1977895ac0cb688021e1e7ca6525a2bd30e.SendCustomNotificationToCompanyPortalRequestBuilder) {
     return ib9ddea00f470a770676c6891549ef1977895ac0cb688021e1e7ca6525a2bd30e.NewSendCustomNotificationToCompanyPortalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SetCloudPcReviewStatus the setCloudPcReviewStatus property
+func (m *ManagedDeviceItemRequestBuilder) SetCloudPcReviewStatus()(*i3a451234d2b2a6a6387dc5a169c250dea302a38ca99f87e49d79cd06cafb5f4d.SetCloudPcReviewStatusRequestBuilder) {
+    return i3a451234d2b2a6a6387dc5a169c250dea302a38ca99f87e49d79cd06cafb5f4d.NewSetCloudPcReviewStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SetDeviceName the setDeviceName property
 func (m *ManagedDeviceItemRequestBuilder) SetDeviceName()(*i3801d66be73ebd80eac8d4afbb42c4a4b730ab7f2f26c6e5cd4dba5aa9d5482d.SetDeviceNameRequestBuilder) {

@@ -23,49 +23,49 @@ import (
 // DeviceItemRequestBuilder provides operations to manage the devices property of the microsoft.graph.user entity.
 type DeviceItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // DeviceItemRequestBuilderDeleteOptions options for Delete
 type DeviceItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceItemRequestBuilderGetOptions options for Get
 type DeviceItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *DeviceItemRequestBuilderGetQueryParameters;
+    QueryParameters *DeviceItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceItemRequestBuilderGetQueryParameters get devices from users
 type DeviceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // DeviceItemRequestBuilderPatchOptions options for Patch
 type DeviceItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Commands the commands property
 func (m *DeviceItemRequestBuilder) Commands()(*iaf34d7f762b2e74c284c42effd3462cff0e37f08a9f6986b076294804a2449ef.CommandsRequestBuilder) {
@@ -78,7 +78,7 @@ func (m *DeviceItemRequestBuilder) CommandsById(id string)(*i35eda896d73fbeb4732
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["command_id"] = id
+        urlTplParams["command%2Did"] = id
     }
     return i35eda896d73fbeb4732e5c4720890d6a590710f94bd582a4cff1752828a69af3.NewCommandItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -86,7 +86,7 @@ func (m *DeviceItemRequestBuilder) CommandsById(id string)(*i35eda896d73fbeb4732
 func NewDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceItemRequestBuilder) {
     m := &DeviceItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user_id}/devices/{device_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/devices/{device%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -183,7 +183,7 @@ func (m *DeviceItemRequestBuilder) ExtensionsById(id string)(*i15521158ed5380a59
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["extension_id"] = id
+        urlTplParams["extension%2Did"] = id
     }
     return i15521158ed5380a593e0fb66e3ea064f39b1577a2ac9b6eda66652739a42c3a7.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -214,7 +214,7 @@ func (m *DeviceItemRequestBuilder) MemberOfById(id string)(*i7691315271fdbee9c13
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i7691315271fdbee9c1364b694cd1da63bf25ef5dbd68a8733beca60509601b78.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -245,7 +245,7 @@ func (m *DeviceItemRequestBuilder) RegisteredOwnersById(id string)(*ie640d03df2e
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return ie640d03df2e875a4b8e918f08a8bdd3c0ef7575f5ac82da96969e2d5c6834087.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -260,7 +260,7 @@ func (m *DeviceItemRequestBuilder) RegisteredUsersById(id string)(*i14cc2fa3b60c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i14cc2fa3b60c5ce229c289cfacee26146c0b595b94a01d4ba5e8f2bc380db01b.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -275,7 +275,7 @@ func (m *DeviceItemRequestBuilder) TransitiveMemberOfById(id string)(*i12d469d87
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i12d469d8755e67463c108cc666b7d20d9dd4f29509dd9f4401df2c1bf22efaf7.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -290,7 +290,7 @@ func (m *DeviceItemRequestBuilder) UsageRightsById(id string)(*i00aa926b8f1486da
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["usageRight_id"] = id
+        urlTplParams["usageRight%2Did"] = id
     }
     return i00aa926b8f1486da2206b774db04d1cd018936bae2dcf0db49162361f332101f.NewUsageRightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

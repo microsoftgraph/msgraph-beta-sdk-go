@@ -9,25 +9,25 @@ import (
 type GroupPolicyDefinitionFile struct {
     Entity
     // The group policy definitions associated with the file.
-    definitions []GroupPolicyDefinitionable;
+    definitions []GroupPolicyDefinitionable
     // The localized description of the policy settings in the ADMX file. The default value is empty.
-    description *string;
+    description *string
     // The localized friendly name of the ADMX file.
-    displayName *string;
+    displayName *string
     // The file name of the ADMX file without the path. For example: edge.admx
-    fileName *string;
+    fileName *string
     // The supported language codes for the ADMX file.
-    languageCodes []string;
+    languageCodes []string
     // The date and time the entity was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
-    policyType *GroupPolicyType;
+    policyType *GroupPolicyType
     // The revision version associated with the file.
-    revision *string;
+    revision *string
     // Specifies the URI used to identify the namespace within the ADMX file.
-    targetNamespace *string;
+    targetNamespace *string
     // Specifies the logical name that refers to the namespace within the ADMX file.
-    targetPrefix *string;
+    targetPrefix *string
 }
 // NewGroupPolicyDefinitionFile instantiates a new groupPolicyDefinitionFile and sets the default values.
 func NewGroupPolicyDefinitionFile()(*GroupPolicyDefinitionFile) {
@@ -65,9 +65,9 @@ func (m *GroupPolicyDefinitionFile) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["definitions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["definitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["fileName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["languageCodes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["languageCodes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["policyType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseGroupPolicyType)
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["revision"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["revision"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["targetNamespace"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetNamespace"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["targetPrefix"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetPrefix"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

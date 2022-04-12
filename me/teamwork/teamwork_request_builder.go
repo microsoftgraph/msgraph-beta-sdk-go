@@ -14,49 +14,49 @@ import (
 // TeamworkRequestBuilder provides operations to manage the teamwork property of the microsoft.graph.user entity.
 type TeamworkRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // TeamworkRequestBuilderDeleteOptions options for Delete
 type TeamworkRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TeamworkRequestBuilderGetOptions options for Get
 type TeamworkRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *TeamworkRequestBuilderGetQueryParameters;
+    QueryParameters *TeamworkRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TeamworkRequestBuilderGetQueryParameters a container for Microsoft Teams features available for the user. Read-only. Nullable.
 type TeamworkRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // TeamworkRequestBuilderPatchOptions options for Patch
 type TeamworkRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserTeamworkable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserTeamworkable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AssociatedTeams the associatedTeams property
 func (m *TeamworkRequestBuilder) AssociatedTeams()(*i200af14bc8a01d318341d7ffd4bd69adb3b9b97703c97f7fd8c69b8f1dc415df.AssociatedTeamsRequestBuilder) {
@@ -69,7 +69,7 @@ func (m *TeamworkRequestBuilder) AssociatedTeamsById(id string)(*i884fd4ffb36d19
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["associatedTeamInfo_id"] = id
+        urlTplParams["associatedTeamInfo%2Did"] = id
     }
     return i884fd4ffb36d199e7dec37be072607e2769510674770c99847363a2f72615545.NewAssociatedTeamInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -77,7 +77,7 @@ func (m *TeamworkRequestBuilder) AssociatedTeamsById(id string)(*i884fd4ffb36d19
 func NewTeamworkRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamworkRequestBuilder) {
     m := &TeamworkRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/teamwork{?select,expand}";
+    m.urlTemplate = "{+baseurl}/me/teamwork{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -190,7 +190,7 @@ func (m *TeamworkRequestBuilder) InstalledAppsById(id string)(*i2f8fc19d0ffa3789
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["userScopeTeamsAppInstallation_id"] = id
+        urlTplParams["userScopeTeamsAppInstallation%2Did"] = id
     }
     return i2f8fc19d0ffa378974d134d26c9bd4ed6b3083770f50add7d052132db4ad8e8b.NewUserScopeTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -9,13 +9,13 @@ import (
 type OfferShiftRequest struct {
     ScheduleChangeRequest
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    recipientActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    recipientActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Custom message sent by recipient of the offer shift request.
-    recipientActionMessage *string;
+    recipientActionMessage *string
     // User ID of the recipient of the offer shift request.
-    recipientUserId *string;
+    recipientUserId *string
     // User ID of the sender of the offer shift request.
-    senderShiftId *string;
+    senderShiftId *string
 }
 // NewOfferShiftRequest instantiates a new offerShiftRequest and sets the default values.
 func NewOfferShiftRequest()(*OfferShiftRequest) {
@@ -29,9 +29,9 @@ func CreateOfferShiftRequestFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewOfferShiftRequest(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ScheduleChangeRequest.GetFieldDeserializers()
-    res["recipientActionDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recipientActionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -41,7 +41,7 @@ func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["recipientActionMessage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recipientActionMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -51,7 +51,7 @@ func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["recipientUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recipientUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *OfferShiftRequest) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["senderShiftId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["senderShiftId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

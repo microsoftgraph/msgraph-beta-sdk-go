@@ -20,53 +20,53 @@ import (
 // OutlookRequestBuilder provides operations to manage the outlook property of the microsoft.graph.user entity.
 type OutlookRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // OutlookRequestBuilderDeleteOptions options for Delete
 type OutlookRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // OutlookRequestBuilderGetOptions options for Get
 type OutlookRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *OutlookRequestBuilderGetQueryParameters;
+    QueryParameters *OutlookRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // OutlookRequestBuilderGetQueryParameters read-only.
 type OutlookRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // OutlookRequestBuilderPatchOptions options for Patch
 type OutlookRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookUserable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookUserable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewOutlookRequestBuilderInternal instantiates a new OutlookRequestBuilder and sets the default values.
 func NewOutlookRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OutlookRequestBuilder) {
     m := &OutlookRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/outlook{?select}";
+    m.urlTemplate = "{+baseurl}/me/outlook{?%24select}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -179,7 +179,7 @@ func (m *OutlookRequestBuilder) MasterCategoriesById(id string)(*i84930f2750a94e
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["outlookCategory_id"] = id
+        urlTplParams["outlookCategory%2Did"] = id
     }
     return i84930f2750a94ee2130f035e9c9bdbcfffcb068c52a806479d0964d9d2020e40.NewOutlookCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -222,7 +222,7 @@ func (m *OutlookRequestBuilder) TaskFoldersById(id string)(*ic19e499d3e454132915
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["outlookTaskFolder_id"] = id
+        urlTplParams["outlookTaskFolder%2Did"] = id
     }
     return ic19e499d3e4541329156d6926f4f6db570dcce60051f4e1edd3f0b0db81cff9a.NewOutlookTaskFolderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -237,7 +237,7 @@ func (m *OutlookRequestBuilder) TaskGroupsById(id string)(*i984fa253a0580cb2d81d
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["outlookTaskGroup_id"] = id
+        urlTplParams["outlookTaskGroup%2Did"] = id
     }
     return i984fa253a0580cb2d81d93e449a106836d455f23e065de8d03edfcc8dbf44acb.NewOutlookTaskGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -252,7 +252,7 @@ func (m *OutlookRequestBuilder) TasksById(id string)(*id3508c1f1aa1eff5970c7a4fe
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["outlookTask_id"] = id
+        urlTplParams["outlookTask%2Did"] = id
     }
     return id3508c1f1aa1eff5970c7a4fe8b1bb7b16a0d219f157caf9278141e89295cd00.NewOutlookTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

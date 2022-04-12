@@ -7,13 +7,13 @@ import (
 // AndroidEnrollmentCompanyCode a class to hold specialty enrollment data used for enrolling via Google's Android Management API, such as Token, Url, and QR code content
 type AndroidEnrollmentCompanyCode struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Enrollment Token used by the User to enroll their device.
-    enrollmentToken *string;
+    enrollmentToken *string
     // String used to generate a QR code for the token.
-    qrCodeContent *string;
+    qrCodeContent *string
     // Generated QR code for the token.
-    qrCodeImage MimeContentable;
+    qrCodeImage MimeContentable
 }
 // NewAndroidEnrollmentCompanyCode instantiates a new androidEnrollmentCompanyCode and sets the default values.
 func NewAndroidEnrollmentCompanyCode()(*AndroidEnrollmentCompanyCode) {
@@ -43,9 +43,9 @@ func (m *AndroidEnrollmentCompanyCode) GetEnrollmentToken()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["enrollmentToken"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["enrollmentToken"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["qrCodeContent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["qrCodeContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["qrCodeImage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["qrCodeImage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err

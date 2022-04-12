@@ -9,19 +9,19 @@ import (
 type AccessReviewHistoryInstance struct {
     Entity
     // Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
-    downloadUri *string;
+    downloadUri *string
     // Timestamp when this instance and associated data expires and the history is deleted. Required.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Timestamp when all of the available data for this instance was collected. This will be set after this instance's status is set to done. Required.
-    fulfilledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    fulfilledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Timestamp, reviews ending on or before this date will be included in the fetched history data.
-    reviewHistoryPeriodEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    reviewHistoryPeriodEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Timestamp, reviews starting on or after this date will be included in the fetched history data.
-    reviewHistoryPeriodStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    reviewHistoryPeriodStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Timestamp when the instance's history data is scheduled to be generated.
-    runDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    runDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status has been marked as done, a link can be generated to retrieve the instance's data by calling generateDownloadUri method.
-    status *AccessReviewHistoryStatus;
+    status *AccessReviewHistoryStatus
 }
 // NewAccessReviewHistoryInstance instantiates a new accessReviewHistoryInstance and sets the default values.
 func NewAccessReviewHistoryInstance()(*AccessReviewHistoryInstance) {
@@ -51,9 +51,9 @@ func (m *AccessReviewHistoryInstance) GetExpirationDateTime()(*i336074805fc85398
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessReviewHistoryInstance) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AccessReviewHistoryInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["downloadUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["downloadUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *AccessReviewHistoryInstance) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *AccessReviewHistoryInstance) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["fulfilledDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fulfilledDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *AccessReviewHistoryInstance) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["reviewHistoryPeriodEndDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reviewHistoryPeriodEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *AccessReviewHistoryInstance) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["reviewHistoryPeriodStartDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reviewHistoryPeriodStartDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *AccessReviewHistoryInstance) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["runDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["runDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *AccessReviewHistoryInstance) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAccessReviewHistoryStatus)
         if err != nil {
             return err

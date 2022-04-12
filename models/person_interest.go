@@ -8,17 +8,17 @@ import (
 type PersonInterest struct {
     ItemFacet
     // Contains categories a user has associated with the interest (for example, personal, recipies).
-    categories []string;
+    categories []string
     // Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
-    collaborationTags []string;
+    collaborationTags []string
     // Contains a description of the interest.
-    description *string;
+    description *string
     // Contains a friendly name for the interest.
-    displayName *string;
+    displayName *string
     // The thumbnailUrl property
-    thumbnailUrl *string;
+    thumbnailUrl *string
     // Contains a link to a web page or resource about the interest.
-    webUrl *string;
+    webUrl *string
 }
 // NewPersonInterest instantiates a new personInterest and sets the default values.
 func NewPersonInterest()(*PersonInterest) {
@@ -64,9 +64,9 @@ func (m *PersonInterest) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PersonInterest) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PersonInterest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
-    res["categories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *PersonInterest) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["collaborationTags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["collaborationTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *PersonInterest) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *PersonInterest) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *PersonInterest) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["thumbnailUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["thumbnailUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *PersonInterest) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["webUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

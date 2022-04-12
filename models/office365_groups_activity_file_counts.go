@@ -8,15 +8,15 @@ import (
 type Office365GroupsActivityFileCounts struct {
     Entity
     // The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
-    active *int64;
+    active *int64
     // The date on which a number of files were active in the group's SharePoint site.
-    reportDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    reportDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of days the report covers.
-    reportPeriod *string;
+    reportPeriod *string
     // The latest date of the content.
-    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The total number of files in the group's SharePoint document library.
-    total *int64;
+    total *int64
 }
 // NewOffice365GroupsActivityFileCounts instantiates a new office365GroupsActivityFileCounts and sets the default values.
 func NewOffice365GroupsActivityFileCounts()(*Office365GroupsActivityFileCounts) {
@@ -38,9 +38,9 @@ func (m *Office365GroupsActivityFileCounts) GetActive()(*int64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["active"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["active"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["reportDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["reportPeriod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportPeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["reportRefreshDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportRefreshDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["total"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["total"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

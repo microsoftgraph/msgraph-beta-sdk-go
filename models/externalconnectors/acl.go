@@ -7,15 +7,15 @@ import (
 // Acl 
 type Acl struct {
     // The access granted to the identity. Possible values are: grant, deny, unknownFutureValue.
-    accessType *AccessType;
+    accessType *AccessType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The source of identity. Possible values are azureActiveDirectory or external.
-    identitySource *IdentitySourceType;
+    identitySource *IdentitySourceType
     // The type of identity. Possible values are: user, group, everyone, everyoneExceptGuests, externalGroup, unknownFutureValue.
-    type_escaped *AclType;
+    type_escaped *AclType
     // The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
-    value *string;
+    value *string
 }
 // NewAcl instantiates a new acl and sets the default values.
 func NewAcl()(*Acl) {
@@ -45,9 +45,9 @@ func (m *Acl) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Acl) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["accessType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *Acl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["accessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAccessType)
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["identitySource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["identitySource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseIdentitySourceType)
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAclType)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *Acl) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e
         }
         return nil
     }
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

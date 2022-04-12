@@ -9,121 +9,121 @@ import (
 type TiIndicator struct {
     Entity
     // The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
-    action *TiAction;
+    action *TiAction
     // The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
-    activityGroupNames []string;
+    activityGroupNames []string
     // A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
-    additionalInformation *string;
+    additionalInformation *string
     // Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
-    azureTenantId *string;
+    azureTenantId *string
     // An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.
-    confidence *int32;
+    confidence *int32
     // Brief description (100 characters or less) of the threat represented by the indicator. Required.
-    description *string;
+    description *string
     // The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.
-    diamondModel *DiamondModel;
+    diamondModel *DiamondModel
     // The domainName property
-    domainName *string;
+    domainName *string
     // The emailEncoding property
-    emailEncoding *string;
+    emailEncoding *string
     // The emailLanguage property
-    emailLanguage *string;
+    emailLanguage *string
     // The emailRecipient property
-    emailRecipient *string;
+    emailRecipient *string
     // The emailSenderAddress property
-    emailSenderAddress *string;
+    emailSenderAddress *string
     // The emailSenderName property
-    emailSenderName *string;
+    emailSenderName *string
     // The emailSourceDomain property
-    emailSourceDomain *string;
+    emailSourceDomain *string
     // The emailSourceIpAddress property
-    emailSourceIpAddress *string;
+    emailSourceIpAddress *string
     // The emailSubject property
-    emailSubject *string;
+    emailSubject *string
     // The emailXMailer property
-    emailXMailer *string;
+    emailXMailer *string
     // DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).
-    externalId *string;
+    externalId *string
     // The fileCompileDateTime property
-    fileCompileDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    fileCompileDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The fileCreatedDateTime property
-    fileCreatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    fileCreatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The fileHashType property
-    fileHashType *FileHashType;
+    fileHashType *FileHashType
     // The fileHashValue property
-    fileHashValue *string;
+    fileHashValue *string
     // The fileMutexName property
-    fileMutexName *string;
+    fileMutexName *string
     // The fileName property
-    fileName *string;
+    fileName *string
     // The filePacker property
-    filePacker *string;
+    filePacker *string
     // The filePath property
-    filePath *string;
+    filePath *string
     // The fileSize property
-    fileSize *int64;
+    fileSize *int64
     // The fileType property
-    fileType *string;
+    fileType *string
     // Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    ingestedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    ingestedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to ‘False’ to deactivate indicators in the system.
-    isActive *bool;
+    isActive *bool
     // A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.
-    killChain []string;
+    killChain []string
     // Scenarios in which the indicator may cause false positives. This should be human-readable text.
-    knownFalsePositives *string;
+    knownFalsePositives *string
     // The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.
-    malwareFamilyNames []string;
+    malwareFamilyNames []string
     // The networkCidrBlock property
-    networkCidrBlock *string;
+    networkCidrBlock *string
     // The networkDestinationAsn property
-    networkDestinationAsn *int64;
+    networkDestinationAsn *int64
     // The networkDestinationCidrBlock property
-    networkDestinationCidrBlock *string;
+    networkDestinationCidrBlock *string
     // The networkDestinationIPv4 property
-    networkDestinationIPv4 *string;
+    networkDestinationIPv4 *string
     // The networkDestinationIPv6 property
-    networkDestinationIPv6 *string;
+    networkDestinationIPv6 *string
     // The networkDestinationPort property
-    networkDestinationPort *int32;
+    networkDestinationPort *int32
     // The networkIPv4 property
-    networkIPv4 *string;
+    networkIPv4 *string
     // The networkIPv6 property
-    networkIPv6 *string;
+    networkIPv6 *string
     // The networkPort property
-    networkPort *int32;
+    networkPort *int32
     // The networkProtocol property
-    networkProtocol *int32;
+    networkProtocol *int32
     // The networkSourceAsn property
-    networkSourceAsn *int64;
+    networkSourceAsn *int64
     // The networkSourceCidrBlock property
-    networkSourceCidrBlock *string;
+    networkSourceCidrBlock *string
     // The networkSourceIPv4 property
-    networkSourceIPv4 *string;
+    networkSourceIPv4 *string
     // The networkSourceIPv6 property
-    networkSourceIPv6 *string;
+    networkSourceIPv6 *string
     // The networkSourcePort property
-    networkSourcePort *int32;
+    networkSourcePort *int32
     // Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.
-    passiveOnly *bool;
+    passiveOnly *bool
     // An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.
-    severity *int32;
+    severity *int32
     // A JSON array of strings that stores arbitrary tags/keywords.
-    tags []string;
+    tags []string
     // A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required
-    targetProduct *string;
+    targetProduct *string
     // Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
-    threatType *string;
+    threatType *string
     // Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
-    tlpLevel *TlpLevel;
+    tlpLevel *TlpLevel
     // The url property
-    url *string;
+    url *string
     // The userAgent property
-    userAgent *string;
+    userAgent *string
 }
 // NewTiIndicator instantiates a new tiIndicator and sets the default values.
 func NewTiIndicator()(*TiIndicator) {
@@ -289,9 +289,9 @@ func (m *TiIndicator) GetExternalId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TiIndicator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["action"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTiAction)
         if err != nil {
             return err
@@ -301,7 +301,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["activityGroupNames"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityGroupNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -315,7 +315,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["additionalInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["additionalInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -325,7 +325,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["azureTenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -335,7 +335,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["confidence"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["confidence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -345,7 +345,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -355,7 +355,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["diamondModel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["diamondModel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDiamondModel)
         if err != nil {
             return err
@@ -365,7 +365,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["domainName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["domainName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -375,7 +375,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["emailEncoding"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emailEncoding"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -385,7 +385,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["emailLanguage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emailLanguage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -395,7 +395,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["emailRecipient"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emailRecipient"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -405,7 +405,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["emailSenderAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emailSenderAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -415,7 +415,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["emailSenderName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emailSenderName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -425,7 +425,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["emailSourceDomain"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emailSourceDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -435,7 +435,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["emailSourceIpAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emailSourceIpAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -445,7 +445,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["emailSubject"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emailSubject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -455,7 +455,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["emailXMailer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emailXMailer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -465,7 +465,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -475,7 +475,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["externalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -485,7 +485,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["fileCompileDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileCompileDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -495,7 +495,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["fileCreatedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileCreatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -505,7 +505,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["fileHashType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileHashType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseFileHashType)
         if err != nil {
             return err
@@ -515,7 +515,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["fileHashValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileHashValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -525,7 +525,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["fileMutexName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileMutexName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -535,7 +535,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["fileName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -545,7 +545,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["filePacker"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["filePacker"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -555,7 +555,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["filePath"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["filePath"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -565,7 +565,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["fileSize"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileSize"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -575,7 +575,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["fileType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -585,7 +585,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["ingestedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ingestedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -595,7 +595,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["isActive"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isActive"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -605,7 +605,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["killChain"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["killChain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -619,7 +619,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["knownFalsePositives"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["knownFalsePositives"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -629,7 +629,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["lastReportedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastReportedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -639,7 +639,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["malwareFamilyNames"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["malwareFamilyNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -653,7 +653,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkCidrBlock"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkCidrBlock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -663,7 +663,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkDestinationAsn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkDestinationAsn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -673,7 +673,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkDestinationCidrBlock"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkDestinationCidrBlock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -683,7 +683,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkDestinationIPv4"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkDestinationIPv4"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -693,7 +693,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkDestinationIPv6"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkDestinationIPv6"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -703,7 +703,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkDestinationPort"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkDestinationPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -713,7 +713,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkIPv4"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkIPv4"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -723,7 +723,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkIPv6"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkIPv6"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -733,7 +733,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkPort"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -743,7 +743,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkProtocol"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkProtocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -753,7 +753,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkSourceAsn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkSourceAsn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -763,7 +763,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkSourceCidrBlock"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkSourceCidrBlock"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -773,7 +773,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkSourceIPv4"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkSourceIPv4"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -783,7 +783,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkSourceIPv6"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkSourceIPv6"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -793,7 +793,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["networkSourcePort"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkSourcePort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -803,7 +803,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["passiveOnly"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passiveOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -813,7 +813,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["severity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -823,7 +823,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["tags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -837,7 +837,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["targetProduct"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetProduct"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -847,7 +847,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["threatType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["threatType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -857,7 +857,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["tlpLevel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tlpLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTlpLevel)
         if err != nil {
             return err
@@ -867,7 +867,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["url"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -877,7 +877,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["userAgent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userAgent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

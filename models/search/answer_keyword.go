@@ -7,13 +7,13 @@ import (
 // AnswerKeyword 
 type AnswerKeyword struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A collection of keywords used to trigger the search answer.
-    keywords []string;
+    keywords []string
     // If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
-    matchSimilarKeywords *bool;
+    matchSimilarKeywords *bool
     // Unique keywords that will guarantee the search answer is triggered.
-    reservedKeywords []string;
+    reservedKeywords []string
 }
 // NewAnswerKeyword instantiates a new answerKeyword and sets the default values.
 func NewAnswerKeyword()(*AnswerKeyword) {
@@ -35,9 +35,9 @@ func (m *AnswerKeyword) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["keywords"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["keywords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -51,7 +51,7 @@ func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["matchSimilarKeywords"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["matchSimilarKeywords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["reservedKeywords"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reservedKeywords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

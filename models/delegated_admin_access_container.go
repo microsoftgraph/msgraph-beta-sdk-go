@@ -7,11 +7,11 @@ import (
 // DelegatedAdminAccessContainer 
 type DelegatedAdminAccessContainer struct {
     // The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner's tenant.
-    accessContainerId *string;
+    accessContainerId *string
     // The type of access container (for example, security group) that will be assigned one or more roles through a delegated admin relationship. The possible values are: securityGroup, unknownFutureValue.
-    accessContainerType *DelegatedAdminAccessContainerType;
+    accessContainerType *DelegatedAdminAccessContainerType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
 }
 // NewDelegatedAdminAccessContainer instantiates a new delegatedAdminAccessContainer and sets the default values.
 func NewDelegatedAdminAccessContainer()(*DelegatedAdminAccessContainer) {
@@ -49,9 +49,9 @@ func (m *DelegatedAdminAccessContainer) GetAdditionalData()(map[string]interface
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DelegatedAdminAccessContainer) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["accessContainerId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DelegatedAdminAccessContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["accessContainerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *DelegatedAdminAccessContainer) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["accessContainerType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessContainerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDelegatedAdminAccessContainerType)
         if err != nil {
             return err

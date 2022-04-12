@@ -57,49 +57,49 @@ import (
 // ManagedTenantsRequestBuilder provides operations to manage the managedTenants property of the microsoft.graph.tenantRelationship entity.
 type ManagedTenantsRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ManagedTenantsRequestBuilderDeleteOptions options for Delete
 type ManagedTenantsRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ManagedTenantsRequestBuilderGetOptions options for Get
 type ManagedTenantsRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ManagedTenantsRequestBuilderGetQueryParameters;
+    QueryParameters *ManagedTenantsRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ManagedTenantsRequestBuilderGetQueryParameters the operations available to interact with the multi-tenant management platform.
 type ManagedTenantsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ManagedTenantsRequestBuilderPatchOptions options for Patch
 type ManagedTenantsRequestBuilderPatchOptions struct {
     // 
-    Body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantable;
+    Body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AggregatedPolicyCompliances the aggregatedPolicyCompliances property
 func (m *ManagedTenantsRequestBuilder) AggregatedPolicyCompliances()(*idbc8f4984d2cb262d1942923c269bd190c01b953b808d1fdb9cf4be97280aaa9.AggregatedPolicyCompliancesRequestBuilder) {
@@ -112,7 +112,7 @@ func (m *ManagedTenantsRequestBuilder) AggregatedPolicyCompliancesById(id string
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["aggregatedPolicyCompliance_id"] = id
+        urlTplParams["aggregatedPolicyCompliance%2Did"] = id
     }
     return i52c320bc8af30828e6ec0c42efaa3e1776f96666e820434df3a8666acde77551.NewAggregatedPolicyComplianceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -127,7 +127,7 @@ func (m *ManagedTenantsRequestBuilder) AuditEventsById(id string)(*i60191c74f9be
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["auditEvent_id"] = id
+        urlTplParams["auditEvent%2Did"] = id
     }
     return i60191c74f9be183cc909ce75260c09c09ec76d902f83e1b4f0c161cf0afa63b9.NewAuditEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -142,7 +142,7 @@ func (m *ManagedTenantsRequestBuilder) CloudPcConnectionsById(id string)(*ief1a5
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudPcConnection_id"] = id
+        urlTplParams["cloudPcConnection%2Did"] = id
     }
     return ief1a51d13b4379383242b889e4364a07fc548b896256031dfb57941100b7e3b5.NewCloudPcConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -157,7 +157,7 @@ func (m *ManagedTenantsRequestBuilder) CloudPcDevicesById(id string)(*i24e026309
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudPcDevice_id"] = id
+        urlTplParams["cloudPcDevice%2Did"] = id
     }
     return i24e026309e2f5ec4fcde15b1735de3d790a689d3408b9e14ae04f9328e84c7bd.NewCloudPcDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -172,7 +172,7 @@ func (m *ManagedTenantsRequestBuilder) CloudPcsOverviewById(id string)(*if6d60fc
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudPcOverview_tenantId"] = id
+        urlTplParams["cloudPcOverview%2DtenantId"] = id
     }
     return if6d60fc8097e10a44124bc34967688bbbcf720e50c2b3034d3ecedc559f02741.NewCloudPcOverviewItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -187,7 +187,7 @@ func (m *ManagedTenantsRequestBuilder) ConditionalAccessPolicyCoveragesById(id s
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["conditionalAccessPolicyCoverage_id"] = id
+        urlTplParams["conditionalAccessPolicyCoverage%2Did"] = id
     }
     return ic4d32f9937154ecb1938a14d8397e02282c93535909cb4eb03a94798fefb2623.NewConditionalAccessPolicyCoverageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -195,7 +195,7 @@ func (m *ManagedTenantsRequestBuilder) ConditionalAccessPolicyCoveragesById(id s
 func NewManagedTenantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsRequestBuilder) {
     m := &ManagedTenantsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants{?select,expand}";
+    m.urlTemplate = "{+baseurl}/tenantRelationships/managedTenants{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -276,7 +276,7 @@ func (m *ManagedTenantsRequestBuilder) CredentialUserRegistrationsSummariesById(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["credentialUserRegistrationsSummary_id"] = id
+        urlTplParams["credentialUserRegistrationsSummary%2Did"] = id
     }
     return ibb2dbd75a715fb8c4c67773499667f80d218a5b875d91d6bb702f87d5c5815f3.NewCredentialUserRegistrationsSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -307,7 +307,7 @@ func (m *ManagedTenantsRequestBuilder) DeviceCompliancePolicySettingStateSummari
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceCompliancePolicySettingStateSummary_id"] = id
+        urlTplParams["deviceCompliancePolicySettingStateSummary%2Did"] = id
     }
     return i39c4093a2570401121e930eab4cc05bf3a3f5879dba69aa644fa464b46e8aa51.NewDeviceCompliancePolicySettingStateSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -338,7 +338,7 @@ func (m *ManagedTenantsRequestBuilder) ManagedDeviceCompliancesById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedDeviceCompliance_id"] = id
+        urlTplParams["managedDeviceCompliance%2Did"] = id
     }
     return idf8987c670699b4ba0e9e1d460cbd94442affa23953d4b483a7d372543e0f818.NewManagedDeviceComplianceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -353,7 +353,7 @@ func (m *ManagedTenantsRequestBuilder) ManagedDeviceComplianceTrendsById(id stri
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedDeviceComplianceTrend_id"] = id
+        urlTplParams["managedDeviceComplianceTrend%2Did"] = id
     }
     return i3d3e0cdf3a9fbbfd02cd0827a97a9c93f4ebb2715ac2ee966e30acaf51299aff.NewManagedDeviceComplianceTrendItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -368,7 +368,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementActionsById(id string)(*ief0081
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managementAction_id"] = id
+        urlTplParams["managementAction%2Did"] = id
     }
     return ief008158d809c9b248f0635950f9a44dacadb584a83e78751c8b87051d125c7a.NewManagementActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -383,7 +383,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementActionTenantDeploymentStatusesB
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managementActionTenantDeploymentStatus_id"] = id
+        urlTplParams["managementActionTenantDeploymentStatus%2Did"] = id
     }
     return ib007e276e70fb157eccc427006d3a6fdf591c84e085e79a6ae7d6a7149a17922.NewManagementActionTenantDeploymentStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -398,7 +398,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementIntentsById(id string)(*i1ec6b6
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managementIntent_id"] = id
+        urlTplParams["managementIntent%2Did"] = id
     }
     return i1ec6b65aff2fcd462f8f45f48ce513ea76dde61b1ec3f1cf01d65b849b740b8b.NewManagementIntentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -413,7 +413,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateCollectionsById(id stri
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managementTemplateCollection_id"] = id
+        urlTplParams["managementTemplateCollection%2Did"] = id
     }
     return i8612235b849d43a7141e3638c7b76b5ba29594d12c5272cfc9e32333a038808a.NewManagementTemplateCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -428,7 +428,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplatesById(id string)(*i3637
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managementTemplate_id"] = id
+        urlTplParams["managementTemplate%2Did"] = id
     }
     return i36371b16b14a3a26bf98be71cdf018d4cde82965ba2327d328aeac3639125ea0.NewManagementTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -443,7 +443,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepsById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managementTemplateStep_id"] = id
+        urlTplParams["managementTemplateStep%2Did"] = id
     }
     return i7002a802b3e3d4667259a74b2f46e5190bce103c7bacef3e3630f3808a1f4256.NewManagementTemplateStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -458,7 +458,7 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepVersionsById(id str
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managementTemplateStepVersion_id"] = id
+        urlTplParams["managementTemplateStepVersion%2Did"] = id
     }
     return ibeef58461c8396867818d36875356dc3e16db01443724532b324a94c46ca8d52.NewManagementTemplateStepVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -489,7 +489,7 @@ func (m *ManagedTenantsRequestBuilder) TenantGroupsById(id string)(*i79c491f1321
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["tenantGroup_id"] = id
+        urlTplParams["tenantGroup%2Did"] = id
     }
     return i79c491f13216abf413ae87d0ff1c465e6a8a4809a3f15a3c0d1e120851ef9a5c.NewTenantGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -504,7 +504,7 @@ func (m *ManagedTenantsRequestBuilder) TenantsById(id string)(*i902764218ad55776
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["tenant_id"] = id
+        urlTplParams["tenant%2Did"] = id
     }
     return i902764218ad5577611d10586599ccdb34a8aa22b15a8c9043e035e89db4d4c7b.NewTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -519,7 +519,7 @@ func (m *ManagedTenantsRequestBuilder) TenantsCustomizedInformationById(id strin
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["tenantCustomizedInformation_id"] = id
+        urlTplParams["tenantCustomizedInformation%2Did"] = id
     }
     return i22d7e4fc2a16cf517b6c379250cc88fc88b4ed4261b52362648bc93110b5f230.NewTenantCustomizedInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -534,7 +534,7 @@ func (m *ManagedTenantsRequestBuilder) TenantsDetailedInformationById(id string)
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["tenantDetailedInformation_id"] = id
+        urlTplParams["tenantDetailedInformation%2Did"] = id
     }
     return ic98453c829b49eb4768ddc3245c452c7c68722a915539ad220764ab7c19350c3.NewTenantDetailedInformationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -549,7 +549,7 @@ func (m *ManagedTenantsRequestBuilder) TenantTagsById(id string)(*i44e5d1aa33292
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["tenantTag_id"] = id
+        urlTplParams["tenantTag%2Did"] = id
     }
     return i44e5d1aa3329234fb97b49ec0893e801904dd6a9768684f18a00bd816da70fd6.NewTenantTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -564,7 +564,7 @@ func (m *ManagedTenantsRequestBuilder) WindowsDeviceMalwareStatesById(id string)
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["windowsDeviceMalwareState_id"] = id
+        urlTplParams["windowsDeviceMalwareState%2Did"] = id
     }
     return i186e85376ac4af3f7e13d1b03ae3ecca0403b582ff4761f086be79d2ceacdf75.NewWindowsDeviceMalwareStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -579,7 +579,7 @@ func (m *ManagedTenantsRequestBuilder) WindowsProtectionStatesById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["windowsProtectionState_id"] = id
+        urlTplParams["windowsProtectionState%2Did"] = id
     }
     return ib77c9f0cca75f19b263afc4ae06ae033ceee00cde50068f4a1ad949ad4e69035.NewWindowsProtectionStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

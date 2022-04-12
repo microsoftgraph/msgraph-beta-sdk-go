@@ -8,17 +8,17 @@ import (
 type InformationProtection struct {
     Entity
     // The bitlocker property
-    bitlocker Bitlockerable;
+    bitlocker Bitlockerable
     // The dataLossPreventionPolicies property
-    dataLossPreventionPolicies []DataLossPreventionPolicyable;
+    dataLossPreventionPolicies []DataLossPreventionPolicyable
     // The policy property
-    policy InformationProtectionPolicyable;
+    policy InformationProtectionPolicyable
     // The sensitivityLabels property
-    sensitivityLabels []SensitivityLabelable;
+    sensitivityLabels []SensitivityLabelable
     // The sensitivityPolicySettings property
-    sensitivityPolicySettings SensitivityPolicySettingsable;
+    sensitivityPolicySettings SensitivityPolicySettingsable
     // The threatAssessmentRequests property
-    threatAssessmentRequests []ThreatAssessmentRequestable;
+    threatAssessmentRequests []ThreatAssessmentRequestable
 }
 // NewInformationProtection instantiates a new informationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {
@@ -48,9 +48,9 @@ func (m *InformationProtection) GetDataLossPreventionPolicies()([]DataLossPreven
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["bitlocker"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["bitlocker"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateBitlockerFromDiscriminatorValue)
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["dataLossPreventionPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataLossPreventionPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDataLossPreventionPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["policy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateInformationProtectionPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["sensitivityLabels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sensitivityLabels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSensitivityLabelFromDiscriminatorValue)
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["sensitivityPolicySettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sensitivityPolicySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSensitivityPolicySettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["threatAssessmentRequests"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["threatAssessmentRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateThreatAssessmentRequestFromDiscriminatorValue)
         if err != nil {
             return err

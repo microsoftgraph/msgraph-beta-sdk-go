@@ -15,55 +15,55 @@ import (
 // CloudPCRequestBuilder provides operations to manage the cloudPC property of the microsoft.graph.roleManagement entity.
 type CloudPCRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // CloudPCRequestBuilderDeleteOptions options for Delete
 type CloudPCRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CloudPCRequestBuilderGetOptions options for Get
 type CloudPCRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *CloudPCRequestBuilderGetQueryParameters;
+    QueryParameters *CloudPCRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CloudPCRequestBuilderGetQueryParameters get cloudPC from roleManagement
 type CloudPCRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // CloudPCRequestBuilderPatchOptions options for Patch
 type CloudPCRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RbacApplicationMultipleable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RbacApplicationMultipleable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewCloudPCRequestBuilderInternal instantiates a new CloudPCRequestBuilder and sets the default values.
 func NewCloudPCRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCRequestBuilder) {
     m := &CloudPCRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/roleManagement/cloudPC{?select,expand}";
+    m.urlTemplate = "{+baseurl}/roleManagement/cloudPC{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -192,7 +192,7 @@ func (m *CloudPCRequestBuilder) ResourceNamespacesById(id string)(*if2fe6d33056a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRbacResourceNamespace_id"] = id
+        urlTplParams["unifiedRbacResourceNamespace%2Did"] = id
     }
     return if2fe6d33056a86a8c02bd09d388e1ad97378adc4d03f5d4afe21fd7135b39314.NewUnifiedRbacResourceNamespaceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -207,7 +207,7 @@ func (m *CloudPCRequestBuilder) RoleAssignmentsById(id string)(*i5122da689a05212
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleAssignmentMultiple_id"] = id
+        urlTplParams["unifiedRoleAssignmentMultiple%2Did"] = id
     }
     return i5122da689a05212ccc762ebf1a452cf0621ee3e3ee2ed9c79b323f7d87ab82ba.NewUnifiedRoleAssignmentMultipleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -222,7 +222,7 @@ func (m *CloudPCRequestBuilder) RoleDefinitionsById(id string)(*i6596aa8a9eb296c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["unifiedRoleDefinition_id"] = id
+        urlTplParams["unifiedRoleDefinition%2Did"] = id
     }
     return i6596aa8a9eb296ce0e4c8af117114f5b675a99379d789079c98d15d2b4b41cb0.NewUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

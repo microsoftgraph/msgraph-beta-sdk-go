@@ -7,17 +7,17 @@ import (
 // UserTrainingEventInfo 
 type UserTrainingEventInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Display name of the training.
-    displayName *string;
+    displayName *string
     // Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
-    latestTrainingStatus *TrainingStatus;
+    latestTrainingStatus *TrainingStatus
     // Event details of the training when it was assigned to the user.
-    trainingAssignedProperties UserTrainingContentEventInfoable;
+    trainingAssignedProperties UserTrainingContentEventInfoable
     // Event details of the training when it was completed by the user.
-    trainingCompletedProperties UserTrainingContentEventInfoable;
+    trainingCompletedProperties UserTrainingContentEventInfoable
     // Event details of the training when it was updated/in-progress by the user.
-    trainingUpdatedProperties UserTrainingContentEventInfoable;
+    trainingUpdatedProperties UserTrainingContentEventInfoable
 }
 // NewUserTrainingEventInfo instantiates a new userTrainingEventInfo and sets the default values.
 func NewUserTrainingEventInfo()(*UserTrainingEventInfo) {
@@ -47,9 +47,9 @@ func (m *UserTrainingEventInfo) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["latestTrainingStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["latestTrainingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTrainingStatus)
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["trainingAssignedProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["trainingAssignedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserTrainingContentEventInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["trainingCompletedProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["trainingCompletedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserTrainingContentEventInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *UserTrainingEventInfo) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["trainingUpdatedProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["trainingUpdatedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserTrainingContentEventInfoFromDiscriminatorValue)
         if err != nil {
             return err

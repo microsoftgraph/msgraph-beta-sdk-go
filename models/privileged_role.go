@@ -8,13 +8,13 @@ import (
 type PrivilegedRole struct {
     Entity
     // The assignments for this role. Read-only. Nullable.
-    assignments []PrivilegedRoleAssignmentable;
+    assignments []PrivilegedRoleAssignmentable
     // Role name.
-    name *string;
+    name *string
     // The settings for this role. Read-only. Nullable.
-    settings PrivilegedRoleSettingsable;
+    settings PrivilegedRoleSettingsable
     // The summary information for this role. Read-only. Nullable.
-    summary PrivilegedRoleSummaryable;
+    summary PrivilegedRoleSummaryable
 }
 // NewPrivilegedRole instantiates a new privilegedRole and sets the default values.
 func NewPrivilegedRole()(*PrivilegedRole) {
@@ -36,9 +36,9 @@ func (m *PrivilegedRole) GetAssignments()([]PrivilegedRoleAssignmentable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrivilegedRoleAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["settings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrivilegedRoleSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["summary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrivilegedRoleSummaryFromDiscriminatorValue)
         if err != nil {
             return err

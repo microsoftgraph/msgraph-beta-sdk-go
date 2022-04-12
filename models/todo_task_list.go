@@ -8,17 +8,17 @@ import (
 type TodoTaskList struct {
     Entity
     // The name of the task list.
-    displayName *string;
+    displayName *string
     // The collection of open extensions defined for the task list. Nullable.
-    extensions []Extensionable;
+    extensions []Extensionable
     // True if the user is owner of the given task list.
-    isOwner *bool;
+    isOwner *bool
     // True if the task list is shared with other users
-    isShared *bool;
+    isShared *bool
     // The tasks in this task list. Read-only. Nullable.
-    tasks []TodoTaskable;
+    tasks []TodoTaskable
     // Property indicating the list name if the given list is a well-known list. Possible values are: none, defaultList, flaggedEmails, unknownFutureValue.
-    wellknownListName *WellknownListName;
+    wellknownListName *WellknownListName
 }
 // NewTodoTaskList instantiates a new todoTaskList and sets the default values.
 func NewTodoTaskList()(*TodoTaskList) {
@@ -48,9 +48,9 @@ func (m *TodoTaskList) GetExtensions()([]Extensionable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["extensions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["isOwner"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isOwner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["isShared"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isShared"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["tasks"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTodoTaskFromDiscriminatorValue)
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *TodoTaskList) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["wellknownListName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wellknownListName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWellknownListName)
         if err != nil {
             return err

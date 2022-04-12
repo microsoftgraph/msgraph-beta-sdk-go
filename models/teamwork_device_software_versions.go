@@ -7,17 +7,17 @@ import (
 // TeamworkDeviceSoftwareVersions 
 type TeamworkDeviceSoftwareVersions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The software version for the admin agent running on the device.
-    adminAgentSoftwareVersion *string;
+    adminAgentSoftwareVersion *string
     // The software version for the firmware running on the device.
-    firmwareSoftwareVersion *string;
+    firmwareSoftwareVersion *string
     // The software version for the operating system on the device.
-    operatingSystemSoftwareVersion *string;
+    operatingSystemSoftwareVersion *string
     // The software version for the partner agent running on the device.
-    partnerAgentSoftwareVersion *string;
+    partnerAgentSoftwareVersion *string
     // The software version for the Teams client running on the device.
-    teamsClientSoftwareVersion *string;
+    teamsClientSoftwareVersion *string
 }
 // NewTeamworkDeviceSoftwareVersions instantiates a new teamworkDeviceSoftwareVersions and sets the default values.
 func NewTeamworkDeviceSoftwareVersions()(*TeamworkDeviceSoftwareVersions) {
@@ -47,9 +47,9 @@ func (m *TeamworkDeviceSoftwareVersions) GetAdminAgentSoftwareVersion()(*string)
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkDeviceSoftwareVersions) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["adminAgentSoftwareVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkDeviceSoftwareVersions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["adminAgentSoftwareVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["firmwareSoftwareVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["firmwareSoftwareVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["operatingSystemSoftwareVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operatingSystemSoftwareVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["partnerAgentSoftwareVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["partnerAgentSoftwareVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["teamsClientSoftwareVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["teamsClientSoftwareVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

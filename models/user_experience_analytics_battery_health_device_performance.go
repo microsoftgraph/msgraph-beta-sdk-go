@@ -8,23 +8,23 @@ import (
 type UserExperienceAnalyticsBatteryHealthDevicePerformance struct {
     Entity
     // Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
-    batteryAgeInDays *int32;
+    batteryAgeInDays *int32
     // A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
-    deviceBatteryHealthScore *int32;
+    deviceBatteryHealthScore *int32
     // The unique identifier of the device, Intune DeviceID.
-    deviceId *string;
+    deviceId *string
     // Device friendly name.
-    deviceName *string;
+    deviceName *string
     // The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
-    estimatedRuntimeInMinutes *int32;
+    estimatedRuntimeInMinutes *int32
     // The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-    healthStatus *UserExperienceAnalyticsHealthState;
+    healthStatus *UserExperienceAnalyticsHealthState
     // The manufacturer name of the device.
-    manufacturer *string;
+    manufacturer *string
     // Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
-    maxCapacityPercentage *int32;
+    maxCapacityPercentage *int32
     // The model name of the device.
-    model *string;
+    model *string
 }
 // NewUserExperienceAnalyticsBatteryHealthDevicePerformance instantiates a new userExperienceAnalyticsBatteryHealthDevicePerformance and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDevicePerformance()(*UserExperienceAnalyticsBatteryHealthDevicePerformance) {
@@ -78,9 +78,9 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetEstimatedRunt
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["batteryAgeInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["batteryAgeInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         return nil
     }
-    res["deviceBatteryHealthScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceBatteryHealthScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         return nil
     }
-    res["deviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         return nil
     }
-    res["estimatedRuntimeInMinutes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["estimatedRuntimeInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         return nil
     }
-    res["healthStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["healthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserExperienceAnalyticsHealthState)
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         return nil
     }
-    res["manufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -150,7 +150,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         return nil
     }
-    res["maxCapacityPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxCapacityPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -160,7 +160,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         return nil
     }
-    res["model"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

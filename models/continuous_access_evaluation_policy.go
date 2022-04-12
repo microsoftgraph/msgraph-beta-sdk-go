@@ -8,17 +8,17 @@ import (
 type ContinuousAccessEvaluationPolicy struct {
     Entity
     // Continuous access evaluation automatically blocks access to resources and applications in near real time when a user's access is removed or a client IP address changes. Read-only.
-    description *string;
+    description *string
     // The value is always Continuous Access Evaluation. Read-only.
-    displayName *string;
+    displayName *string
     // The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.
-    groups []string;
+    groups []string
     // true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.
-    isEnabled *bool;
+    isEnabled *bool
     // true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.
-    migrate *bool;
+    migrate *bool
     // The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
-    users []string;
+    users []string
 }
 // NewContinuousAccessEvaluationPolicy instantiates a new continuousAccessEvaluationPolicy and sets the default values.
 func NewContinuousAccessEvaluationPolicy()(*ContinuousAccessEvaluationPolicy) {
@@ -48,9 +48,9 @@ func (m *ContinuousAccessEvaluationPolicy) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ContinuousAccessEvaluationPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ContinuousAccessEvaluationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["groups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["isEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["migrate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["migrate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["users"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["users"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

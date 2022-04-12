@@ -9,57 +9,58 @@ import (
     i7e96e1b990aeb4d47dec870ab144f92eef626fd02edc82312e6ebb7fb40dbd1b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/count"
     i7fe672ce2ded63745de2480f0a175b485195547bff2ac413663b22ef3172bb4e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/bulkreprovisioncloudpc"
     i97970601371fcbb5ba7ab85926c15aaf372bd11b13e0e69958d51b9047db72f5 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/bulkrestorecloudpc"
+    if7ab50280eee6c516e9627d5b46411704669babc585beaa87d9d2b895be64058 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/bulksetcloudpcreviewstatus"
 )
 
 // ComanagedDevicesRequestBuilder provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.
 type ComanagedDevicesRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ComanagedDevicesRequestBuilderGetOptions options for Get
 type ComanagedDevicesRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ComanagedDevicesRequestBuilderGetQueryParameters;
+    QueryParameters *ComanagedDevicesRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ComanagedDevicesRequestBuilderGetQueryParameters the list of co-managed devices report
 type ComanagedDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool;
+    Count *bool `uriparametername:"%24count"`
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
-    Filter *string;
+    Filter *string `uriparametername:"%24filter"`
     // Order items by property values
-    Orderby []string;
+    Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
-    Search *string;
+    Search *string `uriparametername:"%24search"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32;
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32;
+    Top *int32 `uriparametername:"%24top"`
 }
 // ComanagedDevicesRequestBuilderPostOptions options for Post
 type ComanagedDevicesRequestBuilderPostOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // BulkReprovisionCloudPc the bulkReprovisionCloudPc property
 func (m *ComanagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*i7fe672ce2ded63745de2480f0a175b485195547bff2ac413663b22ef3172bb4e.BulkReprovisionCloudPcRequestBuilder) {
@@ -69,11 +70,15 @@ func (m *ComanagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*i7fe672ce2ded
 func (m *ComanagedDevicesRequestBuilder) BulkRestoreCloudPc()(*i97970601371fcbb5ba7ab85926c15aaf372bd11b13e0e69958d51b9047db72f5.BulkRestoreCloudPcRequestBuilder) {
     return i97970601371fcbb5ba7ab85926c15aaf372bd11b13e0e69958d51b9047db72f5.NewBulkRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// BulkSetCloudPcReviewStatus the bulkSetCloudPcReviewStatus property
+func (m *ComanagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*if7ab50280eee6c516e9627d5b46411704669babc585beaa87d9d2b895be64058.BulkSetCloudPcReviewStatusRequestBuilder) {
+    return if7ab50280eee6c516e9627d5b46411704669babc585beaa87d9d2b895be64058.NewBulkSetCloudPcReviewStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // NewComanagedDevicesRequestBuilderInternal instantiates a new ComanagedDevicesRequestBuilder and sets the default values.
 func NewComanagedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesRequestBuilder) {
     m := &ComanagedDevicesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/comanagedDevices{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/comanagedDevices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

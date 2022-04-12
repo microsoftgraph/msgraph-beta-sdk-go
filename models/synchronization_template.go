@@ -8,19 +8,19 @@ import (
 type SynchronizationTemplate struct {
     Entity
     // Identifier of the application this template belongs to.
-    applicationId *string;
+    applicationId *string
     // true if this template is recommended to be the default for the application.
-    default_escaped *bool;
+    default_escaped *bool
     // Description of the template.
-    description *string;
+    description *string
     // true if this template should appear in the collection of templates available for the application instance (service principal).
-    discoverable *bool;
+    discoverable *bool
     // One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
-    factoryTag *string;
+    factoryTag *string
     // Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-    metadata []MetadataEntryable;
+    metadata []MetadataEntryable
     // Default synchronization schema for the jobs based on this template.
-    schema SynchronizationSchemaable;
+    schema SynchronizationSchemaable
 }
 // NewSynchronizationTemplate instantiates a new synchronizationTemplate and sets the default values.
 func NewSynchronizationTemplate()(*SynchronizationTemplate) {
@@ -74,9 +74,9 @@ func (m *SynchronizationTemplate) GetFactoryTag()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["applicationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["default"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["default"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["discoverable"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["discoverable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["factoryTag"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["factoryTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["metadata"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["metadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMetadataEntryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *SynchronizationTemplate) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["schema"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["schema"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSynchronizationSchemaFromDiscriminatorValue)
         if err != nil {
             return err

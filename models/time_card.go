@@ -8,21 +8,21 @@ import (
 type TimeCard struct {
     ChangeTrackedEntity
     // The list of breaks associated with the timeCard.
-    breaks []TimeCardBreakable;
+    breaks []TimeCardBreakable
     // The clock-in event of the timeCard.
-    clockInEvent TimeCardEventable;
+    clockInEvent TimeCardEventable
     // The clock-out event of the timeCard.
-    clockOutEvent TimeCardEventable;
+    clockOutEvent TimeCardEventable
     // Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
-    confirmedBy *ConfirmedBy;
+    confirmedBy *ConfirmedBy
     // Notes about the timeCard.
-    notes ItemBodyable;
+    notes ItemBodyable
     // The original timeCardEntry of the timeCard, before user edits.
-    originalEntry TimeCardEntryable;
+    originalEntry TimeCardEntryable
     // The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
-    state *TimeCardState;
+    state *TimeCardState
     // User ID to which  the timeCard belongs.
-    userId *string;
+    userId *string
 }
 // NewTimeCard instantiates a new timeCard and sets the default values.
 func NewTimeCard()(*TimeCard) {
@@ -68,9 +68,9 @@ func (m *TimeCard) GetConfirmedBy()(*ConfirmedBy) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TimeCard) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
-    res["breaks"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["breaks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTimeCardBreakFromDiscriminatorValue)
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["clockInEvent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clockInEvent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTimeCardEventFromDiscriminatorValue)
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["clockOutEvent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clockOutEvent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTimeCardEventFromDiscriminatorValue)
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["confirmedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["confirmedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConfirmedBy)
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["notes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["originalEntry"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["originalEntry"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTimeCardEntryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTimeCardState)
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

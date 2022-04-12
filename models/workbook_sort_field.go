@@ -7,19 +7,19 @@ import (
 // WorkbookSortField 
 type WorkbookSortField struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Represents whether the sorting is done in an ascending fashion.
-    ascending *bool;
+    ascending *bool
     // Represents the color that is the target of the condition if the sorting is on font or cell color.
-    color *string;
+    color *string
     // Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
-    dataOption *string;
+    dataOption *string
     // Represents the icon that is the target of the condition if the sorting is on the cell's icon.
-    icon WorkbookIconable;
+    icon WorkbookIconable
     // Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
-    key *int32;
+    key *int32
     // Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
-    sortOn *string;
+    sortOn *string
 }
 // NewWorkbookSortField instantiates a new workbookSortField and sets the default values.
 func NewWorkbookSortField()(*WorkbookSortField) {
@@ -65,9 +65,9 @@ func (m *WorkbookSortField) GetDataOption()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["ascending"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["ascending"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["color"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["dataOption"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataOption"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["icon"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["icon"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookIconFromDiscriminatorValue)
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["key"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["key"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *WorkbookSortField) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["sortOn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sortOn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

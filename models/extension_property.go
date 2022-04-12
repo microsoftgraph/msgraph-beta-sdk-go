@@ -8,15 +8,15 @@ import (
 type ExtensionProperty struct {
     DirectoryObject
     // Display name of the application object on which this extension property is defined. Read-only.
-    appDisplayName *string;
+    appDisplayName *string
     // Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
-    dataType *string;
+    dataType *string
     // Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
-    isSyncedFromOnPremises *bool;
+    isSyncedFromOnPremises *bool
     // Name of the extension property. Not nullable.
-    name *string;
+    name *string
     // Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
-    targetObjects []string;
+    targetObjects []string
 }
 // NewExtensionProperty instantiates a new extensionProperty and sets the default values.
 func NewExtensionProperty()(*ExtensionProperty) {
@@ -46,9 +46,9 @@ func (m *ExtensionProperty) GetDataType()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
-    res["appDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["dataType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["isSyncedFromOnPremises"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isSyncedFromOnPremises"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *ExtensionProperty) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["targetObjects"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetObjects"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

@@ -9,23 +9,23 @@ import (
 type DeviceManagementReusablePolicySetting struct {
     Entity
     // reusable setting creation date and time. This property is read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // reusable setting description supplied by user.
-    description *string;
+    description *string
     // reusable setting display name supplied by user.
-    displayName *string;
+    displayName *string
     // date and time when reusable setting was last modified. This property is read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // configuration policies referencing the current reusable setting. This property is read-only.
-    referencingConfigurationPolicies []DeviceManagementConfigurationPolicyable;
+    referencingConfigurationPolicies []DeviceManagementConfigurationPolicyable
     // count of configuration policies referencing the current reusable setting. Valid values 0 to 2147483647. This property is read-only.
-    referencingConfigurationPolicyCount *int32;
+    referencingConfigurationPolicyCount *int32
     // setting definition id associated with this reusable setting.
-    settingDefinitionId *string;
+    settingDefinitionId *string
     // reusable setting configuration instance
-    settingInstance DeviceManagementConfigurationSettingInstanceable;
+    settingInstance DeviceManagementConfigurationSettingInstanceable
     // version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.
-    version *int32;
+    version *int32
 }
 // NewDeviceManagementReusablePolicySetting instantiates a new deviceManagementReusablePolicySetting and sets the default values.
 func NewDeviceManagementReusablePolicySetting()(*DeviceManagementReusablePolicySetting) {
@@ -63,9 +63,9 @@ func (m *DeviceManagementReusablePolicySetting) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["referencingConfigurationPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["referencingConfigurationPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["referencingConfigurationPolicyCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["referencingConfigurationPolicyCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["settingDefinitionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingDefinitionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["settingInstance"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingInstance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementConfigurationSettingInstanceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

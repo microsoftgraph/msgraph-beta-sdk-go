@@ -9,15 +9,15 @@ import (
 type LocalizedNotificationMessage struct {
     Entity
     // Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
-    isDefault *bool;
+    isDefault *bool
     // DateTime the object was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Locale for which this message is destined.
-    locale *string;
+    locale *string
     // The Message Template content.
-    messageTemplate *string;
+    messageTemplate *string
     // The Message Template Subject.
-    subject *string;
+    subject *string
 }
 // NewLocalizedNotificationMessage instantiates a new localizedNotificationMessage and sets the default values.
 func NewLocalizedNotificationMessage()(*LocalizedNotificationMessage) {
@@ -31,9 +31,9 @@ func CreateLocalizedNotificationMessageFromDiscriminatorValue(parseNode i878a80d
     return NewLocalizedNotificationMessage(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *LocalizedNotificationMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *LocalizedNotificationMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["isDefault"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -43,7 +43,7 @@ func (m *LocalizedNotificationMessage) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *LocalizedNotificationMessage) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["locale"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["locale"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *LocalizedNotificationMessage) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["messageTemplate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["messageTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *LocalizedNotificationMessage) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["subject"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

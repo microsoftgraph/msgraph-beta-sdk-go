@@ -9,59 +9,59 @@ import (
 type DeviceManagementAutopilotEvent struct {
     Entity
     // Time spent in user ESP.
-    accountSetupDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    accountSetupDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Deployment status for the enrollment status page account setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
-    accountSetupStatus *WindowsAutopilotDeploymentState;
+    accountSetupStatus *WindowsAutopilotDeploymentState
     // Autopilot deployment duration including enrollment.
-    deploymentDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    deploymentDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Deployment end time.
-    deploymentEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    deploymentEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Deployment start time.
-    deploymentStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    deploymentStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Deployment state like Success, Failure, InProgress, SuccessWithTimeout. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
-    deploymentState *WindowsAutopilotDeploymentState;
+    deploymentState *WindowsAutopilotDeploymentState
     // Total deployment duration from enrollment to Desktop screen.
-    deploymentTotalDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    deploymentTotalDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Device id associated with the object
-    deviceId *string;
+    deviceId *string
     // Time spent in device enrollment.
-    devicePreparationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    devicePreparationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Device registration date.
-    deviceRegisteredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    deviceRegisteredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Device serial number.
-    deviceSerialNumber *string;
+    deviceSerialNumber *string
     // Time spent in device ESP.
-    deviceSetupDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    deviceSetupDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Deployment status for the enrollment status page device setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
-    deviceSetupStatus *WindowsAutopilotDeploymentState;
+    deviceSetupStatus *WindowsAutopilotDeploymentState
     // Enrollment failure details.
-    enrollmentFailureDetails *string;
+    enrollmentFailureDetails *string
     // Device enrollment start date.
-    enrollmentStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    enrollmentStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Enrollment state like Enrolled, Failed. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
-    enrollmentState *EnrollmentState;
+    enrollmentState *EnrollmentState
     // Enrollment type. Possible values are: unknown, azureADJoinedWithAutopilotProfile, offlineDomainJoined, azureADJoinedUsingDeviceAuthWithAutopilotProfile, azureADJoinedUsingDeviceAuthWithoutAutopilotProfile, azureADJoinedWithOfflineAutopilotProfile, azureADJoinedWithWhiteGlove, offlineDomainJoinedWithWhiteGlove, offlineDomainJoinedWithOfflineAutopilotProfile.
-    enrollmentType *WindowsAutopilotEnrollmentType;
+    enrollmentType *WindowsAutopilotEnrollmentType
     // Time when the event occurred .
-    eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Managed device name.
-    managedDeviceName *string;
+    managedDeviceName *string
     // Device operating system version.
-    osVersion *string;
+    osVersion *string
     // Policy and application status details for this device.
-    policyStatusDetails []DeviceManagementAutopilotPolicyStatusDetailable;
+    policyStatusDetails []DeviceManagementAutopilotPolicyStatusDetailable
     // Count of applications targeted.
-    targetedAppCount *int32;
+    targetedAppCount *int32
     // Count of policies targeted.
-    targetedPolicyCount *int32;
+    targetedPolicyCount *int32
     // User principal name used to enroll the device.
-    userPrincipalName *string;
+    userPrincipalName *string
     // Enrollment Status Page profile name
-    windows10EnrollmentCompletionPageConfigurationDisplayName *string;
+    windows10EnrollmentCompletionPageConfigurationDisplayName *string
     // Enrollment Status Page profile ID
-    windows10EnrollmentCompletionPageConfigurationId *string;
+    windows10EnrollmentCompletionPageConfigurationId *string
     // Autopilot profile name.
-    windowsAutopilotDeploymentProfileDisplayName *string;
+    windowsAutopilotDeploymentProfileDisplayName *string
 }
 // NewDeviceManagementAutopilotEvent instantiates a new deviceManagementAutopilotEvent and sets the default values.
 func NewDeviceManagementAutopilotEvent()(*DeviceManagementAutopilotEvent) {
@@ -219,9 +219,9 @@ func (m *DeviceManagementAutopilotEvent) GetEventDateTime()(*i336074805fc853987a
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accountSetupDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accountSetupDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -231,7 +231,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["accountSetupStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accountSetupStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsAutopilotDeploymentState)
         if err != nil {
             return err
@@ -241,7 +241,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["deploymentDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deploymentDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -251,7 +251,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["deploymentEndDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deploymentEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -261,7 +261,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["deploymentStartDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deploymentStartDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -271,7 +271,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["deploymentState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deploymentState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsAutopilotDeploymentState)
         if err != nil {
             return err
@@ -281,7 +281,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["deploymentTotalDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deploymentTotalDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -291,7 +291,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["deviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -301,7 +301,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["devicePreparationDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["devicePreparationDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -311,7 +311,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["deviceRegisteredDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceRegisteredDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -321,7 +321,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["deviceSerialNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceSerialNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -331,7 +331,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["deviceSetupDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceSetupDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -341,7 +341,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["deviceSetupStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceSetupStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsAutopilotDeploymentState)
         if err != nil {
             return err
@@ -351,7 +351,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["enrollmentFailureDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enrollmentFailureDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -361,7 +361,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["enrollmentStartDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enrollmentStartDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -371,7 +371,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["enrollmentState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enrollmentState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEnrollmentState)
         if err != nil {
             return err
@@ -381,7 +381,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["enrollmentType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enrollmentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsAutopilotEnrollmentType)
         if err != nil {
             return err
@@ -391,7 +391,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["eventDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["eventDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -401,7 +401,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["managedDeviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -411,7 +411,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["osVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -421,7 +421,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["policyStatusDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyStatusDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue)
         if err != nil {
             return err
@@ -435,7 +435,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["targetedAppCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetedAppCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -445,7 +445,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["targetedPolicyCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetedPolicyCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -455,7 +455,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -465,7 +465,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["windows10EnrollmentCompletionPageConfigurationDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windows10EnrollmentCompletionPageConfigurationDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -475,7 +475,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["windows10EnrollmentCompletionPageConfigurationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windows10EnrollmentCompletionPageConfigurationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -485,7 +485,7 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["windowsAutopilotDeploymentProfileDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsAutopilotDeploymentProfileDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

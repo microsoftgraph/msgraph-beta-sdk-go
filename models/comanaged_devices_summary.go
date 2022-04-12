@@ -7,25 +7,25 @@ import (
 // ComanagedDevicesSummary summary data for co managed devices
 type ComanagedDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Number of devices with CompliancePolicy swung-over. This property is read-only.
-    compliancePolicyCount *int32;
+    compliancePolicyCount *int32
     // Number of devices with ConfigurationSettings swung-over. This property is read-only.
-    configurationSettingsCount *int32;
+    configurationSettingsCount *int32
     // Number of devices with EndpointProtection swung-over. This property is read-only.
-    endpointProtectionCount *int32;
+    endpointProtectionCount *int32
     // Number of devices with Inventory swung-over. This property is read-only.
-    inventoryCount *int32;
+    inventoryCount *int32
     // Number of devices with ModernApps swung-over. This property is read-only.
-    modernAppsCount *int32;
+    modernAppsCount *int32
     // Number of devices with OfficeApps swung-over. This property is read-only.
-    officeAppsCount *int32;
+    officeAppsCount *int32
     // Number of devices with ResourceAccess swung-over. This property is read-only.
-    resourceAccessCount *int32;
+    resourceAccessCount *int32
     // Number of Co-Managed Devices. This property is read-only.
-    totalComanagedCount *int32;
+    totalComanagedCount *int32
     // Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.
-    windowsUpdateForBusinessCount *int32;
+    windowsUpdateForBusinessCount *int32
 }
 // NewComanagedDevicesSummary instantiates a new comanagedDevicesSummary and sets the default values.
 func NewComanagedDevicesSummary()(*ComanagedDevicesSummary) {
@@ -71,9 +71,9 @@ func (m *ComanagedDevicesSummary) GetEndpointProtectionCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["compliancePolicyCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["compliancePolicyCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["configurationSettingsCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["configurationSettingsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["endpointProtectionCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endpointProtectionCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["inventoryCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inventoryCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["modernAppsCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["modernAppsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["officeAppsCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["officeAppsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["resourceAccessCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceAccessCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["totalComanagedCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalComanagedCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["windowsUpdateForBusinessCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsUpdateForBusinessCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

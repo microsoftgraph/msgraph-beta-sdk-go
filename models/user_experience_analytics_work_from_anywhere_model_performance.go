@@ -8,23 +8,23 @@ import (
 type UserExperienceAnalyticsWorkFromAnywhereModelPerformance struct {
     Entity
     // The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    cloudIdentityScore *float64;
+    cloudIdentityScore *float64
     // The user experience work from anywhere's cloud management score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    cloudManagementScore *float64;
+    cloudManagementScore *float64
     // The user experience work from anywhere's cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    cloudProvisioningScore *float64;
+    cloudProvisioningScore *float64
     // The health state of the user experience analytics work from anywhere model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-    healthStatus *UserExperienceAnalyticsHealthState;
+    healthStatus *UserExperienceAnalyticsHealthState
     // The user experience work from anywhere's manufacturer name of the devices.
-    manufacturer *string;
+    manufacturer *string
     // The user experience work from anywhere's model name of the devices.
-    model *string;
+    model *string
     // The user experience work from anywhere's devices count for the model. Valid values -2147483648 to 2147483647
-    modelDeviceCount *int32;
+    modelDeviceCount *int32
     // The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    windowsScore *float64;
+    windowsScore *float64
     // The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    workFromAnywhereScore *float64;
+    workFromAnywhereScore *float64
 }
 // NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance instantiates a new userExperienceAnalyticsWorkFromAnywhereModelPerformance and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance()(*UserExperienceAnalyticsWorkFromAnywhereModelPerformance) {
@@ -62,9 +62,9 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetCloudProvis
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["cloudIdentityScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudIdentityScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeseri
         }
         return nil
     }
-    res["cloudManagementScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudManagementScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeseri
         }
         return nil
     }
-    res["cloudProvisioningScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudProvisioningScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeseri
         }
         return nil
     }
-    res["healthStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["healthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserExperienceAnalyticsHealthState)
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeseri
         }
         return nil
     }
-    res["manufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeseri
         }
         return nil
     }
-    res["model"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeseri
         }
         return nil
     }
-    res["modelDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["modelDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeseri
         }
         return nil
     }
-    res["windowsScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeseri
         }
         return nil
     }
-    res["workFromAnywhereScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["workFromAnywhereScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err

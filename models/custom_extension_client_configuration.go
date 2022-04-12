@@ -7,9 +7,9 @@ import (
 // CustomExtensionClientConfiguration 
 type CustomExtensionClientConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
-    timeoutInMilliseconds *int32;
+    timeoutInMilliseconds *int32
 }
 // NewCustomExtensionClientConfiguration instantiates a new customExtensionClientConfiguration and sets the default values.
 func NewCustomExtensionClientConfiguration()(*CustomExtensionClientConfiguration) {
@@ -31,9 +31,9 @@ func (m *CustomExtensionClientConfiguration) GetAdditionalData()(map[string]inte
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CustomExtensionClientConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["timeoutInMilliseconds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CustomExtensionClientConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["timeoutInMilliseconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

@@ -8,13 +8,13 @@ import (
 // CertificateConnectorHealthMetricValue metric snapshot value returned in response to a GetHealthMetricTimeSeries request.
 type CertificateConnectorHealthMetricValue struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Timestamp for this metric data-point.
-    dateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    dateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Count of failed requests/operations.
-    failureCount *int64;
+    failureCount *int64
     // Count of successful requests/operations.
-    successCount *int64;
+    successCount *int64
 }
 // NewCertificateConnectorHealthMetricValue instantiates a new certificateConnectorHealthMetricValue and sets the default values.
 func NewCertificateConnectorHealthMetricValue()(*CertificateConnectorHealthMetricValue) {
@@ -52,9 +52,9 @@ func (m *CertificateConnectorHealthMetricValue) GetFailureCount()(*int64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CertificateConnectorHealthMetricValue) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["dateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CertificateConnectorHealthMetricValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["dateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *CertificateConnectorHealthMetricValue) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["failureCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["failureCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *CertificateConnectorHealthMetricValue) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["successCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["successCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

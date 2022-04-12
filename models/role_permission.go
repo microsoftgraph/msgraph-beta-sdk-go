@@ -7,11 +7,11 @@ import (
 // RolePermission contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
 type RolePermission struct {
     // Allowed Actions - Deprecated
-    actions []string;
+    actions []string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Resource Actions each containing a set of allowed and not allowed permissions.
-    resourceActions []ResourceActionable;
+    resourceActions []ResourceActionable
 }
 // NewRolePermission instantiates a new rolePermission and sets the default values.
 func NewRolePermission()(*RolePermission) {
@@ -41,9 +41,9 @@ func (m *RolePermission) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RolePermission) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["actions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *RolePermission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *RolePermission) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["resourceActions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateResourceActionFromDiscriminatorValue)
         if err != nil {
             return err

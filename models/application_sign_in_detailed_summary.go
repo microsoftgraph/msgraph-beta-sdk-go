@@ -9,15 +9,15 @@ import (
 type ApplicationSignInDetailedSummary struct {
     Entity
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    aggregatedEventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    aggregatedEventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Name of the application that the user signed in to.
-    appDisplayName *string;
+    appDisplayName *string
     // ID of the application that the user signed in to.
-    appId *string;
+    appId *string
     // Count of sign-ins made by the application.
-    signInCount *int64;
+    signInCount *int64
     // Details of the sign-in status.
-    status SignInStatusable;
+    status SignInStatusable
 }
 // NewApplicationSignInDetailedSummary instantiates a new applicationSignInDetailedSummary and sets the default values.
 func NewApplicationSignInDetailedSummary()(*ApplicationSignInDetailedSummary) {
@@ -55,9 +55,9 @@ func (m *ApplicationSignInDetailedSummary) GetAppId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["aggregatedEventDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["aggregatedEventDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["appDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["appId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["signInCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["signInCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSignInStatusFromDiscriminatorValue)
         if err != nil {
             return err

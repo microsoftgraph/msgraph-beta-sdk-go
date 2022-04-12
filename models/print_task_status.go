@@ -7,11 +7,11 @@ import (
 // PrintTaskStatus 
 type PrintTaskStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A human-readable description of the current processing state of the printTask.
-    description *string;
+    description *string
     // The current processing state of the printTask. Valid values are described in the following table.
-    state *PrintTaskProcessingState;
+    state *PrintTaskProcessingState
 }
 // NewPrintTaskStatus instantiates a new printTaskStatus and sets the default values.
 func NewPrintTaskStatus()(*PrintTaskStatus) {
@@ -41,9 +41,9 @@ func (m *PrintTaskStatus) GetDescription()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PrintTaskStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *PrintTaskStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *PrintTaskStatus) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePrintTaskProcessingState)
         if err != nil {
             return err

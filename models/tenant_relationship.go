@@ -8,9 +8,9 @@ import (
 type TenantRelationship struct {
     Entity
     // The customer who has a delegated admin relationship with a Microsoft partner.
-    delegatedAdminCustomers []DelegatedAdminCustomerable;
+    delegatedAdminCustomers []DelegatedAdminCustomerable
     // The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
-    delegatedAdminRelationships []DelegatedAdminRelationshipable;
+    delegatedAdminRelationships []DelegatedAdminRelationshipable
 }
 // NewTenantRelationship instantiates a new tenantRelationship and sets the default values.
 func NewTenantRelationship()(*TenantRelationship) {
@@ -40,9 +40,9 @@ func (m *TenantRelationship) GetDelegatedAdminRelationships()([]DelegatedAdminRe
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TenantRelationship) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TenantRelationship) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["delegatedAdminCustomers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["delegatedAdminCustomers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDelegatedAdminCustomerFromDiscriminatorValue)
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *TenantRelationship) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["delegatedAdminRelationships"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["delegatedAdminRelationships"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDelegatedAdminRelationshipFromDiscriminatorValue)
         if err != nil {
             return err

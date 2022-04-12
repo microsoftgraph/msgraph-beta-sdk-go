@@ -7,13 +7,13 @@ import (
 // AuthenticationMethodsRegistrationCampaignIncludeTarget 
 type AuthenticationMethodsRegistrationCampaignIncludeTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The object identifier of an Azure Active Directory user or group.
-    id *string;
+    id *string
     // The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
-    targetedAuthenticationMethod *string;
+    targetedAuthenticationMethod *string
     // The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
-    targetType *AuthenticationMethodTargetType;
+    targetType *AuthenticationMethodTargetType
 }
 // NewAuthenticationMethodsRegistrationCampaignIncludeTarget instantiates a new authenticationMethodsRegistrationCampaignIncludeTarget and sets the default values.
 func NewAuthenticationMethodsRegistrationCampaignIncludeTarget()(*AuthenticationMethodsRegistrationCampaignIncludeTarget) {
@@ -35,9 +35,9 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetAdditionalDa
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeseria
         }
         return nil
     }
-    res["targetedAuthenticationMethod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetedAuthenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *AuthenticationMethodsRegistrationCampaignIncludeTarget) GetFieldDeseria
         }
         return nil
     }
-    res["targetType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAuthenticationMethodTargetType)
         if err != nil {
             return err

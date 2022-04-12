@@ -20,55 +20,55 @@ import (
 // EducationSubmissionItemRequestBuilder provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
 type EducationSubmissionItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // EducationSubmissionItemRequestBuilderDeleteOptions options for Delete
 type EducationSubmissionItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // EducationSubmissionItemRequestBuilderGetOptions options for Get
 type EducationSubmissionItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *EducationSubmissionItemRequestBuilderGetQueryParameters;
+    QueryParameters *EducationSubmissionItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // EducationSubmissionItemRequestBuilderGetQueryParameters once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
 type EducationSubmissionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // EducationSubmissionItemRequestBuilderPatchOptions options for Patch
 type EducationSubmissionItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSubmissionable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSubmissionable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewEducationSubmissionItemRequestBuilderInternal instantiates a new EducationSubmissionItemRequestBuilder and sets the default values.
 func NewEducationSubmissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EducationSubmissionItemRequestBuilder) {
     m := &EducationSubmissionItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/me/assignments/{educationAssignment_id}/submissions/{educationSubmission_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -181,7 +181,7 @@ func (m *EducationSubmissionItemRequestBuilder) OutcomesById(id string)(*i1385c8
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["educationOutcome_id"] = id
+        urlTplParams["educationOutcome%2Did"] = id
     }
     return i1385c8c70a4568d699eec3bf9f510616b7cc7e4ff29e686c620650de2efd46c7.NewEducationOutcomeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -216,7 +216,7 @@ func (m *EducationSubmissionItemRequestBuilder) ResourcesById(id string)(*ic3033
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["educationSubmissionResource_id"] = id
+        urlTplParams["educationSubmissionResource%2Did"] = id
     }
     return ic303354d0ebbaf25e55517d0e5a70f2d884d74d3f80686736f2592b8b57dc23f.NewEducationSubmissionResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -243,7 +243,7 @@ func (m *EducationSubmissionItemRequestBuilder) SubmittedResourcesById(id string
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["educationSubmissionResource_id"] = id
+        urlTplParams["educationSubmissionResource%2Did"] = id
     }
     return ie785db4b38f9f4ba6fc3e6cfb4164fd07a4b957a6f8e1b2b297b1e8dfeb71a05.NewEducationSubmissionResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -9,17 +9,17 @@ import (
 type WindowsInformationProtectionWipeAction struct {
     Entity
     // Last checkin time of the device that was targeted by this wipe action.
-    lastCheckInDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastCheckInDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Wipe action status. Possible values are: none, pending, canceled, active, done, failed, notSupported.
-    status *ActionState;
+    status *ActionState
     // Targeted device Mac address.
-    targetedDeviceMacAddress *string;
+    targetedDeviceMacAddress *string
     // Targeted device name.
-    targetedDeviceName *string;
+    targetedDeviceName *string
     // The DeviceRegistrationId being targeted by this wipe action.
-    targetedDeviceRegistrationId *string;
+    targetedDeviceRegistrationId *string
     // The UserId being targeted by this wipe action.
-    targetedUserId *string;
+    targetedUserId *string
 }
 // NewWindowsInformationProtectionWipeAction instantiates a new windowsInformationProtectionWipeAction and sets the default values.
 func NewWindowsInformationProtectionWipeAction()(*WindowsInformationProtectionWipeAction) {
@@ -33,9 +33,9 @@ func CreateWindowsInformationProtectionWipeActionFromDiscriminatorValue(parseNod
     return NewWindowsInformationProtectionWipeAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["lastCheckInDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastCheckInDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseActionState)
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["targetedDeviceMacAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetedDeviceMacAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["targetedDeviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetedDeviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["targetedDeviceRegistrationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetedDeviceRegistrationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["targetedUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetedUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

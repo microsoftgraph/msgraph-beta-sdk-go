@@ -7,17 +7,17 @@ import (
 // ProvisioningErrorInfo 
 type ProvisioningErrorInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Additional details in case of error.
-    additionalDetails *string;
+    additionalDetails *string
     // Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
-    errorCategory *ProvisioningStatusErrorCategory;
+    errorCategory *ProvisioningStatusErrorCategory
     // Unique error code if any occurred. Learn more
-    errorCode *string;
+    errorCode *string
     // Summarizes the status and describes why the status happened.
-    reason *string;
+    reason *string
     // Provides the resolution for the corresponding error.
-    recommendedAction *string;
+    recommendedAction *string
 }
 // NewProvisioningErrorInfo instantiates a new provisioningErrorInfo and sets the default values.
 func NewProvisioningErrorInfo()(*ProvisioningErrorInfo) {
@@ -63,9 +63,9 @@ func (m *ProvisioningErrorInfo) GetErrorCode()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["additionalDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["additionalDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["errorCategory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseProvisioningStatusErrorCategory)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["errorCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["reason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *ProvisioningErrorInfo) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["recommendedAction"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recommendedAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

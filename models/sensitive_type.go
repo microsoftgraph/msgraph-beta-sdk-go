@@ -8,23 +8,23 @@ import (
 type SensitiveType struct {
     Entity
     // The classificationMethod property
-    classificationMethod *ClassificationMethod;
+    classificationMethod *ClassificationMethod
     // The description property
-    description *string;
+    description *string
     // The name property
-    name *string;
+    name *string
     // The publisherName property
-    publisherName *string;
+    publisherName *string
     // The rulePackageId property
-    rulePackageId *string;
+    rulePackageId *string
     // The rulePackageType property
-    rulePackageType *string;
+    rulePackageType *string
     // The scope property
-    scope *SensitiveTypeScope;
+    scope *SensitiveTypeScope
     // The sensitiveTypeSource property
-    sensitiveTypeSource *SensitiveTypeSource;
+    sensitiveTypeSource *SensitiveTypeSource
     // The state property
-    state *string;
+    state *string
 }
 // NewSensitiveType instantiates a new sensitiveType and sets the default values.
 func NewSensitiveType()(*SensitiveType) {
@@ -54,9 +54,9 @@ func (m *SensitiveType) GetDescription()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SensitiveType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["classificationMethod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["classificationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseClassificationMethod)
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["publisherName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publisherName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["rulePackageId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rulePackageId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["rulePackageType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rulePackageType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["scope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSensitiveTypeScope)
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["sensitiveTypeSource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sensitiveTypeSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSensitiveTypeSource)
         if err != nil {
             return err
@@ -136,7 +136,7 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

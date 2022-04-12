@@ -9,17 +9,17 @@ import (
 type Custodian struct {
     DataSourceContainer
     // Date and time the custodian acknowledged a hold notification.
-    acknowledgedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    acknowledgedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Identifies whether a custodian's sources were placed on hold during creation.
-    applyHoldToSources *bool;
+    applyHoldToSources *bool
     // Email address of the custodian.
-    email *string;
+    email *string
     // Data source entity for SharePoint sites associated with the custodian.
-    siteSources []SiteSourceable;
+    siteSources []SiteSourceable
     // Data source entity for groups associated with the custodian.
-    unifiedGroupSources []UnifiedGroupSourceable;
+    unifiedGroupSources []UnifiedGroupSourceable
     // Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-    userSources []UserSourceable;
+    userSources []UserSourceable
 }
 // NewCustodian instantiates a new custodian and sets the default values.
 func NewCustodian()(*Custodian) {
@@ -57,9 +57,9 @@ func (m *Custodian) GetEmail()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Custodian) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Custodian) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DataSourceContainer.GetFieldDeserializers()
-    res["acknowledgedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["acknowledgedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["applyHoldToSources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applyHoldToSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["email"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["siteSources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["siteSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSiteSourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["unifiedGroupSources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unifiedGroupSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedGroupSourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["userSources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserSourceFromDiscriminatorValue)
         if err != nil {
             return err

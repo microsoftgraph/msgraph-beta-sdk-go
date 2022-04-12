@@ -7,13 +7,13 @@ import (
 // MobileAppSupportedDeviceType device properties
 type MobileAppSupportedDeviceType struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Maximum OS version
-    maximumOperatingSystemVersion *string;
+    maximumOperatingSystemVersion *string
     // Minimum OS version
-    minimumOperatingSystemVersion *string;
+    minimumOperatingSystemVersion *string
     // Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
-    type_escaped *DeviceType;
+    type_escaped *DeviceType
 }
 // NewMobileAppSupportedDeviceType instantiates a new mobileAppSupportedDeviceType and sets the default values.
 func NewMobileAppSupportedDeviceType()(*MobileAppSupportedDeviceType) {
@@ -35,9 +35,9 @@ func (m *MobileAppSupportedDeviceType) GetAdditionalData()(map[string]interface{
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MobileAppSupportedDeviceType) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["maximumOperatingSystemVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MobileAppSupportedDeviceType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["maximumOperatingSystemVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *MobileAppSupportedDeviceType) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["minimumOperatingSystemVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumOperatingSystemVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *MobileAppSupportedDeviceType) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceType)
         if err != nil {
             return err

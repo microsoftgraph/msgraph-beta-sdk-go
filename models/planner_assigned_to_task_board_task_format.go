@@ -8,9 +8,9 @@ import (
 type PlannerAssignedToTaskBoardTaskFormat struct {
     PlannerDelta
     // Dictionary of hints used to order tasks on the AssignedTo view of the Task Board. The key of each entry is one of the users the task is assigned to and the value is the order hint. The format of each value is defined as outlined here.
-    orderHintsByAssignee PlannerOrderHintsByAssigneeable;
+    orderHintsByAssignee PlannerOrderHintsByAssigneeable
     // Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.
-    unassignedOrderHint *string;
+    unassignedOrderHint *string
 }
 // NewPlannerAssignedToTaskBoardTaskFormat instantiates a new plannerAssignedToTaskBoardTaskFormat and sets the default values.
 func NewPlannerAssignedToTaskBoardTaskFormat()(*PlannerAssignedToTaskBoardTaskFormat) {
@@ -24,9 +24,9 @@ func CreatePlannerAssignedToTaskBoardTaskFormatFromDiscriminatorValue(parseNode 
     return NewPlannerAssignedToTaskBoardTaskFormat(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PlannerAssignedToTaskBoardTaskFormat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PlannerAssignedToTaskBoardTaskFormat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerDelta.GetFieldDeserializers()
-    res["orderHintsByAssignee"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["orderHintsByAssignee"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerOrderHintsByAssigneeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *PlannerAssignedToTaskBoardTaskFormat) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["unassignedOrderHint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unassignedOrderHint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -7,19 +7,19 @@ import (
 // AutomaticRepliesSetting 
 type AutomaticRepliesSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
-    externalAudience *ExternalAudienceScope;
+    externalAudience *ExternalAudienceScope
     // The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.
-    externalReplyMessage *string;
+    externalReplyMessage *string
     // The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
-    internalReplyMessage *string;
+    internalReplyMessage *string
     // The date and time that automatic replies are set to end, if Status is set to Scheduled.
-    scheduledEndDateTime DateTimeTimeZoneable;
+    scheduledEndDateTime DateTimeTimeZoneable
     // The date and time that automatic replies are set to begin, if Status is set to Scheduled.
-    scheduledStartDateTime DateTimeTimeZoneable;
+    scheduledStartDateTime DateTimeTimeZoneable
     // Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
-    status *AutomaticRepliesStatus;
+    status *AutomaticRepliesStatus
 }
 // NewAutomaticRepliesSetting instantiates a new automaticRepliesSetting and sets the default values.
 func NewAutomaticRepliesSetting()(*AutomaticRepliesSetting) {
@@ -57,9 +57,9 @@ func (m *AutomaticRepliesSetting) GetExternalReplyMessage()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["externalAudience"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["externalAudience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseExternalAudienceScope)
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["externalReplyMessage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalReplyMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["internalReplyMessage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["internalReplyMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["scheduledEndDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scheduledEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["scheduledStartDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scheduledStartDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *AutomaticRepliesSetting) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAutomaticRepliesStatus)
         if err != nil {
             return err

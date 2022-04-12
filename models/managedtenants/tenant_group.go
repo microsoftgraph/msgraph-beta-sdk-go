@@ -9,15 +9,15 @@ import (
 type TenantGroup struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
-    allTenantsIncluded *bool;
+    allTenantsIncluded *bool
     // The display name for the tenant group. Optional. Read-only.
-    displayName *string;
+    displayName *string
     // The collection of management action associated with the tenant group. Optional. Read-only.
-    managementActions []ManagementActionInfoable;
+    managementActions []ManagementActionInfoable
     // The collection of management intents associated with the tenant group. Optional. Read-only.
-    managementIntents []ManagementIntentInfoable;
+    managementIntents []ManagementIntentInfoable
     // The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
-    tenantIds []string;
+    tenantIds []string
 }
 // NewTenantGroup instantiates a new tenantGroup and sets the default values.
 func NewTenantGroup()(*TenantGroup) {
@@ -47,9 +47,9 @@ func (m *TenantGroup) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TenantGroup) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TenantGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["allTenantsIncluded"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allTenantsIncluded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["managementActions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementActionInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["managementIntents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementIntents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementIntentInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["tenantIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

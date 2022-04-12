@@ -9,19 +9,19 @@ import (
 type Journal struct {
     Entity
     // The account property
-    account Accountable;
+    account Accountable
     // The balancingAccountId property
-    balancingAccountId *string;
+    balancingAccountId *string
     // The balancingAccountNumber property
-    balancingAccountNumber *string;
+    balancingAccountNumber *string
     // The code property
-    code *string;
+    code *string
     // The displayName property
-    displayName *string;
+    displayName *string
     // The journalLines property
-    journalLines []JournalLineable;
+    journalLines []JournalLineable
     // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewJournal instantiates a new journal and sets the default values.
 func NewJournal()(*Journal) {
@@ -75,9 +75,9 @@ func (m *Journal) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Journal) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Journal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["account"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["account"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccountFromDiscriminatorValue)
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *Journal) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["balancingAccountId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["balancingAccountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *Journal) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["balancingAccountNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["balancingAccountNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *Journal) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["code"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *Journal) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *Journal) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["journalLines"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["journalLines"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateJournalLineFromDiscriminatorValue)
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *Journal) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

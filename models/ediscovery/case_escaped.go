@@ -10,39 +10,39 @@ import (
 type Case_escaped struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The user who closed the case.
-    closedBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable;
+    closedBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable
     // The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    closedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    closedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Returns a list of case custodian objects for this case.  Nullable.
-    custodians []Custodianable;
+    custodians []Custodianable
     // The case description.
-    description *string;
+    description *string
     // The case name.
-    displayName *string;
+    displayName *string
     // The external case number for customer reference.
-    externalId *string;
+    externalId *string
     // The last user who modified the entity.
-    lastModifiedBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable;
+    lastModifiedBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable
     // The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Returns a list of case legalHold objects for this case.  Nullable.
-    legalHolds []LegalHoldable;
+    legalHolds []LegalHoldable
     // Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-    noncustodialDataSources []NoncustodialDataSourceable;
+    noncustodialDataSources []NoncustodialDataSourceable
     // Returns a list of case operation objects for this case. Nullable.
-    operations []CaseOperationable;
+    operations []CaseOperationable
     // Returns a list of reviewSet objects in the case. Read-only. Nullable.
-    reviewSets []ReviewSetable;
+    reviewSets []ReviewSetable
     // The settings property
-    settings CaseSettingsable;
+    settings CaseSettingsable
     // Returns a list of sourceCollection objects associated with this case.
-    sourceCollections []SourceCollectionable;
+    sourceCollections []SourceCollectionable
     // The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
-    status *CaseStatus;
+    status *CaseStatus
     // Returns a list of tag objects associated to this case.
-    tags []Tagable;
+    tags []Tagable
 }
 // NewCase_escaped instantiates a new case_escaped and sets the default values.
 func NewCase_escaped()(*Case_escaped) {
@@ -112,9 +112,9 @@ func (m *Case_escaped) GetExternalId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Case_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["closedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["closedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["closedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["closedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["custodians"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["custodians"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCustodianFromDiscriminatorValue)
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -168,7 +168,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -178,7 +178,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["externalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -188,7 +188,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["lastModifiedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -198,7 +198,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -208,7 +208,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["legalHolds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["legalHolds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLegalHoldFromDiscriminatorValue)
         if err != nil {
             return err
@@ -222,7 +222,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["noncustodialDataSources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["noncustodialDataSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateNoncustodialDataSourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -236,7 +236,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["operations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCaseOperationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -250,7 +250,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["reviewSets"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reviewSets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateReviewSetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -264,7 +264,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["settings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCaseSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -274,7 +274,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["sourceCollections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceCollections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -288,7 +288,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCaseStatus)
         if err != nil {
             return err
@@ -298,7 +298,7 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["tags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTagFromDiscriminatorValue)
         if err != nil {
             return err

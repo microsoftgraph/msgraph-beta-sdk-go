@@ -9,31 +9,31 @@ import (
 type AccessPackageResource struct {
     Entity
     // Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
-    accessPackageResourceEnvironment AccessPackageResourceEnvironmentable;
+    accessPackageResourceEnvironment AccessPackageResourceEnvironmentable
     // Read-only. Nullable. Supports $expand.
-    accessPackageResourceRoles []AccessPackageResourceRoleable;
+    accessPackageResourceRoles []AccessPackageResourceRoleable
     // Read-only. Nullable. Supports $expand.
-    accessPackageResourceScopes []AccessPackageResourceScopeable;
+    accessPackageResourceScopes []AccessPackageResourceScopeable
     // The name of the user or application that first added this resource. Read-only.
-    addedBy *string;
+    addedBy *string
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    addedOn *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    addedOn *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Contains information about the attributes to be collected from the requestor and sent to the resource application.
-    attributes []AccessPackageResourceAttributeable;
+    attributes []AccessPackageResourceAttributeable
     // A description for the resource.
-    description *string;
+    description *string
     // The display name of the resource, such as the application name, group name or site name.
-    displayName *string;
+    displayName *string
     // True if the resource is not yet available for assignment.
-    isPendingOnboarding *bool;
+    isPendingOnboarding *bool
     // The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
-    originId *string;
+    originId *string
     // The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
-    originSystem *string;
+    originSystem *string
     // The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
-    resourceType *string;
+    resourceType *string
     // A unique resource locator for the resource, such as the URL for signing a user into an application.
-    url *string;
+    url *string
 }
 // NewAccessPackageResource instantiates a new accessPackageResource and sets the default values.
 func NewAccessPackageResource()(*AccessPackageResource) {
@@ -111,9 +111,9 @@ func (m *AccessPackageResource) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessPackageResourceEnvironment"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageResourceEnvironment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageResourceEnvironmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["accessPackageResourceRoles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageResourceRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceRoleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["accessPackageResourceScopes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageResourceScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceScopeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["addedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["addedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["addedOn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["addedOn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["attributes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["attributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceAttributeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["isPendingOnboarding"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isPendingOnboarding"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -215,7 +215,7 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["originId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["originId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["originSystem"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["originSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -235,7 +235,7 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["resourceType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -245,7 +245,7 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["url"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

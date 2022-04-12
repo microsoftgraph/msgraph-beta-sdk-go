@@ -7,15 +7,15 @@ import (
 // ImportedWindowsAutopilotDeviceIdentityState 
 type ImportedWindowsAutopilotDeviceIdentityState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Device error code reported by Device Directory Service(DDS).
-    deviceErrorCode *int32;
+    deviceErrorCode *int32
     // Device error name reported by Device Directory Service(DDS).
-    deviceErrorName *string;
+    deviceErrorName *string
     // Device status reported by Device Directory Service(DDS). Possible values are: unknown, pending, partial, complete, error.
-    deviceImportStatus *ImportedWindowsAutopilotDeviceIdentityImportStatus;
+    deviceImportStatus *ImportedWindowsAutopilotDeviceIdentityImportStatus
     // Device Registration ID for successfully added device reported by Device Directory Service(DDS).
-    deviceRegistrationId *string;
+    deviceRegistrationId *string
 }
 // NewImportedWindowsAutopilotDeviceIdentityState instantiates a new importedWindowsAutopilotDeviceIdentityState and sets the default values.
 func NewImportedWindowsAutopilotDeviceIdentityState()(*ImportedWindowsAutopilotDeviceIdentityState) {
@@ -69,9 +69,9 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetDeviceRegistrationId()(
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ImportedWindowsAutopilotDeviceIdentityState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["deviceErrorCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ImportedWindowsAutopilotDeviceIdentityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["deviceErrorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["deviceErrorName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceErrorName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["deviceImportStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceImportStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseImportedWindowsAutopilotDeviceIdentityImportStatus)
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *ImportedWindowsAutopilotDeviceIdentityState) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["deviceRegistrationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceRegistrationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

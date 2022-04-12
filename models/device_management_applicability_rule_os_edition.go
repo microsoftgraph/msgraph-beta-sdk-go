@@ -7,13 +7,13 @@ import (
 // DeviceManagementApplicabilityRuleOsEdition 
 type DeviceManagementApplicabilityRuleOsEdition struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Name for object.
-    name *string;
+    name *string
     // Applicability rule OS edition type.
-    osEditionTypes []Windows10EditionType;
+    osEditionTypes []Windows10EditionType
     // Applicability Rule type. Possible values are: include, exclude.
-    ruleType *DeviceManagementApplicabilityRuleType;
+    ruleType *DeviceManagementApplicabilityRuleType
 }
 // NewDeviceManagementApplicabilityRuleOsEdition instantiates a new deviceManagementApplicabilityRuleOsEdition and sets the default values.
 func NewDeviceManagementApplicabilityRuleOsEdition()(*DeviceManagementApplicabilityRuleOsEdition) {
@@ -35,9 +35,9 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetAdditionalData()(map[str
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementApplicabilityRuleOsEdition) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceManagementApplicabilityRuleOsEdition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["osEditionTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osEditionTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseWindows10EditionType)
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["ruleType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ruleType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementApplicabilityRuleType)
         if err != nil {
             return err

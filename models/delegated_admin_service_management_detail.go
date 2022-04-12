@@ -8,11 +8,11 @@ import (
 type DelegatedAdminServiceManagementDetail struct {
     Entity
     // The serviceId property
-    serviceId *string;
+    serviceId *string
     // The URL of the management portal for the managed service. Read-only.
-    serviceManagementUrl *string;
+    serviceManagementUrl *string
     // The name of a managed service. Read-only.
-    serviceName *string;
+    serviceName *string
 }
 // NewDelegatedAdminServiceManagementDetail instantiates a new delegatedAdminServiceManagementDetail and sets the default values.
 func NewDelegatedAdminServiceManagementDetail()(*DelegatedAdminServiceManagementDetail) {
@@ -26,9 +26,9 @@ func CreateDelegatedAdminServiceManagementDetailFromDiscriminatorValue(parseNode
     return NewDelegatedAdminServiceManagementDetail(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DelegatedAdminServiceManagementDetail) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DelegatedAdminServiceManagementDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["serviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -38,7 +38,7 @@ func (m *DelegatedAdminServiceManagementDetail) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["serviceManagementUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serviceManagementUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *DelegatedAdminServiceManagementDetail) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["serviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

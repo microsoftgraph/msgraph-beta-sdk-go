@@ -7,13 +7,13 @@ import (
 // OfficeConfiguration 
 type OfficeConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // List of office Client configuration.
-    clientConfigurations []OfficeClientConfigurationable;
+    clientConfigurations []OfficeClientConfigurationable
     // List of office Client check-in status.
-    tenantCheckinStatuses []OfficeClientCheckinStatusable;
+    tenantCheckinStatuses []OfficeClientCheckinStatusable
     // Entity that describes tenant check-in statues
-    tenantUserCheckinSummary OfficeUserCheckinSummaryable;
+    tenantUserCheckinSummary OfficeUserCheckinSummaryable
 }
 // NewOfficeConfiguration instantiates a new OfficeConfiguration and sets the default values.
 func NewOfficeConfiguration()(*OfficeConfiguration) {
@@ -43,9 +43,9 @@ func (m *OfficeConfiguration) GetClientConfigurations()([]OfficeClientConfigurat
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["clientConfigurations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["clientConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOfficeClientConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["tenantCheckinStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantCheckinStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOfficeClientCheckinStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["tenantUserCheckinSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantUserCheckinSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOfficeUserCheckinSummaryFromDiscriminatorValue)
         if err != nil {
             return err

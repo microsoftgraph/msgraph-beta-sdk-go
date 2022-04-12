@@ -32,49 +32,49 @@ import (
 // TeamRequestBuilder provides operations to manage the team property of the microsoft.graph.group entity.
 type TeamRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // TeamRequestBuilderDeleteOptions options for Delete
 type TeamRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TeamRequestBuilderGetOptions options for Get
 type TeamRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *TeamRequestBuilderGetQueryParameters;
+    QueryParameters *TeamRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TeamRequestBuilderGetQueryParameters get team from groups
 type TeamRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // TeamRequestBuilderPatchOptions options for Patch
 type TeamRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AllChannels the allChannels property
 func (m *TeamRequestBuilder) AllChannels()(*ib8cfafd2f6ca25503668caed9b0cd67ee91541ffff70e7906c57fa89871b1a20.AllChannelsRequestBuilder) {
@@ -87,7 +87,7 @@ func (m *TeamRequestBuilder) AllChannelsById(id string)(*i76e835f69addd3b76fa4f4
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["channel_id"] = id
+        urlTplParams["channel%2Did"] = id
     }
     return i76e835f69addd3b76fa4f4c624ee19dc988f6341fdf4ca5ba96721cbd87ec805.NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -102,7 +102,7 @@ func (m *TeamRequestBuilder) ChannelsById(id string)(*idf9596a657cf549a24aca9ce7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["channel_id"] = id
+        urlTplParams["channel%2Did"] = id
     }
     return idf9596a657cf549a24aca9ce70a9474252cf1784a579a04033ef97eb87e63a89.NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -110,7 +110,7 @@ func (m *TeamRequestBuilder) ChannelsById(id string)(*idf9596a657cf549a24aca9ce7
 func NewTeamRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamRequestBuilder) {
     m := &TeamRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group_id}/team{?select,expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/team{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -227,7 +227,7 @@ func (m *TeamRequestBuilder) IncomingChannelsById(id string)(*ifc1883ca07fdc0cb0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["channel_id"] = id
+        urlTplParams["channel%2Did"] = id
     }
     return ifc1883ca07fdc0cb053dd4f20f86b918549ab8d93ac7e207d922aa8370ee771f.NewChannelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -242,7 +242,7 @@ func (m *TeamRequestBuilder) InstalledAppsById(id string)(*i561e7ee1a103538797b9
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["teamsAppInstallation_id"] = id
+        urlTplParams["teamsAppInstallation%2Did"] = id
     }
     return i561e7ee1a103538797b93465871642e260b5e8db2b292a02eee8e68e2a67345a.NewTeamsAppInstallationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -257,7 +257,7 @@ func (m *TeamRequestBuilder) MembersById(id string)(*i4ec70ed3a09b5467fad127726e
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["conversationMember_id"] = id
+        urlTplParams["conversationMember%2Did"] = id
     }
     return i4ec70ed3a09b5467fad127726e19cca6112801b6feb60254f18e5a2533c3ee56.NewConversationMemberItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -272,7 +272,7 @@ func (m *TeamRequestBuilder) OperationsById(id string)(*i9a8b892ec6341ca828b87b1
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["teamsAsyncOperation_id"] = id
+        urlTplParams["teamsAsyncOperation%2Did"] = id
     }
     return i9a8b892ec6341ca828b87b1cde48342764942138cc5b79f3266c017f0fc03ffd.NewTeamsAsyncOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -287,7 +287,7 @@ func (m *TeamRequestBuilder) OwnersById(id string)(*id2d1db801a84d6c9a3a750acf02
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["user_id"] = id
+        urlTplParams["user%2Did"] = id
     }
     return id2d1db801a84d6c9a3a750acf0225d5e09a69c9865390c7bab93fa541cbc6125.NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -318,7 +318,7 @@ func (m *TeamRequestBuilder) PermissionGrantsById(id string)(*ib6cc8679c1d8b1fdb
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["resourceSpecificPermissionGrant_id"] = id
+        urlTplParams["resourceSpecificPermissionGrant%2Did"] = id
     }
     return ib6cc8679c1d8b1fdbaf622c34a88a722a821e1146db4542c60501545741765e0.NewResourceSpecificPermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -345,7 +345,7 @@ func (m *TeamRequestBuilder) TagsById(id string)(*ic7aad6617468ac8ab7994cbe9e037
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["teamworkTag_id"] = id
+        urlTplParams["teamworkTag%2Did"] = id
     }
     return ic7aad6617468ac8ab7994cbe9e03741fe79693d41944df1e32f15797dcdc1000.NewTeamworkTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -7,11 +7,11 @@ import (
 // MfaDetail 
 type MfaDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.
-    authDetail *string;
+    authDetail *string
     // Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
-    authMethod *string;
+    authMethod *string
 }
 // NewMfaDetail instantiates a new mfaDetail and sets the default values.
 func NewMfaDetail()(*MfaDetail) {
@@ -49,9 +49,9 @@ func (m *MfaDetail) GetAuthMethod()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MfaDetail) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["authDetail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MfaDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["authDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *MfaDetail) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["authMethod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["authMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

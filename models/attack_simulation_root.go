@@ -8,9 +8,9 @@ import (
 type AttackSimulationRoot struct {
     Entity
     // Represents simulation automations created to run on a tenant.
-    simulationAutomations []SimulationAutomationable;
+    simulationAutomations []SimulationAutomationable
     // Represents an attack simulation training campaign in a tenant.
-    simulations []Simulationable;
+    simulations []Simulationable
 }
 // NewAttackSimulationRoot instantiates a new attackSimulationRoot and sets the default values.
 func NewAttackSimulationRoot()(*AttackSimulationRoot) {
@@ -24,9 +24,9 @@ func CreateAttackSimulationRootFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewAttackSimulationRoot(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["simulationAutomations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["simulationAutomations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSimulationAutomationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -40,7 +40,7 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["simulations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["simulations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSimulationFromDiscriminatorValue)
         if err != nil {
             return err

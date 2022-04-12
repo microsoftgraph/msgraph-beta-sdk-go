@@ -9,17 +9,17 @@ import (
 type PrinterShare struct {
     PrinterBase
     // If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
-    allowAllUsers *bool;
+    allowAllUsers *bool
     // The groups whose users have access to print using the printer.
-    allowedGroups []Groupable;
+    allowedGroups []Groupable
     // The users who have access to print using the printer.
-    allowedUsers []Userable;
+    allowedUsers []Userable
     // The DateTimeOffset when the printer share was created. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The printer that this printer share is related to.
-    printer Printerable;
+    printer Printerable
     // The viewPoint property
-    viewPoint PrinterShareViewpointable;
+    viewPoint PrinterShareViewpointable
 }
 // NewPrinterShare instantiates a new printerShare and sets the default values.
 func NewPrinterShare()(*PrinterShare) {
@@ -65,9 +65,9 @@ func (m *PrinterShare) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PrinterShare) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PrinterBase.GetFieldDeserializers()
-    res["allowAllUsers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowAllUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["allowedGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowedGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["allowedUsers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowedUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["printer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["printer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrinterFromDiscriminatorValue)
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *PrinterShare) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["viewPoint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["viewPoint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrinterShareViewpointFromDiscriminatorValue)
         if err != nil {
             return err

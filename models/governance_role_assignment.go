@@ -9,33 +9,33 @@ import (
 type GovernanceRoleAssignment struct {
     Entity
     // The state of the assignment. The value can be Eligible for eligible assignment or Active if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
-    assignmentState *string;
+    assignmentState *string
     // For a non-permanent role assignment, this is the time when the role assignment will be expired. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The external ID the resource that is used to identify the role assignment in the provider.
-    externalId *string;
+    externalId *string
     // Read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
-    linkedEligibleRoleAssignment GovernanceRoleAssignmentable;
+    linkedEligibleRoleAssignment GovernanceRoleAssignmentable
     // If this is an active assignment and created due to activation on an eligible assignment, it represents the ID of that eligible assignment; Otherwise, the value is null.
-    linkedEligibleRoleAssignmentId *string;
+    linkedEligibleRoleAssignmentId *string
     // The type of member. The value can be: Inherited (if the role assignment is inherited from a parent resource scope), Group (if the role assignment is not inherited, but comes from the membership of a group assignment), or User (if the role assignment is neither inherited nor from a group assignment).
-    memberType *string;
+    memberType *string
     // Read-only. The resource associated with the role assignment.
-    resource GovernanceResourceable;
+    resource GovernanceResourceable
     // Required. The ID of the resource which the role assignment is associated with.
-    resourceId *string;
+    resourceId *string
     // Read-only. The role definition associated with the role assignment.
-    roleDefinition GovernanceRoleDefinitionable;
+    roleDefinition GovernanceRoleDefinitionable
     // Required. The ID of the role definition which the role assignment is associated with.
-    roleDefinitionId *string;
+    roleDefinitionId *string
     // The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The status property
-    status *string;
+    status *string
     // Read-only. The subject associated with the role assignment.
-    subject GovernanceSubjectable;
+    subject GovernanceSubjectable
     // Required. The ID of the subject which the role assignment is associated with.
-    subjectId *string;
+    subjectId *string
 }
 // NewGovernanceRoleAssignment instantiates a new governanceRoleAssignment and sets the default values.
 func NewGovernanceRoleAssignment()(*GovernanceRoleAssignment) {
@@ -73,9 +73,9 @@ func (m *GovernanceRoleAssignment) GetExternalId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignmentState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignmentState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["endDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["externalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["linkedEligibleRoleAssignment"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["linkedEligibleRoleAssignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGovernanceRoleAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["linkedEligibleRoleAssignmentId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["linkedEligibleRoleAssignmentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["memberType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["memberType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["resource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGovernanceResourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["resourceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["roleDefinition"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleDefinition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGovernanceRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["roleDefinitionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleDefinitionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["subject"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGovernanceSubjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *GovernanceRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["subjectId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subjectId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

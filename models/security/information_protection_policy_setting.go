@@ -9,13 +9,13 @@ import (
 type InformationProtectionPolicySetting struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The defaultLabelId property
-    defaultLabelId *string;
+    defaultLabelId *string
     // The isDowngradeJustificationRequired property
-    isDowngradeJustificationRequired *bool;
+    isDowngradeJustificationRequired *bool
     // The isMandatory property
-    isMandatory *bool;
+    isMandatory *bool
     // The moreInfoUrl property
-    moreInfoUrl *string;
+    moreInfoUrl *string
 }
 // NewInformationProtectionPolicySetting instantiates a new informationProtectionPolicySetting and sets the default values.
 func NewInformationProtectionPolicySetting()(*InformationProtectionPolicySetting) {
@@ -37,9 +37,9 @@ func (m *InformationProtectionPolicySetting) GetDefaultLabelId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *InformationProtectionPolicySetting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *InformationProtectionPolicySetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["defaultLabelId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultLabelId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *InformationProtectionPolicySetting) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["isDowngradeJustificationRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDowngradeJustificationRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *InformationProtectionPolicySetting) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["isMandatory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isMandatory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *InformationProtectionPolicySetting) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["moreInfoUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["moreInfoUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

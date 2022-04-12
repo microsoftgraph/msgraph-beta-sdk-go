@@ -7,17 +7,17 @@ import (
 // ConditionalAccessDevices 
 type ConditionalAccessDevices struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them.
-    deviceFilter ConditionalAccessFilterable;
+    deviceFilter ConditionalAccessFilterable
     // States excluded from the scope of the policy. Possible values: Compliant, DomainJoined. Cannot be set if deviceFIlter is set.
-    excludeDevices []string;
+    excludeDevices []string
     // The excludeDeviceStates property
-    excludeDeviceStates []string;
+    excludeDeviceStates []string
     // States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
-    includeDevices []string;
+    includeDevices []string
     // The includeDeviceStates property
-    includeDeviceStates []string;
+    includeDeviceStates []string
 }
 // NewConditionalAccessDevices instantiates a new conditionalAccessDevices and sets the default values.
 func NewConditionalAccessDevices()(*ConditionalAccessDevices) {
@@ -63,9 +63,9 @@ func (m *ConditionalAccessDevices) GetExcludeDeviceStates()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["deviceFilter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["deviceFilter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConditionalAccessFilterFromDiscriminatorValue)
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["excludeDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["excludeDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["excludeDeviceStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["excludeDeviceStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["includeDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includeDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *ConditionalAccessDevices) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["includeDeviceStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includeDeviceStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

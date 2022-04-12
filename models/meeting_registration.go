@@ -9,21 +9,21 @@ import (
 type MeetingRegistration struct {
     MeetingRegistrationBase
     // Custom registration questions.
-    customQuestions []MeetingRegistrationQuestionable;
+    customQuestions []MeetingRegistrationQuestionable
     // The description of the meeting.
-    description *string;
+    description *string
     // The meeting end time in UTC.
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The number of times the registration page has been visited. Read-only.
-    registrationPageViewCount *int32;
+    registrationPageViewCount *int32
     // The URL of the registration page. Read-only.
-    registrationPageWebUrl *string;
+    registrationPageWebUrl *string
     // The meeting speaker's information.
-    speakers []MeetingSpeakerable;
+    speakers []MeetingSpeakerable
     // The meeting start time in UTC.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The subject of the meeting.
-    subject *string;
+    subject *string
 }
 // NewMeetingRegistration instantiates a new meetingRegistration and sets the default values.
 func NewMeetingRegistration()(*MeetingRegistration) {
@@ -61,9 +61,9 @@ func (m *MeetingRegistration) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MeetingRegistrationBase.GetFieldDeserializers()
-    res["customQuestions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customQuestions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMeetingRegistrationQuestionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["endDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["registrationPageViewCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["registrationPageViewCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["registrationPageWebUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["registrationPageWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["speakers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["speakers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMeetingSpeakerFromDiscriminatorValue)
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["subject"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

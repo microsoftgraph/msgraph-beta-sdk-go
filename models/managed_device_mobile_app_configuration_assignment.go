@@ -8,7 +8,7 @@ import (
 type ManagedDeviceMobileAppConfigurationAssignment struct {
     Entity
     // Assignment target that the T&C policy is assigned to.
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewManagedDeviceMobileAppConfigurationAssignment instantiates a new managedDeviceMobileAppConfigurationAssignment and sets the default values.
 func NewManagedDeviceMobileAppConfigurationAssignment()(*ManagedDeviceMobileAppConfigurationAssignment) {
@@ -22,9 +22,9 @@ func CreateManagedDeviceMobileAppConfigurationAssignmentFromDiscriminatorValue(p
     return NewManagedDeviceMobileAppConfigurationAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagedDeviceMobileAppConfigurationAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagedDeviceMobileAppConfigurationAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["target"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
             return err

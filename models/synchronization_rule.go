@@ -7,23 +7,23 @@ import (
 // SynchronizationRule 
 type SynchronizationRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
-    editable *bool;
+    editable *bool
     // Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
-    id *string;
+    id *string
     // Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
-    metadata []StringKeyStringValuePairable;
+    metadata []StringKeyStringValuePairable
     // Human-readable name of the synchronization rule. Not nullable.
-    name *string;
+    name *string
     // Collection of object mappings supported by the rule. Tells the synchronization engine which objects should be synchronized.
-    objectMappings []ObjectMappingable;
+    objectMappings []ObjectMappingable
     // Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
-    priority *int32;
+    priority *int32
     // Name of the source directory. Must match one of the directory definitions in synchronizationSchema.
-    sourceDirectoryName *string;
+    sourceDirectoryName *string
     // Name of the target directory. Must match one of the directory definitions in synchronizationSchema.
-    targetDirectoryName *string;
+    targetDirectoryName *string
 }
 // NewSynchronizationRule instantiates a new synchronizationRule and sets the default values.
 func NewSynchronizationRule()(*SynchronizationRule) {
@@ -53,9 +53,9 @@ func (m *SynchronizationRule) GetEditable()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["editable"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["editable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["metadata"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["metadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateStringKeyStringValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["objectMappings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["objectMappings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateObjectMappingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["priority"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["sourceDirectoryName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceDirectoryName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["targetDirectoryName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetDirectoryName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

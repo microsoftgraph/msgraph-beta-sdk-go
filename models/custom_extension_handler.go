@@ -8,9 +8,9 @@ import (
 type CustomExtensionHandler struct {
     Entity
     // Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
-    customExtension CustomAccessPackageWorkflowExtensionable;
+    customExtension CustomAccessPackageWorkflowExtensionable
     // Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
-    stage *AccessPackageCustomExtensionStage;
+    stage *AccessPackageCustomExtensionStage
 }
 // NewCustomExtensionHandler instantiates a new customExtensionHandler and sets the default values.
 func NewCustomExtensionHandler()(*CustomExtensionHandler) {
@@ -32,9 +32,9 @@ func (m *CustomExtensionHandler) GetCustomExtension()(CustomAccessPackageWorkflo
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CustomExtensionHandler) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CustomExtensionHandler) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["customExtension"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customExtension"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCustomAccessPackageWorkflowExtensionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -44,7 +44,7 @@ func (m *CustomExtensionHandler) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["stage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["stage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAccessPackageCustomExtensionStage)
         if err != nil {
             return err

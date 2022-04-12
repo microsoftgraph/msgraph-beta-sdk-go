@@ -8,7 +8,7 @@ import (
 type OnenoteEntityBaseModel struct {
     Entity
     // The endpoint where you can get details about the page. Read-only.
-    self *string;
+    self *string
 }
 // NewOnenoteEntityBaseModel instantiates a new onenoteEntityBaseModel and sets the default values.
 func NewOnenoteEntityBaseModel()(*OnenoteEntityBaseModel) {
@@ -22,9 +22,9 @@ func CreateOnenoteEntityBaseModelFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewOnenoteEntityBaseModel(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OnenoteEntityBaseModel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OnenoteEntityBaseModel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["self"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["self"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

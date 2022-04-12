@@ -7,57 +7,57 @@ import (
 // PlannerCategoryDescriptions 
 type PlannerCategoryDescriptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The label associated with Category 1
-    category1 *string;
+    category1 *string
     // The label associated with Category 10
-    category10 *string;
+    category10 *string
     // The label associated with Category 11
-    category11 *string;
+    category11 *string
     // The label associated with Category 12
-    category12 *string;
+    category12 *string
     // The label associated with Category 13
-    category13 *string;
+    category13 *string
     // The label associated with Category 14
-    category14 *string;
+    category14 *string
     // The label associated with Category 15
-    category15 *string;
+    category15 *string
     // The label associated with Category 16
-    category16 *string;
+    category16 *string
     // The label associated with Category 17
-    category17 *string;
+    category17 *string
     // The label associated with Category 18
-    category18 *string;
+    category18 *string
     // The label associated with Category 19
-    category19 *string;
+    category19 *string
     // The label associated with Category 2
-    category2 *string;
+    category2 *string
     // The label associated with Category 20
-    category20 *string;
+    category20 *string
     // The label associated with Category 21
-    category21 *string;
+    category21 *string
     // The label associated with Category 22
-    category22 *string;
+    category22 *string
     // The label associated with Category 23
-    category23 *string;
+    category23 *string
     // The label associated with Category 24
-    category24 *string;
+    category24 *string
     // The label associated with Category 25
-    category25 *string;
+    category25 *string
     // The label associated with Category 3
-    category3 *string;
+    category3 *string
     // The label associated with Category 4
-    category4 *string;
+    category4 *string
     // The label associated with Category 5
-    category5 *string;
+    category5 *string
     // The label associated with Category 6
-    category6 *string;
+    category6 *string
     // The label associated with Category 7
-    category7 *string;
+    category7 *string
     // The label associated with Category 8
-    category8 *string;
+    category8 *string
     // The label associated with Category 9
-    category9 *string;
+    category9 *string
 }
 // NewPlannerCategoryDescriptions instantiates a new plannerCategoryDescriptions and sets the default values.
 func NewPlannerCategoryDescriptions()(*PlannerCategoryDescriptions) {
@@ -279,9 +279,9 @@ func (m *PlannerCategoryDescriptions) GetCategory9()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["category1"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["category1"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -291,7 +291,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category10"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category10"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -301,7 +301,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category11"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category11"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -311,7 +311,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category12"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category12"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -321,7 +321,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category13"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category13"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -331,7 +331,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category14"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category14"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -341,7 +341,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category15"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category15"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -351,7 +351,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category16"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category16"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -361,7 +361,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category17"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category17"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -371,7 +371,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category18"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category18"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -381,7 +381,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category19"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category19"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -391,7 +391,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category2"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -401,7 +401,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category20"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category20"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -411,7 +411,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category21"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category21"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -421,7 +421,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category22"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category22"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -431,7 +431,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category23"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category23"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -441,7 +441,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category24"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category24"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -451,7 +451,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category25"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category25"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -461,7 +461,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category3"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category3"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -471,7 +471,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category4"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category4"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -481,7 +481,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category5"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category5"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -491,7 +491,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category6"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category6"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -501,7 +501,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category7"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category7"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -511,7 +511,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category8"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category8"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -521,7 +521,7 @@ func (m *PlannerCategoryDescriptions) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["category9"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category9"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

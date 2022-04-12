@@ -7,13 +7,13 @@ import (
 // TeamworkSoftwareUpdateStatus 
 type TeamworkSoftwareUpdateStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The available software version to update.
-    availableVersion *string;
+    availableVersion *string
     // The current software version.
-    currentVersion *string;
+    currentVersion *string
     // The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
-    softwareFreshness *TeamworkSoftwareFreshness;
+    softwareFreshness *TeamworkSoftwareFreshness
 }
 // NewTeamworkSoftwareUpdateStatus instantiates a new teamworkSoftwareUpdateStatus and sets the default values.
 func NewTeamworkSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
@@ -51,9 +51,9 @@ func (m *TeamworkSoftwareUpdateStatus) GetCurrentVersion()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkSoftwareUpdateStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["availableVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkSoftwareUpdateStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["availableVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *TeamworkSoftwareUpdateStatus) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["currentVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["currentVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *TeamworkSoftwareUpdateStatus) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["softwareFreshness"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["softwareFreshness"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTeamworkSoftwareFreshness)
         if err != nil {
             return err

@@ -11,55 +11,55 @@ import (
 // AuthorizationPolicyItemRequestBuilder provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.
 type AuthorizationPolicyItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // AuthorizationPolicyItemRequestBuilderDeleteOptions options for Delete
 type AuthorizationPolicyItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AuthorizationPolicyItemRequestBuilderGetOptions options for Get
 type AuthorizationPolicyItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *AuthorizationPolicyItemRequestBuilderGetQueryParameters;
+    QueryParameters *AuthorizationPolicyItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AuthorizationPolicyItemRequestBuilderGetQueryParameters the policy that controls Azure AD authorization settings.
 type AuthorizationPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // AuthorizationPolicyItemRequestBuilderPatchOptions options for Patch
 type AuthorizationPolicyItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewAuthorizationPolicyItemRequestBuilderInternal instantiates a new AuthorizationPolicyItemRequestBuilder and sets the default values.
 func NewAuthorizationPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthorizationPolicyItemRequestBuilder) {
     m := &AuthorizationPolicyItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/policies/authorizationPolicy/{authorizationPolicy_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/policies/authorizationPolicy/{authorizationPolicy%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -140,7 +140,7 @@ func (m *AuthorizationPolicyItemRequestBuilder) DefaultUserRoleOverridesById(id 
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["defaultUserRoleOverride_id"] = id
+        urlTplParams["defaultUserRoleOverride%2Did"] = id
     }
     return if552963b64d01abf5402660068a63a336053e969fbe13841bbe4817b65852c68.NewDefaultUserRoleOverrideItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

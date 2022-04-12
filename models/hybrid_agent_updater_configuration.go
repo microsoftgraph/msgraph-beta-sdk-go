@@ -8,13 +8,13 @@ import (
 // HybridAgentUpdaterConfiguration 
 type HybridAgentUpdaterConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available.
-    allowUpdateConfigurationOverride *bool;
+    allowUpdateConfigurationOverride *bool
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    deferUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    deferUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The updateWindow property
-    updateWindow UpdateWindowable;
+    updateWindow UpdateWindowable
 }
 // NewHybridAgentUpdaterConfiguration instantiates a new hybridAgentUpdaterConfiguration and sets the default values.
 func NewHybridAgentUpdaterConfiguration()(*HybridAgentUpdaterConfiguration) {
@@ -52,9 +52,9 @@ func (m *HybridAgentUpdaterConfiguration) GetDeferUpdateDateTime()(*i336074805fc
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *HybridAgentUpdaterConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["allowUpdateConfigurationOverride"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *HybridAgentUpdaterConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["allowUpdateConfigurationOverride"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *HybridAgentUpdaterConfiguration) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["deferUpdateDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deferUpdateDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *HybridAgentUpdaterConfiguration) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["updateWindow"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["updateWindow"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUpdateWindowFromDiscriminatorValue)
         if err != nil {
             return err

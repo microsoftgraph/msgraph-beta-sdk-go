@@ -7,11 +7,11 @@ import (
 // AccessPackageLocalizedText 
 type AccessPackageLocalizedText struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The ISO code for the intended language. Required.
-    languageCode *string;
+    languageCode *string
     // The text in the specific language. Required.
-    text *string;
+    text *string
 }
 // NewAccessPackageLocalizedText instantiates a new accessPackageLocalizedText and sets the default values.
 func NewAccessPackageLocalizedText()(*AccessPackageLocalizedText) {
@@ -33,9 +33,9 @@ func (m *AccessPackageLocalizedText) GetAdditionalData()(map[string]interface{})
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackageLocalizedText) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["languageCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AccessPackageLocalizedText) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["languageCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *AccessPackageLocalizedText) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["text"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["text"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

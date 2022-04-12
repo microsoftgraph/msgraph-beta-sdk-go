@@ -8,43 +8,43 @@ import (
 type ComanagementEligibleDevice struct {
     Entity
     // ClientRegistrationStatus. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.
-    clientRegistrationStatus *DeviceRegistrationState;
+    clientRegistrationStatus *DeviceRegistrationState
     // DeviceName
-    deviceName *string;
+    deviceName *string
     // DeviceType. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
-    deviceType *DeviceType;
+    deviceType *DeviceType
     // EntitySource
-    entitySource *int32;
+    entitySource *int32
     // ManagementAgents. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
-    managementAgents *ManagementAgentType;
+    managementAgents *ManagementAgentType
     // ManagementState. Possible values are: managed, retirePending, retireFailed, wipePending, wipeFailed, unhealthy, deletePending, retireIssued, wipeIssued, wipeCanceled, retireCanceled, discovered.
-    managementState *ManagementState;
+    managementState *ManagementState
     // Manufacturer
-    manufacturer *string;
+    manufacturer *string
     // MDMStatus
-    mdmStatus *string;
+    mdmStatus *string
     // Model
-    model *string;
+    model *string
     // OSDescription
-    osDescription *string;
+    osDescription *string
     // OSVersion
-    osVersion *string;
+    osVersion *string
     // OwnerType. Possible values are: unknown, company, personal.
-    ownerType *OwnerType;
+    ownerType *OwnerType
     // ReferenceId
-    referenceId *string;
+    referenceId *string
     // SerialNumber
-    serialNumber *string;
+    serialNumber *string
     // ComanagementEligibleStatus. Possible values are: comanaged, eligible, eligibleButNotAzureAdJoined, needsOsUpdate, ineligible.
-    status *ComanagementEligibleType;
+    status *ComanagementEligibleType
     // UPN
-    upn *string;
+    upn *string
     // UserEmail
-    userEmail *string;
+    userEmail *string
     // UserId
-    userId *string;
+    userId *string
     // UserName
-    userName *string;
+    userName *string
 }
 // NewComanagementEligibleDevice instantiates a new comanagementEligibleDevice and sets the default values.
 func NewComanagementEligibleDevice()(*ComanagementEligibleDevice) {
@@ -90,9 +90,9 @@ func (m *ComanagementEligibleDevice) GetEntitySource()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["clientRegistrationStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clientRegistrationStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceRegistrationState)
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["deviceType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceType)
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["entitySource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["entitySource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["managementAgents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementAgents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagementAgentType)
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["managementState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagementState)
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["manufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -162,7 +162,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["mdmStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mdmStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["model"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -182,7 +182,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["osDescription"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -192,7 +192,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["osVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -202,7 +202,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["ownerType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ownerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOwnerType)
         if err != nil {
             return err
@@ -212,7 +212,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["referenceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["referenceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -222,7 +222,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["serialNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serialNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -232,7 +232,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseComanagementEligibleType)
         if err != nil {
             return err
@@ -242,7 +242,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["upn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["upn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -252,7 +252,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["userEmail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userEmail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -262,7 +262,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -272,7 +272,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["userName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
