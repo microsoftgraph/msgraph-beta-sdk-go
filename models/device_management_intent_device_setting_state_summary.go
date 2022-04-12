@@ -8,19 +8,19 @@ import (
 type DeviceManagementIntentDeviceSettingStateSummary struct {
     Entity
     // Number of compliant devices
-    compliantCount *int32;
+    compliantCount *int32
     // Number of devices in conflict
-    conflictCount *int32;
+    conflictCount *int32
     // Number of error devices
-    errorCount *int32;
+    errorCount *int32
     // Number of non compliant devices
-    nonCompliantCount *int32;
+    nonCompliantCount *int32
     // Number of not applicable devices
-    notApplicableCount *int32;
+    notApplicableCount *int32
     // Number of remediated devices
-    remediatedCount *int32;
+    remediatedCount *int32
     // Name of a setting
-    settingName *string;
+    settingName *string
 }
 // NewDeviceManagementIntentDeviceSettingStateSummary instantiates a new deviceManagementIntentDeviceSettingStateSummary and sets the default values.
 func NewDeviceManagementIntentDeviceSettingStateSummary()(*DeviceManagementIntentDeviceSettingStateSummary) {
@@ -58,9 +58,9 @@ func (m *DeviceManagementIntentDeviceSettingStateSummary) GetErrorCount()(*int32
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementIntentDeviceSettingStateSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementIntentDeviceSettingStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["compliantCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["compliantCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *DeviceManagementIntentDeviceSettingStateSummary) GetFieldDeserializers(
         }
         return nil
     }
-    res["conflictCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conflictCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *DeviceManagementIntentDeviceSettingStateSummary) GetFieldDeserializers(
         }
         return nil
     }
-    res["errorCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *DeviceManagementIntentDeviceSettingStateSummary) GetFieldDeserializers(
         }
         return nil
     }
-    res["nonCompliantCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["nonCompliantCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *DeviceManagementIntentDeviceSettingStateSummary) GetFieldDeserializers(
         }
         return nil
     }
-    res["notApplicableCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notApplicableCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *DeviceManagementIntentDeviceSettingStateSummary) GetFieldDeserializers(
         }
         return nil
     }
-    res["remediatedCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remediatedCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *DeviceManagementIntentDeviceSettingStateSummary) GetFieldDeserializers(
         }
         return nil
     }
-    res["settingName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

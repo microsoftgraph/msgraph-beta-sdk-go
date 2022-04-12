@@ -7,19 +7,19 @@ import (
 // TeamworkSoftwareUpdateHealth 
 type TeamworkSoftwareUpdateHealth struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The software update available for the admin agent.
-    adminAgentSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable;
+    adminAgentSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
     // The software update available for the company portal.
-    companyPortalSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable;
+    companyPortalSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
     // The software update available for the firmware.
-    firmwareSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable;
+    firmwareSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
     // The software update available for the operating system.
-    operatingSystemSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable;
+    operatingSystemSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
     // The software update available for the partner agent.
-    partnerAgentSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable;
+    partnerAgentSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
     // The software update available for the Teams client.
-    teamsClientSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable;
+    teamsClientSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
 }
 // NewTeamworkSoftwareUpdateHealth instantiates a new teamworkSoftwareUpdateHealth and sets the default values.
 func NewTeamworkSoftwareUpdateHealth()(*TeamworkSoftwareUpdateHealth) {
@@ -57,9 +57,9 @@ func (m *TeamworkSoftwareUpdateHealth) GetCompanyPortalSoftwareUpdateStatus()(Te
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["adminAgentSoftwareUpdateStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["adminAgentSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["companyPortalSoftwareUpdateStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["companyPortalSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["firmwareSoftwareUpdateStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["firmwareSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["operatingSystemSoftwareUpdateStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operatingSystemSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["partnerAgentSoftwareUpdateStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["partnerAgentSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["teamsClientSoftwareUpdateStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["teamsClientSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
         if err != nil {
             return err

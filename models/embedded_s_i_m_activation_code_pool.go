@@ -9,19 +9,19 @@ import (
 type EmbeddedSIMActivationCodePool struct {
     Entity
     // The total count of activation codes which belong to this pool.
-    activationCodeCount *int32;
+    activationCodeCount *int32
     // The activation codes which belong to this pool. This navigation property is used to post activation codes to Intune but cannot be used to read activation codes from Intune.
-    activationCodes []EmbeddedSIMActivationCodeable;
+    activationCodes []EmbeddedSIMActivationCodeable
     // Navigational property to a list of targets to which this pool is assigned.
-    assignments []EmbeddedSIMActivationCodePoolAssignmentable;
+    assignments []EmbeddedSIMActivationCodePoolAssignmentable
     // The time the embedded SIM activation code pool was created. Generated service side.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Navigational property to a list of device states for this pool.
-    deviceStates []EmbeddedSIMDeviceStateable;
+    deviceStates []EmbeddedSIMDeviceStateable
     // The admin defined name of the embedded SIM activation code pool.
-    displayName *string;
+    displayName *string
     // The time the embedded SIM activation code pool was last modified. Updated service side.
-    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewEmbeddedSIMActivationCodePool instantiates a new embeddedSIMActivationCodePool and sets the default values.
 func NewEmbeddedSIMActivationCodePool()(*EmbeddedSIMActivationCodePool) {
@@ -83,9 +83,9 @@ func (m *EmbeddedSIMActivationCodePool) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activationCodeCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activationCodeCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["activationCodes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activationCodes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEmbeddedSIMActivationCodeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEmbeddedSIMActivationCodePoolAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["deviceStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEmbeddedSIMDeviceStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *EmbeddedSIMActivationCodePool) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["modifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["modifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

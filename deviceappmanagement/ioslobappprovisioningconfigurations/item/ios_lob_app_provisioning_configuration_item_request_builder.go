@@ -18,49 +18,49 @@ import (
 // IosLobAppProvisioningConfigurationItemRequestBuilder provides operations to manage the iosLobAppProvisioningConfigurations property of the microsoft.graph.deviceAppManagement entity.
 type IosLobAppProvisioningConfigurationItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // IosLobAppProvisioningConfigurationItemRequestBuilderDeleteOptions options for Delete
 type IosLobAppProvisioningConfigurationItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // IosLobAppProvisioningConfigurationItemRequestBuilderGetOptions options for Get
 type IosLobAppProvisioningConfigurationItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *IosLobAppProvisioningConfigurationItemRequestBuilderGetQueryParameters;
+    QueryParameters *IosLobAppProvisioningConfigurationItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // IosLobAppProvisioningConfigurationItemRequestBuilderGetQueryParameters the IOS Lob App Provisioning Configurations.
 type IosLobAppProvisioningConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // IosLobAppProvisioningConfigurationItemRequestBuilderPatchOptions options for Patch
 type IosLobAppProvisioningConfigurationItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Assign the assign property
 func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) Assign()(*ia3ce539b9f79e09109b9926ad281d97d40b25705ecefa910e2bfd8db0c875c85.AssignRequestBuilder) {
@@ -77,7 +77,7 @@ func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) AssignmentsById(i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["iosLobAppProvisioningConfigurationAssignment_id"] = id
+        urlTplParams["iosLobAppProvisioningConfigurationAssignment%2Did"] = id
     }
     return ia1a84f1e276568c2aeb23fcbd50f8de951fa5878159c134fa0228aec984ff3c0.NewIosLobAppProvisioningConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -85,7 +85,7 @@ func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) AssignmentsById(i
 func NewIosLobAppProvisioningConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosLobAppProvisioningConfigurationItemRequestBuilder) {
     m := &IosLobAppProvisioningConfigurationItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/iosLobAppProvisioningConfigurations/{iosLobAppProvisioningConfiguration%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -182,7 +182,7 @@ func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) DeviceStatusesByI
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedDeviceMobileAppConfigurationDeviceStatus_id"] = id
+        urlTplParams["managedDeviceMobileAppConfigurationDeviceStatus%2Did"] = id
     }
     return i072136c315e8186c0ff2a10126695a2fb03cdd14dfc2acf41de66f1f1caba3d8.NewManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -213,7 +213,7 @@ func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) GroupAssignmentsB
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["mobileAppProvisioningConfigGroupAssignment_id"] = id
+        urlTplParams["mobileAppProvisioningConfigGroupAssignment%2Did"] = id
     }
     return i11301c42fede611eafd37db9196e74ba08d3d72e93b62bd910672a1181aa6c19.NewMobileAppProvisioningConfigGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -244,7 +244,7 @@ func (m *IosLobAppProvisioningConfigurationItemRequestBuilder) UserStatusesById(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["managedDeviceMobileAppConfigurationUserStatus_id"] = id
+        urlTplParams["managedDeviceMobileAppConfigurationUserStatus%2Did"] = id
     }
     return i6393c179ab957b9b86c9cd839a5d7820fb3ce75696832f0ef436bd70a8a4196d.NewManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

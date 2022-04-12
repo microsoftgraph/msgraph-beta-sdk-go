@@ -13,49 +13,49 @@ import (
 // RoleInfoRequestBuilder provides operations to manage the roleInfo property of the microsoft.graph.privilegedApproval entity.
 type RoleInfoRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // RoleInfoRequestBuilderDeleteOptions options for Delete
 type RoleInfoRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // RoleInfoRequestBuilderGetOptions options for Get
 type RoleInfoRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *RoleInfoRequestBuilderGetQueryParameters;
+    QueryParameters *RoleInfoRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // RoleInfoRequestBuilderGetQueryParameters read-only. Nullable.
 type RoleInfoRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // RoleInfoRequestBuilderPatchOptions options for Patch
 type RoleInfoRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Assignments the assignments property
 func (m *RoleInfoRequestBuilder) Assignments()(*ib5cd5b3c19268d246febcc379cad7c6c55d83a8e91bd1b806e4aeced1e9bcbf0.AssignmentsRequestBuilder) {
@@ -68,7 +68,7 @@ func (m *RoleInfoRequestBuilder) AssignmentsById(id string)(*i91831fb3bb284dcc08
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["privilegedRoleAssignment_id"] = id
+        urlTplParams["privilegedRoleAssignment%2Did"] = id
     }
     return i91831fb3bb284dcc082f0d50962d9b4761f0d7da6397b6aaa15e6aadeeef1c31.NewPrivilegedRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -76,7 +76,7 @@ func (m *RoleInfoRequestBuilder) AssignmentsById(id string)(*i91831fb3bb284dcc08
 func NewRoleInfoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleInfoRequestBuilder) {
     m := &RoleInfoRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/privilegedApproval/{privilegedApproval_id}/roleInfo{?select,expand}";
+    m.urlTemplate = "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/roleInfo{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

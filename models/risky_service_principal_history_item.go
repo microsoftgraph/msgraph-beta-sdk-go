@@ -8,11 +8,11 @@ import (
 type RiskyServicePrincipalHistoryItem struct {
     RiskyServicePrincipal
     // The activity related to service principal risk level change.
-    activity RiskServicePrincipalActivityable;
+    activity RiskServicePrincipalActivityable
     // The identifier of the actor of the operation.
-    initiatedBy *string;
+    initiatedBy *string
     // The identifier of the service principal.
-    servicePrincipalId *string;
+    servicePrincipalId *string
 }
 // NewRiskyServicePrincipalHistoryItem instantiates a new riskyServicePrincipalHistoryItem and sets the default values.
 func NewRiskyServicePrincipalHistoryItem()(*RiskyServicePrincipalHistoryItem) {
@@ -34,9 +34,9 @@ func (m *RiskyServicePrincipalHistoryItem) GetActivity()(RiskServicePrincipalAct
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RiskyServicePrincipalHistoryItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RiskyServicePrincipalHistoryItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.RiskyServicePrincipal.GetFieldDeserializers()
-    res["activity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRiskServicePrincipalActivityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *RiskyServicePrincipalHistoryItem) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["initiatedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["initiatedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *RiskyServicePrincipalHistoryItem) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["servicePrincipalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["servicePrincipalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

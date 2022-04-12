@@ -7,19 +7,19 @@ import (
 // ConditionalAccessSessionControls 
 type ConditionalAccessSessionControls struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
-    applicationEnforcedRestrictions ApplicationEnforcedRestrictionsSessionControlable;
+    applicationEnforcedRestrictions ApplicationEnforcedRestrictionsSessionControlable
     // Session control to apply cloud app security.
-    cloudAppSecurity CloudAppSecuritySessionControlable;
+    cloudAppSecurity CloudAppSecuritySessionControlable
     // Session control for continuous access evaluation settings.
-    continuousAccessEvaluation ContinuousAccessEvaluationSessionControlable;
+    continuousAccessEvaluation ContinuousAccessEvaluationSessionControlable
     // Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
-    disableResilienceDefaults *bool;
+    disableResilienceDefaults *bool
     // Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
-    persistentBrowser PersistentBrowserSessionControlable;
+    persistentBrowser PersistentBrowserSessionControlable
     // Session control to enforce signin frequency.
-    signInFrequency SignInFrequencySessionControlable;
+    signInFrequency SignInFrequencySessionControlable
 }
 // NewConditionalAccessSessionControls instantiates a new conditionalAccessSessionControls and sets the default values.
 func NewConditionalAccessSessionControls()(*ConditionalAccessSessionControls) {
@@ -73,9 +73,9 @@ func (m *ConditionalAccessSessionControls) GetDisableResilienceDefaults()(*bool)
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["applicationEnforcedRestrictions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["applicationEnforcedRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateApplicationEnforcedRestrictionsSessionControlFromDiscriminatorValue)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["cloudAppSecurity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudAppSecurity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudAppSecuritySessionControlFromDiscriminatorValue)
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["continuousAccessEvaluation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["continuousAccessEvaluation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateContinuousAccessEvaluationSessionControlFromDiscriminatorValue)
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["disableResilienceDefaults"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["disableResilienceDefaults"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["persistentBrowser"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["persistentBrowser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePersistentBrowserSessionControlFromDiscriminatorValue)
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *ConditionalAccessSessionControls) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["signInFrequency"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["signInFrequency"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSignInFrequencySessionControlFromDiscriminatorValue)
         if err != nil {
             return err

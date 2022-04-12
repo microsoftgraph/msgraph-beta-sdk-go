@@ -7,19 +7,19 @@ import (
 // ApprovalStage 
 type ApprovalStage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The number of days that a request can be pending a response before it is automatically denied.
-    approvalStageTimeOutInDays *int32;
+    approvalStageTimeOutInDays *int32
     // If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.  When creating or updating a policy, if there are no escalation approvers, or escalation approvers are not required for the stage, the value of this property should be an empty collection.
-    escalationApprovers []UserSetable;
+    escalationApprovers []UserSetable
     // If escalation is required, the time a request can be pending a response from a primary approver.
-    escalationTimeInMinutes *int32;
+    escalationTimeInMinutes *int32
     // Indicates whether the approver is required to provide a justification for approving a request.
-    isApproverJustificationRequired *bool;
+    isApproverJustificationRequired *bool
     // If true, then one or more escalation approvers are configured in this approval stage.
-    isEscalationEnabled *bool;
+    isEscalationEnabled *bool
     // The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors. When creating or updating a policy, include at least one userSet in this collection.
-    primaryApprovers []UserSetable;
+    primaryApprovers []UserSetable
 }
 // NewApprovalStage instantiates a new approvalStage and sets the default values.
 func NewApprovalStage()(*ApprovalStage) {
@@ -65,9 +65,9 @@ func (m *ApprovalStage) GetEscalationTimeInMinutes()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["approvalStageTimeOutInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["approvalStageTimeOutInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["escalationApprovers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["escalationApprovers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserSetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["escalationTimeInMinutes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["escalationTimeInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["isApproverJustificationRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isApproverJustificationRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["isEscalationEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEscalationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["primaryApprovers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["primaryApprovers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserSetFromDiscriminatorValue)
         if err != nil {
             return err

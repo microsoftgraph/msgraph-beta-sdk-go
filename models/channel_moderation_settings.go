@@ -7,15 +7,15 @@ import (
 // ChannelModerationSettings 
 type ChannelModerationSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Indicates whether bots are allowed to post messages.
-    allowNewMessageFromBots *bool;
+    allowNewMessageFromBots *bool
     // Indicates whether connectors are allowed to post messages.
-    allowNewMessageFromConnectors *bool;
+    allowNewMessageFromConnectors *bool
     // Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
-    replyRestriction *ReplyRestriction;
+    replyRestriction *ReplyRestriction
     // Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
-    userNewMessageRestriction *UserNewMessageRestriction;
+    userNewMessageRestriction *UserNewMessageRestriction
 }
 // NewChannelModerationSettings instantiates a new channelModerationSettings and sets the default values.
 func NewChannelModerationSettings()(*ChannelModerationSettings) {
@@ -53,9 +53,9 @@ func (m *ChannelModerationSettings) GetAllowNewMessageFromConnectors()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["allowNewMessageFromBots"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["allowNewMessageFromBots"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["allowNewMessageFromConnectors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowNewMessageFromConnectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["replyRestriction"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["replyRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseReplyRestriction)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["userNewMessageRestriction"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userNewMessageRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserNewMessageRestriction)
         if err != nil {
             return err

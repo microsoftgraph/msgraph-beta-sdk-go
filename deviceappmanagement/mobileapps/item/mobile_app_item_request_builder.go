@@ -24,49 +24,49 @@ import (
 // MobileAppItemRequestBuilder provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
 type MobileAppItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // MobileAppItemRequestBuilderDeleteOptions options for Delete
 type MobileAppItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // MobileAppItemRequestBuilderGetOptions options for Get
 type MobileAppItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *MobileAppItemRequestBuilderGetQueryParameters;
+    QueryParameters *MobileAppItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // MobileAppItemRequestBuilderGetQueryParameters the mobile apps.
 type MobileAppItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // MobileAppItemRequestBuilderPatchOptions options for Patch
 type MobileAppItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Assign the assign property
 func (m *MobileAppItemRequestBuilder) Assign()(*i1e3d61799ac5b1670257d353559a6aa4ec7e545fb82dd83595bf36c04e7e9b1d.AssignRequestBuilder) {
@@ -83,7 +83,7 @@ func (m *MobileAppItemRequestBuilder) AssignmentsById(id string)(*i8ae606a13a79c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["mobileAppAssignment_id"] = id
+        urlTplParams["mobileAppAssignment%2Did"] = id
     }
     return i8ae606a13a79cd675f0f56386d1cfce72468cf3465afc5d50a1e5bfa0e57e603.NewMobileAppAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -98,7 +98,7 @@ func (m *MobileAppItemRequestBuilder) CategoriesById(id string)(*i732f121d128a63
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["mobileAppCategory_id"] = id
+        urlTplParams["mobileAppCategory%2Did"] = id
     }
     return i732f121d128a6358acbcb613d4f9cc7f5a9dd32364d5caff115da0580dadf6af.NewMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -106,7 +106,7 @@ func (m *MobileAppItemRequestBuilder) CategoriesById(id string)(*i732f121d128a63
 func NewMobileAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppItemRequestBuilder) {
     m := &MobileAppItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -203,7 +203,7 @@ func (m *MobileAppItemRequestBuilder) DeviceStatusesById(id string)(*i7578dc338c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["mobileAppInstallStatus_id"] = id
+        urlTplParams["mobileAppInstallStatus%2Did"] = id
     }
     return i7578dc338c9dc393bea0c169238874f0e19fedfffc44418ab516b34a4b525138.NewMobileAppInstallStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -262,7 +262,7 @@ func (m *MobileAppItemRequestBuilder) RelationshipsById(id string)(*ia6a71ed4e86
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["mobileAppRelationship_id"] = id
+        urlTplParams["mobileAppRelationship%2Did"] = id
     }
     return ia6a71ed4e86b560dd63fb4ca626455944edeea774053bb5436fcd463ee9a2cc2.NewMobileAppRelationshipItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -281,7 +281,7 @@ func (m *MobileAppItemRequestBuilder) UserStatusesById(id string)(*ifddf3b1a5eae
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["userAppInstallStatus_id"] = id
+        urlTplParams["userAppInstallStatus%2Did"] = id
     }
     return ifddf3b1a5eae62e5fad4e7d420246006149401e2aacd31254c493f3bd5f95b80.NewUserAppInstallStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -8,11 +8,11 @@ import (
 type UserSource struct {
     DataSource
     // Email address of the user's mailbox.
-    email *string;
+    email *string
     // Specifies which sources are included in this group. Possible values are: mailbox, site.
-    includedSources *SourceType;
+    includedSources *SourceType
     // The URL of the user's OneDrive for Business site. Read-only.
-    siteWebUrl *string;
+    siteWebUrl *string
 }
 // NewUserSource instantiates a new userSource and sets the default values.
 func NewUserSource()(*UserSource) {
@@ -34,9 +34,9 @@ func (m *UserSource) GetEmail()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserSource) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DataSource.GetFieldDeserializers()
-    res["email"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *UserSource) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["includedSources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includedSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSourceType)
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *UserSource) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["siteWebUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["siteWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

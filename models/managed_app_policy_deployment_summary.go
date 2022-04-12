@@ -9,15 +9,15 @@ import (
 type ManagedAppPolicyDeploymentSummary struct {
     Entity
     // Not yet documented
-    configurationDeployedUserCount *int32;
+    configurationDeployedUserCount *int32
     // Not yet documented
-    configurationDeploymentSummaryPerApp []ManagedAppPolicyDeploymentSummaryPerAppable;
+    configurationDeploymentSummaryPerApp []ManagedAppPolicyDeploymentSummaryPerAppable
     // Not yet documented
-    displayName *string;
+    displayName *string
     // Not yet documented
-    lastRefreshTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastRefreshTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Version of the entity.
-    version *string;
+    version *string
 }
 // NewManagedAppPolicyDeploymentSummary instantiates a new managedAppPolicyDeploymentSummary and sets the default values.
 func NewManagedAppPolicyDeploymentSummary()(*ManagedAppPolicyDeploymentSummary) {
@@ -55,9 +55,9 @@ func (m *ManagedAppPolicyDeploymentSummary) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["configurationDeployedUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["configurationDeployedUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["configurationDeploymentSummaryPerApp"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["configurationDeploymentSummaryPerApp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedAppPolicyDeploymentSummaryPerAppFromDiscriminatorValue)
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["lastRefreshTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastRefreshTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *ManagedAppPolicyDeploymentSummary) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

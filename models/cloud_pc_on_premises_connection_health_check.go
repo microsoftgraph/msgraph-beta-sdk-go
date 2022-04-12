@@ -8,21 +8,21 @@ import (
 // CloudPcOnPremisesConnectionHealthCheck 
 type CloudPcOnPremisesConnectionHealthCheck struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Additional details about the health check or the recommended action.
-    additionalDetails *string;
+    additionalDetails *string
     // The display name for this health check item.
-    displayName *string;
+    displayName *string
     // The end time of the health check item. Read-only.
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The type of error that occurred during this health check.
-    errorType *CloudPcOnPremisesConnectionHealthCheckErrorType;
+    errorType *CloudPcOnPremisesConnectionHealthCheckErrorType
     // The recommended action to fix the corresponding error.
-    recommendedAction *string;
+    recommendedAction *string
     // The start time of the health check item. Read-only.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
-    status *CloudPcOnPremisesConnectionStatus;
+    status *CloudPcOnPremisesConnectionStatus
 }
 // NewCloudPcOnPremisesConnectionHealthCheck instantiates a new cloudPcOnPremisesConnectionHealthCheck and sets the default values.
 func NewCloudPcOnPremisesConnectionHealthCheck()(*CloudPcOnPremisesConnectionHealthCheck) {
@@ -76,9 +76,9 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetErrorType()(*CloudPcOnPremis
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["additionalDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["additionalDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["endDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["errorType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcOnPremisesConnectionHealthCheckErrorType)
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["recommendedAction"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recommendedAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcOnPremisesConnectionStatus)
         if err != nil {
             return err

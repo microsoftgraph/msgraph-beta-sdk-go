@@ -9,17 +9,17 @@ import (
 type Conversation struct {
     Entity
     // Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
-    hasAttachments *bool;
+    hasAttachments *bool
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    lastDeliveredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastDeliveredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A short summary from the body of the latest post in this conversation. Supports $filter (eq, ne, le, ge).
-    preview *string;
+    preview *string
     // A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
-    threads []ConversationThreadable;
+    threads []ConversationThreadable
     // The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
-    topic *string;
+    topic *string
     // All the users that sent a message to this Conversation.
-    uniqueSenders []string;
+    uniqueSenders []string
 }
 // NewConversation instantiates a new conversation and sets the default values.
 func NewConversation()(*Conversation) {
@@ -33,9 +33,9 @@ func CreateConversationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewConversation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Conversation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Conversation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["hasAttachments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasAttachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *Conversation) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["lastDeliveredDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastDeliveredDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *Conversation) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["preview"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *Conversation) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["threads"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["threads"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConversationThreadFromDiscriminatorValue)
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *Conversation) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["topic"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["topic"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *Conversation) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["uniqueSenders"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["uniqueSenders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

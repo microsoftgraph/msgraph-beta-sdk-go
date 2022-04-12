@@ -8,9 +8,9 @@ import (
 type DeviceManagementConfigurationSettingTemplate struct {
     Entity
     // List of related Setting Definitions
-    settingDefinitions []DeviceManagementConfigurationSettingDefinitionable;
+    settingDefinitions []DeviceManagementConfigurationSettingDefinitionable
     // Setting Instance Template
-    settingInstanceTemplate DeviceManagementConfigurationSettingInstanceTemplateable;
+    settingInstanceTemplate DeviceManagementConfigurationSettingInstanceTemplateable
 }
 // NewDeviceManagementConfigurationSettingTemplate instantiates a new deviceManagementConfigurationSettingTemplate and sets the default values.
 func NewDeviceManagementConfigurationSettingTemplate()(*DeviceManagementConfigurationSettingTemplate) {
@@ -24,9 +24,9 @@ func CreateDeviceManagementConfigurationSettingTemplateFromDiscriminatorValue(pa
     return NewDeviceManagementConfigurationSettingTemplate(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementConfigurationSettingTemplate) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementConfigurationSettingTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["settingDefinitions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -40,7 +40,7 @@ func (m *DeviceManagementConfigurationSettingTemplate) GetFieldDeserializers()(m
         }
         return nil
     }
-    res["settingInstanceTemplate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingInstanceTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementConfigurationSettingInstanceTemplateFromDiscriminatorValue)
         if err != nil {
             return err

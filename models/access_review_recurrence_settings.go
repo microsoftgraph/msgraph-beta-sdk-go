@@ -7,15 +7,15 @@ import (
 // AccessReviewRecurrenceSettings 
 type AccessReviewRecurrenceSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The duration in days for recurrence.
-    durationInDays *int32;
+    durationInDays *int32
     // The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.
-    recurrenceCount *int32;
+    recurrenceCount *int32
     // How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.
-    recurrenceEndType *string;
+    recurrenceEndType *string
     // The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.
-    recurrenceType *string;
+    recurrenceType *string
 }
 // NewAccessReviewRecurrenceSettings instantiates a new accessReviewRecurrenceSettings and sets the default values.
 func NewAccessReviewRecurrenceSettings()(*AccessReviewRecurrenceSettings) {
@@ -45,9 +45,9 @@ func (m *AccessReviewRecurrenceSettings) GetDurationInDays()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["durationInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["durationInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["recurrenceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recurrenceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["recurrenceEndType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recurrenceEndType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["recurrenceType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recurrenceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

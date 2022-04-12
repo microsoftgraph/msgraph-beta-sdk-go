@@ -7,15 +7,15 @@ import (
 // TopicModelingSettings 
 type TopicModelingSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // To learn more, see Adjust maximum number of themes dynamically.
-    dynamicallyAdjustTopicCount *bool;
+    dynamicallyAdjustTopicCount *bool
     // To learn more, see Include numbers in themes.
-    ignoreNumbers *bool;
+    ignoreNumbers *bool
     // Indicates whether themes is enabled for the case.
-    isEnabled *bool;
+    isEnabled *bool
     // To learn more, see Maximum number of themes.
-    topicCount *int32;
+    topicCount *int32
 }
 // NewTopicModelingSettings instantiates a new topicModelingSettings and sets the default values.
 func NewTopicModelingSettings()(*TopicModelingSettings) {
@@ -45,9 +45,9 @@ func (m *TopicModelingSettings) GetDynamicallyAdjustTopicCount()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TopicModelingSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["dynamicallyAdjustTopicCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TopicModelingSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["dynamicallyAdjustTopicCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *TopicModelingSettings) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["ignoreNumbers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ignoreNumbers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *TopicModelingSettings) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["isEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *TopicModelingSettings) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["topicCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["topicCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

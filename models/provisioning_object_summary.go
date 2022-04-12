@@ -9,41 +9,41 @@ import (
 type ProvisioningObjectSummary struct {
     Entity
     // The action property
-    action *string;
+    action *string
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Unique ID of this change in this cycle.
-    changeId *string;
+    changeId *string
     // Unique ID per job iteration.
-    cycleId *string;
+    cycleId *string
     // Indicates how long this provisioning action took to finish. Measured in milliseconds.
-    durationInMilliseconds *int32;
+    durationInMilliseconds *int32
     // Details of who initiated this provisioning.
-    initiatedBy Initiatorable;
+    initiatedBy Initiatorable
     // The unique ID for the whole provisioning job.
-    jobId *string;
+    jobId *string
     // Details of each property that was modified in this provisioning action on this object.
-    modifiedProperties []ModifiedPropertyable;
+    modifiedProperties []ModifiedPropertyable
     // Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
-    provisioningAction *ProvisioningAction;
+    provisioningAction *ProvisioningAction
     // Details of provisioning status.
-    provisioningStatusInfo ProvisioningStatusInfoable;
+    provisioningStatusInfo ProvisioningStatusInfoable
     // Details of each step in provisioning.
-    provisioningSteps []ProvisioningStepable;
+    provisioningSteps []ProvisioningStepable
     // Represents the service principal used for provisioning.
-    servicePrincipal ProvisioningServicePrincipalable;
+    servicePrincipal ProvisioningServicePrincipalable
     // Details of source object being provisioned.
-    sourceIdentity ProvisionedIdentityable;
+    sourceIdentity ProvisionedIdentityable
     // Details of source system of the object being provisioned.
-    sourceSystem ProvisioningSystemable;
+    sourceSystem ProvisioningSystemable
     // The statusInfo property
-    statusInfo StatusBaseable;
+    statusInfo StatusBaseable
     // Details of target object being provisioned.
-    targetIdentity ProvisionedIdentityable;
+    targetIdentity ProvisionedIdentityable
     // Details of target system of the object being provisioned.
-    targetSystem ProvisioningSystemable;
+    targetSystem ProvisioningSystemable
     // Unique Azure AD tenant ID.
-    tenantId *string;
+    tenantId *string
 }
 // NewProvisioningObjectSummary instantiates a new provisioningObjectSummary and sets the default values.
 func NewProvisioningObjectSummary()(*ProvisioningObjectSummary) {
@@ -97,9 +97,9 @@ func (m *ProvisioningObjectSummary) GetDurationInMilliseconds()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["action"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["activityDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["changeId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["changeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["cycleId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cycleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["durationInMilliseconds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["durationInMilliseconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["initiatedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["initiatedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateInitiatorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["jobId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["jobId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["modifiedProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["modifiedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateModifiedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -183,7 +183,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["provisioningAction"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["provisioningAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseProvisioningAction)
         if err != nil {
             return err
@@ -193,7 +193,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["provisioningStatusInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["provisioningStatusInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateProvisioningStatusInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -203,7 +203,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["provisioningSteps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["provisioningSteps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateProvisioningStepFromDiscriminatorValue)
         if err != nil {
             return err
@@ -217,7 +217,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["servicePrincipal"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["servicePrincipal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateProvisioningServicePrincipalFromDiscriminatorValue)
         if err != nil {
             return err
@@ -227,7 +227,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["sourceIdentity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceIdentity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateProvisionedIdentityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -237,7 +237,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["sourceSystem"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateProvisioningSystemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -247,7 +247,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["statusInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["statusInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateStatusBaseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -257,7 +257,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["targetIdentity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetIdentity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateProvisionedIdentityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -267,7 +267,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["targetSystem"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateProvisioningSystemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -277,7 +277,7 @@ func (m *ProvisioningObjectSummary) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

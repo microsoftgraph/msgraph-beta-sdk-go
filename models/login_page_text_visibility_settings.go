@@ -7,17 +7,19 @@ import (
 // LoginPageTextVisibilitySettings 
 type LoginPageTextVisibilitySettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
+    // The hideAccountResetCredentials property
+    hideAccountResetCredentials *bool
     // Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.
-    hideCannotAccessYourAccount *bool;
+    hideCannotAccessYourAccount *bool
     // Option to hide the self-service password reset (SSPR) 'Forgot my password' hyperlink on the sign-in form.
-    hideForgotMyPassword *bool;
+    hideForgotMyPassword *bool
     // Option to hide the 'Privacy & Cookies' hyperlink in the footer.
-    hidePrivacyAndCookies *bool;
+    hidePrivacyAndCookies *bool
     // Option to hide the self-service password reset (SSPR) 'reset it now' hyperlink on the sign-in form.
-    hideResetItNow *bool;
+    hideResetItNow *bool
     // Option to hide the 'Terms of Use' hyperlink in the footer.
-    hideTermsOfUse *bool;
+    hideTermsOfUse *bool
 }
 // NewLoginPageTextVisibilitySettings instantiates a new loginPageTextVisibilitySettings and sets the default values.
 func NewLoginPageTextVisibilitySettings()(*LoginPageTextVisibilitySettings) {
@@ -39,9 +41,19 @@ func (m *LoginPageTextVisibilitySettings) GetAdditionalData()(map[string]interfa
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["hideCannotAccessYourAccount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["hideAccountResetCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHideAccountResetCredentials(val)
+        }
+        return nil
+    }
+    res["hideCannotAccessYourAccount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -51,7 +63,7 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["hideForgotMyPassword"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hideForgotMyPassword"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -61,7 +73,7 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["hidePrivacyAndCookies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hidePrivacyAndCookies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -71,7 +83,7 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["hideResetItNow"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hideResetItNow"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -81,7 +93,7 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["hideTermsOfUse"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hideTermsOfUse"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -92,6 +104,14 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetHideAccountResetCredentials gets the hideAccountResetCredentials property value. The hideAccountResetCredentials property
+func (m *LoginPageTextVisibilitySettings) GetHideAccountResetCredentials()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hideAccountResetCredentials
+    }
 }
 // GetHideCannotAccessYourAccount gets the hideCannotAccessYourAccount property value. Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) GetHideCannotAccessYourAccount()(*bool) {
@@ -136,6 +156,12 @@ func (m *LoginPageTextVisibilitySettings) GetHideTermsOfUse()(*bool) {
 // Serialize serializes information the current object
 func (m *LoginPageTextVisibilitySettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteBoolValue("hideAccountResetCredentials", m.GetHideAccountResetCredentials())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("hideCannotAccessYourAccount", m.GetHideCannotAccessYourAccount())
         if err != nil {
             return err
@@ -177,6 +203,12 @@ func (m *LoginPageTextVisibilitySettings) Serialize(writer i878a80d2330e89d26896
 func (m *LoginPageTextVisibilitySettings) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetHideAccountResetCredentials sets the hideAccountResetCredentials property value. The hideAccountResetCredentials property
+func (m *LoginPageTextVisibilitySettings) SetHideAccountResetCredentials(value *bool)() {
+    if m != nil {
+        m.hideAccountResetCredentials = value
     }
 }
 // SetHideCannotAccessYourAccount sets the hideCannotAccessYourAccount property value. Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.

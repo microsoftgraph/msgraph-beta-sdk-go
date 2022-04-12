@@ -8,7 +8,7 @@ import (
 type InformationProtectionPolicy struct {
     Entity
     // The labels property
-    labels []InformationProtectionLabelable;
+    labels []InformationProtectionLabelable
 }
 // NewInformationProtectionPolicy instantiates a new informationProtectionPolicy and sets the default values.
 func NewInformationProtectionPolicy()(*InformationProtectionPolicy) {
@@ -22,9 +22,9 @@ func CreateInformationProtectionPolicyFromDiscriminatorValue(parseNode i878a80d2
     return NewInformationProtectionPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *InformationProtectionPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *InformationProtectionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["labels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["labels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateInformationProtectionLabelFromDiscriminatorValue)
         if err != nil {
             return err

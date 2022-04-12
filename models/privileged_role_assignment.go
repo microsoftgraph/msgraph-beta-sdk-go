@@ -9,17 +9,17 @@ import (
 type PrivilegedRoleAssignment struct {
     Entity
     // The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // true if the role assignment is activated. false if the role assignment is deactivated.
-    isElevated *bool;
+    isElevated *bool
     // Result message set by the service.
-    resultMessage *string;
+    resultMessage *string
     // Role identifier. In GUID string format.
-    roleId *string;
+    roleId *string
     // Read-only. Nullable. The associated role information.
-    roleInfo PrivilegedRoleable;
+    roleInfo PrivilegedRoleable
     // User identifier. In GUID string format.
-    userId *string;
+    userId *string
 }
 // NewPrivilegedRoleAssignment instantiates a new privilegedRoleAssignment and sets the default values.
 func NewPrivilegedRoleAssignment()(*PrivilegedRoleAssignment) {
@@ -41,9 +41,9 @@ func (m *PrivilegedRoleAssignment) GetExpirationDateTime()(*i336074805fc853987ab
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isElevated"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isElevated"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["resultMessage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resultMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["roleId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["roleInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrivilegedRoleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -9,17 +9,17 @@ import (
 type GroupPolicyUploadedDefinitionFile struct {
     GroupPolicyDefinitionFile
     // The contents of the uploaded ADMX file.
-    content []byte;
+    content []byte
     // The default language of the uploaded ADMX file.
-    defaultLanguageCode *string;
+    defaultLanguageCode *string
     // The list of operations on the uploaded ADMX file.
-    groupPolicyOperations []GroupPolicyOperationable;
+    groupPolicyOperations []GroupPolicyOperationable
     // The list of ADML files associated with the uploaded ADMX file.
-    groupPolicyUploadedLanguageFiles []GroupPolicyUploadedLanguageFileable;
+    groupPolicyUploadedLanguageFiles []GroupPolicyUploadedLanguageFileable
     // The upload status of the uploaded ADMX file. Possible values are: none, uploadInProgress, available, assigned, removalInProgress, uploadFailed, removalFailed.
-    status *GroupPolicyUploadedDefinitionFileStatus;
+    status *GroupPolicyUploadedDefinitionFileStatus
     // The uploaded time of the uploaded ADMX file.
-    uploadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    uploadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewGroupPolicyUploadedDefinitionFile instantiates a new groupPolicyUploadedDefinitionFile and sets the default values.
 func NewGroupPolicyUploadedDefinitionFile()(*GroupPolicyUploadedDefinitionFile) {
@@ -49,9 +49,9 @@ func (m *GroupPolicyUploadedDefinitionFile) GetDefaultLanguageCode()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GroupPolicyDefinitionFile.GetFieldDeserializers()
-    res["content"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["defaultLanguageCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultLanguageCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["groupPolicyOperations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupPolicyOperations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyOperationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["groupPolicyUploadedLanguageFiles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupPolicyUploadedLanguageFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGroupPolicyUploadedLanguageFileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseGroupPolicyUploadedDefinitionFileStatus)
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["uploadDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["uploadDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

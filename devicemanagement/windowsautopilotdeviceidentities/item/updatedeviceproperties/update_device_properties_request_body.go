@@ -7,21 +7,21 @@ import (
 // UpdateDevicePropertiesRequestBody provides operations to call the updateDeviceProperties method.
 type UpdateDevicePropertiesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The addressableUserName property
-    addressableUserName *string;
+    addressableUserName *string
     // The deviceAccountPassword property
-    deviceAccountPassword *string;
+    deviceAccountPassword *string
     // The deviceAccountUpn property
-    deviceAccountUpn *string;
+    deviceAccountUpn *string
     // The deviceFriendlyName property
-    deviceFriendlyName *string;
+    deviceFriendlyName *string
     // The displayName property
-    displayName *string;
+    displayName *string
     // The groupTag property
-    groupTag *string;
+    groupTag *string
     // The userPrincipalName property
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewUpdateDevicePropertiesRequestBody instantiates a new updateDevicePropertiesRequestBody and sets the default values.
 func NewUpdateDevicePropertiesRequestBody()(*UpdateDevicePropertiesRequestBody) {
@@ -83,9 +83,9 @@ func (m *UpdateDevicePropertiesRequestBody) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["addressableUserName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["addressableUserName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["deviceAccountPassword"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceAccountPassword"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["deviceAccountUpn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceAccountUpn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["deviceFriendlyName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceFriendlyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["groupTag"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *UpdateDevicePropertiesRequestBody) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

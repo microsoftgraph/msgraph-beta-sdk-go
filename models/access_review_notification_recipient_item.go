@@ -7,11 +7,11 @@ import (
 // AccessReviewNotificationRecipientItem 
 type AccessReviewNotificationRecipientItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Determines the recipient of the notification email.
-    notificationRecipientScope AccessReviewNotificationRecipientScopeable;
+    notificationRecipientScope AccessReviewNotificationRecipientScopeable
     // Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.
-    notificationTemplateType *string;
+    notificationTemplateType *string
 }
 // NewAccessReviewNotificationRecipientItem instantiates a new accessReviewNotificationRecipientItem and sets the default values.
 func NewAccessReviewNotificationRecipientItem()(*AccessReviewNotificationRecipientItem) {
@@ -33,9 +33,9 @@ func (m *AccessReviewNotificationRecipientItem) GetAdditionalData()(map[string]i
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessReviewNotificationRecipientItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["notificationRecipientScope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AccessReviewNotificationRecipientItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["notificationRecipientScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessReviewNotificationRecipientScopeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *AccessReviewNotificationRecipientItem) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["notificationTemplateType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notificationTemplateType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

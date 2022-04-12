@@ -8,27 +8,27 @@ import (
 type Directory struct {
     Entity
     // Conceptual container for user and group directory objects.
-    administrativeUnits []AdministrativeUnitable;
+    administrativeUnits []AdministrativeUnitable
     // Group of related custom security attribute definitions.
-    attributeSets []AttributeSetable;
+    attributeSets []AttributeSetable
     // Schema of a custom security attributes (key-value pairs).
-    customSecurityAttributeDefinitions []CustomSecurityAttributeDefinitionable;
+    customSecurityAttributeDefinitions []CustomSecurityAttributeDefinitionable
     // Recently deleted items. Read-only. Nullable.
-    deletedItems []DirectoryObjectable;
+    deletedItems []DirectoryObjectable
     // Nullable.
-    featureRolloutPolicies []FeatureRolloutPolicyable;
+    featureRolloutPolicies []FeatureRolloutPolicyable
     // Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
-    federationConfigurations []IdentityProviderBaseable;
+    federationConfigurations []IdentityProviderBaseable
     // The impactedResources property
-    impactedResources []RecommendationResourceable;
+    impactedResources []RecommendationResourceable
     // The inboundSharedUserProfiles property
-    inboundSharedUserProfiles []InboundSharedUserProfileable;
+    inboundSharedUserProfiles []InboundSharedUserProfileable
     // The outboundSharedUserProfiles property
-    outboundSharedUserProfiles []OutboundSharedUserProfileable;
+    outboundSharedUserProfiles []OutboundSharedUserProfileable
     // The recommendations property
-    recommendations []Recommendationable;
+    recommendations []Recommendationable
     // The sharedEmailDomains property
-    sharedEmailDomains []SharedEmailDomainable;
+    sharedEmailDomains []SharedEmailDomainable
 }
 // NewDirectory instantiates a new directory and sets the default values.
 func NewDirectory()(*Directory) {
@@ -90,9 +90,9 @@ func (m *Directory) GetFederationConfigurations()([]IdentityProviderBaseable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["administrativeUnits"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["administrativeUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAdministrativeUnitFromDiscriminatorValue)
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["attributeSets"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["attributeSets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAttributeSetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["customSecurityAttributeDefinitions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customSecurityAttributeDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCustomSecurityAttributeDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["deletedItems"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deletedItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["featureRolloutPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["featureRolloutPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateFeatureRolloutPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -162,7 +162,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["federationConfigurations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["federationConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentityProviderBaseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -176,7 +176,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["impactedResources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["impactedResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRecommendationResourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -190,7 +190,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["inboundSharedUserProfiles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inboundSharedUserProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateInboundSharedUserProfileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -204,7 +204,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["outboundSharedUserProfiles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["outboundSharedUserProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOutboundSharedUserProfileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -218,7 +218,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["recommendations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recommendations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRecommendationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -232,7 +232,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["sharedEmailDomains"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharedEmailDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSharedEmailDomainFromDiscriminatorValue)
         if err != nil {
             return err

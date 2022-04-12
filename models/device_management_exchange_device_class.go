@@ -7,11 +7,11 @@ import (
 // DeviceManagementExchangeDeviceClass device Class in Exchange.
 type DeviceManagementExchangeDeviceClass struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Name of the device class which will be impacted by this rule.
-    name *string;
+    name *string
     // Type of device which is impacted by this rule e.g. Model, Family. Possible values are: family, model.
-    type_escaped *DeviceManagementExchangeAccessRuleType;
+    type_escaped *DeviceManagementExchangeAccessRuleType
 }
 // NewDeviceManagementExchangeDeviceClass instantiates a new deviceManagementExchangeDeviceClass and sets the default values.
 func NewDeviceManagementExchangeDeviceClass()(*DeviceManagementExchangeDeviceClass) {
@@ -33,9 +33,9 @@ func (m *DeviceManagementExchangeDeviceClass) GetAdditionalData()(map[string]int
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementExchangeDeviceClass) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceManagementExchangeDeviceClass) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -45,13 +45,13 @@ func (m *DeviceManagementExchangeDeviceClass) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementExchangeAccessRuleType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val.(*DeviceManagementExchangeAccessRuleType))
+            m.SetType_escaped(val.(*DeviceManagementExchangeAccessRuleType))
         }
         return nil
     }
@@ -81,8 +81,8 @@ func (m *DeviceManagementExchangeDeviceClass) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetType_escaped() != nil {
+        cast := (*m.GetType_escaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

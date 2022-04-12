@@ -15,49 +15,49 @@ import (
 // GroupPolicyCategoryItemRequestBuilder provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.
 type GroupPolicyCategoryItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // GroupPolicyCategoryItemRequestBuilderDeleteOptions options for Delete
 type GroupPolicyCategoryItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // GroupPolicyCategoryItemRequestBuilderGetOptions options for Get
 type GroupPolicyCategoryItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *GroupPolicyCategoryItemRequestBuilderGetQueryParameters;
+    QueryParameters *GroupPolicyCategoryItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // GroupPolicyCategoryItemRequestBuilderGetQueryParameters the available group policy categories for this account.
 type GroupPolicyCategoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // GroupPolicyCategoryItemRequestBuilderPatchOptions options for Patch
 type GroupPolicyCategoryItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyCategoryable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyCategoryable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Children the children property
 func (m *GroupPolicyCategoryItemRequestBuilder) Children()(*id2be9225a42cb4e206ea5df101d0b19a8153d5b9b239d1b508a6a626f022511d.ChildrenRequestBuilder) {
@@ -70,7 +70,7 @@ func (m *GroupPolicyCategoryItemRequestBuilder) ChildrenById(id string)(*ifbd0ac
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["groupPolicyCategory_id1"] = id
+        urlTplParams["groupPolicyCategory%2Did1"] = id
     }
     return ifbd0ac3b7baba765dc2dc37d787c02abc489a2f2b906d274ff1edb3eaa318000.NewGroupPolicyCategoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -78,7 +78,7 @@ func (m *GroupPolicyCategoryItemRequestBuilder) ChildrenById(id string)(*ifbd0ac
 func NewGroupPolicyCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyCategoryItemRequestBuilder) {
     m := &GroupPolicyCategoryItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -163,7 +163,7 @@ func (m *GroupPolicyCategoryItemRequestBuilder) DefinitionsById(id string)(*i8c8
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["groupPolicyDefinition_id"] = id
+        urlTplParams["groupPolicyDefinition%2Did"] = id
     }
     return i8c872c2226508b9c43bacd7dd3653c998b92eb6bc77a2787b67fc5417e0ee09a.NewGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

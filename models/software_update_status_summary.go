@@ -8,35 +8,35 @@ import (
 type SoftwareUpdateStatusSummary struct {
     Entity
     // Number of compliant devices.
-    compliantDeviceCount *int32;
+    compliantDeviceCount *int32
     // Number of compliant users.
-    compliantUserCount *int32;
+    compliantUserCount *int32
     // Number of conflict devices.
-    conflictDeviceCount *int32;
+    conflictDeviceCount *int32
     // Number of conflict users.
-    conflictUserCount *int32;
+    conflictUserCount *int32
     // The name of the policy.
-    displayName *string;
+    displayName *string
     // Number of devices had error.
-    errorDeviceCount *int32;
+    errorDeviceCount *int32
     // Number of users had error.
-    errorUserCount *int32;
+    errorUserCount *int32
     // Number of non compliant devices.
-    nonCompliantDeviceCount *int32;
+    nonCompliantDeviceCount *int32
     // Number of non compliant users.
-    nonCompliantUserCount *int32;
+    nonCompliantUserCount *int32
     // Number of not applicable devices.
-    notApplicableDeviceCount *int32;
+    notApplicableDeviceCount *int32
     // Number of not applicable users.
-    notApplicableUserCount *int32;
+    notApplicableUserCount *int32
     // Number of remediated devices.
-    remediatedDeviceCount *int32;
+    remediatedDeviceCount *int32
     // Number of remediated users.
-    remediatedUserCount *int32;
+    remediatedUserCount *int32
     // Number of unknown devices.
-    unknownDeviceCount *int32;
+    unknownDeviceCount *int32
     // Number of unknown users.
-    unknownUserCount *int32;
+    unknownUserCount *int32
 }
 // NewSoftwareUpdateStatusSummary instantiates a new softwareUpdateStatusSummary and sets the default values.
 func NewSoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummary) {
@@ -106,9 +106,9 @@ func (m *SoftwareUpdateStatusSummary) GetErrorUserCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["compliantDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["compliantDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["compliantUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["compliantUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["conflictDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conflictDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["conflictUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conflictUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["errorDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -168,7 +168,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["errorUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -178,7 +178,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["nonCompliantDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["nonCompliantDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -188,7 +188,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["nonCompliantUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["nonCompliantUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -198,7 +198,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["notApplicableDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notApplicableDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -208,7 +208,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["notApplicableUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notApplicableUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -218,7 +218,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["remediatedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remediatedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -228,7 +228,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["remediatedUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remediatedUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -238,7 +238,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["unknownDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unknownDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -248,7 +248,7 @@ func (m *SoftwareUpdateStatusSummary) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["unknownUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unknownUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

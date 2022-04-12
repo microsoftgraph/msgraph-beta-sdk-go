@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/security"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i29dbe885802105b8f24e18a3ad45a4baf47a032bed4a97cc90638ac720b35332 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/subjectrightsrequests"
     i2d37e58be29c573dea772021cbc16fb5110ad11503c90334105692cd58482307 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/securescorecontrolprofiles"
     i30697897f04d53b804bcad1f0153ad552b622f468be9ca14198e001717fcbdd9 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/alerts"
     i3076976e1c2468886103a1402ff2835f889faba296f1c85ce51c99ee09e38cdc "github.com/microsoftgraph/msgraph-beta-sdk-go/security/cloudappsecurityprofiles"
@@ -26,6 +27,7 @@ import (
     i8366108fde7cb9abb94de15d00c81b743720ced29144f928fd43323122437c0a "github.com/microsoftgraph/msgraph-beta-sdk-go/security/ipsecurityprofiles/item"
     i956e12778a313e3750d20998bd9bc58b24ba11b94459928db9623590d22b6ddc "github.com/microsoftgraph/msgraph-beta-sdk-go/security/securityactions/item"
     i9b85a1e7bdfc97cbdd52f3319eecf44724fb90aed32a007e01bbf117230a1cbd "github.com/microsoftgraph/msgraph-beta-sdk-go/security/usersecurityprofiles/item"
+    i9fe89cbebebc9e8421ea4e1df57c4ac03af0de51d9dea1f1d0ba1d6023c52df0 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/subjectrightsrequests/item"
     ic633bb560cd35fd4a473b252391ace288264bc3e0245adcecf45bb4f003dcc2d "github.com/microsoftgraph/msgraph-beta-sdk-go/security/filesecurityprofiles/item"
     icf7abdec996315842957a23a296d4a13dfa457345ce67dfb1fcf777acecb7ef7 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/alerts/item"
     idfc7ee4e0b30b6fb2a96f1eed667daeae65a0816e9af7bc38a13ef77dac4c0d5 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/providertenantsettings/item"
@@ -35,40 +37,40 @@ import (
 // SecurityRequestBuilder provides operations to manage the security singleton.
 type SecurityRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // SecurityRequestBuilderGetOptions options for Get
 type SecurityRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *SecurityRequestBuilderGetQueryParameters;
+    QueryParameters *SecurityRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // SecurityRequestBuilderGetQueryParameters get security
 type SecurityRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // SecurityRequestBuilderPatchOptions options for Patch
 type SecurityRequestBuilderPatchOptions struct {
     // 
-    Body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable;
+    Body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Alerts the alerts property
 func (m *SecurityRequestBuilder) Alerts()(*i30697897f04d53b804bcad1f0153ad552b622f468be9ca14198e001717fcbdd9.AlertsRequestBuilder) {
@@ -81,7 +83,7 @@ func (m *SecurityRequestBuilder) AlertsById(id string)(*icf7abdec996315842957a23
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["alert_id"] = id
+        urlTplParams["alert%2Did"] = id
     }
     return icf7abdec996315842957a23a296d4a13dfa457345ce67dfb1fcf777acecb7ef7.NewAlertItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -100,7 +102,7 @@ func (m *SecurityRequestBuilder) CloudAppSecurityProfilesById(id string)(*ie02fc
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudAppSecurityProfile_id"] = id
+        urlTplParams["cloudAppSecurityProfile%2Did"] = id
     }
     return ie02fc175d3be34ac616ef3dda9f36f01be04b3ccf591093492385bc0ab62023a.NewCloudAppSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -108,7 +110,7 @@ func (m *SecurityRequestBuilder) CloudAppSecurityProfilesById(id string)(*ie02fc
 func NewSecurityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityRequestBuilder) {
     m := &SecurityRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/security{?select,expand}";
+    m.urlTemplate = "{+baseurl}/security{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -172,7 +174,7 @@ func (m *SecurityRequestBuilder) DomainSecurityProfilesById(id string)(*i0905673
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["domainSecurityProfile_id"] = id
+        urlTplParams["domainSecurityProfile%2Did"] = id
     }
     return i0905673ef4d7fa54e4d3f55e349406fd6862ddc6c802fb42ff1e5afa87694e6e.NewDomainSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -187,7 +189,7 @@ func (m *SecurityRequestBuilder) FileSecurityProfilesById(id string)(*ic633bb560
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["fileSecurityProfile_id"] = id
+        urlTplParams["fileSecurityProfile%2Did"] = id
     }
     return ic633bb560cd35fd4a473b252391ace288264bc3e0245adcecf45bb4f003dcc2d.NewFileSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -218,7 +220,7 @@ func (m *SecurityRequestBuilder) HostSecurityProfilesById(id string)(*i02e0bbeb2
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["hostSecurityProfile_id"] = id
+        urlTplParams["hostSecurityProfile%2Did"] = id
     }
     return i02e0bbeb2df2eda7dbc98813d493b8564c05050583278d44a701c5e5b6ef886a.NewHostSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -237,7 +239,7 @@ func (m *SecurityRequestBuilder) IpSecurityProfilesById(id string)(*i8366108fde7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["ipSecurityProfile_id"] = id
+        urlTplParams["ipSecurityProfile%2Did"] = id
     }
     return i8366108fde7cb9abb94de15d00c81b743720ced29144f928fd43323122437c0a.NewIpSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -268,7 +270,7 @@ func (m *SecurityRequestBuilder) ProviderTenantSettingsById(id string)(*idfc7ee4
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["providerTenantSetting_id"] = id
+        urlTplParams["providerTenantSetting%2Did"] = id
     }
     return idfc7ee4e0b30b6fb2a96f1eed667daeae65a0816e9af7bc38a13ef77dac4c0d5.NewProviderTenantSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -283,7 +285,7 @@ func (m *SecurityRequestBuilder) SecureScoreControlProfilesById(id string)(*i5a3
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["secureScoreControlProfile_id"] = id
+        urlTplParams["secureScoreControlProfile%2Did"] = id
     }
     return i5a3d2f037bd277d4a881c48a1993939f3df188957e325d6ae0bdf67636fcf03b.NewSecureScoreControlProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -298,7 +300,7 @@ func (m *SecurityRequestBuilder) SecureScoresById(id string)(*i6c9cc74f462fa9e89
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["secureScore_id"] = id
+        urlTplParams["secureScore%2Did"] = id
     }
     return i6c9cc74f462fa9e89a76cab1d5a7489b11c2e26c4d3a81cda11945485ac87c86.NewSecureScoreItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -313,9 +315,24 @@ func (m *SecurityRequestBuilder) SecurityActionsById(id string)(*i956e12778a313e
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["securityAction_id"] = id
+        urlTplParams["securityAction%2Did"] = id
     }
     return i956e12778a313e3750d20998bd9bc58b24ba11b94459928db9623590d22b6ddc.NewSecurityActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// SubjectRightsRequests the subjectRightsRequests property
+func (m *SecurityRequestBuilder) SubjectRightsRequests()(*i29dbe885802105b8f24e18a3ad45a4baf47a032bed4a97cc90638ac720b35332.SubjectRightsRequestsRequestBuilder) {
+    return i29dbe885802105b8f24e18a3ad45a4baf47a032bed4a97cc90638ac720b35332.NewSubjectRightsRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SubjectRightsRequestsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.security.subjectRightsRequests.item collection
+func (m *SecurityRequestBuilder) SubjectRightsRequestsById(id string)(*i9fe89cbebebc9e8421ea4e1df57c4ac03af0de51d9dea1f1d0ba1d6023c52df0.SubjectRightsRequestItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["subjectRightsRequest%2Did"] = id
+    }
+    return i9fe89cbebebc9e8421ea4e1df57c4ac03af0de51d9dea1f1d0ba1d6023c52df0.NewSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // TiIndicators the tiIndicators property
 func (m *SecurityRequestBuilder) TiIndicators()(*i81ba5cba60c873845066ad89e2c6fe67a50b8f628aaa18e17de96216c62d64f4.TiIndicatorsRequestBuilder) {
@@ -328,7 +345,7 @@ func (m *SecurityRequestBuilder) TiIndicatorsById(id string)(*i5c9089aa1bb65758f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["tiIndicator_id"] = id
+        urlTplParams["tiIndicator%2Did"] = id
     }
     return i5c9089aa1bb65758fcfbff1d8a7aa9b5deeb5741c421c67322898649fd582848.NewTiIndicatorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -343,7 +360,7 @@ func (m *SecurityRequestBuilder) UserSecurityProfilesById(id string)(*i9b85a1e7b
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["userSecurityProfile_id"] = id
+        urlTplParams["userSecurityProfile%2Did"] = id
     }
     return i9b85a1e7bdfc97cbdd52f3319eecf44724fb90aed32a007e01bbf117230a1cbd.NewUserSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

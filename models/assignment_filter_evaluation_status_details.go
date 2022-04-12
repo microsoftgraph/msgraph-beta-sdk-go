@@ -8,7 +8,7 @@ import (
 type AssignmentFilterEvaluationStatusDetails struct {
     Entity
     // PayloadId on which filter has been applied.
-    payloadId *string;
+    payloadId *string
 }
 // NewAssignmentFilterEvaluationStatusDetails instantiates a new assignmentFilterEvaluationStatusDetails and sets the default values.
 func NewAssignmentFilterEvaluationStatusDetails()(*AssignmentFilterEvaluationStatusDetails) {
@@ -22,9 +22,9 @@ func CreateAssignmentFilterEvaluationStatusDetailsFromDiscriminatorValue(parseNo
     return NewAssignmentFilterEvaluationStatusDetails(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AssignmentFilterEvaluationStatusDetails) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AssignmentFilterEvaluationStatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["payloadId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["payloadId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

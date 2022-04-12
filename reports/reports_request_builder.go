@@ -157,40 +157,40 @@ import (
 // ReportsRequestBuilder provides operations to manage the reportRoot singleton.
 type ReportsRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ReportsRequestBuilderGetOptions options for Get
 type ReportsRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ReportsRequestBuilderGetQueryParameters;
+    QueryParameters *ReportsRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ReportsRequestBuilderGetQueryParameters get reports
 type ReportsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ReportsRequestBuilderPatchOptions options for Patch
 type ReportsRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReportRootable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReportRootable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ApplicationSignInDetailedSummary the applicationSignInDetailedSummary property
 func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummary()(*i3e5807f553ec696a6e36bac9cfe39f134eed4f44a99a041d12ec819c388bd840.ApplicationSignInDetailedSummaryRequestBuilder) {
@@ -203,7 +203,7 @@ func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummaryById(id string)(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["applicationSignInDetailedSummary_id"] = id
+        urlTplParams["applicationSignInDetailedSummary%2Did"] = id
     }
     return ib41269879aaaaafe023559bee72eced006e67c0981359cdf0e53448af198f4bc.NewApplicationSignInDetailedSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -215,7 +215,7 @@ func (m *ReportsRequestBuilder) AuthenticationMethods()(*ib278d65ffeb85ab37242d8
 func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsRequestBuilder) {
     m := &ReportsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/reports{?select,expand}";
+    m.urlTemplate = "{+baseurl}/reports{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -279,7 +279,7 @@ func (m *ReportsRequestBuilder) CredentialUserRegistrationDetailsById(id string)
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["credentialUserRegistrationDetails_id"] = id
+        urlTplParams["credentialUserRegistrationDetails%2Did"] = id
     }
     return ie8dfbe0f2a10d928f186e8a85be8a433fa4f6ef763d02998cd4f197b915e90ce.NewCredentialUserRegistrationDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -294,7 +294,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByPrinterById(id string)(*id64618
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByPrinter_id"] = id
+        urlTplParams["printUsageByPrinter%2Did"] = id
     }
     return id64618d3ddc94c3dc7162d9da67abd3172a3d1bf99f56c9991906d6421e665be.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -309,7 +309,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageByUserById(id string)(*i6325a2796
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByUser_id"] = id
+        urlTplParams["printUsageByUser%2Did"] = id
     }
     return i6325a2796f62004e900be3097636ac3cdb4b5f89fff67309d7747a1f3c033bf5.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -324,7 +324,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByPrinterById(id string)
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByPrinter_id"] = id
+        urlTplParams["printUsageByPrinter%2Did"] = id
     }
     return i81f53b8b26ae53be90ad15f1e85f74bb88ada9cad7e6d8f0b3cb9ce23e2e0f46.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -339,7 +339,7 @@ func (m *ReportsRequestBuilder) DailyPrintUsageSummariesByUserById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByUser_id"] = id
+        urlTplParams["printUsageByUser%2Did"] = id
     }
     return if50f0dbd8a90dfcd7816cc16a43a257b56afed52876190fb217ae57a9d4679e0.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -862,7 +862,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByPrinterById(id string)(*i9d33
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByPrinter_id"] = id
+        urlTplParams["printUsageByPrinter%2Did"] = id
     }
     return i9d3332b918775296ebe9eb5ed2e432af9b61c784aceacaca03a043c49a0ff6db.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -877,7 +877,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageByUserById(id string)(*i5983a96
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByUser_id"] = id
+        urlTplParams["printUsageByUser%2Did"] = id
     }
     return i5983a969121cc458289b2e9bf5b347bab6120a3ecd4adca075e2189cc9460c6f.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -892,7 +892,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByPrinterById(id strin
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByPrinter_id"] = id
+        urlTplParams["printUsageByPrinter%2Did"] = id
     }
     return i9e0e6696a72655a2583635eb551d9445661402ca5fa5c8f22f82920d3cbae9a3.NewPrintUsageByPrinterItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -907,7 +907,7 @@ func (m *ReportsRequestBuilder) MonthlyPrintUsageSummariesByUserById(id string)(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["printUsageByUser_id"] = id
+        urlTplParams["printUsageByUser%2Did"] = id
     }
     return ie40751cac1559213f1bbd658ede6043abd8ffd3463aa7abc8847eea9e36a36f8.NewPrintUsageByUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -938,7 +938,7 @@ func (m *ReportsRequestBuilder) UserCredentialUsageDetailsById(id string)(*i6e78
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["userCredentialUsageDetails_id"] = id
+        urlTplParams["userCredentialUsageDetails%2Did"] = id
     }
     return i6e7800f96429fcd3abddac192866febcab6b2f74bee1f02470e717ea53e849df.NewUserCredentialUsageDetailsItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -8,17 +8,17 @@ import (
 type EnrollmentProfile struct {
     Entity
     // Configuration endpoint url to use for Enrollment
-    configurationEndpointUrl *string;
+    configurationEndpointUrl *string
     // Description of the profile
-    description *string;
+    description *string
     // Name of the profile
-    displayName *string;
+    displayName *string
     // Indicates to authenticate with Apple Setup Assistant instead of Company Portal.
-    enableAuthenticationViaCompanyPortal *bool;
+    enableAuthenticationViaCompanyPortal *bool
     // Indicates that Company Portal is required on setup assistant enrolled devices
-    requireCompanyPortalOnSetupAssistantEnrolledDevices *bool;
+    requireCompanyPortalOnSetupAssistantEnrolledDevices *bool
     // Indicates if the profile requires user authentication
-    requiresUserAuthentication *bool;
+    requiresUserAuthentication *bool
 }
 // NewEnrollmentProfile instantiates a new enrollmentProfile and sets the default values.
 func NewEnrollmentProfile()(*EnrollmentProfile) {
@@ -64,9 +64,9 @@ func (m *EnrollmentProfile) GetEnableAuthenticationViaCompanyPortal()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["configurationEndpointUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["configurationEndpointUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["enableAuthenticationViaCompanyPortal"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableAuthenticationViaCompanyPortal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["requireCompanyPortalOnSetupAssistantEnrolledDevices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requireCompanyPortalOnSetupAssistantEnrolledDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["requiresUserAuthentication"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requiresUserAuthentication"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

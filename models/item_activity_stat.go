@@ -9,25 +9,25 @@ import (
 type ItemActivityStat struct {
     Entity
     // Statistics about the access actions in this interval. Read-only.
-    access ItemActionStatable;
+    access ItemActionStatable
     // Exposes the itemActivities represented in this itemActivityStat resource.
-    activities []ItemActivityable;
+    activities []ItemActivityable
     // Statistics about the create actions in this interval. Read-only.
-    create ItemActionStatable;
+    create ItemActionStatable
     // Statistics about the delete actions in this interval. Read-only.
-    delete ItemActionStatable;
+    delete ItemActionStatable
     // Statistics about the edit actions in this interval. Read-only.
-    edit ItemActionStatable;
+    edit ItemActionStatable
     // When the interval ends. Read-only.
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Indicates that the statistics in this interval are based on incomplete data. Read-only.
-    incompleteData IncompleteDataable;
+    incompleteData IncompleteDataable
     // Indicates whether the item is 'trending.' Read-only.
-    isTrending *bool;
+    isTrending *bool
     // Statistics about the move actions in this interval. Read-only.
-    move ItemActionStatable;
+    move ItemActionStatable
     // When the interval starts. Read-only.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewItemActivityStat instantiates a new itemActivityStat and sets the default values.
 func NewItemActivityStat()(*ItemActivityStat) {
@@ -89,9 +89,9 @@ func (m *ItemActivityStat) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["access"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["access"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemActionStatFromDiscriminatorValue)
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["activities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateItemActivityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["create"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["create"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemActionStatFromDiscriminatorValue)
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["delete"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["delete"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemActionStatFromDiscriminatorValue)
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["edit"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["edit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemActionStatFromDiscriminatorValue)
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["endDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["incompleteData"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["incompleteData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIncompleteDataFromDiscriminatorValue)
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["isTrending"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isTrending"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["move"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["move"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemActionStatFromDiscriminatorValue)
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *ItemActivityStat) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

@@ -7,27 +7,27 @@ import (
 // ItemActionSet 
 type ItemActionSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A comment was added to the item.
-    comment CommentActionable;
+    comment CommentActionable
     // An item was created.
-    create CreateActionable;
+    create CreateActionable
     // An item was deleted.
-    delete DeleteActionable;
+    delete DeleteActionable
     // An item was edited.
-    edit EditActionable;
+    edit EditActionable
     // A user was mentioned in the item.
-    mention MentionActionable;
+    mention MentionActionable
     // An item was moved.
-    move MoveActionable;
+    move MoveActionable
     // An item was renamed.
-    rename RenameActionable;
+    rename RenameActionable
     // An item was restored.
-    restore RestoreActionable;
+    restore RestoreActionable
     // An item was shared.
-    share ShareActionable;
+    share ShareActionable
     // An item was versioned.
-    version VersionActionable;
+    version VersionActionable
 }
 // NewItemActionSet instantiates a new itemActionSet and sets the default values.
 func NewItemActionSet()(*ItemActionSet) {
@@ -81,9 +81,9 @@ func (m *ItemActionSet) GetEdit()(EditActionable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["comment"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCommentActionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["create"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["create"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCreateActionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["delete"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["delete"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeleteActionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["edit"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["edit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEditActionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["mention"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mention"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMentionActionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["move"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["move"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMoveActionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["rename"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rename"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRenameActionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["restore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["restore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRestoreActionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -163,7 +163,7 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["share"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["share"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateShareActionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateVersionActionFromDiscriminatorValue)
         if err != nil {
             return err

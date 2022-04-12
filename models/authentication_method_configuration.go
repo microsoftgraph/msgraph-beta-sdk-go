@@ -8,7 +8,7 @@ import (
 type AuthenticationMethodConfiguration struct {
     Entity
     // The state of the policy. Possible values are: enabled, disabled.
-    state *AuthenticationMethodState;
+    state *AuthenticationMethodState
 }
 // NewAuthenticationMethodConfiguration instantiates a new authenticationMethodConfiguration and sets the default values.
 func NewAuthenticationMethodConfiguration()(*AuthenticationMethodConfiguration) {
@@ -22,9 +22,9 @@ func CreateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i87
     return NewAuthenticationMethodConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAuthenticationMethodState)
         if err != nil {
             return err

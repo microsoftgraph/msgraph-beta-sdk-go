@@ -8,35 +8,35 @@ import (
 // UserSecurityState 
 type UserSecurityState struct {
     // AAD User object identifier (GUID) - represents the physical/multi-account user entity.
-    aadUserId *string;
+    aadUserId *string
     // Account name of user account (without Active Directory domain or DNS domain) - (also called mailNickName).
-    accountName *string;
+    accountName *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // NetBIOS/Active Directory domain of user account (that is, domain/account format).
-    domainName *string;
+    domainName *string
     // For email-related alerts - user account's email 'role'. Possible values are: unknown, sender, recipient.
-    emailRole *EmailRole;
+    emailRole *EmailRole
     // Indicates whether the user logged on through a VPN.
-    isVpn *bool;
+    isVpn *bool
     // Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    logonDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    logonDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // User sign-in ID.
-    logonId *string;
+    logonId *string
     // IP Address the sign-in request originated from.
-    logonIp *string;
+    logonIp *string
     // Location (by IP address mapping) associated with a user sign-in event by this user.
-    logonLocation *string;
+    logonLocation *string
     // Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
-    logonType *LogonType;
+    logonType *LogonType
     // Active Directory (on-premises) Security Identifier (SID) of the user.
-    onPremisesSecurityIdentifier *string;
+    onPremisesSecurityIdentifier *string
     // Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.
-    riskScore *string;
+    riskScore *string
     // User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.
-    userAccountType *UserAccountSecurityType;
+    userAccountType *UserAccountSecurityType
     // User sign-in name - internet format: (user account name)@(user account DNS domain name).
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewUserSecurityState instantiates a new userSecurityState and sets the default values.
 func NewUserSecurityState()(*UserSecurityState) {
@@ -90,9 +90,9 @@ func (m *UserSecurityState) GetEmailRole()(*EmailRole) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["aadUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["aadUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["accountName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accountName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["domainName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["domainName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["emailRole"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emailRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEmailRole)
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["isVpn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isVpn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["logonDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["logonDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["logonId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["logonId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -162,7 +162,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["logonIp"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["logonIp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["logonLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["logonLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -182,7 +182,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["logonType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["logonType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseLogonType)
         if err != nil {
             return err
@@ -192,7 +192,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["onPremisesSecurityIdentifier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onPremisesSecurityIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -202,7 +202,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["riskScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -212,7 +212,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["userAccountType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userAccountType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserAccountSecurityType)
         if err != nil {
             return err
@@ -222,7 +222,7 @@ func (m *UserSecurityState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

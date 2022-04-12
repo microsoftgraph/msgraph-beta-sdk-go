@@ -7,15 +7,15 @@ import (
 // ConditionalAccessApplications 
 type ConditionalAccessApplications struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The list of application IDs explicitly excluded from the policy.
-    excludeApplications []string;
+    excludeApplications []string
     // The list of application IDs the policy applies to, unless explicitly excluded (in excludeApplications). Can also be set to All.
-    includeApplications []string;
+    includeApplications []string
     // Authentication context class references include. Supported values are c1 through c25.
-    includeAuthenticationContextClassReferences []string;
+    includeAuthenticationContextClassReferences []string
     // User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
-    includeUserActions []string;
+    includeUserActions []string
 }
 // NewConditionalAccessApplications instantiates a new conditionalAccessApplications and sets the default values.
 func NewConditionalAccessApplications()(*ConditionalAccessApplications) {
@@ -45,9 +45,9 @@ func (m *ConditionalAccessApplications) GetExcludeApplications()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["excludeApplications"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["excludeApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["includeApplications"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includeApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["includeAuthenticationContextClassReferences"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includeAuthenticationContextClassReferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["includeUserActions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includeUserActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

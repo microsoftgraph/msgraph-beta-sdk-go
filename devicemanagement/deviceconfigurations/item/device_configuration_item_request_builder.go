@@ -26,49 +26,49 @@ import (
 // DeviceConfigurationItemRequestBuilder provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
 type DeviceConfigurationItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // DeviceConfigurationItemRequestBuilderDeleteOptions options for Delete
 type DeviceConfigurationItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceConfigurationItemRequestBuilderGetOptions options for Get
 type DeviceConfigurationItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *DeviceConfigurationItemRequestBuilderGetQueryParameters;
+    QueryParameters *DeviceConfigurationItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceConfigurationItemRequestBuilderGetQueryParameters the device configurations.
 type DeviceConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // DeviceConfigurationItemRequestBuilderPatchOptions options for Patch
 type DeviceConfigurationItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Assign the assign property
 func (m *DeviceConfigurationItemRequestBuilder) Assign()(*i7e7ab7485c32e3c00675ecc9b604c0fe15e0b309a689ee4edec907b80b4f4bf0.AssignRequestBuilder) {
@@ -89,7 +89,7 @@ func (m *DeviceConfigurationItemRequestBuilder) AssignmentsById(id string)(*iec0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceConfigurationAssignment_id"] = id
+        urlTplParams["deviceConfigurationAssignment%2Did"] = id
     }
     return iec03053e92d095e4b0c7ff7cef308162ec4e18612ecc279c203b4dc1727f41cf.NewDeviceConfigurationAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -97,7 +97,7 @@ func (m *DeviceConfigurationItemRequestBuilder) AssignmentsById(id string)(*iec0
 func NewDeviceConfigurationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationItemRequestBuilder) {
     m := &DeviceConfigurationItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -194,7 +194,7 @@ func (m *DeviceConfigurationItemRequestBuilder) DeviceSettingStateSummariesById(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["settingStateDeviceSummary_id"] = id
+        urlTplParams["settingStateDeviceSummary%2Did"] = id
     }
     return i77e922bc2634c1b149fd5fbc479252b5a9dce4fcc9a42aa64bb2a5b2192e0580.NewSettingStateDeviceSummaryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -209,7 +209,7 @@ func (m *DeviceConfigurationItemRequestBuilder) DeviceStatusesById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceConfigurationDeviceStatus_id"] = id
+        urlTplParams["deviceConfigurationDeviceStatus%2Did"] = id
     }
     return i3e34b826795238ed9133fb18aa5cec93b37b6f29016c136e739a889f1b977bfd.NewDeviceConfigurationDeviceStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -248,7 +248,7 @@ func (m *DeviceConfigurationItemRequestBuilder) GroupAssignmentsById(id string)(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceConfigurationGroupAssignment_id"] = id
+        urlTplParams["deviceConfigurationGroupAssignment%2Did"] = id
     }
     return i4f57a07bf94a6a03edadd0600f1cacbf130f9cea090055c5e429f5f9239c636e.NewDeviceConfigurationGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -279,7 +279,7 @@ func (m *DeviceConfigurationItemRequestBuilder) UserStatusesById(id string)(*id7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceConfigurationUserStatus_id"] = id
+        urlTplParams["deviceConfigurationUserStatus%2Did"] = id
     }
     return id79155e4004317e808df6e9ae0a7f5ed23f8c89b955537d051b7e20bdfefe0e7.NewDeviceConfigurationUserStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

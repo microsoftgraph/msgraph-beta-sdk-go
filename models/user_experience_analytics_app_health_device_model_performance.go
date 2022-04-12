@@ -8,19 +8,19 @@ import (
 type UserExperienceAnalyticsAppHealthDeviceModelPerformance struct {
     Entity
     // The number of active devices for the model. Valid values -2147483648 to 2147483647
-    activeDeviceCount *int32;
+    activeDeviceCount *int32
     // The manufacturer name of the device.
-    deviceManufacturer *string;
+    deviceManufacturer *string
     // The model name of the device.
-    deviceModel *string;
+    deviceModel *string
     // The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-    healthStatus *UserExperienceAnalyticsHealthState;
+    healthStatus *UserExperienceAnalyticsHealthState
     // The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
-    meanTimeToFailureInMinutes *int32;
+    meanTimeToFailureInMinutes *int32
     // The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    modelAppHealthScore *float64;
+    modelAppHealthScore *float64
     // The overall app health status of the device model.
-    modelAppHealthStatus *string;
+    modelAppHealthStatus *string
 }
 // NewUserExperienceAnalyticsAppHealthDeviceModelPerformance instantiates a new userExperienceAnalyticsAppHealthDeviceModelPerformance and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDeviceModelPerformance()(*UserExperienceAnalyticsAppHealthDeviceModelPerformance) {
@@ -58,9 +58,9 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetDeviceModel(
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activeDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activeDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["deviceManufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceManufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["deviceModel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceModel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["healthStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["healthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserExperienceAnalyticsHealthState)
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["meanTimeToFailureInMinutes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["meanTimeToFailureInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["modelAppHealthScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["modelAppHealthScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["modelAppHealthStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["modelAppHealthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

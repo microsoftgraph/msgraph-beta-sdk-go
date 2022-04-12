@@ -8,7 +8,7 @@ import (
 type ExactMatchDataStore struct {
     ExactMatchDataStoreBase
     // The sessions property
-    sessions []ExactMatchSessionable;
+    sessions []ExactMatchSessionable
 }
 // NewExactMatchDataStore instantiates a new exactMatchDataStore and sets the default values.
 func NewExactMatchDataStore()(*ExactMatchDataStore) {
@@ -22,9 +22,9 @@ func CreateExactMatchDataStoreFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewExactMatchDataStore(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ExactMatchDataStore) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ExactMatchDataStore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ExactMatchDataStoreBase.GetFieldDeserializers()
-    res["sessions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateExactMatchSessionFromDiscriminatorValue)
         if err != nil {
             return err

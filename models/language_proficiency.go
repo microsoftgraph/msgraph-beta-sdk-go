@@ -8,19 +8,19 @@ import (
 type LanguageProficiency struct {
     ItemFacet
     // Contains the long-form name for the language.
-    displayName *string;
+    displayName *string
     // The proficiency property
-    proficiency *LanguageProficiencyLevel;
+    proficiency *LanguageProficiencyLevel
     // Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-    reading *LanguageProficiencyLevel;
+    reading *LanguageProficiencyLevel
     // Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-    spoken *LanguageProficiencyLevel;
+    spoken *LanguageProficiencyLevel
     // Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).
-    tag *string;
+    tag *string
     // The thumbnailUrl property
-    thumbnailUrl *string;
+    thumbnailUrl *string
     // Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
-    written *LanguageProficiencyLevel;
+    written *LanguageProficiencyLevel
 }
 // NewLanguageProficiency instantiates a new languageProficiency and sets the default values.
 func NewLanguageProficiency()(*LanguageProficiency) {
@@ -42,9 +42,9 @@ func (m *LanguageProficiency) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["proficiency"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["proficiency"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseLanguageProficiencyLevel)
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["reading"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reading"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseLanguageProficiencyLevel)
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["spoken"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["spoken"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseLanguageProficiencyLevel)
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["tag"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["thumbnailUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["thumbnailUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["written"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["written"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseLanguageProficiencyLevel)
         if err != nil {
             return err

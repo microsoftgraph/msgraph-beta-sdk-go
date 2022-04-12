@@ -8,11 +8,11 @@ import (
 type AccessReviewPolicy struct {
     Entity
     // Description for this policy. Read-only.
-    description *string;
+    description *string
     // Display name for this policy. Read-only.
-    displayName *string;
+    displayName *string
     // If true, group owners can create and manage access reviews on groups they own.
-    isGroupOwnerManagementEnabled *bool;
+    isGroupOwnerManagementEnabled *bool
 }
 // NewAccessReviewPolicy instantiates a new accessReviewPolicy and sets the default values.
 func NewAccessReviewPolicy()(*AccessReviewPolicy) {
@@ -42,9 +42,9 @@ func (m *AccessReviewPolicy) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessReviewPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AccessReviewPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *AccessReviewPolicy) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *AccessReviewPolicy) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["isGroupOwnerManagementEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isGroupOwnerManagementEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

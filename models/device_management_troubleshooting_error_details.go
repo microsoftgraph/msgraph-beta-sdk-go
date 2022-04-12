@@ -7,17 +7,17 @@ import (
 // DeviceManagementTroubleshootingErrorDetails object containing detailed information about the error and its remediation.
 type DeviceManagementTroubleshootingErrorDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Not yet documented
-    context *string;
+    context *string
     // Not yet documented
-    failure *string;
+    failure *string
     // The detailed description of what went wrong.
-    failureDetails *string;
+    failureDetails *string
     // The detailed description of how to remediate this issue.
-    remediation *string;
+    remediation *string
     // Links to helpful documentation about this failure.
-    resources []DeviceManagementTroubleshootingErrorResourceable;
+    resources []DeviceManagementTroubleshootingErrorResourceable
 }
 // NewDeviceManagementTroubleshootingErrorDetails instantiates a new deviceManagementTroubleshootingErrorDetails and sets the default values.
 func NewDeviceManagementTroubleshootingErrorDetails()(*DeviceManagementTroubleshootingErrorDetails) {
@@ -63,9 +63,9 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFailureDetails()(*strin
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["context"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["context"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["failure"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["failure"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["failureDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["failureDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["remediation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remediation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["resources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementTroubleshootingErrorResourceFromDiscriminatorValue)
         if err != nil {
             return err

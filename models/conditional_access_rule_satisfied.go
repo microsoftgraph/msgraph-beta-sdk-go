@@ -7,11 +7,11 @@ import (
 // ConditionalAccessRuleSatisfied 
 type ConditionalAccessRuleSatisfied struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client, ipAddressSeenByAzureAD, ipAddressSeenByResourceProvider, unknownFutureValue, servicePrincipals, servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals, servicePrincipalRisk.
-    conditionalAccessCondition *ConditionalAccessConditions;
+    conditionalAccessCondition *ConditionalAccessConditions
     // Refers to the conditional access policy conditions that were satisfied. The possible values are: allApps, firstPartyApps, office365, appId, acr, appFilter, allUsers, guest, groupId, roleId, userId, allDevicePlatforms, devicePlatform, allLocations, insideCorpnet, allTrustedLocations, locationId, allDevices, deviceFilter, deviceState, unknownFutureValue, deviceFilterIncludeRuleNotMatched, allDeviceStates. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: deviceFilterIncludeRuleNotMatched, allDeviceStates.
-    ruleSatisfied *ConditionalAccessRule;
+    ruleSatisfied *ConditionalAccessRule
 }
 // NewConditionalAccessRuleSatisfied instantiates a new conditionalAccessRuleSatisfied and sets the default values.
 func NewConditionalAccessRuleSatisfied()(*ConditionalAccessRuleSatisfied) {
@@ -41,9 +41,9 @@ func (m *ConditionalAccessRuleSatisfied) GetConditionalAccessCondition()(*Condit
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConditionalAccessRuleSatisfied) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["conditionalAccessCondition"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ConditionalAccessRuleSatisfied) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["conditionalAccessCondition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConditionalAccessConditions)
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *ConditionalAccessRuleSatisfied) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["ruleSatisfied"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ruleSatisfied"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConditionalAccessRule)
         if err != nil {
             return err

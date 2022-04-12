@@ -8,11 +8,11 @@ import (
 type UnifiedRbacResourceScope struct {
     Entity
     // The displayName property
-    displayName *string;
+    displayName *string
     // The scope property
-    scope *string;
+    scope *string
     // The type property
-    type_escaped *string;
+    type_escaped *string
 }
 // NewUnifiedRbacResourceScope instantiates a new unifiedRbacResourceScope and sets the default values.
 func NewUnifiedRbacResourceScope()(*UnifiedRbacResourceScope) {
@@ -34,9 +34,9 @@ func (m *UnifiedRbacResourceScope) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UnifiedRbacResourceScope) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UnifiedRbacResourceScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *UnifiedRbacResourceScope) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["scope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -56,13 +56,13 @@ func (m *UnifiedRbacResourceScope) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetType_escaped(val)
         }
         return nil
     }
@@ -103,7 +103,7 @@ func (m *UnifiedRbacResourceScope) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetType_escaped())
         if err != nil {
             return err
         }

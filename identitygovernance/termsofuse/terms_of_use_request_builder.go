@@ -13,49 +13,49 @@ import (
 // TermsOfUseRequestBuilder provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.
 type TermsOfUseRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // TermsOfUseRequestBuilderDeleteOptions options for Delete
 type TermsOfUseRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TermsOfUseRequestBuilderGetOptions options for Get
 type TermsOfUseRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *TermsOfUseRequestBuilderGetQueryParameters;
+    QueryParameters *TermsOfUseRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TermsOfUseRequestBuilderGetQueryParameters get termsOfUse from identityGovernance
 type TermsOfUseRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // TermsOfUseRequestBuilderPatchOptions options for Patch
 type TermsOfUseRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TermsOfUseContainerable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TermsOfUseContainerable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AgreementAcceptances the agreementAcceptances property
 func (m *TermsOfUseRequestBuilder) AgreementAcceptances()(*idbdd55c4f874f351f01786070df721944ce5b3467ee40a9186d8e1d8254c5038.AgreementAcceptancesRequestBuilder) {
@@ -68,7 +68,7 @@ func (m *TermsOfUseRequestBuilder) AgreementAcceptancesById(id string)(*ib81ff97
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["agreementAcceptance_id"] = id
+        urlTplParams["agreementAcceptance%2Did"] = id
     }
     return ib81ff97ec65f62c7e3bf45944864f15e6a426c2a95656377c94aedf6454d4d96.NewAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -83,7 +83,7 @@ func (m *TermsOfUseRequestBuilder) AgreementsById(id string)(*i4c625eec080c8046d
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["agreement_id"] = id
+        urlTplParams["agreement%2Did"] = id
     }
     return i4c625eec080c8046d067dfb89b7686880f5fffd058fe784176bdef86f3d98004.NewAgreementItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -91,7 +91,7 @@ func (m *TermsOfUseRequestBuilder) AgreementsById(id string)(*i4c625eec080c8046d
 func NewTermsOfUseRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermsOfUseRequestBuilder) {
     m := &TermsOfUseRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/termsOfUse{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/termsOfUse{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

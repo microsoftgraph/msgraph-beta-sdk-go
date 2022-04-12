@@ -8,11 +8,11 @@ import (
 type ItemPhone struct {
     ItemFacet
     // Friendly name the user has assigned this phone number.
-    displayName *string;
+    displayName *string
     // Phone number provided by the user.
-    number *string;
+    number *string
     // The type of phone number within the object. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
-    type_escaped *PhoneType;
+    type_escaped *PhoneType
 }
 // NewItemPhone instantiates a new itemPhone and sets the default values.
 func NewItemPhone()(*ItemPhone) {
@@ -34,9 +34,9 @@ func (m *ItemPhone) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ItemPhone) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ItemPhone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *ItemPhone) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["number"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["number"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -56,13 +56,13 @@ func (m *ItemPhone) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePhoneType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val.(*PhoneType))
+            m.SetType_escaped(val.(*PhoneType))
         }
         return nil
     }
@@ -102,8 +102,8 @@ func (m *ItemPhone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetType_escaped() != nil {
+        cast := (*m.GetType_escaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

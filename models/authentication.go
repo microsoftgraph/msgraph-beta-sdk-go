@@ -8,27 +8,27 @@ import (
 type Authentication struct {
     Entity
     // Represents the email addresses registered to a user for authentication.
-    emailMethods []EmailAuthenticationMethodable;
+    emailMethods []EmailAuthenticationMethodable
     // Represents the FIDO2 security keys registered to a user for authentication.
-    fido2Methods []Fido2AuthenticationMethodable;
+    fido2Methods []Fido2AuthenticationMethodable
     // Represents all authentication methods registered to a user.
-    methods []AuthenticationMethodable;
+    methods []AuthenticationMethodable
     // The details of the Microsoft Authenticator app registered to a user for authentication.
-    microsoftAuthenticatorMethods []MicrosoftAuthenticatorAuthenticationMethodable;
+    microsoftAuthenticatorMethods []MicrosoftAuthenticatorAuthenticationMethodable
     // The operations property
-    operations []LongRunningOperationable;
+    operations []LongRunningOperationable
     // Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
-    passwordlessMicrosoftAuthenticatorMethods []PasswordlessMicrosoftAuthenticatorAuthenticationMethodable;
+    passwordlessMicrosoftAuthenticatorMethods []PasswordlessMicrosoftAuthenticatorAuthenticationMethodable
     // Represents the details of the password authentication method registered to a user for authentication.
-    passwordMethods []PasswordAuthenticationMethodable;
+    passwordMethods []PasswordAuthenticationMethodable
     // Represents the phone registered to a user for authentication.
-    phoneMethods []PhoneAuthenticationMethodable;
+    phoneMethods []PhoneAuthenticationMethodable
     // The softwareOathMethods property
-    softwareOathMethods []SoftwareOathAuthenticationMethodable;
+    softwareOathMethods []SoftwareOathAuthenticationMethodable
     // Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
-    temporaryAccessPassMethods []TemporaryAccessPassAuthenticationMethodable;
+    temporaryAccessPassMethods []TemporaryAccessPassAuthenticationMethodable
     // Represents the Windows Hello for Business authentication method registered to a user for authentication.
-    windowsHelloForBusinessMethods []WindowsHelloForBusinessAuthenticationMethodable;
+    windowsHelloForBusinessMethods []WindowsHelloForBusinessAuthenticationMethodable
 }
 // NewAuthentication instantiates a new authentication and sets the default values.
 func NewAuthentication()(*Authentication) {
@@ -58,9 +58,9 @@ func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethodable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["emailMethods"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emailMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEmailAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["fido2Methods"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fido2Methods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateFido2AuthenticationMethodFromDiscriminatorValue)
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["methods"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["methods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["microsoftAuthenticatorMethods"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["microsoftAuthenticatorMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["operations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLongRunningOperationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["passwordlessMicrosoftAuthenticatorMethods"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordlessMicrosoftAuthenticatorMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePasswordlessMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["passwordMethods"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePasswordAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["phoneMethods"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["phoneMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePhoneAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["softwareOathMethods"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["softwareOathMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSoftwareOathAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
             return err
@@ -186,7 +186,7 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["temporaryAccessPassMethods"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["temporaryAccessPassMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTemporaryAccessPassAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
             return err
@@ -200,7 +200,7 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["windowsHelloForBusinessMethods"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsHelloForBusinessMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsHelloForBusinessAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
             return err

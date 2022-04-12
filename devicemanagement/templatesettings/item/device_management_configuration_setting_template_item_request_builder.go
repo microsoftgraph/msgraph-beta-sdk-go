@@ -11,55 +11,55 @@ import (
 // DeviceManagementConfigurationSettingTemplateItemRequestBuilder provides operations to manage the templateSettings property of the microsoft.graph.deviceManagement entity.
 type DeviceManagementConfigurationSettingTemplateItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // DeviceManagementConfigurationSettingTemplateItemRequestBuilderDeleteOptions options for Delete
 type DeviceManagementConfigurationSettingTemplateItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceManagementConfigurationSettingTemplateItemRequestBuilderGetOptions options for Get
 type DeviceManagementConfigurationSettingTemplateItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *DeviceManagementConfigurationSettingTemplateItemRequestBuilderGetQueryParameters;
+    QueryParameters *DeviceManagementConfigurationSettingTemplateItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceManagementConfigurationSettingTemplateItemRequestBuilderGetQueryParameters list of all TemplateSettings
 type DeviceManagementConfigurationSettingTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // DeviceManagementConfigurationSettingTemplateItemRequestBuilderPatchOptions options for Patch
 type DeviceManagementConfigurationSettingTemplateItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationSettingTemplateable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationSettingTemplateable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewDeviceManagementConfigurationSettingTemplateItemRequestBuilderInternal instantiates a new DeviceManagementConfigurationSettingTemplateItemRequestBuilder and sets the default values.
 func NewDeviceManagementConfigurationSettingTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementConfigurationSettingTemplateItemRequestBuilder) {
     m := &DeviceManagementConfigurationSettingTemplateItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/templateSettings/{deviceManagementConfigurationSettingTemplate_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/templateSettings/{deviceManagementConfigurationSettingTemplate%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -188,7 +188,7 @@ func (m *DeviceManagementConfigurationSettingTemplateItemRequestBuilder) Setting
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementConfigurationSettingDefinition_id"] = id
+        urlTplParams["deviceManagementConfigurationSettingDefinition%2Did"] = id
     }
     return i4f0149b3e6ba09c0f520b64321fecfe210adf8765f10ecec8746545de6ac00e6.NewDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

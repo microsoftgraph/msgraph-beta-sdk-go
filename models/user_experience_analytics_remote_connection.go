@@ -8,31 +8,31 @@ import (
 type UserExperienceAnalyticsRemoteConnection struct {
     Entity
     // The sign in failure percentage of Cloud PC Device. Valid values 0 to 100
-    cloudPcFailurePercentage *float64;
+    cloudPcFailurePercentage *float64
     // The round tip time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
-    cloudPcRoundTripTime *float64;
+    cloudPcRoundTripTime *float64
     // The sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
-    cloudPcSignInTime *float64;
+    cloudPcSignInTime *float64
     // The core boot time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
-    coreBootTime *float64;
+    coreBootTime *float64
     // The core sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
-    coreSignInTime *float64;
+    coreSignInTime *float64
     // The count of remote connection. Valid values 0 to 2147483647
-    deviceCount *int32;
+    deviceCount *int32
     // The id of the device.
-    deviceId *string;
+    deviceId *string
     // The name of the device.
-    deviceName *string;
+    deviceName *string
     // The user experience analytics manufacturer.
-    manufacturer *string;
+    manufacturer *string
     // The user experience analytics device model.
-    model *string;
+    model *string
     // The remote sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
-    remoteSignInTime *float64;
+    remoteSignInTime *float64
     // The user experience analytics userPrincipalName.
-    userPrincipalName *string;
+    userPrincipalName *string
     // The user experience analytics virtual network.
-    virtualNetwork *string;
+    virtualNetwork *string
 }
 // NewUserExperienceAnalyticsRemoteConnection instantiates a new userExperienceAnalyticsRemoteConnection and sets the default values.
 func NewUserExperienceAnalyticsRemoteConnection()(*UserExperienceAnalyticsRemoteConnection) {
@@ -110,9 +110,9 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetDeviceName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["cloudPcFailurePercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudPcFailurePercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["cloudPcRoundTripTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudPcRoundTripTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["cloudPcSignInTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudPcSignInTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["coreBootTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["coreBootTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["coreSignInTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["coreSignInTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -162,7 +162,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["deviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["deviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -182,7 +182,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -192,7 +192,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["manufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -202,7 +202,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["model"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -212,7 +212,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["remoteSignInTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remoteSignInTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -222,7 +222,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -232,7 +232,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["virtualNetwork"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["virtualNetwork"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

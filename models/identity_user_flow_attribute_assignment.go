@@ -8,17 +8,17 @@ import (
 type IdentityUserFlowAttributeAssignment struct {
     Entity
     // The display name of the identityUserFlowAttribute within a user flow.
-    displayName *string;
+    displayName *string
     // Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
-    isOptional *bool;
+    isOptional *bool
     // Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
-    requiresVerification *bool;
+    requiresVerification *bool
     // The user attribute that you want to add to your user flow.
-    userAttribute IdentityUserFlowAttributeable;
+    userAttribute IdentityUserFlowAttributeable
     // The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
-    userAttributeValues []UserAttributeValuesItemable;
+    userAttributeValues []UserAttributeValuesItemable
     // The input type of the user flow attribute. Possible values are: textBox, dateTimeDropdown, radioSingleSelect, dropdownSingleSelect, emailBox, checkboxMultiSelect.
-    userInputType *IdentityUserFlowAttributeInputType;
+    userInputType *IdentityUserFlowAttributeInputType
 }
 // NewIdentityUserFlowAttributeAssignment instantiates a new identityUserFlowAttributeAssignment and sets the default values.
 func NewIdentityUserFlowAttributeAssignment()(*IdentityUserFlowAttributeAssignment) {
@@ -40,9 +40,9 @@ func (m *IdentityUserFlowAttributeAssignment) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["isOptional"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isOptional"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["requiresVerification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requiresVerification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["userAttribute"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userAttribute"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentityUserFlowAttributeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["userAttributeValues"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userAttributeValues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserAttributeValuesItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *IdentityUserFlowAttributeAssignment) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["userInputType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userInputType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseIdentityUserFlowAttributeInputType)
         if err != nil {
             return err

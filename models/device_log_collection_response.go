@@ -9,21 +9,21 @@ import (
 type DeviceLogCollectionResponse struct {
     Entity
     // The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
-    errorCode *int64;
+    errorCode *int64
     // The DateTime of the expiration of the logs
-    expirationDateTimeUTC *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTimeUTC *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The UPN for who initiated the request
-    initiatedByUserPrincipalName *string;
+    initiatedByUserPrincipalName *string
     // The device Id
-    managedDeviceId *string;
+    managedDeviceId *string
     // The DateTime the request was received
-    receivedDateTimeUTC *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    receivedDateTimeUTC *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The DateTime of the request
-    requestedDateTimeUTC *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    requestedDateTimeUTC *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The size of the logs. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    size *float64;
+    size *float64
     // The status of the log collection request
-    status *string;
+    status *string
 }
 // NewDeviceLogCollectionResponse instantiates a new deviceLogCollectionResponse and sets the default values.
 func NewDeviceLogCollectionResponse()(*DeviceLogCollectionResponse) {
@@ -53,9 +53,9 @@ func (m *DeviceLogCollectionResponse) GetExpirationDateTimeUTC()(*i336074805fc85
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["errorCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["expirationDateTimeUTC"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTimeUTC"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["initiatedByUserPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["initiatedByUserPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["managedDeviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["receivedDateTimeUTC"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["receivedDateTimeUTC"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["requestedDateTimeUTC"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestedDateTimeUTC"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["size"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

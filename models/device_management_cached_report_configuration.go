@@ -9,21 +9,21 @@ import (
 type DeviceManagementCachedReportConfiguration struct {
     Entity
     // Time that the cached report expires
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Filters applied on report creation.
-    filter *string;
+    filter *string
     // Time that the cached report was last refreshed
-    lastRefreshDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastRefreshDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Caller-managed metadata associated with the report
-    metadata *string;
+    metadata *string
     // Ordering of columns in the report
-    orderBy []string;
+    orderBy []string
     // Name of the report
-    reportName *string;
+    reportName *string
     // Columns selected from the report
-    select_escaped []string;
+    select_escaped []string
     // Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.
-    status *DeviceManagementReportStatus;
+    status *DeviceManagementReportStatus
 }
 // NewDeviceManagementCachedReportConfiguration instantiates a new deviceManagementCachedReportConfiguration and sets the default values.
 func NewDeviceManagementCachedReportConfiguration()(*DeviceManagementCachedReportConfiguration) {
@@ -45,9 +45,9 @@ func (m *DeviceManagementCachedReportConfiguration) GetExpirationDateTime()(*i33
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["filter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["filter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["lastRefreshDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastRefreshDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["metadata"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["metadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["orderBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["orderBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["reportName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["select"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["select"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -121,11 +121,11 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetSelect(res)
+            m.SetSelect_escaped(res)
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementReportStatus)
         if err != nil {
             return err
@@ -235,8 +235,8 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i878a80d233
             return err
         }
     }
-    if m.GetSelect() != nil {
-        err = writer.WriteCollectionOfStringValues("select", m.GetSelect())
+    if m.GetSelect_escaped() != nil {
+        err = writer.WriteCollectionOfStringValues("select", m.GetSelect_escaped())
         if err != nil {
             return err
         }

@@ -7,11 +7,11 @@ import (
 // DelegatedAdminRelationshipCustomerParticipant 
 type DelegatedAdminRelationshipCustomerParticipant struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The display name of the customer tenant as set by Azure AD. Read only
-    displayName *string;
+    displayName *string
     // The Azure AD-assigned tenant ID of the customer tenant.
-    tenantId *string;
+    tenantId *string
 }
 // NewDelegatedAdminRelationshipCustomerParticipant instantiates a new delegatedAdminRelationshipCustomerParticipant and sets the default values.
 func NewDelegatedAdminRelationshipCustomerParticipant()(*DelegatedAdminRelationshipCustomerParticipant) {
@@ -41,9 +41,9 @@ func (m *DelegatedAdminRelationshipCustomerParticipant) GetDisplayName()(*string
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DelegatedAdminRelationshipCustomerParticipant) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DelegatedAdminRelationshipCustomerParticipant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *DelegatedAdminRelationshipCustomerParticipant) GetFieldDeserializers()(
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

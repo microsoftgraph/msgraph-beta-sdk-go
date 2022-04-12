@@ -7,11 +7,11 @@ import (
 // AppManagementConfiguration 
 type AppManagementConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Collection of keyCredential restrictions settings to be applied to an application or service principal.
-    keyCredentials []KeyCredentialConfigurationable;
+    keyCredentials []KeyCredentialConfigurationable
     // Collection of password restrictions settings to be applied to an application or service principal.
-    passwordCredentials []PasswordCredentialConfigurationable;
+    passwordCredentials []PasswordCredentialConfigurationable
 }
 // NewAppManagementConfiguration instantiates a new appManagementConfiguration and sets the default values.
 func NewAppManagementConfiguration()(*AppManagementConfiguration) {
@@ -33,9 +33,9 @@ func (m *AppManagementConfiguration) GetAdditionalData()(map[string]interface{})
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AppManagementConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["keyCredentials"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AppManagementConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["keyCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyCredentialConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *AppManagementConfiguration) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["passwordCredentials"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePasswordCredentialConfigurationFromDiscriminatorValue)
         if err != nil {
             return err

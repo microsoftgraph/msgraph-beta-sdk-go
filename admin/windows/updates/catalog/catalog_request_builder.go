@@ -11,55 +11,55 @@ import (
 // CatalogRequestBuilder provides operations to manage the catalog property of the microsoft.graph.windowsUpdates.updates entity.
 type CatalogRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // CatalogRequestBuilderDeleteOptions options for Delete
 type CatalogRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CatalogRequestBuilderGetOptions options for Get
 type CatalogRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *CatalogRequestBuilderGetQueryParameters;
+    QueryParameters *CatalogRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CatalogRequestBuilderGetQueryParameters catalog of content that can be approved for deployment by the deployment service. Read-only.
 type CatalogRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // CatalogRequestBuilderPatchOptions options for Patch
 type CatalogRequestBuilderPatchOptions struct {
     // 
-    Body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable;
+    Body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewCatalogRequestBuilderInternal instantiates a new CatalogRequestBuilder and sets the default values.
 func NewCatalogRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CatalogRequestBuilder) {
     m := &CatalogRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/admin/windows/updates/catalog{?select,expand}";
+    m.urlTemplate = "{+baseurl}/admin/windows/updates/catalog{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -156,7 +156,7 @@ func (m *CatalogRequestBuilder) EntriesById(id string)(*id50e9b79234f49f74c6a4b5
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["catalogEntry_id"] = id
+        urlTplParams["catalogEntry%2Did"] = id
     }
     return id50e9b79234f49f74c6a4b53cd51a15446fd59c350985c8cbaaed7993817ce91.NewCatalogEntryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

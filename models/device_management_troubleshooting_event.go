@@ -9,15 +9,15 @@ import (
 type DeviceManagementTroubleshootingEvent struct {
     Entity
     // A set of string key and string value pairs which provides additional information on the Troubleshooting event
-    additionalInformation []KeyValuePairable;
+    additionalInformation []KeyValuePairable
     // Id used for tracing the failure in the service.
-    correlationId *string;
+    correlationId *string
     // Time when the event occurred .
-    eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Event Name corresponding to the Troubleshooting Event. It is an Optional field
-    eventName *string;
+    eventName *string
     // Object containing detailed information about the error and its remediation.
-    troubleshootingErrorDetails DeviceManagementTroubleshootingErrorDetailsable;
+    troubleshootingErrorDetails DeviceManagementTroubleshootingErrorDetailsable
 }
 // NewDeviceManagementTroubleshootingEvent instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
 func NewDeviceManagementTroubleshootingEvent()(*DeviceManagementTroubleshootingEvent) {
@@ -63,9 +63,9 @@ func (m *DeviceManagementTroubleshootingEvent) GetEventName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["additionalInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["additionalInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["correlationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["correlationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["eventDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["eventDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["eventName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["eventName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["troubleshootingErrorDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["troubleshootingErrorDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementTroubleshootingErrorDetailsFromDiscriminatorValue)
         if err != nil {
             return err

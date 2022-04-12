@@ -7,9 +7,9 @@ import (
 // UserExperienceAnalyticsWindows10DevicesSummary the user experience analytics work from anywhere Windows 10 devices summary.
 type UserExperienceAnalyticsWindows10DevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The count of Windows 10 devices that have unsupported OS versions.
-    unsupportedOSversionDeviceCount *int32;
+    unsupportedOSversionDeviceCount *int32
 }
 // NewUserExperienceAnalyticsWindows10DevicesSummary instantiates a new userExperienceAnalyticsWindows10DevicesSummary and sets the default values.
 func NewUserExperienceAnalyticsWindows10DevicesSummary()(*UserExperienceAnalyticsWindows10DevicesSummary) {
@@ -31,9 +31,9 @@ func (m *UserExperienceAnalyticsWindows10DevicesSummary) GetAdditionalData()(map
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsWindows10DevicesSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["unsupportedOSversionDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserExperienceAnalyticsWindows10DevicesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["unsupportedOSversionDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

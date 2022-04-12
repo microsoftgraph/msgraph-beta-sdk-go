@@ -9,9 +9,9 @@ import (
 type UnifiedGroupSource struct {
     DataSource
     // The group property
-    group ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable;
+    group ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable
     // Specifies which sources are included in this group. Possible values are: mailbox, site.
-    includedSources *SourceType;
+    includedSources *SourceType
 }
 // NewUnifiedGroupSource instantiates a new unifiedGroupSource and sets the default values.
 func NewUnifiedGroupSource()(*UnifiedGroupSource) {
@@ -25,9 +25,9 @@ func CreateUnifiedGroupSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewUnifiedGroupSource(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UnifiedGroupSource) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UnifiedGroupSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DataSource.GetFieldDeserializers()
-    res["group"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["group"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -37,7 +37,7 @@ func (m *UnifiedGroupSource) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["includedSources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includedSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSourceType)
         if err != nil {
             return err

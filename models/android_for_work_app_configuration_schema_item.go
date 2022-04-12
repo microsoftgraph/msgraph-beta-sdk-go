@@ -7,25 +7,25 @@ import (
 // AndroidForWorkAppConfigurationSchemaItem single configuration item inside an Android for Work application's custom configuration schema.
 type AndroidForWorkAppConfigurationSchemaItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The type of value this item describes. Possible values are: bool, integer, string, choice, multiselect, bundle, bundleArray, hidden.
-    dataType *AndroidForWorkAppConfigurationSchemaItemDataType;
+    dataType *AndroidForWorkAppConfigurationSchemaItemDataType
     // Default value for boolean type items, if specified by the app developer
-    defaultBoolValue *bool;
+    defaultBoolValue *bool
     // Default value for integer type items, if specified by the app developer
-    defaultIntValue *int32;
+    defaultIntValue *int32
     // Default value for string array type items, if specified by the app developer
-    defaultStringArrayValue []string;
+    defaultStringArrayValue []string
     // Default value for string type items, if specified by the app developer
-    defaultStringValue *string;
+    defaultStringValue *string
     // Description of what the item controls within the application
-    description *string;
+    description *string
     // Human readable name
-    displayName *string;
+    displayName *string
     // Unique key the application uses to identify the item
-    schemaItemKey *string;
+    schemaItemKey *string
     // List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)
-    selections []KeyValuePairable;
+    selections []KeyValuePairable
 }
 // NewAndroidForWorkAppConfigurationSchemaItem instantiates a new androidForWorkAppConfigurationSchemaItem and sets the default values.
 func NewAndroidForWorkAppConfigurationSchemaItem()(*AndroidForWorkAppConfigurationSchemaItem) {
@@ -103,9 +103,9 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AndroidForWorkAppConfigurationSchemaItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["dataType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AndroidForWorkAppConfigurationSchemaItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["dataType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAndroidForWorkAppConfigurationSchemaItemDataType)
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["defaultBoolValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultBoolValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["defaultIntValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultIntValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["defaultStringArrayValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultStringArrayValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["defaultStringValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultStringValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["schemaItemKey"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["schemaItemKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["selections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["selections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err

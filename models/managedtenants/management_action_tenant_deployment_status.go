@@ -9,11 +9,11 @@ import (
 type ManagementActionTenantDeploymentStatus struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The collection of deployment status for each instance of a management action. Optional.
-    statuses []ManagementActionDeploymentStatusable;
+    statuses []ManagementActionDeploymentStatusable
     // The identifier for the tenant group that is associated with the management action. Required. Read-only.
-    tenantGroupId *string;
+    tenantGroupId *string
     // The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
-    tenantId *string;
+    tenantId *string
 }
 // NewManagementActionTenantDeploymentStatus instantiates a new managementActionTenantDeploymentStatus and sets the default values.
 func NewManagementActionTenantDeploymentStatus()(*ManagementActionTenantDeploymentStatus) {
@@ -27,9 +27,9 @@ func CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue(parseNod
     return NewManagementActionTenantDeploymentStatus(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["statuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["statuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementActionDeploymentStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -43,7 +43,7 @@ func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["tenantGroupId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

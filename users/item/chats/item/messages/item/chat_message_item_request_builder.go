@@ -15,55 +15,55 @@ import (
 // ChatMessageItemRequestBuilder provides operations to manage the messages property of the microsoft.graph.chat entity.
 type ChatMessageItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ChatMessageItemRequestBuilderDeleteOptions options for Delete
 type ChatMessageItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ChatMessageItemRequestBuilderGetOptions options for Get
 type ChatMessageItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ChatMessageItemRequestBuilderGetQueryParameters;
+    QueryParameters *ChatMessageItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ChatMessageItemRequestBuilderGetQueryParameters a collection of all the messages in the chat. Nullable.
 type ChatMessageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ChatMessageItemRequestBuilderPatchOptions options for Patch
 type ChatMessageItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewChatMessageItemRequestBuilderInternal instantiates a new ChatMessageItemRequestBuilder and sets the default values.
 func NewChatMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatMessageItemRequestBuilder) {
     m := &ChatMessageItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user_id}/chats/{chat_id}/messages/{chatMessage_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/messages/{chatMessage%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -176,7 +176,7 @@ func (m *ChatMessageItemRequestBuilder) HostedContentsById(id string)(*i9451bb5c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["chatMessageHostedContent_id"] = id
+        urlTplParams["chatMessageHostedContent%2Did"] = id
     }
     return i9451bb5c4c6966f0757cf1e25bb2d67947ff72a58133160bd11a3b946737d3ed.NewChatMessageHostedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -207,7 +207,7 @@ func (m *ChatMessageItemRequestBuilder) RepliesById(id string)(*i99346193a95b8de
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["chatMessage_id1"] = id
+        urlTplParams["chatMessage%2Did1"] = id
     }
     return i99346193a95b8ded10d28c89f4bf57f816d81fc0634d64987d260f3a472f205c.NewChatMessageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -8,13 +8,13 @@ import (
 type AccessReviewSet struct {
     Entity
     // Represents an Azure AD access review decision on an instance of a review.
-    decisions []AccessReviewInstanceDecisionItemable;
+    decisions []AccessReviewInstanceDecisionItemable
     // Represents the template and scheduling for an access review.
-    definitions []AccessReviewScheduleDefinitionable;
+    definitions []AccessReviewScheduleDefinitionable
     // Represents a collection of access review history data and the scopes used to collect that data.
-    historyDefinitions []AccessReviewHistoryDefinitionable;
+    historyDefinitions []AccessReviewHistoryDefinitionable
     // Resource that enables administrators to manage directory-level access review policies in their tenant.
-    policy AccessReviewPolicyable;
+    policy AccessReviewPolicyable
 }
 // NewAccessReviewSet instantiates a new accessReviewSet and sets the default values.
 func NewAccessReviewSet()(*AccessReviewSet) {
@@ -44,9 +44,9 @@ func (m *AccessReviewSet) GetDefinitions()([]AccessReviewScheduleDefinitionable)
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["decisions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["decisions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewInstanceDecisionItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["definitions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["definitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewScheduleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["historyDefinitions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["historyDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewHistoryDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["policy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessReviewPolicyFromDiscriminatorValue)
         if err != nil {
             return err

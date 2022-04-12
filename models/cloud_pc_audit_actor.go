@@ -7,29 +7,29 @@ import (
 // CloudPcAuditActor 
 type CloudPcAuditActor struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Name of the application.
-    applicationDisplayName *string;
+    applicationDisplayName *string
     // Azure AD application ID.
-    applicationId *string;
+    applicationId *string
     // IP address.
-    ipAddress *string;
+    ipAddress *string
     // The delegated partner tenant ID.
-    remoteTenantId *string;
+    remoteTenantId *string
     // The delegated partner user ID.
-    remoteUserId *string;
+    remoteUserId *string
     // Service Principal Name (SPN).
-    servicePrincipalName *string;
+    servicePrincipalName *string
     // The actor type. Possible values include ItPro, Application, Partner and Unknown.
-    type_escaped *CloudPcAuditActorType;
+    type_escaped *CloudPcAuditActorType
     // Azure AD user ID.
-    userId *string;
+    userId *string
     // List of user permissions and application permissions when the audit event was performed.
-    userPermissions []string;
+    userPermissions []string
     // User Principal Name (UPN).
-    userPrincipalName *string;
+    userPrincipalName *string
     // List of role scope tags.
-    userRoleScopeTags []CloudPcUserRoleScopeTagInfoable;
+    userRoleScopeTags []CloudPcUserRoleScopeTagInfoable
 }
 // NewCloudPcAuditActor instantiates a new cloudPcAuditActor and sets the default values.
 func NewCloudPcAuditActor()(*CloudPcAuditActor) {
@@ -67,9 +67,9 @@ func (m *CloudPcAuditActor) GetApplicationId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["applicationDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["applicationDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["applicationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["ipAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ipAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["remoteTenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remoteTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["remoteUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remoteUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["servicePrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["servicePrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -129,17 +129,17 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcAuditActorType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val.(*CloudPcAuditActorType))
+            m.SetType_escaped(val.(*CloudPcAuditActorType))
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["userPermissions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPermissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -163,7 +163,7 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["userRoleScopeTags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userRoleScopeTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcUserRoleScopeTagInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -299,8 +299,8 @@ func (m *CloudPcAuditActor) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetType_escaped() != nil {
+        cast := (*m.GetType_escaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

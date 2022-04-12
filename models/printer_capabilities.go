@@ -7,85 +7,85 @@ import (
 // PrinterCapabilities 
 type PrinterCapabilities struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A list of supported bottom margins(in microns) for the printer.
-    bottomMargins []int32;
+    bottomMargins []int32
     // True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
-    collation *bool;
+    collation *bool
     // The color modes supported by the printer. Valid values are described in the following table.
-    colorModes []PrintColorMode;
+    colorModes []PrintColorMode
     // A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
-    contentTypes []string;
+    contentTypes []string
     // The range of copies per job supported by the printer.
-    copiesPerJob IntegerRangeable;
+    copiesPerJob IntegerRangeable
     // The list of print resolutions in DPI that are supported by the printer.
-    dpis []int32;
+    dpis []int32
     // The list of duplex modes that are supported by the printer. Valid values are described in the following table.
-    duplexModes []PrintDuplexMode;
+    duplexModes []PrintDuplexMode
     // The feedDirections property
-    feedDirections []PrinterFeedDirection;
+    feedDirections []PrinterFeedDirection
     // The list of feed orientations that are supported by the printer.
-    feedOrientations []PrinterFeedOrientation;
+    feedOrientations []PrinterFeedOrientation
     // Finishing processes the printer supports for a printed document.
-    finishings []PrintFinishing;
+    finishings []PrintFinishing
     // Supported input bins for the printer.
-    inputBins []string;
+    inputBins []string
     // True if color printing is supported by the printer; false otherwise. Read-only.
-    isColorPrintingSupported *bool;
+    isColorPrintingSupported *bool
     // True if the printer supports printing by page ranges; false otherwise.
-    isPageRangeSupported *bool;
+    isPageRangeSupported *bool
     // A list of supported left margins(in microns) for the printer.
-    leftMargins []int32;
+    leftMargins []int32
     // The media (i.e., paper) colors supported by the printer.
-    mediaColors []string;
+    mediaColors []string
     // The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
-    mediaSizes []string;
+    mediaSizes []string
     // The media types supported by the printer.
-    mediaTypes []string;
+    mediaTypes []string
     // The presentation directions supported by the printer. Supported values are described in the following table.
-    multipageLayouts []PrintMultipageLayout;
+    multipageLayouts []PrintMultipageLayout
     // The print orientations supported by the printer. Valid values are described in the following table.
-    orientations []PrintOrientation;
+    orientations []PrintOrientation
     // The printer's supported output bins (trays).
-    outputBins []string;
+    outputBins []string
     // Supported number of Input Pages to impose upon a single Impression.
-    pagesPerSheet []int32;
+    pagesPerSheet []int32
     // The print qualities supported by the printer.
-    qualities []PrintQuality;
+    qualities []PrintQuality
     // A list of supported right margins(in microns) for the printer.
-    rightMargins []int32;
+    rightMargins []int32
     // Supported print scalings.
-    scalings []PrintScaling;
+    scalings []PrintScaling
     // The supportedColorConfigurations property
-    supportedColorConfigurations []PrintColorConfiguration;
+    supportedColorConfigurations []PrintColorConfiguration
     // The supportedCopiesPerJob property
-    supportedCopiesPerJob IntegerRangeable;
+    supportedCopiesPerJob IntegerRangeable
     // The supportedDocumentMimeTypes property
-    supportedDocumentMimeTypes []string;
+    supportedDocumentMimeTypes []string
     // The supportedDuplexConfigurations property
-    supportedDuplexConfigurations []PrintDuplexConfiguration;
+    supportedDuplexConfigurations []PrintDuplexConfiguration
     // The supportedFinishings property
-    supportedFinishings []PrintFinishing;
+    supportedFinishings []PrintFinishing
     // The supportedMediaColors property
-    supportedMediaColors []string;
+    supportedMediaColors []string
     // The supportedMediaSizes property
-    supportedMediaSizes []string;
+    supportedMediaSizes []string
     // The supportedMediaTypes property
-    supportedMediaTypes []PrintMediaType;
+    supportedMediaTypes []PrintMediaType
     // The supportedOrientations property
-    supportedOrientations []PrintOrientation;
+    supportedOrientations []PrintOrientation
     // The supportedOutputBins property
-    supportedOutputBins []string;
+    supportedOutputBins []string
     // The supportedPagesPerSheet property
-    supportedPagesPerSheet IntegerRangeable;
+    supportedPagesPerSheet IntegerRangeable
     // The supportedPresentationDirections property
-    supportedPresentationDirections []PrintPresentationDirection;
+    supportedPresentationDirections []PrintPresentationDirection
     // The supportedPrintQualities property
-    supportedPrintQualities []PrintQuality;
+    supportedPrintQualities []PrintQuality
     // True if the printer supports scaling PDF pages to match the print media size; false otherwise.
-    supportsFitPdfToPage *bool;
+    supportsFitPdfToPage *bool
     // A list of supported top margins(in microns) for the printer.
-    topMargins []int32;
+    topMargins []int32
 }
 // NewPrinterCapabilities instantiates a new printerCapabilities and sets the default values.
 func NewPrinterCapabilities()(*PrinterCapabilities) {
@@ -179,9 +179,9 @@ func (m *PrinterCapabilities) GetFeedOrientations()([]PrinterFeedOrientation) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["bottomMargins"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["bottomMargins"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("int32")
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["collation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["collation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["colorModes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["colorModes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintColorMode)
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["contentTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -233,7 +233,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["copiesPerJob"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["copiesPerJob"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIntegerRangeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -243,7 +243,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["dpis"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dpis"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("int32")
         if err != nil {
             return err
@@ -257,7 +257,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["duplexModes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["duplexModes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintDuplexMode)
         if err != nil {
             return err
@@ -271,7 +271,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["feedDirections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["feedDirections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrinterFeedDirection)
         if err != nil {
             return err
@@ -285,7 +285,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["feedOrientations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["feedOrientations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrinterFeedOrientation)
         if err != nil {
             return err
@@ -299,7 +299,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["finishings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["finishings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintFinishing)
         if err != nil {
             return err
@@ -313,7 +313,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["inputBins"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inputBins"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -327,7 +327,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["isColorPrintingSupported"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isColorPrintingSupported"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -337,7 +337,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["isPageRangeSupported"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isPageRangeSupported"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -347,7 +347,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["leftMargins"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["leftMargins"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("int32")
         if err != nil {
             return err
@@ -361,7 +361,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["mediaColors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mediaColors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -375,7 +375,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["mediaSizes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mediaSizes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -389,7 +389,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["mediaTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mediaTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -403,7 +403,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["multipageLayouts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["multipageLayouts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintMultipageLayout)
         if err != nil {
             return err
@@ -417,7 +417,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["orientations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["orientations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintOrientation)
         if err != nil {
             return err
@@ -431,7 +431,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["outputBins"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["outputBins"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -445,7 +445,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["pagesPerSheet"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pagesPerSheet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("int32")
         if err != nil {
             return err
@@ -459,7 +459,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["qualities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["qualities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintQuality)
         if err != nil {
             return err
@@ -473,7 +473,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["rightMargins"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rightMargins"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("int32")
         if err != nil {
             return err
@@ -487,7 +487,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["scalings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scalings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintScaling)
         if err != nil {
             return err
@@ -501,7 +501,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedColorConfigurations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedColorConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintColorConfiguration)
         if err != nil {
             return err
@@ -515,7 +515,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedCopiesPerJob"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedCopiesPerJob"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIntegerRangeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -525,7 +525,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedDocumentMimeTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedDocumentMimeTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -539,7 +539,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedDuplexConfigurations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedDuplexConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintDuplexConfiguration)
         if err != nil {
             return err
@@ -553,7 +553,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedFinishings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedFinishings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintFinishing)
         if err != nil {
             return err
@@ -567,7 +567,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedMediaColors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedMediaColors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -581,7 +581,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedMediaSizes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedMediaSizes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -595,7 +595,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedMediaTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedMediaTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintMediaType)
         if err != nil {
             return err
@@ -609,7 +609,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedOrientations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedOrientations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintOrientation)
         if err != nil {
             return err
@@ -623,7 +623,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedOutputBins"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedOutputBins"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -637,7 +637,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedPagesPerSheet"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedPagesPerSheet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIntegerRangeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -647,7 +647,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedPresentationDirections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedPresentationDirections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintPresentationDirection)
         if err != nil {
             return err
@@ -661,7 +661,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedPrintQualities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedPrintQualities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParsePrintQuality)
         if err != nil {
             return err
@@ -675,7 +675,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportsFitPdfToPage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportsFitPdfToPage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -685,7 +685,7 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["topMargins"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["topMargins"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("int32")
         if err != nil {
             return err

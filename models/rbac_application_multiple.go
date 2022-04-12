@@ -8,11 +8,11 @@ import (
 type RbacApplicationMultiple struct {
     Entity
     // The resourceNamespaces property
-    resourceNamespaces []UnifiedRbacResourceNamespaceable;
+    resourceNamespaces []UnifiedRbacResourceNamespaceable
     // The roleAssignments property
-    roleAssignments []UnifiedRoleAssignmentMultipleable;
+    roleAssignments []UnifiedRoleAssignmentMultipleable
     // The roleDefinitions property
-    roleDefinitions []UnifiedRoleDefinitionable;
+    roleDefinitions []UnifiedRoleDefinitionable
 }
 // NewRbacApplicationMultiple instantiates a new rbacApplicationMultiple and sets the default values.
 func NewRbacApplicationMultiple()(*RbacApplicationMultiple) {
@@ -26,9 +26,9 @@ func CreateRbacApplicationMultipleFromDiscriminatorValue(parseNode i878a80d2330e
     return NewRbacApplicationMultiple(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["resourceNamespaces"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceNamespaces"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -42,7 +42,7 @@ func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["roleAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentMultipleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["roleDefinitions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err

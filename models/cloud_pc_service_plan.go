@@ -8,17 +8,17 @@ import (
 type CloudPcServicePlan struct {
     Entity
     // The name for the service plan. Read-only.
-    displayName *string;
+    displayName *string
     // The size of the RAM in GB. Read-only.
-    ramInGB *int32;
+    ramInGB *int32
     // The size of the OS Disk in GB. Read-only.
-    storageInGB *int32;
+    storageInGB *int32
     // The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
-    type_escaped *CloudPcServicePlanType;
+    type_escaped *CloudPcServicePlanType
     // The size of the user profile disk in GB. Read-only.
-    userProfileInGB *int32;
+    userProfileInGB *int32
     // The number of vCPUs. Read-only.
-    vCpuCount *int32;
+    vCpuCount *int32
 }
 // NewCloudPcServicePlan instantiates a new cloudPcServicePlan and sets the default values.
 func NewCloudPcServicePlan()(*CloudPcServicePlan) {
@@ -40,9 +40,9 @@ func (m *CloudPcServicePlan) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["ramInGB"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ramInGB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["storageInGB"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["storageInGB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -72,17 +72,17 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcServicePlanType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val.(*CloudPcServicePlanType))
+            m.SetType_escaped(val.(*CloudPcServicePlanType))
         }
         return nil
     }
-    res["userProfileInGB"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userProfileInGB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["vCpuCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vCpuCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -168,8 +168,8 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetType_escaped() != nil {
+        cast := (*m.GetType_escaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

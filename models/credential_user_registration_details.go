@@ -8,19 +8,19 @@ import (
 type CredentialUserRegistrationDetails struct {
     Entity
     // Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
-    authMethods []RegistrationAuthMethod;
+    authMethods []RegistrationAuthMethod
     // Indicates whether the user is ready to perform self-service password reset or MFA.
-    isCapable *bool;
+    isCapable *bool
     // Indicates whether the user enabled to perform self-service password reset.
-    isEnabled *bool;
+    isEnabled *bool
     // Indicates whether the user is registered for MFA.
-    isMfaRegistered *bool;
+    isMfaRegistered *bool
     // Indicates whether the user has registered any authentication methods for self-service password reset.
-    isRegistered *bool;
+    isRegistered *bool
     // Provides the user name of the corresponding user.
-    userDisplayName *string;
+    userDisplayName *string
     // Provides the user principal name of the corresponding user.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewCredentialUserRegistrationDetails instantiates a new credentialUserRegistrationDetails and sets the default values.
 func NewCredentialUserRegistrationDetails()(*CredentialUserRegistrationDetails) {
@@ -42,9 +42,9 @@ func (m *CredentialUserRegistrationDetails) GetAuthMethods()([]RegistrationAuthM
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["authMethods"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["authMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseRegistrationAuthMethod)
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["isCapable"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isCapable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["isEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["isMfaRegistered"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isMfaRegistered"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["isRegistered"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isRegistered"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["userDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

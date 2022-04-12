@@ -9,45 +9,45 @@ import (
 type RiskDetection struct {
     Entity
     // Indicates the activity type the detected risk is linked to. Possible values are: signin, user, unknownFutureValue.
-    activity *ActivityType;
+    activity *ActivityType
     // Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
-    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Additional information associated with the risk detection in JSON format. For example, '[{/'Key/':/'userAgent/',/'Value/':/'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36/'}]'. Possible keys in the additionalInfo JSON string are: userAgent, alertUrl, relatedEventTimeInUtc, relatedUserAgent, deviceInformation, relatedLocation, requestId, correlationId, lastActivityTimeInUtc, malwareName, clientLocation, clientIp, riskReasons. For more information about riskReasons and possible values, see riskReasons values.
-    additionalInfo *string;
+    additionalInfo *string
     // Correlation ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
-    correlationId *string;
+    correlationId *string
     // Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: 2014-01-01T00:00:00Z
-    detectedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    detectedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
-    detectionTimingType *RiskDetectionTimingType;
+    detectionTimingType *RiskDetectionTimingType
     // Provides the IP address of the client from where the risk occurred.
-    ipAddress *string;
+    ipAddress *string
     // Date and time that the risk detection was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
-    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Location of the sign-in.
-    location SignInLocationable;
+    location SignInLocationable
     // Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
-    requestId *string;
+    requestId *string
     // Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-    riskDetail *RiskDetail;
+    riskDetail *RiskDetail
     // The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, passwordSpray, impossibleTravel, newCountry, anomalousToken, tokenIssuerAnomaly,suspiciousBrowser, riskyIPAddress, mcasSuspiciousInboxManipulationRules, suspiciousInboxForwarding, and unknownFutureValue. If the risk detection is a premium detection, will show generic. For more information about each value, see riskEventType values.
-    riskEventType *string;
+    riskEventType *string
     // Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
-    riskLevel *RiskLevel;
+    riskLevel *RiskLevel
     // The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-    riskState *RiskState;
+    riskState *RiskState
     // The riskType property
-    riskType *RiskEventType;
+    riskType *RiskEventType
     // Source of the risk detection. For example, activeDirectory.
-    source *string;
+    source *string
     // Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
-    tokenIssuerType *TokenIssuerType;
+    tokenIssuerType *TokenIssuerType
     // The user principal name (UPN) of the user.
-    userDisplayName *string;
+    userDisplayName *string
     // Unique ID of the user.
-    userId *string;
+    userId *string
     // The user principal name (UPN) of the user.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewRiskDetection instantiates a new riskDetection and sets the default values.
 func NewRiskDetection()(*RiskDetection) {
@@ -109,9 +109,9 @@ func (m *RiskDetection) GetDetectionTimingType()(*RiskDetectionTimingType) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RiskDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseActivityType)
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["activityDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["additionalInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["additionalInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["correlationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["correlationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["detectedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["detectedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["detectionTimingType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["detectionTimingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRiskDetectionTimingType)
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["ipAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ipAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["lastUpdatedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["location"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["location"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSignInLocationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -201,7 +201,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["requestId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -211,7 +211,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["riskDetail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRiskDetail)
         if err != nil {
             return err
@@ -221,7 +221,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["riskEventType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskEventType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -231,7 +231,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["riskLevel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRiskLevel)
         if err != nil {
             return err
@@ -241,7 +241,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["riskState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRiskState)
         if err != nil {
             return err
@@ -251,7 +251,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["riskType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRiskEventType)
         if err != nil {
             return err
@@ -261,7 +261,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["source"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -271,7 +271,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["tokenIssuerType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenIssuerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTokenIssuerType)
         if err != nil {
             return err
@@ -281,7 +281,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["userDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -291,7 +291,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -301,7 +301,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

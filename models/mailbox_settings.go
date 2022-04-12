@@ -7,27 +7,27 @@ import (
 // MailboxSettings 
 type MailboxSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Folder ID of an archive folder for the user.
-    archiveFolder *string;
+    archiveFolder *string
     // Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
-    automaticRepliesSetting AutomaticRepliesSettingable;
+    automaticRepliesSetting AutomaticRepliesSettingable
     // The date format for the user's mailbox.
-    dateFormat *string;
+    dateFormat *string
     // If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
-    delegateMeetingMessageDeliveryOptions *DelegateMeetingMessageDeliveryOptions;
+    delegateMeetingMessageDeliveryOptions *DelegateMeetingMessageDeliveryOptions
     // The locale information for the user, including the preferred language and country/region.
-    language LocaleInfoable;
+    language LocaleInfoable
     // The time format for the user's mailbox.
-    timeFormat *string;
+    timeFormat *string
     // The default time zone for the user's mailbox.
-    timeZone *string;
+    timeZone *string
     // The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.
-    userPurpose *UserPurpose;
+    userPurpose *UserPurpose
     // The userPurposeV2 property
-    userPurposeV2 *MailboxRecipientType;
+    userPurposeV2 *MailboxRecipientType
     // The days of the week and hours in a specific time zone that the user works.
-    workingHours WorkingHoursable;
+    workingHours WorkingHoursable
 }
 // NewMailboxSettings instantiates a new mailboxSettings and sets the default values.
 func NewMailboxSettings()(*MailboxSettings) {
@@ -81,9 +81,9 @@ func (m *MailboxSettings) GetDelegateMeetingMessageDeliveryOptions()(*DelegateMe
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["archiveFolder"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["archiveFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["automaticRepliesSetting"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["automaticRepliesSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAutomaticRepliesSettingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["dateFormat"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dateFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["delegateMeetingMessageDeliveryOptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["delegateMeetingMessageDeliveryOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDelegateMeetingMessageDeliveryOptions)
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["language"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["language"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLocaleInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["timeFormat"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["timeZone"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeZone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["userPurpose"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPurpose"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserPurpose)
         if err != nil {
             return err
@@ -163,7 +163,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["userPurposeV2"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPurposeV2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMailboxRecipientType)
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *MailboxSettings) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["workingHours"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["workingHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkingHoursFromDiscriminatorValue)
         if err != nil {
             return err

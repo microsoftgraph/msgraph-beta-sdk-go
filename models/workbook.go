@@ -8,19 +8,19 @@ import (
 type Workbook struct {
     Entity
     // The application property
-    application WorkbookApplicationable;
+    application WorkbookApplicationable
     // The comments property
-    comments []WorkbookCommentable;
+    comments []WorkbookCommentable
     // The functions property
-    functions WorkbookFunctionsable;
+    functions WorkbookFunctionsable
     // Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
-    names []WorkbookNamedItemable;
+    names []WorkbookNamedItemable
     // The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
-    operations []WorkbookOperationable;
+    operations []WorkbookOperationable
     // Represents a collection of tables associated with the workbook. Read-only.
-    tables []WorkbookTableable;
+    tables []WorkbookTableable
     // Represents a collection of worksheets associated with the workbook. Read-only.
-    worksheets []WorkbookWorksheetable;
+    worksheets []WorkbookWorksheetable
 }
 // NewWorkbook instantiates a new workbook and sets the default values.
 func NewWorkbook()(*Workbook) {
@@ -50,9 +50,9 @@ func (m *Workbook) GetComments()([]WorkbookCommentable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Workbook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["application"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["application"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookApplicationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["comments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["comments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkbookCommentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["functions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["functions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookFunctionsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["names"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["names"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkbookNamedItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["operations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkbookOperationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["tables"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tables"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkbookTableFromDiscriminatorValue)
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *Workbook) GetFieldDeserializers()(map[string]func(interface{}, i878a80d
         }
         return nil
     }
-    res["worksheets"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["worksheets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkbookWorksheetFromDiscriminatorValue)
         if err != nil {
             return err

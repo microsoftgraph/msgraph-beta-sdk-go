@@ -8,11 +8,11 @@ import (
 // MetricTimeSeriesDataPoint metric Time series data point
 type MetricTimeSeriesDataPoint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Time of the metric time series data point
-    dateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    dateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Value of the metric time series data point
-    value *int64;
+    value *int64
 }
 // NewMetricTimeSeriesDataPoint instantiates a new metricTimeSeriesDataPoint and sets the default values.
 func NewMetricTimeSeriesDataPoint()(*MetricTimeSeriesDataPoint) {
@@ -42,9 +42,9 @@ func (m *MetricTimeSeriesDataPoint) GetDateTime()(*i336074805fc853987abe6f7fe3ad
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MetricTimeSeriesDataPoint) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["dateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MetricTimeSeriesDataPoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["dateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *MetricTimeSeriesDataPoint) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

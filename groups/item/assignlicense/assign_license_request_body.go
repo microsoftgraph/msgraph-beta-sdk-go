@@ -8,11 +8,11 @@ import (
 // AssignLicenseRequestBody provides operations to call the assignLicense method.
 type AssignLicenseRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The addLicenses property
-    addLicenses []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignedLicenseable;
+    addLicenses []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignedLicenseable
     // The removeLicenses property
-    removeLicenses []string;
+    removeLicenses []string
 }
 // NewAssignLicenseRequestBody instantiates a new assignLicenseRequestBody and sets the default values.
 func NewAssignLicenseRequestBody()(*AssignLicenseRequestBody) {
@@ -42,9 +42,9 @@ func (m *AssignLicenseRequestBody) GetAddLicenses()([]ie233ee762e29b4ba6970aa2a2
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AssignLicenseRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["addLicenses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AssignLicenseRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["addLicenses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAssignedLicenseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *AssignLicenseRequestBody) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["removeLicenses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["removeLicenses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

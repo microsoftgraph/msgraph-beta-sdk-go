@@ -7,13 +7,13 @@ import (
 // SetUserPreferredPresenceRequestBody provides operations to call the setUserPreferredPresence method.
 type SetUserPreferredPresenceRequestBody struct {
     // The activity property
-    activity *string;
+    activity *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The availability property
-    availability *string;
+    availability *string
     // The expirationDuration property
-    expirationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    expirationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 }
 // NewSetUserPreferredPresenceRequestBody instantiates a new setUserPreferredPresenceRequestBody and sets the default values.
 func NewSetUserPreferredPresenceRequestBody()(*SetUserPreferredPresenceRequestBody) {
@@ -59,9 +59,9 @@ func (m *SetUserPreferredPresenceRequestBody) GetExpirationDuration()(*i878a80d2
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SetUserPreferredPresenceRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["activity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SetUserPreferredPresenceRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *SetUserPreferredPresenceRequestBody) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["availability"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["availability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *SetUserPreferredPresenceRequestBody) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["expirationDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err

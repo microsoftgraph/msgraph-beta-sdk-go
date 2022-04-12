@@ -8,35 +8,35 @@ import (
 // ArchivedPrintJob 
 type ArchivedPrintJob struct {
     // True if the job was acquired by a printer; false otherwise. Read-only.
-    acquiredByPrinter *bool;
+    acquiredByPrinter *bool
     // The dateTimeOffset when the job was acquired by the printer, if any. Read-only.
-    acquiredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    acquiredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The number of black and white pages that were printed. Read-only.
-    blackAndWhitePageCount *int32;
+    blackAndWhitePageCount *int32
     // The number of color pages that were printed. Read-only.
-    colorPageCount *int32;
+    colorPageCount *int32
     // The dateTimeOffset when the job was completed, canceled or aborted. Read-only.
-    completionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    completionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The number of copies that were printed. Read-only.
-    copiesPrinted *int32;
+    copiesPrinted *int32
     // The user who created the print job. Read-only.
-    createdBy UserIdentityable;
+    createdBy UserIdentityable
     // The dateTimeOffset when the job was created. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The number of duplex (double-sided) pages that were printed. Read-only.
-    duplexPageCount *int32;
+    duplexPageCount *int32
     // The archived print job's GUID. Read-only.
-    id *string;
+    id *string
     // The total number of pages that were printed. Read-only.
-    pageCount *int32;
+    pageCount *int32
     // The printer ID that the job was queued for. Read-only.
-    printerId *string;
+    printerId *string
     // The print job's final processing state. Read-only.
-    processingState *PrintJobProcessingState;
+    processingState *PrintJobProcessingState
     // The number of simplex (single-sided) pages that were printed. Read-only.
-    simplexPageCount *int32;
+    simplexPageCount *int32
 }
 // NewArchivedPrintJob instantiates a new archivedPrintJob and sets the default values.
 func NewArchivedPrintJob()(*ArchivedPrintJob) {
@@ -130,9 +130,9 @@ func (m *ArchivedPrintJob) GetDuplexPageCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["acquiredByPrinter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["acquiredByPrinter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["acquiredDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["acquiredDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["blackAndWhitePageCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["blackAndWhitePageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -162,7 +162,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["colorPageCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["colorPageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["completionDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["completionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -182,7 +182,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["copiesPrinted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["copiesPrinted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -192,7 +192,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -202,7 +202,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -212,7 +212,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["duplexPageCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["duplexPageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -222,7 +222,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -232,7 +232,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["pageCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -242,7 +242,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["printerId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["printerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -252,7 +252,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["processingState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["processingState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePrintJobProcessingState)
         if err != nil {
             return err
@@ -262,7 +262,7 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["simplexPageCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["simplexPageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

@@ -9,15 +9,15 @@ import (
 type EducationSynchronizationProfileStatus struct {
     Entity
     // Number of errors during synchronization.
-    errorCount *int64;
+    errorCount *int64
     // Represents the time when most recent changes were observed in profile.
-    lastActivityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastActivityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Represents the time of the most recent successful  synchronization.
-    lastSynchronizationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSynchronizationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
-    status *EducationSynchronizationStatus;
+    status *EducationSynchronizationStatus
     // Status message for the current profile's synchronization stage.
-    statusMessage *string;
+    statusMessage *string
 }
 // NewEducationSynchronizationProfileStatus instantiates a new educationSynchronizationProfileStatus and sets the default values.
 func NewEducationSynchronizationProfileStatus()(*EducationSynchronizationProfileStatus) {
@@ -39,9 +39,9 @@ func (m *EducationSynchronizationProfileStatus) GetErrorCount()(*int64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["errorCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -51,7 +51,7 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["lastActivityDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastActivityDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["lastSynchronizationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSynchronizationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEducationSynchronizationStatus)
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["statusMessage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["statusMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

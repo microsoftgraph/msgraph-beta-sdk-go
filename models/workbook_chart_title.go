@@ -8,13 +8,13 @@ import (
 type WorkbookChartTitle struct {
     Entity
     // Represents the formatting of a chart title, which includes fill and font formatting. Read-only.
-    format WorkbookChartTitleFormatable;
+    format WorkbookChartTitleFormatable
     // Boolean value representing if the chart title will overlay the chart or not.
-    overlay *bool;
+    overlay *bool
     // Represents the title text of a chart.
-    text *string;
+    text *string
     // A boolean value the represents the visibility of a chart title object.
-    visible *bool;
+    visible *bool
 }
 // NewWorkbookChartTitle instantiates a new workbookChartTitle and sets the default values.
 func NewWorkbookChartTitle()(*WorkbookChartTitle) {
@@ -28,9 +28,9 @@ func CreateWorkbookChartTitleFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewWorkbookChartTitle(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkbookChartTitle) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WorkbookChartTitle) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["format"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartTitleFormatFromDiscriminatorValue)
         if err != nil {
             return err
@@ -40,7 +40,7 @@ func (m *WorkbookChartTitle) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["overlay"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["overlay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *WorkbookChartTitle) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["text"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["text"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *WorkbookChartTitle) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["visible"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["visible"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

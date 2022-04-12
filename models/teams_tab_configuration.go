@@ -7,15 +7,15 @@ import (
 // TeamsTabConfiguration 
 type TeamsTabConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Url used for rendering tab contents in Teams. Required.
-    contentUrl *string;
+    contentUrl *string
     // Identifier for the entity hosted by the tab provider.
-    entityId *string;
+    entityId *string
     // Url called by Teams client when a Tab is removed using the Teams Client.
-    removeUrl *string;
+    removeUrl *string
     // Url for showing tab contents outside of Teams.
-    websiteUrl *string;
+    websiteUrl *string
 }
 // NewTeamsTabConfiguration instantiates a new teamsTabConfiguration and sets the default values.
 func NewTeamsTabConfiguration()(*TeamsTabConfiguration) {
@@ -53,9 +53,9 @@ func (m *TeamsTabConfiguration) GetEntityId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamsTabConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["contentUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamsTabConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["contentUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *TeamsTabConfiguration) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["entityId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["entityId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *TeamsTabConfiguration) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["removeUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["removeUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *TeamsTabConfiguration) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["websiteUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["websiteUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -9,25 +9,25 @@ import (
 type DeviceAppManagementTask struct {
     Entity
     // The name or email of the admin this task is assigned to.
-    assignedTo *string;
+    assignedTo *string
     // The category. Possible values are: unknown, advancedThreatProtection.
-    category *DeviceAppManagementTaskCategory;
+    category *DeviceAppManagementTaskCategory
     // The created date.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The email address of the creator.
-    creator *string;
+    creator *string
     // Notes from the creator.
-    creatorNotes *string;
+    creatorNotes *string
     // The description.
-    description *string;
+    description *string
     // The name.
-    displayName *string;
+    displayName *string
     // The due date.
-    dueDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    dueDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The priority. Possible values are: none, high, low.
-    priority *DeviceAppManagementTaskPriority;
+    priority *DeviceAppManagementTaskPriority
     // The status. Possible values are: unknown, pending, active, completed, rejected.
-    status *DeviceAppManagementTaskStatus;
+    status *DeviceAppManagementTaskStatus
 }
 // NewDeviceAppManagementTask instantiates a new deviceAppManagementTask and sets the default values.
 func NewDeviceAppManagementTask()(*DeviceAppManagementTask) {
@@ -105,9 +105,9 @@ func (m *DeviceAppManagementTask) GetDueDateTime()(*i336074805fc853987abe6f7fe3a
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignedTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["category"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceAppManagementTaskCategory)
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["creator"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["creator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["creatorNotes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["creatorNotes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["dueDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dueDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -187,7 +187,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["priority"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceAppManagementTaskPriority)
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceAppManagementTaskStatus)
         if err != nil {
             return err

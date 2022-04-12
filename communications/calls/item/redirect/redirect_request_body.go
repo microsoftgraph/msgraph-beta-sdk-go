@@ -8,19 +8,19 @@ import (
 // RedirectRequestBody provides operations to call the redirect method.
 type RedirectRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The callbackUri property
-    callbackUri *string;
+    callbackUri *string
     // The maskCallee property
-    maskCallee *bool;
+    maskCallee *bool
     // The maskCaller property
-    maskCaller *bool;
+    maskCaller *bool
     // The targetDisposition property
-    targetDisposition *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition;
+    targetDisposition *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition
     // The targets property
-    targets []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable;
+    targets []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable
     // The timeout property
-    timeout *int32;
+    timeout *int32
 }
 // NewRedirectRequestBody instantiates a new redirectRequestBody and sets the default values.
 func NewRedirectRequestBody()(*RedirectRequestBody) {
@@ -50,9 +50,9 @@ func (m *RedirectRequestBody) GetCallbackUri()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["callbackUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["callbackUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["maskCallee"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maskCallee"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["maskCaller"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maskCaller"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["targetDisposition"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetDisposition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseCallDisposition)
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["targets"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateInvitationParticipantInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *RedirectRequestBody) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["timeout"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

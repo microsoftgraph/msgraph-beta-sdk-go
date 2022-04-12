@@ -7,11 +7,11 @@ import (
 // UserRegistrationFeatureCount 
 type UserRegistrationFeatureCount struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication. Possible values are: ssprRegistered, ssprEnabled, ssprCapable, passwordlessCapable, mfaCapable.
-    feature *AuthenticationMethodFeature;
+    feature *AuthenticationMethodFeature
     // Number of users.
-    userCount *int64;
+    userCount *int64
 }
 // NewUserRegistrationFeatureCount instantiates a new userRegistrationFeatureCount and sets the default values.
 func NewUserRegistrationFeatureCount()(*UserRegistrationFeatureCount) {
@@ -41,9 +41,9 @@ func (m *UserRegistrationFeatureCount) GetFeature()(*AuthenticationMethodFeature
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserRegistrationFeatureCount) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["feature"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserRegistrationFeatureCount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["feature"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAuthenticationMethodFeature)
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *UserRegistrationFeatureCount) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["userCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

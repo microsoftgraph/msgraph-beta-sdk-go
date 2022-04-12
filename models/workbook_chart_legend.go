@@ -8,13 +8,13 @@ import (
 type WorkbookChartLegend struct {
     Entity
     // Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.
-    format WorkbookChartLegendFormatable;
+    format WorkbookChartLegendFormatable
     // Boolean value for whether the chart legend should overlap with the main body of the chart.
-    overlay *bool;
+    overlay *bool
     // Represents the position of the legend on the chart. The possible values are: Top, Bottom, Left, Right, Corner, Custom.
-    position *string;
+    position *string
     // A boolean value the represents the visibility of a ChartLegend object.
-    visible *bool;
+    visible *bool
 }
 // NewWorkbookChartLegend instantiates a new workbookChartLegend and sets the default values.
 func NewWorkbookChartLegend()(*WorkbookChartLegend) {
@@ -28,9 +28,9 @@ func CreateWorkbookChartLegendFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewWorkbookChartLegend(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkbookChartLegend) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WorkbookChartLegend) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["format"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartLegendFormatFromDiscriminatorValue)
         if err != nil {
             return err
@@ -40,7 +40,7 @@ func (m *WorkbookChartLegend) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["overlay"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["overlay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *WorkbookChartLegend) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["position"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["position"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *WorkbookChartLegend) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["visible"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["visible"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

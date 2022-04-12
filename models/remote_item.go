@@ -8,45 +8,45 @@ import (
 // RemoteItem 
 type RemoteItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Identity of the user, device, and application which created the item. Read-only.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // Date and time of item creation. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Indicates that the remote item is a file. Read-only.
-    file Fileable;
+    file Fileable
     // Information about the remote item from the local file system. Read-only.
-    fileSystemInfo FileSystemInfoable;
+    fileSystemInfo FileSystemInfoable
     // Indicates that the remote item is a folder. Read-only.
-    folder Folderable;
+    folder Folderable
     // Unique identifier for the remote item in its drive. Read-only.
-    id *string;
+    id *string
     // Image metadata, if the item is an image. Read-only.
-    image Imageable;
+    image Imageable
     // Identity of the user, device, and application which last modified the item. Read-only.
-    lastModifiedBy IdentitySetable;
+    lastModifiedBy IdentitySetable
     // Date and time the item was last modified. Read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Optional. Filename of the remote item. Read-only.
-    name *string;
+    name *string
     // If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-    package_escaped Package_escapedable;
+    package_escaped Package_escapedable
     // Properties of the parent of the remote item. Read-only.
-    parentReference ItemReferenceable;
+    parentReference ItemReferenceable
     // Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
-    shared Sharedable;
+    shared Sharedable
     // Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.
-    sharepointIds SharepointIdsable;
+    sharepointIds SharepointIdsable
     // Size of the remote item. Read-only.
-    size *int64;
+    size *int64
     // If the current item is also available as a special folder, this facet is returned. Read-only.
-    specialFolder SpecialFolderable;
+    specialFolder SpecialFolderable
     // Video metadata, if the item is a video. Read-only.
-    video Videoable;
+    video Videoable
     // DAV compatible URL for the item.
-    webDavUrl *string;
+    webDavUrl *string
     // URL that displays the resource in the browser. Read-only.
-    webUrl *string;
+    webUrl *string
 }
 // NewRemoteItem instantiates a new remoteItem and sets the default values.
 func NewRemoteItem()(*RemoteItem) {
@@ -84,9 +84,9 @@ func (m *RemoteItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *RemoteItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["file"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["file"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateFileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["fileSystemInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileSystemInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateFileSystemInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["folder"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["folder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateFolderFromDiscriminatorValue)
         if err != nil {
             return err
@@ -136,7 +136,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -146,7 +146,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["image"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["image"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateImageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -156,7 +156,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["lastModifiedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -166,7 +166,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -176,7 +176,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -186,17 +186,17 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["package"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["package"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePackage_escapedFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPackage(val.(Package_escapedable))
+            m.SetPackage_escaped(val.(Package_escapedable))
         }
         return nil
     }
-    res["parentReference"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parentReference"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemReferenceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -206,7 +206,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["shared"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["shared"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharedFromDiscriminatorValue)
         if err != nil {
             return err
@@ -216,7 +216,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["sharepointIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharepointIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharepointIdsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -226,7 +226,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["size"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -236,7 +236,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["specialFolder"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["specialFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSpecialFolderFromDiscriminatorValue)
         if err != nil {
             return err
@@ -246,7 +246,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["video"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["video"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateVideoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -256,7 +256,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["webDavUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webDavUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -266,7 +266,7 @@ func (m *RemoteItem) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["webUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -477,7 +477,7 @@ func (m *RemoteItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err := writer.WriteObjectValue("package", m.GetPackage())
+        err := writer.WriteObjectValue("package", m.GetPackage_escaped())
         if err != nil {
             return err
         }

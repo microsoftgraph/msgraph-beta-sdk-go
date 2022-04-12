@@ -7,17 +7,17 @@ import (
 // ChatMessagePolicyViolation 
 type ChatMessagePolicyViolation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The action taken by the DLP provider on the message with sensitive content. Supported values are: NoneNotifySender -- Inform the sender of the violation but allow readers to read the message.BlockAccess -- Block readers from reading the message.BlockAccessExternal -- Block users outside the organization from reading the message, while allowing users within the organization to read the message.
-    dlpAction *ChatMessagePolicyViolationDlpActionTypes;
+    dlpAction *ChatMessagePolicyViolationDlpActionTypes
     // Justification text provided by the sender of the message when overriding a policy violation.
-    justificationText *string;
+    justificationText *string
     // Information to display to the message sender about why the message was flagged as a violation.
-    policyTip ChatMessagePolicyViolationPolicyTipable;
+    policyTip ChatMessagePolicyViolationPolicyTipable
     // Indicates the action taken by the user on a message blocked by the DLP provider. Supported values are: NoneOverrideReportFalsePositiveWhen the DLP provider is updating the message for blocking sensitive content, userAction is not required.
-    userAction *ChatMessagePolicyViolationUserActionTypes;
+    userAction *ChatMessagePolicyViolationUserActionTypes
     // Indicates what actions the sender may take in response to the policy violation. Supported values are: NoneAllowFalsePositiveOverride -- Allows the sender to declare the policyViolation to be an error in the DLP app and its rules, and allow readers to see the message again if the dlpAction had hidden it.AllowOverrideWithoutJustification -- Allows the sender to overriide the DLP violation and allow readers to see the message again if the dlpAction had hidden it, without needing to provide an explanation for doing so. AllowOverrideWithJustification -- Allows the sender to overriide the DLP violation and allow readers to see the message again if the dlpAction had hidden it, after providing an explanation for doing so.AllowOverrideWithoutJustification and AllowOverrideWithJustification are mutually exclusive.
-    verdictDetails *ChatMessagePolicyViolationVerdictDetailsTypes;
+    verdictDetails *ChatMessagePolicyViolationVerdictDetailsTypes
 }
 // NewChatMessagePolicyViolation instantiates a new chatMessagePolicyViolation and sets the default values.
 func NewChatMessagePolicyViolation()(*ChatMessagePolicyViolation) {
@@ -47,9 +47,9 @@ func (m *ChatMessagePolicyViolation) GetDlpAction()(*ChatMessagePolicyViolationD
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["dlpAction"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["dlpAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseChatMessagePolicyViolationDlpActionTypes)
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["justificationText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["justificationText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["policyTip"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyTip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChatMessagePolicyViolationPolicyTipFromDiscriminatorValue)
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["userAction"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseChatMessagePolicyViolationUserActionTypes)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *ChatMessagePolicyViolation) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["verdictDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["verdictDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseChatMessagePolicyViolationVerdictDetailsTypes)
         if err != nil {
             return err

@@ -7,29 +7,29 @@ import (
 // ConditionalAccessConditionSet 
 type ConditionalAccessConditionSet struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Applications and user actions included in and excluded from the policy. Required.
-    applications ConditionalAccessApplicationsable;
+    applications ConditionalAccessApplicationsable
     // Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
-    clientApplications ConditionalAccessClientApplicationsable;
+    clientApplications ConditionalAccessClientApplicationsable
     // Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
-    clientAppTypes []ConditionalAccessClientApp;
+    clientAppTypes []ConditionalAccessClientApp
     // Devices in the policy.
-    devices ConditionalAccessDevicesable;
+    devices ConditionalAccessDevicesable
     // Device states in the policy.
-    deviceStates ConditionalAccessDeviceStatesable;
+    deviceStates ConditionalAccessDeviceStatesable
     // Locations included in and excluded from the policy.
-    locations ConditionalAccessLocationsable;
+    locations ConditionalAccessLocationsable
     // Platforms included in and excluded from the policy.
-    platforms ConditionalAccessPlatformsable;
+    platforms ConditionalAccessPlatformsable
     // Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
-    servicePrincipalRiskLevels []RiskLevel;
+    servicePrincipalRiskLevels []RiskLevel
     // Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-    signInRiskLevels []RiskLevel;
+    signInRiskLevels []RiskLevel
     // User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-    userRiskLevels []RiskLevel;
+    userRiskLevels []RiskLevel
     // Users, groups, and roles included in and excluded from the policy. Required.
-    users ConditionalAccessUsersable;
+    users ConditionalAccessUsersable
 }
 // NewConditionalAccessConditionSet instantiates a new conditionalAccessConditionSet and sets the default values.
 func NewConditionalAccessConditionSet()(*ConditionalAccessConditionSet) {
@@ -91,9 +91,9 @@ func (m *ConditionalAccessConditionSet) GetDeviceStates()(ConditionalAccessDevic
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["applications"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["applications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConditionalAccessApplicationsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["clientApplications"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clientApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConditionalAccessClientApplicationsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["clientAppTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clientAppTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseConditionalAccessClientApp)
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["devices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["devices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConditionalAccessDevicesFromDiscriminatorValue)
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["deviceStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConditionalAccessDeviceStatesFromDiscriminatorValue)
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["locations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["locations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConditionalAccessLocationsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["platforms"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["platforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConditionalAccessPlatformsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["servicePrincipalRiskLevels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["servicePrincipalRiskLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseRiskLevel)
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["signInRiskLevels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["signInRiskLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseRiskLevel)
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["userRiskLevels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userRiskLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseRiskLevel)
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["users"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["users"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConditionalAccessUsersFromDiscriminatorValue)
         if err != nil {
             return err

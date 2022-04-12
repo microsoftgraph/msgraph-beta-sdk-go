@@ -7,15 +7,15 @@ import (
 // BulkManagedDeviceActionResult 
 type BulkManagedDeviceActionResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Failed devices
-    failedDeviceIds []string;
+    failedDeviceIds []string
     // Not found devices
-    notFoundDeviceIds []string;
+    notFoundDeviceIds []string
     // Not supported devices
-    notSupportedDeviceIds []string;
+    notSupportedDeviceIds []string
     // Successful devices
-    successfulDeviceIds []string;
+    successfulDeviceIds []string
 }
 // NewBulkManagedDeviceActionResult instantiates a new bulkManagedDeviceActionResult and sets the default values.
 func NewBulkManagedDeviceActionResult()(*BulkManagedDeviceActionResult) {
@@ -45,9 +45,9 @@ func (m *BulkManagedDeviceActionResult) GetFailedDeviceIds()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["failedDeviceIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["failedDeviceIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["notFoundDeviceIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notFoundDeviceIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["notSupportedDeviceIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notSupportedDeviceIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *BulkManagedDeviceActionResult) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["successfulDeviceIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["successfulDeviceIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

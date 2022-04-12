@@ -8,9 +8,9 @@ import (
 type UserExperienceAnalyticsCategory struct {
     Entity
     // The insights for the user experience analytics category.
-    insights []UserExperienceAnalyticsInsightable;
+    insights []UserExperienceAnalyticsInsightable
     // The metric values for the user experience analytics category.
-    metricValues []UserExperienceAnalyticsMetricable;
+    metricValues []UserExperienceAnalyticsMetricable
 }
 // NewUserExperienceAnalyticsCategory instantiates a new userExperienceAnalyticsCategory and sets the default values.
 func NewUserExperienceAnalyticsCategory()(*UserExperienceAnalyticsCategory) {
@@ -24,9 +24,9 @@ func CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue(parseNode i878a
     return NewUserExperienceAnalyticsCategory(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsCategory) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["insights"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["insights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsInsightFromDiscriminatorValue)
         if err != nil {
             return err
@@ -40,7 +40,7 @@ func (m *UserExperienceAnalyticsCategory) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["metricValues"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["metricValues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsMetricFromDiscriminatorValue)
         if err != nil {
             return err

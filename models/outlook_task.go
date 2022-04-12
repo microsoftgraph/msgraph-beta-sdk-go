@@ -8,41 +8,41 @@ import (
 type OutlookTask struct {
     OutlookItem
     // The name of the person who has been assigned the task in Outlook. Read-only.
-    assignedTo *string;
+    assignedTo *string
     // The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
-    attachments []Attachmentable;
+    attachments []Attachmentable
     // The task body that typically contains information about the task. Note that only HTML type is supported.
-    body ItemBodyable;
+    body ItemBodyable
     // The date in the specified time zone that the task was finished.
-    completedDateTime DateTimeTimeZoneable;
+    completedDateTime DateTimeTimeZoneable
     // The date in the specified time zone that the task is to be finished.
-    dueDateTime DateTimeTimeZoneable;
+    dueDateTime DateTimeTimeZoneable
     // Set to true if the task has attachments.
-    hasAttachments *bool;
+    hasAttachments *bool
     // The importance property
-    importance *Importance;
+    importance *Importance
     // The isReminderOn property
-    isReminderOn *bool;
+    isReminderOn *bool
     // The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable;
+    multiValueExtendedProperties []MultiValueLegacyExtendedPropertyable
     // The owner property
-    owner *string;
+    owner *string
     // The parentFolderId property
-    parentFolderId *string;
+    parentFolderId *string
     // The recurrence property
-    recurrence PatternedRecurrenceable;
+    recurrence PatternedRecurrenceable
     // The reminderDateTime property
-    reminderDateTime DateTimeTimeZoneable;
+    reminderDateTime DateTimeTimeZoneable
     // The sensitivity property
-    sensitivity *Sensitivity;
+    sensitivity *Sensitivity
     // The collection of single-value extended properties defined for the task. Read-only. Nullable.
-    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable;
+    singleValueExtendedProperties []SingleValueLegacyExtendedPropertyable
     // The startDateTime property
-    startDateTime DateTimeTimeZoneable;
+    startDateTime DateTimeTimeZoneable
     // The status property
-    status *TaskStatus;
+    status *TaskStatus
     // The subject property
-    subject *string;
+    subject *string
 }
 // NewOutlookTask instantiates a new outlookTask and sets the default values.
 func NewOutlookTask()(*OutlookTask) {
@@ -96,9 +96,9 @@ func (m *OutlookTask) GetDueDateTime()(DateTimeTimeZoneable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OutlookTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OutlookItem.GetFieldDeserializers()
-    res["assignedTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["attachments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["attachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAttachmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["body"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["completedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["completedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["dueDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dueDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["hasAttachments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasAttachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -162,7 +162,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["importance"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["importance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseImportance)
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["isReminderOn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isReminderOn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -182,7 +182,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["multiValueExtendedProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["multiValueExtendedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMultiValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -196,7 +196,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["owner"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["owner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -206,7 +206,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["parentFolderId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parentFolderId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -216,7 +216,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["recurrence"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recurrence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePatternedRecurrenceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -226,7 +226,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["reminderDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reminderDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -236,7 +236,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["sensitivity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sensitivity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSensitivity)
         if err != nil {
             return err
@@ -246,7 +246,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["singleValueExtendedProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["singleValueExtendedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -260,7 +260,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -270,7 +270,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTaskStatus)
         if err != nil {
             return err
@@ -280,7 +280,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["subject"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

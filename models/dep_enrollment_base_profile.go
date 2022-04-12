@@ -8,43 +8,43 @@ import (
 type DepEnrollmentBaseProfile struct {
     EnrollmentProfile
     // Indicates if Apple id setup pane is disabled
-    appleIdDisabled *bool;
+    appleIdDisabled *bool
     // Indicates if Apple pay setup pane is disabled
-    applePayDisabled *bool;
+    applePayDisabled *bool
     // URL for setup assistant login
-    configurationWebUrl *bool;
+    configurationWebUrl *bool
     // Sets a literal or name pattern.
-    deviceNameTemplate *string;
+    deviceNameTemplate *string
     // Indicates if diagnostics setup pane is disabled
-    diagnosticsDisabled *bool;
+    diagnosticsDisabled *bool
     // Indicates if displaytone setup screen is disabled
-    displayToneSetupDisabled *bool;
+    displayToneSetupDisabled *bool
     // Indicates if this is the default profile
-    isDefault *bool;
+    isDefault *bool
     // Indicates if the profile is mandatory
-    isMandatory *bool;
+    isMandatory *bool
     // Indicates if Location service setup pane is disabled
-    locationDisabled *bool;
+    locationDisabled *bool
     // Indicates if privacy screen is disabled
-    privacyPaneDisabled *bool;
+    privacyPaneDisabled *bool
     // Indicates if the profile removal option is disabled
-    profileRemovalDisabled *bool;
+    profileRemovalDisabled *bool
     // Indicates if Restore setup pane is blocked
-    restoreBlocked *bool;
+    restoreBlocked *bool
     // Indicates if screen timeout setup is disabled
-    screenTimeScreenDisabled *bool;
+    screenTimeScreenDisabled *bool
     // Indicates if siri setup pane is disabled
-    siriDisabled *bool;
+    siriDisabled *bool
     // Supervised mode, True to enable, false otherwise. See Enroll devices in Microsoft Intune for additional information.
-    supervisedModeEnabled *bool;
+    supervisedModeEnabled *bool
     // Support department information
-    supportDepartment *string;
+    supportDepartment *string
     // Support phone number
-    supportPhoneNumber *string;
+    supportPhoneNumber *string
     // Indicates if 'Terms and Conditions' setup pane is disabled
-    termsAndConditionsDisabled *bool;
+    termsAndConditionsDisabled *bool
     // Indicates if touch id setup pane is disabled
-    touchIdDisabled *bool;
+    touchIdDisabled *bool
 }
 // NewDepEnrollmentBaseProfile instantiates a new depEnrollmentBaseProfile and sets the default values.
 func NewDepEnrollmentBaseProfile()(*DepEnrollmentBaseProfile) {
@@ -106,9 +106,9 @@ func (m *DepEnrollmentBaseProfile) GetDisplayToneSetupDisabled()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EnrollmentProfile.GetFieldDeserializers()
-    res["appleIdDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appleIdDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["applePayDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applePayDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["configurationWebUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["configurationWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["deviceNameTemplate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceNameTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["diagnosticsDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["diagnosticsDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["displayToneSetupDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayToneSetupDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -168,7 +168,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isDefault"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -178,7 +178,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["isMandatory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isMandatory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -188,7 +188,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["locationDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["locationDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -198,7 +198,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["privacyPaneDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["privacyPaneDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -208,7 +208,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["profileRemovalDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["profileRemovalDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -218,7 +218,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["restoreBlocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["restoreBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -228,7 +228,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["screenTimeScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["screenTimeScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -238,7 +238,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["siriDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["siriDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -248,7 +248,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["supervisedModeEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supervisedModeEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -258,7 +258,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["supportDepartment"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportDepartment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -268,7 +268,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["supportPhoneNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportPhoneNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -278,7 +278,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["termsAndConditionsDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["termsAndConditionsDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -288,7 +288,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["touchIdDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["touchIdDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

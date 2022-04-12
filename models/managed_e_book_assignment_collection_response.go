@@ -7,11 +7,11 @@ import (
 // ManagedEBookAssignmentCollectionResponse 
 type ManagedEBookAssignmentCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The nextLink property
-    nextLink *string;
+    nextLink *string
     // The value property
-    value []ManagedEBookAssignmentable;
+    value []ManagedEBookAssignmentable
 }
 // NewManagedEBookAssignmentCollectionResponse instantiates a new ManagedEBookAssignmentCollectionResponse and sets the default values.
 func NewManagedEBookAssignmentCollectionResponse()(*ManagedEBookAssignmentCollectionResponse) {
@@ -33,9 +33,9 @@ func (m *ManagedEBookAssignmentCollectionResponse) GetAdditionalData()(map[strin
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagedEBookAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["@odata.nextLink"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ManagedEBookAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.nextLink"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *ManagedEBookAssignmentCollectionResponse) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedEBookAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -61,8 +61,8 @@ func (m *ManagedEBookAssignmentCollectionResponse) GetFieldDeserializers()(map[s
     }
     return res
 }
-// GetNextLink gets the @odata.nextLink property value. The nextLink property
-func (m *ManagedEBookAssignmentCollectionResponse) GetNextLink()(*string) {
+// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
+func (m *ManagedEBookAssignmentCollectionResponse) GetOdatanextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -109,8 +109,8 @@ func (m *ManagedEBookAssignmentCollectionResponse) SetAdditionalData(value map[s
         m.additionalData = value
     }
 }
-// SetNextLink sets the @odata.nextLink property value. The nextLink property
-func (m *ManagedEBookAssignmentCollectionResponse) SetNextLink(value *string)() {
+// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
+func (m *ManagedEBookAssignmentCollectionResponse) SetOdatanextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }

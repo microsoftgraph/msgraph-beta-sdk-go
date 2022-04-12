@@ -8,11 +8,11 @@ import (
 type BaseTaskList struct {
     Entity
     // The name of the task list.
-    displayName *string;
+    displayName *string
     // The collection of open extensions defined for the task list. Nullable.
-    extensions []Extensionable;
+    extensions []Extensionable
     // The tasks in this task list. Read-only. Nullable.
-    tasks []BaseTaskable;
+    tasks []BaseTaskable
 }
 // NewBaseTaskList instantiates a new baseTaskList and sets the default values.
 func NewBaseTaskList()(*BaseTaskList) {
@@ -42,9 +42,9 @@ func (m *BaseTaskList) GetExtensions()([]Extensionable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BaseTaskList) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *BaseTaskList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *BaseTaskList) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["extensions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *BaseTaskList) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["tasks"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBaseTaskFromDiscriminatorValue)
         if err != nil {
             return err

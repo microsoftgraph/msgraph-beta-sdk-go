@@ -7,15 +7,15 @@ import (
 // HasPayloadLinkResultItem a class containing the result of HasPayloadLinks action.
 type HasPayloadLinkResultItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Exception information indicates if check for this item was successful or not.Empty string for no error.
-    error *string;
+    error *string
     // Indicate whether a payload has any link or not.
-    hasLink *bool;
+    hasLink *bool
     // Key of the Payload, In the format of Guid.
-    payloadId *string;
+    payloadId *string
     // The reason where the link comes from.
-    sources []DeviceAndAppManagementAssignmentSource;
+    sources []DeviceAndAppManagementAssignmentSource
 }
 // NewHasPayloadLinkResultItem instantiates a new hasPayloadLinkResultItem and sets the default values.
 func NewHasPayloadLinkResultItem()(*HasPayloadLinkResultItem) {
@@ -45,9 +45,9 @@ func (m *HasPayloadLinkResultItem) GetError()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *HasPayloadLinkResultItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["error"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *HasPayloadLinkResultItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *HasPayloadLinkResultItem) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["hasLink"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasLink"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *HasPayloadLinkResultItem) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["payloadId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["payloadId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *HasPayloadLinkResultItem) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["sources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseDeviceAndAppManagementAssignmentSource)
         if err != nil {
             return err

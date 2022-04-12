@@ -9,15 +9,15 @@ import (
 type DeviceComplianceScriptRunSummary struct {
     Entity
     // Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647
-    detectionScriptErrorDeviceCount *int32;
+    detectionScriptErrorDeviceCount *int32
     // Number of devices which have not yet run the latest version of the device compliance script. Valid values -2147483648 to 2147483647
-    detectionScriptPendingDeviceCount *int32;
+    detectionScriptPendingDeviceCount *int32
     // Number of devices for which the detection script found an issue. Valid values -2147483648 to 2147483647
-    issueDetectedDeviceCount *int32;
+    issueDetectedDeviceCount *int32
     // Last run time for the script across all devices
-    lastScriptRunDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastScriptRunDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Number of devices for which the detection script did not find an issue and the device is healthy. Valid values -2147483648 to 2147483647
-    noIssueDetectedDeviceCount *int32;
+    noIssueDetectedDeviceCount *int32
 }
 // NewDeviceComplianceScriptRunSummary instantiates a new deviceComplianceScriptRunSummary and sets the default values.
 func NewDeviceComplianceScriptRunSummary()(*DeviceComplianceScriptRunSummary) {
@@ -47,9 +47,9 @@ func (m *DeviceComplianceScriptRunSummary) GetDetectionScriptPendingDeviceCount(
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["detectionScriptErrorDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["detectionScriptErrorDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["detectionScriptPendingDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["detectionScriptPendingDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["issueDetectedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["issueDetectedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["lastScriptRunDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastScriptRunDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["noIssueDetectedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["noIssueDetectedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

@@ -9,37 +9,37 @@ import (
 type FileSecurityProfile struct {
     Entity
     // The activityGroupNames property
-    activityGroupNames []string;
+    activityGroupNames []string
     // The azureSubscriptionId property
-    azureSubscriptionId *string;
+    azureSubscriptionId *string
     // The azureTenantId property
-    azureTenantId *string;
+    azureTenantId *string
     // The certificateThumbprint property
-    certificateThumbprint *string;
+    certificateThumbprint *string
     // The extensions property
-    extensions []string;
+    extensions []string
     // The fileType property
-    fileType *string;
+    fileType *string
     // The firstSeenDateTime property
-    firstSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    firstSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The hashes property
-    hashes []FileHashable;
+    hashes []FileHashable
     // The lastSeenDateTime property
-    lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The malwareStates property
-    malwareStates []MalwareStateable;
+    malwareStates []MalwareStateable
     // The names property
-    names []string;
+    names []string
     // The riskScore property
-    riskScore *string;
+    riskScore *string
     // The size property
-    size *int64;
+    size *int64
     // The tags property
-    tags []string;
+    tags []string
     // The vendorInformation property
-    vendorInformation SecurityVendorInformationable;
+    vendorInformation SecurityVendorInformationable
     // The vulnerabilityStates property
-    vulnerabilityStates []VulnerabilityStateable;
+    vulnerabilityStates []VulnerabilityStateable
 }
 // NewFileSecurityProfile instantiates a new fileSecurityProfile and sets the default values.
 func NewFileSecurityProfile()(*FileSecurityProfile) {
@@ -93,9 +93,9 @@ func (m *FileSecurityProfile) GetExtensions()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activityGroupNames"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityGroupNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["azureSubscriptionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureSubscriptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["azureTenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["certificateThumbprint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateThumbprint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["extensions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["fileType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -163,7 +163,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["firstSeenDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["firstSeenDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["hashes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hashes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateFileHashFromDiscriminatorValue)
         if err != nil {
             return err
@@ -187,7 +187,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["lastSeenDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSeenDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["malwareStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["malwareStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMalwareStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -211,7 +211,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["names"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["names"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["riskScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -235,7 +235,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["size"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -245,7 +245,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["tags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -259,7 +259,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["vendorInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vendorInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -269,7 +269,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["vulnerabilityStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vulnerabilityStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateVulnerabilityStateFromDiscriminatorValue)
         if err != nil {
             return err

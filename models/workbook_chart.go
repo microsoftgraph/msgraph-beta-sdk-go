@@ -8,29 +8,29 @@ import (
 type WorkbookChart struct {
     Entity
     // Represents chart axes. Read-only.
-    axes WorkbookChartAxesable;
+    axes WorkbookChartAxesable
     // Represents the datalabels on the chart. Read-only.
-    dataLabels WorkbookChartDataLabelsable;
+    dataLabels WorkbookChartDataLabelsable
     // Encapsulates the format properties for the chart area. Read-only.
-    format WorkbookChartAreaFormatable;
+    format WorkbookChartAreaFormatable
     // Represents the height, in points, of the chart object.
-    height *float64;
+    height *float64
     // The distance, in points, from the left side of the chart to the worksheet origin.
-    left *float64;
+    left *float64
     // Represents the legend for the chart. Read-only.
-    legend WorkbookChartLegendable;
+    legend WorkbookChartLegendable
     // Represents the name of a chart object.
-    name *string;
+    name *string
     // Represents either a single series or collection of series in the chart. Read-only.
-    series []WorkbookChartSeriesable;
+    series []WorkbookChartSeriesable
     // Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
-    title WorkbookChartTitleable;
+    title WorkbookChartTitleable
     // Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).
-    top *float64;
+    top *float64
     // Represents the width, in points, of the chart object.
-    width *float64;
+    width *float64
     // The worksheet containing the current chart. Read-only.
-    worksheet WorkbookWorksheetable;
+    worksheet WorkbookWorksheetable
 }
 // NewWorkbookChart instantiates a new workbookChart and sets the default values.
 func NewWorkbookChart()(*WorkbookChart) {
@@ -60,9 +60,9 @@ func (m *WorkbookChart) GetDataLabels()(WorkbookChartDataLabelsable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["axes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["axes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartAxesFromDiscriminatorValue)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["dataLabels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataLabels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartDataLabelsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["format"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartAreaFormatFromDiscriminatorValue)
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["height"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["height"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["left"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["left"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["legend"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["legend"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartLegendFromDiscriminatorValue)
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["series"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["series"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkbookChartSeriesFromDiscriminatorValue)
         if err != nil {
             return err
@@ -146,7 +146,7 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["title"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartTitleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -156,7 +156,7 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["top"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["top"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -166,7 +166,7 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["width"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["width"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -176,7 +176,7 @@ func (m *WorkbookChart) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["worksheet"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["worksheet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookWorksheetFromDiscriminatorValue)
         if err != nil {
             return err

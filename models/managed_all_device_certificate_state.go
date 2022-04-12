@@ -9,29 +9,29 @@ import (
 type ManagedAllDeviceCertificateState struct {
     Entity
     // Certificate expiry date
-    certificateExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    certificateExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Enhanced Key Usage
-    certificateExtendedKeyUsages *string;
+    certificateExtendedKeyUsages *string
     // Issuance date
-    certificateIssuanceDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    certificateIssuanceDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Issuer
-    certificateIssuerName *string;
+    certificateIssuerName *string
     // Key Usage
-    certificateKeyUsages *int32;
+    certificateKeyUsages *int32
     // Revoke status. Possible values are: none, pending, issued, failed, revoked.
-    certificateRevokeStatus *CertificateRevocationStatus;
+    certificateRevokeStatus *CertificateRevocationStatus
     // The time the revoke status was last changed
-    certificateRevokeStatusLastChangeDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    certificateRevokeStatusLastChangeDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Serial number
-    certificateSerialNumber *string;
+    certificateSerialNumber *string
     // Certificate subject name
-    certificateSubjectName *string;
+    certificateSubjectName *string
     // Thumbprint
-    certificateThumbprint *string;
+    certificateThumbprint *string
     // Device display name
-    managedDeviceDisplayName *string;
+    managedDeviceDisplayName *string
     // User principal name
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewManagedAllDeviceCertificateState instantiates a new managedAllDeviceCertificateState and sets the default values.
 func NewManagedAllDeviceCertificateState()(*ManagedAllDeviceCertificateState) {
@@ -125,9 +125,9 @@ func (m *ManagedAllDeviceCertificateState) GetCertificateThumbprint()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["certificateExpirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateExpirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["certificateExtendedKeyUsages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateExtendedKeyUsages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["certificateIssuanceDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateIssuanceDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["certificateIssuerName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateIssuerName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["certificateKeyUsages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateKeyUsages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["certificateRevokeStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateRevokeStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCertificateRevocationStatus)
         if err != nil {
             return err
@@ -187,7 +187,7 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["certificateRevokeStatusLastChangeDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateRevokeStatusLastChangeDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["certificateSerialNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateSerialNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -207,7 +207,7 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["certificateSubjectName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateSubjectName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -217,7 +217,7 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["certificateThumbprint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateThumbprint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -227,7 +227,7 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["managedDeviceDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -237,7 +237,7 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

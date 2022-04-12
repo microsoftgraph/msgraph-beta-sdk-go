@@ -22,49 +22,49 @@ import (
 // InstanceRequestBuilder provides operations to manage the instance property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
 type InstanceRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // InstanceRequestBuilderDeleteOptions options for Delete
 type InstanceRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // InstanceRequestBuilderGetOptions options for Get
 type InstanceRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *InstanceRequestBuilderGetQueryParameters;
+    QueryParameters *InstanceRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // InstanceRequestBuilderGetQueryParameters there is exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
 type InstanceRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // InstanceRequestBuilderPatchOptions options for Patch
 type InstanceRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AcceptRecommendations the acceptRecommendations property
 func (m *InstanceRequestBuilder) AcceptRecommendations()(*i9eb2370a85ce8df5e8f50351054e9a4bdc9aa063da2ef2ea98a9f58a43b4045c.AcceptRecommendationsRequestBuilder) {
@@ -82,7 +82,7 @@ func (m *InstanceRequestBuilder) BatchRecordDecisions()(*i94c2546ce2c1ca2aaff4bf
 func NewInstanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InstanceRequestBuilder) {
     m := &InstanceRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem_id}/instance{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -108,7 +108,7 @@ func (m *InstanceRequestBuilder) ContactedReviewersById(id string)(*i2cf7965e5bc
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessReviewReviewer_id"] = id
+        urlTplParams["accessReviewReviewer%2Did"] = id
     }
     return i2cf7965e5bcacbaf398832a7f2f84cae59e8d9123c23a4d7df880c767c813358.NewAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -178,7 +178,7 @@ func (m *InstanceRequestBuilder) DecisionsById(id string)(*i8f76eb834e079485d9bf
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessReviewInstanceDecisionItem_id1"] = id
+        urlTplParams["accessReviewInstanceDecisionItem%2Did1"] = id
     }
     return i8f76eb834e079485d9bfcc198960c387e47a032c16f3c5e1a1d9779d19557d0e.NewAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -253,7 +253,7 @@ func (m *InstanceRequestBuilder) StagesById(id string)(*ie737e21101e5c8fcb439d26
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessReviewStage_id"] = id
+        urlTplParams["accessReviewStage%2Did"] = id
     }
     return ie737e21101e5c8fcb439d2621c3dbdcc10511191b0a9e20174987172b109dc3c.NewAccessReviewStageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

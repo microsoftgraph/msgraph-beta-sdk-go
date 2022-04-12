@@ -7,11 +7,11 @@ import (
 // ConditionalAccessDeviceStates 
 type ConditionalAccessDeviceStates struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
-    excludeStates []string;
+    excludeStates []string
     // States in the scope of the policy. All is the only allowed value.
-    includeStates []string;
+    includeStates []string
 }
 // NewConditionalAccessDeviceStates instantiates a new conditionalAccessDeviceStates and sets the default values.
 func NewConditionalAccessDeviceStates()(*ConditionalAccessDeviceStates) {
@@ -41,9 +41,9 @@ func (m *ConditionalAccessDeviceStates) GetExcludeStates()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConditionalAccessDeviceStates) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["excludeStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ConditionalAccessDeviceStates) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["excludeStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *ConditionalAccessDeviceStates) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["includeStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includeStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

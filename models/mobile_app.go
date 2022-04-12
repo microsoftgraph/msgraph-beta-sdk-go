@@ -9,55 +9,55 @@ import (
 type MobileApp struct {
     Entity
     // The list of group assignments for this mobile app.
-    assignments []MobileAppAssignmentable;
+    assignments []MobileAppAssignmentable
     // The list of categories for this app.
-    categories []MobileAppCategoryable;
+    categories []MobileAppCategoryable
     // The date and time the app was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The total number of dependencies the child app has.
-    dependentAppCount *int32;
+    dependentAppCount *int32
     // The description of the app.
-    description *string;
+    description *string
     // The developer of the app.
-    developer *string;
+    developer *string
     // The list of installation states for this mobile app.
-    deviceStatuses []MobileAppInstallStatusable;
+    deviceStatuses []MobileAppInstallStatusable
     // The admin provided or imported title of the app.
-    displayName *string;
+    displayName *string
     // The more information Url.
-    informationUrl *string;
+    informationUrl *string
     // Mobile App Install Summary.
-    installSummary MobileAppInstallSummaryable;
+    installSummary MobileAppInstallSummaryable
     // The value indicating whether the app is assigned to at least one group.
-    isAssigned *bool;
+    isAssigned *bool
     // The value indicating whether the app is marked as featured by the admin.
-    isFeatured *bool;
+    isFeatured *bool
     // The large icon, to be displayed in the app details and used for upload of the icon.
-    largeIcon MimeContentable;
+    largeIcon MimeContentable
     // The date and time the app was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Notes for the app.
-    notes *string;
+    notes *string
     // The owner of the app.
-    owner *string;
+    owner *string
     // The privacy statement Url.
-    privacyInformationUrl *string;
+    privacyInformationUrl *string
     // The publisher of the app.
-    publisher *string;
+    publisher *string
     // The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
-    publishingState *MobileAppPublishingState;
+    publishingState *MobileAppPublishingState
     // List of relationships for this mobile app.
-    relationships []MobileAppRelationshipable;
+    relationships []MobileAppRelationshipable
     // List of scope tag ids for this mobile app.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // The total number of apps this app is directly or indirectly superseded by.
-    supersededAppCount *int32;
+    supersededAppCount *int32
     // The total number of apps this app directly or indirectly supersedes.
-    supersedingAppCount *int32;
+    supersedingAppCount *int32
     // The upload state.
-    uploadState *int32;
+    uploadState *int32
     // The list of installation states for this mobile app.
-    userStatuses []UserAppInstallStatusable;
+    userStatuses []UserAppInstallStatusable
 }
 // NewMobileApp instantiates a new mobileApp and sets the default values.
 func NewMobileApp()(*MobileApp) {
@@ -135,9 +135,9 @@ func (m *MobileApp) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MobileApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["categories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["dependentAppCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dependentAppCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["developer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["developer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["deviceStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppInstallStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -229,7 +229,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["informationUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["informationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -239,7 +239,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["installSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["installSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMobileAppInstallSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -249,7 +249,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["isAssigned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isAssigned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -259,7 +259,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["isFeatured"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isFeatured"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -269,7 +269,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["largeIcon"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["largeIcon"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -279,7 +279,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -289,7 +289,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["notes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -299,7 +299,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["owner"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["owner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -309,7 +309,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["privacyInformationUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["privacyInformationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -319,7 +319,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["publisher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -329,7 +329,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["publishingState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publishingState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMobileAppPublishingState)
         if err != nil {
             return err
@@ -339,7 +339,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["relationships"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["relationships"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppRelationshipFromDiscriminatorValue)
         if err != nil {
             return err
@@ -353,7 +353,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -367,7 +367,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["supersededAppCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supersededAppCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -377,7 +377,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["supersedingAppCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supersedingAppCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -387,7 +387,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["uploadState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["uploadState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -397,7 +397,7 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["userStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserAppInstallStatusFromDiscriminatorValue)
         if err != nil {
             return err

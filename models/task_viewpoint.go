@@ -7,11 +7,11 @@ import (
 // TaskViewpoint 
 type TaskViewpoint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
-    categories []string;
+    categories []string
     // The date and time for a reminder alert of the task to occur.
-    reminderDateTime DateTimeTimeZoneable;
+    reminderDateTime DateTimeTimeZoneable
 }
 // NewTaskViewpoint instantiates a new taskViewpoint and sets the default values.
 func NewTaskViewpoint()(*TaskViewpoint) {
@@ -41,9 +41,9 @@ func (m *TaskViewpoint) GetCategories()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TaskViewpoint) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["categories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TaskViewpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *TaskViewpoint) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["reminderDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reminderDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err

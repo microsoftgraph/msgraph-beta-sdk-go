@@ -8,7 +8,7 @@ import (
 type UserInsightsSettings struct {
     Entity
     // true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
-    isEnabled *bool;
+    isEnabled *bool
 }
 // NewUserInsightsSettings instantiates a new userInsightsSettings and sets the default values.
 func NewUserInsightsSettings()(*UserInsightsSettings) {
@@ -22,9 +22,9 @@ func CreateUserInsightsSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewUserInsightsSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserInsightsSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserInsightsSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["isEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

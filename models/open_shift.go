@@ -8,13 +8,13 @@ import (
 type OpenShift struct {
     ChangeTrackedEntity
     // An unpublished open shift.
-    draftOpenShift OpenShiftItemable;
+    draftOpenShift OpenShiftItemable
     // The isStagedForDeletion property
-    isStagedForDeletion *bool;
+    isStagedForDeletion *bool
     // ID for the scheduling group that the open shift belongs to.
-    schedulingGroupId *string;
+    schedulingGroupId *string
     // A published open shift.
-    sharedOpenShift OpenShiftItemable;
+    sharedOpenShift OpenShiftItemable
 }
 // NewOpenShift instantiates a new openShift and sets the default values.
 func NewOpenShift()(*OpenShift) {
@@ -36,9 +36,9 @@ func (m *OpenShift) GetDraftOpenShift()(OpenShiftItemable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OpenShift) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OpenShift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
-    res["draftOpenShift"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["draftOpenShift"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOpenShiftItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["isStagedForDeletion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isStagedForDeletion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["schedulingGroupId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["schedulingGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *OpenShift) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["sharedOpenShift"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharedOpenShift"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOpenShiftItemFromDiscriminatorValue)
         if err != nil {
             return err

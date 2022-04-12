@@ -7,15 +7,15 @@ import (
 // DeviceManagementConfigurationSettingApplicability 
 type DeviceManagementConfigurationSettingApplicability struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // description of the setting
-    description *string;
+    description *string
     // Device Mode that setting can be applied on. Possible values are: none, kiosk.
-    deviceMode *DeviceManagementConfigurationDeviceMode;
+    deviceMode *DeviceManagementConfigurationDeviceMode
     // Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
-    platform *DeviceManagementConfigurationPlatforms;
+    platform *DeviceManagementConfigurationPlatforms
     // Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
-    technologies *DeviceManagementConfigurationTechnologies;
+    technologies *DeviceManagementConfigurationTechnologies
 }
 // NewDeviceManagementConfigurationSettingApplicability instantiates a new deviceManagementConfigurationSettingApplicability and sets the default values.
 func NewDeviceManagementConfigurationSettingApplicability()(*DeviceManagementConfigurationSettingApplicability) {
@@ -53,9 +53,9 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetDeviceMode()(*Dev
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializer
         }
         return nil
     }
-    res["deviceMode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationDeviceMode)
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializer
         }
         return nil
     }
-    res["platform"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationPlatforms)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializer
         }
         return nil
     }
-    res["technologies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["technologies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationTechnologies)
         if err != nil {
             return err

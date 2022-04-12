@@ -8,13 +8,13 @@ import (
 type DeviceManagementScriptUserState struct {
     Entity
     // List of run states for this script across all devices of specific user.
-    deviceRunStates []DeviceManagementScriptDeviceStateable;
+    deviceRunStates []DeviceManagementScriptDeviceStateable
     // Error device count for specific user.
-    errorDeviceCount *int32;
+    errorDeviceCount *int32
     // Success device count for specific user.
-    successDeviceCount *int32;
+    successDeviceCount *int32
     // User principle name of specific user.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewDeviceManagementScriptUserState instantiates a new deviceManagementScriptUserState and sets the default values.
 func NewDeviceManagementScriptUserState()(*DeviceManagementScriptUserState) {
@@ -44,9 +44,9 @@ func (m *DeviceManagementScriptUserState) GetErrorDeviceCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementScriptUserState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementScriptUserState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deviceRunStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceRunStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementScriptDeviceStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *DeviceManagementScriptUserState) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["errorDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *DeviceManagementScriptUserState) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["successDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["successDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *DeviceManagementScriptUserState) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

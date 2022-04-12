@@ -8,11 +8,11 @@ import (
 type DeviceHealthScriptAssignment struct {
     Entity
     // Determine whether we want to run detection script only or run both detection script and remediation script
-    runRemediationScript *bool;
+    runRemediationScript *bool
     // Script run schedule for the target group
-    runSchedule DeviceHealthScriptRunScheduleable;
+    runSchedule DeviceHealthScriptRunScheduleable
     // The Azure Active Directory group we are targeting the script to
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewDeviceHealthScriptAssignment instantiates a new deviceHealthScriptAssignment and sets the default values.
 func NewDeviceHealthScriptAssignment()(*DeviceHealthScriptAssignment) {
@@ -26,9 +26,9 @@ func CreateDeviceHealthScriptAssignmentFromDiscriminatorValue(parseNode i878a80d
     return NewDeviceHealthScriptAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceHealthScriptAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceHealthScriptAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["runRemediationScript"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["runRemediationScript"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -38,7 +38,7 @@ func (m *DeviceHealthScriptAssignment) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["runSchedule"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["runSchedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceHealthScriptRunScheduleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *DeviceHealthScriptAssignment) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["target"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
             return err

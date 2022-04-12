@@ -8,29 +8,29 @@ import (
 type MicrosoftTunnelSite struct {
     Entity
     // The MicrosoftTunnelSite's description
-    description *string;
+    description *string
     // The MicrosoftTunnelSite's display name
-    displayName *string;
+    displayName *string
     // The MicrosoftTunnelSite's Internal Network Access Probe URL
-    internalNetworkProbeUrl *string;
+    internalNetworkProbeUrl *string
     // The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
-    microsoftTunnelConfiguration MicrosoftTunnelConfigurationable;
+    microsoftTunnelConfiguration MicrosoftTunnelConfigurationable
     // A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
-    microsoftTunnelServers []MicrosoftTunnelServerable;
+    microsoftTunnelServers []MicrosoftTunnelServerable
     // The MicrosoftTunnelSite's public domain name or IP address
-    publicAddress *string;
+    publicAddress *string
     // List of Scope Tags for this Entity instance.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // The site's automatic upgrade setting. True for automatic upgrades, false for manual control
-    upgradeAutomatically *bool;
+    upgradeAutomatically *bool
     // True if an upgrade is available
-    upgradeAvailable *bool;
+    upgradeAvailable *bool
     // The site's upgrade window end time of day
-    upgradeWindowEndTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly;
+    upgradeWindowEndTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // The site's upgrade window start time of day
-    upgradeWindowStartTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly;
+    upgradeWindowStartTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // The site's timezone represented as a minute offset from UTC
-    upgradeWindowUtcOffsetInMinutes *int32;
+    upgradeWindowUtcOffsetInMinutes *int32
 }
 // NewMicrosoftTunnelSite instantiates a new microsoftTunnelSite and sets the default values.
 func NewMicrosoftTunnelSite()(*MicrosoftTunnelSite) {
@@ -60,9 +60,9 @@ func (m *MicrosoftTunnelSite) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["internalNetworkProbeUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["internalNetworkProbeUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["microsoftTunnelConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["microsoftTunnelConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMicrosoftTunnelConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["microsoftTunnelServers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["microsoftTunnelServers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMicrosoftTunnelServerFromDiscriminatorValue)
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["publicAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publicAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["upgradeAutomatically"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["upgradeAutomatically"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -150,7 +150,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["upgradeAvailable"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["upgradeAvailable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -160,7 +160,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["upgradeWindowEndTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["upgradeWindowEndTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
@@ -170,7 +170,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["upgradeWindowStartTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["upgradeWindowStartTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeOnlyValue()
         if err != nil {
             return err
@@ -180,7 +180,7 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["upgradeWindowUtcOffsetInMinutes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["upgradeWindowUtcOffsetInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

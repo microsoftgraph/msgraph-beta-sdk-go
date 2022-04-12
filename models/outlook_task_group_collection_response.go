@@ -7,11 +7,11 @@ import (
 // OutlookTaskGroupCollectionResponse 
 type OutlookTaskGroupCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The nextLink property
-    nextLink *string;
+    nextLink *string
     // The value property
-    value []OutlookTaskGroupable;
+    value []OutlookTaskGroupable
 }
 // NewOutlookTaskGroupCollectionResponse instantiates a new OutlookTaskGroupCollectionResponse and sets the default values.
 func NewOutlookTaskGroupCollectionResponse()(*OutlookTaskGroupCollectionResponse) {
@@ -33,9 +33,9 @@ func (m *OutlookTaskGroupCollectionResponse) GetAdditionalData()(map[string]inte
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OutlookTaskGroupCollectionResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["@odata.nextLink"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *OutlookTaskGroupCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.nextLink"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *OutlookTaskGroupCollectionResponse) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOutlookTaskGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -61,8 +61,8 @@ func (m *OutlookTaskGroupCollectionResponse) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetNextLink gets the @odata.nextLink property value. The nextLink property
-func (m *OutlookTaskGroupCollectionResponse) GetNextLink()(*string) {
+// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
+func (m *OutlookTaskGroupCollectionResponse) GetOdatanextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -109,8 +109,8 @@ func (m *OutlookTaskGroupCollectionResponse) SetAdditionalData(value map[string]
         m.additionalData = value
     }
 }
-// SetNextLink sets the @odata.nextLink property value. The nextLink property
-func (m *OutlookTaskGroupCollectionResponse) SetNextLink(value *string)() {
+// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
+func (m *OutlookTaskGroupCollectionResponse) SetOdatanextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }

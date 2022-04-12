@@ -9,9 +9,9 @@ import (
 type InformationProtection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The labelPolicySettings property
-    labelPolicySettings InformationProtectionPolicySettingable;
+    labelPolicySettings InformationProtectionPolicySettingable
     // The sensitivityLabels property
-    sensitivityLabels []SensitivityLabelable;
+    sensitivityLabels []SensitivityLabelable
 }
 // NewInformationProtection instantiates a new informationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {
@@ -25,9 +25,9 @@ func CreateInformationProtectionFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewInformationProtection(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["labelPolicySettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["labelPolicySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateInformationProtectionPolicySettingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -37,7 +37,7 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["sensitivityLabels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sensitivityLabels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSensitivityLabelFromDiscriminatorValue)
         if err != nil {
             return err

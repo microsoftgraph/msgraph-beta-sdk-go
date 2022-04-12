@@ -8,21 +8,21 @@ import (
 type UserExperienceAnalyticsDeviceScores struct {
     Entity
     // The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    appReliabilityScore *float64;
+    appReliabilityScore *float64
     // The user experience analytics device name.
-    deviceName *string;
+    deviceName *string
     // The user experience analytics device score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    endpointAnalyticsScore *float64;
+    endpointAnalyticsScore *float64
     // The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-    healthStatus *UserExperienceAnalyticsHealthState;
+    healthStatus *UserExperienceAnalyticsHealthState
     // The user experience analytics device manufacturer.
-    manufacturer *string;
+    manufacturer *string
     // The user experience analytics device model.
-    model *string;
+    model *string
     // The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    startupPerformanceScore *float64;
+    startupPerformanceScore *float64
     // The user experience analytics device work From anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    workFromAnywhereScore *float64;
+    workFromAnywhereScore *float64
 }
 // NewUserExperienceAnalyticsDeviceScores instantiates a new userExperienceAnalyticsDeviceScores and sets the default values.
 func NewUserExperienceAnalyticsDeviceScores()(*UserExperienceAnalyticsDeviceScores) {
@@ -60,9 +60,9 @@ func (m *UserExperienceAnalyticsDeviceScores) GetEndpointAnalyticsScore()(*float
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appReliabilityScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appReliabilityScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["endpointAnalyticsScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endpointAnalyticsScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["healthStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["healthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserExperienceAnalyticsHealthState)
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["manufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["model"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["startupPerformanceScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startupPerformanceScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["workFromAnywhereScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["workFromAnywhereScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err

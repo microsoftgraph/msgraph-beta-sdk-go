@@ -8,9 +8,9 @@ import (
 type TypedEmailAddress struct {
     EmailAddress
     // To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
-    otherLabel *string;
+    otherLabel *string
     // The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
-    type_escaped *EmailType;
+    type_escaped *EmailType
 }
 // NewTypedEmailAddress instantiates a new typedEmailAddress and sets the default values.
 func NewTypedEmailAddress()(*TypedEmailAddress) {
@@ -24,9 +24,9 @@ func CreateTypedEmailAddressFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewTypedEmailAddress(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EmailAddress.GetFieldDeserializers()
-    res["otherLabel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["otherLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -36,13 +36,13 @@ func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEmailType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val.(*EmailType))
+            m.SetType_escaped(val.(*EmailType))
         }
         return nil
     }
@@ -76,8 +76,8 @@ func (m *TypedEmailAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetType_escaped() != nil {
+        cast := (*m.GetType_escaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

@@ -7,11 +7,11 @@ import (
 // CommsApplication 
 type CommsApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The calls property
-    calls []Callable;
+    calls []Callable
     // The onlineMeetings property
-    onlineMeetings []OnlineMeetingable;
+    onlineMeetings []OnlineMeetingable
 }
 // NewCommsApplication instantiates a new CommsApplication and sets the default values.
 func NewCommsApplication()(*CommsApplication) {
@@ -41,9 +41,9 @@ func (m *CommsApplication) GetCalls()([]Callable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CommsApplication) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["calls"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CommsApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["calls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCallFromDiscriminatorValue)
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *CommsApplication) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["onlineMeetings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onlineMeetings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOnlineMeetingFromDiscriminatorValue)
         if err != nil {
             return err

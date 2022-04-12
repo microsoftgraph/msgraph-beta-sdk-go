@@ -9,33 +9,33 @@ import (
 type GroupPolicyMigrationReport struct {
     Entity
     // The date and time at which the GroupPolicyMigrationReport was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The name of Group Policy Object from the GPO Xml Content
-    displayName *string;
+    displayName *string
     // The date and time at which the GroupPolicyMigrationReport was created.
-    groupPolicyCreatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    groupPolicyCreatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The date and time at which the GroupPolicyMigrationReport was last modified.
-    groupPolicyLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    groupPolicyLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Group Policy Object GUID from GPO Xml content
-    groupPolicyObjectId *string;
+    groupPolicyObjectId *string
     // A list of group policy settings to MDM/Intune mappings.
-    groupPolicySettingMappings []GroupPolicySettingMappingable;
+    groupPolicySettingMappings []GroupPolicySettingMappingable
     // The date and time at which the GroupPolicyMigrationReport was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Intune coverage for the associated Group Policy Object file. Possible values are: none, partial, complete, error, notApplicable.
-    migrationReadiness *GroupPolicyMigrationReadiness;
+    migrationReadiness *GroupPolicyMigrationReadiness
     // The distinguished name of the OU.
-    ouDistinguishedName *string;
+    ouDistinguishedName *string
     // The number of Group Policy Settings supported by Intune.
-    supportedSettingsCount *int32;
+    supportedSettingsCount *int32
     // The Percentage of Group Policy Settings supported by Intune.
-    supportedSettingsPercent *int32;
+    supportedSettingsPercent *int32
     // The Targeted in AD property from GPO Xml Content
-    targetedInActiveDirectory *bool;
+    targetedInActiveDirectory *bool
     // The total number of Group Policy Settings from GPO file.
-    totalSettingsCount *int32;
+    totalSettingsCount *int32
     // A list of unsupported group policy extensions inside the Group Policy Object.
-    unsupportedGroupPolicyExtensions []UnsupportedGroupPolicyExtensionable;
+    unsupportedGroupPolicyExtensions []UnsupportedGroupPolicyExtensionable
 }
 // NewGroupPolicyMigrationReport instantiates a new groupPolicyMigrationReport and sets the default values.
 func NewGroupPolicyMigrationReport()(*GroupPolicyMigrationReport) {
@@ -65,9 +65,9 @@ func (m *GroupPolicyMigrationReport) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["groupPolicyCreatedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupPolicyCreatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["groupPolicyLastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupPolicyLastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["groupPolicyObjectId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupPolicyObjectId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["groupPolicySettingMappings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupPolicySettingMappings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGroupPolicySettingMappingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["migrationReadiness"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["migrationReadiness"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseGroupPolicyMigrationReadiness)
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["ouDistinguishedName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ouDistinguishedName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["supportedSettingsCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedSettingsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["supportedSettingsPercent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedSettingsPercent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["targetedInActiveDirectory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetedInActiveDirectory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["totalSettingsCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalSettingsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -201,7 +201,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["unsupportedGroupPolicyExtensions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unsupportedGroupPolicyExtensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnsupportedGroupPolicyExtensionFromDiscriminatorValue)
         if err != nil {
             return err

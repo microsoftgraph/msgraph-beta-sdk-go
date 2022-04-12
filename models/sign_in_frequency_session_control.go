@@ -8,9 +8,9 @@ import (
 type SignInFrequencySessionControl struct {
     ConditionalAccessSessionControl
     // Possible values are: days, hours.
-    type_escaped *SigninFrequencyType;
+    type_escaped *SigninFrequencyType
     // The number of days or hours.
-    value *int32;
+    value *int32
 }
 // NewSignInFrequencySessionControl instantiates a new signInFrequencySessionControl and sets the default values.
 func NewSignInFrequencySessionControl()(*SignInFrequencySessionControl) {
@@ -24,19 +24,19 @@ func CreateSignInFrequencySessionControlFromDiscriminatorValue(parseNode i878a80
     return NewSignInFrequencySessionControl(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ConditionalAccessSessionControl.GetFieldDeserializers()
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSigninFrequencyType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val.(*SigninFrequencyType))
+            m.SetType_escaped(val.(*SigninFrequencyType))
         }
         return nil
     }
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -70,8 +70,8 @@ func (m *SignInFrequencySessionControl) Serialize(writer i878a80d2330e89d2689638
     if err != nil {
         return err
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetType_escaped() != nil {
+        cast := (*m.GetType_escaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

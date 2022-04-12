@@ -8,27 +8,27 @@ import (
 type RbacApplication struct {
     Entity
     // The resourceNamespaces property
-    resourceNamespaces []UnifiedRbacResourceNamespaceable;
+    resourceNamespaces []UnifiedRbacResourceNamespaceable
     // The roleAssignmentApprovals property
-    roleAssignmentApprovals []Approvalable;
+    roleAssignmentApprovals []Approvalable
     // Resource to grant access to users or groups.
-    roleAssignments []UnifiedRoleAssignmentable;
+    roleAssignments []UnifiedRoleAssignmentable
     // The roleAssignmentScheduleInstances property
-    roleAssignmentScheduleInstances []UnifiedRoleAssignmentScheduleInstanceable;
+    roleAssignmentScheduleInstances []UnifiedRoleAssignmentScheduleInstanceable
     // The roleAssignmentScheduleRequests property
-    roleAssignmentScheduleRequests []UnifiedRoleAssignmentScheduleRequestable;
+    roleAssignmentScheduleRequests []UnifiedRoleAssignmentScheduleRequestable
     // The roleAssignmentSchedules property
-    roleAssignmentSchedules []UnifiedRoleAssignmentScheduleable;
+    roleAssignmentSchedules []UnifiedRoleAssignmentScheduleable
     // Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-    roleDefinitions []UnifiedRoleDefinitionable;
+    roleDefinitions []UnifiedRoleDefinitionable
     // The roleEligibilityScheduleInstances property
-    roleEligibilityScheduleInstances []UnifiedRoleEligibilityScheduleInstanceable;
+    roleEligibilityScheduleInstances []UnifiedRoleEligibilityScheduleInstanceable
     // The roleEligibilityScheduleRequests property
-    roleEligibilityScheduleRequests []UnifiedRoleEligibilityScheduleRequestable;
+    roleEligibilityScheduleRequests []UnifiedRoleEligibilityScheduleRequestable
     // The roleEligibilitySchedules property
-    roleEligibilitySchedules []UnifiedRoleEligibilityScheduleable;
+    roleEligibilitySchedules []UnifiedRoleEligibilityScheduleable
     // The transitiveRoleAssignments property
-    transitiveRoleAssignments []UnifiedRoleAssignmentable;
+    transitiveRoleAssignments []UnifiedRoleAssignmentable
 }
 // NewRbacApplication instantiates a new rbacApplication and sets the default values.
 func NewRbacApplication()(*RbacApplication) {
@@ -42,9 +42,9 @@ func CreateRbacApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewRbacApplication(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RbacApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["resourceNamespaces"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceNamespaces"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRbacResourceNamespaceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["roleAssignmentApprovals"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleAssignmentApprovals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateApprovalFromDiscriminatorValue)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["roleAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["roleAssignmentScheduleInstances"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleAssignmentScheduleInstances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentScheduleInstanceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["roleAssignmentScheduleRequests"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleAssignmentScheduleRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentScheduleRequestFromDiscriminatorValue)
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["roleAssignmentSchedules"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleAssignmentSchedules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentScheduleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["roleDefinitions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["roleEligibilityScheduleInstances"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleEligibilityScheduleInstances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleEligibilityScheduleInstanceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -156,7 +156,7 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["roleEligibilityScheduleRequests"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleEligibilityScheduleRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleEligibilityScheduleRequestFromDiscriminatorValue)
         if err != nil {
             return err
@@ -170,7 +170,7 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["roleEligibilitySchedules"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleEligibilitySchedules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleEligibilityScheduleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -184,7 +184,7 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["transitiveRoleAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["transitiveRoleAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleAssignmentFromDiscriminatorValue)
         if err != nil {
             return err

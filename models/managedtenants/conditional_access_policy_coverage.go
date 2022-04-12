@@ -10,13 +10,13 @@ import (
 type ConditionalAccessPolicyCoverage struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
-    conditionalAccessPolicyState *string;
+    conditionalAccessPolicyState *string
     // The date and time the conditional access policy was last modified. Required. Read-only.
-    latestPolicyModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    latestPolicyModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A flag indicating whether the conditional access policy requires device compliance. Required. Read-only.
-    requiresDeviceCompliance *bool;
+    requiresDeviceCompliance *bool
     // The display name for the managed tenant. Required. Read-only.
-    tenantDisplayName *string;
+    tenantDisplayName *string
 }
 // NewConditionalAccessPolicyCoverage instantiates a new conditionalAccessPolicyCoverage and sets the default values.
 func NewConditionalAccessPolicyCoverage()(*ConditionalAccessPolicyCoverage) {
@@ -38,9 +38,9 @@ func (m *ConditionalAccessPolicyCoverage) GetConditionalAccessPolicyState()(*str
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConditionalAccessPolicyCoverage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ConditionalAccessPolicyCoverage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["conditionalAccessPolicyState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conditionalAccessPolicyState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *ConditionalAccessPolicyCoverage) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["latestPolicyModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["latestPolicyModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *ConditionalAccessPolicyCoverage) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["requiresDeviceCompliance"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requiresDeviceCompliance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *ConditionalAccessPolicyCoverage) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["tenantDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

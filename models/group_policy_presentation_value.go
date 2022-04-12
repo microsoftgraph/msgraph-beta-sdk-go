@@ -9,13 +9,13 @@ import (
 type GroupPolicyPresentationValue struct {
     Entity
     // The date and time the object was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The group policy definition value associated with the presentation value.
-    definitionValue GroupPolicyDefinitionValueable;
+    definitionValue GroupPolicyDefinitionValueable
     // The date and time the object was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The group policy presentation associated with the presentation value.
-    presentation GroupPolicyPresentationable;
+    presentation GroupPolicyPresentationable
 }
 // NewGroupPolicyPresentationValue instantiates a new groupPolicyPresentationValue and sets the default values.
 func NewGroupPolicyPresentationValue()(*GroupPolicyPresentationValue) {
@@ -45,9 +45,9 @@ func (m *GroupPolicyPresentationValue) GetDefinitionValue()(GroupPolicyDefinitio
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GroupPolicyPresentationValue) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *GroupPolicyPresentationValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *GroupPolicyPresentationValue) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["definitionValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["definitionValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGroupPolicyDefinitionValueFromDiscriminatorValue)
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *GroupPolicyPresentationValue) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *GroupPolicyPresentationValue) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["presentation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["presentation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGroupPolicyPresentationFromDiscriminatorValue)
         if err != nil {
             return err

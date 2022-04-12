@@ -10,45 +10,45 @@ import (
 type CloudPcOverview struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
-    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The number of cloud PC connections that have a status of failed. Optional. Read-only.
-    numberOfCloudPcConnectionStatusFailed *int32;
+    numberOfCloudPcConnectionStatusFailed *int32
     // The number of cloud PC connections that have a status of passed. Optional. Read-only.
-    numberOfCloudPcConnectionStatusPassed *int32;
+    numberOfCloudPcConnectionStatusPassed *int32
     // The number of cloud PC connections that have a status of pending. Optional. Read-only.
-    numberOfCloudPcConnectionStatusPending *int32;
+    numberOfCloudPcConnectionStatusPending *int32
     // The number of cloud PC connections that have a status of running. Optional. Read-only.
-    numberOfCloudPcConnectionStatusRunning *int32;
+    numberOfCloudPcConnectionStatusRunning *int32
     // The number of cloud PC connections that have a status of unknownFutureValue. Optional. Read-only.
-    numberOfCloudPcConnectionStatusUnkownFutureValue *int32;
+    numberOfCloudPcConnectionStatusUnkownFutureValue *int32
     // The number of cloud PCs that have a status of deprovisioning. Optional. Read-only.
-    numberOfCloudPcStatusDeprovisioning *int32;
+    numberOfCloudPcStatusDeprovisioning *int32
     // The number of cloud PCs that have a status of failed. Optional. Read-only.
-    numberOfCloudPcStatusFailed *int32;
+    numberOfCloudPcStatusFailed *int32
     // The number of cloud PCs that have a status of inGracePeriod. Optional. Read-only.
-    numberOfCloudPcStatusInGracePeriod *int32;
+    numberOfCloudPcStatusInGracePeriod *int32
     // The number of cloud PCs that have a status of notProvisioned. Optional. Read-only.
-    numberOfCloudPcStatusNotProvisioned *int32;
+    numberOfCloudPcStatusNotProvisioned *int32
     // The number of cloud PCs that have a status of provisioned. Optional. Read-only.
-    numberOfCloudPcStatusProvisioned *int32;
+    numberOfCloudPcStatusProvisioned *int32
     // The number of cloud PCs that have a status of provisioning. Optional. Read-only.
-    numberOfCloudPcStatusProvisioning *int32;
+    numberOfCloudPcStatusProvisioning *int32
     // The number of cloud PCs that have a status of unknown. Optional. Read-only.
-    numberOfCloudPcStatusUnknown *int32;
+    numberOfCloudPcStatusUnknown *int32
     // The number of cloud PCs that have a status of upgrading. Optional. Read-only.
-    numberOfCloudPcStatusUpgrading *int32;
+    numberOfCloudPcStatusUpgrading *int32
     // The display name for the managed tenant. Optional. Read-only.
-    tenantDisplayName *string;
+    tenantDisplayName *string
     // The tenantId property
-    tenantId *string;
+    tenantId *string
     // The totalBusinessLicenses property
-    totalBusinessLicenses *int32;
+    totalBusinessLicenses *int32
     // The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
-    totalCloudPcConnectionStatus *int32;
+    totalCloudPcConnectionStatus *int32
     // The total number of cloud PC statues for the given managed tenant. Optional. Read-only.
-    totalCloudPcStatus *int32;
+    totalCloudPcStatus *int32
     // The totalEnterpriseLicenses property
-    totalEnterpriseLicenses *int32;
+    totalEnterpriseLicenses *int32
 }
 // NewCloudPcOverview instantiates a new cloudPcOverview and sets the default values.
 func NewCloudPcOverview()(*CloudPcOverview) {
@@ -62,9 +62,9 @@ func CreateCloudPcOverviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewCloudPcOverview(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["lastRefreshedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastRefreshedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["numberOfCloudPcConnectionStatusFailed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCloudPcConnectionStatusFailed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["numberOfCloudPcConnectionStatusPassed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCloudPcConnectionStatusPassed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["numberOfCloudPcConnectionStatusPending"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCloudPcConnectionStatusPending"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["numberOfCloudPcConnectionStatusRunning"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCloudPcConnectionStatusRunning"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["numberOfCloudPcConnectionStatusUnkownFutureValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCloudPcConnectionStatusUnkownFutureValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["numberOfCloudPcStatusDeprovisioning"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCloudPcStatusDeprovisioning"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["numberOfCloudPcStatusFailed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCloudPcStatusFailed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["numberOfCloudPcStatusInGracePeriod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCloudPcStatusInGracePeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["numberOfCloudPcStatusNotProvisioned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCloudPcStatusNotProvisioned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -164,7 +164,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["numberOfCloudPcStatusProvisioned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCloudPcStatusProvisioned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -174,7 +174,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["numberOfCloudPcStatusProvisioning"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCloudPcStatusProvisioning"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -184,7 +184,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["numberOfCloudPcStatusUnknown"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCloudPcStatusUnknown"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -194,7 +194,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["numberOfCloudPcStatusUpgrading"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["numberOfCloudPcStatusUpgrading"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -204,7 +204,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["tenantDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -214,7 +214,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -224,7 +224,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["totalBusinessLicenses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalBusinessLicenses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -234,7 +234,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["totalCloudPcConnectionStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalCloudPcConnectionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -244,7 +244,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["totalCloudPcStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalCloudPcStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -254,7 +254,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["totalEnterpriseLicenses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalEnterpriseLicenses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

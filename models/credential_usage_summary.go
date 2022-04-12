@@ -8,13 +8,13 @@ import (
 type CredentialUsageSummary struct {
     Entity
     // Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
-    authMethod *UsageAuthMethod;
+    authMethod *UsageAuthMethod
     // Provides the count of failed resets or registration data.
-    failureActivityCount *int64;
+    failureActivityCount *int64
     // Defines the feature to report. Possible values are: registration, reset, unknownFutureValue.
-    feature *FeatureType;
+    feature *FeatureType
     // Provides the count of successful registrations or resets.
-    successfulActivityCount *int64;
+    successfulActivityCount *int64
 }
 // NewCredentialUsageSummary instantiates a new credentialUsageSummary and sets the default values.
 func NewCredentialUsageSummary()(*CredentialUsageSummary) {
@@ -52,9 +52,9 @@ func (m *CredentialUsageSummary) GetFeature()(*FeatureType) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["authMethod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["authMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUsageAuthMethod)
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["failureActivityCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["failureActivityCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["feature"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["feature"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseFeatureType)
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["successfulActivityCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["successfulActivityCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

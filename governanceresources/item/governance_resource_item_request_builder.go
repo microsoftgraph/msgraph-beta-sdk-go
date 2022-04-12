@@ -18,55 +18,55 @@ import (
 // GovernanceResourceItemRequestBuilder provides operations to manage the collection of governanceResource entities.
 type GovernanceResourceItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // GovernanceResourceItemRequestBuilderDeleteOptions options for Delete
 type GovernanceResourceItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // GovernanceResourceItemRequestBuilderGetOptions options for Get
 type GovernanceResourceItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *GovernanceResourceItemRequestBuilderGetQueryParameters;
+    QueryParameters *GovernanceResourceItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // GovernanceResourceItemRequestBuilderGetQueryParameters get entity from governanceResources by key
 type GovernanceResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // GovernanceResourceItemRequestBuilderPatchOptions options for Patch
 type GovernanceResourceItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGovernanceResourceItemRequestBuilderInternal instantiates a new GovernanceResourceItemRequestBuilder and sets the default values.
 func NewGovernanceResourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GovernanceResourceItemRequestBuilder) {
     m := &GovernanceResourceItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/governanceResources/{governanceResource_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/governanceResources/{governanceResource%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -199,7 +199,7 @@ func (m *GovernanceResourceItemRequestBuilder) RoleAssignmentRequestsById(id str
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["governanceRoleAssignmentRequest_id"] = id
+        urlTplParams["governanceRoleAssignmentRequest%2Did"] = id
     }
     return ib874dfaa0f52241f63218e4bd5551aae0a845a5ffdc8fe31ba0ba8d76ef68368.NewGovernanceRoleAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -214,7 +214,7 @@ func (m *GovernanceResourceItemRequestBuilder) RoleAssignmentsById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["governanceRoleAssignment_id"] = id
+        urlTplParams["governanceRoleAssignment%2Did"] = id
     }
     return iebcf8addd43958225cc668f85c54db37378718447b94561d98640bf82caf0a25.NewGovernanceRoleAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -229,7 +229,7 @@ func (m *GovernanceResourceItemRequestBuilder) RoleDefinitionsById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["governanceRoleDefinition_id"] = id
+        urlTplParams["governanceRoleDefinition%2Did"] = id
     }
     return if64c28382662f3e40b50d01a6d6cccdf239d73815a84e10346df6028d2331d87.NewGovernanceRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -244,7 +244,7 @@ func (m *GovernanceResourceItemRequestBuilder) RoleSettingsById(id string)(*i45f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["governanceRoleSetting_id"] = id
+        urlTplParams["governanceRoleSetting%2Did"] = id
     }
     return i45fabc4315060a7a2958038a6d8acadc4ae3b133060b3d51a24591bef93cbd24.NewGovernanceRoleSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

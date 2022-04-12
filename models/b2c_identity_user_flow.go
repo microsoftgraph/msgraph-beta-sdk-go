@@ -8,19 +8,19 @@ import (
 type B2cIdentityUserFlow struct {
     IdentityUserFlow
     // Configuration for enabling an API connector for use as part of the user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
-    apiConnectorConfiguration UserFlowApiConnectorConfigurationable;
+    apiConnectorConfiguration UserFlowApiConnectorConfigurationable
     // Indicates the default language of the b2cIdentityUserFlow that is used when no ui_locale tag is specified in the request. This field is RFC 5646 compliant.
-    defaultLanguageTag *string;
+    defaultLanguageTag *string
     // The identityProviders property
-    identityProviders []IdentityProviderable;
+    identityProviders []IdentityProviderable
     // The property that determines whether language customization is enabled within the B2C user flow. Language customization is not enabled by default for B2C user flows.
-    isLanguageCustomizationEnabled *bool;
+    isLanguageCustomizationEnabled *bool
     // The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
-    languages []UserFlowLanguageConfigurationable;
+    languages []UserFlowLanguageConfigurationable
     // The user attribute assignments included in the user flow.
-    userAttributeAssignments []IdentityUserFlowAttributeAssignmentable;
+    userAttributeAssignments []IdentityUserFlowAttributeAssignmentable
     // The userFlowIdentityProviders property
-    userFlowIdentityProviders []IdentityProviderBaseable;
+    userFlowIdentityProviders []IdentityProviderBaseable
 }
 // NewB2cIdentityUserFlow instantiates a new b2cIdentityUserFlow and sets the default values.
 func NewB2cIdentityUserFlow()(*B2cIdentityUserFlow) {
@@ -50,9 +50,9 @@ func (m *B2cIdentityUserFlow) GetDefaultLanguageTag()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentityUserFlow.GetFieldDeserializers()
-    res["apiConnectorConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["apiConnectorConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserFlowApiConnectorConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["defaultLanguageTag"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultLanguageTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["identityProviders"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["identityProviders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentityProviderFromDiscriminatorValue)
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["isLanguageCustomizationEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isLanguageCustomizationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["languages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["languages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserFlowLanguageConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["userAttributeAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userAttributeAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["userFlowIdentityProviders"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userFlowIdentityProviders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentityProviderBaseFromDiscriminatorValue)
         if err != nil {
             return err

@@ -7,9 +7,9 @@ import (
 // PersonDataSources 
 type PersonDataSources struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The type property
-    type_escaped []string;
+    type_escaped []string
 }
 // NewPersonDataSources instantiates a new personDataSources and sets the default values.
 func NewPersonDataSources()(*PersonDataSources) {
@@ -31,9 +31,9 @@ func (m *PersonDataSources) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PersonDataSources) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *PersonDataSources) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -43,7 +43,7 @@ func (m *PersonDataSources) GetFieldDeserializers()(map[string]func(interface{},
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetType(res)
+            m.SetType_escaped(res)
         }
         return nil
     }
@@ -59,8 +59,8 @@ func (m *PersonDataSources) GetType()([]string) {
 }
 // Serialize serializes information the current object
 func (m *PersonDataSources) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetType() != nil {
-        err := writer.WriteCollectionOfStringValues("type", m.GetType())
+    if m.GetType_escaped() != nil {
+        err := writer.WriteCollectionOfStringValues("type", m.GetType_escaped())
         if err != nil {
             return err
         }

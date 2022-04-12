@@ -7,9 +7,9 @@ import (
 // GetSharePointActivityPagesWithPeriodResponse provides operations to call the getSharePointActivityPages method.
 type GetSharePointActivityPagesWithPeriodResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The value property
-    value []byte;
+    value []byte
 }
 // NewGetSharePointActivityPagesWithPeriodResponse instantiates a new getSharePointActivityPagesWithPeriodResponse and sets the default values.
 func NewGetSharePointActivityPagesWithPeriodResponse()(*GetSharePointActivityPagesWithPeriodResponse) {
@@ -31,9 +31,9 @@ func (m *GetSharePointActivityPagesWithPeriodResponse) GetAdditionalData()(map[s
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GetSharePointActivityPagesWithPeriodResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *GetSharePointActivityPagesWithPeriodResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err

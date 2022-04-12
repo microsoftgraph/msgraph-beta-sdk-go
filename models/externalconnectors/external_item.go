@@ -9,11 +9,11 @@ import (
 type ExternalItem struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // An array of access control entries. Each entry specifies the access granted to a user or group. Required.
-    acl []Aclable;
+    acl []Aclable
     // A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
-    content ExternalItemContentable;
+    content ExternalItemContentable
     // A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
-    properties Propertiesable;
+    properties Propertiesable
 }
 // NewExternalItem instantiates a new externalItem and sets the default values.
 func NewExternalItem()(*ExternalItem) {
@@ -43,9 +43,9 @@ func (m *ExternalItem) GetContent()(ExternalItemContentable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ExternalItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["acl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["acl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAclFromDiscriminatorValue)
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["content"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateExternalItemContentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["properties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["properties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePropertiesFromDiscriminatorValue)
         if err != nil {
             return err

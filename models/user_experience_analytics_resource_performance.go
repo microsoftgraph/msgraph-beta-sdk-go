@@ -8,31 +8,31 @@ import (
 type UserExperienceAnalyticsResourcePerformance struct {
     Entity
     // AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
-    averageSpikeTimeScore *int32;
+    averageSpikeTimeScore *int32
     // CPU spike time in percentage. Valid values 0 to 100
-    cpuSpikeTimePercentage *float64;
+    cpuSpikeTimePercentage *float64
     // Threshold of cpuSpikeTimeScore. Valid values 0 to 100
-    cpuSpikeTimePercentageThreshold *float64;
+    cpuSpikeTimePercentageThreshold *float64
     // The user experience analytics device CPU spike time score. Valid values 0 to 100
-    cpuSpikeTimeScore *int32;
+    cpuSpikeTimeScore *int32
     // User experience analytics summarized device count.
-    deviceCount *int64;
+    deviceCount *int64
     // The id of the device.
-    deviceId *string;
+    deviceId *string
     // The name of the device.
-    deviceName *string;
+    deviceName *string
     // Resource performance score of a specific device. Valid values 0 to 100
-    deviceResourcePerformanceScore *int32;
+    deviceResourcePerformanceScore *int32
     // The user experience analytics device manufacturer.
-    manufacturer *string;
+    manufacturer *string
     // The user experience analytics device model.
-    model *string;
+    model *string
     // RAM spike time in percentage. Valid values 0 to 100
-    ramSpikeTimePercentage *float64;
+    ramSpikeTimePercentage *float64
     // Threshold of ramSpikeTimeScore. Valid values 0 to 100
-    ramSpikeTimePercentageThreshold *float64;
+    ramSpikeTimePercentageThreshold *float64
     // The user experience analytics device RAM spike time score. Valid values 0 to 100
-    ramSpikeTimeScore *int32;
+    ramSpikeTimeScore *int32
 }
 // NewUserExperienceAnalyticsResourcePerformance instantiates a new userExperienceAnalyticsResourcePerformance and sets the default values.
 func NewUserExperienceAnalyticsResourcePerformance()(*UserExperienceAnalyticsResourcePerformance) {
@@ -110,9 +110,9 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceResourcePerformanc
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["averageSpikeTimeScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageSpikeTimeScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["cpuSpikeTimePercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cpuSpikeTimePercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["cpuSpikeTimePercentageThreshold"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cpuSpikeTimePercentageThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["cpuSpikeTimeScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cpuSpikeTimeScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["deviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -162,7 +162,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["deviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -182,7 +182,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["deviceResourcePerformanceScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceResourcePerformanceScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -192,7 +192,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["manufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -202,7 +202,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["model"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -212,7 +212,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["ramSpikeTimePercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ramSpikeTimePercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -222,7 +222,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["ramSpikeTimePercentageThreshold"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ramSpikeTimePercentageThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -232,7 +232,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         }
         return nil
     }
-    res["ramSpikeTimeScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ramSpikeTimeScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

@@ -7,28 +7,28 @@ import (
 // MarkChatUnreadForUserRequestBuilder provides operations to call the markChatUnreadForUser method.
 type MarkChatUnreadForUserRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // MarkChatUnreadForUserRequestBuilderPostOptions options for Post
 type MarkChatUnreadForUserRequestBuilderPostOptions struct {
     // 
-    Body MarkChatUnreadForUserRequestBodyable;
+    Body MarkChatUnreadForUserRequestBodyable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewMarkChatUnreadForUserRequestBuilderInternal instantiates a new MarkChatUnreadForUserRequestBuilder and sets the default values.
 func NewMarkChatUnreadForUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MarkChatUnreadForUserRequestBuilder) {
     m := &MarkChatUnreadForUserRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/chats/{chat_id}/microsoft.graph.markChatUnreadForUser";
+    m.urlTemplate = "{+baseurl}/chats/{chat%2Did}/microsoft.graph.markChatUnreadForUser";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

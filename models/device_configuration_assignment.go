@@ -8,13 +8,13 @@ import (
 type DeviceConfigurationAssignment struct {
     Entity
     // The admin intent to apply or remove the profile. Possible values are: apply, remove.
-    intent *DeviceConfigAssignmentIntent;
+    intent *DeviceConfigAssignmentIntent
     // The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
-    source *DeviceAndAppManagementAssignmentSource;
+    source *DeviceAndAppManagementAssignmentSource
     // The identifier of the source of the assignment. This property is read-only.
-    sourceId *string;
+    sourceId *string
     // The assignment target for the device configuration.
-    target DeviceAndAppManagementAssignmentTargetable;
+    target DeviceAndAppManagementAssignmentTargetable
 }
 // NewDeviceConfigurationAssignment instantiates a new deviceConfigurationAssignment and sets the default values.
 func NewDeviceConfigurationAssignment()(*DeviceConfigurationAssignment) {
@@ -28,9 +28,9 @@ func CreateDeviceConfigurationAssignmentFromDiscriminatorValue(parseNode i878a80
     return NewDeviceConfigurationAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["intent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["intent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceConfigAssignmentIntent)
         if err != nil {
             return err
@@ -40,7 +40,7 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["source"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceAndAppManagementAssignmentSource)
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["sourceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["target"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue)
         if err != nil {
             return err

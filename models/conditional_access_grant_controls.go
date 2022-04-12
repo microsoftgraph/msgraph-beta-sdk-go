@@ -7,15 +7,15 @@ import (
 // ConditionalAccessGrantControls 
 type ConditionalAccessGrantControls struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
-    builtInControls []ConditionalAccessGrantControl;
+    builtInControls []ConditionalAccessGrantControl
     // List of custom controls IDs required by the policy. For more information, see Custom controls.
-    customAuthenticationFactors []string;
+    customAuthenticationFactors []string
     // Defines the relationship of the grant controls. Possible values: AND, OR.
-    operator *string;
+    operator *string
     // List of terms of use IDs required by the policy.
-    termsOfUse []string;
+    termsOfUse []string
 }
 // NewConditionalAccessGrantControls instantiates a new conditionalAccessGrantControls and sets the default values.
 func NewConditionalAccessGrantControls()(*ConditionalAccessGrantControls) {
@@ -53,9 +53,9 @@ func (m *ConditionalAccessGrantControls) GetCustomAuthenticationFactors()([]stri
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["builtInControls"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["builtInControls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseConditionalAccessGrantControl)
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["customAuthenticationFactors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customAuthenticationFactors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["operator"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *ConditionalAccessGrantControls) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["termsOfUse"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["termsOfUse"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

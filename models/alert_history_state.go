@@ -8,21 +8,21 @@ import (
 // AlertHistoryState 
 type AlertHistoryState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
-    appId *string;
+    appId *string
     // UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).
-    assignedTo *string;
+    assignedTo *string
     // Comment entered by signed-in user.
-    comments []string;
+    comments []string
     // Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.
-    feedback *AlertFeedback;
+    feedback *AlertFeedback
     // Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
-    status *AlertStatus;
+    status *AlertStatus
     // Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    updatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    updatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
-    user *string;
+    user *string
 }
 // NewAlertHistoryState instantiates a new alertHistoryState and sets the default values.
 func NewAlertHistoryState()(*AlertHistoryState) {
@@ -76,9 +76,9 @@ func (m *AlertHistoryState) GetFeedback()(*AlertFeedback) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["appId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["assignedTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["comments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["comments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["feedback"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["feedback"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAlertFeedback)
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAlertStatus)
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["updatedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["updatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["user"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["user"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -8,11 +8,11 @@ import (
 type DirectorySettingTemplate struct {
     DirectoryObject
     // Description of the template. Read-only.
-    description *string;
+    description *string
     // Display name of the template. Read-only.
-    displayName *string;
+    displayName *string
     // Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
-    values []SettingTemplateValueable;
+    values []SettingTemplateValueable
 }
 // NewDirectorySettingTemplate instantiates a new directorySettingTemplate and sets the default values.
 func NewDirectorySettingTemplate()(*DirectorySettingTemplate) {
@@ -42,9 +42,9 @@ func (m *DirectorySettingTemplate) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["values"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSettingTemplateValueFromDiscriminatorValue)
         if err != nil {
             return err

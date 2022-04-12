@@ -8,9 +8,9 @@ import (
 type DefaultUserRoleOverride struct {
     Entity
     // The isDefault property
-    isDefault *bool;
+    isDefault *bool
     // The rolePermissions property
-    rolePermissions []UnifiedRolePermissionable;
+    rolePermissions []UnifiedRolePermissionable
 }
 // NewDefaultUserRoleOverride instantiates a new defaultUserRoleOverride and sets the default values.
 func NewDefaultUserRoleOverride()(*DefaultUserRoleOverride) {
@@ -24,9 +24,9 @@ func CreateDefaultUserRoleOverrideFromDiscriminatorValue(parseNode i878a80d2330e
     return NewDefaultUserRoleOverride(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DefaultUserRoleOverride) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DefaultUserRoleOverride) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["isDefault"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *DefaultUserRoleOverride) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["rolePermissions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rolePermissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRolePermissionFromDiscriminatorValue)
         if err != nil {
             return err

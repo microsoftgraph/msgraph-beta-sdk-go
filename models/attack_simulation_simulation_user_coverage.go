@@ -8,17 +8,17 @@ import (
 // AttackSimulationSimulationUserCoverage 
 type AttackSimulationSimulationUserCoverage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // User in an attack simulation and training campaign.
-    attackSimulationUser AttackSimulationUserable;
+    attackSimulationUser AttackSimulationUserable
     // Number of link clicks in the received payloads by the user in attack simulation and training campaigns.
-    clickCount *int32;
+    clickCount *int32
     // Number of compromising actions by the user in attack simulation and training campaigns.
-    compromisedCount *int32;
+    compromisedCount *int32
     // Date and time of latest attack simulation and training campaign that the user was included in.
-    latestSimulationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    latestSimulationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Number of attack simulation and training campaigns that the user was included in.
-    simulationCount *int32;
+    simulationCount *int32
 }
 // NewAttackSimulationSimulationUserCoverage instantiates a new attackSimulationSimulationUserCoverage and sets the default values.
 func NewAttackSimulationSimulationUserCoverage()(*AttackSimulationSimulationUserCoverage) {
@@ -64,9 +64,9 @@ func (m *AttackSimulationSimulationUserCoverage) GetCompromisedCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AttackSimulationSimulationUserCoverage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["attackSimulationUser"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AttackSimulationSimulationUserCoverage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["attackSimulationUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAttackSimulationUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *AttackSimulationSimulationUserCoverage) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["clickCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clickCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *AttackSimulationSimulationUserCoverage) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["compromisedCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["compromisedCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *AttackSimulationSimulationUserCoverage) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["latestSimulationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["latestSimulationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *AttackSimulationSimulationUserCoverage) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["simulationCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["simulationCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

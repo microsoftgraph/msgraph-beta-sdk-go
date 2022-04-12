@@ -8,68 +8,68 @@ import (
 // Team 
 type Team struct {
     Entity
-    // The allChannels property
-    allChannels []Channelable;
+    // List of channels either hosted in or shared with the team (incoming channels).
+    allChannels []Channelable
     // The collection of channels and messages associated with the team.
-    channels []Channelable;
+    channels []Channelable
     // An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
-    classification *string;
+    classification *string
     // Timestamp at which the team was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // An optional description for the team. Maximum length: 1024 characters.
-    description *string;
+    description *string
     // Settings to configure team discoverability by others.
-    discoverySettings TeamDiscoverySettingsable;
+    discoverySettings TeamDiscoverySettingsable
     // The name of the team.
-    displayName *string;
+    displayName *string
     // Settings to configure use of Giphy, memes, and stickers in the team.
-    funSettings TeamFunSettingsable;
+    funSettings TeamFunSettingsable
     // The group property
-    group Groupable;
+    group Groupable
     // Settings to configure whether guests can create, update, or delete channels in the team.
-    guestSettings TeamGuestSettingsable;
+    guestSettings TeamGuestSettingsable
     // The incomingChannels property
-    incomingChannels []Channelable;
+    incomingChannels []Channelable
     // The apps installed in this team.
-    installedApps []TeamsAppInstallationable;
+    installedApps []TeamsAppInstallationable
     // A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
-    internalId *string;
+    internalId *string
     // Whether this team is in read-only mode.
-    isArchived *bool;
+    isArchived *bool
     // If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.
-    isMembershipLimitedToOwners *bool;
+    isMembershipLimitedToOwners *bool
     // Members and owners of the team.
-    members []ConversationMemberable;
+    members []ConversationMemberable
     // Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
-    memberSettings TeamMemberSettingsable;
+    memberSettings TeamMemberSettingsable
     // Settings to configure messaging and mentions in the team.
-    messagingSettings TeamMessagingSettingsable;
+    messagingSettings TeamMessagingSettingsable
     // The async operations that ran or are running on this team.
-    operations []TeamsAsyncOperationable;
+    operations []TeamsAsyncOperationable
     // The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
-    owners []Userable;
+    owners []Userable
     // A collection of permissions granted to apps to access the team.
-    permissionGrants []ResourceSpecificPermissionGrantable;
+    permissionGrants []ResourceSpecificPermissionGrantable
     // The team photo.
-    photo ProfilePhotoable;
+    photo ProfilePhotoable
     // The general channel for the team.
-    primaryChannel Channelable;
+    primaryChannel Channelable
     // The schedule of shifts for this team.
-    schedule Scheduleable;
+    schedule Scheduleable
     // Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
-    specialization *TeamSpecialization;
+    specialization *TeamSpecialization
     // Contains summary information about the team, including number of owners, members, and guests.
-    summary TeamSummaryable;
+    summary TeamSummaryable
     // The tags associated with the team.
-    tags []TeamworkTagable;
+    tags []TeamworkTagable
     // The template this team was created from. See available templates.
-    template TeamsTemplateable;
-    // The tenantId property
-    tenantId *string;
+    template TeamsTemplateable
+    // The ID of the Azure Active Directory tenant.
+    tenantId *string
     // The visibility of the group and team. Defaults to Public.
-    visibility *TeamVisibilityType;
+    visibility *TeamVisibilityType
     // A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
-    webUrl *string;
+    webUrl *string
 }
 // NewTeam instantiates a new team and sets the default values.
 func NewTeam()(*Team) {
@@ -82,7 +82,7 @@ func NewTeam()(*Team) {
 func CreateTeamFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeam(), nil
 }
-// GetAllChannels gets the allChannels property value. The allChannels property
+// GetAllChannels gets the allChannels property value. List of channels either hosted in or shared with the team (incoming channels).
 func (m *Team) GetAllChannels()([]Channelable) {
     if m == nil {
         return nil
@@ -139,9 +139,9 @@ func (m *Team) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["allChannels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allChannels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateChannelFromDiscriminatorValue)
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["channels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["channels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateChannelFromDiscriminatorValue)
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["classification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["discoverySettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["discoverySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamDiscoverySettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["funSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["funSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamFunSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -229,7 +229,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["group"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["group"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -239,7 +239,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["guestSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["guestSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamGuestSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -249,7 +249,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["incomingChannels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["incomingChannels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateChannelFromDiscriminatorValue)
         if err != nil {
             return err
@@ -263,7 +263,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["installedApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["installedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsAppInstallationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -277,7 +277,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["internalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["internalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -287,7 +287,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["isArchived"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isArchived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -297,7 +297,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["isMembershipLimitedToOwners"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isMembershipLimitedToOwners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -307,7 +307,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["members"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue)
         if err != nil {
             return err
@@ -321,7 +321,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["memberSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["memberSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamMemberSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -331,7 +331,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["messagingSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["messagingSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamMessagingSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -341,7 +341,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["operations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsAsyncOperationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -355,7 +355,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["owners"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["owners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -369,7 +369,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["permissionGrants"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["permissionGrants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateResourceSpecificPermissionGrantFromDiscriminatorValue)
         if err != nil {
             return err
@@ -383,7 +383,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["photo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["photo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateProfilePhotoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -393,7 +393,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["primaryChannel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["primaryChannel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChannelFromDiscriminatorValue)
         if err != nil {
             return err
@@ -403,7 +403,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["schedule"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["schedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateScheduleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -413,7 +413,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["specialization"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["specialization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTeamSpecialization)
         if err != nil {
             return err
@@ -423,7 +423,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["summary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -433,7 +433,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["tags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamworkTagFromDiscriminatorValue)
         if err != nil {
             return err
@@ -447,7 +447,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["template"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["template"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamsTemplateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -457,7 +457,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -467,7 +467,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["visibility"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["visibility"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTeamVisibilityType)
         if err != nil {
             return err
@@ -477,7 +477,7 @@ func (m *Team) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["webUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -657,7 +657,7 @@ func (m *Team) GetTemplate()(TeamsTemplateable) {
         return m.template
     }
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *Team) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -913,7 +913,7 @@ func (m *Team) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetAllChannels sets the allChannels property value. The allChannels property
+// SetAllChannels sets the allChannels property value. List of channels either hosted in or shared with the team (incoming channels).
 func (m *Team) SetAllChannels(value []Channelable)() {
     if m != nil {
         m.allChannels = value
@@ -1081,7 +1081,7 @@ func (m *Team) SetTemplate(value TeamsTemplateable)() {
         m.template = value
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant.
 func (m *Team) SetTenantId(value *string)() {
     if m != nil {
         m.tenantId = value

@@ -8,53 +8,53 @@ import (
 type Office365ActiveUserDetail struct {
     Entity
     // All the products assigned for the user.
-    assignedProducts []string;
+    assignedProducts []string
     // The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
-    deletedDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    deletedDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.
-    displayName *string;
+    displayName *string
     // The date when user last read or sent email.
-    exchangeLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    exchangeLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The last date when the user was assigned an Exchange license.
-    exchangeLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    exchangeLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // Whether the user has been assigned an Exchange license.
-    hasExchangeLicense *bool;
+    hasExchangeLicense *bool
     // Whether the user has been assigned a OneDrive license.
-    hasOneDriveLicense *bool;
+    hasOneDriveLicense *bool
     // Whether the user has been assigned a SharePoint license.
-    hasSharePointLicense *bool;
+    hasSharePointLicense *bool
     // Whether the user has been assigned a Skype For Business license.
-    hasSkypeForBusinessLicense *bool;
+    hasSkypeForBusinessLicense *bool
     // Whether the user has been assigned a Teams license.
-    hasTeamsLicense *bool;
+    hasTeamsLicense *bool
     // Whether the user has been assigned a Yammer license.
-    hasYammerLicense *bool;
+    hasYammerLicense *bool
     // Whether this user has been deleted or soft deleted.
-    isDeleted *bool;
+    isDeleted *bool
     // The date when user last viewed or edited files, shared files internally or externally, or synced files.
-    oneDriveLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    oneDriveLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The last date when the user was assigned a OneDrive license.
-    oneDriveLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    oneDriveLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The latest date of the content.
-    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The date when user last viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages.
-    sharePointLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    sharePointLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The last date when the user was assigned a SharePoint license.
-    sharePointLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    sharePointLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The date when user last organized or participated in conferences, or joined peer-to-peer sessions.
-    skypeForBusinessLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    skypeForBusinessLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The last date when the user was assigned a Skype For Business license.
-    skypeForBusinessLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    skypeForBusinessLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The date when user last posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls.
-    teamsLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    teamsLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The last date when the user was assigned a Teams license.
-    teamsLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    teamsLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.
-    userPrincipalName *string;
+    userPrincipalName *string
     // The date when user last posted, read, or liked message.
-    yammerLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    yammerLastActivityDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The last date when the user was assigned a Yammer license.
-    yammerLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    yammerLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
 // NewOffice365ActiveUserDetail instantiates a new office365ActiveUserDetail and sets the default values.
 func NewOffice365ActiveUserDetail()(*Office365ActiveUserDetail) {
@@ -108,9 +108,9 @@ func (m *Office365ActiveUserDetail) GetExchangeLicenseAssignDate()(*i878a80d2330
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignedProducts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignedProducts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["deletedDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deletedDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["exchangeLastActivityDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exchangeLastActivityDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["exchangeLicenseAssignDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exchangeLicenseAssignDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -164,7 +164,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["hasExchangeLicense"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasExchangeLicense"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -174,7 +174,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["hasOneDriveLicense"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasOneDriveLicense"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -184,7 +184,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["hasSharePointLicense"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasSharePointLicense"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -194,7 +194,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["hasSkypeForBusinessLicense"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasSkypeForBusinessLicense"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -204,7 +204,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["hasTeamsLicense"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasTeamsLicense"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -214,7 +214,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["hasYammerLicense"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasYammerLicense"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -224,7 +224,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["isDeleted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDeleted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -234,7 +234,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["oneDriveLastActivityDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["oneDriveLastActivityDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -244,7 +244,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["oneDriveLicenseAssignDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["oneDriveLicenseAssignDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -254,7 +254,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["reportRefreshDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportRefreshDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -264,7 +264,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["sharePointLastActivityDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharePointLastActivityDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -274,7 +274,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["sharePointLicenseAssignDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharePointLicenseAssignDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -284,7 +284,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["skypeForBusinessLastActivityDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["skypeForBusinessLastActivityDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -294,7 +294,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["skypeForBusinessLicenseAssignDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["skypeForBusinessLicenseAssignDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -304,7 +304,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["teamsLastActivityDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["teamsLastActivityDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -314,7 +314,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["teamsLicenseAssignDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["teamsLicenseAssignDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -324,7 +324,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -334,7 +334,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["yammerLastActivityDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["yammerLastActivityDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -344,7 +344,7 @@ func (m *Office365ActiveUserDetail) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["yammerLicenseAssignDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["yammerLicenseAssignDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err

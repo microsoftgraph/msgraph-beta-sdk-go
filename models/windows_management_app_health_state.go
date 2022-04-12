@@ -9,15 +9,15 @@ import (
 type WindowsManagementAppHealthState struct {
     Entity
     // Name of the device on which Windows management app is installed.
-    deviceName *string;
+    deviceName *string
     // Windows 10 OS version of the device on which Windows management app is installed.
-    deviceOSVersion *string;
+    deviceOSVersion *string
     // Windows management app health state. Possible values are: unknown, healthy, unhealthy.
-    healthState *HealthState;
+    healthState *HealthState
     // Windows management app installed version.
-    installedVersion *string;
+    installedVersion *string
     // Windows management app last check-in time.
-    lastCheckInDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastCheckInDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewWindowsManagementAppHealthState instantiates a new windowsManagementAppHealthState and sets the default values.
 func NewWindowsManagementAppHealthState()(*WindowsManagementAppHealthState) {
@@ -47,9 +47,9 @@ func (m *WindowsManagementAppHealthState) GetDeviceOSVersion()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["deviceOSVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceOSVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["healthState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["healthState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseHealthState)
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["installedVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["installedVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["lastCheckInDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastCheckInDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

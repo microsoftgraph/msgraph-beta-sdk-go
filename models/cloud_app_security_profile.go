@@ -9,39 +9,39 @@ import (
 type CloudAppSecurityProfile struct {
     Entity
     // The azureSubscriptionId property
-    azureSubscriptionId *string;
+    azureSubscriptionId *string
     // The azureTenantId property
-    azureTenantId *string;
+    azureTenantId *string
     // The createdDateTime property
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The deploymentPackageUrl property
-    deploymentPackageUrl *string;
+    deploymentPackageUrl *string
     // The destinationServiceName property
-    destinationServiceName *string;
+    destinationServiceName *string
     // The isSigned property
-    isSigned *bool;
+    isSigned *bool
     // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The manifest property
-    manifest *string;
+    manifest *string
     // The name property
-    name *string;
+    name *string
     // The permissionsRequired property
-    permissionsRequired *ApplicationPermissionsRequired;
+    permissionsRequired *ApplicationPermissionsRequired
     // The platform property
-    platform *string;
+    platform *string
     // The policyName property
-    policyName *string;
+    policyName *string
     // The publisher property
-    publisher *string;
+    publisher *string
     // The riskScore property
-    riskScore *string;
+    riskScore *string
     // The tags property
-    tags []string;
+    tags []string
     // The type property
-    type_escaped *string;
+    type_escaped *string
     // The vendorInformation property
-    vendorInformation SecurityVendorInformationable;
+    vendorInformation SecurityVendorInformationable
 }
 // NewCloudAppSecurityProfile instantiates a new cloudAppSecurityProfile and sets the default values.
 func NewCloudAppSecurityProfile()(*CloudAppSecurityProfile) {
@@ -95,9 +95,9 @@ func (m *CloudAppSecurityProfile) GetDestinationServiceName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["azureSubscriptionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureSubscriptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["azureTenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["deploymentPackageUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deploymentPackageUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["destinationServiceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["destinationServiceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["isSigned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isSigned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["manifest"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manifest"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -187,7 +187,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["permissionsRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["permissionsRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseApplicationPermissionsRequired)
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["platform"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -207,7 +207,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["policyName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -217,7 +217,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["publisher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -227,7 +227,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["riskScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -237,7 +237,7 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["tags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -251,17 +251,17 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetType_escaped(val)
         }
         return nil
     }
-    res["vendorInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vendorInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -467,7 +467,7 @@ func (m *CloudAppSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetType_escaped())
         if err != nil {
             return err
         }

@@ -8,25 +8,25 @@ import (
 type PrivilegedRoleSettings struct {
     Entity
     // true if the approval is required when activate the role. false if the approval is not required when activate the role.
-    approvalOnElevation *bool;
+    approvalOnElevation *bool
     // List of Approval ids, if approval is required for activation.
-    approverIds []string;
+    approverIds []string
     // The duration when the role is activated.
-    elevationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    elevationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // true if mfaOnElevation is configurable. false if mfaOnElevation is not configurable.
-    isMfaOnElevationConfigurable *bool;
+    isMfaOnElevationConfigurable *bool
     // Internal used only.
-    lastGlobalAdmin *bool;
+    lastGlobalAdmin *bool
     // Maximal duration for the activated role.
-    maxElavationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    maxElavationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // true if MFA is required to activate the role. false if MFA is not required to activate the role.
-    mfaOnElevation *bool;
+    mfaOnElevation *bool
     // Minimal duration for the activated role.
-    minElevationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    minElevationDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // true if send notification to the end user when the role is activated. false if do not send notification when the role is activated.
-    notificationToUserOnElevation *bool;
+    notificationToUserOnElevation *bool
     // true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
-    ticketingInfoOnElevation *bool;
+    ticketingInfoOnElevation *bool
 }
 // NewPrivilegedRoleSettings instantiates a new privilegedRoleSettings and sets the default values.
 func NewPrivilegedRoleSettings()(*PrivilegedRoleSettings) {
@@ -64,9 +64,9 @@ func (m *PrivilegedRoleSettings) GetElevationDuration()(*i878a80d2330e89d2689638
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["approvalOnElevation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["approvalOnElevation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["approverIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["approverIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["elevationDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["elevationDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["isMfaOnElevationConfigurable"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isMfaOnElevationConfigurable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["lastGlobalAdmin"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastGlobalAdmin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["maxElavationDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxElavationDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["mfaOnElevation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mfaOnElevation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["minElevationDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minElevationDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -150,7 +150,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["notificationToUserOnElevation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notificationToUserOnElevation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -160,7 +160,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["ticketingInfoOnElevation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ticketingInfoOnElevation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

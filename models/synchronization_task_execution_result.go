@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the collection of application entities.
+// Provides operations to call the instantiate method.
 type SynchronizationTaskExecutionResult int
 
 const (

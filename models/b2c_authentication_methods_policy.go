@@ -8,11 +8,11 @@ import (
 type B2cAuthenticationMethodsPolicy struct {
     Entity
     // The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
-    isEmailPasswordAuthenticationEnabled *bool;
+    isEmailPasswordAuthenticationEnabled *bool
     // The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
-    isPhoneOneTimePasswordAuthenticationEnabled *bool;
+    isPhoneOneTimePasswordAuthenticationEnabled *bool
     // The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
-    isUserNameAuthenticationEnabled *bool;
+    isUserNameAuthenticationEnabled *bool
 }
 // NewB2cAuthenticationMethodsPolicy instantiates a new b2cAuthenticationMethodsPolicy and sets the default values.
 func NewB2cAuthenticationMethodsPolicy()(*B2cAuthenticationMethodsPolicy) {
@@ -26,9 +26,9 @@ func CreateB2cAuthenticationMethodsPolicyFromDiscriminatorValue(parseNode i878a8
     return NewB2cAuthenticationMethodsPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["isEmailPasswordAuthenticationEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEmailPasswordAuthenticationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -38,7 +38,7 @@ func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["isPhoneOneTimePasswordAuthenticationEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isPhoneOneTimePasswordAuthenticationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["isUserNameAuthenticationEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isUserNameAuthenticationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

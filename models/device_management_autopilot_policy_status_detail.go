@@ -9,17 +9,17 @@ import (
 type DeviceManagementAutopilotPolicyStatusDetail struct {
     Entity
     // The policy compliance status. Possible values are: unknown, compliant, installed, notCompliant, notInstalled, error.
-    complianceStatus *DeviceManagementAutopilotPolicyComplianceStatus;
+    complianceStatus *DeviceManagementAutopilotPolicyComplianceStatus
     // The friendly name of the policy.
-    displayName *string;
+    displayName *string
     // The errorode associated with the compliance or enforcement status of the policy. Error code for enforcement status takes precedence if it exists.
-    errorCode *int32;
+    errorCode *int32
     // Timestamp of the reported policy status
-    lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The type of policy. Possible values are: unknown, application, appModel, configurationPolicy.
-    policyType *DeviceManagementAutopilotPolicyType;
+    policyType *DeviceManagementAutopilotPolicyType
     // Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
-    trackedOnEnrollmentStatus *bool;
+    trackedOnEnrollmentStatus *bool
 }
 // NewDeviceManagementAutopilotPolicyStatusDetail instantiates a new deviceManagementAutopilotPolicyStatusDetail and sets the default values.
 func NewDeviceManagementAutopilotPolicyStatusDetail()(*DeviceManagementAutopilotPolicyStatusDetail) {
@@ -57,9 +57,9 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetErrorCode()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["complianceStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["complianceStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementAutopilotPolicyComplianceStatus)
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["errorCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["lastReportedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastReportedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["policyType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementAutopilotPolicyType)
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
         }
         return nil
     }
-    res["trackedOnEnrollmentStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["trackedOnEnrollmentStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

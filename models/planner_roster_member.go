@@ -8,11 +8,11 @@ import (
 type PlannerRosterMember struct {
     Entity
     // Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.
-    roles []string;
+    roles []string
     // Identifier of the tenant the user belongs to. Currently only the users from the same tenant can be added to a plannerRoster.
-    tenantId *string;
+    tenantId *string
     // Identifier of the user.
-    userId *string;
+    userId *string
 }
 // NewPlannerRosterMember instantiates a new plannerRosterMember and sets the default values.
 func NewPlannerRosterMember()(*PlannerRosterMember) {
@@ -26,9 +26,9 @@ func CreatePlannerRosterMemberFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewPlannerRosterMember(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PlannerRosterMember) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PlannerRosterMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["roles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -42,7 +42,7 @@ func (m *PlannerRosterMember) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *PlannerRosterMember) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

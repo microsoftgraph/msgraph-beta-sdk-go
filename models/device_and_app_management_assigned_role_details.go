@@ -7,11 +7,11 @@ import (
 // DeviceAndAppManagementAssignedRoleDetails the set of Role Definitions and Role Assignments assigned to a user.
 type DeviceAndAppManagementAssignedRoleDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Role Assignment IDs for the specifc Role Assignments assigned to a user. This property is read-only.
-    roleAssignmentIds []string;
+    roleAssignmentIds []string
     // Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.
-    roleDefinitionIds []string;
+    roleDefinitionIds []string
 }
 // NewDeviceAndAppManagementAssignedRoleDetails instantiates a new deviceAndAppManagementAssignedRoleDetails and sets the default values.
 func NewDeviceAndAppManagementAssignedRoleDetails()(*DeviceAndAppManagementAssignedRoleDetails) {
@@ -33,9 +33,9 @@ func (m *DeviceAndAppManagementAssignedRoleDetails) GetAdditionalData()(map[stri
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceAndAppManagementAssignedRoleDetails) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["roleAssignmentIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceAndAppManagementAssignedRoleDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["roleAssignmentIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *DeviceAndAppManagementAssignedRoleDetails) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["roleDefinitionIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleDefinitionIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

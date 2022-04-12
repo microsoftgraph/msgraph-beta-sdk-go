@@ -7,17 +7,17 @@ import (
 // PreviewRequestBody provides operations to call the preview method.
 type PreviewRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The allowEdit property
-    allowEdit *bool;
+    allowEdit *bool
     // The chromeless property
-    chromeless *bool;
+    chromeless *bool
     // The page property
-    page *string;
+    page *string
     // The viewer property
-    viewer *string;
+    viewer *string
     // The zoom property
-    zoom *float64;
+    zoom *float64
 }
 // NewPreviewRequestBody instantiates a new previewRequestBody and sets the default values.
 func NewPreviewRequestBody()(*PreviewRequestBody) {
@@ -55,9 +55,9 @@ func (m *PreviewRequestBody) GetChromeless()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PreviewRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["allowEdit"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *PreviewRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["allowEdit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *PreviewRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["chromeless"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["chromeless"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *PreviewRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["page"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["page"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *PreviewRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["viewer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["viewer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *PreviewRequestBody) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["zoom"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["zoom"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err

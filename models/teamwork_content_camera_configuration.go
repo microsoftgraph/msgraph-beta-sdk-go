@@ -7,13 +7,13 @@ import (
 // TeamworkContentCameraConfiguration 
 type TeamworkContentCameraConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // True if the content camera is inverted.
-    isContentCameraInverted *bool;
+    isContentCameraInverted *bool
     // True if the content camera is optional.
-    isContentCameraOptional *bool;
+    isContentCameraOptional *bool
     // True if the content enhancement is enabled.
-    isContentEnhancementEnabled *bool;
+    isContentEnhancementEnabled *bool
 }
 // NewTeamworkContentCameraConfiguration instantiates a new teamworkContentCameraConfiguration and sets the default values.
 func NewTeamworkContentCameraConfiguration()(*TeamworkContentCameraConfiguration) {
@@ -35,9 +35,9 @@ func (m *TeamworkContentCameraConfiguration) GetAdditionalData()(map[string]inte
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkContentCameraConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["isContentCameraInverted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkContentCameraConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["isContentCameraInverted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *TeamworkContentCameraConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["isContentCameraOptional"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isContentCameraOptional"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *TeamworkContentCameraConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["isContentEnhancementEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isContentEnhancementEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

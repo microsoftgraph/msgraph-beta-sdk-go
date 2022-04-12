@@ -7,19 +7,19 @@ import (
 // IpReferenceData 
 type IpReferenceData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The asn property
-    asn *int64;
+    asn *int64
     // The city property
-    city *string;
+    city *string
     // The countryOrRegionCode property
-    countryOrRegionCode *string;
+    countryOrRegionCode *string
     // The organization property
-    organization *string;
+    organization *string
     // The state property
-    state *string;
+    state *string
     // The vendor property
-    vendor_escaped *string;
+    vendor_escaped *string
 }
 // NewIpReferenceData instantiates a new ipReferenceData and sets the default values.
 func NewIpReferenceData()(*IpReferenceData) {
@@ -65,9 +65,9 @@ func (m *IpReferenceData) GetCountryOrRegionCode()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["asn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["asn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["city"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["city"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["countryOrRegionCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countryOrRegionCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["organization"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["organization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,13 +117,13 @@ func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["vendor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vendor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendor(val)
+            m.SetVendor_escaped(val)
         }
         return nil
     }
@@ -186,7 +186,7 @@ func (m *IpReferenceData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err := writer.WriteStringValue("vendor", m.GetVendor())
+        err := writer.WriteStringValue("vendor", m.GetVendor_escaped())
         if err != nil {
             return err
         }

@@ -9,27 +9,27 @@ import (
 type WindowsDefenderApplicationControlSupplementalPolicy struct {
     Entity
     // The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
-    assignments []WindowsDefenderApplicationControlSupplementalPolicyAssignmentable;
+    assignments []WindowsDefenderApplicationControlSupplementalPolicyAssignmentable
     // The WindowsDefenderApplicationControl supplemental policy content in byte array format.
-    content []byte;
+    content []byte
     // The WindowsDefenderApplicationControl supplemental policy content's file name.
-    contentFileName *string;
+    contentFileName *string
     // The date and time when the WindowsDefenderApplicationControl supplemental policy was uploaded.
-    creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // WindowsDefenderApplicationControl supplemental policy deployment summary.
-    deploySummary WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable;
+    deploySummary WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable
     // The description of WindowsDefenderApplicationControl supplemental policy.
-    description *string;
+    description *string
     // The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-    deviceStatuses []WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable;
+    deviceStatuses []WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable
     // The display name of WindowsDefenderApplicationControl supplemental policy.
-    displayName *string;
+    displayName *string
     // The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // The WindowsDefenderApplicationControl supplemental policy's version.
-    version *string;
+    version *string
 }
 // NewWindowsDefenderApplicationControlSupplementalPolicy instantiates a new windowsDefenderApplicationControlSupplementalPolicy and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicy()(*WindowsDefenderApplicationControlSupplementalPolicy) {
@@ -107,9 +107,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDisplayName()(*
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsDefenderApplicationControlSupplementalPolicyAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         }
         return nil
     }
-    res["content"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         }
         return nil
     }
-    res["contentFileName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentFileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         }
         return nil
     }
-    res["creationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["creationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         }
         return nil
     }
-    res["deploySummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deploySummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -163,7 +163,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         }
         return nil
     }
-    res["deviceStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -187,7 +187,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -207,7 +207,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -221,7 +221,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -7,17 +7,17 @@ import (
 // TeamworkFeaturesConfiguration 
 type TeamworkFeaturesConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Email address to send logs and feedback.
-    emailToSendLogsAndFeedback *string;
+    emailToSendLogsAndFeedback *string
     // True if auto screen shared is enabled.
-    isAutoScreenShareEnabled *bool;
+    isAutoScreenShareEnabled *bool
     // True if Bluetooth beaconing is enabled.
-    isBluetoothBeaconingEnabled *bool;
+    isBluetoothBeaconingEnabled *bool
     // True if hiding meeting names is enabled.
-    isHideMeetingNamesEnabled *bool;
+    isHideMeetingNamesEnabled *bool
     // True if sending logs and feedback is enabled.
-    isSendLogsAndFeedbackEnabled *bool;
+    isSendLogsAndFeedbackEnabled *bool
 }
 // NewTeamworkFeaturesConfiguration instantiates a new teamworkFeaturesConfiguration and sets the default values.
 func NewTeamworkFeaturesConfiguration()(*TeamworkFeaturesConfiguration) {
@@ -47,9 +47,9 @@ func (m *TeamworkFeaturesConfiguration) GetEmailToSendLogsAndFeedback()(*string)
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkFeaturesConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["emailToSendLogsAndFeedback"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkFeaturesConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["emailToSendLogsAndFeedback"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *TeamworkFeaturesConfiguration) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["isAutoScreenShareEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isAutoScreenShareEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *TeamworkFeaturesConfiguration) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["isBluetoothBeaconingEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isBluetoothBeaconingEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *TeamworkFeaturesConfiguration) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["isHideMeetingNamesEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isHideMeetingNamesEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *TeamworkFeaturesConfiguration) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["isSendLogsAndFeedbackEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isSendLogsAndFeedbackEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

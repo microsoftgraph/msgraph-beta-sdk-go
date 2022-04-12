@@ -10,31 +10,31 @@ import (
 type DeviceCompliancePolicySettingStateSummary struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The number of devices in a conflict state. Optional. Read-only.
-    conflictDeviceCount *int32;
+    conflictDeviceCount *int32
     // The number of devices in an error state. Optional. Read-only.
-    errorDeviceCount *int32;
+    errorDeviceCount *int32
     // The number of devices in a failed state. Optional. Read-only.
-    failedDeviceCount *int32;
+    failedDeviceCount *int32
     // The identifer for the Microsoft Intune account. Required. Read-only.
-    intuneAccountId *string;
+    intuneAccountId *string
     // The identifier for the Intune setting. Optional. Read-only.
-    intuneSettingId *string;
+    intuneSettingId *string
     // Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
-    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The number of devices in a not applicable state. Optional. Read-only.
-    notApplicableDeviceCount *int32;
+    notApplicableDeviceCount *int32
     // The number of devices in a pending state. Optional. Read-only.
-    pendingDeviceCount *int32;
+    pendingDeviceCount *int32
     // The type for the device compliance policy. Optional. Read-only.
-    policyType *string;
+    policyType *string
     // The name for the setting within the device compliance policy. Optional. Read-only.
-    settingName *string;
+    settingName *string
     // The number of devices in a succeeded state. Optional. Read-only.
-    succeededDeviceCount *int32;
+    succeededDeviceCount *int32
     // The display name for the managed tenant. Required. Read-only.
-    tenantDisplayName *string;
+    tenantDisplayName *string
     // The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
-    tenantId *string;
+    tenantId *string
 }
 // NewDeviceCompliancePolicySettingStateSummary instantiates a new deviceCompliancePolicySettingStateSummary and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummary()(*DeviceCompliancePolicySettingStateSummary) {
@@ -72,9 +72,9 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFailedDeviceCount()(*int3
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["conflictDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conflictDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["errorDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["failedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["failedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["intuneAccountId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["intuneAccountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["intuneSettingId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["intuneSettingId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["lastRefreshedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastRefreshedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["notApplicableDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notApplicableDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["pendingDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pendingDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["policyType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -164,7 +164,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["settingName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -174,7 +174,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["succeededDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["succeededDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -184,7 +184,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["tenantDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -194,7 +194,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

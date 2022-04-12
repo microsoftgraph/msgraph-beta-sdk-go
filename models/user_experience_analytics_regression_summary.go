@@ -8,11 +8,11 @@ import (
 type UserExperienceAnalyticsRegressionSummary struct {
     Entity
     // The metric values for the user experience analytics Manufacturer regression.
-    manufacturerRegression []UserExperienceAnalyticsMetricable;
+    manufacturerRegression []UserExperienceAnalyticsMetricable
     // The metric values for the user experience analytics model regression.
-    modelRegression []UserExperienceAnalyticsMetricable;
+    modelRegression []UserExperienceAnalyticsMetricable
     // The metric values for the user experience analytics operating system regression.
-    operatingSystemRegression []UserExperienceAnalyticsMetricable;
+    operatingSystemRegression []UserExperienceAnalyticsMetricable
 }
 // NewUserExperienceAnalyticsRegressionSummary instantiates a new userExperienceAnalyticsRegressionSummary and sets the default values.
 func NewUserExperienceAnalyticsRegressionSummary()(*UserExperienceAnalyticsRegressionSummary) {
@@ -26,9 +26,9 @@ func CreateUserExperienceAnalyticsRegressionSummaryFromDiscriminatorValue(parseN
     return NewUserExperienceAnalyticsRegressionSummary(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsRegressionSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsRegressionSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["manufacturerRegression"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manufacturerRegression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsMetricFromDiscriminatorValue)
         if err != nil {
             return err
@@ -42,7 +42,7 @@ func (m *UserExperienceAnalyticsRegressionSummary) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["modelRegression"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["modelRegression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsMetricFromDiscriminatorValue)
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *UserExperienceAnalyticsRegressionSummary) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["operatingSystemRegression"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operatingSystemRegression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsMetricFromDiscriminatorValue)
         if err != nil {
             return err

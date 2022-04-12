@@ -8,21 +8,21 @@ import (
 type UserExperienceAnalyticsModelScores struct {
     Entity
     // The user experience analytics model app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    appReliabilityScore *float64;
+    appReliabilityScore *float64
     // The user experience analytics model score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    endpointAnalyticsScore *float64;
+    endpointAnalyticsScore *float64
     // The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
-    healthStatus *UserExperienceAnalyticsHealthState;
+    healthStatus *UserExperienceAnalyticsHealthState
     // A unique identifier of the user experience analytics model scores: device manufacturer.
-    manufacturer *string;
+    manufacturer *string
     // A unique identifier of the user experience analytics model scores: device model.
-    model *string;
+    model *string
     // The user experience analytics model device count. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
-    modelDeviceCount *int64;
+    modelDeviceCount *int64
     // The user experience analytics model startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    startupPerformanceScore *float64;
+    startupPerformanceScore *float64
     // The user experience analytics model work from anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    workFromAnywhereScore *float64;
+    workFromAnywhereScore *float64
 }
 // NewUserExperienceAnalyticsModelScores instantiates a new userExperienceAnalyticsModelScores and sets the default values.
 func NewUserExperienceAnalyticsModelScores()(*UserExperienceAnalyticsModelScores) {
@@ -52,9 +52,9 @@ func (m *UserExperienceAnalyticsModelScores) GetEndpointAnalyticsScore()(*float6
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appReliabilityScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appReliabilityScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["endpointAnalyticsScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endpointAnalyticsScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["healthStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["healthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserExperienceAnalyticsHealthState)
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["manufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["model"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["modelDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["modelDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["startupPerformanceScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startupPerformanceScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["workFromAnywhereScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["workFromAnywhereScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err

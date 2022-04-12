@@ -7,11 +7,11 @@ import (
 // ContentTypeOrder 
 type ContentTypeOrder struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Whether this is the default Content Type
-    default_escaped *bool;
+    default_escaped *bool
     // Specifies the position in which the Content Type appears in the selection UI.
-    position *int32;
+    position *int32
 }
 // NewContentTypeOrder instantiates a new contentTypeOrder and sets the default values.
 func NewContentTypeOrder()(*ContentTypeOrder) {
@@ -41,19 +41,19 @@ func (m *ContentTypeOrder) GetDefault()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ContentTypeOrder) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["default"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ContentTypeOrder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["default"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefault(val)
+            m.SetDefault_escaped(val)
         }
         return nil
     }
-    res["position"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["position"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *ContentTypeOrder) GetPosition()(*int32) {
 // Serialize serializes information the current object
 func (m *ContentTypeOrder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteBoolValue("default", m.GetDefault())
+        err := writer.WriteBoolValue("default", m.GetDefault_escaped())
         if err != nil {
             return err
         }

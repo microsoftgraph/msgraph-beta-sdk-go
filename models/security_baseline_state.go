@@ -8,15 +8,15 @@ import (
 type SecurityBaselineState struct {
     Entity
     // The display name of the security baseline
-    displayName *string;
+    displayName *string
     // The security baseline template id
-    securityBaselineTemplateId *string;
+    securityBaselineTemplateId *string
     // The security baseline state for different settings for a device
-    settingStates []SecurityBaselineSettingStateable;
+    settingStates []SecurityBaselineSettingStateable
     // Security baseline compliance state
-    state *SecurityBaselineComplianceState;
+    state *SecurityBaselineComplianceState
     // User Principal Name
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewSecurityBaselineState instantiates a new securityBaselineState and sets the default values.
 func NewSecurityBaselineState()(*SecurityBaselineState) {
@@ -38,9 +38,9 @@ func (m *SecurityBaselineState) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SecurityBaselineState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SecurityBaselineState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -50,7 +50,7 @@ func (m *SecurityBaselineState) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["securityBaselineTemplateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["securityBaselineTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *SecurityBaselineState) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["settingStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSecurityBaselineSettingStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *SecurityBaselineState) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSecurityBaselineComplianceState)
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *SecurityBaselineState) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

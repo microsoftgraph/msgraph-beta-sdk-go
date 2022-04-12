@@ -8,15 +8,15 @@ import (
 type MobileAppTroubleshootingEvent struct {
     DeviceManagementTroubleshootingEvent
     // Intune application identifier.
-    applicationId *string;
+    applicationId *string
     // The collection property of AppLogUploadRequest.
-    appLogCollectionRequests []AppLogCollectionRequestable;
+    appLogCollectionRequests []AppLogCollectionRequestable
     // Intune Mobile Application Troubleshooting History Item
-    history []MobileAppTroubleshootingHistoryItemable;
+    history []MobileAppTroubleshootingHistoryItemable
     // Device identifier created or collected by Intune.
-    managedDeviceIdentifier *string;
+    managedDeviceIdentifier *string
     // Identifier for the user that tried to enroll the device.
-    userId *string;
+    userId *string
 }
 // NewMobileAppTroubleshootingEvent instantiates a new mobileAppTroubleshootingEvent and sets the default values.
 func NewMobileAppTroubleshootingEvent()(*MobileAppTroubleshootingEvent) {
@@ -46,9 +46,9 @@ func (m *MobileAppTroubleshootingEvent) GetAppLogCollectionRequests()([]AppLogCo
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementTroubleshootingEvent.GetFieldDeserializers()
-    res["applicationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["appLogCollectionRequests"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appLogCollectionRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAppLogCollectionRequestFromDiscriminatorValue)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["history"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["history"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["managedDeviceIdentifier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

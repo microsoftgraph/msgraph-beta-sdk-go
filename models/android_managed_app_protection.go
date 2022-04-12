@@ -8,75 +8,75 @@ import (
 type AndroidManagedAppProtection struct {
     TargetedManagedAppProtection
     // Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.
-    allowedAndroidDeviceManufacturers *string;
+    allowedAndroidDeviceManufacturers *string
     // List of device models allowed, as a string, for the managed app to work.
-    allowedAndroidDeviceModels []string;
+    allowedAndroidDeviceModels []string
     // Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. Possible values are: block, wipe, warn.
-    appActionIfAndroidDeviceManufacturerNotAllowed *ManagedAppRemediationAction;
+    appActionIfAndroidDeviceManufacturerNotAllowed *ManagedAppRemediationAction
     // Defines a managed app behavior, either block or wipe, if the specified device model is not allowed.
-    appActionIfAndroidDeviceModelNotAllowed *ManagedAppRemediationAction;
+    appActionIfAndroidDeviceModelNotAllowed *ManagedAppRemediationAction
     // Defines a managed app behavior, either warn or block, if the specified Android App Verification requirment fails. Possible values are: block, wipe, warn.
-    appActionIfAndroidSafetyNetAppsVerificationFailed *ManagedAppRemediationAction;
+    appActionIfAndroidSafetyNetAppsVerificationFailed *ManagedAppRemediationAction
     // Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirment fails. Possible values are: block, wipe, warn.
-    appActionIfAndroidSafetyNetDeviceAttestationFailed *ManagedAppRemediationAction;
+    appActionIfAndroidSafetyNetDeviceAttestationFailed *ManagedAppRemediationAction
     // Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on android device but is not set.
-    appActionIfDeviceLockNotSet *ManagedAppRemediationAction;
+    appActionIfDeviceLockNotSet *ManagedAppRemediationAction
     // If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
-    approvedKeyboards []KeyValuePairable;
+    approvedKeyboards []KeyValuePairable
     // List of apps to which the policy is deployed.
-    apps []ManagedMobileAppable;
+    apps []ManagedMobileAppable
     // Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True.
-    biometricAuthenticationBlocked *bool;
+    biometricAuthenticationBlocked *bool
     // Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
-    blockAfterCompanyPortalUpdateDeferralInDays *int32;
+    blockAfterCompanyPortalUpdateDeferralInDays *int32
     // Whether the app should connect to the configured VPN on launch.
-    connectToVpnOnLaunch *bool;
+    connectToVpnOnLaunch *bool
     // Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-    customBrowserDisplayName *string;
+    customBrowserDisplayName *string
     // Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-    customBrowserPackageId *string;
+    customBrowserPackageId *string
     // Friendly name of a custom dialer app to click-to-open a phone number on Android.
-    customDialerAppDisplayName *string;
+    customDialerAppDisplayName *string
     // PackageId of a custom dialer app to click-to-open a phone number on Android.
-    customDialerAppPackageId *string;
+    customDialerAppPackageId *string
     // Count of apps to which the current policy is deployed.
-    deployedAppCount *int32;
+    deployedAppCount *int32
     // Navigation property to deployment summary of the configuration.
-    deploymentSummary ManagedAppPolicyDeploymentSummaryable;
+    deploymentSummary ManagedAppPolicyDeploymentSummaryable
     // Defines if any kind of lock must be required on android device
-    deviceLockRequired *bool;
+    deviceLockRequired *bool
     // When this setting is enabled, app level encryption is disabled if device level encryption is enabled
-    disableAppEncryptionIfDeviceEncryptionIsEnabled *bool;
+    disableAppEncryptionIfDeviceEncryptionIsEnabled *bool
     // Indicates whether application data for managed apps should be encrypted
-    encryptAppData *bool;
+    encryptAppData *bool
     // App packages in this list will be exempt from the policy and will be able to receive data from managed apps.
-    exemptedAppPackages []KeyValuePairable;
+    exemptedAppPackages []KeyValuePairable
     // Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.
-    keyboardsRestricted *bool;
+    keyboardsRestricted *bool
     // Minimum version of the Company portal that must be installed on the device or app access will be blocked
-    minimumRequiredCompanyPortalVersion *string;
+    minimumRequiredCompanyPortalVersion *string
     // Define the oldest required Android security patch level a user can have to gain secure access to the app.
-    minimumRequiredPatchVersion *string;
+    minimumRequiredPatchVersion *string
     // Minimum version of the Company portal that must be installed on the device or the user will receive a warning
-    minimumWarningCompanyPortalVersion *string;
+    minimumWarningCompanyPortalVersion *string
     // Define the oldest recommended Android security patch level a user can have for secure access to the app.
-    minimumWarningPatchVersion *string;
+    minimumWarningPatchVersion *string
     // Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
-    minimumWipeCompanyPortalVersion *string;
+    minimumWipeCompanyPortalVersion *string
     // Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data.
-    minimumWipePatchVersion *string;
+    minimumWipePatchVersion *string
     // Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
-    requiredAndroidSafetyNetAppsVerificationType *AndroidManagedAppSafetyNetAppsVerificationType;
+    requiredAndroidSafetyNetAppsVerificationType *AndroidManagedAppSafetyNetAppsVerificationType
     // Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.
-    requiredAndroidSafetyNetDeviceAttestationType *AndroidManagedAppSafetyNetDeviceAttestationType;
+    requiredAndroidSafetyNetDeviceAttestationType *AndroidManagedAppSafetyNetDeviceAttestationType
     // Defines the Android SafetyNet evaluation type requirement for a managed app to work.
-    requiredAndroidSafetyNetEvaluationType *AndroidManagedAppSafetyNetEvaluationType;
+    requiredAndroidSafetyNetEvaluationType *AndroidManagedAppSafetyNetEvaluationType
     // Indicates whether a managed user can take screen captures of managed apps
-    screenCaptureBlocked *bool;
+    screenCaptureBlocked *bool
     // Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
-    warnAfterCompanyPortalUpdateDeferralInDays *int32;
+    warnAfterCompanyPortalUpdateDeferralInDays *int32
     // Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
-    wipeAfterCompanyPortalUpdateDeferralInDays *int32;
+    wipeAfterCompanyPortalUpdateDeferralInDays *int32
 }
 // NewAndroidManagedAppProtection instantiates a new androidManagedAppProtection and sets the default values.
 func NewAndroidManagedAppProtection()(*AndroidManagedAppProtection) {
@@ -266,9 +266,9 @@ func (m *AndroidManagedAppProtection) GetExemptedAppPackages()([]KeyValuePairabl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TargetedManagedAppProtection.GetFieldDeserializers()
-    res["allowedAndroidDeviceManufacturers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowedAndroidDeviceManufacturers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -278,7 +278,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["allowedAndroidDeviceModels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowedAndroidDeviceModels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -292,7 +292,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["appActionIfAndroidDeviceManufacturerNotAllowed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appActionIfAndroidDeviceManufacturerNotAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
         if err != nil {
             return err
@@ -302,7 +302,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["appActionIfAndroidDeviceModelNotAllowed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appActionIfAndroidDeviceModelNotAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
         if err != nil {
             return err
@@ -312,7 +312,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["appActionIfAndroidSafetyNetAppsVerificationFailed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appActionIfAndroidSafetyNetAppsVerificationFailed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
         if err != nil {
             return err
@@ -322,7 +322,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["appActionIfAndroidSafetyNetDeviceAttestationFailed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appActionIfAndroidSafetyNetDeviceAttestationFailed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
         if err != nil {
             return err
@@ -332,7 +332,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["appActionIfDeviceLockNotSet"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appActionIfDeviceLockNotSet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
         if err != nil {
             return err
@@ -342,7 +342,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["approvedKeyboards"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["approvedKeyboards"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -356,7 +356,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["apps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["apps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedMobileAppFromDiscriminatorValue)
         if err != nil {
             return err
@@ -370,7 +370,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["biometricAuthenticationBlocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["biometricAuthenticationBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -380,7 +380,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["blockAfterCompanyPortalUpdateDeferralInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["blockAfterCompanyPortalUpdateDeferralInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -390,7 +390,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["connectToVpnOnLaunch"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["connectToVpnOnLaunch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -400,7 +400,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["customBrowserDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customBrowserDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -410,7 +410,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["customBrowserPackageId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customBrowserPackageId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -420,7 +420,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["customDialerAppDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customDialerAppDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -430,7 +430,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["customDialerAppPackageId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customDialerAppPackageId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -440,7 +440,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["deployedAppCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deployedAppCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -450,7 +450,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["deploymentSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deploymentSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -460,7 +460,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["deviceLockRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceLockRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -470,7 +470,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["disableAppEncryptionIfDeviceEncryptionIsEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["disableAppEncryptionIfDeviceEncryptionIsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -480,7 +480,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["encryptAppData"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["encryptAppData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -490,7 +490,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["exemptedAppPackages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exemptedAppPackages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -504,7 +504,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["keyboardsRestricted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["keyboardsRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -514,7 +514,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["minimumRequiredCompanyPortalVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumRequiredCompanyPortalVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -524,7 +524,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["minimumRequiredPatchVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumRequiredPatchVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -534,7 +534,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["minimumWarningCompanyPortalVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumWarningCompanyPortalVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -544,7 +544,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["minimumWarningPatchVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumWarningPatchVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -554,7 +554,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["minimumWipeCompanyPortalVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumWipeCompanyPortalVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -564,7 +564,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["minimumWipePatchVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumWipePatchVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -574,7 +574,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["requiredAndroidSafetyNetAppsVerificationType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requiredAndroidSafetyNetAppsVerificationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAndroidManagedAppSafetyNetAppsVerificationType)
         if err != nil {
             return err
@@ -584,7 +584,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["requiredAndroidSafetyNetDeviceAttestationType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requiredAndroidSafetyNetDeviceAttestationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAndroidManagedAppSafetyNetDeviceAttestationType)
         if err != nil {
             return err
@@ -594,7 +594,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["requiredAndroidSafetyNetEvaluationType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requiredAndroidSafetyNetEvaluationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAndroidManagedAppSafetyNetEvaluationType)
         if err != nil {
             return err
@@ -604,7 +604,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["screenCaptureBlocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["screenCaptureBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -614,7 +614,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["warnAfterCompanyPortalUpdateDeferralInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["warnAfterCompanyPortalUpdateDeferralInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -624,7 +624,7 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["wipeAfterCompanyPortalUpdateDeferralInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["wipeAfterCompanyPortalUpdateDeferralInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

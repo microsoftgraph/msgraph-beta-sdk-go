@@ -8,13 +8,13 @@ import (
 // ConfigurationManagerClientHealthState configuration manager client health state
 type ConfigurationManagerClientHealthState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Error code for failed state.
-    errorCode *int32;
+    errorCode *int32
     // Datetime for last sync with configuration manager management point.
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Current configuration manager client state. Possible values are: unknown, installed, healthy, installFailed, updateFailed, communicationError.
-    state *ConfigurationManagerClientState;
+    state *ConfigurationManagerClientState
 }
 // NewConfigurationManagerClientHealthState instantiates a new configurationManagerClientHealthState and sets the default values.
 func NewConfigurationManagerClientHealthState()(*ConfigurationManagerClientHealthState) {
@@ -44,9 +44,9 @@ func (m *ConfigurationManagerClientHealthState) GetErrorCode()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConfigurationManagerClientHealthState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["errorCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ConfigurationManagerClientHealthState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *ConfigurationManagerClientHealthState) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["lastSyncDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *ConfigurationManagerClientHealthState) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConfigurationManagerClientState)
         if err != nil {
             return err

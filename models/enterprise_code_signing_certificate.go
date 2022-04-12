@@ -9,21 +9,21 @@ import (
 type EnterpriseCodeSigningCertificate struct {
     Entity
     // The Windows Enterprise Code-Signing Certificate in the raw data format.
-    content []byte;
+    content []byte
     // The Cert Expiration Date.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Issuer value for the cert.
-    issuer *string;
+    issuer *string
     // The Issuer Name for the cert.
-    issuerName *string;
+    issuerName *string
     // The Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
-    status *CertificateStatus;
+    status *CertificateStatus
     // The Subject Value for the cert.
-    subject *string;
+    subject *string
     // The Subject Name for the cert.
-    subjectName *string;
+    subjectName *string
     // The date time of CodeSigning Cert when it is uploaded.
-    uploadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    uploadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewEnterpriseCodeSigningCertificate instantiates a new enterpriseCodeSigningCertificate and sets the default values.
 func NewEnterpriseCodeSigningCertificate()(*EnterpriseCodeSigningCertificate) {
@@ -53,9 +53,9 @@ func (m *EnterpriseCodeSigningCertificate) GetExpirationDateTime()(*i336074805fc
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["content"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["issuer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["issuer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["issuerName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["issuerName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCertificateStatus)
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["subject"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["subjectName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subjectName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *EnterpriseCodeSigningCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["uploadDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["uploadDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

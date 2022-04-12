@@ -7,15 +7,15 @@ import (
 // DomainRegistrant 
 type DomainRegistrant struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The countryOrRegionCode property
-    countryOrRegionCode *string;
+    countryOrRegionCode *string
     // The organization property
-    organization *string;
+    organization *string
     // The url property
-    url *string;
+    url *string
     // The vendor property
-    vendor_escaped *string;
+    vendor_escaped *string
 }
 // NewDomainRegistrant instantiates a new domainRegistrant and sets the default values.
 func NewDomainRegistrant()(*DomainRegistrant) {
@@ -45,9 +45,9 @@ func (m *DomainRegistrant) GetCountryOrRegionCode()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["countryOrRegionCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["countryOrRegionCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["organization"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["organization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["url"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -77,13 +77,13 @@ func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["vendor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vendor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetVendor(val)
+            m.SetVendor_escaped(val)
         }
         return nil
     }
@@ -134,7 +134,7 @@ func (m *DomainRegistrant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
-        err := writer.WriteStringValue("vendor", m.GetVendor())
+        err := writer.WriteStringValue("vendor", m.GetVendor_escaped())
         if err != nil {
             return err
         }

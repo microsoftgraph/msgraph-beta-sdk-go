@@ -8,7 +8,7 @@ import (
 type AttendeeBase struct {
     Recipient
     // The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
-    type_escaped *AttendeeType;
+    type_escaped *AttendeeType
 }
 // NewAttendeeBase instantiates a new attendeeBase and sets the default values.
 func NewAttendeeBase()(*AttendeeBase) {
@@ -22,15 +22,15 @@ func CreateAttendeeBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewAttendeeBase(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AttendeeBase) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AttendeeBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Recipient.GetFieldDeserializers()
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttendeeType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val.(*AttendeeType))
+            m.SetType_escaped(val.(*AttendeeType))
         }
         return nil
     }
@@ -50,8 +50,8 @@ func (m *AttendeeBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     if err != nil {
         return err
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetType_escaped() != nil {
+        cast := (*m.GetType_escaped()).String()
         err = writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

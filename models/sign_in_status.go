@@ -7,13 +7,13 @@ import (
 // SignInStatus 
 type SignInStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Provides additional details on the sign-in activity
-    additionalDetails *string;
+    additionalDetails *string
     // Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
-    errorCode *int32;
+    errorCode *int32
     // Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
-    failureReason *string;
+    failureReason *string
 }
 // NewSignInStatus instantiates a new signInStatus and sets the default values.
 func NewSignInStatus()(*SignInStatus) {
@@ -59,9 +59,9 @@ func (m *SignInStatus) GetFailureReason()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SignInStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["additionalDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SignInStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["additionalDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *SignInStatus) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["errorCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *SignInStatus) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["failureReason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["failureReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

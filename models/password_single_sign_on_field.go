@@ -7,15 +7,15 @@ import (
 // PasswordSingleSignOnField 
 type PasswordSingleSignOnField struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Title/label override for customization.
-    customizedLabel *string;
+    customizedLabel *string
     // Label that would be used if no customizedLabel is provided. Read only.
-    defaultLabel *string;
+    defaultLabel *string
     // Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.
-    fieldId *string;
+    fieldId *string
     // Type of the credential. The values can be text, password.
-    type_escaped *string;
+    type_escaped *string
 }
 // NewPasswordSingleSignOnField instantiates a new passwordSingleSignOnField and sets the default values.
 func NewPasswordSingleSignOnField()(*PasswordSingleSignOnField) {
@@ -53,9 +53,9 @@ func (m *PasswordSingleSignOnField) GetDefaultLabel()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PasswordSingleSignOnField) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["customizedLabel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *PasswordSingleSignOnField) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["customizedLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *PasswordSingleSignOnField) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["defaultLabel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *PasswordSingleSignOnField) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["fieldId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fieldId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,13 +85,13 @@ func (m *PasswordSingleSignOnField) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetType_escaped(val)
         }
         return nil
     }
@@ -134,7 +134,7 @@ func (m *PasswordSingleSignOnField) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("type", m.GetType_escaped())
         if err != nil {
             return err
         }

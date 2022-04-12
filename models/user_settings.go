@@ -8,17 +8,17 @@ import (
 type UserSettings struct {
     Entity
     // The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
-    contactMergeSuggestions ContactMergeSuggestionsable;
+    contactMergeSuggestions ContactMergeSuggestionsable
     // Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
-    contributionToContentDiscoveryAsOrganizationDisabled *bool;
+    contributionToContentDiscoveryAsOrganizationDisabled *bool
     // When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
-    contributionToContentDiscoveryDisabled *bool;
+    contributionToContentDiscoveryDisabled *bool
     // The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
-    itemInsights UserInsightsSettingsable;
+    itemInsights UserInsightsSettingsable
     // The user's preferences for languages, regional locale and date/time formatting.
-    regionalAndLanguageSettings RegionalAndLanguageSettingsable;
+    regionalAndLanguageSettings RegionalAndLanguageSettingsable
     // The shift preferences for the user.
-    shiftPreferences ShiftPreferencesable;
+    shiftPreferences ShiftPreferencesable
 }
 // NewUserSettings instantiates a new userSettings and sets the default values.
 func NewUserSettings()(*UserSettings) {
@@ -56,9 +56,9 @@ func (m *UserSettings) GetContributionToContentDiscoveryDisabled()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["contactMergeSuggestions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contactMergeSuggestions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateContactMergeSuggestionsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["contributionToContentDiscoveryAsOrganizationDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contributionToContentDiscoveryAsOrganizationDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["contributionToContentDiscoveryDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contributionToContentDiscoveryDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["itemInsights"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["itemInsights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserInsightsSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["regionalAndLanguageSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["regionalAndLanguageSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRegionalAndLanguageSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["shiftPreferences"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["shiftPreferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateShiftPreferencesFromDiscriminatorValue)
         if err != nil {
             return err

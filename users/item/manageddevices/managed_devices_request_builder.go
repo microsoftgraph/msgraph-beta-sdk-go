@@ -8,58 +8,59 @@ import (
     i354da0a7c77a3e4dbbf4c2908e40eb9ba102f2173af0e90bc4d10956f0e44dee "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/movedevicestoou"
     i8d8a434efe54b7a3fa263217b0c04ff177a4bc1c2230b98a73b80cd1d561c96d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/executeaction"
     i992082cec9bab654e1839fe55796615f8620ef8a4078776f6e65f83f16c347b1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/bulkrestorecloudpc"
+    ia17acf45d59e7e028076f52b9be902e17efbcf8ed8876140e71381907e497649 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/bulksetcloudpcreviewstatus"
     ic3bd1e20a7b0e931aaa4561b6ef97f202035d17ae0819323a2b55935709cdfa7 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/count"
 )
 
 // ManagedDevicesRequestBuilder provides operations to manage the managedDevices property of the microsoft.graph.user entity.
 type ManagedDevicesRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ManagedDevicesRequestBuilderGetOptions options for Get
 type ManagedDevicesRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ManagedDevicesRequestBuilderGetQueryParameters;
+    QueryParameters *ManagedDevicesRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ManagedDevicesRequestBuilderGetQueryParameters the managed devices associated with the user.
 type ManagedDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool;
+    Count *bool `uriparametername:"%24count"`
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
-    Filter *string;
+    Filter *string `uriparametername:"%24filter"`
     // Order items by property values
-    Orderby []string;
+    Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
-    Search *string;
+    Search *string `uriparametername:"%24search"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32;
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32;
+    Top *int32 `uriparametername:"%24top"`
 }
 // ManagedDevicesRequestBuilderPostOptions options for Post
 type ManagedDevicesRequestBuilderPostOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // BulkReprovisionCloudPc the bulkReprovisionCloudPc property
 func (m *ManagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*i221b9cde99e476699da097a8d903ef5a79f3532dc9f4f0e5ee20a66cefd5214f.BulkReprovisionCloudPcRequestBuilder) {
@@ -69,11 +70,15 @@ func (m *ManagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*i221b9cde99e476
 func (m *ManagedDevicesRequestBuilder) BulkRestoreCloudPc()(*i992082cec9bab654e1839fe55796615f8620ef8a4078776f6e65f83f16c347b1.BulkRestoreCloudPcRequestBuilder) {
     return i992082cec9bab654e1839fe55796615f8620ef8a4078776f6e65f83f16c347b1.NewBulkRestoreCloudPcRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// BulkSetCloudPcReviewStatus the bulkSetCloudPcReviewStatus property
+func (m *ManagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*ia17acf45d59e7e028076f52b9be902e17efbcf8ed8876140e71381907e497649.BulkSetCloudPcReviewStatusRequestBuilder) {
+    return ia17acf45d59e7e028076f52b9be902e17efbcf8ed8876140e71381907e497649.NewBulkSetCloudPcReviewStatusRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // NewManagedDevicesRequestBuilderInternal instantiates a new ManagedDevicesRequestBuilder and sets the default values.
 func NewManagedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesRequestBuilder) {
     m := &ManagedDevicesRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user_id}/managedDevices{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/managedDevices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

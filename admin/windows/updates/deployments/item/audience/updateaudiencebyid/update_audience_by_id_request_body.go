@@ -7,17 +7,17 @@ import (
 // UpdateAudienceByIdRequestBody provides operations to call the updateAudienceById method.
 type UpdateAudienceByIdRequestBody struct {
     // The addExclusions property
-    addExclusions []string;
+    addExclusions []string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The addMembers property
-    addMembers []string;
+    addMembers []string
     // The memberEntityType property
-    memberEntityType *string;
+    memberEntityType *string
     // The removeExclusions property
-    removeExclusions []string;
+    removeExclusions []string
     // The removeMembers property
-    removeMembers []string;
+    removeMembers []string
 }
 // NewUpdateAudienceByIdRequestBody instantiates a new updateAudienceByIdRequestBody and sets the default values.
 func NewUpdateAudienceByIdRequestBody()(*UpdateAudienceByIdRequestBody) {
@@ -55,9 +55,9 @@ func (m *UpdateAudienceByIdRequestBody) GetAddMembers()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["addExclusions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["addExclusions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["addMembers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["addMembers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["memberEntityType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["memberEntityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["removeExclusions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["removeExclusions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *UpdateAudienceByIdRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["removeMembers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["removeMembers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

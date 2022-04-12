@@ -7,15 +7,15 @@ import (
 // PrintMargin 
 type PrintMargin struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The margin in microns from the bottom edge.
-    bottom *int32;
+    bottom *int32
     // The margin in microns from the left edge.
-    left *int32;
+    left *int32
     // The margin in microns from the right edge.
-    right *int32;
+    right *int32
     // The margin in microns from the top edge.
-    top *int32;
+    top *int32
 }
 // NewPrintMargin instantiates a new printMargin and sets the default values.
 func NewPrintMargin()(*PrintMargin) {
@@ -45,9 +45,9 @@ func (m *PrintMargin) GetBottom()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PrintMargin) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["bottom"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *PrintMargin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["bottom"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *PrintMargin) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["left"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["left"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *PrintMargin) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["right"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["right"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *PrintMargin) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["top"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["top"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

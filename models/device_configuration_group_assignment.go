@@ -8,11 +8,11 @@ import (
 type DeviceConfigurationGroupAssignment struct {
     Entity
     // The navigation link to the Device Configuration being targeted.
-    deviceConfiguration DeviceConfigurationable;
+    deviceConfiguration DeviceConfigurationable
     // Indicates if this group is should be excluded. Defaults that the group should be included
-    excludeGroup *bool;
+    excludeGroup *bool
     // The Id of the AAD group we are targeting the device configuration to.
-    targetGroupId *string;
+    targetGroupId *string
 }
 // NewDeviceConfigurationGroupAssignment instantiates a new deviceConfigurationGroupAssignment and sets the default values.
 func NewDeviceConfigurationGroupAssignment()(*DeviceConfigurationGroupAssignment) {
@@ -42,9 +42,9 @@ func (m *DeviceConfigurationGroupAssignment) GetExcludeGroup()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceConfigurationGroupAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceConfigurationGroupAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deviceConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *DeviceConfigurationGroupAssignment) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["excludeGroup"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["excludeGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *DeviceConfigurationGroupAssignment) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["targetGroupId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

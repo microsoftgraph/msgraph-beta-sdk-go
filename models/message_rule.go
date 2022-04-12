@@ -8,21 +8,21 @@ import (
 type MessageRule struct {
     Entity
     // Actions to be taken on a message when the corresponding conditions are fulfilled.
-    actions MessageRuleActionsable;
+    actions MessageRuleActionsable
     // Conditions that when fulfilled, will trigger the corresponding actions for that rule.
-    conditions MessageRulePredicatesable;
+    conditions MessageRulePredicatesable
     // The display name of the rule.
-    displayName *string;
+    displayName *string
     // Exception conditions for the rule.
-    exceptions MessageRulePredicatesable;
+    exceptions MessageRulePredicatesable
     // Indicates whether the rule is in an error condition. Read-only.
-    hasError *bool;
+    hasError *bool
     // Indicates whether the rule is enabled to be applied to messages.
-    isEnabled *bool;
+    isEnabled *bool
     // Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
-    isReadOnly *bool;
+    isReadOnly *bool
     // Indicates the order in which the rule is executed, among other rules.
-    sequence *int32;
+    sequence *int32
 }
 // NewMessageRule instantiates a new messageRule and sets the default values.
 func NewMessageRule()(*MessageRule) {
@@ -68,9 +68,9 @@ func (m *MessageRule) GetExceptions()(MessageRulePredicatesable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MessageRule) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MessageRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["actions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMessageRuleActionsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *MessageRule) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["conditions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMessageRulePredicatesFromDiscriminatorValue)
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *MessageRule) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *MessageRule) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["exceptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exceptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMessageRulePredicatesFromDiscriminatorValue)
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *MessageRule) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["hasError"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasError"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *MessageRule) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["isEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *MessageRule) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["isReadOnly"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isReadOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *MessageRule) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["sequence"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sequence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

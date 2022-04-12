@@ -7,11 +7,11 @@ import (
 // InferenceData 
 type InferenceData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Confidence score reflecting the accuracy of the data inferred about the user.
-    confidenceScore *float64;
+    confidenceScore *float64
     // Records if the user has confirmed this inference as being True or False.
-    userHasVerifiedAccuracy *bool;
+    userHasVerifiedAccuracy *bool
 }
 // NewInferenceData instantiates a new inferenceData and sets the default values.
 func NewInferenceData()(*InferenceData) {
@@ -41,9 +41,9 @@ func (m *InferenceData) GetConfidenceScore()(*float64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *InferenceData) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["confidenceScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *InferenceData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["confidenceScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *InferenceData) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["userHasVerifiedAccuracy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userHasVerifiedAccuracy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

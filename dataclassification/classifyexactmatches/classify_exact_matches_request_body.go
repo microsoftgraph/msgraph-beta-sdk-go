@@ -8,15 +8,15 @@ import (
 // ClassifyExactMatchesRequestBody provides operations to call the classifyExactMatches method.
 type ClassifyExactMatchesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The contentClassifications property
-    contentClassifications []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentClassificationable;
+    contentClassifications []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentClassificationable
     // The sensitiveTypeIds property
-    sensitiveTypeIds []string;
+    sensitiveTypeIds []string
     // The text property
-    text *string;
+    text *string
     // The timeoutInMs property
-    timeoutInMs *string;
+    timeoutInMs *string
 }
 // NewClassifyExactMatchesRequestBody instantiates a new classifyExactMatchesRequestBody and sets the default values.
 func NewClassifyExactMatchesRequestBody()(*ClassifyExactMatchesRequestBody) {
@@ -46,9 +46,9 @@ func (m *ClassifyExactMatchesRequestBody) GetContentClassifications()([]ie233ee7
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ClassifyExactMatchesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["contentClassifications"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ClassifyExactMatchesRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["contentClassifications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateContentClassificationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *ClassifyExactMatchesRequestBody) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["sensitiveTypeIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sensitiveTypeIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *ClassifyExactMatchesRequestBody) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["text"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["text"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *ClassifyExactMatchesRequestBody) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["timeoutInMs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeoutInMs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -5,12 +5,14 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i171cba9a6593eebb15a25bdecb4e7b68992240964dd0dcf94faff9fec6922e8a "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/lists/item/items/item/createlink"
+    i54a67566247c88e0df811a2ed946590294491d98944f520de597a8bbb6779536 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/lists/item/items/item/documentsetversions"
     i5de2a26d9ca6c076decf6b96a9866a502a36f5b38dd182e17a4ce5c6da907b19 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/lists/item/items/item/versions"
     i6222f486427b16385a7486ef974f1ba5ed889d63aa3d33e0b1b70ded2a5295eb "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/lists/item/items/item/activities"
     i8a77e844a33d05eed9cb2980f354e93c663b6bf99f751ac6e06d0bac5861bedc "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/lists/item/items/item/fields"
     ib72995c0e040129e0998e017fe97bcb09a69fe4c4f1b94aa27dba02ebb390aed "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/lists/item/items/item/analytics"
     icd1189a97b569563d3109d2245a2eae6333ded6eb34f03bc7a07f9feeb5aa763 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/lists/item/items/item/getactivitiesbyintervalwithstartdatetimewithenddatetimewithinterval"
     id1f83b88c5e9118a397fec8d377a56d0843a6059b3b36f13c15bd3dbaebced4b "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/lists/item/items/item/driveitem"
+    i53d548c1157bc2734cecabf9ff7e0418612a368e2c19523093157ae2ff28323c "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/lists/item/items/item/documentsetversions/item"
     i616c47b3c949ac02a16dc2746109684cd8f063d58da7d523b5316e5dcbf3f398 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/lists/item/items/item/versions/item"
     ib68cb8a1eaf3ee22b0407521b30cc967ee9a61e173ac3a5d450c69bfb69cb933 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/lists/item/items/item/activities/item"
 )
@@ -18,49 +20,49 @@ import (
 // ListItemItemRequestBuilder provides operations to manage the items property of the microsoft.graph.list entity.
 type ListItemItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ListItemItemRequestBuilderDeleteOptions options for Delete
 type ListItemItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ListItemItemRequestBuilderGetOptions options for Get
 type ListItemItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ListItemItemRequestBuilderGetQueryParameters;
+    QueryParameters *ListItemItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ListItemItemRequestBuilderGetQueryParameters all items contained in the list.
 type ListItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ListItemItemRequestBuilderPatchOptions options for Patch
 type ListItemItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Activities the activities property
 func (m *ListItemItemRequestBuilder) Activities()(*i6222f486427b16385a7486ef974f1ba5ed889d63aa3d33e0b1b70ded2a5295eb.ActivitiesRequestBuilder) {
@@ -73,7 +75,7 @@ func (m *ListItemItemRequestBuilder) ActivitiesById(id string)(*ib68cb8a1eaf3ee2
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["itemActivityOLD_id"] = id
+        urlTplParams["itemActivityOLD%2Did"] = id
     }
     return ib68cb8a1eaf3ee22b0407521b30cc967ee9a61e173ac3a5d450c69bfb69cb933.NewItemActivityOLDItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -85,7 +87,7 @@ func (m *ListItemItemRequestBuilder) Analytics()(*ib72995c0e040129e0998e017fe97b
 func NewListItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ListItemItemRequestBuilder) {
     m := &ListItemItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group_id}/sites/{site_id}/lists/{list_id}/items/{listItem_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -175,6 +177,21 @@ func (m *ListItemItemRequestBuilder) Delete(options *ListItemItemRequestBuilderD
     }
     return nil
 }
+// DocumentSetVersions the documentSetVersions property
+func (m *ListItemItemRequestBuilder) DocumentSetVersions()(*i54a67566247c88e0df811a2ed946590294491d98944f520de597a8bbb6779536.DocumentSetVersionsRequestBuilder) {
+    return i54a67566247c88e0df811a2ed946590294491d98944f520de597a8bbb6779536.NewDocumentSetVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// DocumentSetVersionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.groups.item.sites.item.lists.item.items.item.documentSetVersions.item collection
+func (m *ListItemItemRequestBuilder) DocumentSetVersionsById(id string)(*i53d548c1157bc2734cecabf9ff7e0418612a368e2c19523093157ae2ff28323c.DocumentSetVersionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["documentSetVersion%2Did"] = id
+    }
+    return i53d548c1157bc2734cecabf9ff7e0418612a368e2c19523093157ae2ff28323c.NewDocumentSetVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
 // DriveItem the driveItem property
 func (m *ListItemItemRequestBuilder) DriveItem()(*id1f83b88c5e9118a397fec8d377a56d0843a6059b3b36f13c15bd3dbaebced4b.DriveItemRequestBuilder) {
     return id1f83b88c5e9118a397fec8d377a56d0843a6059b3b36f13c15bd3dbaebced4b.NewDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -230,7 +247,7 @@ func (m *ListItemItemRequestBuilder) VersionsById(id string)(*i616c47b3c949ac02a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["listItemVersion_id"] = id
+        urlTplParams["listItemVersion%2Did"] = id
     }
     return i616c47b3c949ac02a16dc2746109684cd8f063d58da7d523b5316e5dcbf3f398.NewListItemVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

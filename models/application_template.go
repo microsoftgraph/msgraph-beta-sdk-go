@@ -8,23 +8,23 @@ import (
 type ApplicationTemplate struct {
     Entity
     // The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
-    categories []string;
+    categories []string
     // A description of the application.
-    description *string;
+    description *string
     // The name of the application.
-    displayName *string;
+    displayName *string
     // The home page URL of the application.
-    homePageUrl *string;
+    homePageUrl *string
     // The informationalUrls property
-    informationalUrls InformationalUrlsable;
+    informationalUrls InformationalUrlsable
     // The URL to get the logo for this application.
-    logoUrl *string;
+    logoUrl *string
     // The name of the publisher for this application.
-    publisher *string;
+    publisher *string
     // The list of provisioning modes supported by this application. The only valid value is sync.
-    supportedProvisioningTypes []string;
+    supportedProvisioningTypes []string
     // The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
-    supportedSingleSignOnModes []string;
+    supportedSingleSignOnModes []string
 }
 // NewApplicationTemplate instantiates a new applicationTemplate and sets the default values.
 func NewApplicationTemplate()(*ApplicationTemplate) {
@@ -62,9 +62,9 @@ func (m *ApplicationTemplate) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["categories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["homePageUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["homePageUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["informationalUrls"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["informationalUrls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateInformationalUrlsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["logoUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["logoUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["publisher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedProvisioningTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedProvisioningTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["supportedSingleSignOnModes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedSingleSignOnModes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

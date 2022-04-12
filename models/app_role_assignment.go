@@ -9,19 +9,19 @@ import (
 type AppRoleAssignment struct {
     Entity
     // The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
-    appRoleId *string;
+    appRoleId *string
     // The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    creationTimestamp *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    creationTimestamp *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
-    principalDisplayName *string;
+    principalDisplayName *string
     // The unique identifier (id) for the user, group, or service principal being granted the app role. Required on create.
-    principalId *string;
+    principalId *string
     // The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.
-    principalType *string;
+    principalType *string
     // The display name of the resource app's service principal to which the assignment is made.
-    resourceDisplayName *string;
+    resourceDisplayName *string
     // The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
-    resourceId *string;
+    resourceId *string
 }
 // NewAppRoleAssignment instantiates a new appRoleAssignment and sets the default values.
 func NewAppRoleAssignment()(*AppRoleAssignment) {
@@ -51,9 +51,9 @@ func (m *AppRoleAssignment) GetCreationTimestamp()(*i336074805fc853987abe6f7fe3a
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appRoleId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appRoleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["creationTimestamp"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["creationTimestamp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["principalDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["principalDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["principalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["principalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["principalType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["principalType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["resourceDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["resourceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -7,15 +7,15 @@ import (
 // LicenseInfoDetail 
 type LicenseInfoDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The licenseType property
-    licenseType *AzureADLicenseType;
+    licenseType *AzureADLicenseType
     // The totalAssignedCount property
-    totalAssignedCount *int32;
+    totalAssignedCount *int32
     // The totalLicenseCount property
-    totalLicenseCount *int32;
+    totalLicenseCount *int32
     // The totalUsageCount property
-    totalUsageCount *int32;
+    totalUsageCount *int32
 }
 // NewLicenseInfoDetail instantiates a new licenseInfoDetail and sets the default values.
 func NewLicenseInfoDetail()(*LicenseInfoDetail) {
@@ -37,9 +37,9 @@ func (m *LicenseInfoDetail) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *LicenseInfoDetail) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["licenseType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *LicenseInfoDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["licenseType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAzureADLicenseType)
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *LicenseInfoDetail) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["totalAssignedCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalAssignedCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *LicenseInfoDetail) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["totalLicenseCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalLicenseCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *LicenseInfoDetail) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["totalUsageCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalUsageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

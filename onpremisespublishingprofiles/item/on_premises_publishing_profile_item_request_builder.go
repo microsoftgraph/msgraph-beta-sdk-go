@@ -19,49 +19,49 @@ import (
 // OnPremisesPublishingProfileItemRequestBuilder provides operations to manage the collection of onPremisesPublishingProfile entities.
 type OnPremisesPublishingProfileItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // OnPremisesPublishingProfileItemRequestBuilderDeleteOptions options for Delete
 type OnPremisesPublishingProfileItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // OnPremisesPublishingProfileItemRequestBuilderGetOptions options for Get
 type OnPremisesPublishingProfileItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters;
+    QueryParameters *OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters get entity from onPremisesPublishingProfiles by key
 type OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // OnPremisesPublishingProfileItemRequestBuilderPatchOptions options for Patch
 type OnPremisesPublishingProfileItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesPublishingProfileable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesPublishingProfileable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AgentGroups the agentGroups property
 func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentGroups()(*i4f4a2aad6de6e818a6b03ab06593dcd209fd37f696b126badf1ccf2cbb487d98.AgentGroupsRequestBuilder) {
@@ -74,7 +74,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentGroupsById(id strin
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["onPremisesAgentGroup_id"] = id
+        urlTplParams["onPremisesAgentGroup%2Did"] = id
     }
     return i7be5eb505c9819935bb7ecd0914ce542aff26ebb696b731e5bb2ef462b429317.NewOnPremisesAgentGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -89,7 +89,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentsById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["onPremisesAgent_id"] = id
+        urlTplParams["onPremisesAgent%2Did"] = id
     }
     return i50192dbecdd2d205018f1c9f0d43e5faa1231c597c1e3d9879fb3bfcceb8f7bf.NewOnPremisesAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorGroupsById(id s
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["connectorGroup_id"] = id
+        urlTplParams["connectorGroup%2Did"] = id
     }
     return i4e613208e03a8604c73cff8fea0c650341897927012dab6031821bf1b1ae2305.NewConnectorGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -119,7 +119,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorsById(id string
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["connector_id"] = id
+        urlTplParams["connector%2Did"] = id
     }
     return ia6c25f4c749e8beb990221d7c4363a8d4383190388b2db9197c94a520cdfffde.NewConnectorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -127,7 +127,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorsById(id string
 func NewOnPremisesPublishingProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnPremisesPublishingProfileItemRequestBuilder) {
     m := &OnPremisesPublishingProfileItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -256,7 +256,7 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) PublishedResourcesById(i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["publishedResource_id"] = id
+        urlTplParams["publishedResource%2Did"] = id
     }
     return i04768df19176575e14a7cad44b0f47526794459b68db53ab71668e3192948132.NewPublishedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

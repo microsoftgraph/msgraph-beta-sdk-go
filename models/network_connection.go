@@ -8,47 +8,47 @@ import (
 // NetworkConnection 
 type NetworkConnection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Name of the application managing the network connection (for example, Facebook or SMTP).
-    applicationName *string;
+    applicationName *string
     // Destination IP address (of the network connection).
-    destinationAddress *string;
+    destinationAddress *string
     // Destination domain portion of the destination URL. (for example 'www.contoso.com').
-    destinationDomain *string;
+    destinationDomain *string
     // Location (by IP address mapping) associated with the destination of a network connection.
-    destinationLocation *string;
+    destinationLocation *string
     // Destination port (of the network connection).
-    destinationPort *string;
+    destinationPort *string
     // Network connection URL/URI string - excluding parameters. (for example 'www.contoso.com/products/default.html')
-    destinationUrl *string;
+    destinationUrl *string
     // Network connection direction. Possible values are: unknown, inbound, outbound.
-    direction *ConnectionDirection;
+    direction *ConnectionDirection
     // Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    domainRegisteredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    domainRegisteredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The local DNS name resolution as it appears in the host's local DNS cache (for example, in case the 'hosts' file was tampered with).
-    localDnsName *string;
+    localDnsName *string
     // Network Address Translation destination IP address.
-    natDestinationAddress *string;
+    natDestinationAddress *string
     // Network Address Translation destination port.
-    natDestinationPort *string;
+    natDestinationPort *string
     // Network Address Translation source IP address.
-    natSourceAddress *string;
+    natSourceAddress *string
     // Network Address Translation source port.
-    natSourcePort *string;
+    natSourcePort *string
     // Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
-    protocol *SecurityNetworkProtocol;
+    protocol *SecurityNetworkProtocol
     // Provider generated/calculated risk score of the network connection. Recommended value range of 0-1, which equates to a percentage.
-    riskScore *string;
+    riskScore *string
     // Source (i.e. origin) IP address (of the network connection).
-    sourceAddress *string;
+    sourceAddress *string
     // Location (by IP address mapping) associated with the source of a network connection.
-    sourceLocation *string;
+    sourceLocation *string
     // Source (i.e. origin) IP port (of the network connection).
-    sourcePort *string;
+    sourcePort *string
     // Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.
-    status *ConnectionStatus;
+    status *ConnectionStatus
     // Parameters (suffix) of the destination URL.
-    urlParameters *string;
+    urlParameters *string
 }
 // NewNetworkConnection instantiates a new networkConnection and sets the default values.
 func NewNetworkConnection()(*NetworkConnection) {
@@ -134,9 +134,9 @@ func (m *NetworkConnection) GetDomainRegisteredDateTime()(*i336074805fc853987abe
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["applicationName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["applicationName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -146,7 +146,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["destinationAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["destinationAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -156,7 +156,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["destinationDomain"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["destinationDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -166,7 +166,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["destinationLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["destinationLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -176,7 +176,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["destinationPort"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["destinationPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -186,7 +186,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["destinationUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["destinationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -196,7 +196,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["direction"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["direction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConnectionDirection)
         if err != nil {
             return err
@@ -206,7 +206,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["domainRegisteredDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["domainRegisteredDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -216,7 +216,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["localDnsName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["localDnsName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -226,7 +226,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["natDestinationAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["natDestinationAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -236,7 +236,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["natDestinationPort"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["natDestinationPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -246,7 +246,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["natSourceAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["natSourceAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -256,7 +256,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["natSourcePort"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["natSourcePort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -266,7 +266,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["protocol"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["protocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSecurityNetworkProtocol)
         if err != nil {
             return err
@@ -276,7 +276,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["riskScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -286,7 +286,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["sourceAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -296,7 +296,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["sourceLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -306,7 +306,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["sourcePort"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourcePort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -316,7 +316,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConnectionStatus)
         if err != nil {
             return err
@@ -326,7 +326,7 @@ func (m *NetworkConnection) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["urlParameters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["urlParameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

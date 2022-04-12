@@ -7,21 +7,21 @@ import (
 // RegionalFormatOverrides 
 type RegionalFormatOverrides struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The calendar to use, e.g., Gregorian Calendar.Returned by default.
-    calendar *string;
+    calendar *string
     // The first day of the week to use, e.g., Sunday.Returned by default.
-    firstDayOfWeek *string;
+    firstDayOfWeek *string
     // The long date time format to be used for displaying dates.Returned by default.
-    longDateFormat *string;
+    longDateFormat *string
     // The long time format to be used for displaying time.Returned by default.
-    longTimeFormat *string;
+    longTimeFormat *string
     // The short date time format to be used for displaying dates.Returned by default.
-    shortDateFormat *string;
+    shortDateFormat *string
     // The short time format to be used for displaying time.Returned by default.
-    shortTimeFormat *string;
+    shortTimeFormat *string
     // The timezone to be used for displaying time.Returned by default.
-    timeZone *string;
+    timeZone *string
 }
 // NewRegionalFormatOverrides instantiates a new regionalFormatOverrides and sets the default values.
 func NewRegionalFormatOverrides()(*RegionalFormatOverrides) {
@@ -51,9 +51,9 @@ func (m *RegionalFormatOverrides) GetCalendar()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["calendar"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["calendar"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["firstDayOfWeek"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["firstDayOfWeek"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["longDateFormat"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["longDateFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["longTimeFormat"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["longTimeFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["shortDateFormat"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["shortDateFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["shortTimeFormat"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["shortTimeFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["timeZone"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeZone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -7,17 +7,17 @@ import (
 // AccessPackageQuestion 
 type AccessPackageQuestion struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // ID of the question.
-    id *string;
+    id *string
     // Specifies whether the requestor is allowed to edit answers to questions.
-    isAnswerEditable *bool;
+    isAnswerEditable *bool
     // Whether the requestor is required to supply an answer or not.
-    isRequired *bool;
+    isRequired *bool
     // Relative position of this question when displaying a list of questions to the requestor.
-    sequence *int32;
+    sequence *int32
     // The text of the question to show to the requestor.
-    text AccessPackageLocalizedContentable;
+    text AccessPackageLocalizedContentable
 }
 // NewAccessPackageQuestion instantiates a new accessPackageQuestion and sets the default values.
 func NewAccessPackageQuestion()(*AccessPackageQuestion) {
@@ -39,9 +39,9 @@ func (m *AccessPackageQuestion) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -51,7 +51,7 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["isAnswerEditable"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isAnswerEditable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["isRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["sequence"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sequence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["text"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["text"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageLocalizedContentFromDiscriminatorValue)
         if err != nil {
             return err

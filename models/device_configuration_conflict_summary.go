@@ -8,11 +8,11 @@ import (
 type DeviceConfigurationConflictSummary struct {
     Entity
     // The set of policies in conflict with the given setting
-    conflictingDeviceConfigurations []SettingSourceable;
+    conflictingDeviceConfigurations []SettingSourceable
     // The set of settings in conflict with the given policies
-    contributingSettings []string;
+    contributingSettings []string
     // The count of checkins impacted by the conflicting policies and settings
-    deviceCheckinsImpacted *int32;
+    deviceCheckinsImpacted *int32
 }
 // NewDeviceConfigurationConflictSummary instantiates a new deviceConfigurationConflictSummary and sets the default values.
 func NewDeviceConfigurationConflictSummary()(*DeviceConfigurationConflictSummary) {
@@ -50,9 +50,9 @@ func (m *DeviceConfigurationConflictSummary) GetDeviceCheckinsImpacted()(*int32)
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceConfigurationConflictSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceConfigurationConflictSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["conflictingDeviceConfigurations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conflictingDeviceConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSettingSourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *DeviceConfigurationConflictSummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["contributingSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contributingSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *DeviceConfigurationConflictSummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["deviceCheckinsImpacted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceCheckinsImpacted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

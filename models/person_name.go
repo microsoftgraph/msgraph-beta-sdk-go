@@ -8,27 +8,27 @@ import (
 type PersonName struct {
     ItemFacet
     // Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.
-    displayName *string;
+    displayName *string
     // First name of the user.
-    first *string;
+    first *string
     // Initials of the user.
-    initials *string;
+    initials *string
     // Contains the name for the language (en-US, no-NB, en-AU) following IETF BCP47 format.
-    languageTag *string;
+    languageTag *string
     // Last name of the user.
-    last *string;
+    last *string
     // Maiden name of the user.
-    maiden *string;
+    maiden *string
     // Middle name of the user.
-    middle *string;
+    middle *string
     // Nickname of the user.
-    nickname *string;
+    nickname *string
     // Guidance on how to pronounce the users name.
-    pronunciation PersonNamePronounciationable;
+    pronunciation PersonNamePronounciationable
     // Designators used after the users name (eg: PhD.)
-    suffix *string;
+    suffix *string
     // Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)
-    title *string;
+    title *string
 }
 // NewPersonName instantiates a new personName and sets the default values.
 func NewPersonName()(*PersonName) {
@@ -50,9 +50,9 @@ func (m *PersonName) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PersonName) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PersonName) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *PersonName) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["first"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["first"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *PersonName) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["initials"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["initials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *PersonName) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["languageTag"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["languageTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *PersonName) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["last"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["last"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *PersonName) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["maiden"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maiden"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *PersonName) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["middle"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["middle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *PersonName) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["nickname"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["nickname"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *PersonName) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["pronunciation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pronunciation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePersonNamePronounciationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *PersonName) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["suffix"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["suffix"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *PersonName) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["title"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -7,11 +7,11 @@ import (
 // ExpressionInputObject 
 type ExpressionInputObject struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Definition of the test object.
-    definition ObjectDefinitionable;
+    definition ObjectDefinitionable
     // Property values of the test object.
-    properties []StringKeyObjectValuePairable;
+    properties []StringKeyObjectValuePairable
 }
 // NewExpressionInputObject instantiates a new expressionInputObject and sets the default values.
 func NewExpressionInputObject()(*ExpressionInputObject) {
@@ -41,9 +41,9 @@ func (m *ExpressionInputObject) GetDefinition()(ObjectDefinitionable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ExpressionInputObject) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["definition"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ExpressionInputObject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["definition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateObjectDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *ExpressionInputObject) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["properties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["properties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateStringKeyObjectValuePairFromDiscriminatorValue)
         if err != nil {
             return err

@@ -8,23 +8,23 @@ import (
 type EducationSynchronizationProfile struct {
     Entity
     // The dataProvider property
-    dataProvider EducationSynchronizationDataProviderable;
+    dataProvider EducationSynchronizationDataProviderable
     // Name of the configuration profile for syncing identities.
-    displayName *string;
+    displayName *string
     // All errors associated with this synchronization profile.
-    errors []EducationSynchronizationErrorable;
+    errors []EducationSynchronizationErrorable
     // The date the profile should be considered expired and cease syncing. Provide the date in YYYY-MM-DD format, following ISO 8601. Maximum value is 18 months from profile creation.  (optional)
-    expirationDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    expirationDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.
-    handleSpecialCharacterConstraint *bool;
+    handleSpecialCharacterConstraint *bool
     // The identitySynchronizationConfiguration property
-    identitySynchronizationConfiguration EducationIdentitySynchronizationConfigurationable;
+    identitySynchronizationConfiguration EducationIdentitySynchronizationConfigurationable
     // License setup configuration.
-    licensesToAssign []EducationSynchronizationLicenseAssignmentable;
+    licensesToAssign []EducationSynchronizationLicenseAssignmentable
     // The synchronization status.
-    profileStatus EducationSynchronizationProfileStatusable;
+    profileStatus EducationSynchronizationProfileStatusable
     // The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
-    state *EducationSynchronizationProfileState;
+    state *EducationSynchronizationProfileState
 }
 // NewEducationSynchronizationProfile instantiates a new educationSynchronizationProfile and sets the default values.
 func NewEducationSynchronizationProfile()(*EducationSynchronizationProfile) {
@@ -70,9 +70,9 @@ func (m *EducationSynchronizationProfile) GetExpirationDate()(*i878a80d2330e89d2
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["dataProvider"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataProvider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationSynchronizationDataProviderFromDiscriminatorValue)
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["errors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationSynchronizationErrorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["expirationDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["handleSpecialCharacterConstraint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["handleSpecialCharacterConstraint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["identitySynchronizationConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["identitySynchronizationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationIdentitySynchronizationConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -136,7 +136,7 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["licensesToAssign"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["licensesToAssign"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationSynchronizationLicenseAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -150,7 +150,7 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["profileStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["profileStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationSynchronizationProfileStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -160,7 +160,7 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEducationSynchronizationProfileState)
         if err != nil {
             return err

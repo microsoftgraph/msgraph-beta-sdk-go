@@ -7,25 +7,25 @@ import (
 // GetUserInstallStatusReportRequestBody provides operations to call the getUserInstallStatusReport method.
 type GetUserInstallStatusReportRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The filter property
-    filter *string;
+    filter *string
     // The groupBy property
-    groupBy []string;
+    groupBy []string
     // The name property
-    name *string;
+    name *string
     // The orderBy property
-    orderBy []string;
+    orderBy []string
     // The search property
-    search *string;
+    search *string
     // The select property
-    select_escaped []string;
+    select_escaped []string
     // The sessionId property
-    sessionId *string;
+    sessionId *string
     // The skip property
-    skip *int32;
+    skip *int32
     // The top property
-    top *int32;
+    top *int32
 }
 // NewGetUserInstallStatusReportRequestBody instantiates a new getUserInstallStatusReportRequestBody and sets the default values.
 func NewGetUserInstallStatusReportRequestBody()(*GetUserInstallStatusReportRequestBody) {
@@ -47,9 +47,9 @@ func (m *GetUserInstallStatusReportRequestBody) GetAdditionalData()(map[string]i
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GetUserInstallStatusReportRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["filter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *GetUserInstallStatusReportRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["filter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *GetUserInstallStatusReportRequestBody) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["groupBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *GetUserInstallStatusReportRequestBody) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *GetUserInstallStatusReportRequestBody) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["orderBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["orderBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *GetUserInstallStatusReportRequestBody) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["search"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["search"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *GetUserInstallStatusReportRequestBody) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["select"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["select"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -117,11 +117,11 @@ func (m *GetUserInstallStatusReportRequestBody) GetFieldDeserializers()(map[stri
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetSelect(res)
+            m.SetSelect_escaped(res)
         }
         return nil
     }
-    res["sessionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sessionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *GetUserInstallStatusReportRequestBody) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["skip"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["skip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *GetUserInstallStatusReportRequestBody) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["top"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["top"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -257,8 +257,8 @@ func (m *GetUserInstallStatusReportRequestBody) Serialize(writer i878a80d2330e89
             return err
         }
     }
-    if m.GetSelect() != nil {
-        err := writer.WriteCollectionOfStringValues("select", m.GetSelect())
+    if m.GetSelect_escaped() != nil {
+        err := writer.WriteCollectionOfStringValues("select", m.GetSelect_escaped())
         if err != nil {
             return err
         }

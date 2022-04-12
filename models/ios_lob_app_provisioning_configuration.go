@@ -9,31 +9,31 @@ import (
 type IosLobAppProvisioningConfiguration struct {
     Entity
     // The associated group assignments for IosLobAppProvisioningConfiguration.
-    assignments []IosLobAppProvisioningConfigurationAssignmentable;
+    assignments []IosLobAppProvisioningConfigurationAssignmentable
     // DateTime the object was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Admin provided description of the Device Configuration.
-    description *string;
+    description *string
     // The list of device installation states for this mobile app configuration.
-    deviceStatuses []ManagedDeviceMobileAppConfigurationDeviceStatusable;
+    deviceStatuses []ManagedDeviceMobileAppConfigurationDeviceStatusable
     // Admin provided name of the device configuration.
-    displayName *string;
+    displayName *string
     // Optional profile expiration date and time.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The associated group assignments.
-    groupAssignments []MobileAppProvisioningConfigGroupAssignmentable;
+    groupAssignments []MobileAppProvisioningConfigGroupAssignmentable
     // DateTime the object was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Payload. (UTF8 encoded byte array)
-    payload []byte;
+    payload []byte
     // Payload file name (.mobileprovision
-    payloadFileName *string;
+    payloadFileName *string
     // List of Scope Tags for this iOS LOB app provisioning configuration entity.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // The list of user installation states for this mobile app configuration.
-    userStatuses []ManagedDeviceMobileAppConfigurationUserStatusable;
+    userStatuses []ManagedDeviceMobileAppConfigurationUserStatusable
     // Version of the device configuration.
-    version *int32;
+    version *int32
 }
 // NewIosLobAppProvisioningConfiguration instantiates a new iosLobAppProvisioningConfiguration and sets the default values.
 func NewIosLobAppProvisioningConfiguration()(*IosLobAppProvisioningConfiguration) {
@@ -95,9 +95,9 @@ func (m *IosLobAppProvisioningConfiguration) GetExpirationDateTime()(*i336074805
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIosLobAppProvisioningConfigurationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["deviceStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceMobileAppConfigurationDeviceStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["groupAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppProvisioningConfigGroupAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["payload"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["payload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["payloadFileName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["payloadFileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -223,7 +223,7 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["userStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceMobileAppConfigurationUserStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -237,7 +237,7 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

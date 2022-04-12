@@ -10,31 +10,31 @@ import (
 type AuditEvent struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // A string which uniquely represents the operation that occurred. Required. Read-only.
-    activity *string;
+    activity *string
     // The time when the activity ocurred. Required. Read-only.
-    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The identifier of the activity request that made the audit event. Required. Read-only.
-    activityId *string;
+    activityId *string
     // A category which represents a logical grouping of activities. Required. Read-only.
-    category *string;
+    category *string
     // The HTTP verb that was used when making the API request. Required. Read-only.
-    httpVerb *string;
+    httpVerb *string
     // The identifier of the app that was used to make the request. Required. Read-only.
-    initiatedByAppId *string;
+    initiatedByAppId *string
     // The UPN of the user who initiated the activity. Required. Read-only.
-    initiatedByUpn *string;
+    initiatedByUpn *string
     // The identifier of the user who initiated the activity. Required. Read-only.
-    initiatedByUserId *string;
+    initiatedByUserId *string
     // The IP address of where the activity was initiated. This may be an IPv4 or IPv6 address. Required. Read-only.
-    ipAddress *string;
+    ipAddress *string
     // The raw HTTP request body. Some sensitive information may be removed.
-    requestBody *string;
+    requestBody *string
     // The raw HTTP request URL. Required. Read-only.
-    requestUrl *string;
+    requestUrl *string
     // The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
-    tenantIds *string;
+    tenantIds *string
     // The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
-    tenantNames *string;
+    tenantNames *string
 }
 // NewAuditEvent instantiates a new auditEvent and sets the default values.
 func NewAuditEvent()(*AuditEvent) {
@@ -80,9 +80,9 @@ func (m *AuditEvent) GetCategory()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["activityDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["activityId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["category"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["httpVerb"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["httpVerb"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["initiatedByAppId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["initiatedByAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["initiatedByUpn"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["initiatedByUpn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["initiatedByUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["initiatedByUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -162,7 +162,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["ipAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ipAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["requestBody"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestBody"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -182,7 +182,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["requestUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -192,7 +192,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["tenantIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -202,7 +202,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["tenantNames"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

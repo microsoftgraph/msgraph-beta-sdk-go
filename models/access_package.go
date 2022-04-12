@@ -9,35 +9,35 @@ import (
 type AccessPackage struct {
     Entity
     // Read-only. Nullable. Supports $expand.
-    accessPackageAssignmentPolicies []AccessPackageAssignmentPolicyable;
+    accessPackageAssignmentPolicies []AccessPackageAssignmentPolicyable
     // Read-only. Nullable.
-    accessPackageCatalog AccessPackageCatalogable;
+    accessPackageCatalog AccessPackageCatalogable
     // Nullable.
-    accessPackageResourceRoleScopes []AccessPackageResourceRoleScopeable;
+    accessPackageResourceRoleScopes []AccessPackageResourceRoleScopeable
     // The access packages that are incompatible with this package. Read-only.
-    accessPackagesIncompatibleWith []AccessPackageable;
+    accessPackagesIncompatibleWith []AccessPackageable
     // Identifier of the access package catalog referencing this access package. Read-only.
-    catalogId *string;
+    catalogId *string
     // The userPrincipalName of the user or identity of the subject who created this resource. Read-only.
-    createdBy *string;
+    createdBy *string
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description of the access package.
-    description *string;
+    description *string
     // The display name of the access package. Supports $filter (eq, contains).
-    displayName *string;
+    displayName *string
     // The  access packages whose assigned users are ineligible to be assigned this access package.
-    incompatibleAccessPackages []AccessPackageable;
+    incompatibleAccessPackages []AccessPackageable
     // The groups whose members are ineligible to be assigned this access package.
-    incompatibleGroups []Groupable;
+    incompatibleGroups []Groupable
     // Whether the access package is hidden from the requestor.
-    isHidden *bool;
+    isHidden *bool
     // Indicates whether role scopes are visible.
-    isRoleScopesVisible *bool;
+    isRoleScopesVisible *bool
     // The userPrincipalName of the user who last modified this resource. Read-only.
-    modifiedBy *string;
+    modifiedBy *string
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewAccessPackage instantiates a new accessPackage and sets the default values.
 func NewAccessPackage()(*AccessPackage) {
@@ -123,9 +123,9 @@ func (m *AccessPackage) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AccessPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessPackageAssignmentPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageAssignmentPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["accessPackageCatalog"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageCatalog"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageCatalogFromDiscriminatorValue)
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["accessPackageResourceRoleScopes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageResourceRoleScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageResourceRoleScopeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -163,7 +163,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["accessPackagesIncompatibleWith"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackagesIncompatibleWith"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["catalogId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["catalogId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -187,7 +187,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -207,7 +207,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -217,7 +217,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -227,7 +227,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["incompatibleAccessPackages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["incompatibleAccessPackages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -241,7 +241,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["incompatibleGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["incompatibleGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -255,7 +255,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["isHidden"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isHidden"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -265,7 +265,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["isRoleScopesVisible"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isRoleScopesVisible"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -275,7 +275,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["modifiedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["modifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -285,7 +285,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["modifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["modifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

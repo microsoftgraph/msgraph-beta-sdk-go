@@ -9,37 +9,37 @@ import (
 type DepOnboardingSetting struct {
     Entity
     // The Apple ID used to obtain the current token.
-    appleIdentifier *string;
+    appleIdentifier *string
     // Consent granted for data sharing with Apple Dep Service
-    dataSharingConsentGranted *bool;
+    dataSharingConsentGranted *bool
     // Default iOS Enrollment Profile
-    defaultIosEnrollmentProfile DepIOSEnrollmentProfileable;
+    defaultIosEnrollmentProfile DepIOSEnrollmentProfileable
     // Default MacOs Enrollment Profile
-    defaultMacOsEnrollmentProfile DepMacOSEnrollmentProfileable;
+    defaultMacOsEnrollmentProfile DepMacOSEnrollmentProfileable
     // The enrollment profiles.
-    enrollmentProfiles []EnrollmentProfileable;
+    enrollmentProfiles []EnrollmentProfileable
     // The imported Apple device identities.
-    importedAppleDeviceIdentities []ImportedAppleDeviceIdentityable;
+    importedAppleDeviceIdentities []ImportedAppleDeviceIdentityable
     // When the service was onboarded.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // When the service last syned with Intune
-    lastSuccessfulSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSuccessfulSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Error code reported by Apple during last dep sync.
-    lastSyncErrorCode *int32;
+    lastSyncErrorCode *int32
     // When Intune last requested a sync.
-    lastSyncTriggeredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSyncTriggeredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of Scope Tags for this Entity instance.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // Whether or not the Dep token sharing is enabled with the School Data Sync service.
-    shareTokenWithSchoolDataSyncService *bool;
+    shareTokenWithSchoolDataSyncService *bool
     // Gets synced device count
-    syncedDeviceCount *int32;
+    syncedDeviceCount *int32
     // When the token will expire.
-    tokenExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    tokenExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Friendly Name for Dep Token
-    tokenName *string;
+    tokenName *string
     // Gets or sets the Dep Token Type. Possible values are: none, dep, appleSchoolManager.
-    tokenType *DepTokenType;
+    tokenType *DepTokenType
 }
 // NewDepOnboardingSetting instantiates a new depOnboardingSetting and sets the default values.
 func NewDepOnboardingSetting()(*DepOnboardingSetting) {
@@ -93,9 +93,9 @@ func (m *DepOnboardingSetting) GetEnrollmentProfiles()([]EnrollmentProfileable) 
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appleIdentifier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appleIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["dataSharingConsentGranted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataSharingConsentGranted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["defaultIosEnrollmentProfile"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultIosEnrollmentProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDepIOSEnrollmentProfileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["defaultMacOsEnrollmentProfile"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultMacOsEnrollmentProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDepMacOSEnrollmentProfileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["enrollmentProfiles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enrollmentProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEnrollmentProfileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["importedAppleDeviceIdentities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["importedAppleDeviceIdentities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateImportedAppleDeviceIdentityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -163,7 +163,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["lastSuccessfulSyncDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSuccessfulSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -183,7 +183,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["lastSyncErrorCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSyncErrorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -193,7 +193,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["lastSyncTriggeredDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSyncTriggeredDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -203,7 +203,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -217,7 +217,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["shareTokenWithSchoolDataSyncService"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["shareTokenWithSchoolDataSyncService"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -227,7 +227,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["syncedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["syncedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -237,7 +237,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["tokenExpirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenExpirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -247,7 +247,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["tokenName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -257,7 +257,7 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["tokenType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDepTokenType)
         if err != nil {
             return err

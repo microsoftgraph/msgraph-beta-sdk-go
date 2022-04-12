@@ -9,13 +9,13 @@ import (
 // BulkRestoreCloudPcRequestBody provides operations to call the bulkRestoreCloudPc method.
 type BulkRestoreCloudPcRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The managedDeviceIds property
-    managedDeviceIds []string;
+    managedDeviceIds []string
     // The restorePointDateTime property
-    restorePointDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    restorePointDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The timeRange property
-    timeRange *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestoreTimeRange;
+    timeRange *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestoreTimeRange
 }
 // NewBulkRestoreCloudPcRequestBody instantiates a new bulkRestoreCloudPcRequestBody and sets the default values.
 func NewBulkRestoreCloudPcRequestBody()(*BulkRestoreCloudPcRequestBody) {
@@ -37,9 +37,9 @@ func (m *BulkRestoreCloudPcRequestBody) GetAdditionalData()(map[string]interface
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BulkRestoreCloudPcRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["managedDeviceIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *BulkRestoreCloudPcRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["managedDeviceIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *BulkRestoreCloudPcRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["restorePointDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["restorePointDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *BulkRestoreCloudPcRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["timeRange"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeRange"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseRestoreTimeRange)
         if err != nil {
             return err

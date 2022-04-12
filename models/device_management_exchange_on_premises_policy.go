@@ -8,15 +8,15 @@ import (
 type DeviceManagementExchangeOnPremisesPolicy struct {
     Entity
     // The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
-    accessRules []DeviceManagementExchangeAccessRuleable;
+    accessRules []DeviceManagementExchangeAccessRuleable
     // The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-    conditionalAccessSettings OnPremisesConditionalAccessSettingsable;
+    conditionalAccessSettings OnPremisesConditionalAccessSettingsable
     // Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
-    defaultAccessLevel *DeviceManagementExchangeAccessLevel;
+    defaultAccessLevel *DeviceManagementExchangeAccessLevel
     // The list of device classes known to Exchange
-    knownDeviceClasses []DeviceManagementExchangeDeviceClassable;
+    knownDeviceClasses []DeviceManagementExchangeDeviceClassable
     // Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.
-    notificationContent []byte;
+    notificationContent []byte
 }
 // NewDeviceManagementExchangeOnPremisesPolicy instantiates a new deviceManagementExchangeOnPremisesPolicy and sets the default values.
 func NewDeviceManagementExchangeOnPremisesPolicy()(*DeviceManagementExchangeOnPremisesPolicy) {
@@ -54,9 +54,9 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetDefaultAccessLevel()(*Devi
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessRules"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementExchangeAccessRuleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["conditionalAccessSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conditionalAccessSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOnPremisesConditionalAccessSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["defaultAccessLevel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultAccessLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementExchangeAccessLevel)
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["knownDeviceClasses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["knownDeviceClasses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementExchangeDeviceClassFromDiscriminatorValue)
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["notificationContent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notificationContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err

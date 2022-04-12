@@ -7,15 +7,15 @@ import (
 // SearchHitsContainer 
 type SearchHitsContainer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
-    aggregations []SearchAggregationable;
+    aggregations []SearchAggregationable
     // A collection of the search results.
-    hits []SearchHitable;
+    hits []SearchHitable
     // Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
-    moreResultsAvailable *bool;
+    moreResultsAvailable *bool
     // The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
-    total *int32;
+    total *int32
 }
 // NewSearchHitsContainer instantiates a new searchHitsContainer and sets the default values.
 func NewSearchHitsContainer()(*SearchHitsContainer) {
@@ -45,9 +45,9 @@ func (m *SearchHitsContainer) GetAggregations()([]SearchAggregationable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["aggregations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["aggregations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSearchAggregationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["hits"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSearchHitFromDiscriminatorValue)
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["moreResultsAvailable"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["moreResultsAvailable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *SearchHitsContainer) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["total"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["total"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

@@ -7,27 +7,27 @@ import (
 // AppliedConditionalAccessPolicy 
 type AppliedConditionalAccessPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The custom authentication strength enforced in a Conditional Access policy.
-    authenticationStrength AuthenticationStrengthable;
+    authenticationStrength AuthenticationStrengthable
     // Refers to the conditional access policy conditions that are not satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
-    conditionsNotSatisfied *ConditionalAccessConditions;
+    conditionsNotSatisfied *ConditionalAccessConditions
     // Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
-    conditionsSatisfied *ConditionalAccessConditions;
+    conditionsSatisfied *ConditionalAccessConditions
     // Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
-    displayName *string;
+    displayName *string
     // Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
-    enforcedGrantControls []string;
+    enforcedGrantControls []string
     // Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
-    enforcedSessionControls []string;
+    enforcedSessionControls []string
     // List of key-value pairs containing each matched exclude condition in the conditional access policy. Example: [{'devicePlatform' : 'DevicePlatform'}] means the policy didn’t apply, because the DevicePlatform condition was a match.
-    excludeRulesSatisfied []ConditionalAccessRuleSatisfiedable;
+    excludeRulesSatisfied []ConditionalAccessRuleSatisfiedable
     // An identifier of the conditional access policy.
-    id *string;
+    id *string
     // List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ 'application' : 'AllApps'}, {'users': 'Group'}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.
-    includeRulesSatisfied []ConditionalAccessRuleSatisfiedable;
+    includeRulesSatisfied []ConditionalAccessRuleSatisfiedable
     // Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
-    result *AppliedConditionalAccessPolicyResult;
+    result *AppliedConditionalAccessPolicyResult
 }
 // NewAppliedConditionalAccessPolicy instantiates a new appliedConditionalAccessPolicy and sets the default values.
 func NewAppliedConditionalAccessPolicy()(*AppliedConditionalAccessPolicy) {
@@ -105,9 +105,9 @@ func (m *AppliedConditionalAccessPolicy) GetExcludeRulesSatisfied()([]Conditiona
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["authenticationStrength"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["authenticationStrength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAuthenticationStrengthFromDiscriminatorValue)
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["conditionsNotSatisfied"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conditionsNotSatisfied"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConditionalAccessConditions)
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["conditionsSatisfied"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conditionsSatisfied"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConditionalAccessConditions)
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["enforcedGrantControls"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enforcedGrantControls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["enforcedSessionControls"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enforcedSessionControls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["excludeRulesSatisfied"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["excludeRulesSatisfied"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessRuleSatisfiedFromDiscriminatorValue)
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["includeRulesSatisfied"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includeRulesSatisfied"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessRuleSatisfiedFromDiscriminatorValue)
         if err != nil {
             return err
@@ -213,7 +213,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["result"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["result"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAppliedConditionalAccessPolicyResult)
         if err != nil {
             return err

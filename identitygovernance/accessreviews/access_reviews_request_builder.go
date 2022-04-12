@@ -16,55 +16,55 @@ import (
 // AccessReviewsRequestBuilder provides operations to manage the accessReviews property of the microsoft.graph.identityGovernance entity.
 type AccessReviewsRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // AccessReviewsRequestBuilderDeleteOptions options for Delete
 type AccessReviewsRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AccessReviewsRequestBuilderGetOptions options for Get
 type AccessReviewsRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *AccessReviewsRequestBuilderGetQueryParameters;
+    QueryParameters *AccessReviewsRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AccessReviewsRequestBuilderGetQueryParameters get accessReviews from identityGovernance
 type AccessReviewsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // AccessReviewsRequestBuilderPatchOptions options for Patch
 type AccessReviewsRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewSetable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewSetable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewAccessReviewsRequestBuilderInternal instantiates a new AccessReviewsRequestBuilder and sets the default values.
 func NewAccessReviewsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsRequestBuilder) {
     m := &AccessReviewsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/accessReviews{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/accessReviews{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -145,7 +145,7 @@ func (m *AccessReviewsRequestBuilder) DecisionsById(id string)(*if6ba574ccfc242a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessReviewInstanceDecisionItem_id"] = id
+        urlTplParams["accessReviewInstanceDecisionItem%2Did"] = id
     }
     return if6ba574ccfc242ae9fab37ee4d8c66c1f6e0d711919acd230700df4d4f0faea7.NewAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -160,7 +160,7 @@ func (m *AccessReviewsRequestBuilder) DefinitionsById(id string)(*i6da4aa0125ca0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessReviewScheduleDefinition_id"] = id
+        urlTplParams["accessReviewScheduleDefinition%2Did"] = id
     }
     return i6da4aa0125ca0757188f525aa6935aefda281d0627445ec063c253a0bd2fccb2.NewAccessReviewScheduleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -207,7 +207,7 @@ func (m *AccessReviewsRequestBuilder) HistoryDefinitionsById(id string)(*i560e03
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessReviewHistoryDefinition_id"] = id
+        urlTplParams["accessReviewHistoryDefinition%2Did"] = id
     }
     return i560e03bc7fd4ff380362907aa5dfe4f5629fc0c3ceb16dcb98159089dfc550b7.NewAccessReviewHistoryDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

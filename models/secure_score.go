@@ -9,25 +9,25 @@ import (
 type SecureScore struct {
     Entity
     // Active user count of the given tenant.
-    activeUserCount *int32;
+    activeUserCount *int32
     // Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
-    averageComparativeScores []AverageComparativeScoreable;
+    averageComparativeScores []AverageComparativeScoreable
     // GUID string for tenant ID.
-    azureTenantId *string;
+    azureTenantId *string
     // Contains tenant scores for a set of controls.
-    controlScores []ControlScoreable;
+    controlScores []ControlScoreable
     // The date when the entity is created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Tenant current attained score on specified date.
-    currentScore *float64;
+    currentScore *float64
     // Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
-    enabledServices []string;
+    enabledServices []string
     // Licensed user count of the given tenant.
-    licensedUserCount *int32;
+    licensedUserCount *int32
     // Tenant maximum possible score on specified date.
-    maxScore *float64;
+    maxScore *float64
     // Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
-    vendorInformation SecurityVendorInformationable;
+    vendorInformation SecurityVendorInformationable
 }
 // NewSecureScore instantiates a new secureScore and sets the default values.
 func NewSecureScore()(*SecureScore) {
@@ -97,9 +97,9 @@ func (m *SecureScore) GetEnabledServices()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SecureScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activeUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activeUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["averageComparativeScores"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageComparativeScores"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAverageComparativeScoreFromDiscriminatorValue)
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["azureTenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["controlScores"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["controlScores"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateControlScoreFromDiscriminatorValue)
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["currentScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["currentScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["enabledServices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enabledServices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["licensedUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["licensedUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["maxScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -201,7 +201,7 @@ func (m *SecureScore) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["vendorInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vendorInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err

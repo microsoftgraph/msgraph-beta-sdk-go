@@ -8,21 +8,21 @@ import (
 type AccessPackageResourceScope struct {
     Entity
     // Read-only. Nullable.
-    accessPackageResource AccessPackageResourceable;
+    accessPackageResource AccessPackageResourceable
     // The description of the scope.
-    description *string;
+    description *string
     // The display name of the scope.
-    displayName *string;
+    displayName *string
     // True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
-    isRootScope *bool;
+    isRootScope *bool
     // The unique identifier for the scope in the resource as defined in the origin system.
-    originId *string;
+    originId *string
     // The origin system for the scope.
-    originSystem *string;
+    originSystem *string
     // The origin system for the role, if different.
-    roleOriginId *string;
+    roleOriginId *string
     // A resource locator for the scope.
-    url *string;
+    url *string
 }
 // NewAccessPackageResourceScope instantiates a new accessPackageResourceScope and sets the default values.
 func NewAccessPackageResourceScope()(*AccessPackageResourceScope) {
@@ -60,9 +60,9 @@ func (m *AccessPackageResourceScope) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessPackageResource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageResource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageResourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["isRootScope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isRootScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["originId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["originId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["originSystem"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["originSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["roleOriginId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleOriginId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["url"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

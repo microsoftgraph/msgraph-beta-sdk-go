@@ -7,11 +7,11 @@ import (
 // StaffAvailabilityItem 
 type StaffAvailabilityItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
-    // The availabilityItems property
-    availabilityItems []AvailabilityItemable;
-    // The staffId property
-    staffId *string;
+    additionalData map[string]interface{}
+    // Each item in this collection indicates a slot and the status of the staff member.
+    availabilityItems []AvailabilityItemable
+    // The ID of the staff member.
+    staffId *string
 }
 // NewStaffAvailabilityItem instantiates a new staffAvailabilityItem and sets the default values.
 func NewStaffAvailabilityItem()(*StaffAvailabilityItem) {
@@ -32,7 +32,7 @@ func (m *StaffAvailabilityItem) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAvailabilityItems gets the availabilityItems property value. The availabilityItems property
+// GetAvailabilityItems gets the availabilityItems property value. Each item in this collection indicates a slot and the status of the staff member.
 func (m *StaffAvailabilityItem) GetAvailabilityItems()([]AvailabilityItemable) {
     if m == nil {
         return nil
@@ -41,9 +41,9 @@ func (m *StaffAvailabilityItem) GetAvailabilityItems()([]AvailabilityItemable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *StaffAvailabilityItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["availabilityItems"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *StaffAvailabilityItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["availabilityItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAvailabilityItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *StaffAvailabilityItem) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["staffId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["staffId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *StaffAvailabilityItem) GetFieldDeserializers()(map[string]func(interfac
     }
     return res
 }
-// GetStaffId gets the staffId property value. The staffId property
+// GetStaffId gets the staffId property value. The ID of the staff member.
 func (m *StaffAvailabilityItem) GetStaffId()(*string) {
     if m == nil {
         return nil
@@ -109,13 +109,13 @@ func (m *StaffAvailabilityItem) SetAdditionalData(value map[string]interface{})(
         m.additionalData = value
     }
 }
-// SetAvailabilityItems sets the availabilityItems property value. The availabilityItems property
+// SetAvailabilityItems sets the availabilityItems property value. Each item in this collection indicates a slot and the status of the staff member.
 func (m *StaffAvailabilityItem) SetAvailabilityItems(value []AvailabilityItemable)() {
     if m != nil {
         m.availabilityItems = value
     }
 }
-// SetStaffId sets the staffId property value. The staffId property
+// SetStaffId sets the staffId property value. The ID of the staff member.
 func (m *StaffAvailabilityItem) SetStaffId(value *string)() {
     if m != nil {
         m.staffId = value

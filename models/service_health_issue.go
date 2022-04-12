@@ -8,23 +8,23 @@ import (
 type ServiceHealthIssue struct {
     ServiceAnnouncementBase
     // The type of service health issue. Possible values are: advisory, incident, unknownFutureValue.
-    classification *ServiceHealthClassificationType;
+    classification *ServiceHealthClassificationType
     // The feature name of the service issue.
-    feature *string;
+    feature *string
     // The feature group name of the service issue.
-    featureGroup *string;
+    featureGroup *string
     // The description of the service issue impact.
-    impactDescription *string;
+    impactDescription *string
     // Indicates whether the issue is resolved.
-    isResolved *bool;
+    isResolved *bool
     // Indicates the origin of the service issue. Possible values are: microsoft, thirdParty, customer, unknownFutureValue.
-    origin *ServiceHealthOrigin;
+    origin *ServiceHealthOrigin
     // Collection of historical posts for the service issue.
-    posts []ServiceHealthIssuePostable;
+    posts []ServiceHealthIssuePostable
     // Indicates the service affected by the issue.
-    service *string;
+    service *string
     // The status of the service issue. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. See more in the table below.
-    status *ServiceHealthStatus;
+    status *ServiceHealthStatus
 }
 // NewServiceHealthIssue instantiates a new serviceHealthIssue and sets the default values.
 func NewServiceHealthIssue()(*ServiceHealthIssue) {
@@ -62,9 +62,9 @@ func (m *ServiceHealthIssue) GetFeatureGroup()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ServiceAnnouncementBase.GetFieldDeserializers()
-    res["classification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseServiceHealthClassificationType)
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["feature"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["feature"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["featureGroup"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["featureGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["impactDescription"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["impactDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["isResolved"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isResolved"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["origin"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["origin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseServiceHealthOrigin)
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["posts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["posts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateServiceHealthIssuePostFromDiscriminatorValue)
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["service"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["service"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *ServiceHealthIssue) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseServiceHealthStatus)
         if err != nil {
             return err

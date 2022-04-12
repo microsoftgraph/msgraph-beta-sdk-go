@@ -8,15 +8,15 @@ import (
 type ItemActivityOLD struct {
     Entity
     // The action property
-    action ItemActionSetable;
+    action ItemActionSetable
     // The actor property
-    actor IdentitySetable;
+    actor IdentitySetable
     // The driveItem property
-    driveItem DriveItemable;
+    driveItem DriveItemable
     // The listItem property
-    listItem ListItemable;
+    listItem ListItemable
     // The times property
-    times ItemActivityTimeSetable;
+    times ItemActivityTimeSetable
 }
 // NewItemActivityOLD instantiates a new itemActivityOLD and sets the default values.
 func NewItemActivityOLD()(*ItemActivityOLD) {
@@ -54,9 +54,9 @@ func (m *ItemActivityOLD) GetDriveItem()(DriveItemable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["action"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemActionSetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["actor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["actor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["driveItem"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["driveItem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDriveItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["listItem"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["listItem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateListItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["times"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["times"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemActivityTimeSetFromDiscriminatorValue)
         if err != nil {
             return err

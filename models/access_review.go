@@ -9,33 +9,33 @@ import (
 type AccessReview struct {
     Entity
     // The business flow template identifier. Required on create.  This value is case sensitive.
-    businessFlowTemplateId *string;
+    businessFlowTemplateId *string
     // The user who created this review.
-    createdBy UserIdentityable;
+    createdBy UserIdentityable
     // The collection of decisions for this access review.
-    decisions []AccessReviewDecisionable;
+    decisions []AccessReviewDecisionable
     // The description provided by the access review creator, to show to the reviewers.
-    description *string;
+    description *string
     // The access review name. Required on create.
-    displayName *string;
+    displayName *string
     // The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The collection of access reviews instances past, present and future, if this object is a recurring access review.
-    instances []AccessReviewable;
+    instances []AccessReviewable
     // The collection of decisions for the caller, if the caller is a reviewer.
-    myDecisions []AccessReviewDecisionable;
+    myDecisions []AccessReviewDecisionable
     // The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
-    reviewedEntity Identityable;
+    reviewedEntity Identityable
     // The collection of reviewers for an access review, if access review reviewerType is of type delegated.
-    reviewers []AccessReviewReviewerable;
+    reviewers []AccessReviewReviewerable
     // The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.
-    reviewerType *string;
+    reviewerType *string
     // The settings of an accessReview, see type definition below.
-    settings AccessReviewSettingsable;
+    settings AccessReviewSettingsable
     // The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.
-    status *string;
+    status *string
 }
 // NewAccessReview instantiates a new accessReview and sets the default values.
 func NewAccessReview()(*AccessReview) {
@@ -97,9 +97,9 @@ func (m *AccessReview) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AccessReview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["businessFlowTemplateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["businessFlowTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["decisions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["decisions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewDecisionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["endDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -163,7 +163,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["instances"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["instances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewFromDiscriminatorValue)
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["myDecisions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["myDecisions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewDecisionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["reviewedEntity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reviewedEntity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -201,7 +201,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["reviewers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reviewers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewReviewerFromDiscriminatorValue)
         if err != nil {
             return err
@@ -215,7 +215,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["reviewerType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reviewerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["settings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessReviewSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -235,7 +235,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -245,7 +245,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -17,49 +17,49 @@ import (
 // TeamworkDeviceItemRequestBuilder provides operations to manage the devices property of the microsoft.graph.teamwork entity.
 type TeamworkDeviceItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // TeamworkDeviceItemRequestBuilderDeleteOptions options for Delete
 type TeamworkDeviceItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TeamworkDeviceItemRequestBuilderGetOptions options for Get
 type TeamworkDeviceItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *TeamworkDeviceItemRequestBuilderGetQueryParameters;
+    QueryParameters *TeamworkDeviceItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TeamworkDeviceItemRequestBuilderGetQueryParameters the Teams devices provisioned for the tenant.
 type TeamworkDeviceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // TeamworkDeviceItemRequestBuilderPatchOptions options for Patch
 type TeamworkDeviceItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Activity the activity property
 func (m *TeamworkDeviceItemRequestBuilder) Activity()(*idcb97c68de16b48e5f40ae7c33010c8ab78995f83aafa559ed280e2cd6db993b.ActivityRequestBuilder) {
@@ -73,7 +73,7 @@ func (m *TeamworkDeviceItemRequestBuilder) Configuration()(*i5991b16c8216191b7b7
 func NewTeamworkDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamworkDeviceItemRequestBuilder) {
     m := &TeamworkDeviceItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -190,7 +190,7 @@ func (m *TeamworkDeviceItemRequestBuilder) OperationsById(id string)(*i9322b599a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["teamworkDeviceOperation_id"] = id
+        urlTplParams["teamworkDeviceOperation%2Did"] = id
     }
     return i9322b599ad80a79ed0450750e6a1607ac4158d6981a51a70253206f7041ccd6d.NewTeamworkDeviceOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

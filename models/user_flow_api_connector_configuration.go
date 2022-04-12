@@ -7,13 +7,13 @@ import (
 // UserFlowApiConnectorConfiguration 
 type UserFlowApiConnectorConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The postAttributeCollection property
-    postAttributeCollection IdentityApiConnectorable;
+    postAttributeCollection IdentityApiConnectorable
     // The postFederationSignup property
-    postFederationSignup IdentityApiConnectorable;
+    postFederationSignup IdentityApiConnectorable
     // The preTokenIssuance property
-    preTokenIssuance IdentityApiConnectorable;
+    preTokenIssuance IdentityApiConnectorable
 }
 // NewUserFlowApiConnectorConfiguration instantiates a new userFlowApiConnectorConfiguration and sets the default values.
 func NewUserFlowApiConnectorConfiguration()(*UserFlowApiConnectorConfiguration) {
@@ -35,9 +35,9 @@ func (m *UserFlowApiConnectorConfiguration) GetAdditionalData()(map[string]inter
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserFlowApiConnectorConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["postAttributeCollection"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserFlowApiConnectorConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["postAttributeCollection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentityApiConnectorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *UserFlowApiConnectorConfiguration) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["postFederationSignup"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["postFederationSignup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentityApiConnectorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *UserFlowApiConnectorConfiguration) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["preTokenIssuance"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preTokenIssuance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentityApiConnectorFromDiscriminatorValue)
         if err != nil {
             return err

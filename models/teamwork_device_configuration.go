@@ -9,29 +9,29 @@ import (
 type TeamworkDeviceConfiguration struct {
     Entity
     // The camera configuration. Applicable only for Microsoft Teams Rooms-enabled devices.
-    cameraConfiguration TeamworkCameraConfigurationable;
+    cameraConfiguration TeamworkCameraConfigurationable
     // Identity of the user who created the device configuration document.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // The UTC date and time when the device configuration document was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The display configuration.
-    displayConfiguration TeamworkDisplayConfigurationable;
+    displayConfiguration TeamworkDisplayConfigurationable
     // The hardware configuration. Applicable only for Teams Rooms-enabled devices.
-    hardwareConfiguration TeamworkHardwareConfigurationable;
+    hardwareConfiguration TeamworkHardwareConfigurationable
     // Identity of the user who last modified the device configuration.
-    lastModifiedBy IdentitySetable;
+    lastModifiedBy IdentitySetable
     // The UTC date and time when the device configuration was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The microphone configuration. Applicable only for Teams Rooms-enabled devices.
-    microphoneConfiguration TeamworkMicrophoneConfigurationable;
+    microphoneConfiguration TeamworkMicrophoneConfigurationable
     // Information related to software versions for the device, such as firmware, operating system, Teams client, and admin agent.
-    softwareVersions TeamworkDeviceSoftwareVersionsable;
+    softwareVersions TeamworkDeviceSoftwareVersionsable
     // The speaker configuration. Applicable only for Teams Rooms-enabled devices.
-    speakerConfiguration TeamworkSpeakerConfigurationable;
+    speakerConfiguration TeamworkSpeakerConfigurationable
     // The system configuration. Not applicable for Teams Rooms-enabled devices.
-    systemConfiguration TeamworkSystemConfigurationable;
+    systemConfiguration TeamworkSystemConfigurationable
     // The Teams client configuration. Applicable only for Teams Rooms-enabled devices.
-    teamsClientConfiguration TeamworkTeamsClientConfigurationable;
+    teamsClientConfiguration TeamworkTeamsClientConfigurationable
 }
 // NewTeamworkDeviceConfiguration instantiates a new teamworkDeviceConfiguration and sets the default values.
 func NewTeamworkDeviceConfiguration()(*TeamworkDeviceConfiguration) {
@@ -77,9 +77,9 @@ func (m *TeamworkDeviceConfiguration) GetDisplayConfiguration()(TeamworkDisplayC
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["cameraConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cameraConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkCameraConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["displayConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkDisplayConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["hardwareConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hardwareConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkHardwareConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["lastModifiedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["microphoneConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["microphoneConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkMicrophoneConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["softwareVersions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["softwareVersions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkDeviceSoftwareVersionsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["speakerConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["speakerConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkSpeakerConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["systemConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["systemConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkSystemConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["teamsClientConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["teamsClientConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkTeamsClientConfigurationFromDiscriminatorValue)
         if err != nil {
             return err

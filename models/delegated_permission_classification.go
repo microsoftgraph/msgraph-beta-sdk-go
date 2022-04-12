@@ -8,11 +8,11 @@ import (
 type DelegatedPermissionClassification struct {
     Entity
     // The classification value being given. Possible value: low. Does not support $filter.
-    classification *PermissionClassificationType;
+    classification *PermissionClassificationType
     // The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
-    permissionId *string;
+    permissionId *string
     // The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
-    permissionName *string;
+    permissionName *string
 }
 // NewDelegatedPermissionClassification instantiates a new delegatedPermissionClassification and sets the default values.
 func NewDelegatedPermissionClassification()(*DelegatedPermissionClassification) {
@@ -34,9 +34,9 @@ func (m *DelegatedPermissionClassification) GetClassification()(*PermissionClass
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["classification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePermissionClassificationType)
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["permissionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["permissionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *DelegatedPermissionClassification) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["permissionName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["permissionName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

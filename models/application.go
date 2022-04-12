@@ -9,89 +9,89 @@ import (
 type Application struct {
     DirectoryObject
     // Specifies settings for an application that implements a web API.
-    api ApiApplicationable;
+    api ApiApplicationable
     // The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only.
-    appId *string;
+    appId *string
     // The appManagementPolicy applied to this application.
-    appManagementPolicies []AppManagementPolicyable;
+    appManagementPolicies []AppManagementPolicyable
     // The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
-    appRoles []AppRoleable;
+    appRoles []AppRoleable
     // Specifies the certification status of the application.
-    certification Certificationable;
+    certification Certificationable
     // The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
-    connectorGroup ConnectorGroupable;
+    connectorGroup ConnectorGroupable
     // The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only.
-    createdOnBehalfOf DirectoryObjectable;
+    createdOnBehalfOf DirectoryObjectable
     // The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Azure AD sends the token to this redirect URI. Azure AD also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.
-    defaultRedirectUri *string;
+    defaultRedirectUri *string
     // Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
-    description *string;
+    description *string
     // Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
-    disabledByMicrosoftStatus *string;
+    disabledByMicrosoftStatus *string
     // The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-    displayName *string;
+    displayName *string
     // Read-only. Nullable.
-    extensionProperties []ExtensionPropertyable;
+    extensionProperties []ExtensionPropertyable
     // Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
-    federatedIdentityCredentials []FederatedIdentityCredentialable;
+    federatedIdentityCredentials []FederatedIdentityCredentialable
     // Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
-    groupMembershipClaims *string;
+    groupMembershipClaims *string
     // The homeRealmDiscoveryPolicies property
-    homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicyable;
+    homeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicyable
     // Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
-    identifierUris []string;
+    identifierUris []string
     // Basic profile information of the application such as  app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
-    info InformationalUrlable;
+    info InformationalUrlable
     // Specifies whether this application supports device authentication without a user. The default is false.
-    isDeviceOnlyAuthSupported *bool;
+    isDeviceOnlyAuthSupported *bool
     // Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
-    isFallbackPublicClient *bool;
+    isFallbackPublicClient *bool
     // The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
-    keyCredentials []KeyCredentialable;
+    keyCredentials []KeyCredentialable
     // The main logo for the application. Not nullable.
-    logo []byte;
+    logo []byte
     // Notes relevant for the management of the application.
-    notes *string;
+    notes *string
     // Represents the set of properties required for configuring Application Proxy for this application. Configuring these properties allows you to publish your on-premises application for secure remote access.
-    onPremisesPublishing OnPremisesPublishingable;
+    onPremisesPublishing OnPremisesPublishingable
     // Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
-    optionalClaims OptionalClaimsable;
+    optionalClaims OptionalClaimsable
     // Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
-    owners []DirectoryObjectable;
+    owners []DirectoryObjectable
     // Specifies parental control settings for an application.
-    parentalControlSettings ParentalControlSettingsable;
+    parentalControlSettings ParentalControlSettingsable
     // The collection of password credentials associated with the application. Not nullable.
-    passwordCredentials []PasswordCredentialable;
+    passwordCredentials []PasswordCredentialable
     // Specifies settings for installed clients such as desktop or mobile devices.
-    publicClient PublicClientApplicationable;
+    publicClient PublicClientApplicationable
     // The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
-    publisherDomain *string;
+    publisherDomain *string
     // Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
-    requiredResourceAccess []RequiredResourceAccessable;
+    requiredResourceAccess []RequiredResourceAccessable
     // Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
-    signInAudience *string;
+    signInAudience *string
     // Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
-    spa SpaApplicationable;
+    spa SpaApplicationable
     // The synchronization property
-    synchronization Synchronizationable;
+    synchronization Synchronizationable
     // Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
-    tags []string;
+    tags []string
     // Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
-    tokenEncryptionKeyId *string;
+    tokenEncryptionKeyId *string
     // The tokenIssuancePolicies property
-    tokenIssuancePolicies []TokenIssuancePolicyable;
+    tokenIssuancePolicies []TokenIssuancePolicyable
     // The tokenLifetimePolicies assigned to this application. Supports $expand.
-    tokenLifetimePolicies []TokenLifetimePolicyable;
+    tokenLifetimePolicies []TokenLifetimePolicyable
     // The unique identifier that can be assigned to an application as an alternative identifier. Immutable. Read-only.
-    uniqueName *string;
+    uniqueName *string
     // Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.
-    verifiedPublisher VerifiedPublisherable;
+    verifiedPublisher VerifiedPublisherable
     // Specifies settings for a web application.
-    web WebApplicationable;
+    web WebApplicationable
     // Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
-    windows WindowsApplicationable;
+    windows WindowsApplicationable
 }
 // NewApplication instantiates a new application and sets the default values.
 func NewApplication()(*Application) {
@@ -217,9 +217,9 @@ func (m *Application) GetFederatedIdentityCredentials()([]FederatedIdentityCrede
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
-    res["api"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["api"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateApiApplicationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -229,7 +229,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["appId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -239,7 +239,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["appManagementPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appManagementPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAppManagementPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -253,7 +253,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["appRoles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAppRoleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -267,7 +267,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["certification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCertificationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -277,7 +277,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["connectorGroup"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["connectorGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConnectorGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -287,7 +287,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -297,7 +297,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["createdOnBehalfOf"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdOnBehalfOf"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -307,7 +307,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["defaultRedirectUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultRedirectUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -317,7 +317,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -327,7 +327,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["disabledByMicrosoftStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["disabledByMicrosoftStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -337,7 +337,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -347,7 +347,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["extensionProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensionProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateExtensionPropertyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -361,7 +361,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["federatedIdentityCredentials"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["federatedIdentityCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateFederatedIdentityCredentialFromDiscriminatorValue)
         if err != nil {
             return err
@@ -375,7 +375,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["groupMembershipClaims"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupMembershipClaims"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -385,7 +385,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["homeRealmDiscoveryPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["homeRealmDiscoveryPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateHomeRealmDiscoveryPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -399,7 +399,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["identifierUris"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["identifierUris"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -413,7 +413,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["info"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["info"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateInformationalUrlFromDiscriminatorValue)
         if err != nil {
             return err
@@ -423,7 +423,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["isDeviceOnlyAuthSupported"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDeviceOnlyAuthSupported"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -433,7 +433,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["isFallbackPublicClient"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isFallbackPublicClient"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -443,7 +443,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["keyCredentials"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["keyCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyCredentialFromDiscriminatorValue)
         if err != nil {
             return err
@@ -457,7 +457,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["logo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["logo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -467,7 +467,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["notes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -477,7 +477,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["onPremisesPublishing"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onPremisesPublishing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOnPremisesPublishingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -487,7 +487,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["optionalClaims"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["optionalClaims"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOptionalClaimsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -497,7 +497,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["owners"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["owners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -511,7 +511,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["parentalControlSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parentalControlSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateParentalControlSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -521,7 +521,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["passwordCredentials"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePasswordCredentialFromDiscriminatorValue)
         if err != nil {
             return err
@@ -535,7 +535,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["publicClient"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publicClient"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePublicClientApplicationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -545,7 +545,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["publisherDomain"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publisherDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -555,7 +555,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["requiredResourceAccess"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requiredResourceAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRequiredResourceAccessFromDiscriminatorValue)
         if err != nil {
             return err
@@ -569,7 +569,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["signInAudience"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["signInAudience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -579,7 +579,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["spa"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["spa"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSpaApplicationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -589,7 +589,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["synchronization"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["synchronization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSynchronizationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -599,7 +599,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["tags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -613,7 +613,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["tokenEncryptionKeyId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenEncryptionKeyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -623,7 +623,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["tokenIssuancePolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenIssuancePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTokenIssuancePolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -637,7 +637,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["tokenLifetimePolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tokenLifetimePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTokenLifetimePolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -651,7 +651,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["uniqueName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["uniqueName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -661,7 +661,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["verifiedPublisher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["verifiedPublisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateVerifiedPublisherFromDiscriminatorValue)
         if err != nil {
             return err
@@ -671,7 +671,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["web"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["web"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWebApplicationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -681,7 +681,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["windows"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWindowsApplicationFromDiscriminatorValue)
         if err != nil {
             return err

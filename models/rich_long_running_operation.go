@@ -8,13 +8,13 @@ import (
 type RichLongRunningOperation struct {
     LongRunningOperation
     // Error due to which the operation failed.
-    error PublicErrorable;
+    error PublicErrorable
     // A value between 0 and 100 that indicates the progress of the operation.
-    percentageComplete *int32;
+    percentageComplete *int32
     // A unique identifier for the result.
-    resourceId *string;
+    resourceId *string
     // Type of the operation.
-    type_escaped *string;
+    type_escaped *string
 }
 // NewRichLongRunningOperation instantiates a new richLongRunningOperation and sets the default values.
 func NewRichLongRunningOperation()(*RichLongRunningOperation) {
@@ -36,9 +36,9 @@ func (m *RichLongRunningOperation) GetError()(PublicErrorable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RichLongRunningOperation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RichLongRunningOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.LongRunningOperation.GetFieldDeserializers()
-    res["error"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePublicErrorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *RichLongRunningOperation) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["percentageComplete"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["percentageComplete"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *RichLongRunningOperation) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["resourceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -68,13 +68,13 @@ func (m *RichLongRunningOperation) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetType_escaped(val)
         }
         return nil
     }
@@ -129,7 +129,7 @@ func (m *RichLongRunningOperation) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetType_escaped())
         if err != nil {
             return err
         }

@@ -7,13 +7,13 @@ import (
 // PlannerPlanContainer 
 type PlannerPlanContainer struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The identifier of the resource that contains the plan.
-    containerId *string;
+    containerId *string
     // The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
-    type_escaped *PlannerContainerType;
+    type_escaped *PlannerContainerType
     // The full canonical URL of the container.
-    url *string;
+    url *string
 }
 // NewPlannerPlanContainer instantiates a new plannerPlanContainer and sets the default values.
 func NewPlannerPlanContainer()(*PlannerPlanContainer) {
@@ -43,9 +43,9 @@ func (m *PlannerPlanContainer) GetContainerId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["containerId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["containerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -55,17 +55,17 @@ func (m *PlannerPlanContainer) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePlannerContainerType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val.(*PlannerContainerType))
+            m.SetType_escaped(val.(*PlannerContainerType))
         }
         return nil
     }
-    res["url"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -101,8 +101,8 @@ func (m *PlannerPlanContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
+    if m.GetType_escaped() != nil {
+        cast := (*m.GetType_escaped()).String()
         err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err

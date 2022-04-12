@@ -8,17 +8,17 @@ import (
 type TeamworkTag struct {
     Entity
     // Tag description as it will appear to the user in Microsoft Teams.
-    description *string;
+    description *string
     // Tag name as it will appear to the user in Microsoft Teams.
-    displayName *string;
+    displayName *string
     // The number of users assigned to the tag.
-    memberCount *int32;
+    memberCount *int32
     // Users assigned to the tag.
-    members []TeamworkTagMemberable;
+    members []TeamworkTagMemberable
     // The type of tag. Default is standard.
-    tagType *TeamworkTagType;
+    tagType *TeamworkTagType
     // ID of the team in which the tag is defined.
-    teamId *string;
+    teamId *string
 }
 // NewTeamworkTag instantiates a new teamworkTag and sets the default values.
 func NewTeamworkTag()(*TeamworkTag) {
@@ -48,9 +48,9 @@ func (m *TeamworkTag) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["memberCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["memberCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["members"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamworkTagMemberFromDiscriminatorValue)
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["tagType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tagType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTeamworkTagType)
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *TeamworkTag) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["teamId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["teamId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

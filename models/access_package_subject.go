@@ -8,23 +8,23 @@ import (
 type AccessPackageSubject struct {
     Entity
     // The altSecId property
-    altSecId *string;
+    altSecId *string
     // The connected organization of the subject. Read-only. Nullable.
-    connectedOrganization ConnectedOrganizationable;
+    connectedOrganization ConnectedOrganizationable
     // The identifier of the connected organization of the subject.
-    connectedOrganizationId *string;
+    connectedOrganizationId *string
     // The display name of the subject.
-    displayName *string;
+    displayName *string
     // The email address of the subject.
-    email *string;
+    email *string
     // The object identifier of the subject. null if the subject is not yet a user in the tenant.
-    objectId *string;
+    objectId *string
     // A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
-    onPremisesSecurityIdentifier *string;
+    onPremisesSecurityIdentifier *string
     // The principal name, if known, of the subject.
-    principalName *string;
+    principalName *string
     // The resource type of the subject.
-    type_escaped *string;
+    type_escaped *string
 }
 // NewAccessPackageSubject instantiates a new accessPackageSubject and sets the default values.
 func NewAccessPackageSubject()(*AccessPackageSubject) {
@@ -78,9 +78,9 @@ func (m *AccessPackageSubject) GetEmail()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["altSecId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["altSecId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["connectedOrganization"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["connectedOrganization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConnectedOrganizationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["connectedOrganizationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["connectedOrganizationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["email"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["objectId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["objectId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["onPremisesSecurityIdentifier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onPremisesSecurityIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -150,7 +150,7 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["principalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["principalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -160,13 +160,13 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetType_escaped(val)
         }
         return nil
     }
@@ -259,7 +259,7 @@ func (m *AccessPackageSubject) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetType_escaped())
         if err != nil {
             return err
         }

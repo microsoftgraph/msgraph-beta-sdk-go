@@ -7,15 +7,15 @@ import (
 // MeetingParticipants 
 type MeetingParticipants struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Information of the meeting attendees.
-    attendees []MeetingParticipantInfoable;
+    attendees []MeetingParticipantInfoable
     // The contributors property
-    contributors []MeetingParticipantInfoable;
+    contributors []MeetingParticipantInfoable
     // Information of the meeting organizer.
-    organizer MeetingParticipantInfoable;
+    organizer MeetingParticipantInfoable
     // The producers property
-    producers []MeetingParticipantInfoable;
+    producers []MeetingParticipantInfoable
 }
 // NewMeetingParticipants instantiates a new meetingParticipants and sets the default values.
 func NewMeetingParticipants()(*MeetingParticipants) {
@@ -53,9 +53,9 @@ func (m *MeetingParticipants) GetContributors()([]MeetingParticipantInfoable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["attendees"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["attendees"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMeetingParticipantInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["contributors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contributors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMeetingParticipantInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["organizer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["organizer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMeetingParticipantInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *MeetingParticipants) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["producers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["producers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMeetingParticipantInfoFromDiscriminatorValue)
         if err != nil {
             return err

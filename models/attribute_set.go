@@ -8,9 +8,9 @@ import (
 type AttributeSet struct {
     Entity
     // Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
-    description *string;
+    description *string
     // Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.
-    maxAttributesPerSet *int32;
+    maxAttributesPerSet *int32
 }
 // NewAttributeSet instantiates a new attributeSet and sets the default values.
 func NewAttributeSet()(*AttributeSet) {
@@ -32,9 +32,9 @@ func (m *AttributeSet) GetDescription()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AttributeSet) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AttributeSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -44,7 +44,7 @@ func (m *AttributeSet) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["maxAttributesPerSet"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxAttributesPerSet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

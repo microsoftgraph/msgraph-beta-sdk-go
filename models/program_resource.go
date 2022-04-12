@@ -8,7 +8,7 @@ import (
 type ProgramResource struct {
     Identity
     // Type of the resource, indicating whether it is a group or an app.
-    type_escaped *string;
+    type_escaped *string
 }
 // NewProgramResource instantiates a new programResource and sets the default values.
 func NewProgramResource()(*ProgramResource) {
@@ -22,15 +22,15 @@ func CreateProgramResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewProgramResource(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ProgramResource) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ProgramResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetType_escaped(val)
         }
         return nil
     }
@@ -51,7 +51,7 @@ func (m *ProgramResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
+        err = writer.WriteStringValue("type", m.GetType_escaped())
         if err != nil {
             return err
         }

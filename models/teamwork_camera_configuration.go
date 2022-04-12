@@ -7,13 +7,13 @@ import (
 // TeamworkCameraConfiguration 
 type TeamworkCameraConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The cameras property
-    cameras []TeamworkPeripheralable;
+    cameras []TeamworkPeripheralable
     // The configuration for the content camera.
-    contentCameraConfiguration TeamworkContentCameraConfigurationable;
+    contentCameraConfiguration TeamworkContentCameraConfigurationable
     // The defaultContentCamera property
-    defaultContentCamera TeamworkPeripheralable;
+    defaultContentCamera TeamworkPeripheralable
 }
 // NewTeamworkCameraConfiguration instantiates a new teamworkCameraConfiguration and sets the default values.
 func NewTeamworkCameraConfiguration()(*TeamworkCameraConfiguration) {
@@ -59,9 +59,9 @@ func (m *TeamworkCameraConfiguration) GetDefaultContentCamera()(TeamworkPeripher
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkCameraConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["cameras"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkCameraConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["cameras"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *TeamworkCameraConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["contentCameraConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentCameraConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkContentCameraConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *TeamworkCameraConfiguration) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["defaultContentCamera"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultContentCamera"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
             return err

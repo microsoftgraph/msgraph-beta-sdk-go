@@ -8,15 +8,15 @@ import (
 type ResourceOperation struct {
     Entity
     // Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
-    actionName *string;
+    actionName *string
     // Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.
-    description *string;
+    description *string
     // Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.
-    enabledForScopeValidation *bool;
+    enabledForScopeValidation *bool
     // Resource category to which this Operation belongs. This property is read-only.
-    resource *string;
+    resource *string
     // Name of the Resource this operation is performed on.
-    resourceName *string;
+    resourceName *string
 }
 // NewResourceOperation instantiates a new resourceOperation and sets the default values.
 func NewResourceOperation()(*ResourceOperation) {
@@ -54,9 +54,9 @@ func (m *ResourceOperation) GetEnabledForScopeValidation()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ResourceOperation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ResourceOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["actionName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["actionName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *ResourceOperation) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *ResourceOperation) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["enabledForScopeValidation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enabledForScopeValidation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *ResourceOperation) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["resource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *ResourceOperation) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["resourceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

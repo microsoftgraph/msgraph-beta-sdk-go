@@ -8,17 +8,17 @@ import (
 type TenantSetupInfo struct {
     Entity
     // The defaultRolesSettings property
-    defaultRolesSettings PrivilegedRoleSettingsable;
+    defaultRolesSettings PrivilegedRoleSettingsable
     // The firstTimeSetup property
-    firstTimeSetup *bool;
+    firstTimeSetup *bool
     // The relevantRolesSettings property
-    relevantRolesSettings []string;
+    relevantRolesSettings []string
     // The setupStatus property
-    setupStatus *SetupStatus;
+    setupStatus *SetupStatus
     // The skipSetup property
-    skipSetup *bool;
+    skipSetup *bool
     // The userRolesActions property
-    userRolesActions *string;
+    userRolesActions *string
 }
 // NewTenantSetupInfo instantiates a new tenantSetupInfo and sets the default values.
 func NewTenantSetupInfo()(*TenantSetupInfo) {
@@ -40,9 +40,9 @@ func (m *TenantSetupInfo) GetDefaultRolesSettings()(PrivilegedRoleSettingsable) 
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["defaultRolesSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultRolesSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrivilegedRoleSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["firstTimeSetup"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["firstTimeSetup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["relevantRolesSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["relevantRolesSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["setupStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["setupStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSetupStatus)
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["skipSetup"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["skipSetup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["userRolesActions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userRolesActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

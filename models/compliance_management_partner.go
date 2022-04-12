@@ -9,27 +9,27 @@ import (
 type ComplianceManagementPartner struct {
     Entity
     // User groups which enroll Android devices through partner.
-    androidEnrollmentAssignments []ComplianceManagementPartnerAssignmentable;
+    androidEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
     // Partner onboarded for Android devices.
-    androidOnboarded *bool;
+    androidOnboarded *bool
     // Partner display name
-    displayName *string;
+    displayName *string
     // User groups which enroll ios devices through partner.
-    iosEnrollmentAssignments []ComplianceManagementPartnerAssignmentable;
+    iosEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
     // Partner onboarded for ios devices.
-    iosOnboarded *bool;
+    iosOnboarded *bool
     // Timestamp of last heartbeat after admin onboarded to the compliance management partner
-    lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastHeartbeatDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // User groups which enroll Mac devices through partner.
-    macOsEnrollmentAssignments []ComplianceManagementPartnerAssignmentable;
+    macOsEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
     // Partner onboarded for Mac devices.
-    macOsOnboarded *bool;
+    macOsOnboarded *bool
     // Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
-    partnerState *DeviceManagementPartnerTenantState;
+    partnerState *DeviceManagementPartnerTenantState
     // User groups which enroll Windows devices through partner.
-    windowsEnrollmentAssignments []ComplianceManagementPartnerAssignmentable;
+    windowsEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
     // Partner onboarded for Windows devices.
-    windowsOnboarded *bool;
+    windowsOnboarded *bool
 }
 // NewComplianceManagementPartner instantiates a new complianceManagementPartner and sets the default values.
 func NewComplianceManagementPartner()(*ComplianceManagementPartner) {
@@ -67,9 +67,9 @@ func (m *ComplianceManagementPartner) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["androidEnrollmentAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["androidEnrollmentAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["androidOnboarded"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["androidOnboarded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["iosEnrollmentAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iosEnrollmentAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["iosOnboarded"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iosOnboarded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["lastHeartbeatDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastHeartbeatDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["macOsEnrollmentAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["macOsEnrollmentAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["macOsOnboarded"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["macOsOnboarded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["partnerState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["partnerState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementPartnerTenantState)
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["windowsEnrollmentAssignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsEnrollmentAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["windowsOnboarded"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["windowsOnboarded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

@@ -8,7 +8,7 @@ import (
 type ManagementConditionExpressionString struct {
     ManagementConditionExpression
     // The management condition statement expression string value.
-    value *string;
+    value *string
 }
 // NewManagementConditionExpressionString instantiates a new managementConditionExpressionString and sets the default values.
 func NewManagementConditionExpressionString()(*ManagementConditionExpressionString) {
@@ -22,9 +22,9 @@ func CreateManagementConditionExpressionStringFromDiscriminatorValue(parseNode i
     return NewManagementConditionExpressionString(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagementConditionExpressionString) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagementConditionExpressionString) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagementConditionExpression.GetFieldDeserializers()
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

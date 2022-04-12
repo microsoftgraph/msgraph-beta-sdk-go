@@ -8,17 +8,17 @@ import (
 type SkillProficiency struct {
     ItemFacet
     // Contains categories a user has associated with the skill (for example, personal, professional, hobby).
-    categories []string;
+    categories []string
     // Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
-    collaborationTags []string;
+    collaborationTags []string
     // Contains a friendly name for the skill.
-    displayName *string;
+    displayName *string
     // Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.
-    proficiency *SkillProficiencyLevel;
+    proficiency *SkillProficiencyLevel
     // The thumbnailUrl property
-    thumbnailUrl *string;
+    thumbnailUrl *string
     // Contains a link to an information source about the skill.
-    webUrl *string;
+    webUrl *string
 }
 // NewSkillProficiency instantiates a new skillProficiency and sets the default values.
 func NewSkillProficiency()(*SkillProficiency) {
@@ -56,9 +56,9 @@ func (m *SkillProficiency) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
-    res["categories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["collaborationTags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["collaborationTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["proficiency"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["proficiency"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSkillProficiencyLevel)
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["thumbnailUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["thumbnailUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["webUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -8,23 +8,23 @@ import (
 // FindMeetingTimesRequestBody provides operations to call the findMeetingTimes method.
 type FindMeetingTimesRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The attendees property
-    attendees []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeBaseable;
+    attendees []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendeeBaseable
     // The isOrganizerOptional property
-    isOrganizerOptional *bool;
+    isOrganizerOptional *bool
     // The locationConstraint property
-    locationConstraint ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocationConstraintable;
+    locationConstraint ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocationConstraintable
     // The maxCandidates property
-    maxCandidates *int32;
+    maxCandidates *int32
     // The meetingDuration property
-    meetingDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    meetingDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The minimumAttendeePercentage property
-    minimumAttendeePercentage *float64;
+    minimumAttendeePercentage *float64
     // The returnSuggestionReasons property
-    returnSuggestionReasons *bool;
+    returnSuggestionReasons *bool
     // The timeConstraint property
-    timeConstraint ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeConstraintable;
+    timeConstraint ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeConstraintable
 }
 // NewFindMeetingTimesRequestBody instantiates a new findMeetingTimesRequestBody and sets the default values.
 func NewFindMeetingTimesRequestBody()(*FindMeetingTimesRequestBody) {
@@ -54,9 +54,9 @@ func (m *FindMeetingTimesRequestBody) GetAttendees()([]ie233ee762e29b4ba6970aa2a
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["attendees"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["attendees"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttendeeBaseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["isOrganizerOptional"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isOrganizerOptional"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["locationConstraint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["locationConstraint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateLocationConstraintFromDiscriminatorValue)
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["maxCandidates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxCandidates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["meetingDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["meetingDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["minimumAttendeePercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumAttendeePercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["returnSuggestionReasons"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["returnSuggestionReasons"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *FindMeetingTimesRequestBody) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["timeConstraint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeConstraint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTimeConstraintFromDiscriminatorValue)
         if err != nil {
             return err

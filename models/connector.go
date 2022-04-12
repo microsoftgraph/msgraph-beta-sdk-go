@@ -8,13 +8,13 @@ import (
 type Connector struct {
     Entity
     // The external IP address as detected by the the connector server. Read-only.
-    externalIp *string;
+    externalIp *string
     // The machine name the connector is installed and running on.
-    machineName *string;
+    machineName *string
     // The connectorGroup that the connector is a member of. Read-only.
-    memberOf []ConnectorGroupable;
+    memberOf []ConnectorGroupable
     // Indicates the status of the connector. Possible values are: active, inactive. Read-only.
-    status *ConnectorStatus;
+    status *ConnectorStatus
 }
 // NewConnector instantiates a new connector and sets the default values.
 func NewConnector()(*Connector) {
@@ -36,9 +36,9 @@ func (m *Connector) GetExternalIp()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Connector) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Connector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["externalIp"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalIp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["machineName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["machineName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["memberOf"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["memberOf"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConnectorGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConnectorStatus)
         if err != nil {
             return err

@@ -8,41 +8,41 @@ import (
 type BookingService struct {
     BookingNamedEntity
     // Additional information that is sent to the customer when an appointment is confirmed.
-    additionalInformation *string;
+    additionalInformation *string
     // Contains the set of custom questions associated with a particular service.
-    customQuestions []BookingQuestionAssignmentable;
+    customQuestions []BookingQuestionAssignmentable
     // The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
-    defaultDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    defaultDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The default physical location for the service.
-    defaultLocation Locationable;
+    defaultLocation Locationable
     // The default monetary price for the service.
-    defaultPrice *float64;
+    defaultPrice *float64
     // The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
-    defaultPriceType *BookingPriceType;
+    defaultPriceType *BookingPriceType
     // The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.
-    defaultReminders []BookingReminderable;
+    defaultReminders []BookingReminderable
     // A text description for the service.
-    description *string;
+    description *string
     // True means this service is not available to customers for booking.
-    isHiddenFromCustomers *bool;
+    isHiddenFromCustomers *bool
     // True indicates that the appointments for the service will be held online. Default value is false.
-    isLocationOnline *bool;
+    isLocationOnline *bool
     // The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
-    maximumAttendeesCount *int32;
+    maximumAttendeesCount *int32
     // Additional information about this service.
-    notes *string;
+    notes *string
     // The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
-    postBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    postBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The time to buffer before an appointment for this service can start.
-    preBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    preBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The set of policies that determine how appointments for this type of service should be created and managed.
-    schedulingPolicy BookingSchedulingPolicyable;
+    schedulingPolicy BookingSchedulingPolicyable
     // True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
-    smsNotificationsEnabled *bool;
+    smsNotificationsEnabled *bool
     // Represents those staff members who provide this service.
-    staffMemberIds []string;
+    staffMemberIds []string
     // The URL a customer uses to access the service.
-    webUrl *string;
+    webUrl *string
 }
 // NewBookingService instantiates a new bookingService and sets the default values.
 func NewBookingService()(*BookingService) {
@@ -120,9 +120,9 @@ func (m *BookingService) GetDescription()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *BookingService) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BookingNamedEntity.GetFieldDeserializers()
-    res["additionalInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["additionalInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["customQuestions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customQuestions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBookingQuestionAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -146,7 +146,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["defaultDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -156,7 +156,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["defaultLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLocationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -166,7 +166,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["defaultPrice"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultPrice"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -176,7 +176,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["defaultPriceType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultPriceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBookingPriceType)
         if err != nil {
             return err
@@ -186,7 +186,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["defaultReminders"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultReminders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBookingReminderFromDiscriminatorValue)
         if err != nil {
             return err
@@ -200,7 +200,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -210,7 +210,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["isHiddenFromCustomers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isHiddenFromCustomers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -220,7 +220,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["isLocationOnline"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isLocationOnline"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -230,7 +230,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["maximumAttendeesCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maximumAttendeesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -240,7 +240,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["notes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -250,7 +250,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["postBuffer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["postBuffer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -260,7 +260,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["preBuffer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preBuffer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -270,7 +270,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["schedulingPolicy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["schedulingPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateBookingSchedulingPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -280,7 +280,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["smsNotificationsEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["smsNotificationsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -290,7 +290,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["staffMemberIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["staffMemberIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -304,7 +304,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["webUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

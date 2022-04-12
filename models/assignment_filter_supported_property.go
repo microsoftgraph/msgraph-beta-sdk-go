@@ -7,19 +7,19 @@ import (
 // AssignmentFilterSupportedProperty represents the information about the property which is supported in crafting the rule of AssignmentFilter.
 type AssignmentFilterSupportedProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The data type of the property.
-    dataType *string;
+    dataType *string
     // Indicates whether the property is a collection type or not.
-    isCollection *bool;
+    isCollection *bool
     // Name of the property.
-    name *string;
+    name *string
     // Regex string to do validation on the property value.
-    propertyRegexConstraint *string;
+    propertyRegexConstraint *string
     // List of all supported operators on this property.
-    supportedOperators []AssignmentFilterOperator;
+    supportedOperators []AssignmentFilterOperator
     // List of all supported values for this propery, empty if everything is supported.
-    supportedValues []string;
+    supportedValues []string
 }
 // NewAssignmentFilterSupportedProperty instantiates a new assignmentFilterSupportedProperty and sets the default values.
 func NewAssignmentFilterSupportedProperty()(*AssignmentFilterSupportedProperty) {
@@ -49,9 +49,9 @@ func (m *AssignmentFilterSupportedProperty) GetDataType()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["dataType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["dataType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["isCollection"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isCollection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["propertyRegexConstraint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["propertyRegexConstraint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["supportedOperators"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedOperators"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseAssignmentFilterOperator)
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["supportedValues"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedValues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
