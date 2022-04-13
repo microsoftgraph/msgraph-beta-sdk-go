@@ -8,7 +8,7 @@ import (
 type CloudAppSecuritySessionControl struct {
     ConditionalAccessSessionControl
     // Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
-    cloudAppSecurityType *CloudAppSecuritySessionControlType;
+    cloudAppSecurityType *CloudAppSecuritySessionControlType
 }
 // NewCloudAppSecuritySessionControl instantiates a new cloudAppSecuritySessionControl and sets the default values.
 func NewCloudAppSecuritySessionControl()(*CloudAppSecuritySessionControl) {
@@ -30,9 +30,9 @@ func (m *CloudAppSecuritySessionControl) GetCloudAppSecurityType()(*CloudAppSecu
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudAppSecuritySessionControl) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CloudAppSecuritySessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ConditionalAccessSessionControl.GetFieldDeserializers()
-    res["cloudAppSecurityType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudAppSecurityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudAppSecuritySessionControlType)
         if err != nil {
             return err

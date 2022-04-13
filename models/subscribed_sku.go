@@ -8,19 +8,19 @@ import (
 type SubscribedSku struct {
     Entity
     // For example, 'User' or 'Company'.
-    appliesTo *string;
+    appliesTo *string
     // Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
-    capabilityStatus *string;
+    capabilityStatus *string
     // The number of licenses that have been assigned.
-    consumedUnits *int32;
+    consumedUnits *int32
     // Information about the number and status of prepaid licenses.
-    prepaidUnits LicenseUnitsDetailable;
+    prepaidUnits LicenseUnitsDetailable
     // Information about the service plans that are available with the SKU. Not nullable
-    servicePlans []ServicePlanInfoable;
+    servicePlans []ServicePlanInfoable
     // The unique identifier (GUID) for the service SKU.
-    skuId *string;
+    skuId *string
     // The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
-    skuPartNumber *string;
+    skuPartNumber *string
 }
 // NewSubscribedSku instantiates a new subscribedSku and sets the default values.
 func NewSubscribedSku()(*SubscribedSku) {
@@ -58,9 +58,9 @@ func (m *SubscribedSku) GetConsumedUnits()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appliesTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appliesTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["capabilityStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["capabilityStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["consumedUnits"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["consumedUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["prepaidUnits"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["prepaidUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLicenseUnitsDetailFromDiscriminatorValue)
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["servicePlans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["servicePlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateServicePlanInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["skuId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["skuId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *SubscribedSku) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["skuPartNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["skuPartNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

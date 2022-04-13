@@ -7,11 +7,11 @@ import (
 // KerberosSignOnSettings 
 type KerberosSignOnSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.
-    kerberosServicePrincipalName *string;
+    kerberosServicePrincipalName *string
     // The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.
-    kerberosSignOnMappingAttributeType *KerberosSignOnMappingAttributeType;
+    kerberosSignOnMappingAttributeType *KerberosSignOnMappingAttributeType
 }
 // NewKerberosSignOnSettings instantiates a new kerberosSignOnSettings and sets the default values.
 func NewKerberosSignOnSettings()(*KerberosSignOnSettings) {
@@ -33,9 +33,9 @@ func (m *KerberosSignOnSettings) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *KerberosSignOnSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["kerberosServicePrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *KerberosSignOnSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["kerberosServicePrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *KerberosSignOnSettings) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["kerberosSignOnMappingAttributeType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["kerberosSignOnMappingAttributeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseKerberosSignOnMappingAttributeType)
         if err != nil {
             return err

@@ -7,13 +7,13 @@ import (
 // DeploymentSettings 
 type DeploymentSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Settings governing conditions to monitor and automated actions to take.
-    monitoring MonitoringSettingsable;
+    monitoring MonitoringSettingsable
     // Settings governing how the content is rolled out.
-    rollout RolloutSettingsable;
+    rollout RolloutSettingsable
     // Settings governing safeguard holds on offering content.
-    safeguard SafeguardSettingsable;
+    safeguard SafeguardSettingsable
 }
 // NewDeploymentSettings instantiates a new deploymentSettings and sets the default values.
 func NewDeploymentSettings()(*DeploymentSettings) {
@@ -35,9 +35,9 @@ func (m *DeploymentSettings) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeploymentSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["monitoring"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeploymentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["monitoring"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMonitoringSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *DeploymentSettings) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["rollout"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rollout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRolloutSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *DeploymentSettings) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["safeguard"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["safeguard"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSafeguardSettingsFromDiscriminatorValue)
         if err != nil {
             return err

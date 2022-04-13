@@ -8,13 +8,13 @@ import (
 type IdentityProvider struct {
     Entity
     // The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
-    clientId *string;
+    clientId *string
     // The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return ****.  Required. Not nullable.
-    clientSecret *string;
+    clientSecret *string
     // The display name of the identity provider. Not nullable.
-    name *string;
+    name *string
     // The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
-    type_escaped *string;
+    type_escaped *string
 }
 // NewIdentityProvider instantiates a new identityProvider and sets the default values.
 func NewIdentityProvider()(*IdentityProvider) {
@@ -44,9 +44,9 @@ func (m *IdentityProvider) GetClientSecret()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *IdentityProvider) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *IdentityProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["clientId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clientId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *IdentityProvider) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["clientSecret"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clientSecret"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *IdentityProvider) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *IdentityProvider) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -7,11 +7,11 @@ import (
 // DelegatedAdminRelationshipRequestCollectionResponse 
 type DelegatedAdminRelationshipRequestCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The nextLink property
-    nextLink *string;
+    nextLink *string
     // The value property
-    value []DelegatedAdminRelationshipRequestable;
+    value []DelegatedAdminRelationshipRequestable
 }
 // NewDelegatedAdminRelationshipRequestCollectionResponse instantiates a new DelegatedAdminRelationshipRequestCollectionResponse and sets the default values.
 func NewDelegatedAdminRelationshipRequestCollectionResponse()(*DelegatedAdminRelationshipRequestCollectionResponse) {
@@ -33,19 +33,19 @@ func (m *DelegatedAdminRelationshipRequestCollectionResponse) GetAdditionalData(
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DelegatedAdminRelationshipRequestCollectionResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["@odata.nextLink"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DelegatedAdminRelationshipRequestCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.nextLink"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetNextLink(val)
+            m.SetOdatanextLink(val)
         }
         return nil
     }
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDelegatedAdminRelationshipRequestFromDiscriminatorValue)
         if err != nil {
             return err
@@ -61,8 +61,8 @@ func (m *DelegatedAdminRelationshipRequestCollectionResponse) GetFieldDeserializ
     }
     return res
 }
-// GetNextLink gets the @odata.nextLink property value. The nextLink property
-func (m *DelegatedAdminRelationshipRequestCollectionResponse) GetNextLink()(*string) {
+// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
+func (m *DelegatedAdminRelationshipRequestCollectionResponse) GetOdatanextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *DelegatedAdminRelationshipRequestCollectionResponse) GetValue()([]Deleg
 // Serialize serializes information the current object
 func (m *DelegatedAdminRelationshipRequestCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
+        err := writer.WriteStringValue("@odata.nextLink", m.GetOdatanextLink())
         if err != nil {
             return err
         }
@@ -109,8 +109,8 @@ func (m *DelegatedAdminRelationshipRequestCollectionResponse) SetAdditionalData(
         m.additionalData = value
     }
 }
-// SetNextLink sets the @odata.nextLink property value. The nextLink property
-func (m *DelegatedAdminRelationshipRequestCollectionResponse) SetNextLink(value *string)() {
+// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
+func (m *DelegatedAdminRelationshipRequestCollectionResponse) SetOdatanextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }

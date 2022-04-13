@@ -8,9 +8,9 @@ import (
 type Acronym struct {
     SearchAnswer
     // What the acronym stands for.
-    standsFor *string;
+    standsFor *string
     // State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.
-    state *AnswerState;
+    state *AnswerState
 }
 // NewAcronym instantiates a new acronym and sets the default values.
 func NewAcronym()(*Acronym) {
@@ -24,9 +24,9 @@ func CreateAcronymFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
     return NewAcronym(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Acronym) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Acronym) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SearchAnswer.GetFieldDeserializers()
-    res["standsFor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["standsFor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *Acronym) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAnswerState)
         if err != nil {
             return err

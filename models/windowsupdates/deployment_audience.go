@@ -9,9 +9,9 @@ import (
 type DeploymentAudience struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Specifies the assets to exclude from the audience.
-    exclusions []UpdatableAssetable;
+    exclusions []UpdatableAssetable
     // Specifies the assets to include in the audience.
-    members []UpdatableAssetable;
+    members []UpdatableAssetable
 }
 // NewDeploymentAudience instantiates a new deploymentAudience and sets the default values.
 func NewDeploymentAudience()(*DeploymentAudience) {
@@ -33,9 +33,9 @@ func (m *DeploymentAudience) GetExclusions()([]UpdatableAssetable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeploymentAudience) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeploymentAudience) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["exclusions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exclusions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUpdatableAssetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *DeploymentAudience) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["members"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUpdatableAssetFromDiscriminatorValue)
         if err != nil {
             return err

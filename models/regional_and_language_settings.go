@@ -8,19 +8,19 @@ import (
 type RegionalAndLanguageSettings struct {
     Entity
     // Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.
-    authoringLanguages []LocaleInfoable;
+    authoringLanguages []LocaleInfoable
     // The  user's preferred user interface language (menus, buttons, ribbons, warning messages) for Microsoft web applications.Returned by default. Not nullable.
-    defaultDisplayLanguage LocaleInfoable;
+    defaultDisplayLanguage LocaleInfoable
     // The locale that drives the default date, time, and calendar formatting.Returned by default.
-    defaultRegionalFormat LocaleInfoable;
+    defaultRegionalFormat LocaleInfoable
     // The language a user expected to use as input for text to speech scenarios.Returned by default.
-    defaultSpeechInputLanguage LocaleInfoable;
+    defaultSpeechInputLanguage LocaleInfoable
     // The language a user expects to have documents, emails, and messages translated into.Returned by default.
-    defaultTranslationLanguage LocaleInfoable;
+    defaultTranslationLanguage LocaleInfoable
     // Allows a user to override their defaultRegionalFormat with field specific formats.Returned by default.
-    regionalFormatOverrides RegionalFormatOverridesable;
+    regionalFormatOverrides RegionalFormatOverridesable
     // The user's preferred settings when consuming translated documents, emails, messages, and websites.Returned by default. Not nullable.
-    translationPreferences TranslationPreferencesable;
+    translationPreferences TranslationPreferencesable
 }
 // NewRegionalAndLanguageSettings instantiates a new regionalAndLanguageSettings and sets the default values.
 func NewRegionalAndLanguageSettings()(*RegionalAndLanguageSettings) {
@@ -74,9 +74,9 @@ func (m *RegionalAndLanguageSettings) GetDefaultTranslationLanguage()(LocaleInfo
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["authoringLanguages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["authoringLanguages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLocaleInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["defaultDisplayLanguage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultDisplayLanguage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLocaleInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["defaultRegionalFormat"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultRegionalFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLocaleInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["defaultSpeechInputLanguage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultSpeechInputLanguage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLocaleInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["defaultTranslationLanguage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultTranslationLanguage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLocaleInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["regionalFormatOverrides"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["regionalFormatOverrides"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRegionalFormatOverridesFromDiscriminatorValue)
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["translationPreferences"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["translationPreferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTranslationPreferencesFromDiscriminatorValue)
         if err != nil {
             return err

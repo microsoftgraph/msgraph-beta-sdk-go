@@ -7,11 +7,11 @@ import (
 // WorkforceIntegrationEncryption 
 type WorkforceIntegrationEncryption struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Possible values are: sharedSecret, unknownFutureValue.
-    protocol *WorkforceIntegrationEncryptionProtocol;
+    protocol *WorkforceIntegrationEncryptionProtocol
     // Encryption shared secret.
-    secret *string;
+    secret *string
 }
 // NewWorkforceIntegrationEncryption instantiates a new workforceIntegrationEncryption and sets the default values.
 func NewWorkforceIntegrationEncryption()(*WorkforceIntegrationEncryption) {
@@ -33,9 +33,9 @@ func (m *WorkforceIntegrationEncryption) GetAdditionalData()(map[string]interfac
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkforceIntegrationEncryption) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["protocol"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *WorkforceIntegrationEncryption) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["protocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWorkforceIntegrationEncryptionProtocol)
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *WorkforceIntegrationEncryption) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["secret"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["secret"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

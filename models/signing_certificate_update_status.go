@@ -8,11 +8,11 @@ import (
 // SigningCertificateUpdateStatus 
 type SigningCertificateUpdateStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The certificateUpdateResult property
-    certificateUpdateResult *string;
+    certificateUpdateResult *string
     // The lastRunDateTime property
-    lastRunDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastRunDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewSigningCertificateUpdateStatus instantiates a new signingCertificateUpdateStatus and sets the default values.
 func NewSigningCertificateUpdateStatus()(*SigningCertificateUpdateStatus) {
@@ -42,9 +42,9 @@ func (m *SigningCertificateUpdateStatus) GetCertificateUpdateResult()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SigningCertificateUpdateStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["certificateUpdateResult"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SigningCertificateUpdateStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["certificateUpdateResult"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *SigningCertificateUpdateStatus) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["lastRunDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastRunDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

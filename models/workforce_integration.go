@@ -8,21 +8,21 @@ import (
 type WorkforceIntegration struct {
     ChangeTrackedEntity
     // API version for the call back URL. Start with 1.
-    apiVersion *int32;
+    apiVersion *int32
     // Name of the workforce integration.
-    displayName *string;
+    displayName *string
     // The eligibilityFilteringEnabledEntities property
-    eligibilityFilteringEnabledEntities *EligibilityFilteringEnabledEntities;
+    eligibilityFilteringEnabledEntities *EligibilityFilteringEnabledEntities
     // The workforce integration encryption resource.
-    encryption WorkforceIntegrationEncryptionable;
+    encryption WorkforceIntegrationEncryptionable
     // Indicates whether this workforce integration is currently active and available.
-    isActive *bool;
+    isActive *bool
     // The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openshift, openShiftRequest, offerShiftRequest, unknownFutureValue.
-    supportedEntities *WorkforceIntegrationSupportedEntities;
+    supportedEntities *WorkforceIntegrationSupportedEntities
     // The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.
-    supports *WorkforceIntegrationSupportedEntities;
+    supports *WorkforceIntegrationSupportedEntities
     // Workforce Integration URL for callbacks from the Shifts service.
-    url *string;
+    url *string
 }
 // NewWorkforceIntegration instantiates a new workforceIntegration and sets the default values.
 func NewWorkforceIntegration()(*WorkforceIntegration) {
@@ -68,9 +68,9 @@ func (m *WorkforceIntegration) GetEncryption()(WorkforceIntegrationEncryptionabl
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
-    res["apiVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["apiVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["eligibilityFilteringEnabledEntities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["eligibilityFilteringEnabledEntities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEligibilityFilteringEnabledEntities)
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["encryption"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["encryption"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkforceIntegrationEncryptionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["isActive"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isActive"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["supportedEntities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedEntities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWorkforceIntegrationSupportedEntities)
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["supports"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWorkforceIntegrationSupportedEntities)
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *WorkforceIntegration) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["url"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

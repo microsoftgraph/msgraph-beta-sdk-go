@@ -8,19 +8,19 @@ import (
 // LicenseAssignmentState 
 type LicenseAssignmentState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The id of the group that assigns this license. If the assignment is a direct-assigned license, this field will be Null. Read-Only.
-    assignedByGroup *string;
+    assignedByGroup *string
     // The service plans that are disabled in this assignment. Read-Only.
-    disabledPlans []string;
+    disabledPlans []string
     // License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.
-    error *string;
+    error *string
     // The timestamp when the state of the license assignment was last updated.
-    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The unique identifier for the SKU. Read-Only.
-    skuId *string;
+    skuId *string
     // Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.
-    state *string;
+    state *string
 }
 // NewLicenseAssignmentState instantiates a new licenseAssignmentState and sets the default values.
 func NewLicenseAssignmentState()(*LicenseAssignmentState) {
@@ -66,9 +66,9 @@ func (m *LicenseAssignmentState) GetError()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["assignedByGroup"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["assignedByGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["disabledPlans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["disabledPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["error"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["lastUpdatedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["skuId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["skuId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *LicenseAssignmentState) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

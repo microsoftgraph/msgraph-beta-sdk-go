@@ -12,49 +12,49 @@ import (
 // UserAppInstallStatusItemRequestBuilder provides operations to manage the userStatuses property of the microsoft.graph.mobileApp entity.
 type UserAppInstallStatusItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // UserAppInstallStatusItemRequestBuilderDeleteOptions options for Delete
 type UserAppInstallStatusItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // UserAppInstallStatusItemRequestBuilderGetOptions options for Get
 type UserAppInstallStatusItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *UserAppInstallStatusItemRequestBuilderGetQueryParameters;
+    QueryParameters *UserAppInstallStatusItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // UserAppInstallStatusItemRequestBuilderGetQueryParameters the list of installation states for this mobile app.
 type UserAppInstallStatusItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // UserAppInstallStatusItemRequestBuilderPatchOptions options for Patch
 type UserAppInstallStatusItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // App the app property
 func (m *UserAppInstallStatusItemRequestBuilder) App()(*ic490bfa15729cb25d9948b8e388970092529ca560f41391770e7660c3d7c9699.AppRequestBuilder) {
@@ -64,7 +64,7 @@ func (m *UserAppInstallStatusItemRequestBuilder) App()(*ic490bfa15729cb25d9948b8
 func NewUserAppInstallStatusItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserAppInstallStatusItemRequestBuilder) {
     m := &UserAppInstallStatusItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp_id}/userStatuses/{userAppInstallStatus_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/userStatuses/{userAppInstallStatus%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -161,7 +161,7 @@ func (m *UserAppInstallStatusItemRequestBuilder) DeviceStatusesById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["mobileAppInstallStatus_id"] = id
+        urlTplParams["mobileAppInstallStatus%2Did"] = id
     }
     return i52b737a53d0c03e6a268168d1f82ff2bdff242cee05a2ee607462da8e246d8ba.NewMobileAppInstallStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -7,27 +7,27 @@ import (
 // MatchingLabel 
 type MatchingLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The applicationMode property
-    applicationMode *ApplicationMode;
+    applicationMode *ApplicationMode
     // The description property
-    description *string;
+    description *string
     // The displayName property
-    displayName *string;
+    displayName *string
     // The id property
-    id *string;
+    id *string
     // The isEndpointProtectionEnabled property
-    isEndpointProtectionEnabled *bool;
+    isEndpointProtectionEnabled *bool
     // The labelActions property
-    labelActions []LabelActionBaseable;
+    labelActions []LabelActionBaseable
     // The name property
-    name *string;
+    name *string
     // The policyTip property
-    policyTip *string;
+    policyTip *string
     // The priority property
-    priority *int32;
+    priority *int32
     // The toolTip property
-    toolTip *string;
+    toolTip *string
 }
 // NewMatchingLabel instantiates a new matchingLabel and sets the default values.
 func NewMatchingLabel()(*MatchingLabel) {
@@ -73,9 +73,9 @@ func (m *MatchingLabel) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["applicationMode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["applicationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseApplicationMode)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["isEndpointProtectionEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEndpointProtectionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["labelActions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["labelActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLabelActionBaseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["policyTip"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyTip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["priority"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["toolTip"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["toolTip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

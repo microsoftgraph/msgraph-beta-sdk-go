@@ -7,13 +7,13 @@ import (
 // MonitoringRule 
 type MonitoringRule struct {
     // The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.
-    action *MonitoringAction;
+    action *MonitoringAction
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The signal to monitor. Possible values are: rollback, unknownFutureValue.
-    signal *MonitoringSignal;
+    signal *MonitoringSignal
     // The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
-    threshold *int32;
+    threshold *int32
 }
 // NewMonitoringRule instantiates a new monitoringRule and sets the default values.
 func NewMonitoringRule()(*MonitoringRule) {
@@ -43,9 +43,9 @@ func (m *MonitoringRule) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MonitoringRule) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["action"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MonitoringRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMonitoringAction)
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *MonitoringRule) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["signal"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["signal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMonitoringSignal)
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *MonitoringRule) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["threshold"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["threshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

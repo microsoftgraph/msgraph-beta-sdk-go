@@ -8,9 +8,9 @@ import (
 type UserAnalytics struct {
     Entity
     // The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-    activityStatistics []ActivityStatisticsable;
+    activityStatistics []ActivityStatisticsable
     // The current settings for a user to use the analytics API.
-    settings Settingsable;
+    settings Settingsable
 }
 // NewUserAnalytics instantiates a new userAnalytics and sets the default values.
 func NewUserAnalytics()(*UserAnalytics) {
@@ -32,9 +32,9 @@ func (m *UserAnalytics) GetActivityStatistics()([]ActivityStatisticsable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activityStatistics"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityStatistics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateActivityStatisticsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["settings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSettingsFromDiscriminatorValue)
         if err != nil {
             return err

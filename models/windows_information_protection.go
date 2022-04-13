@@ -8,55 +8,55 @@ import (
 type WindowsInformationProtection struct {
     ManagedAppPolicy
     // Navigation property to list of security groups targeted for policy.
-    assignments []TargetedManagedAppPolicyAssignmentable;
+    assignments []TargetedManagedAppPolicyAssignmentable
     // Specifies whether to allow Azure RMS encryption for WIP
-    azureRightsManagementServicesAllowed *bool;
+    azureRightsManagementServicesAllowed *bool
     // Specifies a recovery certificate that can be used for data recovery of encrypted files. This is the same as the data recovery agent(DRA) certificate for encrypting file system(EFS)
-    dataRecoveryCertificate WindowsInformationProtectionDataRecoveryCertificateable;
+    dataRecoveryCertificate WindowsInformationProtectionDataRecoveryCertificateable
     // WIP enforcement level.See the Enum definition for supported values. Possible values are: noProtection, encryptAndAuditOnly, encryptAuditAndPrompt, encryptAuditAndBlock.
-    enforcementLevel *WindowsInformationProtectionEnforcementLevel;
+    enforcementLevel *WindowsInformationProtectionEnforcementLevel
     // Primary enterprise domain
-    enterpriseDomain *string;
+    enterpriseDomain *string
     // This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
-    enterpriseInternalProxyServers []WindowsInformationProtectionResourceCollectionable;
+    enterpriseInternalProxyServers []WindowsInformationProtectionResourceCollectionable
     // Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
-    enterpriseIPRanges []WindowsInformationProtectionIPRangeCollectionable;
+    enterpriseIPRanges []WindowsInformationProtectionIPRangeCollectionable
     // Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false
-    enterpriseIPRangesAreAuthoritative *bool;
+    enterpriseIPRangesAreAuthoritative *bool
     // This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to
-    enterpriseNetworkDomainNames []WindowsInformationProtectionResourceCollectionable;
+    enterpriseNetworkDomainNames []WindowsInformationProtectionResourceCollectionable
     // List of enterprise domains to be protected
-    enterpriseProtectedDomainNames []WindowsInformationProtectionResourceCollectionable;
+    enterpriseProtectedDomainNames []WindowsInformationProtectionResourceCollectionable
     // Contains a list of Enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy
-    enterpriseProxiedDomains []WindowsInformationProtectionProxiedDomainCollectionable;
+    enterpriseProxiedDomains []WindowsInformationProtectionProxiedDomainCollectionable
     // This is a list of proxy servers. Any server not on this list is considered non-enterprise
-    enterpriseProxyServers []WindowsInformationProtectionResourceCollectionable;
+    enterpriseProxyServers []WindowsInformationProtectionResourceCollectionable
     // Boolean value that tells the client to accept the configured list of proxies and not try to detect other work proxies. Default is false
-    enterpriseProxyServersAreAuthoritative *bool;
+    enterpriseProxyServersAreAuthoritative *bool
     // Another way to input exempt apps through xml files
-    exemptAppLockerFiles []WindowsInformationProtectionAppLockerFileable;
+    exemptAppLockerFiles []WindowsInformationProtectionAppLockerFileable
     // Exempt applications can also access enterprise data, but the data handled by those applications are not protected. This is because some critical enterprise applications may have compatibility problems with encrypted data.
-    exemptApps []WindowsInformationProtectionAppable;
+    exemptApps []WindowsInformationProtectionAppable
     // Determines whether overlays are added to icons for WIP protected files in Explorer and enterprise only app tiles in the Start menu. Starting in Windows 10, version 1703 this setting also configures the visibility of the WIP icon in the title bar of a WIP-protected app
-    iconsVisible *bool;
+    iconsVisible *bool
     // This switch is for the Windows Search Indexer, to allow or disallow indexing of items
-    indexingEncryptedStoresOrItemsBlocked *bool;
+    indexingEncryptedStoresOrItemsBlocked *bool
     // Indicates if the policy is deployed to any inclusion groups or not.
-    isAssigned *bool;
+    isAssigned *bool
     // List of domain names that can used for work or personal resource
-    neutralDomainResources []WindowsInformationProtectionResourceCollectionable;
+    neutralDomainResources []WindowsInformationProtectionResourceCollectionable
     // Another way to input protected apps through xml files
-    protectedAppLockerFiles []WindowsInformationProtectionAppLockerFileable;
+    protectedAppLockerFiles []WindowsInformationProtectionAppLockerFileable
     // Protected applications can access enterprise data and the data handled by those applications are protected with encryption
-    protectedApps []WindowsInformationProtectionAppable;
+    protectedApps []WindowsInformationProtectionAppable
     // Specifies whether the protection under lock feature (also known as encrypt under pin) should be configured
-    protectionUnderLockConfigRequired *bool;
+    protectionUnderLockConfigRequired *bool
     // This policy controls whether to revoke the WIP keys when a device unenrolls from the management service. If set to 1 (Don't revoke keys), the keys will not be revoked and the user will continue to have access to protected files after unenrollment. If the keys are not revoked, there will be no revoked file cleanup subsequently.
-    revokeOnUnenrollDisabled *bool;
+    revokeOnUnenrollDisabled *bool
     // TemplateID GUID to use for RMS encryption. The RMS template allows the IT admin to configure the details about who has access to RMS-protected file and how long they have access
-    rightsManagementServicesTemplateId *string;
+    rightsManagementServicesTemplateId *string
     // Specifies a list of file extensions, so that files with these extensions are encrypted when copying from an SMB share within the corporate boundary
-    smbAutoEncryptedFileExtensions []WindowsInformationProtectionResourceCollectionable;
+    smbAutoEncryptedFileExtensions []WindowsInformationProtectionResourceCollectionable
 }
 // NewWindowsInformationProtection instantiates a new windowsInformationProtection and sets the default values.
 func NewWindowsInformationProtection()(*WindowsInformationProtection) {
@@ -190,9 +190,9 @@ func (m *WindowsInformationProtection) GetExemptApps()([]WindowsInformationProte
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTargetedManagedAppPolicyAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -206,7 +206,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["azureRightsManagementServicesAllowed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureRightsManagementServicesAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -216,7 +216,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["dataRecoveryCertificate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dataRecoveryCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWindowsInformationProtectionDataRecoveryCertificateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -226,7 +226,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enforcementLevel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enforcementLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsInformationProtectionEnforcementLevel)
         if err != nil {
             return err
@@ -236,7 +236,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseDomain"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -246,7 +246,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseInternalProxyServers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseInternalProxyServers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -260,7 +260,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseIPRanges"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseIPRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionIPRangeCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -274,7 +274,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseIPRangesAreAuthoritative"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseIPRangesAreAuthoritative"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -284,7 +284,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseNetworkDomainNames"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseNetworkDomainNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -298,7 +298,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseProtectedDomainNames"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseProtectedDomainNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -312,7 +312,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseProxiedDomains"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseProxiedDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionProxiedDomainCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -326,7 +326,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseProxyServers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseProxyServers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -340,7 +340,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["enterpriseProxyServersAreAuthoritative"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enterpriseProxyServersAreAuthoritative"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -350,7 +350,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["exemptAppLockerFiles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exemptAppLockerFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppLockerFileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -364,7 +364,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["exemptApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exemptApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppFromDiscriminatorValue)
         if err != nil {
             return err
@@ -378,7 +378,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["iconsVisible"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iconsVisible"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -388,7 +388,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["indexingEncryptedStoresOrItemsBlocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["indexingEncryptedStoresOrItemsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -398,7 +398,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["isAssigned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isAssigned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -408,7 +408,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["neutralDomainResources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["neutralDomainResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -422,7 +422,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["protectedAppLockerFiles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["protectedAppLockerFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppLockerFileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -436,7 +436,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["protectedApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["protectedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionAppFromDiscriminatorValue)
         if err != nil {
             return err
@@ -450,7 +450,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["protectionUnderLockConfigRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["protectionUnderLockConfigRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -460,7 +460,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["revokeOnUnenrollDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["revokeOnUnenrollDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -470,7 +470,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["rightsManagementServicesTemplateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rightsManagementServicesTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -480,7 +480,7 @@ func (m *WindowsInformationProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["smbAutoEncryptedFileExtensions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["smbAutoEncryptedFileExtensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsInformationProtectionResourceCollectionFromDiscriminatorValue)
         if err != nil {
             return err

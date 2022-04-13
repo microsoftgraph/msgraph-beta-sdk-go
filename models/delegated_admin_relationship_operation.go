@@ -9,15 +9,15 @@ import (
 type DelegatedAdminRelationshipOperation struct {
     Entity
     // The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The data (payload) for the operation. Read-only.
-    data *string;
+    data *string
     // The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The type of long-running operation. The possible values are: delegatedAdminAccessAssignmentUpdate, unknownFutureValue. Read-only.
-    operationType *DelegatedAdminRelationshipOperationType;
+    operationType *DelegatedAdminRelationshipOperationType
     // The status of the operation. Read-only. The possible values are: notStarted, running, complete, failed, unknownFutureValue. Read-only. Supports $orderBy.
-    status *DelegatedAdminRelationshipOperationStatus;
+    status *DelegatedAdminRelationshipOperationStatus
 }
 // NewDelegatedAdminRelationshipOperation instantiates a new delegatedAdminRelationshipOperation and sets the default values.
 func NewDelegatedAdminRelationshipOperation()(*DelegatedAdminRelationshipOperation) {
@@ -47,9 +47,9 @@ func (m *DelegatedAdminRelationshipOperation) GetData()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DelegatedAdminRelationshipOperation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DelegatedAdminRelationshipOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *DelegatedAdminRelationshipOperation) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["data"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["data"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *DelegatedAdminRelationshipOperation) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *DelegatedAdminRelationshipOperation) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["operationType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDelegatedAdminRelationshipOperationType)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *DelegatedAdminRelationshipOperation) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDelegatedAdminRelationshipOperationStatus)
         if err != nil {
             return err

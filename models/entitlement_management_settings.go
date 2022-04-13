@@ -8,9 +8,9 @@ import (
 type EntitlementManagementSettings struct {
     Entity
     // If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.
-    daysUntilExternalUserDeletedAfterBlocked *int32;
+    daysUntilExternalUserDeletedAfterBlocked *int32
     // Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
-    externalUserLifecycleAction *string;
+    externalUserLifecycleAction *string
 }
 // NewEntitlementManagementSettings instantiates a new entitlementManagementSettings and sets the default values.
 func NewEntitlementManagementSettings()(*EntitlementManagementSettings) {
@@ -40,9 +40,9 @@ func (m *EntitlementManagementSettings) GetExternalUserLifecycleAction()(*string
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EntitlementManagementSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *EntitlementManagementSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["daysUntilExternalUserDeletedAfterBlocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["daysUntilExternalUserDeletedAfterBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *EntitlementManagementSettings) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["externalUserLifecycleAction"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalUserLifecycleAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

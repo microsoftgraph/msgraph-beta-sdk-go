@@ -9,23 +9,23 @@ import (
 type MacOSSoftwareUpdateCategorySummary struct {
     Entity
     // The device ID.
-    deviceId *string;
+    deviceId *string
     // The name of the report
-    displayName *string;
+    displayName *string
     // Number of failed updates on the device
-    failedUpdateCount *int32;
+    failedUpdateCount *int32
     // Last date time the report for this device was updated.
-    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Number of successful updates on the device
-    successfulUpdateCount *int32;
+    successfulUpdateCount *int32
     // Number of total updates on the device
-    totalUpdateCount *int32;
+    totalUpdateCount *int32
     // Software update type. Possible values are: critical, configurationDataFile, firmware, other.
-    updateCategory *MacOSSoftwareUpdateCategory;
+    updateCategory *MacOSSoftwareUpdateCategory
     // Summary of the update states.
-    updateStateSummaries []MacOSSoftwareUpdateStateSummaryable;
+    updateStateSummaries []MacOSSoftwareUpdateStateSummaryable
     // The user ID.
-    userId *string;
+    userId *string
 }
 // NewMacOSSoftwareUpdateCategorySummary instantiates a new macOSSoftwareUpdateCategorySummary and sets the default values.
 func NewMacOSSoftwareUpdateCategorySummary()(*MacOSSoftwareUpdateCategorySummary) {
@@ -63,9 +63,9 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFailedUpdateCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["failedUpdateCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["failedUpdateCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["lastUpdatedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["successfulUpdateCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["successfulUpdateCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["totalUpdateCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalUpdateCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["updateCategory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["updateCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMacOSSoftwareUpdateCategory)
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["updateStateSummaries"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["updateStateSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMacOSSoftwareUpdateStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

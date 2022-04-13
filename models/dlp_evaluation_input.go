@@ -7,13 +7,13 @@ import (
 // DlpEvaluationInput 
 type DlpEvaluationInput struct {
     // The accessScope property
-    accessScope *AccessScope;
+    accessScope *AccessScope
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The currentLabel property
-    currentLabel CurrentLabelable;
+    currentLabel CurrentLabelable
     // The discoveredSensitiveTypes property
-    discoveredSensitiveTypes []DiscoveredSensitiveTypeable;
+    discoveredSensitiveTypes []DiscoveredSensitiveTypeable
 }
 // NewDlpEvaluationInput instantiates a new dlpEvaluationInput and sets the default values.
 func NewDlpEvaluationInput()(*DlpEvaluationInput) {
@@ -59,9 +59,9 @@ func (m *DlpEvaluationInput) GetDiscoveredSensitiveTypes()([]DiscoveredSensitive
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DlpEvaluationInput) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["accessScope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DlpEvaluationInput) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["accessScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAccessScope)
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *DlpEvaluationInput) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["currentLabel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["currentLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCurrentLabelFromDiscriminatorValue)
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *DlpEvaluationInput) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["discoveredSensitiveTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["discoveredSensitiveTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDiscoveredSensitiveTypeFromDiscriminatorValue)
         if err != nil {
             return err

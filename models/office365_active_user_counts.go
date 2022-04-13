@@ -8,25 +8,25 @@ import (
 type Office365ActiveUserCounts struct {
     Entity
     // The number of active users in Exchange. Any user who can read and send email is considered an active user.
-    exchange *int64;
+    exchange *int64
     // The number of active users in Microsoft 365. This number includes all the active users in Exchange, OneDrive, SharePoint, Skype For Business, Yammer, and Microsoft Teams. You can find the definition of active user for each product in the respective property description.
-    office365 *int64;
+    office365 *int64
     // The number of active users in OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.
-    oneDrive *int64;
+    oneDrive *int64
     // The date on which a number of users were active.
-    reportDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    reportDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of days the report covers.
-    reportPeriod *string;
+    reportPeriod *string
     // The latest date of the content.
-    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    reportRefreshDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of active users in SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.
-    sharePoint *int64;
+    sharePoint *int64
     // The number of active users in Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.
-    skypeForBusiness *int64;
+    skypeForBusiness *int64
     // The number of active users in Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.
-    teams *int64;
+    teams *int64
     // The number of active users in Yammer. Any user who can post, read, or like messages is considered an active user.
-    yammer *int64;
+    yammer *int64
 }
 // NewOffice365ActiveUserCounts instantiates a new office365ActiveUserCounts and sets the default values.
 func NewOffice365ActiveUserCounts()(*Office365ActiveUserCounts) {
@@ -48,9 +48,9 @@ func (m *Office365ActiveUserCounts) GetExchange()(*int64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["exchange"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exchange"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["office365"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["office365"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["oneDrive"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["oneDrive"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["reportDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["reportPeriod"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportPeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["reportRefreshDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportRefreshDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["sharePoint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharePoint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["skypeForBusiness"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["skypeForBusiness"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["teams"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["teams"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["yammer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["yammer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

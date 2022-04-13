@@ -11,49 +11,49 @@ import (
 // TeamsAppItemRequestBuilder provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
 type TeamsAppItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // TeamsAppItemRequestBuilderDeleteOptions options for Delete
 type TeamsAppItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TeamsAppItemRequestBuilderGetOptions options for Get
 type TeamsAppItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *TeamsAppItemRequestBuilderGetQueryParameters;
+    QueryParameters *TeamsAppItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TeamsAppItemRequestBuilderGetQueryParameters get teamsApps from appCatalogs
 type TeamsAppItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // TeamsAppItemRequestBuilderPatchOptions options for Patch
 type TeamsAppItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AppDefinitions the appDefinitions property
 func (m *TeamsAppItemRequestBuilder) AppDefinitions()(*ia4ebc11dd032304ffa14250ed04d31f8c778e5ad4538b0fbda5634d98cdc51b4.AppDefinitionsRequestBuilder) {
@@ -66,7 +66,7 @@ func (m *TeamsAppItemRequestBuilder) AppDefinitionsById(id string)(*i17cd5242c75
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["teamsAppDefinition_id"] = id
+        urlTplParams["teamsAppDefinition%2Did"] = id
     }
     return i17cd5242c756bd84355b785c450d2409fb222ae189e4e7a205efdab79ef3c7f2.NewTeamsAppDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -74,7 +74,7 @@ func (m *TeamsAppItemRequestBuilder) AppDefinitionsById(id string)(*i17cd5242c75
 func NewTeamsAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsAppItemRequestBuilder) {
     m := &TeamsAppItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/appCatalogs/teamsApps/{teamsApp_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

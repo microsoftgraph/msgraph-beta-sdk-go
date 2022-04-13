@@ -9,9 +9,9 @@ import (
 type AzureADLicenseUsage struct {
     Entity
     // The licenseInfoDetails property
-    licenseInfoDetails []LicenseInfoDetailable;
+    licenseInfoDetails []LicenseInfoDetailable
     // The snapshotDateTime property
-    snapshotDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    snapshotDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewAzureADLicenseUsage instantiates a new azureADLicenseUsage and sets the default values.
 func NewAzureADLicenseUsage()(*AzureADLicenseUsage) {
@@ -25,9 +25,9 @@ func CreateAzureADLicenseUsageFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewAzureADLicenseUsage(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AzureADLicenseUsage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AzureADLicenseUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["licenseInfoDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["licenseInfoDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLicenseInfoDetailFromDiscriminatorValue)
         if err != nil {
             return err
@@ -41,7 +41,7 @@ func (m *AzureADLicenseUsage) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["snapshotDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["snapshotDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

@@ -9,29 +9,29 @@ import (
 type WindowsDriverUpdateProfile struct {
     Entity
     // Driver update profile approval type. For example, manual or automatic approval. Possible values are: manual, automatic.
-    approvalType *DriverUpdateProfileApprovalType;
+    approvalType *DriverUpdateProfileApprovalType
     // The list of group assignments of the profile.
-    assignments []WindowsDriverUpdateProfileAssignmentable;
+    assignments []WindowsDriverUpdateProfileAssignmentable
     // The date time that the profile was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Deployment deferral settings in days, only applicable when ApprovalType is set to automatic approval.
-    deploymentDeferralInDays *int32;
+    deploymentDeferralInDays *int32
     // The description of the profile which is specified by the user.
-    description *string;
+    description *string
     // Number of devices reporting for this profile
-    deviceReporting *int32;
+    deviceReporting *int32
     // The display name for the profile.
-    displayName *string;
+    displayName *string
     // Driver inventories for this profile.
-    driverInventories []WindowsDriverUpdateInventoryable;
+    driverInventories []WindowsDriverUpdateInventoryable
     // Driver inventory sync status for this profile.
-    inventorySyncStatus WindowsDriverUpdateProfileInventorySyncStatusable;
+    inventorySyncStatus WindowsDriverUpdateProfileInventorySyncStatusable
     // The date time that the profile was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Number of new driver updates available for this profile.
-    newUpdates *int32;
+    newUpdates *int32
     // List of Scope Tags for this Driver Update entity.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
 }
 // NewWindowsDriverUpdateProfile instantiates a new windowsDriverUpdateProfile and sets the default values.
 func NewWindowsDriverUpdateProfile()(*WindowsDriverUpdateProfile) {
@@ -109,9 +109,9 @@ func (m *WindowsDriverUpdateProfile) GetDriverInventories()([]WindowsDriverUpdat
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["approvalType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["approvalType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDriverUpdateProfileApprovalType)
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsDriverUpdateProfileAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["deploymentDeferralInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deploymentDeferralInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["deviceReporting"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceReporting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["driverInventories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["driverInventories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsDriverUpdateInventoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["inventorySyncStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inventorySyncStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWindowsDriverUpdateProfileInventorySyncStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["newUpdates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["newUpdates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -229,7 +229,7 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

@@ -7,15 +7,15 @@ import (
 // ImageInfo 
 type ImageInfo struct {
     // Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
-    addImageQuery *bool;
+    addImageQuery *bool
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Optional; alt-text accessible content for the image
-    alternateText *string;
+    alternateText *string
     // The alternativeText property
-    alternativeText *string;
+    alternativeText *string
     // Optional; URI that points to an icon which represents the application used to generate the activity
-    iconUrl *string;
+    iconUrl *string
 }
 // NewImageInfo instantiates a new imageInfo and sets the default values.
 func NewImageInfo()(*ImageInfo) {
@@ -61,9 +61,9 @@ func (m *ImageInfo) GetAlternativeText()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ImageInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["addImageQuery"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ImageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["addImageQuery"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *ImageInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["alternateText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["alternateText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *ImageInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["alternativeText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["alternativeText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *ImageInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["iconUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iconUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

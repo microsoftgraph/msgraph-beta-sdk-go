@@ -9,29 +9,29 @@ import (
 type DeviceHealthScriptDeviceState struct {
     Entity
     // A list of the assignment filter ids used for health script applicability evaluation
-    assignmentFilterIds []string;
+    assignmentFilterIds []string
     // Detection state from the lastest device health script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
-    detectionState *RunState;
+    detectionState *RunState
     // The next timestamp of when the device health script is expected to execute
-    expectedStateUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expectedStateUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The last timestamp of when the device health script executed
-    lastStateUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastStateUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The last time that Intune Managment Extension synced with Intune
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The managed device on which the device health script executed
-    managedDevice ManagedDeviceable;
+    managedDevice ManagedDeviceable
     // Error from the detection script after remediation
-    postRemediationDetectionScriptError *string;
+    postRemediationDetectionScriptError *string
     // Detection script output after remediation
-    postRemediationDetectionScriptOutput *string;
+    postRemediationDetectionScriptOutput *string
     // Error from the detection script before remediation
-    preRemediationDetectionScriptError *string;
+    preRemediationDetectionScriptError *string
     // Output of the detection script before remediation
-    preRemediationDetectionScriptOutput *string;
+    preRemediationDetectionScriptOutput *string
     // Error output of the remediation script
-    remediationScriptError *string;
+    remediationScriptError *string
     // Remediation state from the lastest device health script execution. Possible values are: unknown, skipped, success, remediationFailed, scriptError.
-    remediationState *RemediationState;
+    remediationState *RemediationState
 }
 // NewDeviceHealthScriptDeviceState instantiates a new deviceHealthScriptDeviceState and sets the default values.
 func NewDeviceHealthScriptDeviceState()(*DeviceHealthScriptDeviceState) {
@@ -69,9 +69,9 @@ func (m *DeviceHealthScriptDeviceState) GetExpectedStateUpdateDateTime()(*i33607
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignmentFilterIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignmentFilterIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["detectionState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["detectionState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRunState)
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["expectedStateUpdateDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expectedStateUpdateDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["lastStateUpdateDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastStateUpdateDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["lastSyncDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["managedDevice"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDevice"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateManagedDeviceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["postRemediationDetectionScriptError"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["postRemediationDetectionScriptError"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["postRemediationDetectionScriptOutput"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["postRemediationDetectionScriptOutput"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["preRemediationDetectionScriptError"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preRemediationDetectionScriptError"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["preRemediationDetectionScriptOutput"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preRemediationDetectionScriptOutput"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["remediationScriptError"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remediationScriptError"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *DeviceHealthScriptDeviceState) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["remediationState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remediationState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRemediationState)
         if err != nil {
             return err

@@ -8,17 +8,17 @@ import (
 // UserTrainingContentEventInfo 
 type UserTrainingContentEventInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Browser of the user from where the training event was generated.
-    browser *string;
+    browser *string
     // Date and time of the training content playback by the user.
-    contentDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    contentDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // IP address of the user for the training event.
-    ipAddress *string;
+    ipAddress *string
     // The operating system, platform, and device details of the user for the training event.
-    osPlatformDeviceDetails *string;
+    osPlatformDeviceDetails *string
     // Potential improvement in security posture of the tenant after completion of the training by the user.
-    potentialScoreImpact *float64;
+    potentialScoreImpact *float64
 }
 // NewUserTrainingContentEventInfo instantiates a new userTrainingContentEventInfo and sets the default values.
 func NewUserTrainingContentEventInfo()(*UserTrainingContentEventInfo) {
@@ -56,9 +56,9 @@ func (m *UserTrainingContentEventInfo) GetContentDateTime()(*i336074805fc853987a
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserTrainingContentEventInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["browser"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserTrainingContentEventInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["browser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *UserTrainingContentEventInfo) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["contentDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *UserTrainingContentEventInfo) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["ipAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ipAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *UserTrainingContentEventInfo) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["osPlatformDeviceDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osPlatformDeviceDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *UserTrainingContentEventInfo) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["potentialScoreImpact"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["potentialScoreImpact"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err

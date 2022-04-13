@@ -8,19 +8,19 @@ import (
 type OnPremisesPublishingProfile struct {
     Entity
     // List of existing onPremisesAgentGroup objects. Read-only. Nullable.
-    agentGroups []OnPremisesAgentGroupable;
+    agentGroups []OnPremisesAgentGroupable
     // List of existing onPremisesAgent objects. Read-only. Nullable.
-    agents []OnPremisesAgentable;
+    agents []OnPremisesAgentable
     // List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
-    connectorGroups []ConnectorGroupable;
+    connectorGroups []ConnectorGroupable
     // List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
-    connectors []Connectorable;
+    connectors []Connectorable
     // Represents a hybridAgentUpdaterConfiguration object.
-    hybridAgentUpdaterConfiguration HybridAgentUpdaterConfigurationable;
+    hybridAgentUpdaterConfiguration HybridAgentUpdaterConfigurationable
     // Represents if Azure AD Application Proxy is enabled for the tenant.
-    isEnabled *bool;
+    isEnabled *bool
     // List of existing publishedResource objects. Read-only. Nullable.
-    publishedResources []PublishedResourceable;
+    publishedResources []PublishedResourceable
 }
 // NewOnPremisesPublishingProfile instantiates a new onPremisesPublishingProfile and sets the default values.
 func NewOnPremisesPublishingProfile()(*OnPremisesPublishingProfile) {
@@ -66,9 +66,9 @@ func (m *OnPremisesPublishingProfile) GetConnectors()([]Connectorable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["agentGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["agentGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOnPremisesAgentGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["agents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["agents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOnPremisesAgentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["connectorGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["connectorGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConnectorGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["connectors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["connectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConnectorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["hybridAgentUpdaterConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hybridAgentUpdaterConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateHybridAgentUpdaterConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["isEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["publishedResources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publishedResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePublishedResourceFromDiscriminatorValue)
         if err != nil {
             return err

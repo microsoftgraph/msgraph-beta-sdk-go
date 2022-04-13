@@ -8,35 +8,35 @@ import (
 // SynchronizationTaskExecution 
 type SynchronizationTaskExecution struct {
     // Identifier of the job run.
-    activityIdentifier *string;
+    activityIdentifier *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Count of processed entries that were assigned for this application.
-    countEntitled *int64;
+    countEntitled *int64
     // Count of processed entries that were assigned for provisioning.
-    countEntitledForProvisioning *int64;
+    countEntitledForProvisioning *int64
     // Count of entries that were escrowed (errors).
-    countEscrowed *int64;
+    countEscrowed *int64
     // Count of entries that were escrowed, including system-generated escrows.
-    countEscrowedRaw *int64;
+    countEscrowedRaw *int64
     // Count of exported entries.
-    countExported *int64;
+    countExported *int64
     // Count of entries that were expected to be exported.
-    countExports *int64;
+    countExports *int64
     // Count of imported entries.
-    countImported *int64;
+    countImported *int64
     // Count of imported delta-changes.
-    countImportedDeltas *int64;
+    countImportedDeltas *int64
     // Count of imported delta-changes pertaining to reference changes.
-    countImportedReferenceDeltas *int64;
+    countImportedReferenceDeltas *int64
     // If an error was encountered, contains a synchronizationError object with details.
-    error SynchronizationErrorable;
+    error SynchronizationErrorable
     // Code summarizing the result of this run. Possible values are: Succeeded, Failed, EntryLevelErrors.
-    state *SynchronizationTaskExecutionResult;
+    state *SynchronizationTaskExecutionResult
     // Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    timeBegan *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    timeBegan *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    timeEnded *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    timeEnded *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewSynchronizationTaskExecution instantiates a new synchronizationTaskExecution and sets the default values.
 func NewSynchronizationTaskExecution()(*SynchronizationTaskExecution) {
@@ -146,9 +146,9 @@ func (m *SynchronizationTaskExecution) GetError()(SynchronizationErrorable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["activityIdentifier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["activityIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["countEntitled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countEntitled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -168,7 +168,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["countEntitledForProvisioning"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countEntitledForProvisioning"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -178,7 +178,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["countEscrowed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countEscrowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -188,7 +188,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["countEscrowedRaw"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countEscrowedRaw"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -198,7 +198,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["countExported"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countExported"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -208,7 +208,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["countExports"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countExports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -218,7 +218,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["countImported"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countImported"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -228,7 +228,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["countImportedDeltas"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countImportedDeltas"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -238,7 +238,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["countImportedReferenceDeltas"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countImportedReferenceDeltas"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -248,7 +248,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["error"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSynchronizationErrorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -258,7 +258,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSynchronizationTaskExecutionResult)
         if err != nil {
             return err
@@ -268,7 +268,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["timeBegan"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeBegan"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -278,7 +278,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["timeEnded"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeEnded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

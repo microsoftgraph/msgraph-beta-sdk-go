@@ -7,11 +7,11 @@ import (
 // DeviceAndAppManagementAssignmentTarget base type for assignment targets.
 type DeviceAndAppManagementAssignmentTarget struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The Id of the filter for the target assignment.
-    deviceAndAppManagementAssignmentFilterId *string;
+    deviceAndAppManagementAssignmentFilterId *string
     // The type of filter of the target assignment i.e. Exclude or Include. Possible values are: none, include, exclude.
-    deviceAndAppManagementAssignmentFilterType *DeviceAndAppManagementAssignmentFilterType;
+    deviceAndAppManagementAssignmentFilterType *DeviceAndAppManagementAssignmentFilterType
 }
 // NewDeviceAndAppManagementAssignmentTarget instantiates a new deviceAndAppManagementAssignmentTarget and sets the default values.
 func NewDeviceAndAppManagementAssignmentTarget()(*DeviceAndAppManagementAssignmentTarget) {
@@ -49,9 +49,9 @@ func (m *DeviceAndAppManagementAssignmentTarget) GetDeviceAndAppManagementAssign
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceAndAppManagementAssignmentTarget) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["deviceAndAppManagementAssignmentFilterId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceAndAppManagementAssignmentTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["deviceAndAppManagementAssignmentFilterId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *DeviceAndAppManagementAssignmentTarget) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["deviceAndAppManagementAssignmentFilterType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceAndAppManagementAssignmentFilterType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceAndAppManagementAssignmentFilterType)
         if err != nil {
             return err

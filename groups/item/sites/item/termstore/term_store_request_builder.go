@@ -13,55 +13,55 @@ import (
 // TermStoreRequestBuilder provides operations to manage the termStore property of the microsoft.graph.site entity.
 type TermStoreRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // TermStoreRequestBuilderDeleteOptions options for Delete
 type TermStoreRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TermStoreRequestBuilderGetOptions options for Get
 type TermStoreRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *TermStoreRequestBuilderGetQueryParameters;
+    QueryParameters *TermStoreRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // TermStoreRequestBuilderGetQueryParameters the default termStore under this site.
 type TermStoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // TermStoreRequestBuilderPatchOptions options for Patch
 type TermStoreRequestBuilderPatchOptions struct {
     // 
-    Body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable;
+    Body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewTermStoreRequestBuilderInternal instantiates a new TermStoreRequestBuilder and sets the default values.
 func NewTermStoreRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TermStoreRequestBuilder) {
     m := &TermStoreRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group_id}/sites/{site_id}/termStore{?select,expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -174,7 +174,7 @@ func (m *TermStoreRequestBuilder) GroupsById(id string)(*i1b4dbadd2c5e680e3c73da
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["group_id1"] = id
+        urlTplParams["group%2Did1"] = id
     }
     return i1b4dbadd2c5e680e3c73da914b30950566eafbc1875da75f093daab1a43dc626.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -205,7 +205,7 @@ func (m *TermStoreRequestBuilder) SetsById(id string)(*i6d76457dec0d89007b8f5153
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["set_id"] = id
+        urlTplParams["set%2Did"] = id
     }
     return i6d76457dec0d89007b8f5153bc6bc6fac5cc69b5509d086fa2c82e6a8a62921d.NewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

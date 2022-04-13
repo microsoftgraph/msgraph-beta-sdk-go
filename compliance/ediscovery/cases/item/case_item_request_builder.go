@@ -26,49 +26,49 @@ import (
 // CaseItemRequestBuilder provides operations to manage the cases property of the microsoft.graph.ediscovery.ediscoveryroot entity.
 type CaseItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // CaseItemRequestBuilderDeleteOptions options for Delete
 type CaseItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CaseItemRequestBuilderGetOptions options for Get
 type CaseItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *CaseItemRequestBuilderGetQueryParameters;
+    QueryParameters *CaseItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CaseItemRequestBuilderGetQueryParameters get cases from compliance
 type CaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // CaseItemRequestBuilderPatchOptions options for Patch
 type CaseItemRequestBuilderPatchOptions struct {
     // 
-    Body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable;
+    Body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Case_escapedable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Close the close property
 func (m *CaseItemRequestBuilder) Close()(*icbe808dca9f215e46a201507bb9fd3d6682ffd22c4228bd2934fa6d092ec2013.CloseRequestBuilder) {
@@ -78,7 +78,7 @@ func (m *CaseItemRequestBuilder) Close()(*icbe808dca9f215e46a201507bb9fd3d6682ff
 func NewCaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CaseItemRequestBuilder) {
     m := &CaseItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -159,7 +159,7 @@ func (m *CaseItemRequestBuilder) CustodiansById(id string)(*i6f12c740d8ad4a07e1c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["custodian_id"] = id
+        urlTplParams["custodian%2Did"] = id
     }
     return i6f12c740d8ad4a07e1c35e99570b5c006a24cd6710fc2378825d45f2cebe46e6.NewCustodianItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -206,7 +206,7 @@ func (m *CaseItemRequestBuilder) LegalHoldsById(id string)(*ia8b23b6ab36c2b10209
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["legalHold_id"] = id
+        urlTplParams["legalHold%2Did"] = id
     }
     return ia8b23b6ab36c2b10209f024c3f8396df9a37f4b7c7dbf0cdcc02383064607d36.NewLegalHoldItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -221,7 +221,7 @@ func (m *CaseItemRequestBuilder) NoncustodialDataSourcesById(id string)(*i2d904c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["noncustodialDataSource_id"] = id
+        urlTplParams["noncustodialDataSource%2Did"] = id
     }
     return i2d904c4ba0f64303f7ec694166a350f070305a6d3282664966c3c7ee03bee849.NewNoncustodialDataSourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -236,7 +236,7 @@ func (m *CaseItemRequestBuilder) OperationsById(id string)(*i85cba7b9ace1e93810a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["caseOperation_id"] = id
+        urlTplParams["caseOperation%2Did"] = id
     }
     return i85cba7b9ace1e93810a0e9c5210f57fed67ca0ac127d57c09a74eadcbfe393df.NewCaseOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -271,7 +271,7 @@ func (m *CaseItemRequestBuilder) ReviewSetsById(id string)(*i6c4f9c432182d1a8383
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["reviewSet_id"] = id
+        urlTplParams["reviewSet%2Did"] = id
     }
     return i6c4f9c432182d1a8383e210ea7282204df1fd76b96287e8d3e0ac99ac798c705.NewReviewSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -290,7 +290,7 @@ func (m *CaseItemRequestBuilder) SourceCollectionsById(id string)(*i700c8523a708
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["sourceCollection_id"] = id
+        urlTplParams["sourceCollection%2Did"] = id
     }
     return i700c8523a708bdda9b2320cf511ec749704101f5da23584bcca53db2919ad351.NewSourceCollectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -305,7 +305,7 @@ func (m *CaseItemRequestBuilder) TagsById(id string)(*i71c6b856224a9a329639e7313
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["tag_id"] = id
+        urlTplParams["tag%2Did"] = id
     }
     return i71c6b856224a9a329639e731310314e9aaa3c89985c5bf77e3adab5540d605e7.NewTagItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

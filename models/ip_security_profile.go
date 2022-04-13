@@ -9,31 +9,31 @@ import (
 type IpSecurityProfile struct {
     Entity
     // The activityGroupNames property
-    activityGroupNames []string;
+    activityGroupNames []string
     // The address property
-    address *string;
+    address *string
     // The azureSubscriptionId property
-    azureSubscriptionId *string;
+    azureSubscriptionId *string
     // The azureTenantId property
-    azureTenantId *string;
+    azureTenantId *string
     // The countHits property
-    countHits *int32;
+    countHits *int32
     // The countHosts property
-    countHosts *int32;
+    countHosts *int32
     // The firstSeenDateTime property
-    firstSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    firstSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The ipCategories property
-    ipCategories []IpCategoryable;
+    ipCategories []IpCategoryable
     // The ipReferenceData property
-    ipReferenceData []IpReferenceDataable;
+    ipReferenceData []IpReferenceDataable
     // The lastSeenDateTime property
-    lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The riskScore property
-    riskScore *string;
+    riskScore *string
     // The tags property
-    tags []string;
+    tags []string
     // The vendorInformation property
-    vendorInformation SecurityVendorInformationable;
+    vendorInformation SecurityVendorInformationable
 }
 // NewIpSecurityProfile instantiates a new ipSecurityProfile and sets the default values.
 func NewIpSecurityProfile()(*IpSecurityProfile) {
@@ -95,9 +95,9 @@ func (m *IpSecurityProfile) GetCountHosts()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activityGroupNames"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityGroupNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["address"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["azureSubscriptionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureSubscriptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["azureTenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["countHits"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countHits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["countHosts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countHosts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["firstSeenDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["firstSeenDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["ipCategories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ipCategories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIpCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["ipReferenceData"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ipReferenceData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIpReferenceDataFromDiscriminatorValue)
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["lastSeenDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSeenDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["riskScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["tags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -233,7 +233,7 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["vendorInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vendorInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err

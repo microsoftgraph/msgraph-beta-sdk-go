@@ -7,11 +7,11 @@ import (
 // TeamworkHardwareHealth 
 type TeamworkHardwareHealth struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The system health details for a teamworkDevice.
-    computeHealth TeamworkPeripheralHealthable;
+    computeHealth TeamworkPeripheralHealthable
     // The health details about the HDMI ingest of a device.
-    hdmiIngestHealth TeamworkPeripheralHealthable;
+    hdmiIngestHealth TeamworkPeripheralHealthable
 }
 // NewTeamworkHardwareHealth instantiates a new teamworkHardwareHealth and sets the default values.
 func NewTeamworkHardwareHealth()(*TeamworkHardwareHealth) {
@@ -41,9 +41,9 @@ func (m *TeamworkHardwareHealth) GetComputeHealth()(TeamworkPeripheralHealthable
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkHardwareHealth) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["computeHealth"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkHardwareHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["computeHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *TeamworkHardwareHealth) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["hdmiIngestHealth"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hdmiIngestHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
         if err != nil {
             return err

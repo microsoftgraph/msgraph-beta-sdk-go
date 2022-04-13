@@ -7,13 +7,13 @@ import (
 // SecurityBaselineContributingPolicy the security baseline compliance state of a setting for a device
 type SecurityBaselineContributingPolicy struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Name of the policy
-    displayName *string;
+    displayName *string
     // Unique identifier of the policy
-    sourceId *string;
+    sourceId *string
     // Authoring source of the policy. Possible values are: deviceConfiguration, deviceIntent.
-    sourceType *SecurityBaselinePolicySourceType;
+    sourceType *SecurityBaselinePolicySourceType
 }
 // NewSecurityBaselineContributingPolicy instantiates a new securityBaselineContributingPolicy and sets the default values.
 func NewSecurityBaselineContributingPolicy()(*SecurityBaselineContributingPolicy) {
@@ -43,9 +43,9 @@ func (m *SecurityBaselineContributingPolicy) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SecurityBaselineContributingPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SecurityBaselineContributingPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *SecurityBaselineContributingPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["sourceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *SecurityBaselineContributingPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["sourceType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSecurityBaselinePolicySourceType)
         if err != nil {
             return err

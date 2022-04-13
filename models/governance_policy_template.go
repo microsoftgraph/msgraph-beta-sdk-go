@@ -8,11 +8,11 @@ import (
 type GovernancePolicyTemplate struct {
     Entity
     // The displayName property
-    displayName *string;
+    displayName *string
     // The policy property
-    policy GovernancePolicyable;
+    policy GovernancePolicyable
     // The settings property
-    settings BusinessFlowSettingsable;
+    settings BusinessFlowSettingsable
 }
 // NewGovernancePolicyTemplate instantiates a new governancePolicyTemplate and sets the default values.
 func NewGovernancePolicyTemplate()(*GovernancePolicyTemplate) {
@@ -34,9 +34,9 @@ func (m *GovernancePolicyTemplate) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GovernancePolicyTemplate) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *GovernancePolicyTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *GovernancePolicyTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["policy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGovernancePolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *GovernancePolicyTemplate) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["settings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateBusinessFlowSettingsFromDiscriminatorValue)
         if err != nil {
             return err

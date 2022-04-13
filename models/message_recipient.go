@@ -8,11 +8,11 @@ import (
 type MessageRecipient struct {
     Entity
     // The deliveryStatus property
-    deliveryStatus *MessageStatus;
+    deliveryStatus *MessageStatus
     // The events property
-    events []MessageEventable;
+    events []MessageEventable
     // The recipientEmail property
-    recipientEmail *string;
+    recipientEmail *string
 }
 // NewMessageRecipient instantiates a new messageRecipient and sets the default values.
 func NewMessageRecipient()(*MessageRecipient) {
@@ -42,9 +42,9 @@ func (m *MessageRecipient) GetEvents()([]MessageEventable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deliveryStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deliveryStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMessageStatus)
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["events"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["events"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMessageEventFromDiscriminatorValue)
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["recipientEmail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recipientEmail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

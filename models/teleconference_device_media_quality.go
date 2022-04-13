@@ -7,49 +7,49 @@ import (
 // TeleconferenceDeviceMediaQuality 
 type TeleconferenceDeviceMediaQuality struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The average inbound stream network jitter.
-    averageInboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    averageInboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The average inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-    averageInboundPacketLossRateInPercentage *float64;
+    averageInboundPacketLossRateInPercentage *float64
     // The average inbound stream network round trip delay.
-    averageInboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    averageInboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The average outbound stream network jitter.
-    averageOutboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    averageOutboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The average outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-    averageOutboundPacketLossRateInPercentage *float64;
+    averageOutboundPacketLossRateInPercentage *float64
     // The average outbound stream network round trip delay.
-    averageOutboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    averageOutboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The channel index of media. Indexing begins with 1.  If a media session contains 3 video modalities, channel indexes will be 1, 2, and 3.
-    channelIndex *int32;
+    channelIndex *int32
     // The total number of the inbound packets.
-    inboundPackets *int64;
+    inboundPackets *int64
     // the local IP address for the media session.
-    localIPAddress *string;
+    localIPAddress *string
     // The local media port.
-    localPort *int32;
+    localPort *int32
     // The maximum inbound stream network jitter.
-    maximumInboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    maximumInboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The maximum inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-    maximumInboundPacketLossRateInPercentage *float64;
+    maximumInboundPacketLossRateInPercentage *float64
     // The maximum inbound stream network round trip delay.
-    maximumInboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    maximumInboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The maximum outbound stream network jitter.
-    maximumOutboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    maximumOutboundJitter *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The maximum outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-    maximumOutboundPacketLossRateInPercentage *float64;
+    maximumOutboundPacketLossRateInPercentage *float64
     // The maximum outbound stream network round trip delay.
-    maximumOutboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    maximumOutboundRoundTripDelay *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The total modality duration. If the media enabled and disabled multiple times, MediaDuration will the summation of all of the durations.
-    mediaDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    mediaDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The network link speed in bytes
-    networkLinkSpeedInBytes *int64;
+    networkLinkSpeedInBytes *int64
     // The total number of the outbound packets.
-    outboundPackets *int64;
+    outboundPackets *int64
     // The remote IP address for the media session.
-    remoteIPAddress *string;
+    remoteIPAddress *string
     // The remote media port.
-    remotePort *int32;
+    remotePort *int32
 }
 // NewTeleconferenceDeviceMediaQuality instantiates a new teleconferenceDeviceMediaQuality and sets the default values.
 func NewTeleconferenceDeviceMediaQuality()(*TeleconferenceDeviceMediaQuality) {
@@ -127,9 +127,9 @@ func (m *TeleconferenceDeviceMediaQuality) GetChannelIndex()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["averageInboundJitter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["averageInboundJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["averageInboundPacketLossRateInPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageInboundPacketLossRateInPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["averageInboundRoundTripDelay"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageInboundRoundTripDelay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["averageOutboundJitter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageOutboundJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["averageOutboundPacketLossRateInPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageOutboundPacketLossRateInPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["averageOutboundRoundTripDelay"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["averageOutboundRoundTripDelay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["channelIndex"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["channelIndex"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["inboundPackets"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inboundPackets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["localIPAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["localIPAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["localPort"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["localPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -229,7 +229,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["maximumInboundJitter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maximumInboundJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -239,7 +239,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["maximumInboundPacketLossRateInPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maximumInboundPacketLossRateInPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -249,7 +249,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["maximumInboundRoundTripDelay"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maximumInboundRoundTripDelay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -259,7 +259,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["maximumOutboundJitter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maximumOutboundJitter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -269,7 +269,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["maximumOutboundPacketLossRateInPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maximumOutboundPacketLossRateInPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -279,7 +279,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["maximumOutboundRoundTripDelay"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maximumOutboundRoundTripDelay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -289,7 +289,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["mediaDuration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mediaDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -299,7 +299,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["networkLinkSpeedInBytes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["networkLinkSpeedInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -309,7 +309,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["outboundPackets"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["outboundPackets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -319,7 +319,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["remoteIPAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remoteIPAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -329,7 +329,7 @@ func (m *TeleconferenceDeviceMediaQuality) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["remotePort"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remotePort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

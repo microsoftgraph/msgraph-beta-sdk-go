@@ -7,9 +7,9 @@ import (
 // PasswordSingleSignOnSettings 
 type PasswordSingleSignOnSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The fields property
-    fields []PasswordSingleSignOnFieldable;
+    fields []PasswordSingleSignOnFieldable
 }
 // NewPasswordSingleSignOnSettings instantiates a new passwordSingleSignOnSettings and sets the default values.
 func NewPasswordSingleSignOnSettings()(*PasswordSingleSignOnSettings) {
@@ -31,9 +31,9 @@ func (m *PasswordSingleSignOnSettings) GetAdditionalData()(map[string]interface{
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PasswordSingleSignOnSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["fields"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *PasswordSingleSignOnSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["fields"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePasswordSingleSignOnFieldFromDiscriminatorValue)
         if err != nil {
             return err

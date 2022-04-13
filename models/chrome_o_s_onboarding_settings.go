@@ -9,13 +9,13 @@ import (
 type ChromeOSOnboardingSettings struct {
     Entity
     // The ChromebookTenant's LastDirectorySyncDateTime
-    lastDirectorySyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastDirectorySyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The ChromebookTenant's LastModifiedDateTime
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed, offboarding, unknownFutureValue.
-    onboardingStatus *OnboardingStatus;
+    onboardingStatus *OnboardingStatus
     // The ChromebookTenant's OwnerUserPrincipalName
-    ownerUserPrincipalName *string;
+    ownerUserPrincipalName *string
 }
 // NewChromeOSOnboardingSettings instantiates a new chromeOSOnboardingSettings and sets the default values.
 func NewChromeOSOnboardingSettings()(*ChromeOSOnboardingSettings) {
@@ -29,9 +29,9 @@ func CreateChromeOSOnboardingSettingsFromDiscriminatorValue(parseNode i878a80d23
     return NewChromeOSOnboardingSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ChromeOSOnboardingSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ChromeOSOnboardingSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["lastDirectorySyncDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastDirectorySyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -41,7 +41,7 @@ func (m *ChromeOSOnboardingSettings) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -51,7 +51,7 @@ func (m *ChromeOSOnboardingSettings) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["onboardingStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onboardingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOnboardingStatus)
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *ChromeOSOnboardingSettings) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["ownerUserPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ownerUserPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

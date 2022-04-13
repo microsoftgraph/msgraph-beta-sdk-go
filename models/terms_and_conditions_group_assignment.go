@@ -8,9 +8,9 @@ import (
 type TermsAndConditionsGroupAssignment struct {
     Entity
     // Unique identifier of a group that the T&C policy is assigned to.
-    targetGroupId *string;
+    targetGroupId *string
     // Navigation link to the terms and conditions that are assigned.
-    termsAndConditions TermsAndConditionsable;
+    termsAndConditions TermsAndConditionsable
 }
 // NewTermsAndConditionsGroupAssignment instantiates a new termsAndConditionsGroupAssignment and sets the default values.
 func NewTermsAndConditionsGroupAssignment()(*TermsAndConditionsGroupAssignment) {
@@ -24,9 +24,9 @@ func CreateTermsAndConditionsGroupAssignmentFromDiscriminatorValue(parseNode i87
     return NewTermsAndConditionsGroupAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TermsAndConditionsGroupAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TermsAndConditionsGroupAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["targetGroupId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *TermsAndConditionsGroupAssignment) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["termsAndConditions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["termsAndConditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTermsAndConditionsFromDiscriminatorValue)
         if err != nil {
             return err

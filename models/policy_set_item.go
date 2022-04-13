@@ -9,21 +9,21 @@ import (
 type PolicySetItem struct {
     Entity
     // Creation time of the PolicySetItem.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // DisplayName of the PolicySetItem.
-    displayName *string;
+    displayName *string
     // Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
-    errorCode *ErrorCode;
+    errorCode *ErrorCode
     // Tags of the guided deployment
-    guidedDeploymentTags []string;
+    guidedDeploymentTags []string
     // policySetType of the PolicySetItem.
-    itemType *string;
+    itemType *string
     // Last modified time of the PolicySetItem.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // PayloadId of the PolicySetItem.
-    payloadId *string;
+    payloadId *string
     // Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
-    status *PolicySetStatus;
+    status *PolicySetStatus
 }
 // NewPolicySetItem instantiates a new policySetItem and sets the default values.
 func NewPolicySetItem()(*PolicySetItem) {
@@ -61,9 +61,9 @@ func (m *PolicySetItem) GetErrorCode()(*ErrorCode) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PolicySetItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PolicySetItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *PolicySetItem) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *PolicySetItem) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["errorCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseErrorCode)
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *PolicySetItem) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["guidedDeploymentTags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["guidedDeploymentTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *PolicySetItem) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["itemType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["itemType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *PolicySetItem) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *PolicySetItem) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["payloadId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["payloadId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *PolicySetItem) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePolicySetStatus)
         if err != nil {
             return err

@@ -9,11 +9,11 @@ import (
 type CaseSettings struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The OCR (Optical Character Recognition) settings for the case.
-    ocr OcrSettingsable;
+    ocr OcrSettingsable
     // The redundancy (near duplicate and email threading) detection settings for the case.
-    redundancyDetection RedundancyDetectionSettingsable;
+    redundancyDetection RedundancyDetectionSettingsable
     // The Topic Modeling (Themes) settings for the case.
-    topicModeling TopicModelingSettingsable;
+    topicModeling TopicModelingSettingsable
 }
 // NewCaseSettings instantiates a new caseSettings and sets the default values.
 func NewCaseSettings()(*CaseSettings) {
@@ -27,9 +27,9 @@ func CreateCaseSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewCaseSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CaseSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CaseSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["ocr"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ocr"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOcrSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -39,7 +39,7 @@ func (m *CaseSettings) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["redundancyDetection"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["redundancyDetection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRedundancyDetectionSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *CaseSettings) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["topicModeling"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["topicModeling"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTopicModelingSettingsFromDiscriminatorValue)
         if err != nil {
             return err

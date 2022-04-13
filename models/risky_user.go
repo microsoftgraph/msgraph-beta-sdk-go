@@ -9,23 +9,23 @@ import (
 type RiskyUser struct {
     Entity
     // The activity related to user risk level change
-    history []RiskyUserHistoryItemable;
+    history []RiskyUserHistoryItemable
     // Indicates whether the user is deleted. Possible values are: true, false.
-    isDeleted *bool;
+    isDeleted *bool
     // Indicates whether a user's risky state is being processed by the backend.
-    isProcessing *bool;
+    isProcessing *bool
     // Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-    riskDetail *RiskDetail;
+    riskDetail *RiskDetail
     // The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    riskLastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    riskLastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
-    riskLevel *RiskLevel;
+    riskLevel *RiskLevel
     // State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-    riskState *RiskState;
+    riskState *RiskState
     // Risky user display name.
-    userDisplayName *string;
+    userDisplayName *string
     // Risky user principal name.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewRiskyUser instantiates a new riskyUser and sets the default values.
 func NewRiskyUser()(*RiskyUser) {
@@ -39,9 +39,9 @@ func CreateRiskyUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     return NewRiskyUser(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RiskyUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["history"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["history"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRiskyUserHistoryItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["isDeleted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDeleted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["isProcessing"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isProcessing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["riskDetail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRiskDetail)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["riskLastUpdatedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskLastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["riskLevel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRiskLevel)
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["riskState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRiskState)
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["userDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *RiskyUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

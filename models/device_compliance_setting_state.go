@@ -9,29 +9,29 @@ import (
 type DeviceComplianceSettingState struct {
     Entity
     // The DateTime when device compliance grace period expires
-    complianceGracePeriodExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    complianceGracePeriodExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Device Id that is being reported
-    deviceId *string;
+    deviceId *string
     // The device model that is being reported
-    deviceModel *string;
+    deviceModel *string
     // The Device Name that is being reported
-    deviceName *string;
+    deviceName *string
     // Device platform type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.
-    platformType *DeviceType;
+    platformType *DeviceType
     // The setting class name and property name.
-    setting *string;
+    setting *string
     // The Setting Name that is being reported
-    settingName *string;
+    settingName *string
     // The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-    state *ComplianceStatus;
+    state *ComplianceStatus
     // The User email address that is being reported
-    userEmail *string;
+    userEmail *string
     // The user Id that is being reported
-    userId *string;
+    userId *string
     // The User Name that is being reported
-    userName *string;
+    userName *string
     // The User PrincipalName that is being reported
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewDeviceComplianceSettingState instantiates a new deviceComplianceSettingState and sets the default values.
 func NewDeviceComplianceSettingState()(*DeviceComplianceSettingState) {
@@ -77,9 +77,9 @@ func (m *DeviceComplianceSettingState) GetDeviceName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["complianceGracePeriodExpirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["complianceGracePeriodExpirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["deviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["deviceModel"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceModel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["platformType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["platformType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceType)
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["setting"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["setting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["settingName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseComplianceStatus)
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["userEmail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userEmail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["userName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

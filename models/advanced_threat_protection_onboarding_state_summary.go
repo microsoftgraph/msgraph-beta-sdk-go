@@ -8,23 +8,23 @@ import (
 type AdvancedThreatProtectionOnboardingStateSummary struct {
     Entity
     // Not yet documented
-    advancedThreatProtectionOnboardingDeviceSettingStates []AdvancedThreatProtectionOnboardingDeviceSettingStateable;
+    advancedThreatProtectionOnboardingDeviceSettingStates []AdvancedThreatProtectionOnboardingDeviceSettingStateable
     // Number of compliant devices
-    compliantDeviceCount *int32;
+    compliantDeviceCount *int32
     // Number of conflict devices
-    conflictDeviceCount *int32;
+    conflictDeviceCount *int32
     // Number of error devices
-    errorDeviceCount *int32;
+    errorDeviceCount *int32
     // Number of NonCompliant devices
-    nonCompliantDeviceCount *int32;
+    nonCompliantDeviceCount *int32
     // Number of not applicable devices
-    notApplicableDeviceCount *int32;
+    notApplicableDeviceCount *int32
     // Number of not assigned devices
-    notAssignedDeviceCount *int32;
+    notAssignedDeviceCount *int32
     // Number of remediated devices
-    remediatedDeviceCount *int32;
+    remediatedDeviceCount *int32
     // Number of unknown devices
-    unknownDeviceCount *int32;
+    unknownDeviceCount *int32
 }
 // NewAdvancedThreatProtectionOnboardingStateSummary instantiates a new advancedThreatProtectionOnboardingStateSummary and sets the default values.
 func NewAdvancedThreatProtectionOnboardingStateSummary()(*AdvancedThreatProtectionOnboardingStateSummary) {
@@ -70,9 +70,9 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetErrorDeviceCount()(*
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["advancedThreatProtectionOnboardingDeviceSettingStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["advancedThreatProtectionOnboardingDeviceSettingStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAdvancedThreatProtectionOnboardingDeviceSettingStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()
         }
         return nil
     }
-    res["compliantDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["compliantDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()
         }
         return nil
     }
-    res["conflictDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["conflictDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()
         }
         return nil
     }
-    res["errorDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()
         }
         return nil
     }
-    res["nonCompliantDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["nonCompliantDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()
         }
         return nil
     }
-    res["notApplicableDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notApplicableDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -136,7 +136,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()
         }
         return nil
     }
-    res["notAssignedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notAssignedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -146,7 +146,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()
         }
         return nil
     }
-    res["remediatedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remediatedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -156,7 +156,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()
         }
         return nil
     }
-    res["unknownDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unknownDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

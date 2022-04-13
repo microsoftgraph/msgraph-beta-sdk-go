@@ -8,41 +8,41 @@ import (
 type IosManagedAppProtection struct {
     TargetedManagedAppProtection
     // Semicolon seperated list of device models allowed, as a string, for the managed app to work.
-    allowedIosDeviceModels *string;
+    allowedIosDeviceModels *string
     // Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. Possible values are: block, wipe, warn.
-    appActionIfIosDeviceModelNotAllowed *ManagedAppRemediationAction;
+    appActionIfIosDeviceModelNotAllowed *ManagedAppRemediationAction
     // Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
-    appDataEncryptionType *ManagedAppDataEncryptionType;
+    appDataEncryptionType *ManagedAppDataEncryptionType
     // List of apps to which the policy is deployed.
-    apps []ManagedMobileAppable;
+    apps []ManagedMobileAppable
     // A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-    customBrowserProtocol *string;
+    customBrowserProtocol *string
     // Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
-    customDialerAppProtocol *string;
+    customDialerAppProtocol *string
     // Count of apps to which the current policy is deployed.
-    deployedAppCount *int32;
+    deployedAppCount *int32
     // Navigation property to deployment summary of the configuration.
-    deploymentSummary ManagedAppPolicyDeploymentSummaryable;
+    deploymentSummary ManagedAppPolicyDeploymentSummaryable
     // Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps.
-    disableProtectionOfManagedOutboundOpenInData *bool;
+    disableProtectionOfManagedOutboundOpenInData *bool
     // Apps in this list will be exempt from the policy and will be able to receive data from managed apps.
-    exemptedAppProtocols []KeyValuePairable;
+    exemptedAppProtocols []KeyValuePairable
     // A list of custom urls that are allowed to invocate an unmanaged app
-    exemptedUniversalLinks []string;
+    exemptedUniversalLinks []string
     // Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
-    faceIdBlocked *bool;
+    faceIdBlocked *bool
     // Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False.
-    filterOpenInToOnlyManagedApps *bool;
+    filterOpenInToOnlyManagedApps *bool
     // A list of custom urls that are allowed to invocate a managed app
-    managedUniversalLinks []string;
+    managedUniversalLinks []string
     // Versions less than the specified version will block the managed app from accessing company data.
-    minimumRequiredSdkVersion *string;
+    minimumRequiredSdkVersion *string
     // Versions less than the specified version will block the managed app from accessing company data.
-    minimumWipeSdkVersion *string;
+    minimumWipeSdkVersion *string
     // Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.
-    protectInboundDataFromUnknownSources *bool;
+    protectInboundDataFromUnknownSources *bool
     // Defines if third party keyboards are allowed while accessing a managed app
-    thirdPartyKeyboardsBlocked *bool;
+    thirdPartyKeyboardsBlocked *bool
 }
 // NewIosManagedAppProtection instantiates a new iosManagedAppProtection and sets the default values.
 func NewIosManagedAppProtection()(*IosManagedAppProtection) {
@@ -152,9 +152,9 @@ func (m *IosManagedAppProtection) GetFaceIdBlocked()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TargetedManagedAppProtection.GetFieldDeserializers()
-    res["allowedIosDeviceModels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowedIosDeviceModels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -164,7 +164,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["appActionIfIosDeviceModelNotAllowed"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appActionIfIosDeviceModelNotAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
         if err != nil {
             return err
@@ -174,7 +174,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["appDataEncryptionType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appDataEncryptionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagedAppDataEncryptionType)
         if err != nil {
             return err
@@ -184,7 +184,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["apps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["apps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedMobileAppFromDiscriminatorValue)
         if err != nil {
             return err
@@ -198,7 +198,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["customBrowserProtocol"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customBrowserProtocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -208,7 +208,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["customDialerAppProtocol"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customDialerAppProtocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -218,7 +218,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["deployedAppCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deployedAppCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -228,7 +228,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["deploymentSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deploymentSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -238,7 +238,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["disableProtectionOfManagedOutboundOpenInData"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["disableProtectionOfManagedOutboundOpenInData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -248,7 +248,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["exemptedAppProtocols"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exemptedAppProtocols"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -262,7 +262,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["exemptedUniversalLinks"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exemptedUniversalLinks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -276,7 +276,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["faceIdBlocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["faceIdBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -286,7 +286,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["filterOpenInToOnlyManagedApps"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["filterOpenInToOnlyManagedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -296,7 +296,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["managedUniversalLinks"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedUniversalLinks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -310,7 +310,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["minimumRequiredSdkVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumRequiredSdkVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -320,7 +320,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["minimumWipeSdkVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimumWipeSdkVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -330,7 +330,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["protectInboundDataFromUnknownSources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["protectInboundDataFromUnknownSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -340,7 +340,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["thirdPartyKeyboardsBlocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["thirdPartyKeyboardsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

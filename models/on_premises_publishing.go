@@ -7,43 +7,43 @@ import (
 // OnPremisesPublishing 
 type OnPremisesPublishing struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.
-    alternateUrl *string;
+    alternateUrl *string
     // The duration the connector will wait for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
-    applicationServerTimeout *string;
+    applicationServerTimeout *string
     // Indicates if this application is an Application Proxy configured application. This is pre-set by the system. Read-only.
-    applicationType *string;
+    applicationType *string
     // Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Passthru does not require authentication. Possible values are: passthru, aadPreAuthentication.
-    externalAuthenticationType *ExternalAuthenticationType;
+    externalAuthenticationType *ExternalAuthenticationType
     // The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.
-    externalUrl *string;
+    externalUrl *string
     // The internal url of the application. For example, https://intranet/.
-    internalUrl *string;
+    internalUrl *string
     // Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
-    isBackendCertificateValidationEnabled *bool;
+    isBackendCertificateValidationEnabled *bool
     // Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
-    isHttpOnlyCookieEnabled *bool;
+    isHttpOnlyCookieEnabled *bool
     // Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.
-    isOnPremPublishingEnabled *bool;
+    isOnPremPublishingEnabled *bool
     // Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Azure Active Directory. Default value is false.
-    isPersistentCookieEnabled *bool;
+    isPersistentCookieEnabled *bool
     // Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.
-    isSecureCookieEnabled *bool;
+    isSecureCookieEnabled *bool
     // Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
-    isTranslateHostHeaderEnabled *bool;
+    isTranslateHostHeaderEnabled *bool
     // Indicates if the application should translate urls in the application body. Keep this value as false unless you have hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see Link translation with Application Proxy. Default value is false.
-    isTranslateLinksInBodyEnabled *bool;
+    isTranslateLinksInBodyEnabled *bool
     // Represents the single sign-on configuration for the on-premises application.
-    singleSignOnSettings OnPremisesPublishingSingleSignOnable;
+    singleSignOnSettings OnPremisesPublishingSingleSignOnable
     // The useAlternateUrlForTranslationAndRedirect property
-    useAlternateUrlForTranslationAndRedirect *bool;
+    useAlternateUrlForTranslationAndRedirect *bool
     // Details of the certificate associated with the application when a custom domain is in use. null when using the default domain. Read-only.
-    verifiedCustomDomainCertificatesMetadata VerifiedCustomDomainCertificatesMetadataable;
+    verifiedCustomDomainCertificatesMetadata VerifiedCustomDomainCertificatesMetadataable
     // The associated key credential for the custom domain used.
-    verifiedCustomDomainKeyCredential KeyCredentialable;
+    verifiedCustomDomainKeyCredential KeyCredentialable
     // The associated password credential for the custom domain used.
-    verifiedCustomDomainPasswordCredential PasswordCredentialable;
+    verifiedCustomDomainPasswordCredential PasswordCredentialable
 }
 // NewOnPremisesPublishing instantiates a new onPremisesPublishing and sets the default values.
 func NewOnPremisesPublishing()(*OnPremisesPublishing) {
@@ -105,9 +105,9 @@ func (m *OnPremisesPublishing) GetExternalUrl()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["alternateUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["alternateUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["applicationServerTimeout"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicationServerTimeout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["applicationType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["externalAuthenticationType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalAuthenticationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseExternalAuthenticationType)
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["externalUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["internalUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["internalUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["isBackendCertificateValidationEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isBackendCertificateValidationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["isHttpOnlyCookieEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isHttpOnlyCookieEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -187,7 +187,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["isOnPremPublishingEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isOnPremPublishingEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["isPersistentCookieEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isPersistentCookieEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -207,7 +207,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["isSecureCookieEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isSecureCookieEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -217,7 +217,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["isTranslateHostHeaderEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isTranslateHostHeaderEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -227,7 +227,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["isTranslateLinksInBodyEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isTranslateLinksInBodyEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -237,7 +237,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["singleSignOnSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["singleSignOnSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOnPremisesPublishingSingleSignOnFromDiscriminatorValue)
         if err != nil {
             return err
@@ -247,7 +247,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["useAlternateUrlForTranslationAndRedirect"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["useAlternateUrlForTranslationAndRedirect"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -257,7 +257,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["verifiedCustomDomainCertificatesMetadata"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["verifiedCustomDomainCertificatesMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateVerifiedCustomDomainCertificatesMetadataFromDiscriminatorValue)
         if err != nil {
             return err
@@ -267,7 +267,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["verifiedCustomDomainKeyCredential"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["verifiedCustomDomainKeyCredential"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateKeyCredentialFromDiscriminatorValue)
         if err != nil {
             return err
@@ -277,7 +277,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["verifiedCustomDomainPasswordCredential"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["verifiedCustomDomainPasswordCredential"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePasswordCredentialFromDiscriminatorValue)
         if err != nil {
             return err

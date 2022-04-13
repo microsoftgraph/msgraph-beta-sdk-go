@@ -11,49 +11,49 @@ import (
 // EdiscoveryRequestBuilder provides operations to manage the ediscovery property of the microsoft.graph.compliance entity.
 type EdiscoveryRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // EdiscoveryRequestBuilderDeleteOptions options for Delete
 type EdiscoveryRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // EdiscoveryRequestBuilderGetOptions options for Get
 type EdiscoveryRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *EdiscoveryRequestBuilderGetQueryParameters;
+    QueryParameters *EdiscoveryRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // EdiscoveryRequestBuilderGetQueryParameters get ediscovery from compliance
 type EdiscoveryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // EdiscoveryRequestBuilderPatchOptions options for Patch
 type EdiscoveryRequestBuilderPatchOptions struct {
     // 
-    Body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Ediscoveryrootable;
+    Body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Ediscoveryrootable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Cases the cases property
 func (m *EdiscoveryRequestBuilder) Cases()(*i11d895b13fb719aa1efc1375b26199040ecaddfd8d2c7a3988be9eb44cb349f9.CasesRequestBuilder) {
@@ -66,7 +66,7 @@ func (m *EdiscoveryRequestBuilder) CasesById(id string)(*i64fd5515da31cb83f4be50
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["case_id"] = id
+        urlTplParams["case%2Did"] = id
     }
     return i64fd5515da31cb83f4be500694b8177bd68e5ad393279ae6213b89bea5bfdbe1.NewCaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -74,7 +74,7 @@ func (m *EdiscoveryRequestBuilder) CasesById(id string)(*i64fd5515da31cb83f4be50
 func NewEdiscoveryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryRequestBuilder) {
     m := &EdiscoveryRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/compliance/ediscovery{?select,expand}";
+    m.urlTemplate = "{+baseurl}/compliance/ediscovery{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

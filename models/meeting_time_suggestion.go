@@ -7,21 +7,21 @@ import (
 // MeetingTimeSuggestion 
 type MeetingTimeSuggestion struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // An array that shows the availability status of each attendee for this meeting suggestion.
-    attendeeAvailability []AttendeeAvailabilityable;
+    attendeeAvailability []AttendeeAvailabilityable
     // A percentage that represents the likelhood of all the attendees attending.
-    confidence *float64;
+    confidence *float64
     // An array that specifies the name and geographic location of each meeting location for this meeting suggestion.
-    locations []Locationable;
+    locations []Locationable
     // A time period suggested for the meeting.
-    meetingTimeSlot TimeSlotable;
+    meetingTimeSlot TimeSlotable
     // Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.
-    order *int32;
+    order *int32
     // Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
-    organizerAvailability *FreeBusyStatus;
+    organizerAvailability *FreeBusyStatus
     // Reason for suggesting the meeting time.
-    suggestionReason *string;
+    suggestionReason *string
 }
 // NewMeetingTimeSuggestion instantiates a new meetingTimeSuggestion and sets the default values.
 func NewMeetingTimeSuggestion()(*MeetingTimeSuggestion) {
@@ -59,9 +59,9 @@ func (m *MeetingTimeSuggestion) GetConfidence()(*float64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["attendeeAvailability"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["attendeeAvailability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAttendeeAvailabilityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["confidence"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["confidence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["locations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["locations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLocationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["meetingTimeSlot"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["meetingTimeSlot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTimeSlotFromDiscriminatorValue)
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["order"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["order"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["organizerAvailability"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["organizerAvailability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseFreeBusyStatus)
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *MeetingTimeSuggestion) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["suggestionReason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["suggestionReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

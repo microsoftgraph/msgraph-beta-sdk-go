@@ -8,7 +8,7 @@ import (
 type BusinessFlowSettings struct {
     AccessReviewSettings
     // The durationInDays property
-    durationInDays *int32;
+    durationInDays *int32
 }
 // NewBusinessFlowSettings instantiates a new businessFlowSettings and sets the default values.
 func NewBusinessFlowSettings()(*BusinessFlowSettings) {
@@ -30,9 +30,9 @@ func (m *BusinessFlowSettings) GetDurationInDays()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BusinessFlowSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *BusinessFlowSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessReviewSettings.GetFieldDeserializers()
-    res["durationInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["durationInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

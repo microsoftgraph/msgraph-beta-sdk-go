@@ -9,27 +9,27 @@ import (
 type CloudPcAuditEvent struct {
     Entity
     // Friendly name of the activity. Optional.
-    activity *string;
+    activity *string
     // The date time in UTC when the activity was performed. Read-only.
-    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The HTTP operation type of the activity. Possible values include create, delete, patch and other. Read-only.
-    activityOperationType *CloudPcAuditActivityOperationType;
+    activityOperationType *CloudPcAuditActivityOperationType
     // The result of the activity. Read-only.
-    activityResult *CloudPcAuditActivityResult;
+    activityResult *CloudPcAuditActivityResult
     // The type of activity that was performed. Read-only.
-    activityType *string;
+    activityType *string
     // The actor property
-    actor CloudPcAuditActorable;
+    actor CloudPcAuditActorable
     // Audit category. Read-only.
-    category *CloudPcAuditCategory;
+    category *CloudPcAuditCategory
     // Component name. Read-only.
-    componentName *string;
+    componentName *string
     // The client request identifier, used to correlate activity within the system. Read-only.
-    correlationId *string;
+    correlationId *string
     // Event display name. Read-only.
-    displayName *string;
+    displayName *string
     // List of cloudPcAuditResource objects. Read-only.
-    resources []CloudPcAuditResourceable;
+    resources []CloudPcAuditResourceable
 }
 // NewCloudPcAuditEvent instantiates a new cloudPcAuditEvent and sets the default values.
 func NewCloudPcAuditEvent()(*CloudPcAuditEvent) {
@@ -123,9 +123,9 @@ func (m *CloudPcAuditEvent) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["activityDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["activityOperationType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityOperationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcAuditActivityOperationType)
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["activityResult"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityResult"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcAuditActivityResult)
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["activityType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["actor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["actor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcAuditActorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["category"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcAuditCategory)
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["componentName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["componentName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["correlationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["correlationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -215,7 +215,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["resources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcAuditResourceFromDiscriminatorValue)
         if err != nil {
             return err

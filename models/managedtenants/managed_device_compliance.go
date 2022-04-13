@@ -10,33 +10,33 @@ import (
 type ManagedDeviceCompliance struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
-    complianceStatus *string;
+    complianceStatus *string
     // Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
-    deviceType *string;
+    deviceType *string
     // The date and time when the grace period will expire. Optional. Read-only.
-    inGracePeriodUntilDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    inGracePeriodUntilDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
-    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The date and time that the device last completed a successful sync with Microsoft Endpoint Manager. Optional. Read-only.
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The identifier for the managed device in Microsoft Endpoint Manager. Optional. Read-only.
-    managedDeviceId *string;
+    managedDeviceId *string
     // The display name for the managed device. Optional. Read-only.
-    managedDeviceName *string;
+    managedDeviceName *string
     // The manufacture for the device. Optional. Read-only.
-    manufacturer *string;
+    manufacturer *string
     // The model for the device. Optional. Read-only.
-    model *string;
+    model *string
     // The description of the operating system for the managed device. Optional. Read-only.
-    osDescription *string;
+    osDescription *string
     // The version of the operating system for the managed device. Optional. Read-only.
-    osVersion *string;
+    osVersion *string
     // The type of owner for the managed device. Optional. Read-only.
-    ownerType *string;
+    ownerType *string
     // The display name for the managed tenant. Optional. Read-only.
-    tenantDisplayName *string;
+    tenantDisplayName *string
     // The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
-    tenantId *string;
+    tenantId *string
 }
 // NewManagedDeviceCompliance instantiates a new managedDeviceCompliance and sets the default values.
 func NewManagedDeviceCompliance()(*ManagedDeviceCompliance) {
@@ -66,9 +66,9 @@ func (m *ManagedDeviceCompliance) GetDeviceType()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["complianceStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["complianceStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["deviceType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["inGracePeriodUntilDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inGracePeriodUntilDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["lastRefreshedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastRefreshedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["lastSyncDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["managedDeviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["managedDeviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["manufacturer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["model"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["model"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["osDescription"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -168,7 +168,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["osVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -178,7 +178,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["ownerType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ownerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -188,7 +188,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["tenantDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -198,7 +198,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -8,27 +8,27 @@ import (
 type VirtualEndpoint struct {
     Entity
     // Cloud PC audit event.
-    auditEvents []CloudPcAuditEventable;
+    auditEvents []CloudPcAuditEventable
     // Cloud managed virtual desktops.
-    cloudPCs []CloudPCable;
+    cloudPCs []CloudPCable
     // The image resource on Cloud PC.
-    deviceImages []CloudPcDeviceImageable;
+    deviceImages []CloudPcDeviceImageable
     // The gallery image resource on Cloud PC.
-    galleryImages []CloudPcGalleryImageable;
+    galleryImages []CloudPcGalleryImageable
     // A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
-    onPremisesConnections []CloudPcOnPremisesConnectionable;
+    onPremisesConnections []CloudPcOnPremisesConnectionable
     // The Cloud PC organization settings for a tenant.
-    organizationSettings CloudPcOrganizationSettingsable;
+    organizationSettings CloudPcOrganizationSettingsable
     // Cloud PC provisioning policy.
-    provisioningPolicies []CloudPcProvisioningPolicyable;
+    provisioningPolicies []CloudPcProvisioningPolicyable
     // Cloud PC service plans.
-    servicePlans []CloudPcServicePlanable;
+    servicePlans []CloudPcServicePlanable
     // Cloud PC snapshots.
-    snapshots []CloudPcSnapshotable;
+    snapshots []CloudPcSnapshotable
     // Cloud PC supported regions.
-    supportedRegions []CloudPcSupportedRegionable;
+    supportedRegions []CloudPcSupportedRegionable
     // Cloud PC user settings.
-    userSettings []CloudPcUserSettingable;
+    userSettings []CloudPcUserSettingable
 }
 // NewVirtualEndpoint instantiates a new virtualEndpoint and sets the default values.
 func NewVirtualEndpoint()(*VirtualEndpoint) {
@@ -66,9 +66,9 @@ func (m *VirtualEndpoint) GetDeviceImages()([]CloudPcDeviceImageable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["auditEvents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["auditEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcAuditEventFromDiscriminatorValue)
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["cloudPCs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudPCs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPCFromDiscriminatorValue)
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["deviceImages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceImages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcDeviceImageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["galleryImages"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["galleryImages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcGalleryImageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["onPremisesConnections"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onPremisesConnections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcOnPremisesConnectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["organizationSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["organizationSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcOrganizationSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["provisioningPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["provisioningPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcProvisioningPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -162,7 +162,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["servicePlans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["servicePlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcServicePlanFromDiscriminatorValue)
         if err != nil {
             return err
@@ -176,7 +176,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["snapshots"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["snapshots"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcSnapshotFromDiscriminatorValue)
         if err != nil {
             return err
@@ -190,7 +190,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["supportedRegions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedRegions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcSupportedRegionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -204,7 +204,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["userSettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcUserSettingFromDiscriminatorValue)
         if err != nil {
             return err

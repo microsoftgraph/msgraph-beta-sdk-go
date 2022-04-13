@@ -9,61 +9,61 @@ import (
 type Organization struct {
     DirectoryObject
     // The collection of service plans associated with the tenant. Not nullable.
-    assignedPlans []AssignedPlanable;
+    assignedPlans []AssignedPlanable
     // The branding property
-    branding OrganizationalBrandingable;
+    branding OrganizationalBrandingable
     // Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
-    businessPhones []string;
+    businessPhones []string
     // Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-    certificateBasedAuthConfiguration []CertificateBasedAuthConfigurationable;
+    certificateBasedAuthConfiguration []CertificateBasedAuthConfigurationable
     // Certificate connector setting.
-    certificateConnectorSetting CertificateConnectorSettingable;
+    certificateConnectorSetting CertificateConnectorSettingable
     // City name of the address for the organization.
-    city *string;
+    city *string
     // Country/region name of the address for the organization.
-    country *string;
+    country *string
     // Country or region abbreviation for the organization in ISO 3166-2 format.
-    countryLetterCode *string;
+    countryLetterCode *string
     // Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The directory size quota information of an organization.
-    directorySizeQuota DirectorySizeQuotaable;
+    directorySizeQuota DirectorySizeQuotaable
     // The display name for the tenant.
-    displayName *string;
+    displayName *string
     // The collection of open extensions defined for the organization. Read-only. Nullable.
-    extensions []Extensionable;
+    extensions []Extensionable
     // true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
-    isMultipleDataLocationsForServicesEnabled *bool;
+    isMultipleDataLocationsForServicesEnabled *bool
     // Not nullable.
-    marketingNotificationEmails []string;
+    marketingNotificationEmails []string
     // Mobile device management authority. Possible values are: unknown, intune, sccm, office365.
-    mobileDeviceManagementAuthority *MdmAuthority;
+    mobileDeviceManagementAuthority *MdmAuthority
     // The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-    onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    onPremisesLastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
-    onPremisesSyncEnabled *bool;
+    onPremisesSyncEnabled *bool
     // Postal code of the address for the organization.
-    postalCode *string;
+    postalCode *string
     // The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.
-    preferredLanguage *string;
+    preferredLanguage *string
     // The privacy profile of an organization.
-    privacyProfile PrivacyProfileable;
+    privacyProfile PrivacyProfileable
     // Not nullable.
-    provisionedPlans []ProvisionedPlanable;
+    provisionedPlans []ProvisionedPlanable
     // The securityComplianceNotificationMails property
-    securityComplianceNotificationMails []string;
+    securityComplianceNotificationMails []string
     // The securityComplianceNotificationPhones property
-    securityComplianceNotificationPhones []string;
+    securityComplianceNotificationPhones []string
     // Retrieve the properties and relationships of organizationSettings object. Nullable.
-    settings OrganizationSettingsable;
+    settings OrganizationSettingsable
     // State name of the address for the organization.
-    state *string;
+    state *string
     // Street name of the address for organization.
-    street *string;
+    street *string
     // Not nullable.
-    technicalNotificationMails []string;
+    technicalNotificationMails []string
     // The collection of domains associated with this tenant. Not nullable.
-    verifiedDomains []VerifiedDomainable;
+    verifiedDomains []VerifiedDomainable
 }
 // NewOrganization instantiates a new organization and sets the default values.
 func NewOrganization()(*Organization) {
@@ -173,9 +173,9 @@ func (m *Organization) GetExtensions()([]Extensionable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
-    res["assignedPlans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignedPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAssignedPlanFromDiscriminatorValue)
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["branding"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["branding"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOrganizationalBrandingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["businessPhones"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["businessPhones"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -213,7 +213,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["certificateBasedAuthConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateBasedAuthConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCertificateBasedAuthConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -227,7 +227,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["certificateConnectorSetting"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateConnectorSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCertificateConnectorSettingFromDiscriminatorValue)
         if err != nil {
             return err
@@ -237,7 +237,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["city"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["city"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -247,7 +247,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["country"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["country"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -257,7 +257,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["countryLetterCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countryLetterCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -267,7 +267,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -277,7 +277,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["directorySizeQuota"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["directorySizeQuota"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDirectorySizeQuotaFromDiscriminatorValue)
         if err != nil {
             return err
@@ -287,7 +287,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -297,7 +297,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["extensions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["extensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -311,7 +311,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["isMultipleDataLocationsForServicesEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isMultipleDataLocationsForServicesEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -321,7 +321,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["marketingNotificationEmails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["marketingNotificationEmails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -335,7 +335,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["mobileDeviceManagementAuthority"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mobileDeviceManagementAuthority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMdmAuthority)
         if err != nil {
             return err
@@ -345,7 +345,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["onPremisesLastSyncDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onPremisesLastSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -355,7 +355,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["onPremisesSyncEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onPremisesSyncEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -365,7 +365,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["postalCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["postalCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -375,7 +375,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["preferredLanguage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preferredLanguage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -385,7 +385,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["privacyProfile"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["privacyProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrivacyProfileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -395,7 +395,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["provisionedPlans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["provisionedPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateProvisionedPlanFromDiscriminatorValue)
         if err != nil {
             return err
@@ -409,7 +409,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["securityComplianceNotificationMails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["securityComplianceNotificationMails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -423,7 +423,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["securityComplianceNotificationPhones"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["securityComplianceNotificationPhones"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -437,7 +437,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["settings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOrganizationSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -447,7 +447,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -457,7 +457,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["street"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["street"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -467,7 +467,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["technicalNotificationMails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["technicalNotificationMails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -481,7 +481,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["verifiedDomains"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["verifiedDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateVerifiedDomainFromDiscriminatorValue)
         if err != nil {
             return err

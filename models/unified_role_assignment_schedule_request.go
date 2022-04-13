@@ -8,37 +8,37 @@ import (
 type UnifiedRoleAssignmentScheduleRequest struct {
     Request
     // Represents the type of the operation on the role assignment. The possible values are: AdminAssign: For administrators to assign roles to users or groups.AdminRemove: For administrators to remove users or groups from roles. AdminUpdate: For administrators to change existing role assignments.AdminExtend: For administrators to extend expiring assignments.AdminRenew: For administrators to renew expired assignments.SelfActivate: For users to activate their assignments.SelfDeactivate: For users to deactivate their active assignments.SelfExtend: For users to request to extend their expiring assignments.SelfRenew: For users to request to renew their expired assignments.
-    action *string;
+    action *string
     // If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.
-    activatedUsing UnifiedRoleEligibilityScheduleable;
+    activatedUsing UnifiedRoleEligibilityScheduleable
     // Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-    appScope AppScopeable;
+    appScope AppScopeable
     // Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.
-    appScopeId *string;
+    appScopeId *string
     // Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-    directoryScope DirectoryObjectable;
+    directoryScope DirectoryObjectable
     // Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
-    directoryScopeId *string;
+    directoryScopeId *string
     // A boolean that determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
-    isValidationOnly *bool;
+    isValidationOnly *bool
     // A message provided by users and administrators when create the request about why it is needed.
-    justification *string;
+    justification *string
     // Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-    principal DirectoryObjectable;
+    principal DirectoryObjectable
     // Identifier of the principal to which the assignment is being granted to.
-    principalId *string;
+    principalId *string
     // Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
-    roleDefinition UnifiedRoleDefinitionable;
+    roleDefinition UnifiedRoleDefinitionable
     // Identifier of the unifiedRoleDefinition the assignment is for. Read only.
-    roleDefinitionId *string;
+    roleDefinitionId *string
     // The schedule object of the role assignment request.
-    scheduleInfo RequestScheduleable;
+    scheduleInfo RequestScheduleable
     // Property indicating the schedule for an eligible role assignment.
-    targetSchedule UnifiedRoleAssignmentScheduleable;
+    targetSchedule UnifiedRoleAssignmentScheduleable
     // Identifier of the schedule object attached to the assignment.
-    targetScheduleId *string;
+    targetScheduleId *string
     // The ticketInfo object attached to the role assignment request which includes details of the ticket number and ticket system.
-    ticketInfo TicketInfoable;
+    ticketInfo TicketInfoable
 }
 // NewUnifiedRoleAssignmentScheduleRequest instantiates a new unifiedRoleAssignmentScheduleRequest and sets the default values.
 func NewUnifiedRoleAssignmentScheduleRequest()(*UnifiedRoleAssignmentScheduleRequest) {
@@ -100,9 +100,9 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetDirectoryScopeId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Request.GetFieldDeserializers()
-    res["action"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["activatedUsing"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activatedUsing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUnifiedRoleEligibilityScheduleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["appScope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAppScopeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["appScopeId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appScopeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["directoryScope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["directoryScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["directoryScopeId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["directoryScopeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -162,7 +162,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["isValidationOnly"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isValidationOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["justification"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["justification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -182,7 +182,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["principal"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["principal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -192,7 +192,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["principalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["principalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -202,7 +202,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["roleDefinition"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleDefinition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUnifiedRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -212,7 +212,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["roleDefinitionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleDefinitionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -222,7 +222,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["scheduleInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scheduleInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRequestScheduleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -232,7 +232,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["targetSchedule"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetSchedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUnifiedRoleAssignmentScheduleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -242,7 +242,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["targetScheduleId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetScheduleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -252,7 +252,7 @@ func (m *UnifiedRoleAssignmentScheduleRequest) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["ticketInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ticketInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTicketInfoFromDiscriminatorValue)
         if err != nil {
             return err

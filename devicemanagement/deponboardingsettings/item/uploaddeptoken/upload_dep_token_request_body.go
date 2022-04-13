@@ -7,11 +7,11 @@ import (
 // UploadDepTokenRequestBody provides operations to call the uploadDepToken method.
 type UploadDepTokenRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The appleId property
-    appleId *string;
+    appleId *string
     // The depToken property
-    depToken *string;
+    depToken *string
 }
 // NewUploadDepTokenRequestBody instantiates a new uploadDepTokenRequestBody and sets the default values.
 func NewUploadDepTokenRequestBody()(*UploadDepTokenRequestBody) {
@@ -49,9 +49,9 @@ func (m *UploadDepTokenRequestBody) GetDepToken()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UploadDepTokenRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["appleId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UploadDepTokenRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["appleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *UploadDepTokenRequestBody) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["depToken"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["depToken"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

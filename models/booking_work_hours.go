@@ -7,11 +7,11 @@ import (
 // BookingWorkHours this type represents the set of working hours in a single day of the week.
 type BookingWorkHours struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The day of the week represented by this instance. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
-    day *DayOfWeek;
+    day *DayOfWeek
     // A list of start/end times during a day.
-    timeSlots []BookingWorkTimeSlotable;
+    timeSlots []BookingWorkTimeSlotable
 }
 // NewBookingWorkHours instantiates a new bookingWorkHours and sets the default values.
 func NewBookingWorkHours()(*BookingWorkHours) {
@@ -41,9 +41,9 @@ func (m *BookingWorkHours) GetDay()(*DayOfWeek) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BookingWorkHours) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["day"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *BookingWorkHours) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["day"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDayOfWeek)
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *BookingWorkHours) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["timeSlots"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["timeSlots"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBookingWorkTimeSlotFromDiscriminatorValue)
         if err != nil {
             return err

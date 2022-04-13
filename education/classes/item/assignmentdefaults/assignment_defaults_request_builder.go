@@ -9,55 +9,55 @@ import (
 // AssignmentDefaultsRequestBuilder provides operations to manage the assignmentDefaults property of the microsoft.graph.educationClass entity.
 type AssignmentDefaultsRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // AssignmentDefaultsRequestBuilderDeleteOptions options for Delete
 type AssignmentDefaultsRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AssignmentDefaultsRequestBuilderGetOptions options for Get
 type AssignmentDefaultsRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *AssignmentDefaultsRequestBuilderGetQueryParameters;
+    QueryParameters *AssignmentDefaultsRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
-// AssignmentDefaultsRequestBuilderGetQueryParameters get assignmentDefaults from education
+// AssignmentDefaultsRequestBuilderGetQueryParameters specifies class-level defaults respected by new assignments created in the class.
 type AssignmentDefaultsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // AssignmentDefaultsRequestBuilderPatchOptions options for Patch
 type AssignmentDefaultsRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewAssignmentDefaultsRequestBuilderInternal instantiates a new AssignmentDefaultsRequestBuilder and sets the default values.
 func NewAssignmentDefaultsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AssignmentDefaultsRequestBuilder) {
     m := &AssignmentDefaultsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/education/classes/{educationClass_id}/assignmentDefaults{?select,expand}";
+    m.urlTemplate = "{+baseurl}/education/classes/{educationClass%2Did}/assignmentDefaults{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -89,7 +89,7 @@ func (m *AssignmentDefaultsRequestBuilder) CreateDeleteRequestInformation(option
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get assignmentDefaults from education
+// CreateGetRequestInformation specifies class-level defaults respected by new assignments created in the class.
 func (m *AssignmentDefaultsRequestBuilder) CreateGetRequestInformation(options *AssignmentDefaultsRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,7 @@ func (m *AssignmentDefaultsRequestBuilder) Delete(options *AssignmentDefaultsReq
     }
     return nil
 }
-// Get get assignmentDefaults from education
+// Get specifies class-level defaults respected by new assignments created in the class.
 func (m *AssignmentDefaultsRequestBuilder) Get(options *AssignmentDefaultsRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

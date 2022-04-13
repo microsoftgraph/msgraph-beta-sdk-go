@@ -7,27 +7,27 @@ import (
 // SearchHit 
 type SearchHit struct {
     // The _id property
-    _id *string;
+    _id *string
     // The _score property
-    _score *int32;
+    _score *int32
     // The _source property
-    _source Entityable;
+    _source Entityable
     // The _summary property
-    _summary *string;
+    _summary *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The name of the content source which the externalItem is part of .
-    contentSource *string;
+    contentSource *string
     // The internal identifier for the item.
-    hitId *string;
+    hitId *string
     // The rank or the order of the result.
-    rank *int32;
+    rank *int32
     // The resource property
-    resource Entityable;
+    resource Entityable
     // ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
-    resultTemplateId *string;
+    resultTemplateId *string
     // A summary of the result, if a summary is available.
-    summary *string;
+    summary *string
 }
 // NewSearchHit instantiates a new searchHit and sets the default values.
 func NewSearchHit()(*SearchHit) {
@@ -89,9 +89,9 @@ func (m *SearchHit) GetContentSource()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["_id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["_score"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["_score"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["_source"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["_source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEntityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["_summary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["_summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["contentSource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["hitId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hitId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["rank"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rank"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["resource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEntityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["resultTemplateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resultTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["summary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

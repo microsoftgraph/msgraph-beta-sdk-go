@@ -9,21 +9,21 @@ import (
 type ApplePushNotificationCertificate struct {
     Entity
     // Apple Id of the account used to create the MDM push certificate.
-    appleIdentifier *string;
+    appleIdentifier *string
     // Not yet documented
-    certificate *string;
+    certificate *string
     // Certificate serial number. This property is read-only.
-    certificateSerialNumber *string;
+    certificateSerialNumber *string
     // The reason the certificate upload failed.
-    certificateUploadFailureReason *string;
+    certificateUploadFailureReason *string
     // The certificate upload status.
-    certificateUploadStatus *string;
+    certificateUploadStatus *string
     // The expiration date and time for Apple push notification certificate.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Last modified date and time for Apple push notification certificate.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Topic Id.
-    topicIdentifier *string;
+    topicIdentifier *string
 }
 // NewApplePushNotificationCertificate instantiates a new applePushNotificationCertificate and sets the default values.
 func NewApplePushNotificationCertificate()(*ApplePushNotificationCertificate) {
@@ -85,9 +85,9 @@ func (m *ApplePushNotificationCertificate) GetExpirationDateTime()(*i336074805fc
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appleIdentifier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appleIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["certificate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["certificateSerialNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateSerialNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["certificateUploadFailureReason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateUploadFailureReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["certificateUploadStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certificateUploadStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["topicIdentifier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["topicIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -9,15 +9,15 @@ import (
 type MicrosoftTunnelServer struct {
     Entity
     // The digest of the current agent image running on this server
-    agentImageDigest *string;
+    agentImageDigest *string
     // The MicrosoftTunnelServer's display name
-    displayName *string;
+    displayName *string
     // When the MicrosoftTunnelServer last checked in
-    lastCheckinDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastCheckinDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The digest of the current server image running on this server
-    serverImageDigest *string;
+    serverImageDigest *string
     // The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
-    tunnelServerHealthStatus *MicrosoftTunnelServerHealthStatus;
+    tunnelServerHealthStatus *MicrosoftTunnelServerHealthStatus
 }
 // NewMicrosoftTunnelServer instantiates a new microsoftTunnelServer and sets the default values.
 func NewMicrosoftTunnelServer()(*MicrosoftTunnelServer) {
@@ -47,9 +47,9 @@ func (m *MicrosoftTunnelServer) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["agentImageDigest"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["agentImageDigest"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["lastCheckinDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastCheckinDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["serverImageDigest"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serverImageDigest"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["tunnelServerHealthStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tunnelServerHealthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMicrosoftTunnelServerHealthStatus)
         if err != nil {
             return err

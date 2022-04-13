@@ -8,27 +8,27 @@ import (
 type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric struct {
     Entity
     // The percentage of devices for which OS check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    osCheckFailedPercentage *float64;
+    osCheckFailedPercentage *float64
     // The percentage of devices for which processor hardware 64-bit architecture check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    processor64BitCheckFailedPercentage *float64;
+    processor64BitCheckFailedPercentage *float64
     // The percentage of devices for which processor hardware core count check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    processorCoreCountCheckFailedPercentage *float64;
+    processorCoreCountCheckFailedPercentage *float64
     // The percentage of devices for which processor hardware family check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    processorFamilyCheckFailedPercentage *float64;
+    processorFamilyCheckFailedPercentage *float64
     // The percentage of devices for which processor hardware speed check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    processorSpeedCheckFailedPercentage *float64;
+    processorSpeedCheckFailedPercentage *float64
     // The percentage of devices for which RAM hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    ramCheckFailedPercentage *float64;
+    ramCheckFailedPercentage *float64
     // The percentage of devices for which secure boot hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    secureBootCheckFailedPercentage *float64;
+    secureBootCheckFailedPercentage *float64
     // The percentage of devices for which storage hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    storageCheckFailedPercentage *float64;
+    storageCheckFailedPercentage *float64
     // The count of total devices in an organization. Valid values -2147483648 to 2147483647
-    totalDeviceCount *int32;
+    totalDeviceCount *int32
     // The percentage of devices for which Trusted Platform Module (TPM) hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-    tpmCheckFailedPercentage *float64;
+    tpmCheckFailedPercentage *float64
     // The count of devices in an organization eligible for windows upgrade. Valid values -2147483648 to 2147483647
-    upgradeEligibleDeviceCount *int32;
+    upgradeEligibleDeviceCount *int32
 }
 // NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric instantiates a new userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(*UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) {
@@ -42,9 +42,9 @@ func CreateUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricFromDis
     return NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["osCheckFailedPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osCheckFailedPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         }
         return nil
     }
-    res["processor64BitCheckFailedPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["processor64BitCheckFailedPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         }
         return nil
     }
-    res["processorCoreCountCheckFailedPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["processorCoreCountCheckFailedPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         }
         return nil
     }
-    res["processorFamilyCheckFailedPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["processorFamilyCheckFailedPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         }
         return nil
     }
-    res["processorSpeedCheckFailedPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["processorSpeedCheckFailedPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         }
         return nil
     }
-    res["ramCheckFailedPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ramCheckFailedPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         }
         return nil
     }
-    res["secureBootCheckFailedPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["secureBootCheckFailedPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         }
         return nil
     }
-    res["storageCheckFailedPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["storageCheckFailedPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         }
         return nil
     }
-    res["totalDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         }
         return nil
     }
-    res["tpmCheckFailedPercentage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tpmCheckFailedPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) GetFiel
         }
         return nil
     }
-    res["upgradeEligibleDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["upgradeEligibleDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

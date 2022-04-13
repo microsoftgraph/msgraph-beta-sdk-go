@@ -9,19 +9,19 @@ import (
 type ManagedDeviceOverview struct {
     Entity
     // Distribution of Exchange Access State in Intune
-    deviceExchangeAccessStateSummary DeviceExchangeAccessStateSummaryable;
+    deviceExchangeAccessStateSummary DeviceExchangeAccessStateSummaryable
     // Device operating system summary.
-    deviceOperatingSystemSummary DeviceOperatingSystemSummaryable;
+    deviceOperatingSystemSummary DeviceOperatingSystemSummaryable
     // The number of devices enrolled in both MDM and EAS
-    dualEnrolledDeviceCount *int32;
+    dualEnrolledDeviceCount *int32
     // Total enrolled device count. Does not include PC devices managed via Intune PC Agent
-    enrolledDeviceCount *int32;
+    enrolledDeviceCount *int32
     // Last modified date time of device overview
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Models and Manufactures meatadata for managed devices in the account
-    managedDeviceModelsAndManufacturers ManagedDeviceModelsAndManufacturersable;
+    managedDeviceModelsAndManufacturers ManagedDeviceModelsAndManufacturersable
     // The number of devices enrolled in MDM
-    mdmEnrolledCount *int32;
+    mdmEnrolledCount *int32
 }
 // NewManagedDeviceOverview instantiates a new managedDeviceOverview and sets the default values.
 func NewManagedDeviceOverview()(*ManagedDeviceOverview) {
@@ -67,9 +67,9 @@ func (m *ManagedDeviceOverview) GetEnrolledDeviceCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deviceExchangeAccessStateSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceExchangeAccessStateSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceExchangeAccessStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["deviceOperatingSystemSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceOperatingSystemSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceOperatingSystemSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["dualEnrolledDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dualEnrolledDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["enrolledDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enrolledDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["managedDeviceModelsAndManufacturers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceModelsAndManufacturers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateManagedDeviceModelsAndManufacturersFromDiscriminatorValue)
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["mdmEnrolledCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mdmEnrolledCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

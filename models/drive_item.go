@@ -8,75 +8,75 @@ import (
 type DriveItem struct {
     BaseItem
     // The list of recent activities that took place on this item.
-    activities []ItemActivityOLDable;
+    activities []ItemActivityOLDable
     // Analytics about the view activities that took place on this item.
-    analytics ItemAnalyticsable;
+    analytics ItemAnalyticsable
     // Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.
-    audio Audioable;
+    audio Audioable
     // Bundle metadata, if the item is a bundle. Read-only.
-    bundle Bundleable;
+    bundle Bundleable
     // Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
-    children []DriveItemable;
+    children []DriveItemable
     // The content stream, if the item represents a file.
-    content []byte;
+    content []byte
     // An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
-    cTag *string;
+    cTag *string
     // Information about the deleted state of the item. Read-only.
-    deleted Deletedable;
+    deleted Deletedable
     // File metadata, if the item is a file. Read-only.
-    file Fileable;
+    file Fileable
     // File system information on client. Read-write.
-    fileSystemInfo FileSystemInfoable;
+    fileSystemInfo FileSystemInfoable
     // Folder metadata, if the item is a folder. Read-only.
-    folder Folderable;
+    folder Folderable
     // Image metadata, if the item is an image. Read-only.
-    image Imageable;
+    image Imageable
     // For drives in SharePoint, the associated document library list item. Read-only. Nullable.
-    listItem ListItemable;
+    listItem ListItemable
     // Location metadata, if the item has location data. Read-only.
-    location GeoCoordinatesable;
+    location GeoCoordinatesable
     // Malware metadata, if the item was detected to contain malware. Read-only.
-    malware Malwareable;
+    malware Malwareable
     // Information about the media (audio or video) item. Read-write. Only on OneDrive for Business and SharePoint.
-    media Mediaable;
+    media Mediaable
     // If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
-    package_escaped Package_escapedable;
+    package_escaped Package_escapedable
     // If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
-    pendingOperations PendingOperationsable;
+    pendingOperations PendingOperationsable
     // The set of permissions for the item. Read-only. Nullable.
-    permissions []Permissionable;
+    permissions []Permissionable
     // Photo metadata, if the item is a photo. Read-only.
-    photo Photoable;
+    photo Photoable
     // Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
-    publication PublicationFacetable;
+    publication PublicationFacetable
     // Remote item data, if the item is shared from a drive other than the one being accessed. Read-only.
-    remoteItem RemoteItemable;
+    remoteItem RemoteItemable
     // If this property is non-null, it indicates that the driveItem is the top-most driveItem in the drive.
-    root Rootable;
+    root Rootable
     // Search metadata, if the item is from a search result. Read-only.
-    searchResult SearchResultable;
+    searchResult SearchResultable
     // Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
-    shared Sharedable;
+    shared Sharedable
     // Returns identifiers useful for SharePoint REST compatibility. Read-only.
-    sharepointIds SharepointIdsable;
+    sharepointIds SharepointIdsable
     // Size of the item in bytes. Read-only.
-    size *int64;
+    size *int64
     // Information about the drive item source. Read-only. Only on OneDrive for Business and SharePoint.
-    source DriveItemSourceable;
+    source DriveItemSourceable
     // If the current item is also available as a special folder, this facet is returned. Read-only.
-    specialFolder SpecialFolderable;
+    specialFolder SpecialFolderable
     // The set of subscriptions on the item. Only supported on the root of a drive.
-    subscriptions []Subscriptionable;
+    subscriptions []Subscriptionable
     // Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
-    thumbnails []ThumbnailSetable;
+    thumbnails []ThumbnailSetable
     // The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
-    versions []DriveItemVersionable;
+    versions []DriveItemVersionable
     // Video metadata, if the item is a video. Read-only.
-    video Videoable;
+    video Videoable
     // WebDAV compatible URL for the item.
-    webDavUrl *string;
+    webDavUrl *string
     // For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
-    workbook Workbookable;
+    workbook Workbookable
 }
 // NewDriveItem instantiates a new driveItem and sets the default values.
 func NewDriveItem()(*DriveItem) {
@@ -154,9 +154,9 @@ func (m *DriveItem) GetDeleted()(Deletedable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
-    res["activities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateItemActivityOLDFromDiscriminatorValue)
         if err != nil {
             return err
@@ -170,7 +170,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["analytics"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["analytics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemAnalyticsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -180,7 +180,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["audio"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["audio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAudioFromDiscriminatorValue)
         if err != nil {
             return err
@@ -190,7 +190,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["bundle"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["bundle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateBundleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -200,7 +200,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["children"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["children"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDriveItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -214,7 +214,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["content"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -224,7 +224,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["cTag"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -234,7 +234,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["deleted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deleted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeletedFromDiscriminatorValue)
         if err != nil {
             return err
@@ -244,7 +244,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["file"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["file"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateFileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -254,7 +254,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["fileSystemInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fileSystemInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateFileSystemInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -264,7 +264,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["folder"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["folder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateFolderFromDiscriminatorValue)
         if err != nil {
             return err
@@ -274,7 +274,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["image"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["image"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateImageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -284,7 +284,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["listItem"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["listItem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateListItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -294,7 +294,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["location"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["location"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGeoCoordinatesFromDiscriminatorValue)
         if err != nil {
             return err
@@ -304,7 +304,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["malware"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["malware"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMalwareFromDiscriminatorValue)
         if err != nil {
             return err
@@ -314,7 +314,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["media"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["media"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMediaFromDiscriminatorValue)
         if err != nil {
             return err
@@ -324,7 +324,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["package"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["package"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePackage_escapedFromDiscriminatorValue)
         if err != nil {
             return err
@@ -334,7 +334,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["pendingOperations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pendingOperations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePendingOperationsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -344,7 +344,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["permissions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["permissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -358,7 +358,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["photo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["photo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePhotoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -368,7 +368,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["publication"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publication"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePublicationFacetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -378,7 +378,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["remoteItem"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remoteItem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRemoteItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -388,7 +388,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["root"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["root"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRootFromDiscriminatorValue)
         if err != nil {
             return err
@@ -398,7 +398,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["searchResult"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["searchResult"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSearchResultFromDiscriminatorValue)
         if err != nil {
             return err
@@ -408,7 +408,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["shared"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["shared"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharedFromDiscriminatorValue)
         if err != nil {
             return err
@@ -418,7 +418,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["sharepointIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharepointIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharepointIdsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -428,7 +428,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["size"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -438,7 +438,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["source"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDriveItemSourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -448,7 +448,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["specialFolder"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["specialFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSpecialFolderFromDiscriminatorValue)
         if err != nil {
             return err
@@ -458,7 +458,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["subscriptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subscriptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSubscriptionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -472,7 +472,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["thumbnails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["thumbnails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateThumbnailSetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -486,7 +486,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["versions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["versions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDriveItemVersionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -500,7 +500,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["video"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["video"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateVideoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -510,7 +510,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["webDavUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webDavUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -520,7 +520,7 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["workbook"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["workbook"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookFromDiscriminatorValue)
         if err != nil {
             return err

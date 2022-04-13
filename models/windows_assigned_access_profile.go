@@ -8,17 +8,17 @@ import (
 type WindowsAssignedAccessProfile struct {
     Entity
     // These are the only Windows Store Apps that will be available to launch from the Start menu.
-    appUserModelIds []string;
+    appUserModelIds []string
     // These are the paths of the Desktop Apps that will be available on the Start menu and the only apps the user will be able to launch.
-    desktopAppPaths []string;
+    desktopAppPaths []string
     // This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
-    profileName *string;
+    profileName *string
     // This setting allows the admin to specify whether the Task Bar is shown or not.
-    showTaskBar *bool;
+    showTaskBar *bool
     // Allows admins to override the default Start layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.
-    startMenuLayoutXml []byte;
+    startMenuLayoutXml []byte
     // The user accounts that will be locked to this kiosk configuration.
-    userAccounts []string;
+    userAccounts []string
 }
 // NewWindowsAssignedAccessProfile instantiates a new windowsAssignedAccessProfile and sets the default values.
 func NewWindowsAssignedAccessProfile()(*WindowsAssignedAccessProfile) {
@@ -48,9 +48,9 @@ func (m *WindowsAssignedAccessProfile) GetDesktopAppPaths()([]string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appUserModelIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appUserModelIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["desktopAppPaths"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["desktopAppPaths"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["profileName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["profileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["showTaskBar"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["showTaskBar"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["startMenuLayoutXml"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startMenuLayoutXml"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *WindowsAssignedAccessProfile) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["userAccounts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userAccounts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

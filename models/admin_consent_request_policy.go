@@ -8,17 +8,17 @@ import (
 type AdminConsentRequestPolicy struct {
     Entity
     // Specifies whether the admin consent request feature is enabled or disabled. Required.
-    isEnabled *bool;
+    isEnabled *bool
     // Specifies whether reviewers will receive notifications. Required.
-    notifyReviewers *bool;
+    notifyReviewers *bool
     // Specifies whether reviewers will receive reminder emails. Required.
-    remindersEnabled *bool;
+    remindersEnabled *bool
     // Specifies the duration the request is active before it automatically expires if no decision is applied.
-    requestDurationInDays *int32;
+    requestDurationInDays *int32
     // The list of reviewers for the admin consent. Required.
-    reviewers []AccessReviewReviewerScopeable;
+    reviewers []AccessReviewReviewerScopeable
     // Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
-    version *int32;
+    version *int32
 }
 // NewAdminConsentRequestPolicy instantiates a new adminConsentRequestPolicy and sets the default values.
 func NewAdminConsentRequestPolicy()(*AdminConsentRequestPolicy) {
@@ -32,9 +32,9 @@ func CreateAdminConsentRequestPolicyFromDiscriminatorValue(parseNode i878a80d233
     return NewAdminConsentRequestPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["isEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -44,7 +44,7 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["notifyReviewers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notifyReviewers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["remindersEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remindersEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["requestDurationInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestDurationInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["reviewers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reviewers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewReviewerScopeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

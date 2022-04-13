@@ -21,49 +21,49 @@ import (
 // InReplyToRequestBuilder provides operations to manage the inReplyTo property of the microsoft.graph.post entity.
 type InReplyToRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // InReplyToRequestBuilderDeleteOptions options for Delete
 type InReplyToRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // InReplyToRequestBuilderGetOptions options for Get
 type InReplyToRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *InReplyToRequestBuilderGetQueryParameters;
+    QueryParameters *InReplyToRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // InReplyToRequestBuilderGetQueryParameters read-only. Supports $expand.
 type InReplyToRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // InReplyToRequestBuilderPatchOptions options for Patch
 type InReplyToRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Postable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Postable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Attachments the attachments property
 func (m *InReplyToRequestBuilder) Attachments()(*i340b1e7815d335dd75428026204f77ed63767269b5f30448456d513e1be7aee1.AttachmentsRequestBuilder) {
@@ -76,7 +76,7 @@ func (m *InReplyToRequestBuilder) AttachmentsById(id string)(*i4d4f4736b20b53387
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["attachment_id"] = id
+        urlTplParams["attachment%2Did"] = id
     }
     return i4d4f4736b20b533874b21d43afdeb8387415582e42ec98e9b5f3a0834591f636.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -84,7 +84,7 @@ func (m *InReplyToRequestBuilder) AttachmentsById(id string)(*i4d4f4736b20b53387
 func NewInReplyToRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InReplyToRequestBuilder) {
     m := &InReplyToRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group_id}/conversations/{conversation_id}/threads/{conversationThread_id}/posts/{post_id}/inReplyTo{?select,expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -181,7 +181,7 @@ func (m *InReplyToRequestBuilder) ExtensionsById(id string)(*ibdb87644e5d9ad4b69
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["extension_id"] = id
+        urlTplParams["extension%2Did"] = id
     }
     return ibdb87644e5d9ad4b691e589620d652f65dd8e136822c1a12d53aa5971dd79ace.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -216,7 +216,7 @@ func (m *InReplyToRequestBuilder) MentionsById(id string)(*i627ac24b1c5154b00c54
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["mention_id"] = id
+        urlTplParams["mention%2Did"] = id
     }
     return i627ac24b1c5154b00c54703eaed3391660a6f1b701cbc4e8f4cafc57218df556.NewMentionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -231,7 +231,7 @@ func (m *InReplyToRequestBuilder) MultiValueExtendedPropertiesById(id string)(*i
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["multiValueLegacyExtendedProperty_id"] = id
+        urlTplParams["multiValueLegacyExtendedProperty%2Did"] = id
     }
     return id25bdfa22a85826c2d415ddac3ea84ff50c4050e7452b38f37b55fbaa6e42145.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -266,7 +266,7 @@ func (m *InReplyToRequestBuilder) SingleValueExtendedPropertiesById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["singleValueLegacyExtendedProperty_id"] = id
+        urlTplParams["singleValueLegacyExtendedProperty%2Did"] = id
     }
     return i5ae608db00267db06b6efd5d156fb58202137670bc8f0b2db988c7647811c893.NewSingleValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

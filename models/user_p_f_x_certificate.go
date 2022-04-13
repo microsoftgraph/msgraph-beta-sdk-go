@@ -9,29 +9,29 @@ import (
 type UserPFXCertificate struct {
     Entity
     // Date/time when this PFX certificate was imported.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Encrypted PFX blob.
-    encryptedPfxBlob []byte;
+    encryptedPfxBlob []byte
     // Encrypted PFX password.
-    encryptedPfxPassword *string;
+    encryptedPfxPassword *string
     // Certificate's validity expiration date/time.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Certificate's intended purpose from the point-of-view of deployment. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
-    intendedPurpose *UserPfxIntendedPurpose;
+    intendedPurpose *UserPfxIntendedPurpose
     // Name of the key (within the provider) used to encrypt the blob.
-    keyName *string;
+    keyName *string
     // Date/time when this PFX certificate was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Padding scheme used by the provider during encryption/decryption. Possible values are: none, pkcs1, oaepSha1, oaepSha256, oaepSha384, oaepSha512.
-    paddingScheme *UserPfxPaddingScheme;
+    paddingScheme *UserPfxPaddingScheme
     // Crypto provider used to encrypt this blob.
-    providerName *string;
+    providerName *string
     // Certificate's validity start date/time.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // SHA-1 thumbprint of the PFX certificate.
-    thumbprint *string;
+    thumbprint *string
     // User Principal Name of the PFX certificate.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewUserPFXCertificate instantiates a new userPFXCertificate and sets the default values.
 func NewUserPFXCertificate()(*UserPFXCertificate) {
@@ -77,9 +77,9 @@ func (m *UserPFXCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["encryptedPfxBlob"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["encryptedPfxBlob"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["encryptedPfxPassword"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["encryptedPfxPassword"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["intendedPurpose"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["intendedPurpose"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserPfxIntendedPurpose)
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["keyName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["keyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["paddingScheme"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["paddingScheme"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserPfxPaddingScheme)
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["providerName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["providerName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["thumbprint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["thumbprint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

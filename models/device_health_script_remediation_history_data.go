@@ -7,13 +7,13 @@ import (
 // DeviceHealthScriptRemediationHistoryData the number of devices remediated by a device health script on a given date.
 type DeviceHealthScriptRemediationHistoryData struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The date on which devices were remediated by the device health script.
-    date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of devices that were found to have no issue by the device health script.
-    noIssueDeviceCount *int32;
+    noIssueDeviceCount *int32
     // The number of devices remediated by the device health script.
-    remediatedDeviceCount *int32;
+    remediatedDeviceCount *int32
 }
 // NewDeviceHealthScriptRemediationHistoryData instantiates a new deviceHealthScriptRemediationHistoryData and sets the default values.
 func NewDeviceHealthScriptRemediationHistoryData()(*DeviceHealthScriptRemediationHistoryData) {
@@ -43,9 +43,9 @@ func (m *DeviceHealthScriptRemediationHistoryData) GetDate()(*i878a80d2330e89d26
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceHealthScriptRemediationHistoryData) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["date"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceHealthScriptRemediationHistoryData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["date"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *DeviceHealthScriptRemediationHistoryData) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["noIssueDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["noIssueDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *DeviceHealthScriptRemediationHistoryData) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["remediatedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["remediatedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

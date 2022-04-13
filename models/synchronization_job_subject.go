@@ -7,13 +7,13 @@ import (
 // SynchronizationJobSubject 
 type SynchronizationJobSubject struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The links property
-    links SynchronizationLinkedObjectsable;
+    links SynchronizationLinkedObjectsable
     // The identifier of an object to which a synchronizationJob  is to be applied.
-    objectId *string;
+    objectId *string
     // The type of the object to which a synchronizationJob  is to be applied.
-    objectTypeName *string;
+    objectTypeName *string
 }
 // NewSynchronizationJobSubject instantiates a new synchronizationJobSubject and sets the default values.
 func NewSynchronizationJobSubject()(*SynchronizationJobSubject) {
@@ -35,9 +35,9 @@ func (m *SynchronizationJobSubject) GetAdditionalData()(map[string]interface{}) 
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SynchronizationJobSubject) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["links"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SynchronizationJobSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["links"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSynchronizationLinkedObjectsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *SynchronizationJobSubject) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["objectId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["objectId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *SynchronizationJobSubject) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["objectTypeName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["objectTypeName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

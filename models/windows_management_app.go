@@ -8,13 +8,13 @@ import (
 type WindowsManagementApp struct {
     Entity
     // Windows management app available version.
-    availableVersion *string;
+    availableVersion *string
     // The list of health states for installed Windows management app.
-    healthStates []WindowsManagementAppHealthStateable;
+    healthStates []WindowsManagementAppHealthStateable
     // Managed Installer Status. Possible values are: disabled, enabled.
-    managedInstaller *ManagedInstallerStatus;
+    managedInstaller *ManagedInstallerStatus
     // Managed Installer Configured Date Time
-    managedInstallerConfiguredDateTime *string;
+    managedInstallerConfiguredDateTime *string
 }
 // NewWindowsManagementApp instantiates a new windowsManagementApp and sets the default values.
 func NewWindowsManagementApp()(*WindowsManagementApp) {
@@ -36,9 +36,9 @@ func (m *WindowsManagementApp) GetAvailableVersion()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["availableVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["availableVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["healthStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["healthStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsManagementAppHealthStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["managedInstaller"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedInstaller"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagedInstallerStatus)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["managedInstallerConfiguredDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedInstallerConfiguredDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -7,27 +7,27 @@ import (
 // TeleconferenceDeviceQuality 
 type TeleconferenceDeviceQuality struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.
-    callChainId *string;
+    callChainId *string
     // A geo-region where the service is deployed, such as ProdNoam.
-    cloudServiceDeploymentEnvironment *string;
+    cloudServiceDeploymentEnvironment *string
     // A unique deployment identifier assigned by Azure.
-    cloudServiceDeploymentId *string;
+    cloudServiceDeploymentId *string
     // The Azure deployed cloud service instance name, such as FrontEnd_IN_3.
-    cloudServiceInstanceName *string;
+    cloudServiceInstanceName *string
     // The Azure deployed cloud service name, such as contoso.cloudapp.net.
-    cloudServiceName *string;
+    cloudServiceName *string
     // Any additional description, such as VTC Bldg 30/21.
-    deviceDescription *string;
+    deviceDescription *string
     // The user media agent name, such as Cisco SX80.
-    deviceName *string;
+    deviceName *string
     // A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.
-    mediaLegId *string;
+    mediaLegId *string
     // The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
-    mediaQualityList []TeleconferenceDeviceMediaQualityable;
+    mediaQualityList []TeleconferenceDeviceMediaQualityable
     // A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
-    participantId *string;
+    participantId *string
 }
 // NewTeleconferenceDeviceQuality instantiates a new teleconferenceDeviceQuality and sets the default values.
 func NewTeleconferenceDeviceQuality()(*TeleconferenceDeviceQuality) {
@@ -105,9 +105,9 @@ func (m *TeleconferenceDeviceQuality) GetDeviceName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["callChainId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["callChainId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["cloudServiceDeploymentEnvironment"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudServiceDeploymentEnvironment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["cloudServiceDeploymentId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudServiceDeploymentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["cloudServiceInstanceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudServiceInstanceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["cloudServiceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudServiceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["deviceDescription"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["mediaLegId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mediaLegId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -187,7 +187,7 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["mediaQualityList"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mediaQualityList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeleconferenceDeviceMediaQualityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -201,7 +201,7 @@ func (m *TeleconferenceDeviceQuality) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["participantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["participantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

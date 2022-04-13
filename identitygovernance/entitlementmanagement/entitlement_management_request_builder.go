@@ -34,49 +34,49 @@ import (
 // EntitlementManagementRequestBuilder provides operations to manage the entitlementManagement property of the microsoft.graph.identityGovernance entity.
 type EntitlementManagementRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // EntitlementManagementRequestBuilderDeleteOptions options for Delete
 type EntitlementManagementRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // EntitlementManagementRequestBuilderGetOptions options for Get
 type EntitlementManagementRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *EntitlementManagementRequestBuilderGetQueryParameters;
+    QueryParameters *EntitlementManagementRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // EntitlementManagementRequestBuilderGetQueryParameters get entitlementManagement from identityGovernance
 type EntitlementManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // EntitlementManagementRequestBuilderPatchOptions options for Patch
 type EntitlementManagementRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EntitlementManagementable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EntitlementManagementable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AccessPackageAssignmentApprovals the accessPackageAssignmentApprovals property
 func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovals()(*i4457cf48628c9e6d5d1e3963ea8a19dd7f20c98f2fd6035004babfeb7e44fbc8.AccessPackageAssignmentApprovalsRequestBuilder) {
@@ -89,7 +89,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovalsBy
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["approval_id"] = id
+        urlTplParams["approval%2Did"] = id
     }
     return ifa7e2fb3dcb6477dacae87733273579930d76bee0f987eee04a36237466ad30b.NewApprovalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentPoliciesByI
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackageAssignmentPolicy_id"] = id
+        urlTplParams["accessPackageAssignmentPolicy%2Did"] = id
     }
     return i259297720910df1e18cab41eaf6e93c6e506e2f6ead7e552913518ba4de7df35.NewAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -119,7 +119,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentRequestsByI
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackageAssignmentRequest_id"] = id
+        urlTplParams["accessPackageAssignmentRequest%2Did"] = id
     }
     return i76c412e0065634c6fc606ecd0b6e09322c5b7f7b51446f949b2f794f2fc40926.NewAccessPackageAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -134,7 +134,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentResourceRol
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackageAssignmentResourceRole_id"] = id
+        urlTplParams["accessPackageAssignmentResourceRole%2Did"] = id
     }
     return i46b0d052826008fb4b9e2de18eaadb28b08fda0c4481c35e9fdf6c08800480a1.NewAccessPackageAssignmentResourceRoleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -149,7 +149,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignmentsById(id st
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackageAssignment_id"] = id
+        urlTplParams["accessPackageAssignment%2Did"] = id
     }
     return ib0d512b118f91cf1bc458b5feacf403e01f72b051f66b4e84985a41cb52dab99.NewAccessPackageAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -164,7 +164,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageCatalogsById(id strin
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackageCatalog_id"] = id
+        urlTplParams["accessPackageCatalog%2Did"] = id
     }
     return i82310b3d54600cbafcfbb579b511cc82bb29ed7fb49516f06dce0fcc7951bdf0.NewAccessPackageCatalogItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -179,7 +179,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResourceEnvironmentsB
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackageResourceEnvironment_id"] = id
+        urlTplParams["accessPackageResourceEnvironment%2Did"] = id
     }
     return id480c6778d8753dfd5aecaa8cfff24f904f1d9cfb89137f57d90578c37490dde.NewAccessPackageResourceEnvironmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -194,7 +194,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResourceRequestsById(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackageResourceRequest_id"] = id
+        urlTplParams["accessPackageResourceRequest%2Did"] = id
     }
     return if945e55d38fc375c56dbf90cf6e39a7d61a6cd01059d47fb2b23e38f45842f3e.NewAccessPackageResourceRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -209,7 +209,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResourceRoleScopesByI
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackageResourceRoleScope_id"] = id
+        urlTplParams["accessPackageResourceRoleScope%2Did"] = id
     }
     return i73885afb0012ccafe2d98c7ad3770430abc8b68787e78c60063bf998dee8be11.NewAccessPackageResourceRoleScopeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -224,7 +224,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResourcesById(id stri
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackageResource_id"] = id
+        urlTplParams["accessPackageResource%2Did"] = id
     }
     return ia3f92f11727041477c1ada6bfc08139cadda160d066f173db00cce4f8358bc50.NewAccessPackageResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -239,7 +239,7 @@ func (m *EntitlementManagementRequestBuilder) AccessPackagesById(id string)(*i83
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackage_id"] = id
+        urlTplParams["accessPackage%2Did"] = id
     }
     return i832824d2195e5d19b0fbdef0bb45eca79f632cf74d39d2b1535ca2c63e49b230.NewAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -254,7 +254,7 @@ func (m *EntitlementManagementRequestBuilder) ConnectedOrganizationsById(id stri
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["connectedOrganization_id"] = id
+        urlTplParams["connectedOrganization%2Did"] = id
     }
     return i6733f0715c511b6a99e8e8280d52d93704622cda212a0d03f6340a8c98c403e5.NewConnectedOrganizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -262,7 +262,7 @@ func (m *EntitlementManagementRequestBuilder) ConnectedOrganizationsById(id stri
 func NewEntitlementManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRequestBuilder) {
     m := &EntitlementManagementRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

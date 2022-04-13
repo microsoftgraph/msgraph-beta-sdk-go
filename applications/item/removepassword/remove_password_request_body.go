@@ -7,9 +7,9 @@ import (
 // RemovePasswordRequestBody provides operations to call the removePassword method.
 type RemovePasswordRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The keyId property
-    keyId *string;
+    keyId *string
 }
 // NewRemovePasswordRequestBody instantiates a new removePasswordRequestBody and sets the default values.
 func NewRemovePasswordRequestBody()(*RemovePasswordRequestBody) {
@@ -31,9 +31,9 @@ func (m *RemovePasswordRequestBody) GetAdditionalData()(map[string]interface{}) 
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RemovePasswordRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["keyId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *RemovePasswordRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["keyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -9,19 +9,19 @@ import (
 type AuthenticationMethodsPolicy struct {
     Entity
     // Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-    authenticationMethodConfigurations []AuthenticationMethodConfigurationable;
+    authenticationMethodConfigurations []AuthenticationMethodConfigurationable
     // A description of the policy. Read-only.
-    description *string;
+    description *string
     // The name of the policy. Read-only.
-    displayName *string;
+    displayName *string
     // The date and time of the last update to the policy. Read-only.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The version of the policy in use. Read-only.
-    policyVersion *string;
+    policyVersion *string
     // The reconfirmationInDays property
-    reconfirmationInDays *int32;
+    reconfirmationInDays *int32
     // Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
-    registrationEnforcement RegistrationEnforcementable;
+    registrationEnforcement RegistrationEnforcementable
 }
 // NewAuthenticationMethodsPolicy instantiates a new authenticationMethodsPolicy and sets the default values.
 func NewAuthenticationMethodsPolicy()(*AuthenticationMethodsPolicy) {
@@ -59,9 +59,9 @@ func (m *AuthenticationMethodsPolicy) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["authenticationMethodConfigurations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["authenticationMethodConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAuthenticationMethodConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["policyVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["reconfirmationInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reconfirmationInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *AuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["registrationEnforcement"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["registrationEnforcement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRegistrationEnforcementFromDiscriminatorValue)
         if err != nil {
             return err

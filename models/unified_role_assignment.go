@@ -8,27 +8,27 @@ import (
 type UnifiedRoleAssignment struct {
     Entity
     // Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
-    appScope AppScopeable;
+    appScope AppScopeable
     // Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
-    appScopeId *string;
+    appScopeId *string
     // The condition property
-    condition *string;
+    condition *string
     // The directory object that is the scope of the assignment. Read-only. Supports $expand.
-    directoryScope DirectoryObjectable;
+    directoryScope DirectoryObjectable
     // Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
-    directoryScopeId *string;
+    directoryScopeId *string
     // Referencing the assigned principal. Read-only. Supports $expand.
-    principal DirectoryObjectable;
+    principal DirectoryObjectable
     // Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
-    principalId *string;
+    principalId *string
     // The principalOrganizationId property
-    principalOrganizationId *string;
+    principalOrganizationId *string
     // The scope at which the unifiedRoleAssignment applies. This is / for service-wide. DO NOT USE. This property will be deprecated soon.
-    resourceScope *string;
+    resourceScope *string
     // The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
-    roleDefinition UnifiedRoleDefinitionable;
+    roleDefinition UnifiedRoleDefinitionable
     // Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
-    roleDefinitionId *string;
+    roleDefinitionId *string
 }
 // NewUnifiedRoleAssignment instantiates a new unifiedRoleAssignment and sets the default values.
 func NewUnifiedRoleAssignment()(*UnifiedRoleAssignment) {
@@ -82,9 +82,9 @@ func (m *UnifiedRoleAssignment) GetDirectoryScopeId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["appScope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAppScopeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["appScopeId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appScopeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["condition"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["condition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -114,7 +114,7 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["directoryScope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["directoryScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["directoryScopeId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["directoryScopeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["principal"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["principal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["principalId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["principalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["principalOrganizationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["principalOrganizationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -164,7 +164,7 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["resourceScope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -174,7 +174,7 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["roleDefinition"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleDefinition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUnifiedRoleDefinitionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -184,7 +184,7 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["roleDefinitionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleDefinitionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

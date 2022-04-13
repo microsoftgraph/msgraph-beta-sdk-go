@@ -33,49 +33,49 @@ import (
 // SiteItemRequestBuilder provides operations to manage the sites property of the microsoft.graph.group entity.
 type SiteItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // SiteItemRequestBuilderDeleteOptions options for Delete
 type SiteItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // SiteItemRequestBuilderGetOptions options for Get
 type SiteItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *SiteItemRequestBuilderGetQueryParameters;
+    QueryParameters *SiteItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // SiteItemRequestBuilderGetQueryParameters the list of SharePoint sites in this group. Access the default site with /sites/root.
 type SiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // SiteItemRequestBuilderPatchOptions options for Patch
 type SiteItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Analytics the analytics property
 func (m *SiteItemRequestBuilder) Analytics()(*i5e304ff4e8f7389e05b8435725a95166eb67d5d1e116cc3b18d200fbd7bdaa7e.AnalyticsRequestBuilder) {
@@ -92,7 +92,7 @@ func (m *SiteItemRequestBuilder) ColumnsById(id string)(*if0253c120b3b3a099cb60e
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["columnDefinition_id"] = id
+        urlTplParams["columnDefinition%2Did"] = id
     }
     return if0253c120b3b3a099cb60e9326d7b7be9d1749a2813c7fa0cae43bf0e67deb80.NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -100,7 +100,7 @@ func (m *SiteItemRequestBuilder) ColumnsById(id string)(*if0253c120b3b3a099cb60e
 func NewSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SiteItemRequestBuilder) {
     m := &SiteItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group_id}/sites/{site_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -126,7 +126,7 @@ func (m *SiteItemRequestBuilder) ContentTypesById(id string)(*i73e8a92b70513f051
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["contentType_id"] = id
+        urlTplParams["contentType%2Did"] = id
     }
     return i73e8a92b70513f051da5d1a665c9c5c97d07dcfc0bc14436b3e9ddae0a733601.NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -216,7 +216,7 @@ func (m *SiteItemRequestBuilder) DrivesById(id string)(*ic4ea50c9f752d2b4c86c26f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["drive_id"] = id
+        urlTplParams["drive%2Did"] = id
     }
     return ic4ea50c9f752d2b4c86c26f61c9fe954fa57cf84715361c40caf7028754c21d7.NewDriveItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -231,7 +231,7 @@ func (m *SiteItemRequestBuilder) ExternalColumnsById(id string)(*i053597ae2fca36
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["columnDefinition_id"] = id
+        urlTplParams["columnDefinition%2Did"] = id
     }
     return i053597ae2fca36945f3da0e944bf07318cb94bde79534f0ef588eac99861007f.NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -262,7 +262,7 @@ func (m *SiteItemRequestBuilder) ItemsById(id string)(*i727152b614c462054b3f5cbd
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["baseItem_id"] = id
+        urlTplParams["baseItem%2Did"] = id
     }
     return i727152b614c462054b3f5cbde245c93660e74322a2e4614e0bf0455749ffe99d.NewBaseItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -277,7 +277,7 @@ func (m *SiteItemRequestBuilder) ListsById(id string)(*i2ad58809366fe51c914338bc
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["list_id"] = id
+        urlTplParams["list%2Did"] = id
     }
     return i2ad58809366fe51c914338bc998230f2c52e936efb52e3da9dc1795da6d2e60e.NewListItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -296,7 +296,7 @@ func (m *SiteItemRequestBuilder) OperationsById(id string)(*i7dbcdb87846307ec830
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["richLongRunningOperation_id"] = id
+        urlTplParams["richLongRunningOperation%2Did"] = id
     }
     return i7dbcdb87846307ec83020a5f7bc018b8694724bb7641788349fd036a81ce8c46.NewRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -311,7 +311,7 @@ func (m *SiteItemRequestBuilder) PagesById(id string)(*i161351685aba3b02962a6a41
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["sitePage_id"] = id
+        urlTplParams["sitePage%2Did"] = id
     }
     return i161351685aba3b02962a6a41ccbc3125edc0df60596b473175fadb0ca4ee50c2.NewSitePageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -342,7 +342,7 @@ func (m *SiteItemRequestBuilder) PermissionsById(id string)(*i8d7b2e54750fab899b
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["permission_id"] = id
+        urlTplParams["permission%2Did"] = id
     }
     return i8d7b2e54750fab899bdfdc413ec9096c45dd35a331acfc965e0139c931df339e.NewPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -357,7 +357,7 @@ func (m *SiteItemRequestBuilder) SitesById(id string)(*id9138e79961f7d02552ce3b5
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["site_id1"] = id
+        urlTplParams["site%2Did1"] = id
     }
     return id9138e79961f7d02552ce3b5941d270ed2f0a8a46497542d2459bd97dccbc06b.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -9,23 +9,23 @@ import (
 type TeamworkDeviceOperation struct {
     Entity
     // Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
-    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Identity of the user who created the device operation.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // The UTC date and time when the device operation was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Error details are available only in case of a failed status.
-    error OperationErrorable;
+    error OperationErrorable
     // Identity of the user who last modified the device operation.
-    lastActionBy IdentitySetable;
+    lastActionBy IdentitySetable
     // The UTC date and time when the device operation was last modified.
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Type of async operation on a device. The possible values are: deviceRestart, configUpdate, deviceDiagnostics, softwareUpdate, deviceManagementAgentConfigUpdate, remoteLogin, remoteLogout, unknownFutureValue.
-    operationType *TeamworkDeviceOperationType;
+    operationType *TeamworkDeviceOperationType
     // Time at which the operation was started.
-    startedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.
-    status *string;
+    status *string
 }
 // NewTeamworkDeviceOperation instantiates a new teamworkDeviceOperation and sets the default values.
 func NewTeamworkDeviceOperation()(*TeamworkDeviceOperation) {
@@ -71,9 +71,9 @@ func (m *TeamworkDeviceOperation) GetError()(OperationErrorable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["completedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["completedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["error"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOperationErrorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["lastActionBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastActionBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["lastActionDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastActionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["operationType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTeamworkDeviceOperationType)
         if err != nil {
             return err
@@ -143,7 +143,7 @@ func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["startedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

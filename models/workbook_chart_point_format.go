@@ -8,7 +8,7 @@ import (
 type WorkbookChartPointFormat struct {
     Entity
     // Represents the fill format of a chart, which includes background formating information. Read-only.
-    fill WorkbookChartFillable;
+    fill WorkbookChartFillable
 }
 // NewWorkbookChartPointFormat instantiates a new workbookChartPointFormat and sets the default values.
 func NewWorkbookChartPointFormat()(*WorkbookChartPointFormat) {
@@ -22,9 +22,9 @@ func CreateWorkbookChartPointFormatFromDiscriminatorValue(parseNode i878a80d2330
     return NewWorkbookChartPointFormat(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkbookChartPointFormat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WorkbookChartPointFormat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["fill"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fill"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartFillFromDiscriminatorValue)
         if err != nil {
             return err

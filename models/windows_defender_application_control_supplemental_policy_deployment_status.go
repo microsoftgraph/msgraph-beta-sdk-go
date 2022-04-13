@@ -9,25 +9,25 @@ import (
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus struct {
     Entity
     // The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.
-    deploymentStatus *WindowsDefenderApplicationControlSupplementalPolicyStatuses;
+    deploymentStatus *WindowsDefenderApplicationControlSupplementalPolicyStatuses
     // Device ID.
-    deviceId *string;
+    deviceId *string
     // Device name.
-    deviceName *string;
+    deviceName *string
     // Last sync date time.
-    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Windows OS Version Description.
-    osDescription *string;
+    osDescription *string
     // Windows OS Version.
-    osVersion *string;
+    osVersion *string
     // The navigation link to the WindowsDefenderApplicationControl supplemental policy.
-    policy WindowsDefenderApplicationControlSupplementalPolicyable;
+    policy WindowsDefenderApplicationControlSupplementalPolicyable
     // Human readable version of the WindowsDefenderApplicationControl supplemental policy.
-    policyVersion *string;
+    policyVersion *string
     // The name of the user of this device.
-    userName *string;
+    userName *string
     // User Principal Name.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus instantiates a new windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus()(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) {
@@ -65,9 +65,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deploymentStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deploymentStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsDefenderApplicationControlSupplementalPolicyStatuses)
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         }
         return nil
     }
-    res["deviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         }
         return nil
     }
-    res["deviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         }
         return nil
     }
-    res["lastSyncDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         }
         return nil
     }
-    res["osDescription"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         }
         return nil
     }
-    res["osVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         }
         return nil
     }
-    res["policy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWindowsDefenderApplicationControlSupplementalPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         }
         return nil
     }
-    res["policyVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         }
         return nil
     }
-    res["userName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

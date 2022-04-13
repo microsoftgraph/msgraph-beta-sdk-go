@@ -8,11 +8,11 @@ import (
 type TeamworkPeripheral struct {
     Entity
     // Display name for the peripheral.
-    displayName *string;
+    displayName *string
     // The product ID of the device. Each product from a vendor has its own ID.
-    productId *string;
+    productId *string
     // The unique identifier for the vendor of the device. Each vendor has a unique ID.
-    vendorId *string;
+    vendorId *string
 }
 // NewTeamworkPeripheral instantiates a new teamworkPeripheral and sets the default values.
 func NewTeamworkPeripheral()(*TeamworkPeripheral) {
@@ -34,9 +34,9 @@ func (m *TeamworkPeripheral) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkPeripheral) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TeamworkPeripheral) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *TeamworkPeripheral) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["productId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["productId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *TeamworkPeripheral) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["vendorId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vendorId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

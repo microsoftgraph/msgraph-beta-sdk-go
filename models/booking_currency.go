@@ -8,7 +8,7 @@ import (
 type BookingCurrency struct {
     Entity
     // The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.
-    symbol *string;
+    symbol *string
 }
 // NewBookingCurrency instantiates a new bookingCurrency and sets the default values.
 func NewBookingCurrency()(*BookingCurrency) {
@@ -22,9 +22,9 @@ func CreateBookingCurrencyFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewBookingCurrency(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BookingCurrency) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *BookingCurrency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["symbol"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["symbol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

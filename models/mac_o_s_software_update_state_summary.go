@@ -9,17 +9,17 @@ import (
 type MacOSSoftwareUpdateStateSummary struct {
     Entity
     // Human readable name of the software update
-    displayName *string;
+    displayName *string
     // Last date time the report for this device and product key was updated.
-    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Product key of the software update.
-    productKey *string;
+    productKey *string
     // State of the software update. Possible values are: success, downloading, downloaded, installing, idle, available, scheduled, downloadFailed, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installInsufficientSpace, installInsufficientPower, installFailed, commandFailed.
-    state *MacOSSoftwareUpdateState;
+    state *MacOSSoftwareUpdateState
     // Software update category. Possible values are: critical, configurationDataFile, firmware, other.
-    updateCategory *MacOSSoftwareUpdateCategory;
+    updateCategory *MacOSSoftwareUpdateCategory
     // Version of the software update
-    updateVersion *string;
+    updateVersion *string
 }
 // NewMacOSSoftwareUpdateStateSummary instantiates a new macOSSoftwareUpdateStateSummary and sets the default values.
 func NewMacOSSoftwareUpdateStateSummary()(*MacOSSoftwareUpdateStateSummary) {
@@ -41,9 +41,9 @@ func (m *MacOSSoftwareUpdateStateSummary) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["lastUpdatedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["productKey"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["productKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMacOSSoftwareUpdateState)
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["updateCategory"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["updateCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMacOSSoftwareUpdateCategory)
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["updateVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["updateVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

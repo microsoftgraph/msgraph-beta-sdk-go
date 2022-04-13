@@ -8,11 +8,11 @@ import (
 type IdentityApiConnector struct {
     Entity
     // The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
-    authenticationConfiguration ApiAuthenticationConfigurationBaseable;
+    authenticationConfiguration ApiAuthenticationConfigurationBaseable
     // The name of the API connector.
-    displayName *string;
+    displayName *string
     // The URL of the API endpoint to call.
-    targetUrl *string;
+    targetUrl *string
 }
 // NewIdentityApiConnector instantiates a new identityApiConnector and sets the default values.
 func NewIdentityApiConnector()(*IdentityApiConnector) {
@@ -42,9 +42,9 @@ func (m *IdentityApiConnector) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *IdentityApiConnector) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *IdentityApiConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["authenticationConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["authenticationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateApiAuthenticationConfigurationBaseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *IdentityApiConnector) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *IdentityApiConnector) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["targetUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -8,11 +8,11 @@ import (
 type GroupLifecyclePolicy struct {
     Entity
     // List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
-    alternateNotificationEmails *string;
+    alternateNotificationEmails *string
     // Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
-    groupLifetimeInDays *int32;
+    groupLifetimeInDays *int32
     // The group type for which the expiration policy applies. Possible values are All, Selected or None.
-    managedGroupTypes *string;
+    managedGroupTypes *string
 }
 // NewGroupLifecyclePolicy instantiates a new groupLifecyclePolicy and sets the default values.
 func NewGroupLifecyclePolicy()(*GroupLifecyclePolicy) {
@@ -34,9 +34,9 @@ func (m *GroupLifecyclePolicy) GetAlternateNotificationEmails()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *GroupLifecyclePolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *GroupLifecyclePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["alternateNotificationEmails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["alternateNotificationEmails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *GroupLifecyclePolicy) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["groupLifetimeInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupLifetimeInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *GroupLifecyclePolicy) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["managedGroupTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedGroupTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

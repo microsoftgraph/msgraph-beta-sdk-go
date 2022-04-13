@@ -31,49 +31,49 @@ import (
 // VirtualEndpointRequestBuilder provides operations to manage the virtualEndpoint property of the microsoft.graph.deviceManagement entity.
 type VirtualEndpointRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // VirtualEndpointRequestBuilderDeleteOptions options for Delete
 type VirtualEndpointRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // VirtualEndpointRequestBuilderGetOptions options for Get
 type VirtualEndpointRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *VirtualEndpointRequestBuilderGetQueryParameters;
+    QueryParameters *VirtualEndpointRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // VirtualEndpointRequestBuilderGetQueryParameters get virtualEndpoint from deviceManagement
 type VirtualEndpointRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // VirtualEndpointRequestBuilderPatchOptions options for Patch
 type VirtualEndpointRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AuditEvents the auditEvents property
 func (m *VirtualEndpointRequestBuilder) AuditEvents()(*i5b2233e79dc3147871fe57df3812d50c932074cfced41065bb12f77e2edec21e.AuditEventsRequestBuilder) {
@@ -86,7 +86,7 @@ func (m *VirtualEndpointRequestBuilder) AuditEventsById(id string)(*i57a7497f8ee
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudPcAuditEvent_id"] = id
+        urlTplParams["cloudPcAuditEvent%2Did"] = id
     }
     return i57a7497f8ee90067ee6f4aa2a9b6074c547470907dd198f9de96f123682ddda0.NewCloudPcAuditEventItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -101,7 +101,7 @@ func (m *VirtualEndpointRequestBuilder) CloudPCsById(id string)(*ic14d63ed61f1b6
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudPC_id"] = id
+        urlTplParams["cloudPC%2Did"] = id
     }
     return ic14d63ed61f1b60b506fcd81a146444ab96691619c2ac32f274b0793b622f23f.NewCloudPCItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -109,7 +109,7 @@ func (m *VirtualEndpointRequestBuilder) CloudPCsById(id string)(*ic14d63ed61f1b6
 func NewVirtualEndpointRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointRequestBuilder) {
     m := &VirtualEndpointRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/virtualEndpoint{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -206,7 +206,7 @@ func (m *VirtualEndpointRequestBuilder) DeviceImagesById(id string)(*ia3bcb5abfa
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudPcDeviceImage_id"] = id
+        urlTplParams["cloudPcDeviceImage%2Did"] = id
     }
     return ia3bcb5abfa0df15f63e2a6fa1f06bcbd43b05fc488a36754660b8c694246fe0b.NewCloudPcDeviceImageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -221,7 +221,7 @@ func (m *VirtualEndpointRequestBuilder) GalleryImagesById(id string)(*ia7d6e3577
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudPcGalleryImage_id"] = id
+        urlTplParams["cloudPcGalleryImage%2Did"] = id
     }
     return ia7d6e357762433a03086487f037283652587e5519e4f5513185ee9e97e7426e9.NewCloudPcGalleryImageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -256,7 +256,7 @@ func (m *VirtualEndpointRequestBuilder) OnPremisesConnectionsById(id string)(*i4
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudPcOnPremisesConnection_id"] = id
+        urlTplParams["cloudPcOnPremisesConnection%2Did"] = id
     }
     return i471da8905b96f5687f46d1c5dc0de1420e0c35b35374f400b7618e2937b4bf34.NewCloudPcOnPremisesConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -291,7 +291,7 @@ func (m *VirtualEndpointRequestBuilder) ProvisioningPoliciesById(id string)(*i6c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudPcProvisioningPolicy_id"] = id
+        urlTplParams["cloudPcProvisioningPolicy%2Did"] = id
     }
     return i6c86691f21aa3210591c58f278b27fee3b5fb3a866b020940f913e3f9a20a060.NewCloudPcProvisioningPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -306,7 +306,7 @@ func (m *VirtualEndpointRequestBuilder) ServicePlansById(id string)(*i41c3478ec8
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudPcServicePlan_id"] = id
+        urlTplParams["cloudPcServicePlan%2Did"] = id
     }
     return i41c3478ec8e1cf11d4aa0d810af05da1184e70e2f0c4b1acd5144a495b556b79.NewCloudPcServicePlanItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -321,7 +321,7 @@ func (m *VirtualEndpointRequestBuilder) SnapshotsById(id string)(*i6cd22011575c0
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudPcSnapshot_id"] = id
+        urlTplParams["cloudPcSnapshot%2Did"] = id
     }
     return i6cd22011575c099f23c4a4c1302ad841306148c11914cbf14eb33d52739607c2.NewCloudPcSnapshotItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -336,7 +336,7 @@ func (m *VirtualEndpointRequestBuilder) SupportedRegionsById(id string)(*i91bd1a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudPcSupportedRegion_id"] = id
+        urlTplParams["cloudPcSupportedRegion%2Did"] = id
     }
     return i91bd1ab7316bb059e22edb6c7fdf042441efd0af722f5ea856fc4be260402497.NewCloudPcSupportedRegionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -351,7 +351,7 @@ func (m *VirtualEndpointRequestBuilder) UserSettingsById(id string)(*i940a1af81d
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["cloudPcUserSetting_id"] = id
+        urlTplParams["cloudPcUserSetting%2Did"] = id
     }
     return i940a1af81d34e1d5a5cfef93acb216fcbeba9c4d02700ce3000fd8f0588fd162.NewCloudPcUserSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

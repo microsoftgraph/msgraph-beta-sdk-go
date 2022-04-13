@@ -9,13 +9,13 @@ import (
 type MeetingAttendanceReport struct {
     Entity
     // List of attendance records of an attendance report. Read-only.
-    attendanceRecords []AttendanceRecordable;
+    attendanceRecords []AttendanceRecordable
     // UTC time when the meeting ended. Read-only.
-    meetingEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    meetingEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // UTC time when the meeting started. Read-only.
-    meetingStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    meetingStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Total number of participants. Read-only.
-    totalParticipantCount *int32;
+    totalParticipantCount *int32
 }
 // NewMeetingAttendanceReport instantiates a new meetingAttendanceReport and sets the default values.
 func NewMeetingAttendanceReport()(*MeetingAttendanceReport) {
@@ -37,9 +37,9 @@ func (m *MeetingAttendanceReport) GetAttendanceRecords()([]AttendanceRecordable)
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MeetingAttendanceReport) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MeetingAttendanceReport) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["attendanceRecords"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["attendanceRecords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAttendanceRecordFromDiscriminatorValue)
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *MeetingAttendanceReport) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["meetingEndDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["meetingEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *MeetingAttendanceReport) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["meetingStartDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["meetingStartDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *MeetingAttendanceReport) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["totalParticipantCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalParticipantCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

@@ -8,9 +8,11 @@ import (
 type CloudPcOrganizationSettings struct {
     Entity
     // The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
-    osVersion *CloudPcOperatingSystem;
+    osVersion *CloudPcOperatingSystem
     // The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
-    userAccountType *CloudPcUserAccountType;
+    userAccountType *CloudPcUserAccountType
+    // Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.
+    windowsSettings CloudPcWindowsSettingsable
 }
 // NewCloudPcOrganizationSettings instantiates a new cloudPcOrganizationSettings and sets the default values.
 func NewCloudPcOrganizationSettings()(*CloudPcOrganizationSettings) {
@@ -24,9 +26,9 @@ func CreateCloudPcOrganizationSettingsFromDiscriminatorValue(parseNode i878a80d2
     return NewCloudPcOrganizationSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["osVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcOperatingSystem)
         if err != nil {
             return err
@@ -36,13 +38,23 @@ func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["userAccountType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userAccountType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcUserAccountType)
         if err != nil {
             return err
         }
         if val != nil {
             m.SetUserAccountType(val.(*CloudPcUserAccountType))
+        }
+        return nil
+    }
+    res["windowsSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcWindowsSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWindowsSettings(val.(CloudPcWindowsSettingsable))
         }
         return nil
     }
@@ -62,6 +74,14 @@ func (m *CloudPcOrganizationSettings) GetUserAccountType()(*CloudPcUserAccountTy
         return nil
     } else {
         return m.userAccountType
+    }
+}
+// GetWindowsSettings gets the windowsSettings property value. Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.
+func (m *CloudPcOrganizationSettings) GetWindowsSettings()(CloudPcWindowsSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsSettings
     }
 }
 // Serialize serializes information the current object
@@ -84,6 +104,12 @@ func (m *CloudPcOrganizationSettings) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("windowsSettings", m.GetWindowsSettings())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetOsVersion sets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
@@ -96,5 +122,11 @@ func (m *CloudPcOrganizationSettings) SetOsVersion(value *CloudPcOperatingSystem
 func (m *CloudPcOrganizationSettings) SetUserAccountType(value *CloudPcUserAccountType)() {
     if m != nil {
         m.userAccountType = value
+    }
+}
+// SetWindowsSettings sets the windowsSettings property value. Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.
+func (m *CloudPcOrganizationSettings) SetWindowsSettings(value CloudPcWindowsSettingsable)() {
+    if m != nil {
+        m.windowsSettings = value
     }
 }

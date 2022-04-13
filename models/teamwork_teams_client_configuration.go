@@ -7,11 +7,11 @@ import (
 // TeamworkTeamsClientConfiguration 
 type TeamworkTeamsClientConfiguration struct {
     // The configuration of the Microsoft Teams client user account for a device.
-    accountConfiguration TeamworkAccountConfigurationable;
+    accountConfiguration TeamworkAccountConfigurationable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The configuration of Microsoft Teams client features for a device.
-    featuresConfiguration TeamworkFeaturesConfigurationable;
+    featuresConfiguration TeamworkFeaturesConfigurationable
 }
 // NewTeamworkTeamsClientConfiguration instantiates a new teamworkTeamsClientConfiguration and sets the default values.
 func NewTeamworkTeamsClientConfiguration()(*TeamworkTeamsClientConfiguration) {
@@ -49,9 +49,9 @@ func (m *TeamworkTeamsClientConfiguration) GetFeaturesConfiguration()(TeamworkFe
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkTeamsClientConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["accountConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkTeamsClientConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["accountConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkAccountConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *TeamworkTeamsClientConfiguration) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["featuresConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["featuresConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkFeaturesConfigurationFromDiscriminatorValue)
         if err != nil {
             return err

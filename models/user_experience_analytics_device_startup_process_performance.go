@@ -8,21 +8,21 @@ import (
 type UserExperienceAnalyticsDeviceStartupProcessPerformance struct {
     Entity
     // User experience analytics device startup process summarized count.
-    deviceCount *int64;
+    deviceCount *int64
     // User experience analytics device startup process median impact in milliseconds.
-    medianImpactInMs *int32;
+    medianImpactInMs *int32
     // User experience analytics device startup process median impact in milliseconds.
-    medianImpactInMs2 *int64;
+    medianImpactInMs2 *int64
     // User experience analytics device startup process name.
-    processName *string;
+    processName *string
     // The user experience analytics device startup process product name.
-    productName *string;
+    productName *string
     // The User experience analytics device startup process publisher.
-    publisher *string;
+    publisher *string
     // User experience analytics device startup process total impact in milliseconds.
-    totalImpactInMs *int32;
+    totalImpactInMs *int32
     // User experience analytics device startup process total impact in milliseconds.
-    totalImpactInMs2 *int64;
+    totalImpactInMs2 *int64
 }
 // NewUserExperienceAnalyticsDeviceStartupProcessPerformance instantiates a new userExperienceAnalyticsDeviceStartupProcessPerformance and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupProcessPerformance()(*UserExperienceAnalyticsDeviceStartupProcessPerformance) {
@@ -44,9 +44,9 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetDeviceCount(
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -56,7 +56,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["medianImpactInMs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["medianImpactInMs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["medianImpactInMs2"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["medianImpactInMs2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -76,7 +76,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["processName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["processName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["productName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["productName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["publisher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["totalImpactInMs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalImpactInMs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessPerformance) GetFieldDeseria
         }
         return nil
     }
-    res["totalImpactInMs2"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalImpactInMs2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

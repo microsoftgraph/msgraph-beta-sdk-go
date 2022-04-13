@@ -9,33 +9,33 @@ import (
 type DomainSecurityProfile struct {
     Entity
     // The activityGroupNames property
-    activityGroupNames []string;
+    activityGroupNames []string
     // The azureSubscriptionId property
-    azureSubscriptionId *string;
+    azureSubscriptionId *string
     // The azureTenantId property
-    azureTenantId *string;
+    azureTenantId *string
     // The countHits property
-    countHits *int32;
+    countHits *int32
     // The countInOrg property
-    countInOrg *int32;
+    countInOrg *int32
     // The domainCategories property
-    domainCategories []ReputationCategoryable;
+    domainCategories []ReputationCategoryable
     // The domainRegisteredDateTime property
-    domainRegisteredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    domainRegisteredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The firstSeenDateTime property
-    firstSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    firstSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The lastSeenDateTime property
-    lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The name property
-    name *string;
+    name *string
     // The registrant property
-    registrant DomainRegistrantable;
+    registrant DomainRegistrantable
     // The riskScore property
-    riskScore *string;
+    riskScore *string
     // The tags property
-    tags []string;
+    tags []string
     // The vendorInformation property
-    vendorInformation SecurityVendorInformationable;
+    vendorInformation SecurityVendorInformationable
 }
 // NewDomainSecurityProfile instantiates a new domainSecurityProfile and sets the default values.
 func NewDomainSecurityProfile()(*DomainSecurityProfile) {
@@ -105,9 +105,9 @@ func (m *DomainSecurityProfile) GetDomainRegisteredDateTime()(*i336074805fc85398
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activityGroupNames"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityGroupNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["azureSubscriptionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureSubscriptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["azureTenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["countHits"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countHits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["countInOrg"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["countInOrg"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["domainCategories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["domainCategories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateReputationCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["domainRegisteredDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["domainRegisteredDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["firstSeenDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["firstSeenDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["lastSeenDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastSeenDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -215,7 +215,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["registrant"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["registrant"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDomainRegistrantFromDiscriminatorValue)
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["riskScore"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -235,7 +235,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["tags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -249,7 +249,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(interfac
         }
         return nil
     }
-    res["vendorInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vendorInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err

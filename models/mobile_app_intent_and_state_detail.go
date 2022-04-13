@@ -7,19 +7,19 @@ import (
 // MobileAppIntentAndStateDetail mobile App Intent and Install State for a given device.
 type MobileAppIntentAndStateDetail struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // MobieApp identifier.
-    applicationId *string;
+    applicationId *string
     // The admin provided or imported title of the app.
-    displayName *string;
+    displayName *string
     // Human readable version of the application
-    displayVersion *string;
+    displayVersion *string
     // The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
-    installState *ResultantAppState;
+    installState *ResultantAppState
     // Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
-    mobileAppIntent *MobileAppIntent;
+    mobileAppIntent *MobileAppIntent
     // The supported platforms for the app.
-    supportedDeviceTypes []MobileAppSupportedDeviceTypeable;
+    supportedDeviceTypes []MobileAppSupportedDeviceTypeable
 }
 // NewMobileAppIntentAndStateDetail instantiates a new mobileAppIntentAndStateDetail and sets the default values.
 func NewMobileAppIntentAndStateDetail()(*MobileAppIntentAndStateDetail) {
@@ -65,9 +65,9 @@ func (m *MobileAppIntentAndStateDetail) GetDisplayVersion()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["applicationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["applicationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["displayVersion"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["installState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["installState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseResultantAppState)
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["mobileAppIntent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mobileAppIntent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMobileAppIntent)
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["supportedDeviceTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedDeviceTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppSupportedDeviceTypeFromDiscriminatorValue)
         if err != nil {
             return err

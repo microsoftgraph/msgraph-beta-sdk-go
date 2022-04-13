@@ -18,49 +18,49 @@ import (
 // InformationProtectionRequestBuilder provides operations to manage the informationProtection property of the microsoft.graph.user entity.
 type InformationProtectionRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // InformationProtectionRequestBuilderDeleteOptions options for Delete
 type InformationProtectionRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // InformationProtectionRequestBuilderGetOptions options for Get
 type InformationProtectionRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *InformationProtectionRequestBuilderGetQueryParameters;
+    QueryParameters *InformationProtectionRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // InformationProtectionRequestBuilderGetQueryParameters get informationProtection from me
 type InformationProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // InformationProtectionRequestBuilderPatchOptions options for Patch
 type InformationProtectionRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Bitlocker the bitlocker property
 func (m *InformationProtectionRequestBuilder) Bitlocker()(*i0277c2a76ea648d8b78b47eb740e4426e8b70cafa779ae7cfc25d4423af78cd7.BitlockerRequestBuilder) {
@@ -70,7 +70,7 @@ func (m *InformationProtectionRequestBuilder) Bitlocker()(*i0277c2a76ea648d8b78b
 func NewInformationProtectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionRequestBuilder) {
     m := &InformationProtectionRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/informationProtection{?select,expand}";
+    m.urlTemplate = "{+baseurl}/me/informationProtection{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -151,7 +151,7 @@ func (m *InformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id 
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["dataLossPreventionPolicy_id"] = id
+        urlTplParams["dataLossPreventionPolicy%2Did"] = id
     }
     return iafc786e37c049dc894b91f10f3a1a6a1d5d6c2a2aadbde9b9478f38371b96dd6.NewDataLossPreventionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -218,7 +218,7 @@ func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["sensitivityLabel_id"] = id
+        urlTplParams["sensitivityLabel%2Did"] = id
     }
     return ic2a0f6c7e03401afbd27ed2c227884da9fe6f7c80345dc54e72b4c6d67543da9.NewSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -237,7 +237,7 @@ func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id st
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["threatAssessmentRequest_id"] = id
+        urlTplParams["threatAssessmentRequest%2Did"] = id
     }
     return i400f881fad4edba6edc2afa2747654d483b40cd2db34116a77814ec312135432.NewThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

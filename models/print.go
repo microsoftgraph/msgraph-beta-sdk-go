@@ -7,25 +7,25 @@ import (
 // Print 
 type Print struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The list of available print connectors.
-    connectors []PrintConnectorable;
+    connectors []PrintConnectorable
     // The list of print long running operations.
-    operations []PrintOperationable;
+    operations []PrintOperationable
     // The list of printers registered in the tenant.
-    printers []Printerable;
+    printers []Printerable
     // The printerShares property
-    printerShares []PrinterShareable;
+    printerShares []PrinterShareable
     // The reports property
-    reports ReportRootable;
+    reports ReportRootable
     // The list of available Universal Print service endpoints.
-    services []PrintServiceable;
+    services []PrintServiceable
     // Tenant-wide settings for the Universal Print service.
-    settings PrintSettingsable;
+    settings PrintSettingsable
     // The list of printer shares registered in the tenant.
-    shares []PrinterShareable;
+    shares []PrinterShareable
     // List of abstract definition for a task that can be triggered when various events occur within Universal Print.
-    taskDefinitions []PrintTaskDefinitionable;
+    taskDefinitions []PrintTaskDefinitionable
 }
 // NewPrint instantiates a new Print and sets the default values.
 func NewPrint()(*Print) {
@@ -55,9 +55,9 @@ func (m *Print) GetConnectors()([]PrintConnectorable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["connectors"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["connectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintConnectorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["operations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintOperationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["printers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["printers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrinterFromDiscriminatorValue)
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["printerShares"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["printerShares"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrinterShareFromDiscriminatorValue)
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["reports"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateReportRootFromDiscriminatorValue)
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["services"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["services"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintServiceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["settings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePrintSettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["shares"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["shares"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrinterShareFromDiscriminatorValue)
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *Print) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["taskDefinitions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["taskDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintTaskDefinitionFromDiscriminatorValue)
         if err != nil {
             return err

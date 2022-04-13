@@ -7,11 +7,11 @@ import (
 // SectionLinks 
 type SectionLinks struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Opens the section in the OneNote native client if it's installed.
-    oneNoteClientUrl ExternalLinkable;
+    oneNoteClientUrl ExternalLinkable
     // Opens the section in OneNote on the web.
-    oneNoteWebUrl ExternalLinkable;
+    oneNoteWebUrl ExternalLinkable
 }
 // NewSectionLinks instantiates a new sectionLinks and sets the default values.
 func NewSectionLinks()(*SectionLinks) {
@@ -33,9 +33,9 @@ func (m *SectionLinks) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SectionLinks) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["oneNoteClientUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SectionLinks) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["oneNoteClientUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateExternalLinkFromDiscriminatorValue)
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *SectionLinks) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["oneNoteWebUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["oneNoteWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateExternalLinkFromDiscriminatorValue)
         if err != nil {
             return err

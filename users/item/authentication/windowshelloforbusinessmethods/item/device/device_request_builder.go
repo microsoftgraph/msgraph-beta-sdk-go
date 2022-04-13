@@ -23,49 +23,49 @@ import (
 // DeviceRequestBuilder provides operations to manage the device property of the microsoft.graph.windowsHelloForBusinessAuthenticationMethod entity.
 type DeviceRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // DeviceRequestBuilderDeleteOptions options for Delete
 type DeviceRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceRequestBuilderGetOptions options for Get
 type DeviceRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *DeviceRequestBuilderGetQueryParameters;
+    QueryParameters *DeviceRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceRequestBuilderGetQueryParameters the registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 type DeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // DeviceRequestBuilderPatchOptions options for Patch
 type DeviceRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Commands the commands property
 func (m *DeviceRequestBuilder) Commands()(*i5a3f3491cada69786d8dc6347851ed9ae24c7af51641700ae2c11483dd059a93.CommandsRequestBuilder) {
@@ -78,7 +78,7 @@ func (m *DeviceRequestBuilder) CommandsById(id string)(*i5680acfb979cbcbc9bf3698
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["command_id"] = id
+        urlTplParams["command%2Did"] = id
     }
     return i5680acfb979cbcbc9bf369845d5e7e99f9f26e626efd593414fc1a6d59bd14be.NewCommandItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -86,7 +86,7 @@ func (m *DeviceRequestBuilder) CommandsById(id string)(*i5680acfb979cbcbc9bf3698
 func NewDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceRequestBuilder) {
     m := &DeviceRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/users/{user_id}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod_id}/device{?select,expand}";
+    m.urlTemplate = "{+baseurl}/users/{user%2Did}/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod%2Did}/device{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -183,7 +183,7 @@ func (m *DeviceRequestBuilder) ExtensionsById(id string)(*i1605d0057c653186fcacf
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["extension_id"] = id
+        urlTplParams["extension%2Did"] = id
     }
     return i1605d0057c653186fcacf38730d68a93a064ce091805e5e1d4c6d378eefac6fa.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -214,7 +214,7 @@ func (m *DeviceRequestBuilder) MemberOfById(id string)(*i6ab82c3fea9de45896b50e6
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i6ab82c3fea9de45896b50e6171070905c9f7a8a1606a82a068c3254a4988d1b8.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -245,7 +245,7 @@ func (m *DeviceRequestBuilder) RegisteredOwnersById(id string)(*iae7d2d0a647de4e
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return iae7d2d0a647de4e274a820553b74075513948fb0331ef68df755d319366e359d.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -260,7 +260,7 @@ func (m *DeviceRequestBuilder) RegisteredUsersById(id string)(*ibbf9f71f42ad0032
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return ibbf9f71f42ad003261e0ab32bc144aa7595cb52793e32a38b56cd7580f889e7b.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -275,7 +275,7 @@ func (m *DeviceRequestBuilder) TransitiveMemberOfById(id string)(*i65f3107e1febe
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return i65f3107e1febe2b1e7e8b92d84172f33c47da6831c1484a1292d615876fa1ed1.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -290,7 +290,7 @@ func (m *DeviceRequestBuilder) UsageRightsById(id string)(*ibdf383b4b0b4f963197b
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["usageRight_id"] = id
+        urlTplParams["usageRight%2Did"] = id
     }
     return ibdf383b4b0b4f963197b019e7e819b43b6bc49f66b4328eaa2f01436357e24f0.NewUsageRightItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

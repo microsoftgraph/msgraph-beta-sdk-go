@@ -8,15 +8,15 @@ import (
 type CalendarPermission struct {
     Entity
     // List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
-    allowedRoles []CalendarRoleType;
+    allowedRoles []CalendarRoleType
     // Represents a sharee or delegate who has access to the calendar. For the 'My Organization' sharee, the address property is null. Read-only.
-    emailAddress EmailAddressable;
+    emailAddress EmailAddressable
     // True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
-    isInsideOrganization *bool;
+    isInsideOrganization *bool
     // True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
-    isRemovable *bool;
+    isRemovable *bool
     // Current permission level of the calendar sharee or delegate.
-    role *CalendarRoleType;
+    role *CalendarRoleType
 }
 // NewCalendarPermission instantiates a new calendarPermission and sets the default values.
 func NewCalendarPermission()(*CalendarPermission) {
@@ -46,9 +46,9 @@ func (m *CalendarPermission) GetEmailAddress()(EmailAddressable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["allowedRoles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowedRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseCalendarRoleType)
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["emailAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["emailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEmailAddressFromDiscriminatorValue)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["isInsideOrganization"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isInsideOrganization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["isRemovable"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isRemovable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *CalendarPermission) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["role"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCalendarRoleType)
         if err != nil {
             return err

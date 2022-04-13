@@ -9,33 +9,33 @@ import (
 type ManagedEBook struct {
     Entity
     // The list of assignments for this eBook.
-    assignments []ManagedEBookAssignmentable;
+    assignments []ManagedEBookAssignmentable
     // The list of categories for this eBook.
-    categories []ManagedEBookCategoryable;
+    categories []ManagedEBookCategoryable
     // The date and time when the eBook file was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Description.
-    description *string;
+    description *string
     // The list of installation states for this eBook.
-    deviceStates []DeviceInstallStateable;
+    deviceStates []DeviceInstallStateable
     // Name of the eBook.
-    displayName *string;
+    displayName *string
     // The more information Url.
-    informationUrl *string;
+    informationUrl *string
     // Mobile App Install Summary.
-    installSummary EBookInstallSummaryable;
+    installSummary EBookInstallSummaryable
     // Book cover.
-    largeCover MimeContentable;
+    largeCover MimeContentable
     // The date and time when the eBook was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The privacy statement Url.
-    privacyInformationUrl *string;
+    privacyInformationUrl *string
     // The date and time when the eBook was published.
-    publishedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    publishedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Publisher.
-    publisher *string;
+    publisher *string
     // The list of installation states for this eBook.
-    userStateSummary []UserInstallStateSummaryable;
+    userStateSummary []UserInstallStateSummaryable
 }
 // NewManagedEBook instantiates a new managedEBook and sets the default values.
 func NewManagedEBook()(*ManagedEBook) {
@@ -97,9 +97,9 @@ func (m *ManagedEBook) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedEBookAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["categories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagedEBookCategoryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["deviceStates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceInstallStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["informationUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["informationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["installSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["installSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEBookInstallSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["largeCover"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["largeCover"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMimeContentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -201,7 +201,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -211,7 +211,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["privacyInformationUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["privacyInformationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -221,7 +221,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["publishedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publishedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -231,7 +231,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["publisher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -241,7 +241,7 @@ func (m *ManagedEBook) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["userStateSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userStateSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserInstallStateSummaryFromDiscriminatorValue)
         if err != nil {
             return err

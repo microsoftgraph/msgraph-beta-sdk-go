@@ -8,25 +8,25 @@ import (
 type AgedAccountsReceivable struct {
     Entity
     // The agedAsOfDate property
-    agedAsOfDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    agedAsOfDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The balanceDue property
-    balanceDue *float64;
+    balanceDue *float64
     // The currencyCode property
-    currencyCode *string;
+    currencyCode *string
     // The currentAmount property
-    currentAmount *float64;
+    currentAmount *float64
     // The customerNumber property
-    customerNumber *string;
+    customerNumber *string
     // The name property
-    name *string;
+    name *string
     // The period1Amount property
-    period1Amount *float64;
+    period1Amount *float64
     // The period2Amount property
-    period2Amount *float64;
+    period2Amount *float64
     // The period3Amount property
-    period3Amount *float64;
+    period3Amount *float64
     // The periodLengthFilter property
-    periodLengthFilter *string;
+    periodLengthFilter *string
 }
 // NewAgedAccountsReceivable instantiates a new agedAccountsReceivable and sets the default values.
 func NewAgedAccountsReceivable()(*AgedAccountsReceivable) {
@@ -80,9 +80,9 @@ func (m *AgedAccountsReceivable) GetCustomerNumber()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["agedAsOfDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["agedAsOfDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["balanceDue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["balanceDue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["currencyCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["currencyCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["currentAmount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["currentAmount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -122,7 +122,7 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["customerNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customerNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -142,7 +142,7 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["period1Amount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["period1Amount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -152,7 +152,7 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["period2Amount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["period2Amount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -162,7 +162,7 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["period3Amount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["period3Amount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["periodLengthFilter"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["periodLengthFilter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

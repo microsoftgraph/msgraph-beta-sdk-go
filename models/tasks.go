@@ -8,9 +8,9 @@ import (
 type Tasks struct {
     Entity
     // All tasks in the users mailbox.
-    alltasks []BaseTaskable;
+    alltasks []BaseTaskable
     // The task lists in the users mailbox.
-    lists []BaseTaskListable;
+    lists []BaseTaskListable
 }
 // NewTasks instantiates a new tasks and sets the default values.
 func NewTasks()(*Tasks) {
@@ -32,9 +32,9 @@ func (m *Tasks) GetAlltasks()([]BaseTaskable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Tasks) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Tasks) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["alltasks"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["alltasks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBaseTaskFromDiscriminatorValue)
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *Tasks) GetFieldDeserializers()(map[string]func(interface{}, i878a80d233
         }
         return nil
     }
-    res["lists"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lists"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBaseTaskListFromDiscriminatorValue)
         if err != nil {
             return err

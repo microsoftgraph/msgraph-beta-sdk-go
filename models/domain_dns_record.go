@@ -8,15 +8,15 @@ import (
 type DomainDnsRecord struct {
     Entity
     // If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
-    isOptional *bool;
+    isOptional *bool
     // Value used when configuring the name of the DNS record at the DNS host.
-    label *string;
+    label *string
     // Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, TxtKey
-    recordType *string;
+    recordType *string
     // Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune
-    supportedService *string;
+    supportedService *string
     // Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable
-    ttl *int32;
+    ttl *int32
 }
 // NewDomainDnsRecord instantiates a new domainDnsRecord and sets the default values.
 func NewDomainDnsRecord()(*DomainDnsRecord) {
@@ -30,9 +30,9 @@ func CreateDomainDnsRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewDomainDnsRecord(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["isOptional"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isOptional"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -42,7 +42,7 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["label"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["label"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["recordType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recordType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["supportedService"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedService"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["ttl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ttl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

@@ -31,40 +31,40 @@ import (
 // DirectoryRequestBuilder provides operations to manage the directory singleton.
 type DirectoryRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // DirectoryRequestBuilderGetOptions options for Get
 type DirectoryRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *DirectoryRequestBuilderGetQueryParameters;
+    QueryParameters *DirectoryRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DirectoryRequestBuilderGetQueryParameters get directory
 type DirectoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // DirectoryRequestBuilderPatchOptions options for Patch
 type DirectoryRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Directoryable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Directoryable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AdministrativeUnits the administrativeUnits property
 func (m *DirectoryRequestBuilder) AdministrativeUnits()(*i099820decfc9bea0a9207fe8eabbdbec38a02bc9f29b8c032c0f3dc2b1de2037.AdministrativeUnitsRequestBuilder) {
@@ -77,7 +77,7 @@ func (m *DirectoryRequestBuilder) AdministrativeUnitsById(id string)(*i6dbb852f4
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["administrativeUnit_id"] = id
+        urlTplParams["administrativeUnit%2Did"] = id
     }
     return i6dbb852f4179b2099ef0d7cfea974aab29da28ff271825ed4facd1031635a55a.NewAdministrativeUnitItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -92,7 +92,7 @@ func (m *DirectoryRequestBuilder) AttributeSetsById(id string)(*ifebb2851fc7ede7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["attributeSet_id"] = id
+        urlTplParams["attributeSet%2Did"] = id
     }
     return ifebb2851fc7ede78464b250ca6ca9ee9431aaf2ea5e0cabbeec1de32f3d73223.NewAttributeSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -100,7 +100,7 @@ func (m *DirectoryRequestBuilder) AttributeSetsById(id string)(*ifebb2851fc7ede7
 func NewDirectoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRequestBuilder) {
     m := &DirectoryRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/directory{?select,expand}";
+    m.urlTemplate = "{+baseurl}/directory{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -164,7 +164,7 @@ func (m *DirectoryRequestBuilder) CustomSecurityAttributeDefinitionsById(id stri
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["customSecurityAttributeDefinition_id"] = id
+        urlTplParams["customSecurityAttributeDefinition%2Did"] = id
     }
     return i9b5ae363d6622db0767524c36dfc4944cb635f7495736d92423ec12e1c606ff6.NewCustomSecurityAttributeDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -179,7 +179,7 @@ func (m *DirectoryRequestBuilder) DeletedItemsById(id string)(*ia0a2720db6fe1c20
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["directoryObject_id"] = id
+        urlTplParams["directoryObject%2Did"] = id
     }
     return ia0a2720db6fe1c2002158844efe537fd50cb223ed65a824c2b17bccbc76d639b.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -194,7 +194,7 @@ func (m *DirectoryRequestBuilder) FeatureRolloutPoliciesById(id string)(*i555243
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["featureRolloutPolicy_id"] = id
+        urlTplParams["featureRolloutPolicy%2Did"] = id
     }
     return i5552436032dc99a204b9894d3cdec8c8fd49de8267b7be85641d407446e4b6b4.NewFeatureRolloutPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -209,7 +209,7 @@ func (m *DirectoryRequestBuilder) FederationConfigurationsById(id string)(*ic56a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["identityProviderBase_id"] = id
+        urlTplParams["identityProviderBase%2Did"] = id
     }
     return ic56ab875d66f866a4e02c3e21e059765fd0587edf1d7176130c0d565ab17801b.NewIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -240,7 +240,7 @@ func (m *DirectoryRequestBuilder) ImpactedResourcesById(id string)(*ia636abbcfb3
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["recommendationResource_id"] = id
+        urlTplParams["recommendationResource%2Did"] = id
     }
     return ia636abbcfb3919c66696d3c05179fcf8f8119643975a04700a611861aa160b5c.NewRecommendationResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -255,7 +255,7 @@ func (m *DirectoryRequestBuilder) InboundSharedUserProfilesById(id string)(*i223
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["inboundSharedUserProfile_userId"] = id
+        urlTplParams["inboundSharedUserProfile%2DuserId"] = id
     }
     return i223f1150f57c5b2623641984f128295eead7dbc629507266bd840afb65dde273.NewInboundSharedUserProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -270,7 +270,7 @@ func (m *DirectoryRequestBuilder) OutboundSharedUserProfilesById(id string)(*i91
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["outboundSharedUserProfile_userId"] = id
+        urlTplParams["outboundSharedUserProfile%2DuserId"] = id
     }
     return i9134fdf6cb6de8e59b19b19500831f6af1d8bb62e86076ee3571e1840ede40fb.NewOutboundSharedUserProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -301,7 +301,7 @@ func (m *DirectoryRequestBuilder) RecommendationsById(id string)(*ic0e4d6d4cf5e4
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["recommendation_id"] = id
+        urlTplParams["recommendation%2Did"] = id
     }
     return ic0e4d6d4cf5e413a63e73490ea86e089e106e5a7b365a7cbc55fdf6d36d2bbf7.NewRecommendationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -316,7 +316,7 @@ func (m *DirectoryRequestBuilder) SharedEmailDomainsById(id string)(*i596c69bb84
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["sharedEmailDomain_id"] = id
+        urlTplParams["sharedEmailDomain%2Did"] = id
     }
     return i596c69bb84519fa1bd095263c7f63372f6b77b2d592adcc064a8f58e4664f18a.NewSharedEmailDomainItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

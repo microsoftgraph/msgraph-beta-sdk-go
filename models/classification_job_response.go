@@ -8,7 +8,7 @@ import (
 type ClassificationJobResponse struct {
     JobResponseBase
     // The result property
-    result DetectedSensitiveContentWrapperable;
+    result DetectedSensitiveContentWrapperable
 }
 // NewClassificationJobResponse instantiates a new classificationJobResponse and sets the default values.
 func NewClassificationJobResponse()(*ClassificationJobResponse) {
@@ -22,9 +22,9 @@ func CreateClassificationJobResponseFromDiscriminatorValue(parseNode i878a80d233
     return NewClassificationJobResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ClassificationJobResponse) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ClassificationJobResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.JobResponseBase.GetFieldDeserializers()
-    res["result"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["result"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDetectedSensitiveContentWrapperFromDiscriminatorValue)
         if err != nil {
             return err

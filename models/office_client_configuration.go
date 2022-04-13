@@ -8,21 +8,21 @@ import (
 type OfficeClientConfiguration struct {
     Entity
     // The list of group assignments for the policy.
-    assignments []OfficeClientConfigurationAssignmentable;
+    assignments []OfficeClientConfigurationAssignmentable
     // List of office Client check-in status.
-    checkinStatuses []OfficeClientCheckinStatusable;
+    checkinStatuses []OfficeClientCheckinStatusable
     // Not yet documented
-    description *string;
+    description *string
     // Admin provided description of the office client configuration policy.
-    displayName *string;
+    displayName *string
     // Policy settings JSON string in binary format, these values cannot be changed by the user.
-    policyPayload []byte;
+    policyPayload []byte
     // Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
-    priority *int32;
+    priority *int32
     // User check-in summary for the policy.
-    userCheckinSummary OfficeUserCheckinSummaryable;
+    userCheckinSummary OfficeUserCheckinSummaryable
     // Preference settings JSON string in binary format, these values can be overridden by the user.
-    userPreferencePayload []byte;
+    userPreferencePayload []byte
 }
 // NewOfficeClientConfiguration instantiates a new officeClientConfiguration and sets the default values.
 func NewOfficeClientConfiguration()(*OfficeClientConfiguration) {
@@ -68,9 +68,9 @@ func (m *OfficeClientConfiguration) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOfficeClientConfigurationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["checkinStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["checkinStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOfficeClientCheckinStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["policyPayload"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyPayload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["priority"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["userCheckinSummary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userCheckinSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOfficeUserCheckinSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -148,7 +148,7 @@ func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["userPreferencePayload"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPreferencePayload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err

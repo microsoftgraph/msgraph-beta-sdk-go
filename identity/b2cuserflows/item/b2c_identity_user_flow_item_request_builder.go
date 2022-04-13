@@ -17,55 +17,55 @@ import (
 // B2cIdentityUserFlowItemRequestBuilder provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.
 type B2cIdentityUserFlowItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // B2cIdentityUserFlowItemRequestBuilderDeleteOptions options for Delete
 type B2cIdentityUserFlowItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // B2cIdentityUserFlowItemRequestBuilderGetOptions options for Get
 type B2cIdentityUserFlowItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *B2cIdentityUserFlowItemRequestBuilderGetQueryParameters;
+    QueryParameters *B2cIdentityUserFlowItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // B2cIdentityUserFlowItemRequestBuilderGetQueryParameters represents entry point for B2C identity userflows.
 type B2cIdentityUserFlowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // B2cIdentityUserFlowItemRequestBuilderPatchOptions options for Patch
 type B2cIdentityUserFlowItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cIdentityUserFlowable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewB2cIdentityUserFlowItemRequestBuilderInternal instantiates a new B2cIdentityUserFlowItemRequestBuilder and sets the default values.
 func NewB2cIdentityUserFlowItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cIdentityUserFlowItemRequestBuilder) {
     m := &B2cIdentityUserFlowItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -178,7 +178,7 @@ func (m *B2cIdentityUserFlowItemRequestBuilder) IdentityProvidersById(id string)
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["identityProvider_id"] = id
+        urlTplParams["identityProvider%2Did"] = id
     }
     return i49a1823495467514804483eeb49dca5d9b4265432b5f032c862b8625c52a4c44.NewIdentityProviderItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -193,7 +193,7 @@ func (m *B2cIdentityUserFlowItemRequestBuilder) LanguagesById(id string)(*i4f989
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["userFlowLanguageConfiguration_id"] = id
+        urlTplParams["userFlowLanguageConfiguration%2Did"] = id
     }
     return i4f9895372ea85cee1ee4bf9a8b414752e4270d4b2216846b499db783b5644d6c.NewUserFlowLanguageConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -224,7 +224,7 @@ func (m *B2cIdentityUserFlowItemRequestBuilder) UserAttributeAssignmentsById(id 
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["identityUserFlowAttributeAssignment_id"] = id
+        urlTplParams["identityUserFlowAttributeAssignment%2Did"] = id
     }
     return ib4590aff7f09f446c7ae6a4a70dfc243aac07fb4522106f724124d4539ac2888.NewIdentityUserFlowAttributeAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -239,7 +239,7 @@ func (m *B2cIdentityUserFlowItemRequestBuilder) UserFlowIdentityProvidersById(id
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["identityProviderBase_id"] = id
+        urlTplParams["identityProviderBase%2Did"] = id
     }
     return i9ea52c3311e45f7594a4b33eff17673fff89c980f459b1cb921c89a7ec842263.NewIdentityProviderBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

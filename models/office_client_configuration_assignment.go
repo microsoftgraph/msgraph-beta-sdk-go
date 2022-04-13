@@ -8,7 +8,7 @@ import (
 type OfficeClientConfigurationAssignment struct {
     Entity
     // The target assignment defined by the admin.
-    target OfficeConfigurationAssignmentTargetable;
+    target OfficeConfigurationAssignmentTargetable
 }
 // NewOfficeClientConfigurationAssignment instantiates a new officeClientConfigurationAssignment and sets the default values.
 func NewOfficeClientConfigurationAssignment()(*OfficeClientConfigurationAssignment) {
@@ -22,9 +22,9 @@ func CreateOfficeClientConfigurationAssignmentFromDiscriminatorValue(parseNode i
     return NewOfficeClientConfigurationAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OfficeClientConfigurationAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OfficeClientConfigurationAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["target"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOfficeConfigurationAssignmentTargetFromDiscriminatorValue)
         if err != nil {
             return err

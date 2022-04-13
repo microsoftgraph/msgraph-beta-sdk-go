@@ -9,13 +9,13 @@ import (
 type SimulationAutomationRun struct {
     Entity
     // Date and time when the run ends in an attack simulation automation.
-    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.
-    simulationId *string;
+    simulationId *string
     // Date and time when the run starts in an attack simulation automation.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Status of the run of an attack simulation automation. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
-    status *SimulationAutomationRunStatus;
+    status *SimulationAutomationRunStatus
 }
 // NewSimulationAutomationRun instantiates a new simulationAutomationRun and sets the default values.
 func NewSimulationAutomationRun()(*SimulationAutomationRun) {
@@ -37,9 +37,9 @@ func (m *SimulationAutomationRun) GetEndDateTime()(*i336074805fc853987abe6f7fe3a
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SimulationAutomationRun) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SimulationAutomationRun) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["endDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *SimulationAutomationRun) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["simulationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["simulationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *SimulationAutomationRun) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *SimulationAutomationRun) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSimulationAutomationRunStatus)
         if err != nil {
             return err

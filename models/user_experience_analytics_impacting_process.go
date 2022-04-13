@@ -8,17 +8,17 @@ import (
 type UserExperienceAnalyticsImpactingProcess struct {
     Entity
     // The category of impacting process.
-    category *string;
+    category *string
     // The description of process.
-    description *string;
+    description *string
     // The unique identifier of the impacted device.
-    deviceId *string;
+    deviceId *string
     // The impact value of the process. Valid values 0 to 1.79769313486232E+308
-    impactValue *float64;
+    impactValue *float64
     // The process name.
-    processName *string;
+    processName *string
     // The publisher of the process.
-    publisher *string;
+    publisher *string
 }
 // NewUserExperienceAnalyticsImpactingProcess instantiates a new userExperienceAnalyticsImpactingProcess and sets the default values.
 func NewUserExperienceAnalyticsImpactingProcess()(*UserExperienceAnalyticsImpactingProcess) {
@@ -56,9 +56,9 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetDeviceId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["category"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["deviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["impactValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["impactValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["processName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["processName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["publisher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

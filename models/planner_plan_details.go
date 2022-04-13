@@ -8,11 +8,11 @@ import (
 type PlannerPlanDetails struct {
     PlannerDelta
     // An object that specifies the descriptions of the six categories that can be associated with tasks in the plan
-    categoryDescriptions PlannerCategoryDescriptionsable;
+    categoryDescriptions PlannerCategoryDescriptionsable
     // Read-only. A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container.
-    contextDetails PlannerPlanContextDetailsCollectionable;
+    contextDetails PlannerPlanContextDetailsCollectionable
     // Set of user ids that this plan is shared with. If you are leveraging Microsoft 365 groups, use the Groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group.
-    sharedWith PlannerUserIdsable;
+    sharedWith PlannerUserIdsable
 }
 // NewPlannerPlanDetails instantiates a new plannerPlanDetails and sets the default values.
 func NewPlannerPlanDetails()(*PlannerPlanDetails) {
@@ -42,9 +42,9 @@ func (m *PlannerPlanDetails) GetContextDetails()(PlannerPlanContextDetailsCollec
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PlannerPlanDetails) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PlannerPlanDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerDelta.GetFieldDeserializers()
-    res["categoryDescriptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["categoryDescriptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerCategoryDescriptionsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *PlannerPlanDetails) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["contextDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contextDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerPlanContextDetailsCollectionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *PlannerPlanDetails) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["sharedWith"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharedWith"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerUserIdsFromDiscriminatorValue)
         if err != nil {
             return err

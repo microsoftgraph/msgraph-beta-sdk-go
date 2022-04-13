@@ -8,27 +8,27 @@ import (
 type DeviceManagementConfigurationCategory struct {
     Entity
     // Description of the category header
-    categoryDescription *string;
+    categoryDescription *string
     // List of child ids of the category.
-    childCategoryIds []string;
+    childCategoryIds []string
     // Description of the item
-    description *string;
+    description *string
     // Display name of the item
-    displayName *string;
+    displayName *string
     // Help text of the item
-    helpText *string;
+    helpText *string
     // Name of the item
-    name *string;
+    name *string
     // Parent id of the category.
-    parentCategoryId *string;
+    parentCategoryId *string
     // Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
-    platforms *DeviceManagementConfigurationPlatforms;
+    platforms *DeviceManagementConfigurationPlatforms
     // Root id of the category.
-    rootCategoryId *string;
+    rootCategoryId *string
     // Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.
-    settingUsage *DeviceManagementConfigurationSettingUsage;
+    settingUsage *DeviceManagementConfigurationSettingUsage
     // Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
-    technologies *DeviceManagementConfigurationTechnologies;
+    technologies *DeviceManagementConfigurationTechnologies
 }
 // NewDeviceManagementConfigurationCategory instantiates a new deviceManagementConfigurationCategory and sets the default values.
 func NewDeviceManagementConfigurationCategory()(*DeviceManagementConfigurationCategory) {
@@ -74,9 +74,9 @@ func (m *DeviceManagementConfigurationCategory) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["categoryDescription"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["categoryDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["childCategoryIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["childCategoryIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["helpText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["helpText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -140,7 +140,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["parentCategoryId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parentCategoryId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -150,7 +150,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["platforms"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["platforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationPlatforms)
         if err != nil {
             return err
@@ -160,7 +160,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["rootCategoryId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rootCategoryId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -170,7 +170,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["settingUsage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationSettingUsage)
         if err != nil {
             return err
@@ -180,7 +180,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
         }
         return nil
     }
-    res["technologies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["technologies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationTechnologies)
         if err != nil {
             return err

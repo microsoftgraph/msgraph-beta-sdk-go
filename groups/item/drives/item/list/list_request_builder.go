@@ -21,49 +21,49 @@ import (
 // ListRequestBuilder provides operations to manage the list property of the microsoft.graph.drive entity.
 type ListRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ListRequestBuilderDeleteOptions options for Delete
 type ListRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ListRequestBuilderGetOptions options for Get
 type ListRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ListRequestBuilderGetQueryParameters;
+    QueryParameters *ListRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ListRequestBuilderGetQueryParameters for drives in SharePoint, the underlying document library list. Read-only. Nullable.
 type ListRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ListRequestBuilderPatchOptions options for Patch
 type ListRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Activities the activities property
 func (m *ListRequestBuilder) Activities()(*ia7fc35da0de2bd686f2aa5a8a1fdfc88ac3a5bbd57126d8a1bd0644eceb39752.ActivitiesRequestBuilder) {
@@ -80,7 +80,7 @@ func (m *ListRequestBuilder) ColumnsById(id string)(*i649cdddb50a802c43dc3af1a06
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["columnDefinition_id"] = id
+        urlTplParams["columnDefinition%2Did"] = id
     }
     return i649cdddb50a802c43dc3af1a06a94775bd06e4c17653045c20a5077da03ca95d.NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -88,7 +88,7 @@ func (m *ListRequestBuilder) ColumnsById(id string)(*i649cdddb50a802c43dc3af1a06
 func NewListRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ListRequestBuilder) {
     m := &ListRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/groups/{group_id}/drives/{drive_id}/list{?select,expand}";
+    m.urlTemplate = "{+baseurl}/groups/{group%2Did}/drives/{drive%2Did}/list{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -114,7 +114,7 @@ func (m *ListRequestBuilder) ContentTypesById(id string)(*i998c00f0ec1e2b40c5518
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["contentType_id"] = id
+        urlTplParams["contentType%2Did"] = id
     }
     return i998c00f0ec1e2b40c5518299a0453c926896385255ff91e4bf3d2b7234a467a8.NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -220,7 +220,7 @@ func (m *ListRequestBuilder) ItemsById(id string)(*iba31399dc8f34e424c8ebc1f280f
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["listItem_id"] = id
+        urlTplParams["listItem%2Did"] = id
     }
     return iba31399dc8f34e424c8ebc1f280f4f9e3e58432f001227720cab229ef435deaa.NewListItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -235,7 +235,7 @@ func (m *ListRequestBuilder) OperationsById(id string)(*iae2fd07cb5857ac5712f84d
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["richLongRunningOperation_id"] = id
+        urlTplParams["richLongRunningOperation%2Did"] = id
     }
     return iae2fd07cb5857ac5712f84db0ed1eab2184e2ab848fee6addbad50e8b44d0302.NewRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -266,7 +266,7 @@ func (m *ListRequestBuilder) SubscriptionsById(id string)(*ia7e7318eb558bf8bfc7b
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["subscription_id"] = id
+        urlTplParams["subscription%2Did"] = id
     }
     return ia7e7318eb558bf8bfc7b2e73993fafd19e3292f1d7b06c2efa414823b5a839db.NewSubscriptionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

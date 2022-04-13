@@ -8,19 +8,19 @@ import (
 type WorkbookNamedItem struct {
     Entity
     // Represents the comment associated with this name.
-    comment *string;
+    comment *string
     // The name of the object. Read-only.
-    name *string;
+    name *string
     // Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
-    scope *string;
+    scope *string
     // Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
-    type_escaped *string;
+    type_escaped *string
     // Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
-    value Jsonable;
+    value Jsonable
     // Specifies whether the object is visible or not.
-    visible *bool;
+    visible *bool
     // Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
-    worksheet WorkbookWorksheetable;
+    worksheet WorkbookWorksheetable
 }
 // NewWorkbookNamedItem instantiates a new workbookNamedItem and sets the default values.
 func NewWorkbookNamedItem()(*WorkbookNamedItem) {
@@ -42,9 +42,9 @@ func (m *WorkbookNamedItem) GetComment()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["comment"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["scope"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -74,7 +74,7 @@ func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["visible"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["visible"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *WorkbookNamedItem) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["worksheet"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["worksheet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookWorksheetFromDiscriminatorValue)
         if err != nil {
             return err

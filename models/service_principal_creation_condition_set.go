@@ -8,15 +8,15 @@ import (
 type ServicePrincipalCreationConditionSet struct {
     Entity
     // The applicationIds property
-    applicationIds []string;
+    applicationIds []string
     // The applicationPublisherIds property
-    applicationPublisherIds []string;
+    applicationPublisherIds []string
     // The applicationsFromVerifiedPublisherOnly property
-    applicationsFromVerifiedPublisherOnly *bool;
+    applicationsFromVerifiedPublisherOnly *bool
     // The applicationTenantIds property
-    applicationTenantIds []string;
+    applicationTenantIds []string
     // The certifiedApplicationsOnly property
-    certifiedApplicationsOnly *bool;
+    certifiedApplicationsOnly *bool
 }
 // NewServicePrincipalCreationConditionSet instantiates a new servicePrincipalCreationConditionSet and sets the default values.
 func NewServicePrincipalCreationConditionSet()(*ServicePrincipalCreationConditionSet) {
@@ -70,9 +70,9 @@ func (m *ServicePrincipalCreationConditionSet) GetCertifiedApplicationsOnly()(*b
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["applicationIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicationIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["applicationPublisherIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicationPublisherIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["applicationsFromVerifiedPublisherOnly"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicationsFromVerifiedPublisherOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["applicationTenantIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["applicationTenantIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -124,7 +124,7 @@ func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["certifiedApplicationsOnly"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["certifiedApplicationsOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

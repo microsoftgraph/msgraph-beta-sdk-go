@@ -8,11 +8,11 @@ import (
 type OemWarrantyInformationOnboarding struct {
     Entity
     // Specifies whether warranty API is available. This property is read-only.
-    available *bool;
+    available *bool
     // Specifies whether warranty query is enabled for given OEM. This property is read-only.
-    enabled *bool;
+    enabled *bool
     // OEM name. This property is read-only.
-    oemName *string;
+    oemName *string
 }
 // NewOemWarrantyInformationOnboarding instantiates a new oemWarrantyInformationOnboarding and sets the default values.
 func NewOemWarrantyInformationOnboarding()(*OemWarrantyInformationOnboarding) {
@@ -42,9 +42,9 @@ func (m *OemWarrantyInformationOnboarding) GetEnabled()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OemWarrantyInformationOnboarding) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OemWarrantyInformationOnboarding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["available"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["available"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -54,7 +54,7 @@ func (m *OemWarrantyInformationOnboarding) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["enabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *OemWarrantyInformationOnboarding) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["oemName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["oemName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

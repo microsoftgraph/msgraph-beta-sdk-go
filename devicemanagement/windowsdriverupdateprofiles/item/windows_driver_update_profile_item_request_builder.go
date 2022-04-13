@@ -16,49 +16,49 @@ import (
 // WindowsDriverUpdateProfileItemRequestBuilder provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 type WindowsDriverUpdateProfileItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // WindowsDriverUpdateProfileItemRequestBuilderDeleteOptions options for Delete
 type WindowsDriverUpdateProfileItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // WindowsDriverUpdateProfileItemRequestBuilderGetOptions options for Get
 type WindowsDriverUpdateProfileItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *WindowsDriverUpdateProfileItemRequestBuilderGetQueryParameters;
+    QueryParameters *WindowsDriverUpdateProfileItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // WindowsDriverUpdateProfileItemRequestBuilderGetQueryParameters a collection of windows driver update profiles
 type WindowsDriverUpdateProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // WindowsDriverUpdateProfileItemRequestBuilderPatchOptions options for Patch
 type WindowsDriverUpdateProfileItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateProfileable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateProfileable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Assign the assign property
 func (m *WindowsDriverUpdateProfileItemRequestBuilder) Assign()(*i0d5104ae2038733f4a0ba840268b8369f6bc121826293eab58ba88947073f553.AssignRequestBuilder) {
@@ -75,7 +75,7 @@ func (m *WindowsDriverUpdateProfileItemRequestBuilder) AssignmentsById(id string
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["windowsDriverUpdateProfileAssignment_id"] = id
+        urlTplParams["windowsDriverUpdateProfileAssignment%2Did"] = id
     }
     return i823e1a7037c21e1cb6a062bc58c9b7f7aacc3516364a051cdbc689c661c6ff50.NewWindowsDriverUpdateProfileAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -83,7 +83,7 @@ func (m *WindowsDriverUpdateProfileItemRequestBuilder) AssignmentsById(id string
 func NewWindowsDriverUpdateProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsDriverUpdateProfileItemRequestBuilder) {
     m := &WindowsDriverUpdateProfileItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -180,7 +180,7 @@ func (m *WindowsDriverUpdateProfileItemRequestBuilder) DriverInventoriesById(id 
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["windowsDriverUpdateInventory_id"] = id
+        urlTplParams["windowsDriverUpdateInventory%2Did"] = id
     }
     return i34e12a4e98dbefb122831ccf78a7c140934f5de1ca516a3631404c0f4718c186.NewWindowsDriverUpdateInventoryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

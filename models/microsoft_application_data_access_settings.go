@@ -8,9 +8,9 @@ import (
 type MicrosoftApplicationDataAccessSettings struct {
     Entity
     // The ID of an Azure Active Directory (Azure AD) security group for which the members are allowed to access Microsoft 365 data using only Microsoft 365 apps, but not other Microsoft apps such as Edge.  This is only applicable if isEnabledForAllMicrosoftApplications is set to true.
-    disabledForGroup *string;
+    disabledForGroup *string
     // When set to true, all users in the organization can access in a Microsoft app any Microsoft 365 data that the user has been authorized to access. The Microsoft app can be a Microsoft 365 app (for example, Excel, Outlook) or non-Microsoft 365 app (for example, Edge). The default is true.  It is possible to disable this access for a subset of users in an Azure AD security group, by specifying the group in the disabledForGroup property.  When set to false, all users can access authorized Microsoft 365 data only in a Microsoft 365 app.
-    isEnabledForAllMicrosoftApplications *bool;
+    isEnabledForAllMicrosoftApplications *bool
 }
 // NewMicrosoftApplicationDataAccessSettings instantiates a new microsoftApplicationDataAccessSettings and sets the default values.
 func NewMicrosoftApplicationDataAccessSettings()(*MicrosoftApplicationDataAccessSettings) {
@@ -32,9 +32,9 @@ func (m *MicrosoftApplicationDataAccessSettings) GetDisabledForGroup()(*string) 
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MicrosoftApplicationDataAccessSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MicrosoftApplicationDataAccessSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["disabledForGroup"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["disabledForGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -44,7 +44,7 @@ func (m *MicrosoftApplicationDataAccessSettings) GetFieldDeserializers()(map[str
         }
         return nil
     }
-    res["isEnabledForAllMicrosoftApplications"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isEnabledForAllMicrosoftApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

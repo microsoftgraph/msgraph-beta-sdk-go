@@ -9,23 +9,23 @@ import (
 type ConversationThread struct {
     Entity
     // The Cc: recipients for the thread. Returned only on $select.
-    ccRecipients []Recipientable;
+    ccRecipients []Recipientable
     // Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
-    hasAttachments *bool;
+    hasAttachments *bool
     // Indicates if the thread is locked. Returned by default.
-    isLocked *bool;
+    isLocked *bool
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.
-    lastDeliveredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastDeliveredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only. Nullable.
-    posts []Postable;
+    posts []Postable
     // A short summary from the body of the latest post in this conversation. Returned by default.
-    preview *string;
+    preview *string
     // The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. Returned by default.
-    topic *string;
+    topic *string
     // The To: recipients for the thread. Returned only on $select.
-    toRecipients []Recipientable;
+    toRecipients []Recipientable
     // All the users that sent a message to this thread. Returned by default.
-    uniqueSenders []string;
+    uniqueSenders []string
 }
 // NewConversationThread instantiates a new conversationThread and sets the default values.
 func NewConversationThread()(*ConversationThread) {
@@ -47,9 +47,9 @@ func (m *ConversationThread) GetCcRecipients()([]Recipientable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ConversationThread) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["ccRecipients"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ccRecipients"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["hasAttachments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasAttachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["isLocked"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isLocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["lastDeliveredDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastDeliveredDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["posts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["posts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePostFromDiscriminatorValue)
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["preview"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["topic"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["topic"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["toRecipients"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["toRecipients"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRecipientFromDiscriminatorValue)
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *ConversationThread) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["uniqueSenders"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["uniqueSenders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

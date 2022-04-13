@@ -9,19 +9,19 @@ import (
 type Notification struct {
     Entity
     // Sets how long (in seconds) this notification content will stay in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user's Windows Action Center.
-    displayTimeToLive *int32;
+    displayTimeToLive *int32
     // Sets a UTC expiration date and time on a user notification using ISO 8601 format (for example, midnight UTC on Jan 1, 2019 would look like this: '2019-01-01T00:00:00Z'). When time is up, the notification is removed from the Microsoft Graph notification feed store completely and is no longer part of notification history. Max value is 30 days.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.
-    groupName *string;
+    groupName *string
     // The payload property
-    payload PayloadTypesable;
+    payload PayloadTypesable
     // Indicates the priority of a raw user notification. Visual notifications are sent with high priority by default. Valid values are None, High and Low.
-    priority *Priority;
+    priority *Priority
     // Represents the host name of the app to which the calling service wants to post the notification, for the given user. If targeting web endpoints (see targetPolicy.platformTypes), ensure that targetHostName is the same as the name used when creating a subscription on the client side within the application JSON property.
-    targetHostName *string;
+    targetHostName *string
     // Target policy object handles notification delivery policy for endpoint types that should be targeted (Windows, iOS, Android and WebPush) for the given user.
-    targetPolicy TargetPolicyEndpointsable;
+    targetPolicy TargetPolicyEndpointsable
 }
 // NewNotification instantiates a new notification and sets the default values.
 func NewNotification()(*Notification) {
@@ -51,9 +51,9 @@ func (m *Notification) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Notification) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Notification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayTimeToLive"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayTimeToLive"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["groupName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["groupName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["payload"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["payload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePayloadTypesFromDiscriminatorValue)
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["priority"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePriority)
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["targetHostName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetHostName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["targetPolicy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTargetPolicyEndpointsFromDiscriminatorValue)
         if err != nil {
             return err

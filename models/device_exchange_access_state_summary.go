@@ -7,17 +7,17 @@ import (
 // DeviceExchangeAccessStateSummary device Exchange Access State summary
 type DeviceExchangeAccessStateSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Total count of devices with Exchange Access State: Allowed.
-    allowedDeviceCount *int32;
+    allowedDeviceCount *int32
     // Total count of devices with Exchange Access State: Blocked.
-    blockedDeviceCount *int32;
+    blockedDeviceCount *int32
     // Total count of devices with Exchange Access State: Quarantined.
-    quarantinedDeviceCount *int32;
+    quarantinedDeviceCount *int32
     // Total count of devices for which no Exchange Access State could be found.
-    unavailableDeviceCount *int32;
+    unavailableDeviceCount *int32
     // Total count of devices with Exchange Access State: Unknown.
-    unknownDeviceCount *int32;
+    unknownDeviceCount *int32
 }
 // NewDeviceExchangeAccessStateSummary instantiates a new deviceExchangeAccessStateSummary and sets the default values.
 func NewDeviceExchangeAccessStateSummary()(*DeviceExchangeAccessStateSummary) {
@@ -55,9 +55,9 @@ func (m *DeviceExchangeAccessStateSummary) GetBlockedDeviceCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["allowedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["allowedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["blockedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["blockedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["quarantinedDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["quarantinedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["unavailableDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unavailableDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *DeviceExchangeAccessStateSummary) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["unknownDeviceCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["unknownDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

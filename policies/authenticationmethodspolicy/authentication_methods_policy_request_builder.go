@@ -11,49 +11,49 @@ import (
 // AuthenticationMethodsPolicyRequestBuilder provides operations to manage the authenticationMethodsPolicy property of the microsoft.graph.policyRoot entity.
 type AuthenticationMethodsPolicyRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // AuthenticationMethodsPolicyRequestBuilderDeleteOptions options for Delete
 type AuthenticationMethodsPolicyRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AuthenticationMethodsPolicyRequestBuilderGetOptions options for Get
 type AuthenticationMethodsPolicyRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *AuthenticationMethodsPolicyRequestBuilderGetQueryParameters;
+    QueryParameters *AuthenticationMethodsPolicyRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AuthenticationMethodsPolicyRequestBuilderGetQueryParameters the authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
 type AuthenticationMethodsPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // AuthenticationMethodsPolicyRequestBuilderPatchOptions options for Patch
 type AuthenticationMethodsPolicyRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodsPolicyable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodsPolicyable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AuthenticationMethodConfigurations the authenticationMethodConfigurations property
 func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurations()(*i4376254c2dee506badee447d5617fb50703e00f66d852d79a59c4a18630245a5.AuthenticationMethodConfigurationsRequestBuilder) {
@@ -66,7 +66,7 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigur
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["authenticationMethodConfiguration_id"] = id
+        urlTplParams["authenticationMethodConfiguration%2Did"] = id
     }
     return ie2dfcba97926bc310080be1c8abadda253ee131e99b39f132f9206db4d03e071.NewAuthenticationMethodConfigurationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -74,7 +74,7 @@ func (m *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigur
 func NewAuthenticationMethodsPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationMethodsPolicyRequestBuilder) {
     m := &AuthenticationMethodsPolicyRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/policies/authenticationMethodsPolicy{?select,expand}";
+    m.urlTemplate = "{+baseurl}/policies/authenticationMethodsPolicy{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

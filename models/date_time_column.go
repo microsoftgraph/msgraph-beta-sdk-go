@@ -7,11 +7,11 @@ import (
 // DateTimeColumn 
 type DateTimeColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // How the value should be presented in the UX. Must be one of default, friendly, or standard. See below for more details. If unspecified, treated as default.
-    displayAs *string;
+    displayAs *string
     // Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
-    format *string;
+    format *string
 }
 // NewDateTimeColumn instantiates a new dateTimeColumn and sets the default values.
 func NewDateTimeColumn()(*DateTimeColumn) {
@@ -41,9 +41,9 @@ func (m *DateTimeColumn) GetDisplayAs()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DateTimeColumn) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["displayAs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DateTimeColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["displayAs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *DateTimeColumn) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["format"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["format"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

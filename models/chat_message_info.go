@@ -9,17 +9,17 @@ import (
 type ChatMessageInfo struct {
     Entity
     // Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.
-    body ItemBodyable;
+    body ItemBodyable
     // Date time object representing the time at which message was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
-    eventDetail EventMessageDetailable;
+    eventDetail EventMessageDetailable
     // Information about the sender of the message.
-    from ChatMessageFromIdentitySetable;
+    from ChatMessageFromIdentitySetable
     // If set to true, the original message has been deleted.
-    isDeleted *bool;
+    isDeleted *bool
     // The type of chat message. The possible values are: message, unknownFutureValue, systemEventMessage.
-    messageType *ChatMessageType;
+    messageType *ChatMessageType
 }
 // NewChatMessageInfo instantiates a new chatMessageInfo and sets the default values.
 func NewChatMessageInfo()(*ChatMessageInfo) {
@@ -57,9 +57,9 @@ func (m *ChatMessageInfo) GetEventDetail()(EventMessageDetailable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["body"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["eventDetail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["eventDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEventMessageDetailFromDiscriminatorValue)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["from"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["from"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChatMessageFromIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["isDeleted"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDeleted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["messageType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["messageType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseChatMessageType)
         if err != nil {
             return err

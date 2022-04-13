@@ -7,9 +7,9 @@ import (
 // CheckMemberGroupsRequestBody provides operations to call the checkMemberGroups method.
 type CheckMemberGroupsRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The groupIds property
-    groupIds []string;
+    groupIds []string
 }
 // NewCheckMemberGroupsRequestBody instantiates a new checkMemberGroupsRequestBody and sets the default values.
 func NewCheckMemberGroupsRequestBody()(*CheckMemberGroupsRequestBody) {
@@ -31,9 +31,9 @@ func (m *CheckMemberGroupsRequestBody) GetAdditionalData()(map[string]interface{
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CheckMemberGroupsRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["groupIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CheckMemberGroupsRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["groupIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

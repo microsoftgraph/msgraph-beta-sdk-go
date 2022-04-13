@@ -7,17 +7,17 @@ import (
 // EducationRoot 
 type EducationRoot struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The classes property
-    classes []EducationClassable;
+    classes []EducationClassable
     // The me property
-    me EducationUserable;
+    me EducationUserable
     // The schools property
-    schools []EducationSchoolable;
+    schools []EducationSchoolable
     // The synchronizationProfiles property
-    synchronizationProfiles []EducationSynchronizationProfileable;
+    synchronizationProfiles []EducationSynchronizationProfileable
     // The users property
-    users []EducationUserable;
+    users []EducationUserable
 }
 // NewEducationRoot instantiates a new EducationRoot and sets the default values.
 func NewEducationRoot()(*EducationRoot) {
@@ -47,9 +47,9 @@ func (m *EducationRoot) GetClasses()([]EducationClassable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["classes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *EducationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["classes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationClassFromDiscriminatorValue)
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["me"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["me"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["schools"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["schools"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationSchoolFromDiscriminatorValue)
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["synchronizationProfiles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["synchronizationProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationSynchronizationProfileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["users"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["users"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationUserFromDiscriminatorValue)
         if err != nil {
             return err

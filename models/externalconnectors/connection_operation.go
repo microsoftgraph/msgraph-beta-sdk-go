@@ -9,9 +9,9 @@ import (
 type ConnectionOperation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // If status is failed, provides more information about the error that caused the failure.
-    error ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable;
+    error ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable
     // Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
-    status *ConnectionOperationStatus;
+    status *ConnectionOperationStatus
 }
 // NewConnectionOperation instantiates a new connectionOperation and sets the default values.
 func NewConnectionOperation()(*ConnectionOperation) {
@@ -33,9 +33,9 @@ func (m *ConnectionOperation) GetError()(ie233ee762e29b4ba6970aa2a2efce4b7fde116
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["error"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePublicErrorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -45,7 +45,7 @@ func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConnectionOperationStatus)
         if err != nil {
             return err

@@ -7,15 +7,15 @@ import (
 // DeviceHealthScriptParameter base properties of the script parameter.
 type DeviceHealthScriptParameter struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Whether Apply DefaultValue When Not Assigned
-    applyDefaultValueWhenNotAssigned *bool;
+    applyDefaultValueWhenNotAssigned *bool
     // The description of the param
-    description *string;
+    description *string
     // Whether the param is required
-    isRequired *bool;
+    isRequired *bool
     // The name of the param
-    name *string;
+    name *string
 }
 // NewDeviceHealthScriptParameter instantiates a new deviceHealthScriptParameter and sets the default values.
 func NewDeviceHealthScriptParameter()(*DeviceHealthScriptParameter) {
@@ -53,9 +53,9 @@ func (m *DeviceHealthScriptParameter) GetDescription()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceHealthScriptParameter) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["applyDefaultValueWhenNotAssigned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceHealthScriptParameter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["applyDefaultValueWhenNotAssigned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *DeviceHealthScriptParameter) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *DeviceHealthScriptParameter) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["isRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *DeviceHealthScriptParameter) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

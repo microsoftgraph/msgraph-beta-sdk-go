@@ -7,15 +7,15 @@ import (
 // IntegerRange 
 type IntegerRange struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The inclusive upper bound of the integer range.
-    end *int64;
+    end *int64
     // The maximum property
-    maximum *int64;
+    maximum *int64
     // The minimum property
-    minimum *int64;
+    minimum *int64
     // The inclusive lower bound of the integer range.
-    start *int64;
+    start *int64
 }
 // NewIntegerRange instantiates a new integerRange and sets the default values.
 func NewIntegerRange()(*IntegerRange) {
@@ -45,9 +45,9 @@ func (m *IntegerRange) GetEnd()(*int64) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *IntegerRange) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["end"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *IntegerRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["end"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *IntegerRange) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["maximum"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maximum"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *IntegerRange) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["minimum"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["minimum"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *IntegerRange) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["start"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["start"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err

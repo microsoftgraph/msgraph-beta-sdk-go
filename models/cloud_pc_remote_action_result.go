@@ -8,21 +8,21 @@ import (
 // CloudPcRemoteActionResult 
 type CloudPcRemoteActionResult struct {
     // The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
-    actionName *string;
+    actionName *string
     // State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
-    actionState *ActionState;
+    actionState *ActionState
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The ID of the Cloud PC device on which the remote action is performed. Read-only.
-    cloudPcId *string;
+    cloudPcId *string
     // Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The ID of the Intune managed device on which the remote action is performed. Read-only.
-    managedDeviceId *string;
+    managedDeviceId *string
     // Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The details of the Cloud PC status.
-    statusDetails CloudPcStatusDetailsable;
+    statusDetails CloudPcStatusDetailsable
 }
 // NewCloudPcRemoteActionResult instantiates a new cloudPcRemoteActionResult and sets the default values.
 func NewCloudPcRemoteActionResult()(*CloudPcRemoteActionResult) {
@@ -68,9 +68,9 @@ func (m *CloudPcRemoteActionResult) GetCloudPcId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["actionName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["actionName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -80,7 +80,7 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["actionState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["actionState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseActionState)
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["cloudPcId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cloudPcId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -100,7 +100,7 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["lastUpdatedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -110,7 +110,7 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["managedDeviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["statusDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["statusDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcStatusDetailsFromDiscriminatorValue)
         if err != nil {
             return err

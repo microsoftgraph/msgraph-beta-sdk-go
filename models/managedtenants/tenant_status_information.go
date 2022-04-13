@@ -8,25 +8,25 @@ import (
 // TenantStatusInformation 
 type TenantStatusInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue. Optional. Read-only.
-    delegatedPrivilegeStatus *DelegatedPrivilegeStatus;
+    delegatedPrivilegeStatus *DelegatedPrivilegeStatus
     // The date and time the delegated admin privileges status was updated. Optional. Read-only.
-    lastDelegatedPrivilegeRefreshDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastDelegatedPrivilegeRefreshDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The identifier for the account that offboarded the managed tenant. Optional. Read-only.
-    offboardedByUserId *string;
+    offboardedByUserId *string
     // The date and time when the managed tenant was offboarded. Optional. Read-only.
-    offboardedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    offboardedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The identifier for the account that onboarded the managed tenant. Optional. Read-only.
-    onboardedByUserId *string;
+    onboardedByUserId *string
     // The date and time when the managed tenant was onboarded. Optional. Read-only.
-    onboardedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    onboardedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
-    onboardingStatus *TenantOnboardingStatus;
+    onboardingStatus *TenantOnboardingStatus
     // Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
-    tenantOnboardingEligibilityReason *TenantOnboardingEligibilityReason;
+    tenantOnboardingEligibilityReason *TenantOnboardingEligibilityReason
     // The collection of workload statues for the managed tenant. Optional. Read-only.
-    workloadStatuses []WorkloadStatusable;
+    workloadStatuses []WorkloadStatusable
 }
 // NewTenantStatusInformation instantiates a new tenantStatusInformation and sets the default values.
 func NewTenantStatusInformation()(*TenantStatusInformation) {
@@ -56,9 +56,9 @@ func (m *TenantStatusInformation) GetDelegatedPrivilegeStatus()(*DelegatedPrivil
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["delegatedPrivilegeStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["delegatedPrivilegeStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDelegatedPrivilegeStatus)
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["lastDelegatedPrivilegeRefreshDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastDelegatedPrivilegeRefreshDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["offboardedByUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["offboardedByUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["offboardedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["offboardedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["onboardedByUserId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onboardedByUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["onboardedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onboardedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["onboardingStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onboardingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTenantOnboardingStatus)
         if err != nil {
             return err
@@ -128,7 +128,7 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["tenantOnboardingEligibilityReason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantOnboardingEligibilityReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTenantOnboardingEligibilityReason)
         if err != nil {
             return err
@@ -138,7 +138,7 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["workloadStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["workloadStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkloadStatusFromDiscriminatorValue)
         if err != nil {
             return err

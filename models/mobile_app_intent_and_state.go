@@ -8,11 +8,11 @@ import (
 type MobileAppIntentAndState struct {
     Entity
     // Device identifier created or collected by Intune.
-    managedDeviceIdentifier *string;
+    managedDeviceIdentifier *string
     // The list of payload intents and states for the tenant.
-    mobileAppList []MobileAppIntentAndStateDetailable;
+    mobileAppList []MobileAppIntentAndStateDetailable
     // Identifier for the user that tried to enroll the device.
-    userId *string;
+    userId *string
 }
 // NewMobileAppIntentAndState instantiates a new mobileAppIntentAndState and sets the default values.
 func NewMobileAppIntentAndState()(*MobileAppIntentAndState) {
@@ -26,9 +26,9 @@ func CreateMobileAppIntentAndStateFromDiscriminatorValue(parseNode i878a80d2330e
     return NewMobileAppIntentAndState(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["managedDeviceIdentifier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -38,7 +38,7 @@ func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["mobileAppList"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mobileAppList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppIntentAndStateDetailFromDiscriminatorValue)
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

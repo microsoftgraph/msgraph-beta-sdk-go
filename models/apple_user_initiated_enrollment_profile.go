@@ -9,23 +9,23 @@ import (
 type AppleUserInitiatedEnrollmentProfile struct {
     Entity
     // The list of assignments for this profile.
-    assignments []AppleEnrollmentProfileAssignmentable;
+    assignments []AppleEnrollmentProfileAssignmentable
     // List of available enrollment type options
-    availableEnrollmentTypeOptions []AppleOwnerTypeEnrollmentTypeable;
+    availableEnrollmentTypeOptions []AppleOwnerTypeEnrollmentTypeable
     // Profile creation time
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The default profile enrollment type. Possible values are: unknown, device, user.
-    defaultEnrollmentType *AppleUserInitiatedEnrollmentType;
+    defaultEnrollmentType *AppleUserInitiatedEnrollmentType
     // Description of the profile
-    description *string;
+    description *string
     // Name of the profile
-    displayName *string;
+    displayName *string
     // Profile last modified time
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The platform of the Device. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.
-    platform *DevicePlatformType;
+    platform *DevicePlatformType
     // Priority, 0 is highest
-    priority *int32;
+    priority *int32
 }
 // NewAppleUserInitiatedEnrollmentProfile instantiates a new appleUserInitiatedEnrollmentProfile and sets the default values.
 func NewAppleUserInitiatedEnrollmentProfile()(*AppleUserInitiatedEnrollmentProfile) {
@@ -87,9 +87,9 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAppleEnrollmentProfileAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["availableEnrollmentTypeOptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["availableEnrollmentTypeOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAppleOwnerTypeEnrollmentTypeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["defaultEnrollmentType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["defaultEnrollmentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAppleUserInitiatedEnrollmentType)
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["platform"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDevicePlatformType)
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["priority"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

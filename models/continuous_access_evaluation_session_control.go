@@ -7,9 +7,9 @@ import (
 // ContinuousAccessEvaluationSessionControl 
 type ContinuousAccessEvaluationSessionControl struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue.
-    mode *ContinuousAccessEvaluationMode;
+    mode *ContinuousAccessEvaluationMode
 }
 // NewContinuousAccessEvaluationSessionControl instantiates a new continuousAccessEvaluationSessionControl and sets the default values.
 func NewContinuousAccessEvaluationSessionControl()(*ContinuousAccessEvaluationSessionControl) {
@@ -31,9 +31,9 @@ func (m *ContinuousAccessEvaluationSessionControl) GetAdditionalData()(map[strin
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ContinuousAccessEvaluationSessionControl) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["mode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ContinuousAccessEvaluationSessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["mode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseContinuousAccessEvaluationMode)
         if err != nil {
             return err

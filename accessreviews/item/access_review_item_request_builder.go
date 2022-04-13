@@ -21,49 +21,49 @@ import (
 // AccessReviewItemRequestBuilder provides operations to manage the collection of accessReview entities.
 type AccessReviewItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // AccessReviewItemRequestBuilderDeleteOptions options for Delete
 type AccessReviewItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AccessReviewItemRequestBuilderGetOptions options for Get
 type AccessReviewItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *AccessReviewItemRequestBuilderGetQueryParameters;
+    QueryParameters *AccessReviewItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AccessReviewItemRequestBuilderGetQueryParameters get entity from accessReviews by key
 type AccessReviewItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // AccessReviewItemRequestBuilderPatchOptions options for Patch
 type AccessReviewItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ApplyDecisions the applyDecisions property
 func (m *AccessReviewItemRequestBuilder) ApplyDecisions()(*i925eb082010f3d3144e37628501079bf5f355da9fe37d9a4fefdf1a66160bec6.ApplyDecisionsRequestBuilder) {
@@ -73,7 +73,7 @@ func (m *AccessReviewItemRequestBuilder) ApplyDecisions()(*i925eb082010f3d3144e3
 func NewAccessReviewItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewItemRequestBuilder) {
     m := &AccessReviewItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/accessReviews/{accessReview_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/accessReviews/{accessReview%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -154,7 +154,7 @@ func (m *AccessReviewItemRequestBuilder) DecisionsById(id string)(*i674dbad02771
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessReviewDecision_id"] = id
+        urlTplParams["accessReviewDecision%2Did"] = id
     }
     return i674dbad02771f1ef76ff9b64c61a2d6be676fe415bb8516739597b979e68b51c.NewAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -201,7 +201,7 @@ func (m *AccessReviewItemRequestBuilder) InstancesById(id string)(*i705becb6109e
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessReview_id1"] = id
+        urlTplParams["accessReview%2Did1"] = id
     }
     return i705becb6109e853394ffaa8ec9b9d2ca9bbc3f2d29dd2d667c6d76b0ba676d1c.NewAccessReviewItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -216,7 +216,7 @@ func (m *AccessReviewItemRequestBuilder) MyDecisionsById(id string)(*ia4fff597ad
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessReviewDecision_id"] = id
+        urlTplParams["accessReviewDecision%2Did"] = id
     }
     return ia4fff597adb182643edeeb0e0ef392b36f38b279436254fb6004441a7cc386e4.NewAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -251,7 +251,7 @@ func (m *AccessReviewItemRequestBuilder) ReviewersById(id string)(*i9a1acb52dae7
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessReviewReviewer_id"] = id
+        urlTplParams["accessReviewReviewer%2Did"] = id
     }
     return i9a1acb52dae713764d01984787eec0e51b4aaa96f162a6a5f7316ada71c7758b.NewAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

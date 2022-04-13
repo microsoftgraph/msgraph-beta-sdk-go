@@ -7,15 +7,15 @@ import (
 // UserExperienceAnalyticsInsight the user experience analytics insight is the recomendation to improve the user experience analytics score.
 type UserExperienceAnalyticsInsight struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The unique identifier of the user experience analytics insight.
-    insightId *string;
+    insightId *string
     // The value of the user experience analytics insight. Possible values are: none, informational, warning, error.
-    severity *UserExperienceAnalyticsInsightSeverity;
+    severity *UserExperienceAnalyticsInsightSeverity
     // The unique identifier of the user experience analytics insight.
-    userExperienceAnalyticsMetricId *string;
+    userExperienceAnalyticsMetricId *string
     // The value of the user experience analytics insight.
-    values []UserExperienceAnalyticsInsightValueable;
+    values []UserExperienceAnalyticsInsightValueable
 }
 // NewUserExperienceAnalyticsInsight instantiates a new userExperienceAnalyticsInsight and sets the default values.
 func NewUserExperienceAnalyticsInsight()(*UserExperienceAnalyticsInsight) {
@@ -37,9 +37,9 @@ func (m *UserExperienceAnalyticsInsight) GetAdditionalData()(map[string]interfac
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["insightId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["insightId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["severity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserExperienceAnalyticsInsightSeverity)
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["userExperienceAnalyticsMetricId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userExperienceAnalyticsMetricId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["values"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsInsightValueFromDiscriminatorValue)
         if err != nil {
             return err

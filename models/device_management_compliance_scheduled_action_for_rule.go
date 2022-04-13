@@ -8,9 +8,9 @@ import (
 type DeviceManagementComplianceScheduledActionForRule struct {
     Entity
     // Name of the rule which this scheduled action applies to.
-    ruleName *string;
+    ruleName *string
     // The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-    scheduledActionConfigurations []DeviceManagementComplianceActionItemable;
+    scheduledActionConfigurations []DeviceManagementComplianceActionItemable
 }
 // NewDeviceManagementComplianceScheduledActionForRule instantiates a new deviceManagementComplianceScheduledActionForRule and sets the default values.
 func NewDeviceManagementComplianceScheduledActionForRule()(*DeviceManagementComplianceScheduledActionForRule) {
@@ -24,9 +24,9 @@ func CreateDeviceManagementComplianceScheduledActionForRuleFromDiscriminatorValu
     return NewDeviceManagementComplianceScheduledActionForRule(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementComplianceScheduledActionForRule) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementComplianceScheduledActionForRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["ruleName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ruleName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *DeviceManagementComplianceScheduledActionForRule) GetFieldDeserializers
         }
         return nil
     }
-    res["scheduledActionConfigurations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scheduledActionConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementComplianceActionItemFromDiscriminatorValue)
         if err != nil {
             return err

@@ -9,21 +9,21 @@ import (
 type ItemFacet struct {
     Entity
     // The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
-    allowedAudiences *AllowedAudiences;
+    allowedAudiences *AllowedAudiences
     // The createdBy property
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // Provides the dateTimeOffset for when the entity was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Contains inference detail if the entity is inferred by the creating or modifying application.
-    inference InferenceDataable;
+    inference InferenceDataable
     // The isSearchable property
-    isSearchable *bool;
+    isSearchable *bool
     // The lastModifiedBy property
-    lastModifiedBy IdentitySetable;
+    lastModifiedBy IdentitySetable
     // Provides the dateTimeOffset for when the entity was created.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Where the values within an entity originated if synced from another service.
-    source PersonDataSourcesable;
+    source PersonDataSourcesable
 }
 // NewItemFacet instantiates a new itemFacet and sets the default values.
 func NewItemFacet()(*ItemFacet) {
@@ -61,9 +61,9 @@ func (m *ItemFacet) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ItemFacet) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ItemFacet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["allowedAudiences"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["allowedAudiences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAllowedAudiences)
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *ItemFacet) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *ItemFacet) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *ItemFacet) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["inference"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inference"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateInferenceDataFromDiscriminatorValue)
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *ItemFacet) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["isSearchable"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isSearchable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *ItemFacet) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["lastModifiedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *ItemFacet) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *ItemFacet) GetFieldDeserializers()(map[string]func(interface{}, i878a80
         }
         return nil
     }
-    res["source"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePersonDataSourcesFromDiscriminatorValue)
         if err != nil {
             return err

@@ -9,7 +9,7 @@ import (
 type Ediscoveryroot struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The cases property
-    cases []Case_escapedable;
+    cases []Case_escapedable
 }
 // NewEdiscoveryroot instantiates a new ediscoveryroot and sets the default values.
 func NewEdiscoveryroot()(*Ediscoveryroot) {
@@ -31,9 +31,9 @@ func (m *Ediscoveryroot) GetCases()([]Case_escapedable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Ediscoveryroot) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Ediscoveryroot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["cases"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cases"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCase_escapedFromDiscriminatorValue)
         if err != nil {
             return err

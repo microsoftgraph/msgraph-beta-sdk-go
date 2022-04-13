@@ -9,7 +9,7 @@ import (
 type Catalog struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Lists the content that you can approve for deployment. Read-only.
-    entries []CatalogEntryable;
+    entries []CatalogEntryable
 }
 // NewCatalog instantiates a new catalog and sets the default values.
 func NewCatalog()(*Catalog) {
@@ -31,9 +31,9 @@ func (m *Catalog) GetEntries()([]CatalogEntryable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Catalog) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Catalog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["entries"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["entries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCatalogEntryFromDiscriminatorValue)
         if err != nil {
             return err

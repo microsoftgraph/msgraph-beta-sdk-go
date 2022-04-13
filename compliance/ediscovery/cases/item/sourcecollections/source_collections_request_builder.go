@@ -10,58 +10,58 @@ import (
 // SourceCollectionsRequestBuilder provides operations to manage the sourceCollections property of the microsoft.graph.ediscovery.case entity.
 type SourceCollectionsRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // SourceCollectionsRequestBuilderGetOptions options for Get
 type SourceCollectionsRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *SourceCollectionsRequestBuilderGetQueryParameters;
+    QueryParameters *SourceCollectionsRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // SourceCollectionsRequestBuilderGetQueryParameters returns a list of sourceCollection objects associated with this case.
 type SourceCollectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool;
+    Count *bool `uriparametername:"%24count"`
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
-    Filter *string;
+    Filter *string `uriparametername:"%24filter"`
     // Order items by property values
-    Orderby []string;
+    Orderby []string `uriparametername:"%24orderby"`
     // Search items by search phrases
-    Search *string;
+    Search *string `uriparametername:"%24search"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32;
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32;
+    Top *int32 `uriparametername:"%24top"`
 }
 // SourceCollectionsRequestBuilderPostOptions options for Post
 type SourceCollectionsRequestBuilderPostOptions struct {
     // 
-    Body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable;
+    Body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SourceCollectionable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewSourceCollectionsRequestBuilderInternal instantiates a new SourceCollectionsRequestBuilder and sets the default values.
 func NewSourceCollectionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SourceCollectionsRequestBuilder) {
     m := &SourceCollectionsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case_id}/sourceCollections{?top,skip,search,filter,count,orderby,select,expand}";
+    m.urlTemplate = "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item

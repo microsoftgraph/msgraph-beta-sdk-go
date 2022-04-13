@@ -9,31 +9,31 @@ import (
 type DeviceCompliancePolicy struct {
     Entity
     // The collection of assignments for this compliance policy.
-    assignments []DeviceCompliancePolicyAssignmentable;
+    assignments []DeviceCompliancePolicyAssignmentable
     // DateTime the object was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Admin provided description of the Device Configuration.
-    description *string;
+    description *string
     // Compliance Setting State Device Summary
-    deviceSettingStateSummaries []SettingStateDeviceSummaryable;
+    deviceSettingStateSummaries []SettingStateDeviceSummaryable
     // List of DeviceComplianceDeviceStatus.
-    deviceStatuses []DeviceComplianceDeviceStatusable;
+    deviceStatuses []DeviceComplianceDeviceStatusable
     // Device compliance devices status overview
-    deviceStatusOverview DeviceComplianceDeviceOverviewable;
+    deviceStatusOverview DeviceComplianceDeviceOverviewable
     // Admin provided name of the device configuration.
-    displayName *string;
+    displayName *string
     // DateTime the object was last modified.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of Scope Tags for this Entity instance.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
     // The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-    scheduledActionsForRule []DeviceComplianceScheduledActionForRuleable;
+    scheduledActionsForRule []DeviceComplianceScheduledActionForRuleable
     // List of DeviceComplianceUserStatus.
-    userStatuses []DeviceComplianceUserStatusable;
+    userStatuses []DeviceComplianceUserStatusable
     // Device compliance users status overview
-    userStatusOverview DeviceComplianceUserOverviewable;
+    userStatusOverview DeviceComplianceUserOverviewable
     // Version of the device configuration.
-    version *int32;
+    version *int32
 }
 // NewDeviceCompliancePolicy instantiates a new deviceCompliancePolicy and sets the default values.
 func NewDeviceCompliancePolicy()(*DeviceCompliancePolicy) {
@@ -103,9 +103,9 @@ func (m *DeviceCompliancePolicy) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceCompliancePolicyAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["deviceSettingStateSummaries"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceSettingStateSummaries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSettingStateDeviceSummaryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -153,7 +153,7 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["deviceStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceComplianceDeviceStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["deviceStatusOverview"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceStatusOverview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceComplianceDeviceOverviewFromDiscriminatorValue)
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -187,7 +187,7 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -211,7 +211,7 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["scheduledActionsForRule"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["scheduledActionsForRule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceComplianceScheduledActionForRuleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["userStatuses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceComplianceUserStatusFromDiscriminatorValue)
         if err != nil {
             return err
@@ -239,7 +239,7 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["userStatusOverview"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userStatusOverview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceComplianceUserOverviewFromDiscriminatorValue)
         if err != nil {
             return err
@@ -249,7 +249,7 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["version"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

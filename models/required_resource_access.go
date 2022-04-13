@@ -7,11 +7,11 @@ import (
 // RequiredResourceAccess 
 type RequiredResourceAccess struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The list of OAuth2.0 permission scopes and app roles that the application requires from the specified resource.
-    resourceAccess []ResourceAccessable;
+    resourceAccess []ResourceAccessable
     // The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.
-    resourceAppId *string;
+    resourceAppId *string
 }
 // NewRequiredResourceAccess instantiates a new requiredResourceAccess and sets the default values.
 func NewRequiredResourceAccess()(*RequiredResourceAccess) {
@@ -33,9 +33,9 @@ func (m *RequiredResourceAccess) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RequiredResourceAccess) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["resourceAccess"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *RequiredResourceAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["resourceAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateResourceAccessFromDiscriminatorValue)
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *RequiredResourceAccess) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["resourceAppId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resourceAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

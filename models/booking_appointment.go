@@ -8,75 +8,75 @@ import (
 type BookingAppointment struct {
     Entity
     // Additional information that is sent to the customer when an appointment is confirmed.
-    additionalInformation *string;
+    additionalInformation *string
     // The SMTP address of the bookingCustomer who is booking the appointment.
-    customerEmailAddress *string;
+    customerEmailAddress *string
     // The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
-    customerId *string;
+    customerId *string
     // Represents location information for the bookingCustomer who is booking the appointment.
-    customerLocation Locationable;
+    customerLocation Locationable
     // The customer's name.
-    customerName *string;
+    customerName *string
     // Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.
-    customerNotes *string;
+    customerNotes *string
     // The customer's phone number.
-    customerPhone *string;
+    customerPhone *string
     // It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
-    customers []BookingCustomerInformationBaseable;
+    customers []BookingCustomerInformationBaseable
     // The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
-    customerTimeZone *string;
+    customerTimeZone *string
     // The length of the appointment, denoted in ISO8601 format.
-    duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The end property
-    end DateTimeTimeZoneable;
+    end DateTimeTimeZoneable
     // The current number of customers in the appointment
-    filledAttendeesCount *int32;
+    filledAttendeesCount *int32
     // The billed amount on the invoice.
-    invoiceAmount *float64;
+    invoiceAmount *float64
     // The date, time, and time zone of the invoice for this appointment.
-    invoiceDate DateTimeTimeZoneable;
+    invoiceDate DateTimeTimeZoneable
     // The ID of the invoice.
-    invoiceId *string;
+    invoiceId *string
     // The status of the invoice. Possible values are: draft, reviewing, open, canceled, paid, corrective.
-    invoiceStatus *BookingInvoiceStatus;
+    invoiceStatus *BookingInvoiceStatus
     // The URL of the invoice in Microsoft Bookings.
-    invoiceUrl *string;
+    invoiceUrl *string
     // If true, indicates that the appointment will be held online. Default value is false.
-    isLocationOnline *bool;
+    isLocationOnline *bool
     // The URL of the online meeting for the appointment.
-    joinWebUrl *string;
+    joinWebUrl *string
     // The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
-    maximumAttendeesCount *int32;
+    maximumAttendeesCount *int32
     // The onlineMeetingUrl property
-    onlineMeetingUrl *string;
+    onlineMeetingUrl *string
     // If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
-    optOutOfCustomerEmail *bool;
+    optOutOfCustomerEmail *bool
     // The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
-    postBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    postBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
-    preBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    preBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The regular price for an appointment for the specified bookingService.
-    price *float64;
+    price *float64
     // A setting to provide flexibility for the pricing structure of services. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
-    priceType *BookingPriceType;
+    priceType *BookingPriceType
     // The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
-    reminders []BookingReminderable;
+    reminders []BookingReminderable
     // An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
-    selfServiceAppointmentId *string;
+    selfServiceAppointmentId *string
     // The ID of the bookingService associated with this appointment.
-    serviceId *string;
+    serviceId *string
     // The location where the service is delivered.
-    serviceLocation Locationable;
+    serviceLocation Locationable
     // The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
-    serviceName *string;
+    serviceName *string
     // Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
-    serviceNotes *string;
+    serviceNotes *string
     // If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
-    smsNotificationsEnabled *bool;
+    smsNotificationsEnabled *bool
     // The ID of each bookingStaffMember who is scheduled in this appointment.
-    staffMemberIds []string;
+    staffMemberIds []string
     // The start property
-    start DateTimeTimeZoneable;
+    start DateTimeTimeZoneable
 }
 // NewBookingAppointment instantiates a new bookingAppointment and sets the default values.
 func NewBookingAppointment()(*BookingAppointment) {
@@ -178,9 +178,9 @@ func (m *BookingAppointment) GetEnd()(DateTimeTimeZoneable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["additionalInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["additionalInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -190,7 +190,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["customerEmailAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customerEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -200,7 +200,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["customerId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -210,7 +210,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["customerLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customerLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLocationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -220,7 +220,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["customerName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customerName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -230,7 +230,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["customerNotes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customerNotes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -240,7 +240,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["customerPhone"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customerPhone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -250,7 +250,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["customers"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBookingCustomerInformationBaseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -264,7 +264,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["customerTimeZone"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customerTimeZone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -274,7 +274,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["duration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["duration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -284,7 +284,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["end"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["end"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -294,7 +294,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["filledAttendeesCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["filledAttendeesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -304,7 +304,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["invoiceAmount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invoiceAmount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -314,7 +314,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["invoiceDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invoiceDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -324,7 +324,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["invoiceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invoiceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -334,7 +334,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["invoiceStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invoiceStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBookingInvoiceStatus)
         if err != nil {
             return err
@@ -344,7 +344,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["invoiceUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invoiceUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -354,7 +354,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["isLocationOnline"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isLocationOnline"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -364,7 +364,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["joinWebUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["joinWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -374,7 +374,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["maximumAttendeesCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maximumAttendeesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -384,7 +384,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["onlineMeetingUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onlineMeetingUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -394,7 +394,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["optOutOfCustomerEmail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["optOutOfCustomerEmail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -404,7 +404,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["postBuffer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["postBuffer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -414,7 +414,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["preBuffer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preBuffer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -424,7 +424,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["price"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["price"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -434,7 +434,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["priceType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["priceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBookingPriceType)
         if err != nil {
             return err
@@ -444,7 +444,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["reminders"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reminders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateBookingReminderFromDiscriminatorValue)
         if err != nil {
             return err
@@ -458,7 +458,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["selfServiceAppointmentId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["selfServiceAppointmentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -468,7 +468,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["serviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -478,7 +478,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["serviceLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serviceLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLocationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -488,7 +488,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["serviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -498,7 +498,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["serviceNotes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serviceNotes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -508,7 +508,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["smsNotificationsEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["smsNotificationsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -518,7 +518,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["staffMemberIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["staffMemberIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -532,7 +532,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["start"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["start"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err

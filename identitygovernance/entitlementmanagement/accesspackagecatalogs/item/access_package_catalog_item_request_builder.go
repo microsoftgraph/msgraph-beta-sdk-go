@@ -19,49 +19,49 @@ import (
 // AccessPackageCatalogItemRequestBuilder provides operations to manage the accessPackageCatalogs property of the microsoft.graph.entitlementManagement entity.
 type AccessPackageCatalogItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // AccessPackageCatalogItemRequestBuilderDeleteOptions options for Delete
 type AccessPackageCatalogItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AccessPackageCatalogItemRequestBuilderGetOptions options for Get
 type AccessPackageCatalogItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *AccessPackageCatalogItemRequestBuilderGetQueryParameters;
+    QueryParameters *AccessPackageCatalogItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AccessPackageCatalogItemRequestBuilderGetQueryParameters represents a group of access packages.
 type AccessPackageCatalogItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // AccessPackageCatalogItemRequestBuilderPatchOptions options for Patch
 type AccessPackageCatalogItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCatalogable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCatalogable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AccessPackageResourceRoles the accessPackageResourceRoles property
 func (m *AccessPackageCatalogItemRequestBuilder) AccessPackageResourceRoles()(*i1f9cffb4601faa399fd85c8de6b651cc216602bdc0c0c7fd82237b87ef00c701.AccessPackageResourceRolesRequestBuilder) {
@@ -74,7 +74,7 @@ func (m *AccessPackageCatalogItemRequestBuilder) AccessPackageResourceRolesById(
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackageResourceRole_id"] = id
+        urlTplParams["accessPackageResourceRole%2Did"] = id
     }
     return i0094b207b40e8cb09f9d32a6382458515f23aab8a8ae50f238c48be456a919cb.NewAccessPackageResourceRoleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -89,7 +89,7 @@ func (m *AccessPackageCatalogItemRequestBuilder) AccessPackageResourcesById(id s
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackageResource_id"] = id
+        urlTplParams["accessPackageResource%2Did"] = id
     }
     return i65f5dc28e0a490505ec4c25929f8f0cd4ed34f866dad25cd8f8d84164466ba9d.NewAccessPackageResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -104,7 +104,7 @@ func (m *AccessPackageCatalogItemRequestBuilder) AccessPackageResourceScopesById
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackageResourceScope_id"] = id
+        urlTplParams["accessPackageResourceScope%2Did"] = id
     }
     return ia31d35903f75b5412153928c21cef5d403530da3185ff1b360326a3b48175ea2.NewAccessPackageResourceScopeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -119,7 +119,7 @@ func (m *AccessPackageCatalogItemRequestBuilder) AccessPackagesById(id string)(*
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["accessPackage_id"] = id
+        urlTplParams["accessPackage%2Did"] = id
     }
     return i7684640c78c5bc7c9ae3afd77219ae3a2dfc37dafc063e341fba91ca6bc63d39.NewAccessPackageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -127,7 +127,7 @@ func (m *AccessPackageCatalogItemRequestBuilder) AccessPackagesById(id string)(*
 func NewAccessPackageCatalogItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessPackageCatalogItemRequestBuilder) {
     m := &AccessPackageCatalogItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -208,7 +208,7 @@ func (m *AccessPackageCatalogItemRequestBuilder) CustomAccessPackageWorkflowExte
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["customAccessPackageWorkflowExtension_id"] = id
+        urlTplParams["customAccessPackageWorkflowExtension%2Did"] = id
     }
     return i806de8bb91fba217829bd350dbe60cbabafef2c2766ce4d625eb368f342897c0.NewCustomAccessPackageWorkflowExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

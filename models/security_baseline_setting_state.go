@@ -8,21 +8,21 @@ import (
 type SecurityBaselineSettingState struct {
     Entity
     // The policies that contribute to this setting instance
-    contributingPolicies []SecurityBaselineContributingPolicyable;
+    contributingPolicies []SecurityBaselineContributingPolicyable
     // The error code if the setting is in error state
-    errorCode *string;
+    errorCode *string
     // The setting category id which this setting belongs to
-    settingCategoryId *string;
+    settingCategoryId *string
     // The setting category name which this setting belongs to
-    settingCategoryName *string;
+    settingCategoryName *string
     // The setting id guid
-    settingId *string;
+    settingId *string
     // The setting name that is being reported
-    settingName *string;
+    settingName *string
     // The policies that contribute to this setting instance
-    sourcePolicies []SettingSourceable;
+    sourcePolicies []SettingSourceable
     // The compliance state of the security baseline setting
-    state *SecurityBaselineComplianceState;
+    state *SecurityBaselineComplianceState
 }
 // NewSecurityBaselineSettingState instantiates a new securityBaselineSettingState and sets the default values.
 func NewSecurityBaselineSettingState()(*SecurityBaselineSettingState) {
@@ -52,9 +52,9 @@ func (m *SecurityBaselineSettingState) GetErrorCode()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["contributingPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contributingPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSecurityBaselineContributingPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["errorCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["settingCategoryId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingCategoryId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["settingCategoryName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingCategoryName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -98,7 +98,7 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["settingId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["settingName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["settingName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -118,7 +118,7 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["sourcePolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sourcePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSettingSourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -132,7 +132,7 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSecurityBaselineComplianceState)
         if err != nil {
             return err

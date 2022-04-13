@@ -8,65 +8,65 @@ import (
 type Call struct {
     Entity
     // The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.
-    activeModalities []Modality;
+    activeModalities []Modality
     // The participant that answered the call. Read-only.
-    answeredBy ParticipantInfoable;
+    answeredBy ParticipantInfoable
     // Read-only. Nullable.
-    audioRoutingGroups []AudioRoutingGroupable;
+    audioRoutingGroups []AudioRoutingGroupable
     // The callback URL on which callbacks will be delivered. Must be https.
-    callbackUri *string;
+    callbackUri *string
     // A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
-    callChainId *string;
+    callChainId *string
     // The callOptions property
-    callOptions CallOptionsable;
+    callOptions CallOptionsable
     // The routing information on how the call was retargeted. Read-only.
-    callRoutes []CallRouteable;
+    callRoutes []CallRouteable
     // The chat information. Required information for joining a meeting.
-    chatInfo ChatInfoable;
+    chatInfo ChatInfoable
     // The contentSharingSessions property
-    contentSharingSessions []ContentSharingSessionable;
+    contentSharingSessions []ContentSharingSessionable
     // The direction of the call. The possible value are incoming or outgoing. Read-only.
-    direction *CallDirection;
+    direction *CallDirection
     // The context associated with an incoming call. Read-only. Server generated.
-    incomingContext IncomingContextable;
+    incomingContext IncomingContextable
     // The media configuration. Required.
-    mediaConfig MediaConfigable;
+    mediaConfig MediaConfigable
     // Read-only. The call media state.
-    mediaState CallMediaStateable;
+    mediaState CallMediaStateable
     // Contains the capabilities of a meeting. Read-only.
-    meetingCapability MeetingCapabilityable;
+    meetingCapability MeetingCapabilityable
     // The meeting information that's required for joining a meeting.
-    meetingInfo MeetingInfoable;
+    meetingInfo MeetingInfoable
     // The myParticipantId property
-    myParticipantId *string;
+    myParticipantId *string
     // Read-only. Nullable.
-    operations []CommsOperationable;
+    operations []CommsOperationable
     // Read-only. Nullable.
-    participants []Participantable;
+    participants []Participantable
     // The requestedModalities property
-    requestedModalities []Modality;
+    requestedModalities []Modality
     // The resultInfo property
-    resultInfo ResultInfoable;
+    resultInfo ResultInfoable
     // The ringingTimeoutInSeconds property
-    ringingTimeoutInSeconds *int32;
+    ringingTimeoutInSeconds *int32
     // The routingPolicies property
-    routingPolicies []RoutingPolicy;
+    routingPolicies []RoutingPolicy
     // The source property
-    source ParticipantInfoable;
+    source ParticipantInfoable
     // The state property
-    state *CallState;
+    state *CallState
     // The subject property
-    subject *string;
+    subject *string
     // The targets property
-    targets []InvitationParticipantInfoable;
+    targets []InvitationParticipantInfoable
     // The tenantId property
-    tenantId *string;
+    tenantId *string
     // The terminationReason property
-    terminationReason *string;
+    terminationReason *string
     // The toneInfo property
-    toneInfo ToneInfoable;
+    toneInfo ToneInfoable
     // The transcription information for the call. Read-only.
-    transcription CallTranscriptionInfoable;
+    transcription CallTranscriptionInfoable
 }
 // NewCall instantiates a new call and sets the default values.
 func NewCall()(*Call) {
@@ -160,9 +160,9 @@ func (m *Call) GetDirection()(*CallDirection) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activeModalities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activeModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseModality)
         if err != nil {
             return err
@@ -176,7 +176,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["answeredBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["answeredBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateParticipantInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -186,7 +186,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["audioRoutingGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["audioRoutingGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAudioRoutingGroupFromDiscriminatorValue)
         if err != nil {
             return err
@@ -200,7 +200,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["callbackUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["callbackUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -210,7 +210,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["callChainId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["callChainId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -220,7 +220,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["callOptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["callOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCallOptionsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -230,7 +230,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["callRoutes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["callRoutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCallRouteFromDiscriminatorValue)
         if err != nil {
             return err
@@ -244,7 +244,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["chatInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["chatInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChatInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -254,7 +254,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["contentSharingSessions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentSharingSessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateContentSharingSessionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -268,7 +268,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["direction"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["direction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCallDirection)
         if err != nil {
             return err
@@ -278,7 +278,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["incomingContext"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["incomingContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIncomingContextFromDiscriminatorValue)
         if err != nil {
             return err
@@ -288,7 +288,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["mediaConfig"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mediaConfig"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMediaConfigFromDiscriminatorValue)
         if err != nil {
             return err
@@ -298,7 +298,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["mediaState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mediaState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCallMediaStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -308,7 +308,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["meetingCapability"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["meetingCapability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMeetingCapabilityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -318,7 +318,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["meetingInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["meetingInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMeetingInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -328,7 +328,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["myParticipantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["myParticipantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -338,7 +338,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["operations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCommsOperationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -352,7 +352,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["participants"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["participants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateParticipantFromDiscriminatorValue)
         if err != nil {
             return err
@@ -366,7 +366,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["requestedModalities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestedModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseModality)
         if err != nil {
             return err
@@ -380,7 +380,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["resultInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resultInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateResultInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -390,7 +390,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["ringingTimeoutInSeconds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ringingTimeoutInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -400,7 +400,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["routingPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["routingPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseRoutingPolicy)
         if err != nil {
             return err
@@ -414,7 +414,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["source"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateParticipantInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -424,7 +424,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCallState)
         if err != nil {
             return err
@@ -434,7 +434,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["subject"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -444,7 +444,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["targets"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateInvitationParticipantInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -458,7 +458,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["tenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -468,7 +468,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["terminationReason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["terminationReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -478,7 +478,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["toneInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["toneInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateToneInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -488,7 +488,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330
         }
         return nil
     }
-    res["transcription"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["transcription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCallTranscriptionInfoFromDiscriminatorValue)
         if err != nil {
             return err

@@ -8,63 +8,63 @@ import (
 type DepIOSEnrollmentProfile struct {
     DepEnrollmentBaseProfile
     // Indicates if Apperance screen is disabled
-    appearanceScreenDisabled *bool;
+    appearanceScreenDisabled *bool
     // Indicates if the device will need to wait for configured confirmation
-    awaitDeviceConfiguredConfirmation *bool;
+    awaitDeviceConfiguredConfirmation *bool
     // Carrier URL for activating device eSIM.
-    carrierActivationUrl *string;
+    carrierActivationUrl *string
     // If set, indicates which Vpp token should be used to deploy the Company Portal w/ device licensing. 'enableAuthenticationViaCompanyPortal' must be set in order for this property to be set.
-    companyPortalVppTokenId *string;
+    companyPortalVppTokenId *string
     // Indicates if Device To Device Migration is disabled
-    deviceToDeviceMigrationDisabled *bool;
+    deviceToDeviceMigrationDisabled *bool
     // This indicates whether the device is to be enrolled in a mode which enables multi user scenarios. Only applicable in shared iPads.
-    enableSharedIPad *bool;
+    enableSharedIPad *bool
     // Tells the device to enable single app mode and apply app-lock during enrollment. Default is false. 'enableAuthenticationViaCompanyPortal' and 'companyPortalVppTokenId' must be set for this property to be set.
-    enableSingleAppEnrollmentMode *bool;
+    enableSingleAppEnrollmentMode *bool
     // Indicates if Express Language screen is disabled
-    expressLanguageScreenDisabled *bool;
+    expressLanguageScreenDisabled *bool
     // Indicates if temporary sessions is enabled
-    forceTemporarySession *bool;
+    forceTemporarySession *bool
     // Indicates if home button sensitivity screen is disabled
-    homeButtonScreenDisabled *bool;
+    homeButtonScreenDisabled *bool
     // Indicates if iMessage and FaceTime screen is disabled
-    iMessageAndFaceTimeScreenDisabled *bool;
+    iMessageAndFaceTimeScreenDisabled *bool
     // Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.
-    iTunesPairingMode *ITunesPairingMode;
+    iTunesPairingMode *ITunesPairingMode
     // Management certificates for Apple Configurator
-    managementCertificates []ManagementCertificateWithThumbprintable;
+    managementCertificates []ManagementCertificateWithThumbprintable
     // Indicates if onboarding setup screen is disabled
-    onBoardingScreenDisabled *bool;
+    onBoardingScreenDisabled *bool
     // Indicates if Passcode setup pane is disabled
-    passCodeDisabled *bool;
+    passCodeDisabled *bool
     // Indicates timeout before locked screen requires the user to enter the device passocde to unlock it
-    passcodeLockGracePeriodInSeconds *int32;
+    passcodeLockGracePeriodInSeconds *int32
     // Indicates if Preferred language screen is disabled
-    preferredLanguageScreenDisabled *bool;
+    preferredLanguageScreenDisabled *bool
     // Indicates if Weclome screen is disabled
-    restoreCompletedScreenDisabled *bool;
+    restoreCompletedScreenDisabled *bool
     // Indicates if Restore from Android is disabled
-    restoreFromAndroidDisabled *bool;
+    restoreFromAndroidDisabled *bool
     // This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.
-    sharedIPadMaximumUserCount *int32;
+    sharedIPadMaximumUserCount *int32
     // Indicates if the SIMSetup screen is disabled
-    simSetupScreenDisabled *bool;
+    simSetupScreenDisabled *bool
     // Indicates if the mandatory sofware update screen is disabled
-    softwareUpdateScreenDisabled *bool;
+    softwareUpdateScreenDisabled *bool
     // Indicates timeout of temporary session
-    temporarySessionTimeoutInSeconds *int32;
+    temporarySessionTimeoutInSeconds *int32
     // Indicates if Weclome screen is disabled
-    updateCompleteScreenDisabled *bool;
+    updateCompleteScreenDisabled *bool
     // Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices
-    userlessSharedAadModeEnabled *bool;
+    userlessSharedAadModeEnabled *bool
     // Indicates timeout of temporary session
-    userSessionTimeoutInSeconds *int32;
+    userSessionTimeoutInSeconds *int32
     // Indicates if the watch migration screen is disabled
-    watchMigrationScreenDisabled *bool;
+    watchMigrationScreenDisabled *bool
     // Indicates if Weclome screen is disabled
-    welcomeScreenDisabled *bool;
+    welcomeScreenDisabled *bool
     // Indicates if zoom setup pane is disabled
-    zoomDisabled *bool;
+    zoomDisabled *bool
 }
 // NewDepIOSEnrollmentProfile instantiates a new depIOSEnrollmentProfile and sets the default values.
 func NewDepIOSEnrollmentProfile()(*DepIOSEnrollmentProfile) {
@@ -142,9 +142,9 @@ func (m *DepIOSEnrollmentProfile) GetExpressLanguageScreenDisabled()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DepEnrollmentBaseProfile.GetFieldDeserializers()
-    res["appearanceScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appearanceScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["awaitDeviceConfiguredConfirmation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["awaitDeviceConfiguredConfirmation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -164,7 +164,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["carrierActivationUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["carrierActivationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -174,7 +174,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["companyPortalVppTokenId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["companyPortalVppTokenId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -184,7 +184,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["deviceToDeviceMigrationDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceToDeviceMigrationDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -194,7 +194,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["enableSharedIPad"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableSharedIPad"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -204,7 +204,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["enableSingleAppEnrollmentMode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableSingleAppEnrollmentMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -214,7 +214,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["expressLanguageScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expressLanguageScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -224,7 +224,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["forceTemporarySession"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["forceTemporarySession"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -234,7 +234,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["homeButtonScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["homeButtonScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -244,7 +244,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["iMessageAndFaceTimeScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iMessageAndFaceTimeScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -254,7 +254,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["iTunesPairingMode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["iTunesPairingMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseITunesPairingMode)
         if err != nil {
             return err
@@ -264,7 +264,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["managementCertificates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementCertificates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateManagementCertificateWithThumbprintFromDiscriminatorValue)
         if err != nil {
             return err
@@ -278,7 +278,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["onBoardingScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onBoardingScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -288,7 +288,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["passCodeDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passCodeDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -298,7 +298,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["passcodeLockGracePeriodInSeconds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passcodeLockGracePeriodInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -308,7 +308,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["preferredLanguageScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preferredLanguageScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -318,7 +318,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["restoreCompletedScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["restoreCompletedScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -328,7 +328,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["restoreFromAndroidDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["restoreFromAndroidDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -338,7 +338,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["sharedIPadMaximumUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharedIPadMaximumUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -348,7 +348,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["simSetupScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["simSetupScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -358,7 +358,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["softwareUpdateScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["softwareUpdateScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -368,7 +368,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["temporarySessionTimeoutInSeconds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["temporarySessionTimeoutInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -378,7 +378,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["updateCompleteScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["updateCompleteScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -388,7 +388,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["userlessSharedAadModeEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userlessSharedAadModeEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -398,7 +398,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["userSessionTimeoutInSeconds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userSessionTimeoutInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -408,7 +408,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["watchMigrationScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["watchMigrationScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -418,7 +418,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["welcomeScreenDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["welcomeScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -428,7 +428,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["zoomDisabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["zoomDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

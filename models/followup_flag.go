@@ -7,15 +7,15 @@ import (
 // FollowupFlag 
 type FollowupFlag struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The date and time that the follow-up was finished.
-    completedDateTime DateTimeTimeZoneable;
+    completedDateTime DateTimeTimeZoneable
     // The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.
-    dueDateTime DateTimeTimeZoneable;
+    dueDateTime DateTimeTimeZoneable
     // The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
-    flagStatus *FollowupFlagStatus;
+    flagStatus *FollowupFlagStatus
     // The date and time that the follow-up is to begin.
-    startDateTime DateTimeTimeZoneable;
+    startDateTime DateTimeTimeZoneable
 }
 // NewFollowupFlag instantiates a new followupFlag and sets the default values.
 func NewFollowupFlag()(*FollowupFlag) {
@@ -53,9 +53,9 @@ func (m *FollowupFlag) GetDueDateTime()(DateTimeTimeZoneable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["completedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["completedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -65,7 +65,7 @@ func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["dueDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dueDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["flagStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["flagStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseFollowupFlagStatus)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *FollowupFlag) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["startDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
             return err

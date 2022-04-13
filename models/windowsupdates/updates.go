@@ -9,11 +9,11 @@ import (
 type Updates struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Catalog of content that can be approved for deployment by the deployment service. Read-only.
-    catalog Catalogable;
+    catalog Catalogable
     // Deployments created using the deployment service. Read-only.
-    deployments []Deploymentable;
+    deployments []Deploymentable
     // Assets registered with the deployment service that can receive updates. Read-only.
-    updatableAssets []UpdatableAssetable;
+    updatableAssets []UpdatableAssetable
 }
 // NewUpdates instantiates a new updates and sets the default values.
 func NewUpdates()(*Updates) {
@@ -43,9 +43,9 @@ func (m *Updates) GetDeployments()([]Deploymentable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Updates) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Updates) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["catalog"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["catalog"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCatalogFromDiscriminatorValue)
         if err != nil {
             return err
@@ -55,7 +55,7 @@ func (m *Updates) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["deployments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deployments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeploymentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *Updates) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2
         }
         return nil
     }
-    res["updatableAssets"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["updatableAssets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUpdatableAssetFromDiscriminatorValue)
         if err != nil {
             return err

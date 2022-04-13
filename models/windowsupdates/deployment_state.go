@@ -7,13 +7,13 @@ import (
 // DeploymentState 
 type DeploymentState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Specifies the reasons the deployment has its state value. Read-only.
-    reasons []DeploymentStateReasonable;
+    reasons []DeploymentStateReasonable
     // Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused, unknownFutureValue.
-    requestedValue *RequestedDeploymentStateValue;
+    requestedValue *RequestedDeploymentStateValue
     // Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused, unknownFutureValue. Read-only.
-    value *DeploymentStateValue;
+    value *DeploymentStateValue
 }
 // NewDeploymentState instantiates a new deploymentState and sets the default values.
 func NewDeploymentState()(*DeploymentState) {
@@ -35,9 +35,9 @@ func (m *DeploymentState) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeploymentState) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["reasons"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeploymentState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["reasons"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeploymentStateReasonFromDiscriminatorValue)
         if err != nil {
             return err
@@ -51,7 +51,7 @@ func (m *DeploymentState) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["requestedValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["requestedValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRequestedDeploymentStateValue)
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *DeploymentState) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["value"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeploymentStateValue)
         if err != nil {
             return err

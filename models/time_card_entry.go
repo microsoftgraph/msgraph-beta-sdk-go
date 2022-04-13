@@ -7,13 +7,13 @@ import (
 // TimeCardEntry 
 type TimeCardEntry struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The list of breaks associated with the timeCard.
-    breaks []TimeCardBreakable;
+    breaks []TimeCardBreakable
     // The clock-in event of the timeCard.
-    clockInEvent TimeCardEventable;
+    clockInEvent TimeCardEventable
     // The clock-out event of the timeCard.
-    clockOutEvent TimeCardEventable;
+    clockOutEvent TimeCardEventable
 }
 // NewTimeCardEntry instantiates a new timeCardEntry and sets the default values.
 func NewTimeCardEntry()(*TimeCardEntry) {
@@ -59,9 +59,9 @@ func (m *TimeCardEntry) GetClockOutEvent()(TimeCardEventable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TimeCardEntry) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["breaks"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TimeCardEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["breaks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTimeCardBreakFromDiscriminatorValue)
         if err != nil {
             return err
@@ -75,7 +75,7 @@ func (m *TimeCardEntry) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["clockInEvent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clockInEvent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTimeCardEventFromDiscriminatorValue)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *TimeCardEntry) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["clockOutEvent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clockOutEvent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTimeCardEventFromDiscriminatorValue)
         if err != nil {
             return err

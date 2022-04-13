@@ -8,51 +8,51 @@ import (
 type OrganizationalBrandingProperties struct {
     Entity
     // Color that will appear in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
-    backgroundColor *string;
+    backgroundColor *string
     // Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
-    backgroundImage []byte;
+    backgroundImage []byte
     // A relative URL for the backgroundImage property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
-    backgroundImageRelativeUrl *string;
+    backgroundImageRelativeUrl *string
     // A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-    bannerLogo []byte;
+    bannerLogo []byte
     // A relative url for the bannerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
-    bannerLogoRelativeUrl *string;
+    bannerLogoRelativeUrl *string
     // A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
-    cdnList []string;
+    cdnList []string
     // A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
-    customAccountResetCredentialsUrl *string;
+    customAccountResetCredentialsUrl *string
     // A string to replace the default 'Can't access your account?' self-service password reset (SSPR) hyperlink text on the sign-in page. This text must be in Unicode format and not exceed 256 characters.
-    customCannotAccessYourAccountText *string;
+    customCannotAccessYourAccountText *string
     // A custom URL to replace the default URL of the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in page. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters. DO NOT USE. Use customAccountResetCredentialsUrl instead.
-    customCannotAccessYourAccountUrl *string;
+    customCannotAccessYourAccountUrl *string
     // A string to replace the default 'Forgot my password' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.
-    customForgotMyPasswordText *string;
+    customForgotMyPasswordText *string
     // A string to replace the default 'Privacy and Cookies' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
-    customPrivacyAndCookiesText *string;
+    customPrivacyAndCookiesText *string
     // A custom URL to replace the default URL of the 'Privacy and Cookies' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
-    customPrivacyAndCookiesUrl *string;
+    customPrivacyAndCookiesUrl *string
     // A string to replace the default 'reset it now' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters. DO NOT USE: Customization of the 'reset it now' hyperlink text is currently not supported.
-    customResetItNowText *string;
+    customResetItNowText *string
     // A string to replace the the default 'Terms of Use' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
-    customTermsOfUseText *string;
+    customTermsOfUseText *string
     // A custom URL to replace the default URL of the 'Terms of Use' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.
-    customTermsOfUseUrl *string;
+    customTermsOfUseUrl *string
     // A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
-    favicon []byte;
+    favicon []byte
     // A relative url for the favicon above that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
-    faviconRelativeUrl *string;
+    faviconRelativeUrl *string
     // The RGB color to apply to customize the color of the header.
-    headerBackgroundColor *string;
+    headerBackgroundColor *string
     // Represents the various texts that can be hidden on the login page for a tenant.
-    loginPageTextVisibilitySettings LoginPageTextVisibilitySettingsable;
+    loginPageTextVisibilitySettings LoginPageTextVisibilitySettingsable
     // Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
-    signInPageText *string;
+    signInPageText *string
     // A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
-    squareLogo []byte;
+    squareLogo []byte
     // A relative url for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
-    squareLogoRelativeUrl *string;
+    squareLogoRelativeUrl *string
     // String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
-    usernameHintText *string;
+    usernameHintText *string
 }
 // NewOrganizationalBrandingProperties instantiates a new organizationalBrandingProperties and sets the default values.
 func NewOrganizationalBrandingProperties()(*OrganizationalBrandingProperties) {
@@ -202,9 +202,9 @@ func (m *OrganizationalBrandingProperties) GetFaviconRelativeUrl()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["backgroundColor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["backgroundColor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -214,7 +214,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["backgroundImage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["backgroundImage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -224,7 +224,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["backgroundImageRelativeUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["backgroundImageRelativeUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -234,7 +234,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["bannerLogo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["bannerLogo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -244,7 +244,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["bannerLogoRelativeUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["bannerLogoRelativeUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -254,7 +254,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["cdnList"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["cdnList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -268,7 +268,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["customAccountResetCredentialsUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customAccountResetCredentialsUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -278,7 +278,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["customCannotAccessYourAccountText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customCannotAccessYourAccountText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -288,7 +288,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["customCannotAccessYourAccountUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customCannotAccessYourAccountUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -298,7 +298,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["customForgotMyPasswordText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customForgotMyPasswordText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -308,7 +308,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["customPrivacyAndCookiesText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customPrivacyAndCookiesText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -318,7 +318,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["customPrivacyAndCookiesUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customPrivacyAndCookiesUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -328,7 +328,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["customResetItNowText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customResetItNowText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -338,7 +338,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["customTermsOfUseText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customTermsOfUseText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -348,7 +348,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["customTermsOfUseUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customTermsOfUseUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -358,7 +358,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["favicon"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["favicon"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -368,7 +368,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["faviconRelativeUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["faviconRelativeUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -378,7 +378,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["headerBackgroundColor"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["headerBackgroundColor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -388,7 +388,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["loginPageTextVisibilitySettings"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["loginPageTextVisibilitySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLoginPageTextVisibilitySettingsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -398,7 +398,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["signInPageText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["signInPageText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -408,7 +408,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["squareLogo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["squareLogo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -418,7 +418,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["squareLogoRelativeUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["squareLogoRelativeUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -428,7 +428,7 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
-    res["usernameHintText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["usernameHintText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

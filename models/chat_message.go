@@ -9,53 +9,53 @@ import (
 type ChatMessage struct {
     Entity
     // References to attached objects like files, tabs, meetings etc.
-    attachments []ChatMessageAttachmentable;
+    attachments []ChatMessageAttachmentable
     // The body property
-    body ItemBodyable;
+    body ItemBodyable
     // If the message was sent in a channel, represents identity of the channel.
-    channelIdentity ChannelIdentityable;
+    channelIdentity ChannelIdentityable
     // If the message was sent in a chat, represents the identity of the chat.
-    chatId *string;
+    chatId *string
     // Timestamp of when the chat message was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read only. Timestamp at which the chat message was deleted, or null if not deleted.
-    deletedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    deletedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read-only. Version number of the chat message.
-    etag *string;
+    etag *string
     // Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
-    eventDetail EventMessageDetailable;
+    eventDetail EventMessageDetailable
     // Details of the sender of the chat message. Can only be set during migration.
-    from ChatMessageFromIdentitySetable;
+    from ChatMessageFromIdentitySetable
     // Content in a message hosted by Microsoft Teams - for example, images or code snippets.
-    hostedContents []ChatMessageHostedContentable;
+    hostedContents []ChatMessageHostedContentable
     // The importance of the chat message. The possible values are: normal, high, urgent.
-    importance *ChatMessageImportance;
+    importance *ChatMessageImportance
     // Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
-    lastEditedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastEditedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Locale of the chat message set by the client. Always set to en-us.
-    locale *string;
+    locale *string
     // List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
-    mentions []ChatMessageMentionable;
+    mentions []ChatMessageMentionable
     // The type of chat message. The possible values are: message, chatEvent, typing, unknownFutureValue, systemEventMessage. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: systemEventMessage.
-    messageType *ChatMessageType;
+    messageType *ChatMessageType
     // User attribution of the message when bot sends a message on behalf of a user.
-    onBehalfOf ChatMessageFromIdentitySetable;
+    onBehalfOf ChatMessageFromIdentitySetable
     // Defines the properties of a policy violation set by a data loss prevention (DLP) application.
-    policyViolation ChatMessagePolicyViolationable;
+    policyViolation ChatMessagePolicyViolationable
     // Reactions for this chat message (for example, Like).
-    reactions []ChatMessageReactionable;
+    reactions []ChatMessageReactionable
     // Replies for a specified message.
-    replies []ChatMessageable;
+    replies []ChatMessageable
     // Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
-    replyToId *string;
+    replyToId *string
     // The subject of the chat message, in plaintext.
-    subject *string;
+    subject *string
     // Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
-    summary *string;
+    summary *string
     // Read-only. Link to the message in Microsoft Teams.
-    webUrl *string;
+    webUrl *string
 }
 // NewChatMessage instantiates a new chatMessage and sets the default values.
 func NewChatMessage()(*ChatMessage) {
@@ -133,9 +133,9 @@ func (m *ChatMessage) GetEventDetail()(EventMessageDetailable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["attachments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["attachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateChatMessageAttachmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["body"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["channelIdentity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["channelIdentity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChannelIdentityFromDiscriminatorValue)
         if err != nil {
             return err
@@ -169,7 +169,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["chatId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["chatId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["deletedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deletedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["etag"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["etag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["eventDetail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["eventDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEventMessageDetailFromDiscriminatorValue)
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["from"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["from"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChatMessageFromIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -229,7 +229,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["hostedContents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hostedContents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateChatMessageHostedContentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -243,7 +243,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["importance"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["importance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseChatMessageImportance)
         if err != nil {
             return err
@@ -253,7 +253,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["lastEditedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastEditedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -263,7 +263,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -273,7 +273,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["locale"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["locale"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -283,7 +283,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["mentions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mentions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateChatMessageMentionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -297,7 +297,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["messageType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["messageType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseChatMessageType)
         if err != nil {
             return err
@@ -307,7 +307,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["onBehalfOf"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onBehalfOf"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChatMessageFromIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -317,7 +317,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["policyViolation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyViolation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChatMessagePolicyViolationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -327,7 +327,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["reactions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reactions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateChatMessageReactionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -341,7 +341,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["replies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["replies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateChatMessageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -355,7 +355,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["replyToId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["replyToId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -365,7 +365,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["subject"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["subject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -375,7 +375,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["summary"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -385,7 +385,7 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["webUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

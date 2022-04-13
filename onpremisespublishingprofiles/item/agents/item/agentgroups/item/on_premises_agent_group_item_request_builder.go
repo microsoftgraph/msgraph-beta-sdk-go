@@ -13,49 +13,49 @@ import (
 // OnPremisesAgentGroupItemRequestBuilder provides operations to manage the agentGroups property of the microsoft.graph.onPremisesAgent entity.
 type OnPremisesAgentGroupItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // OnPremisesAgentGroupItemRequestBuilderDeleteOptions options for Delete
 type OnPremisesAgentGroupItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // OnPremisesAgentGroupItemRequestBuilderGetOptions options for Get
 type OnPremisesAgentGroupItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *OnPremisesAgentGroupItemRequestBuilderGetQueryParameters;
+    QueryParameters *OnPremisesAgentGroupItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // OnPremisesAgentGroupItemRequestBuilderGetQueryParameters list of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
 type OnPremisesAgentGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // OnPremisesAgentGroupItemRequestBuilderPatchOptions options for Patch
 type OnPremisesAgentGroupItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Agents the agents property
 func (m *OnPremisesAgentGroupItemRequestBuilder) Agents()(*ia1f378fe0766dfc5dfea6349a05cfa28f3e62a895660c36f63e44f99148d8843.AgentsRequestBuilder) {
@@ -68,7 +68,7 @@ func (m *OnPremisesAgentGroupItemRequestBuilder) AgentsById(id string)(*i7e840fa
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["onPremisesAgent_id1"] = id
+        urlTplParams["onPremisesAgent%2Did1"] = id
     }
     return i7e840fa7b37fef7aff16c31565cd806fb2481b9e74e26cb7fc98957b305799d2.NewOnPremisesAgentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -76,7 +76,7 @@ func (m *OnPremisesAgentGroupItemRequestBuilder) AgentsById(id string)(*i7e840fa
 func NewOnPremisesAgentGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnPremisesAgentGroupItemRequestBuilder) {
     m := &OnPremisesAgentGroupItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile_id}/agents/{onPremisesAgent_id}/agentGroups/{onPremisesAgentGroup_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/agents/{onPremisesAgent%2Did}/agentGroups/{onPremisesAgentGroup%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -205,7 +205,7 @@ func (m *OnPremisesAgentGroupItemRequestBuilder) PublishedResourcesById(id strin
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["publishedResource_id"] = id
+        urlTplParams["publishedResource%2Did"] = id
     }
     return ifae56f8c6511fee3e2bb5415d36058ab3f529b5629909455a1b4b59c293a0479.NewPublishedResourceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

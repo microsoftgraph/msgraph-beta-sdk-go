@@ -7,21 +7,21 @@ import (
 // AttributeMapping 
 type AttributeMapping struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Default value to be used in case the source property was evaluated to null. Optional.
-    defaultValue *string;
+    defaultValue *string
     // For internal use only.
-    exportMissingReferences *bool;
+    exportMissingReferences *bool
     // Defines when this attribute should be exported to the target directory. Possible values are: FlowWhenChanged and FlowAlways. Default is FlowWhenChanged.
-    flowBehavior *AttributeFlowBehavior;
+    flowBehavior *AttributeFlowBehavior
     // Defines when this attribute should be updated in the target directory. Possible values are: Always (default), ObjectAddOnly (only when new object is created), MultiValueAddOnly (only when the change is adding new values to a multi-valued attribute).
-    flowType *AttributeFlowType;
+    flowType *AttributeFlowType
     // If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
-    matchingPriority *int32;
+    matchingPriority *int32
     // Defines how a value should be extracted (or transformed) from the source object.
-    source AttributeMappingSourceable;
+    source AttributeMappingSourceable
     // Name of the attribute on the target object.
-    targetAttributeName *string;
+    targetAttributeName *string
 }
 // NewAttributeMapping instantiates a new attributeMapping and sets the default values.
 func NewAttributeMapping()(*AttributeMapping) {
@@ -59,9 +59,9 @@ func (m *AttributeMapping) GetExportMissingReferences()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["defaultValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["defaultValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -71,7 +71,7 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["exportMissingReferences"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exportMissingReferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -81,7 +81,7 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["flowBehavior"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["flowBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttributeFlowBehavior)
         if err != nil {
             return err
@@ -91,7 +91,7 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["flowType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["flowType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAttributeFlowType)
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["matchingPriority"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["matchingPriority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["source"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAttributeMappingSourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(interface{}, 
         }
         return nil
     }
-    res["targetAttributeName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetAttributeName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

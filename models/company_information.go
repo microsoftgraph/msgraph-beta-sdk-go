@@ -9,29 +9,29 @@ import (
 type CompanyInformation struct {
     Entity
     // The address property
-    address PostalAddressTypeable;
+    address PostalAddressTypeable
     // The currencyCode property
-    currencyCode *string;
+    currencyCode *string
     // The currentFiscalYearStartDate property
-    currentFiscalYearStartDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly;
+    currentFiscalYearStartDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The displayName property
-    displayName *string;
+    displayName *string
     // The email property
-    email *string;
+    email *string
     // The faxNumber property
-    faxNumber *string;
+    faxNumber *string
     // The industry property
-    industry *string;
+    industry *string
     // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The phoneNumber property
-    phoneNumber *string;
+    phoneNumber *string
     // The picture property
-    picture []byte;
+    picture []byte
     // The taxRegistrationNumber property
-    taxRegistrationNumber *string;
+    taxRegistrationNumber *string
     // The website property
-    website *string;
+    website *string
 }
 // NewCompanyInformation instantiates a new companyInformation and sets the default values.
 func NewCompanyInformation()(*CompanyInformation) {
@@ -93,9 +93,9 @@ func (m *CompanyInformation) GetFaxNumber()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["address"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePostalAddressTypeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["currencyCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["currencyCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["currentFiscalYearStartDate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["currentFiscalYearStartDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["email"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["faxNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["faxNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -155,7 +155,7 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["industry"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["industry"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -175,7 +175,7 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["phoneNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["phoneNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -185,7 +185,7 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["picture"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["picture"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -195,7 +195,7 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["taxRegistrationNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["taxRegistrationNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *CompanyInformation) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["website"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["website"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

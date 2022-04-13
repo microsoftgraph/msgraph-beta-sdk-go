@@ -7,17 +7,17 @@ import (
 // TextColumn 
 type TextColumn struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Whether to allow multiple lines of text.
-    allowMultipleLines *bool;
+    allowMultipleLines *bool
     // Whether updates to this column should replace existing text, or append to it.
-    appendChangesToExistingText *bool;
+    appendChangesToExistingText *bool
     // The size of the text box.
-    linesForEditing *int32;
+    linesForEditing *int32
     // The maximum number of characters for the value.
-    maxLength *int32;
+    maxLength *int32
     // The type of text being stored. Must be one of plain or richText
-    textType *string;
+    textType *string
 }
 // NewTextColumn instantiates a new textColumn and sets the default values.
 func NewTextColumn()(*TextColumn) {
@@ -55,9 +55,9 @@ func (m *TextColumn) GetAppendChangesToExistingText()(*bool) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TextColumn) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["allowMultipleLines"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TextColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["allowMultipleLines"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *TextColumn) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["appendChangesToExistingText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appendChangesToExistingText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *TextColumn) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["linesForEditing"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["linesForEditing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *TextColumn) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["maxLength"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["maxLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *TextColumn) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["textType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["textType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -32,49 +32,49 @@ import (
 // CallItemRequestBuilder provides operations to manage the calls property of the microsoft.graph.commsApplication entity.
 type CallItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // CallItemRequestBuilderDeleteOptions options for Delete
 type CallItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CallItemRequestBuilderGetOptions options for Get
 type CallItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *CallItemRequestBuilderGetQueryParameters;
+    QueryParameters *CallItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CallItemRequestBuilderGetQueryParameters get calls from app
 type CallItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // CallItemRequestBuilderPatchOptions options for Patch
 type CallItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Callable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Callable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AddLargeGalleryView the addLargeGalleryView property
 func (m *CallItemRequestBuilder) AddLargeGalleryView()(*ia617450ea6a6c55b69e3406d78900114c4a839be32a64fbf47520d45899eab0b.AddLargeGalleryViewRequestBuilder) {
@@ -95,7 +95,7 @@ func (m *CallItemRequestBuilder) AudioRoutingGroupsById(id string)(*i76c60465809
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["audioRoutingGroup_id"] = id
+        urlTplParams["audioRoutingGroup%2Did"] = id
     }
     return i76c60465809f227922ef886abb4be5e5ba936f1aee25121d8be66ca149691e37.NewAudioRoutingGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -111,7 +111,7 @@ func (m *CallItemRequestBuilder) ChangeScreenSharingRole()(*icbe1c65482be5ba7756
 func NewCallItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallItemRequestBuilder) {
     m := &CallItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/app/calls/{call_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/app/calls/{call%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -137,7 +137,7 @@ func (m *CallItemRequestBuilder) ContentSharingSessionsById(id string)(*i0e77db2
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["contentSharingSession_id"] = id
+        urlTplParams["contentSharingSession%2Did"] = id
     }
     return i0e77db2894bae546ce3028844c9be92c1f453524b9969cb6a1c5fbc30a81428b.NewContentSharingSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -247,7 +247,7 @@ func (m *CallItemRequestBuilder) OperationsById(id string)(*i39deddda18f57c5a3a9
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["commsOperation_id"] = id
+        urlTplParams["commsOperation%2Did"] = id
     }
     return i39deddda18f57c5a3a9987261e9e10fe2b86924c965453300c89efb467115e2a.NewCommsOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -262,7 +262,7 @@ func (m *CallItemRequestBuilder) ParticipantsById(id string)(*idfae2eb2f859c8338
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["participant_id"] = id
+        urlTplParams["participant%2Did"] = id
     }
     return idfae2eb2f859c83384878a7565f78eb2c09250cf7b3892104836a28c6368c37a.NewParticipantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

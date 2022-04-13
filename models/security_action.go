@@ -9,33 +9,33 @@ import (
 type SecurityAction struct {
     Entity
     // Reason for invoking this action.
-    actionReason *string;
+    actionReason *string
     // The Application ID of the calling application that submitted (POST) the action. The appId should be extracted from the auth token and not entered manually by the calling application.
-    appId *string;
+    appId *string
     // Azure tenant ID of the entity to determine which tenant the entity belongs to (multi-tenancy support). The azureTenantId should be extracted from the auth token and not entered manually by the calling application.
-    azureTenantId *string;
+    azureTenantId *string
     // The clientContext property
-    clientContext *string;
+    clientContext *string
     // Timestamp when the action was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Timestamp when the action is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Error info when the action fails.
-    errorInfo ResultInfoable;
+    errorInfo ResultInfoable
     // Timestamp when this action was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Action name.
-    name *string;
+    name *string
     // Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.
-    parameters []KeyValuePairable;
+    parameters []KeyValuePairable
     // Collection of securityActionState to keep the history of an action.
-    states []SecurityActionStateable;
+    states []SecurityActionStateable
     // Status of the action. Possible values are: NotStarted, Running, Completed, Failed.
-    status *OperationStatus;
+    status *OperationStatus
     // The user principal name of the signed-in user that submitted  (POST) the action. The user should be extracted from the auth token and not entered manually by the calling application.
-    user *string;
+    user *string
     // Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).
-    vendorInformation SecurityVendorInformationable;
+    vendorInformation SecurityVendorInformationable
 }
 // NewSecurityAction instantiates a new securityAction and sets the default values.
 func NewSecurityAction()(*SecurityAction) {
@@ -105,9 +105,9 @@ func (m *SecurityAction) GetErrorInfo()(ResultInfoable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SecurityAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["actionReason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["actionReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -117,7 +117,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["appId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["azureTenantId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["azureTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -137,7 +137,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["clientContext"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clientContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -147,7 +147,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["completedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["completedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -157,7 +157,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -167,7 +167,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["errorInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateResultInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -177,7 +177,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["lastActionDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastActionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -187,7 +187,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["name"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["parameters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["parameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValuePairFromDiscriminatorValue)
         if err != nil {
             return err
@@ -211,7 +211,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["states"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["states"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSecurityActionStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOperationStatus)
         if err != nil {
             return err
@@ -235,7 +235,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["user"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["user"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -245,7 +245,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["vendorInformation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["vendorInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
             return err

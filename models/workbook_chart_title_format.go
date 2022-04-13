@@ -8,9 +8,9 @@ import (
 type WorkbookChartTitleFormat struct {
     Entity
     // Represents the fill format of an object, which includes background formatting information. Read-only.
-    fill WorkbookChartFillable;
+    fill WorkbookChartFillable
     // Represents the font attributes (font name, font size, color, etc.) for the current object. Read-only.
-    font WorkbookChartFontable;
+    font WorkbookChartFontable
 }
 // NewWorkbookChartTitleFormat instantiates a new workbookChartTitleFormat and sets the default values.
 func NewWorkbookChartTitleFormat()(*WorkbookChartTitleFormat) {
@@ -24,9 +24,9 @@ func CreateWorkbookChartTitleFormatFromDiscriminatorValue(parseNode i878a80d2330
     return NewWorkbookChartTitleFormat(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkbookChartTitleFormat) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WorkbookChartTitleFormat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["fill"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fill"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartFillFromDiscriminatorValue)
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *WorkbookChartTitleFormat) GetFieldDeserializers()(map[string]func(inter
         }
         return nil
     }
-    res["font"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["font"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookChartFontFromDiscriminatorValue)
         if err != nil {
             return err

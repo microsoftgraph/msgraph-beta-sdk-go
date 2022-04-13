@@ -8,15 +8,15 @@ import (
 type WorkPosition struct {
     ItemFacet
     // Categories that the user has associated with this position.
-    categories []string;
+    categories []string
     // Colleagues that are associated with this position.
-    colleagues []RelatedPersonable;
+    colleagues []RelatedPersonable
     // The detail property
-    detail PositionDetailable;
+    detail PositionDetailable
     // Denotes whether or not the position is current.
-    isCurrent *bool;
+    isCurrent *bool
     // Contains detail of the user's manager in this position.
-    manager RelatedPersonable;
+    manager RelatedPersonable
 }
 // NewWorkPosition instantiates a new workPosition and sets the default values.
 func NewWorkPosition()(*WorkPosition) {
@@ -54,9 +54,9 @@ func (m *WorkPosition) GetDetail()(PositionDetailable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *WorkPosition) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *WorkPosition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
-    res["categories"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *WorkPosition) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["colleagues"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["colleagues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRelatedPersonFromDiscriminatorValue)
         if err != nil {
             return err
@@ -84,7 +84,7 @@ func (m *WorkPosition) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["detail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePositionDetailFromDiscriminatorValue)
         if err != nil {
             return err
@@ -94,7 +94,7 @@ func (m *WorkPosition) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["isCurrent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isCurrent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -104,7 +104,7 @@ func (m *WorkPosition) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["manager"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["manager"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRelatedPersonFromDiscriminatorValue)
         if err != nil {
             return err

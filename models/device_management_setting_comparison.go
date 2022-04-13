@@ -7,19 +7,19 @@ import (
 // DeviceManagementSettingComparison entity representing setting comparison result
 type DeviceManagementSettingComparison struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Setting comparison result. Possible values are: unknown, equal, notEqual, added, removed.
-    comparisonResult *DeviceManagementComparisonResult;
+    comparisonResult *DeviceManagementComparisonResult
     // JSON representation of current intent (or) template setting's value
-    currentValueJson *string;
+    currentValueJson *string
     // The ID of the setting definition for this instance
-    definitionId *string;
+    definitionId *string
     // The setting's display name
-    displayName *string;
+    displayName *string
     // The setting ID
-    id *string;
+    id *string
     // JSON representation of new template setting's value
-    newValueJson *string;
+    newValueJson *string
 }
 // NewDeviceManagementSettingComparison instantiates a new deviceManagementSettingComparison and sets the default values.
 func NewDeviceManagementSettingComparison()(*DeviceManagementSettingComparison) {
@@ -73,9 +73,9 @@ func (m *DeviceManagementSettingComparison) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementSettingComparison) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["comparisonResult"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *DeviceManagementSettingComparison) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["comparisonResult"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementComparisonResult)
         if err != nil {
             return err
@@ -85,7 +85,7 @@ func (m *DeviceManagementSettingComparison) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["currentValueJson"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["currentValueJson"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *DeviceManagementSettingComparison) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["definitionId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["definitionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *DeviceManagementSettingComparison) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *DeviceManagementSettingComparison) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *DeviceManagementSettingComparison) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["newValueJson"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["newValueJson"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

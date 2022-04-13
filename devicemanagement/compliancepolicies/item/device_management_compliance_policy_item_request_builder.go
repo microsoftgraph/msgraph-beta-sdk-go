@@ -17,49 +17,49 @@ import (
 // DeviceManagementCompliancePolicyItemRequestBuilder provides operations to manage the compliancePolicies property of the microsoft.graph.deviceManagement entity.
 type DeviceManagementCompliancePolicyItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // DeviceManagementCompliancePolicyItemRequestBuilderDeleteOptions options for Delete
 type DeviceManagementCompliancePolicyItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceManagementCompliancePolicyItemRequestBuilderGetOptions options for Get
 type DeviceManagementCompliancePolicyItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *DeviceManagementCompliancePolicyItemRequestBuilderGetQueryParameters;
+    QueryParameters *DeviceManagementCompliancePolicyItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DeviceManagementCompliancePolicyItemRequestBuilderGetQueryParameters list of all compliance policies
 type DeviceManagementCompliancePolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // DeviceManagementCompliancePolicyItemRequestBuilderPatchOptions options for Patch
 type DeviceManagementCompliancePolicyItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCompliancePolicyable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCompliancePolicyable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Assign the assign property
 func (m *DeviceManagementCompliancePolicyItemRequestBuilder) Assign()(*i0742bff39d39edf9e7fdaa5802f2ceda48231b0df3ad173faa313f5c87241b5a.AssignRequestBuilder) {
@@ -76,7 +76,7 @@ func (m *DeviceManagementCompliancePolicyItemRequestBuilder) AssignmentsById(id 
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementConfigurationPolicyAssignment_id"] = id
+        urlTplParams["deviceManagementConfigurationPolicyAssignment%2Did"] = id
     }
     return i1d9a96a6a2f04ecb11762741e92d99faf72d8bfcea65eb2f15cca45f47882da5.NewDeviceManagementConfigurationPolicyAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -84,7 +84,7 @@ func (m *DeviceManagementCompliancePolicyItemRequestBuilder) AssignmentsById(id 
 func NewDeviceManagementCompliancePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementCompliancePolicyItemRequestBuilder) {
     m := &DeviceManagementCompliancePolicyItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -213,7 +213,7 @@ func (m *DeviceManagementCompliancePolicyItemRequestBuilder) ScheduledActionsFor
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementComplianceScheduledActionForRule_id"] = id
+        urlTplParams["deviceManagementComplianceScheduledActionForRule%2Did"] = id
     }
     return i6cd919cf4ce1e5e402de893f996a02ad42aff8ec4ade9971ee45c71e8fbcb47a.NewDeviceManagementComplianceScheduledActionForRuleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -232,7 +232,7 @@ func (m *DeviceManagementCompliancePolicyItemRequestBuilder) SettingsById(id str
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["deviceManagementConfigurationSetting_id"] = id
+        urlTplParams["deviceManagementConfigurationSetting%2Did"] = id
     }
     return ie4d81e74e3624280f0e519971ef2c7635b27540efa521cec95913734fcecc59f.NewDeviceManagementConfigurationSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

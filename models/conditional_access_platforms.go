@@ -7,11 +7,11 @@ import (
 // ConditionalAccessPlatforms 
 type ConditionalAccessPlatforms struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
-    excludePlatforms []ConditionalAccessDevicePlatform;
+    excludePlatforms []ConditionalAccessDevicePlatform
     // Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
-    includePlatforms []ConditionalAccessDevicePlatform;
+    includePlatforms []ConditionalAccessDevicePlatform
 }
 // NewConditionalAccessPlatforms instantiates a new conditionalAccessPlatforms and sets the default values.
 func NewConditionalAccessPlatforms()(*ConditionalAccessPlatforms) {
@@ -41,9 +41,9 @@ func (m *ConditionalAccessPlatforms) GetExcludePlatforms()([]ConditionalAccessDe
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ConditionalAccessPlatforms) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["excludePlatforms"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ConditionalAccessPlatforms) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["excludePlatforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseConditionalAccessDevicePlatform)
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *ConditionalAccessPlatforms) GetFieldDeserializers()(map[string]func(int
         }
         return nil
     }
-    res["includePlatforms"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["includePlatforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseConditionalAccessDevicePlatform)
         if err != nil {
             return err

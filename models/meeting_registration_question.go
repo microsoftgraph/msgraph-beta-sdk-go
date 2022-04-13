@@ -8,13 +8,13 @@ import (
 type MeetingRegistrationQuestion struct {
     Entity
     // Answer input type of the custom registration question.
-    answerInputType *AnswerInputType;
+    answerInputType *AnswerInputType
     // Answer options when answerInputType is radioButton.
-    answerOptions []string;
+    answerOptions []string
     // Display name of the custom registration question.
-    displayName *string;
+    displayName *string
     // Indicates whether the question is required. Default value is false.
-    isRequired *bool;
+    isRequired *bool
 }
 // NewMeetingRegistrationQuestion instantiates a new meetingRegistrationQuestion and sets the default values.
 func NewMeetingRegistrationQuestion()(*MeetingRegistrationQuestion) {
@@ -52,9 +52,9 @@ func (m *MeetingRegistrationQuestion) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["answerInputType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["answerInputType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAnswerInputType)
         if err != nil {
             return err
@@ -64,7 +64,7 @@ func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["answerOptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["answerOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -78,7 +78,7 @@ func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -88,7 +88,7 @@ func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(in
         }
         return nil
     }
-    res["isRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

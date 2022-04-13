@@ -9,33 +9,33 @@ import (
 type AccessPackageAssignment struct {
     Entity
     // Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
-    accessPackage AccessPackageable;
+    accessPackage AccessPackageable
     // Read-only. Nullable. Supports $filter (eq) on the id property
-    accessPackageAssignmentPolicy AccessPackageAssignmentPolicyable;
+    accessPackageAssignmentPolicy AccessPackageAssignmentPolicyable
     // The accessPackageAssignmentRequests property
-    accessPackageAssignmentRequests []AccessPackageAssignmentRequestable;
+    accessPackageAssignmentRequests []AccessPackageAssignmentRequestable
     // The resource roles delivered to the target user for this assignment. Read-only. Nullable.
-    accessPackageAssignmentResourceRoles []AccessPackageAssignmentResourceRoleable;
+    accessPackageAssignmentResourceRoles []AccessPackageAssignmentResourceRoleable
     // The identifier of the access package. Read-only.
-    accessPackageId *string;
+    accessPackageId *string
     // The identifier of the access package assignment policy. Read-only.
-    assignmentPolicyId *string;
+    assignmentPolicyId *string
     // The state of the access package assignment. Possible values are Delivering, Delivered, or Expired. Read-only. Supports $filter (eq).
-    assignmentState *string;
+    assignmentState *string
     // More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
-    assignmentStatus *string;
+    assignmentStatus *string
     // The identifier of the catalog containing the access package. Read-only.
-    catalogId *string;
+    catalogId *string
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    expiredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expiredDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Indicates whether the access package assignment is extended. Read-only.
-    isExtended *bool;
+    isExtended *bool
     // When the access assignment is to be in place. Read-only.
-    schedule RequestScheduleable;
+    schedule RequestScheduleable
     // The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
-    target AccessPackageSubjectable;
+    target AccessPackageSubjectable
     // The ID of the subject with the assignment. Read-only.
-    targetId *string;
+    targetId *string
 }
 // NewAccessPackageAssignment instantiates a new accessPackageAssignment and sets the default values.
 func NewAccessPackageAssignment()(*AccessPackageAssignment) {
@@ -129,9 +129,9 @@ func (m *AccessPackageAssignment) GetExpiredDateTime()(*i336074805fc853987abe6f7
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accessPackage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageFromDiscriminatorValue)
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["accessPackageAssignmentPolicy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageAssignmentPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageAssignmentPolicyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["accessPackageAssignmentRequests"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageAssignmentRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentRequestFromDiscriminatorValue)
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["accessPackageAssignmentResourceRoles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageAssignmentResourceRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentResourceRoleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["accessPackageId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accessPackageId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["assignmentPolicyId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignmentPolicyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["assignmentState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignmentState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["assignmentStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignmentStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["catalogId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["catalogId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -229,7 +229,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["expiredDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expiredDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -239,7 +239,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["isExtended"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isExtended"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -249,7 +249,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["schedule"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["schedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRequestScheduleFromDiscriminatorValue)
         if err != nil {
             return err
@@ -259,7 +259,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["target"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageSubjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -269,7 +269,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["targetId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

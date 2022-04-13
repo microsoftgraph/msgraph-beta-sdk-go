@@ -8,15 +8,15 @@ import (
 type SamlOrWsFedProvider struct {
     IdentityProviderBase
     // Issuer URI of the federation server.
-    issuerUri *string;
+    issuerUri *string
     // URI of the metadata exchange endpoint used for authentication from rich client applications.
-    metadataExchangeUri *string;
+    metadataExchangeUri *string
     // URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
-    passiveSignInUri *string;
+    passiveSignInUri *string
     // Preferred authentication protocol. Supported values include saml or wsfed.
-    preferredAuthenticationProtocol *AuthenticationProtocol;
+    preferredAuthenticationProtocol *AuthenticationProtocol
     // Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
-    signingCertificate *string;
+    signingCertificate *string
 }
 // NewSamlOrWsFedProvider instantiates a new samlOrWsFedProvider and sets the default values.
 func NewSamlOrWsFedProvider()(*SamlOrWsFedProvider) {
@@ -30,9 +30,9 @@ func CreateSamlOrWsFedProviderFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewSamlOrWsFedProvider(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentityProviderBase.GetFieldDeserializers()
-    res["issuerUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["issuerUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -42,7 +42,7 @@ func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["metadataExchangeUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["metadataExchangeUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -52,7 +52,7 @@ func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["passiveSignInUri"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passiveSignInUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["preferredAuthenticationProtocol"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preferredAuthenticationProtocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAuthenticationProtocol)
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *SamlOrWsFedProvider) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["signingCertificate"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["signingCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

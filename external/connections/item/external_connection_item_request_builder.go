@@ -17,55 +17,55 @@ import (
 // ExternalConnectionItemRequestBuilder provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.
 type ExternalConnectionItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // ExternalConnectionItemRequestBuilderDeleteOptions options for Delete
 type ExternalConnectionItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ExternalConnectionItemRequestBuilderGetOptions options for Get
 type ExternalConnectionItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *ExternalConnectionItemRequestBuilderGetQueryParameters;
+    QueryParameters *ExternalConnectionItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ExternalConnectionItemRequestBuilderGetQueryParameters get connections from external
 type ExternalConnectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // ExternalConnectionItemRequestBuilderPatchOptions options for Patch
 type ExternalConnectionItemRequestBuilderPatchOptions struct {
     // 
-    Body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalConnectionable;
+    Body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalConnectionable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewExternalConnectionItemRequestBuilderInternal instantiates a new ExternalConnectionItemRequestBuilder and sets the default values.
 func NewExternalConnectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExternalConnectionItemRequestBuilder) {
     m := &ExternalConnectionItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/external/connections/{externalConnection_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/external/connections/{externalConnection%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -178,7 +178,7 @@ func (m *ExternalConnectionItemRequestBuilder) GroupsById(id string)(*i69c1e05ad
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["externalGroup_id"] = id
+        urlTplParams["externalGroup%2Did"] = id
     }
     return i69c1e05ad8c29369be49685d62438c214dc9c439a6a4fbbe7ed3e2fe0eda2729.NewExternalGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -193,7 +193,7 @@ func (m *ExternalConnectionItemRequestBuilder) ItemsById(id string)(*ia3b063108d
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["externalItem_id"] = id
+        urlTplParams["externalItem%2Did"] = id
     }
     return ia3b063108d214ef75fea5b818cfe6b67e41a7d601f088df5d728f5455baccf43.NewExternalItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -208,7 +208,7 @@ func (m *ExternalConnectionItemRequestBuilder) OperationsById(id string)(*ib6f02
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["connectionOperation_id"] = id
+        urlTplParams["connectionOperation%2Did"] = id
     }
     return ib6f02e4874285f867a5cd99416af186a892f455b055bf8cf850ece628119315b.NewConnectionOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

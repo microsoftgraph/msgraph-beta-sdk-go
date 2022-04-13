@@ -7,13 +7,13 @@ import (
 // ChatMessageMention 
 type ChatMessageMention struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
-    id *int32;
+    id *int32
     // The entity (user, application, team, or channel) that was @mentioned.
-    mentioned ChatMessageMentionedIdentitySetable;
+    mentioned ChatMessageMentionedIdentitySetable
     // String used to represent the mention. For example, a user's display name, a team name.
-    mentionText *string;
+    mentionText *string
 }
 // NewChatMessageMention instantiates a new chatMessageMention and sets the default values.
 func NewChatMessageMention()(*ChatMessageMention) {
@@ -35,9 +35,9 @@ func (m *ChatMessageMention) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ChatMessageMention) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *ChatMessageMention) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *ChatMessageMention) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["mentioned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mentioned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChatMessageMentionedIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *ChatMessageMention) GetFieldDeserializers()(map[string]func(interface{}
         }
         return nil
     }
-    res["mentionText"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mentionText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

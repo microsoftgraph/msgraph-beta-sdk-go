@@ -8,15 +8,15 @@ import (
 type OnPremisesAgentGroup struct {
     Entity
     // List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-    agents []OnPremisesAgentable;
+    agents []OnPremisesAgentable
     // Display name of the onPremisesAgentGroup.
-    displayName *string;
+    displayName *string
     // Indicates if the onPremisesAgentGroup is the default agent group. Only a single agent group can be the default onPremisesAgentGroup and is set by the system.
-    isDefault *bool;
+    isDefault *bool
     // List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
-    publishedResources []PublishedResourceable;
+    publishedResources []PublishedResourceable
     // Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
-    publishingType *OnPremisesPublishingType;
+    publishingType *OnPremisesPublishingType
 }
 // NewOnPremisesAgentGroup instantiates a new onPremisesAgentGroup and sets the default values.
 func NewOnPremisesAgentGroup()(*OnPremisesAgentGroup) {
@@ -46,9 +46,9 @@ func (m *OnPremisesAgentGroup) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["agents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["agents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOnPremisesAgentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -62,7 +62,7 @@ func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["isDefault"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["publishedResources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publishedResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePublishedResourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["publishingType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["publishingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOnPremisesPublishingType)
         if err != nil {
             return err

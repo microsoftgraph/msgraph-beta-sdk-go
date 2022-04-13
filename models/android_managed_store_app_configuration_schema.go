@@ -8,11 +8,11 @@ import (
 type AndroidManagedStoreAppConfigurationSchema struct {
     Entity
     // UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app
-    exampleJson []byte;
+    exampleJson []byte
     // Collection of items each representing a named configuration option in the schema. It contains a flat list of all configuration.
-    nestedSchemaItems []AndroidManagedStoreAppConfigurationSchemaItemable;
+    nestedSchemaItems []AndroidManagedStoreAppConfigurationSchemaItemable
     // Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.
-    schemaItems []AndroidManagedStoreAppConfigurationSchemaItemable;
+    schemaItems []AndroidManagedStoreAppConfigurationSchemaItemable
 }
 // NewAndroidManagedStoreAppConfigurationSchema instantiates a new androidManagedStoreAppConfigurationSchema and sets the default values.
 func NewAndroidManagedStoreAppConfigurationSchema()(*AndroidManagedStoreAppConfigurationSchema) {
@@ -34,9 +34,9 @@ func (m *AndroidManagedStoreAppConfigurationSchema) GetExampleJson()([]byte) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AndroidManagedStoreAppConfigurationSchema) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AndroidManagedStoreAppConfigurationSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["exampleJson"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exampleJson"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -46,7 +46,7 @@ func (m *AndroidManagedStoreAppConfigurationSchema) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["nestedSchemaItems"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["nestedSchemaItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue)
         if err != nil {
             return err
@@ -60,7 +60,7 @@ func (m *AndroidManagedStoreAppConfigurationSchema) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["schemaItems"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["schemaItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue)
         if err != nil {
             return err

@@ -8,37 +8,37 @@ import (
 type Domain struct {
     Entity
     // Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
-    authenticationType *string;
+    authenticationType *string
     // This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
-    availabilityStatus *string;
+    availabilityStatus *string
     // Read-only, Nullable
-    domainNameReferences []DirectoryObjectable;
+    domainNameReferences []DirectoryObjectable
     // The federationConfiguration property
-    federationConfiguration []InternalDomainFederationable;
+    federationConfiguration []InternalDomainFederationable
     // The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
-    isAdminManaged *bool;
+    isAdminManaged *bool
     // true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
-    isDefault *bool;
+    isDefault *bool
     // true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
-    isInitial *bool;
+    isInitial *bool
     // true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
-    isRoot *bool;
+    isRoot *bool
     // true if the domain has completed domain ownership verification. Not nullable
-    isVerified *bool;
+    isVerified *bool
     // Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
-    passwordNotificationWindowInDays *int32;
+    passwordNotificationWindowInDays *int32
     // Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
-    passwordValidityPeriodInDays *int32;
+    passwordValidityPeriodInDays *int32
     // DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable
-    serviceConfigurationRecords []DomainDnsRecordable;
+    serviceConfigurationRecords []DomainDnsRecordable
     // The sharedEmailDomainInvitations property
-    sharedEmailDomainInvitations []SharedEmailDomainInvitationable;
+    sharedEmailDomainInvitations []SharedEmailDomainInvitationable
     // Status of asynchronous operations scheduled for the domain.
-    state DomainStateable;
+    state DomainStateable
     // The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable
-    supportedServices []string;
+    supportedServices []string
     // DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable
-    verificationDnsRecords []DomainDnsRecordable;
+    verificationDnsRecords []DomainDnsRecordable
 }
 // NewDomain instantiates a new domain and sets the default values.
 func NewDomain()(*Domain) {
@@ -84,9 +84,9 @@ func (m *Domain) GetFederationConfiguration()([]InternalDomainFederationable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Domain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["authenticationType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["authenticationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["availabilityStatus"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["availabilityStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["domainNameReferences"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["domainNameReferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
             return err
@@ -120,7 +120,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["federationConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["federationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateInternalDomainFederationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -134,7 +134,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["isAdminManaged"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isAdminManaged"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["isDefault"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -154,7 +154,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["isInitial"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isInitial"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -164,7 +164,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["isRoot"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isRoot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -174,7 +174,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["isVerified"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isVerified"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -184,7 +184,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["passwordNotificationWindowInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordNotificationWindowInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -194,7 +194,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["passwordValidityPeriodInDays"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordValidityPeriodInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -204,7 +204,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["serviceConfigurationRecords"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["serviceConfigurationRecords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDomainDnsRecordFromDiscriminatorValue)
         if err != nil {
             return err
@@ -218,7 +218,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["sharedEmailDomainInvitations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sharedEmailDomainInvitations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSharedEmailDomainInvitationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -232,7 +232,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["state"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDomainStateFromDiscriminatorValue)
         if err != nil {
             return err
@@ -242,7 +242,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["supportedServices"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["supportedServices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -256,7 +256,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["verificationDnsRecords"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["verificationDnsRecords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDomainDnsRecordFromDiscriminatorValue)
         if err != nil {
             return err

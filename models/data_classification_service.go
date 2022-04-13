@@ -8,23 +8,23 @@ import (
 type DataClassificationService struct {
     Entity
     // The classifyFileJobs property
-    classifyFileJobs []JobResponseBaseable;
+    classifyFileJobs []JobResponseBaseable
     // The classifyTextJobs property
-    classifyTextJobs []JobResponseBaseable;
+    classifyTextJobs []JobResponseBaseable
     // The evaluateDlpPoliciesJobs property
-    evaluateDlpPoliciesJobs []JobResponseBaseable;
+    evaluateDlpPoliciesJobs []JobResponseBaseable
     // The evaluateLabelJobs property
-    evaluateLabelJobs []JobResponseBaseable;
+    evaluateLabelJobs []JobResponseBaseable
     // The exactMatchDataStores property
-    exactMatchDataStores []ExactMatchDataStoreable;
+    exactMatchDataStores []ExactMatchDataStoreable
     // The exactMatchUploadAgents property
-    exactMatchUploadAgents []ExactMatchUploadAgentable;
+    exactMatchUploadAgents []ExactMatchUploadAgentable
     // The jobs property
-    jobs []JobResponseBaseable;
+    jobs []JobResponseBaseable
     // The sensitiveTypes property
-    sensitiveTypes []SensitiveTypeable;
+    sensitiveTypes []SensitiveTypeable
     // The sensitivityLabels property
-    sensitivityLabels []SensitivityLabelable;
+    sensitivityLabels []SensitivityLabelable
 }
 // NewDataClassificationService instantiates a new dataClassificationService and sets the default values.
 func NewDataClassificationService()(*DataClassificationService) {
@@ -86,9 +86,9 @@ func (m *DataClassificationService) GetExactMatchUploadAgents()([]ExactMatchUplo
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["classifyFileJobs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["classifyFileJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["classifyTextJobs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["classifyTextJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["evaluateDlpPoliciesJobs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["evaluateDlpPoliciesJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -130,7 +130,7 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["evaluateLabelJobs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["evaluateLabelJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -144,7 +144,7 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["exactMatchDataStores"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exactMatchDataStores"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateExactMatchDataStoreFromDiscriminatorValue)
         if err != nil {
             return err
@@ -158,7 +158,7 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["exactMatchUploadAgents"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["exactMatchUploadAgents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateExactMatchUploadAgentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -172,7 +172,7 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["jobs"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["jobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateJobResponseBaseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -186,7 +186,7 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["sensitiveTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sensitiveTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSensitiveTypeFromDiscriminatorValue)
         if err != nil {
             return err
@@ -200,7 +200,7 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["sensitivityLabels"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sensitivityLabels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSensitivityLabelFromDiscriminatorValue)
         if err != nil {
             return err

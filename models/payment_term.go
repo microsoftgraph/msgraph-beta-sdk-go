@@ -9,19 +9,19 @@ import (
 type PaymentTerm struct {
     Entity
     // The calculateDiscountOnCreditMemos property
-    calculateDiscountOnCreditMemos *bool;
+    calculateDiscountOnCreditMemos *bool
     // The code property
-    code *string;
+    code *string
     // The discountDateCalculation property
-    discountDateCalculation *string;
+    discountDateCalculation *string
     // The discountPercent property
-    discountPercent *float64;
+    discountPercent *float64
     // The displayName property
-    displayName *string;
+    displayName *string
     // The dueDateCalculation property
-    dueDateCalculation *string;
+    dueDateCalculation *string
     // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewPaymentTerm instantiates a new paymentTerm and sets the default values.
 func NewPaymentTerm()(*PaymentTerm) {
@@ -83,9 +83,9 @@ func (m *PaymentTerm) GetDueDateCalculation()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *PaymentTerm) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *PaymentTerm) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["calculateDiscountOnCreditMemos"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["calculateDiscountOnCreditMemos"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *PaymentTerm) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["code"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *PaymentTerm) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["discountDateCalculation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["discountDateCalculation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *PaymentTerm) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["discountPercent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["discountPercent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *PaymentTerm) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -135,7 +135,7 @@ func (m *PaymentTerm) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["dueDateCalculation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["dueDateCalculation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -145,7 +145,7 @@ func (m *PaymentTerm) GetFieldDeserializers()(map[string]func(interface{}, i878a
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

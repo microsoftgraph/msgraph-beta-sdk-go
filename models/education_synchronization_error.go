@@ -9,17 +9,17 @@ import (
 type EducationSynchronizationError struct {
     Entity
     // Represents the sync entity (school, section, student, teacher).
-    entryType *string;
+    entryType *string
     // Represents the error code for this error.
-    errorCode *string;
+    errorCode *string
     // Contains a description of the error.
-    errorMessage *string;
+    errorMessage *string
     // The unique identifier for the entry.
-    joiningValue *string;
+    joiningValue *string
     // The time of occurrence of this error.
-    recordedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    recordedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The identifier of this error entry.
-    reportableIdentifier *string;
+    reportableIdentifier *string
 }
 // NewEducationSynchronizationError instantiates a new educationSynchronizationError and sets the default values.
 func NewEducationSynchronizationError()(*EducationSynchronizationError) {
@@ -57,9 +57,9 @@ func (m *EducationSynchronizationError) GetErrorMessage()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["entryType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["entryType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["errorCode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["errorMessage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["errorMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["joiningValue"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["joiningValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["recordedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["recordedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["reportableIdentifier"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["reportableIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

@@ -8,13 +8,13 @@ import (
 type DeviceManagementDerivedCredentialSettings struct {
     Entity
     // The display name for the profile.
-    displayName *string;
+    displayName *string
     // The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
-    helpUrl *string;
+    helpUrl *string
     // The derived credential provider to use.
-    issuer *DeviceManagementDerivedCredentialIssuer;
+    issuer *DeviceManagementDerivedCredentialIssuer
     // The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
-    notificationType *DeviceManagementDerivedCredentialNotificationType;
+    notificationType *DeviceManagementDerivedCredentialNotificationType
 }
 // NewDeviceManagementDerivedCredentialSettings instantiates a new deviceManagementDerivedCredentialSettings and sets the default values.
 func NewDeviceManagementDerivedCredentialSettings()(*DeviceManagementDerivedCredentialSettings) {
@@ -36,9 +36,9 @@ func (m *DeviceManagementDerivedCredentialSettings) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["helpUrl"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["helpUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["issuer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["issuer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementDerivedCredentialIssuer)
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["notificationType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notificationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementDerivedCredentialNotificationType)
         if err != nil {
             return err

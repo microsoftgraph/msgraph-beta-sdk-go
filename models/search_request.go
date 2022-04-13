@@ -7,35 +7,35 @@ import (
 // SearchRequest 
 type SearchRequest struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.
-    aggregationFilters []string;
+    aggregationFilters []string
     // Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
-    aggregations []AggregationOptionable;
+    aggregations []AggregationOptionable
     // Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
-    contentSources []string;
+    contentSources []string
     // This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
-    enableTopResults *bool;
+    enableTopResults *bool
     // One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
-    entityTypes []EntityType;
+    entityTypes []EntityType
     // Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
-    fields []string;
+    fields []string
     // Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
-    from *int32;
+    from *int32
     // The query property
-    query SearchQueryable;
+    query SearchQueryable
     // Provides query alteration options formatted as a JSON blob that contains two optional flags related to spelling correction. Optional.
-    queryAlterationOptions SearchAlterationOptionsable;
+    queryAlterationOptions SearchAlterationOptionsable
     // Provides the search result templates options for rendering connectors search results.
-    resultTemplateOptions ResultTemplateOptionable;
+    resultTemplateOptions ResultTemplateOptionable
     // The size of the page to be retrieved. Optional.
-    size *int32;
+    size *int32
     // Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
-    sortProperties []SortPropertyable;
+    sortProperties []SortPropertyable
     // The stored_fields property
-    stored_fields []string;
+    stored_fields []string
     // Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.
-    trimDuplicates *bool;
+    trimDuplicates *bool
 }
 // NewSearchRequest instantiates a new searchRequest and sets the default values.
 func NewSearchRequest()(*SearchRequest) {
@@ -97,9 +97,9 @@ func (m *SearchRequest) GetEntityTypes()([]EntityType) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["aggregationFilters"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["aggregationFilters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["aggregations"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["aggregations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAggregationOptionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -127,7 +127,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["contentSources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["contentSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["enableTopResults"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["enableTopResults"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["entityTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["entityTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseEntityType)
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["fields"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["fields"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -179,7 +179,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["from"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["from"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -189,7 +189,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["query"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["query"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSearchQueryFromDiscriminatorValue)
         if err != nil {
             return err
@@ -199,7 +199,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["queryAlterationOptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["queryAlterationOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSearchAlterationOptionsFromDiscriminatorValue)
         if err != nil {
             return err
@@ -209,7 +209,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["resultTemplateOptions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resultTemplateOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateResultTemplateOptionFromDiscriminatorValue)
         if err != nil {
             return err
@@ -219,7 +219,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["size"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -229,7 +229,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["sortProperties"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["sortProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSortPropertyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -243,7 +243,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["stored_fields"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["stored_fields"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -257,7 +257,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["trimDuplicates"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["trimDuplicates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

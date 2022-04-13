@@ -8,15 +8,15 @@ import (
 type CustomCalloutExtension struct {
     Entity
     // Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
-    authenticationConfiguration CustomExtensionAuthenticationConfigurationable;
+    authenticationConfiguration CustomExtensionAuthenticationConfigurationable
     // HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
-    clientConfiguration CustomExtensionClientConfigurationable;
+    clientConfiguration CustomExtensionClientConfigurationable
     // Description for the customCalloutExtension object.
-    description *string;
+    description *string
     // Display name for the customCalloutExtension object.
-    displayName *string;
+    displayName *string
     // The type and details for configuring the endpoint to call the logic app's workflow.
-    endpointConfiguration CustomExtensionEndpointConfigurationable;
+    endpointConfiguration CustomExtensionEndpointConfigurationable
 }
 // NewCustomCalloutExtension instantiates a new customCalloutExtension and sets the default values.
 func NewCustomCalloutExtension()(*CustomCalloutExtension) {
@@ -70,9 +70,9 @@ func (m *CustomCalloutExtension) GetEndpointConfiguration()(CustomExtensionEndpo
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CustomCalloutExtension) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CustomCalloutExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["authenticationConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["authenticationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCustomExtensionAuthenticationConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -82,7 +82,7 @@ func (m *CustomCalloutExtension) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["clientConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["clientConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCustomExtensionClientConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -92,7 +92,7 @@ func (m *CustomCalloutExtension) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["description"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -102,7 +102,7 @@ func (m *CustomCalloutExtension) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -112,7 +112,7 @@ func (m *CustomCalloutExtension) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["endpointConfiguration"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["endpointConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCustomExtensionEndpointConfigurationFromDiscriminatorValue)
         if err != nil {
             return err

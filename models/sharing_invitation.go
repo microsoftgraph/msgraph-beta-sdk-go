@@ -7,15 +7,15 @@ import (
 // SharingInvitation 
 type SharingInvitation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The email address provided for the recipient of the sharing invitation. Read-only.
-    email *string;
+    email *string
     // Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
-    invitedBy IdentitySetable;
+    invitedBy IdentitySetable
     // The redeemedBy property
-    redeemedBy *string;
+    redeemedBy *string
     // If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
-    signInRequired *bool;
+    signInRequired *bool
 }
 // NewSharingInvitation instantiates a new sharingInvitation and sets the default values.
 func NewSharingInvitation()(*SharingInvitation) {
@@ -45,9 +45,9 @@ func (m *SharingInvitation) GetEmail()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["email"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["invitedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invitedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["redeemedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["redeemedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *SharingInvitation) GetFieldDeserializers()(map[string]func(interface{},
         }
         return nil
     }
-    res["signInRequired"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["signInRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err

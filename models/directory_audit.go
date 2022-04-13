@@ -9,29 +9,29 @@ import (
 type DirectoryAudit struct {
     Entity
     // Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
-    activityDisplayName *string;
+    activityDisplayName *string
     // Indicates additional details on the activity.
-    additionalDetails []KeyValueable;
+    additionalDetails []KeyValueable
     // Indicates which resource category that's targeted by the activity. (For example: User Management, Group Management etc..)
-    category *string;
+    category *string
     // Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
-    correlationId *string;
+    correlationId *string
     // The initiatedBy property
-    initiatedBy AuditActivityInitiatorable;
+    initiatedBy AuditActivityInitiatorable
     // Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
-    loggedByService *string;
+    loggedByService *string
     // The operationType property
-    operationType *string;
+    operationType *string
     // Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
-    result *OperationResult;
+    result *OperationResult
     // Indicates the reason for failure if the result is failure or timeout.
-    resultReason *string;
+    resultReason *string
     // Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
-    targetResources []TargetResourceable;
+    targetResources []TargetResourceable
     // Type of user agent used by a user in the activity.
-    userAgent *string;
+    userAgent *string
 }
 // NewDirectoryAudit instantiates a new directoryAudit and sets the default values.
 func NewDirectoryAudit()(*DirectoryAudit) {
@@ -85,9 +85,9 @@ func (m *DirectoryAudit) GetCorrelationId()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["activityDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["activityDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["activityDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -107,7 +107,7 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["additionalDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["additionalDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyValueFromDiscriminatorValue)
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["category"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["correlationId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["correlationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["initiatedBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["initiatedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAuditActivityInitiatorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["loggedByService"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["loggedByService"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -161,7 +161,7 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["operationType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -171,7 +171,7 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["result"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["result"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOperationResult)
         if err != nil {
             return err
@@ -181,7 +181,7 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["resultReason"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["resultReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -191,7 +191,7 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["targetResources"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTargetResourceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -205,7 +205,7 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(interface{}, i8
         }
         return nil
     }
-    res["userAgent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userAgent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

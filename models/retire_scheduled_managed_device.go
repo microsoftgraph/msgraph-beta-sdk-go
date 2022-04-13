@@ -8,29 +8,29 @@ import (
 // RetireScheduledManagedDevice managedDevices that are scheduled for retire
 type RetireScheduledManagedDevice struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Managed Device ComplianceStatus. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
-    complianceState *ComplianceStatus;
+    complianceState *ComplianceStatus
     // Device Compliance PolicyId
-    deviceCompliancePolicyId *string;
+    deviceCompliancePolicyId *string
     // Device Compliance Policy Name
-    deviceCompliancePolicyName *string;
+    deviceCompliancePolicyName *string
     // Managed Device Device Type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.
-    deviceType *DeviceType;
+    deviceType *DeviceType
     // Key of the entity.
-    id *string;
+    id *string
     // Managed DeviceId
-    managedDeviceId *string;
+    managedDeviceId *string
     // Managed Device Name
-    managedDeviceName *string;
+    managedDeviceName *string
     // Managed Device ManagementAgentType. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, windowsManagementCloudApi.
-    managementAgent *ManagementAgentType;
+    managementAgent *ManagementAgentType
     // Managed Device ManagedDeviceOwnerType. Possible values are: unknown, company, personal.
-    ownerType *ManagedDeviceOwnerType;
+    ownerType *ManagedDeviceOwnerType
     // Managed Device Retire After DateTime
-    retireAfterDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    retireAfterDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of Scope Tags for this Entity instance.
-    roleScopeTagIds []string;
+    roleScopeTagIds []string
 }
 // NewRetireScheduledManagedDevice instantiates a new retireScheduledManagedDevice and sets the default values.
 func NewRetireScheduledManagedDevice()(*RetireScheduledManagedDevice) {
@@ -84,9 +84,9 @@ func (m *RetireScheduledManagedDevice) GetDeviceType()(*DeviceType) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["complianceState"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["complianceState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseComplianceStatus)
         if err != nil {
             return err
@@ -96,7 +96,7 @@ func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["deviceCompliancePolicyId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceCompliancePolicyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -106,7 +106,7 @@ func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["deviceCompliancePolicyName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceCompliancePolicyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -116,7 +116,7 @@ func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["deviceType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deviceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceType)
         if err != nil {
             return err
@@ -126,7 +126,7 @@ func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["id"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -136,7 +136,7 @@ func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["managedDeviceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -146,7 +146,7 @@ func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["managedDeviceName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managedDeviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -156,7 +156,7 @@ func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["managementAgent"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["managementAgent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagementAgentType)
         if err != nil {
             return err
@@ -166,7 +166,7 @@ func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["ownerType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ownerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagedDeviceOwnerType)
         if err != nil {
             return err
@@ -176,7 +176,7 @@ func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["retireAfterDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["retireAfterDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -186,7 +186,7 @@ func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
-    res["roleScopeTagIds"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err

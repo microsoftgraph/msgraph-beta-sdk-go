@@ -7,15 +7,15 @@ import (
 // UserRegistrationMethodSummary 
 type UserRegistrationMethodSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // Total number of users in the tenant.
-    totalUserCount *int64;
+    totalUserCount *int64
     // Number of users registered for each authentication method.
-    userRegistrationMethodCounts []UserRegistrationMethodCountable;
+    userRegistrationMethodCounts []UserRegistrationMethodCountable
     // User role type. Possible values are: all, privilegedAdmin, admin, user.
-    userRoles *IncludedUserRoles;
+    userRoles *IncludedUserRoles
     // User type. Possible values are: all, member, guest.
-    userTypes *IncludedUserTypes;
+    userTypes *IncludedUserTypes
 }
 // NewUserRegistrationMethodSummary instantiates a new UserRegistrationMethodSummary and sets the default values.
 func NewUserRegistrationMethodSummary()(*UserRegistrationMethodSummary) {
@@ -37,9 +37,9 @@ func (m *UserRegistrationMethodSummary) GetAdditionalData()(map[string]interface
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["totalUserCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["totalUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
             return err
@@ -49,7 +49,7 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["userRegistrationMethodCounts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userRegistrationMethodCounts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserRegistrationMethodCountFromDiscriminatorValue)
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["userRoles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseIncludedUserRoles)
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["userTypes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseIncludedUserTypes)
         if err != nil {
             return err

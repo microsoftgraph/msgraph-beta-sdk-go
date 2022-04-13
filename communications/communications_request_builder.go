@@ -18,40 +18,40 @@ import (
 // CommunicationsRequestBuilder provides operations to manage the cloudCommunications singleton.
 type CommunicationsRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // CommunicationsRequestBuilderGetOptions options for Get
 type CommunicationsRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *CommunicationsRequestBuilderGetQueryParameters;
+    QueryParameters *CommunicationsRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CommunicationsRequestBuilderGetQueryParameters get communications
 type CommunicationsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // CommunicationsRequestBuilderPatchOptions options for Patch
 type CommunicationsRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudCommunicationsable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudCommunicationsable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // CallRecords the callRecords property
 func (m *CommunicationsRequestBuilder) CallRecords()(*i965da9a625d444ee0641f25e2137e02bba50edc4392b22f2fa73778ab7bced1e.CallRecordsRequestBuilder) {
@@ -64,7 +64,7 @@ func (m *CommunicationsRequestBuilder) CallRecordsById(id string)(*i91e038aa5292
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["callRecord_id"] = id
+        urlTplParams["callRecord%2Did"] = id
     }
     return i91e038aa5292a643921ca895687d88f65d881c089abb4e73353e157fb12a2573.NewCallRecordItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -79,7 +79,7 @@ func (m *CommunicationsRequestBuilder) CallsById(id string)(*i7dc1bec6d83d544190
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["call_id"] = id
+        urlTplParams["call%2Did"] = id
     }
     return i7dc1bec6d83d544190845d06820f8de2905f8b24b69eeb9dfe9bfa4b6a37d5ac.NewCallItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -87,7 +87,7 @@ func (m *CommunicationsRequestBuilder) CallsById(id string)(*i7dc1bec6d83d544190
 func NewCommunicationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CommunicationsRequestBuilder) {
     m := &CommunicationsRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/communications{?select,expand}";
+    m.urlTemplate = "{+baseurl}/communications{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -171,7 +171,7 @@ func (m *CommunicationsRequestBuilder) OnlineMeetingsById(id string)(*id8025802a
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["onlineMeeting_id"] = id
+        urlTplParams["onlineMeeting%2Did"] = id
     }
     return id8025802a736e38f202cdaf17f10fd49a39fe90b7555838603d54aab8444b40b.NewOnlineMeetingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -202,7 +202,7 @@ func (m *CommunicationsRequestBuilder) PresencesById(id string)(*i6746c6cf2c43c8
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["presence_id"] = id
+        urlTplParams["presence%2Did"] = id
     }
     return i6746c6cf2c43c81a05117e20eb3e5320224f79f1b890ece0fe2fdfa63ae8b1a0.NewPresenceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

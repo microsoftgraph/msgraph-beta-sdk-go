@@ -13,55 +13,55 @@ import (
 // BaseTaskListItemRequestBuilder provides operations to manage the lists property of the microsoft.graph.tasks entity.
 type BaseTaskListItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // BaseTaskListItemRequestBuilderDeleteOptions options for Delete
 type BaseTaskListItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // BaseTaskListItemRequestBuilderGetOptions options for Get
 type BaseTaskListItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *BaseTaskListItemRequestBuilderGetQueryParameters;
+    QueryParameters *BaseTaskListItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // BaseTaskListItemRequestBuilderGetQueryParameters the task lists in the users mailbox.
 type BaseTaskListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // BaseTaskListItemRequestBuilderPatchOptions options for Patch
 type BaseTaskListItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewBaseTaskListItemRequestBuilderInternal instantiates a new BaseTaskListItemRequestBuilder and sets the default values.
 func NewBaseTaskListItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BaseTaskListItemRequestBuilder) {
     m := &BaseTaskListItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/me/tasks/lists/{baseTaskList_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/me/tasks/lists/{baseTaskList%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -158,7 +158,7 @@ func (m *BaseTaskListItemRequestBuilder) ExtensionsById(id string)(*ic2a1728b965
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["extension_id"] = id
+        urlTplParams["extension%2Did"] = id
     }
     return ic2a1728b965201eb2c4a49a6ab389aeb85905c2e8ce090860374209c717fee89.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -205,7 +205,7 @@ func (m *BaseTaskListItemRequestBuilder) TasksById(id string)(*i4dab3159909e3c80
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["baseTask_id"] = id
+        urlTplParams["baseTask%2Did"] = id
     }
     return i4dab3159909e3c80d30dfedfdf84f1d2a765e5adf19465bc164ad1721709364d.NewBaseTaskItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

@@ -9,27 +9,27 @@ import (
 type ServiceUpdateMessage struct {
     ServiceAnnouncementBase
     // The expected deadline of the action for the message.
-    actionRequiredByDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    actionRequiredByDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A collection of serviceAnnouncementAttachments.
-    attachments []ServiceAnnouncementAttachmentable;
+    attachments []ServiceAnnouncementAttachmentable
     // The zip file that contains all attachments for a message.
-    attachmentsArchive []byte;
+    attachmentsArchive []byte
     // The body property
-    body ItemBodyable;
+    body ItemBodyable
     // The service message category. Possible values are: preventOrFixIssue, planForChange, stayInformed, unknownFutureValue.
-    category *ServiceUpdateCategory;
+    category *ServiceUpdateCategory
     // Indicates whether the message has any attachment.
-    hasAttachments *bool;
+    hasAttachments *bool
     // Indicates whether the message describes a major update for the service.
-    isMajorChange *bool;
+    isMajorChange *bool
     // The affected services by the service message.
-    services []string;
+    services []string
     // The severity of the service message. Possible values are: normal, high, critical, unknownFutureValue.
-    severity *ServiceUpdateSeverity;
+    severity *ServiceUpdateSeverity
     // A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.
-    tags []string;
+    tags []string
     // Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
-    viewPoint ServiceUpdateMessageViewpointable;
+    viewPoint ServiceUpdateMessageViewpointable
 }
 // NewServiceUpdateMessage instantiates a new serviceUpdateMessage and sets the default values.
 func NewServiceUpdateMessage()(*ServiceUpdateMessage) {
@@ -83,9 +83,9 @@ func (m *ServiceUpdateMessage) GetCategory()(*ServiceUpdateCategory) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ServiceAnnouncementBase.GetFieldDeserializers()
-    res["actionRequiredByDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["actionRequiredByDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["attachments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["attachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateServiceAnnouncementAttachmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["attachmentsArchive"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["attachmentsArchive"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["body"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["category"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseServiceUpdateCategory)
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["hasAttachments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasAttachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["isMajorChange"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isMajorChange"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -159,7 +159,7 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["services"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["services"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -173,7 +173,7 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["severity"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseServiceUpdateSeverity)
         if err != nil {
             return err
@@ -183,7 +183,7 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["tags"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *ServiceUpdateMessage) GetFieldDeserializers()(map[string]func(interface
         }
         return nil
     }
-    res["viewPoint"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["viewPoint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateServiceUpdateMessageViewpointFromDiscriminatorValue)
         if err != nil {
             return err

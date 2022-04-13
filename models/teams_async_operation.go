@@ -9,21 +9,21 @@ import (
 type TeamsAsyncOperation struct {
     Entity
     // Number of times the operation was attempted before being marked successful or failed.
-    attemptsCount *int32;
+    attemptsCount *int32
     // Time when the operation was created.
-    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Any error that causes the async operation to fail.
-    error OperationErrorable;
+    error OperationErrorable
     // Time when the async operation was last updated.
-    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Denotes which type of operation is being described.
-    operationType *TeamsAsyncOperationType;
+    operationType *TeamsAsyncOperationType
     // Operation status.
-    status *TeamsAsyncOperationStatus;
+    status *TeamsAsyncOperationStatus
     // The ID of the object that's created or modified as result of this async operation, typically a team.
-    targetResourceId *string;
+    targetResourceId *string
     // The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
-    targetResourceLocation *string;
+    targetResourceLocation *string
 }
 // NewTeamsAsyncOperation instantiates a new teamsAsyncOperation and sets the default values.
 func NewTeamsAsyncOperation()(*TeamsAsyncOperation) {
@@ -61,9 +61,9 @@ func (m *TeamsAsyncOperation) GetError()(OperationErrorable) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["attemptsCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["attemptsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["createdDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -83,7 +83,7 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["error"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOperationErrorFromDiscriminatorValue)
         if err != nil {
             return err
@@ -93,7 +93,7 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["lastActionDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastActionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -103,7 +103,7 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["operationType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["operationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTeamsAsyncOperationType)
         if err != nil {
             return err
@@ -113,7 +113,7 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["status"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTeamsAsyncOperationStatus)
         if err != nil {
             return err
@@ -123,7 +123,7 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["targetResourceId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetResourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -133,7 +133,7 @@ func (m *TeamsAsyncOperation) GetFieldDeserializers()(map[string]func(interface{
         }
         return nil
     }
-    res["targetResourceLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetResourceLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

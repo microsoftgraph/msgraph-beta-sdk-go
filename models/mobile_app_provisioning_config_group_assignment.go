@@ -8,7 +8,7 @@ import (
 type MobileAppProvisioningConfigGroupAssignment struct {
     Entity
     // The ID of the AAD group in which the app provisioning configuration is being targeted.
-    targetGroupId *string;
+    targetGroupId *string
 }
 // NewMobileAppProvisioningConfigGroupAssignment instantiates a new mobileAppProvisioningConfigGroupAssignment and sets the default values.
 func NewMobileAppProvisioningConfigGroupAssignment()(*MobileAppProvisioningConfigGroupAssignment) {
@@ -22,9 +22,9 @@ func CreateMobileAppProvisioningConfigGroupAssignmentFromDiscriminatorValue(pars
     return NewMobileAppProvisioningConfigGroupAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MobileAppProvisioningConfigGroupAssignment) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *MobileAppProvisioningConfigGroupAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["targetGroupId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["targetGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

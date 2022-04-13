@@ -8,13 +8,13 @@ import (
 type DeviceManagementComplianceActionItem struct {
     Entity
     // What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
-    actionType *DeviceManagementComplianceActionType;
+    actionType *DeviceManagementComplianceActionType
     // Number of hours to wait till the action will be enforced. Valid values 0 to 8760
-    gracePeriodHours *int32;
+    gracePeriodHours *int32
     // A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
-    notificationMessageCCList []string;
+    notificationMessageCCList []string
     // What notification Message template to use
-    notificationTemplateId *string;
+    notificationTemplateId *string
 }
 // NewDeviceManagementComplianceActionItem instantiates a new deviceManagementComplianceActionItem and sets the default values.
 func NewDeviceManagementComplianceActionItem()(*DeviceManagementComplianceActionItem) {
@@ -36,9 +36,9 @@ func (m *DeviceManagementComplianceActionItem) GetActionType()(*DeviceManagement
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *DeviceManagementComplianceActionItem) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *DeviceManagementComplianceActionItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["actionType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["actionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementComplianceActionType)
         if err != nil {
             return err
@@ -48,7 +48,7 @@ func (m *DeviceManagementComplianceActionItem) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["gracePeriodHours"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["gracePeriodHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -58,7 +58,7 @@ func (m *DeviceManagementComplianceActionItem) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["notificationMessageCCList"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notificationMessageCCList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -72,7 +72,7 @@ func (m *DeviceManagementComplianceActionItem) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["notificationTemplateId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["notificationTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

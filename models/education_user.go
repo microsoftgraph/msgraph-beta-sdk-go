@@ -9,81 +9,81 @@ import (
 type EducationUser struct {
     Entity
     // True if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.
-    accountEnabled *bool;
+    accountEnabled *bool
     // The licenses that are assigned to the user. Not nullable.
-    assignedLicenses []AssignedLicenseable;
+    assignedLicenses []AssignedLicenseable
     // The plans that are assigned to the user. Read-only. Not nullable.
-    assignedPlans []AssignedPlanable;
-    // Assignments that belongs to the user.
-    assignments []EducationAssignmentable;
+    assignedPlans []AssignedPlanable
+    // Assignments belonging to the user.
+    assignments []EducationAssignmentable
     // The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.
-    businessPhones []string;
+    businessPhones []string
     // Classes to which the user belongs. Nullable.
-    classes []EducationClassable;
+    classes []EducationClassable
     // The entity who created the user.
-    createdBy IdentitySetable;
+    createdBy IdentitySetable
     // The name for the department in which the user works. Supports $filter.
-    department *string;
+    department *string
     // The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Supports $filter and $orderby.
-    displayName *string;
+    displayName *string
     // Where this user was created from. Possible values are: sis, manual.
-    externalSource *EducationExternalSource;
+    externalSource *EducationExternalSource
     // The name of the external source this resource was generated from.
-    externalSourceDetail *string;
+    externalSourceDetail *string
     // The given name (first name) of the user. Supports $filter.
-    givenName *string;
+    givenName *string
     // The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
-    mail *string;
+    mail *string
     // The mail address of the user.
-    mailingAddress PhysicalAddressable;
+    mailingAddress PhysicalAddressable
     // The mail alias for the user. This property must be specified when a user is created. Supports $filter.
-    mailNickname *string;
+    mailNickname *string
     // The middle name of the user.
-    middleName *string;
+    middleName *string
     // The primary cellular telephone number for the user.
-    mobilePhone *string;
+    mobilePhone *string
     // The officeLocation property
-    officeLocation *string;
+    officeLocation *string
     // Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
-    onPremisesInfo EducationOnPremisesInfoable;
+    onPremisesInfo EducationOnPremisesInfoable
     // Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two can be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.
-    passwordPolicies *string;
+    passwordPolicies *string
     // Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
-    passwordProfile PasswordProfileable;
+    passwordProfile PasswordProfileable
     // The preferred language for the user that should follow the ISO 639-1 code, for example, en-US.
-    preferredLanguage *string;
+    preferredLanguage *string
     // Default role for a user. The user's role might be different in an individual class. Possible values are: student, teacher, none, unknownFutureValue.
-    primaryRole *EducationUserRole;
+    primaryRole *EducationUserRole
     // The plans that are provisioned for the user. Read-only. Not nullable.
-    provisionedPlans []ProvisionedPlanable;
+    provisionedPlans []ProvisionedPlanable
     // The refreshTokensValidFromDateTime property
-    refreshTokensValidFromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    refreshTokensValidFromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Related records associated with the user. Read-only.
-    relatedContacts []RelatedContactable;
+    relatedContacts []RelatedContactable
     // The address where the user lives.
-    residenceAddress PhysicalAddressable;
-    // The rubrics property
-    rubrics []EducationRubricable;
+    residenceAddress PhysicalAddressable
+    // When set, the grading rubric attached to the assignment.
+    rubrics []EducationRubricable
     // Schools to which the user belongs. Nullable.
-    schools []EducationSchoolable;
+    schools []EducationSchoolable
     // True if the Outlook Global Address List should contain this user; otherwise, false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.
-    showInAddressList *bool;
+    showInAddressList *bool
     // If the primary role is student, this block will contain student specific data.
-    student EducationStudentable;
+    student EducationStudentable
     // The user's surname (family name or last name). Supports $filter.
-    surname *string;
+    surname *string
     // Classes for which the user is a teacher.
-    taughtClasses []EducationClassable;
+    taughtClasses []EducationClassable
     // If the primary role is teacher, this block will contain teacher specific data.
-    teacher EducationTeacherable;
+    teacher EducationTeacherable
     // A two-letter country code (ISO standard 3166). Required for users who will be assigned licenses due to a legal requirement to check for availability of services in countries or regions. Examples include: US, JP, and GB. Not nullable. Supports $filter.
-    usageLocation *string;
+    usageLocation *string
     // The directory user that corresponds to this user.
-    user Userable;
+    user Userable
     // The user principal name (UPN) of the user. The UPN is an internet-style login name for the user based on the internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of the organization. Supports $filter and $orderby.
-    userPrincipalName *string;
+    userPrincipalName *string
     // A string value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter.
-    userType *string;
+    userType *string
 }
 // NewEducationUser instantiates a new educationUser and sets the default values.
 func NewEducationUser()(*EducationUser) {
@@ -120,7 +120,7 @@ func (m *EducationUser) GetAssignedPlans()([]AssignedPlanable) {
         return m.assignedPlans
     }
 }
-// GetAssignments gets the assignments property value. Assignments that belongs to the user.
+// GetAssignments gets the assignments property value. Assignments belonging to the user.
 func (m *EducationUser) GetAssignments()([]EducationAssignmentable) {
     if m == nil {
         return nil
@@ -185,9 +185,9 @@ func (m *EducationUser) GetExternalSourceDetail()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *EducationUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["accountEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["accountEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -197,7 +197,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["assignedLicenses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignedLicenses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAssignedLicenseFromDiscriminatorValue)
         if err != nil {
             return err
@@ -211,7 +211,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["assignedPlans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignedPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAssignedPlanFromDiscriminatorValue)
         if err != nil {
             return err
@@ -225,7 +225,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["assignments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationAssignmentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -239,7 +239,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["businessPhones"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["businessPhones"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -253,7 +253,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["classes"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["classes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationClassFromDiscriminatorValue)
         if err != nil {
             return err
@@ -267,7 +267,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["createdBy"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -277,7 +277,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["department"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["department"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -287,7 +287,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -297,7 +297,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["externalSource"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEducationExternalSource)
         if err != nil {
             return err
@@ -307,7 +307,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["externalSourceDetail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["externalSourceDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -317,7 +317,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["givenName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["givenName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -327,7 +327,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["mail"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -337,7 +337,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["mailingAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mailingAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
@@ -347,7 +347,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["mailNickname"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mailNickname"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -357,7 +357,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["middleName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["middleName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -367,7 +367,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["mobilePhone"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["mobilePhone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -377,7 +377,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["officeLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["officeLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -387,7 +387,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["onPremisesInfo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["onPremisesInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationOnPremisesInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -397,7 +397,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["passwordPolicies"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -407,7 +407,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["passwordProfile"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["passwordProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePasswordProfileFromDiscriminatorValue)
         if err != nil {
             return err
@@ -417,7 +417,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["preferredLanguage"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["preferredLanguage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -427,7 +427,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["primaryRole"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["primaryRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEducationUserRole)
         if err != nil {
             return err
@@ -437,7 +437,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["provisionedPlans"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["provisionedPlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateProvisionedPlanFromDiscriminatorValue)
         if err != nil {
             return err
@@ -451,7 +451,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["refreshTokensValidFromDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["refreshTokensValidFromDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -461,7 +461,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["relatedContacts"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["relatedContacts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRelatedContactFromDiscriminatorValue)
         if err != nil {
             return err
@@ -475,7 +475,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["residenceAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["residenceAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePhysicalAddressFromDiscriminatorValue)
         if err != nil {
             return err
@@ -485,7 +485,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["rubrics"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["rubrics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationRubricFromDiscriminatorValue)
         if err != nil {
             return err
@@ -499,7 +499,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["schools"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["schools"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationSchoolFromDiscriminatorValue)
         if err != nil {
             return err
@@ -513,7 +513,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["showInAddressList"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["showInAddressList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -523,7 +523,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["student"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["student"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationStudentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -533,7 +533,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["surname"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["surname"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -543,7 +543,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["taughtClasses"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["taughtClasses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationClassFromDiscriminatorValue)
         if err != nil {
             return err
@@ -557,7 +557,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["teacher"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["teacher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEducationTeacherFromDiscriminatorValue)
         if err != nil {
             return err
@@ -567,7 +567,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["usageLocation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["usageLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -577,7 +577,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["user"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["user"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserFromDiscriminatorValue)
         if err != nil {
             return err
@@ -587,7 +587,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -597,7 +597,7 @@ func (m *EducationUser) GetFieldDeserializers()(map[string]func(interface{}, i87
         }
         return nil
     }
-    res["userType"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -737,7 +737,7 @@ func (m *EducationUser) GetResidenceAddress()(PhysicalAddressable) {
         return m.residenceAddress
     }
 }
-// GetRubrics gets the rubrics property value. The rubrics property
+// GetRubrics gets the rubrics property value. When set, the grading rubric attached to the assignment.
 func (m *EducationUser) GetRubrics()([]EducationRubricable) {
     if m == nil {
         return nil
@@ -1117,7 +1117,7 @@ func (m *EducationUser) SetAssignedPlans(value []AssignedPlanable)() {
         m.assignedPlans = value
     }
 }
-// SetAssignments sets the assignments property value. Assignments that belongs to the user.
+// SetAssignments sets the assignments property value. Assignments belonging to the user.
 func (m *EducationUser) SetAssignments(value []EducationAssignmentable)() {
     if m != nil {
         m.assignments = value
@@ -1261,7 +1261,7 @@ func (m *EducationUser) SetResidenceAddress(value PhysicalAddressable)() {
         m.residenceAddress = value
     }
 }
-// SetRubrics sets the rubrics property value. The rubrics property
+// SetRubrics sets the rubrics property value. When set, the grading rubric attached to the assignment.
 func (m *EducationUser) SetRubrics(value []EducationRubricable)() {
     if m != nil {
         m.rubrics = value

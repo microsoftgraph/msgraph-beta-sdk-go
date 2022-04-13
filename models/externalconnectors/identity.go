@@ -9,7 +9,7 @@ import (
 type Identity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
-    type_escaped *IdentityType;
+    type_escaped *IdentityType
 }
 // NewIdentity instantiates a new identity and sets the default values.
 func NewIdentity()(*Identity) {
@@ -23,9 +23,9 @@ func CreateIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewIdentity(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Identity) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Identity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["type"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseIdentityType)
         if err != nil {
             return err

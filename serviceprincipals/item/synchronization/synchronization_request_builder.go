@@ -15,49 +15,49 @@ import (
 // SynchronizationRequestBuilder provides operations to manage the synchronization property of the microsoft.graph.servicePrincipal entity.
 type SynchronizationRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // SynchronizationRequestBuilderDeleteOptions options for Delete
 type SynchronizationRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // SynchronizationRequestBuilderGetOptions options for Get
 type SynchronizationRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *SynchronizationRequestBuilderGetQueryParameters;
+    QueryParameters *SynchronizationRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // SynchronizationRequestBuilderGetQueryParameters get synchronization from servicePrincipals
 type SynchronizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // SynchronizationRequestBuilderPatchOptions options for Patch
 type SynchronizationRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Synchronizationable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Synchronizationable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AcquireAccessToken the acquireAccessToken property
 func (m *SynchronizationRequestBuilder) AcquireAccessToken()(*ie4e7228c8413ba04b04a7f1fac840439946274cff81aadbd7cf5252263fe1cc4.AcquireAccessTokenRequestBuilder) {
@@ -67,7 +67,7 @@ func (m *SynchronizationRequestBuilder) AcquireAccessToken()(*ie4e7228c8413ba04b
 func NewSynchronizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SynchronizationRequestBuilder) {
     m := &SynchronizationRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal_id}/synchronization{?select,expand}";
+    m.urlTemplate = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -180,7 +180,7 @@ func (m *SynchronizationRequestBuilder) JobsById(id string)(*ibe6466d39a6e0f7d78
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["synchronizationJob_id"] = id
+        urlTplParams["synchronizationJob%2Did"] = id
     }
     return ibe6466d39a6e0f7d78fef7ec330777772ce9e4942297f090c6e91a7b4f7da1a8.NewSynchronizationJobItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -215,7 +215,7 @@ func (m *SynchronizationRequestBuilder) TemplatesById(id string)(*idbe71426e8a7c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["synchronizationTemplate_id"] = id
+        urlTplParams["synchronizationTemplate%2Did"] = id
     }
     return idbe71426e8a7cf17f46df86ea54d1a8d22e20242b9a4e0a5c7d1e8c8405dd581.NewSynchronizationTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

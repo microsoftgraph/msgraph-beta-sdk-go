@@ -7,11 +7,11 @@ import (
 // CrossTenantAccessPolicyB2BSetting 
 type CrossTenantAccessPolicyB2BSetting struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The list of applications targeted with your cross-tenant access policy.
-    applications CrossTenantAccessPolicyTargetConfigurationable;
+    applications CrossTenantAccessPolicyTargetConfigurationable
     // The list of users and groups targeted with your cross-tenant access policy.
-    usersAndGroups CrossTenantAccessPolicyTargetConfigurationable;
+    usersAndGroups CrossTenantAccessPolicyTargetConfigurationable
 }
 // NewCrossTenantAccessPolicyB2BSetting instantiates a new crossTenantAccessPolicyB2BSetting and sets the default values.
 func NewCrossTenantAccessPolicyB2BSetting()(*CrossTenantAccessPolicyB2BSetting) {
@@ -41,9 +41,9 @@ func (m *CrossTenantAccessPolicyB2BSetting) GetApplications()(CrossTenantAccessP
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CrossTenantAccessPolicyB2BSetting) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["applications"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *CrossTenantAccessPolicyB2BSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["applications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyTargetConfigurationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -53,7 +53,7 @@ func (m *CrossTenantAccessPolicyB2BSetting) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["usersAndGroups"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["usersAndGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyTargetConfigurationFromDiscriminatorValue)
         if err != nil {
             return err

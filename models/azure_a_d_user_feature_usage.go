@@ -9,19 +9,19 @@ import (
 type AzureADUserFeatureUsage struct {
     Entity
     // The featureUsageDetails property
-    featureUsageDetails []FeatureUsageDetailable;
+    featureUsageDetails []FeatureUsageDetailable
     // The lastUpdatedDateTime property
-    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The licenseAssigned property
-    licenseAssigned *AzureADLicenseType;
+    licenseAssigned *AzureADLicenseType
     // The licenseRecommended property
-    licenseRecommended *AzureADLicenseType;
+    licenseRecommended *AzureADLicenseType
     // The userDisplayName property
-    userDisplayName *string;
+    userDisplayName *string
     // The userId property
-    userId *string;
+    userId *string
     // The userPrincipalName property
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewAzureADUserFeatureUsage instantiates a new azureADUserFeatureUsage and sets the default values.
 func NewAzureADUserFeatureUsage()(*AzureADUserFeatureUsage) {
@@ -43,9 +43,9 @@ func (m *AzureADUserFeatureUsage) GetFeatureUsageDetails()([]FeatureUsageDetaila
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *AzureADUserFeatureUsage) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *AzureADUserFeatureUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["featureUsageDetails"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["featureUsageDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateFeatureUsageDetailFromDiscriminatorValue)
         if err != nil {
             return err
@@ -59,7 +59,7 @@ func (m *AzureADUserFeatureUsage) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["lastUpdatedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *AzureADUserFeatureUsage) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["licenseAssigned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["licenseAssigned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAzureADLicenseType)
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *AzureADUserFeatureUsage) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["licenseRecommended"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["licenseRecommended"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAzureADLicenseType)
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *AzureADUserFeatureUsage) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["userDisplayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *AzureADUserFeatureUsage) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["userId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *AzureADUserFeatureUsage) GetFieldDeserializers()(map[string]func(interf
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

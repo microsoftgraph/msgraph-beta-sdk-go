@@ -7,23 +7,23 @@ import (
 // MatchingDlpRule 
 type MatchingDlpRule struct {
     // The actions property
-    actions []DlpActionInfoable;
+    actions []DlpActionInfoable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The isMostRestrictive property
-    isMostRestrictive *bool;
+    isMostRestrictive *bool
     // The policyId property
-    policyId *string;
+    policyId *string
     // The policyName property
-    policyName *string;
+    policyName *string
     // The priority property
-    priority *int32;
+    priority *int32
     // The ruleId property
-    ruleId *string;
+    ruleId *string
     // The ruleMode property
-    ruleMode *RuleMode;
+    ruleMode *RuleMode
     // The ruleName property
-    ruleName *string;
+    ruleName *string
 }
 // NewMatchingDlpRule instantiates a new matchingDlpRule and sets the default values.
 func NewMatchingDlpRule()(*MatchingDlpRule) {
@@ -53,9 +53,9 @@ func (m *MatchingDlpRule) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["actions"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDlpActionInfoFromDiscriminatorValue)
         if err != nil {
             return err
@@ -69,7 +69,7 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["isMostRestrictive"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isMostRestrictive"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -79,7 +79,7 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["policyId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -89,7 +89,7 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["policyName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["policyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -99,7 +99,7 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["priority"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -109,7 +109,7 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["ruleId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ruleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -119,7 +119,7 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["ruleMode"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ruleMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRuleMode)
         if err != nil {
             return err
@@ -129,7 +129,7 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(interface{}, i
         }
         return nil
     }
-    res["ruleName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ruleName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

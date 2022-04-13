@@ -7,17 +7,17 @@ import (
 // TeamworkDisplayScreenConfiguration 
 type TeamworkDisplayScreenConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The brightness level on the device (0-100). Not applicable for Microsoft Teams Rooms devices.
-    backlightBrightness *int32;
+    backlightBrightness *int32
     // Timeout for backlight (30-3600 secs). Not applicable for Teams Rooms devices.
-    backlightTimeout *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    backlightTimeout *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // True if high contrast mode is enabled. Not applicable for Teams Rooms devices.
-    isHighContrastEnabled *bool;
+    isHighContrastEnabled *bool
     // True if screensaver is enabled. Not applicable for Teams Rooms devices.
-    isScreensaverEnabled *bool;
+    isScreensaverEnabled *bool
     // Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.
-    screensaverTimeout *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration;
+    screensaverTimeout *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 }
 // NewTeamworkDisplayScreenConfiguration instantiates a new teamworkDisplayScreenConfiguration and sets the default values.
 func NewTeamworkDisplayScreenConfiguration()(*TeamworkDisplayScreenConfiguration) {
@@ -55,9 +55,9 @@ func (m *TeamworkDisplayScreenConfiguration) GetBacklightTimeout()(*i878a80d2330
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *TeamworkDisplayScreenConfiguration) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["backlightBrightness"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *TeamworkDisplayScreenConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["backlightBrightness"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -67,7 +67,7 @@ func (m *TeamworkDisplayScreenConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["backlightTimeout"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["backlightTimeout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err
@@ -77,7 +77,7 @@ func (m *TeamworkDisplayScreenConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["isHighContrastEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isHighContrastEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *TeamworkDisplayScreenConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["isScreensaverEnabled"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["isScreensaverEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -97,7 +97,7 @@ func (m *TeamworkDisplayScreenConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
-    res["screensaverTimeout"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["screensaverTimeout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
             return err

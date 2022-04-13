@@ -9,19 +9,19 @@ import (
 type CustomerPaymentJournal struct {
     Entity
     // The account property
-    account Accountable;
+    account Accountable
     // The balancingAccountId property
-    balancingAccountId *string;
+    balancingAccountId *string
     // The balancingAccountNumber property
-    balancingAccountNumber *string;
+    balancingAccountNumber *string
     // The code property
-    code *string;
+    code *string
     // The customerPayments property
-    customerPayments []CustomerPaymentable;
+    customerPayments []CustomerPaymentable
     // The displayName property
-    displayName *string;
+    displayName *string
     // The lastModifiedDateTime property
-    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewCustomerPaymentJournal instantiates a new customerPaymentJournal and sets the default values.
 func NewCustomerPaymentJournal()(*CustomerPaymentJournal) {
@@ -83,9 +83,9 @@ func (m *CustomerPaymentJournal) GetDisplayName()(*string) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["account"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["account"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccountFromDiscriminatorValue)
         if err != nil {
             return err
@@ -95,7 +95,7 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["balancingAccountId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["balancingAccountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -105,7 +105,7 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["balancingAccountNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["balancingAccountNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -115,7 +115,7 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["code"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -125,7 +125,7 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["customerPayments"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["customerPayments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCustomerPaymentFromDiscriminatorValue)
         if err != nil {
             return err
@@ -139,7 +139,7 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["displayName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -149,7 +149,7 @@ func (m *CustomerPaymentJournal) GetFieldDeserializers()(map[string]func(interfa
         }
         return nil
     }
-    res["lastModifiedDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err

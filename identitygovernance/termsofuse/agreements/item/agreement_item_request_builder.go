@@ -14,49 +14,49 @@ import (
 // AgreementItemRequestBuilder provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
 type AgreementItemRequestBuilder struct {
     // Path parameters for the request
-    pathParameters map[string]string;
+    pathParameters map[string]string
     // The request adapter to use to execute the requests.
-    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter;
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
-    urlTemplate string;
+    urlTemplate string
 }
 // AgreementItemRequestBuilderDeleteOptions options for Delete
 type AgreementItemRequestBuilderDeleteOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AgreementItemRequestBuilderGetOptions options for Get
 type AgreementItemRequestBuilderGetOptions struct {
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
-    QueryParameters *AgreementItemRequestBuilderGetQueryParameters;
+    QueryParameters *AgreementItemRequestBuilderGetQueryParameters
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // AgreementItemRequestBuilderGetQueryParameters represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
 type AgreementItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string;
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
-    Select []string;
+    Select []string `uriparametername:"%24select"`
 }
 // AgreementItemRequestBuilderPatchOptions options for Patch
 type AgreementItemRequestBuilderPatchOptions struct {
     // 
-    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Agreementable;
+    Body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Agreementable
     // Request headers
-    Headers map[string]string;
+    Headers map[string]string
     // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption;
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler;
+    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // Acceptances the acceptances property
 func (m *AgreementItemRequestBuilder) Acceptances()(*i66d9dba79b3398f677058e0cd74add8c5aa1c9f404f26d139834d053d89a3476.AcceptancesRequestBuilder) {
@@ -69,7 +69,7 @@ func (m *AgreementItemRequestBuilder) AcceptancesById(id string)(*i3d34171db570c
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["agreementAcceptance_id"] = id
+        urlTplParams["agreementAcceptance%2Did"] = id
     }
     return i3d34171db570c60e4cbffd06ca8d60c573908322c769e01a75055782feb092b6.NewAgreementAcceptanceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
@@ -77,7 +77,7 @@ func (m *AgreementItemRequestBuilder) AcceptancesById(id string)(*i3d34171db570c
 func NewAgreementItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AgreementItemRequestBuilder) {
     m := &AgreementItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identityGovernance/termsOfUse/agreements/{agreement_id}{?select,expand}";
+    m.urlTemplate = "{+baseurl}/identityGovernance/termsOfUse/agreements/{agreement%2Did}{?%24select,%24expand}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -178,7 +178,7 @@ func (m *AgreementItemRequestBuilder) FilesById(id string)(*ibf7051967ca6357a1ca
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["agreementFileLocalization_id"] = id
+        urlTplParams["agreementFileLocalization%2Did"] = id
     }
     return ibf7051967ca6357a1cabdcd019832d684fa9a4ebe72128e70675fccdced3aac4.NewAgreementFileLocalizationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

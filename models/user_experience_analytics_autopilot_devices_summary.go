@@ -7,13 +7,13 @@ import (
 // UserExperienceAnalyticsAutopilotDevicesSummary the user experience analytics summary of Devices not windows autopilot ready.
 type UserExperienceAnalyticsAutopilotDevicesSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The count of intune devices that are not autopilot registerd.
-    devicesNotAutopilotRegistered *int32;
+    devicesNotAutopilotRegistered *int32
     // The count of intune devices not autopilot profile assigned.
-    devicesWithoutAutopilotProfileAssigned *int32;
+    devicesWithoutAutopilotProfileAssigned *int32
     // The count of windows 10 devices that are Intune and Comanaged.
-    totalWindows10DevicesWithoutTenantAttached *int32;
+    totalWindows10DevicesWithoutTenantAttached *int32
 }
 // NewUserExperienceAnalyticsAutopilotDevicesSummary instantiates a new userExperienceAnalyticsAutopilotDevicesSummary and sets the default values.
 func NewUserExperienceAnalyticsAutopilotDevicesSummary()(*UserExperienceAnalyticsAutopilotDevicesSummary) {
@@ -51,9 +51,9 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetDevicesWithoutAutopi
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["devicesNotAutopilotRegistered"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["devicesNotAutopilotRegistered"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetFieldDeserializers()
         }
         return nil
     }
-    res["devicesWithoutAutopilotProfileAssigned"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["devicesWithoutAutopilotProfileAssigned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetFieldDeserializers()
         }
         return nil
     }
-    res["totalWindows10DevicesWithoutTenantAttached"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["totalWindows10DevicesWithoutTenantAttached"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

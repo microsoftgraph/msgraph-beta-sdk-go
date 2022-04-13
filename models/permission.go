@@ -9,27 +9,27 @@ import (
 type Permission struct {
     Entity
     // A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
-    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time;
+    expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The grantedTo property
-    grantedTo IdentitySetable;
+    grantedTo IdentitySetable
     // The grantedToIdentities property
-    grantedToIdentities []IdentitySetable;
+    grantedToIdentities []IdentitySetable
     // For link type permissions, the details of the users to whom permission was granted. Read-only.
-    grantedToIdentitiesV2 []SharePointIdentitySetable;
+    grantedToIdentitiesV2 []SharePointIdentitySetable
     // For user type permissions, the details of the users and applications for this permission. Read-only.
-    grantedToV2 SharePointIdentitySetable;
+    grantedToV2 SharePointIdentitySetable
     // Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
-    hasPassword *bool;
+    hasPassword *bool
     // Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
-    inheritedFrom ItemReferenceable;
+    inheritedFrom ItemReferenceable
     // Details of any associated sharing invitation for this permission. Read-only.
-    invitation SharingInvitationable;
+    invitation SharingInvitationable
     // Provides the link details of the current permission, if it is a link type permissions. Read-only.
-    link SharingLinkable;
+    link SharingLinkable
     // The type of permission, for example, read. See below for the full list of roles. Read-only.
-    roles []string;
+    roles []string
     // A unique token that can be used to access this shared item via the **shares** API. Read-only.
-    shareId *string;
+    shareId *string
 }
 // NewPermission instantiates a new permission and sets the default values.
 func NewPermission()(*Permission) {
@@ -51,9 +51,9 @@ func (m *Permission) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *Permission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["expirationDateTime"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
             return err
@@ -63,7 +63,7 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["grantedTo"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["grantedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -73,7 +73,7 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["grantedToIdentities"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["grantedToIdentities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -87,7 +87,7 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["grantedToIdentitiesV2"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["grantedToIdentitiesV2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSharePointIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -101,7 +101,7 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["grantedToV2"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["grantedToV2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharePointIdentitySetFromDiscriminatorValue)
         if err != nil {
             return err
@@ -111,7 +111,7 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["hasPassword"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["hasPassword"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
             return err
@@ -121,7 +121,7 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["inheritedFrom"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["inheritedFrom"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemReferenceFromDiscriminatorValue)
         if err != nil {
             return err
@@ -131,7 +131,7 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["invitation"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["invitation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharingInvitationFromDiscriminatorValue)
         if err != nil {
             return err
@@ -141,7 +141,7 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["link"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["link"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharingLinkFromDiscriminatorValue)
         if err != nil {
             return err
@@ -151,7 +151,7 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["roles"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["roles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -165,7 +165,7 @@ func (m *Permission) GetFieldDeserializers()(map[string]func(interface{}, i878a8
         }
         return nil
     }
-    res["shareId"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["shareId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

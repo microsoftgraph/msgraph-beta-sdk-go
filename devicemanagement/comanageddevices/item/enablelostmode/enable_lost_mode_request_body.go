@@ -7,13 +7,13 @@ import (
 // EnableLostModeRequestBody provides operations to call the enableLostMode method.
 type EnableLostModeRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // The footer property
-    footer *string;
+    footer *string
     // The message property
-    message *string;
+    message *string
     // The phoneNumber property
-    phoneNumber *string;
+    phoneNumber *string
 }
 // NewEnableLostModeRequestBody instantiates a new enableLostModeRequestBody and sets the default values.
 func NewEnableLostModeRequestBody()(*EnableLostModeRequestBody) {
@@ -35,9 +35,9 @@ func (m *EnableLostModeRequestBody) GetAdditionalData()(map[string]interface{}) 
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *EnableLostModeRequestBody) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["footer"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *EnableLostModeRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["footer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -47,7 +47,7 @@ func (m *EnableLostModeRequestBody) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["message"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["message"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -57,7 +57,7 @@ func (m *EnableLostModeRequestBody) GetFieldDeserializers()(map[string]func(inte
         }
         return nil
     }
-    res["phoneNumber"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["phoneNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err

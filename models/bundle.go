@@ -7,11 +7,11 @@ import (
 // Bundle 
 type Bundle struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]interface{};
+    additionalData map[string]interface{}
     // If the bundle is an [album][], then the album property is included
-    album Albumable;
+    album Albumable
     // Number of children contained immediately within this container.
-    childCount *int32;
+    childCount *int32
 }
 // NewBundle instantiates a new bundle and sets the default values.
 func NewBundle()(*Bundle) {
@@ -49,9 +49,9 @@ func (m *Bundle) GetChildCount()(*int32) {
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *Bundle) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["album"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+func (m *Bundle) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["album"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAlbumFromDiscriminatorValue)
         if err != nil {
             return err
@@ -61,7 +61,7 @@ func (m *Bundle) GetFieldDeserializers()(map[string]func(interface{}, i878a80d23
         }
         return nil
     }
-    res["childCount"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["childCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err

@@ -8,9 +8,9 @@ import (
 type UserIdentity struct {
     Identity
     // Indicates the client IP address used by user performing the activity (audit log only).
-    ipAddress *string;
+    ipAddress *string
     // The userPrincipalName attribute of the user.
-    userPrincipalName *string;
+    userPrincipalName *string
 }
 // NewUserIdentity instantiates a new userIdentity and sets the default values.
 func NewUserIdentity()(*UserIdentity) {
@@ -24,9 +24,9 @@ func CreateUserIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewUserIdentity(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
-func (m *UserIdentity) GetFieldDeserializers()(map[string]func(interface{}, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *UserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
-    res["ipAddress"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["ipAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -36,7 +36,7 @@ func (m *UserIdentity) GetFieldDeserializers()(map[string]func(interface{}, i878
         }
         return nil
     }
-    res["userPrincipalName"] = func (o interface{}, n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
