@@ -144,7 +144,7 @@ type Group struct {
     settings []DirectorySettingable
     // The list of SharePoint sites in this group. Access the default site with /sites/root.
     sites []Siteable
-    // The team property
+    // The team associated with this group.
     team Teamable
     // Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
     theme *string
@@ -1609,7 +1609,7 @@ func (m *Group) GetSites()([]Siteable) {
         return m.sites
     }
 }
-// GetTeam gets the team property value. The team property
+// GetTeam gets the team property value. The team associated with this group.
 func (m *Group) GetTeam()(Teamable) {
     if m == nil {
         return nil
@@ -2656,7 +2656,7 @@ func (m *Group) SetSites(value []Siteable)() {
         m.sites = value
     }
 }
-// SetTeam sets the team property value. The team property
+// SetTeam sets the team property value. The team associated with this group.
 func (m *Group) SetTeam(value Teamable)() {
     if m != nil {
         m.team = value
