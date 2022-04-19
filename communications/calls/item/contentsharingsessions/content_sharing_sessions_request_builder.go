@@ -27,7 +27,7 @@ type ContentSharingSessionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
-// ContentSharingSessionsRequestBuilderGetQueryParameters get contentSharingSessions from communications
+// ContentSharingSessionsRequestBuilderGetQueryParameters read-only. Nullable.
 type ContentSharingSessionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -80,7 +80,7 @@ func NewContentSharingSessionsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ContentSharingSessionsRequestBuilder) Count()(*i0c7c4dfe07faf8e6230d5b1fdc9f521191eafb6e86cdb42da14c799e06007805.CountRequestBuilder) {
     return i0c7c4dfe07faf8e6230d5b1fdc9f521191eafb6e86cdb42da14c799e06007805.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get contentSharingSessions from communications
+// CreateGetRequestInformation read-only. Nullable.
 func (m *ContentSharingSessionsRequestBuilder) CreateGetRequestInformation(options *ContentSharingSessionsRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *ContentSharingSessionsRequestBuilder) CreatePostRequestInformation(opti
     }
     return requestInfo, nil
 }
-// Get get contentSharingSessions from communications
+// Get read-only. Nullable.
 func (m *ContentSharingSessionsRequestBuilder) Get(options *ContentSharingSessionsRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentSharingSessionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

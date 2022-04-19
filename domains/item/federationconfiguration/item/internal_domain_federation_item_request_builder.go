@@ -35,7 +35,7 @@ type InternalDomainFederationItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
-// InternalDomainFederationItemRequestBuilderGetQueryParameters get federationConfiguration from domains
+// InternalDomainFederationItemRequestBuilderGetQueryParameters domain settings configured by customer when federated with Azure AD.
 type InternalDomainFederationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -89,7 +89,7 @@ func (m *InternalDomainFederationItemRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get federationConfiguration from domains
+// CreateGetRequestInformation domain settings configured by customer when federated with Azure AD.
 func (m *InternalDomainFederationItemRequestBuilder) CreateGetRequestInformation(options *InternalDomainFederationItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,7 @@ func (m *InternalDomainFederationItemRequestBuilder) Delete(options *InternalDom
     }
     return nil
 }
-// Get get federationConfiguration from domains
+// Get domain settings configured by customer when federated with Azure AD.
 func (m *InternalDomainFederationItemRequestBuilder) Get(options *InternalDomainFederationItemRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -8,7 +8,7 @@ import (
 type ExtractSensitivityLabelsResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The labels property
+    // List of sensitivity labels assigned to a file.
     labels []SensitivityLabelAssignmentable
 }
 // NewExtractSensitivityLabelsResult instantiates a new extractSensitivityLabelsResult and sets the default values.
@@ -49,7 +49,7 @@ func (m *ExtractSensitivityLabelsResult) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetLabels gets the labels property value. The labels property
+// GetLabels gets the labels property value. List of sensitivity labels assigned to a file.
 func (m *ExtractSensitivityLabelsResult) GetLabels()([]SensitivityLabelAssignmentable) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *ExtractSensitivityLabelsResult) SetAdditionalData(value map[string]inte
         m.additionalData = value
     }
 }
-// SetLabels sets the labels property value. The labels property
+// SetLabels sets the labels property value. List of sensitivity labels assigned to a file.
 func (m *ExtractSensitivityLabelsResult) SetLabels(value []SensitivityLabelAssignmentable)() {
     if m != nil {
         m.labels = value
