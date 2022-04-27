@@ -27,7 +27,7 @@ type FederationConfigurationRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
-// FederationConfigurationRequestBuilderGetQueryParameters get federationConfiguration from domains
+// FederationConfigurationRequestBuilderGetQueryParameters domain settings configured by customer when federated with Azure AD.
 type FederationConfigurationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -80,7 +80,7 @@ func NewFederationConfigurationRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *FederationConfigurationRequestBuilder) Count()(*id870850ef5174af71604f883c640b113e53dfa198c6c5b449840479873c6d825.CountRequestBuilder) {
     return id870850ef5174af71604f883c640b113e53dfa198c6c5b449840479873c6d825.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get federationConfiguration from domains
+// CreateGetRequestInformation domain settings configured by customer when federated with Azure AD.
 func (m *FederationConfigurationRequestBuilder) CreateGetRequestInformation(options *FederationConfigurationRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *FederationConfigurationRequestBuilder) CreatePostRequestInformation(opt
     }
     return requestInfo, nil
 }
-// Get get federationConfiguration from domains
+// Get domain settings configured by customer when federated with Azure AD.
 func (m *FederationConfigurationRequestBuilder) Get(options *FederationConfigurationRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

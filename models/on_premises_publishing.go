@@ -30,10 +30,14 @@ type OnPremisesPublishing struct {
     isPersistentCookieEnabled *bool
     // Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.
     isSecureCookieEnabled *bool
+    // The isStateSessionEnabled property
+    isStateSessionEnabled *bool
     // Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
     isTranslateHostHeaderEnabled *bool
     // Indicates if the application should translate urls in the application body. Keep this value as false unless you have hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see Link translation with Application Proxy. Default value is false.
     isTranslateLinksInBodyEnabled *bool
+    // The onPremisesApplicationSegments property
+    onPremisesApplicationSegments []OnPremisesApplicationSegmentable
     // Represents the single sign-on configuration for the on-premises application.
     singleSignOnSettings OnPremisesPublishingSingleSignOnable
     // The useAlternateUrlForTranslationAndRedirect property
@@ -217,6 +221,16 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["isStateSessionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsStateSessionEnabled(val)
+        }
+        return nil
+    }
     res["isTranslateHostHeaderEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -234,6 +248,20 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetIsTranslateLinksInBodyEnabled(val)
+        }
+        return nil
+    }
+    res["onPremisesApplicationSegments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOnPremisesApplicationSegmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OnPremisesApplicationSegmentable, len(val))
+            for i, v := range val {
+                res[i] = v.(OnPremisesApplicationSegmentable)
+            }
+            m.SetOnPremisesApplicationSegments(res)
         }
         return nil
     }
@@ -337,6 +365,14 @@ func (m *OnPremisesPublishing) GetIsSecureCookieEnabled()(*bool) {
         return m.isSecureCookieEnabled
     }
 }
+// GetIsStateSessionEnabled gets the isStateSessionEnabled property value. The isStateSessionEnabled property
+func (m *OnPremisesPublishing) GetIsStateSessionEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isStateSessionEnabled
+    }
+}
 // GetIsTranslateHostHeaderEnabled gets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
 func (m *OnPremisesPublishing) GetIsTranslateHostHeaderEnabled()(*bool) {
     if m == nil {
@@ -351,6 +387,14 @@ func (m *OnPremisesPublishing) GetIsTranslateLinksInBodyEnabled()(*bool) {
         return nil
     } else {
         return m.isTranslateLinksInBodyEnabled
+    }
+}
+// GetOnPremisesApplicationSegments gets the onPremisesApplicationSegments property value. The onPremisesApplicationSegments property
+func (m *OnPremisesPublishing) GetOnPremisesApplicationSegments()([]OnPremisesApplicationSegmentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.onPremisesApplicationSegments
     }
 }
 // GetSingleSignOnSettings gets the singleSignOnSettings property value. Represents the single sign-on configuration for the on-premises application.
@@ -463,6 +507,12 @@ func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteBoolValue("isStateSessionEnabled", m.GetIsStateSessionEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("isTranslateHostHeaderEnabled", m.GetIsTranslateHostHeaderEnabled())
         if err != nil {
             return err
@@ -470,6 +520,16 @@ func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteBoolValue("isTranslateLinksInBodyEnabled", m.GetIsTranslateLinksInBodyEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetOnPremisesApplicationSegments() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnPremisesApplicationSegments()))
+        for i, v := range m.GetOnPremisesApplicationSegments() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err := writer.WriteCollectionOfObjectValues("onPremisesApplicationSegments", cast)
         if err != nil {
             return err
         }
@@ -584,6 +644,12 @@ func (m *OnPremisesPublishing) SetIsSecureCookieEnabled(value *bool)() {
         m.isSecureCookieEnabled = value
     }
 }
+// SetIsStateSessionEnabled sets the isStateSessionEnabled property value. The isStateSessionEnabled property
+func (m *OnPremisesPublishing) SetIsStateSessionEnabled(value *bool)() {
+    if m != nil {
+        m.isStateSessionEnabled = value
+    }
+}
 // SetIsTranslateHostHeaderEnabled sets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
 func (m *OnPremisesPublishing) SetIsTranslateHostHeaderEnabled(value *bool)() {
     if m != nil {
@@ -594,6 +660,12 @@ func (m *OnPremisesPublishing) SetIsTranslateHostHeaderEnabled(value *bool)() {
 func (m *OnPremisesPublishing) SetIsTranslateLinksInBodyEnabled(value *bool)() {
     if m != nil {
         m.isTranslateLinksInBodyEnabled = value
+    }
+}
+// SetOnPremisesApplicationSegments sets the onPremisesApplicationSegments property value. The onPremisesApplicationSegments property
+func (m *OnPremisesPublishing) SetOnPremisesApplicationSegments(value []OnPremisesApplicationSegmentable)() {
+    if m != nil {
+        m.onPremisesApplicationSegments = value
     }
 }
 // SetSingleSignOnSettings sets the singleSignOnSettings property value. Represents the single sign-on configuration for the on-premises application.

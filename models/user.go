@@ -126,6 +126,8 @@ type User struct {
     insights ItemInsightsable
     // A list for the user to describe their interests. Returned only on $select.
     interests []string
+    // The isManagementRestricted property
+    isManagementRestricted *bool
     // Do not use – reserved for future use.
     isResourceAccount *bool
     // The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -1399,6 +1401,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["isManagementRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsManagementRestricted(val)
+        }
+        return nil
+    }
     res["isResourceAccount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -2411,6 +2423,14 @@ func (m *User) GetInterests()([]string) {
         return nil
     } else {
         return m.interests
+    }
+}
+// GetIsManagementRestricted gets the isManagementRestricted property value. The isManagementRestricted property
+func (m *User) GetIsManagementRestricted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isManagementRestricted
     }
 }
 // GetIsResourceAccount gets the isResourceAccount property value. Do not use – reserved for future use.
@@ -3514,6 +3534,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteBoolValue("isManagementRestricted", m.GetIsManagementRestricted())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isResourceAccount", m.GetIsResourceAccount())
         if err != nil {
             return err
@@ -4455,6 +4481,12 @@ func (m *User) SetInsights(value ItemInsightsable)() {
 func (m *User) SetInterests(value []string)() {
     if m != nil {
         m.interests = value
+    }
+}
+// SetIsManagementRestricted sets the isManagementRestricted property value. The isManagementRestricted property
+func (m *User) SetIsManagementRestricted(value *bool)() {
+    if m != nil {
+        m.isManagementRestricted = value
     }
 }
 // SetIsResourceAccount sets the isResourceAccount property value. Do not use – reserved for future use.

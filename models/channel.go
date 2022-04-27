@@ -28,7 +28,7 @@ type Channel struct {
     messages []ChatMessageable
     // Settings to configure channel moderation to control who can start new posts and reply to posts in that channel.
     moderationSettings ChannelModerationSettingsable
-    // A collection of teams shared with the channel.
+    // A collection of teams with which a channel is shared.
     sharedWithTeams []SharedWithChannelTeamInfoable
     // A collection of all the tabs in the channel. A navigation property.
     tabs []TeamsTabable
@@ -289,7 +289,7 @@ func (m *Channel) GetModerationSettings()(ChannelModerationSettingsable) {
         return m.moderationSettings
     }
 }
-// GetSharedWithTeams gets the sharedWithTeams property value. A collection of teams shared with the channel.
+// GetSharedWithTeams gets the sharedWithTeams property value. A collection of teams with which a channel is shared.
 func (m *Channel) GetSharedWithTeams()([]SharedWithChannelTeamInfoable) {
     if m == nil {
         return nil
@@ -490,7 +490,7 @@ func (m *Channel) SetModerationSettings(value ChannelModerationSettingsable)() {
         m.moderationSettings = value
     }
 }
-// SetSharedWithTeams sets the sharedWithTeams property value. A collection of teams shared with the channel.
+// SetSharedWithTeams sets the sharedWithTeams property value. A collection of teams with which a channel is shared.
 func (m *Channel) SetSharedWithTeams(value []SharedWithChannelTeamInfoable)() {
     if m != nil {
         m.sharedWithTeams = value

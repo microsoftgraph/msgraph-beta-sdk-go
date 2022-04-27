@@ -13,6 +13,8 @@ type AdministrativeUnit struct {
     displayName *string
     // The collection of open extensions defined for this administrative unit. Nullable.
     extensions []Extensionable
+    // The isMemberManagementRestricted property
+    isMemberManagementRestricted *bool
     // Users and groups that are members of this administrative unit. Supports $expand.
     members []DirectoryObjectable
     // Scoped-role members of this administrative unit.
@@ -92,6 +94,16 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["isMemberManagementRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsMemberManagementRestricted(val)
+        }
+        return nil
+    }
     res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
@@ -131,6 +143,14 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetIsMemberManagementRestricted gets the isMemberManagementRestricted property value. The isMemberManagementRestricted property
+func (m *AdministrativeUnit) GetIsMemberManagementRestricted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isMemberManagementRestricted
+    }
 }
 // GetMembers gets the members property value. Users and groups that are members of this administrative unit. Supports $expand.
 func (m *AdministrativeUnit) GetMembers()([]DirectoryObjectable) {
@@ -184,6 +204,12 @@ func (m *AdministrativeUnit) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("isMemberManagementRestricted", m.GetIsMemberManagementRestricted())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
@@ -228,6 +254,12 @@ func (m *AdministrativeUnit) SetDisplayName(value *string)() {
 func (m *AdministrativeUnit) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
+    }
+}
+// SetIsMemberManagementRestricted sets the isMemberManagementRestricted property value. The isMemberManagementRestricted property
+func (m *AdministrativeUnit) SetIsMemberManagementRestricted(value *bool)() {
+    if m != nil {
+        m.isMemberManagementRestricted = value
     }
 }
 // SetMembers sets the members property value. Users and groups that are members of this administrative unit. Supports $expand.

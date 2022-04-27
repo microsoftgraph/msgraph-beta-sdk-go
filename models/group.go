@@ -70,6 +70,8 @@ type Group struct {
     isAssignableToRole *bool
     // The isFavorite property
     isFavorite *bool
+    // The isManagementRestricted property
+    isManagementRestricted *bool
     // Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     isSubscribedByMail *bool
     // Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
@@ -715,6 +717,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["isManagementRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsManagementRestricted(val)
+        }
+        return nil
+    }
     res["isSubscribedByMail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -1311,6 +1323,14 @@ func (m *Group) GetIsFavorite()(*bool) {
         return nil
     } else {
         return m.isFavorite
+    }
+}
+// GetIsManagementRestricted gets the isManagementRestricted property value. The isManagementRestricted property
+func (m *Group) GetIsManagementRestricted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isManagementRestricted
     }
 }
 // GetIsSubscribedByMail gets the isSubscribedByMail property value. Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
@@ -1919,6 +1939,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteBoolValue("isManagementRestricted", m.GetIsManagementRestricted())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isSubscribedByMail", m.GetIsSubscribedByMail())
         if err != nil {
             return err
@@ -2432,6 +2458,12 @@ func (m *Group) SetIsAssignableToRole(value *bool)() {
 func (m *Group) SetIsFavorite(value *bool)() {
     if m != nil {
         m.isFavorite = value
+    }
+}
+// SetIsManagementRestricted sets the isManagementRestricted property value. The isManagementRestricted property
+func (m *Group) SetIsManagementRestricted(value *bool)() {
+    if m != nil {
+        m.isManagementRestricted = value
     }
 }
 // SetIsSubscribedByMail sets the isSubscribedByMail property value. Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).

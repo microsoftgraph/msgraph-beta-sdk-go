@@ -10,7 +10,7 @@ type CallOptions struct {
     additionalData map[string]interface{}
     // The hideBotAfterEscalation property
     hideBotAfterEscalation *bool
-    // The isContentSharingNotificationEnabled property
+    // Indicates whether content sharing notifications should be enabled for the call.
     isContentSharingNotificationEnabled *bool
 }
 // NewCallOptions instantiates a new callOptions and sets the default values.
@@ -65,7 +65,7 @@ func (m *CallOptions) GetHideBotAfterEscalation()(*bool) {
         return m.hideBotAfterEscalation
     }
 }
-// GetIsContentSharingNotificationEnabled gets the isContentSharingNotificationEnabled property value. The isContentSharingNotificationEnabled property
+// GetIsContentSharingNotificationEnabled gets the isContentSharingNotificationEnabled property value. Indicates whether content sharing notifications should be enabled for the call.
 func (m *CallOptions) GetIsContentSharingNotificationEnabled()(*bool) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *CallOptions) SetHideBotAfterEscalation(value *bool)() {
         m.hideBotAfterEscalation = value
     }
 }
-// SetIsContentSharingNotificationEnabled sets the isContentSharingNotificationEnabled property value. The isContentSharingNotificationEnabled property
+// SetIsContentSharingNotificationEnabled sets the isContentSharingNotificationEnabled property value. Indicates whether content sharing notifications should be enabled for the call.
 func (m *CallOptions) SetIsContentSharingNotificationEnabled(value *bool)() {
     if m != nil {
         m.isContentSharingNotificationEnabled = value

@@ -8,11 +8,11 @@ import (
 type DocumentSetVersionItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The itemId property
+    // The unique identifier for the item.
     itemId *string
-    // The title property
+    // The title of the item.
     title *string
-    // The versionId property
+    // The version ID of the item.
     versionId *string
 }
 // NewDocumentSetVersionItem instantiates a new documentSetVersionItem and sets the default values.
@@ -69,7 +69,7 @@ func (m *DocumentSetVersionItem) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetItemId gets the itemId property value. The itemId property
+// GetItemId gets the itemId property value. The unique identifier for the item.
 func (m *DocumentSetVersionItem) GetItemId()(*string) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *DocumentSetVersionItem) GetItemId()(*string) {
         return m.itemId
     }
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. The title of the item.
 func (m *DocumentSetVersionItem) GetTitle()(*string) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *DocumentSetVersionItem) GetTitle()(*string) {
         return m.title
     }
 }
-// GetVersionId gets the versionId property value. The versionId property
+// GetVersionId gets the versionId property value. The version ID of the item.
 func (m *DocumentSetVersionItem) GetVersionId()(*string) {
     if m == nil {
         return nil
@@ -127,19 +127,19 @@ func (m *DocumentSetVersionItem) SetAdditionalData(value map[string]interface{})
         m.additionalData = value
     }
 }
-// SetItemId sets the itemId property value. The itemId property
+// SetItemId sets the itemId property value. The unique identifier for the item.
 func (m *DocumentSetVersionItem) SetItemId(value *string)() {
     if m != nil {
         m.itemId = value
     }
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. The title of the item.
 func (m *DocumentSetVersionItem) SetTitle(value *string)() {
     if m != nil {
         m.title = value
     }
 }
-// SetVersionId sets the versionId property value. The versionId property
+// SetVersionId sets the versionId property value. The version ID of the item.
 func (m *DocumentSetVersionItem) SetVersionId(value *string)() {
     if m != nil {
         m.versionId = value

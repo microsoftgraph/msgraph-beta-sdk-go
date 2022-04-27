@@ -17,13 +17,13 @@ type Call struct {
     callbackUri *string
     // A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
     callChainId *string
-    // The callOptions property
+    // Contains the optional features for the call.
     callOptions CallOptionsable
     // The routing information on how the call was retargeted. Read-only.
     callRoutes []CallRouteable
     // The chat information. Required information for joining a meeting.
     chatInfo ChatInfoable
-    // The contentSharingSessions property
+    // Read-only. Nullable.
     contentSharingSessions []ContentSharingSessionable
     // The direction of the call. The possible value are incoming or outgoing. Read-only.
     direction *CallDirection
@@ -119,7 +119,7 @@ func (m *Call) GetCallChainId()(*string) {
         return m.callChainId
     }
 }
-// GetCallOptions gets the callOptions property value. The callOptions property
+// GetCallOptions gets the callOptions property value. Contains the optional features for the call.
 func (m *Call) GetCallOptions()(CallOptionsable) {
     if m == nil {
         return nil
@@ -143,7 +143,7 @@ func (m *Call) GetChatInfo()(ChatInfoable) {
         return m.chatInfo
     }
 }
-// GetContentSharingSessions gets the contentSharingSessions property value. The contentSharingSessions property
+// GetContentSharingSessions gets the contentSharingSessions property value. Read-only. Nullable.
 func (m *Call) GetContentSharingSessions()([]ContentSharingSessionable) {
     if m == nil {
         return nil
@@ -904,7 +904,7 @@ func (m *Call) SetCallChainId(value *string)() {
         m.callChainId = value
     }
 }
-// SetCallOptions sets the callOptions property value. The callOptions property
+// SetCallOptions sets the callOptions property value. Contains the optional features for the call.
 func (m *Call) SetCallOptions(value CallOptionsable)() {
     if m != nil {
         m.callOptions = value
@@ -922,7 +922,7 @@ func (m *Call) SetChatInfo(value ChatInfoable)() {
         m.chatInfo = value
     }
 }
-// SetContentSharingSessions sets the contentSharingSessions property value. The contentSharingSessions property
+// SetContentSharingSessions sets the contentSharingSessions property value. Read-only. Nullable.
 func (m *Call) SetContentSharingSessions(value []ContentSharingSessionable)() {
     if m != nil {
         m.contentSharingSessions = value

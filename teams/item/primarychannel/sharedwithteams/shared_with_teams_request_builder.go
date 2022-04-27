@@ -27,7 +27,7 @@ type SharedWithTeamsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
-// SharedWithTeamsRequestBuilderGetQueryParameters a collection of teams shared with the channel.
+// SharedWithTeamsRequestBuilderGetQueryParameters a collection of teams with which a channel is shared.
 type SharedWithTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -80,7 +80,7 @@ func NewSharedWithTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *SharedWithTeamsRequestBuilder) Count()(*i0af9b21c05b0b738fd8933a487f17ba2df389cdd80162223711ce96ee442cc5f.CountRequestBuilder) {
     return i0af9b21c05b0b738fd8933a487f17ba2df389cdd80162223711ce96ee442cc5f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a collection of teams shared with the channel.
+// CreateGetRequestInformation a collection of teams with which a channel is shared.
 func (m *SharedWithTeamsRequestBuilder) CreateGetRequestInformation(options *SharedWithTeamsRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *SharedWithTeamsRequestBuilder) CreatePostRequestInformation(options *Sh
     }
     return requestInfo, nil
 }
-// Get a collection of teams shared with the channel.
+// Get a collection of teams with which a channel is shared.
 func (m *SharedWithTeamsRequestBuilder) Get(options *SharedWithTeamsRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedWithChannelTeamInfoCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

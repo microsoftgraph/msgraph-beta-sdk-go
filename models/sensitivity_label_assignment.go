@@ -8,11 +8,11 @@ import (
 type SensitivityLabelAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The assignmentMethod property
+    // Indicates whether the label assignment is done automatically, as a standard, or a privileged operation. The possible values are: standard, privileged, auto, unknownFutureValue.
     assignmentMethod *SensitivityLabelAssignmentMethod
-    // The sensitivityLabelId property
+    // The unique identifier for the sensitivity label assigned to the file.
     sensitivityLabelId *string
-    // The tenantId property
+    // The unique identifier for the tenant that hosts the file when this label is applied.
     tenantId *string
 }
 // NewSensitivityLabelAssignment instantiates a new sensitivityLabelAssignment and sets the default values.
@@ -34,7 +34,7 @@ func (m *SensitivityLabelAssignment) GetAdditionalData()(map[string]interface{})
         return m.additionalData
     }
 }
-// GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
+// GetAssignmentMethod gets the assignmentMethod property value. Indicates whether the label assignment is done automatically, as a standard, or a privileged operation. The possible values are: standard, privileged, auto, unknownFutureValue.
 func (m *SensitivityLabelAssignment) GetAssignmentMethod()(*SensitivityLabelAssignmentMethod) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *SensitivityLabelAssignment) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetSensitivityLabelId gets the sensitivityLabelId property value. The sensitivityLabelId property
+// GetSensitivityLabelId gets the sensitivityLabelId property value. The unique identifier for the sensitivity label assigned to the file.
 func (m *SensitivityLabelAssignment) GetSensitivityLabelId()(*string) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *SensitivityLabelAssignment) GetSensitivityLabelId()(*string) {
         return m.sensitivityLabelId
     }
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. The unique identifier for the tenant that hosts the file when this label is applied.
 func (m *SensitivityLabelAssignment) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -128,19 +128,19 @@ func (m *SensitivityLabelAssignment) SetAdditionalData(value map[string]interfac
         m.additionalData = value
     }
 }
-// SetAssignmentMethod sets the assignmentMethod property value. The assignmentMethod property
+// SetAssignmentMethod sets the assignmentMethod property value. Indicates whether the label assignment is done automatically, as a standard, or a privileged operation. The possible values are: standard, privileged, auto, unknownFutureValue.
 func (m *SensitivityLabelAssignment) SetAssignmentMethod(value *SensitivityLabelAssignmentMethod)() {
     if m != nil {
         m.assignmentMethod = value
     }
 }
-// SetSensitivityLabelId sets the sensitivityLabelId property value. The sensitivityLabelId property
+// SetSensitivityLabelId sets the sensitivityLabelId property value. The unique identifier for the sensitivity label assigned to the file.
 func (m *SensitivityLabelAssignment) SetSensitivityLabelId(value *string)() {
     if m != nil {
         m.sensitivityLabelId = value
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. The unique identifier for the tenant that hosts the file when this label is applied.
 func (m *SensitivityLabelAssignment) SetTenantId(value *string)() {
     if m != nil {
         m.tenantId = value
