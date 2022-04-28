@@ -36,7 +36,7 @@ type DocumentSetVersionItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
-// DocumentSetVersionItemRequestBuilderGetQueryParameters get documentSetVersions from me
+// DocumentSetVersionItemRequestBuilderGetQueryParameters version information for a document set version created by a user.
 type DocumentSetVersionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -90,7 +90,7 @@ func (m *DocumentSetVersionItemRequestBuilder) CreateDeleteRequestInformation(op
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get documentSetVersions from me
+// CreateGetRequestInformation version information for a document set version created by a user.
 func (m *DocumentSetVersionItemRequestBuilder) CreateGetRequestInformation(options *DocumentSetVersionItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -144,7 +144,7 @@ func (m *DocumentSetVersionItemRequestBuilder) Delete(options *DocumentSetVersio
     }
     return nil
 }
-// Get get documentSetVersions from me
+// Get version information for a document set version created by a user.
 func (m *DocumentSetVersionItemRequestBuilder) Get(options *DocumentSetVersionItemRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DocumentSetVersionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

@@ -13,7 +13,7 @@ type Domain struct {
     availabilityStatus *string
     // Read-only, Nullable
     domainNameReferences []DirectoryObjectable
-    // The federationConfiguration property
+    // Domain settings configured by customer when federated with Azure AD.
     federationConfiguration []InternalDomainFederationable
     // The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
     isAdminManaged *bool
@@ -75,7 +75,7 @@ func (m *Domain) GetDomainNameReferences()([]DirectoryObjectable) {
         return m.domainNameReferences
     }
 }
-// GetFederationConfiguration gets the federationConfiguration property value. The federationConfiguration property
+// GetFederationConfiguration gets the federationConfiguration property value. Domain settings configured by customer when federated with Azure AD.
 func (m *Domain) GetFederationConfiguration()([]InternalDomainFederationable) {
     if m == nil {
         return nil
@@ -510,7 +510,7 @@ func (m *Domain) SetDomainNameReferences(value []DirectoryObjectable)() {
         m.domainNameReferences = value
     }
 }
-// SetFederationConfiguration sets the federationConfiguration property value. The federationConfiguration property
+// SetFederationConfiguration sets the federationConfiguration property value. Domain settings configured by customer when federated with Azure AD.
 func (m *Domain) SetFederationConfiguration(value []InternalDomainFederationable)() {
     if m != nil {
         m.federationConfiguration = value

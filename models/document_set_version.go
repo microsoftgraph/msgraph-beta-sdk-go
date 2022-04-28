@@ -8,15 +8,15 @@ import (
 // DocumentSetVersion 
 type DocumentSetVersion struct {
     ListItemVersion
-    // The comment property
+    // Comment about the captured version.
     comment *string
-    // The createdBy property
+    // User who captured the version.
     createdBy IdentitySetable
-    // The createdDateTime property
+    // Date and time when this version was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The items property
+    // Items within the document set that are captured as part of this version.
     items []DocumentSetVersionItemable
-    // The shouldCaptureMinorVersion property
+    // If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
     shouldCaptureMinorVersion *bool
 }
 // NewDocumentSetVersion instantiates a new documentSetVersion and sets the default values.
@@ -30,7 +30,7 @@ func NewDocumentSetVersion()(*DocumentSetVersion) {
 func CreateDocumentSetVersionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDocumentSetVersion(), nil
 }
-// GetComment gets the comment property value. The comment property
+// GetComment gets the comment property value. Comment about the captured version.
 func (m *DocumentSetVersion) GetComment()(*string) {
     if m == nil {
         return nil
@@ -38,7 +38,7 @@ func (m *DocumentSetVersion) GetComment()(*string) {
         return m.comment
     }
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. User who captured the version.
 func (m *DocumentSetVersion) GetCreatedBy()(IdentitySetable) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *DocumentSetVersion) GetCreatedBy()(IdentitySetable) {
         return m.createdBy
     }
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time when this version was created.
 func (m *DocumentSetVersion) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -113,7 +113,7 @@ func (m *DocumentSetVersion) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetItems gets the items property value. The items property
+// GetItems gets the items property value. Items within the document set that are captured as part of this version.
 func (m *DocumentSetVersion) GetItems()([]DocumentSetVersionItemable) {
     if m == nil {
         return nil
@@ -121,7 +121,7 @@ func (m *DocumentSetVersion) GetItems()([]DocumentSetVersionItemable) {
         return m.items
     }
 }
-// GetShouldCaptureMinorVersion gets the shouldCaptureMinorVersion property value. The shouldCaptureMinorVersion property
+// GetShouldCaptureMinorVersion gets the shouldCaptureMinorVersion property value. If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
 func (m *DocumentSetVersion) GetShouldCaptureMinorVersion()(*bool) {
     if m == nil {
         return nil
@@ -171,31 +171,31 @@ func (m *DocumentSetVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetComment sets the comment property value. The comment property
+// SetComment sets the comment property value. Comment about the captured version.
 func (m *DocumentSetVersion) SetComment(value *string)() {
     if m != nil {
         m.comment = value
     }
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. User who captured the version.
 func (m *DocumentSetVersion) SetCreatedBy(value IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time when this version was created.
 func (m *DocumentSetVersion) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
     }
 }
-// SetItems sets the items property value. The items property
+// SetItems sets the items property value. Items within the document set that are captured as part of this version.
 func (m *DocumentSetVersion) SetItems(value []DocumentSetVersionItemable)() {
     if m != nil {
         m.items = value
     }
 }
-// SetShouldCaptureMinorVersion sets the shouldCaptureMinorVersion property value. The shouldCaptureMinorVersion property
+// SetShouldCaptureMinorVersion sets the shouldCaptureMinorVersion property value. If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
 func (m *DocumentSetVersion) SetShouldCaptureMinorVersion(value *bool)() {
     if m != nil {
         m.shouldCaptureMinorVersion = value

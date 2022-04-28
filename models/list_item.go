@@ -15,7 +15,7 @@ type ListItem struct {
     contentType ContentTypeInfoable
     // The deleted property
     deleted Deletedable
-    // The documentSetVersions property
+    // Version information for a document set version created by a user.
     documentSetVersions []DocumentSetVersionable
     // For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
     driveItem DriveItemable
@@ -69,7 +69,7 @@ func (m *ListItem) GetDeleted()(Deletedable) {
         return m.deleted
     }
 }
-// GetDocumentSetVersions gets the documentSetVersions property value. The documentSetVersions property
+// GetDocumentSetVersions gets the documentSetVersions property value. Version information for a document set version created by a user.
 func (m *ListItem) GetDocumentSetVersions()([]DocumentSetVersionable) {
     if m == nil {
         return nil
@@ -314,7 +314,7 @@ func (m *ListItem) SetDeleted(value Deletedable)() {
         m.deleted = value
     }
 }
-// SetDocumentSetVersions sets the documentSetVersions property value. The documentSetVersions property
+// SetDocumentSetVersions sets the documentSetVersions property value. Version information for a document set version created by a user.
 func (m *ListItem) SetDocumentSetVersions(value []DocumentSetVersionable)() {
     if m != nil {
         m.documentSetVersions = value

@@ -10,9 +10,9 @@ type SynchronizationJobSubject struct {
     additionalData map[string]interface{}
     // The links property
     links SynchronizationLinkedObjectsable
-    // The identifier of an object to which a synchronizationJob  is to be applied.
+    // The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.
     objectId *string
-    // The type of the object to which a synchronizationJob  is to be applied.
+    // The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronization from Active Directory to Azure AD.User for synchronization from Azure AD to a third-party application. Worker for synchronization from Workday to either Active Directory or Azure AD.
     objectTypeName *string
 }
 // NewSynchronizationJobSubject instantiates a new synchronizationJobSubject and sets the default values.
@@ -77,7 +77,7 @@ func (m *SynchronizationJobSubject) GetLinks()(SynchronizationLinkedObjectsable)
         return m.links
     }
 }
-// GetObjectId gets the objectId property value. The identifier of an object to which a synchronizationJob  is to be applied.
+// GetObjectId gets the objectId property value. The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.
 func (m *SynchronizationJobSubject) GetObjectId()(*string) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *SynchronizationJobSubject) GetObjectId()(*string) {
         return m.objectId
     }
 }
-// GetObjectTypeName gets the objectTypeName property value. The type of the object to which a synchronizationJob  is to be applied.
+// GetObjectTypeName gets the objectTypeName property value. The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronization from Active Directory to Azure AD.User for synchronization from Azure AD to a third-party application. Worker for synchronization from Workday to either Active Directory or Azure AD.
 func (m *SynchronizationJobSubject) GetObjectTypeName()(*string) {
     if m == nil {
         return nil
@@ -133,13 +133,13 @@ func (m *SynchronizationJobSubject) SetLinks(value SynchronizationLinkedObjectsa
         m.links = value
     }
 }
-// SetObjectId sets the objectId property value. The identifier of an object to which a synchronizationJob  is to be applied.
+// SetObjectId sets the objectId property value. The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.
 func (m *SynchronizationJobSubject) SetObjectId(value *string)() {
     if m != nil {
         m.objectId = value
     }
 }
-// SetObjectTypeName sets the objectTypeName property value. The type of the object to which a synchronizationJob  is to be applied.
+// SetObjectTypeName sets the objectTypeName property value. The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronization from Active Directory to Azure AD.User for synchronization from Azure AD to a third-party application. Worker for synchronization from Workday to either Active Directory or Azure AD.
 func (m *SynchronizationJobSubject) SetObjectTypeName(value *string)() {
     if m != nil {
         m.objectTypeName = value

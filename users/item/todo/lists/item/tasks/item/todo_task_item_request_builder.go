@@ -6,8 +6,10 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i4473eb3633503a172b34982c873e33c8efa94259783a3642ee6cedb3c5c906a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/todo/lists/item/tasks/item/extensions"
     i49c9f3580718111fd0b6ef827e6816e14178557d048d09f86d74f5aa6ba02f54 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/todo/lists/item/tasks/item/linkedresources"
+    ifed95a4ba551c880d2020cfb9eb2eab0946d4430e7bb4641dab7f5b82b60c655 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/todo/lists/item/tasks/item/checklistitems"
     i4531f84f655bf3b3d3a1027773f9c2bb029ea97f2eece205c7eb9bcaec4c009c "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/todo/lists/item/tasks/item/extensions/item"
     i6737f99b67a18abc341a9ca718ffc65ce748e94cc634823575af95ac13a007ca "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/todo/lists/item/tasks/item/linkedresources/item"
+    iabf0df8a70bb970e3966c7005b6f3fac8c6c8c2c237330ea2b1c48ec24f3ef61 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/todo/lists/item/tasks/item/checklistitems/item"
 )
 
 // TodoTaskItemRequestBuilder provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
@@ -56,6 +58,21 @@ type TodoTaskItemRequestBuilderPatchOptions struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
+}
+// ChecklistItems the checklistItems property
+func (m *TodoTaskItemRequestBuilder) ChecklistItems()(*ifed95a4ba551c880d2020cfb9eb2eab0946d4430e7bb4641dab7f5b82b60c655.ChecklistItemsRequestBuilder) {
+    return ifed95a4ba551c880d2020cfb9eb2eab0946d4430e7bb4641dab7f5b82b60c655.NewChecklistItemsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ChecklistItemsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.todo.lists.item.tasks.item.checklistItems.item collection
+func (m *TodoTaskItemRequestBuilder) ChecklistItemsById(id string)(*iabf0df8a70bb970e3966c7005b6f3fac8c6c8c2c237330ea2b1c48ec24f3ef61.ChecklistItemItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["checklistItem%2Did"] = id
+    }
+    return iabf0df8a70bb970e3966c7005b6f3fac8c6c8c2c237330ea2b1c48ec24f3ef61.NewChecklistItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // NewTodoTaskItemRequestBuilderInternal instantiates a new TodoTaskItemRequestBuilder and sets the default values.
 func NewTodoTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TodoTaskItemRequestBuilder) {

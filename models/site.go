@@ -37,7 +37,7 @@ type Site struct {
     permissions []Permissionable
     // If present, indicates that this is the root site in the site collection. Read-only.
     root Rootable
-    // The settings on this site. Returned only on $select. Read-only.
+    // The settings on this site. Read-only.
     settings SiteSettingsable
     // Returns identifiers useful for SharePoint REST compatibility. Read-only.
     sharepointIds SharepointIdsable
@@ -412,7 +412,7 @@ func (m *Site) GetRoot()(Rootable) {
         return m.root
     }
 }
-// GetSettings gets the settings property value. The settings on this site. Returned only on $select. Read-only.
+// GetSettings gets the settings property value. The settings on this site. Read-only.
 func (m *Site) GetSettings()(SiteSettingsable) {
     if m == nil {
         return nil
@@ -696,7 +696,7 @@ func (m *Site) SetRoot(value Rootable)() {
         m.root = value
     }
 }
-// SetSettings sets the settings property value. The settings on this site. Returned only on $select. Read-only.
+// SetSettings sets the settings property value. The settings on this site. Read-only.
 func (m *Site) SetSettings(value SiteSettingsable)() {
     if m != nil {
         m.settings = value

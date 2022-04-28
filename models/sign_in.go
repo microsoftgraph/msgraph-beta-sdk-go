@@ -34,7 +34,7 @@ type SignIn struct {
     azureResourceId *string
     // Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).
     clientAppUsed *string
-    // The clientCredentialType property
+    // Describes the credential type that a user client or service principal provided to Azure AD to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
     clientCredentialType *ClientCredentialType
     // Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).
     conditionalAccessStatus *ConditionalAccessStatus
@@ -54,7 +54,7 @@ type SignIn struct {
     homeTenantId *string
     // For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
     homeTenantName *string
-    // Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed.
+    // Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
     incomingTokenType *IncomingTokenType
     // IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).
     ipAddress *string
@@ -244,7 +244,7 @@ func (m *SignIn) GetClientAppUsed()(*string) {
         return m.clientAppUsed
     }
 }
-// GetClientCredentialType gets the clientCredentialType property value. The clientCredentialType property
+// GetClientCredentialType gets the clientCredentialType property value. Describes the credential type that a user client or service principal provided to Azure AD to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
 func (m *SignIn) GetClientCredentialType()(*ClientCredentialType) {
     if m == nil {
         return nil
@@ -969,7 +969,7 @@ func (m *SignIn) GetHomeTenantName()(*string) {
         return m.homeTenantName
     }
 }
-// GetIncomingTokenType gets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed.
+// GetIncomingTokenType gets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
 func (m *SignIn) GetIncomingTokenType()(*IncomingTokenType) {
     if m == nil {
         return nil
@@ -1751,7 +1751,7 @@ func (m *SignIn) SetClientAppUsed(value *string)() {
         m.clientAppUsed = value
     }
 }
-// SetClientCredentialType sets the clientCredentialType property value. The clientCredentialType property
+// SetClientCredentialType sets the clientCredentialType property value. Describes the credential type that a user client or service principal provided to Azure AD to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
 func (m *SignIn) SetClientCredentialType(value *ClientCredentialType)() {
     if m != nil {
         m.clientCredentialType = value
@@ -1811,7 +1811,7 @@ func (m *SignIn) SetHomeTenantName(value *string)() {
         m.homeTenantName = value
     }
 }
-// SetIncomingTokenType sets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed.
+// SetIncomingTokenType sets the incomingTokenType property value. Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
 func (m *SignIn) SetIncomingTokenType(value *IncomingTokenType)() {
     if m != nil {
         m.incomingTokenType = value

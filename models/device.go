@@ -46,6 +46,8 @@ type Device struct {
     isCompliant *bool
     // true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
     isManaged *bool
+    // The isManagementRestricted property
+    isManagementRestricted *bool
     // true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
     isRooted *bool
     // Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
@@ -441,6 +443,16 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["isManagementRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsManagementRestricted(val)
+        }
+        return nil
+    }
     res["isRooted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -723,6 +735,14 @@ func (m *Device) GetIsManaged()(*bool) {
         return nil
     } else {
         return m.isManaged
+    }
+}
+// GetIsManagementRestricted gets the isManagementRestricted property value. The isManagementRestricted property
+func (m *Device) GetIsManagementRestricted()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isManagementRestricted
     }
 }
 // GetIsRooted gets the isRooted property value. true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
@@ -1042,6 +1062,12 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteBoolValue("isManagementRestricted", m.GetIsManagementRestricted())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isRooted", m.GetIsRooted())
         if err != nil {
             return err
@@ -1313,6 +1339,12 @@ func (m *Device) SetIsCompliant(value *bool)() {
 func (m *Device) SetIsManaged(value *bool)() {
     if m != nil {
         m.isManaged = value
+    }
+}
+// SetIsManagementRestricted sets the isManagementRestricted property value. The isManagementRestricted property
+func (m *Device) SetIsManagementRestricted(value *bool)() {
+    if m != nil {
+        m.isManagementRestricted = value
     }
 }
 // SetIsRooted sets the isRooted property value. true if device is rooted; false if device is jail-broken. This can only be updated by Intune.

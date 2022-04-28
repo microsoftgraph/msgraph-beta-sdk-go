@@ -26,6 +26,8 @@ type SearchRequest struct {
     query SearchQueryable
     // Provides query alteration options formatted as a JSON blob that contains two optional flags related to spelling correction. Optional.
     queryAlterationOptions SearchAlterationOptionsable
+    // The region property
+    region *string
     // Provides the search result templates options for rendering connectors search results.
     resultTemplateOptions ResultTemplateOptionable
     // The size of the page to be retrieved. Optional.
@@ -209,6 +211,16 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["region"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegion(val)
+        }
+        return nil
+    }
     res["resultTemplateOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateResultTemplateOptionFromDiscriminatorValue)
         if err != nil {
@@ -299,6 +311,14 @@ func (m *SearchRequest) GetQueryAlterationOptions()(SearchAlterationOptionsable)
         return nil
     } else {
         return m.queryAlterationOptions
+    }
+}
+// GetRegion gets the region property value. The region property
+func (m *SearchRequest) GetRegion()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.region
     }
 }
 // GetResultTemplateOptions gets the resultTemplateOptions property value. Provides the search result templates options for rendering connectors search results.
@@ -397,6 +417,12 @@ func (m *SearchRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteObjectValue("queryAlterationOptions", m.GetQueryAlterationOptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("region", m.GetRegion())
         if err != nil {
             return err
         }
@@ -501,6 +527,12 @@ func (m *SearchRequest) SetQuery(value SearchQueryable)() {
 func (m *SearchRequest) SetQueryAlterationOptions(value SearchAlterationOptionsable)() {
     if m != nil {
         m.queryAlterationOptions = value
+    }
+}
+// SetRegion sets the region property value. The region property
+func (m *SearchRequest) SetRegion(value *string)() {
+    if m != nil {
+        m.region = value
     }
 }
 // SetResultTemplateOptions sets the resultTemplateOptions property value. Provides the search result templates options for rendering connectors search results.

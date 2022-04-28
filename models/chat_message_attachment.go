@@ -18,7 +18,7 @@ type ChatMessageAttachment struct {
     id *string
     // Name of the attachment.
     name *string
-    // The teamsAppId property
+    // The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
     teamsAppId *string
     // URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
     thumbnailUrl *string
@@ -157,7 +157,7 @@ func (m *ChatMessageAttachment) GetName()(*string) {
         return m.name
     }
 }
-// GetTeamsAppId gets the teamsAppId property value. The teamsAppId property
+// GetTeamsAppId gets the teamsAppId property value. The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
 func (m *ChatMessageAttachment) GetTeamsAppId()(*string) {
     if m == nil {
         return nil
@@ -261,7 +261,7 @@ func (m *ChatMessageAttachment) SetName(value *string)() {
         m.name = value
     }
 }
-// SetTeamsAppId sets the teamsAppId property value. The teamsAppId property
+// SetTeamsAppId sets the teamsAppId property value. The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
 func (m *ChatMessageAttachment) SetTeamsAppId(value *string)() {
     if m != nil {
         m.teamsAppId = value

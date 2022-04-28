@@ -35,7 +35,7 @@ type ContentSharingSessionItemRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
-// ContentSharingSessionItemRequestBuilderGetQueryParameters get contentSharingSessions from app
+// ContentSharingSessionItemRequestBuilderGetQueryParameters read-only. Nullable.
 type ContentSharingSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -89,7 +89,7 @@ func (m *ContentSharingSessionItemRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get contentSharingSessions from app
+// CreateGetRequestInformation read-only. Nullable.
 func (m *ContentSharingSessionItemRequestBuilder) CreateGetRequestInformation(options *ContentSharingSessionItemRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -143,7 +143,7 @@ func (m *ContentSharingSessionItemRequestBuilder) Delete(options *ContentSharing
     }
     return nil
 }
-// Get get contentSharingSessions from app
+// Get read-only. Nullable.
 func (m *ContentSharingSessionItemRequestBuilder) Get(options *ContentSharingSessionItemRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentSharingSessionable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

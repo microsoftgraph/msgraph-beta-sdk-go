@@ -9,9 +9,9 @@ import (
 type SigningCertificateUpdateStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The certificateUpdateResult property
+    // Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.
     certificateUpdateResult *string
-    // The lastRunDateTime property
+    // Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
     lastRunDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewSigningCertificateUpdateStatus instantiates a new signingCertificateUpdateStatus and sets the default values.
@@ -33,7 +33,7 @@ func (m *SigningCertificateUpdateStatus) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// GetCertificateUpdateResult gets the certificateUpdateResult property value. The certificateUpdateResult property
+// GetCertificateUpdateResult gets the certificateUpdateResult property value. Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.
 func (m *SigningCertificateUpdateStatus) GetCertificateUpdateResult()(*string) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *SigningCertificateUpdateStatus) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetLastRunDateTime gets the lastRunDateTime property value. The lastRunDateTime property
+// GetLastRunDateTime gets the lastRunDateTime property value. Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
 func (m *SigningCertificateUpdateStatus) GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -102,13 +102,13 @@ func (m *SigningCertificateUpdateStatus) SetAdditionalData(value map[string]inte
         m.additionalData = value
     }
 }
-// SetCertificateUpdateResult sets the certificateUpdateResult property value. The certificateUpdateResult property
+// SetCertificateUpdateResult sets the certificateUpdateResult property value. Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.
 func (m *SigningCertificateUpdateStatus) SetCertificateUpdateResult(value *string)() {
     if m != nil {
         m.certificateUpdateResult = value
     }
 }
-// SetLastRunDateTime sets the lastRunDateTime property value. The lastRunDateTime property
+// SetLastRunDateTime sets the lastRunDateTime property value. Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
 func (m *SigningCertificateUpdateStatus) SetLastRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastRunDateTime = value

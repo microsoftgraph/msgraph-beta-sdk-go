@@ -27,7 +27,7 @@ type DocumentSetVersionsRequestBuilderGetOptions struct {
     // Response handler to use in place of the default response handling provided by the core service
     ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
-// DocumentSetVersionsRequestBuilderGetQueryParameters get documentSetVersions from drives
+// DocumentSetVersionsRequestBuilderGetQueryParameters version information for a document set version created by a user.
 type DocumentSetVersionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -80,7 +80,7 @@ func NewDocumentSetVersionsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *DocumentSetVersionsRequestBuilder) Count()(*idb6a8e5a5105d67ba5020b4ccbb336f3445a5b6f6ddaa0f235b30c4976d4c19e.CountRequestBuilder) {
     return idb6a8e5a5105d67ba5020b4ccbb336f3445a5b6f6ddaa0f235b30c4976d4c19e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get documentSetVersions from drives
+// CreateGetRequestInformation version information for a document set version created by a user.
 func (m *DocumentSetVersionsRequestBuilder) CreateGetRequestInformation(options *DocumentSetVersionsRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *DocumentSetVersionsRequestBuilder) CreatePostRequestInformation(options
     }
     return requestInfo, nil
 }
-// Get get documentSetVersions from drives
+// Get version information for a document set version created by a user.
 func (m *DocumentSetVersionsRequestBuilder) Get(options *DocumentSetVersionsRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DocumentSetVersionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformation(options);
     if err != nil {

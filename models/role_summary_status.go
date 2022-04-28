@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the collection of privilegedApproval entities.
+// Provides operations to manage the collection of privilegedRoleAssignmentRequest entities.
 type RoleSummaryStatus int
 
 const (
