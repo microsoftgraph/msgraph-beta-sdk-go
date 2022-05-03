@@ -8,7 +8,7 @@ import (
 // Device 
 type Device struct {
     DirectoryObject
-    // true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
+    // true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
     accountEnabled *bool
     // For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
     alternativeSecurityIds []AlternativeSecurityIdable
@@ -20,7 +20,7 @@ type Device struct {
     complianceExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
     deviceCategory *string
-    // Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+    // Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
     deviceId *string
     // For internal use only. Set to null.
     deviceMetadata *string
@@ -58,7 +58,7 @@ type Device struct {
     manufacturer *string
     // Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
     mdmAppId *string
-    // Groups that this device is a member of. Read-only. Nullable. Supports $expand.
+    // Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
     memberOf []DirectoryObjectable
     // Model of the device. Read-only.
     model *string
@@ -70,7 +70,7 @@ type Device struct {
     onPremisesSyncEnabled *bool
     // The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
     operatingSystem *string
-    // The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
+    // Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
     operatingSystemVersion *string
     // For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
     physicalIds []string
@@ -88,9 +88,9 @@ type Device struct {
     status *string
     // List of labels applied to the device by the system.
     systemLabels []string
-    // Groups that the device is a member of. This operation is transitive. Supports $expand.
+    // Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
     transitiveMemberOf []DirectoryObjectable
-    // Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+    // Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
     trustType *string
     // Represents the usage rights a device has been granted.
     usageRights []UsageRightable
@@ -106,7 +106,7 @@ func NewDevice()(*Device) {
 func CreateDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDevice(), nil
 }
-// GetAccountEnabled gets the accountEnabled property value. true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
+// GetAccountEnabled gets the accountEnabled property value. true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
 func (m *Device) GetAccountEnabled()(*bool) {
     if m == nil {
         return nil
@@ -154,7 +154,7 @@ func (m *Device) GetDeviceCategory()(*string) {
         return m.deviceCategory
     }
 }
-// GetDeviceId gets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+// GetDeviceId gets the deviceId property value. Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
 func (m *Device) GetDeviceId()(*string) {
     if m == nil {
         return nil
@@ -785,7 +785,7 @@ func (m *Device) GetMdmAppId()(*string) {
         return m.mdmAppId
     }
 }
-// GetMemberOf gets the memberOf property value. Groups that this device is a member of. Read-only. Nullable. Supports $expand.
+// GetMemberOf gets the memberOf property value. Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
 func (m *Device) GetMemberOf()([]DirectoryObjectable) {
     if m == nil {
         return nil
@@ -833,7 +833,7 @@ func (m *Device) GetOperatingSystem()(*string) {
         return m.operatingSystem
     }
 }
-// GetOperatingSystemVersion gets the operatingSystemVersion property value. The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
+// GetOperatingSystemVersion gets the operatingSystemVersion property value. Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
 func (m *Device) GetOperatingSystemVersion()(*string) {
     if m == nil {
         return nil
@@ -905,7 +905,7 @@ func (m *Device) GetSystemLabels()([]string) {
         return m.systemLabels
     }
 }
-// GetTransitiveMemberOf gets the transitiveMemberOf property value. Groups that the device is a member of. This operation is transitive. Supports $expand.
+// GetTransitiveMemberOf gets the transitiveMemberOf property value. Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
 func (m *Device) GetTransitiveMemberOf()([]DirectoryObjectable) {
     if m == nil {
         return nil
@@ -913,7 +913,7 @@ func (m *Device) GetTransitiveMemberOf()([]DirectoryObjectable) {
         return m.transitiveMemberOf
     }
 }
-// GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+// GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
 func (m *Device) GetTrustType()(*string) {
     if m == nil {
         return nil
@@ -1227,7 +1227,7 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     return nil
 }
-// SetAccountEnabled sets the accountEnabled property value. true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
+// SetAccountEnabled sets the accountEnabled property value. true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
 func (m *Device) SetAccountEnabled(value *bool)() {
     if m != nil {
         m.accountEnabled = value
@@ -1263,7 +1263,7 @@ func (m *Device) SetDeviceCategory(value *string)() {
         m.deviceCategory = value
     }
 }
-// SetDeviceId sets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+// SetDeviceId sets the deviceId property value. Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
 func (m *Device) SetDeviceId(value *string)() {
     if m != nil {
         m.deviceId = value
@@ -1377,7 +1377,7 @@ func (m *Device) SetMdmAppId(value *string)() {
         m.mdmAppId = value
     }
 }
-// SetMemberOf sets the memberOf property value. Groups that this device is a member of. Read-only. Nullable. Supports $expand.
+// SetMemberOf sets the memberOf property value. Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
 func (m *Device) SetMemberOf(value []DirectoryObjectable)() {
     if m != nil {
         m.memberOf = value
@@ -1413,7 +1413,7 @@ func (m *Device) SetOperatingSystem(value *string)() {
         m.operatingSystem = value
     }
 }
-// SetOperatingSystemVersion sets the operatingSystemVersion property value. The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
+// SetOperatingSystemVersion sets the operatingSystemVersion property value. Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
 func (m *Device) SetOperatingSystemVersion(value *string)() {
     if m != nil {
         m.operatingSystemVersion = value
@@ -1467,13 +1467,13 @@ func (m *Device) SetSystemLabels(value []string)() {
         m.systemLabels = value
     }
 }
-// SetTransitiveMemberOf sets the transitiveMemberOf property value. Groups that the device is a member of. This operation is transitive. Supports $expand.
+// SetTransitiveMemberOf sets the transitiveMemberOf property value. Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
 func (m *Device) SetTransitiveMemberOf(value []DirectoryObjectable)() {
     if m != nil {
         m.transitiveMemberOf = value
     }
 }
-// SetTrustType sets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+// SetTrustType sets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
 func (m *Device) SetTrustType(value *string)() {
     if m != nil {
         m.trustType = value

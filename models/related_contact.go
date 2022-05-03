@@ -12,7 +12,7 @@ type RelatedContact struct {
     additionalData map[string]interface{}
     // Name of the contact. Required.
     displayName *string
-    // Primary email address of the contact. Required.
+    // Email address of the contact.
     emailAddress *string
     // The id property
     id *string
@@ -56,7 +56,7 @@ func (m *RelatedContact) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetEmailAddress gets the emailAddress property value. Primary email address of the contact. Required.
+// GetEmailAddress gets the emailAddress property value. Email address of the contact.
 func (m *RelatedContact) GetEmailAddress()(*string) {
     if m == nil {
         return nil
@@ -218,7 +218,7 @@ func (m *RelatedContact) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetEmailAddress sets the emailAddress property value. Primary email address of the contact. Required.
+// SetEmailAddress sets the emailAddress property value. Email address of the contact.
 func (m *RelatedContact) SetEmailAddress(value *string)() {
     if m != nil {
         m.emailAddress = value

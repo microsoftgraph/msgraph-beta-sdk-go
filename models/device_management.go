@@ -146,7 +146,7 @@ type DeviceManagement struct {
     importedWindowsAutopilotDeviceIdentities []ImportedWindowsAutopilotDeviceIdentityable
     // The device management intents
     intents []DeviceManagementIntentable
-    // Intune Account Id for given tenant
+    // Intune Account ID for given tenant
     intuneAccountId *string
     // intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
     intuneBrand IntuneBrandable
@@ -3113,7 +3113,7 @@ func (m *DeviceManagement) GetIntents()([]DeviceManagementIntentable) {
         return m.intents
     }
 }
-// GetIntuneAccountId gets the intuneAccountId property value. Intune Account Id for given tenant
+// GetIntuneAccountId gets the intuneAccountId property value. Intune Account ID for given tenant
 func (m *DeviceManagement) GetIntuneAccountId()(*string) {
     if m == nil {
         return nil
@@ -5857,7 +5857,7 @@ func (m *DeviceManagement) SetIntents(value []DeviceManagementIntentable)() {
         m.intents = value
     }
 }
-// SetIntuneAccountId sets the intuneAccountId property value. Intune Account Id for given tenant
+// SetIntuneAccountId sets the intuneAccountId property value. Intune Account ID for given tenant
 func (m *DeviceManagement) SetIntuneAccountId(value *string)() {
     if m != nil {
         m.intuneAccountId = value

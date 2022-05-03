@@ -13,16 +13,12 @@ type UpdateStatusRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UpdateStatusRequestBuilderPostOptions options for Post
-type UpdateStatusRequestBuilderPostOptions struct {
-    // 
-    Body UpdateStatusRequestBodyable
+// UpdateStatusRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type UpdateStatusRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewUpdateStatusRequestBuilderInternal instantiates a new UpdateStatusRequestBuilder and sets the default values.
 func NewUpdateStatusRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UpdateStatusRequestBuilder) {
@@ -43,31 +39,34 @@ func NewUpdateStatusRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation set the task's status and attach a note.
-func (m *UpdateStatusRequestBuilder) CreatePostRequestInformation(options *UpdateStatusRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformationWithRequestConfiguration set the task's status and attach a note.
+func (m *UpdateStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateStatusRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration set the task's status and attach a note.
+func (m *UpdateStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateStatusRequestBodyable, requestConfiguration *UpdateStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Post set the task's status and attach a note.
-func (m *UpdateStatusRequestBuilder) Post(options *UpdateStatusRequestBuilderPostOptions)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+// PostWithResponseHandler set the task's status and attach a note.
+func (m *UpdateStatusRequestBuilder) PostWithResponseHandler(body UpdateStatusRequestBodyable, requestConfiguration *UpdateStatusRequestBuilderPostRequestConfiguration)(error) {
+    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+}
+// PostWithResponseHandler set the task's status and attach a note.
+func (m *UpdateStatusRequestBuilder) PostWithResponseHandler(body UpdateStatusRequestBodyable, requestConfiguration *UpdateStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, nil)
     if err != nil {
         return err
     }

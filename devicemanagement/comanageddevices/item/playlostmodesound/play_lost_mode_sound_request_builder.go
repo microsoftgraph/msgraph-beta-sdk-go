@@ -13,16 +13,12 @@ type PlayLostModeSoundRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PlayLostModeSoundRequestBuilderPostOptions options for Post
-type PlayLostModeSoundRequestBuilderPostOptions struct {
-    // 
-    Body PlayLostModeSoundRequestBodyable
+// PlayLostModeSoundRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type PlayLostModeSoundRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewPlayLostModeSoundRequestBuilderInternal instantiates a new PlayLostModeSoundRequestBuilder and sets the default values.
 func NewPlayLostModeSoundRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlayLostModeSoundRequestBuilder) {
@@ -43,31 +39,34 @@ func NewPlayLostModeSoundRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewPlayLostModeSoundRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation play lost mode sound
-func (m *PlayLostModeSoundRequestBuilder) CreatePostRequestInformation(options *PlayLostModeSoundRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformationWithRequestConfiguration play lost mode sound
+func (m *PlayLostModeSoundRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body PlayLostModeSoundRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration play lost mode sound
+func (m *PlayLostModeSoundRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body PlayLostModeSoundRequestBodyable, requestConfiguration *PlayLostModeSoundRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Post play lost mode sound
-func (m *PlayLostModeSoundRequestBuilder) Post(options *PlayLostModeSoundRequestBuilderPostOptions)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+// PostWithResponseHandler play lost mode sound
+func (m *PlayLostModeSoundRequestBuilder) PostWithResponseHandler(body PlayLostModeSoundRequestBodyable, requestConfiguration *PlayLostModeSoundRequestBuilderPostRequestConfiguration)(error) {
+    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+}
+// PostWithResponseHandler play lost mode sound
+func (m *PlayLostModeSoundRequestBuilder) PostWithResponseHandler(body PlayLostModeSoundRequestBodyable, requestConfiguration *PlayLostModeSoundRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, nil)
     if err != nil {
         return err
     }

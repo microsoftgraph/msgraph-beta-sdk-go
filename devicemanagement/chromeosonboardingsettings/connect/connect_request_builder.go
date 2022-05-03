@@ -15,16 +15,12 @@ type ConnectRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ConnectRequestBuilderPostOptions options for Post
-type ConnectRequestBuilderPostOptions struct {
-    // 
-    Body ConnectRequestBodyable
+// ConnectRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ConnectRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // ConnectResponse union type wrapper for classes chromeOSOnboardingStatus
 type ConnectResponse struct {
@@ -129,31 +125,34 @@ func NewConnectRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewConnectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action connect
-func (m *ConnectRequestBuilder) CreatePostRequestInformation(options *ConnectRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformationWithRequestConfiguration invoke action connect
+func (m *ConnectRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ConnectRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action connect
+func (m *ConnectRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ConnectRequestBodyable, requestConfiguration *ConnectRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Post invoke action connect
-func (m *ConnectRequestBuilder) Post(options *ConnectRequestBuilderPostOptions)(ConnectResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+// PostWithResponseHandler invoke action connect
+func (m *ConnectRequestBuilder) PostWithResponseHandler(body ConnectRequestBodyable, requestConfiguration *ConnectRequestBuilderPostRequestConfiguration)(ConnectResponseable, error) {
+    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+}
+// PostWithResponseHandler invoke action connect
+func (m *ConnectRequestBuilder) PostWithResponseHandler(body ConnectRequestBodyable, requestConfiguration *ConnectRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ConnectResponseable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateConnectResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateConnectResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

@@ -15,14 +15,12 @@ type DisconnectRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DisconnectRequestBuilderPostOptions options for Post
-type DisconnectRequestBuilderPostOptions struct {
+// DisconnectRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type DisconnectRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // DisconnectResponse union type wrapper for classes chromeOSOnboardingStatus
 type DisconnectResponse struct {
@@ -127,30 +125,33 @@ func NewDisconnectRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewDisconnectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action disconnect
-func (m *DisconnectRequestBuilder) CreatePostRequestInformation(options *DisconnectRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformationWithRequestConfiguration invoke action disconnect
+func (m *DisconnectRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action disconnect
+func (m *DisconnectRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *DisconnectRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Post invoke action disconnect
-func (m *DisconnectRequestBuilder) Post(options *DisconnectRequestBuilderPostOptions)(DisconnectResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+// PostWithResponseHandler invoke action disconnect
+func (m *DisconnectRequestBuilder) PostWithResponseHandler(requestConfiguration *DisconnectRequestBuilderPostRequestConfiguration)(DisconnectResponseable, error) {
+    return m.PostWithResponseHandler(requestConfiguration, nil);
+}
+// PostWithResponseHandler invoke action disconnect
+func (m *DisconnectRequestBuilder) PostWithResponseHandler(requestConfiguration *DisconnectRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(DisconnectResponseable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateDisconnectResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateDisconnectResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

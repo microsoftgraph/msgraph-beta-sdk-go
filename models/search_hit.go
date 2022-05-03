@@ -24,7 +24,7 @@ type SearchHit struct {
     rank *int32
     // The resource property
     resource Entityable
-    // ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
+    // ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.
     resultTemplateId *string
     // A summary of the result, if a summary is available.
     summary *string
@@ -217,7 +217,7 @@ func (m *SearchHit) GetResource()(Entityable) {
         return m.resource
     }
 }
-// GetResultTemplateId gets the resultTemplateId property value. ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
+// GetResultTemplateId gets the resultTemplateId property value. ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.
 func (m *SearchHit) GetResultTemplateId()(*string) {
     if m == nil {
         return nil
@@ -357,7 +357,7 @@ func (m *SearchHit) SetResource(value Entityable)() {
         m.resource = value
     }
 }
-// SetResultTemplateId sets the resultTemplateId property value. ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
+// SetResultTemplateId sets the resultTemplateId property value. ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.
 func (m *SearchHit) SetResultTemplateId(value *string)() {
     if m != nil {
         m.resultTemplateId = value

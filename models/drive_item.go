@@ -11,7 +11,7 @@ type DriveItem struct {
     activities []ItemActivityOLDable
     // Analytics about the view activities that took place on this item.
     analytics ItemAnalyticsable
-    // Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.
+    // Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
     audio Audioable
     // Bundle metadata, if the item is a bundle. Read-only.
     bundle Bundleable
@@ -41,7 +41,7 @@ type DriveItem struct {
     media Mediaable
     // If present, indicates that this item is a package instead of a folder or file. Packages are treated like files in some contexts and folders in others. Read-only.
     package_escaped Package_escapedable
-    // If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
+    // If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
     pendingOperations PendingOperationsable
     // The set of permissions for the item. Read-only. Nullable.
     permissions []Permissionable
@@ -105,7 +105,7 @@ func (m *DriveItem) GetAnalytics()(ItemAnalyticsable) {
         return m.analytics
     }
 }
-// GetAudio gets the audio property value. Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.
+// GetAudio gets the audio property value. Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
 func (m *DriveItem) GetAudio()(Audioable) {
     if m == nil {
         return nil
@@ -604,7 +604,7 @@ func (m *DriveItem) GetPackage()(Package_escapedable) {
         return m.package_escaped
     }
 }
-// GetPendingOperations gets the pendingOperations property value. If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
+// GetPendingOperations gets the pendingOperations property value. If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
 func (m *DriveItem) GetPendingOperations()(PendingOperationsable) {
     if m == nil {
         return nil
@@ -1002,7 +1002,7 @@ func (m *DriveItem) SetAnalytics(value ItemAnalyticsable)() {
         m.analytics = value
     }
 }
-// SetAudio sets the audio property value. Audio metadata, if the item is an audio file. Read-only. Read-only. Only on OneDrive Personal.
+// SetAudio sets the audio property value. Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
 func (m *DriveItem) SetAudio(value Audioable)() {
     if m != nil {
         m.audio = value
@@ -1092,7 +1092,7 @@ func (m *DriveItem) SetPackage(value Package_escapedable)() {
         m.package_escaped = value
     }
 }
-// SetPendingOperations sets the pendingOperations property value. If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
+// SetPendingOperations sets the pendingOperations property value. If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.
 func (m *DriveItem) SetPendingOperations(value PendingOperationsable)() {
     if m != nil {
         m.pendingOperations = value

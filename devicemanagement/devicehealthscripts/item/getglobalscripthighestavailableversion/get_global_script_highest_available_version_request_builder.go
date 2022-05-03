@@ -13,14 +13,12 @@ type GetGlobalScriptHighestAvailableVersionRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetGlobalScriptHighestAvailableVersionRequestBuilderPostOptions options for Post
-type GetGlobalScriptHighestAvailableVersionRequestBuilderPostOptions struct {
+// GetGlobalScriptHighestAvailableVersionRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetGlobalScriptHighestAvailableVersionRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetGlobalScriptHighestAvailableVersionRequestBuilderInternal instantiates a new GetGlobalScriptHighestAvailableVersionRequestBuilder and sets the default values.
 func NewGetGlobalScriptHighestAvailableVersionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetGlobalScriptHighestAvailableVersionRequestBuilder) {
@@ -41,30 +39,33 @@ func NewGetGlobalScriptHighestAvailableVersionRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewGetGlobalScriptHighestAvailableVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation update the Proprietary Device Health Script
-func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) CreatePostRequestInformation(options *GetGlobalScriptHighestAvailableVersionRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformationWithRequestConfiguration update the Proprietary Device Health Script
+func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration update the Proprietary Device Health Script
+func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *GetGlobalScriptHighestAvailableVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Post update the Proprietary Device Health Script
-func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) Post(options *GetGlobalScriptHighestAvailableVersionRequestBuilderPostOptions)(GetGlobalScriptHighestAvailableVersionResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+// PostWithResponseHandler update the Proprietary Device Health Script
+func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) PostWithResponseHandler(requestConfiguration *GetGlobalScriptHighestAvailableVersionRequestBuilderPostRequestConfiguration)(GetGlobalScriptHighestAvailableVersionResponseable, error) {
+    return m.PostWithResponseHandler(requestConfiguration, nil);
+}
+// PostWithResponseHandler update the Proprietary Device Health Script
+func (m *GetGlobalScriptHighestAvailableVersionRequestBuilder) PostWithResponseHandler(requestConfiguration *GetGlobalScriptHighestAvailableVersionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetGlobalScriptHighestAvailableVersionResponseable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetGlobalScriptHighestAvailableVersionResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetGlobalScriptHighestAvailableVersionResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

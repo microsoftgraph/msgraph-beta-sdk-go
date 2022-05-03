@@ -12,7 +12,7 @@ type IdentityContainer struct {
     apiConnectors []IdentityApiConnectorable
     // Represents entry point for B2C identity userflows.
     b2cUserFlows []B2cIdentityUserFlowable
-    // Represents entry point for B2X/self-service sign-up identity userflows.
+    // Represents entry point for B2X and self-service sign-up identity userflows.
     b2xUserFlows []B2xIdentityUserFlowable
     // the entry point for the Conditional Access (CA) object model.
     conditionalAccess ConditionalAccessRootable
@@ -60,7 +60,7 @@ func (m *IdentityContainer) GetB2cUserFlows()([]B2cIdentityUserFlowable) {
         return m.b2cUserFlows
     }
 }
-// GetB2xUserFlows gets the b2xUserFlows property value. Represents entry point for B2X/self-service sign-up identity userflows.
+// GetB2xUserFlows gets the b2xUserFlows property value. Represents entry point for B2X and self-service sign-up identity userflows.
 func (m *IdentityContainer) GetB2xUserFlows()([]B2xIdentityUserFlowable) {
     if m == nil {
         return nil
@@ -317,7 +317,7 @@ func (m *IdentityContainer) SetB2cUserFlows(value []B2cIdentityUserFlowable)() {
         m.b2cUserFlows = value
     }
 }
-// SetB2xUserFlows sets the b2xUserFlows property value. Represents entry point for B2X/self-service sign-up identity userflows.
+// SetB2xUserFlows sets the b2xUserFlows property value. Represents entry point for B2X and self-service sign-up identity userflows.
 func (m *IdentityContainer) SetB2xUserFlows(value []B2xIdentityUserFlowable)() {
     if m != nil {
         m.b2xUserFlows = value

@@ -13,16 +13,12 @@ type GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostOptions options for Post
-type GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostOptions struct {
-    // 
-    Body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable
+// GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetEnrollmentConfigurationPoliciesByDeviceRequestBuilderInternal instantiates a new GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder and sets the default values.
 func NewGetEnrollmentConfigurationPoliciesByDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) {
@@ -43,31 +39,34 @@ func NewGetEnrollmentConfigurationPoliciesByDeviceRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewGetEnrollmentConfigurationPoliciesByDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action getEnrollmentConfigurationPoliciesByDevice
-func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) CreatePostRequestInformation(options *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformationWithRequestConfiguration invoke action getEnrollmentConfigurationPoliciesByDevice
+func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action getEnrollmentConfigurationPoliciesByDevice
+func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable, requestConfiguration *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Post invoke action getEnrollmentConfigurationPoliciesByDevice
-func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) Post(options *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostOptions)(GetEnrollmentConfigurationPoliciesByDeviceResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+// PostWithResponseHandler invoke action getEnrollmentConfigurationPoliciesByDevice
+func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) PostWithResponseHandler(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable, requestConfiguration *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostRequestConfiguration)(GetEnrollmentConfigurationPoliciesByDeviceResponseable, error) {
+    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+}
+// PostWithResponseHandler invoke action getEnrollmentConfigurationPoliciesByDevice
+func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) PostWithResponseHandler(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable, requestConfiguration *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEnrollmentConfigurationPoliciesByDeviceResponseable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEnrollmentConfigurationPoliciesByDeviceResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEnrollmentConfigurationPoliciesByDeviceResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

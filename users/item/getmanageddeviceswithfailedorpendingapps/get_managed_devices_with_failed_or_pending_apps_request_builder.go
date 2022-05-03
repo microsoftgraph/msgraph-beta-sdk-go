@@ -13,14 +13,12 @@ type GetManagedDevicesWithFailedOrPendingAppsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetOptions options for Get
-type GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetOptions struct {
+// GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetManagedDevicesWithFailedOrPendingAppsRequestBuilderInternal instantiates a new GetManagedDevicesWithFailedOrPendingAppsRequestBuilder and sets the default values.
 func NewGetManagedDevicesWithFailedOrPendingAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetManagedDevicesWithFailedOrPendingAppsRequestBuilder) {
@@ -41,30 +39,33 @@ func NewGetManagedDevicesWithFailedOrPendingAppsRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewGetManagedDevicesWithFailedOrPendingAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation retrieves the list of devices with failed or pending apps
-func (m *GetManagedDevicesWithFailedOrPendingAppsRequestBuilder) CreateGetRequestInformation(options *GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformationWithRequestConfiguration retrieves the list of devices with failed or pending apps
+func (m *GetManagedDevicesWithFailedOrPendingAppsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration retrieves the list of devices with failed or pending apps
+func (m *GetManagedDevicesWithFailedOrPendingAppsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Get retrieves the list of devices with failed or pending apps
-func (m *GetManagedDevicesWithFailedOrPendingAppsRequestBuilder) Get(options *GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetOptions)(GetManagedDevicesWithFailedOrPendingAppsResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+// GetWithResponseHandler retrieves the list of devices with failed or pending apps
+func (m *GetManagedDevicesWithFailedOrPendingAppsRequestBuilder) GetWithResponseHandler(requestConfiguration *GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration)(GetManagedDevicesWithFailedOrPendingAppsResponseable, error) {
+    return m.GetWithResponseHandler(requestConfiguration, nil);
+}
+// GetWithResponseHandler retrieves the list of devices with failed or pending apps
+func (m *GetManagedDevicesWithFailedOrPendingAppsRequestBuilder) GetWithResponseHandler(requestConfiguration *GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetManagedDevicesWithFailedOrPendingAppsResponseable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetManagedDevicesWithFailedOrPendingAppsResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetManagedDevicesWithFailedOrPendingAppsResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

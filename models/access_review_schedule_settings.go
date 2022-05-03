@@ -14,11 +14,11 @@ type AccessReviewScheduleSettings struct {
     autoApplyDecisionsEnabled *bool
     // Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).
     decisionHistoriesForReviewersEnabled *bool
-    // Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
+    // Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
     defaultDecision *string
     // Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
     defaultDecisionEnabled *bool
-    // Duration of each recurrence of review (accessReviewInstance) in number of days.
+    // Duration of each recurrence of review (accessReviewInstance) in number of days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its durationInDays setting will be used instead of the value of this property.
     instanceDurationInDays *int32
     // Indicates whether reviewers are required to provide justification with their decision. Default value is false.
     justificationRequiredOnApproval *bool
@@ -28,9 +28,9 @@ type AccessReviewScheduleSettings struct {
     recommendationInsightSettings []AccessReviewRecommendationInsightSettingable
     // Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
     recommendationLookBackDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // Indicates whether decision recommendations are enabled or disabled.
+    // Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
     recommendationsEnabled *bool
-    // Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+    // Detailed settings for recurrence using the standard Outlook recurrence object. Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
     recurrence PatternedRecurrenceable
     // Indicates whether reminders are enabled or disabled. Default value is false.
     reminderNotificationsEnabled *bool
@@ -78,7 +78,7 @@ func (m *AccessReviewScheduleSettings) GetDecisionHistoriesForReviewersEnabled()
         return m.decisionHistoriesForReviewersEnabled
     }
 }
-// GetDefaultDecision gets the defaultDecision property value. Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
+// GetDefaultDecision gets the defaultDecision property value. Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
 func (m *AccessReviewScheduleSettings) GetDefaultDecision()(*string) {
     if m == nil {
         return nil
@@ -237,7 +237,7 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetInstanceDurationInDays gets the instanceDurationInDays property value. Duration of each recurrence of review (accessReviewInstance) in number of days.
+// GetInstanceDurationInDays gets the instanceDurationInDays property value. Duration of each recurrence of review (accessReviewInstance) in number of days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its durationInDays setting will be used instead of the value of this property.
 func (m *AccessReviewScheduleSettings) GetInstanceDurationInDays()(*int32) {
     if m == nil {
         return nil
@@ -277,7 +277,7 @@ func (m *AccessReviewScheduleSettings) GetRecommendationLookBackDuration()(*i878
         return m.recommendationLookBackDuration
     }
 }
-// GetRecommendationsEnabled gets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled.
+// GetRecommendationsEnabled gets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
 func (m *AccessReviewScheduleSettings) GetRecommendationsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -285,7 +285,7 @@ func (m *AccessReviewScheduleSettings) GetRecommendationsEnabled()(*bool) {
         return m.recommendationsEnabled
     }
 }
-// GetRecurrence gets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+// GetRecurrence gets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object. Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
 func (m *AccessReviewScheduleSettings) GetRecurrence()(PatternedRecurrenceable) {
     if m == nil {
         return nil
@@ -421,7 +421,7 @@ func (m *AccessReviewScheduleSettings) SetDecisionHistoriesForReviewersEnabled(v
         m.decisionHistoriesForReviewersEnabled = value
     }
 }
-// SetDefaultDecision sets the defaultDecision property value. Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
+// SetDefaultDecision sets the defaultDecision property value. Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
 func (m *AccessReviewScheduleSettings) SetDefaultDecision(value *string)() {
     if m != nil {
         m.defaultDecision = value
@@ -433,7 +433,7 @@ func (m *AccessReviewScheduleSettings) SetDefaultDecisionEnabled(value *bool)() 
         m.defaultDecisionEnabled = value
     }
 }
-// SetInstanceDurationInDays sets the instanceDurationInDays property value. Duration of each recurrence of review (accessReviewInstance) in number of days.
+// SetInstanceDurationInDays sets the instanceDurationInDays property value. Duration of each recurrence of review (accessReviewInstance) in number of days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its durationInDays setting will be used instead of the value of this property.
 func (m *AccessReviewScheduleSettings) SetInstanceDurationInDays(value *int32)() {
     if m != nil {
         m.instanceDurationInDays = value
@@ -463,13 +463,13 @@ func (m *AccessReviewScheduleSettings) SetRecommendationLookBackDuration(value *
         m.recommendationLookBackDuration = value
     }
 }
-// SetRecommendationsEnabled sets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled.
+// SetRecommendationsEnabled sets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
 func (m *AccessReviewScheduleSettings) SetRecommendationsEnabled(value *bool)() {
     if m != nil {
         m.recommendationsEnabled = value
     }
 }
-// SetRecurrence sets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+// SetRecurrence sets the recurrence property value. Detailed settings for recurrence using the standard Outlook recurrence object. Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
 func (m *AccessReviewScheduleSettings) SetRecurrence(value PatternedRecurrenceable)() {
     if m != nil {
         m.recurrence = value

@@ -14,11 +14,11 @@ type AccessPackageCatalog struct {
     accessPackageResources []AccessPackageResourceable
     // Read-only.
     accessPackageResourceScopes []AccessPackageResourceScopeable
-    // The access packages in this catalog. Read-only. Nullable.
+    // The access packages in this catalog. Read-only. Nullable. Supports $expand.
     accessPackages []AccessPackageable
     // Has the value Published if the access packages are available for management.
     catalogStatus *string
-    // Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
+    // One of UserManaged or ServiceDefault.
     catalogType *string
     // UPN of the user who created this resource. Read-only.
     createdBy *string
@@ -28,7 +28,7 @@ type AccessPackageCatalog struct {
     customAccessPackageWorkflowExtensions []CustomAccessPackageWorkflowExtensionable
     // The description of the access package catalog.
     description *string
-    // The display name of the access package catalog.
+    // The display name of the access package catalog. Supports $filter (eq, contains).
     displayName *string
     // Whether the access packages in this catalog can be requested by users outside of the tenant.
     isExternallyVisible *bool
@@ -72,7 +72,7 @@ func (m *AccessPackageCatalog) GetAccessPackageResourceScopes()([]AccessPackageR
         return m.accessPackageResourceScopes
     }
 }
-// GetAccessPackages gets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
+// GetAccessPackages gets the accessPackages property value. The access packages in this catalog. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackageable) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *AccessPackageCatalog) GetCatalogStatus()(*string) {
         return m.catalogStatus
     }
 }
-// GetCatalogType gets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
+// GetCatalogType gets the catalogType property value. One of UserManaged or ServiceDefault.
 func (m *AccessPackageCatalog) GetCatalogType()(*string) {
     if m == nil {
         return nil
@@ -128,7 +128,7 @@ func (m *AccessPackageCatalog) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The display name of the access package catalog.
+// GetDisplayName gets the displayName property value. The display name of the access package catalog. Supports $filter (eq, contains).
 func (m *AccessPackageCatalog) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -455,7 +455,7 @@ func (m *AccessPackageCatalog) SetAccessPackageResourceScopes(value []AccessPack
         m.accessPackageResourceScopes = value
     }
 }
-// SetAccessPackages sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
+// SetAccessPackages sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageCatalog) SetAccessPackages(value []AccessPackageable)() {
     if m != nil {
         m.accessPackages = value
@@ -467,7 +467,7 @@ func (m *AccessPackageCatalog) SetCatalogStatus(value *string)() {
         m.catalogStatus = value
     }
 }
-// SetCatalogType sets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
+// SetCatalogType sets the catalogType property value. One of UserManaged or ServiceDefault.
 func (m *AccessPackageCatalog) SetCatalogType(value *string)() {
     if m != nil {
         m.catalogType = value
@@ -497,7 +497,7 @@ func (m *AccessPackageCatalog) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the access package catalog.
+// SetDisplayName sets the displayName property value. The display name of the access package catalog. Supports $filter (eq, contains).
 func (m *AccessPackageCatalog) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value

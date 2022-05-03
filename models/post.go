@@ -8,7 +8,7 @@ import (
 // Post 
 type Post struct {
     OutlookItem
-    // Read-only. Nullable. Supports $expand.
+    // The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
     attachments []Attachmentable
     // The contents of the post. This is a default property. This property can be null.
     body ItemBodyable
@@ -24,7 +24,7 @@ type Post struct {
     hasAttachments *bool
     // The importance of a group post: low, normal, high.
     importance *Importance
-    // Read-only. Supports $expand.
+    // The earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
     inReplyTo Postable
     // The mentions property
     mentions []Mentionable
@@ -50,7 +50,7 @@ func NewPost()(*Post) {
 func CreatePostFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPost(), nil
 }
-// GetAttachments gets the attachments property value. Read-only. Nullable. Supports $expand.
+// GetAttachments gets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
 func (m *Post) GetAttachments()([]Attachmentable) {
     if m == nil {
         return nil
@@ -293,7 +293,7 @@ func (m *Post) GetImportance()(*Importance) {
         return m.importance
     }
 }
-// GetInReplyTo gets the inReplyTo property value. Read-only. Supports $expand.
+// GetInReplyTo gets the inReplyTo property value. The earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
 func (m *Post) GetInReplyTo()(Postable) {
     if m == nil {
         return nil
@@ -472,7 +472,7 @@ func (m *Post) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetAttachments sets the attachments property value. Read-only. Nullable. Supports $expand.
+// SetAttachments sets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
 func (m *Post) SetAttachments(value []Attachmentable)() {
     if m != nil {
         m.attachments = value
@@ -520,7 +520,7 @@ func (m *Post) SetImportance(value *Importance)() {
         m.importance = value
     }
 }
-// SetInReplyTo sets the inReplyTo property value. Read-only. Supports $expand.
+// SetInReplyTo sets the inReplyTo property value. The earlier post that this post is replying to in the conversationThread. Read-only. Supports $expand.
 func (m *Post) SetInReplyTo(value Postable)() {
     if m != nil {
         m.inReplyTo = value

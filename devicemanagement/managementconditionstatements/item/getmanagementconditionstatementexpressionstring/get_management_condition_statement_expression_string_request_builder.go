@@ -14,14 +14,12 @@ type GetManagementConditionStatementExpressionStringRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetManagementConditionStatementExpressionStringRequestBuilderGetOptions options for Get
-type GetManagementConditionStatementExpressionStringRequestBuilderGetOptions struct {
+// GetManagementConditionStatementExpressionStringRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetManagementConditionStatementExpressionStringRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetManagementConditionStatementExpressionStringRequestBuilderInternal instantiates a new GetManagementConditionStatementExpressionStringRequestBuilder and sets the default values.
 func NewGetManagementConditionStatementExpressionStringRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetManagementConditionStatementExpressionStringRequestBuilder) {
@@ -42,30 +40,33 @@ func NewGetManagementConditionStatementExpressionStringRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewGetManagementConditionStatementExpressionStringRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation invoke function getManagementConditionStatementExpressionString
-func (m *GetManagementConditionStatementExpressionStringRequestBuilder) CreateGetRequestInformation(options *GetManagementConditionStatementExpressionStringRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformationWithRequestConfiguration invoke function getManagementConditionStatementExpressionString
+func (m *GetManagementConditionStatementExpressionStringRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration invoke function getManagementConditionStatementExpressionString
+func (m *GetManagementConditionStatementExpressionStringRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetManagementConditionStatementExpressionStringRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Get invoke function getManagementConditionStatementExpressionString
-func (m *GetManagementConditionStatementExpressionStringRequestBuilder) Get(options *GetManagementConditionStatementExpressionStringRequestBuilderGetOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagementConditionExpressionStringable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+// GetWithResponseHandler invoke function getManagementConditionStatementExpressionString
+func (m *GetManagementConditionStatementExpressionStringRequestBuilder) GetWithResponseHandler(requestConfiguration *GetManagementConditionStatementExpressionStringRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagementConditionExpressionStringable, error) {
+    return m.GetWithResponseHandler(requestConfiguration, nil);
+}
+// GetWithResponseHandler invoke function getManagementConditionStatementExpressionString
+func (m *GetManagementConditionStatementExpressionStringRequestBuilder) GetWithResponseHandler(requestConfiguration *GetManagementConditionStatementExpressionStringRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagementConditionExpressionStringable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateManagementConditionExpressionStringFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateManagementConditionExpressionStringFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

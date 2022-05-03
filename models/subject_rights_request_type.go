@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
+// Provides operations to manage the privacy singleton.
 type SubjectRightsRequestType int
 
 const (

@@ -29,7 +29,7 @@ type BookingAppointment struct {
     duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The end property
     end DateTimeTimeZoneable
-    // The current number of customers in the appointment
+    // The current number of customers in the appointment.
     filledAttendeesCount *int32
     // The billed amount on the invoice.
     invoiceAmount *float64
@@ -41,7 +41,7 @@ type BookingAppointment struct {
     invoiceStatus *BookingInvoiceStatus
     // The URL of the invoice in Microsoft Bookings.
     invoiceUrl *string
-    // If true, indicates that the appointment will be held online. Default value is false.
+    // True indicates that the appointment will be held online. Default value is false.
     isLocationOnline *bool
     // The URL of the online meeting for the appointment.
     joinWebUrl *string
@@ -49,7 +49,7 @@ type BookingAppointment struct {
     maximumAttendeesCount *int32
     // The onlineMeetingUrl property
     onlineMeetingUrl *string
-    // If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+    // True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
     optOutOfCustomerEmail *bool
     // The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
     postBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
@@ -61,7 +61,7 @@ type BookingAppointment struct {
     priceType *BookingPriceType
     // The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
     reminders []BookingReminderable
-    // An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
+    // An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
     selfServiceAppointmentId *string
     // The ID of the bookingService associated with this appointment.
     serviceId *string
@@ -71,7 +71,7 @@ type BookingAppointment struct {
     serviceName *string
     // Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
     serviceNotes *string
-    // If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+    // True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
     smsNotificationsEnabled *bool
     // The ID of each bookingStaffMember who is scheduled in this appointment.
     staffMemberIds []string
@@ -544,7 +544,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetFilledAttendeesCount gets the filledAttendeesCount property value. The current number of customers in the appointment
+// GetFilledAttendeesCount gets the filledAttendeesCount property value. The current number of customers in the appointment.
 func (m *BookingAppointment) GetFilledAttendeesCount()(*int32) {
     if m == nil {
         return nil
@@ -592,7 +592,7 @@ func (m *BookingAppointment) GetInvoiceUrl()(*string) {
         return m.invoiceUrl
     }
 }
-// GetIsLocationOnline gets the isLocationOnline property value. If true, indicates that the appointment will be held online. Default value is false.
+// GetIsLocationOnline gets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
 func (m *BookingAppointment) GetIsLocationOnline()(*bool) {
     if m == nil {
         return nil
@@ -624,7 +624,7 @@ func (m *BookingAppointment) GetOnlineMeetingUrl()(*string) {
         return m.onlineMeetingUrl
     }
 }
-// GetOptOutOfCustomerEmail gets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+// GetOptOutOfCustomerEmail gets the optOutOfCustomerEmail property value. True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
 func (m *BookingAppointment) GetOptOutOfCustomerEmail()(*bool) {
     if m == nil {
         return nil
@@ -672,7 +672,7 @@ func (m *BookingAppointment) GetReminders()([]BookingReminderable) {
         return m.reminders
     }
 }
-// GetSelfServiceAppointmentId gets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
+// GetSelfServiceAppointmentId gets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
 func (m *BookingAppointment) GetSelfServiceAppointmentId()(*string) {
     if m == nil {
         return nil
@@ -712,7 +712,7 @@ func (m *BookingAppointment) GetServiceNotes()(*string) {
         return m.serviceNotes
     }
 }
-// GetSmsNotificationsEnabled gets the smsNotificationsEnabled property value. If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+// GetSmsNotificationsEnabled gets the smsNotificationsEnabled property value. True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
 func (m *BookingAppointment) GetSmsNotificationsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -1030,7 +1030,7 @@ func (m *BookingAppointment) SetEnd(value DateTimeTimeZoneable)() {
         m.end = value
     }
 }
-// SetFilledAttendeesCount sets the filledAttendeesCount property value. The current number of customers in the appointment
+// SetFilledAttendeesCount sets the filledAttendeesCount property value. The current number of customers in the appointment.
 func (m *BookingAppointment) SetFilledAttendeesCount(value *int32)() {
     if m != nil {
         m.filledAttendeesCount = value
@@ -1066,7 +1066,7 @@ func (m *BookingAppointment) SetInvoiceUrl(value *string)() {
         m.invoiceUrl = value
     }
 }
-// SetIsLocationOnline sets the isLocationOnline property value. If true, indicates that the appointment will be held online. Default value is false.
+// SetIsLocationOnline sets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
 func (m *BookingAppointment) SetIsLocationOnline(value *bool)() {
     if m != nil {
         m.isLocationOnline = value
@@ -1090,7 +1090,7 @@ func (m *BookingAppointment) SetOnlineMeetingUrl(value *string)() {
         m.onlineMeetingUrl = value
     }
 }
-// SetOptOutOfCustomerEmail sets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+// SetOptOutOfCustomerEmail sets the optOutOfCustomerEmail property value. True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
 func (m *BookingAppointment) SetOptOutOfCustomerEmail(value *bool)() {
     if m != nil {
         m.optOutOfCustomerEmail = value
@@ -1126,7 +1126,7 @@ func (m *BookingAppointment) SetReminders(value []BookingReminderable)() {
         m.reminders = value
     }
 }
-// SetSelfServiceAppointmentId sets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
+// SetSelfServiceAppointmentId sets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
 func (m *BookingAppointment) SetSelfServiceAppointmentId(value *string)() {
     if m != nil {
         m.selfServiceAppointmentId = value
@@ -1156,7 +1156,7 @@ func (m *BookingAppointment) SetServiceNotes(value *string)() {
         m.serviceNotes = value
     }
 }
-// SetSmsNotificationsEnabled sets the smsNotificationsEnabled property value. If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+// SetSmsNotificationsEnabled sets the smsNotificationsEnabled property value. True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
 func (m *BookingAppointment) SetSmsNotificationsEnabled(value *bool)() {
     if m != nil {
         m.smsNotificationsEnabled = value

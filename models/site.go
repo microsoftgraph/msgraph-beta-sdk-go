@@ -23,7 +23,7 @@ type Site struct {
     drives []Driveable
     // The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
     externalColumns []ColumnDefinitionable
-    // Used to address any item contained in this site. This collection can't be enumerated.
+    // Used to address any item contained in this site. This collection cannot be enumerated.
     items []BaseItemable
     // The collection of lists under this site.
     lists []Listable
@@ -356,7 +356,7 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetItems gets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
+// GetItems gets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
 func (m *Site) GetItems()([]BaseItemable) {
     if m == nil {
         return nil
@@ -654,7 +654,7 @@ func (m *Site) SetExternalColumns(value []ColumnDefinitionable)() {
         m.externalColumns = value
     }
 }
-// SetItems sets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
+// SetItems sets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
 func (m *Site) SetItems(value []BaseItemable)() {
     if m != nil {
         m.items = value

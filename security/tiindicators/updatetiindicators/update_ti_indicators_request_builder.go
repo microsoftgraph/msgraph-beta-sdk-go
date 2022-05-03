@@ -13,16 +13,12 @@ type UpdateTiIndicatorsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UpdateTiIndicatorsRequestBuilderPostOptions options for Post
-type UpdateTiIndicatorsRequestBuilderPostOptions struct {
-    // 
-    Body UpdateTiIndicatorsRequestBodyable
+// UpdateTiIndicatorsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type UpdateTiIndicatorsRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewUpdateTiIndicatorsRequestBuilderInternal instantiates a new UpdateTiIndicatorsRequestBuilder and sets the default values.
 func NewUpdateTiIndicatorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UpdateTiIndicatorsRequestBuilder) {
@@ -43,31 +39,34 @@ func NewUpdateTiIndicatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action updateTiIndicators
-func (m *UpdateTiIndicatorsRequestBuilder) CreatePostRequestInformation(options *UpdateTiIndicatorsRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformationWithRequestConfiguration invoke action updateTiIndicators
+func (m *UpdateTiIndicatorsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateTiIndicatorsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action updateTiIndicators
+func (m *UpdateTiIndicatorsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateTiIndicatorsRequestBodyable, requestConfiguration *UpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Post invoke action updateTiIndicators
-func (m *UpdateTiIndicatorsRequestBuilder) Post(options *UpdateTiIndicatorsRequestBuilderPostOptions)(UpdateTiIndicatorsResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+// PostWithResponseHandler invoke action updateTiIndicators
+func (m *UpdateTiIndicatorsRequestBuilder) PostWithResponseHandler(body UpdateTiIndicatorsRequestBodyable, requestConfiguration *UpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(UpdateTiIndicatorsResponseable, error) {
+    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+}
+// PostWithResponseHandler invoke action updateTiIndicators
+func (m *UpdateTiIndicatorsRequestBuilder) PostWithResponseHandler(body UpdateTiIndicatorsRequestBodyable, requestConfiguration *UpdateTiIndicatorsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(UpdateTiIndicatorsResponseable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateUpdateTiIndicatorsResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateUpdateTiIndicatorsResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

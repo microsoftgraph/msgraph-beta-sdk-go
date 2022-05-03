@@ -15,7 +15,7 @@ type TeamsTab struct {
     messageId *string
     // Index of the order used for sorting tabs.
     sortOrderIndex *string
-    // The application that is linked to the tab. This cannot be changed after tab creation.
+    // The application that is linked to the tab.
     teamsApp TeamsAppable
     // The teamsAppId property
     teamsAppId *string
@@ -140,7 +140,7 @@ func (m *TeamsTab) GetSortOrderIndex()(*string) {
         return m.sortOrderIndex
     }
 }
-// GetTeamsApp gets the teamsApp property value. The application that is linked to the tab. This cannot be changed after tab creation.
+// GetTeamsApp gets the teamsApp property value. The application that is linked to the tab.
 func (m *TeamsTab) GetTeamsApp()(TeamsAppable) {
     if m == nil {
         return nil
@@ -238,7 +238,7 @@ func (m *TeamsTab) SetSortOrderIndex(value *string)() {
         m.sortOrderIndex = value
     }
 }
-// SetTeamsApp sets the teamsApp property value. The application that is linked to the tab. This cannot be changed after tab creation.
+// SetTeamsApp sets the teamsApp property value. The application that is linked to the tab.
 func (m *TeamsTab) SetTeamsApp(value TeamsAppable)() {
     if m != nil {
         m.teamsApp = value

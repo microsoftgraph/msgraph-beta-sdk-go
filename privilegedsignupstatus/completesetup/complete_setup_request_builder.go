@@ -13,16 +13,12 @@ type CompleteSetupRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CompleteSetupRequestBuilderPostOptions options for Post
-type CompleteSetupRequestBuilderPostOptions struct {
-    // 
-    Body CompleteSetupRequestBodyable
+// CompleteSetupRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type CompleteSetupRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewCompleteSetupRequestBuilderInternal instantiates a new CompleteSetupRequestBuilder and sets the default values.
 func NewCompleteSetupRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompleteSetupRequestBuilder) {
@@ -43,31 +39,34 @@ func NewCompleteSetupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewCompleteSetupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformation invoke action completeSetup
-func (m *CompleteSetupRequestBuilder) CreatePostRequestInformation(options *CompleteSetupRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformationWithRequestConfiguration invoke action completeSetup
+func (m *CompleteSetupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CompleteSetupRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action completeSetup
+func (m *CompleteSetupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CompleteSetupRequestBodyable, requestConfiguration *CompleteSetupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// Post invoke action completeSetup
-func (m *CompleteSetupRequestBuilder) Post(options *CompleteSetupRequestBuilderPostOptions)(CompleteSetupResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+// PostWithResponseHandler invoke action completeSetup
+func (m *CompleteSetupRequestBuilder) PostWithResponseHandler(body CompleteSetupRequestBodyable, requestConfiguration *CompleteSetupRequestBuilderPostRequestConfiguration)(CompleteSetupResponseable, error) {
+    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+}
+// PostWithResponseHandler invoke action completeSetup
+func (m *CompleteSetupRequestBuilder) PostWithResponseHandler(body CompleteSetupRequestBodyable, requestConfiguration *CompleteSetupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CompleteSetupResponseable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCompleteSetupResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateCompleteSetupResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

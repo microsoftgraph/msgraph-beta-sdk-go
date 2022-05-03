@@ -3,7 +3,7 @@ import (
     "strings"
     "errors"
 )
-// Provides operations to manage the identityProtectionRoot singleton.
+// Provides operations to manage the collection of riskDetection entities.
 type RiskEventType int
 
 const (
