@@ -40,8 +40,8 @@ func NewManagedDeviceEnrollmentFailureDetailsRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceEnrollmentFailureDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function managedDeviceEnrollmentFailureDetails
-func (m *ManagedDeviceEnrollmentFailureDetailsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function managedDeviceEnrollmentFailureDetails
+func (m *ManagedDeviceEnrollmentFailureDetailsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function managedDeviceEnrollmentFailureDetails
@@ -56,12 +56,12 @@ func (m *ManagedDeviceEnrollmentFailureDetailsRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function managedDeviceEnrollmentFailureDetails
-func (m *ManagedDeviceEnrollmentFailureDetailsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedDeviceEnrollmentFailureDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Reportable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function managedDeviceEnrollmentFailureDetails
+func (m *ManagedDeviceEnrollmentFailureDetailsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Reportable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function managedDeviceEnrollmentFailureDetails
-func (m *ManagedDeviceEnrollmentFailureDetailsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedDeviceEnrollmentFailureDetailsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Reportable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function managedDeviceEnrollmentFailureDetails
+func (m *ManagedDeviceEnrollmentFailureDetailsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedDeviceEnrollmentFailureDetailsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Reportable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

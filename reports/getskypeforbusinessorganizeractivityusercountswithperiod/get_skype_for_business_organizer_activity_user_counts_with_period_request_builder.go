@@ -42,8 +42,8 @@ func NewGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewGetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getSkypeForBusinessOrganizerActivityUserCounts
-func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getSkypeForBusinessOrganizerActivityUserCounts
+func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getSkypeForBusinessOrganizerActivityUserCounts
@@ -58,12 +58,12 @@ func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder)
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getSkypeForBusinessOrganizerActivityUserCounts
-func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getSkypeForBusinessOrganizerActivityUserCounts
+func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder) Get()(GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getSkypeForBusinessOrganizerActivityUserCounts
-func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getSkypeForBusinessOrganizerActivityUserCounts
+func (m *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

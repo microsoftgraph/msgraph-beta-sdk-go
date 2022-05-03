@@ -40,8 +40,8 @@ func NewApplyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewApplyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action apply
-func (m *ApplyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ApplyRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action apply
+func (m *ApplyRequestBuilder) CreatePostRequestInformation(body ApplyRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action apply
@@ -57,12 +57,12 @@ func (m *ApplyRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action apply
-func (m *ApplyRequestBuilder) PostWithResponseHandler(body ApplyRequestBodyable, requestConfiguration *ApplyRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionDeploymentStatusable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action apply
+func (m *ApplyRequestBuilder) Post(body ApplyRequestBodyable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionDeploymentStatusable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action apply
-func (m *ApplyRequestBuilder) PostWithResponseHandler(body ApplyRequestBodyable, requestConfiguration *ApplyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionDeploymentStatusable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action apply
+func (m *ApplyRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ApplyRequestBodyable, requestConfiguration *ApplyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionDeploymentStatusable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

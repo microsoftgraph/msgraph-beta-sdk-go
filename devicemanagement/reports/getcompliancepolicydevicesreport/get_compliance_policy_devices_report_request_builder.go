@@ -39,8 +39,8 @@ func NewGetCompliancePolicyDevicesReportRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewGetCompliancePolicyDevicesReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getCompliancePolicyDevicesReport
-func (m *GetCompliancePolicyDevicesReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetCompliancePolicyDevicesReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getCompliancePolicyDevicesReport
+func (m *GetCompliancePolicyDevicesReportRequestBuilder) CreatePostRequestInformation(body GetCompliancePolicyDevicesReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getCompliancePolicyDevicesReport
@@ -56,12 +56,12 @@ func (m *GetCompliancePolicyDevicesReportRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getCompliancePolicyDevicesReport
-func (m *GetCompliancePolicyDevicesReportRequestBuilder) PostWithResponseHandler(body GetCompliancePolicyDevicesReportRequestBodyable, requestConfiguration *GetCompliancePolicyDevicesReportRequestBuilderPostRequestConfiguration)(GetCompliancePolicyDevicesReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getCompliancePolicyDevicesReport
+func (m *GetCompliancePolicyDevicesReportRequestBuilder) Post(body GetCompliancePolicyDevicesReportRequestBodyable)(GetCompliancePolicyDevicesReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getCompliancePolicyDevicesReport
-func (m *GetCompliancePolicyDevicesReportRequestBuilder) PostWithResponseHandler(body GetCompliancePolicyDevicesReportRequestBodyable, requestConfiguration *GetCompliancePolicyDevicesReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCompliancePolicyDevicesReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getCompliancePolicyDevicesReport
+func (m *GetCompliancePolicyDevicesReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetCompliancePolicyDevicesReportRequestBodyable, requestConfiguration *GetCompliancePolicyDevicesReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCompliancePolicyDevicesReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

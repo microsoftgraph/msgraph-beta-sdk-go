@@ -39,8 +39,8 @@ func NewAddMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewAddMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addMembers
-func (m *AddMembersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddMembersRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action addMembers
+func (m *AddMembersRequestBuilder) CreatePostRequestInformation(body AddMembersRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addMembers
@@ -56,12 +56,12 @@ func (m *AddMembersRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action addMembers
-func (m *AddMembersRequestBuilder) PostWithResponseHandler(body AddMembersRequestBodyable, requestConfiguration *AddMembersRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action addMembers
+func (m *AddMembersRequestBuilder) Post(body AddMembersRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action addMembers
-func (m *AddMembersRequestBuilder) PostWithResponseHandler(body AddMembersRequestBodyable, requestConfiguration *AddMembersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action addMembers
+func (m *AddMembersRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddMembersRequestBodyable, requestConfiguration *AddMembersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

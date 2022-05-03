@@ -39,8 +39,8 @@ func NewDeleteTiIndicatorsByExternalIdRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewDeleteTiIndicatorsByExternalIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action deleteTiIndicatorsByExternalId
-func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DeleteTiIndicatorsByExternalIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action deleteTiIndicatorsByExternalId
+func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) CreatePostRequestInformation(body DeleteTiIndicatorsByExternalIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action deleteTiIndicatorsByExternalId
@@ -56,12 +56,12 @@ func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action deleteTiIndicatorsByExternalId
-func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) PostWithResponseHandler(body DeleteTiIndicatorsByExternalIdRequestBodyable, requestConfiguration *DeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration)(DeleteTiIndicatorsByExternalIdResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action deleteTiIndicatorsByExternalId
+func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) Post(body DeleteTiIndicatorsByExternalIdRequestBodyable)(DeleteTiIndicatorsByExternalIdResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action deleteTiIndicatorsByExternalId
-func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) PostWithResponseHandler(body DeleteTiIndicatorsByExternalIdRequestBodyable, requestConfiguration *DeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(DeleteTiIndicatorsByExternalIdResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action deleteTiIndicatorsByExternalId
+func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body DeleteTiIndicatorsByExternalIdRequestBodyable, requestConfiguration *DeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(DeleteTiIndicatorsByExternalIdResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

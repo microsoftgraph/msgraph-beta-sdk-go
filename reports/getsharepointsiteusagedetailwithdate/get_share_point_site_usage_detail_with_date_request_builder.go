@@ -43,8 +43,8 @@ func NewGetSharePointSiteUsageDetailWithDateRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewGetSharePointSiteUsageDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getSharePointSiteUsageDetail
-func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getSharePointSiteUsageDetail
+func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getSharePointSiteUsageDetail
@@ -59,12 +59,12 @@ func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getSharePointSiteUsageDetail
-func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSharePointSiteUsageDetailWithDateRequestBuilderGetRequestConfiguration)(GetSharePointSiteUsageDetailWithDateResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getSharePointSiteUsageDetail
+func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) Get()(GetSharePointSiteUsageDetailWithDateResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getSharePointSiteUsageDetail
-func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSharePointSiteUsageDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSharePointSiteUsageDetailWithDateResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getSharePointSiteUsageDetail
+func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSharePointSiteUsageDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSharePointSiteUsageDetailWithDateResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

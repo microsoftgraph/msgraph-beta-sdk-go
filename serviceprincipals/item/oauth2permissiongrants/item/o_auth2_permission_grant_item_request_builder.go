@@ -50,8 +50,8 @@ func NewOAuth2PermissionGrantItemRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewOAuth2PermissionGrantItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
-func (m *OAuth2PermissionGrantItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
+func (m *OAuth2PermissionGrantItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
@@ -69,12 +69,12 @@ func (m *OAuth2PermissionGrantItemRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
-func (m *OAuth2PermissionGrantItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OAuth2PermissionGrantItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
+func (m *OAuth2PermissionGrantItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
-func (m *OAuth2PermissionGrantItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OAuth2PermissionGrantItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable, error) {
+// GetWithRequestConfigurationAndResponseHandler delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
+func (m *OAuth2PermissionGrantItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OAuth2PermissionGrantItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

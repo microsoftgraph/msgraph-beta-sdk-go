@@ -67,8 +67,8 @@ func NewAgreementAcceptancesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *AgreementAcceptancesRequestBuilder) Count()(*i47c9811e3b0c7ac2b97c97418bddc2e09594bc15c35dad9e39a27fdf876c953b.CountRequestBuilder) {
     return i47c9811e3b0c7ac2b97c97418bddc2e09594bc15c35dad9e39a27fdf876c953b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the user's terms of use acceptance statuses. Read-only. Nullable.
-func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the user's terms of use acceptance statuses. Read-only. Nullable.
+func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the user's terms of use acceptance statuses. Read-only. Nullable.
@@ -86,12 +86,12 @@ func (m *AgreementAcceptancesRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the user's terms of use acceptance statuses. Read-only. Nullable.
-func (m *AgreementAcceptancesRequestBuilder) GetWithResponseHandler(requestConfiguration *AgreementAcceptancesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the user's terms of use acceptance statuses. Read-only. Nullable.
+func (m *AgreementAcceptancesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the user's terms of use acceptance statuses. Read-only. Nullable.
-func (m *AgreementAcceptancesRequestBuilder) GetWithResponseHandler(requestConfiguration *AgreementAcceptancesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the user's terms of use acceptance statuses. Read-only. Nullable.
+func (m *AgreementAcceptancesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AgreementAcceptancesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

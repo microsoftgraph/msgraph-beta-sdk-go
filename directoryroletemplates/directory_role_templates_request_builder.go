@@ -75,8 +75,8 @@ func NewDirectoryRoleTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *DirectoryRoleTemplatesRequestBuilder) Count()(*i3f8034c8f6f2b58468d7d887066b5af2d36cab6daa3877702f6e2742abf25509.CountRequestBuilder) {
     return i3f8034c8f6f2b58468d7d887066b5af2d36cab6daa3877702f6e2742abf25509.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from directoryRoleTemplates
-func (m *DirectoryRoleTemplatesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from directoryRoleTemplates
+func (m *DirectoryRoleTemplatesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from directoryRoleTemplates
@@ -94,8 +94,8 @@ func (m *DirectoryRoleTemplatesRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to directoryRoleTemplates
-func (m *DirectoryRoleTemplatesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to directoryRoleTemplates
+func (m *DirectoryRoleTemplatesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to directoryRoleTemplates
@@ -111,6 +111,10 @@ func (m *DirectoryRoleTemplatesRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
+// Get get entities from directoryRoleTemplates
+func (m *DirectoryRoleTemplatesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetByIds the getByIds property
 func (m *DirectoryRoleTemplatesRequestBuilder) GetByIds()(*ife18911f94e8d446d0a26f38b8cd124d5a68379523a1dc16ae8198cdf21a7152.GetByIdsRequestBuilder) {
     return ife18911f94e8d446d0a26f38b8cd124d5a68379523a1dc16ae8198cdf21a7152.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -119,12 +123,8 @@ func (m *DirectoryRoleTemplatesRequestBuilder) GetByIds()(*ife18911f94e8d446d0a2
 func (m *DirectoryRoleTemplatesRequestBuilder) GetUserOwnedObjects()(*i88743b6fef8c46b4b91459762f36ac5865d91e9f7d82bba7253d32e67ee18285.GetUserOwnedObjectsRequestBuilder) {
     return i88743b6fef8c46b4b91459762f36ac5865d91e9f7d82bba7253d32e67ee18285.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get entities from directoryRoleTemplates
-func (m *DirectoryRoleTemplatesRequestBuilder) GetWithResponseHandler(requestConfiguration *DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler get entities from directoryRoleTemplates
-func (m *DirectoryRoleTemplatesRequestBuilder) GetWithResponseHandler(requestConfiguration *DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from directoryRoleTemplates
+func (m *DirectoryRoleTemplatesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -139,12 +139,12 @@ func (m *DirectoryRoleTemplatesRequestBuilder) GetWithResponseHandler(requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateCollectionResponseable), nil
 }
-// PostWithResponseHandler add new entity to directoryRoleTemplates
-func (m *DirectoryRoleTemplatesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable, requestConfiguration *DirectoryRoleTemplatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to directoryRoleTemplates
+func (m *DirectoryRoleTemplatesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to directoryRoleTemplates
-func (m *DirectoryRoleTemplatesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable, requestConfiguration *DirectoryRoleTemplatesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to directoryRoleTemplates
+func (m *DirectoryRoleTemplatesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable, requestConfiguration *DirectoryRoleTemplatesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleTemplateable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

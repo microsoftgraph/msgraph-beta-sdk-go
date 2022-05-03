@@ -39,8 +39,8 @@ func NewTriggerConfigurationManagerActionRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewTriggerConfigurationManagerActionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration trigger action on ConfigurationManager client
-func (m *TriggerConfigurationManagerActionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body TriggerConfigurationManagerActionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation trigger action on ConfigurationManager client
+func (m *TriggerConfigurationManagerActionRequestBuilder) CreatePostRequestInformation(body TriggerConfigurationManagerActionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration trigger action on ConfigurationManager client
@@ -56,12 +56,12 @@ func (m *TriggerConfigurationManagerActionRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler trigger action on ConfigurationManager client
-func (m *TriggerConfigurationManagerActionRequestBuilder) PostWithResponseHandler(body TriggerConfigurationManagerActionRequestBodyable, requestConfiguration *TriggerConfigurationManagerActionRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post trigger action on ConfigurationManager client
+func (m *TriggerConfigurationManagerActionRequestBuilder) Post(body TriggerConfigurationManagerActionRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler trigger action on ConfigurationManager client
-func (m *TriggerConfigurationManagerActionRequestBuilder) PostWithResponseHandler(body TriggerConfigurationManagerActionRequestBodyable, requestConfiguration *TriggerConfigurationManagerActionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler trigger action on ConfigurationManager client
+func (m *TriggerConfigurationManagerActionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body TriggerConfigurationManagerActionRequestBodyable, requestConfiguration *TriggerConfigurationManagerActionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -65,8 +65,8 @@ func NewDeviceAndAppManagementAssignmentFilterItemRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceAndAppManagementAssignmentFilterItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignmentFilters for deviceManagement
-func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property assignmentFilters for deviceManagement
+func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignmentFilters for deviceManagement
@@ -81,8 +81,8 @@ func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) CreateDeleteR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of assignment filters
-func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of assignment filters
+func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of assignment filters
@@ -100,8 +100,8 @@ func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignmentFilters in deviceManagement
-func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property assignmentFilters in deviceManagement
+func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignmentFilters in deviceManagement
@@ -117,12 +117,12 @@ func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) CreatePatchRe
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property assignmentFilters for deviceManagement
-func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceAndAppManagementAssignmentFilterItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property assignmentFilters for deviceManagement
+func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property assignmentFilters for deviceManagement
-func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceAndAppManagementAssignmentFilterItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property assignmentFilters for deviceManagement
+func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceAndAppManagementAssignmentFilterItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -137,16 +137,16 @@ func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) DeleteWithRes
     }
     return nil
 }
+// Get the list of assignment filters
+func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetSupportedProperties provides operations to call the getSupportedProperties method.
 func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) GetSupportedProperties()(*i2abdeba6a2120c9e857becdb50bd4401198f13618af67e4a5a7bcffdd11f7525.GetSupportedPropertiesRequestBuilder) {
     return i2abdeba6a2120c9e857becdb50bd4401198f13618af67e4a5a7bcffdd11f7525.NewGetSupportedPropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the list of assignment filters
-func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceAndAppManagementAssignmentFilterItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler the list of assignment filters
-func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceAndAppManagementAssignmentFilterItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of assignment filters
+func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceAndAppManagementAssignmentFilterItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -161,12 +161,12 @@ func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) GetWithRespon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable), nil
 }
-// PatchWithResponseHandler update the navigation property assignmentFilters in deviceManagement
-func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable, requestConfiguration *DeviceAndAppManagementAssignmentFilterItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property assignmentFilters in deviceManagement
+func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property assignmentFilters in deviceManagement
-func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable, requestConfiguration *DeviceAndAppManagementAssignmentFilterItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property assignmentFilters in deviceManagement
+func (m *DeviceAndAppManagementAssignmentFilterItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementAssignmentFilterable, requestConfiguration *DeviceAndAppManagementAssignmentFilterItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

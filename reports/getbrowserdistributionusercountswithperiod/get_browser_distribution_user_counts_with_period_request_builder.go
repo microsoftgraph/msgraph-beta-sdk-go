@@ -42,8 +42,8 @@ func NewGetBrowserDistributionUserCountsWithPeriodRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewGetBrowserDistributionUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getBrowserDistributionUserCounts
-func (m *GetBrowserDistributionUserCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getBrowserDistributionUserCounts
+func (m *GetBrowserDistributionUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getBrowserDistributionUserCounts
@@ -58,12 +58,12 @@ func (m *GetBrowserDistributionUserCountsWithPeriodRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getBrowserDistributionUserCounts
-func (m *GetBrowserDistributionUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetBrowserDistributionUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetBrowserDistributionUserCountsWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getBrowserDistributionUserCounts
+func (m *GetBrowserDistributionUserCountsWithPeriodRequestBuilder) Get()(GetBrowserDistributionUserCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getBrowserDistributionUserCounts
-func (m *GetBrowserDistributionUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetBrowserDistributionUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetBrowserDistributionUserCountsWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getBrowserDistributionUserCounts
+func (m *GetBrowserDistributionUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetBrowserDistributionUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetBrowserDistributionUserCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

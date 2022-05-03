@@ -42,8 +42,8 @@ func NewGetOneDriveUsageStorageWithPeriodRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewGetOneDriveUsageStorageWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getOneDriveUsageStorage
-func (m *GetOneDriveUsageStorageWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getOneDriveUsageStorage
+func (m *GetOneDriveUsageStorageWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getOneDriveUsageStorage
@@ -58,12 +58,12 @@ func (m *GetOneDriveUsageStorageWithPeriodRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getOneDriveUsageStorage
-func (m *GetOneDriveUsageStorageWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOneDriveUsageStorageWithPeriodRequestBuilderGetRequestConfiguration)(GetOneDriveUsageStorageWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getOneDriveUsageStorage
+func (m *GetOneDriveUsageStorageWithPeriodRequestBuilder) Get()(GetOneDriveUsageStorageWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getOneDriveUsageStorage
-func (m *GetOneDriveUsageStorageWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOneDriveUsageStorageWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOneDriveUsageStorageWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getOneDriveUsageStorage
+func (m *GetOneDriveUsageStorageWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetOneDriveUsageStorageWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOneDriveUsageStorageWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

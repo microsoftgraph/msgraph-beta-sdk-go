@@ -74,8 +74,8 @@ func NewUnsupportedGroupPolicyExtensionsRequestBuilder(rawUrl string, requestAda
 func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) Count()(*i6e5e07125c6c700a5903528a10026787c58243d792090096a9f6b71ee589c87a.CountRequestBuilder) {
     return i6e5e07125c6c700a5903528a10026787c58243d792090096a9f6b71ee589c87a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration a list of unsupported group policy extensions inside the Group Policy Object.
-func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a list of unsupported group policy extensions inside the Group Policy Object.
+func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a list of unsupported group policy extensions inside the Group Policy Object.
@@ -93,8 +93,8 @@ func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to unsupportedGroupPolicyExtensions for deviceManagement
-func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to unsupportedGroupPolicyExtensions for deviceManagement
+func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to unsupportedGroupPolicyExtensions for deviceManagement
@@ -110,12 +110,12 @@ func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler a list of unsupported group policy extensions inside the Group Policy Object.
-func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) GetWithResponseHandler(requestConfiguration *UnsupportedGroupPolicyExtensionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a list of unsupported group policy extensions inside the Group Policy Object.
+func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a list of unsupported group policy extensions inside the Group Policy Object.
-func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) GetWithResponseHandler(requestConfiguration *UnsupportedGroupPolicyExtensionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler a list of unsupported group policy extensions inside the Group Policy Object.
+func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnsupportedGroupPolicyExtensionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) GetWithResponseHandler(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to unsupportedGroupPolicyExtensions for deviceManagement
-func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionable, requestConfiguration *UnsupportedGroupPolicyExtensionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to unsupportedGroupPolicyExtensions for deviceManagement
+func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to unsupportedGroupPolicyExtensions for deviceManagement
-func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionable, requestConfiguration *UnsupportedGroupPolicyExtensionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to unsupportedGroupPolicyExtensions for deviceManagement
+func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionable, requestConfiguration *UnsupportedGroupPolicyExtensionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnsupportedGroupPolicyExtensionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

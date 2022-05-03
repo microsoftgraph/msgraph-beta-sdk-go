@@ -77,8 +77,8 @@ func NewDeviceConfigurationsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *DeviceConfigurationsRequestBuilder) Count()(*id4f8b95e9a4f408fff016b0499932369a6013687b3c089be2d425060978e03b0.CountRequestBuilder) {
     return id4f8b95e9a4f408fff016b0499932369a6013687b3c089be2d425060978e03b0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the device configurations.
-func (m *DeviceConfigurationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the device configurations.
+func (m *DeviceConfigurationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the device configurations.
@@ -96,8 +96,8 @@ func (m *DeviceConfigurationsRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceConfigurations for deviceManagement
-func (m *DeviceConfigurationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to deviceConfigurations for deviceManagement
+func (m *DeviceConfigurationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceConfigurations for deviceManagement
@@ -113,6 +113,10 @@ func (m *DeviceConfigurationsRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
+// Get the device configurations.
+func (m *DeviceConfigurationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetIosAvailableUpdateVersions provides operations to call the getIosAvailableUpdateVersions method.
 func (m *DeviceConfigurationsRequestBuilder) GetIosAvailableUpdateVersions()(*i91812d422ff32b6087dbdb578859075772e6e50438228306a697e5aa7c00dc0a.GetIosAvailableUpdateVersionsRequestBuilder) {
     return i91812d422ff32b6087dbdb578859075772e6e50438228306a697e5aa7c00dc0a.NewGetIosAvailableUpdateVersionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -121,12 +125,8 @@ func (m *DeviceConfigurationsRequestBuilder) GetIosAvailableUpdateVersions()(*i9
 func (m *DeviceConfigurationsRequestBuilder) GetTargetedUsersAndDevices()(*i7c8fc03ac714b8a0b8442431c0a15160448a9c352c4c71e08219dd57f3689a4a.GetTargetedUsersAndDevicesRequestBuilder) {
     return i7c8fc03ac714b8a0b8442431c0a15160448a9c352c4c71e08219dd57f3689a4a.NewGetTargetedUsersAndDevicesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the device configurations.
-func (m *DeviceConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler the device configurations.
-func (m *DeviceConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the device configurations.
+func (m *DeviceConfigurationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -145,12 +145,12 @@ func (m *DeviceConfigurationsRequestBuilder) GetWithResponseHandler(requestConfi
 func (m *DeviceConfigurationsRequestBuilder) HasPayloadLinks()(*ie1dbe7768034fc9acbabff177deec668725e3e1b963712ee72a4c861c0c6347f.HasPayloadLinksRequestBuilder) {
     return ie1dbe7768034fc9acbabff177deec668725e3e1b963712ee72a4c861c0c6347f.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PostWithResponseHandler create new navigation property to deviceConfigurations for deviceManagement
-func (m *DeviceConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable, requestConfiguration *DeviceConfigurationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to deviceConfigurations for deviceManagement
+func (m *DeviceConfigurationsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to deviceConfigurations for deviceManagement
-func (m *DeviceConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable, requestConfiguration *DeviceConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to deviceConfigurations for deviceManagement
+func (m *DeviceConfigurationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable, requestConfiguration *DeviceConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

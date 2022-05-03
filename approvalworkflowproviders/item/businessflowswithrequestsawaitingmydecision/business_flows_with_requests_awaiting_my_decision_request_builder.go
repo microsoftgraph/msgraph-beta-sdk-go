@@ -74,8 +74,8 @@ func NewBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder(rawUrl string,
 func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) Count()(*ia2a47d39f7acac39501993a83b159182bff063cd1d8626dbfb39cc2ce12693b0.CountRequestBuilder) {
     return ia2a47d39f7acac39501993a83b159182bff063cd1d8626dbfb39cc2ce12693b0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
-func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
+func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
@@ -93,8 +93,8 @@ func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to businessFlowsWithRequestsAwaitingMyDecision for approvalWorkflowProviders
-func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to businessFlowsWithRequestsAwaitingMyDecision for approvalWorkflowProviders
+func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to businessFlowsWithRequestsAwaitingMyDecision for approvalWorkflowProviders
@@ -110,12 +110,12 @@ func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) CreatePostRe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
-func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) GetWithResponseHandler(requestConfiguration *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
+func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
-func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) GetWithResponseHandler(requestConfiguration *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
+func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) GetWithRespo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to businessFlowsWithRequestsAwaitingMyDecision for approvalWorkflowProviders
-func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable, requestConfiguration *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to businessFlowsWithRequestsAwaitingMyDecision for approvalWorkflowProviders
+func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to businessFlowsWithRequestsAwaitingMyDecision for approvalWorkflowProviders
-func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable, requestConfiguration *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to businessFlowsWithRequestsAwaitingMyDecision for approvalWorkflowProviders
+func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable, requestConfiguration *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

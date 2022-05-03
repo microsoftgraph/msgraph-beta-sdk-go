@@ -39,8 +39,8 @@ func NewGetComplianceSettingDetailsReportRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewGetComplianceSettingDetailsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getComplianceSettingDetailsReport
-func (m *GetComplianceSettingDetailsReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetComplianceSettingDetailsReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getComplianceSettingDetailsReport
+func (m *GetComplianceSettingDetailsReportRequestBuilder) CreatePostRequestInformation(body GetComplianceSettingDetailsReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getComplianceSettingDetailsReport
@@ -56,12 +56,12 @@ func (m *GetComplianceSettingDetailsReportRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getComplianceSettingDetailsReport
-func (m *GetComplianceSettingDetailsReportRequestBuilder) PostWithResponseHandler(body GetComplianceSettingDetailsReportRequestBodyable, requestConfiguration *GetComplianceSettingDetailsReportRequestBuilderPostRequestConfiguration)(GetComplianceSettingDetailsReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getComplianceSettingDetailsReport
+func (m *GetComplianceSettingDetailsReportRequestBuilder) Post(body GetComplianceSettingDetailsReportRequestBodyable)(GetComplianceSettingDetailsReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getComplianceSettingDetailsReport
-func (m *GetComplianceSettingDetailsReportRequestBuilder) PostWithResponseHandler(body GetComplianceSettingDetailsReportRequestBodyable, requestConfiguration *GetComplianceSettingDetailsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetComplianceSettingDetailsReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getComplianceSettingDetailsReport
+func (m *GetComplianceSettingDetailsReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetComplianceSettingDetailsReportRequestBodyable, requestConfiguration *GetComplianceSettingDetailsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetComplianceSettingDetailsReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

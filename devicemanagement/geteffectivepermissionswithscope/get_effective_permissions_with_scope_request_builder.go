@@ -42,8 +42,8 @@ func NewGetEffectivePermissionsWithScopeRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewGetEffectivePermissionsWithScopeRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getEffectivePermissions
-func (m *GetEffectivePermissionsWithScopeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getEffectivePermissions
+func (m *GetEffectivePermissionsWithScopeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getEffectivePermissions
@@ -58,12 +58,12 @@ func (m *GetEffectivePermissionsWithScopeRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getEffectivePermissions
-func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(GetEffectivePermissionsWithScopeResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getEffectivePermissions
+func (m *GetEffectivePermissionsWithScopeRequestBuilder) Get()(GetEffectivePermissionsWithScopeResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getEffectivePermissions
-func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEffectivePermissionsWithScopeResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getEffectivePermissions
+func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEffectivePermissionsWithScopeResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

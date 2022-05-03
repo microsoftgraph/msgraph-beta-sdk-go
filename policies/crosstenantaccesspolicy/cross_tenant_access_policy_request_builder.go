@@ -67,8 +67,8 @@ func NewCrossTenantAccessPolicyRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewCrossTenantAccessPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property crossTenantAccessPolicy for policies
-func (m *CrossTenantAccessPolicyRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property crossTenantAccessPolicy for policies
+func (m *CrossTenantAccessPolicyRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property crossTenantAccessPolicy for policies
@@ -83,8 +83,8 @@ func (m *CrossTenantAccessPolicyRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the custom rules that define an access scenario when interacting with external Azure AD tenants.
-func (m *CrossTenantAccessPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the custom rules that define an access scenario when interacting with external Azure AD tenants.
+func (m *CrossTenantAccessPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the custom rules that define an access scenario when interacting with external Azure AD tenants.
@@ -102,8 +102,8 @@ func (m *CrossTenantAccessPolicyRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property crossTenantAccessPolicy in policies
-func (m *CrossTenantAccessPolicyRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property crossTenantAccessPolicy in policies
+func (m *CrossTenantAccessPolicyRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property crossTenantAccessPolicy in policies
@@ -123,12 +123,12 @@ func (m *CrossTenantAccessPolicyRequestBuilder) CreatePatchRequestInformationWit
 func (m *CrossTenantAccessPolicyRequestBuilder) Default_escaped()(*i9012de60632d1258f2b5642de666977d54e3da254d584ad456e64c40f801e738.DefaultRequestBuilder) {
     return i9012de60632d1258f2b5642de666977d54e3da254d584ad456e64c40f801e738.NewDefaultRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeleteWithResponseHandler delete navigation property crossTenantAccessPolicy for policies
-func (m *CrossTenantAccessPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CrossTenantAccessPolicyRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property crossTenantAccessPolicy for policies
+func (m *CrossTenantAccessPolicyRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property crossTenantAccessPolicy for policies
-func (m *CrossTenantAccessPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CrossTenantAccessPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property crossTenantAccessPolicy for policies
+func (m *CrossTenantAccessPolicyRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *CrossTenantAccessPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -143,12 +143,12 @@ func (m *CrossTenantAccessPolicyRequestBuilder) DeleteWithResponseHandler(reques
     }
     return nil
 }
-// GetWithResponseHandler the custom rules that define an access scenario when interacting with external Azure AD tenants.
-func (m *CrossTenantAccessPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *CrossTenantAccessPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the custom rules that define an access scenario when interacting with external Azure AD tenants.
+func (m *CrossTenantAccessPolicyRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the custom rules that define an access scenario when interacting with external Azure AD tenants.
-func (m *CrossTenantAccessPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *CrossTenantAccessPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler the custom rules that define an access scenario when interacting with external Azure AD tenants.
+func (m *CrossTenantAccessPolicyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CrossTenantAccessPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -178,12 +178,12 @@ func (m *CrossTenantAccessPolicyRequestBuilder) PartnersById(id string)(*i671445
     }
     return i671445f12e1144f0707e713947da70fbe18307579db947c865515610f6068a76.NewCrossTenantAccessPolicyConfigurationPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property crossTenantAccessPolicy in policies
-func (m *CrossTenantAccessPolicyRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyable, requestConfiguration *CrossTenantAccessPolicyRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property crossTenantAccessPolicy in policies
+func (m *CrossTenantAccessPolicyRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property crossTenantAccessPolicy in policies
-func (m *CrossTenantAccessPolicyRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyable, requestConfiguration *CrossTenantAccessPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property crossTenantAccessPolicy in policies
+func (m *CrossTenantAccessPolicyRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyable, requestConfiguration *CrossTenantAccessPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

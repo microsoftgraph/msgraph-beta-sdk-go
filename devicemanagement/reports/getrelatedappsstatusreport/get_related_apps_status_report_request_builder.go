@@ -39,8 +39,8 @@ func NewGetRelatedAppsStatusReportRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewGetRelatedAppsStatusReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getRelatedAppsStatusReport
-func (m *GetRelatedAppsStatusReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetRelatedAppsStatusReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getRelatedAppsStatusReport
+func (m *GetRelatedAppsStatusReportRequestBuilder) CreatePostRequestInformation(body GetRelatedAppsStatusReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getRelatedAppsStatusReport
@@ -56,12 +56,12 @@ func (m *GetRelatedAppsStatusReportRequestBuilder) CreatePostRequestInformationW
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getRelatedAppsStatusReport
-func (m *GetRelatedAppsStatusReportRequestBuilder) PostWithResponseHandler(body GetRelatedAppsStatusReportRequestBodyable, requestConfiguration *GetRelatedAppsStatusReportRequestBuilderPostRequestConfiguration)(GetRelatedAppsStatusReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getRelatedAppsStatusReport
+func (m *GetRelatedAppsStatusReportRequestBuilder) Post(body GetRelatedAppsStatusReportRequestBodyable)(GetRelatedAppsStatusReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getRelatedAppsStatusReport
-func (m *GetRelatedAppsStatusReportRequestBuilder) PostWithResponseHandler(body GetRelatedAppsStatusReportRequestBodyable, requestConfiguration *GetRelatedAppsStatusReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRelatedAppsStatusReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getRelatedAppsStatusReport
+func (m *GetRelatedAppsStatusReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetRelatedAppsStatusReportRequestBodyable, requestConfiguration *GetRelatedAppsStatusReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRelatedAppsStatusReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

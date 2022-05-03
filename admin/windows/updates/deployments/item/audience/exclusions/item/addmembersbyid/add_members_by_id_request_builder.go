@@ -39,8 +39,8 @@ func NewAddMembersByIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewAddMembersByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addMembersById
-func (m *AddMembersByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddMembersByIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action addMembersById
+func (m *AddMembersByIdRequestBuilder) CreatePostRequestInformation(body AddMembersByIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addMembersById
@@ -56,12 +56,12 @@ func (m *AddMembersByIdRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action addMembersById
-func (m *AddMembersByIdRequestBuilder) PostWithResponseHandler(body AddMembersByIdRequestBodyable, requestConfiguration *AddMembersByIdRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action addMembersById
+func (m *AddMembersByIdRequestBuilder) Post(body AddMembersByIdRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action addMembersById
-func (m *AddMembersByIdRequestBuilder) PostWithResponseHandler(body AddMembersByIdRequestBodyable, requestConfiguration *AddMembersByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action addMembersById
+func (m *AddMembersByIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddMembersByIdRequestBodyable, requestConfiguration *AddMembersByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

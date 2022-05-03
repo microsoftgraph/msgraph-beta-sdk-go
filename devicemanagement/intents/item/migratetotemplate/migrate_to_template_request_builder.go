@@ -39,8 +39,8 @@ func NewMigrateToTemplateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewMigrateToTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action migrateToTemplate
-func (m *MigrateToTemplateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MigrateToTemplateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action migrateToTemplate
+func (m *MigrateToTemplateRequestBuilder) CreatePostRequestInformation(body MigrateToTemplateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action migrateToTemplate
@@ -56,12 +56,12 @@ func (m *MigrateToTemplateRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action migrateToTemplate
-func (m *MigrateToTemplateRequestBuilder) PostWithResponseHandler(body MigrateToTemplateRequestBodyable, requestConfiguration *MigrateToTemplateRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action migrateToTemplate
+func (m *MigrateToTemplateRequestBuilder) Post(body MigrateToTemplateRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action migrateToTemplate
-func (m *MigrateToTemplateRequestBuilder) PostWithResponseHandler(body MigrateToTemplateRequestBodyable, requestConfiguration *MigrateToTemplateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action migrateToTemplate
+func (m *MigrateToTemplateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body MigrateToTemplateRequestBodyable, requestConfiguration *MigrateToTemplateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

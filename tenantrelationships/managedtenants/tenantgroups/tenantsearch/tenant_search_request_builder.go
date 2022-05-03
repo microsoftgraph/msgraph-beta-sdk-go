@@ -39,8 +39,8 @@ func NewTenantSearchRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewTenantSearchRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action tenantSearch
-func (m *TenantSearchRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body TenantSearchRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action tenantSearch
+func (m *TenantSearchRequestBuilder) CreatePostRequestInformation(body TenantSearchRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action tenantSearch
@@ -56,12 +56,12 @@ func (m *TenantSearchRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action tenantSearch
-func (m *TenantSearchRequestBuilder) PostWithResponseHandler(body TenantSearchRequestBodyable, requestConfiguration *TenantSearchRequestBuilderPostRequestConfiguration)(TenantSearchResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action tenantSearch
+func (m *TenantSearchRequestBuilder) Post(body TenantSearchRequestBodyable)(TenantSearchResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action tenantSearch
-func (m *TenantSearchRequestBuilder) PostWithResponseHandler(body TenantSearchRequestBodyable, requestConfiguration *TenantSearchRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(TenantSearchResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action tenantSearch
+func (m *TenantSearchRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body TenantSearchRequestBodyable, requestConfiguration *TenantSearchRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(TenantSearchResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

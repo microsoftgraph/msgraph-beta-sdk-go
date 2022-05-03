@@ -96,8 +96,8 @@ func NewAccessPackageAssignmentResourceRoleItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentResourceRoleItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property accessPackageAssignmentResourceRoles for identityGovernance
-func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property accessPackageAssignmentResourceRoles for identityGovernance
+func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property accessPackageAssignmentResourceRoles for identityGovernance
@@ -112,8 +112,8 @@ func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) CreateDeleteRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the resource roles delivered to the target user for this assignment. Read-only. Nullable.
-func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the resource roles delivered to the target user for this assignment. Read-only. Nullable.
+func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the resource roles delivered to the target user for this assignment. Read-only. Nullable.
@@ -131,8 +131,8 @@ func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property accessPackageAssignmentResourceRoles in identityGovernance
-func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property accessPackageAssignmentResourceRoles in identityGovernance
+func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property accessPackageAssignmentResourceRoles in identityGovernance
@@ -148,12 +148,12 @@ func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) CreatePatchReque
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property accessPackageAssignmentResourceRoles for identityGovernance
-func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AccessPackageAssignmentResourceRoleItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property accessPackageAssignmentResourceRoles for identityGovernance
+func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property accessPackageAssignmentResourceRoles for identityGovernance
-func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AccessPackageAssignmentResourceRoleItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property accessPackageAssignmentResourceRoles for identityGovernance
+func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageAssignmentResourceRoleItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -168,12 +168,12 @@ func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) DeleteWithRespon
     }
     return nil
 }
-// GetWithResponseHandler the resource roles delivered to the target user for this assignment. Read-only. Nullable.
-func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageAssignmentResourceRoleItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the resource roles delivered to the target user for this assignment. Read-only. Nullable.
+func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the resource roles delivered to the target user for this assignment. Read-only. Nullable.
-func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageAssignmentResourceRoleItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, error) {
+// GetWithRequestConfigurationAndResponseHandler the resource roles delivered to the target user for this assignment. Read-only. Nullable.
+func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageAssignmentResourceRoleItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -188,12 +188,12 @@ func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) GetWithResponseH
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable), nil
 }
-// PatchWithResponseHandler update the navigation property accessPackageAssignmentResourceRoles in identityGovernance
-func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, requestConfiguration *AccessPackageAssignmentResourceRoleItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property accessPackageAssignmentResourceRoles in identityGovernance
+func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property accessPackageAssignmentResourceRoles in identityGovernance
-func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, requestConfiguration *AccessPackageAssignmentResourceRoleItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property accessPackageAssignmentResourceRoles in identityGovernance
+func (m *AccessPackageAssignmentResourceRoleItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, requestConfiguration *AccessPackageAssignmentResourceRoleItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

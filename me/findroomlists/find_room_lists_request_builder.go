@@ -39,8 +39,8 @@ func NewFindRoomListsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewFindRoomListsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function findRoomLists
-func (m *FindRoomListsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function findRoomLists
+func (m *FindRoomListsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function findRoomLists
@@ -55,12 +55,12 @@ func (m *FindRoomListsRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function findRoomLists
-func (m *FindRoomListsRequestBuilder) GetWithResponseHandler(requestConfiguration *FindRoomListsRequestBuilderGetRequestConfiguration)(FindRoomListsResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function findRoomLists
+func (m *FindRoomListsRequestBuilder) Get()(FindRoomListsResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function findRoomLists
-func (m *FindRoomListsRequestBuilder) GetWithResponseHandler(requestConfiguration *FindRoomListsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(FindRoomListsResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function findRoomLists
+func (m *FindRoomListsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FindRoomListsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(FindRoomListsResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

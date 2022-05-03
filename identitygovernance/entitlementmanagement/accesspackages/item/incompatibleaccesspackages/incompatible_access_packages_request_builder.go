@@ -67,8 +67,8 @@ func NewIncompatibleAccessPackagesRequestBuilder(rawUrl string, requestAdapter i
 func (m *IncompatibleAccessPackagesRequestBuilder) Count()(*i8d618b932c15df77f1b1beb5f72990a574d1f84db2d085282d104c495a3d0daf.CountRequestBuilder) {
     return i8d618b932c15df77f1b1beb5f72990a574d1f84db2d085282d104c495a3d0daf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the  access packages whose assigned users are ineligible to be assigned this access package.
-func (m *IncompatibleAccessPackagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the  access packages whose assigned users are ineligible to be assigned this access package.
+func (m *IncompatibleAccessPackagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the  access packages whose assigned users are ineligible to be assigned this access package.
@@ -86,12 +86,12 @@ func (m *IncompatibleAccessPackagesRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the  access packages whose assigned users are ineligible to be assigned this access package.
-func (m *IncompatibleAccessPackagesRequestBuilder) GetWithResponseHandler(requestConfiguration *IncompatibleAccessPackagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the  access packages whose assigned users are ineligible to be assigned this access package.
+func (m *IncompatibleAccessPackagesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the  access packages whose assigned users are ineligible to be assigned this access package.
-func (m *IncompatibleAccessPackagesRequestBuilder) GetWithResponseHandler(requestConfiguration *IncompatibleAccessPackagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the  access packages whose assigned users are ineligible to be assigned this access package.
+func (m *IncompatibleAccessPackagesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IncompatibleAccessPackagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

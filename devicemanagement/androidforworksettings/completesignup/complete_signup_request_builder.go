@@ -39,8 +39,8 @@ func NewCompleteSignupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewCompleteSignupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action completeSignup
-func (m *CompleteSignupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CompleteSignupRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action completeSignup
+func (m *CompleteSignupRequestBuilder) CreatePostRequestInformation(body CompleteSignupRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action completeSignup
@@ -56,12 +56,12 @@ func (m *CompleteSignupRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action completeSignup
-func (m *CompleteSignupRequestBuilder) PostWithResponseHandler(body CompleteSignupRequestBodyable, requestConfiguration *CompleteSignupRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action completeSignup
+func (m *CompleteSignupRequestBuilder) Post(body CompleteSignupRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action completeSignup
-func (m *CompleteSignupRequestBuilder) PostWithResponseHandler(body CompleteSignupRequestBodyable, requestConfiguration *CompleteSignupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action completeSignup
+func (m *CompleteSignupRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CompleteSignupRequestBodyable, requestConfiguration *CompleteSignupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

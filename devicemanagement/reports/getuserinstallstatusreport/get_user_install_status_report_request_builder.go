@@ -39,8 +39,8 @@ func NewGetUserInstallStatusReportRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewGetUserInstallStatusReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getUserInstallStatusReport
-func (m *GetUserInstallStatusReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetUserInstallStatusReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getUserInstallStatusReport
+func (m *GetUserInstallStatusReportRequestBuilder) CreatePostRequestInformation(body GetUserInstallStatusReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getUserInstallStatusReport
@@ -56,12 +56,12 @@ func (m *GetUserInstallStatusReportRequestBuilder) CreatePostRequestInformationW
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getUserInstallStatusReport
-func (m *GetUserInstallStatusReportRequestBuilder) PostWithResponseHandler(body GetUserInstallStatusReportRequestBodyable, requestConfiguration *GetUserInstallStatusReportRequestBuilderPostRequestConfiguration)(GetUserInstallStatusReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getUserInstallStatusReport
+func (m *GetUserInstallStatusReportRequestBuilder) Post(body GetUserInstallStatusReportRequestBodyable)(GetUserInstallStatusReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getUserInstallStatusReport
-func (m *GetUserInstallStatusReportRequestBuilder) PostWithResponseHandler(body GetUserInstallStatusReportRequestBodyable, requestConfiguration *GetUserInstallStatusReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetUserInstallStatusReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getUserInstallStatusReport
+func (m *GetUserInstallStatusReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetUserInstallStatusReportRequestBodyable, requestConfiguration *GetUserInstallStatusReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetUserInstallStatusReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

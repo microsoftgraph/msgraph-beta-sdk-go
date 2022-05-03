@@ -39,8 +39,8 @@ func NewEnrollAssetsByIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewEnrollAssetsByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action enrollAssetsById
-func (m *EnrollAssetsByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EnrollAssetsByIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action enrollAssetsById
+func (m *EnrollAssetsByIdRequestBuilder) CreatePostRequestInformation(body EnrollAssetsByIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action enrollAssetsById
@@ -56,12 +56,12 @@ func (m *EnrollAssetsByIdRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action enrollAssetsById
-func (m *EnrollAssetsByIdRequestBuilder) PostWithResponseHandler(body EnrollAssetsByIdRequestBodyable, requestConfiguration *EnrollAssetsByIdRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action enrollAssetsById
+func (m *EnrollAssetsByIdRequestBuilder) Post(body EnrollAssetsByIdRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action enrollAssetsById
-func (m *EnrollAssetsByIdRequestBuilder) PostWithResponseHandler(body EnrollAssetsByIdRequestBodyable, requestConfiguration *EnrollAssetsByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action enrollAssetsById
+func (m *EnrollAssetsByIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EnrollAssetsByIdRequestBodyable, requestConfiguration *EnrollAssetsByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

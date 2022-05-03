@@ -40,8 +40,8 @@ func NewManagedDeviceEnrollmentFailureTrendsRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceEnrollmentFailureTrendsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration metadata for the enrollment failure trends report
-func (m *ManagedDeviceEnrollmentFailureTrendsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation metadata for the enrollment failure trends report
+func (m *ManagedDeviceEnrollmentFailureTrendsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration metadata for the enrollment failure trends report
@@ -56,12 +56,12 @@ func (m *ManagedDeviceEnrollmentFailureTrendsRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler metadata for the enrollment failure trends report
-func (m *ManagedDeviceEnrollmentFailureTrendsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedDeviceEnrollmentFailureTrendsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Reportable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get metadata for the enrollment failure trends report
+func (m *ManagedDeviceEnrollmentFailureTrendsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Reportable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler metadata for the enrollment failure trends report
-func (m *ManagedDeviceEnrollmentFailureTrendsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedDeviceEnrollmentFailureTrendsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Reportable, error) {
+// GetWithRequestConfigurationAndResponseHandler metadata for the enrollment failure trends report
+func (m *ManagedDeviceEnrollmentFailureTrendsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedDeviceEnrollmentFailureTrendsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Reportable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -50,8 +50,8 @@ func NewIntendedDeploymentProfileRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewIntendedDeploymentProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration deployment profile intended to be assigned to the Windows autopilot device.
-func (m *IntendedDeploymentProfileRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation deployment profile intended to be assigned to the Windows autopilot device.
+func (m *IntendedDeploymentProfileRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration deployment profile intended to be assigned to the Windows autopilot device.
@@ -69,12 +69,12 @@ func (m *IntendedDeploymentProfileRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler deployment profile intended to be assigned to the Windows autopilot device.
-func (m *IntendedDeploymentProfileRequestBuilder) GetWithResponseHandler(requestConfiguration *IntendedDeploymentProfileRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get deployment profile intended to be assigned to the Windows autopilot device.
+func (m *IntendedDeploymentProfileRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler deployment profile intended to be assigned to the Windows autopilot device.
-func (m *IntendedDeploymentProfileRequestBuilder) GetWithResponseHandler(requestConfiguration *IntendedDeploymentProfileRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, error) {
+// GetWithRequestConfigurationAndResponseHandler deployment profile intended to be assigned to the Windows autopilot device.
+func (m *IntendedDeploymentProfileRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IntendedDeploymentProfileRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -39,8 +39,8 @@ func NewGetAppsInstallSummaryReportRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewGetAppsInstallSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getAppsInstallSummaryReport
-func (m *GetAppsInstallSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetAppsInstallSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getAppsInstallSummaryReport
+func (m *GetAppsInstallSummaryReportRequestBuilder) CreatePostRequestInformation(body GetAppsInstallSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getAppsInstallSummaryReport
@@ -56,12 +56,12 @@ func (m *GetAppsInstallSummaryReportRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getAppsInstallSummaryReport
-func (m *GetAppsInstallSummaryReportRequestBuilder) PostWithResponseHandler(body GetAppsInstallSummaryReportRequestBodyable, requestConfiguration *GetAppsInstallSummaryReportRequestBuilderPostRequestConfiguration)(GetAppsInstallSummaryReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getAppsInstallSummaryReport
+func (m *GetAppsInstallSummaryReportRequestBuilder) Post(body GetAppsInstallSummaryReportRequestBodyable)(GetAppsInstallSummaryReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getAppsInstallSummaryReport
-func (m *GetAppsInstallSummaryReportRequestBuilder) PostWithResponseHandler(body GetAppsInstallSummaryReportRequestBodyable, requestConfiguration *GetAppsInstallSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAppsInstallSummaryReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getAppsInstallSummaryReport
+func (m *GetAppsInstallSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetAppsInstallSummaryReportRequestBodyable, requestConfiguration *GetAppsInstallSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAppsInstallSummaryReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

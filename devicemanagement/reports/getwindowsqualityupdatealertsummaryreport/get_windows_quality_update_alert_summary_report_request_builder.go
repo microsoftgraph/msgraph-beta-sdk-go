@@ -39,8 +39,8 @@ func NewGetWindowsQualityUpdateAlertSummaryReportRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewGetWindowsQualityUpdateAlertSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getWindowsQualityUpdateAlertSummaryReport
-func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetWindowsQualityUpdateAlertSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getWindowsQualityUpdateAlertSummaryReport
+func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBuilder) CreatePostRequestInformation(body GetWindowsQualityUpdateAlertSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getWindowsQualityUpdateAlertSummaryReport
@@ -56,12 +56,12 @@ func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBuilder) CreatePostRequ
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getWindowsQualityUpdateAlertSummaryReport
-func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBuilder) PostWithResponseHandler(body GetWindowsQualityUpdateAlertSummaryReportRequestBodyable, requestConfiguration *GetWindowsQualityUpdateAlertSummaryReportRequestBuilderPostRequestConfiguration)(GetWindowsQualityUpdateAlertSummaryReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getWindowsQualityUpdateAlertSummaryReport
+func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBuilder) Post(body GetWindowsQualityUpdateAlertSummaryReportRequestBodyable)(GetWindowsQualityUpdateAlertSummaryReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getWindowsQualityUpdateAlertSummaryReport
-func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBuilder) PostWithResponseHandler(body GetWindowsQualityUpdateAlertSummaryReportRequestBodyable, requestConfiguration *GetWindowsQualityUpdateAlertSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetWindowsQualityUpdateAlertSummaryReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getWindowsQualityUpdateAlertSummaryReport
+func (m *GetWindowsQualityUpdateAlertSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetWindowsQualityUpdateAlertSummaryReportRequestBodyable, requestConfiguration *GetWindowsQualityUpdateAlertSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetWindowsQualityUpdateAlertSummaryReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

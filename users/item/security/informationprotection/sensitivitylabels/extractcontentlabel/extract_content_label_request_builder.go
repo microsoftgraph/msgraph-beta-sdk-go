@@ -40,8 +40,8 @@ func NewExtractContentLabelRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewExtractContentLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action extractContentLabel
-func (m *ExtractContentLabelRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ExtractContentLabelRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action extractContentLabel
+func (m *ExtractContentLabelRequestBuilder) CreatePostRequestInformation(body ExtractContentLabelRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action extractContentLabel
@@ -57,12 +57,12 @@ func (m *ExtractContentLabelRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action extractContentLabel
-func (m *ExtractContentLabelRequestBuilder) PostWithResponseHandler(body ExtractContentLabelRequestBodyable, requestConfiguration *ExtractContentLabelRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentLabelable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action extractContentLabel
+func (m *ExtractContentLabelRequestBuilder) Post(body ExtractContentLabelRequestBodyable)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentLabelable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action extractContentLabel
-func (m *ExtractContentLabelRequestBuilder) PostWithResponseHandler(body ExtractContentLabelRequestBodyable, requestConfiguration *ExtractContentLabelRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentLabelable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action extractContentLabel
+func (m *ExtractContentLabelRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ExtractContentLabelRequestBodyable, requestConfiguration *ExtractContentLabelRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentLabelable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

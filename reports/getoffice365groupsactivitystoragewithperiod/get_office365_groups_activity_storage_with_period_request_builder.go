@@ -42,8 +42,8 @@ func NewGetOffice365GroupsActivityStorageWithPeriodRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365GroupsActivityStorageWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getOffice365GroupsActivityStorage
-func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getOffice365GroupsActivityStorage
+func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getOffice365GroupsActivityStorage
@@ -58,12 +58,12 @@ func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getOffice365GroupsActivityStorage
-func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOffice365GroupsActivityStorageWithPeriodRequestBuilderGetRequestConfiguration)(GetOffice365GroupsActivityStorageWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getOffice365GroupsActivityStorage
+func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) Get()(GetOffice365GroupsActivityStorageWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getOffice365GroupsActivityStorage
-func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOffice365GroupsActivityStorageWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOffice365GroupsActivityStorageWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getOffice365GroupsActivityStorage
+func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetOffice365GroupsActivityStorageWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOffice365GroupsActivityStorageWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

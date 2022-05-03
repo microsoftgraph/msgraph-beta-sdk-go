@@ -74,8 +74,8 @@ func NewDeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder(rawU
 func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) Count()(*iedf847a249af5d381be78d32a395069f479c7729ddced45f9b5c72ba105f91b0.CountRequestBuilder) {
     return iedf847a249af5d381be78d32a395069f479c7729ddced45f9b5c72ba105f91b0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration summary of all certificates for all devices.
-func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation summary of all certificates for all devices.
+func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration summary of all certificates for all devices.
@@ -93,8 +93,8 @@ func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) Cr
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
-func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
+func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
@@ -110,12 +110,12 @@ func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) Cr
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler summary of all certificates for all devices.
-func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get summary of all certificates for all devices.
+func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler summary of all certificates for all devices.
-func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler summary of all certificates for all devices.
+func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
-func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateable, requestConfiguration *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
+func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
-func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateable, requestConfiguration *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
+func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateable, requestConfiguration *DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAllDeviceCertificateStateable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

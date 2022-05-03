@@ -40,8 +40,8 @@ func NewPostponeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewPostponeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action postpone
-func (m *PostponeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body PostponeRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action postpone
+func (m *PostponeRequestBuilder) CreatePostRequestInformation(body PostponeRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action postpone
@@ -57,12 +57,12 @@ func (m *PostponeRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action postpone
-func (m *PostponeRequestBuilder) PostWithResponseHandler(body PostponeRequestBodyable, requestConfiguration *PostponeRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecommendationResourceable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action postpone
+func (m *PostponeRequestBuilder) Post(body PostponeRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecommendationResourceable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action postpone
-func (m *PostponeRequestBuilder) PostWithResponseHandler(body PostponeRequestBodyable, requestConfiguration *PostponeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecommendationResourceable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action postpone
+func (m *PostponeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body PostponeRequestBodyable, requestConfiguration *PostponeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecommendationResourceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

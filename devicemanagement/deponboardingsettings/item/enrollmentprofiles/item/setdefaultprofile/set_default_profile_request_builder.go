@@ -39,8 +39,8 @@ func NewSetDefaultProfileRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewSetDefaultProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action setDefaultProfile
-func (m *SetDefaultProfileRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action setDefaultProfile
+func (m *SetDefaultProfileRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action setDefaultProfile
@@ -55,12 +55,12 @@ func (m *SetDefaultProfileRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action setDefaultProfile
-func (m *SetDefaultProfileRequestBuilder) PostWithResponseHandler(requestConfiguration *SetDefaultProfileRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action setDefaultProfile
+func (m *SetDefaultProfileRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action setDefaultProfile
-func (m *SetDefaultProfileRequestBuilder) PostWithResponseHandler(requestConfiguration *SetDefaultProfileRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action setDefaultProfile
+func (m *SetDefaultProfileRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *SetDefaultProfileRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

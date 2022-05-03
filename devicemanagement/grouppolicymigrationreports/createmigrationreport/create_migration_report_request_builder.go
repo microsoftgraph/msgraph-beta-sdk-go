@@ -39,8 +39,8 @@ func NewCreateMigrationReportRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewCreateMigrationReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action createMigrationReport
-func (m *CreateMigrationReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateMigrationReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action createMigrationReport
+func (m *CreateMigrationReportRequestBuilder) CreatePostRequestInformation(body CreateMigrationReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action createMigrationReport
@@ -56,12 +56,12 @@ func (m *CreateMigrationReportRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action createMigrationReport
-func (m *CreateMigrationReportRequestBuilder) PostWithResponseHandler(body CreateMigrationReportRequestBodyable, requestConfiguration *CreateMigrationReportRequestBuilderPostRequestConfiguration)(CreateMigrationReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action createMigrationReport
+func (m *CreateMigrationReportRequestBuilder) Post(body CreateMigrationReportRequestBodyable)(CreateMigrationReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action createMigrationReport
-func (m *CreateMigrationReportRequestBuilder) PostWithResponseHandler(body CreateMigrationReportRequestBodyable, requestConfiguration *CreateMigrationReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CreateMigrationReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action createMigrationReport
+func (m *CreateMigrationReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateMigrationReportRequestBodyable, requestConfiguration *CreateMigrationReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CreateMigrationReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

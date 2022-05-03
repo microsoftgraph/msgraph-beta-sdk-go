@@ -88,8 +88,8 @@ func NewEmbeddedSIMActivationCodePoolItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewEmbeddedSIMActivationCodePoolItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property embeddedSIMActivationCodePools for deviceManagement
-func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property embeddedSIMActivationCodePools for deviceManagement
+func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property embeddedSIMActivationCodePools for deviceManagement
@@ -104,8 +104,8 @@ func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the embedded SIM activation code pools created by this account.
-func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the embedded SIM activation code pools created by this account.
+func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the embedded SIM activation code pools created by this account.
@@ -123,8 +123,8 @@ func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property embeddedSIMActivationCodePools in deviceManagement
-func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property embeddedSIMActivationCodePools in deviceManagement
+func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property embeddedSIMActivationCodePools in deviceManagement
@@ -140,12 +140,12 @@ func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property embeddedSIMActivationCodePools for deviceManagement
-func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *EmbeddedSIMActivationCodePoolItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property embeddedSIMActivationCodePools for deviceManagement
+func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property embeddedSIMActivationCodePools for deviceManagement
-func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *EmbeddedSIMActivationCodePoolItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property embeddedSIMActivationCodePools for deviceManagement
+func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *EmbeddedSIMActivationCodePoolItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -175,12 +175,12 @@ func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) DeviceStatesById(id st
     }
     return if044a617b4d30ce4a26c463e72b94403997b338b8aeafd10eb8d535111e4cc01.NewEmbeddedSIMDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GetWithResponseHandler the embedded SIM activation code pools created by this account.
-func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) GetWithResponseHandler(requestConfiguration *EmbeddedSIMActivationCodePoolItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the embedded SIM activation code pools created by this account.
+func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the embedded SIM activation code pools created by this account.
-func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) GetWithResponseHandler(requestConfiguration *EmbeddedSIMActivationCodePoolItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolable, error) {
+// GetWithRequestConfigurationAndResponseHandler the embedded SIM activation code pools created by this account.
+func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EmbeddedSIMActivationCodePoolItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -195,12 +195,12 @@ func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) GetWithResponseHandler
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolable), nil
 }
-// PatchWithResponseHandler update the navigation property embeddedSIMActivationCodePools in deviceManagement
-func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolable, requestConfiguration *EmbeddedSIMActivationCodePoolItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property embeddedSIMActivationCodePools in deviceManagement
+func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property embeddedSIMActivationCodePools in deviceManagement
-func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolable, requestConfiguration *EmbeddedSIMActivationCodePoolItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property embeddedSIMActivationCodePools in deviceManagement
+func (m *EmbeddedSIMActivationCodePoolItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolable, requestConfiguration *EmbeddedSIMActivationCodePoolItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

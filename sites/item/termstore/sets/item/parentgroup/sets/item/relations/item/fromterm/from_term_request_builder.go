@@ -50,8 +50,8 @@ func NewFromTermRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewFromTermRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
-func (m *FromTermRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
+func (m *FromTermRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
@@ -69,12 +69,12 @@ func (m *FromTermRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
-func (m *FromTermRequestBuilder) GetWithResponseHandler(requestConfiguration *FromTermRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
+func (m *FromTermRequestBuilder) Get()(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
-func (m *FromTermRequestBuilder) GetWithResponseHandler(requestConfiguration *FromTermRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable, error) {
+// GetWithRequestConfigurationAndResponseHandler the from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
+func (m *FromTermRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FromTermRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

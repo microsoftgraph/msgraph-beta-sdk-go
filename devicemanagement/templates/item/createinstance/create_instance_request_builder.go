@@ -40,8 +40,8 @@ func NewCreateInstanceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewCreateInstanceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action createInstance
-func (m *CreateInstanceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateInstanceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action createInstance
+func (m *CreateInstanceRequestBuilder) CreatePostRequestInformation(body CreateInstanceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action createInstance
@@ -57,12 +57,12 @@ func (m *CreateInstanceRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action createInstance
-func (m *CreateInstanceRequestBuilder) PostWithResponseHandler(body CreateInstanceRequestBodyable, requestConfiguration *CreateInstanceRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action createInstance
+func (m *CreateInstanceRequestBuilder) Post(body CreateInstanceRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action createInstance
-func (m *CreateInstanceRequestBuilder) PostWithResponseHandler(body CreateInstanceRequestBodyable, requestConfiguration *CreateInstanceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action createInstance
+func (m *CreateInstanceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateInstanceRequestBodyable, requestConfiguration *CreateInstanceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -42,8 +42,8 @@ func NewAdditionalAccessWithAccessPackageIdRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewAdditionalAccessWithAccessPackageIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function additionalAccess
-func (m *AdditionalAccessWithAccessPackageIdRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function additionalAccess
+func (m *AdditionalAccessWithAccessPackageIdRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function additionalAccess
@@ -58,12 +58,12 @@ func (m *AdditionalAccessWithAccessPackageIdRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function additionalAccess
-func (m *AdditionalAccessWithAccessPackageIdRequestBuilder) GetWithResponseHandler(requestConfiguration *AdditionalAccessWithAccessPackageIdRequestBuilderGetRequestConfiguration)(AdditionalAccessWithAccessPackageIdResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function additionalAccess
+func (m *AdditionalAccessWithAccessPackageIdRequestBuilder) Get()(AdditionalAccessWithAccessPackageIdResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function additionalAccess
-func (m *AdditionalAccessWithAccessPackageIdRequestBuilder) GetWithResponseHandler(requestConfiguration *AdditionalAccessWithAccessPackageIdRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(AdditionalAccessWithAccessPackageIdResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function additionalAccess
+func (m *AdditionalAccessWithAccessPackageIdRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AdditionalAccessWithAccessPackageIdRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(AdditionalAccessWithAccessPackageIdResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

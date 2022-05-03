@@ -75,8 +75,8 @@ func NewGroupPolicyUploadedDefinitionFileItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyUploadedDefinitionFileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property groupPolicyUploadedDefinitionFiles for deviceManagement
-func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property groupPolicyUploadedDefinitionFiles for deviceManagement
+func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property groupPolicyUploadedDefinitionFiles for deviceManagement
@@ -91,8 +91,8 @@ func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) CreateDeleteReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the available group policy uploaded definition files for this account.
-func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the available group policy uploaded definition files for this account.
+func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the available group policy uploaded definition files for this account.
@@ -110,8 +110,8 @@ func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
-func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedDefinitionFileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
+func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedDefinitionFileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
@@ -127,12 +127,12 @@ func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) CreatePatchRequest
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property groupPolicyUploadedDefinitionFiles for deviceManagement
-func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *GroupPolicyUploadedDefinitionFileItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property groupPolicyUploadedDefinitionFiles for deviceManagement
+func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property groupPolicyUploadedDefinitionFiles for deviceManagement
-func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *GroupPolicyUploadedDefinitionFileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property groupPolicyUploadedDefinitionFiles for deviceManagement
+func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *GroupPolicyUploadedDefinitionFileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -147,12 +147,12 @@ func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) DeleteWithResponse
     }
     return nil
 }
-// GetWithResponseHandler the available group policy uploaded definition files for this account.
-func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *GroupPolicyUploadedDefinitionFileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedDefinitionFileable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the available group policy uploaded definition files for this account.
+func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedDefinitionFileable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the available group policy uploaded definition files for this account.
-func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *GroupPolicyUploadedDefinitionFileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedDefinitionFileable, error) {
+// GetWithRequestConfigurationAndResponseHandler the available group policy uploaded definition files for this account.
+func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GroupPolicyUploadedDefinitionFileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedDefinitionFileable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -182,12 +182,12 @@ func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) GroupPolicyOperati
     }
     return ib268e3b08fe1fad55fddc2f3fcee0a20255a98eba2bf68e561d4e06a67c8ce93.NewGroupPolicyOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
-func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedDefinitionFileable, requestConfiguration *GroupPolicyUploadedDefinitionFileItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
+func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedDefinitionFileable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
-func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedDefinitionFileable, requestConfiguration *GroupPolicyUploadedDefinitionFileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
+func (m *GroupPolicyUploadedDefinitionFileItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyUploadedDefinitionFileable, requestConfiguration *GroupPolicyUploadedDefinitionFileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

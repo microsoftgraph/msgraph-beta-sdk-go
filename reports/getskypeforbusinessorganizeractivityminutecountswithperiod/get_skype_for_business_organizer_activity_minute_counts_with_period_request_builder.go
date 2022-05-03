@@ -42,8 +42,8 @@ func NewGetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewGetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
-func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
+func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
@@ -58,12 +58,12 @@ func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilde
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
-func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
+func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder) Get()(GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
-func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getSkypeForBusinessOrganizerActivityMinuteCounts
+func (m *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

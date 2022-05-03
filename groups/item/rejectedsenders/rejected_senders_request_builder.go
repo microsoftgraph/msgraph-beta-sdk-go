@@ -63,8 +63,8 @@ func NewRejectedSendersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *RejectedSendersRequestBuilder) Count()(*i4cd946ba6fa87ef9076b08165c8d362f1f54b4ae7f7949a0783809a0f18bbbae.CountRequestBuilder) {
     return i4cd946ba6fa87ef9076b08165c8d362f1f54b4ae7f7949a0783809a0f18bbbae.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-func (m *RejectedSendersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
+func (m *RejectedSendersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
@@ -82,12 +82,12 @@ func (m *RejectedSendersRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-func (m *RejectedSendersRequestBuilder) GetWithResponseHandler(requestConfiguration *RejectedSendersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
+func (m *RejectedSendersRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-func (m *RejectedSendersRequestBuilder) GetWithResponseHandler(requestConfiguration *RejectedSendersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
+func (m *RejectedSendersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RejectedSendersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

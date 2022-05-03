@@ -125,8 +125,8 @@ func NewAreGlobalScriptsAvailableRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewAreGlobalScriptsAvailableRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function areGlobalScriptsAvailable
-func (m *AreGlobalScriptsAvailableRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function areGlobalScriptsAvailable
+func (m *AreGlobalScriptsAvailableRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function areGlobalScriptsAvailable
@@ -141,12 +141,12 @@ func (m *AreGlobalScriptsAvailableRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function areGlobalScriptsAvailable
-func (m *AreGlobalScriptsAvailableRequestBuilder) GetWithResponseHandler(requestConfiguration *AreGlobalScriptsAvailableRequestBuilderGetRequestConfiguration)(AreGlobalScriptsAvailableResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function areGlobalScriptsAvailable
+func (m *AreGlobalScriptsAvailableRequestBuilder) Get()(AreGlobalScriptsAvailableResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function areGlobalScriptsAvailable
-func (m *AreGlobalScriptsAvailableRequestBuilder) GetWithResponseHandler(requestConfiguration *AreGlobalScriptsAvailableRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(AreGlobalScriptsAvailableResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function areGlobalScriptsAvailable
+func (m *AreGlobalScriptsAvailableRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AreGlobalScriptsAvailableRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(AreGlobalScriptsAvailableResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

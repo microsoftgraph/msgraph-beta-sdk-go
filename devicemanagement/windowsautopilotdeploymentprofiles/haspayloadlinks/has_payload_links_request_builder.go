@@ -39,8 +39,8 @@ func NewHasPayloadLinksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewHasPayloadLinksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action hasPayloadLinks
-func (m *HasPayloadLinksRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body HasPayloadLinksRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action hasPayloadLinks
+func (m *HasPayloadLinksRequestBuilder) CreatePostRequestInformation(body HasPayloadLinksRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action hasPayloadLinks
@@ -56,12 +56,12 @@ func (m *HasPayloadLinksRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action hasPayloadLinks
-func (m *HasPayloadLinksRequestBuilder) PostWithResponseHandler(body HasPayloadLinksRequestBodyable, requestConfiguration *HasPayloadLinksRequestBuilderPostRequestConfiguration)(HasPayloadLinksResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action hasPayloadLinks
+func (m *HasPayloadLinksRequestBuilder) Post(body HasPayloadLinksRequestBodyable)(HasPayloadLinksResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action hasPayloadLinks
-func (m *HasPayloadLinksRequestBuilder) PostWithResponseHandler(body HasPayloadLinksRequestBodyable, requestConfiguration *HasPayloadLinksRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(HasPayloadLinksResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action hasPayloadLinks
+func (m *HasPayloadLinksRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body HasPayloadLinksRequestBodyable, requestConfiguration *HasPayloadLinksRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(HasPayloadLinksResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

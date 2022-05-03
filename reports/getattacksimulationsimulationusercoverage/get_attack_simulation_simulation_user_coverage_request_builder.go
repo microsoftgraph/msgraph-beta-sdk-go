@@ -39,8 +39,8 @@ func NewGetAttackSimulationSimulationUserCoverageRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewGetAttackSimulationSimulationUserCoverageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getAttackSimulationSimulationUserCoverage
-func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getAttackSimulationSimulationUserCoverage
+func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getAttackSimulationSimulationUserCoverage
@@ -55,12 +55,12 @@ func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getAttackSimulationSimulationUserCoverage
-func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration)(GetAttackSimulationSimulationUserCoverageResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getAttackSimulationSimulationUserCoverage
+func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) Get()(GetAttackSimulationSimulationUserCoverageResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getAttackSimulationSimulationUserCoverage
-func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAttackSimulationSimulationUserCoverageResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getAttackSimulationSimulationUserCoverage
+func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAttackSimulationSimulationUserCoverageResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -75,8 +75,8 @@ func NewIosLobAppProvisioningConfigurationsRequestBuilder(rawUrl string, request
 func (m *IosLobAppProvisioningConfigurationsRequestBuilder) Count()(*ia8831c95b7a0c8af06144645031c15784df3017700db5cffd72ec5f9443887d5.CountRequestBuilder) {
     return ia8831c95b7a0c8af06144645031c15784df3017700db5cffd72ec5f9443887d5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the IOS Lob App Provisioning Configurations.
-func (m *IosLobAppProvisioningConfigurationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the IOS Lob App Provisioning Configurations.
+func (m *IosLobAppProvisioningConfigurationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the IOS Lob App Provisioning Configurations.
@@ -94,8 +94,8 @@ func (m *IosLobAppProvisioningConfigurationsRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
-func (m *IosLobAppProvisioningConfigurationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
+func (m *IosLobAppProvisioningConfigurationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
@@ -111,12 +111,12 @@ func (m *IosLobAppProvisioningConfigurationsRequestBuilder) CreatePostRequestInf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the IOS Lob App Provisioning Configurations.
-func (m *IosLobAppProvisioningConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *IosLobAppProvisioningConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the IOS Lob App Provisioning Configurations.
+func (m *IosLobAppProvisioningConfigurationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the IOS Lob App Provisioning Configurations.
-func (m *IosLobAppProvisioningConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *IosLobAppProvisioningConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the IOS Lob App Provisioning Configurations.
+func (m *IosLobAppProvisioningConfigurationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IosLobAppProvisioningConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *IosLobAppProvisioningConfigurationsRequestBuilder) GetWithResponseHandl
 func (m *IosLobAppProvisioningConfigurationsRequestBuilder) HasPayloadLinks()(*i0ee45bbd3414d7e3fded0eaf2684c7ba588435cc6a7a055482d3f1856a44991a.HasPayloadLinksRequestBuilder) {
     return i0ee45bbd3414d7e3fded0eaf2684c7ba588435cc6a7a055482d3f1856a44991a.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PostWithResponseHandler create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
-func (m *IosLobAppProvisioningConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable, requestConfiguration *IosLobAppProvisioningConfigurationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
+func (m *IosLobAppProvisioningConfigurationsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
-func (m *IosLobAppProvisioningConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable, requestConfiguration *IosLobAppProvisioningConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
+func (m *IosLobAppProvisioningConfigurationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable, requestConfiguration *IosLobAppProvisioningConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

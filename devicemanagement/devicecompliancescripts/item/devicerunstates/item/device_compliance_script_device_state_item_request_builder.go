@@ -65,8 +65,8 @@ func NewDeviceComplianceScriptDeviceStateItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceComplianceScriptDeviceStateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceRunStates for deviceManagement
-func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property deviceRunStates for deviceManagement
+func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceRunStates for deviceManagement
@@ -81,8 +81,8 @@ func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) CreateDeleteReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration list of run states for the device compliance script across all devices
-func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation list of run states for the device compliance script across all devices
+func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration list of run states for the device compliance script across all devices
@@ -100,8 +100,8 @@ func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceRunStates in deviceManagement
-func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptDeviceStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property deviceRunStates in deviceManagement
+func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptDeviceStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceRunStates in deviceManagement
@@ -117,12 +117,12 @@ func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) CreatePatchRequest
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property deviceRunStates for deviceManagement
-func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceComplianceScriptDeviceStateItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property deviceRunStates for deviceManagement
+func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property deviceRunStates for deviceManagement
-func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceComplianceScriptDeviceStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property deviceRunStates for deviceManagement
+func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceComplianceScriptDeviceStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -137,12 +137,12 @@ func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) DeleteWithResponse
     }
     return nil
 }
-// GetWithResponseHandler list of run states for the device compliance script across all devices
-func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceComplianceScriptDeviceStateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptDeviceStateable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get list of run states for the device compliance script across all devices
+func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptDeviceStateable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler list of run states for the device compliance script across all devices
-func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceComplianceScriptDeviceStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptDeviceStateable, error) {
+// GetWithRequestConfigurationAndResponseHandler list of run states for the device compliance script across all devices
+func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceComplianceScriptDeviceStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptDeviceStateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -161,12 +161,12 @@ func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) GetWithResponseHan
 func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) ManagedDevice()(*i19a63f2b15203acaac6189a999bb295cf2c5803855da2a97309802ed8f87c931.ManagedDeviceRequestBuilder) {
     return i19a63f2b15203acaac6189a999bb295cf2c5803855da2a97309802ed8f87c931.NewManagedDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property deviceRunStates in deviceManagement
-func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptDeviceStateable, requestConfiguration *DeviceComplianceScriptDeviceStateItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property deviceRunStates in deviceManagement
+func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptDeviceStateable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property deviceRunStates in deviceManagement
-func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptDeviceStateable, requestConfiguration *DeviceComplianceScriptDeviceStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property deviceRunStates in deviceManagement
+func (m *DeviceComplianceScriptDeviceStateItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptDeviceStateable, requestConfiguration *DeviceComplianceScriptDeviceStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

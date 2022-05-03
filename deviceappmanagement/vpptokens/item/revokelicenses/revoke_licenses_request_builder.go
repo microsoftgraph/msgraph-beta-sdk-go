@@ -39,8 +39,8 @@ func NewRevokeLicensesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewRevokeLicensesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration revoke licenses associated with a specific appleVolumePurchaseProgramToken
-func (m *RevokeLicensesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RevokeLicensesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation revoke licenses associated with a specific appleVolumePurchaseProgramToken
+func (m *RevokeLicensesRequestBuilder) CreatePostRequestInformation(body RevokeLicensesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration revoke licenses associated with a specific appleVolumePurchaseProgramToken
@@ -56,12 +56,12 @@ func (m *RevokeLicensesRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler revoke licenses associated with a specific appleVolumePurchaseProgramToken
-func (m *RevokeLicensesRequestBuilder) PostWithResponseHandler(body RevokeLicensesRequestBodyable, requestConfiguration *RevokeLicensesRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post revoke licenses associated with a specific appleVolumePurchaseProgramToken
+func (m *RevokeLicensesRequestBuilder) Post(body RevokeLicensesRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler revoke licenses associated with a specific appleVolumePurchaseProgramToken
-func (m *RevokeLicensesRequestBuilder) PostWithResponseHandler(body RevokeLicensesRequestBodyable, requestConfiguration *RevokeLicensesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler revoke licenses associated with a specific appleVolumePurchaseProgramToken
+func (m *RevokeLicensesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RevokeLicensesRequestBodyable, requestConfiguration *RevokeLicensesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

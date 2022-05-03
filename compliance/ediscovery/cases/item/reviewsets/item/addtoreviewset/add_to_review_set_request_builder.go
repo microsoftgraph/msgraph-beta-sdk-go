@@ -39,8 +39,8 @@ func NewAddToReviewSetRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewAddToReviewSetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addToReviewSet
-func (m *AddToReviewSetRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddToReviewSetRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action addToReviewSet
+func (m *AddToReviewSetRequestBuilder) CreatePostRequestInformation(body AddToReviewSetRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addToReviewSet
@@ -56,12 +56,12 @@ func (m *AddToReviewSetRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action addToReviewSet
-func (m *AddToReviewSetRequestBuilder) PostWithResponseHandler(body AddToReviewSetRequestBodyable, requestConfiguration *AddToReviewSetRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action addToReviewSet
+func (m *AddToReviewSetRequestBuilder) Post(body AddToReviewSetRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action addToReviewSet
-func (m *AddToReviewSetRequestBuilder) PostWithResponseHandler(body AddToReviewSetRequestBodyable, requestConfiguration *AddToReviewSetRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action addToReviewSet
+func (m *AddToReviewSetRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddToReviewSetRequestBodyable, requestConfiguration *AddToReviewSetRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

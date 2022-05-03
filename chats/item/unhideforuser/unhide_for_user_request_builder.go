@@ -39,8 +39,8 @@ func NewUnhideForUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewUnhideForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action unhideForUser
-func (m *UnhideForUserRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UnhideForUserRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action unhideForUser
+func (m *UnhideForUserRequestBuilder) CreatePostRequestInformation(body UnhideForUserRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action unhideForUser
@@ -56,12 +56,12 @@ func (m *UnhideForUserRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action unhideForUser
-func (m *UnhideForUserRequestBuilder) PostWithResponseHandler(body UnhideForUserRequestBodyable, requestConfiguration *UnhideForUserRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action unhideForUser
+func (m *UnhideForUserRequestBuilder) Post(body UnhideForUserRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action unhideForUser
-func (m *UnhideForUserRequestBuilder) PostWithResponseHandler(body UnhideForUserRequestBodyable, requestConfiguration *UnhideForUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action unhideForUser
+func (m *UnhideForUserRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UnhideForUserRequestBodyable, requestConfiguration *UnhideForUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

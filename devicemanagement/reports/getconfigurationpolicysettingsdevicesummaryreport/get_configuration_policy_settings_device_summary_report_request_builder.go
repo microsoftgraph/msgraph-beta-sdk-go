@@ -39,8 +39,8 @@ func NewGetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewGetConfigurationPolicySettingsDeviceSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getConfigurationPolicySettingsDeviceSummaryReport
-func (m *GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigurationPolicySettingsDeviceSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getConfigurationPolicySettingsDeviceSummaryReport
+func (m *GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder) CreatePostRequestInformation(body GetConfigurationPolicySettingsDeviceSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getConfigurationPolicySettingsDeviceSummaryReport
@@ -56,12 +56,12 @@ func (m *GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getConfigurationPolicySettingsDeviceSummaryReport
-func (m *GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder) PostWithResponseHandler(body GetConfigurationPolicySettingsDeviceSummaryReportRequestBodyable, requestConfiguration *GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilderPostRequestConfiguration)(GetConfigurationPolicySettingsDeviceSummaryReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getConfigurationPolicySettingsDeviceSummaryReport
+func (m *GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder) Post(body GetConfigurationPolicySettingsDeviceSummaryReportRequestBodyable)(GetConfigurationPolicySettingsDeviceSummaryReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getConfigurationPolicySettingsDeviceSummaryReport
-func (m *GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder) PostWithResponseHandler(body GetConfigurationPolicySettingsDeviceSummaryReportRequestBodyable, requestConfiguration *GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetConfigurationPolicySettingsDeviceSummaryReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getConfigurationPolicySettingsDeviceSummaryReport
+func (m *GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigurationPolicySettingsDeviceSummaryReportRequestBodyable, requestConfiguration *GetConfigurationPolicySettingsDeviceSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetConfigurationPolicySettingsDeviceSummaryReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

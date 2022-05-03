@@ -64,8 +64,8 @@ func NewWindowsInformationProtectionWipeActionItemRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionWipeActionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsInformationProtectionWipeActions for deviceAppManagement
-func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property windowsInformationProtectionWipeActions for deviceAppManagement
+func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsInformationProtectionWipeActions for deviceAppManagement
@@ -80,8 +80,8 @@ func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) CreateDeleteR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration windows information protection wipe actions.
-func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation windows information protection wipe actions.
+func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration windows information protection wipe actions.
@@ -99,8 +99,8 @@ func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsInformationProtectionWipeActions in deviceAppManagement
-func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property windowsInformationProtectionWipeActions in deviceAppManagement
+func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsInformationProtectionWipeActions in deviceAppManagement
@@ -116,12 +116,12 @@ func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) CreatePatchRe
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property windowsInformationProtectionWipeActions for deviceAppManagement
-func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsInformationProtectionWipeActionItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property windowsInformationProtectionWipeActions for deviceAppManagement
+func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property windowsInformationProtectionWipeActions for deviceAppManagement
-func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsInformationProtectionWipeActionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property windowsInformationProtectionWipeActions for deviceAppManagement
+func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsInformationProtectionWipeActionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) DeleteWithRes
     }
     return nil
 }
-// GetWithResponseHandler windows information protection wipe actions.
-func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsInformationProtectionWipeActionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get windows information protection wipe actions.
+func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler windows information protection wipe actions.
-func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsInformationProtectionWipeActionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable, error) {
+// GetWithRequestConfigurationAndResponseHandler windows information protection wipe actions.
+func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsInformationProtectionWipeActionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) GetWithRespon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable), nil
 }
-// PatchWithResponseHandler update the navigation property windowsInformationProtectionWipeActions in deviceAppManagement
-func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable, requestConfiguration *WindowsInformationProtectionWipeActionItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property windowsInformationProtectionWipeActions in deviceAppManagement
+func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property windowsInformationProtectionWipeActions in deviceAppManagement
-func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable, requestConfiguration *WindowsInformationProtectionWipeActionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property windowsInformationProtectionWipeActions in deviceAppManagement
+func (m *WindowsInformationProtectionWipeActionItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable, requestConfiguration *WindowsInformationProtectionWipeActionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

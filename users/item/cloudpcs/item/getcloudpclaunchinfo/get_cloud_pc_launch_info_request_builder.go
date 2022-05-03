@@ -40,8 +40,8 @@ func NewGetCloudPcLaunchInfoRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewGetCloudPcLaunchInfoRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getCloudPcLaunchInfo
-func (m *GetCloudPcLaunchInfoRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getCloudPcLaunchInfo
+func (m *GetCloudPcLaunchInfoRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getCloudPcLaunchInfo
@@ -56,12 +56,12 @@ func (m *GetCloudPcLaunchInfoRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getCloudPcLaunchInfo
-func (m *GetCloudPcLaunchInfoRequestBuilder) GetWithResponseHandler(requestConfiguration *GetCloudPcLaunchInfoRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcLaunchInfoable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getCloudPcLaunchInfo
+func (m *GetCloudPcLaunchInfoRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcLaunchInfoable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getCloudPcLaunchInfo
-func (m *GetCloudPcLaunchInfoRequestBuilder) GetWithResponseHandler(requestConfiguration *GetCloudPcLaunchInfoRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcLaunchInfoable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getCloudPcLaunchInfo
+func (m *GetCloudPcLaunchInfoRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetCloudPcLaunchInfoRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcLaunchInfoable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

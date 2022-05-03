@@ -67,8 +67,8 @@ func NewManagementTemplateStepsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ManagementTemplateStepsRequestBuilder) Count()(*i989c1b0701216bede772df138ca17269c169a70ea0fdfbdd9e55fe1f9a375edc.CountRequestBuilder) {
     return i989c1b0701216bede772df138ca17269c169a70ea0fdfbdd9e55fe1f9a375edc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get managementTemplateSteps from tenantRelationships
-func (m *ManagementTemplateStepsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get managementTemplateSteps from tenantRelationships
+func (m *ManagementTemplateStepsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get managementTemplateSteps from tenantRelationships
@@ -86,12 +86,12 @@ func (m *ManagementTemplateStepsRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get managementTemplateSteps from tenantRelationships
-func (m *ManagementTemplateStepsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementTemplateStepsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get managementTemplateSteps from tenantRelationships
+func (m *ManagementTemplateStepsRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get managementTemplateSteps from tenantRelationships
-func (m *ManagementTemplateStepsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementTemplateStepsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get managementTemplateSteps from tenantRelationships
+func (m *ManagementTemplateStepsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagementTemplateStepsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -39,8 +39,8 @@ func NewEvaluateAssignmentFilterRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateAssignmentFilterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action evaluateAssignmentFilter
-func (m *EvaluateAssignmentFilterRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateAssignmentFilterRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action evaluateAssignmentFilter
+func (m *EvaluateAssignmentFilterRequestBuilder) CreatePostRequestInformation(body EvaluateAssignmentFilterRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action evaluateAssignmentFilter
@@ -56,12 +56,12 @@ func (m *EvaluateAssignmentFilterRequestBuilder) CreatePostRequestInformationWit
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action evaluateAssignmentFilter
-func (m *EvaluateAssignmentFilterRequestBuilder) PostWithResponseHandler(body EvaluateAssignmentFilterRequestBodyable, requestConfiguration *EvaluateAssignmentFilterRequestBuilderPostRequestConfiguration)(EvaluateAssignmentFilterResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action evaluateAssignmentFilter
+func (m *EvaluateAssignmentFilterRequestBuilder) Post(body EvaluateAssignmentFilterRequestBodyable)(EvaluateAssignmentFilterResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action evaluateAssignmentFilter
-func (m *EvaluateAssignmentFilterRequestBuilder) PostWithResponseHandler(body EvaluateAssignmentFilterRequestBodyable, requestConfiguration *EvaluateAssignmentFilterRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(EvaluateAssignmentFilterResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action evaluateAssignmentFilter
+func (m *EvaluateAssignmentFilterRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EvaluateAssignmentFilterRequestBodyable, requestConfiguration *EvaluateAssignmentFilterRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(EvaluateAssignmentFilterResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

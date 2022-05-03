@@ -66,8 +66,8 @@ func NewAndroidDeviceOwnerEnrollmentProfileItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidDeviceOwnerEnrollmentProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property androidDeviceOwnerEnrollmentProfiles for deviceManagement
-func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property androidDeviceOwnerEnrollmentProfiles for deviceManagement
+func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property androidDeviceOwnerEnrollmentProfiles for deviceManagement
@@ -82,8 +82,8 @@ func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) CreateDeleteRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration android device owner enrollment profile entities.
-func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation android device owner enrollment profile entities.
+func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration android device owner enrollment profile entities.
@@ -101,8 +101,8 @@ func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property androidDeviceOwnerEnrollmentProfiles in deviceManagement
-func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidDeviceOwnerEnrollmentProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property androidDeviceOwnerEnrollmentProfiles in deviceManagement
+func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidDeviceOwnerEnrollmentProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property androidDeviceOwnerEnrollmentProfiles in deviceManagement
@@ -122,12 +122,12 @@ func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) CreatePatchReque
 func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) CreateToken()(*ibf7310ca68d55392bbdbd2da406d3078b3d0933d2dfaa641477e64ac9571c49c.CreateTokenRequestBuilder) {
     return ibf7310ca68d55392bbdbd2da406d3078b3d0933d2dfaa641477e64ac9571c49c.NewCreateTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeleteWithResponseHandler delete navigation property androidDeviceOwnerEnrollmentProfiles for deviceManagement
-func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property androidDeviceOwnerEnrollmentProfiles for deviceManagement
+func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property androidDeviceOwnerEnrollmentProfiles for deviceManagement
-func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property androidDeviceOwnerEnrollmentProfiles for deviceManagement
+func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -142,12 +142,12 @@ func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) DeleteWithRespon
     }
     return nil
 }
-// GetWithResponseHandler android device owner enrollment profile entities.
-func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidDeviceOwnerEnrollmentProfileable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get android device owner enrollment profile entities.
+func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidDeviceOwnerEnrollmentProfileable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler android device owner enrollment profile entities.
-func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidDeviceOwnerEnrollmentProfileable, error) {
+// GetWithRequestConfigurationAndResponseHandler android device owner enrollment profile entities.
+func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidDeviceOwnerEnrollmentProfileable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -162,12 +162,12 @@ func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) GetWithResponseH
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidDeviceOwnerEnrollmentProfileable), nil
 }
-// PatchWithResponseHandler update the navigation property androidDeviceOwnerEnrollmentProfiles in deviceManagement
-func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidDeviceOwnerEnrollmentProfileable, requestConfiguration *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property androidDeviceOwnerEnrollmentProfiles in deviceManagement
+func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidDeviceOwnerEnrollmentProfileable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property androidDeviceOwnerEnrollmentProfiles in deviceManagement
-func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidDeviceOwnerEnrollmentProfileable, requestConfiguration *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property androidDeviceOwnerEnrollmentProfiles in deviceManagement
+func (m *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidDeviceOwnerEnrollmentProfileable, requestConfiguration *AndroidDeviceOwnerEnrollmentProfileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

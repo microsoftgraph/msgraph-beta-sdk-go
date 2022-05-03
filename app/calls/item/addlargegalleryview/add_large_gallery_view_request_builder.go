@@ -40,8 +40,8 @@ func NewAddLargeGalleryViewRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewAddLargeGalleryViewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addLargeGalleryView
-func (m *AddLargeGalleryViewRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddLargeGalleryViewRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action addLargeGalleryView
+func (m *AddLargeGalleryViewRequestBuilder) CreatePostRequestInformation(body AddLargeGalleryViewRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addLargeGalleryView
@@ -57,12 +57,12 @@ func (m *AddLargeGalleryViewRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action addLargeGalleryView
-func (m *AddLargeGalleryViewRequestBuilder) PostWithResponseHandler(body AddLargeGalleryViewRequestBodyable, requestConfiguration *AddLargeGalleryViewRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AddLargeGalleryViewOperationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action addLargeGalleryView
+func (m *AddLargeGalleryViewRequestBuilder) Post(body AddLargeGalleryViewRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AddLargeGalleryViewOperationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action addLargeGalleryView
-func (m *AddLargeGalleryViewRequestBuilder) PostWithResponseHandler(body AddLargeGalleryViewRequestBodyable, requestConfiguration *AddLargeGalleryViewRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AddLargeGalleryViewOperationable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action addLargeGalleryView
+func (m *AddLargeGalleryViewRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddLargeGalleryViewRequestBodyable, requestConfiguration *AddLargeGalleryViewRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AddLargeGalleryViewOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

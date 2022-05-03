@@ -74,8 +74,8 @@ func NewPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder(rawUrl string, r
 func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Count()(*i64a95688aba3f8daa031a76499d4e9264c8a3125b44b58f8fd2e8b0439cc117f.CountRequestBuilder) {
     return i64a95688aba3f8daa031a76499d4e9264c8a3125b44b58f8fd2e8b0439cc117f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
-func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
+func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
@@ -93,8 +93,8 @@ func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
-func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
+func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
@@ -110,12 +110,12 @@ func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) CreatePostRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
-func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) GetWithResponseHandler(requestConfiguration *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
+func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
-func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) GetWithResponseHandler(requestConfiguration *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
+func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) GetWithRespons
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
-func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable, requestConfiguration *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
+func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
-func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable, requestConfiguration *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
+func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable, requestConfiguration *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordlessMicrosoftAuthenticatorAuthenticationMethodable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

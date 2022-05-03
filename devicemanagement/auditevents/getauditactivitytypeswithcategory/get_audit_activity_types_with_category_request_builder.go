@@ -42,8 +42,8 @@ func NewGetAuditActivityTypesWithCategoryRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewGetAuditActivityTypesWithCategoryRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getAuditActivityTypes
-func (m *GetAuditActivityTypesWithCategoryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getAuditActivityTypes
+func (m *GetAuditActivityTypesWithCategoryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getAuditActivityTypes
@@ -58,12 +58,12 @@ func (m *GetAuditActivityTypesWithCategoryRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getAuditActivityTypes
-func (m *GetAuditActivityTypesWithCategoryRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAuditActivityTypesWithCategoryRequestBuilderGetRequestConfiguration)(GetAuditActivityTypesWithCategoryResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getAuditActivityTypes
+func (m *GetAuditActivityTypesWithCategoryRequestBuilder) Get()(GetAuditActivityTypesWithCategoryResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getAuditActivityTypes
-func (m *GetAuditActivityTypesWithCategoryRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAuditActivityTypesWithCategoryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAuditActivityTypesWithCategoryResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getAuditActivityTypes
+func (m *GetAuditActivityTypesWithCategoryRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetAuditActivityTypesWithCategoryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAuditActivityTypesWithCategoryResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

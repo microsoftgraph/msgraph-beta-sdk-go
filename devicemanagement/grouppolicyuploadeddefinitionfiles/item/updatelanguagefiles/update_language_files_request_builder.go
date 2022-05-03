@@ -39,8 +39,8 @@ func NewUpdateLanguageFilesRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateLanguageFilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action updateLanguageFiles
-func (m *UpdateLanguageFilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateLanguageFilesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action updateLanguageFiles
+func (m *UpdateLanguageFilesRequestBuilder) CreatePostRequestInformation(body UpdateLanguageFilesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateLanguageFiles
@@ -56,12 +56,12 @@ func (m *UpdateLanguageFilesRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action updateLanguageFiles
-func (m *UpdateLanguageFilesRequestBuilder) PostWithResponseHandler(body UpdateLanguageFilesRequestBodyable, requestConfiguration *UpdateLanguageFilesRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action updateLanguageFiles
+func (m *UpdateLanguageFilesRequestBuilder) Post(body UpdateLanguageFilesRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action updateLanguageFiles
-func (m *UpdateLanguageFilesRequestBuilder) PostWithResponseHandler(body UpdateLanguageFilesRequestBodyable, requestConfiguration *UpdateLanguageFilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action updateLanguageFiles
+func (m *UpdateLanguageFilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateLanguageFilesRequestBodyable, requestConfiguration *UpdateLanguageFilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

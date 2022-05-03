@@ -67,8 +67,8 @@ func NewClaimsMappingPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *ClaimsMappingPoliciesRequestBuilder) Count()(*i0438131ff8ba54925db4c29af39223414dce78d26ebc13f6de96410d1c3938e7.CountRequestBuilder) {
     return i0438131ff8ba54925db4c29af39223414dce78d26ebc13f6de96410d1c3938e7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the claimsMappingPolicies assigned to this service principal. Supports $expand.
-func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the claimsMappingPolicies assigned to this service principal. Supports $expand.
+func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the claimsMappingPolicies assigned to this service principal. Supports $expand.
@@ -86,12 +86,12 @@ func (m *ClaimsMappingPoliciesRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the claimsMappingPolicies assigned to this service principal. Supports $expand.
-func (m *ClaimsMappingPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *ClaimsMappingPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the claimsMappingPolicies assigned to this service principal. Supports $expand.
+func (m *ClaimsMappingPoliciesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the claimsMappingPolicies assigned to this service principal. Supports $expand.
-func (m *ClaimsMappingPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *ClaimsMappingPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the claimsMappingPolicies assigned to this service principal. Supports $expand.
+func (m *ClaimsMappingPoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ClaimsMappingPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClaimsMappingPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

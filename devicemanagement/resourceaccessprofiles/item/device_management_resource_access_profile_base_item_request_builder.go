@@ -86,8 +86,8 @@ func NewDeviceManagementResourceAccessProfileBaseItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property resourceAccessProfiles for deviceManagement
-func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property resourceAccessProfiles for deviceManagement
+func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property resourceAccessProfiles for deviceManagement
@@ -102,8 +102,8 @@ func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) CreateDele
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of resource access settings associated with account.
-func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation collection of resource access settings associated with account.
+func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration collection of resource access settings associated with account.
@@ -121,8 +121,8 @@ func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) CreateGetR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property resourceAccessProfiles in deviceManagement
-func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property resourceAccessProfiles in deviceManagement
+func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property resourceAccessProfiles in deviceManagement
@@ -138,12 +138,12 @@ func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) CreatePatc
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property resourceAccessProfiles for deviceManagement
-func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementResourceAccessProfileBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property resourceAccessProfiles for deviceManagement
+func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property resourceAccessProfiles for deviceManagement
-func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementResourceAccessProfileBaseItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property resourceAccessProfiles for deviceManagement
+func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementResourceAccessProfileBaseItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -158,12 +158,12 @@ func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) DeleteWith
     }
     return nil
 }
-// GetWithResponseHandler collection of resource access settings associated with account.
-func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get collection of resource access settings associated with account.
+func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler collection of resource access settings associated with account.
-func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable, error) {
+// GetWithRequestConfigurationAndResponseHandler collection of resource access settings associated with account.
+func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -178,12 +178,12 @@ func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) GetWithRes
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable), nil
 }
-// PatchWithResponseHandler update the navigation property resourceAccessProfiles in deviceManagement
-func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable, requestConfiguration *DeviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property resourceAccessProfiles in deviceManagement
+func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property resourceAccessProfiles in deviceManagement
-func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable, requestConfiguration *DeviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property resourceAccessProfiles in deviceManagement
+func (m *DeviceManagementResourceAccessProfileBaseItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable, requestConfiguration *DeviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

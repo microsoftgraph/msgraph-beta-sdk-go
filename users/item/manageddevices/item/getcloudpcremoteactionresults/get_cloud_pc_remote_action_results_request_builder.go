@@ -39,8 +39,8 @@ func NewGetCloudPcRemoteActionResultsRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewGetCloudPcRemoteActionResultsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getCloudPcRemoteActionResults
-func (m *GetCloudPcRemoteActionResultsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getCloudPcRemoteActionResults
+func (m *GetCloudPcRemoteActionResultsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getCloudPcRemoteActionResults
@@ -55,12 +55,12 @@ func (m *GetCloudPcRemoteActionResultsRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getCloudPcRemoteActionResults
-func (m *GetCloudPcRemoteActionResultsRequestBuilder) GetWithResponseHandler(requestConfiguration *GetCloudPcRemoteActionResultsRequestBuilderGetRequestConfiguration)(GetCloudPcRemoteActionResultsResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getCloudPcRemoteActionResults
+func (m *GetCloudPcRemoteActionResultsRequestBuilder) Get()(GetCloudPcRemoteActionResultsResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getCloudPcRemoteActionResults
-func (m *GetCloudPcRemoteActionResultsRequestBuilder) GetWithResponseHandler(requestConfiguration *GetCloudPcRemoteActionResultsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCloudPcRemoteActionResultsResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getCloudPcRemoteActionResults
+func (m *GetCloudPcRemoteActionResultsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetCloudPcRemoteActionResultsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCloudPcRemoteActionResultsResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

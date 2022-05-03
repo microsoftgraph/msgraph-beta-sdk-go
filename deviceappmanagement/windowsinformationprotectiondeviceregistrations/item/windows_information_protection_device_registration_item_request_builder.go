@@ -65,8 +65,8 @@ func NewWindowsInformationProtectionDeviceRegistrationItemRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionDeviceRegistrationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsInformationProtectionDeviceRegistrations for deviceAppManagement
-func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property windowsInformationProtectionDeviceRegistrations for deviceAppManagement
+func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsInformationProtectionDeviceRegistrations for deviceAppManagement
@@ -81,8 +81,8 @@ func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) Creat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration windows information protection device registrations that are not MDM enrolled.
-func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation windows information protection device registrations that are not MDM enrolled.
+func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration windows information protection device registrations that are not MDM enrolled.
@@ -100,8 +100,8 @@ func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) Creat
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsInformationProtectionDeviceRegistrations in deviceAppManagement
-func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property windowsInformationProtectionDeviceRegistrations in deviceAppManagement
+func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsInformationProtectionDeviceRegistrations in deviceAppManagement
@@ -117,12 +117,12 @@ func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) Creat
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property windowsInformationProtectionDeviceRegistrations for deviceAppManagement
-func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsInformationProtectionDeviceRegistrationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property windowsInformationProtectionDeviceRegistrations for deviceAppManagement
+func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property windowsInformationProtectionDeviceRegistrations for deviceAppManagement
-func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsInformationProtectionDeviceRegistrationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property windowsInformationProtectionDeviceRegistrations for deviceAppManagement
+func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsInformationProtectionDeviceRegistrationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -137,12 +137,12 @@ func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) Delet
     }
     return nil
 }
-// GetWithResponseHandler windows information protection device registrations that are not MDM enrolled.
-func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get windows information protection device registrations that are not MDM enrolled.
+func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler windows information protection device registrations that are not MDM enrolled.
-func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationable, error) {
+// GetWithRequestConfigurationAndResponseHandler windows information protection device registrations that are not MDM enrolled.
+func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -157,12 +157,12 @@ func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) GetWi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationable), nil
 }
-// PatchWithResponseHandler update the navigation property windowsInformationProtectionDeviceRegistrations in deviceAppManagement
-func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationable, requestConfiguration *WindowsInformationProtectionDeviceRegistrationItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property windowsInformationProtectionDeviceRegistrations in deviceAppManagement
+func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property windowsInformationProtectionDeviceRegistrations in deviceAppManagement
-func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationable, requestConfiguration *WindowsInformationProtectionDeviceRegistrationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property windowsInformationProtectionDeviceRegistrations in deviceAppManagement
+func (m *WindowsInformationProtectionDeviceRegistrationItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationable, requestConfiguration *WindowsInformationProtectionDeviceRegistrationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

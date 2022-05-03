@@ -43,8 +43,8 @@ func NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getSuggestedEnrollmentLimit
-func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getSuggestedEnrollmentLimit
+func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getSuggestedEnrollmentLimit
@@ -59,12 +59,12 @@ func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) CreateGetR
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getSuggestedEnrollmentLimit
-func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SuggestedEnrollmentLimitable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getSuggestedEnrollmentLimit
+func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SuggestedEnrollmentLimitable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getSuggestedEnrollmentLimit
-func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SuggestedEnrollmentLimitable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getSuggestedEnrollmentLimit
+func (m *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SuggestedEnrollmentLimitable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

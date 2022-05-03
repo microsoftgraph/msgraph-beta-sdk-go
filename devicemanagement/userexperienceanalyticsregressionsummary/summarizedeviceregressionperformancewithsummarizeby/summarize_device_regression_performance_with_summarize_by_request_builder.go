@@ -43,8 +43,8 @@ func NewSummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewSummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function summarizeDeviceRegressionPerformance
-func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function summarizeDeviceRegressionPerformance
+func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function summarizeDeviceRegressionPerformance
@@ -59,12 +59,12 @@ func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) Crea
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function summarizeDeviceRegressionPerformance
-func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) GetWithResponseHandler(requestConfiguration *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function summarizeDeviceRegressionPerformance
+func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function summarizeDeviceRegressionPerformance
-func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) GetWithResponseHandler(requestConfiguration *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function summarizeDeviceRegressionPerformance
+func (m *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -42,8 +42,8 @@ func NewGetScopesForUserWithUseridRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewGetScopesForUserWithUseridRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getScopesForUser
-func (m *GetScopesForUserWithUseridRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getScopesForUser
+func (m *GetScopesForUserWithUseridRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getScopesForUser
@@ -58,12 +58,12 @@ func (m *GetScopesForUserWithUseridRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getScopesForUser
-func (m *GetScopesForUserWithUseridRequestBuilder) GetWithResponseHandler(requestConfiguration *GetScopesForUserWithUseridRequestBuilderGetRequestConfiguration)(GetScopesForUserWithUseridResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getScopesForUser
+func (m *GetScopesForUserWithUseridRequestBuilder) Get()(GetScopesForUserWithUseridResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getScopesForUser
-func (m *GetScopesForUserWithUseridRequestBuilder) GetWithResponseHandler(requestConfiguration *GetScopesForUserWithUseridRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetScopesForUserWithUseridResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getScopesForUser
+func (m *GetScopesForUserWithUseridRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetScopesForUserWithUseridRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetScopesForUserWithUseridResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

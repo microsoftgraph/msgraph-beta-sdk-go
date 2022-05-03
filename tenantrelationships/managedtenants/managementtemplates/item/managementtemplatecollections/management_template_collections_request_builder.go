@@ -67,8 +67,8 @@ func NewManagementTemplateCollectionsRequestBuilder(rawUrl string, requestAdapte
 func (m *ManagementTemplateCollectionsRequestBuilder) Count()(*i999a5e0e8c717c32ff63a7921306ca0d74001ccd7f622d7de5cffa481b6c4246.CountRequestBuilder) {
     return i999a5e0e8c717c32ff63a7921306ca0d74001ccd7f622d7de5cffa481b6c4246.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get managementTemplateCollections from tenantRelationships
-func (m *ManagementTemplateCollectionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get managementTemplateCollections from tenantRelationships
+func (m *ManagementTemplateCollectionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get managementTemplateCollections from tenantRelationships
@@ -86,12 +86,12 @@ func (m *ManagementTemplateCollectionsRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get managementTemplateCollections from tenantRelationships
-func (m *ManagementTemplateCollectionsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementTemplateCollectionsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateCollectionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get managementTemplateCollections from tenantRelationships
+func (m *ManagementTemplateCollectionsRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateCollectionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get managementTemplateCollections from tenantRelationships
-func (m *ManagementTemplateCollectionsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementTemplateCollectionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateCollectionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get managementTemplateCollections from tenantRelationships
+func (m *ManagementTemplateCollectionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagementTemplateCollectionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateCollectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

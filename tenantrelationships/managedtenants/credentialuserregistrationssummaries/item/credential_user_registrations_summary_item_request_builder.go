@@ -64,8 +64,8 @@ func NewCredentialUserRegistrationsSummaryItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewCredentialUserRegistrationsSummaryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property credentialUserRegistrationsSummaries for tenantRelationships
-func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property credentialUserRegistrationsSummaries for tenantRelationships
+func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property credentialUserRegistrationsSummaries for tenantRelationships
@@ -80,8 +80,8 @@ func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) CreateDeleteReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
@@ -99,8 +99,8 @@ func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property credentialUserRegistrationsSummaries in tenantRelationships
-func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property credentialUserRegistrationsSummaries in tenantRelationships
+func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) CreatePatchRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property credentialUserRegistrationsSummaries in tenantRelationships
@@ -116,12 +116,12 @@ func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) CreatePatchReques
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property credentialUserRegistrationsSummaries for tenantRelationships
-func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CredentialUserRegistrationsSummaryItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property credentialUserRegistrationsSummaries for tenantRelationships
+func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property credentialUserRegistrationsSummaries for tenantRelationships
-func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CredentialUserRegistrationsSummaryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property credentialUserRegistrationsSummaries for tenantRelationships
+func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *CredentialUserRegistrationsSummaryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) DeleteWithRespons
     }
     return nil
 }
-// GetWithResponseHandler summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CredentialUserRegistrationsSummaryItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CredentialUserRegistrationsSummaryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CredentialUserRegistrationsSummaryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) GetWithResponseHa
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable), nil
 }
-// PatchWithResponseHandler update the navigation property credentialUserRegistrationsSummaries in tenantRelationships
-func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) PatchWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, requestConfiguration *CredentialUserRegistrationsSummaryItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property credentialUserRegistrationsSummaries in tenantRelationships
+func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) Patch(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property credentialUserRegistrationsSummaries in tenantRelationships
-func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) PatchWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, requestConfiguration *CredentialUserRegistrationsSummaryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property credentialUserRegistrationsSummaries in tenantRelationships
+func (m *CredentialUserRegistrationsSummaryItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, requestConfiguration *CredentialUserRegistrationsSummaryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

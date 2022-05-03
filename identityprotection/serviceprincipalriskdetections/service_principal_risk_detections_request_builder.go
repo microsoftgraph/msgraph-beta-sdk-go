@@ -74,8 +74,8 @@ func NewServicePrincipalRiskDetectionsRequestBuilder(rawUrl string, requestAdapt
 func (m *ServicePrincipalRiskDetectionsRequestBuilder) Count()(*i2a7c5b962a0301daf3d885c22f0964c1c24132187b7ee1638c6b00926beff25a.CountRequestBuilder) {
     return i2a7c5b962a0301daf3d885c22f0964c1c24132187b7ee1638c6b00926beff25a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents information about detected at-risk service principals in an Azure AD tenant.
-func (m *ServicePrincipalRiskDetectionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents information about detected at-risk service principals in an Azure AD tenant.
+func (m *ServicePrincipalRiskDetectionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents information about detected at-risk service principals in an Azure AD tenant.
@@ -93,8 +93,8 @@ func (m *ServicePrincipalRiskDetectionsRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to servicePrincipalRiskDetections for identityProtection
-func (m *ServicePrincipalRiskDetectionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to servicePrincipalRiskDetections for identityProtection
+func (m *ServicePrincipalRiskDetectionsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to servicePrincipalRiskDetections for identityProtection
@@ -110,12 +110,12 @@ func (m *ServicePrincipalRiskDetectionsRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler represents information about detected at-risk service principals in an Azure AD tenant.
-func (m *ServicePrincipalRiskDetectionsRequestBuilder) GetWithResponseHandler(requestConfiguration *ServicePrincipalRiskDetectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents information about detected at-risk service principals in an Azure AD tenant.
+func (m *ServicePrincipalRiskDetectionsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents information about detected at-risk service principals in an Azure AD tenant.
-func (m *ServicePrincipalRiskDetectionsRequestBuilder) GetWithResponseHandler(requestConfiguration *ServicePrincipalRiskDetectionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents information about detected at-risk service principals in an Azure AD tenant.
+func (m *ServicePrincipalRiskDetectionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ServicePrincipalRiskDetectionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ServicePrincipalRiskDetectionsRequestBuilder) GetWithResponseHandler(re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to servicePrincipalRiskDetections for identityProtection
-func (m *ServicePrincipalRiskDetectionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionable, requestConfiguration *ServicePrincipalRiskDetectionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to servicePrincipalRiskDetections for identityProtection
+func (m *ServicePrincipalRiskDetectionsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to servicePrincipalRiskDetections for identityProtection
-func (m *ServicePrincipalRiskDetectionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionable, requestConfiguration *ServicePrincipalRiskDetectionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to servicePrincipalRiskDetections for identityProtection
+func (m *ServicePrincipalRiskDetectionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionable, requestConfiguration *ServicePrincipalRiskDetectionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalRiskDetectionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -45,8 +45,8 @@ func NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getRelatedAppStates
-func (m *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getRelatedAppStates
+func (m *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getRelatedAppStates
@@ -61,12 +61,12 @@ func (m *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) Cre
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getRelatedAppStates
-func (m *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) GetWithResponseHandler(requestConfiguration *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderGetRequestConfiguration)(GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getRelatedAppStates
+func (m *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) Get()(GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getRelatedAppStates
-func (m *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) GetWithResponseHandler(requestConfiguration *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getRelatedAppStates
+func (m *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

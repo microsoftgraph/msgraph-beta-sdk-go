@@ -43,8 +43,8 @@ func NewGetYammerDeviceUsageUserDetailWithDateRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewGetYammerDeviceUsageUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getYammerDeviceUsageUserDetail
-func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getYammerDeviceUsageUserDetail
+func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getYammerDeviceUsageUserDetail
@@ -59,12 +59,12 @@ func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getYammerDeviceUsageUserDetail
-func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) GetWithResponseHandler(requestConfiguration *GetYammerDeviceUsageUserDetailWithDateRequestBuilderGetRequestConfiguration)(GetYammerDeviceUsageUserDetailWithDateResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getYammerDeviceUsageUserDetail
+func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) Get()(GetYammerDeviceUsageUserDetailWithDateResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getYammerDeviceUsageUserDetail
-func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) GetWithResponseHandler(requestConfiguration *GetYammerDeviceUsageUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetYammerDeviceUsageUserDetailWithDateResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getYammerDeviceUsageUserDetail
+func (m *GetYammerDeviceUsageUserDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetYammerDeviceUsageUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetYammerDeviceUsageUserDetailWithDateResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

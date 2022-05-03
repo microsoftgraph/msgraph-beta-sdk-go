@@ -81,8 +81,8 @@ func NewDeviceHealthScriptsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *DeviceHealthScriptsRequestBuilder) Count()(*ic4de1ae6615c5df9eec3108346be9478c79d3a7aa8645c40d6f5091d453580f1.CountRequestBuilder) {
     return ic4de1ae6615c5df9eec3108346be9478c79d3a7aa8645c40d6f5091d453580f1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of device health scripts associated with the tenant.
-func (m *DeviceHealthScriptsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of device health scripts associated with the tenant.
+func (m *DeviceHealthScriptsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of device health scripts associated with the tenant.
@@ -100,8 +100,8 @@ func (m *DeviceHealthScriptsRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceHealthScripts for deviceManagement
-func (m *DeviceHealthScriptsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to deviceHealthScripts for deviceManagement
+func (m *DeviceHealthScriptsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceHealthScripts for deviceManagement
@@ -121,16 +121,16 @@ func (m *DeviceHealthScriptsRequestBuilder) CreatePostRequestInformationWithRequ
 func (m *DeviceHealthScriptsRequestBuilder) EnableGlobalScripts()(*i87802417fac8dafea49fd0889f538e357ba4f700228dd931789b2c3a9194e714.EnableGlobalScriptsRequestBuilder) {
     return i87802417fac8dafea49fd0889f538e357ba4f700228dd931789b2c3a9194e714.NewEnableGlobalScriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Get the list of device health scripts associated with the tenant.
+func (m *DeviceHealthScriptsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetRemediationSummary provides operations to call the getRemediationSummary method.
 func (m *DeviceHealthScriptsRequestBuilder) GetRemediationSummary()(*i2e7b8f78fa151b32792a059a6a4155ce021c6574bebe2d5c93dfeeaa4fb76547.GetRemediationSummaryRequestBuilder) {
     return i2e7b8f78fa151b32792a059a6a4155ce021c6574bebe2d5c93dfeeaa4fb76547.NewGetRemediationSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the list of device health scripts associated with the tenant.
-func (m *DeviceHealthScriptsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceHealthScriptsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler the list of device health scripts associated with the tenant.
-func (m *DeviceHealthScriptsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceHealthScriptsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of device health scripts associated with the tenant.
+func (m *DeviceHealthScriptsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceHealthScriptsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -145,12 +145,12 @@ func (m *DeviceHealthScriptsRequestBuilder) GetWithResponseHandler(requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to deviceHealthScripts for deviceManagement
-func (m *DeviceHealthScriptsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable, requestConfiguration *DeviceHealthScriptsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to deviceHealthScripts for deviceManagement
+func (m *DeviceHealthScriptsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to deviceHealthScripts for deviceManagement
-func (m *DeviceHealthScriptsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable, requestConfiguration *DeviceHealthScriptsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to deviceHealthScripts for deviceManagement
+func (m *DeviceHealthScriptsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable, requestConfiguration *DeviceHealthScriptsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

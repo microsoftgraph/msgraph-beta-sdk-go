@@ -39,8 +39,8 @@ func NewSetCloudPcReviewStatusRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewSetCloudPcReviewStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action setCloudPcReviewStatus
-func (m *SetCloudPcReviewStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetCloudPcReviewStatusRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action setCloudPcReviewStatus
+func (m *SetCloudPcReviewStatusRequestBuilder) CreatePostRequestInformation(body SetCloudPcReviewStatusRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action setCloudPcReviewStatus
@@ -56,12 +56,12 @@ func (m *SetCloudPcReviewStatusRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action setCloudPcReviewStatus
-func (m *SetCloudPcReviewStatusRequestBuilder) PostWithResponseHandler(body SetCloudPcReviewStatusRequestBodyable, requestConfiguration *SetCloudPcReviewStatusRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action setCloudPcReviewStatus
+func (m *SetCloudPcReviewStatusRequestBuilder) Post(body SetCloudPcReviewStatusRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action setCloudPcReviewStatus
-func (m *SetCloudPcReviewStatusRequestBuilder) PostWithResponseHandler(body SetCloudPcReviewStatusRequestBodyable, requestConfiguration *SetCloudPcReviewStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action setCloudPcReviewStatus
+func (m *SetCloudPcReviewStatusRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetCloudPcReviewStatusRequestBodyable, requestConfiguration *SetCloudPcReviewStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

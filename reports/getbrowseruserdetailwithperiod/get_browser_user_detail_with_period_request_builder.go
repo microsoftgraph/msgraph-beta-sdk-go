@@ -42,8 +42,8 @@ func NewGetBrowserUserDetailWithPeriodRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewGetBrowserUserDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getBrowserUserDetail
-func (m *GetBrowserUserDetailWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getBrowserUserDetail
+func (m *GetBrowserUserDetailWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getBrowserUserDetail
@@ -58,12 +58,12 @@ func (m *GetBrowserUserDetailWithPeriodRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getBrowserUserDetail
-func (m *GetBrowserUserDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetBrowserUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(GetBrowserUserDetailWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getBrowserUserDetail
+func (m *GetBrowserUserDetailWithPeriodRequestBuilder) Get()(GetBrowserUserDetailWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getBrowserUserDetail
-func (m *GetBrowserUserDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetBrowserUserDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetBrowserUserDetailWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getBrowserUserDetail
+func (m *GetBrowserUserDetailWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetBrowserUserDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetBrowserUserDetailWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

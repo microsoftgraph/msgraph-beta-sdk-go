@@ -64,8 +64,8 @@ func NewMicrosoftApplicationDataAccessRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftApplicationDataAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property microsoftApplicationDataAccess for organization
-func (m *MicrosoftApplicationDataAccessRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property microsoftApplicationDataAccess for organization
+func (m *MicrosoftApplicationDataAccessRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property microsoftApplicationDataAccess for organization
@@ -80,8 +80,8 @@ func (m *MicrosoftApplicationDataAccessRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get microsoftApplicationDataAccess from organization
-func (m *MicrosoftApplicationDataAccessRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get microsoftApplicationDataAccess from organization
+func (m *MicrosoftApplicationDataAccessRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get microsoftApplicationDataAccess from organization
@@ -99,8 +99,8 @@ func (m *MicrosoftApplicationDataAccessRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property microsoftApplicationDataAccess in organization
-func (m *MicrosoftApplicationDataAccessRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftApplicationDataAccessSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property microsoftApplicationDataAccess in organization
+func (m *MicrosoftApplicationDataAccessRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftApplicationDataAccessSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property microsoftApplicationDataAccess in organization
@@ -116,12 +116,12 @@ func (m *MicrosoftApplicationDataAccessRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property microsoftApplicationDataAccess for organization
-func (m *MicrosoftApplicationDataAccessRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MicrosoftApplicationDataAccessRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property microsoftApplicationDataAccess for organization
+func (m *MicrosoftApplicationDataAccessRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property microsoftApplicationDataAccess for organization
-func (m *MicrosoftApplicationDataAccessRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MicrosoftApplicationDataAccessRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property microsoftApplicationDataAccess for organization
+func (m *MicrosoftApplicationDataAccessRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *MicrosoftApplicationDataAccessRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *MicrosoftApplicationDataAccessRequestBuilder) DeleteWithResponseHandler
     }
     return nil
 }
-// GetWithResponseHandler get microsoftApplicationDataAccess from organization
-func (m *MicrosoftApplicationDataAccessRequestBuilder) GetWithResponseHandler(requestConfiguration *MicrosoftApplicationDataAccessRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftApplicationDataAccessSettingsable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get microsoftApplicationDataAccess from organization
+func (m *MicrosoftApplicationDataAccessRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftApplicationDataAccessSettingsable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get microsoftApplicationDataAccess from organization
-func (m *MicrosoftApplicationDataAccessRequestBuilder) GetWithResponseHandler(requestConfiguration *MicrosoftApplicationDataAccessRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftApplicationDataAccessSettingsable, error) {
+// GetWithRequestConfigurationAndResponseHandler get microsoftApplicationDataAccess from organization
+func (m *MicrosoftApplicationDataAccessRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MicrosoftApplicationDataAccessRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftApplicationDataAccessSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *MicrosoftApplicationDataAccessRequestBuilder) GetWithResponseHandler(re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftApplicationDataAccessSettingsable), nil
 }
-// PatchWithResponseHandler update the navigation property microsoftApplicationDataAccess in organization
-func (m *MicrosoftApplicationDataAccessRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftApplicationDataAccessSettingsable, requestConfiguration *MicrosoftApplicationDataAccessRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property microsoftApplicationDataAccess in organization
+func (m *MicrosoftApplicationDataAccessRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftApplicationDataAccessSettingsable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property microsoftApplicationDataAccess in organization
-func (m *MicrosoftApplicationDataAccessRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftApplicationDataAccessSettingsable, requestConfiguration *MicrosoftApplicationDataAccessRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property microsoftApplicationDataAccess in organization
+func (m *MicrosoftApplicationDataAccessRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftApplicationDataAccessSettingsable, requestConfiguration *MicrosoftApplicationDataAccessRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

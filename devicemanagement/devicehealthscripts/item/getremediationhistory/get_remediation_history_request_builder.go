@@ -40,8 +40,8 @@ func NewGetRemediationHistoryRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewGetRemediationHistoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration function to get the number of remediations by a device health scripts
-func (m *GetRemediationHistoryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation function to get the number of remediations by a device health scripts
+func (m *GetRemediationHistoryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration function to get the number of remediations by a device health scripts
@@ -56,12 +56,12 @@ func (m *GetRemediationHistoryRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler function to get the number of remediations by a device health scripts
-func (m *GetRemediationHistoryRequestBuilder) GetWithResponseHandler(requestConfiguration *GetRemediationHistoryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptRemediationHistoryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get function to get the number of remediations by a device health scripts
+func (m *GetRemediationHistoryRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptRemediationHistoryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler function to get the number of remediations by a device health scripts
-func (m *GetRemediationHistoryRequestBuilder) GetWithResponseHandler(requestConfiguration *GetRemediationHistoryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptRemediationHistoryable, error) {
+// GetWithRequestConfigurationAndResponseHandler function to get the number of remediations by a device health scripts
+func (m *GetRemediationHistoryRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetRemediationHistoryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptRemediationHistoryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

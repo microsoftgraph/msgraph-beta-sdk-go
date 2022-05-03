@@ -39,8 +39,8 @@ func NewSearchExistingIdentitiesRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewSearchExistingIdentitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action searchExistingIdentities
-func (m *SearchExistingIdentitiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SearchExistingIdentitiesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action searchExistingIdentities
+func (m *SearchExistingIdentitiesRequestBuilder) CreatePostRequestInformation(body SearchExistingIdentitiesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action searchExistingIdentities
@@ -56,12 +56,12 @@ func (m *SearchExistingIdentitiesRequestBuilder) CreatePostRequestInformationWit
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action searchExistingIdentities
-func (m *SearchExistingIdentitiesRequestBuilder) PostWithResponseHandler(body SearchExistingIdentitiesRequestBodyable, requestConfiguration *SearchExistingIdentitiesRequestBuilderPostRequestConfiguration)(SearchExistingIdentitiesResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action searchExistingIdentities
+func (m *SearchExistingIdentitiesRequestBuilder) Post(body SearchExistingIdentitiesRequestBodyable)(SearchExistingIdentitiesResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action searchExistingIdentities
-func (m *SearchExistingIdentitiesRequestBuilder) PostWithResponseHandler(body SearchExistingIdentitiesRequestBodyable, requestConfiguration *SearchExistingIdentitiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SearchExistingIdentitiesResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action searchExistingIdentities
+func (m *SearchExistingIdentitiesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SearchExistingIdentitiesRequestBodyable, requestConfiguration *SearchExistingIdentitiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SearchExistingIdentitiesResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

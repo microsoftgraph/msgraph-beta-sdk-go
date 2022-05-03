@@ -69,8 +69,8 @@ func NewSubjectRightsRequestItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewSubjectRightsRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property subjectRightsRequests for privacy
-func (m *SubjectRightsRequestItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property subjectRightsRequests for privacy
+func (m *SubjectRightsRequestItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property subjectRightsRequests for privacy
@@ -85,8 +85,8 @@ func (m *SubjectRightsRequestItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get subjectRightsRequests from privacy
-func (m *SubjectRightsRequestItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get subjectRightsRequests from privacy
+func (m *SubjectRightsRequestItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get subjectRightsRequests from privacy
@@ -104,8 +104,8 @@ func (m *SubjectRightsRequestItemRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property subjectRightsRequests in privacy
-func (m *SubjectRightsRequestItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property subjectRightsRequests in privacy
+func (m *SubjectRightsRequestItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property subjectRightsRequests in privacy
@@ -121,12 +121,12 @@ func (m *SubjectRightsRequestItemRequestBuilder) CreatePatchRequestInformationWi
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property subjectRightsRequests for privacy
-func (m *SubjectRightsRequestItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property subjectRightsRequests for privacy
+func (m *SubjectRightsRequestItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property subjectRightsRequests for privacy
-func (m *SubjectRightsRequestItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property subjectRightsRequests for privacy
+func (m *SubjectRightsRequestItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *SubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -141,6 +141,10 @@ func (m *SubjectRightsRequestItemRequestBuilder) DeleteWithResponseHandler(reque
     }
     return nil
 }
+// Get get subjectRightsRequests from privacy
+func (m *SubjectRightsRequestItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetFinalAttachment provides operations to call the getFinalAttachment method.
 func (m *SubjectRightsRequestItemRequestBuilder) GetFinalAttachment()(*i2bf59a4d763ab3355a4526b9ff2ddcae384f1210dd464ff5940ff3a054d5f26e.GetFinalAttachmentRequestBuilder) {
     return i2bf59a4d763ab3355a4526b9ff2ddcae384f1210dd464ff5940ff3a054d5f26e.NewGetFinalAttachmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -149,12 +153,8 @@ func (m *SubjectRightsRequestItemRequestBuilder) GetFinalAttachment()(*i2bf59a4d
 func (m *SubjectRightsRequestItemRequestBuilder) GetFinalReport()(*i958489264196dd08f36dd719f907da913cf1a6b619228f3d6bc8da52997d8449.GetFinalReportRequestBuilder) {
     return i958489264196dd08f36dd719f907da913cf1a6b619228f3d6bc8da52997d8449.NewGetFinalReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get subjectRightsRequests from privacy
-func (m *SubjectRightsRequestItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SubjectRightsRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler get subjectRightsRequests from privacy
-func (m *SubjectRightsRequestItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SubjectRightsRequestItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, error) {
+// GetWithRequestConfigurationAndResponseHandler get subjectRightsRequests from privacy
+func (m *SubjectRightsRequestItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SubjectRightsRequestItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -184,12 +184,12 @@ func (m *SubjectRightsRequestItemRequestBuilder) NotesById(id string)(*ibe7a5a69
     }
     return ibe7a5a69eee3e39fd9fd52c318c683abd357fbe438629376f053fbf8dafee6d9.NewAuthoredNoteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property subjectRightsRequests in privacy
-func (m *SubjectRightsRequestItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property subjectRightsRequests in privacy
+func (m *SubjectRightsRequestItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property subjectRightsRequests in privacy
-func (m *SubjectRightsRequestItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property subjectRightsRequests in privacy
+func (m *SubjectRightsRequestItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubjectRightsRequestable, requestConfiguration *SubjectRightsRequestItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

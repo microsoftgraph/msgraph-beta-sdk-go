@@ -64,8 +64,8 @@ func NewAdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewAdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
-func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
+func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
@@ -80,8 +80,8 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder)
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration not yet documented
-func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation not yet documented
+func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration not yet documented
@@ -99,8 +99,8 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder)
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property advancedThreatProtectionOnboardingDeviceSettingStates in deviceManagement
-func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingDeviceSettingStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property advancedThreatProtectionOnboardingDeviceSettingStates in deviceManagement
+func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingDeviceSettingStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property advancedThreatProtectionOnboardingDeviceSettingStates in deviceManagement
@@ -116,12 +116,12 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder)
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
-func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
+func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
-func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
+func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder)
     }
     return nil
 }
-// GetWithResponseHandler not yet documented
-func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingDeviceSettingStateable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get not yet documented
+func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingDeviceSettingStateable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler not yet documented
-func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingDeviceSettingStateable, error) {
+// GetWithRequestConfigurationAndResponseHandler not yet documented
+func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingDeviceSettingStateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder)
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingDeviceSettingStateable), nil
 }
-// PatchWithResponseHandler update the navigation property advancedThreatProtectionOnboardingDeviceSettingStates in deviceManagement
-func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingDeviceSettingStateable, requestConfiguration *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property advancedThreatProtectionOnboardingDeviceSettingStates in deviceManagement
+func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingDeviceSettingStateable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property advancedThreatProtectionOnboardingDeviceSettingStates in deviceManagement
-func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingDeviceSettingStateable, requestConfiguration *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property advancedThreatProtectionOnboardingDeviceSettingStates in deviceManagement
+func (m *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingDeviceSettingStateable, requestConfiguration *AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

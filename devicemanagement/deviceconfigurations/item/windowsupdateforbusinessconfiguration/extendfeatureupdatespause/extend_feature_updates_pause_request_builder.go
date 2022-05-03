@@ -39,8 +39,8 @@ func NewExtendFeatureUpdatesPauseRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewExtendFeatureUpdatesPauseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration extend Feature Updates Pause for a Windows Update for Business ring.
-func (m *ExtendFeatureUpdatesPauseRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation extend Feature Updates Pause for a Windows Update for Business ring.
+func (m *ExtendFeatureUpdatesPauseRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration extend Feature Updates Pause for a Windows Update for Business ring.
@@ -55,12 +55,12 @@ func (m *ExtendFeatureUpdatesPauseRequestBuilder) CreatePostRequestInformationWi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler extend Feature Updates Pause for a Windows Update for Business ring.
-func (m *ExtendFeatureUpdatesPauseRequestBuilder) PostWithResponseHandler(requestConfiguration *ExtendFeatureUpdatesPauseRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post extend Feature Updates Pause for a Windows Update for Business ring.
+func (m *ExtendFeatureUpdatesPauseRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler extend Feature Updates Pause for a Windows Update for Business ring.
-func (m *ExtendFeatureUpdatesPauseRequestBuilder) PostWithResponseHandler(requestConfiguration *ExtendFeatureUpdatesPauseRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler extend Feature Updates Pause for a Windows Update for Business ring.
+func (m *ExtendFeatureUpdatesPauseRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *ExtendFeatureUpdatesPauseRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

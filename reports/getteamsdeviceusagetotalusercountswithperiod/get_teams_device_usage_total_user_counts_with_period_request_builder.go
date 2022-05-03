@@ -42,8 +42,8 @@ func NewGetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewGetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getTeamsDeviceUsageTotalUserCounts
-func (m *GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getTeamsDeviceUsageTotalUserCounts
+func (m *GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getTeamsDeviceUsageTotalUserCounts
@@ -58,12 +58,12 @@ func (m *GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder) CreateGetRe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getTeamsDeviceUsageTotalUserCounts
-func (m *GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetTeamsDeviceUsageTotalUserCountsWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getTeamsDeviceUsageTotalUserCounts
+func (m *GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder) Get()(GetTeamsDeviceUsageTotalUserCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getTeamsDeviceUsageTotalUserCounts
-func (m *GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTeamsDeviceUsageTotalUserCountsWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getTeamsDeviceUsageTotalUserCounts
+func (m *GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTeamsDeviceUsageTotalUserCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -42,8 +42,8 @@ func NewCompareWithTemplateIdRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewCompareWithTemplateIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function compare
-func (m *CompareWithTemplateIdRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function compare
+func (m *CompareWithTemplateIdRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function compare
@@ -58,12 +58,12 @@ func (m *CompareWithTemplateIdRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function compare
-func (m *CompareWithTemplateIdRequestBuilder) GetWithResponseHandler(requestConfiguration *CompareWithTemplateIdRequestBuilderGetRequestConfiguration)(CompareWithTemplateIdResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function compare
+func (m *CompareWithTemplateIdRequestBuilder) Get()(CompareWithTemplateIdResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function compare
-func (m *CompareWithTemplateIdRequestBuilder) GetWithResponseHandler(requestConfiguration *CompareWithTemplateIdRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CompareWithTemplateIdResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function compare
+func (m *CompareWithTemplateIdRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CompareWithTemplateIdRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CompareWithTemplateIdResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

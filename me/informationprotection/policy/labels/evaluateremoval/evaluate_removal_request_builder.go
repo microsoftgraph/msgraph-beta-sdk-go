@@ -39,8 +39,8 @@ func NewEvaluateRemovalRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateRemovalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action evaluateRemoval
-func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateRemovalRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action evaluateRemoval
+func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformation(body EvaluateRemovalRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action evaluateRemoval
@@ -56,12 +56,12 @@ func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action evaluateRemoval
-func (m *EvaluateRemovalRequestBuilder) PostWithResponseHandler(body EvaluateRemovalRequestBodyable, requestConfiguration *EvaluateRemovalRequestBuilderPostRequestConfiguration)(EvaluateRemovalResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action evaluateRemoval
+func (m *EvaluateRemovalRequestBuilder) Post(body EvaluateRemovalRequestBodyable)(EvaluateRemovalResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action evaluateRemoval
-func (m *EvaluateRemovalRequestBuilder) PostWithResponseHandler(body EvaluateRemovalRequestBodyable, requestConfiguration *EvaluateRemovalRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(EvaluateRemovalResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action evaluateRemoval
+func (m *EvaluateRemovalRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EvaluateRemovalRequestBodyable, requestConfiguration *EvaluateRemovalRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(EvaluateRemovalResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

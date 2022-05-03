@@ -42,8 +42,8 @@ func NewGetSharePointSiteUsageFileCountsWithPeriodRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewGetSharePointSiteUsageFileCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getSharePointSiteUsageFileCounts
-func (m *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getSharePointSiteUsageFileCounts
+func (m *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getSharePointSiteUsageFileCounts
@@ -58,12 +58,12 @@ func (m *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getSharePointSiteUsageFileCounts
-func (m *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetSharePointSiteUsageFileCountsWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getSharePointSiteUsageFileCounts
+func (m *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) Get()(GetSharePointSiteUsageFileCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getSharePointSiteUsageFileCounts
-func (m *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSharePointSiteUsageFileCountsWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getSharePointSiteUsageFileCounts
+func (m *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSharePointSiteUsageFileCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

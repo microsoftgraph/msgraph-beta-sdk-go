@@ -40,8 +40,8 @@ func NewResetTenantOnboardingStatusRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewResetTenantOnboardingStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action resetTenantOnboardingStatus
-func (m *ResetTenantOnboardingStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action resetTenantOnboardingStatus
+func (m *ResetTenantOnboardingStatusRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action resetTenantOnboardingStatus
@@ -56,12 +56,12 @@ func (m *ResetTenantOnboardingStatusRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action resetTenantOnboardingStatus
-func (m *ResetTenantOnboardingStatusRequestBuilder) PostWithResponseHandler(requestConfiguration *ResetTenantOnboardingStatusRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable, error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action resetTenantOnboardingStatus
+func (m *ResetTenantOnboardingStatusRequestBuilder) Post()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action resetTenantOnboardingStatus
-func (m *ResetTenantOnboardingStatusRequestBuilder) PostWithResponseHandler(requestConfiguration *ResetTenantOnboardingStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action resetTenantOnboardingStatus
+func (m *ResetTenantOnboardingStatusRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *ResetTenantOnboardingStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

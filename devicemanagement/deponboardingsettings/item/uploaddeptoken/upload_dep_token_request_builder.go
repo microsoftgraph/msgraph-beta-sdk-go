@@ -39,8 +39,8 @@ func NewUploadDepTokenRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewUploadDepTokenRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration uploads a new Device Enrollment Program token
-func (m *UploadDepTokenRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadDepTokenRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation uploads a new Device Enrollment Program token
+func (m *UploadDepTokenRequestBuilder) CreatePostRequestInformation(body UploadDepTokenRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration uploads a new Device Enrollment Program token
@@ -56,12 +56,12 @@ func (m *UploadDepTokenRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler uploads a new Device Enrollment Program token
-func (m *UploadDepTokenRequestBuilder) PostWithResponseHandler(body UploadDepTokenRequestBodyable, requestConfiguration *UploadDepTokenRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post uploads a new Device Enrollment Program token
+func (m *UploadDepTokenRequestBuilder) Post(body UploadDepTokenRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler uploads a new Device Enrollment Program token
-func (m *UploadDepTokenRequestBuilder) PostWithResponseHandler(body UploadDepTokenRequestBodyable, requestConfiguration *UploadDepTokenRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler uploads a new Device Enrollment Program token
+func (m *UploadDepTokenRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UploadDepTokenRequestBodyable, requestConfiguration *UploadDepTokenRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

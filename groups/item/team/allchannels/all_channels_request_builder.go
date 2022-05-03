@@ -67,8 +67,8 @@ func NewAllChannelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *AllChannelsRequestBuilder) Count()(*i824d1bdb76844a47999c71fa180c0b7372bdb0fe2287ac670452cac0c4e70390.CountRequestBuilder) {
     return i824d1bdb76844a47999c71fa180c0b7372bdb0fe2287ac670452cac0c4e70390.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration list of channels either hosted in or shared with the team (incoming channels).
-func (m *AllChannelsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation list of channels either hosted in or shared with the team (incoming channels).
+func (m *AllChannelsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration list of channels either hosted in or shared with the team (incoming channels).
@@ -86,12 +86,12 @@ func (m *AllChannelsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler list of channels either hosted in or shared with the team (incoming channels).
-func (m *AllChannelsRequestBuilder) GetWithResponseHandler(requestConfiguration *AllChannelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get list of channels either hosted in or shared with the team (incoming channels).
+func (m *AllChannelsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler list of channels either hosted in or shared with the team (incoming channels).
-func (m *AllChannelsRequestBuilder) GetWithResponseHandler(requestConfiguration *AllChannelsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler list of channels either hosted in or shared with the team (incoming channels).
+func (m *AllChannelsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AllChannelsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

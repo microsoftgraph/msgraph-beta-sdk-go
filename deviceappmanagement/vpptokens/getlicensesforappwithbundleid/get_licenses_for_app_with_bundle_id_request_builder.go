@@ -42,8 +42,8 @@ func NewGetLicensesForAppWithBundleIdRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewGetLicensesForAppWithBundleIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getLicensesForApp
-func (m *GetLicensesForAppWithBundleIdRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getLicensesForApp
+func (m *GetLicensesForAppWithBundleIdRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getLicensesForApp
@@ -58,12 +58,12 @@ func (m *GetLicensesForAppWithBundleIdRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getLicensesForApp
-func (m *GetLicensesForAppWithBundleIdRequestBuilder) GetWithResponseHandler(requestConfiguration *GetLicensesForAppWithBundleIdRequestBuilderGetRequestConfiguration)(GetLicensesForAppWithBundleIdResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getLicensesForApp
+func (m *GetLicensesForAppWithBundleIdRequestBuilder) Get()(GetLicensesForAppWithBundleIdResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getLicensesForApp
-func (m *GetLicensesForAppWithBundleIdRequestBuilder) GetWithResponseHandler(requestConfiguration *GetLicensesForAppWithBundleIdRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetLicensesForAppWithBundleIdResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getLicensesForApp
+func (m *GetLicensesForAppWithBundleIdRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetLicensesForAppWithBundleIdRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetLicensesForAppWithBundleIdResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

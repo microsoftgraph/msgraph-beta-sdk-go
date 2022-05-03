@@ -42,8 +42,8 @@ func NewSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function summarizeDeviceRemoteConnection
-func (m *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function summarizeDeviceRemoteConnection
+func (m *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function summarizeDeviceRemoteConnection
@@ -58,12 +58,12 @@ func (m *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) CreateGet
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function summarizeDeviceRemoteConnection
-func (m *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) GetWithResponseHandler(requestConfiguration *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetRequestConfiguration)(SummarizeDeviceRemoteConnectionWithSummarizeByResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function summarizeDeviceRemoteConnection
+func (m *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) Get()(SummarizeDeviceRemoteConnectionWithSummarizeByResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function summarizeDeviceRemoteConnection
-func (m *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) GetWithResponseHandler(requestConfiguration *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SummarizeDeviceRemoteConnectionWithSummarizeByResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function summarizeDeviceRemoteConnection
+func (m *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SummarizeDeviceRemoteConnectionWithSummarizeByResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

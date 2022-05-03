@@ -39,8 +39,8 @@ func NewSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
-func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
+func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder) CreatePostRequestInformation(body SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
@@ -56,12 +56,12 @@ func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder) CreateP
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
-func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder) PostWithResponseHandler(body SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBodyable, requestConfiguration *SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
+func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder) Post(body SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
-func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder) PostWithResponseHandler(body SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBodyable, requestConfiguration *SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
+func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBodyable, requestConfiguration *SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

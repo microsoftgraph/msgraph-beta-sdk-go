@@ -67,8 +67,8 @@ func NewRegisteredDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *RegisteredDevicesRequestBuilder) Count()(*iae1984fb3fc141b0f414161e859e280d2f4ae41744529837c3922e8d5ba99818.CountRequestBuilder) {
     return iae1984fb3fc141b0f414161e859e280d2f4ae41744529837c3922e8d5ba99818.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration devices that are registered for the user. Read-only. Nullable. Supports $expand.
-func (m *RegisteredDevicesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation devices that are registered for the user. Read-only. Nullable. Supports $expand.
+func (m *RegisteredDevicesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration devices that are registered for the user. Read-only. Nullable. Supports $expand.
@@ -86,12 +86,12 @@ func (m *RegisteredDevicesRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler devices that are registered for the user. Read-only. Nullable. Supports $expand.
-func (m *RegisteredDevicesRequestBuilder) GetWithResponseHandler(requestConfiguration *RegisteredDevicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get devices that are registered for the user. Read-only. Nullable. Supports $expand.
+func (m *RegisteredDevicesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler devices that are registered for the user. Read-only. Nullable. Supports $expand.
-func (m *RegisteredDevicesRequestBuilder) GetWithResponseHandler(requestConfiguration *RegisteredDevicesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler devices that are registered for the user. Read-only. Nullable. Supports $expand.
+func (m *RegisteredDevicesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RegisteredDevicesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

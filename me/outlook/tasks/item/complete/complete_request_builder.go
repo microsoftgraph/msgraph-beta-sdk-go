@@ -39,8 +39,8 @@ func NewCompleteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewCompleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action complete
-func (m *CompleteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action complete
+func (m *CompleteRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action complete
@@ -55,12 +55,12 @@ func (m *CompleteRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action complete
-func (m *CompleteRequestBuilder) PostWithResponseHandler(requestConfiguration *CompleteRequestBuilderPostRequestConfiguration)(CompleteResponseable, error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action complete
+func (m *CompleteRequestBuilder) Post()(CompleteResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action complete
-func (m *CompleteRequestBuilder) PostWithResponseHandler(requestConfiguration *CompleteRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CompleteResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action complete
+func (m *CompleteRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *CompleteRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CompleteResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

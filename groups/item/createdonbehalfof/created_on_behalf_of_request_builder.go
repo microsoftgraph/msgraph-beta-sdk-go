@@ -50,8 +50,8 @@ func NewCreatedOnBehalfOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewCreatedOnBehalfOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
-func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
+func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
@@ -69,12 +69,12 @@ func (m *CreatedOnBehalfOfRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
-func (m *CreatedOnBehalfOfRequestBuilder) GetWithResponseHandler(requestConfiguration *CreatedOnBehalfOfRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
+func (m *CreatedOnBehalfOfRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
-func (m *CreatedOnBehalfOfRequestBuilder) GetWithResponseHandler(requestConfiguration *CreatedOnBehalfOfRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
+// GetWithRequestConfigurationAndResponseHandler the user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
+func (m *CreatedOnBehalfOfRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CreatedOnBehalfOfRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

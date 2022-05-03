@@ -40,8 +40,8 @@ func NewMakePermanentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewMakePermanentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action makePermanent
-func (m *MakePermanentRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MakePermanentRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action makePermanent
+func (m *MakePermanentRequestBuilder) CreatePostRequestInformation(body MakePermanentRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action makePermanent
@@ -57,12 +57,12 @@ func (m *MakePermanentRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action makePermanent
-func (m *MakePermanentRequestBuilder) PostWithResponseHandler(body MakePermanentRequestBodyable, requestConfiguration *MakePermanentRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action makePermanent
+func (m *MakePermanentRequestBuilder) Post(body MakePermanentRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action makePermanent
-func (m *MakePermanentRequestBuilder) PostWithResponseHandler(body MakePermanentRequestBodyable, requestConfiguration *MakePermanentRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action makePermanent
+func (m *MakePermanentRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body MakePermanentRequestBodyable, requestConfiguration *MakePermanentRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

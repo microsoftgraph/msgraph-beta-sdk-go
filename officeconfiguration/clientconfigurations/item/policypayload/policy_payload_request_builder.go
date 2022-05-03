@@ -47,8 +47,8 @@ func NewPolicyPayloadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewPolicyPayloadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation policy settings JSON string in binary format, these values cannot be changed by the user.
+func (m *PolicyPayloadRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration policy settings JSON string in binary format, these values cannot be changed by the user.
@@ -63,8 +63,8 @@ func (m *PolicyPayloadRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// CreatePutRequestInformationWithRequestConfiguration policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePutRequestInformation policy settings JSON string in binary format, these values cannot be changed by the user.
+func (m *PolicyPayloadRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePutRequestInformationWithRequestConfiguration policy settings JSON string in binary format, these values cannot be changed by the user.
@@ -80,12 +80,12 @@ func (m *PolicyPayloadRequestBuilder) CreatePutRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) GetWithResponseHandler(requestConfiguration *PolicyPayloadRequestBuilderGetRequestConfiguration)([]byte, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get policy settings JSON string in binary format, these values cannot be changed by the user.
+func (m *PolicyPayloadRequestBuilder) Get()([]byte, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) GetWithResponseHandler(requestConfiguration *PolicyPayloadRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+// GetWithRequestConfigurationAndResponseHandler policy settings JSON string in binary format, these values cannot be changed by the user.
+func (m *PolicyPayloadRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PolicyPayloadRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -100,12 +100,12 @@ func (m *PolicyPayloadRequestBuilder) GetWithResponseHandler(requestConfiguratio
     }
     return res.([]byte), nil
 }
-// PutWithResponseHandler policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *PolicyPayloadRequestBuilderPutRequestConfiguration)(error) {
-    return m.PutWithResponseHandler(body, requestConfiguration, nil);
+// Put policy settings JSON string in binary format, these values cannot be changed by the user.
+func (m *PolicyPayloadRequestBuilder) Put(body []byte)(error) {
+    return m.PutWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PutWithResponseHandler policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *PolicyPayloadRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PutWithRequestConfigurationAndResponseHandler policy settings JSON string in binary format, these values cannot be changed by the user.
+func (m *PolicyPayloadRequestBuilder) PutWithRequestConfigurationAndResponseHandler(body []byte, requestConfiguration *PolicyPayloadRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -39,8 +39,8 @@ func NewIsManagedAppUserBlockedRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewIsManagedAppUserBlockedRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration gets the blocked state of a managed app user.
-func (m *IsManagedAppUserBlockedRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation gets the blocked state of a managed app user.
+func (m *IsManagedAppUserBlockedRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration gets the blocked state of a managed app user.
@@ -55,12 +55,12 @@ func (m *IsManagedAppUserBlockedRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler gets the blocked state of a managed app user.
-func (m *IsManagedAppUserBlockedRequestBuilder) GetWithResponseHandler(requestConfiguration *IsManagedAppUserBlockedRequestBuilderGetRequestConfiguration)(IsManagedAppUserBlockedResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get gets the blocked state of a managed app user.
+func (m *IsManagedAppUserBlockedRequestBuilder) Get()(IsManagedAppUserBlockedResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler gets the blocked state of a managed app user.
-func (m *IsManagedAppUserBlockedRequestBuilder) GetWithResponseHandler(requestConfiguration *IsManagedAppUserBlockedRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(IsManagedAppUserBlockedResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler gets the blocked state of a managed app user.
+func (m *IsManagedAppUserBlockedRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IsManagedAppUserBlockedRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(IsManagedAppUserBlockedResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

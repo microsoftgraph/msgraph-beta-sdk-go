@@ -39,8 +39,8 @@ func NewDeprovisionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewDeprovisionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action deprovision
-func (m *DeprovisionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DeprovisionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action deprovision
+func (m *DeprovisionRequestBuilder) CreatePostRequestInformation(body DeprovisionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action deprovision
@@ -56,12 +56,12 @@ func (m *DeprovisionRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action deprovision
-func (m *DeprovisionRequestBuilder) PostWithResponseHandler(body DeprovisionRequestBodyable, requestConfiguration *DeprovisionRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action deprovision
+func (m *DeprovisionRequestBuilder) Post(body DeprovisionRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action deprovision
-func (m *DeprovisionRequestBuilder) PostWithResponseHandler(body DeprovisionRequestBodyable, requestConfiguration *DeprovisionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action deprovision
+func (m *DeprovisionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body DeprovisionRequestBodyable, requestConfiguration *DeprovisionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

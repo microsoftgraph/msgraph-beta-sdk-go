@@ -50,8 +50,8 @@ func NewDeviceBootPerformanceMetricsRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceBootPerformanceMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the user experience analytics device boot performance metrics.
-func (m *DeviceBootPerformanceMetricsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the user experience analytics device boot performance metrics.
+func (m *DeviceBootPerformanceMetricsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the user experience analytics device boot performance metrics.
@@ -69,12 +69,12 @@ func (m *DeviceBootPerformanceMetricsRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the user experience analytics device boot performance metrics.
-func (m *DeviceBootPerformanceMetricsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceBootPerformanceMetricsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the user experience analytics device boot performance metrics.
+func (m *DeviceBootPerformanceMetricsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the user experience analytics device boot performance metrics.
-func (m *DeviceBootPerformanceMetricsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceBootPerformanceMetricsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
+// GetWithRequestConfigurationAndResponseHandler the user experience analytics device boot performance metrics.
+func (m *DeviceBootPerformanceMetricsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceBootPerformanceMetricsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

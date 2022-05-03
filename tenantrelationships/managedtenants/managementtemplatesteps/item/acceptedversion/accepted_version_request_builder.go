@@ -50,8 +50,8 @@ func NewAcceptedVersionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewAcceptedVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration get acceptedVersion from tenantRelationships
-func (m *AcceptedVersionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get acceptedVersion from tenantRelationships
+func (m *AcceptedVersionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get acceptedVersion from tenantRelationships
@@ -69,12 +69,12 @@ func (m *AcceptedVersionRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get acceptedVersion from tenantRelationships
-func (m *AcceptedVersionRequestBuilder) GetWithResponseHandler(requestConfiguration *AcceptedVersionRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get acceptedVersion from tenantRelationships
+func (m *AcceptedVersionRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get acceptedVersion from tenantRelationships
-func (m *AcceptedVersionRequestBuilder) GetWithResponseHandler(requestConfiguration *AcceptedVersionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, error) {
+// GetWithRequestConfigurationAndResponseHandler get acceptedVersion from tenantRelationships
+func (m *AcceptedVersionRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AcceptedVersionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

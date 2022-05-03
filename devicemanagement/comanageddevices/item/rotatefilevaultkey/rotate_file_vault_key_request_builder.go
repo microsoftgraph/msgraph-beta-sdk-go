@@ -39,8 +39,8 @@ func NewRotateFileVaultKeyRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewRotateFileVaultKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action rotateFileVaultKey
-func (m *RotateFileVaultKeyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action rotateFileVaultKey
+func (m *RotateFileVaultKeyRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action rotateFileVaultKey
@@ -55,12 +55,12 @@ func (m *RotateFileVaultKeyRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action rotateFileVaultKey
-func (m *RotateFileVaultKeyRequestBuilder) PostWithResponseHandler(requestConfiguration *RotateFileVaultKeyRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action rotateFileVaultKey
+func (m *RotateFileVaultKeyRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action rotateFileVaultKey
-func (m *RotateFileVaultKeyRequestBuilder) PostWithResponseHandler(requestConfiguration *RotateFileVaultKeyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action rotateFileVaultKey
+func (m *RotateFileVaultKeyRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *RotateFileVaultKeyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

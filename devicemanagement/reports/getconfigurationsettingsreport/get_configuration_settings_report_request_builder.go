@@ -39,8 +39,8 @@ func NewGetConfigurationSettingsReportRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewGetConfigurationSettingsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getConfigurationSettingsReport
-func (m *GetConfigurationSettingsReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigurationSettingsReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getConfigurationSettingsReport
+func (m *GetConfigurationSettingsReportRequestBuilder) CreatePostRequestInformation(body GetConfigurationSettingsReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getConfigurationSettingsReport
@@ -56,12 +56,12 @@ func (m *GetConfigurationSettingsReportRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getConfigurationSettingsReport
-func (m *GetConfigurationSettingsReportRequestBuilder) PostWithResponseHandler(body GetConfigurationSettingsReportRequestBodyable, requestConfiguration *GetConfigurationSettingsReportRequestBuilderPostRequestConfiguration)(GetConfigurationSettingsReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getConfigurationSettingsReport
+func (m *GetConfigurationSettingsReportRequestBuilder) Post(body GetConfigurationSettingsReportRequestBodyable)(GetConfigurationSettingsReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getConfigurationSettingsReport
-func (m *GetConfigurationSettingsReportRequestBuilder) PostWithResponseHandler(body GetConfigurationSettingsReportRequestBodyable, requestConfiguration *GetConfigurationSettingsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetConfigurationSettingsReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getConfigurationSettingsReport
+func (m *GetConfigurationSettingsReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigurationSettingsReportRequestBodyable, requestConfiguration *GetConfigurationSettingsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetConfigurationSettingsReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

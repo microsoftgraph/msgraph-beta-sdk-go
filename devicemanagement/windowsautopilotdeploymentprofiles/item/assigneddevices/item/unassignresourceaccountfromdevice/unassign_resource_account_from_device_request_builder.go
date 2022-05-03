@@ -39,8 +39,8 @@ func NewUnassignResourceAccountFromDeviceRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewUnassignResourceAccountFromDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration unassigns the resource account from an Autopilot device.
-func (m *UnassignResourceAccountFromDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation unassigns the resource account from an Autopilot device.
+func (m *UnassignResourceAccountFromDeviceRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration unassigns the resource account from an Autopilot device.
@@ -55,12 +55,12 @@ func (m *UnassignResourceAccountFromDeviceRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler unassigns the resource account from an Autopilot device.
-func (m *UnassignResourceAccountFromDeviceRequestBuilder) PostWithResponseHandler(requestConfiguration *UnassignResourceAccountFromDeviceRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post unassigns the resource account from an Autopilot device.
+func (m *UnassignResourceAccountFromDeviceRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler unassigns the resource account from an Autopilot device.
-func (m *UnassignResourceAccountFromDeviceRequestBuilder) PostWithResponseHandler(requestConfiguration *UnassignResourceAccountFromDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler unassigns the resource account from an Autopilot device.
+func (m *UnassignResourceAccountFromDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *UnassignResourceAccountFromDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

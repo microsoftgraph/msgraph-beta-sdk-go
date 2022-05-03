@@ -40,8 +40,8 @@ func NewUsersRegisteredByFeatureRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewUsersRegisteredByFeatureRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function usersRegisteredByFeature
-func (m *UsersRegisteredByFeatureRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function usersRegisteredByFeature
+func (m *UsersRegisteredByFeatureRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function usersRegisteredByFeature
@@ -56,12 +56,12 @@ func (m *UsersRegisteredByFeatureRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function usersRegisteredByFeature
-func (m *UsersRegisteredByFeatureRequestBuilder) GetWithResponseHandler(requestConfiguration *UsersRegisteredByFeatureRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRegistrationFeatureSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function usersRegisteredByFeature
+func (m *UsersRegisteredByFeatureRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRegistrationFeatureSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function usersRegisteredByFeature
-func (m *UsersRegisteredByFeatureRequestBuilder) GetWithResponseHandler(requestConfiguration *UsersRegisteredByFeatureRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRegistrationFeatureSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function usersRegisteredByFeature
+func (m *UsersRegisteredByFeatureRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UsersRegisteredByFeatureRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRegistrationFeatureSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -13,8 +13,8 @@ type GetDevicesScheduledToRetireRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetDevicesScheduledToRetireRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type GetDevicesScheduledToRetireRequestBuilderPostRequestConfiguration struct {
+// GetDevicesScheduledToRetireRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetDevicesScheduledToRetireRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
@@ -24,7 +24,7 @@ type GetDevicesScheduledToRetireRequestBuilderPostRequestConfiguration struct {
 func NewGetDevicesScheduledToRetireRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetDevicesScheduledToRetireRequestBuilder) {
     m := &GetDevicesScheduledToRetireRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/deviceManagement/deviceCompliancePolicies/microsoft.graph.getDevicesScheduledToRetire";
+    m.urlTemplate = "{+baseurl}/deviceManagement/deviceCompliancePolicies/microsoft.graph.getDevicesScheduledToRetire()";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -39,29 +39,29 @@ func NewGetDevicesScheduledToRetireRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewGetDevicesScheduledToRetireRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getDevicesScheduledToRetire
-func (m *GetDevicesScheduledToRetireRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
+// CreateGetRequestInformation invoke function getDevicesScheduledToRetire
+func (m *GetDevicesScheduledToRetireRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getDevicesScheduledToRetire
-func (m *GetDevicesScheduledToRetireRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *GetDevicesScheduledToRetireRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformationWithRequestConfiguration invoke function getDevicesScheduledToRetire
+func (m *GetDevicesScheduledToRetireRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetDevicesScheduledToRetireRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getDevicesScheduledToRetire
-func (m *GetDevicesScheduledToRetireRequestBuilder) PostWithResponseHandler(requestConfiguration *GetDevicesScheduledToRetireRequestBuilderPostRequestConfiguration)(GetDevicesScheduledToRetireResponseable, error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getDevicesScheduledToRetire
+func (m *GetDevicesScheduledToRetireRequestBuilder) Get()(GetDevicesScheduledToRetireResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action getDevicesScheduledToRetire
-func (m *GetDevicesScheduledToRetireRequestBuilder) PostWithResponseHandler(requestConfiguration *GetDevicesScheduledToRetireRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetDevicesScheduledToRetireResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
+// GetWithRequestConfigurationAndResponseHandler invoke function getDevicesScheduledToRetire
+func (m *GetDevicesScheduledToRetireRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetDevicesScheduledToRetireRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetDevicesScheduledToRetireResponseable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
