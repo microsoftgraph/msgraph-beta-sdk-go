@@ -67,8 +67,8 @@ func NewDefinitionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *DefinitionsRequestBuilder) Count()(*id125d01a301ac8d65e311ec187f496688c0df885ea34166f16dd958a1313479c.CountRequestBuilder) {
     return id125d01a301ac8d65e311ec187f496688c0df885ea34166f16dd958a1313479c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the immediate GroupPolicyDefinition children of the category
-func (m *DefinitionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the immediate GroupPolicyDefinition children of the category
+func (m *DefinitionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the immediate GroupPolicyDefinition children of the category
@@ -86,12 +86,12 @@ func (m *DefinitionsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the immediate GroupPolicyDefinition children of the category
-func (m *DefinitionsRequestBuilder) GetWithResponseHandler(requestConfiguration *DefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the immediate GroupPolicyDefinition children of the category
+func (m *DefinitionsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the immediate GroupPolicyDefinition children of the category
-func (m *DefinitionsRequestBuilder) GetWithResponseHandler(requestConfiguration *DefinitionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the immediate GroupPolicyDefinition children of the category
+func (m *DefinitionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DefinitionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

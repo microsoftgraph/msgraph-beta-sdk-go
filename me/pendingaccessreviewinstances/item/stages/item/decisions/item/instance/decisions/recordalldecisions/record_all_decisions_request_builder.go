@@ -39,8 +39,8 @@ func NewRecordAllDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewRecordAllDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action recordAllDecisions
-func (m *RecordAllDecisionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RecordAllDecisionsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action recordAllDecisions
+func (m *RecordAllDecisionsRequestBuilder) CreatePostRequestInformation(body RecordAllDecisionsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action recordAllDecisions
@@ -56,12 +56,12 @@ func (m *RecordAllDecisionsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action recordAllDecisions
-func (m *RecordAllDecisionsRequestBuilder) PostWithResponseHandler(body RecordAllDecisionsRequestBodyable, requestConfiguration *RecordAllDecisionsRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action recordAllDecisions
+func (m *RecordAllDecisionsRequestBuilder) Post(body RecordAllDecisionsRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action recordAllDecisions
-func (m *RecordAllDecisionsRequestBuilder) PostWithResponseHandler(body RecordAllDecisionsRequestBodyable, requestConfiguration *RecordAllDecisionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action recordAllDecisions
+func (m *RecordAllDecisionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RecordAllDecisionsRequestBodyable, requestConfiguration *RecordAllDecisionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

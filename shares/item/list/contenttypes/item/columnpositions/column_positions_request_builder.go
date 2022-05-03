@@ -67,8 +67,8 @@ func NewColumnPositionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ColumnPositionsRequestBuilder) Count()(*i81dd19db0c3f33f27106dbf582b9fcb3574cd61e23ba176c435158353cde278b.CountRequestBuilder) {
     return i81dd19db0c3f33f27106dbf582b9fcb3574cd61e23ba176c435158353cde278b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration column order information in a content type.
-func (m *ColumnPositionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation column order information in a content type.
+func (m *ColumnPositionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration column order information in a content type.
@@ -86,12 +86,12 @@ func (m *ColumnPositionsRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler column order information in a content type.
-func (m *ColumnPositionsRequestBuilder) GetWithResponseHandler(requestConfiguration *ColumnPositionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get column order information in a content type.
+func (m *ColumnPositionsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler column order information in a content type.
-func (m *ColumnPositionsRequestBuilder) GetWithResponseHandler(requestConfiguration *ColumnPositionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler column order information in a content type.
+func (m *ColumnPositionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ColumnPositionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

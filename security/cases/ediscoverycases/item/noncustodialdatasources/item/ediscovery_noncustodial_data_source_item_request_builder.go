@@ -1,0 +1,208 @@
+package item
+
+import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/security"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i07c73418b6859e18c3a7f65c0b04f4973df64e5a2646c6a5a8191f1e1746035c "github.com/microsoftgraph/msgraph-beta-sdk-go/security/cases/ediscoverycases/item/noncustodialdatasources/item/removehold"
+    i16eb752f456bdfe41996a691bb16f172054c6490293c63a9c33a5f9d6f0ae74b "github.com/microsoftgraph/msgraph-beta-sdk-go/security/cases/ediscoverycases/item/noncustodialdatasources/item/applyhold"
+    i8fe416e2172f79d2bc84401d1bf132eb2f7d1aaaa5dfe171f19717e867fdd17a "github.com/microsoftgraph/msgraph-beta-sdk-go/security/cases/ediscoverycases/item/noncustodialdatasources/item/lastindexoperation"
+    ic3f57edd13e6e25ad55e7fd0ed7af36ccc925699ed44938b4d7f0634878406f0 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/cases/ediscoverycases/item/noncustodialdatasources/item/updateindex"
+    icd282688bb838ebc3808a93fc7619d53d48e4179819f771d890e88117b2fc47f "github.com/microsoftgraph/msgraph-beta-sdk-go/security/cases/ediscoverycases/item/noncustodialdatasources/item/release"
+    ie83f222c02372aab98e048d91424c09f76b1c4927aeb5c4c6d6707251163078d "github.com/microsoftgraph/msgraph-beta-sdk-go/security/cases/ediscoverycases/item/noncustodialdatasources/item/datasource"
+)
+
+// EdiscoveryNoncustodialDataSourceItemRequestBuilder provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.
+type EdiscoveryNoncustodialDataSourceItemRequestBuilder struct {
+    // Path parameters for the request
+    pathParameters map[string]string
+    // The request adapter to use to execute the requests.
+    requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
+    // Url template to use to build the URL for the current request builder
+    urlTemplate string
+}
+// EdiscoveryNoncustodialDataSourceItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type EdiscoveryNoncustodialDataSourceItemRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers map[string]string
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters get noncustodialDataSources from security
+type EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Select properties to be returned
+    Select []string `uriparametername:"%24select"`
+}
+// EdiscoveryNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type EdiscoveryNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration struct {
+    // Request headers
+    Headers map[string]string
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters
+}
+// EdiscoveryNoncustodialDataSourceItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type EdiscoveryNoncustodialDataSourceItemRequestBuilderPatchRequestConfiguration struct {
+    // Request headers
+    Headers map[string]string
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// ApplyHold the applyHold property
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) ApplyHold()(*i16eb752f456bdfe41996a691bb16f172054c6490293c63a9c33a5f9d6f0ae74b.ApplyHoldRequestBuilder) {
+    return i16eb752f456bdfe41996a691bb16f172054c6490293c63a9c33a5f9d6f0ae74b.NewApplyHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// NewEdiscoveryNoncustodialDataSourceItemRequestBuilderInternal instantiates a new EdiscoveryNoncustodialDataSourceItemRequestBuilder and sets the default values.
+func NewEdiscoveryNoncustodialDataSourceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryNoncustodialDataSourceItemRequestBuilder) {
+    m := &EdiscoveryNoncustodialDataSourceItemRequestBuilder{
+    }
+    m.urlTemplate = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/noncustodialDataSources/{ediscoveryNoncustodialDataSource%2Did}{?%24select,%24expand}";
+    urlTplParams := make(map[string]string)
+    for idx, item := range pathParameters {
+        urlTplParams[idx] = item
+    }
+    m.pathParameters = urlTplParams;
+    m.requestAdapter = requestAdapter;
+    return m
+}
+// NewEdiscoveryNoncustodialDataSourceItemRequestBuilder instantiates a new EdiscoveryNoncustodialDataSourceItemRequestBuilder and sets the default values.
+func NewEdiscoveryNoncustodialDataSourceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryNoncustodialDataSourceItemRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewEdiscoveryNoncustodialDataSourceItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// CreateDeleteRequestInformation delete navigation property noncustodialDataSources for security
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
+}
+// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property noncustodialDataSources for security
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *EdiscoveryNoncustodialDataSourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// CreateGetRequestInformation get noncustodialDataSources from security
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration get noncustodialDataSources from security
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EdiscoveryNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// CreatePatchRequestInformation update the navigation property noncustodialDataSources in security
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) CreatePatchRequestInformation(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePatchRequestInformationWithRequestConfiguration update the navigation property noncustodialDataSources in security
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceable, requestConfiguration *EdiscoveryNoncustodialDataSourceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo.UrlTemplate = m.urlTemplate
+    requestInfo.PathParameters = m.pathParameters
+    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
+}
+// DataSource the dataSource property
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) DataSource()(*ie83f222c02372aab98e048d91424c09f76b1c4927aeb5c4c6d6707251163078d.DataSourceRequestBuilder) {
+    return ie83f222c02372aab98e048d91424c09f76b1c4927aeb5c4c6d6707251163078d.NewDataSourceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Delete delete navigation property noncustodialDataSources for security
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property noncustodialDataSources for security
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *EdiscoveryNoncustodialDataSourceItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// Get get noncustodialDataSources from security
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetWithRequestConfigurationAndResponseHandler get noncustodialDataSources from security
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EdiscoveryNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.requestAdapter.SendAsync(requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateEdiscoveryNoncustodialDataSourceFromDiscriminatorValue, responseHandler, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceable), nil
+}
+// LastIndexOperation the lastIndexOperation property
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) LastIndexOperation()(*i8fe416e2172f79d2bc84401d1bf132eb2f7d1aaaa5dfe171f19717e867fdd17a.LastIndexOperationRequestBuilder) {
+    return i8fe416e2172f79d2bc84401d1bf132eb2f7d1aaaa5dfe171f19717e867fdd17a.NewLastIndexOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Patch update the navigation property noncustodialDataSources in security
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) Patch(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property noncustodialDataSources in security
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceable, requestConfiguration *EdiscoveryNoncustodialDataSourceItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// Release the release property
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) Release()(*icd282688bb838ebc3808a93fc7619d53d48e4179819f771d890e88117b2fc47f.ReleaseRequestBuilder) {
+    return icd282688bb838ebc3808a93fc7619d53d48e4179819f771d890e88117b2fc47f.NewReleaseRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// RemoveHold the removeHold property
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) RemoveHold()(*i07c73418b6859e18c3a7f65c0b04f4973df64e5a2646c6a5a8191f1e1746035c.RemoveHoldRequestBuilder) {
+    return i07c73418b6859e18c3a7f65c0b04f4973df64e5a2646c6a5a8191f1e1746035c.NewRemoveHoldRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UpdateIndex the updateIndex property
+func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) UpdateIndex()(*ic3f57edd13e6e25ad55e7fd0ed7af36ccc925699ed44938b4d7f0634878406f0.UpdateIndexRequestBuilder) {
+    return ic3f57edd13e6e25ad55e7fd0ed7af36ccc925699ed44938b4d7f0634878406f0.NewUpdateIndexRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}

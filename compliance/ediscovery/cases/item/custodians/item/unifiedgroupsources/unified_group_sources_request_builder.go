@@ -74,8 +74,8 @@ func NewUnifiedGroupSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *UnifiedGroupSourcesRequestBuilder) Count()(*i2636d05117494663921167e946424c30f57eb40b3d4bb1a133f363f3f23912c7.CountRequestBuilder) {
     return i2636d05117494663921167e946424c30f57eb40b3d4bb1a133f363f3f23912c7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration data source entity for groups associated with the custodian.
-func (m *UnifiedGroupSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation data source entity for groups associated with the custodian.
+func (m *UnifiedGroupSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration data source entity for groups associated with the custodian.
@@ -93,8 +93,8 @@ func (m *UnifiedGroupSourcesRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to unifiedGroupSources for compliance
-func (m *UnifiedGroupSourcesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to unifiedGroupSources for compliance
+func (m *UnifiedGroupSourcesRequestBuilder) CreatePostRequestInformation(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to unifiedGroupSources for compliance
@@ -110,12 +110,12 @@ func (m *UnifiedGroupSourcesRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler data source entity for groups associated with the custodian.
-func (m *UnifiedGroupSourcesRequestBuilder) GetWithResponseHandler(requestConfiguration *UnifiedGroupSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get data source entity for groups associated with the custodian.
+func (m *UnifiedGroupSourcesRequestBuilder) Get()(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler data source entity for groups associated with the custodian.
-func (m *UnifiedGroupSourcesRequestBuilder) GetWithResponseHandler(requestConfiguration *UnifiedGroupSourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler data source entity for groups associated with the custodian.
+func (m *UnifiedGroupSourcesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedGroupSourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *UnifiedGroupSourcesRequestBuilder) GetWithResponseHandler(requestConfig
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to unifiedGroupSources for compliance
-func (m *UnifiedGroupSourcesRequestBuilder) PostWithResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable, requestConfiguration *UnifiedGroupSourcesRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to unifiedGroupSources for compliance
+func (m *UnifiedGroupSourcesRequestBuilder) Post(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to unifiedGroupSources for compliance
-func (m *UnifiedGroupSourcesRequestBuilder) PostWithResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable, requestConfiguration *UnifiedGroupSourcesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to unifiedGroupSources for compliance
+func (m *UnifiedGroupSourcesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable, requestConfiguration *UnifiedGroupSourcesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

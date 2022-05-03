@@ -39,8 +39,8 @@ func NewGetFileVaultKeyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewGetFileVaultKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getFileVaultKey
-func (m *GetFileVaultKeyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getFileVaultKey
+func (m *GetFileVaultKeyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getFileVaultKey
@@ -55,12 +55,12 @@ func (m *GetFileVaultKeyRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getFileVaultKey
-func (m *GetFileVaultKeyRequestBuilder) GetWithResponseHandler(requestConfiguration *GetFileVaultKeyRequestBuilderGetRequestConfiguration)(GetFileVaultKeyResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getFileVaultKey
+func (m *GetFileVaultKeyRequestBuilder) Get()(GetFileVaultKeyResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getFileVaultKey
-func (m *GetFileVaultKeyRequestBuilder) GetWithResponseHandler(requestConfiguration *GetFileVaultKeyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetFileVaultKeyResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getFileVaultKey
+func (m *GetFileVaultKeyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetFileVaultKeyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetFileVaultKeyResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -71,8 +71,8 @@ func NewDeviceManagementReusablePolicySettingItemRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementReusablePolicySettingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property reusablePolicySettings for deviceManagement
-func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property reusablePolicySettings for deviceManagement
+func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property reusablePolicySettings for deviceManagement
@@ -87,8 +87,8 @@ func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) CreateDeleteRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration list of all reusable settings that can be referred in a policy
-func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation list of all reusable settings that can be referred in a policy
+func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration list of all reusable settings that can be referred in a policy
@@ -106,8 +106,8 @@ func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property reusablePolicySettings in deviceManagement
-func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property reusablePolicySettings in deviceManagement
+func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property reusablePolicySettings in deviceManagement
@@ -123,12 +123,12 @@ func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) CreatePatchReq
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property reusablePolicySettings for deviceManagement
-func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementReusablePolicySettingItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property reusablePolicySettings for deviceManagement
+func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property reusablePolicySettings for deviceManagement
-func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementReusablePolicySettingItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property reusablePolicySettings for deviceManagement
+func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementReusablePolicySettingItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -143,12 +143,12 @@ func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) DeleteWithResp
     }
     return nil
 }
-// GetWithResponseHandler list of all reusable settings that can be referred in a policy
-func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementReusablePolicySettingItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get list of all reusable settings that can be referred in a policy
+func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler list of all reusable settings that can be referred in a policy
-func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementReusablePolicySettingItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, error) {
+// GetWithRequestConfigurationAndResponseHandler list of all reusable settings that can be referred in a policy
+func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementReusablePolicySettingItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -163,12 +163,12 @@ func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) GetWithRespons
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable), nil
 }
-// PatchWithResponseHandler update the navigation property reusablePolicySettings in deviceManagement
-func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, requestConfiguration *DeviceManagementReusablePolicySettingItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property reusablePolicySettings in deviceManagement
+func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property reusablePolicySettings in deviceManagement
-func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, requestConfiguration *DeviceManagementReusablePolicySettingItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property reusablePolicySettings in deviceManagement
+func (m *DeviceManagementReusablePolicySettingItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, requestConfiguration *DeviceManagementReusablePolicySettingItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

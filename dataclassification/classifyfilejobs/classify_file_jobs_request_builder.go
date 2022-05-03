@@ -74,8 +74,8 @@ func NewClassifyFileJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ClassifyFileJobsRequestBuilder) Count()(*i7747466098946293f6baf0a2a218dd76a90e83949c6557233c0fe697d3612c7b.CountRequestBuilder) {
     return i7747466098946293f6baf0a2a218dd76a90e83949c6557233c0fe697d3612c7b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get classifyFileJobs from dataClassification
-func (m *ClassifyFileJobsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get classifyFileJobs from dataClassification
+func (m *ClassifyFileJobsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get classifyFileJobs from dataClassification
@@ -93,8 +93,8 @@ func (m *ClassifyFileJobsRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to classifyFileJobs for dataClassification
-func (m *ClassifyFileJobsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to classifyFileJobs for dataClassification
+func (m *ClassifyFileJobsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to classifyFileJobs for dataClassification
@@ -110,12 +110,12 @@ func (m *ClassifyFileJobsRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get classifyFileJobs from dataClassification
-func (m *ClassifyFileJobsRequestBuilder) GetWithResponseHandler(requestConfiguration *ClassifyFileJobsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get classifyFileJobs from dataClassification
+func (m *ClassifyFileJobsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get classifyFileJobs from dataClassification
-func (m *ClassifyFileJobsRequestBuilder) GetWithResponseHandler(requestConfiguration *ClassifyFileJobsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get classifyFileJobs from dataClassification
+func (m *ClassifyFileJobsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ClassifyFileJobsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ClassifyFileJobsRequestBuilder) GetWithResponseHandler(requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to classifyFileJobs for dataClassification
-func (m *ClassifyFileJobsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseable, requestConfiguration *ClassifyFileJobsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to classifyFileJobs for dataClassification
+func (m *ClassifyFileJobsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to classifyFileJobs for dataClassification
-func (m *ClassifyFileJobsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseable, requestConfiguration *ClassifyFileJobsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to classifyFileJobs for dataClassification
+func (m *ClassifyFileJobsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseable, requestConfiguration *ClassifyFileJobsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JobResponseBaseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

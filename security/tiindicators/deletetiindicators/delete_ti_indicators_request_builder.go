@@ -39,8 +39,8 @@ func NewDeleteTiIndicatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewDeleteTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action deleteTiIndicators
-func (m *DeleteTiIndicatorsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DeleteTiIndicatorsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action deleteTiIndicators
+func (m *DeleteTiIndicatorsRequestBuilder) CreatePostRequestInformation(body DeleteTiIndicatorsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action deleteTiIndicators
@@ -56,12 +56,12 @@ func (m *DeleteTiIndicatorsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action deleteTiIndicators
-func (m *DeleteTiIndicatorsRequestBuilder) PostWithResponseHandler(body DeleteTiIndicatorsRequestBodyable, requestConfiguration *DeleteTiIndicatorsRequestBuilderPostRequestConfiguration)(DeleteTiIndicatorsResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action deleteTiIndicators
+func (m *DeleteTiIndicatorsRequestBuilder) Post(body DeleteTiIndicatorsRequestBodyable)(DeleteTiIndicatorsResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action deleteTiIndicators
-func (m *DeleteTiIndicatorsRequestBuilder) PostWithResponseHandler(body DeleteTiIndicatorsRequestBodyable, requestConfiguration *DeleteTiIndicatorsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(DeleteTiIndicatorsResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action deleteTiIndicators
+func (m *DeleteTiIndicatorsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body DeleteTiIndicatorsRequestBodyable, requestConfiguration *DeleteTiIndicatorsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(DeleteTiIndicatorsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

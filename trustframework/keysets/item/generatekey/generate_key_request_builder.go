@@ -40,8 +40,8 @@ func NewGenerateKeyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewGenerateKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action generateKey
-func (m *GenerateKeyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GenerateKeyRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action generateKey
+func (m *GenerateKeyRequestBuilder) CreatePostRequestInformation(body GenerateKeyRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action generateKey
@@ -57,12 +57,12 @@ func (m *GenerateKeyRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action generateKey
-func (m *GenerateKeyRequestBuilder) PostWithResponseHandler(body GenerateKeyRequestBodyable, requestConfiguration *GenerateKeyRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action generateKey
+func (m *GenerateKeyRequestBuilder) Post(body GenerateKeyRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action generateKey
-func (m *GenerateKeyRequestBuilder) PostWithResponseHandler(body GenerateKeyRequestBodyable, requestConfiguration *GenerateKeyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action generateKey
+func (m *GenerateKeyRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GenerateKeyRequestBodyable, requestConfiguration *GenerateKeyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

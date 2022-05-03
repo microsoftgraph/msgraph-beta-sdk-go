@@ -40,8 +40,8 @@ func NewExtractSensitivityLabelsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewExtractSensitivityLabelsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action extractSensitivityLabels
-func (m *ExtractSensitivityLabelsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action extractSensitivityLabels
+func (m *ExtractSensitivityLabelsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action extractSensitivityLabels
@@ -56,12 +56,12 @@ func (m *ExtractSensitivityLabelsRequestBuilder) CreatePostRequestInformationWit
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action extractSensitivityLabels
-func (m *ExtractSensitivityLabelsRequestBuilder) PostWithResponseHandler(requestConfiguration *ExtractSensitivityLabelsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtractSensitivityLabelsResultable, error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action extractSensitivityLabels
+func (m *ExtractSensitivityLabelsRequestBuilder) Post()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtractSensitivityLabelsResultable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action extractSensitivityLabels
-func (m *ExtractSensitivityLabelsRequestBuilder) PostWithResponseHandler(requestConfiguration *ExtractSensitivityLabelsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtractSensitivityLabelsResultable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action extractSensitivityLabels
+func (m *ExtractSensitivityLabelsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *ExtractSensitivityLabelsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtractSensitivityLabelsResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

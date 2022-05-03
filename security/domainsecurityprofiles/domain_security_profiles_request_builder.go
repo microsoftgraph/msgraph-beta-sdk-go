@@ -74,8 +74,8 @@ func NewDomainSecurityProfilesRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *DomainSecurityProfilesRequestBuilder) Count()(*i096bc6ae5c0d70bb99067437fe73e502bc851837af1913995bcc34a9cb432e43.CountRequestBuilder) {
     return i096bc6ae5c0d70bb99067437fe73e502bc851837af1913995bcc34a9cb432e43.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get domainSecurityProfiles from security
-func (m *DomainSecurityProfilesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get domainSecurityProfiles from security
+func (m *DomainSecurityProfilesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get domainSecurityProfiles from security
@@ -93,8 +93,8 @@ func (m *DomainSecurityProfilesRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to domainSecurityProfiles for security
-func (m *DomainSecurityProfilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to domainSecurityProfiles for security
+func (m *DomainSecurityProfilesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to domainSecurityProfiles for security
@@ -110,12 +110,12 @@ func (m *DomainSecurityProfilesRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get domainSecurityProfiles from security
-func (m *DomainSecurityProfilesRequestBuilder) GetWithResponseHandler(requestConfiguration *DomainSecurityProfilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get domainSecurityProfiles from security
+func (m *DomainSecurityProfilesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get domainSecurityProfiles from security
-func (m *DomainSecurityProfilesRequestBuilder) GetWithResponseHandler(requestConfiguration *DomainSecurityProfilesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get domainSecurityProfiles from security
+func (m *DomainSecurityProfilesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DomainSecurityProfilesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *DomainSecurityProfilesRequestBuilder) GetWithResponseHandler(requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to domainSecurityProfiles for security
-func (m *DomainSecurityProfilesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileable, requestConfiguration *DomainSecurityProfilesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to domainSecurityProfiles for security
+func (m *DomainSecurityProfilesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to domainSecurityProfiles for security
-func (m *DomainSecurityProfilesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileable, requestConfiguration *DomainSecurityProfilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to domainSecurityProfiles for security
+func (m *DomainSecurityProfilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileable, requestConfiguration *DomainSecurityProfilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainSecurityProfileable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -76,8 +76,8 @@ func NewAccessPackageAssignmentPolicyItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageAssignmentPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property accessPackageAssignmentPolicies for identityGovernance
-func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property accessPackageAssignmentPolicies for identityGovernance
+func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property accessPackageAssignmentPolicies for identityGovernance
@@ -92,8 +92,8 @@ func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
-func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
+func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
@@ -111,8 +111,8 @@ func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property accessPackageAssignmentPolicies in identityGovernance
-func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property accessPackageAssignmentPolicies in identityGovernance
+func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property accessPackageAssignmentPolicies in identityGovernance
@@ -143,12 +143,12 @@ func (m *AccessPackageAssignmentPolicyItemRequestBuilder) CustomExtensionHandler
     }
     return ifecd3ae21008a0b99debbef575c8dab8240d5ec15b4a543d74cae4efe1bfdb8a.NewCustomExtensionHandlerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeleteWithResponseHandler delete navigation property accessPackageAssignmentPolicies for identityGovernance
-func (m *AccessPackageAssignmentPolicyItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AccessPackageAssignmentPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property accessPackageAssignmentPolicies for identityGovernance
+func (m *AccessPackageAssignmentPolicyItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property accessPackageAssignmentPolicies for identityGovernance
-func (m *AccessPackageAssignmentPolicyItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AccessPackageAssignmentPolicyItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property accessPackageAssignmentPolicies for identityGovernance
+func (m *AccessPackageAssignmentPolicyItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageAssignmentPolicyItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -163,12 +163,12 @@ func (m *AccessPackageAssignmentPolicyItemRequestBuilder) DeleteWithResponseHand
     }
     return nil
 }
-// GetWithResponseHandler represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
-func (m *AccessPackageAssignmentPolicyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageAssignmentPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
+func (m *AccessPackageAssignmentPolicyItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
-func (m *AccessPackageAssignmentPolicyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageAssignmentPolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
+func (m *AccessPackageAssignmentPolicyItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageAssignmentPolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -183,12 +183,12 @@ func (m *AccessPackageAssignmentPolicyItemRequestBuilder) GetWithResponseHandler
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable), nil
 }
-// PatchWithResponseHandler update the navigation property accessPackageAssignmentPolicies in identityGovernance
-func (m *AccessPackageAssignmentPolicyItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable, requestConfiguration *AccessPackageAssignmentPolicyItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property accessPackageAssignmentPolicies in identityGovernance
+func (m *AccessPackageAssignmentPolicyItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property accessPackageAssignmentPolicies in identityGovernance
-func (m *AccessPackageAssignmentPolicyItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable, requestConfiguration *AccessPackageAssignmentPolicyItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property accessPackageAssignmentPolicies in identityGovernance
+func (m *AccessPackageAssignmentPolicyItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentPolicyable, requestConfiguration *AccessPackageAssignmentPolicyItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

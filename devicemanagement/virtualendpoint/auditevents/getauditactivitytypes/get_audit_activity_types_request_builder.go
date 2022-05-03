@@ -39,8 +39,8 @@ func NewGetAuditActivityTypesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewGetAuditActivityTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getAuditActivityTypes
-func (m *GetAuditActivityTypesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getAuditActivityTypes
+func (m *GetAuditActivityTypesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getAuditActivityTypes
@@ -55,12 +55,12 @@ func (m *GetAuditActivityTypesRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getAuditActivityTypes
-func (m *GetAuditActivityTypesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAuditActivityTypesRequestBuilderGetRequestConfiguration)(GetAuditActivityTypesResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getAuditActivityTypes
+func (m *GetAuditActivityTypesRequestBuilder) Get()(GetAuditActivityTypesResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getAuditActivityTypes
-func (m *GetAuditActivityTypesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAuditActivityTypesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAuditActivityTypesResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getAuditActivityTypes
+func (m *GetAuditActivityTypesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetAuditActivityTypesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAuditActivityTypesResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

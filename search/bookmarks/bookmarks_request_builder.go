@@ -74,8 +74,8 @@ func NewBookmarksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *BookmarksRequestBuilder) Count()(*id90852543ffe0a1612445ebbf1b2ba7ecfe3df20a8786bace4a5dd415613d297.CountRequestBuilder) {
     return id90852543ffe0a1612445ebbf1b2ba7ecfe3df20a8786bace4a5dd415613d297.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration administrative answer in Microsoft Search results for common search queries in an organization.
-func (m *BookmarksRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation administrative answer in Microsoft Search results for common search queries in an organization.
+func (m *BookmarksRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration administrative answer in Microsoft Search results for common search queries in an organization.
@@ -93,8 +93,8 @@ func (m *BookmarksRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to bookmarks for search
-func (m *BookmarksRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to bookmarks for search
+func (m *BookmarksRequestBuilder) CreatePostRequestInformation(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to bookmarks for search
@@ -110,12 +110,12 @@ func (m *BookmarksRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler administrative answer in Microsoft Search results for common search queries in an organization.
-func (m *BookmarksRequestBuilder) GetWithResponseHandler(requestConfiguration *BookmarksRequestBuilderGetRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.BookmarkCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get administrative answer in Microsoft Search results for common search queries in an organization.
+func (m *BookmarksRequestBuilder) Get()(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.BookmarkCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler administrative answer in Microsoft Search results for common search queries in an organization.
-func (m *BookmarksRequestBuilder) GetWithResponseHandler(requestConfiguration *BookmarksRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.BookmarkCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler administrative answer in Microsoft Search results for common search queries in an organization.
+func (m *BookmarksRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BookmarksRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.BookmarkCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *BookmarksRequestBuilder) GetWithResponseHandler(requestConfiguration *B
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.BookmarkCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to bookmarks for search
-func (m *BookmarksRequestBuilder) PostWithResponseHandler(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, requestConfiguration *BookmarksRequestBuilderPostRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to bookmarks for search
+func (m *BookmarksRequestBuilder) Post(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to bookmarks for search
-func (m *BookmarksRequestBuilder) PostWithResponseHandler(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, requestConfiguration *BookmarksRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to bookmarks for search
+func (m *BookmarksRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, requestConfiguration *BookmarksRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Bookmarkable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

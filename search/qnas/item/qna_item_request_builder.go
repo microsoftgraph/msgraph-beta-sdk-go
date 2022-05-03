@@ -64,8 +64,8 @@ func NewQnaItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewQnaItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property qnas for search
-func (m *QnaItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property qnas for search
+func (m *QnaItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property qnas for search
@@ -80,8 +80,8 @@ func (m *QnaItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
-func (m *QnaItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+func (m *QnaItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
@@ -99,8 +99,8 @@ func (m *QnaItemRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property qnas in search
-func (m *QnaItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property qnas in search
+func (m *QnaItemRequestBuilder) CreatePatchRequestInformation(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property qnas in search
@@ -116,12 +116,12 @@ func (m *QnaItemRequestBuilder) CreatePatchRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property qnas for search
-func (m *QnaItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *QnaItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property qnas for search
+func (m *QnaItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property qnas for search
-func (m *QnaItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *QnaItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property qnas for search
+func (m *QnaItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *QnaItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *QnaItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *
     }
     return nil
 }
-// GetWithResponseHandler administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
-func (m *QnaItemRequestBuilder) GetWithResponseHandler(requestConfiguration *QnaItemRequestBuilderGetRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+func (m *QnaItemRequestBuilder) Get()(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
-func (m *QnaItemRequestBuilder) GetWithResponseHandler(requestConfiguration *QnaItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, error) {
+// GetWithRequestConfigurationAndResponseHandler administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+func (m *QnaItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *QnaItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *QnaItemRequestBuilder) GetWithResponseHandler(requestConfiguration *Qna
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable), nil
 }
-// PatchWithResponseHandler update the navigation property qnas in search
-func (m *QnaItemRequestBuilder) PatchWithResponseHandler(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, requestConfiguration *QnaItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property qnas in search
+func (m *QnaItemRequestBuilder) Patch(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property qnas in search
-func (m *QnaItemRequestBuilder) PatchWithResponseHandler(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, requestConfiguration *QnaItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property qnas in search
+func (m *QnaItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Qnaable, requestConfiguration *QnaItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

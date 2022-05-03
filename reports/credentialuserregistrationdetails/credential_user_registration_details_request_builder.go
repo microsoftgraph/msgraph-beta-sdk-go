@@ -74,8 +74,8 @@ func NewCredentialUserRegistrationDetailsRequestBuilder(rawUrl string, requestAd
 func (m *CredentialUserRegistrationDetailsRequestBuilder) Count()(*ibf272912623c6e8bc72fbb33fa9511a90ca530eb357757e286fdd3774e60e719.CountRequestBuilder) {
     return ibf272912623c6e8bc72fbb33fa9511a90ca530eb357757e286fdd3774e60e719.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
-func (m *CredentialUserRegistrationDetailsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+func (m *CredentialUserRegistrationDetailsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
@@ -93,8 +93,8 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to credentialUserRegistrationDetails for reports
-func (m *CredentialUserRegistrationDetailsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to credentialUserRegistrationDetails for reports
+func (m *CredentialUserRegistrationDetailsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to credentialUserRegistrationDetails for reports
@@ -110,12 +110,12 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
-func (m *CredentialUserRegistrationDetailsRequestBuilder) GetWithResponseHandler(requestConfiguration *CredentialUserRegistrationDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+func (m *CredentialUserRegistrationDetailsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
-func (m *CredentialUserRegistrationDetailsRequestBuilder) GetWithResponseHandler(requestConfiguration *CredentialUserRegistrationDetailsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+func (m *CredentialUserRegistrationDetailsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CredentialUserRegistrationDetailsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) GetWithResponseHandler
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to credentialUserRegistrationDetails for reports
-func (m *CredentialUserRegistrationDetailsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, requestConfiguration *CredentialUserRegistrationDetailsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to credentialUserRegistrationDetails for reports
+func (m *CredentialUserRegistrationDetailsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to credentialUserRegistrationDetails for reports
-func (m *CredentialUserRegistrationDetailsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, requestConfiguration *CredentialUserRegistrationDetailsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to credentialUserRegistrationDetails for reports
+func (m *CredentialUserRegistrationDetailsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, requestConfiguration *CredentialUserRegistrationDetailsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -125,8 +125,8 @@ func NewConnectRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewConnectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action connect
-func (m *ConnectRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ConnectRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action connect
+func (m *ConnectRequestBuilder) CreatePostRequestInformation(body ConnectRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action connect
@@ -142,12 +142,12 @@ func (m *ConnectRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action connect
-func (m *ConnectRequestBuilder) PostWithResponseHandler(body ConnectRequestBodyable, requestConfiguration *ConnectRequestBuilderPostRequestConfiguration)(ConnectResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action connect
+func (m *ConnectRequestBuilder) Post(body ConnectRequestBodyable)(ConnectResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action connect
-func (m *ConnectRequestBuilder) PostWithResponseHandler(body ConnectRequestBodyable, requestConfiguration *ConnectRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ConnectResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action connect
+func (m *ConnectRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ConnectRequestBodyable, requestConfiguration *ConnectRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ConnectResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

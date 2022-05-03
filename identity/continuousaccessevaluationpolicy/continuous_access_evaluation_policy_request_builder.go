@@ -64,8 +64,8 @@ func NewContinuousAccessEvaluationPolicyRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewContinuousAccessEvaluationPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property continuousAccessEvaluationPolicy for identity
-func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property continuousAccessEvaluationPolicy for identity
+func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property continuousAccessEvaluationPolicy for identity
@@ -80,8 +80,8 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration represents entry point for continuous access evaluation policy.
-func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents entry point for continuous access evaluation policy.
+func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents entry point for continuous access evaluation policy.
@@ -99,8 +99,8 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property continuousAccessEvaluationPolicy in identity
-func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property continuousAccessEvaluationPolicy in identity
+func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property continuousAccessEvaluationPolicy in identity
@@ -116,12 +116,12 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property continuousAccessEvaluationPolicy for identity
-func (m *ContinuousAccessEvaluationPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property continuousAccessEvaluationPolicy for identity
+func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property continuousAccessEvaluationPolicy for identity
-func (m *ContinuousAccessEvaluationPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property continuousAccessEvaluationPolicy for identity
+func (m *ContinuousAccessEvaluationPolicyRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) DeleteWithResponseHandl
     }
     return nil
 }
-// GetWithResponseHandler represents entry point for continuous access evaluation policy.
-func (m *ContinuousAccessEvaluationPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents entry point for continuous access evaluation policy.
+func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents entry point for continuous access evaluation policy.
-func (m *ContinuousAccessEvaluationPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents entry point for continuous access evaluation policy.
+func (m *ContinuousAccessEvaluationPolicyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) GetWithResponseHandler(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable), nil
 }
-// PatchWithResponseHandler update the navigation property continuousAccessEvaluationPolicy in identity
-func (m *ContinuousAccessEvaluationPolicyRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property continuousAccessEvaluationPolicy in identity
+func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property continuousAccessEvaluationPolicy in identity
-func (m *ContinuousAccessEvaluationPolicyRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property continuousAccessEvaluationPolicy in identity
+func (m *ContinuousAccessEvaluationPolicyRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

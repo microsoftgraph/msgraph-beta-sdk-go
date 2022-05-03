@@ -88,8 +88,8 @@ func NewOfficeClientConfigurationItemRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewOfficeClientConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property clientConfigurations for officeConfiguration
-func (m *OfficeClientConfigurationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property clientConfigurations for officeConfiguration
+func (m *OfficeClientConfigurationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property clientConfigurations for officeConfiguration
@@ -104,8 +104,8 @@ func (m *OfficeClientConfigurationItemRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration list of office Client configuration.
-func (m *OfficeClientConfigurationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation list of office Client configuration.
+func (m *OfficeClientConfigurationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration list of office Client configuration.
@@ -123,8 +123,8 @@ func (m *OfficeClientConfigurationItemRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property clientConfigurations in officeConfiguration
-func (m *OfficeClientConfigurationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property clientConfigurations in officeConfiguration
+func (m *OfficeClientConfigurationItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property clientConfigurations in officeConfiguration
@@ -140,12 +140,12 @@ func (m *OfficeClientConfigurationItemRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property clientConfigurations for officeConfiguration
-func (m *OfficeClientConfigurationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OfficeClientConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property clientConfigurations for officeConfiguration
+func (m *OfficeClientConfigurationItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property clientConfigurations for officeConfiguration
-func (m *OfficeClientConfigurationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OfficeClientConfigurationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property clientConfigurations for officeConfiguration
+func (m *OfficeClientConfigurationItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *OfficeClientConfigurationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -160,12 +160,12 @@ func (m *OfficeClientConfigurationItemRequestBuilder) DeleteWithResponseHandler(
     }
     return nil
 }
-// GetWithResponseHandler list of office Client configuration.
-func (m *OfficeClientConfigurationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OfficeClientConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get list of office Client configuration.
+func (m *OfficeClientConfigurationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler list of office Client configuration.
-func (m *OfficeClientConfigurationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OfficeClientConfigurationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationable, error) {
+// GetWithRequestConfigurationAndResponseHandler list of office Client configuration.
+func (m *OfficeClientConfigurationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OfficeClientConfigurationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -180,12 +180,12 @@ func (m *OfficeClientConfigurationItemRequestBuilder) GetWithResponseHandler(req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationable), nil
 }
-// PatchWithResponseHandler update the navigation property clientConfigurations in officeConfiguration
-func (m *OfficeClientConfigurationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationable, requestConfiguration *OfficeClientConfigurationItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property clientConfigurations in officeConfiguration
+func (m *OfficeClientConfigurationItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property clientConfigurations in officeConfiguration
-func (m *OfficeClientConfigurationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationable, requestConfiguration *OfficeClientConfigurationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property clientConfigurations in officeConfiguration
+func (m *OfficeClientConfigurationItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OfficeClientConfigurationable, requestConfiguration *OfficeClientConfigurationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

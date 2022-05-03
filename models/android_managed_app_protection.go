@@ -21,6 +21,12 @@ type AndroidManagedAppProtection struct {
     appActionIfAndroidSafetyNetDeviceAttestationFailed *ManagedAppRemediationAction
     // Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on android device but is not set.
     appActionIfDeviceLockNotSet *ManagedAppRemediationAction
+    // If the device does not have a passcode of high complexity or higher, trigger the stored action.
+    appActionIfDevicePasscodeComplexityLessThanHigh *ManagedAppRemediationAction
+    // If the device does not have a passcode of low complexity or higher, trigger the stored action.
+    appActionIfDevicePasscodeComplexityLessThanLow *ManagedAppRemediationAction
+    // If the device does not have a passcode of medium complexity or higher, trigger the stored action.
+    appActionIfDevicePasscodeComplexityLessThanMedium *ManagedAppRemediationAction
     // If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
     approvedKeyboards []KeyValuePairable
     // List of apps to which the policy is deployed.
@@ -143,6 +149,30 @@ func (m *AndroidManagedAppProtection) GetAppActionIfDeviceLockNotSet()(*ManagedA
         return nil
     } else {
         return m.appActionIfDeviceLockNotSet
+    }
+}
+// GetAppActionIfDevicePasscodeComplexityLessThanHigh gets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action.
+func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanHigh()(*ManagedAppRemediationAction) {
+    if m == nil {
+        return nil
+    } else {
+        return m.appActionIfDevicePasscodeComplexityLessThanHigh
+    }
+}
+// GetAppActionIfDevicePasscodeComplexityLessThanLow gets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action.
+func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanLow()(*ManagedAppRemediationAction) {
+    if m == nil {
+        return nil
+    } else {
+        return m.appActionIfDevicePasscodeComplexityLessThanLow
+    }
+}
+// GetAppActionIfDevicePasscodeComplexityLessThanMedium gets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action.
+func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanMedium()(*ManagedAppRemediationAction) {
+    if m == nil {
+        return nil
+    } else {
+        return m.appActionIfDevicePasscodeComplexityLessThanMedium
     }
 }
 // GetApprovedKeyboards gets the approvedKeyboards property value. If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name
@@ -339,6 +369,36 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetAppActionIfDeviceLockNotSet(val.(*ManagedAppRemediationAction))
+        }
+        return nil
+    }
+    res["appActionIfDevicePasscodeComplexityLessThanHigh"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppActionIfDevicePasscodeComplexityLessThanHigh(val.(*ManagedAppRemediationAction))
+        }
+        return nil
+    }
+    res["appActionIfDevicePasscodeComplexityLessThanLow"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppActionIfDevicePasscodeComplexityLessThanLow(val.(*ManagedAppRemediationAction))
+        }
+        return nil
+    }
+    res["appActionIfDevicePasscodeComplexityLessThanMedium"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppActionIfDevicePasscodeComplexityLessThanMedium(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -793,6 +853,27 @@ func (m *AndroidManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetAppActionIfDevicePasscodeComplexityLessThanHigh() != nil {
+        cast := (*m.GetAppActionIfDevicePasscodeComplexityLessThanHigh()).String()
+        err = writer.WriteStringValue("appActionIfDevicePasscodeComplexityLessThanHigh", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAppActionIfDevicePasscodeComplexityLessThanLow() != nil {
+        cast := (*m.GetAppActionIfDevicePasscodeComplexityLessThanLow()).String()
+        err = writer.WriteStringValue("appActionIfDevicePasscodeComplexityLessThanLow", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAppActionIfDevicePasscodeComplexityLessThanMedium() != nil {
+        cast := (*m.GetAppActionIfDevicePasscodeComplexityLessThanMedium()).String()
+        err = writer.WriteStringValue("appActionIfDevicePasscodeComplexityLessThanMedium", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetApprovedKeyboards() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApprovedKeyboards()))
         for i, v := range m.GetApprovedKeyboards() {
@@ -1018,6 +1099,24 @@ func (m *AndroidManagedAppProtection) SetAppActionIfAndroidSafetyNetDeviceAttest
 func (m *AndroidManagedAppProtection) SetAppActionIfDeviceLockNotSet(value *ManagedAppRemediationAction)() {
     if m != nil {
         m.appActionIfDeviceLockNotSet = value
+    }
+}
+// SetAppActionIfDevicePasscodeComplexityLessThanHigh sets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action.
+func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanHigh(value *ManagedAppRemediationAction)() {
+    if m != nil {
+        m.appActionIfDevicePasscodeComplexityLessThanHigh = value
+    }
+}
+// SetAppActionIfDevicePasscodeComplexityLessThanLow sets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action.
+func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanLow(value *ManagedAppRemediationAction)() {
+    if m != nil {
+        m.appActionIfDevicePasscodeComplexityLessThanLow = value
+    }
+}
+// SetAppActionIfDevicePasscodeComplexityLessThanMedium sets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action.
+func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanMedium(value *ManagedAppRemediationAction)() {
+    if m != nil {
+        m.appActionIfDevicePasscodeComplexityLessThanMedium = value
     }
 }
 // SetApprovedKeyboards sets the approvedKeyboards property value. If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name

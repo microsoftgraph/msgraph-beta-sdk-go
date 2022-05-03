@@ -42,8 +42,8 @@ func NewGetPlatformSupportedPropertiesWithPlatformRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewGetPlatformSupportedPropertiesWithPlatformRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getPlatformSupportedProperties
-func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getPlatformSupportedProperties
+func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getPlatformSupportedProperties
@@ -58,12 +58,12 @@ func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getPlatformSupportedProperties
-func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) GetWithResponseHandler(requestConfiguration *GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetRequestConfiguration)(GetPlatformSupportedPropertiesWithPlatformResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getPlatformSupportedProperties
+func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) Get()(GetPlatformSupportedPropertiesWithPlatformResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getPlatformSupportedProperties
-func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) GetWithResponseHandler(requestConfiguration *GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetPlatformSupportedPropertiesWithPlatformResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getPlatformSupportedProperties
+func (m *GetPlatformSupportedPropertiesWithPlatformRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetPlatformSupportedPropertiesWithPlatformRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetPlatformSupportedPropertiesWithPlatformResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

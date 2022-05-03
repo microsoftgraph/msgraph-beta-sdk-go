@@ -67,8 +67,8 @@ func NewRecentPlansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *RecentPlansRequestBuilder) Count()(*i17ae75e61bdc7571b21e8a686693436272662c1755bb8dbfb7b9fca18f097e5a.CountRequestBuilder) {
     return i17ae75e61bdc7571b21e8a686693436272662c1755bb8dbfb7b9fca18f097e5a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
-func (m *RecentPlansRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+func (m *RecentPlansRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
@@ -86,12 +86,12 @@ func (m *RecentPlansRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
-func (m *RecentPlansRequestBuilder) GetWithResponseHandler(requestConfiguration *RecentPlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+func (m *RecentPlansRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
-func (m *RecentPlansRequestBuilder) GetWithResponseHandler(requestConfiguration *RecentPlansRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+func (m *RecentPlansRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RecentPlansRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

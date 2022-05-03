@@ -39,8 +39,8 @@ func NewUpdateDeviceProfileAssignmentRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateDeviceProfileAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action updateDeviceProfileAssignment
-func (m *UpdateDeviceProfileAssignmentRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateDeviceProfileAssignmentRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action updateDeviceProfileAssignment
+func (m *UpdateDeviceProfileAssignmentRequestBuilder) CreatePostRequestInformation(body UpdateDeviceProfileAssignmentRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateDeviceProfileAssignment
@@ -56,12 +56,12 @@ func (m *UpdateDeviceProfileAssignmentRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action updateDeviceProfileAssignment
-func (m *UpdateDeviceProfileAssignmentRequestBuilder) PostWithResponseHandler(body UpdateDeviceProfileAssignmentRequestBodyable, requestConfiguration *UpdateDeviceProfileAssignmentRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action updateDeviceProfileAssignment
+func (m *UpdateDeviceProfileAssignmentRequestBuilder) Post(body UpdateDeviceProfileAssignmentRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action updateDeviceProfileAssignment
-func (m *UpdateDeviceProfileAssignmentRequestBuilder) PostWithResponseHandler(body UpdateDeviceProfileAssignmentRequestBodyable, requestConfiguration *UpdateDeviceProfileAssignmentRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action updateDeviceProfileAssignment
+func (m *UpdateDeviceProfileAssignmentRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateDeviceProfileAssignmentRequestBodyable, requestConfiguration *UpdateDeviceProfileAssignmentRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -67,8 +67,8 @@ func NewIncludedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *IncludedGroupsRequestBuilder) Count()(*ic5b7d6629b4a5c986e3a9357b5228149ea2d4a33d343593c8d1d7ec0756e4fb4.CountRequestBuilder) {
     return ic5b7d6629b4a5c986e3a9357b5228149ea2d4a33d343593c8d1d7ec0756e4fb4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration azure AD groups under the scope of the mobility management application if appliesTo is selected
-func (m *IncludedGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation azure AD groups under the scope of the mobility management application if appliesTo is selected
+func (m *IncludedGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration azure AD groups under the scope of the mobility management application if appliesTo is selected
@@ -86,12 +86,12 @@ func (m *IncludedGroupsRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler azure AD groups under the scope of the mobility management application if appliesTo is selected
-func (m *IncludedGroupsRequestBuilder) GetWithResponseHandler(requestConfiguration *IncludedGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get azure AD groups under the scope of the mobility management application if appliesTo is selected
+func (m *IncludedGroupsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler azure AD groups under the scope of the mobility management application if appliesTo is selected
-func (m *IncludedGroupsRequestBuilder) GetWithResponseHandler(requestConfiguration *IncludedGroupsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler azure AD groups under the scope of the mobility management application if appliesTo is selected
+func (m *IncludedGroupsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IncludedGroupsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

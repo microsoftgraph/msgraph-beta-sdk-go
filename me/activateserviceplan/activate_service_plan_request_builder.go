@@ -39,8 +39,8 @@ func NewActivateServicePlanRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewActivateServicePlanRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action activateServicePlan
-func (m *ActivateServicePlanRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ActivateServicePlanRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action activateServicePlan
+func (m *ActivateServicePlanRequestBuilder) CreatePostRequestInformation(body ActivateServicePlanRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action activateServicePlan
@@ -56,12 +56,12 @@ func (m *ActivateServicePlanRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action activateServicePlan
-func (m *ActivateServicePlanRequestBuilder) PostWithResponseHandler(body ActivateServicePlanRequestBodyable, requestConfiguration *ActivateServicePlanRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action activateServicePlan
+func (m *ActivateServicePlanRequestBuilder) Post(body ActivateServicePlanRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action activateServicePlan
-func (m *ActivateServicePlanRequestBuilder) PostWithResponseHandler(body ActivateServicePlanRequestBodyable, requestConfiguration *ActivateServicePlanRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action activateServicePlan
+func (m *ActivateServicePlanRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ActivateServicePlanRequestBodyable, requestConfiguration *ActivateServicePlanRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

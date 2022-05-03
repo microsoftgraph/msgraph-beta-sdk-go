@@ -65,8 +65,8 @@ func NewServiceHealthIssueItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewServiceHealthIssueItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property issues for admin
-func (m *ServiceHealthIssueItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property issues for admin
+func (m *ServiceHealthIssueItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property issues for admin
@@ -81,8 +81,8 @@ func (m *ServiceHealthIssueItemRequestBuilder) CreateDeleteRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of issues that happened on the service, with detailed information for each issue.
-func (m *ServiceHealthIssueItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a collection of issues that happened on the service, with detailed information for each issue.
+func (m *ServiceHealthIssueItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a collection of issues that happened on the service, with detailed information for each issue.
@@ -100,8 +100,8 @@ func (m *ServiceHealthIssueItemRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property issues in admin
-func (m *ServiceHealthIssueItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property issues in admin
+func (m *ServiceHealthIssueItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property issues in admin
@@ -117,12 +117,12 @@ func (m *ServiceHealthIssueItemRequestBuilder) CreatePatchRequestInformationWith
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property issues for admin
-func (m *ServiceHealthIssueItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ServiceHealthIssueItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property issues for admin
+func (m *ServiceHealthIssueItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property issues for admin
-func (m *ServiceHealthIssueItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ServiceHealthIssueItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property issues for admin
+func (m *ServiceHealthIssueItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ServiceHealthIssueItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -137,12 +137,12 @@ func (m *ServiceHealthIssueItemRequestBuilder) DeleteWithResponseHandler(request
     }
     return nil
 }
-// GetWithResponseHandler a collection of issues that happened on the service, with detailed information for each issue.
-func (m *ServiceHealthIssueItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ServiceHealthIssueItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a collection of issues that happened on the service, with detailed information for each issue.
+func (m *ServiceHealthIssueItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a collection of issues that happened on the service, with detailed information for each issue.
-func (m *ServiceHealthIssueItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ServiceHealthIssueItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable, error) {
+// GetWithRequestConfigurationAndResponseHandler a collection of issues that happened on the service, with detailed information for each issue.
+func (m *ServiceHealthIssueItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ServiceHealthIssueItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -161,12 +161,12 @@ func (m *ServiceHealthIssueItemRequestBuilder) GetWithResponseHandler(requestCon
 func (m *ServiceHealthIssueItemRequestBuilder) IncidentReport()(*i40a6ff730e1dbe1b57a1470eb07301f9a3fef718a64aff449ed88fb4f374a094.IncidentReportRequestBuilder) {
     return i40a6ff730e1dbe1b57a1470eb07301f9a3fef718a64aff449ed88fb4f374a094.NewIncidentReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property issues in admin
-func (m *ServiceHealthIssueItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable, requestConfiguration *ServiceHealthIssueItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property issues in admin
+func (m *ServiceHealthIssueItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property issues in admin
-func (m *ServiceHealthIssueItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable, requestConfiguration *ServiceHealthIssueItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property issues in admin
+func (m *ServiceHealthIssueItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceHealthIssueable, requestConfiguration *ServiceHealthIssueItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

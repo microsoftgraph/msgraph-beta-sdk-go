@@ -50,8 +50,8 @@ func NewDefaultMacOsEnrollmentProfileRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewDefaultMacOsEnrollmentProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration default MacOs Enrollment Profile
-func (m *DefaultMacOsEnrollmentProfileRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation default MacOs Enrollment Profile
+func (m *DefaultMacOsEnrollmentProfileRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration default MacOs Enrollment Profile
@@ -69,12 +69,12 @@ func (m *DefaultMacOsEnrollmentProfileRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler default MacOs Enrollment Profile
-func (m *DefaultMacOsEnrollmentProfileRequestBuilder) GetWithResponseHandler(requestConfiguration *DefaultMacOsEnrollmentProfileRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepMacOSEnrollmentProfileable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get default MacOs Enrollment Profile
+func (m *DefaultMacOsEnrollmentProfileRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepMacOSEnrollmentProfileable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler default MacOs Enrollment Profile
-func (m *DefaultMacOsEnrollmentProfileRequestBuilder) GetWithResponseHandler(requestConfiguration *DefaultMacOsEnrollmentProfileRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepMacOSEnrollmentProfileable, error) {
+// GetWithRequestConfigurationAndResponseHandler default MacOs Enrollment Profile
+func (m *DefaultMacOsEnrollmentProfileRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DefaultMacOsEnrollmentProfileRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepMacOSEnrollmentProfileable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

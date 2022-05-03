@@ -75,8 +75,8 @@ func NewPrivilegedRoleAssignmentRequestsRequestBuilder(rawUrl string, requestAda
 func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Count()(*i70d6e58f3a3c90dc95763338a5e5ad4e94491fc09788136c71619ec0fe88911b.CountRequestBuilder) {
     return i70d6e58f3a3c90dc95763338a5e5ad4e94491fc09788136c71619ec0fe88911b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from privilegedRoleAssignmentRequests
+func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from privilegedRoleAssignmentRequests
@@ -94,8 +94,8 @@ func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to privilegedRoleAssignmentRequests
+func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to privilegedRoleAssignmentRequests
@@ -111,12 +111,12 @@ func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get entities from privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) GetWithResponseHandler(requestConfiguration *PrivilegedRoleAssignmentRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entities from privilegedRoleAssignmentRequests
+func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entities from privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) GetWithResponseHandler(requestConfiguration *PrivilegedRoleAssignmentRequestsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from privilegedRoleAssignmentRequests
+func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PrivilegedRoleAssignmentRequestsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) GetWithResponseHandler(
 func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) My()(*i835e2da68a9851f6b7e1b69f013e35c203624684b8d3495cd380603c465c929a.MyRequestBuilder) {
     return i835e2da68a9851f6b7e1b69f013e35c203624684b8d3495cd380603c465c929a.NewMyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PostWithResponseHandler add new entity to privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, requestConfiguration *PrivilegedRoleAssignmentRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to privilegedRoleAssignmentRequests
+func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, requestConfiguration *PrivilegedRoleAssignmentRequestsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to privilegedRoleAssignmentRequests
+func (m *PrivilegedRoleAssignmentRequestsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, requestConfiguration *PrivilegedRoleAssignmentRequestsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

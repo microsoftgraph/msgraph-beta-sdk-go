@@ -74,8 +74,8 @@ func NewCachedReportConfigurationsRequestBuilder(rawUrl string, requestAdapter i
 func (m *CachedReportConfigurationsRequestBuilder) Count()(*i3d8a6c45ce826c7e2d53a3d27dd8b4a14fa6b3b99b15552bdd25cf465a4c558c.CountRequestBuilder) {
     return i3d8a6c45ce826c7e2d53a3d27dd8b4a14fa6b3b99b15552bdd25cf465a4c558c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration entity representing the configuration of a cached report
-func (m *CachedReportConfigurationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation entity representing the configuration of a cached report
+func (m *CachedReportConfigurationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration entity representing the configuration of a cached report
@@ -93,8 +93,8 @@ func (m *CachedReportConfigurationsRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to cachedReportConfigurations for deviceManagement
-func (m *CachedReportConfigurationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to cachedReportConfigurations for deviceManagement
+func (m *CachedReportConfigurationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to cachedReportConfigurations for deviceManagement
@@ -110,12 +110,12 @@ func (m *CachedReportConfigurationsRequestBuilder) CreatePostRequestInformationW
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler entity representing the configuration of a cached report
-func (m *CachedReportConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *CachedReportConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get entity representing the configuration of a cached report
+func (m *CachedReportConfigurationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler entity representing the configuration of a cached report
-func (m *CachedReportConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *CachedReportConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler entity representing the configuration of a cached report
+func (m *CachedReportConfigurationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CachedReportConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *CachedReportConfigurationsRequestBuilder) GetWithResponseHandler(reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to cachedReportConfigurations for deviceManagement
-func (m *CachedReportConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationable, requestConfiguration *CachedReportConfigurationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to cachedReportConfigurations for deviceManagement
+func (m *CachedReportConfigurationsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to cachedReportConfigurations for deviceManagement
-func (m *CachedReportConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationable, requestConfiguration *CachedReportConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to cachedReportConfigurations for deviceManagement
+func (m *CachedReportConfigurationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationable, requestConfiguration *CachedReportConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementCachedReportConfigurationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -40,8 +40,8 @@ func NewClockInRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewClockInRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action clockIn
-func (m *ClockInRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ClockInRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action clockIn
+func (m *ClockInRequestBuilder) CreatePostRequestInformation(body ClockInRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action clockIn
@@ -57,12 +57,12 @@ func (m *ClockInRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action clockIn
-func (m *ClockInRequestBuilder) PostWithResponseHandler(body ClockInRequestBodyable, requestConfiguration *ClockInRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action clockIn
+func (m *ClockInRequestBuilder) Post(body ClockInRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action clockIn
-func (m *ClockInRequestBuilder) PostWithResponseHandler(body ClockInRequestBodyable, requestConfiguration *ClockInRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action clockIn
+func (m *ClockInRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ClockInRequestBodyable, requestConfiguration *ClockInRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

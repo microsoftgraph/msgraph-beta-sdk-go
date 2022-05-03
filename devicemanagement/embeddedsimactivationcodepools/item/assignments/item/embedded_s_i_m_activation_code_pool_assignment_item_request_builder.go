@@ -64,8 +64,8 @@ func NewEmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewEmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignments for deviceManagement
-func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property assignments for deviceManagement
+func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignments for deviceManagement
@@ -80,8 +80,8 @@ func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) CreateDelete
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration navigational property to a list of targets to which this pool is assigned.
-func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation navigational property to a list of targets to which this pool is assigned.
+func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration navigational property to a list of targets to which this pool is assigned.
@@ -99,8 +99,8 @@ func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignments in deviceManagement
-func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property assignments in deviceManagement
+func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignments in deviceManagement
@@ -116,12 +116,12 @@ func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) CreatePatchR
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property assignments for deviceManagement
-func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property assignments for deviceManagement
+func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property assignments for deviceManagement
-func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property assignments for deviceManagement
+func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) DeleteWithRe
     }
     return nil
 }
-// GetWithResponseHandler navigational property to a list of targets to which this pool is assigned.
-func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolAssignmentable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get navigational property to a list of targets to which this pool is assigned.
+func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolAssignmentable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler navigational property to a list of targets to which this pool is assigned.
-func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolAssignmentable, error) {
+// GetWithRequestConfigurationAndResponseHandler navigational property to a list of targets to which this pool is assigned.
+func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) GetWithRespo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolAssignmentable), nil
 }
-// PatchWithResponseHandler update the navigation property assignments in deviceManagement
-func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolAssignmentable, requestConfiguration *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property assignments in deviceManagement
+func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolAssignmentable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property assignments in deviceManagement
-func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolAssignmentable, requestConfiguration *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property assignments in deviceManagement
+func (m *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMActivationCodePoolAssignmentable, requestConfiguration *EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

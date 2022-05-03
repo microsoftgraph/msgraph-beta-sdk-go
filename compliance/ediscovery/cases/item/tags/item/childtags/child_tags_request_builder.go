@@ -67,8 +67,8 @@ func NewChildTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *ChildTagsRequestBuilder) Count()(*i9a01db24451f5306d8e60a9df9efc40d9d496dc3eedcc5f07e01341e112981f8.CountRequestBuilder) {
     return i9a01db24451f5306d8e60a9df9efc40d9d496dc3eedcc5f07e01341e112981f8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration returns the tags that are a child of a tag.
-func (m *ChildTagsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation returns the tags that are a child of a tag.
+func (m *ChildTagsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration returns the tags that are a child of a tag.
@@ -86,12 +86,12 @@ func (m *ChildTagsRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler returns the tags that are a child of a tag.
-func (m *ChildTagsRequestBuilder) GetWithResponseHandler(requestConfiguration *ChildTagsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.TagCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get returns the tags that are a child of a tag.
+func (m *ChildTagsRequestBuilder) Get()(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.TagCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler returns the tags that are a child of a tag.
-func (m *ChildTagsRequestBuilder) GetWithResponseHandler(requestConfiguration *ChildTagsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.TagCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler returns the tags that are a child of a tag.
+func (m *ChildTagsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChildTagsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.TagCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

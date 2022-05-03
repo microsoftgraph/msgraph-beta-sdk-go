@@ -64,8 +64,8 @@ func NewUserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsBatteryHealthOsPerformance for deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userExperienceAnalyticsBatteryHealthOsPerformance for deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsBatteryHealthOsPerformance for deviceManagement
@@ -80,8 +80,8 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) Cr
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration user Experience Analytics Battery Health Os Performance
-func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation user Experience Analytics Battery Health Os Performance
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration user Experience Analytics Battery Health Os Performance
@@ -99,8 +99,8 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) Cr
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsBatteryHealthOsPerformance in deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthOsPerformanceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userExperienceAnalyticsBatteryHealthOsPerformance in deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthOsPerformanceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsBatteryHealthOsPerformance in deviceManagement
@@ -116,12 +116,12 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) Cr
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsBatteryHealthOsPerformance for deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userExperienceAnalyticsBatteryHealthOsPerformance for deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsBatteryHealthOsPerformance for deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userExperienceAnalyticsBatteryHealthOsPerformance for deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) De
     }
     return nil
 }
-// GetWithResponseHandler user Experience Analytics Battery Health Os Performance
-func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthOsPerformanceable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get user Experience Analytics Battery Health Os Performance
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthOsPerformanceable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler user Experience Analytics Battery Health Os Performance
-func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthOsPerformanceable, error) {
+// GetWithRequestConfigurationAndResponseHandler user Experience Analytics Battery Health Os Performance
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthOsPerformanceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthOsPerformanceable), nil
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsBatteryHealthOsPerformance in deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthOsPerformanceable, requestConfiguration *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userExperienceAnalyticsBatteryHealthOsPerformance in deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthOsPerformanceable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsBatteryHealthOsPerformance in deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthOsPerformanceable, requestConfiguration *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userExperienceAnalyticsBatteryHealthOsPerformance in deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthOsPerformanceable, requestConfiguration *UserExperienceAnalyticsBatteryHealthOsPerformanceItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

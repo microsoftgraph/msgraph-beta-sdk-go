@@ -39,8 +39,8 @@ func NewRemoveHoldRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewRemoveHoldRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action removeHold
-func (m *RemoveHoldRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveHoldRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action removeHold
+func (m *RemoveHoldRequestBuilder) CreatePostRequestInformation(body RemoveHoldRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action removeHold
@@ -56,12 +56,12 @@ func (m *RemoveHoldRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action removeHold
-func (m *RemoveHoldRequestBuilder) PostWithResponseHandler(body RemoveHoldRequestBodyable, requestConfiguration *RemoveHoldRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action removeHold
+func (m *RemoveHoldRequestBuilder) Post(body RemoveHoldRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action removeHold
-func (m *RemoveHoldRequestBuilder) PostWithResponseHandler(body RemoveHoldRequestBodyable, requestConfiguration *RemoveHoldRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action removeHold
+func (m *RemoveHoldRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveHoldRequestBodyable, requestConfiguration *RemoveHoldRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

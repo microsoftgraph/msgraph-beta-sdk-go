@@ -76,8 +76,8 @@ func NewNotebooksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *NotebooksRequestBuilder) Count()(*i19e59018d356110684d7b1f87f39ab0f94e288118dd13f9d1b0ef94a27c69c0d.CountRequestBuilder) {
     return i19e59018d356110684d7b1f87f39ab0f94e288118dd13f9d1b0ef94a27c69c0d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-func (m *NotebooksRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+func (m *NotebooksRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
@@ -95,8 +95,8 @@ func (m *NotebooksRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to notebooks for groups
-func (m *NotebooksRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to notebooks for groups
+func (m *NotebooksRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to notebooks for groups
@@ -112,6 +112,10 @@ func (m *NotebooksRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
+// Get the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+func (m *NotebooksRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NotebookCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetNotebookFromWebUrl the getNotebookFromWebUrl property
 func (m *NotebooksRequestBuilder) GetNotebookFromWebUrl()(*i0830ab625b9359734e1d1f0b8661894992aec435a3c30d278b52809328b654c6.GetNotebookFromWebUrlRequestBuilder) {
     return i0830ab625b9359734e1d1f0b8661894992aec435a3c30d278b52809328b654c6.NewGetNotebookFromWebUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -120,12 +124,8 @@ func (m *NotebooksRequestBuilder) GetNotebookFromWebUrl()(*i0830ab625b9359734e1d
 func (m *NotebooksRequestBuilder) GetRecentNotebooksWithIncludePersonalNotebooks(includePersonalNotebooks *bool)(*iedaf1f3b30812c4a7ab4084a3fbee8b9774634abe05eca1985e30fb58db329cb.GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder) {
     return iedaf1f3b30812c4a7ab4084a3fbee8b9774634abe05eca1985e30fb58db329cb.NewGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilderInternal(m.pathParameters, m.requestAdapter, includePersonalNotebooks);
 }
-// GetWithResponseHandler the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-func (m *NotebooksRequestBuilder) GetWithResponseHandler(requestConfiguration *NotebooksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NotebookCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-func (m *NotebooksRequestBuilder) GetWithResponseHandler(requestConfiguration *NotebooksRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NotebookCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+func (m *NotebooksRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *NotebooksRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NotebookCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -140,12 +140,12 @@ func (m *NotebooksRequestBuilder) GetWithResponseHandler(requestConfiguration *N
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NotebookCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to notebooks for groups
-func (m *NotebooksRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable, requestConfiguration *NotebooksRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to notebooks for groups
+func (m *NotebooksRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to notebooks for groups
-func (m *NotebooksRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable, requestConfiguration *NotebooksRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to notebooks for groups
+func (m *NotebooksRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable, requestConfiguration *NotebooksRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

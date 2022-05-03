@@ -81,8 +81,8 @@ func NewMacOSSoftwareUpdateAccountSummaryItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewMacOSSoftwareUpdateAccountSummaryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property macOSSoftwareUpdateAccountSummaries for deviceManagement
-func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property macOSSoftwareUpdateAccountSummaries for deviceManagement
+func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property macOSSoftwareUpdateAccountSummaries for deviceManagement
@@ -97,8 +97,8 @@ func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) CreateDeleteReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the MacOS software update account summaries for this account.
-func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the MacOS software update account summaries for this account.
+func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the MacOS software update account summaries for this account.
@@ -116,8 +116,8 @@ func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property macOSSoftwareUpdateAccountSummaries in deviceManagement
-func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MacOSSoftwareUpdateAccountSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property macOSSoftwareUpdateAccountSummaries in deviceManagement
+func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MacOSSoftwareUpdateAccountSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property macOSSoftwareUpdateAccountSummaries in deviceManagement
@@ -133,12 +133,12 @@ func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) CreatePatchRequest
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property macOSSoftwareUpdateAccountSummaries for deviceManagement
-func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MacOSSoftwareUpdateAccountSummaryItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property macOSSoftwareUpdateAccountSummaries for deviceManagement
+func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property macOSSoftwareUpdateAccountSummaries for deviceManagement
-func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MacOSSoftwareUpdateAccountSummaryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property macOSSoftwareUpdateAccountSummaries for deviceManagement
+func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *MacOSSoftwareUpdateAccountSummaryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -153,12 +153,12 @@ func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) DeleteWithResponse
     }
     return nil
 }
-// GetWithResponseHandler the MacOS software update account summaries for this account.
-func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MacOSSoftwareUpdateAccountSummaryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MacOSSoftwareUpdateAccountSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the MacOS software update account summaries for this account.
+func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MacOSSoftwareUpdateAccountSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the MacOS software update account summaries for this account.
-func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MacOSSoftwareUpdateAccountSummaryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MacOSSoftwareUpdateAccountSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler the MacOS software update account summaries for this account.
+func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MacOSSoftwareUpdateAccountSummaryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MacOSSoftwareUpdateAccountSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -173,12 +173,12 @@ func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) GetWithResponseHan
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MacOSSoftwareUpdateAccountSummaryable), nil
 }
-// PatchWithResponseHandler update the navigation property macOSSoftwareUpdateAccountSummaries in deviceManagement
-func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MacOSSoftwareUpdateAccountSummaryable, requestConfiguration *MacOSSoftwareUpdateAccountSummaryItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property macOSSoftwareUpdateAccountSummaries in deviceManagement
+func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MacOSSoftwareUpdateAccountSummaryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property macOSSoftwareUpdateAccountSummaries in deviceManagement
-func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MacOSSoftwareUpdateAccountSummaryable, requestConfiguration *MacOSSoftwareUpdateAccountSummaryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property macOSSoftwareUpdateAccountSummaries in deviceManagement
+func (m *MacOSSoftwareUpdateAccountSummaryItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MacOSSoftwareUpdateAccountSummaryable, requestConfiguration *MacOSSoftwareUpdateAccountSummaryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

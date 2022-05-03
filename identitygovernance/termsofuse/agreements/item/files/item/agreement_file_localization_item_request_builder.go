@@ -66,8 +66,8 @@ func NewAgreementFileLocalizationItemRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewAgreementFileLocalizationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property files for identityGovernance
-func (m *AgreementFileLocalizationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property files for identityGovernance
+func (m *AgreementFileLocalizationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property files for identityGovernance
@@ -82,8 +82,8 @@ func (m *AgreementFileLocalizationItemRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
-func (m *AgreementFileLocalizationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
+func (m *AgreementFileLocalizationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
@@ -101,8 +101,8 @@ func (m *AgreementFileLocalizationItemRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property files in identityGovernance
-func (m *AgreementFileLocalizationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property files in identityGovernance
+func (m *AgreementFileLocalizationItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property files in identityGovernance
@@ -118,12 +118,12 @@ func (m *AgreementFileLocalizationItemRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property files for identityGovernance
-func (m *AgreementFileLocalizationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AgreementFileLocalizationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property files for identityGovernance
+func (m *AgreementFileLocalizationItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property files for identityGovernance
-func (m *AgreementFileLocalizationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AgreementFileLocalizationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property files for identityGovernance
+func (m *AgreementFileLocalizationItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AgreementFileLocalizationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -138,12 +138,12 @@ func (m *AgreementFileLocalizationItemRequestBuilder) DeleteWithResponseHandler(
     }
     return nil
 }
-// GetWithResponseHandler pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
-func (m *AgreementFileLocalizationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AgreementFileLocalizationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
+func (m *AgreementFileLocalizationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
-func (m *AgreementFileLocalizationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AgreementFileLocalizationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, error) {
+// GetWithRequestConfigurationAndResponseHandler pDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
+func (m *AgreementFileLocalizationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AgreementFileLocalizationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -158,12 +158,12 @@ func (m *AgreementFileLocalizationItemRequestBuilder) GetWithResponseHandler(req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable), nil
 }
-// PatchWithResponseHandler update the navigation property files in identityGovernance
-func (m *AgreementFileLocalizationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, requestConfiguration *AgreementFileLocalizationItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property files in identityGovernance
+func (m *AgreementFileLocalizationItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property files in identityGovernance
-func (m *AgreementFileLocalizationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, requestConfiguration *AgreementFileLocalizationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property files in identityGovernance
+func (m *AgreementFileLocalizationItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, requestConfiguration *AgreementFileLocalizationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

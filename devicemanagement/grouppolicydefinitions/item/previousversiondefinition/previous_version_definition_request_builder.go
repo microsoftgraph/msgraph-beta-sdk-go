@@ -73,8 +73,8 @@ func NewPreviousVersionDefinitionRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewPreviousVersionDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property previousVersionDefinition for deviceManagement
-func (m *PreviousVersionDefinitionRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property previousVersionDefinition for deviceManagement
+func (m *PreviousVersionDefinitionRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property previousVersionDefinition for deviceManagement
@@ -89,8 +89,8 @@ func (m *PreviousVersionDefinitionRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration definition of the previous version of this definition
-func (m *PreviousVersionDefinitionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation definition of the previous version of this definition
+func (m *PreviousVersionDefinitionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration definition of the previous version of this definition
@@ -108,8 +108,8 @@ func (m *PreviousVersionDefinitionRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property previousVersionDefinition in deviceManagement
-func (m *PreviousVersionDefinitionRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property previousVersionDefinition in deviceManagement
+func (m *PreviousVersionDefinitionRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property previousVersionDefinition in deviceManagement
@@ -129,12 +129,12 @@ func (m *PreviousVersionDefinitionRequestBuilder) CreatePatchRequestInformationW
 func (m *PreviousVersionDefinitionRequestBuilder) DefinitionFile()(*iec10cf7d92cea4a05bd61c522f717307dbdc7c7f04798646f228a85f3200e9d6.DefinitionFileRequestBuilder) {
     return iec10cf7d92cea4a05bd61c522f717307dbdc7c7f04798646f228a85f3200e9d6.NewDefinitionFileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeleteWithResponseHandler delete navigation property previousVersionDefinition for deviceManagement
-func (m *PreviousVersionDefinitionRequestBuilder) DeleteWithResponseHandler(requestConfiguration *PreviousVersionDefinitionRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property previousVersionDefinition for deviceManagement
+func (m *PreviousVersionDefinitionRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property previousVersionDefinition for deviceManagement
-func (m *PreviousVersionDefinitionRequestBuilder) DeleteWithResponseHandler(requestConfiguration *PreviousVersionDefinitionRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property previousVersionDefinition for deviceManagement
+func (m *PreviousVersionDefinitionRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *PreviousVersionDefinitionRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -149,12 +149,12 @@ func (m *PreviousVersionDefinitionRequestBuilder) DeleteWithResponseHandler(requ
     }
     return nil
 }
-// GetWithResponseHandler definition of the previous version of this definition
-func (m *PreviousVersionDefinitionRequestBuilder) GetWithResponseHandler(requestConfiguration *PreviousVersionDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get definition of the previous version of this definition
+func (m *PreviousVersionDefinitionRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler definition of the previous version of this definition
-func (m *PreviousVersionDefinitionRequestBuilder) GetWithResponseHandler(requestConfiguration *PreviousVersionDefinitionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable, error) {
+// GetWithRequestConfigurationAndResponseHandler definition of the previous version of this definition
+func (m *PreviousVersionDefinitionRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PreviousVersionDefinitionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -173,12 +173,12 @@ func (m *PreviousVersionDefinitionRequestBuilder) GetWithResponseHandler(request
 func (m *PreviousVersionDefinitionRequestBuilder) NextVersionDefinition()(*i76dcada0ec02bd3dd3b1c880caaf69fd97aab0007527200a2cb47fc6fd50d460.NextVersionDefinitionRequestBuilder) {
     return i76dcada0ec02bd3dd3b1c880caaf69fd97aab0007527200a2cb47fc6fd50d460.NewNextVersionDefinitionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property previousVersionDefinition in deviceManagement
-func (m *PreviousVersionDefinitionRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable, requestConfiguration *PreviousVersionDefinitionRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property previousVersionDefinition in deviceManagement
+func (m *PreviousVersionDefinitionRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property previousVersionDefinition in deviceManagement
-func (m *PreviousVersionDefinitionRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable, requestConfiguration *PreviousVersionDefinitionRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property previousVersionDefinition in deviceManagement
+func (m *PreviousVersionDefinitionRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionable, requestConfiguration *PreviousVersionDefinitionRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

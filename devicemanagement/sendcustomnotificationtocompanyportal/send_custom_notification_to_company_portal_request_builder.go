@@ -39,8 +39,8 @@ func NewSendCustomNotificationToCompanyPortalRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewSendCustomNotificationToCompanyPortalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action sendCustomNotificationToCompanyPortal
-func (m *SendCustomNotificationToCompanyPortalRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SendCustomNotificationToCompanyPortalRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action sendCustomNotificationToCompanyPortal
+func (m *SendCustomNotificationToCompanyPortalRequestBuilder) CreatePostRequestInformation(body SendCustomNotificationToCompanyPortalRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action sendCustomNotificationToCompanyPortal
@@ -56,12 +56,12 @@ func (m *SendCustomNotificationToCompanyPortalRequestBuilder) CreatePostRequestI
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action sendCustomNotificationToCompanyPortal
-func (m *SendCustomNotificationToCompanyPortalRequestBuilder) PostWithResponseHandler(body SendCustomNotificationToCompanyPortalRequestBodyable, requestConfiguration *SendCustomNotificationToCompanyPortalRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action sendCustomNotificationToCompanyPortal
+func (m *SendCustomNotificationToCompanyPortalRequestBuilder) Post(body SendCustomNotificationToCompanyPortalRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action sendCustomNotificationToCompanyPortal
-func (m *SendCustomNotificationToCompanyPortalRequestBuilder) PostWithResponseHandler(body SendCustomNotificationToCompanyPortalRequestBodyable, requestConfiguration *SendCustomNotificationToCompanyPortalRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action sendCustomNotificationToCompanyPortal
+func (m *SendCustomNotificationToCompanyPortalRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SendCustomNotificationToCompanyPortalRequestBodyable, requestConfiguration *SendCustomNotificationToCompanyPortalRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

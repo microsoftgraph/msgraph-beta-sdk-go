@@ -67,8 +67,8 @@ func NewAllowedUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *AllowedUsersRequestBuilder) Count()(*i80225734b8bb22b64a29709a890d77d1e7de550228a4a6f28a1d311fbc2fe8f1.CountRequestBuilder) {
     return i80225734b8bb22b64a29709a890d77d1e7de550228a4a6f28a1d311fbc2fe8f1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the users who have access to print using the printer.
-func (m *AllowedUsersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the users who have access to print using the printer.
+func (m *AllowedUsersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the users who have access to print using the printer.
@@ -86,12 +86,12 @@ func (m *AllowedUsersRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the users who have access to print using the printer.
-func (m *AllowedUsersRequestBuilder) GetWithResponseHandler(requestConfiguration *AllowedUsersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the users who have access to print using the printer.
+func (m *AllowedUsersRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the users who have access to print using the printer.
-func (m *AllowedUsersRequestBuilder) GetWithResponseHandler(requestConfiguration *AllowedUsersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the users who have access to print using the printer.
+func (m *AllowedUsersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AllowedUsersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -74,8 +74,8 @@ func NewDeviceConfigurationConflictSummaryRequestBuilder(rawUrl string, requestA
 func (m *DeviceConfigurationConflictSummaryRequestBuilder) Count()(*i9c791089a12e453784c02d88a8c4b64adb283fbfcc6c2e493281bf0cf9e516e1.CountRequestBuilder) {
     return i9c791089a12e453784c02d88a8c4b64adb283fbfcc6c2e493281bf0cf9e516e1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration summary of policies in conflict state for this account.
-func (m *DeviceConfigurationConflictSummaryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation summary of policies in conflict state for this account.
+func (m *DeviceConfigurationConflictSummaryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration summary of policies in conflict state for this account.
@@ -93,8 +93,8 @@ func (m *DeviceConfigurationConflictSummaryRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceConfigurationConflictSummary for deviceManagement
-func (m *DeviceConfigurationConflictSummaryRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to deviceConfigurationConflictSummary for deviceManagement
+func (m *DeviceConfigurationConflictSummaryRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceConfigurationConflictSummary for deviceManagement
@@ -110,12 +110,12 @@ func (m *DeviceConfigurationConflictSummaryRequestBuilder) CreatePostRequestInfo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler summary of policies in conflict state for this account.
-func (m *DeviceConfigurationConflictSummaryRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationConflictSummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get summary of policies in conflict state for this account.
+func (m *DeviceConfigurationConflictSummaryRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler summary of policies in conflict state for this account.
-func (m *DeviceConfigurationConflictSummaryRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationConflictSummaryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler summary of policies in conflict state for this account.
+func (m *DeviceConfigurationConflictSummaryRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceConfigurationConflictSummaryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *DeviceConfigurationConflictSummaryRequestBuilder) GetWithResponseHandle
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to deviceConfigurationConflictSummary for deviceManagement
-func (m *DeviceConfigurationConflictSummaryRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, requestConfiguration *DeviceConfigurationConflictSummaryRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to deviceConfigurationConflictSummary for deviceManagement
+func (m *DeviceConfigurationConflictSummaryRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to deviceConfigurationConflictSummary for deviceManagement
-func (m *DeviceConfigurationConflictSummaryRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, requestConfiguration *DeviceConfigurationConflictSummaryRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to deviceConfigurationConflictSummary for deviceManagement
+func (m *DeviceConfigurationConflictSummaryRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, requestConfiguration *DeviceConfigurationConflictSummaryRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

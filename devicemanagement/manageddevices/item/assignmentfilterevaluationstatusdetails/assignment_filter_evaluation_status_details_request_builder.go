@@ -74,8 +74,8 @@ func NewAssignmentFilterEvaluationStatusDetailsRequestBuilder(rawUrl string, req
 func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) Count()(*ifdb8d4f0c5c9db60a29bc1ec2b4be630a524291deaa3d58f5805fc1c65331025.CountRequestBuilder) {
     return ifdb8d4f0c5c9db60a29bc1ec2b4be630a524291deaa3d58f5805fc1c65331025.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration managed device mobile app configuration states for this device.
-func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation managed device mobile app configuration states for this device.
+func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration managed device mobile app configuration states for this device.
@@ -93,8 +93,8 @@ func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to assignmentFilterEvaluationStatusDetails for deviceManagement
-func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to assignmentFilterEvaluationStatusDetails for deviceManagement
+func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to assignmentFilterEvaluationStatusDetails for deviceManagement
@@ -110,12 +110,12 @@ func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) CreatePostReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler managed device mobile app configuration states for this device.
-func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) GetWithResponseHandler(requestConfiguration *AssignmentFilterEvaluationStatusDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get managed device mobile app configuration states for this device.
+func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler managed device mobile app configuration states for this device.
-func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) GetWithResponseHandler(requestConfiguration *AssignmentFilterEvaluationStatusDetailsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler managed device mobile app configuration states for this device.
+func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AssignmentFilterEvaluationStatusDetailsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) GetWithResponseH
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to assignmentFilterEvaluationStatusDetails for deviceManagement
-func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, requestConfiguration *AssignmentFilterEvaluationStatusDetailsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to assignmentFilterEvaluationStatusDetails for deviceManagement
+func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to assignmentFilterEvaluationStatusDetails for deviceManagement
-func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, requestConfiguration *AssignmentFilterEvaluationStatusDetailsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to assignmentFilterEvaluationStatusDetails for deviceManagement
+func (m *AssignmentFilterEvaluationStatusDetailsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, requestConfiguration *AssignmentFilterEvaluationStatusDetailsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -50,8 +50,8 @@ func NewBaseItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewBaseItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration used to address any item contained in this site. This collection cannot be enumerated.
-func (m *BaseItemItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation used to address any item contained in this site. This collection cannot be enumerated.
+func (m *BaseItemItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration used to address any item contained in this site. This collection cannot be enumerated.
@@ -69,12 +69,12 @@ func (m *BaseItemItemRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler used to address any item contained in this site. This collection cannot be enumerated.
-func (m *BaseItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *BaseItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseItemable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get used to address any item contained in this site. This collection cannot be enumerated.
+func (m *BaseItemItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseItemable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler used to address any item contained in this site. This collection cannot be enumerated.
-func (m *BaseItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *BaseItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseItemable, error) {
+// GetWithRequestConfigurationAndResponseHandler used to address any item contained in this site. This collection cannot be enumerated.
+func (m *BaseItemItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BaseItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

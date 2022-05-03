@@ -66,8 +66,8 @@ func NewOemWarrantyInformationOnboardingItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewOemWarrantyInformationOnboardingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property oemWarrantyInformationOnboarding for deviceManagement
-func (m *OemWarrantyInformationOnboardingItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property oemWarrantyInformationOnboarding for deviceManagement
+func (m *OemWarrantyInformationOnboardingItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property oemWarrantyInformationOnboarding for deviceManagement
@@ -82,8 +82,8 @@ func (m *OemWarrantyInformationOnboardingItemRequestBuilder) CreateDeleteRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration list of OEM Warranty Statuses
-func (m *OemWarrantyInformationOnboardingItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation list of OEM Warranty Statuses
+func (m *OemWarrantyInformationOnboardingItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration list of OEM Warranty Statuses
@@ -101,8 +101,8 @@ func (m *OemWarrantyInformationOnboardingItemRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property oemWarrantyInformationOnboarding in deviceManagement
-func (m *OemWarrantyInformationOnboardingItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyInformationOnboardingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property oemWarrantyInformationOnboarding in deviceManagement
+func (m *OemWarrantyInformationOnboardingItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyInformationOnboardingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property oemWarrantyInformationOnboarding in deviceManagement
@@ -118,12 +118,12 @@ func (m *OemWarrantyInformationOnboardingItemRequestBuilder) CreatePatchRequestI
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property oemWarrantyInformationOnboarding for deviceManagement
-func (m *OemWarrantyInformationOnboardingItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OemWarrantyInformationOnboardingItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property oemWarrantyInformationOnboarding for deviceManagement
+func (m *OemWarrantyInformationOnboardingItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property oemWarrantyInformationOnboarding for deviceManagement
-func (m *OemWarrantyInformationOnboardingItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OemWarrantyInformationOnboardingItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property oemWarrantyInformationOnboarding for deviceManagement
+func (m *OemWarrantyInformationOnboardingItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *OemWarrantyInformationOnboardingItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -146,12 +146,12 @@ func (m *OemWarrantyInformationOnboardingItemRequestBuilder) Disable()(*ia4101f7
 func (m *OemWarrantyInformationOnboardingItemRequestBuilder) Enable()(*ia3d1361f46182d3550e67aa93c4815afd1bb111a192b4fae107e1737a85945f2.EnableRequestBuilder) {
     return ia3d1361f46182d3550e67aa93c4815afd1bb111a192b4fae107e1737a85945f2.NewEnableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler list of OEM Warranty Statuses
-func (m *OemWarrantyInformationOnboardingItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OemWarrantyInformationOnboardingItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyInformationOnboardingable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get list of OEM Warranty Statuses
+func (m *OemWarrantyInformationOnboardingItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyInformationOnboardingable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler list of OEM Warranty Statuses
-func (m *OemWarrantyInformationOnboardingItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OemWarrantyInformationOnboardingItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyInformationOnboardingable, error) {
+// GetWithRequestConfigurationAndResponseHandler list of OEM Warranty Statuses
+func (m *OemWarrantyInformationOnboardingItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OemWarrantyInformationOnboardingItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyInformationOnboardingable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -166,12 +166,12 @@ func (m *OemWarrantyInformationOnboardingItemRequestBuilder) GetWithResponseHand
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyInformationOnboardingable), nil
 }
-// PatchWithResponseHandler update the navigation property oemWarrantyInformationOnboarding in deviceManagement
-func (m *OemWarrantyInformationOnboardingItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyInformationOnboardingable, requestConfiguration *OemWarrantyInformationOnboardingItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property oemWarrantyInformationOnboarding in deviceManagement
+func (m *OemWarrantyInformationOnboardingItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyInformationOnboardingable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property oemWarrantyInformationOnboarding in deviceManagement
-func (m *OemWarrantyInformationOnboardingItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyInformationOnboardingable, requestConfiguration *OemWarrantyInformationOnboardingItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property oemWarrantyInformationOnboarding in deviceManagement
+func (m *OemWarrantyInformationOnboardingItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyInformationOnboardingable, requestConfiguration *OemWarrantyInformationOnboardingItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

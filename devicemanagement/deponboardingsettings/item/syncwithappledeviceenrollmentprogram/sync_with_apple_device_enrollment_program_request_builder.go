@@ -39,8 +39,8 @@ func NewSyncWithAppleDeviceEnrollmentProgramRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewSyncWithAppleDeviceEnrollmentProgramRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration synchronizes between Apple Device Enrollment Program and Intune
-func (m *SyncWithAppleDeviceEnrollmentProgramRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation synchronizes between Apple Device Enrollment Program and Intune
+func (m *SyncWithAppleDeviceEnrollmentProgramRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration synchronizes between Apple Device Enrollment Program and Intune
@@ -55,12 +55,12 @@ func (m *SyncWithAppleDeviceEnrollmentProgramRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler synchronizes between Apple Device Enrollment Program and Intune
-func (m *SyncWithAppleDeviceEnrollmentProgramRequestBuilder) PostWithResponseHandler(requestConfiguration *SyncWithAppleDeviceEnrollmentProgramRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post synchronizes between Apple Device Enrollment Program and Intune
+func (m *SyncWithAppleDeviceEnrollmentProgramRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler synchronizes between Apple Device Enrollment Program and Intune
-func (m *SyncWithAppleDeviceEnrollmentProgramRequestBuilder) PostWithResponseHandler(requestConfiguration *SyncWithAppleDeviceEnrollmentProgramRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler synchronizes between Apple Device Enrollment Program and Intune
+func (m *SyncWithAppleDeviceEnrollmentProgramRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *SyncWithAppleDeviceEnrollmentProgramRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

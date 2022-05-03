@@ -64,8 +64,8 @@ func NewAndroidManagedStoreAppConfigurationSchemaItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidManagedStoreAppConfigurationSchemaItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property androidManagedStoreAppConfigurationSchemas for deviceManagement
-func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property androidManagedStoreAppConfigurationSchemas for deviceManagement
+func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property androidManagedStoreAppConfigurationSchemas for deviceManagement
@@ -80,8 +80,8 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) CreateDele
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration android Enterprise app configuration schema entities.
-func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation android Enterprise app configuration schema entities.
+func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration android Enterprise app configuration schema entities.
@@ -99,8 +99,8 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) CreateGetR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property androidManagedStoreAppConfigurationSchemas in deviceManagement
-func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property androidManagedStoreAppConfigurationSchemas in deviceManagement
+func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property androidManagedStoreAppConfigurationSchemas in deviceManagement
@@ -116,12 +116,12 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) CreatePatc
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property androidManagedStoreAppConfigurationSchemas for deviceManagement
-func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property androidManagedStoreAppConfigurationSchemas for deviceManagement
+func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property androidManagedStoreAppConfigurationSchemas for deviceManagement
-func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property androidManagedStoreAppConfigurationSchemas for deviceManagement
+func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) DeleteWith
     }
     return nil
 }
-// GetWithResponseHandler android Enterprise app configuration schema entities.
-func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get android Enterprise app configuration schema entities.
+func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler android Enterprise app configuration schema entities.
-func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, error) {
+// GetWithRequestConfigurationAndResponseHandler android Enterprise app configuration schema entities.
+func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) GetWithRes
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable), nil
 }
-// PatchWithResponseHandler update the navigation property androidManagedStoreAppConfigurationSchemas in deviceManagement
-func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, requestConfiguration *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property androidManagedStoreAppConfigurationSchemas in deviceManagement
+func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property androidManagedStoreAppConfigurationSchemas in deviceManagement
-func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, requestConfiguration *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property androidManagedStoreAppConfigurationSchemas in deviceManagement
+func (m *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, requestConfiguration *AndroidManagedStoreAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

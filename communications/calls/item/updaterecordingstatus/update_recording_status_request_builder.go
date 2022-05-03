@@ -40,8 +40,8 @@ func NewUpdateRecordingStatusRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateRecordingStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action updateRecordingStatus
-func (m *UpdateRecordingStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateRecordingStatusRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action updateRecordingStatus
+func (m *UpdateRecordingStatusRequestBuilder) CreatePostRequestInformation(body UpdateRecordingStatusRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateRecordingStatus
@@ -57,12 +57,12 @@ func (m *UpdateRecordingStatusRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action updateRecordingStatus
-func (m *UpdateRecordingStatusRequestBuilder) PostWithResponseHandler(body UpdateRecordingStatusRequestBodyable, requestConfiguration *UpdateRecordingStatusRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UpdateRecordingStatusOperationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action updateRecordingStatus
+func (m *UpdateRecordingStatusRequestBuilder) Post(body UpdateRecordingStatusRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UpdateRecordingStatusOperationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action updateRecordingStatus
-func (m *UpdateRecordingStatusRequestBuilder) PostWithResponseHandler(body UpdateRecordingStatusRequestBodyable, requestConfiguration *UpdateRecordingStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UpdateRecordingStatusOperationable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action updateRecordingStatus
+func (m *UpdateRecordingStatusRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateRecordingStatusRequestBodyable, requestConfiguration *UpdateRecordingStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UpdateRecordingStatusOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

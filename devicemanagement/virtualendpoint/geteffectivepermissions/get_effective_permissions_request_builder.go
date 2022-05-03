@@ -39,8 +39,8 @@ func NewGetEffectivePermissionsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewGetEffectivePermissionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getEffectivePermissions
-func (m *GetEffectivePermissionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getEffectivePermissions
+func (m *GetEffectivePermissionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getEffectivePermissions
@@ -55,12 +55,12 @@ func (m *GetEffectivePermissionsRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getEffectivePermissions
-func (m *GetEffectivePermissionsRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEffectivePermissionsRequestBuilderGetRequestConfiguration)(GetEffectivePermissionsResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getEffectivePermissions
+func (m *GetEffectivePermissionsRequestBuilder) Get()(GetEffectivePermissionsResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getEffectivePermissions
-func (m *GetEffectivePermissionsRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEffectivePermissionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEffectivePermissionsResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getEffectivePermissions
+func (m *GetEffectivePermissionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEffectivePermissionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEffectivePermissionsResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

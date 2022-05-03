@@ -64,8 +64,8 @@ func NewUserExperienceAnalyticsDeviceScoresItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsDeviceScoresItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsDeviceScores for deviceManagement
-func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userExperienceAnalyticsDeviceScores for deviceManagement
+func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsDeviceScores for deviceManagement
@@ -80,8 +80,8 @@ func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) CreateDeleteRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration user experience analytics device scores
-func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation user experience analytics device scores
+func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration user experience analytics device scores
@@ -99,8 +99,8 @@ func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsDeviceScores in deviceManagement
-func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScoresable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userExperienceAnalyticsDeviceScores in deviceManagement
+func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScoresable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsDeviceScores in deviceManagement
@@ -116,12 +116,12 @@ func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) CreatePatchReque
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsDeviceScores for deviceManagement
-func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsDeviceScoresItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userExperienceAnalyticsDeviceScores for deviceManagement
+func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsDeviceScores for deviceManagement
-func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsDeviceScoresItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userExperienceAnalyticsDeviceScores for deviceManagement
+func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsDeviceScoresItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) DeleteWithRespon
     }
     return nil
 }
-// GetWithResponseHandler user experience analytics device scores
-func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsDeviceScoresItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScoresable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get user experience analytics device scores
+func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScoresable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler user experience analytics device scores
-func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsDeviceScoresItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScoresable, error) {
+// GetWithRequestConfigurationAndResponseHandler user experience analytics device scores
+func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsDeviceScoresItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScoresable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) GetWithResponseH
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScoresable), nil
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsDeviceScores in deviceManagement
-func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScoresable, requestConfiguration *UserExperienceAnalyticsDeviceScoresItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userExperienceAnalyticsDeviceScores in deviceManagement
+func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScoresable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsDeviceScores in deviceManagement
-func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScoresable, requestConfiguration *UserExperienceAnalyticsDeviceScoresItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userExperienceAnalyticsDeviceScores in deviceManagement
+func (m *UserExperienceAnalyticsDeviceScoresItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceScoresable, requestConfiguration *UserExperienceAnalyticsDeviceScoresItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

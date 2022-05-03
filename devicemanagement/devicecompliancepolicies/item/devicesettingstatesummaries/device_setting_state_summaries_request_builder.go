@@ -74,8 +74,8 @@ func NewDeviceSettingStateSummariesRequestBuilder(rawUrl string, requestAdapter 
 func (m *DeviceSettingStateSummariesRequestBuilder) Count()(*ic83686a6030a5c441ac1d6203bfba7f0dfe93b694b610c45fbfc7d26d1f7f9bb.CountRequestBuilder) {
     return ic83686a6030a5c441ac1d6203bfba7f0dfe93b694b610c45fbfc7d26d1f7f9bb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration compliance Setting State Device Summary
-func (m *DeviceSettingStateSummariesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation compliance Setting State Device Summary
+func (m *DeviceSettingStateSummariesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration compliance Setting State Device Summary
@@ -93,8 +93,8 @@ func (m *DeviceSettingStateSummariesRequestBuilder) CreateGetRequestInformationW
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceSettingStateSummaries for deviceManagement
-func (m *DeviceSettingStateSummariesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to deviceSettingStateSummaries for deviceManagement
+func (m *DeviceSettingStateSummariesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceSettingStateSummaries for deviceManagement
@@ -110,12 +110,12 @@ func (m *DeviceSettingStateSummariesRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler compliance Setting State Device Summary
-func (m *DeviceSettingStateSummariesRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceSettingStateSummariesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get compliance Setting State Device Summary
+func (m *DeviceSettingStateSummariesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler compliance Setting State Device Summary
-func (m *DeviceSettingStateSummariesRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceSettingStateSummariesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler compliance Setting State Device Summary
+func (m *DeviceSettingStateSummariesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceSettingStateSummariesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *DeviceSettingStateSummariesRequestBuilder) GetWithResponseHandler(reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to deviceSettingStateSummaries for deviceManagement
-func (m *DeviceSettingStateSummariesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryable, requestConfiguration *DeviceSettingStateSummariesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to deviceSettingStateSummaries for deviceManagement
+func (m *DeviceSettingStateSummariesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to deviceSettingStateSummaries for deviceManagement
-func (m *DeviceSettingStateSummariesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryable, requestConfiguration *DeviceSettingStateSummariesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to deviceSettingStateSummaries for deviceManagement
+func (m *DeviceSettingStateSummariesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryable, requestConfiguration *DeviceSettingStateSummariesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SettingStateDeviceSummaryable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -74,8 +74,8 @@ func NewManagementTemplateStepVersionsRequestBuilder(rawUrl string, requestAdapt
 func (m *ManagementTemplateStepVersionsRequestBuilder) Count()(*i2105f68bb66b02d05110aef193b87c3227f092c53df250ef349f1e25c1482dd0.CountRequestBuilder) {
     return i2105f68bb66b02d05110aef193b87c3227f092c53df250ef349f1e25c1482dd0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get managementTemplateStepVersions from tenantRelationships
-func (m *ManagementTemplateStepVersionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get managementTemplateStepVersions from tenantRelationships
+func (m *ManagementTemplateStepVersionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get managementTemplateStepVersions from tenantRelationships
@@ -93,8 +93,8 @@ func (m *ManagementTemplateStepVersionsRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to managementTemplateStepVersions for tenantRelationships
-func (m *ManagementTemplateStepVersionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to managementTemplateStepVersions for tenantRelationships
+func (m *ManagementTemplateStepVersionsRequestBuilder) CreatePostRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to managementTemplateStepVersions for tenantRelationships
@@ -110,12 +110,12 @@ func (m *ManagementTemplateStepVersionsRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get managementTemplateStepVersions from tenantRelationships
-func (m *ManagementTemplateStepVersionsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementTemplateStepVersionsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get managementTemplateStepVersions from tenantRelationships
+func (m *ManagementTemplateStepVersionsRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get managementTemplateStepVersions from tenantRelationships
-func (m *ManagementTemplateStepVersionsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementTemplateStepVersionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get managementTemplateStepVersions from tenantRelationships
+func (m *ManagementTemplateStepVersionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagementTemplateStepVersionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ManagementTemplateStepVersionsRequestBuilder) GetWithResponseHandler(re
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to managementTemplateStepVersions for tenantRelationships
-func (m *ManagementTemplateStepVersionsRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, requestConfiguration *ManagementTemplateStepVersionsRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to managementTemplateStepVersions for tenantRelationships
+func (m *ManagementTemplateStepVersionsRequestBuilder) Post(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to managementTemplateStepVersions for tenantRelationships
-func (m *ManagementTemplateStepVersionsRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, requestConfiguration *ManagementTemplateStepVersionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to managementTemplateStepVersions for tenantRelationships
+func (m *ManagementTemplateStepVersionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, requestConfiguration *ManagementTemplateStepVersionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

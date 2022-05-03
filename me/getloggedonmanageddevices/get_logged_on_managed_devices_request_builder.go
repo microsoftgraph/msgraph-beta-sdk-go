@@ -39,8 +39,8 @@ func NewGetLoggedOnManagedDevicesRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewGetLoggedOnManagedDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getLoggedOnManagedDevices
-func (m *GetLoggedOnManagedDevicesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getLoggedOnManagedDevices
+func (m *GetLoggedOnManagedDevicesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getLoggedOnManagedDevices
@@ -55,12 +55,12 @@ func (m *GetLoggedOnManagedDevicesRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getLoggedOnManagedDevices
-func (m *GetLoggedOnManagedDevicesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetLoggedOnManagedDevicesRequestBuilderGetRequestConfiguration)(GetLoggedOnManagedDevicesResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getLoggedOnManagedDevices
+func (m *GetLoggedOnManagedDevicesRequestBuilder) Get()(GetLoggedOnManagedDevicesResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getLoggedOnManagedDevices
-func (m *GetLoggedOnManagedDevicesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetLoggedOnManagedDevicesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetLoggedOnManagedDevicesResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getLoggedOnManagedDevices
+func (m *GetLoggedOnManagedDevicesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetLoggedOnManagedDevicesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetLoggedOnManagedDevicesResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

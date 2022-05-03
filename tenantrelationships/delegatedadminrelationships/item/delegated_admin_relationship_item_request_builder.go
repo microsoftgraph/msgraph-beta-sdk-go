@@ -85,8 +85,8 @@ func NewDelegatedAdminRelationshipItemRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewDelegatedAdminRelationshipItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property delegatedAdminRelationships for tenantRelationships
-func (m *DelegatedAdminRelationshipItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property delegatedAdminRelationships for tenantRelationships
+func (m *DelegatedAdminRelationshipItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property delegatedAdminRelationships for tenantRelationships
@@ -101,8 +101,8 @@ func (m *DelegatedAdminRelationshipItemRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
-func (m *DelegatedAdminRelationshipItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
+func (m *DelegatedAdminRelationshipItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
@@ -120,8 +120,8 @@ func (m *DelegatedAdminRelationshipItemRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property delegatedAdminRelationships in tenantRelationships
-func (m *DelegatedAdminRelationshipItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property delegatedAdminRelationships in tenantRelationships
+func (m *DelegatedAdminRelationshipItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property delegatedAdminRelationships in tenantRelationships
@@ -137,12 +137,12 @@ func (m *DelegatedAdminRelationshipItemRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property delegatedAdminRelationships for tenantRelationships
-func (m *DelegatedAdminRelationshipItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DelegatedAdminRelationshipItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property delegatedAdminRelationships for tenantRelationships
+func (m *DelegatedAdminRelationshipItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property delegatedAdminRelationships for tenantRelationships
-func (m *DelegatedAdminRelationshipItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DelegatedAdminRelationshipItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property delegatedAdminRelationships for tenantRelationships
+func (m *DelegatedAdminRelationshipItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DelegatedAdminRelationshipItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -157,12 +157,12 @@ func (m *DelegatedAdminRelationshipItemRequestBuilder) DeleteWithResponseHandler
     }
     return nil
 }
-// GetWithResponseHandler the details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
-func (m *DelegatedAdminRelationshipItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DelegatedAdminRelationshipItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
+func (m *DelegatedAdminRelationshipItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
-func (m *DelegatedAdminRelationshipItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DelegatedAdminRelationshipItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable, error) {
+// GetWithRequestConfigurationAndResponseHandler the details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
+func (m *DelegatedAdminRelationshipItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DelegatedAdminRelationshipItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -192,12 +192,12 @@ func (m *DelegatedAdminRelationshipItemRequestBuilder) OperationsById(id string)
     }
     return i5f3e9a785873705d5204dd08bc17b79ce358f2fd632fbe5eb537c2a5d7fc7ef6.NewDelegatedAdminRelationshipOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property delegatedAdminRelationships in tenantRelationships
-func (m *DelegatedAdminRelationshipItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable, requestConfiguration *DelegatedAdminRelationshipItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property delegatedAdminRelationships in tenantRelationships
+func (m *DelegatedAdminRelationshipItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property delegatedAdminRelationships in tenantRelationships
-func (m *DelegatedAdminRelationshipItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable, requestConfiguration *DelegatedAdminRelationshipItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property delegatedAdminRelationships in tenantRelationships
+func (m *DelegatedAdminRelationshipItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipable, requestConfiguration *DelegatedAdminRelationshipItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

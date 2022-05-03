@@ -74,8 +74,8 @@ func NewUserExperienceAnalyticsScoreHistoryRequestBuilder(rawUrl string, request
 func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) Count()(*ia80e1df779dac8351e2660637afeeff1a31d546134cf7e456d73b53ddec67b58.CountRequestBuilder) {
     return ia80e1df779dac8351e2660637afeeff1a31d546134cf7e456d73b53ddec67b58.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration user experience analytics device Startup Score History
-func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation user experience analytics device Startup Score History
+func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration user experience analytics device Startup Score History
@@ -93,8 +93,8 @@ func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to userExperienceAnalyticsScoreHistory for deviceManagement
-func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to userExperienceAnalyticsScoreHistory for deviceManagement
+func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to userExperienceAnalyticsScoreHistory for deviceManagement
@@ -110,12 +110,12 @@ func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) CreatePostRequestInf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler user experience analytics device Startup Score History
-func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsScoreHistoryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get user experience analytics device Startup Score History
+func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler user experience analytics device Startup Score History
-func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsScoreHistoryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler user experience analytics device Startup Score History
+func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsScoreHistoryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) GetWithResponseHandl
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to userExperienceAnalyticsScoreHistory for deviceManagement
-func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryable, requestConfiguration *UserExperienceAnalyticsScoreHistoryRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to userExperienceAnalyticsScoreHistory for deviceManagement
+func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to userExperienceAnalyticsScoreHistory for deviceManagement
-func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryable, requestConfiguration *UserExperienceAnalyticsScoreHistoryRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to userExperienceAnalyticsScoreHistory for deviceManagement
+func (m *UserExperienceAnalyticsScoreHistoryRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryable, requestConfiguration *UserExperienceAnalyticsScoreHistoryRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsScoreHistoryable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

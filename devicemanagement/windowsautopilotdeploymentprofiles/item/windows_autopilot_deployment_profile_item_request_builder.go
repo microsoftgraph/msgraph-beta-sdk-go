@@ -103,8 +103,8 @@ func NewWindowsAutopilotDeploymentProfileItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotDeploymentProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsAutopilotDeploymentProfiles for deviceManagement
-func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property windowsAutopilotDeploymentProfiles for deviceManagement
+func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsAutopilotDeploymentProfiles for deviceManagement
@@ -119,8 +119,8 @@ func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) CreateDeleteReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration windows auto pilot deployment profiles
-func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation windows auto pilot deployment profiles
+func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration windows auto pilot deployment profiles
@@ -138,8 +138,8 @@ func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsAutopilotDeploymentProfiles in deviceManagement
-func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property windowsAutopilotDeploymentProfiles in deviceManagement
+func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsAutopilotDeploymentProfiles in deviceManagement
@@ -155,12 +155,12 @@ func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) CreatePatchRequest
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property windowsAutopilotDeploymentProfiles for deviceManagement
-func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsAutopilotDeploymentProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property windowsAutopilotDeploymentProfiles for deviceManagement
+func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property windowsAutopilotDeploymentProfiles for deviceManagement
-func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsAutopilotDeploymentProfileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property windowsAutopilotDeploymentProfiles for deviceManagement
+func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsAutopilotDeploymentProfileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -175,12 +175,12 @@ func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) DeleteWithResponse
     }
     return nil
 }
-// GetWithResponseHandler windows auto pilot deployment profiles
-func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsAutopilotDeploymentProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get windows auto pilot deployment profiles
+func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler windows auto pilot deployment profiles
-func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsAutopilotDeploymentProfileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, error) {
+// GetWithRequestConfigurationAndResponseHandler windows auto pilot deployment profiles
+func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsAutopilotDeploymentProfileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -195,12 +195,12 @@ func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) GetWithResponseHan
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable), nil
 }
-// PatchWithResponseHandler update the navigation property windowsAutopilotDeploymentProfiles in deviceManagement
-func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, requestConfiguration *WindowsAutopilotDeploymentProfileItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property windowsAutopilotDeploymentProfiles in deviceManagement
+func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property windowsAutopilotDeploymentProfiles in deviceManagement
-func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, requestConfiguration *WindowsAutopilotDeploymentProfileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property windowsAutopilotDeploymentProfiles in deviceManagement
+func (m *WindowsAutopilotDeploymentProfileItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, requestConfiguration *WindowsAutopilotDeploymentProfileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

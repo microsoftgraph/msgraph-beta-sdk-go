@@ -39,8 +39,8 @@ func NewApproveAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewApproveAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action approveApps
-func (m *ApproveAppsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ApproveAppsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action approveApps
+func (m *ApproveAppsRequestBuilder) CreatePostRequestInformation(body ApproveAppsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action approveApps
@@ -56,12 +56,12 @@ func (m *ApproveAppsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action approveApps
-func (m *ApproveAppsRequestBuilder) PostWithResponseHandler(body ApproveAppsRequestBodyable, requestConfiguration *ApproveAppsRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action approveApps
+func (m *ApproveAppsRequestBuilder) Post(body ApproveAppsRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action approveApps
-func (m *ApproveAppsRequestBuilder) PostWithResponseHandler(body ApproveAppsRequestBodyable, requestConfiguration *ApproveAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action approveApps
+func (m *ApproveAppsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ApproveAppsRequestBodyable, requestConfiguration *ApproveAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

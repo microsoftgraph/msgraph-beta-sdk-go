@@ -39,8 +39,8 @@ func NewGetManagedAppBlockedUsersRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewGetManagedAppBlockedUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getManagedAppBlockedUsers
-func (m *GetManagedAppBlockedUsersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getManagedAppBlockedUsers
+func (m *GetManagedAppBlockedUsersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getManagedAppBlockedUsers
@@ -55,12 +55,12 @@ func (m *GetManagedAppBlockedUsersRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getManagedAppBlockedUsers
-func (m *GetManagedAppBlockedUsersRequestBuilder) GetWithResponseHandler(requestConfiguration *GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration)(GetManagedAppBlockedUsersResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getManagedAppBlockedUsers
+func (m *GetManagedAppBlockedUsersRequestBuilder) Get()(GetManagedAppBlockedUsersResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getManagedAppBlockedUsers
-func (m *GetManagedAppBlockedUsersRequestBuilder) GetWithResponseHandler(requestConfiguration *GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetManagedAppBlockedUsersResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getManagedAppBlockedUsers
+func (m *GetManagedAppBlockedUsersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetManagedAppBlockedUsersResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

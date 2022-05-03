@@ -65,8 +65,8 @@ func NewResourceOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewResourceOperationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property resourceOperations for deviceManagement
-func (m *ResourceOperationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property resourceOperations for deviceManagement
+func (m *ResourceOperationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property resourceOperations for deviceManagement
@@ -81,8 +81,8 @@ func (m *ResourceOperationItemRequestBuilder) CreateDeleteRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the Resource Operations.
-func (m *ResourceOperationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the Resource Operations.
+func (m *ResourceOperationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the Resource Operations.
@@ -100,8 +100,8 @@ func (m *ResourceOperationItemRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property resourceOperations in deviceManagement
-func (m *ResourceOperationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceOperationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property resourceOperations in deviceManagement
+func (m *ResourceOperationItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceOperationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property resourceOperations in deviceManagement
@@ -117,12 +117,12 @@ func (m *ResourceOperationItemRequestBuilder) CreatePatchRequestInformationWithR
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property resourceOperations for deviceManagement
-func (m *ResourceOperationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ResourceOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property resourceOperations for deviceManagement
+func (m *ResourceOperationItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property resourceOperations for deviceManagement
-func (m *ResourceOperationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ResourceOperationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property resourceOperations for deviceManagement
+func (m *ResourceOperationItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ResourceOperationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -137,16 +137,16 @@ func (m *ResourceOperationItemRequestBuilder) DeleteWithResponseHandler(requestC
     }
     return nil
 }
+// Get the Resource Operations.
+func (m *ResourceOperationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceOperationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetScopesForUserWithUserid provides operations to call the getScopesForUser method.
 func (m *ResourceOperationItemRequestBuilder) GetScopesForUserWithUserid(userid *string)(*i2b3f2af1c8bc472e0cb8537b228ff0d93f3f8ff8add56d5ef0a24cbb3334094e.GetScopesForUserWithUseridRequestBuilder) {
     return i2b3f2af1c8bc472e0cb8537b228ff0d93f3f8ff8add56d5ef0a24cbb3334094e.NewGetScopesForUserWithUseridRequestBuilderInternal(m.pathParameters, m.requestAdapter, userid);
 }
-// GetWithResponseHandler the Resource Operations.
-func (m *ResourceOperationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ResourceOperationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceOperationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler the Resource Operations.
-func (m *ResourceOperationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ResourceOperationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceOperationable, error) {
+// GetWithRequestConfigurationAndResponseHandler the Resource Operations.
+func (m *ResourceOperationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ResourceOperationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -161,12 +161,12 @@ func (m *ResourceOperationItemRequestBuilder) GetWithResponseHandler(requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceOperationable), nil
 }
-// PatchWithResponseHandler update the navigation property resourceOperations in deviceManagement
-func (m *ResourceOperationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceOperationable, requestConfiguration *ResourceOperationItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property resourceOperations in deviceManagement
+func (m *ResourceOperationItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceOperationable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property resourceOperations in deviceManagement
-func (m *ResourceOperationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceOperationable, requestConfiguration *ResourceOperationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property resourceOperations in deviceManagement
+func (m *ResourceOperationItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceOperationable, requestConfiguration *ResourceOperationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

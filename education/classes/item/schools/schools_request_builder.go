@@ -67,8 +67,8 @@ func NewSchoolsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *SchoolsRequestBuilder) Count()(*iddda30bce35710aa63455263cfad7486bfa673ba1cc3c9d8b136fd728f98d32c.CountRequestBuilder) {
     return iddda30bce35710aa63455263cfad7486bfa673ba1cc3c9d8b136fd728f98d32c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration all schools that this class is associated with. Nullable.
-func (m *SchoolsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation all schools that this class is associated with. Nullable.
+func (m *SchoolsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration all schools that this class is associated with. Nullable.
@@ -86,12 +86,12 @@ func (m *SchoolsRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler all schools that this class is associated with. Nullable.
-func (m *SchoolsRequestBuilder) GetWithResponseHandler(requestConfiguration *SchoolsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get all schools that this class is associated with. Nullable.
+func (m *SchoolsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler all schools that this class is associated with. Nullable.
-func (m *SchoolsRequestBuilder) GetWithResponseHandler(requestConfiguration *SchoolsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler all schools that this class is associated with. Nullable.
+func (m *SchoolsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SchoolsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

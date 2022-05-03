@@ -39,8 +39,8 @@ func NewEvaluateClassificationResultsRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateClassificationResultsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action evaluateClassificationResults
-func (m *EvaluateClassificationResultsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateClassificationResultsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action evaluateClassificationResults
+func (m *EvaluateClassificationResultsRequestBuilder) CreatePostRequestInformation(body EvaluateClassificationResultsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action evaluateClassificationResults
@@ -56,12 +56,12 @@ func (m *EvaluateClassificationResultsRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action evaluateClassificationResults
-func (m *EvaluateClassificationResultsRequestBuilder) PostWithResponseHandler(body EvaluateClassificationResultsRequestBodyable, requestConfiguration *EvaluateClassificationResultsRequestBuilderPostRequestConfiguration)(EvaluateClassificationResultsResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action evaluateClassificationResults
+func (m *EvaluateClassificationResultsRequestBuilder) Post(body EvaluateClassificationResultsRequestBodyable)(EvaluateClassificationResultsResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action evaluateClassificationResults
-func (m *EvaluateClassificationResultsRequestBuilder) PostWithResponseHandler(body EvaluateClassificationResultsRequestBodyable, requestConfiguration *EvaluateClassificationResultsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(EvaluateClassificationResultsResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action evaluateClassificationResults
+func (m *EvaluateClassificationResultsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EvaluateClassificationResultsRequestBodyable, requestConfiguration *EvaluateClassificationResultsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(EvaluateClassificationResultsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

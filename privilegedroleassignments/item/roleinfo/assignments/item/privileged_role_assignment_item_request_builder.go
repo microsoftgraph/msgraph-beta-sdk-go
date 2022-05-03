@@ -50,8 +50,8 @@ func NewPrivilegedRoleAssignmentItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the assignments for this role. Read-only. Nullable.
-func (m *PrivilegedRoleAssignmentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the assignments for this role. Read-only. Nullable.
+func (m *PrivilegedRoleAssignmentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the assignments for this role. Read-only. Nullable.
@@ -69,12 +69,12 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the assignments for this role. Read-only. Nullable.
-func (m *PrivilegedRoleAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *PrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the assignments for this role. Read-only. Nullable.
+func (m *PrivilegedRoleAssignmentItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the assignments for this role. Read-only. Nullable.
-func (m *PrivilegedRoleAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *PrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
+// GetWithRequestConfigurationAndResponseHandler the assignments for this role. Read-only. Nullable.
+func (m *PrivilegedRoleAssignmentItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

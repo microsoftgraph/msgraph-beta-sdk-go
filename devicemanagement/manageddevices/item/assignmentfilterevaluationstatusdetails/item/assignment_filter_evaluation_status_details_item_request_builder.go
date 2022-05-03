@@ -64,8 +64,8 @@ func NewAssignmentFilterEvaluationStatusDetailsItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentFilterEvaluationStatusDetailsItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignmentFilterEvaluationStatusDetails for deviceManagement
-func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property assignmentFilterEvaluationStatusDetails for deviceManagement
+func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignmentFilterEvaluationStatusDetails for deviceManagement
@@ -80,8 +80,8 @@ func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) CreateDelete
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration managed device mobile app configuration states for this device.
-func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation managed device mobile app configuration states for this device.
+func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration managed device mobile app configuration states for this device.
@@ -99,8 +99,8 @@ func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignmentFilterEvaluationStatusDetails in deviceManagement
-func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property assignmentFilterEvaluationStatusDetails in deviceManagement
+func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignmentFilterEvaluationStatusDetails in deviceManagement
@@ -116,12 +116,12 @@ func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) CreatePatchR
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property assignmentFilterEvaluationStatusDetails for deviceManagement
-func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AssignmentFilterEvaluationStatusDetailsItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property assignmentFilterEvaluationStatusDetails for deviceManagement
+func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property assignmentFilterEvaluationStatusDetails for deviceManagement
-func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AssignmentFilterEvaluationStatusDetailsItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property assignmentFilterEvaluationStatusDetails for deviceManagement
+func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AssignmentFilterEvaluationStatusDetailsItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) DeleteWithRe
     }
     return nil
 }
-// GetWithResponseHandler managed device mobile app configuration states for this device.
-func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get managed device mobile app configuration states for this device.
+func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler managed device mobile app configuration states for this device.
-func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, error) {
+// GetWithRequestConfigurationAndResponseHandler managed device mobile app configuration states for this device.
+func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AssignmentFilterEvaluationStatusDetailsItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) GetWithRespo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable), nil
 }
-// PatchWithResponseHandler update the navigation property assignmentFilterEvaluationStatusDetails in deviceManagement
-func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, requestConfiguration *AssignmentFilterEvaluationStatusDetailsItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property assignmentFilterEvaluationStatusDetails in deviceManagement
+func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property assignmentFilterEvaluationStatusDetails in deviceManagement
-func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, requestConfiguration *AssignmentFilterEvaluationStatusDetailsItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property assignmentFilterEvaluationStatusDetails in deviceManagement
+func (m *AssignmentFilterEvaluationStatusDetailsItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterEvaluationStatusDetailsable, requestConfiguration *AssignmentFilterEvaluationStatusDetailsItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

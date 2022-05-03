@@ -39,8 +39,8 @@ func NewGetFailedMobileAppsSummaryReportRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewGetFailedMobileAppsSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getFailedMobileAppsSummaryReport
-func (m *GetFailedMobileAppsSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetFailedMobileAppsSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getFailedMobileAppsSummaryReport
+func (m *GetFailedMobileAppsSummaryReportRequestBuilder) CreatePostRequestInformation(body GetFailedMobileAppsSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getFailedMobileAppsSummaryReport
@@ -56,12 +56,12 @@ func (m *GetFailedMobileAppsSummaryReportRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getFailedMobileAppsSummaryReport
-func (m *GetFailedMobileAppsSummaryReportRequestBuilder) PostWithResponseHandler(body GetFailedMobileAppsSummaryReportRequestBodyable, requestConfiguration *GetFailedMobileAppsSummaryReportRequestBuilderPostRequestConfiguration)(GetFailedMobileAppsSummaryReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getFailedMobileAppsSummaryReport
+func (m *GetFailedMobileAppsSummaryReportRequestBuilder) Post(body GetFailedMobileAppsSummaryReportRequestBodyable)(GetFailedMobileAppsSummaryReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getFailedMobileAppsSummaryReport
-func (m *GetFailedMobileAppsSummaryReportRequestBuilder) PostWithResponseHandler(body GetFailedMobileAppsSummaryReportRequestBodyable, requestConfiguration *GetFailedMobileAppsSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetFailedMobileAppsSummaryReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getFailedMobileAppsSummaryReport
+func (m *GetFailedMobileAppsSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetFailedMobileAppsSummaryReportRequestBodyable, requestConfiguration *GetFailedMobileAppsSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetFailedMobileAppsSummaryReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

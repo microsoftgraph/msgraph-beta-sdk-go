@@ -39,8 +39,8 @@ func NewGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewGetEffectiveDeviceEnrollmentConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getEffectiveDeviceEnrollmentConfigurations
-func (m *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getEffectiveDeviceEnrollmentConfigurations
+func (m *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getEffectiveDeviceEnrollmentConfigurations
@@ -55,12 +55,12 @@ func (m *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getEffectiveDeviceEnrollmentConfigurations
-func (m *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration)(GetEffectiveDeviceEnrollmentConfigurationsResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getEffectiveDeviceEnrollmentConfigurations
+func (m *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) Get()(GetEffectiveDeviceEnrollmentConfigurationsResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getEffectiveDeviceEnrollmentConfigurations
-func (m *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEffectiveDeviceEnrollmentConfigurationsResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getEffectiveDeviceEnrollmentConfigurations
+func (m *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEffectiveDeviceEnrollmentConfigurationsResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

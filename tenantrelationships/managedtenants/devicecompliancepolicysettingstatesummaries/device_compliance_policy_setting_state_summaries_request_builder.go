@@ -74,8 +74,8 @@ func NewDeviceCompliancePolicySettingStateSummariesRequestBuilder(rawUrl string,
 func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) Count()(*if1edd47d08b097c27bc827091cc41d48788f587da25946f8efb6fc254e726a6f.CountRequestBuilder) {
     return if1edd47d08b097c27bc827091cc41d48788f587da25946f8efb6fc254e726a6f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration summary information for device compliance policy setting states across managed tenants.
-func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation summary information for device compliance policy setting states across managed tenants.
+func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration summary information for device compliance policy setting states across managed tenants.
@@ -93,8 +93,8 @@ func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceCompliancePolicySettingStateSummaries for tenantRelationships
-func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to deviceCompliancePolicySettingStateSummaries for tenantRelationships
+func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) CreatePostRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceCompliancePolicySettingStateSummaries for tenantRelationships
@@ -110,12 +110,12 @@ func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) CreatePostRe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler summary information for device compliance policy setting states across managed tenants.
-func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceCompliancePolicySettingStateSummariesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get summary information for device compliance policy setting states across managed tenants.
+func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler summary information for device compliance policy setting states across managed tenants.
-func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceCompliancePolicySettingStateSummariesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler summary information for device compliance policy setting states across managed tenants.
+func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceCompliancePolicySettingStateSummariesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) GetWithRespo
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to deviceCompliancePolicySettingStateSummaries for tenantRelationships
-func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryable, requestConfiguration *DeviceCompliancePolicySettingStateSummariesRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to deviceCompliancePolicySettingStateSummaries for tenantRelationships
+func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) Post(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to deviceCompliancePolicySettingStateSummaries for tenantRelationships
-func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryable, requestConfiguration *DeviceCompliancePolicySettingStateSummariesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to deviceCompliancePolicySettingStateSummaries for tenantRelationships
+func (m *DeviceCompliancePolicySettingStateSummariesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryable, requestConfiguration *DeviceCompliancePolicySettingStateSummariesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.DeviceCompliancePolicySettingStateSummaryable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

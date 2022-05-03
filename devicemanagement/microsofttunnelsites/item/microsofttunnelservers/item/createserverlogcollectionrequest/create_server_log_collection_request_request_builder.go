@@ -40,8 +40,8 @@ func NewCreateServerLogCollectionRequestRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewCreateServerLogCollectionRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action createServerLogCollectionRequest
-func (m *CreateServerLogCollectionRequestRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateServerLogCollectionRequestRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action createServerLogCollectionRequest
+func (m *CreateServerLogCollectionRequestRequestBuilder) CreatePostRequestInformation(body CreateServerLogCollectionRequestRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action createServerLogCollectionRequest
@@ -57,12 +57,12 @@ func (m *CreateServerLogCollectionRequestRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action createServerLogCollectionRequest
-func (m *CreateServerLogCollectionRequestRequestBuilder) PostWithResponseHandler(body CreateServerLogCollectionRequestRequestBodyable, requestConfiguration *CreateServerLogCollectionRequestRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelServerLogCollectionResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action createServerLogCollectionRequest
+func (m *CreateServerLogCollectionRequestRequestBuilder) Post(body CreateServerLogCollectionRequestRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelServerLogCollectionResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action createServerLogCollectionRequest
-func (m *CreateServerLogCollectionRequestRequestBuilder) PostWithResponseHandler(body CreateServerLogCollectionRequestRequestBodyable, requestConfiguration *CreateServerLogCollectionRequestRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelServerLogCollectionResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action createServerLogCollectionRequest
+func (m *CreateServerLogCollectionRequestRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateServerLogCollectionRequestRequestBodyable, requestConfiguration *CreateServerLogCollectionRequestRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelServerLogCollectionResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

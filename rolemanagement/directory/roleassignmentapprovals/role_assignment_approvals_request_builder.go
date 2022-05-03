@@ -75,8 +75,8 @@ func NewRoleAssignmentApprovalsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *RoleAssignmentApprovalsRequestBuilder) Count()(*i278c9e7e9d71b298646dcebb3f000f64e548a02359d5c97bf250da6f651ed988.CountRequestBuilder) {
     return i278c9e7e9d71b298646dcebb3f000f64e548a02359d5c97bf250da6f651ed988.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get roleAssignmentApprovals from roleManagement
-func (m *RoleAssignmentApprovalsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get roleAssignmentApprovals from roleManagement
+func (m *RoleAssignmentApprovalsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get roleAssignmentApprovals from roleManagement
@@ -94,8 +94,8 @@ func (m *RoleAssignmentApprovalsRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to roleAssignmentApprovals for roleManagement
-func (m *RoleAssignmentApprovalsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to roleAssignmentApprovals for roleManagement
+func (m *RoleAssignmentApprovalsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to roleAssignmentApprovals for roleManagement
@@ -115,12 +115,12 @@ func (m *RoleAssignmentApprovalsRequestBuilder) CreatePostRequestInformationWith
 func (m *RoleAssignmentApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*id51c04bdca1b3d3df1fb0cf1a9242cd201c579ca07ebe1d61ada8f6110ca302e.FilterByCurrentUserWithOnRequestBuilder) {
     return id51c04bdca1b3d3df1fb0cf1a9242cd201c579ca07ebe1d61ada8f6110ca302e.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// GetWithResponseHandler get roleAssignmentApprovals from roleManagement
-func (m *RoleAssignmentApprovalsRequestBuilder) GetWithResponseHandler(requestConfiguration *RoleAssignmentApprovalsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get roleAssignmentApprovals from roleManagement
+func (m *RoleAssignmentApprovalsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get roleAssignmentApprovals from roleManagement
-func (m *RoleAssignmentApprovalsRequestBuilder) GetWithResponseHandler(requestConfiguration *RoleAssignmentApprovalsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get roleAssignmentApprovals from roleManagement
+func (m *RoleAssignmentApprovalsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RoleAssignmentApprovalsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *RoleAssignmentApprovalsRequestBuilder) GetWithResponseHandler(requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to roleAssignmentApprovals for roleManagement
-func (m *RoleAssignmentApprovalsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, requestConfiguration *RoleAssignmentApprovalsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to roleAssignmentApprovals for roleManagement
+func (m *RoleAssignmentApprovalsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to roleAssignmentApprovals for roleManagement
-func (m *RoleAssignmentApprovalsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, requestConfiguration *RoleAssignmentApprovalsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to roleAssignmentApprovals for roleManagement
+func (m *RoleAssignmentApprovalsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, requestConfiguration *RoleAssignmentApprovalsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

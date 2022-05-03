@@ -74,8 +74,8 @@ func NewScheduledActionsForRuleRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ScheduledActionsForRuleRequestBuilder) Count()(*i1a22f95d6b3396854b40306e4b4d530780257ceb81e9d8cab8c04ad3ae6645f8.CountRequestBuilder) {
     return i1a22f95d6b3396854b40306e4b4d530780257ceb81e9d8cab8c04ad3ae6645f8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of scheduled action for this rule
-func (m *ScheduledActionsForRuleRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of scheduled action for this rule
+func (m *ScheduledActionsForRuleRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of scheduled action for this rule
@@ -93,8 +93,8 @@ func (m *ScheduledActionsForRuleRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to scheduledActionsForRule for deviceManagement
-func (m *ScheduledActionsForRuleRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to scheduledActionsForRule for deviceManagement
+func (m *ScheduledActionsForRuleRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to scheduledActionsForRule for deviceManagement
@@ -110,12 +110,12 @@ func (m *ScheduledActionsForRuleRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the list of scheduled action for this rule
-func (m *ScheduledActionsForRuleRequestBuilder) GetWithResponseHandler(requestConfiguration *ScheduledActionsForRuleRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of scheduled action for this rule
+func (m *ScheduledActionsForRuleRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of scheduled action for this rule
-func (m *ScheduledActionsForRuleRequestBuilder) GetWithResponseHandler(requestConfiguration *ScheduledActionsForRuleRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of scheduled action for this rule
+func (m *ScheduledActionsForRuleRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ScheduledActionsForRuleRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ScheduledActionsForRuleRequestBuilder) GetWithResponseHandler(requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to scheduledActionsForRule for deviceManagement
-func (m *ScheduledActionsForRuleRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleable, requestConfiguration *ScheduledActionsForRuleRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to scheduledActionsForRule for deviceManagement
+func (m *ScheduledActionsForRuleRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to scheduledActionsForRule for deviceManagement
-func (m *ScheduledActionsForRuleRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleable, requestConfiguration *ScheduledActionsForRuleRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to scheduledActionsForRule for deviceManagement
+func (m *ScheduledActionsForRuleRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleable, requestConfiguration *ScheduledActionsForRuleRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

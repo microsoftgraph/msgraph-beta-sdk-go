@@ -39,8 +39,8 @@ func NewGetRemoteAssistanceSessionsReportRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewGetRemoteAssistanceSessionsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getRemoteAssistanceSessionsReport
-func (m *GetRemoteAssistanceSessionsReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetRemoteAssistanceSessionsReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getRemoteAssistanceSessionsReport
+func (m *GetRemoteAssistanceSessionsReportRequestBuilder) CreatePostRequestInformation(body GetRemoteAssistanceSessionsReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getRemoteAssistanceSessionsReport
@@ -56,12 +56,12 @@ func (m *GetRemoteAssistanceSessionsReportRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getRemoteAssistanceSessionsReport
-func (m *GetRemoteAssistanceSessionsReportRequestBuilder) PostWithResponseHandler(body GetRemoteAssistanceSessionsReportRequestBodyable, requestConfiguration *GetRemoteAssistanceSessionsReportRequestBuilderPostRequestConfiguration)(GetRemoteAssistanceSessionsReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getRemoteAssistanceSessionsReport
+func (m *GetRemoteAssistanceSessionsReportRequestBuilder) Post(body GetRemoteAssistanceSessionsReportRequestBodyable)(GetRemoteAssistanceSessionsReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getRemoteAssistanceSessionsReport
-func (m *GetRemoteAssistanceSessionsReportRequestBuilder) PostWithResponseHandler(body GetRemoteAssistanceSessionsReportRequestBodyable, requestConfiguration *GetRemoteAssistanceSessionsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRemoteAssistanceSessionsReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getRemoteAssistanceSessionsReport
+func (m *GetRemoteAssistanceSessionsReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetRemoteAssistanceSessionsReportRequestBodyable, requestConfiguration *GetRemoteAssistanceSessionsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRemoteAssistanceSessionsReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

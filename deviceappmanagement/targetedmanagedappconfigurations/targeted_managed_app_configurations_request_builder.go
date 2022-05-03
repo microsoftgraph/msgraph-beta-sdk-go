@@ -75,8 +75,8 @@ func NewTargetedManagedAppConfigurationsRequestBuilder(rawUrl string, requestAda
 func (m *TargetedManagedAppConfigurationsRequestBuilder) Count()(*id5aacb0e7f92c24759a0617762ff2708662658dcb1418460a3e5e828312144ca.CountRequestBuilder) {
     return id5aacb0e7f92c24759a0617762ff2708662658dcb1418460a3e5e828312144ca.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration targeted managed app configurations.
-func (m *TargetedManagedAppConfigurationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation targeted managed app configurations.
+func (m *TargetedManagedAppConfigurationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration targeted managed app configurations.
@@ -94,8 +94,8 @@ func (m *TargetedManagedAppConfigurationsRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
-func (m *TargetedManagedAppConfigurationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+func (m *TargetedManagedAppConfigurationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
@@ -111,12 +111,12 @@ func (m *TargetedManagedAppConfigurationsRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler targeted managed app configurations.
-func (m *TargetedManagedAppConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *TargetedManagedAppConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get targeted managed app configurations.
+func (m *TargetedManagedAppConfigurationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler targeted managed app configurations.
-func (m *TargetedManagedAppConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *TargetedManagedAppConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler targeted managed app configurations.
+func (m *TargetedManagedAppConfigurationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TargetedManagedAppConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *TargetedManagedAppConfigurationsRequestBuilder) GetWithResponseHandler(
 func (m *TargetedManagedAppConfigurationsRequestBuilder) HasPayloadLinks()(*i63c441d9d593382f1c0a0eab4d77625eba0d17603d57d02eb4d09e74ba042fa1.HasPayloadLinksRequestBuilder) {
     return i63c441d9d593382f1c0a0eab4d77625eba0d17603d57d02eb4d09e74ba042fa1.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PostWithResponseHandler create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
-func (m *TargetedManagedAppConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationable, requestConfiguration *TargetedManagedAppConfigurationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+func (m *TargetedManagedAppConfigurationsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
-func (m *TargetedManagedAppConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationable, requestConfiguration *TargetedManagedAppConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+func (m *TargetedManagedAppConfigurationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationable, requestConfiguration *TargetedManagedAppConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TargetedManagedAppConfigurationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

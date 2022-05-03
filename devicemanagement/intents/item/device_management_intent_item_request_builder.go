@@ -125,8 +125,8 @@ func NewDeviceManagementIntentItemRequestBuilder(rawUrl string, requestAdapter i
 func (m *DeviceManagementIntentItemRequestBuilder) CreateCopy()(*ifad589ef3ce91c5f33b39c8260cfbe764d5d9bb0a50352392359f13ea1148770.CreateCopyRequestBuilder) {
     return ifad589ef3ce91c5f33b39c8260cfbe764d5d9bb0a50352392359f13ea1148770.NewCreateCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property intents for deviceManagement
-func (m *DeviceManagementIntentItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property intents for deviceManagement
+func (m *DeviceManagementIntentItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property intents for deviceManagement
@@ -141,8 +141,8 @@ func (m *DeviceManagementIntentItemRequestBuilder) CreateDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the device management intents
-func (m *DeviceManagementIntentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the device management intents
+func (m *DeviceManagementIntentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the device management intents
@@ -160,8 +160,8 @@ func (m *DeviceManagementIntentItemRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property intents in deviceManagement
-func (m *DeviceManagementIntentItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property intents in deviceManagement
+func (m *DeviceManagementIntentItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property intents in deviceManagement
@@ -177,12 +177,12 @@ func (m *DeviceManagementIntentItemRequestBuilder) CreatePatchRequestInformation
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property intents for deviceManagement
-func (m *DeviceManagementIntentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementIntentItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property intents for deviceManagement
+func (m *DeviceManagementIntentItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property intents for deviceManagement
-func (m *DeviceManagementIntentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementIntentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property intents for deviceManagement
+func (m *DeviceManagementIntentItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementIntentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -231,12 +231,12 @@ func (m *DeviceManagementIntentItemRequestBuilder) DeviceStatesById(id string)(*
 func (m *DeviceManagementIntentItemRequestBuilder) DeviceStateSummary()(*i8744b36b6ccd58cfb5566d8bcfaaaa5a91c2ca5a7d99218a0d837bd74414e860.DeviceStateSummaryRequestBuilder) {
     return i8744b36b6ccd58cfb5566d8bcfaaaa5a91c2ca5a7d99218a0d837bd74414e860.NewDeviceStateSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the device management intents
-func (m *DeviceManagementIntentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementIntentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the device management intents
+func (m *DeviceManagementIntentItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the device management intents
-func (m *DeviceManagementIntentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementIntentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, error) {
+// GetWithRequestConfigurationAndResponseHandler the device management intents
+func (m *DeviceManagementIntentItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementIntentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -255,12 +255,12 @@ func (m *DeviceManagementIntentItemRequestBuilder) GetWithResponseHandler(reques
 func (m *DeviceManagementIntentItemRequestBuilder) MigrateToTemplate()(*i8baeef7b87df0daa79bc3d6db8884f08954d45824e962bdd11e8d114daa152f2.MigrateToTemplateRequestBuilder) {
     return i8baeef7b87df0daa79bc3d6db8884f08954d45824e962bdd11e8d114daa152f2.NewMigrateToTemplateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property intents in deviceManagement
-func (m *DeviceManagementIntentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, requestConfiguration *DeviceManagementIntentItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property intents in deviceManagement
+func (m *DeviceManagementIntentItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property intents in deviceManagement
-func (m *DeviceManagementIntentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, requestConfiguration *DeviceManagementIntentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property intents in deviceManagement
+func (m *DeviceManagementIntentItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable, requestConfiguration *DeviceManagementIntentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

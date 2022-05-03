@@ -67,8 +67,8 @@ func NewTaughtClassesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *TaughtClassesRequestBuilder) Count()(*if6725fc266308fcb29268c6fd3d559250e5063a42a13a08b96f2131d00736b36.CountRequestBuilder) {
     return if6725fc266308fcb29268c6fd3d559250e5063a42a13a08b96f2131d00736b36.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration classes for which the user is a teacher.
-func (m *TaughtClassesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation classes for which the user is a teacher.
+func (m *TaughtClassesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration classes for which the user is a teacher.
@@ -86,12 +86,12 @@ func (m *TaughtClassesRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler classes for which the user is a teacher.
-func (m *TaughtClassesRequestBuilder) GetWithResponseHandler(requestConfiguration *TaughtClassesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get classes for which the user is a teacher.
+func (m *TaughtClassesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler classes for which the user is a teacher.
-func (m *TaughtClassesRequestBuilder) GetWithResponseHandler(requestConfiguration *TaughtClassesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler classes for which the user is a teacher.
+func (m *TaughtClassesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TaughtClassesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

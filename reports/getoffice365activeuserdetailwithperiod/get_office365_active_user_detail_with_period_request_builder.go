@@ -42,8 +42,8 @@ func NewGetOffice365ActiveUserDetailWithPeriodRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365ActiveUserDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getOffice365ActiveUserDetail
-func (m *GetOffice365ActiveUserDetailWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getOffice365ActiveUserDetail
+func (m *GetOffice365ActiveUserDetailWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getOffice365ActiveUserDetail
@@ -58,12 +58,12 @@ func (m *GetOffice365ActiveUserDetailWithPeriodRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getOffice365ActiveUserDetail
-func (m *GetOffice365ActiveUserDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(GetOffice365ActiveUserDetailWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getOffice365ActiveUserDetail
+func (m *GetOffice365ActiveUserDetailWithPeriodRequestBuilder) Get()(GetOffice365ActiveUserDetailWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getOffice365ActiveUserDetail
-func (m *GetOffice365ActiveUserDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOffice365ActiveUserDetailWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getOffice365ActiveUserDetail
+func (m *GetOffice365ActiveUserDetailWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOffice365ActiveUserDetailWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

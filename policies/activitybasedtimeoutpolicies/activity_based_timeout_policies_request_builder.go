@@ -74,8 +74,8 @@ func NewActivityBasedTimeoutPoliciesRequestBuilder(rawUrl string, requestAdapter
 func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Count()(*icc63819c18904f19ccd572e7e2c185bcbbf9146d29f0987699efa57b983273a1.CountRequestBuilder) {
     return icc63819c18904f19ccd572e7e2c185bcbbf9146d29f0987699efa57b983273a1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the policy that controls the idle time out for web sessions for applications.
-func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the policy that controls the idle time out for web sessions for applications.
+func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the policy that controls the idle time out for web sessions for applications.
@@ -93,8 +93,8 @@ func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to activityBasedTimeoutPolicies for policies
-func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to activityBasedTimeoutPolicies for policies
+func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to activityBasedTimeoutPolicies for policies
@@ -110,12 +110,12 @@ func (m *ActivityBasedTimeoutPoliciesRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the policy that controls the idle time out for web sessions for applications.
-func (m *ActivityBasedTimeoutPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the policy that controls the idle time out for web sessions for applications.
+func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the policy that controls the idle time out for web sessions for applications.
-func (m *ActivityBasedTimeoutPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the policy that controls the idle time out for web sessions for applications.
+func (m *ActivityBasedTimeoutPoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ActivityBasedTimeoutPoliciesRequestBuilder) GetWithResponseHandler(requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to activityBasedTimeoutPolicies for policies
-func (m *ActivityBasedTimeoutPoliciesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable, requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to activityBasedTimeoutPolicies for policies
+func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to activityBasedTimeoutPolicies for policies
-func (m *ActivityBasedTimeoutPoliciesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable, requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to activityBasedTimeoutPolicies for policies
+func (m *ActivityBasedTimeoutPoliciesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable, requestConfiguration *ActivityBasedTimeoutPoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityBasedTimeoutPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -67,8 +67,8 @@ func NewDomainNameReferencesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *DomainNameReferencesRequestBuilder) Count()(*i744ce9274ec61602372c4d102a5914b9e6073cd841d6f7dab5655ab88149c49f.CountRequestBuilder) {
     return i744ce9274ec61602372c4d102a5914b9e6073cd841d6f7dab5655ab88149c49f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only, Nullable
-func (m *DomainNameReferencesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only, Nullable
+func (m *DomainNameReferencesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only, Nullable
@@ -86,12 +86,12 @@ func (m *DomainNameReferencesRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler read-only, Nullable
-func (m *DomainNameReferencesRequestBuilder) GetWithResponseHandler(requestConfiguration *DomainNameReferencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only, Nullable
+func (m *DomainNameReferencesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only, Nullable
-func (m *DomainNameReferencesRequestBuilder) GetWithResponseHandler(requestConfiguration *DomainNameReferencesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only, Nullable
+func (m *DomainNameReferencesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DomainNameReferencesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

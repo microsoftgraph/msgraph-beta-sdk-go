@@ -40,8 +40,8 @@ func NewValidateFilterRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewValidateFilterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action validateFilter
-func (m *ValidateFilterRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ValidateFilterRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action validateFilter
+func (m *ValidateFilterRequestBuilder) CreatePostRequestInformation(body ValidateFilterRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action validateFilter
@@ -57,12 +57,12 @@ func (m *ValidateFilterRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action validateFilter
-func (m *ValidateFilterRequestBuilder) PostWithResponseHandler(body ValidateFilterRequestBodyable, requestConfiguration *ValidateFilterRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterValidationResultable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action validateFilter
+func (m *ValidateFilterRequestBuilder) Post(body ValidateFilterRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterValidationResultable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action validateFilter
-func (m *ValidateFilterRequestBuilder) PostWithResponseHandler(body ValidateFilterRequestBodyable, requestConfiguration *ValidateFilterRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterValidationResultable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action validateFilter
+func (m *ValidateFilterRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ValidateFilterRequestBodyable, requestConfiguration *ValidateFilterRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterValidationResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

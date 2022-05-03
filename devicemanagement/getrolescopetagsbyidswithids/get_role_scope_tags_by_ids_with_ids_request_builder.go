@@ -42,8 +42,8 @@ func NewGetRoleScopeTagsByIdsWithIdsRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getRoleScopeTagsByIds
-func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getRoleScopeTagsByIds
+func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getRoleScopeTagsByIds
@@ -58,12 +58,12 @@ func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getRoleScopeTagsByIds
-func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) GetWithResponseHandler(requestConfiguration *GetRoleScopeTagsByIdsWithIdsRequestBuilderGetRequestConfiguration)(GetRoleScopeTagsByIdsWithIdsResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getRoleScopeTagsByIds
+func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) Get()(GetRoleScopeTagsByIdsWithIdsResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getRoleScopeTagsByIds
-func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) GetWithResponseHandler(requestConfiguration *GetRoleScopeTagsByIdsWithIdsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRoleScopeTagsByIdsWithIdsResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getRoleScopeTagsByIds
+func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetRoleScopeTagsByIdsWithIdsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRoleScopeTagsByIdsWithIdsResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

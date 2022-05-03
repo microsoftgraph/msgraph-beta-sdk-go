@@ -67,8 +67,8 @@ func NewSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *SitesRequestBuilder) Count()(*ic077b13f2e7bec09a66cb7b349598f63b58ed18c6fb6a3a54d83d50486eaefde.CountRequestBuilder) {
     return ic077b13f2e7bec09a66cb7b349598f63b58ed18c6fb6a3a54d83d50486eaefde.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of the sub-sites under this site.
-func (m *SitesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of the sub-sites under this site.
+func (m *SitesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of the sub-sites under this site.
@@ -86,12 +86,12 @@ func (m *SitesRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the collection of the sub-sites under this site.
-func (m *SitesRequestBuilder) GetWithResponseHandler(requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of the sub-sites under this site.
+func (m *SitesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of the sub-sites under this site.
-func (m *SitesRequestBuilder) GetWithResponseHandler(requestConfiguration *SitesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of the sub-sites under this site.
+func (m *SitesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SitesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

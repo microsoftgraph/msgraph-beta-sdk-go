@@ -77,8 +77,8 @@ func NewDirectoryObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *DirectoryObjectsRequestBuilder) Count()(*if13d9c908e534a7b2842e69168489e1796a310b7a1c14547912f317175815ca8.CountRequestBuilder) {
     return if13d9c908e534a7b2842e69168489e1796a310b7a1c14547912f317175815ca8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from directoryObjects
-func (m *DirectoryObjectsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from directoryObjects
+func (m *DirectoryObjectsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from directoryObjects
@@ -96,8 +96,8 @@ func (m *DirectoryObjectsRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to directoryObjects
-func (m *DirectoryObjectsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to directoryObjects
+func (m *DirectoryObjectsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to directoryObjects
@@ -113,6 +113,10 @@ func (m *DirectoryObjectsRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
+// Get get entities from directoryObjects
+func (m *DirectoryObjectsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetByIds the getByIds property
 func (m *DirectoryObjectsRequestBuilder) GetByIds()(*if5535afb267ec7094a4211d736c067fb173f4440e3a9b0ee48ef8a21491d580e.GetByIdsRequestBuilder) {
     return if5535afb267ec7094a4211d736c067fb173f4440e3a9b0ee48ef8a21491d580e.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -121,12 +125,8 @@ func (m *DirectoryObjectsRequestBuilder) GetByIds()(*if5535afb267ec7094a4211d736
 func (m *DirectoryObjectsRequestBuilder) GetUserOwnedObjects()(*i2ef5ec242ba9486a8d97e4a01e6e56c1f33e0283a3ebdc10985a11b1ffffd14f.GetUserOwnedObjectsRequestBuilder) {
     return i2ef5ec242ba9486a8d97e4a01e6e56c1f33e0283a3ebdc10985a11b1ffffd14f.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get entities from directoryObjects
-func (m *DirectoryObjectsRequestBuilder) GetWithResponseHandler(requestConfiguration *DirectoryObjectsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler get entities from directoryObjects
-func (m *DirectoryObjectsRequestBuilder) GetWithResponseHandler(requestConfiguration *DirectoryObjectsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from directoryObjects
+func (m *DirectoryObjectsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryObjectsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -141,12 +141,12 @@ func (m *DirectoryObjectsRequestBuilder) GetWithResponseHandler(requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// PostWithResponseHandler add new entity to directoryObjects
-func (m *DirectoryObjectsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, requestConfiguration *DirectoryObjectsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to directoryObjects
+func (m *DirectoryObjectsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to directoryObjects
-func (m *DirectoryObjectsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, requestConfiguration *DirectoryObjectsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to directoryObjects
+func (m *DirectoryObjectsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, requestConfiguration *DirectoryObjectsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

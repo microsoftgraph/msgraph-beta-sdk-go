@@ -74,8 +74,8 @@ func NewUserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder(rawUrl stri
 func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) Count()(*i91ecb1babeceba1d591322fbe73771b90bf1701d604dafd2a10cc60cfd1b13b8.CountRequestBuilder) {
     return i91ecb1babeceba1d591322fbe73771b90bf1701d604dafd2a10cc60cfd1b13b8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration user experience analytics devices not Windows Autopilot ready.
-func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation user experience analytics devices not Windows Autopilot ready.
+func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration user experience analytics devices not Windows Autopilot ready.
@@ -93,8 +93,8 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) CreateGet
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
-func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
+func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
@@ -110,12 +110,12 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) CreatePos
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler user experience analytics devices not Windows Autopilot ready.
-func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get user experience analytics devices not Windows Autopilot ready.
+func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler user experience analytics devices not Windows Autopilot ready.
-func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler user experience analytics devices not Windows Autopilot ready.
+func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) GetWithRe
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
-func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceable, requestConfiguration *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
+func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
-func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceable, requestConfiguration *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
+func (m *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceable, requestConfiguration *UserExperienceAnalyticsNotAutopilotReadyDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsNotAutopilotReadyDeviceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -64,8 +64,8 @@ func NewUserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsBatteryHealthAppImpact for deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userExperienceAnalyticsBatteryHealthAppImpact for deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsBatteryHealthAppImpact for deviceManagement
@@ -80,8 +80,8 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration user Experience Analytics Battery Health App Impact
-func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation user Experience Analytics Battery Health App Impact
+func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration user Experience Analytics Battery Health App Impact
@@ -99,8 +99,8 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsBatteryHealthAppImpact in deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthAppImpactable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userExperienceAnalyticsBatteryHealthAppImpact in deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthAppImpactable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsBatteryHealthAppImpact in deviceManagement
@@ -116,12 +116,12 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsBatteryHealthAppImpact for deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userExperienceAnalyticsBatteryHealthAppImpact for deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsBatteryHealthAppImpact for deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userExperienceAnalyticsBatteryHealthAppImpact for deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) Delete
     }
     return nil
 }
-// GetWithResponseHandler user Experience Analytics Battery Health App Impact
-func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthAppImpactable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get user Experience Analytics Battery Health App Impact
+func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthAppImpactable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler user Experience Analytics Battery Health App Impact
-func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthAppImpactable, error) {
+// GetWithRequestConfigurationAndResponseHandler user Experience Analytics Battery Health App Impact
+func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthAppImpactable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) GetWit
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthAppImpactable), nil
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsBatteryHealthAppImpact in deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthAppImpactable, requestConfiguration *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userExperienceAnalyticsBatteryHealthAppImpact in deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthAppImpactable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsBatteryHealthAppImpact in deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthAppImpactable, requestConfiguration *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userExperienceAnalyticsBatteryHealthAppImpact in deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthAppImpactable, requestConfiguration *UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

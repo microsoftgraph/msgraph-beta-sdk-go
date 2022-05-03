@@ -39,8 +39,8 @@ func NewGetQuietTimePolicyUsersReportRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewGetQuietTimePolicyUsersReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getQuietTimePolicyUsersReport
-func (m *GetQuietTimePolicyUsersReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetQuietTimePolicyUsersReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getQuietTimePolicyUsersReport
+func (m *GetQuietTimePolicyUsersReportRequestBuilder) CreatePostRequestInformation(body GetQuietTimePolicyUsersReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getQuietTimePolicyUsersReport
@@ -56,12 +56,12 @@ func (m *GetQuietTimePolicyUsersReportRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getQuietTimePolicyUsersReport
-func (m *GetQuietTimePolicyUsersReportRequestBuilder) PostWithResponseHandler(body GetQuietTimePolicyUsersReportRequestBodyable, requestConfiguration *GetQuietTimePolicyUsersReportRequestBuilderPostRequestConfiguration)(GetQuietTimePolicyUsersReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getQuietTimePolicyUsersReport
+func (m *GetQuietTimePolicyUsersReportRequestBuilder) Post(body GetQuietTimePolicyUsersReportRequestBodyable)(GetQuietTimePolicyUsersReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getQuietTimePolicyUsersReport
-func (m *GetQuietTimePolicyUsersReportRequestBuilder) PostWithResponseHandler(body GetQuietTimePolicyUsersReportRequestBodyable, requestConfiguration *GetQuietTimePolicyUsersReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetQuietTimePolicyUsersReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getQuietTimePolicyUsersReport
+func (m *GetQuietTimePolicyUsersReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetQuietTimePolicyUsersReportRequestBodyable, requestConfiguration *GetQuietTimePolicyUsersReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetQuietTimePolicyUsersReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

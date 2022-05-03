@@ -66,8 +66,8 @@ func NewItemActivityOLDItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewItemActivityOLDItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property activities for sites
-func (m *ItemActivityOLDItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property activities for sites
+func (m *ItemActivityOLDItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property activities for sites
@@ -82,8 +82,8 @@ func (m *ItemActivityOLDItemRequestBuilder) CreateDeleteRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of recent activities that took place on this item.
-func (m *ItemActivityOLDItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of recent activities that took place on this item.
+func (m *ItemActivityOLDItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of recent activities that took place on this item.
@@ -101,8 +101,8 @@ func (m *ItemActivityOLDItemRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property activities in sites
-func (m *ItemActivityOLDItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property activities in sites
+func (m *ItemActivityOLDItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property activities in sites
@@ -118,12 +118,12 @@ func (m *ItemActivityOLDItemRequestBuilder) CreatePatchRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property activities for sites
-func (m *ItemActivityOLDItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ItemActivityOLDItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property activities for sites
+func (m *ItemActivityOLDItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property activities for sites
-func (m *ItemActivityOLDItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ItemActivityOLDItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property activities for sites
+func (m *ItemActivityOLDItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ItemActivityOLDItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -142,12 +142,12 @@ func (m *ItemActivityOLDItemRequestBuilder) DeleteWithResponseHandler(requestCon
 func (m *ItemActivityOLDItemRequestBuilder) DriveItem()(*i5ca32c3bd04fb9965bbc38f3de109a8960050d3a3f005631ef5073bdb7731924.DriveItemRequestBuilder) {
     return i5ca32c3bd04fb9965bbc38f3de109a8960050d3a3f005631ef5073bdb7731924.NewDriveItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the list of recent activities that took place on this item.
-func (m *ItemActivityOLDItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ItemActivityOLDItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of recent activities that took place on this item.
+func (m *ItemActivityOLDItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of recent activities that took place on this item.
-func (m *ItemActivityOLDItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ItemActivityOLDItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of recent activities that took place on this item.
+func (m *ItemActivityOLDItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ItemActivityOLDItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -166,12 +166,12 @@ func (m *ItemActivityOLDItemRequestBuilder) GetWithResponseHandler(requestConfig
 func (m *ItemActivityOLDItemRequestBuilder) ListItem()(*i708d5ae407e15469d01dbf382e329177911f3295f9e2ebbce6562c740692f46a.ListItemRequestBuilder) {
     return i708d5ae407e15469d01dbf382e329177911f3295f9e2ebbce6562c740692f46a.NewListItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property activities in sites
-func (m *ItemActivityOLDItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, requestConfiguration *ItemActivityOLDItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property activities in sites
+func (m *ItemActivityOLDItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property activities in sites
-func (m *ItemActivityOLDItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, requestConfiguration *ItemActivityOLDItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property activities in sites
+func (m *ItemActivityOLDItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, requestConfiguration *ItemActivityOLDItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

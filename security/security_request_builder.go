@@ -18,6 +18,7 @@ import (
     id43f72338affca62b04ede5a8930eef2eacb7985a0d9ba5d084163b59793c1b0 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/securescores"
     id8c8c6e6d2248957fbc7631aef94353af5a458e67dcc26feaa6a1450a99a895c "github.com/microsoftgraph/msgraph-beta-sdk-go/security/ipsecurityprofiles"
     iee2d4af12376b55381e42df8f22c5ffc39043076828fbebb0a459384ee44c9e6 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/attacksimulation"
+    if9426fddcb85c4e3b0dbc38e5f8657c3e8823751cef07a81c4685904e8f6a39a "github.com/microsoftgraph/msgraph-beta-sdk-go/security/cases"
     ife41332ee3198396d805ce9faa05ed3df4e05203fb4e2de40b902e920b0e388f "github.com/microsoftgraph/msgraph-beta-sdk-go/security/informationprotection"
     i02e0bbeb2df2eda7dbc98813d493b8564c05050583278d44a701c5e5b6ef886a "github.com/microsoftgraph/msgraph-beta-sdk-go/security/hostsecurityprofiles/item"
     i0905673ef4d7fa54e4d3f55e349406fd6862ddc6c802fb42ff1e5afa87694e6e "github.com/microsoftgraph/msgraph-beta-sdk-go/security/domainsecurityprofiles/item"
@@ -85,6 +86,10 @@ func (m *SecurityRequestBuilder) AlertsById(id string)(*icf7abdec996315842957a23
 func (m *SecurityRequestBuilder) AttackSimulation()(*iee2d4af12376b55381e42df8f22c5ffc39043076828fbebb0a459384ee44c9e6.AttackSimulationRequestBuilder) {
     return iee2d4af12376b55381e42df8f22c5ffc39043076828fbebb0a459384ee44c9e6.NewAttackSimulationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Cases the cases property
+func (m *SecurityRequestBuilder) Cases()(*if9426fddcb85c4e3b0dbc38e5f8657c3e8823751cef07a81c4685904e8f6a39a.CasesRequestBuilder) {
+    return if9426fddcb85c4e3b0dbc38e5f8657c3e8823751cef07a81c4685904e8f6a39a.NewCasesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // CloudAppSecurityProfiles the cloudAppSecurityProfiles property
 func (m *SecurityRequestBuilder) CloudAppSecurityProfiles()(*i3076976e1c2468886103a1402ff2835f889faba296f1c85ce51c99ee09e38cdc.CloudAppSecurityProfilesRequestBuilder) {
     return i3076976e1c2468886103a1402ff2835f889faba296f1c85ce51c99ee09e38cdc.NewCloudAppSecurityProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -119,8 +124,8 @@ func NewSecurityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration get security
-func (m *SecurityRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get security
+func (m *SecurityRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get security
@@ -138,8 +143,8 @@ func (m *SecurityRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update security
-func (m *SecurityRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update security
+func (m *SecurityRequestBuilder) CreatePatchRequestInformation(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update security
@@ -185,12 +190,12 @@ func (m *SecurityRequestBuilder) FileSecurityProfilesById(id string)(*ic633bb560
     }
     return ic633bb560cd35fd4a473b252391ace288264bc3e0245adcecf45bb4f003dcc2d.NewFileSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GetWithResponseHandler get security
-func (m *SecurityRequestBuilder) GetWithResponseHandler(requestConfiguration *SecurityRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get security
+func (m *SecurityRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get security
-func (m *SecurityRequestBuilder) GetWithResponseHandler(requestConfiguration *SecurityRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable, error) {
+// GetWithRequestConfigurationAndResponseHandler get security
+func (m *SecurityRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SecurityRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -239,12 +244,12 @@ func (m *SecurityRequestBuilder) IpSecurityProfilesById(id string)(*i8366108fde7
     }
     return i8366108fde7cb9abb94de15d00c81b743720ced29144f928fd43323122437c0a.NewIpSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update security
-func (m *SecurityRequestBuilder) PatchWithResponseHandler(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable, requestConfiguration *SecurityRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update security
+func (m *SecurityRequestBuilder) Patch(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update security
-func (m *SecurityRequestBuilder) PatchWithResponseHandler(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable, requestConfiguration *SecurityRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update security
+func (m *SecurityRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable, requestConfiguration *SecurityRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

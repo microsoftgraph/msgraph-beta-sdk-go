@@ -71,8 +71,8 @@ func NewUserExperienceAnalyticsRegressionSummaryRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsRegressionSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsRegressionSummary for deviceManagement
-func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userExperienceAnalyticsRegressionSummary for deviceManagement
+func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsRegressionSummary for deviceManagement
@@ -87,8 +87,8 @@ func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) CreateDeleteReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration user experience analytics regression summary
-func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation user experience analytics regression summary
+func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration user experience analytics regression summary
@@ -106,8 +106,8 @@ func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsRegressionSummary in deviceManagement
-func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userExperienceAnalyticsRegressionSummary in deviceManagement
+func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsRegressionSummary in deviceManagement
@@ -123,12 +123,12 @@ func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) CreatePatchRequ
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsRegressionSummary for deviceManagement
-func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsRegressionSummaryRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userExperienceAnalyticsRegressionSummary for deviceManagement
+func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsRegressionSummary for deviceManagement
-func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsRegressionSummaryRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userExperienceAnalyticsRegressionSummary for deviceManagement
+func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsRegressionSummaryRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -143,12 +143,12 @@ func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) DeleteWithRespo
     }
     return nil
 }
-// GetWithResponseHandler user experience analytics regression summary
-func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsRegressionSummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get user experience analytics regression summary
+func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler user experience analytics regression summary
-func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsRegressionSummaryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler user experience analytics regression summary
+func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsRegressionSummaryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -208,12 +208,12 @@ func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) OperatingSystem
     }
     return ifb56eb83a662054d3af4bc800c85e7a65c5bc3df936f5213775ecdd960ce4123.NewUserExperienceAnalyticsMetricItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsRegressionSummary in deviceManagement
-func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable, requestConfiguration *UserExperienceAnalyticsRegressionSummaryRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userExperienceAnalyticsRegressionSummary in deviceManagement
+func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsRegressionSummary in deviceManagement
-func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable, requestConfiguration *UserExperienceAnalyticsRegressionSummaryRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userExperienceAnalyticsRegressionSummary in deviceManagement
+func (m *UserExperienceAnalyticsRegressionSummaryRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRegressionSummaryable, requestConfiguration *UserExperienceAnalyticsRegressionSummaryRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

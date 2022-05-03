@@ -64,8 +64,8 @@ func NewCloudAppSecurityProfileItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewCloudAppSecurityProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property cloudAppSecurityProfiles for security
-func (m *CloudAppSecurityProfileItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property cloudAppSecurityProfiles for security
+func (m *CloudAppSecurityProfileItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property cloudAppSecurityProfiles for security
@@ -80,8 +80,8 @@ func (m *CloudAppSecurityProfileItemRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get cloudAppSecurityProfiles from security
-func (m *CloudAppSecurityProfileItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get cloudAppSecurityProfiles from security
+func (m *CloudAppSecurityProfileItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get cloudAppSecurityProfiles from security
@@ -99,8 +99,8 @@ func (m *CloudAppSecurityProfileItemRequestBuilder) CreateGetRequestInformationW
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property cloudAppSecurityProfiles in security
-func (m *CloudAppSecurityProfileItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property cloudAppSecurityProfiles in security
+func (m *CloudAppSecurityProfileItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property cloudAppSecurityProfiles in security
@@ -116,12 +116,12 @@ func (m *CloudAppSecurityProfileItemRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property cloudAppSecurityProfiles for security
-func (m *CloudAppSecurityProfileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CloudAppSecurityProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property cloudAppSecurityProfiles for security
+func (m *CloudAppSecurityProfileItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property cloudAppSecurityProfiles for security
-func (m *CloudAppSecurityProfileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CloudAppSecurityProfileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property cloudAppSecurityProfiles for security
+func (m *CloudAppSecurityProfileItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *CloudAppSecurityProfileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *CloudAppSecurityProfileItemRequestBuilder) DeleteWithResponseHandler(re
     }
     return nil
 }
-// GetWithResponseHandler get cloudAppSecurityProfiles from security
-func (m *CloudAppSecurityProfileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CloudAppSecurityProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get cloudAppSecurityProfiles from security
+func (m *CloudAppSecurityProfileItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get cloudAppSecurityProfiles from security
-func (m *CloudAppSecurityProfileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CloudAppSecurityProfileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable, error) {
+// GetWithRequestConfigurationAndResponseHandler get cloudAppSecurityProfiles from security
+func (m *CloudAppSecurityProfileItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CloudAppSecurityProfileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *CloudAppSecurityProfileItemRequestBuilder) GetWithResponseHandler(reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable), nil
 }
-// PatchWithResponseHandler update the navigation property cloudAppSecurityProfiles in security
-func (m *CloudAppSecurityProfileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable, requestConfiguration *CloudAppSecurityProfileItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property cloudAppSecurityProfiles in security
+func (m *CloudAppSecurityProfileItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property cloudAppSecurityProfiles in security
-func (m *CloudAppSecurityProfileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable, requestConfiguration *CloudAppSecurityProfileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property cloudAppSecurityProfiles in security
+func (m *CloudAppSecurityProfileItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable, requestConfiguration *CloudAppSecurityProfileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

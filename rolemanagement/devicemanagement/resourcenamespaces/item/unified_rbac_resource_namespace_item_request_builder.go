@@ -67,8 +67,8 @@ func NewUnifiedRbacResourceNamespaceItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRbacResourceNamespaceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property resourceNamespaces for roleManagement
-func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property resourceNamespaces for roleManagement
+func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property resourceNamespaces for roleManagement
@@ -83,8 +83,8 @@ func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get resourceNamespaces from roleManagement
-func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get resourceNamespaces from roleManagement
+func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get resourceNamespaces from roleManagement
@@ -102,8 +102,8 @@ func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property resourceNamespaces in roleManagement
-func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property resourceNamespaces in roleManagement
+func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property resourceNamespaces in roleManagement
@@ -119,12 +119,12 @@ func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property resourceNamespaces for roleManagement
-func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UnifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property resourceNamespaces for roleManagement
+func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property resourceNamespaces for roleManagement
-func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UnifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property resourceNamespaces for roleManagement
+func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -139,12 +139,12 @@ func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) DeleteWithResponseHandl
     }
     return nil
 }
-// GetWithResponseHandler get resourceNamespaces from roleManagement
-func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UnifiedRbacResourceNamespaceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get resourceNamespaces from roleManagement
+func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get resourceNamespaces from roleManagement
-func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UnifiedRbacResourceNamespaceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, error) {
+// GetWithRequestConfigurationAndResponseHandler get resourceNamespaces from roleManagement
+func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRbacResourceNamespaceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -163,12 +163,12 @@ func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) GetWithResponseHandler(
 func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) ImportResourceActions()(*i364de94ee12d8f96dc648e7c3741312fd56499dc3a23d0298bc8da59cf990f04.ImportResourceActionsRequestBuilder) {
     return i364de94ee12d8f96dc648e7c3741312fd56499dc3a23d0298bc8da59cf990f04.NewImportResourceActionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property resourceNamespaces in roleManagement
-func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, requestConfiguration *UnifiedRbacResourceNamespaceItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property resourceNamespaces in roleManagement
+func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property resourceNamespaces in roleManagement
-func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, requestConfiguration *UnifiedRbacResourceNamespaceItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property resourceNamespaces in roleManagement
+func (m *UnifiedRbacResourceNamespaceItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, requestConfiguration *UnifiedRbacResourceNamespaceItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

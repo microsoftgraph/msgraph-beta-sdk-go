@@ -40,8 +40,8 @@ func NewGetNotebookFromWebUrlRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewGetNotebookFromWebUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getNotebookFromWebUrl
-func (m *GetNotebookFromWebUrlRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetNotebookFromWebUrlRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getNotebookFromWebUrl
+func (m *GetNotebookFromWebUrlRequestBuilder) CreatePostRequestInformation(body GetNotebookFromWebUrlRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getNotebookFromWebUrl
@@ -57,12 +57,12 @@ func (m *GetNotebookFromWebUrlRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getNotebookFromWebUrl
-func (m *GetNotebookFromWebUrlRequestBuilder) PostWithResponseHandler(body GetNotebookFromWebUrlRequestBodyable, requestConfiguration *GetNotebookFromWebUrlRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CopyNotebookModelable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getNotebookFromWebUrl
+func (m *GetNotebookFromWebUrlRequestBuilder) Post(body GetNotebookFromWebUrlRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CopyNotebookModelable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getNotebookFromWebUrl
-func (m *GetNotebookFromWebUrlRequestBuilder) PostWithResponseHandler(body GetNotebookFromWebUrlRequestBodyable, requestConfiguration *GetNotebookFromWebUrlRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CopyNotebookModelable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getNotebookFromWebUrl
+func (m *GetNotebookFromWebUrlRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetNotebookFromWebUrlRequestBodyable, requestConfiguration *GetNotebookFromWebUrlRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CopyNotebookModelable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

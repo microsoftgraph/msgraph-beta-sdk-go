@@ -64,8 +64,8 @@ func NewB2cAuthenticationMethodsPolicyRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewB2cAuthenticationMethodsPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property b2cAuthenticationMethodsPolicy for policies
-func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property b2cAuthenticationMethodsPolicy for policies
+func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property b2cAuthenticationMethodsPolicy for policies
@@ -80,8 +80,8 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the Azure AD B2C policies that define how end users register via local accounts.
-func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the Azure AD B2C policies that define how end users register via local accounts.
+func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the Azure AD B2C policies that define how end users register via local accounts.
@@ -99,8 +99,8 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property b2cAuthenticationMethodsPolicy in policies
-func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property b2cAuthenticationMethodsPolicy in policies
+func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property b2cAuthenticationMethodsPolicy in policies
@@ -116,12 +116,12 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property b2cAuthenticationMethodsPolicy for policies
-func (m *B2cAuthenticationMethodsPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property b2cAuthenticationMethodsPolicy for policies
+func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property b2cAuthenticationMethodsPolicy for policies
-func (m *B2cAuthenticationMethodsPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property b2cAuthenticationMethodsPolicy for policies
+func (m *B2cAuthenticationMethodsPolicyRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) DeleteWithResponseHandler
     }
     return nil
 }
-// GetWithResponseHandler the Azure AD B2C policies that define how end users register via local accounts.
-func (m *B2cAuthenticationMethodsPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the Azure AD B2C policies that define how end users register via local accounts.
+func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the Azure AD B2C policies that define how end users register via local accounts.
-func (m *B2cAuthenticationMethodsPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler the Azure AD B2C policies that define how end users register via local accounts.
+func (m *B2cAuthenticationMethodsPolicyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) GetWithResponseHandler(re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable), nil
 }
-// PatchWithResponseHandler update the navigation property b2cAuthenticationMethodsPolicy in policies
-func (m *B2cAuthenticationMethodsPolicyRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property b2cAuthenticationMethodsPolicy in policies
+func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property b2cAuthenticationMethodsPolicy in policies
-func (m *B2cAuthenticationMethodsPolicyRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property b2cAuthenticationMethodsPolicy in policies
+func (m *B2cAuthenticationMethodsPolicyRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

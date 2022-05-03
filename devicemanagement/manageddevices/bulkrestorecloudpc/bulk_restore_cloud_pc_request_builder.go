@@ -40,8 +40,8 @@ func NewBulkRestoreCloudPcRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewBulkRestoreCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action bulkRestoreCloudPc
-func (m *BulkRestoreCloudPcRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body BulkRestoreCloudPcRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action bulkRestoreCloudPc
+func (m *BulkRestoreCloudPcRequestBuilder) CreatePostRequestInformation(body BulkRestoreCloudPcRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action bulkRestoreCloudPc
@@ -57,12 +57,12 @@ func (m *BulkRestoreCloudPcRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action bulkRestoreCloudPc
-func (m *BulkRestoreCloudPcRequestBuilder) PostWithResponseHandler(body BulkRestoreCloudPcRequestBodyable, requestConfiguration *BulkRestoreCloudPcRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action bulkRestoreCloudPc
+func (m *BulkRestoreCloudPcRequestBuilder) Post(body BulkRestoreCloudPcRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action bulkRestoreCloudPc
-func (m *BulkRestoreCloudPcRequestBuilder) PostWithResponseHandler(body BulkRestoreCloudPcRequestBodyable, requestConfiguration *BulkRestoreCloudPcRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action bulkRestoreCloudPc
+func (m *BulkRestoreCloudPcRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body BulkRestoreCloudPcRequestBodyable, requestConfiguration *BulkRestoreCloudPcRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

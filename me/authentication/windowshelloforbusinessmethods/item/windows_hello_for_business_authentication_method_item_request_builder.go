@@ -65,8 +65,8 @@ func NewWindowsHelloForBusinessAuthenticationMethodItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsHelloForBusinessAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsHelloForBusinessMethods for me
-func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property windowsHelloForBusinessMethods for me
+func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsHelloForBusinessMethods for me
@@ -81,8 +81,8 @@ func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) CreateDe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the Windows Hello for Business authentication method registered to a user for authentication.
-func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents the Windows Hello for Business authentication method registered to a user for authentication.
+func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents the Windows Hello for Business authentication method registered to a user for authentication.
@@ -100,8 +100,8 @@ func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) CreateGe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsHelloForBusinessMethods in me
-func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsHelloForBusinessAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property windowsHelloForBusinessMethods in me
+func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsHelloForBusinessAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsHelloForBusinessMethods in me
@@ -117,12 +117,12 @@ func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) CreatePa
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property windowsHelloForBusinessMethods for me
-func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property windowsHelloForBusinessMethods for me
+func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property windowsHelloForBusinessMethods for me
-func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property windowsHelloForBusinessMethods for me
+func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -141,12 +141,12 @@ func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) DeleteWi
 func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) Device()(*i4f9db3ce868389e1f5235eb54ab431b059ccaf6e498c4773259c3da435589ddc.DeviceRequestBuilder) {
     return i4f9db3ce868389e1f5235eb54ab431b059ccaf6e498c4773259c3da435589ddc.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler represents the Windows Hello for Business authentication method registered to a user for authentication.
-func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsHelloForBusinessAuthenticationMethodable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents the Windows Hello for Business authentication method registered to a user for authentication.
+func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsHelloForBusinessAuthenticationMethodable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents the Windows Hello for Business authentication method registered to a user for authentication.
-func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsHelloForBusinessAuthenticationMethodable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents the Windows Hello for Business authentication method registered to a user for authentication.
+func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsHelloForBusinessAuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -161,12 +161,12 @@ func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) GetWithR
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsHelloForBusinessAuthenticationMethodable), nil
 }
-// PatchWithResponseHandler update the navigation property windowsHelloForBusinessMethods in me
-func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsHelloForBusinessAuthenticationMethodable, requestConfiguration *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property windowsHelloForBusinessMethods in me
+func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsHelloForBusinessAuthenticationMethodable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property windowsHelloForBusinessMethods in me
-func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsHelloForBusinessAuthenticationMethodable, requestConfiguration *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property windowsHelloForBusinessMethods in me
+func (m *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsHelloForBusinessAuthenticationMethodable, requestConfiguration *WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

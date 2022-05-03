@@ -39,8 +39,8 @@ func NewGetDownloadUrlRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewGetDownloadUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getDownloadUrl
-func (m *GetDownloadUrlRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getDownloadUrl
+func (m *GetDownloadUrlRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getDownloadUrl
@@ -55,12 +55,12 @@ func (m *GetDownloadUrlRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getDownloadUrl
-func (m *GetDownloadUrlRequestBuilder) GetWithResponseHandler(requestConfiguration *GetDownloadUrlRequestBuilderGetRequestConfiguration)(GetDownloadUrlResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getDownloadUrl
+func (m *GetDownloadUrlRequestBuilder) Get()(GetDownloadUrlResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getDownloadUrl
-func (m *GetDownloadUrlRequestBuilder) GetWithResponseHandler(requestConfiguration *GetDownloadUrlRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetDownloadUrlResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getDownloadUrl
+func (m *GetDownloadUrlRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetDownloadUrlRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetDownloadUrlResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -74,8 +74,8 @@ func NewAppManagementPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *AppManagementPoliciesRequestBuilder) Count()(*i7f7c5d9642909cd26525cc2916fe42bbbbaa2f6b5d2374a1774ed7aef7582bc0.CountRequestBuilder) {
     return i7f7c5d9642909cd26525cc2916fe42bbbbaa2f6b5d2374a1774ed7aef7582bc0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
-func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
@@ -93,8 +93,8 @@ func (m *AppManagementPoliciesRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to appManagementPolicies for policies
-func (m *AppManagementPoliciesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to appManagementPolicies for policies
+func (m *AppManagementPoliciesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to appManagementPolicies for policies
@@ -110,12 +110,12 @@ func (m *AppManagementPoliciesRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
-func (m *AppManagementPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *AppManagementPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+func (m *AppManagementPoliciesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
-func (m *AppManagementPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *AppManagementPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+func (m *AppManagementPoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AppManagementPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AppManagementPoliciesRequestBuilder) GetWithResponseHandler(requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to appManagementPolicies for policies
-func (m *AppManagementPoliciesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, requestConfiguration *AppManagementPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to appManagementPolicies for policies
+func (m *AppManagementPoliciesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to appManagementPolicies for policies
-func (m *AppManagementPoliciesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, requestConfiguration *AppManagementPoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to appManagementPolicies for policies
+func (m *AppManagementPoliciesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, requestConfiguration *AppManagementPoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

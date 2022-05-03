@@ -39,8 +39,8 @@ func NewCompleteSetupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewCompleteSetupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action completeSetup
-func (m *CompleteSetupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CompleteSetupRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action completeSetup
+func (m *CompleteSetupRequestBuilder) CreatePostRequestInformation(body CompleteSetupRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action completeSetup
@@ -56,12 +56,12 @@ func (m *CompleteSetupRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action completeSetup
-func (m *CompleteSetupRequestBuilder) PostWithResponseHandler(body CompleteSetupRequestBodyable, requestConfiguration *CompleteSetupRequestBuilderPostRequestConfiguration)(CompleteSetupResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action completeSetup
+func (m *CompleteSetupRequestBuilder) Post(body CompleteSetupRequestBodyable)(CompleteSetupResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action completeSetup
-func (m *CompleteSetupRequestBuilder) PostWithResponseHandler(body CompleteSetupRequestBodyable, requestConfiguration *CompleteSetupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CompleteSetupResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action completeSetup
+func (m *CompleteSetupRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CompleteSetupRequestBodyable, requestConfiguration *CompleteSetupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CompleteSetupResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

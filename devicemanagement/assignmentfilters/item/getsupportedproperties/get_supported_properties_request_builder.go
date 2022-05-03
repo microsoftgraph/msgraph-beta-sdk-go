@@ -39,8 +39,8 @@ func NewGetSupportedPropertiesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewGetSupportedPropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getSupportedProperties
-func (m *GetSupportedPropertiesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getSupportedProperties
+func (m *GetSupportedPropertiesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getSupportedProperties
@@ -55,12 +55,12 @@ func (m *GetSupportedPropertiesRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getSupportedProperties
-func (m *GetSupportedPropertiesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSupportedPropertiesRequestBuilderGetRequestConfiguration)(GetSupportedPropertiesResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getSupportedProperties
+func (m *GetSupportedPropertiesRequestBuilder) Get()(GetSupportedPropertiesResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getSupportedProperties
-func (m *GetSupportedPropertiesRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSupportedPropertiesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSupportedPropertiesResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getSupportedProperties
+func (m *GetSupportedPropertiesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSupportedPropertiesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSupportedPropertiesResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

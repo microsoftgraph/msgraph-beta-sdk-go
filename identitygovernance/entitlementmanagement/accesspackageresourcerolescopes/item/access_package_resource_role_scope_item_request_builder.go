@@ -74,8 +74,8 @@ func NewAccessPackageResourceRoleScopeItemRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourceRoleScopeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property accessPackageResourceRoleScopes for identityGovernance
-func (m *AccessPackageResourceRoleScopeItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property accessPackageResourceRoleScopes for identityGovernance
+func (m *AccessPackageResourceRoleScopeItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property accessPackageResourceRoleScopes for identityGovernance
@@ -90,8 +90,8 @@ func (m *AccessPackageResourceRoleScopeItemRequestBuilder) CreateDeleteRequestIn
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration a reference to both a scope within a resource, and a role in that resource for that scope.
-func (m *AccessPackageResourceRoleScopeItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a reference to both a scope within a resource, and a role in that resource for that scope.
+func (m *AccessPackageResourceRoleScopeItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a reference to both a scope within a resource, and a role in that resource for that scope.
@@ -109,8 +109,8 @@ func (m *AccessPackageResourceRoleScopeItemRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property accessPackageResourceRoleScopes in identityGovernance
-func (m *AccessPackageResourceRoleScopeItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property accessPackageResourceRoleScopes in identityGovernance
+func (m *AccessPackageResourceRoleScopeItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property accessPackageResourceRoleScopes in identityGovernance
@@ -126,12 +126,12 @@ func (m *AccessPackageResourceRoleScopeItemRequestBuilder) CreatePatchRequestInf
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property accessPackageResourceRoleScopes for identityGovernance
-func (m *AccessPackageResourceRoleScopeItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AccessPackageResourceRoleScopeItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property accessPackageResourceRoleScopes for identityGovernance
+func (m *AccessPackageResourceRoleScopeItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property accessPackageResourceRoleScopes for identityGovernance
-func (m *AccessPackageResourceRoleScopeItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AccessPackageResourceRoleScopeItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property accessPackageResourceRoleScopes for identityGovernance
+func (m *AccessPackageResourceRoleScopeItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageResourceRoleScopeItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -146,12 +146,12 @@ func (m *AccessPackageResourceRoleScopeItemRequestBuilder) DeleteWithResponseHan
     }
     return nil
 }
-// GetWithResponseHandler a reference to both a scope within a resource, and a role in that resource for that scope.
-func (m *AccessPackageResourceRoleScopeItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageResourceRoleScopeItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a reference to both a scope within a resource, and a role in that resource for that scope.
+func (m *AccessPackageResourceRoleScopeItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a reference to both a scope within a resource, and a role in that resource for that scope.
-func (m *AccessPackageResourceRoleScopeItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageResourceRoleScopeItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeable, error) {
+// GetWithRequestConfigurationAndResponseHandler a reference to both a scope within a resource, and a role in that resource for that scope.
+func (m *AccessPackageResourceRoleScopeItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageResourceRoleScopeItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -166,12 +166,12 @@ func (m *AccessPackageResourceRoleScopeItemRequestBuilder) GetWithResponseHandle
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeable), nil
 }
-// PatchWithResponseHandler update the navigation property accessPackageResourceRoleScopes in identityGovernance
-func (m *AccessPackageResourceRoleScopeItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeable, requestConfiguration *AccessPackageResourceRoleScopeItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property accessPackageResourceRoleScopes in identityGovernance
+func (m *AccessPackageResourceRoleScopeItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property accessPackageResourceRoleScopes in identityGovernance
-func (m *AccessPackageResourceRoleScopeItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeable, requestConfiguration *AccessPackageResourceRoleScopeItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property accessPackageResourceRoleScopes in identityGovernance
+func (m *AccessPackageResourceRoleScopeItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeable, requestConfiguration *AccessPackageResourceRoleScopeItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

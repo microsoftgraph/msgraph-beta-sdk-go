@@ -39,8 +39,8 @@ func NewRecordDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewRecordDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action recordDecisions
-func (m *RecordDecisionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RecordDecisionsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action recordDecisions
+func (m *RecordDecisionsRequestBuilder) CreatePostRequestInformation(body RecordDecisionsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action recordDecisions
@@ -56,12 +56,12 @@ func (m *RecordDecisionsRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action recordDecisions
-func (m *RecordDecisionsRequestBuilder) PostWithResponseHandler(body RecordDecisionsRequestBodyable, requestConfiguration *RecordDecisionsRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action recordDecisions
+func (m *RecordDecisionsRequestBuilder) Post(body RecordDecisionsRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action recordDecisions
-func (m *RecordDecisionsRequestBuilder) PostWithResponseHandler(body RecordDecisionsRequestBodyable, requestConfiguration *RecordDecisionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action recordDecisions
+func (m *RecordDecisionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RecordDecisionsRequestBodyable, requestConfiguration *RecordDecisionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

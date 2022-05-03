@@ -67,8 +67,8 @@ func NewUserFlowIdentityProvidersRequestBuilder(rawUrl string, requestAdapter i2
 func (m *UserFlowIdentityProvidersRequestBuilder) Count()(*ifd8e3433cf23d063beca03199da97ae8f05d7164ba72b225cee8185b403f71f9.CountRequestBuilder) {
     return ifd8e3433cf23d063beca03199da97ae8f05d7164ba72b225cee8185b403f71f9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get userFlowIdentityProviders from identity
-func (m *UserFlowIdentityProvidersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get userFlowIdentityProviders from identity
+func (m *UserFlowIdentityProvidersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get userFlowIdentityProviders from identity
@@ -86,12 +86,12 @@ func (m *UserFlowIdentityProvidersRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get userFlowIdentityProviders from identity
-func (m *UserFlowIdentityProvidersRequestBuilder) GetWithResponseHandler(requestConfiguration *UserFlowIdentityProvidersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get userFlowIdentityProviders from identity
+func (m *UserFlowIdentityProvidersRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get userFlowIdentityProviders from identity
-func (m *UserFlowIdentityProvidersRequestBuilder) GetWithResponseHandler(requestConfiguration *UserFlowIdentityProvidersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get userFlowIdentityProviders from identity
+func (m *UserFlowIdentityProvidersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserFlowIdentityProvidersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

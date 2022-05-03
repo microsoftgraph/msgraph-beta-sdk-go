@@ -64,8 +64,8 @@ func NewUserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsDeviceStartupProcesses for deviceManagement
-func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userExperienceAnalyticsDeviceStartupProcesses for deviceManagement
+func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsDeviceStartupProcesses for deviceManagement
@@ -80,8 +80,8 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) CreateDe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration user experience analytics device Startup Processes
-func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation user experience analytics device Startup Processes
+func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration user experience analytics device Startup Processes
@@ -99,8 +99,8 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) CreateGe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsDeviceStartupProcesses in deviceManagement
-func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceStartupProcessable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userExperienceAnalyticsDeviceStartupProcesses in deviceManagement
+func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceStartupProcessable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsDeviceStartupProcesses in deviceManagement
@@ -116,12 +116,12 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) CreatePa
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsDeviceStartupProcesses for deviceManagement
-func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userExperienceAnalyticsDeviceStartupProcesses for deviceManagement
+func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsDeviceStartupProcesses for deviceManagement
-func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userExperienceAnalyticsDeviceStartupProcesses for deviceManagement
+func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) DeleteWi
     }
     return nil
 }
-// GetWithResponseHandler user experience analytics device Startup Processes
-func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceStartupProcessable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get user experience analytics device Startup Processes
+func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceStartupProcessable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler user experience analytics device Startup Processes
-func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceStartupProcessable, error) {
+// GetWithRequestConfigurationAndResponseHandler user experience analytics device Startup Processes
+func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceStartupProcessable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) GetWithR
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceStartupProcessable), nil
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsDeviceStartupProcesses in deviceManagement
-func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceStartupProcessable, requestConfiguration *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userExperienceAnalyticsDeviceStartupProcesses in deviceManagement
+func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceStartupProcessable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsDeviceStartupProcesses in deviceManagement
-func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceStartupProcessable, requestConfiguration *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userExperienceAnalyticsDeviceStartupProcesses in deviceManagement
+func (m *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceStartupProcessable, requestConfiguration *UserExperienceAnalyticsDeviceStartupProcessItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

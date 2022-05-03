@@ -67,8 +67,8 @@ func NewOwnedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *OwnedObjectsRequestBuilder) Count()(*i6abdeca92b8bcaac9f60823fd72189369671d17efbcbb21d501d3073582f37fc.CountRequestBuilder) {
     return i6abdeca92b8bcaac9f60823fd72189369671d17efbcbb21d501d3073582f37fc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-func (m *OwnedObjectsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+func (m *OwnedObjectsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
@@ -86,12 +86,12 @@ func (m *OwnedObjectsRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-func (m *OwnedObjectsRequestBuilder) GetWithResponseHandler(requestConfiguration *OwnedObjectsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+func (m *OwnedObjectsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-func (m *OwnedObjectsRequestBuilder) GetWithResponseHandler(requestConfiguration *OwnedObjectsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+func (m *OwnedObjectsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OwnedObjectsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

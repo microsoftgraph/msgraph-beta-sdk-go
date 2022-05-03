@@ -50,8 +50,8 @@ func NewItemActivityOLDItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewItemActivityOLDItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of recent activities that took place on this item.
-func (m *ItemActivityOLDItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of recent activities that took place on this item.
+func (m *ItemActivityOLDItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of recent activities that took place on this item.
@@ -69,12 +69,12 @@ func (m *ItemActivityOLDItemRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the list of recent activities that took place on this item.
-func (m *ItemActivityOLDItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ItemActivityOLDItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of recent activities that took place on this item.
+func (m *ItemActivityOLDItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of recent activities that took place on this item.
-func (m *ItemActivityOLDItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ItemActivityOLDItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of recent activities that took place on this item.
+func (m *ItemActivityOLDItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ItemActivityOLDItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

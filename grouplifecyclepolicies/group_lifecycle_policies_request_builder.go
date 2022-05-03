@@ -75,8 +75,8 @@ func NewGroupLifecyclePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *GroupLifecyclePoliciesRequestBuilder) Count()(*i9890bcce0426f96fd44b7f68219bfafba7f5dc0822f0d98ce5aae660f8ad0c1b.CountRequestBuilder) {
     return i9890bcce0426f96fd44b7f68219bfafba7f5dc0822f0d98ce5aae660f8ad0c1b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from groupLifecyclePolicies
-func (m *GroupLifecyclePoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from groupLifecyclePolicies
+func (m *GroupLifecyclePoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from groupLifecyclePolicies
@@ -94,8 +94,8 @@ func (m *GroupLifecyclePoliciesRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to groupLifecyclePolicies
-func (m *GroupLifecyclePoliciesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to groupLifecyclePolicies
+func (m *GroupLifecyclePoliciesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to groupLifecyclePolicies
@@ -111,12 +111,12 @@ func (m *GroupLifecyclePoliciesRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get entities from groupLifecyclePolicies
-func (m *GroupLifecyclePoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entities from groupLifecyclePolicies
+func (m *GroupLifecyclePoliciesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entities from groupLifecyclePolicies
-func (m *GroupLifecyclePoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from groupLifecyclePolicies
+func (m *GroupLifecyclePoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -131,12 +131,12 @@ func (m *GroupLifecyclePoliciesRequestBuilder) GetWithResponseHandler(requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyCollectionResponseable), nil
 }
-// PostWithResponseHandler add new entity to groupLifecyclePolicies
-func (m *GroupLifecyclePoliciesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable, requestConfiguration *GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to groupLifecyclePolicies
+func (m *GroupLifecyclePoliciesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to groupLifecyclePolicies
-func (m *GroupLifecyclePoliciesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable, requestConfiguration *GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to groupLifecyclePolicies
+func (m *GroupLifecyclePoliciesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable, requestConfiguration *GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

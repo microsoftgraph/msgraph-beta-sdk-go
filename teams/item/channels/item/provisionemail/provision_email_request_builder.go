@@ -40,8 +40,8 @@ func NewProvisionEmailRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewProvisionEmailRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action provisionEmail
-func (m *ProvisionEmailRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action provisionEmail
+func (m *ProvisionEmailRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action provisionEmail
@@ -56,12 +56,12 @@ func (m *ProvisionEmailRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action provisionEmail
-func (m *ProvisionEmailRequestBuilder) PostWithResponseHandler(requestConfiguration *ProvisionEmailRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisionChannelEmailResultable, error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action provisionEmail
+func (m *ProvisionEmailRequestBuilder) Post()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisionChannelEmailResultable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action provisionEmail
-func (m *ProvisionEmailRequestBuilder) PostWithResponseHandler(requestConfiguration *ProvisionEmailRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisionChannelEmailResultable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action provisionEmail
+func (m *ProvisionEmailRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *ProvisionEmailRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisionChannelEmailResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

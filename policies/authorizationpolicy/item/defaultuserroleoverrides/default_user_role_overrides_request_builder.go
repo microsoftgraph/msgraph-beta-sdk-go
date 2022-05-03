@@ -74,8 +74,8 @@ func NewDefaultUserRoleOverridesRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *DefaultUserRoleOverridesRequestBuilder) Count()(*i78255ef2c28113eb7f96403c35ee50698f56198171845d0b383560c73aaed374.CountRequestBuilder) {
     return i78255ef2c28113eb7f96403c35ee50698f56198171845d0b383560c73aaed374.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get defaultUserRoleOverrides from policies
-func (m *DefaultUserRoleOverridesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get defaultUserRoleOverrides from policies
+func (m *DefaultUserRoleOverridesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get defaultUserRoleOverrides from policies
@@ -93,8 +93,8 @@ func (m *DefaultUserRoleOverridesRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to defaultUserRoleOverrides for policies
-func (m *DefaultUserRoleOverridesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to defaultUserRoleOverrides for policies
+func (m *DefaultUserRoleOverridesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to defaultUserRoleOverrides for policies
@@ -110,12 +110,12 @@ func (m *DefaultUserRoleOverridesRequestBuilder) CreatePostRequestInformationWit
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get defaultUserRoleOverrides from policies
-func (m *DefaultUserRoleOverridesRequestBuilder) GetWithResponseHandler(requestConfiguration *DefaultUserRoleOverridesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get defaultUserRoleOverrides from policies
+func (m *DefaultUserRoleOverridesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get defaultUserRoleOverrides from policies
-func (m *DefaultUserRoleOverridesRequestBuilder) GetWithResponseHandler(requestConfiguration *DefaultUserRoleOverridesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get defaultUserRoleOverrides from policies
+func (m *DefaultUserRoleOverridesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DefaultUserRoleOverridesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *DefaultUserRoleOverridesRequestBuilder) GetWithResponseHandler(requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to defaultUserRoleOverrides for policies
-func (m *DefaultUserRoleOverridesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideable, requestConfiguration *DefaultUserRoleOverridesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to defaultUserRoleOverrides for policies
+func (m *DefaultUserRoleOverridesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to defaultUserRoleOverrides for policies
-func (m *DefaultUserRoleOverridesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideable, requestConfiguration *DefaultUserRoleOverridesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to defaultUserRoleOverrides for policies
+func (m *DefaultUserRoleOverridesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideable, requestConfiguration *DefaultUserRoleOverridesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DefaultUserRoleOverrideable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

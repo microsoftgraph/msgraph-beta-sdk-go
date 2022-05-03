@@ -50,8 +50,8 @@ func NewConversationMemberItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewConversationMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of team members who have access to the shared channel.
-func (m *ConversationMemberItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a collection of team members who have access to the shared channel.
+func (m *ConversationMemberItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a collection of team members who have access to the shared channel.
@@ -69,12 +69,12 @@ func (m *ConversationMemberItemRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler a collection of team members who have access to the shared channel.
-func (m *ConversationMemberItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ConversationMemberItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a collection of team members who have access to the shared channel.
+func (m *ConversationMemberItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a collection of team members who have access to the shared channel.
-func (m *ConversationMemberItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ConversationMemberItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, error) {
+// GetWithRequestConfigurationAndResponseHandler a collection of team members who have access to the shared channel.
+func (m *ConversationMemberItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ConversationMemberItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

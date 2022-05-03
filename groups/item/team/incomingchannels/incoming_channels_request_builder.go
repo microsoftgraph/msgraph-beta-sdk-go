@@ -67,8 +67,8 @@ func NewIncomingChannelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *IncomingChannelsRequestBuilder) Count()(*i6bef8559a93f3c7ad8af6235e4277107b757082d4464be21a5450d5eb1d46c0f.CountRequestBuilder) {
     return i6bef8559a93f3c7ad8af6235e4277107b757082d4464be21a5450d5eb1d46c0f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get incomingChannels from groups
-func (m *IncomingChannelsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get incomingChannels from groups
+func (m *IncomingChannelsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get incomingChannels from groups
@@ -86,12 +86,12 @@ func (m *IncomingChannelsRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get incomingChannels from groups
-func (m *IncomingChannelsRequestBuilder) GetWithResponseHandler(requestConfiguration *IncomingChannelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get incomingChannels from groups
+func (m *IncomingChannelsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get incomingChannels from groups
-func (m *IncomingChannelsRequestBuilder) GetWithResponseHandler(requestConfiguration *IncomingChannelsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get incomingChannels from groups
+func (m *IncomingChannelsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IncomingChannelsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

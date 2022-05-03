@@ -43,8 +43,8 @@ func NewGetByPathWithPathRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewGetByPathWithPathRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getByPath
-func (m *GetByPathWithPathRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getByPath
+func (m *GetByPathWithPathRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getByPath
@@ -59,12 +59,12 @@ func (m *GetByPathWithPathRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getByPath
-func (m *GetByPathWithPathRequestBuilder) GetWithResponseHandler(requestConfiguration *GetByPathWithPathRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getByPath
+func (m *GetByPathWithPathRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getByPath
-func (m *GetByPathWithPathRequestBuilder) GetWithResponseHandler(requestConfiguration *GetByPathWithPathRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getByPath
+func (m *GetByPathWithPathRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetByPathWithPathRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

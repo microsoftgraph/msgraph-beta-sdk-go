@@ -39,8 +39,8 @@ func NewValidateXmlRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewValidateXmlRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action validateXml
-func (m *ValidateXmlRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ValidateXmlRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action validateXml
+func (m *ValidateXmlRequestBuilder) CreatePostRequestInformation(body ValidateXmlRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action validateXml
@@ -56,12 +56,12 @@ func (m *ValidateXmlRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action validateXml
-func (m *ValidateXmlRequestBuilder) PostWithResponseHandler(body ValidateXmlRequestBodyable, requestConfiguration *ValidateXmlRequestBuilderPostRequestConfiguration)(ValidateXmlResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action validateXml
+func (m *ValidateXmlRequestBuilder) Post(body ValidateXmlRequestBodyable)(ValidateXmlResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action validateXml
-func (m *ValidateXmlRequestBuilder) PostWithResponseHandler(body ValidateXmlRequestBodyable, requestConfiguration *ValidateXmlRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ValidateXmlResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action validateXml
+func (m *ValidateXmlRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ValidateXmlRequestBodyable, requestConfiguration *ValidateXmlRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ValidateXmlResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

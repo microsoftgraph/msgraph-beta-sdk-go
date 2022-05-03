@@ -71,8 +71,8 @@ func NewUserAppInstallStatusItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewUserAppInstallStatusItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userStatuses for deviceAppManagement
-func (m *UserAppInstallStatusItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userStatuses for deviceAppManagement
+func (m *UserAppInstallStatusItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userStatuses for deviceAppManagement
@@ -87,8 +87,8 @@ func (m *UserAppInstallStatusItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of installation states for this mobile app.
-func (m *UserAppInstallStatusItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of installation states for this mobile app.
+func (m *UserAppInstallStatusItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of installation states for this mobile app.
@@ -106,8 +106,8 @@ func (m *UserAppInstallStatusItemRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userStatuses in deviceAppManagement
-func (m *UserAppInstallStatusItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userStatuses in deviceAppManagement
+func (m *UserAppInstallStatusItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userStatuses in deviceAppManagement
@@ -123,12 +123,12 @@ func (m *UserAppInstallStatusItemRequestBuilder) CreatePatchRequestInformationWi
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userStatuses for deviceAppManagement
-func (m *UserAppInstallStatusItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserAppInstallStatusItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userStatuses for deviceAppManagement
+func (m *UserAppInstallStatusItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userStatuses for deviceAppManagement
-func (m *UserAppInstallStatusItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserAppInstallStatusItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userStatuses for deviceAppManagement
+func (m *UserAppInstallStatusItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserAppInstallStatusItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -158,12 +158,12 @@ func (m *UserAppInstallStatusItemRequestBuilder) DeviceStatusesById(id string)(*
     }
     return i52b737a53d0c03e6a268168d1f82ff2bdff242cee05a2ee607462da8e246d8ba.NewMobileAppInstallStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GetWithResponseHandler the list of installation states for this mobile app.
-func (m *UserAppInstallStatusItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserAppInstallStatusItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of installation states for this mobile app.
+func (m *UserAppInstallStatusItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of installation states for this mobile app.
-func (m *UserAppInstallStatusItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserAppInstallStatusItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of installation states for this mobile app.
+func (m *UserAppInstallStatusItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserAppInstallStatusItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -178,12 +178,12 @@ func (m *UserAppInstallStatusItemRequestBuilder) GetWithResponseHandler(requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable), nil
 }
-// PatchWithResponseHandler update the navigation property userStatuses in deviceAppManagement
-func (m *UserAppInstallStatusItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable, requestConfiguration *UserAppInstallStatusItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userStatuses in deviceAppManagement
+func (m *UserAppInstallStatusItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userStatuses in deviceAppManagement
-func (m *UserAppInstallStatusItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable, requestConfiguration *UserAppInstallStatusItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userStatuses in deviceAppManagement
+func (m *UserAppInstallStatusItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAppInstallStatusable, requestConfiguration *UserAppInstallStatusItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -64,8 +64,8 @@ func NewMicrosoftTunnelHealthThresholdItemRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelHealthThresholdItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property microsoftTunnelHealthThresholds for deviceManagement
-func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property microsoftTunnelHealthThresholds for deviceManagement
+func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property microsoftTunnelHealthThresholds for deviceManagement
@@ -80,8 +80,8 @@ func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) CreateDeleteRequestIn
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of MicrosoftTunnelHealthThreshold settings associated with account.
-func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation collection of MicrosoftTunnelHealthThreshold settings associated with account.
+func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration collection of MicrosoftTunnelHealthThreshold settings associated with account.
@@ -99,8 +99,8 @@ func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property microsoftTunnelHealthThresholds in deviceManagement
-func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelHealthThresholdable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property microsoftTunnelHealthThresholds in deviceManagement
+func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelHealthThresholdable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property microsoftTunnelHealthThresholds in deviceManagement
@@ -116,12 +116,12 @@ func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) CreatePatchRequestInf
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property microsoftTunnelHealthThresholds for deviceManagement
-func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MicrosoftTunnelHealthThresholdItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property microsoftTunnelHealthThresholds for deviceManagement
+func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property microsoftTunnelHealthThresholds for deviceManagement
-func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MicrosoftTunnelHealthThresholdItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property microsoftTunnelHealthThresholds for deviceManagement
+func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *MicrosoftTunnelHealthThresholdItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) DeleteWithResponseHan
     }
     return nil
 }
-// GetWithResponseHandler collection of MicrosoftTunnelHealthThreshold settings associated with account.
-func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MicrosoftTunnelHealthThresholdItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelHealthThresholdable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get collection of MicrosoftTunnelHealthThreshold settings associated with account.
+func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelHealthThresholdable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler collection of MicrosoftTunnelHealthThreshold settings associated with account.
-func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MicrosoftTunnelHealthThresholdItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelHealthThresholdable, error) {
+// GetWithRequestConfigurationAndResponseHandler collection of MicrosoftTunnelHealthThreshold settings associated with account.
+func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MicrosoftTunnelHealthThresholdItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelHealthThresholdable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) GetWithResponseHandle
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelHealthThresholdable), nil
 }
-// PatchWithResponseHandler update the navigation property microsoftTunnelHealthThresholds in deviceManagement
-func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelHealthThresholdable, requestConfiguration *MicrosoftTunnelHealthThresholdItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property microsoftTunnelHealthThresholds in deviceManagement
+func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelHealthThresholdable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property microsoftTunnelHealthThresholds in deviceManagement
-func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelHealthThresholdable, requestConfiguration *MicrosoftTunnelHealthThresholdItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property microsoftTunnelHealthThresholds in deviceManagement
+func (m *MicrosoftTunnelHealthThresholdItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelHealthThresholdable, requestConfiguration *MicrosoftTunnelHealthThresholdItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

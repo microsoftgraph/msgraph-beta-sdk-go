@@ -39,8 +39,8 @@ func NewUploadUrlRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewUploadUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function uploadUrl
-func (m *UploadUrlRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function uploadUrl
+func (m *UploadUrlRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function uploadUrl
@@ -55,12 +55,12 @@ func (m *UploadUrlRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function uploadUrl
-func (m *UploadUrlRequestBuilder) GetWithResponseHandler(requestConfiguration *UploadUrlRequestBuilderGetRequestConfiguration)(UploadUrlResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function uploadUrl
+func (m *UploadUrlRequestBuilder) Get()(UploadUrlResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function uploadUrl
-func (m *UploadUrlRequestBuilder) GetWithResponseHandler(requestConfiguration *UploadUrlRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(UploadUrlResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function uploadUrl
+func (m *UploadUrlRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UploadUrlRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(UploadUrlResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

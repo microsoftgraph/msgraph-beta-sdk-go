@@ -75,8 +75,8 @@ func NewDeviceEnrollmentConfigurationsRequestBuilder(rawUrl string, requestAdapt
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) Count()(*i30ed9072ee8f9f34740b4df1bf715d9e665ea0ac8d6c58d9d37834f6ca6e7ee3.CountRequestBuilder) {
     return i30ed9072ee8f9f34740b4df1bf715d9e665ea0ac8d6c58d9d37834f6ca6e7ee3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get enrollment configurations targeted to the user
-func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get enrollment configurations targeted to the user
+func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get enrollment configurations targeted to the user
@@ -94,8 +94,8 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceEnrollmentConfigurations for me
-func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to deviceEnrollmentConfigurations for me
+func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceEnrollmentConfigurations for me
@@ -111,12 +111,12 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get enrollment configurations targeted to the user
-func (m *DeviceEnrollmentConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get enrollment configurations targeted to the user
+func (m *DeviceEnrollmentConfigurationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get enrollment configurations targeted to the user
-func (m *DeviceEnrollmentConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get enrollment configurations targeted to the user
+func (m *DeviceEnrollmentConfigurationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) GetWithResponseHandler(re
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) HasPayloadLinks()(*ia15f31e87ca36bc6cb53a6d8a32eb1ce841d7bc0b4a0524a814f6453af48579e.HasPayloadLinksRequestBuilder) {
     return ia15f31e87ca36bc6cb53a6d8a32eb1ce841d7bc0b4a0524a814f6453af48579e.NewHasPayloadLinksRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PostWithResponseHandler create new navigation property to deviceEnrollmentConfigurations for me
-func (m *DeviceEnrollmentConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, requestConfiguration *DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to deviceEnrollmentConfigurations for me
+func (m *DeviceEnrollmentConfigurationsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to deviceEnrollmentConfigurations for me
-func (m *DeviceEnrollmentConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, requestConfiguration *DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to deviceEnrollmentConfigurations for me
+func (m *DeviceEnrollmentConfigurationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, requestConfiguration *DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

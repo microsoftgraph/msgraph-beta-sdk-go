@@ -40,8 +40,8 @@ func NewDecryptBufferRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewDecryptBufferRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action decryptBuffer
-func (m *DecryptBufferRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DecryptBufferRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action decryptBuffer
+func (m *DecryptBufferRequestBuilder) CreatePostRequestInformation(body DecryptBufferRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action decryptBuffer
@@ -57,12 +57,12 @@ func (m *DecryptBufferRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action decryptBuffer
-func (m *DecryptBufferRequestBuilder) PostWithResponseHandler(body DecryptBufferRequestBodyable, requestConfiguration *DecryptBufferRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BufferDecryptionResultable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action decryptBuffer
+func (m *DecryptBufferRequestBuilder) Post(body DecryptBufferRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BufferDecryptionResultable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action decryptBuffer
-func (m *DecryptBufferRequestBuilder) PostWithResponseHandler(body DecryptBufferRequestBodyable, requestConfiguration *DecryptBufferRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BufferDecryptionResultable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action decryptBuffer
+func (m *DecryptBufferRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body DecryptBufferRequestBodyable, requestConfiguration *DecryptBufferRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BufferDecryptionResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

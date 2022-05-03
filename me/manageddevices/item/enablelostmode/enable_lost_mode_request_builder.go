@@ -39,8 +39,8 @@ func NewEnableLostModeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewEnableLostModeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration enable lost mode
-func (m *EnableLostModeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EnableLostModeRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation enable lost mode
+func (m *EnableLostModeRequestBuilder) CreatePostRequestInformation(body EnableLostModeRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration enable lost mode
@@ -56,12 +56,12 @@ func (m *EnableLostModeRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler enable lost mode
-func (m *EnableLostModeRequestBuilder) PostWithResponseHandler(body EnableLostModeRequestBodyable, requestConfiguration *EnableLostModeRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post enable lost mode
+func (m *EnableLostModeRequestBuilder) Post(body EnableLostModeRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler enable lost mode
-func (m *EnableLostModeRequestBuilder) PostWithResponseHandler(body EnableLostModeRequestBodyable, requestConfiguration *EnableLostModeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler enable lost mode
+func (m *EnableLostModeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EnableLostModeRequestBodyable, requestConfiguration *EnableLostModeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

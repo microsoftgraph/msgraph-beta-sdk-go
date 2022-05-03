@@ -50,8 +50,8 @@ func NewDeploymentProfileRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewDeploymentProfileRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration deployment profile currently assigned to the Windows autopilot device.
-func (m *DeploymentProfileRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation deployment profile currently assigned to the Windows autopilot device.
+func (m *DeploymentProfileRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration deployment profile currently assigned to the Windows autopilot device.
@@ -69,12 +69,12 @@ func (m *DeploymentProfileRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler deployment profile currently assigned to the Windows autopilot device.
-func (m *DeploymentProfileRequestBuilder) GetWithResponseHandler(requestConfiguration *DeploymentProfileRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get deployment profile currently assigned to the Windows autopilot device.
+func (m *DeploymentProfileRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler deployment profile currently assigned to the Windows autopilot device.
-func (m *DeploymentProfileRequestBuilder) GetWithResponseHandler(requestConfiguration *DeploymentProfileRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, error) {
+// GetWithRequestConfigurationAndResponseHandler deployment profile currently assigned to the Windows autopilot device.
+func (m *DeploymentProfileRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeploymentProfileRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotDeploymentProfileable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

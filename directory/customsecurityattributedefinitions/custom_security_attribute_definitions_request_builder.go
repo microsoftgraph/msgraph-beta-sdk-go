@@ -74,8 +74,8 @@ func NewCustomSecurityAttributeDefinitionsRequestBuilder(rawUrl string, requestA
 func (m *CustomSecurityAttributeDefinitionsRequestBuilder) Count()(*i7881d098081159f8dd879036c95922e703023ab5eebf3c6961fb1bdf1831b11d.CountRequestBuilder) {
     return i7881d098081159f8dd879036c95922e703023ab5eebf3c6961fb1bdf1831b11d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration schema of a custom security attributes (key-value pairs).
-func (m *CustomSecurityAttributeDefinitionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation schema of a custom security attributes (key-value pairs).
+func (m *CustomSecurityAttributeDefinitionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration schema of a custom security attributes (key-value pairs).
@@ -93,8 +93,8 @@ func (m *CustomSecurityAttributeDefinitionsRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to customSecurityAttributeDefinitions for directory
-func (m *CustomSecurityAttributeDefinitionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to customSecurityAttributeDefinitions for directory
+func (m *CustomSecurityAttributeDefinitionsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to customSecurityAttributeDefinitions for directory
@@ -110,12 +110,12 @@ func (m *CustomSecurityAttributeDefinitionsRequestBuilder) CreatePostRequestInfo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler schema of a custom security attributes (key-value pairs).
-func (m *CustomSecurityAttributeDefinitionsRequestBuilder) GetWithResponseHandler(requestConfiguration *CustomSecurityAttributeDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get schema of a custom security attributes (key-value pairs).
+func (m *CustomSecurityAttributeDefinitionsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler schema of a custom security attributes (key-value pairs).
-func (m *CustomSecurityAttributeDefinitionsRequestBuilder) GetWithResponseHandler(requestConfiguration *CustomSecurityAttributeDefinitionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler schema of a custom security attributes (key-value pairs).
+func (m *CustomSecurityAttributeDefinitionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CustomSecurityAttributeDefinitionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *CustomSecurityAttributeDefinitionsRequestBuilder) GetWithResponseHandle
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to customSecurityAttributeDefinitions for directory
-func (m *CustomSecurityAttributeDefinitionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionable, requestConfiguration *CustomSecurityAttributeDefinitionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to customSecurityAttributeDefinitions for directory
+func (m *CustomSecurityAttributeDefinitionsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to customSecurityAttributeDefinitions for directory
-func (m *CustomSecurityAttributeDefinitionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionable, requestConfiguration *CustomSecurityAttributeDefinitionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to customSecurityAttributeDefinitions for directory
+func (m *CustomSecurityAttributeDefinitionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionable, requestConfiguration *CustomSecurityAttributeDefinitionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeDefinitionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

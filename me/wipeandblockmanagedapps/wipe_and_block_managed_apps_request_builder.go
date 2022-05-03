@@ -39,8 +39,8 @@ func NewWipeAndBlockManagedAppsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewWipeAndBlockManagedAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration blocks the managed app user from app check-in.
-func (m *WipeAndBlockManagedAppsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation blocks the managed app user from app check-in.
+func (m *WipeAndBlockManagedAppsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration blocks the managed app user from app check-in.
@@ -55,12 +55,12 @@ func (m *WipeAndBlockManagedAppsRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler blocks the managed app user from app check-in.
-func (m *WipeAndBlockManagedAppsRequestBuilder) PostWithResponseHandler(requestConfiguration *WipeAndBlockManagedAppsRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post blocks the managed app user from app check-in.
+func (m *WipeAndBlockManagedAppsRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler blocks the managed app user from app check-in.
-func (m *WipeAndBlockManagedAppsRequestBuilder) PostWithResponseHandler(requestConfiguration *WipeAndBlockManagedAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler blocks the managed app user from app check-in.
+func (m *WipeAndBlockManagedAppsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *WipeAndBlockManagedAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

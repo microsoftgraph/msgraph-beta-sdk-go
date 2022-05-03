@@ -74,8 +74,8 @@ func NewMobileAppTroubleshootingEventsRequestBuilder(rawUrl string, requestAdapt
 func (m *MobileAppTroubleshootingEventsRequestBuilder) Count()(*ib45501b61d0be91802da0f78c9a4c2c47e4489468e1d3e32ebe9b53f1c8fd5e0.CountRequestBuilder) {
     return ib45501b61d0be91802da0f78c9a4c2c47e4489468e1d3e32ebe9b53f1c8fd5e0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection property of MobileAppTroubleshootingEvent.
-func (m *MobileAppTroubleshootingEventsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection property of MobileAppTroubleshootingEvent.
+func (m *MobileAppTroubleshootingEventsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection property of MobileAppTroubleshootingEvent.
@@ -93,8 +93,8 @@ func (m *MobileAppTroubleshootingEventsRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to mobileAppTroubleshootingEvents for deviceManagement
-func (m *MobileAppTroubleshootingEventsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to mobileAppTroubleshootingEvents for deviceManagement
+func (m *MobileAppTroubleshootingEventsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to mobileAppTroubleshootingEvents for deviceManagement
@@ -110,12 +110,12 @@ func (m *MobileAppTroubleshootingEventsRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the collection property of MobileAppTroubleshootingEvent.
-func (m *MobileAppTroubleshootingEventsRequestBuilder) GetWithResponseHandler(requestConfiguration *MobileAppTroubleshootingEventsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection property of MobileAppTroubleshootingEvent.
+func (m *MobileAppTroubleshootingEventsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection property of MobileAppTroubleshootingEvent.
-func (m *MobileAppTroubleshootingEventsRequestBuilder) GetWithResponseHandler(requestConfiguration *MobileAppTroubleshootingEventsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection property of MobileAppTroubleshootingEvent.
+func (m *MobileAppTroubleshootingEventsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MobileAppTroubleshootingEventsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *MobileAppTroubleshootingEventsRequestBuilder) GetWithResponseHandler(re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to mobileAppTroubleshootingEvents for deviceManagement
-func (m *MobileAppTroubleshootingEventsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable, requestConfiguration *MobileAppTroubleshootingEventsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to mobileAppTroubleshootingEvents for deviceManagement
+func (m *MobileAppTroubleshootingEventsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to mobileAppTroubleshootingEvents for deviceManagement
-func (m *MobileAppTroubleshootingEventsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable, requestConfiguration *MobileAppTroubleshootingEventsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to mobileAppTroubleshootingEvents for deviceManagement
+func (m *MobileAppTroubleshootingEventsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable, requestConfiguration *MobileAppTroubleshootingEventsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

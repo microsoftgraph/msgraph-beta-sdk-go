@@ -69,8 +69,8 @@ func NewHostedContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *HostedContentRequestBuilder) Content()(*i4bbf56af3b68f9375a2526e13b81eba510730b6af4a1e9f37a81bc6ebfb70aeb.ContentRequestBuilder) {
     return i4bbf56af3b68f9375a2526e13b81eba510730b6af4a1e9f37a81bc6ebfb70aeb.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property hostedContent for appCatalogs
-func (m *HostedContentRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property hostedContent for appCatalogs
+func (m *HostedContentRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property hostedContent for appCatalogs
@@ -85,8 +85,8 @@ func (m *HostedContentRequestBuilder) CreateDeleteRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the contents of the app icon if the icon is hosted within the Teams infrastructure.
-func (m *HostedContentRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the contents of the app icon if the icon is hosted within the Teams infrastructure.
+func (m *HostedContentRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the contents of the app icon if the icon is hosted within the Teams infrastructure.
@@ -104,8 +104,8 @@ func (m *HostedContentRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property hostedContent in appCatalogs
-func (m *HostedContentRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property hostedContent in appCatalogs
+func (m *HostedContentRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property hostedContent in appCatalogs
@@ -121,12 +121,12 @@ func (m *HostedContentRequestBuilder) CreatePatchRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property hostedContent for appCatalogs
-func (m *HostedContentRequestBuilder) DeleteWithResponseHandler(requestConfiguration *HostedContentRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property hostedContent for appCatalogs
+func (m *HostedContentRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property hostedContent for appCatalogs
-func (m *HostedContentRequestBuilder) DeleteWithResponseHandler(requestConfiguration *HostedContentRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property hostedContent for appCatalogs
+func (m *HostedContentRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *HostedContentRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -141,12 +141,12 @@ func (m *HostedContentRequestBuilder) DeleteWithResponseHandler(requestConfigura
     }
     return nil
 }
-// GetWithResponseHandler the contents of the app icon if the icon is hosted within the Teams infrastructure.
-func (m *HostedContentRequestBuilder) GetWithResponseHandler(requestConfiguration *HostedContentRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the contents of the app icon if the icon is hosted within the Teams infrastructure.
+func (m *HostedContentRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the contents of the app icon if the icon is hosted within the Teams infrastructure.
-func (m *HostedContentRequestBuilder) GetWithResponseHandler(requestConfiguration *HostedContentRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable, error) {
+// GetWithRequestConfigurationAndResponseHandler the contents of the app icon if the icon is hosted within the Teams infrastructure.
+func (m *HostedContentRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *HostedContentRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -161,12 +161,12 @@ func (m *HostedContentRequestBuilder) GetWithResponseHandler(requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable), nil
 }
-// PatchWithResponseHandler update the navigation property hostedContent in appCatalogs
-func (m *HostedContentRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable, requestConfiguration *HostedContentRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property hostedContent in appCatalogs
+func (m *HostedContentRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property hostedContent in appCatalogs
-func (m *HostedContentRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable, requestConfiguration *HostedContentRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property hostedContent in appCatalogs
+func (m *HostedContentRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable, requestConfiguration *HostedContentRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

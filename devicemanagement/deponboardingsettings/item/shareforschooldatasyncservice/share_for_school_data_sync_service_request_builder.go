@@ -39,8 +39,8 @@ func NewShareForSchoolDataSyncServiceRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewShareForSchoolDataSyncServiceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action shareForSchoolDataSyncService
-func (m *ShareForSchoolDataSyncServiceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action shareForSchoolDataSyncService
+func (m *ShareForSchoolDataSyncServiceRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action shareForSchoolDataSyncService
@@ -55,12 +55,12 @@ func (m *ShareForSchoolDataSyncServiceRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action shareForSchoolDataSyncService
-func (m *ShareForSchoolDataSyncServiceRequestBuilder) PostWithResponseHandler(requestConfiguration *ShareForSchoolDataSyncServiceRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action shareForSchoolDataSyncService
+func (m *ShareForSchoolDataSyncServiceRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action shareForSchoolDataSyncService
-func (m *ShareForSchoolDataSyncServiceRequestBuilder) PostWithResponseHandler(requestConfiguration *ShareForSchoolDataSyncServiceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action shareForSchoolDataSyncService
+func (m *ShareForSchoolDataSyncServiceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *ShareForSchoolDataSyncServiceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

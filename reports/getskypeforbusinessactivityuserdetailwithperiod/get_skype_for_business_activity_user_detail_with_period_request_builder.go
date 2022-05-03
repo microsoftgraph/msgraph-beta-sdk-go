@@ -42,8 +42,8 @@ func NewGetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewGetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getSkypeForBusinessActivityUserDetail
-func (m *GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getSkypeForBusinessActivityUserDetail
+func (m *GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getSkypeForBusinessActivityUserDetail
@@ -58,12 +58,12 @@ func (m *GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder) CreateGe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getSkypeForBusinessActivityUserDetail
-func (m *GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration)(GetSkypeForBusinessActivityUserDetailWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getSkypeForBusinessActivityUserDetail
+func (m *GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder) Get()(GetSkypeForBusinessActivityUserDetailWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getSkypeForBusinessActivityUserDetail
-func (m *GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSkypeForBusinessActivityUserDetailWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getSkypeForBusinessActivityUserDetail
+func (m *GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSkypeForBusinessActivityUserDetailWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

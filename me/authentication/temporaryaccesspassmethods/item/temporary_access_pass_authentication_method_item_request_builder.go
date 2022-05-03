@@ -64,8 +64,8 @@ func NewTemporaryAccessPassAuthenticationMethodItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewTemporaryAccessPassAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property temporaryAccessPassMethods for me
-func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property temporaryAccessPassMethods for me
+func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property temporaryAccessPassMethods for me
@@ -80,8 +80,8 @@ func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) CreateDelete
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
-func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
@@ -99,8 +99,8 @@ func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property temporaryAccessPassMethods in me
-func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TemporaryAccessPassAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property temporaryAccessPassMethods in me
+func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TemporaryAccessPassAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property temporaryAccessPassMethods in me
@@ -116,12 +116,12 @@ func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) CreatePatchR
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property temporaryAccessPassMethods for me
-func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TemporaryAccessPassAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property temporaryAccessPassMethods for me
+func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property temporaryAccessPassMethods for me
-func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TemporaryAccessPassAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property temporaryAccessPassMethods for me
+func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *TemporaryAccessPassAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) DeleteWithRe
     }
     return nil
 }
-// GetWithResponseHandler represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
-func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TemporaryAccessPassAuthenticationMethodable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TemporaryAccessPassAuthenticationMethodable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
-func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TemporaryAccessPassAuthenticationMethodable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TemporaryAccessPassAuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) GetWithRespo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TemporaryAccessPassAuthenticationMethodable), nil
 }
-// PatchWithResponseHandler update the navigation property temporaryAccessPassMethods in me
-func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TemporaryAccessPassAuthenticationMethodable, requestConfiguration *TemporaryAccessPassAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property temporaryAccessPassMethods in me
+func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TemporaryAccessPassAuthenticationMethodable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property temporaryAccessPassMethods in me
-func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TemporaryAccessPassAuthenticationMethodable, requestConfiguration *TemporaryAccessPassAuthenticationMethodItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property temporaryAccessPassMethods in me
+func (m *TemporaryAccessPassAuthenticationMethodItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TemporaryAccessPassAuthenticationMethodable, requestConfiguration *TemporaryAccessPassAuthenticationMethodItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

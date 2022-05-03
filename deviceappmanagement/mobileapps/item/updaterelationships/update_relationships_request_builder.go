@@ -39,8 +39,8 @@ func NewUpdateRelationshipsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateRelationshipsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action updateRelationships
-func (m *UpdateRelationshipsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateRelationshipsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action updateRelationships
+func (m *UpdateRelationshipsRequestBuilder) CreatePostRequestInformation(body UpdateRelationshipsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateRelationships
@@ -56,12 +56,12 @@ func (m *UpdateRelationshipsRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action updateRelationships
-func (m *UpdateRelationshipsRequestBuilder) PostWithResponseHandler(body UpdateRelationshipsRequestBodyable, requestConfiguration *UpdateRelationshipsRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action updateRelationships
+func (m *UpdateRelationshipsRequestBuilder) Post(body UpdateRelationshipsRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action updateRelationships
-func (m *UpdateRelationshipsRequestBuilder) PostWithResponseHandler(body UpdateRelationshipsRequestBodyable, requestConfiguration *UpdateRelationshipsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action updateRelationships
+func (m *UpdateRelationshipsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateRelationshipsRequestBodyable, requestConfiguration *UpdateRelationshipsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

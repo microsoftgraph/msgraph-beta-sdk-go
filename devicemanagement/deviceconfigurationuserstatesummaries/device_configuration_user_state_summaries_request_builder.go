@@ -64,8 +64,8 @@ func NewDeviceConfigurationUserStateSummariesRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationUserStateSummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceConfigurationUserStateSummaries for deviceManagement
-func (m *DeviceConfigurationUserStateSummariesRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property deviceConfigurationUserStateSummaries for deviceManagement
+func (m *DeviceConfigurationUserStateSummariesRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceConfigurationUserStateSummaries for deviceManagement
@@ -80,8 +80,8 @@ func (m *DeviceConfigurationUserStateSummariesRequestBuilder) CreateDeleteReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the device configuration user state summary for this account.
-func (m *DeviceConfigurationUserStateSummariesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the device configuration user state summary for this account.
+func (m *DeviceConfigurationUserStateSummariesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the device configuration user state summary for this account.
@@ -99,8 +99,8 @@ func (m *DeviceConfigurationUserStateSummariesRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceConfigurationUserStateSummaries in deviceManagement
-func (m *DeviceConfigurationUserStateSummariesRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property deviceConfigurationUserStateSummaries in deviceManagement
+func (m *DeviceConfigurationUserStateSummariesRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceConfigurationUserStateSummaries in deviceManagement
@@ -116,12 +116,12 @@ func (m *DeviceConfigurationUserStateSummariesRequestBuilder) CreatePatchRequest
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property deviceConfigurationUserStateSummaries for deviceManagement
-func (m *DeviceConfigurationUserStateSummariesRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property deviceConfigurationUserStateSummaries for deviceManagement
+func (m *DeviceConfigurationUserStateSummariesRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property deviceConfigurationUserStateSummaries for deviceManagement
-func (m *DeviceConfigurationUserStateSummariesRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property deviceConfigurationUserStateSummaries for deviceManagement
+func (m *DeviceConfigurationUserStateSummariesRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *DeviceConfigurationUserStateSummariesRequestBuilder) DeleteWithResponse
     }
     return nil
 }
-// GetWithResponseHandler the device configuration user state summary for this account.
-func (m *DeviceConfigurationUserStateSummariesRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the device configuration user state summary for this account.
+func (m *DeviceConfigurationUserStateSummariesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the device configuration user state summary for this account.
-func (m *DeviceConfigurationUserStateSummariesRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler the device configuration user state summary for this account.
+func (m *DeviceConfigurationUserStateSummariesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *DeviceConfigurationUserStateSummariesRequestBuilder) GetWithResponseHan
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable), nil
 }
-// PatchWithResponseHandler update the navigation property deviceConfigurationUserStateSummaries in deviceManagement
-func (m *DeviceConfigurationUserStateSummariesRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable, requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property deviceConfigurationUserStateSummaries in deviceManagement
+func (m *DeviceConfigurationUserStateSummariesRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property deviceConfigurationUserStateSummaries in deviceManagement
-func (m *DeviceConfigurationUserStateSummariesRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable, requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property deviceConfigurationUserStateSummaries in deviceManagement
+func (m *DeviceConfigurationUserStateSummariesRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable, requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

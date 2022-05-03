@@ -39,8 +39,8 @@ func NewEnableAndroidDeviceAdministratorEnrollmentRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewEnableAndroidDeviceAdministratorEnrollmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action enableAndroidDeviceAdministratorEnrollment
-func (m *EnableAndroidDeviceAdministratorEnrollmentRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action enableAndroidDeviceAdministratorEnrollment
+func (m *EnableAndroidDeviceAdministratorEnrollmentRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action enableAndroidDeviceAdministratorEnrollment
@@ -55,12 +55,12 @@ func (m *EnableAndroidDeviceAdministratorEnrollmentRequestBuilder) CreatePostReq
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action enableAndroidDeviceAdministratorEnrollment
-func (m *EnableAndroidDeviceAdministratorEnrollmentRequestBuilder) PostWithResponseHandler(requestConfiguration *EnableAndroidDeviceAdministratorEnrollmentRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action enableAndroidDeviceAdministratorEnrollment
+func (m *EnableAndroidDeviceAdministratorEnrollmentRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action enableAndroidDeviceAdministratorEnrollment
-func (m *EnableAndroidDeviceAdministratorEnrollmentRequestBuilder) PostWithResponseHandler(requestConfiguration *EnableAndroidDeviceAdministratorEnrollmentRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action enableAndroidDeviceAdministratorEnrollment
+func (m *EnableAndroidDeviceAdministratorEnrollmentRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *EnableAndroidDeviceAdministratorEnrollmentRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

@@ -50,8 +50,8 @@ func NewToTermRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewToTermRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the to [term] of the relation. The term to which the relationship is defined.
-func (m *ToTermRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the to [term] of the relation. The term to which the relationship is defined.
+func (m *ToTermRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the to [term] of the relation. The term to which the relationship is defined.
@@ -69,12 +69,12 @@ func (m *ToTermRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the to [term] of the relation. The term to which the relationship is defined.
-func (m *ToTermRequestBuilder) GetWithResponseHandler(requestConfiguration *ToTermRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the to [term] of the relation. The term to which the relationship is defined.
+func (m *ToTermRequestBuilder) Get()(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the to [term] of the relation. The term to which the relationship is defined.
-func (m *ToTermRequestBuilder) GetWithResponseHandler(requestConfiguration *ToTermRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable, error) {
+// GetWithRequestConfigurationAndResponseHandler the to [term] of the relation. The term to which the relationship is defined.
+func (m *ToTermRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ToTermRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Termable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

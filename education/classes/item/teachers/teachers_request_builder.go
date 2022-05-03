@@ -67,8 +67,8 @@ func NewTeachersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *TeachersRequestBuilder) Count()(*i3bfc3573df07ff30291cdb2dc838daf277edcd978141d13dc5d70e18259eb96e.CountRequestBuilder) {
     return i3bfc3573df07ff30291cdb2dc838daf277edcd978141d13dc5d70e18259eb96e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration all teachers in the class. Nullable.
-func (m *TeachersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation all teachers in the class. Nullable.
+func (m *TeachersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration all teachers in the class. Nullable.
@@ -86,12 +86,12 @@ func (m *TeachersRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler all teachers in the class. Nullable.
-func (m *TeachersRequestBuilder) GetWithResponseHandler(requestConfiguration *TeachersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get all teachers in the class. Nullable.
+func (m *TeachersRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler all teachers in the class. Nullable.
-func (m *TeachersRequestBuilder) GetWithResponseHandler(requestConfiguration *TeachersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler all teachers in the class. Nullable.
+func (m *TeachersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TeachersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

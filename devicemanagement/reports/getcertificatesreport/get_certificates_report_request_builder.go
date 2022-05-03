@@ -39,8 +39,8 @@ func NewGetCertificatesReportRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewGetCertificatesReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getCertificatesReport
-func (m *GetCertificatesReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetCertificatesReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getCertificatesReport
+func (m *GetCertificatesReportRequestBuilder) CreatePostRequestInformation(body GetCertificatesReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getCertificatesReport
@@ -56,12 +56,12 @@ func (m *GetCertificatesReportRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getCertificatesReport
-func (m *GetCertificatesReportRequestBuilder) PostWithResponseHandler(body GetCertificatesReportRequestBodyable, requestConfiguration *GetCertificatesReportRequestBuilderPostRequestConfiguration)(GetCertificatesReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getCertificatesReport
+func (m *GetCertificatesReportRequestBuilder) Post(body GetCertificatesReportRequestBodyable)(GetCertificatesReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getCertificatesReport
-func (m *GetCertificatesReportRequestBuilder) PostWithResponseHandler(body GetCertificatesReportRequestBodyable, requestConfiguration *GetCertificatesReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCertificatesReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getCertificatesReport
+func (m *GetCertificatesReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetCertificatesReportRequestBodyable, requestConfiguration *GetCertificatesReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCertificatesReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

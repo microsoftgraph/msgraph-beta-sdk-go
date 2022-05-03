@@ -55,8 +55,8 @@ func NewFilesFolderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *FilesFolderRequestBuilder) Content()(*iedae026d81e654559c4b06f50501126105175eb67551a905c3b597f3019af33e.ContentRequestBuilder) {
     return iedae026d81e654559c4b06f50501126105175eb67551a905c3b597f3019af33e.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration metadata for the location where the channel's files are stored.
-func (m *FilesFolderRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation metadata for the location where the channel's files are stored.
+func (m *FilesFolderRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration metadata for the location where the channel's files are stored.
@@ -74,12 +74,12 @@ func (m *FilesFolderRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler metadata for the location where the channel's files are stored.
-func (m *FilesFolderRequestBuilder) GetWithResponseHandler(requestConfiguration *FilesFolderRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get metadata for the location where the channel's files are stored.
+func (m *FilesFolderRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler metadata for the location where the channel's files are stored.
-func (m *FilesFolderRequestBuilder) GetWithResponseHandler(requestConfiguration *FilesFolderRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
+// GetWithRequestConfigurationAndResponseHandler metadata for the location where the channel's files are stored.
+func (m *FilesFolderRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FilesFolderRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

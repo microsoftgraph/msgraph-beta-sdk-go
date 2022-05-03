@@ -74,8 +74,8 @@ func NewTenantsCustomizedInformationRequestBuilder(rawUrl string, requestAdapter
 func (m *TenantsCustomizedInformationRequestBuilder) Count()(*iaf3e02c828f39af7b769e35e7aa9da0803b0c8afb407564e2c5fb7a5dbbb26ca.CountRequestBuilder) {
     return iaf3e02c828f39af7b769e35e7aa9da0803b0c8afb407564e2c5fb7a5dbbb26ca.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of tenant level customized information across managed tenants.
-func (m *TenantsCustomizedInformationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of tenant level customized information across managed tenants.
+func (m *TenantsCustomizedInformationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of tenant level customized information across managed tenants.
@@ -93,8 +93,8 @@ func (m *TenantsCustomizedInformationRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to tenantsCustomizedInformation for tenantRelationships
-func (m *TenantsCustomizedInformationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to tenantsCustomizedInformation for tenantRelationships
+func (m *TenantsCustomizedInformationRequestBuilder) CreatePostRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to tenantsCustomizedInformation for tenantRelationships
@@ -110,12 +110,12 @@ func (m *TenantsCustomizedInformationRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the collection of tenant level customized information across managed tenants.
-func (m *TenantsCustomizedInformationRequestBuilder) GetWithResponseHandler(requestConfiguration *TenantsCustomizedInformationRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of tenant level customized information across managed tenants.
+func (m *TenantsCustomizedInformationRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of tenant level customized information across managed tenants.
-func (m *TenantsCustomizedInformationRequestBuilder) GetWithResponseHandler(requestConfiguration *TenantsCustomizedInformationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of tenant level customized information across managed tenants.
+func (m *TenantsCustomizedInformationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TenantsCustomizedInformationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *TenantsCustomizedInformationRequestBuilder) GetWithResponseHandler(requ
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to tenantsCustomizedInformation for tenantRelationships
-func (m *TenantsCustomizedInformationRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationable, requestConfiguration *TenantsCustomizedInformationRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to tenantsCustomizedInformation for tenantRelationships
+func (m *TenantsCustomizedInformationRequestBuilder) Post(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to tenantsCustomizedInformation for tenantRelationships
-func (m *TenantsCustomizedInformationRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationable, requestConfiguration *TenantsCustomizedInformationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to tenantsCustomizedInformation for tenantRelationships
+func (m *TenantsCustomizedInformationRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationable, requestConfiguration *TenantsCustomizedInformationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCustomizedInformationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

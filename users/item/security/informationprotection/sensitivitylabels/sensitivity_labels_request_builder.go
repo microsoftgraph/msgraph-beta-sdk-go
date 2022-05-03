@@ -78,8 +78,8 @@ func NewSensitivityLabelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *SensitivityLabelsRequestBuilder) Count()(*i67477300d714391f3d8c96f2fb0d3f81f396d1cd261552bd92262fd91c37a3bd.CountRequestBuilder) {
     return i67477300d714391f3d8c96f2fb0d3f81f396d1cd261552bd92262fd91c37a3bd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get sensitivityLabels from users
-func (m *SensitivityLabelsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get sensitivityLabels from users
+func (m *SensitivityLabelsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get sensitivityLabels from users
@@ -97,8 +97,8 @@ func (m *SensitivityLabelsRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to sensitivityLabels for users
-func (m *SensitivityLabelsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to sensitivityLabels for users
+func (m *SensitivityLabelsRequestBuilder) CreatePostRequestInformation(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to sensitivityLabels for users
@@ -130,12 +130,12 @@ func (m *SensitivityLabelsRequestBuilder) EvaluateRemoval()(*id8c6caa17cc80769ed
 func (m *SensitivityLabelsRequestBuilder) ExtractContentLabel()(*ica62016c962f92b30229c778cbb076d6d246aadf7143abdcad3a76504b235726.ExtractContentLabelRequestBuilder) {
     return ica62016c962f92b30229c778cbb076d6d246aadf7143abdcad3a76504b235726.NewExtractContentLabelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get sensitivityLabels from users
-func (m *SensitivityLabelsRequestBuilder) GetWithResponseHandler(requestConfiguration *SensitivityLabelsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get sensitivityLabels from users
+func (m *SensitivityLabelsRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get sensitivityLabels from users
-func (m *SensitivityLabelsRequestBuilder) GetWithResponseHandler(requestConfiguration *SensitivityLabelsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get sensitivityLabels from users
+func (m *SensitivityLabelsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SensitivityLabelsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -150,12 +150,12 @@ func (m *SensitivityLabelsRequestBuilder) GetWithResponseHandler(requestConfigur
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to sensitivityLabels for users
-func (m *SensitivityLabelsRequestBuilder) PostWithResponseHandler(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, requestConfiguration *SensitivityLabelsRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to sensitivityLabels for users
+func (m *SensitivityLabelsRequestBuilder) Post(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to sensitivityLabels for users
-func (m *SensitivityLabelsRequestBuilder) PostWithResponseHandler(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, requestConfiguration *SensitivityLabelsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to sensitivityLabels for users
+func (m *SensitivityLabelsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, requestConfiguration *SensitivityLabelsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

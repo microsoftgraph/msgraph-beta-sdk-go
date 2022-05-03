@@ -67,8 +67,8 @@ func NewIncompatibleGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *IncompatibleGroupsRequestBuilder) Count()(*ie3fba7ccd6b34526026790a4eefad029a410c562a68c582601ee5ba5cc3c8643.CountRequestBuilder) {
     return ie3fba7ccd6b34526026790a4eefad029a410c562a68c582601ee5ba5cc3c8643.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the groups whose members are ineligible to be assigned this access package.
-func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the groups whose members are ineligible to be assigned this access package.
+func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the groups whose members are ineligible to be assigned this access package.
@@ -86,12 +86,12 @@ func (m *IncompatibleGroupsRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the groups whose members are ineligible to be assigned this access package.
-func (m *IncompatibleGroupsRequestBuilder) GetWithResponseHandler(requestConfiguration *IncompatibleGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the groups whose members are ineligible to be assigned this access package.
+func (m *IncompatibleGroupsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the groups whose members are ineligible to be assigned this access package.
-func (m *IncompatibleGroupsRequestBuilder) GetWithResponseHandler(requestConfiguration *IncompatibleGroupsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the groups whose members are ineligible to be assigned this access package.
+func (m *IncompatibleGroupsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IncompatibleGroupsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

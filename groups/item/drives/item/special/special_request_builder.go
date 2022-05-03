@@ -67,8 +67,8 @@ func NewSpecialRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *SpecialRequestBuilder) Count()(*id1991251d6f37e32f5f6915c906e70d37b42bb9da4442e1a6c5af6c1ac8517ce.CountRequestBuilder) {
     return id1991251d6f37e32f5f6915c906e70d37b42bb9da4442e1a6c5af6c1ac8517ce.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of common folders available in OneDrive. Read-only. Nullable.
-func (m *SpecialRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation collection of common folders available in OneDrive. Read-only. Nullable.
+func (m *SpecialRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration collection of common folders available in OneDrive. Read-only. Nullable.
@@ -86,12 +86,12 @@ func (m *SpecialRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler collection of common folders available in OneDrive. Read-only. Nullable.
-func (m *SpecialRequestBuilder) GetWithResponseHandler(requestConfiguration *SpecialRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get collection of common folders available in OneDrive. Read-only. Nullable.
+func (m *SpecialRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler collection of common folders available in OneDrive. Read-only. Nullable.
-func (m *SpecialRequestBuilder) GetWithResponseHandler(requestConfiguration *SpecialRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler collection of common folders available in OneDrive. Read-only. Nullable.
+func (m *SpecialRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SpecialRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

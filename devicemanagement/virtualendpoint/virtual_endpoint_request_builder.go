@@ -116,8 +116,8 @@ func NewVirtualEndpointRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property virtualEndpoint for deviceManagement
-func (m *VirtualEndpointRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property virtualEndpoint for deviceManagement
+func (m *VirtualEndpointRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property virtualEndpoint for deviceManagement
@@ -132,8 +132,8 @@ func (m *VirtualEndpointRequestBuilder) CreateDeleteRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get virtualEndpoint from deviceManagement
-func (m *VirtualEndpointRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get virtualEndpoint from deviceManagement
+func (m *VirtualEndpointRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get virtualEndpoint from deviceManagement
@@ -151,8 +151,8 @@ func (m *VirtualEndpointRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property virtualEndpoint in deviceManagement
-func (m *VirtualEndpointRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property virtualEndpoint in deviceManagement
+func (m *VirtualEndpointRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property virtualEndpoint in deviceManagement
@@ -168,12 +168,12 @@ func (m *VirtualEndpointRequestBuilder) CreatePatchRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property virtualEndpoint for deviceManagement
-func (m *VirtualEndpointRequestBuilder) DeleteWithResponseHandler(requestConfiguration *VirtualEndpointRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property virtualEndpoint for deviceManagement
+func (m *VirtualEndpointRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property virtualEndpoint for deviceManagement
-func (m *VirtualEndpointRequestBuilder) DeleteWithResponseHandler(requestConfiguration *VirtualEndpointRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property virtualEndpoint for deviceManagement
+func (m *VirtualEndpointRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *VirtualEndpointRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -218,16 +218,16 @@ func (m *VirtualEndpointRequestBuilder) GalleryImagesById(id string)(*ia7d6e3577
     }
     return ia7d6e357762433a03086487f037283652587e5519e4f5513185ee9e97e7426e9.NewCloudPcGalleryImageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Get get virtualEndpoint from deviceManagement
+func (m *VirtualEndpointRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetEffectivePermissions provides operations to call the getEffectivePermissions method.
 func (m *VirtualEndpointRequestBuilder) GetEffectivePermissions()(*i641f590b75b18bc875786f11f8c01028ef7a86284da618ffc6636c5f70071b7c.GetEffectivePermissionsRequestBuilder) {
     return i641f590b75b18bc875786f11f8c01028ef7a86284da618ffc6636c5f70071b7c.NewGetEffectivePermissionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get virtualEndpoint from deviceManagement
-func (m *VirtualEndpointRequestBuilder) GetWithResponseHandler(requestConfiguration *VirtualEndpointRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler get virtualEndpoint from deviceManagement
-func (m *VirtualEndpointRequestBuilder) GetWithResponseHandler(requestConfiguration *VirtualEndpointRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable, error) {
+// GetWithRequestConfigurationAndResponseHandler get virtualEndpoint from deviceManagement
+func (m *VirtualEndpointRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *VirtualEndpointRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -261,12 +261,12 @@ func (m *VirtualEndpointRequestBuilder) OnPremisesConnectionsById(id string)(*i4
 func (m *VirtualEndpointRequestBuilder) OrganizationSettings()(*id4ffcadce3c6a0158b09f7c80fb182d7adea4c0b1e976947864d2f4a6310302e.OrganizationSettingsRequestBuilder) {
     return id4ffcadce3c6a0158b09f7c80fb182d7adea4c0b1e976947864d2f4a6310302e.NewOrganizationSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property virtualEndpoint in deviceManagement
-func (m *VirtualEndpointRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable, requestConfiguration *VirtualEndpointRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property virtualEndpoint in deviceManagement
+func (m *VirtualEndpointRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property virtualEndpoint in deviceManagement
-func (m *VirtualEndpointRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable, requestConfiguration *VirtualEndpointRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property virtualEndpoint in deviceManagement
+func (m *VirtualEndpointRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEndpointable, requestConfiguration *VirtualEndpointRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

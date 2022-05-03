@@ -74,8 +74,8 @@ func NewCartToClassAssociationsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *CartToClassAssociationsRequestBuilder) Count()(*i87870e7a4e95665fd47cb1889becbc2c7b4989356e17717fecd614db95d4f035.CountRequestBuilder) {
     return i87870e7a4e95665fd47cb1889becbc2c7b4989356e17717fecd614db95d4f035.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the Cart To Class Associations.
-func (m *CartToClassAssociationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the Cart To Class Associations.
+func (m *CartToClassAssociationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the Cart To Class Associations.
@@ -93,8 +93,8 @@ func (m *CartToClassAssociationsRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to cartToClassAssociations for deviceManagement
-func (m *CartToClassAssociationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to cartToClassAssociations for deviceManagement
+func (m *CartToClassAssociationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to cartToClassAssociations for deviceManagement
@@ -110,12 +110,12 @@ func (m *CartToClassAssociationsRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the Cart To Class Associations.
-func (m *CartToClassAssociationsRequestBuilder) GetWithResponseHandler(requestConfiguration *CartToClassAssociationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the Cart To Class Associations.
+func (m *CartToClassAssociationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the Cart To Class Associations.
-func (m *CartToClassAssociationsRequestBuilder) GetWithResponseHandler(requestConfiguration *CartToClassAssociationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the Cart To Class Associations.
+func (m *CartToClassAssociationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CartToClassAssociationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *CartToClassAssociationsRequestBuilder) GetWithResponseHandler(requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to cartToClassAssociations for deviceManagement
-func (m *CartToClassAssociationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationable, requestConfiguration *CartToClassAssociationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to cartToClassAssociations for deviceManagement
+func (m *CartToClassAssociationsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to cartToClassAssociations for deviceManagement
-func (m *CartToClassAssociationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationable, requestConfiguration *CartToClassAssociationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to cartToClassAssociations for deviceManagement
+func (m *CartToClassAssociationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationable, requestConfiguration *CartToClassAssociationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CartToClassAssociationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

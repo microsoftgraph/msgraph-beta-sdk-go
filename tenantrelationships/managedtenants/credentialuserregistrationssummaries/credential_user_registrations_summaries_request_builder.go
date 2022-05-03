@@ -74,8 +74,8 @@ func NewCredentialUserRegistrationsSummariesRequestBuilder(rawUrl string, reques
 func (m *CredentialUserRegistrationsSummariesRequestBuilder) Count()(*i24f4eb51f717c3034d4688f6ba15526e13c45a6c6e98a9701f1318efcd704d4b.CountRequestBuilder) {
     return i24f4eb51f717c3034d4688f6ba15526e13c45a6c6e98a9701f1318efcd704d4b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-func (m *CredentialUserRegistrationsSummariesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+func (m *CredentialUserRegistrationsSummariesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
@@ -93,8 +93,8 @@ func (m *CredentialUserRegistrationsSummariesRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to credentialUserRegistrationsSummaries for tenantRelationships
-func (m *CredentialUserRegistrationsSummariesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to credentialUserRegistrationsSummaries for tenantRelationships
+func (m *CredentialUserRegistrationsSummariesRequestBuilder) CreatePostRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to credentialUserRegistrationsSummaries for tenantRelationships
@@ -110,12 +110,12 @@ func (m *CredentialUserRegistrationsSummariesRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-func (m *CredentialUserRegistrationsSummariesRequestBuilder) GetWithResponseHandler(requestConfiguration *CredentialUserRegistrationsSummariesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+func (m *CredentialUserRegistrationsSummariesRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
-func (m *CredentialUserRegistrationsSummariesRequestBuilder) GetWithResponseHandler(requestConfiguration *CredentialUserRegistrationsSummariesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+func (m *CredentialUserRegistrationsSummariesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CredentialUserRegistrationsSummariesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *CredentialUserRegistrationsSummariesRequestBuilder) GetWithResponseHand
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to credentialUserRegistrationsSummaries for tenantRelationships
-func (m *CredentialUserRegistrationsSummariesRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, requestConfiguration *CredentialUserRegistrationsSummariesRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to credentialUserRegistrationsSummaries for tenantRelationships
+func (m *CredentialUserRegistrationsSummariesRequestBuilder) Post(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to credentialUserRegistrationsSummaries for tenantRelationships
-func (m *CredentialUserRegistrationsSummariesRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, requestConfiguration *CredentialUserRegistrationsSummariesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to credentialUserRegistrationsSummaries for tenantRelationships
+func (m *CredentialUserRegistrationsSummariesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, requestConfiguration *CredentialUserRegistrationsSummariesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

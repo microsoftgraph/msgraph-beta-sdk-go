@@ -66,8 +66,8 @@ func NewTenantAttachRBACRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewTenantAttachRBACRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property tenantAttachRBAC for deviceManagement
-func (m *TenantAttachRBACRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property tenantAttachRBAC for deviceManagement
+func (m *TenantAttachRBACRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property tenantAttachRBAC for deviceManagement
@@ -82,8 +82,8 @@ func (m *TenantAttachRBACRequestBuilder) CreateDeleteRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration tenantAttach RBAC Enablement
-func (m *TenantAttachRBACRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation tenantAttach RBAC Enablement
+func (m *TenantAttachRBACRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration tenantAttach RBAC Enablement
@@ -101,8 +101,8 @@ func (m *TenantAttachRBACRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property tenantAttachRBAC in deviceManagement
-func (m *TenantAttachRBACRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property tenantAttachRBAC in deviceManagement
+func (m *TenantAttachRBACRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property tenantAttachRBAC in deviceManagement
@@ -118,12 +118,12 @@ func (m *TenantAttachRBACRequestBuilder) CreatePatchRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property tenantAttachRBAC for deviceManagement
-func (m *TenantAttachRBACRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TenantAttachRBACRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property tenantAttachRBAC for deviceManagement
+func (m *TenantAttachRBACRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property tenantAttachRBAC for deviceManagement
-func (m *TenantAttachRBACRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TenantAttachRBACRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property tenantAttachRBAC for deviceManagement
+func (m *TenantAttachRBACRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *TenantAttachRBACRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -142,16 +142,16 @@ func (m *TenantAttachRBACRequestBuilder) DeleteWithResponseHandler(requestConfig
 func (m *TenantAttachRBACRequestBuilder) Enable()(*i7bc33d26fea3adf37af488567a81f90be048ebf49ee9219a6b86ea2b4cd5b097.EnableRequestBuilder) {
     return i7bc33d26fea3adf37af488567a81f90be048ebf49ee9219a6b86ea2b4cd5b097.NewEnableRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Get tenantAttach RBAC Enablement
+func (m *TenantAttachRBACRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetState provides operations to call the getState method.
 func (m *TenantAttachRBACRequestBuilder) GetState()(*i156783e63c46f563ab8ba6c58bd2e9689e66e8743f2dc518ade268d1f52fe636.GetStateRequestBuilder) {
     return i156783e63c46f563ab8ba6c58bd2e9689e66e8743f2dc518ade268d1f52fe636.NewGetStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler tenantAttach RBAC Enablement
-func (m *TenantAttachRBACRequestBuilder) GetWithResponseHandler(requestConfiguration *TenantAttachRBACRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler tenantAttach RBAC Enablement
-func (m *TenantAttachRBACRequestBuilder) GetWithResponseHandler(requestConfiguration *TenantAttachRBACRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable, error) {
+// GetWithRequestConfigurationAndResponseHandler tenantAttach RBAC Enablement
+func (m *TenantAttachRBACRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TenantAttachRBACRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -166,12 +166,12 @@ func (m *TenantAttachRBACRequestBuilder) GetWithResponseHandler(requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable), nil
 }
-// PatchWithResponseHandler update the navigation property tenantAttachRBAC in deviceManagement
-func (m *TenantAttachRBACRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable, requestConfiguration *TenantAttachRBACRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property tenantAttachRBAC in deviceManagement
+func (m *TenantAttachRBACRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property tenantAttachRBAC in deviceManagement
-func (m *TenantAttachRBACRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable, requestConfiguration *TenantAttachRBACRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property tenantAttachRBAC in deviceManagement
+func (m *TenantAttachRBACRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantAttachRBACable, requestConfiguration *TenantAttachRBACRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -39,8 +39,8 @@ func NewInvalidateAllRefreshTokensRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewInvalidateAllRefreshTokensRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action invalidateAllRefreshTokens
-func (m *InvalidateAllRefreshTokensRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action invalidateAllRefreshTokens
+func (m *InvalidateAllRefreshTokensRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action invalidateAllRefreshTokens
@@ -55,12 +55,12 @@ func (m *InvalidateAllRefreshTokensRequestBuilder) CreatePostRequestInformationW
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action invalidateAllRefreshTokens
-func (m *InvalidateAllRefreshTokensRequestBuilder) PostWithResponseHandler(requestConfiguration *InvalidateAllRefreshTokensRequestBuilderPostRequestConfiguration)(InvalidateAllRefreshTokensResponseable, error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action invalidateAllRefreshTokens
+func (m *InvalidateAllRefreshTokensRequestBuilder) Post()(InvalidateAllRefreshTokensResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action invalidateAllRefreshTokens
-func (m *InvalidateAllRefreshTokensRequestBuilder) PostWithResponseHandler(requestConfiguration *InvalidateAllRefreshTokensRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(InvalidateAllRefreshTokensResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action invalidateAllRefreshTokens
+func (m *InvalidateAllRefreshTokensRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *InvalidateAllRefreshTokensRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(InvalidateAllRefreshTokensResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

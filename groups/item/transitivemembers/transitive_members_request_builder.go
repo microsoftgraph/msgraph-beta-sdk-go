@@ -67,8 +67,8 @@ func NewTransitiveMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *TransitiveMembersRequestBuilder) Count()(*i09c8ec187be02eb8c582ed81e1e61003595821ab2bbae63fbe3cc6f03af340cb.CountRequestBuilder) {
     return i09c8ec187be02eb8c582ed81e1e61003595821ab2bbae63fbe3cc6f03af340cb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get transitiveMembers from groups
-func (m *TransitiveMembersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get transitiveMembers from groups
+func (m *TransitiveMembersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get transitiveMembers from groups
@@ -86,12 +86,12 @@ func (m *TransitiveMembersRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get transitiveMembers from groups
-func (m *TransitiveMembersRequestBuilder) GetWithResponseHandler(requestConfiguration *TransitiveMembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get transitiveMembers from groups
+func (m *TransitiveMembersRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get transitiveMembers from groups
-func (m *TransitiveMembersRequestBuilder) GetWithResponseHandler(requestConfiguration *TransitiveMembersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get transitiveMembers from groups
+func (m *TransitiveMembersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TransitiveMembersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

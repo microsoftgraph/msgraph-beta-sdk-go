@@ -39,8 +39,8 @@ func NewAsHierarchyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewAsHierarchyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function asHierarchy
-func (m *AsHierarchyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function asHierarchy
+func (m *AsHierarchyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function asHierarchy
@@ -55,12 +55,12 @@ func (m *AsHierarchyRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function asHierarchy
-func (m *AsHierarchyRequestBuilder) GetWithResponseHandler(requestConfiguration *AsHierarchyRequestBuilderGetRequestConfiguration)(AsHierarchyResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function asHierarchy
+func (m *AsHierarchyRequestBuilder) Get()(AsHierarchyResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function asHierarchy
-func (m *AsHierarchyRequestBuilder) GetWithResponseHandler(requestConfiguration *AsHierarchyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(AsHierarchyResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function asHierarchy
+func (m *AsHierarchyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AsHierarchyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(AsHierarchyResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

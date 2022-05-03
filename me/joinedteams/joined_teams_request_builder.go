@@ -67,8 +67,8 @@ func NewJoinedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *JoinedTeamsRequestBuilder) Count()(*ie2427fbf30e2be206b8b45f2d84b6f2375c83691d1e91b2144f664aecf08187a.CountRequestBuilder) {
     return ie2427fbf30e2be206b8b45f2d84b6f2375c83691d1e91b2144f664aecf08187a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
-func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
@@ -86,12 +86,12 @@ func (m *JoinedTeamsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
-func (m *JoinedTeamsRequestBuilder) GetWithResponseHandler(requestConfiguration *JoinedTeamsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+func (m *JoinedTeamsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
-func (m *JoinedTeamsRequestBuilder) GetWithResponseHandler(requestConfiguration *JoinedTeamsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+func (m *JoinedTeamsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *JoinedTeamsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

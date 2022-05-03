@@ -64,8 +64,8 @@ func NewImportedAppleDeviceIdentityItemRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewImportedAppleDeviceIdentityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property importedAppleDeviceIdentities for deviceManagement
-func (m *ImportedAppleDeviceIdentityItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property importedAppleDeviceIdentities for deviceManagement
+func (m *ImportedAppleDeviceIdentityItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property importedAppleDeviceIdentities for deviceManagement
@@ -80,8 +80,8 @@ func (m *ImportedAppleDeviceIdentityItemRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the imported Apple device identities.
-func (m *ImportedAppleDeviceIdentityItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the imported Apple device identities.
+func (m *ImportedAppleDeviceIdentityItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the imported Apple device identities.
@@ -99,8 +99,8 @@ func (m *ImportedAppleDeviceIdentityItemRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property importedAppleDeviceIdentities in deviceManagement
-func (m *ImportedAppleDeviceIdentityItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property importedAppleDeviceIdentities in deviceManagement
+func (m *ImportedAppleDeviceIdentityItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property importedAppleDeviceIdentities in deviceManagement
@@ -116,12 +116,12 @@ func (m *ImportedAppleDeviceIdentityItemRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property importedAppleDeviceIdentities for deviceManagement
-func (m *ImportedAppleDeviceIdentityItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ImportedAppleDeviceIdentityItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property importedAppleDeviceIdentities for deviceManagement
+func (m *ImportedAppleDeviceIdentityItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property importedAppleDeviceIdentities for deviceManagement
-func (m *ImportedAppleDeviceIdentityItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ImportedAppleDeviceIdentityItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property importedAppleDeviceIdentities for deviceManagement
+func (m *ImportedAppleDeviceIdentityItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ImportedAppleDeviceIdentityItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *ImportedAppleDeviceIdentityItemRequestBuilder) DeleteWithResponseHandle
     }
     return nil
 }
-// GetWithResponseHandler the imported Apple device identities.
-func (m *ImportedAppleDeviceIdentityItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ImportedAppleDeviceIdentityItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the imported Apple device identities.
+func (m *ImportedAppleDeviceIdentityItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the imported Apple device identities.
-func (m *ImportedAppleDeviceIdentityItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ImportedAppleDeviceIdentityItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable, error) {
+// GetWithRequestConfigurationAndResponseHandler the imported Apple device identities.
+func (m *ImportedAppleDeviceIdentityItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ImportedAppleDeviceIdentityItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *ImportedAppleDeviceIdentityItemRequestBuilder) GetWithResponseHandler(r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable), nil
 }
-// PatchWithResponseHandler update the navigation property importedAppleDeviceIdentities in deviceManagement
-func (m *ImportedAppleDeviceIdentityItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable, requestConfiguration *ImportedAppleDeviceIdentityItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property importedAppleDeviceIdentities in deviceManagement
+func (m *ImportedAppleDeviceIdentityItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property importedAppleDeviceIdentities in deviceManagement
-func (m *ImportedAppleDeviceIdentityItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable, requestConfiguration *ImportedAppleDeviceIdentityItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property importedAppleDeviceIdentities in deviceManagement
+func (m *ImportedAppleDeviceIdentityItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedAppleDeviceIdentityable, requestConfiguration *ImportedAppleDeviceIdentityItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

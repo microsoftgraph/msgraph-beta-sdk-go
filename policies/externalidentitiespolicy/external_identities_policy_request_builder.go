@@ -64,8 +64,8 @@ func NewExternalIdentitiesPolicyRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewExternalIdentitiesPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property externalIdentitiesPolicy for policies
-func (m *ExternalIdentitiesPolicyRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property externalIdentitiesPolicy for policies
+func (m *ExternalIdentitiesPolicyRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property externalIdentitiesPolicy for policies
@@ -80,8 +80,8 @@ func (m *ExternalIdentitiesPolicyRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get externalIdentitiesPolicy from policies
-func (m *ExternalIdentitiesPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get externalIdentitiesPolicy from policies
+func (m *ExternalIdentitiesPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get externalIdentitiesPolicy from policies
@@ -99,8 +99,8 @@ func (m *ExternalIdentitiesPolicyRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property externalIdentitiesPolicy in policies
-func (m *ExternalIdentitiesPolicyRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property externalIdentitiesPolicy in policies
+func (m *ExternalIdentitiesPolicyRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property externalIdentitiesPolicy in policies
@@ -116,12 +116,12 @@ func (m *ExternalIdentitiesPolicyRequestBuilder) CreatePatchRequestInformationWi
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property externalIdentitiesPolicy for policies
-func (m *ExternalIdentitiesPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ExternalIdentitiesPolicyRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property externalIdentitiesPolicy for policies
+func (m *ExternalIdentitiesPolicyRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property externalIdentitiesPolicy for policies
-func (m *ExternalIdentitiesPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ExternalIdentitiesPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property externalIdentitiesPolicy for policies
+func (m *ExternalIdentitiesPolicyRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ExternalIdentitiesPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *ExternalIdentitiesPolicyRequestBuilder) DeleteWithResponseHandler(reque
     }
     return nil
 }
-// GetWithResponseHandler get externalIdentitiesPolicy from policies
-func (m *ExternalIdentitiesPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *ExternalIdentitiesPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get externalIdentitiesPolicy from policies
+func (m *ExternalIdentitiesPolicyRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get externalIdentitiesPolicy from policies
-func (m *ExternalIdentitiesPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *ExternalIdentitiesPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler get externalIdentitiesPolicy from policies
+func (m *ExternalIdentitiesPolicyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExternalIdentitiesPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *ExternalIdentitiesPolicyRequestBuilder) GetWithResponseHandler(requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable), nil
 }
-// PatchWithResponseHandler update the navigation property externalIdentitiesPolicy in policies
-func (m *ExternalIdentitiesPolicyRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable, requestConfiguration *ExternalIdentitiesPolicyRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property externalIdentitiesPolicy in policies
+func (m *ExternalIdentitiesPolicyRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property externalIdentitiesPolicy in policies
-func (m *ExternalIdentitiesPolicyRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable, requestConfiguration *ExternalIdentitiesPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property externalIdentitiesPolicy in policies
+func (m *ExternalIdentitiesPolicyRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable, requestConfiguration *ExternalIdentitiesPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

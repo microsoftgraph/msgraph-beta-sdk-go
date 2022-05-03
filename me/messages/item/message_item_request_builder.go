@@ -112,8 +112,8 @@ func (m *MessageItemRequestBuilder) Content()(*if6a5d561727ceed03138849e77938ba7
 func (m *MessageItemRequestBuilder) Copy()(*i25c967d20ec85be402e1a7c6d121a8aa4bd088c230867e82dd4528d524fe2b62.CopyRequestBuilder) {
     return i25c967d20ec85be402e1a7c6d121a8aa4bd088c230867e82dd4528d524fe2b62.NewCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property messages for me
-func (m *MessageItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property messages for me
+func (m *MessageItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property messages for me
@@ -132,8 +132,8 @@ func (m *MessageItemRequestBuilder) CreateDeleteRequestInformationWithRequestCon
 func (m *MessageItemRequestBuilder) CreateForward()(*i023106483eeaa9e057f5ee0ef9eef33b274da7e759afeda3ae1fc96fdf554f97.CreateForwardRequestBuilder) {
     return i023106483eeaa9e057f5ee0ef9eef33b274da7e759afeda3ae1fc96fdf554f97.NewCreateForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the messages in a mailbox or folder. Read-only. Nullable.
-func (m *MessageItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the messages in a mailbox or folder. Read-only. Nullable.
+func (m *MessageItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the messages in a mailbox or folder. Read-only. Nullable.
@@ -151,8 +151,8 @@ func (m *MessageItemRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property messages in me
-func (m *MessageItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property messages in me
+func (m *MessageItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property messages in me
@@ -176,12 +176,12 @@ func (m *MessageItemRequestBuilder) CreateReply()(*ia0f4e54b2ec34c3c2ef48b17a17f
 func (m *MessageItemRequestBuilder) CreateReplyAll()(*idba2d70212ff30cbe1857bf8f733677622af732ef7e26a5c94efed97901ff29f.CreateReplyAllRequestBuilder) {
     return idba2d70212ff30cbe1857bf8f733677622af732ef7e26a5c94efed97901ff29f.NewCreateReplyAllRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeleteWithResponseHandler delete navigation property messages for me
-func (m *MessageItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MessageItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property messages for me
+func (m *MessageItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property messages for me
-func (m *MessageItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MessageItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property messages for me
+func (m *MessageItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *MessageItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -219,12 +219,12 @@ func (m *MessageItemRequestBuilder) ExtensionsById(id string)(*i492cbc6c0049fb52
 func (m *MessageItemRequestBuilder) Forward()(*iac432dfcc94115868ef80393dd9192f38b599425feb55dd1dfe9a9cd4d0abb7d.ForwardRequestBuilder) {
     return iac432dfcc94115868ef80393dd9192f38b599425feb55dd1dfe9a9cd4d0abb7d.NewForwardRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the messages in a mailbox or folder. Read-only. Nullable.
-func (m *MessageItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MessageItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the messages in a mailbox or folder. Read-only. Nullable.
+func (m *MessageItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the messages in a mailbox or folder. Read-only. Nullable.
-func (m *MessageItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MessageItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
+// GetWithRequestConfigurationAndResponseHandler the messages in a mailbox or folder. Read-only. Nullable.
+func (m *MessageItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MessageItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -273,12 +273,12 @@ func (m *MessageItemRequestBuilder) MultiValueExtendedPropertiesById(id string)(
     }
     return i5114ea7bc7e0bddf25a0022c76f1aa4ea041eb41634ed63956fb24a1c7417d21.NewMultiValueLegacyExtendedPropertyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property messages in me
-func (m *MessageItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, requestConfiguration *MessageItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property messages in me
+func (m *MessageItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property messages in me
-func (m *MessageItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, requestConfiguration *MessageItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property messages in me
+func (m *MessageItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, requestConfiguration *MessageItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

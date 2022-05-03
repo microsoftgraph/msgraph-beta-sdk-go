@@ -39,8 +39,8 @@ func NewRevokeDeviceLicenseRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewRevokeDeviceLicenseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration revoke assigned iOS VPP device license for given app.
-func (m *RevokeDeviceLicenseRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RevokeDeviceLicenseRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation revoke assigned iOS VPP device license for given app.
+func (m *RevokeDeviceLicenseRequestBuilder) CreatePostRequestInformation(body RevokeDeviceLicenseRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration revoke assigned iOS VPP device license for given app.
@@ -56,12 +56,12 @@ func (m *RevokeDeviceLicenseRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler revoke assigned iOS VPP device license for given app.
-func (m *RevokeDeviceLicenseRequestBuilder) PostWithResponseHandler(body RevokeDeviceLicenseRequestBodyable, requestConfiguration *RevokeDeviceLicenseRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post revoke assigned iOS VPP device license for given app.
+func (m *RevokeDeviceLicenseRequestBuilder) Post(body RevokeDeviceLicenseRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler revoke assigned iOS VPP device license for given app.
-func (m *RevokeDeviceLicenseRequestBuilder) PostWithResponseHandler(body RevokeDeviceLicenseRequestBodyable, requestConfiguration *RevokeDeviceLicenseRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler revoke assigned iOS VPP device license for given app.
+func (m *RevokeDeviceLicenseRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RevokeDeviceLicenseRequestBodyable, requestConfiguration *RevokeDeviceLicenseRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

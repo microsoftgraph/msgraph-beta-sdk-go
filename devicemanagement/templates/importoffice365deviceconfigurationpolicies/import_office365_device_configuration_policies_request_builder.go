@@ -39,8 +39,8 @@ func NewImportOffice365DeviceConfigurationPoliciesRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewImportOffice365DeviceConfigurationPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action importOffice365DeviceConfigurationPolicies
-func (m *ImportOffice365DeviceConfigurationPoliciesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action importOffice365DeviceConfigurationPolicies
+func (m *ImportOffice365DeviceConfigurationPoliciesRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action importOffice365DeviceConfigurationPolicies
@@ -55,12 +55,12 @@ func (m *ImportOffice365DeviceConfigurationPoliciesRequestBuilder) CreatePostReq
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action importOffice365DeviceConfigurationPolicies
-func (m *ImportOffice365DeviceConfigurationPoliciesRequestBuilder) PostWithResponseHandler(requestConfiguration *ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration)(ImportOffice365DeviceConfigurationPoliciesResponseable, error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action importOffice365DeviceConfigurationPolicies
+func (m *ImportOffice365DeviceConfigurationPoliciesRequestBuilder) Post()(ImportOffice365DeviceConfigurationPoliciesResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action importOffice365DeviceConfigurationPolicies
-func (m *ImportOffice365DeviceConfigurationPoliciesRequestBuilder) PostWithResponseHandler(requestConfiguration *ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ImportOffice365DeviceConfigurationPoliciesResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action importOffice365DeviceConfigurationPolicies
+func (m *ImportOffice365DeviceConfigurationPoliciesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ImportOffice365DeviceConfigurationPoliciesResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -40,8 +40,8 @@ func NewReprocessLicenseAssignmentRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewReprocessLicenseAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action reprocessLicenseAssignment
-func (m *ReprocessLicenseAssignmentRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action reprocessLicenseAssignment
+func (m *ReprocessLicenseAssignmentRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action reprocessLicenseAssignment
@@ -56,12 +56,12 @@ func (m *ReprocessLicenseAssignmentRequestBuilder) CreatePostRequestInformationW
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action reprocessLicenseAssignment
-func (m *ReprocessLicenseAssignmentRequestBuilder) PostWithResponseHandler(requestConfiguration *ReprocessLicenseAssignmentRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action reprocessLicenseAssignment
+func (m *ReprocessLicenseAssignmentRequestBuilder) Post()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action reprocessLicenseAssignment
-func (m *ReprocessLicenseAssignmentRequestBuilder) PostWithResponseHandler(requestConfiguration *ReprocessLicenseAssignmentRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action reprocessLicenseAssignment
+func (m *ReprocessLicenseAssignmentRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *ReprocessLicenseAssignmentRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

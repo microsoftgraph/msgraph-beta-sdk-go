@@ -40,8 +40,8 @@ func NewPreviewRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewPreviewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action preview
-func (m *PreviewRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body PreviewRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action preview
+func (m *PreviewRequestBuilder) CreatePostRequestInformation(body PreviewRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action preview
@@ -57,12 +57,12 @@ func (m *PreviewRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action preview
-func (m *PreviewRequestBuilder) PostWithResponseHandler(body PreviewRequestBodyable, requestConfiguration *PreviewRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPreviewInfoable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action preview
+func (m *PreviewRequestBuilder) Post(body PreviewRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPreviewInfoable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action preview
-func (m *PreviewRequestBuilder) PostWithResponseHandler(body PreviewRequestBodyable, requestConfiguration *PreviewRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPreviewInfoable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action preview
+func (m *PreviewRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body PreviewRequestBodyable, requestConfiguration *PreviewRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPreviewInfoable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

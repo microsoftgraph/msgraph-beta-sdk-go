@@ -50,8 +50,8 @@ func NewDeviceManagementConfigurationSettingDefinitionItemRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementConfigurationSettingDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration list of related Setting Definitions. This property is read-only.
-func (m *DeviceManagementConfigurationSettingDefinitionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation list of related Setting Definitions. This property is read-only.
+func (m *DeviceManagementConfigurationSettingDefinitionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration list of related Setting Definitions. This property is read-only.
@@ -69,12 +69,12 @@ func (m *DeviceManagementConfigurationSettingDefinitionItemRequestBuilder) Creat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler list of related Setting Definitions. This property is read-only.
-func (m *DeviceManagementConfigurationSettingDefinitionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementConfigurationSettingDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationSettingDefinitionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get list of related Setting Definitions. This property is read-only.
+func (m *DeviceManagementConfigurationSettingDefinitionItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationSettingDefinitionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler list of related Setting Definitions. This property is read-only.
-func (m *DeviceManagementConfigurationSettingDefinitionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementConfigurationSettingDefinitionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationSettingDefinitionable, error) {
+// GetWithRequestConfigurationAndResponseHandler list of related Setting Definitions. This property is read-only.
+func (m *DeviceManagementConfigurationSettingDefinitionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementConfigurationSettingDefinitionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationSettingDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

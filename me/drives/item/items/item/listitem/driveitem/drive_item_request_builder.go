@@ -55,8 +55,8 @@ func NewDriveItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *DriveItemRequestBuilder) Content()(*i0d54d57da198551219c4d7c2a53705526ac8dd6910ee01e75554f4ea933e993f.ContentRequestBuilder) {
     return i0d54d57da198551219c4d7c2a53705526ac8dd6910ee01e75554f4ea933e993f.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration for document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
-func (m *DriveItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation for document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+func (m *DriveItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration for document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
@@ -74,12 +74,12 @@ func (m *DriveItemRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler for document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
-func (m *DriveItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DriveItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get for document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+func (m *DriveItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler for document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
-func (m *DriveItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DriveItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
+// GetWithRequestConfigurationAndResponseHandler for document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+func (m *DriveItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DriveItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

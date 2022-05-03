@@ -40,8 +40,8 @@ func NewFindMeetingTimesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewFindMeetingTimesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action findMeetingTimes
-func (m *FindMeetingTimesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body FindMeetingTimesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action findMeetingTimes
+func (m *FindMeetingTimesRequestBuilder) CreatePostRequestInformation(body FindMeetingTimesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action findMeetingTimes
@@ -57,12 +57,12 @@ func (m *FindMeetingTimesRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action findMeetingTimes
-func (m *FindMeetingTimesRequestBuilder) PostWithResponseHandler(body FindMeetingTimesRequestBodyable, requestConfiguration *FindMeetingTimesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingTimeSuggestionsResultable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action findMeetingTimes
+func (m *FindMeetingTimesRequestBuilder) Post(body FindMeetingTimesRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingTimeSuggestionsResultable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action findMeetingTimes
-func (m *FindMeetingTimesRequestBuilder) PostWithResponseHandler(body FindMeetingTimesRequestBodyable, requestConfiguration *FindMeetingTimesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingTimeSuggestionsResultable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action findMeetingTimes
+func (m *FindMeetingTimesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body FindMeetingTimesRequestBodyable, requestConfiguration *FindMeetingTimesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingTimeSuggestionsResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

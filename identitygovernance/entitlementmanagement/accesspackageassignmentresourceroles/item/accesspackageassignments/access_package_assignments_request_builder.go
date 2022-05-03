@@ -67,8 +67,8 @@ func NewAccessPackageAssignmentsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *AccessPackageAssignmentsRequestBuilder) Count()(*ic5ef489a0ef13ef827bc3f0f63956e40002e62475def3599a9e56ba6b39d4f83.CountRequestBuilder) {
     return ic5ef489a0ef13ef827bc3f0f63956e40002e62475def3599a9e56ba6b39d4f83.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the access package assignments resulting in this role assignment. Read-only. Nullable.
-func (m *AccessPackageAssignmentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the access package assignments resulting in this role assignment. Read-only. Nullable.
+func (m *AccessPackageAssignmentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the access package assignments resulting in this role assignment. Read-only. Nullable.
@@ -86,12 +86,12 @@ func (m *AccessPackageAssignmentsRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the access package assignments resulting in this role assignment. Read-only. Nullable.
-func (m *AccessPackageAssignmentsRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the access package assignments resulting in this role assignment. Read-only. Nullable.
+func (m *AccessPackageAssignmentsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the access package assignments resulting in this role assignment. Read-only. Nullable.
-func (m *AccessPackageAssignmentsRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageAssignmentsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the access package assignments resulting in this role assignment. Read-only. Nullable.
+func (m *AccessPackageAssignmentsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageAssignmentsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -64,8 +64,8 @@ func NewDelegatedAdminServiceManagementDetailItemRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewDelegatedAdminServiceManagementDetailItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property serviceManagementDetails for tenantRelationships
-func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property serviceManagementDetails for tenantRelationships
+func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property serviceManagementDetails for tenantRelationships
@@ -80,8 +80,8 @@ func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) CreateDeleteRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration contains the management details of a service in the customer tenant that's managed by delegated administration.
-func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation contains the management details of a service in the customer tenant that's managed by delegated administration.
+func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration contains the management details of a service in the customer tenant that's managed by delegated administration.
@@ -99,8 +99,8 @@ func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property serviceManagementDetails in tenantRelationships
-func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminServiceManagementDetailable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property serviceManagementDetails in tenantRelationships
+func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminServiceManagementDetailable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property serviceManagementDetails in tenantRelationships
@@ -116,12 +116,12 @@ func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) CreatePatchReq
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property serviceManagementDetails for tenantRelationships
-func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DelegatedAdminServiceManagementDetailItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property serviceManagementDetails for tenantRelationships
+func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property serviceManagementDetails for tenantRelationships
-func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DelegatedAdminServiceManagementDetailItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property serviceManagementDetails for tenantRelationships
+func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DelegatedAdminServiceManagementDetailItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) DeleteWithResp
     }
     return nil
 }
-// GetWithResponseHandler contains the management details of a service in the customer tenant that's managed by delegated administration.
-func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DelegatedAdminServiceManagementDetailItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminServiceManagementDetailable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get contains the management details of a service in the customer tenant that's managed by delegated administration.
+func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminServiceManagementDetailable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler contains the management details of a service in the customer tenant that's managed by delegated administration.
-func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DelegatedAdminServiceManagementDetailItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminServiceManagementDetailable, error) {
+// GetWithRequestConfigurationAndResponseHandler contains the management details of a service in the customer tenant that's managed by delegated administration.
+func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DelegatedAdminServiceManagementDetailItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminServiceManagementDetailable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) GetWithRespons
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminServiceManagementDetailable), nil
 }
-// PatchWithResponseHandler update the navigation property serviceManagementDetails in tenantRelationships
-func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminServiceManagementDetailable, requestConfiguration *DelegatedAdminServiceManagementDetailItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property serviceManagementDetails in tenantRelationships
+func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminServiceManagementDetailable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property serviceManagementDetails in tenantRelationships
-func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminServiceManagementDetailable, requestConfiguration *DelegatedAdminServiceManagementDetailItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property serviceManagementDetails in tenantRelationships
+func (m *DelegatedAdminServiceManagementDetailItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminServiceManagementDetailable, requestConfiguration *DelegatedAdminServiceManagementDetailItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -69,8 +69,8 @@ func NewSchemaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewSchemaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property schema for servicePrincipals
-func (m *SchemaRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property schema for servicePrincipals
+func (m *SchemaRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property schema for servicePrincipals
@@ -85,8 +85,8 @@ func (m *SchemaRequestBuilder) CreateDeleteRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration default synchronization schema for the jobs based on this template.
-func (m *SchemaRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation default synchronization schema for the jobs based on this template.
+func (m *SchemaRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration default synchronization schema for the jobs based on this template.
@@ -104,8 +104,8 @@ func (m *SchemaRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property schema in servicePrincipals
-func (m *SchemaRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property schema in servicePrincipals
+func (m *SchemaRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property schema in servicePrincipals
@@ -121,12 +121,12 @@ func (m *SchemaRequestBuilder) CreatePatchRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property schema for servicePrincipals
-func (m *SchemaRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SchemaRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property schema for servicePrincipals
+func (m *SchemaRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property schema for servicePrincipals
-func (m *SchemaRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SchemaRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property schema for servicePrincipals
+func (m *SchemaRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *SchemaRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -164,12 +164,12 @@ func (m *SchemaRequestBuilder) FilterOperators()(*i9303411a20178a126012bdf802c85
 func (m *SchemaRequestBuilder) Functions()(*i36fdc7569d3f0809e9eefdd0c8c16c5e0395c922bdaace8196665e44a09adb27.FunctionsRequestBuilder) {
     return i36fdc7569d3f0809e9eefdd0c8c16c5e0395c922bdaace8196665e44a09adb27.NewFunctionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler default synchronization schema for the jobs based on this template.
-func (m *SchemaRequestBuilder) GetWithResponseHandler(requestConfiguration *SchemaRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get default synchronization schema for the jobs based on this template.
+func (m *SchemaRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler default synchronization schema for the jobs based on this template.
-func (m *SchemaRequestBuilder) GetWithResponseHandler(requestConfiguration *SchemaRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable, error) {
+// GetWithRequestConfigurationAndResponseHandler default synchronization schema for the jobs based on this template.
+func (m *SchemaRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SchemaRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -188,12 +188,12 @@ func (m *SchemaRequestBuilder) GetWithResponseHandler(requestConfiguration *Sche
 func (m *SchemaRequestBuilder) ParseExpression()(*idd8cf83633c367895d6f418067b0f38663f134d6ecc5ab7c35bc0987d1b4ac9e.ParseExpressionRequestBuilder) {
     return idd8cf83633c367895d6f418067b0f38663f134d6ecc5ab7c35bc0987d1b4ac9e.NewParseExpressionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property schema in servicePrincipals
-func (m *SchemaRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable, requestConfiguration *SchemaRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property schema in servicePrincipals
+func (m *SchemaRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property schema in servicePrincipals
-func (m *SchemaRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable, requestConfiguration *SchemaRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property schema in servicePrincipals
+func (m *SchemaRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationSchemaable, requestConfiguration *SchemaRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

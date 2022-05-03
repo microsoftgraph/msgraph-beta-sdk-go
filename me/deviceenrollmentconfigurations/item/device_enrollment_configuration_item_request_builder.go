@@ -6,6 +6,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i6170658a0d5b58db8b79dacb601c4d22e30a4c4ae87b850f6f7f68c09f444c89 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/deviceenrollmentconfigurations/item/assign"
     iaa0d710f90b1a32f5cd84646584587a42f6739141a218233692f0fa578073ccc "github.com/microsoftgraph/msgraph-beta-sdk-go/me/deviceenrollmentconfigurations/item/setpriority"
+    id926cc83590c84f85ae75bb06ce75a181ffce858489901d6286c5f306a6940a9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/deviceenrollmentconfigurations/item/createenrollmentnotificationconfiguration"
     if2a3d3b427cb31b340e4c2412c17e0640a24dc599137ce6be0cc982589e4deb0 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/deviceenrollmentconfigurations/item/assignments"
     i934f161901d6bdad15cab7b3c6bac23e288fe9d7ada1f9c5697626905ea96d9b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/deviceenrollmentconfigurations/item/assignments/item"
 )
@@ -87,8 +88,8 @@ func NewDeviceEnrollmentConfigurationItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceEnrollmentConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceEnrollmentConfigurations for me
-func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property deviceEnrollmentConfigurations for me
+func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceEnrollmentConfigurations for me
@@ -103,8 +104,12 @@ func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get enrollment configurations targeted to the user
-func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateEnrollmentNotificationConfiguration the createEnrollmentNotificationConfiguration property
+func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreateEnrollmentNotificationConfiguration()(*id926cc83590c84f85ae75bb06ce75a181ffce858489901d6286c5f306a6940a9.CreateEnrollmentNotificationConfigurationRequestBuilder) {
+    return id926cc83590c84f85ae75bb06ce75a181ffce858489901d6286c5f306a6940a9.NewCreateEnrollmentNotificationConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CreateGetRequestInformation get enrollment configurations targeted to the user
+func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get enrollment configurations targeted to the user
@@ -122,8 +127,8 @@ func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceEnrollmentConfigurations in me
-func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property deviceEnrollmentConfigurations in me
+func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceEnrollmentConfigurations in me
@@ -139,12 +144,12 @@ func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreatePatchRequestInfo
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property deviceEnrollmentConfigurations for me
-func (m *DeviceEnrollmentConfigurationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceEnrollmentConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property deviceEnrollmentConfigurations for me
+func (m *DeviceEnrollmentConfigurationItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property deviceEnrollmentConfigurations for me
-func (m *DeviceEnrollmentConfigurationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceEnrollmentConfigurationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property deviceEnrollmentConfigurations for me
+func (m *DeviceEnrollmentConfigurationItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceEnrollmentConfigurationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -159,12 +164,12 @@ func (m *DeviceEnrollmentConfigurationItemRequestBuilder) DeleteWithResponseHand
     }
     return nil
 }
-// GetWithResponseHandler get enrollment configurations targeted to the user
-func (m *DeviceEnrollmentConfigurationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceEnrollmentConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get enrollment configurations targeted to the user
+func (m *DeviceEnrollmentConfigurationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get enrollment configurations targeted to the user
-func (m *DeviceEnrollmentConfigurationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceEnrollmentConfigurationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, error) {
+// GetWithRequestConfigurationAndResponseHandler get enrollment configurations targeted to the user
+func (m *DeviceEnrollmentConfigurationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceEnrollmentConfigurationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -179,12 +184,12 @@ func (m *DeviceEnrollmentConfigurationItemRequestBuilder) GetWithResponseHandler
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable), nil
 }
-// PatchWithResponseHandler update the navigation property deviceEnrollmentConfigurations in me
-func (m *DeviceEnrollmentConfigurationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, requestConfiguration *DeviceEnrollmentConfigurationItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property deviceEnrollmentConfigurations in me
+func (m *DeviceEnrollmentConfigurationItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property deviceEnrollmentConfigurations in me
-func (m *DeviceEnrollmentConfigurationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, requestConfiguration *DeviceEnrollmentConfigurationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property deviceEnrollmentConfigurations in me
+func (m *DeviceEnrollmentConfigurationItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, requestConfiguration *DeviceEnrollmentConfigurationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -47,8 +47,8 @@ func NewPictureRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewPictureRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration get picture for the navigation property companyInformation from financials
-func (m *PictureRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get picture for the navigation property companyInformation from financials
+func (m *PictureRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get picture for the navigation property companyInformation from financials
@@ -63,8 +63,8 @@ func (m *PictureRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePutRequestInformationWithRequestConfiguration update picture for the navigation property companyInformation in financials
-func (m *PictureRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePutRequestInformation update picture for the navigation property companyInformation in financials
+func (m *PictureRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePutRequestInformationWithRequestConfiguration update picture for the navigation property companyInformation in financials
@@ -80,12 +80,12 @@ func (m *PictureRequestBuilder) CreatePutRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get picture for the navigation property companyInformation from financials
-func (m *PictureRequestBuilder) GetWithResponseHandler(requestConfiguration *PictureRequestBuilderGetRequestConfiguration)([]byte, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get picture for the navigation property companyInformation from financials
+func (m *PictureRequestBuilder) Get()([]byte, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get picture for the navigation property companyInformation from financials
-func (m *PictureRequestBuilder) GetWithResponseHandler(requestConfiguration *PictureRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+// GetWithRequestConfigurationAndResponseHandler get picture for the navigation property companyInformation from financials
+func (m *PictureRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PictureRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -100,12 +100,12 @@ func (m *PictureRequestBuilder) GetWithResponseHandler(requestConfiguration *Pic
     }
     return res.([]byte), nil
 }
-// PutWithResponseHandler update picture for the navigation property companyInformation in financials
-func (m *PictureRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *PictureRequestBuilderPutRequestConfiguration)(error) {
-    return m.PutWithResponseHandler(body, requestConfiguration, nil);
+// Put update picture for the navigation property companyInformation in financials
+func (m *PictureRequestBuilder) Put(body []byte)(error) {
+    return m.PutWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PutWithResponseHandler update picture for the navigation property companyInformation in financials
-func (m *PictureRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *PictureRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PutWithRequestConfigurationAndResponseHandler update picture for the navigation property companyInformation in financials
+func (m *PictureRequestBuilder) PutWithRequestConfigurationAndResponseHandler(body []byte, requestConfiguration *PictureRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

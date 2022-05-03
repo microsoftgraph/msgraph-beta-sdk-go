@@ -42,8 +42,8 @@ func NewGetOffice365GroupsActivityCountsWithPeriodRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365GroupsActivityCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getOffice365GroupsActivityCounts
-func (m *GetOffice365GroupsActivityCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getOffice365GroupsActivityCounts
+func (m *GetOffice365GroupsActivityCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getOffice365GroupsActivityCounts
@@ -58,12 +58,12 @@ func (m *GetOffice365GroupsActivityCountsWithPeriodRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getOffice365GroupsActivityCounts
-func (m *GetOffice365GroupsActivityCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetOffice365GroupsActivityCountsWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getOffice365GroupsActivityCounts
+func (m *GetOffice365GroupsActivityCountsWithPeriodRequestBuilder) Get()(GetOffice365GroupsActivityCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getOffice365GroupsActivityCounts
-func (m *GetOffice365GroupsActivityCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOffice365GroupsActivityCountsWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getOffice365GroupsActivityCounts
+func (m *GetOffice365GroupsActivityCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOffice365GroupsActivityCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

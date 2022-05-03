@@ -74,8 +74,8 @@ func NewAgedAccountsReceivableRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *AgedAccountsReceivableRequestBuilder) Count()(*i6ff5d563ca39606ef9a26bfcc30e7fccb36c5e5bf160c3c988252c61e4bf1ee0.CountRequestBuilder) {
     return i6ff5d563ca39606ef9a26bfcc30e7fccb36c5e5bf160c3c988252c61e4bf1ee0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get agedAccountsReceivable from financials
-func (m *AgedAccountsReceivableRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get agedAccountsReceivable from financials
+func (m *AgedAccountsReceivableRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get agedAccountsReceivable from financials
@@ -93,8 +93,8 @@ func (m *AgedAccountsReceivableRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to agedAccountsReceivable for financials
-func (m *AgedAccountsReceivableRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to agedAccountsReceivable for financials
+func (m *AgedAccountsReceivableRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to agedAccountsReceivable for financials
@@ -110,12 +110,12 @@ func (m *AgedAccountsReceivableRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get agedAccountsReceivable from financials
-func (m *AgedAccountsReceivableRequestBuilder) GetWithResponseHandler(requestConfiguration *AgedAccountsReceivableRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get agedAccountsReceivable from financials
+func (m *AgedAccountsReceivableRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get agedAccountsReceivable from financials
-func (m *AgedAccountsReceivableRequestBuilder) GetWithResponseHandler(requestConfiguration *AgedAccountsReceivableRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get agedAccountsReceivable from financials
+func (m *AgedAccountsReceivableRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AgedAccountsReceivableRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AgedAccountsReceivableRequestBuilder) GetWithResponseHandler(requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to agedAccountsReceivable for financials
-func (m *AgedAccountsReceivableRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableable, requestConfiguration *AgedAccountsReceivableRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to agedAccountsReceivable for financials
+func (m *AgedAccountsReceivableRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to agedAccountsReceivable for financials
-func (m *AgedAccountsReceivableRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableable, requestConfiguration *AgedAccountsReceivableRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to agedAccountsReceivable for financials
+func (m *AgedAccountsReceivableRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableable, requestConfiguration *AgedAccountsReceivableRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsReceivableable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

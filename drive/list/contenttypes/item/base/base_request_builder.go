@@ -50,8 +50,8 @@ func NewBaseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewBaseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration parent contentType from which this content type is derived.
-func (m *BaseRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation parent contentType from which this content type is derived.
+func (m *BaseRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration parent contentType from which this content type is derived.
@@ -69,12 +69,12 @@ func (m *BaseRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler parent contentType from which this content type is derived.
-func (m *BaseRequestBuilder) GetWithResponseHandler(requestConfiguration *BaseRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get parent contentType from which this content type is derived.
+func (m *BaseRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler parent contentType from which this content type is derived.
-func (m *BaseRequestBuilder) GetWithResponseHandler(requestConfiguration *BaseRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, error) {
+// GetWithRequestConfigurationAndResponseHandler parent contentType from which this content type is derived.
+func (m *BaseRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BaseRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

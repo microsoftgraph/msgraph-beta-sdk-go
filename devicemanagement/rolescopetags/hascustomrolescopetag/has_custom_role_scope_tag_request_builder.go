@@ -39,8 +39,8 @@ func NewHasCustomRoleScopeTagRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewHasCustomRoleScopeTagRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function hasCustomRoleScopeTag
-func (m *HasCustomRoleScopeTagRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function hasCustomRoleScopeTag
+func (m *HasCustomRoleScopeTagRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function hasCustomRoleScopeTag
@@ -55,12 +55,12 @@ func (m *HasCustomRoleScopeTagRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function hasCustomRoleScopeTag
-func (m *HasCustomRoleScopeTagRequestBuilder) GetWithResponseHandler(requestConfiguration *HasCustomRoleScopeTagRequestBuilderGetRequestConfiguration)(HasCustomRoleScopeTagResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function hasCustomRoleScopeTag
+func (m *HasCustomRoleScopeTagRequestBuilder) Get()(HasCustomRoleScopeTagResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function hasCustomRoleScopeTag
-func (m *HasCustomRoleScopeTagRequestBuilder) GetWithResponseHandler(requestConfiguration *HasCustomRoleScopeTagRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(HasCustomRoleScopeTagResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function hasCustomRoleScopeTag
+func (m *HasCustomRoleScopeTagRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *HasCustomRoleScopeTagRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(HasCustomRoleScopeTagResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

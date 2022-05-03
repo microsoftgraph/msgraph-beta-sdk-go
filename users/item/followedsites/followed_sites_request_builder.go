@@ -67,8 +67,8 @@ func NewFollowedSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *FollowedSitesRequestBuilder) Count()(*i8be7a7a8f38bd0e2fe26e6249634793ebfe69e49a62e492acc5b4bf0ccd5040b.CountRequestBuilder) {
     return i8be7a7a8f38bd0e2fe26e6249634793ebfe69e49a62e492acc5b4bf0ccd5040b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get followedSites from users
-func (m *FollowedSitesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get followedSites from users
+func (m *FollowedSitesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get followedSites from users
@@ -86,12 +86,12 @@ func (m *FollowedSitesRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get followedSites from users
-func (m *FollowedSitesRequestBuilder) GetWithResponseHandler(requestConfiguration *FollowedSitesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get followedSites from users
+func (m *FollowedSitesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get followedSites from users
-func (m *FollowedSitesRequestBuilder) GetWithResponseHandler(requestConfiguration *FollowedSitesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get followedSites from users
+func (m *FollowedSitesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FollowedSitesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

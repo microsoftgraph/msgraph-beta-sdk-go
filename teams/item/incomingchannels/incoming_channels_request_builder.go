@@ -67,8 +67,8 @@ func NewIncomingChannelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *IncomingChannelsRequestBuilder) Count()(*i1dba45ba956ea6df53adb73f7891695455d3f9888de3bede7f85244d501ffcad.CountRequestBuilder) {
     return i1dba45ba956ea6df53adb73f7891695455d3f9888de3bede7f85244d501ffcad.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get incomingChannels from teams
-func (m *IncomingChannelsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get incomingChannels from teams
+func (m *IncomingChannelsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get incomingChannels from teams
@@ -86,12 +86,12 @@ func (m *IncomingChannelsRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get incomingChannels from teams
-func (m *IncomingChannelsRequestBuilder) GetWithResponseHandler(requestConfiguration *IncomingChannelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get incomingChannels from teams
+func (m *IncomingChannelsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get incomingChannels from teams
-func (m *IncomingChannelsRequestBuilder) GetWithResponseHandler(requestConfiguration *IncomingChannelsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get incomingChannels from teams
+func (m *IncomingChannelsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IncomingChannelsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

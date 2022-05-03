@@ -40,8 +40,8 @@ func NewGetAssignmentFiltersStatusDetailsRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewGetAssignmentFiltersStatusDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getAssignmentFiltersStatusDetails
-func (m *GetAssignmentFiltersStatusDetailsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetAssignmentFiltersStatusDetailsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getAssignmentFiltersStatusDetails
+func (m *GetAssignmentFiltersStatusDetailsRequestBuilder) CreatePostRequestInformation(body GetAssignmentFiltersStatusDetailsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getAssignmentFiltersStatusDetails
@@ -57,12 +57,12 @@ func (m *GetAssignmentFiltersStatusDetailsRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getAssignmentFiltersStatusDetails
-func (m *GetAssignmentFiltersStatusDetailsRequestBuilder) PostWithResponseHandler(body GetAssignmentFiltersStatusDetailsRequestBodyable, requestConfiguration *GetAssignmentFiltersStatusDetailsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterStatusDetailsable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getAssignmentFiltersStatusDetails
+func (m *GetAssignmentFiltersStatusDetailsRequestBuilder) Post(body GetAssignmentFiltersStatusDetailsRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterStatusDetailsable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getAssignmentFiltersStatusDetails
-func (m *GetAssignmentFiltersStatusDetailsRequestBuilder) PostWithResponseHandler(body GetAssignmentFiltersStatusDetailsRequestBodyable, requestConfiguration *GetAssignmentFiltersStatusDetailsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterStatusDetailsable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getAssignmentFiltersStatusDetails
+func (m *GetAssignmentFiltersStatusDetailsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetAssignmentFiltersStatusDetailsRequestBodyable, requestConfiguration *GetAssignmentFiltersStatusDetailsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterStatusDetailsable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -74,8 +74,8 @@ func NewSideLoadingKeysRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *SideLoadingKeysRequestBuilder) Count()(*i1a730cc908596e5eadc632bab2b63675b1b3bd571e5c79576caa4468ebb3f84f.CountRequestBuilder) {
     return i1a730cc908596e5eadc632bab2b63675b1b3bd571e5c79576caa4468ebb3f84f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-func (m *SideLoadingKeysRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+func (m *SideLoadingKeysRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
@@ -93,8 +93,8 @@ func (m *SideLoadingKeysRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to sideLoadingKeys for deviceAppManagement
-func (m *SideLoadingKeysRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to sideLoadingKeys for deviceAppManagement
+func (m *SideLoadingKeysRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to sideLoadingKeys for deviceAppManagement
@@ -110,12 +110,12 @@ func (m *SideLoadingKeysRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-func (m *SideLoadingKeysRequestBuilder) GetWithResponseHandler(requestConfiguration *SideLoadingKeysRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+func (m *SideLoadingKeysRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-func (m *SideLoadingKeysRequestBuilder) GetWithResponseHandler(requestConfiguration *SideLoadingKeysRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+func (m *SideLoadingKeysRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SideLoadingKeysRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *SideLoadingKeysRequestBuilder) GetWithResponseHandler(requestConfigurat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to sideLoadingKeys for deviceAppManagement
-func (m *SideLoadingKeysRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyable, requestConfiguration *SideLoadingKeysRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to sideLoadingKeys for deviceAppManagement
+func (m *SideLoadingKeysRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to sideLoadingKeys for deviceAppManagement
-func (m *SideLoadingKeysRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyable, requestConfiguration *SideLoadingKeysRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to sideLoadingKeys for deviceAppManagement
+func (m *SideLoadingKeysRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyable, requestConfiguration *SideLoadingKeysRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SideLoadingKeyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

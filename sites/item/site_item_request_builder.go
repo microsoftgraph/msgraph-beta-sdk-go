@@ -118,8 +118,8 @@ func (m *SiteItemRequestBuilder) ContentTypesById(id string)(*i3721ddd37978ed588
     }
     return i3721ddd37978ed5887e741cd4ec530f247da77968194df669e6b5cf53370bed5.NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from sites by key
-func (m *SiteItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entity from sites by key
+func (m *SiteItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entity from sites by key
@@ -137,8 +137,8 @@ func (m *SiteItemRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in sites
-func (m *SiteItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update entity in sites
+func (m *SiteItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update entity in sites
@@ -188,6 +188,10 @@ func (m *SiteItemRequestBuilder) ExternalColumnsById(id string)(*ic6fa3aac02c15c
     }
     return ic6fa3aac02c15ce02c1307596eb029012f7b5635177e98447f51c9743b7179bf.NewColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Get get entity from sites by key
+func (m *SiteItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
 func (m *SiteItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*i46cbb195f6e4660d7b45749753a475a645bf6784bfc9f9adc1d79eccfc9a7b40.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
     return i46cbb195f6e4660d7b45749753a475a645bf6784bfc9f9adc1d79eccfc9a7b40.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime);
@@ -200,12 +204,8 @@ func (m *SiteItemRequestBuilder) GetApplicableContentTypesForListWithListId(list
 func (m *SiteItemRequestBuilder) GetByPathWithPath(path *string)(*i808417908586dcac70c7b70c188cca33c7915492b55710e4dc2e94823e3765cc.GetByPathWithPathRequestBuilder) {
     return i808417908586dcac70c7b70c188cca33c7915492b55710e4dc2e94823e3765cc.NewGetByPathWithPathRequestBuilderInternal(m.pathParameters, m.requestAdapter, path);
 }
-// GetWithResponseHandler get entity from sites by key
-func (m *SiteItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SiteItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler get entity from sites by key
-func (m *SiteItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SiteItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entity from sites by key
+func (m *SiteItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SiteItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -284,12 +284,12 @@ func (m *SiteItemRequestBuilder) PagesById(id string)(*i13de7ce6001c6b4559e0a6f9
     }
     return i13de7ce6001c6b4559e0a6f9bb09511cb1f9e883a741518534e6b03fba66897a.NewSitePageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update entity in sites
-func (m *SiteItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, requestConfiguration *SiteItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update entity in sites
+func (m *SiteItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update entity in sites
-func (m *SiteItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, requestConfiguration *SiteItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update entity in sites
+func (m *SiteItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, requestConfiguration *SiteItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

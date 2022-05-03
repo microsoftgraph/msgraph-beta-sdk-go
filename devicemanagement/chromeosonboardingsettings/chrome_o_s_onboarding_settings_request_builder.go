@@ -80,8 +80,8 @@ func NewChromeOSOnboardingSettingsRequestBuilder(rawUrl string, requestAdapter i
 func (m *ChromeOSOnboardingSettingsRequestBuilder) Count()(*i03210ad32b09351152234b83ec305c89c9e57ede5b483a4b11073f1d5356f1ce.CountRequestBuilder) {
     return i03210ad32b09351152234b83ec305c89c9e57ede5b483a4b11073f1d5356f1ce.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of ChromeOSOnboardingSettings settings associated with account.
-func (m *ChromeOSOnboardingSettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation collection of ChromeOSOnboardingSettings settings associated with account.
+func (m *ChromeOSOnboardingSettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration collection of ChromeOSOnboardingSettings settings associated with account.
@@ -99,8 +99,8 @@ func (m *ChromeOSOnboardingSettingsRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to chromeOSOnboardingSettings for deviceManagement
-func (m *ChromeOSOnboardingSettingsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to chromeOSOnboardingSettings for deviceManagement
+func (m *ChromeOSOnboardingSettingsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to chromeOSOnboardingSettings for deviceManagement
@@ -120,12 +120,12 @@ func (m *ChromeOSOnboardingSettingsRequestBuilder) CreatePostRequestInformationW
 func (m *ChromeOSOnboardingSettingsRequestBuilder) Disconnect()(*icd47eb9dea6f9de87c7b2bffac772b07ab4e53b5bd39f33b7ea3886e5e11f322.DisconnectRequestBuilder) {
     return icd47eb9dea6f9de87c7b2bffac772b07ab4e53b5bd39f33b7ea3886e5e11f322.NewDisconnectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler collection of ChromeOSOnboardingSettings settings associated with account.
-func (m *ChromeOSOnboardingSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *ChromeOSOnboardingSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get collection of ChromeOSOnboardingSettings settings associated with account.
+func (m *ChromeOSOnboardingSettingsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler collection of ChromeOSOnboardingSettings settings associated with account.
-func (m *ChromeOSOnboardingSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *ChromeOSOnboardingSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler collection of ChromeOSOnboardingSettings settings associated with account.
+func (m *ChromeOSOnboardingSettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChromeOSOnboardingSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -140,12 +140,12 @@ func (m *ChromeOSOnboardingSettingsRequestBuilder) GetWithResponseHandler(reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to chromeOSOnboardingSettings for deviceManagement
-func (m *ChromeOSOnboardingSettingsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsable, requestConfiguration *ChromeOSOnboardingSettingsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to chromeOSOnboardingSettings for deviceManagement
+func (m *ChromeOSOnboardingSettingsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to chromeOSOnboardingSettings for deviceManagement
-func (m *ChromeOSOnboardingSettingsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsable, requestConfiguration *ChromeOSOnboardingSettingsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to chromeOSOnboardingSettings for deviceManagement
+func (m *ChromeOSOnboardingSettingsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsable, requestConfiguration *ChromeOSOnboardingSettingsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingSettingsable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

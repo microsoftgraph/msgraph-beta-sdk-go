@@ -42,8 +42,8 @@ func NewGetOneDriveUsageAccountCountsWithPeriodRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewGetOneDriveUsageAccountCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getOneDriveUsageAccountCounts
-func (m *GetOneDriveUsageAccountCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getOneDriveUsageAccountCounts
+func (m *GetOneDriveUsageAccountCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getOneDriveUsageAccountCounts
@@ -58,12 +58,12 @@ func (m *GetOneDriveUsageAccountCountsWithPeriodRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getOneDriveUsageAccountCounts
-func (m *GetOneDriveUsageAccountCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOneDriveUsageAccountCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetOneDriveUsageAccountCountsWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getOneDriveUsageAccountCounts
+func (m *GetOneDriveUsageAccountCountsWithPeriodRequestBuilder) Get()(GetOneDriveUsageAccountCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getOneDriveUsageAccountCounts
-func (m *GetOneDriveUsageAccountCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOneDriveUsageAccountCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOneDriveUsageAccountCountsWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getOneDriveUsageAccountCounts
+func (m *GetOneDriveUsageAccountCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetOneDriveUsageAccountCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOneDriveUsageAccountCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

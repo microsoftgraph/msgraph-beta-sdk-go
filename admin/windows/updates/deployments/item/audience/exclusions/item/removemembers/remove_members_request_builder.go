@@ -39,8 +39,8 @@ func NewRemoveMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewRemoveMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action removeMembers
-func (m *RemoveMembersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveMembersRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action removeMembers
+func (m *RemoveMembersRequestBuilder) CreatePostRequestInformation(body RemoveMembersRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action removeMembers
@@ -56,12 +56,12 @@ func (m *RemoveMembersRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action removeMembers
-func (m *RemoveMembersRequestBuilder) PostWithResponseHandler(body RemoveMembersRequestBodyable, requestConfiguration *RemoveMembersRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action removeMembers
+func (m *RemoveMembersRequestBuilder) Post(body RemoveMembersRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action removeMembers
-func (m *RemoveMembersRequestBuilder) PostWithResponseHandler(body RemoveMembersRequestBodyable, requestConfiguration *RemoveMembersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action removeMembers
+func (m *RemoveMembersRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveMembersRequestBodyable, requestConfiguration *RemoveMembersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

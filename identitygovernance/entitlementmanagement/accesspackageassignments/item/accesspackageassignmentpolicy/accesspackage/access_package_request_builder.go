@@ -50,8 +50,8 @@ func NewAccessPackageRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the access package with this policy. Read-only. Nullable. Supports $expand.
-func (m *AccessPackageRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the access package with this policy. Read-only. Nullable. Supports $expand.
+func (m *AccessPackageRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the access package with this policy. Read-only. Nullable. Supports $expand.
@@ -69,12 +69,12 @@ func (m *AccessPackageRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the access package with this policy. Read-only. Nullable. Supports $expand.
-func (m *AccessPackageRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the access package with this policy. Read-only. Nullable. Supports $expand.
+func (m *AccessPackageRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the access package with this policy. Read-only. Nullable. Supports $expand.
-func (m *AccessPackageRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, error) {
+// GetWithRequestConfigurationAndResponseHandler the access package with this policy. Read-only. Nullable. Supports $expand.
+func (m *AccessPackageRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

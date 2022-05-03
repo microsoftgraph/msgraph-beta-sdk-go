@@ -77,8 +77,8 @@ func NewOrganizationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *OrganizationRequestBuilder) Count()(*ifb1963c9103f69be173eee22987446cd3e9d7ce821b04983cea3b23fb532ead5.CountRequestBuilder) {
     return ifb1963c9103f69be173eee22987446cd3e9d7ce821b04983cea3b23fb532ead5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from organization
-func (m *OrganizationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from organization
+func (m *OrganizationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from organization
@@ -96,8 +96,8 @@ func (m *OrganizationRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to organization
-func (m *OrganizationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to organization
+func (m *OrganizationRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to organization
@@ -113,6 +113,10 @@ func (m *OrganizationRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
+// Get get entities from organization
+func (m *OrganizationRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetByIds the getByIds property
 func (m *OrganizationRequestBuilder) GetByIds()(*i0c7f3ef6fb529e975f67ac224f6035fee6c05276ac28c894a14cfc1e7c3bb0d0.GetByIdsRequestBuilder) {
     return i0c7f3ef6fb529e975f67ac224f6035fee6c05276ac28c894a14cfc1e7c3bb0d0.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -121,12 +125,8 @@ func (m *OrganizationRequestBuilder) GetByIds()(*i0c7f3ef6fb529e975f67ac224f6035
 func (m *OrganizationRequestBuilder) GetUserOwnedObjects()(*if23338229be95a3b02ac4d54214519857673110709575e54061cd24d479f3b7c.GetUserOwnedObjectsRequestBuilder) {
     return if23338229be95a3b02ac4d54214519857673110709575e54061cd24d479f3b7c.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get entities from organization
-func (m *OrganizationRequestBuilder) GetWithResponseHandler(requestConfiguration *OrganizationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler get entities from organization
-func (m *OrganizationRequestBuilder) GetWithResponseHandler(requestConfiguration *OrganizationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from organization
+func (m *OrganizationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OrganizationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -141,12 +141,12 @@ func (m *OrganizationRequestBuilder) GetWithResponseHandler(requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationCollectionResponseable), nil
 }
-// PostWithResponseHandler add new entity to organization
-func (m *OrganizationRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable, requestConfiguration *OrganizationRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to organization
+func (m *OrganizationRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to organization
-func (m *OrganizationRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable, requestConfiguration *OrganizationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to organization
+func (m *OrganizationRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable, requestConfiguration *OrganizationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

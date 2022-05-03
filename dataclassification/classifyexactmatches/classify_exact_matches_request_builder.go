@@ -40,8 +40,8 @@ func NewClassifyExactMatchesRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewClassifyExactMatchesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action classifyExactMatches
-func (m *ClassifyExactMatchesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ClassifyExactMatchesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action classifyExactMatches
+func (m *ClassifyExactMatchesRequestBuilder) CreatePostRequestInformation(body ClassifyExactMatchesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action classifyExactMatches
@@ -57,12 +57,12 @@ func (m *ClassifyExactMatchesRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action classifyExactMatches
-func (m *ClassifyExactMatchesRequestBuilder) PostWithResponseHandler(body ClassifyExactMatchesRequestBodyable, requestConfiguration *ClassifyExactMatchesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchClassificationResultable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action classifyExactMatches
+func (m *ClassifyExactMatchesRequestBuilder) Post(body ClassifyExactMatchesRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchClassificationResultable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action classifyExactMatches
-func (m *ClassifyExactMatchesRequestBuilder) PostWithResponseHandler(body ClassifyExactMatchesRequestBodyable, requestConfiguration *ClassifyExactMatchesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchClassificationResultable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action classifyExactMatches
+func (m *ClassifyExactMatchesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ClassifyExactMatchesRequestBodyable, requestConfiguration *ClassifyExactMatchesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchClassificationResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
