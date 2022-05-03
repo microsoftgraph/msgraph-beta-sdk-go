@@ -109,8 +109,8 @@ func NewDriveItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewDriveItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from drives
-func (m *DriveItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete entity from drives
+func (m *DriveItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete entity from drives
@@ -125,8 +125,8 @@ func (m *DriveItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from drives by key
-func (m *DriveItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entity from drives by key
+func (m *DriveItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entity from drives by key
@@ -144,8 +144,8 @@ func (m *DriveItemRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in drives
-func (m *DriveItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update entity in drives
+func (m *DriveItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update entity in drives
@@ -161,12 +161,12 @@ func (m *DriveItemRequestBuilder) CreatePatchRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete entity from drives
-func (m *DriveItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DriveItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete entity from drives
+func (m *DriveItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete entity from drives
-func (m *DriveItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DriveItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete entity from drives
+func (m *DriveItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DriveItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -196,12 +196,12 @@ func (m *DriveItemRequestBuilder) FollowingById(id string)(*i2ad598655381501616b
     }
     return i2ad598655381501616b067740dbd6e99ee1ac52e664f55c88fbd4f908cb5ad17.NewDriveItemItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GetWithResponseHandler get entity from drives by key
-func (m *DriveItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DriveItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entity from drives by key
+func (m *DriveItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entity from drives by key
-func (m *DriveItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DriveItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entity from drives by key
+func (m *DriveItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DriveItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -235,12 +235,12 @@ func (m *DriveItemRequestBuilder) ItemsById(id string)(*i8f091105e59b53a3e7170d6
 func (m *DriveItemRequestBuilder) List()(*id58c10ecda198f10fa52e1b05c30148577f6b2f028c79657172b0133231e02af.ListRequestBuilder) {
     return id58c10ecda198f10fa52e1b05c30148577f6b2f028c79657172b0133231e02af.NewListRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update entity in drives
-func (m *DriveItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, requestConfiguration *DriveItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update entity in drives
+func (m *DriveItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update entity in drives
-func (m *DriveItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, requestConfiguration *DriveItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update entity in drives
+func (m *DriveItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, requestConfiguration *DriveItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

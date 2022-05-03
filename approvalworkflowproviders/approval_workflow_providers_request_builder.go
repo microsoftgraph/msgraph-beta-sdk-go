@@ -74,8 +74,8 @@ func NewApprovalWorkflowProvidersRequestBuilder(rawUrl string, requestAdapter i2
 func (m *ApprovalWorkflowProvidersRequestBuilder) Count()(*i4da8e5530d04315c6033a01ca82c4df8ed83bd41e66c491404b5a83c801ace83.CountRequestBuilder) {
     return i4da8e5530d04315c6033a01ca82c4df8ed83bd41e66c491404b5a83c801ace83.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from approvalWorkflowProviders
-func (m *ApprovalWorkflowProvidersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from approvalWorkflowProviders
+func (m *ApprovalWorkflowProvidersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from approvalWorkflowProviders
@@ -93,8 +93,8 @@ func (m *ApprovalWorkflowProvidersRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to approvalWorkflowProviders
-func (m *ApprovalWorkflowProvidersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to approvalWorkflowProviders
+func (m *ApprovalWorkflowProvidersRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to approvalWorkflowProviders
@@ -110,12 +110,12 @@ func (m *ApprovalWorkflowProvidersRequestBuilder) CreatePostRequestInformationWi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get entities from approvalWorkflowProviders
-func (m *ApprovalWorkflowProvidersRequestBuilder) GetWithResponseHandler(requestConfiguration *ApprovalWorkflowProvidersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entities from approvalWorkflowProviders
+func (m *ApprovalWorkflowProvidersRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entities from approvalWorkflowProviders
-func (m *ApprovalWorkflowProvidersRequestBuilder) GetWithResponseHandler(requestConfiguration *ApprovalWorkflowProvidersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from approvalWorkflowProviders
+func (m *ApprovalWorkflowProvidersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ApprovalWorkflowProvidersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ApprovalWorkflowProvidersRequestBuilder) GetWithResponseHandler(request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderCollectionResponseable), nil
 }
-// PostWithResponseHandler add new entity to approvalWorkflowProviders
-func (m *ApprovalWorkflowProvidersRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, requestConfiguration *ApprovalWorkflowProvidersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to approvalWorkflowProviders
+func (m *ApprovalWorkflowProvidersRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to approvalWorkflowProviders
-func (m *ApprovalWorkflowProvidersRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, requestConfiguration *ApprovalWorkflowProvidersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to approvalWorkflowProviders
+func (m *ApprovalWorkflowProvidersRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, requestConfiguration *ApprovalWorkflowProvidersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

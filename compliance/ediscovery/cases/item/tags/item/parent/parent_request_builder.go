@@ -50,8 +50,8 @@ func NewParentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewParentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration returns the parent tag of the specified tag.
-func (m *ParentRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation returns the parent tag of the specified tag.
+func (m *ParentRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration returns the parent tag of the specified tag.
@@ -69,12 +69,12 @@ func (m *ParentRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler returns the parent tag of the specified tag.
-func (m *ParentRequestBuilder) GetWithResponseHandler(requestConfiguration *ParentRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get returns the parent tag of the specified tag.
+func (m *ParentRequestBuilder) Get()(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler returns the parent tag of the specified tag.
-func (m *ParentRequestBuilder) GetWithResponseHandler(requestConfiguration *ParentRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, error) {
+// GetWithRequestConfigurationAndResponseHandler returns the parent tag of the specified tag.
+func (m *ParentRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ParentRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

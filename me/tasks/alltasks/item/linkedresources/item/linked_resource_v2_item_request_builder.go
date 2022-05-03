@@ -64,8 +64,8 @@ func NewLinkedResource_v2ItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewLinkedResource_v2ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property linkedResources for me
-func (m *LinkedResource_v2ItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property linkedResources for me
+func (m *LinkedResource_v2ItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property linkedResources for me
@@ -80,8 +80,8 @@ func (m *LinkedResource_v2ItemRequestBuilder) CreateDeleteRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of resources linked to the task.
-func (m *LinkedResource_v2ItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a collection of resources linked to the task.
+func (m *LinkedResource_v2ItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a collection of resources linked to the task.
@@ -99,8 +99,8 @@ func (m *LinkedResource_v2ItemRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property linkedResources in me
-func (m *LinkedResource_v2ItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResource_v2able)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property linkedResources in me
+func (m *LinkedResource_v2ItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResource_v2able)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property linkedResources in me
@@ -116,12 +116,12 @@ func (m *LinkedResource_v2ItemRequestBuilder) CreatePatchRequestInformationWithR
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property linkedResources for me
-func (m *LinkedResource_v2ItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *LinkedResource_v2ItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property linkedResources for me
+func (m *LinkedResource_v2ItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property linkedResources for me
-func (m *LinkedResource_v2ItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *LinkedResource_v2ItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property linkedResources for me
+func (m *LinkedResource_v2ItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *LinkedResource_v2ItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *LinkedResource_v2ItemRequestBuilder) DeleteWithResponseHandler(requestC
     }
     return nil
 }
-// GetWithResponseHandler a collection of resources linked to the task.
-func (m *LinkedResource_v2ItemRequestBuilder) GetWithResponseHandler(requestConfiguration *LinkedResource_v2ItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResource_v2able, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a collection of resources linked to the task.
+func (m *LinkedResource_v2ItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResource_v2able, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a collection of resources linked to the task.
-func (m *LinkedResource_v2ItemRequestBuilder) GetWithResponseHandler(requestConfiguration *LinkedResource_v2ItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResource_v2able, error) {
+// GetWithRequestConfigurationAndResponseHandler a collection of resources linked to the task.
+func (m *LinkedResource_v2ItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LinkedResource_v2ItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResource_v2able, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *LinkedResource_v2ItemRequestBuilder) GetWithResponseHandler(requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResource_v2able), nil
 }
-// PatchWithResponseHandler update the navigation property linkedResources in me
-func (m *LinkedResource_v2ItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResource_v2able, requestConfiguration *LinkedResource_v2ItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property linkedResources in me
+func (m *LinkedResource_v2ItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResource_v2able)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property linkedResources in me
-func (m *LinkedResource_v2ItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResource_v2able, requestConfiguration *LinkedResource_v2ItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property linkedResources in me
+func (m *LinkedResource_v2ItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResource_v2able, requestConfiguration *LinkedResource_v2ItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

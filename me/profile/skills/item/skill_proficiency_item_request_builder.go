@@ -64,8 +64,8 @@ func NewSkillProficiencyItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewSkillProficiencyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property skills for me
-func (m *SkillProficiencyItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property skills for me
+func (m *SkillProficiencyItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property skills for me
@@ -80,8 +80,8 @@ func (m *SkillProficiencyItemRequestBuilder) CreateDeleteRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration represents detailed information about skills associated with a user in various services.
-func (m *SkillProficiencyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents detailed information about skills associated with a user in various services.
+func (m *SkillProficiencyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents detailed information about skills associated with a user in various services.
@@ -99,8 +99,8 @@ func (m *SkillProficiencyItemRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property skills in me
-func (m *SkillProficiencyItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property skills in me
+func (m *SkillProficiencyItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property skills in me
@@ -116,12 +116,12 @@ func (m *SkillProficiencyItemRequestBuilder) CreatePatchRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property skills for me
-func (m *SkillProficiencyItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SkillProficiencyItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property skills for me
+func (m *SkillProficiencyItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property skills for me
-func (m *SkillProficiencyItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SkillProficiencyItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property skills for me
+func (m *SkillProficiencyItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *SkillProficiencyItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *SkillProficiencyItemRequestBuilder) DeleteWithResponseHandler(requestCo
     }
     return nil
 }
-// GetWithResponseHandler represents detailed information about skills associated with a user in various services.
-func (m *SkillProficiencyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SkillProficiencyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents detailed information about skills associated with a user in various services.
+func (m *SkillProficiencyItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents detailed information about skills associated with a user in various services.
-func (m *SkillProficiencyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SkillProficiencyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents detailed information about skills associated with a user in various services.
+func (m *SkillProficiencyItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SkillProficiencyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *SkillProficiencyItemRequestBuilder) GetWithResponseHandler(requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable), nil
 }
-// PatchWithResponseHandler update the navigation property skills in me
-func (m *SkillProficiencyItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, requestConfiguration *SkillProficiencyItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property skills in me
+func (m *SkillProficiencyItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property skills in me
-func (m *SkillProficiencyItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, requestConfiguration *SkillProficiencyItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property skills in me
+func (m *SkillProficiencyItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, requestConfiguration *SkillProficiencyItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

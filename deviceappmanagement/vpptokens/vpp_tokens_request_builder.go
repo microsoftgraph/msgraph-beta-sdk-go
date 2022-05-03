@@ -76,8 +76,8 @@ func NewVppTokensRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *VppTokensRequestBuilder) Count()(*ia528e1063400aadddf50613ea016bf5d44eacef1c362b6d342b7013823ef491f.CountRequestBuilder) {
     return ia528e1063400aadddf50613ea016bf5d44eacef1c362b6d342b7013823ef491f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration list of Vpp tokens for this organization.
-func (m *VppTokensRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation list of Vpp tokens for this organization.
+func (m *VppTokensRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration list of Vpp tokens for this organization.
@@ -95,8 +95,8 @@ func (m *VppTokensRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to vppTokens for deviceAppManagement
-func (m *VppTokensRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to vppTokens for deviceAppManagement
+func (m *VppTokensRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to vppTokens for deviceAppManagement
@@ -112,16 +112,16 @@ func (m *VppTokensRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
+// Get list of Vpp tokens for this organization.
+func (m *VppTokensRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetLicensesForAppWithBundleId provides operations to call the getLicensesForApp method.
 func (m *VppTokensRequestBuilder) GetLicensesForAppWithBundleId(bundleId *string)(*i24db185bc1635f2b2be054ec817ced066302c11adf27d59692cd7b262f32698e.GetLicensesForAppWithBundleIdRequestBuilder) {
     return i24db185bc1635f2b2be054ec817ced066302c11adf27d59692cd7b262f32698e.NewGetLicensesForAppWithBundleIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, bundleId);
 }
-// GetWithResponseHandler list of Vpp tokens for this organization.
-func (m *VppTokensRequestBuilder) GetWithResponseHandler(requestConfiguration *VppTokensRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler list of Vpp tokens for this organization.
-func (m *VppTokensRequestBuilder) GetWithResponseHandler(requestConfiguration *VppTokensRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler list of Vpp tokens for this organization.
+func (m *VppTokensRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *VppTokensRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -136,12 +136,12 @@ func (m *VppTokensRequestBuilder) GetWithResponseHandler(requestConfiguration *V
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to vppTokens for deviceAppManagement
-func (m *VppTokensRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable, requestConfiguration *VppTokensRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to vppTokens for deviceAppManagement
+func (m *VppTokensRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to vppTokens for deviceAppManagement
-func (m *VppTokensRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable, requestConfiguration *VppTokensRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to vppTokens for deviceAppManagement
+func (m *VppTokensRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable, requestConfiguration *VppTokensRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

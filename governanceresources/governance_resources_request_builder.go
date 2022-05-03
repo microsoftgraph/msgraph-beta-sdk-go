@@ -75,8 +75,8 @@ func NewGovernanceResourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *GovernanceResourcesRequestBuilder) Count()(*i779ee9d8f0da7fccccba300f8ea545500bed8dcf3295631674a1414c93daaacd.CountRequestBuilder) {
     return i779ee9d8f0da7fccccba300f8ea545500bed8dcf3295631674a1414c93daaacd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from governanceResources
-func (m *GovernanceResourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from governanceResources
+func (m *GovernanceResourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from governanceResources
@@ -94,8 +94,8 @@ func (m *GovernanceResourcesRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to governanceResources
-func (m *GovernanceResourcesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to governanceResources
+func (m *GovernanceResourcesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to governanceResources
@@ -111,12 +111,12 @@ func (m *GovernanceResourcesRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get entities from governanceResources
-func (m *GovernanceResourcesRequestBuilder) GetWithResponseHandler(requestConfiguration *GovernanceResourcesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entities from governanceResources
+func (m *GovernanceResourcesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entities from governanceResources
-func (m *GovernanceResourcesRequestBuilder) GetWithResponseHandler(requestConfiguration *GovernanceResourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from governanceResources
+func (m *GovernanceResourcesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GovernanceResourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -131,12 +131,12 @@ func (m *GovernanceResourcesRequestBuilder) GetWithResponseHandler(requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceCollectionResponseable), nil
 }
-// PostWithResponseHandler add new entity to governanceResources
-func (m *GovernanceResourcesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, requestConfiguration *GovernanceResourcesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to governanceResources
+func (m *GovernanceResourcesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to governanceResources
-func (m *GovernanceResourcesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, requestConfiguration *GovernanceResourcesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to governanceResources
+func (m *GovernanceResourcesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, requestConfiguration *GovernanceResourcesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

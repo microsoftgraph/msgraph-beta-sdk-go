@@ -64,8 +64,8 @@ func NewDeviceManagementComplianceActionItemItemRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementComplianceActionItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property scheduledActionConfigurations for deviceManagement
-func (m *DeviceManagementComplianceActionItemItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property scheduledActionConfigurations for deviceManagement
+func (m *DeviceManagementComplianceActionItemItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property scheduledActionConfigurations for deviceManagement
@@ -80,8 +80,8 @@ func (m *DeviceManagementComplianceActionItemItemRequestBuilder) CreateDeleteReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-func (m *DeviceManagementComplianceActionItemItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
+func (m *DeviceManagementComplianceActionItemItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
@@ -99,8 +99,8 @@ func (m *DeviceManagementComplianceActionItemItemRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property scheduledActionConfigurations in deviceManagement
-func (m *DeviceManagementComplianceActionItemItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceActionItemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property scheduledActionConfigurations in deviceManagement
+func (m *DeviceManagementComplianceActionItemItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceActionItemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property scheduledActionConfigurations in deviceManagement
@@ -116,12 +116,12 @@ func (m *DeviceManagementComplianceActionItemItemRequestBuilder) CreatePatchRequ
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property scheduledActionConfigurations for deviceManagement
-func (m *DeviceManagementComplianceActionItemItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementComplianceActionItemItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property scheduledActionConfigurations for deviceManagement
+func (m *DeviceManagementComplianceActionItemItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property scheduledActionConfigurations for deviceManagement
-func (m *DeviceManagementComplianceActionItemItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementComplianceActionItemItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property scheduledActionConfigurations for deviceManagement
+func (m *DeviceManagementComplianceActionItemItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementComplianceActionItemItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *DeviceManagementComplianceActionItemItemRequestBuilder) DeleteWithRespo
     }
     return nil
 }
-// GetWithResponseHandler the list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-func (m *DeviceManagementComplianceActionItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementComplianceActionItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceActionItemable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
+func (m *DeviceManagementComplianceActionItemItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceActionItemable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-func (m *DeviceManagementComplianceActionItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementComplianceActionItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceActionItemable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
+func (m *DeviceManagementComplianceActionItemItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementComplianceActionItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceActionItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *DeviceManagementComplianceActionItemItemRequestBuilder) GetWithResponse
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceActionItemable), nil
 }
-// PatchWithResponseHandler update the navigation property scheduledActionConfigurations in deviceManagement
-func (m *DeviceManagementComplianceActionItemItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceActionItemable, requestConfiguration *DeviceManagementComplianceActionItemItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property scheduledActionConfigurations in deviceManagement
+func (m *DeviceManagementComplianceActionItemItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceActionItemable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property scheduledActionConfigurations in deviceManagement
-func (m *DeviceManagementComplianceActionItemItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceActionItemable, requestConfiguration *DeviceManagementComplianceActionItemItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property scheduledActionConfigurations in deviceManagement
+func (m *DeviceManagementComplianceActionItemItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementComplianceActionItemable, requestConfiguration *DeviceManagementComplianceActionItemItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

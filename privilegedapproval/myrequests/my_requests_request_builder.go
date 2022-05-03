@@ -39,8 +39,8 @@ func NewMyRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewMyRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function myRequests
-func (m *MyRequestsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function myRequests
+func (m *MyRequestsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function myRequests
@@ -55,12 +55,12 @@ func (m *MyRequestsRequestBuilder) CreateGetRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function myRequests
-func (m *MyRequestsRequestBuilder) GetWithResponseHandler(requestConfiguration *MyRequestsRequestBuilderGetRequestConfiguration)(MyRequestsResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function myRequests
+func (m *MyRequestsRequestBuilder) Get()(MyRequestsResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function myRequests
-func (m *MyRequestsRequestBuilder) GetWithResponseHandler(requestConfiguration *MyRequestsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(MyRequestsResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function myRequests
+func (m *MyRequestsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MyRequestsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(MyRequestsResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

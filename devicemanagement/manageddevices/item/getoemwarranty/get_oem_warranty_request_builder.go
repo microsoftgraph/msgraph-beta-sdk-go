@@ -40,8 +40,8 @@ func NewGetOemWarrantyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewGetOemWarrantyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getOemWarranty
-func (m *GetOemWarrantyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getOemWarranty
+func (m *GetOemWarrantyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getOemWarranty
@@ -56,12 +56,12 @@ func (m *GetOemWarrantyRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getOemWarranty
-func (m *GetOemWarrantyRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOemWarrantyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getOemWarranty
+func (m *GetOemWarrantyRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getOemWarranty
-func (m *GetOemWarrantyRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOemWarrantyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getOemWarranty
+func (m *GetOemWarrantyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetOemWarrantyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OemWarrantyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

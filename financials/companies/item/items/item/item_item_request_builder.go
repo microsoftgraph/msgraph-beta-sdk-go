@@ -67,8 +67,8 @@ func NewItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property items for financials
-func (m *ItemItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property items for financials
+func (m *ItemItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property items for financials
@@ -83,8 +83,8 @@ func (m *ItemItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get items from financials
-func (m *ItemItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get items from financials
+func (m *ItemItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get items from financials
@@ -102,8 +102,8 @@ func (m *ItemItemRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property items in financials
-func (m *ItemItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property items in financials
+func (m *ItemItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property items in financials
@@ -119,12 +119,12 @@ func (m *ItemItemRequestBuilder) CreatePatchRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property items for financials
-func (m *ItemItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ItemItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property items for financials
+func (m *ItemItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property items for financials
-func (m *ItemItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ItemItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property items for financials
+func (m *ItemItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ItemItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -139,12 +139,12 @@ func (m *ItemItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration 
     }
     return nil
 }
-// GetWithResponseHandler get items from financials
-func (m *ItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get items from financials
+func (m *ItemItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get items from financials
-func (m *ItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, error) {
+// GetWithRequestConfigurationAndResponseHandler get items from financials
+func (m *ItemItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -163,12 +163,12 @@ func (m *ItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *It
 func (m *ItemItemRequestBuilder) ItemCategory()(*ib863e1462c6d6193ab4acd69fe517f8eae6778b1c0fa3c31325a45de31685acd.ItemCategoryRequestBuilder) {
     return ib863e1462c6d6193ab4acd69fe517f8eae6778b1c0fa3c31325a45de31685acd.NewItemCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property items in financials
-func (m *ItemItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, requestConfiguration *ItemItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property items in financials
+func (m *ItemItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property items in financials
-func (m *ItemItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, requestConfiguration *ItemItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property items in financials
+func (m *ItemItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, requestConfiguration *ItemItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

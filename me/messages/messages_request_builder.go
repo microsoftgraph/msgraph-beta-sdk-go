@@ -73,8 +73,8 @@ func NewMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *MessagesRequestBuilder) Count()(*i7f508c5c20c6f2ad8190b1b9fd031d95eb609152501ee3c3b84a332d9730e0d6.CountRequestBuilder) {
     return i7f508c5c20c6f2ad8190b1b9fd031d95eb609152501ee3c3b84a332d9730e0d6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the messages in a mailbox or folder. Read-only. Nullable.
-func (m *MessagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the messages in a mailbox or folder. Read-only. Nullable.
+func (m *MessagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the messages in a mailbox or folder. Read-only. Nullable.
@@ -92,8 +92,8 @@ func (m *MessagesRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to messages for me
-func (m *MessagesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to messages for me
+func (m *MessagesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to messages for me
@@ -113,12 +113,12 @@ func (m *MessagesRequestBuilder) CreatePostRequestInformationWithRequestConfigur
 func (m *MessagesRequestBuilder) Delta()(*ic38726d8e7b63483d8ee3a3543de3129abedfaf7dd3b123a05d4cd084e6302e7.DeltaRequestBuilder) {
     return ic38726d8e7b63483d8ee3a3543de3129abedfaf7dd3b123a05d4cd084e6302e7.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the messages in a mailbox or folder. Read-only. Nullable.
-func (m *MessagesRequestBuilder) GetWithResponseHandler(requestConfiguration *MessagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the messages in a mailbox or folder. Read-only. Nullable.
+func (m *MessagesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the messages in a mailbox or folder. Read-only. Nullable.
-func (m *MessagesRequestBuilder) GetWithResponseHandler(requestConfiguration *MessagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the messages in a mailbox or folder. Read-only. Nullable.
+func (m *MessagesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MessagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -133,12 +133,12 @@ func (m *MessagesRequestBuilder) GetWithResponseHandler(requestConfiguration *Me
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to messages for me
-func (m *MessagesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, requestConfiguration *MessagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to messages for me
+func (m *MessagesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to messages for me
-func (m *MessagesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, requestConfiguration *MessagesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to messages for me
+func (m *MessagesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, requestConfiguration *MessagesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

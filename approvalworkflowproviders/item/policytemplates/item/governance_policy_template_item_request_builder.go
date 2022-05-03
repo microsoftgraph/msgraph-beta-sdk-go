@@ -64,8 +64,8 @@ func NewGovernancePolicyTemplateItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewGovernancePolicyTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property policyTemplates for approvalWorkflowProviders
-func (m *GovernancePolicyTemplateItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property policyTemplates for approvalWorkflowProviders
+func (m *GovernancePolicyTemplateItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property policyTemplates for approvalWorkflowProviders
@@ -80,8 +80,8 @@ func (m *GovernancePolicyTemplateItemRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get policyTemplates from approvalWorkflowProviders
-func (m *GovernancePolicyTemplateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get policyTemplates from approvalWorkflowProviders
+func (m *GovernancePolicyTemplateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get policyTemplates from approvalWorkflowProviders
@@ -99,8 +99,8 @@ func (m *GovernancePolicyTemplateItemRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property policyTemplates in approvalWorkflowProviders
-func (m *GovernancePolicyTemplateItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernancePolicyTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property policyTemplates in approvalWorkflowProviders
+func (m *GovernancePolicyTemplateItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernancePolicyTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property policyTemplates in approvalWorkflowProviders
@@ -116,12 +116,12 @@ func (m *GovernancePolicyTemplateItemRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property policyTemplates for approvalWorkflowProviders
-func (m *GovernancePolicyTemplateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *GovernancePolicyTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property policyTemplates for approvalWorkflowProviders
+func (m *GovernancePolicyTemplateItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property policyTemplates for approvalWorkflowProviders
-func (m *GovernancePolicyTemplateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *GovernancePolicyTemplateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property policyTemplates for approvalWorkflowProviders
+func (m *GovernancePolicyTemplateItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *GovernancePolicyTemplateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *GovernancePolicyTemplateItemRequestBuilder) DeleteWithResponseHandler(r
     }
     return nil
 }
-// GetWithResponseHandler get policyTemplates from approvalWorkflowProviders
-func (m *GovernancePolicyTemplateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *GovernancePolicyTemplateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernancePolicyTemplateable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get policyTemplates from approvalWorkflowProviders
+func (m *GovernancePolicyTemplateItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernancePolicyTemplateable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get policyTemplates from approvalWorkflowProviders
-func (m *GovernancePolicyTemplateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *GovernancePolicyTemplateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernancePolicyTemplateable, error) {
+// GetWithRequestConfigurationAndResponseHandler get policyTemplates from approvalWorkflowProviders
+func (m *GovernancePolicyTemplateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GovernancePolicyTemplateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernancePolicyTemplateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *GovernancePolicyTemplateItemRequestBuilder) GetWithResponseHandler(requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernancePolicyTemplateable), nil
 }
-// PatchWithResponseHandler update the navigation property policyTemplates in approvalWorkflowProviders
-func (m *GovernancePolicyTemplateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernancePolicyTemplateable, requestConfiguration *GovernancePolicyTemplateItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property policyTemplates in approvalWorkflowProviders
+func (m *GovernancePolicyTemplateItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernancePolicyTemplateable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property policyTemplates in approvalWorkflowProviders
-func (m *GovernancePolicyTemplateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernancePolicyTemplateable, requestConfiguration *GovernancePolicyTemplateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property policyTemplates in approvalWorkflowProviders
+func (m *GovernancePolicyTemplateItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernancePolicyTemplateable, requestConfiguration *GovernancePolicyTemplateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

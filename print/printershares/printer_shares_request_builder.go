@@ -74,8 +74,8 @@ func NewPrinterSharesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *PrinterSharesRequestBuilder) Count()(*i693a7cc3118a14d0d42cd0e166806c4292241f68509395fd7aa6154143586a2a.CountRequestBuilder) {
     return i693a7cc3118a14d0d42cd0e166806c4292241f68509395fd7aa6154143586a2a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get printerShares from print
-func (m *PrinterSharesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get printerShares from print
+func (m *PrinterSharesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get printerShares from print
@@ -93,8 +93,8 @@ func (m *PrinterSharesRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to printerShares for print
-func (m *PrinterSharesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to printerShares for print
+func (m *PrinterSharesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to printerShares for print
@@ -110,12 +110,12 @@ func (m *PrinterSharesRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get printerShares from print
-func (m *PrinterSharesRequestBuilder) GetWithResponseHandler(requestConfiguration *PrinterSharesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get printerShares from print
+func (m *PrinterSharesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get printerShares from print
-func (m *PrinterSharesRequestBuilder) GetWithResponseHandler(requestConfiguration *PrinterSharesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get printerShares from print
+func (m *PrinterSharesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PrinterSharesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *PrinterSharesRequestBuilder) GetWithResponseHandler(requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to printerShares for print
-func (m *PrinterSharesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable, requestConfiguration *PrinterSharesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to printerShares for print
+func (m *PrinterSharesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to printerShares for print
-func (m *PrinterSharesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable, requestConfiguration *PrinterSharesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to printerShares for print
+func (m *PrinterSharesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable, requestConfiguration *PrinterSharesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

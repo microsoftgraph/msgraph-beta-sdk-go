@@ -70,8 +70,8 @@ func NewDriveItemVersionItemRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *DriveItemVersionItemRequestBuilder) Content()(*i0099f29f5a56f99dd070557cce42237811c1509d04454960a2fd3812699ba8d4.ContentRequestBuilder) {
     return i0099f29f5a56f99dd070557cce42237811c1509d04454960a2fd3812699ba8d4.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property versions for groups
-func (m *DriveItemVersionItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property versions for groups
+func (m *DriveItemVersionItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property versions for groups
@@ -86,8 +86,8 @@ func (m *DriveItemVersionItemRequestBuilder) CreateDeleteRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
-func (m *DriveItemVersionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+func (m *DriveItemVersionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
@@ -105,8 +105,8 @@ func (m *DriveItemVersionItemRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property versions in groups
-func (m *DriveItemVersionItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property versions in groups
+func (m *DriveItemVersionItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property versions in groups
@@ -122,12 +122,12 @@ func (m *DriveItemVersionItemRequestBuilder) CreatePatchRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property versions for groups
-func (m *DriveItemVersionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DriveItemVersionItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property versions for groups
+func (m *DriveItemVersionItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property versions for groups
-func (m *DriveItemVersionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DriveItemVersionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property versions for groups
+func (m *DriveItemVersionItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DriveItemVersionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -142,12 +142,12 @@ func (m *DriveItemVersionItemRequestBuilder) DeleteWithResponseHandler(requestCo
     }
     return nil
 }
-// GetWithResponseHandler the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
-func (m *DriveItemVersionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DriveItemVersionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+func (m *DriveItemVersionItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
-func (m *DriveItemVersionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DriveItemVersionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+func (m *DriveItemVersionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DriveItemVersionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -162,12 +162,12 @@ func (m *DriveItemVersionItemRequestBuilder) GetWithResponseHandler(requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable), nil
 }
-// PatchWithResponseHandler update the navigation property versions in groups
-func (m *DriveItemVersionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable, requestConfiguration *DriveItemVersionItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property versions in groups
+func (m *DriveItemVersionItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property versions in groups
-func (m *DriveItemVersionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable, requestConfiguration *DriveItemVersionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property versions in groups
+func (m *DriveItemVersionItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable, requestConfiguration *DriveItemVersionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

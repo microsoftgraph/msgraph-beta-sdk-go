@@ -74,8 +74,8 @@ func NewPaymentMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *PaymentMethodsRequestBuilder) Count()(*i78f0589e1e87769a3f6dce2d36940a2aefb3f5329785ffc3a8c62e33fa94f301.CountRequestBuilder) {
     return i78f0589e1e87769a3f6dce2d36940a2aefb3f5329785ffc3a8c62e33fa94f301.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get paymentMethods from financials
-func (m *PaymentMethodsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get paymentMethods from financials
+func (m *PaymentMethodsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get paymentMethods from financials
@@ -93,8 +93,8 @@ func (m *PaymentMethodsRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to paymentMethods for financials
-func (m *PaymentMethodsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to paymentMethods for financials
+func (m *PaymentMethodsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to paymentMethods for financials
@@ -110,12 +110,12 @@ func (m *PaymentMethodsRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get paymentMethods from financials
-func (m *PaymentMethodsRequestBuilder) GetWithResponseHandler(requestConfiguration *PaymentMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get paymentMethods from financials
+func (m *PaymentMethodsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get paymentMethods from financials
-func (m *PaymentMethodsRequestBuilder) GetWithResponseHandler(requestConfiguration *PaymentMethodsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get paymentMethods from financials
+func (m *PaymentMethodsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PaymentMethodsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *PaymentMethodsRequestBuilder) GetWithResponseHandler(requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to paymentMethods for financials
-func (m *PaymentMethodsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, requestConfiguration *PaymentMethodsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to paymentMethods for financials
+func (m *PaymentMethodsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to paymentMethods for financials
-func (m *PaymentMethodsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, requestConfiguration *PaymentMethodsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to paymentMethods for financials
+func (m *PaymentMethodsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, requestConfiguration *PaymentMethodsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

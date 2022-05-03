@@ -74,8 +74,8 @@ func NewCloudPCConnectivityIssuesRequestBuilder(rawUrl string, requestAdapter i2
 func (m *CloudPCConnectivityIssuesRequestBuilder) Count()(*iea59e83adbfc8983f398acf4a526b7414c2a4538b503b38598de89fb80b71ca3.CountRequestBuilder) {
     return iea59e83adbfc8983f398acf4a526b7414c2a4538b503b38598de89fb80b71ca3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of CloudPC Connectivity Issue.
-func (m *CloudPCConnectivityIssuesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of CloudPC Connectivity Issue.
+func (m *CloudPCConnectivityIssuesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of CloudPC Connectivity Issue.
@@ -93,8 +93,8 @@ func (m *CloudPCConnectivityIssuesRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to cloudPCConnectivityIssues for deviceManagement
-func (m *CloudPCConnectivityIssuesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to cloudPCConnectivityIssues for deviceManagement
+func (m *CloudPCConnectivityIssuesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to cloudPCConnectivityIssues for deviceManagement
@@ -110,12 +110,12 @@ func (m *CloudPCConnectivityIssuesRequestBuilder) CreatePostRequestInformationWi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the list of CloudPC Connectivity Issue.
-func (m *CloudPCConnectivityIssuesRequestBuilder) GetWithResponseHandler(requestConfiguration *CloudPCConnectivityIssuesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of CloudPC Connectivity Issue.
+func (m *CloudPCConnectivityIssuesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of CloudPC Connectivity Issue.
-func (m *CloudPCConnectivityIssuesRequestBuilder) GetWithResponseHandler(requestConfiguration *CloudPCConnectivityIssuesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of CloudPC Connectivity Issue.
+func (m *CloudPCConnectivityIssuesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CloudPCConnectivityIssuesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *CloudPCConnectivityIssuesRequestBuilder) GetWithResponseHandler(request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to cloudPCConnectivityIssues for deviceManagement
-func (m *CloudPCConnectivityIssuesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueable, requestConfiguration *CloudPCConnectivityIssuesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to cloudPCConnectivityIssues for deviceManagement
+func (m *CloudPCConnectivityIssuesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to cloudPCConnectivityIssues for deviceManagement
-func (m *CloudPCConnectivityIssuesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueable, requestConfiguration *CloudPCConnectivityIssuesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to cloudPCConnectivityIssues for deviceManagement
+func (m *CloudPCConnectivityIssuesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueable, requestConfiguration *CloudPCConnectivityIssuesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCConnectivityIssueable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

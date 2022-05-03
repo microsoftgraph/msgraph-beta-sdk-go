@@ -42,8 +42,8 @@ func NewGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getYammerGroupsActivityGroupCounts
-func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getYammerGroupsActivityGroupCounts
+func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getYammerGroupsActivityGroupCounts
@@ -58,12 +58,12 @@ func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) CreateGetRe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getYammerGroupsActivityGroupCounts
-func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetYammerGroupsActivityGroupCountsWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getYammerGroupsActivityGroupCounts
+func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) Get()(GetYammerGroupsActivityGroupCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getYammerGroupsActivityGroupCounts
-func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetYammerGroupsActivityGroupCountsWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getYammerGroupsActivityGroupCounts
+func (m *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetYammerGroupsActivityGroupCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

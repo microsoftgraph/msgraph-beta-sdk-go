@@ -74,8 +74,8 @@ func NewSwapShiftsChangeRequestsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *SwapShiftsChangeRequestsRequestBuilder) Count()(*i8c72bf6c002ca54166fea6b2cdafdb276b27b09054cad48a7d4d7aaf84a1d586.CountRequestBuilder) {
     return i8c72bf6c002ca54166fea6b2cdafdb276b27b09054cad48a7d4d7aaf84a1d586.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get swapShiftsChangeRequests from groups
-func (m *SwapShiftsChangeRequestsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get swapShiftsChangeRequests from groups
+func (m *SwapShiftsChangeRequestsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get swapShiftsChangeRequests from groups
@@ -93,8 +93,8 @@ func (m *SwapShiftsChangeRequestsRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to swapShiftsChangeRequests for groups
-func (m *SwapShiftsChangeRequestsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to swapShiftsChangeRequests for groups
+func (m *SwapShiftsChangeRequestsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to swapShiftsChangeRequests for groups
@@ -110,12 +110,12 @@ func (m *SwapShiftsChangeRequestsRequestBuilder) CreatePostRequestInformationWit
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get swapShiftsChangeRequests from groups
-func (m *SwapShiftsChangeRequestsRequestBuilder) GetWithResponseHandler(requestConfiguration *SwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get swapShiftsChangeRequests from groups
+func (m *SwapShiftsChangeRequestsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get swapShiftsChangeRequests from groups
-func (m *SwapShiftsChangeRequestsRequestBuilder) GetWithResponseHandler(requestConfiguration *SwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get swapShiftsChangeRequests from groups
+func (m *SwapShiftsChangeRequestsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SwapShiftsChangeRequestsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *SwapShiftsChangeRequestsRequestBuilder) GetWithResponseHandler(requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to swapShiftsChangeRequests for groups
-func (m *SwapShiftsChangeRequestsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, requestConfiguration *SwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to swapShiftsChangeRequests for groups
+func (m *SwapShiftsChangeRequestsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to swapShiftsChangeRequests for groups
-func (m *SwapShiftsChangeRequestsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, requestConfiguration *SwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to swapShiftsChangeRequests for groups
+func (m *SwapShiftsChangeRequestsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, requestConfiguration *SwapShiftsChangeRequestsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SwapShiftsChangeRequestable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

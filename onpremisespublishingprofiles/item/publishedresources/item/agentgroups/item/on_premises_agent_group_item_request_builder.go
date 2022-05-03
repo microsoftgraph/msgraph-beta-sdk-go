@@ -83,8 +83,8 @@ func NewOnPremisesAgentGroupItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewOnPremisesAgentGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property agentGroups for onPremisesPublishingProfiles
-func (m *OnPremisesAgentGroupItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property agentGroups for onPremisesPublishingProfiles
+func (m *OnPremisesAgentGroupItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property agentGroups for onPremisesPublishingProfiles
@@ -99,8 +99,8 @@ func (m *OnPremisesAgentGroupItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration list of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
-func (m *OnPremisesAgentGroupItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation list of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
+func (m *OnPremisesAgentGroupItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration list of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
@@ -118,8 +118,8 @@ func (m *OnPremisesAgentGroupItemRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property agentGroups in onPremisesPublishingProfiles
-func (m *OnPremisesAgentGroupItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property agentGroups in onPremisesPublishingProfiles
+func (m *OnPremisesAgentGroupItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property agentGroups in onPremisesPublishingProfiles
@@ -135,12 +135,12 @@ func (m *OnPremisesAgentGroupItemRequestBuilder) CreatePatchRequestInformationWi
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property agentGroups for onPremisesPublishingProfiles
-func (m *OnPremisesAgentGroupItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OnPremisesAgentGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property agentGroups for onPremisesPublishingProfiles
+func (m *OnPremisesAgentGroupItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property agentGroups for onPremisesPublishingProfiles
-func (m *OnPremisesAgentGroupItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OnPremisesAgentGroupItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property agentGroups for onPremisesPublishingProfiles
+func (m *OnPremisesAgentGroupItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *OnPremisesAgentGroupItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -155,12 +155,12 @@ func (m *OnPremisesAgentGroupItemRequestBuilder) DeleteWithResponseHandler(reque
     }
     return nil
 }
-// GetWithResponseHandler list of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
-func (m *OnPremisesAgentGroupItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OnPremisesAgentGroupItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get list of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
+func (m *OnPremisesAgentGroupItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler list of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
-func (m *OnPremisesAgentGroupItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OnPremisesAgentGroupItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, error) {
+// GetWithRequestConfigurationAndResponseHandler list of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
+func (m *OnPremisesAgentGroupItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OnPremisesAgentGroupItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -175,12 +175,12 @@ func (m *OnPremisesAgentGroupItemRequestBuilder) GetWithResponseHandler(requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable), nil
 }
-// PatchWithResponseHandler update the navigation property agentGroups in onPremisesPublishingProfiles
-func (m *OnPremisesAgentGroupItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, requestConfiguration *OnPremisesAgentGroupItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property agentGroups in onPremisesPublishingProfiles
+func (m *OnPremisesAgentGroupItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property agentGroups in onPremisesPublishingProfiles
-func (m *OnPremisesAgentGroupItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, requestConfiguration *OnPremisesAgentGroupItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property agentGroups in onPremisesPublishingProfiles
+func (m *OnPremisesAgentGroupItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable, requestConfiguration *OnPremisesAgentGroupItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

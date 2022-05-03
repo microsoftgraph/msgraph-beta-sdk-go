@@ -67,8 +67,8 @@ func NewCreatedObjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *CreatedObjectsRequestBuilder) Count()(*i4549b51bb5af6e26215931bd628e24f2f5f7b1a69e745bb61213dcd4d0c10db0.CountRequestBuilder) {
     return i4549b51bb5af6e26215931bd628e24f2f5f7b1a69e745bb61213dcd4d0c10db0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration directory objects that were created by the user. Read-only. Nullable.
-func (m *CreatedObjectsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation directory objects that were created by the user. Read-only. Nullable.
+func (m *CreatedObjectsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration directory objects that were created by the user. Read-only. Nullable.
@@ -86,12 +86,12 @@ func (m *CreatedObjectsRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler directory objects that were created by the user. Read-only. Nullable.
-func (m *CreatedObjectsRequestBuilder) GetWithResponseHandler(requestConfiguration *CreatedObjectsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get directory objects that were created by the user. Read-only. Nullable.
+func (m *CreatedObjectsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler directory objects that were created by the user. Read-only. Nullable.
-func (m *CreatedObjectsRequestBuilder) GetWithResponseHandler(requestConfiguration *CreatedObjectsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler directory objects that were created by the user. Read-only. Nullable.
+func (m *CreatedObjectsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CreatedObjectsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

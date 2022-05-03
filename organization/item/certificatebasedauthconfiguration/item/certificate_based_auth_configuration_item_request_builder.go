@@ -50,8 +50,8 @@ func NewCertificateBasedAuthConfigurationItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewCertificateBasedAuthConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-func (m *CertificateBasedAuthConfigurationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+func (m *CertificateBasedAuthConfigurationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
@@ -69,12 +69,12 @@ func (m *CertificateBasedAuthConfigurationItemRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-func (m *CertificateBasedAuthConfigurationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+func (m *CertificateBasedAuthConfigurationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-func (m *CertificateBasedAuthConfigurationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable, error) {
+// GetWithRequestConfigurationAndResponseHandler navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+func (m *CertificateBasedAuthConfigurationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CertificateBasedAuthConfigurationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -39,8 +39,8 @@ func NewGetWindowsUpdateAlertSummaryReportRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewGetWindowsUpdateAlertSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getWindowsUpdateAlertSummaryReport
-func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetWindowsUpdateAlertSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getWindowsUpdateAlertSummaryReport
+func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) CreatePostRequestInformation(body GetWindowsUpdateAlertSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getWindowsUpdateAlertSummaryReport
@@ -56,12 +56,12 @@ func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) CreatePostRequestInfo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getWindowsUpdateAlertSummaryReport
-func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) PostWithResponseHandler(body GetWindowsUpdateAlertSummaryReportRequestBodyable, requestConfiguration *GetWindowsUpdateAlertSummaryReportRequestBuilderPostRequestConfiguration)(GetWindowsUpdateAlertSummaryReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getWindowsUpdateAlertSummaryReport
+func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) Post(body GetWindowsUpdateAlertSummaryReportRequestBodyable)(GetWindowsUpdateAlertSummaryReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getWindowsUpdateAlertSummaryReport
-func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) PostWithResponseHandler(body GetWindowsUpdateAlertSummaryReportRequestBodyable, requestConfiguration *GetWindowsUpdateAlertSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetWindowsUpdateAlertSummaryReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getWindowsUpdateAlertSummaryReport
+func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetWindowsUpdateAlertSummaryReportRequestBodyable, requestConfiguration *GetWindowsUpdateAlertSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetWindowsUpdateAlertSummaryReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

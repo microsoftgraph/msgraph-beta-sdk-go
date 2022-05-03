@@ -64,8 +64,8 @@ func NewUserSecurityProfileItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewUserSecurityProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userSecurityProfiles for security
-func (m *UserSecurityProfileItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userSecurityProfiles for security
+func (m *UserSecurityProfileItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userSecurityProfiles for security
@@ -80,8 +80,8 @@ func (m *UserSecurityProfileItemRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get userSecurityProfiles from security
-func (m *UserSecurityProfileItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get userSecurityProfiles from security
+func (m *UserSecurityProfileItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get userSecurityProfiles from security
@@ -99,8 +99,8 @@ func (m *UserSecurityProfileItemRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userSecurityProfiles in security
-func (m *UserSecurityProfileItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userSecurityProfiles in security
+func (m *UserSecurityProfileItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userSecurityProfiles in security
@@ -116,12 +116,12 @@ func (m *UserSecurityProfileItemRequestBuilder) CreatePatchRequestInformationWit
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userSecurityProfiles for security
-func (m *UserSecurityProfileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserSecurityProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userSecurityProfiles for security
+func (m *UserSecurityProfileItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userSecurityProfiles for security
-func (m *UserSecurityProfileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserSecurityProfileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userSecurityProfiles for security
+func (m *UserSecurityProfileItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserSecurityProfileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *UserSecurityProfileItemRequestBuilder) DeleteWithResponseHandler(reques
     }
     return nil
 }
-// GetWithResponseHandler get userSecurityProfiles from security
-func (m *UserSecurityProfileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserSecurityProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get userSecurityProfiles from security
+func (m *UserSecurityProfileItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get userSecurityProfiles from security
-func (m *UserSecurityProfileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserSecurityProfileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable, error) {
+// GetWithRequestConfigurationAndResponseHandler get userSecurityProfiles from security
+func (m *UserSecurityProfileItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserSecurityProfileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *UserSecurityProfileItemRequestBuilder) GetWithResponseHandler(requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable), nil
 }
-// PatchWithResponseHandler update the navigation property userSecurityProfiles in security
-func (m *UserSecurityProfileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable, requestConfiguration *UserSecurityProfileItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userSecurityProfiles in security
+func (m *UserSecurityProfileItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userSecurityProfiles in security
-func (m *UserSecurityProfileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable, requestConfiguration *UserSecurityProfileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userSecurityProfiles in security
+func (m *UserSecurityProfileItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable, requestConfiguration *UserSecurityProfileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

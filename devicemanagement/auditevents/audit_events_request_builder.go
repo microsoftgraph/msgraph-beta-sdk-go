@@ -76,8 +76,8 @@ func NewAuditEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *AuditEventsRequestBuilder) Count()(*i030bbe38f2f5d2d8a0492b3f1370fddd253f4eb643fe50f74fdfdfcd967a1a8d.CountRequestBuilder) {
     return i030bbe38f2f5d2d8a0492b3f1370fddd253f4eb643fe50f74fdfdfcd967a1a8d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the Audit Events
-func (m *AuditEventsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the Audit Events
+func (m *AuditEventsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the Audit Events
@@ -95,8 +95,8 @@ func (m *AuditEventsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to auditEvents for deviceManagement
-func (m *AuditEventsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to auditEvents for deviceManagement
+func (m *AuditEventsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to auditEvents for deviceManagement
@@ -112,6 +112,10 @@ func (m *AuditEventsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
+// Get the Audit Events
+func (m *AuditEventsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetAuditActivityTypesWithCategory provides operations to call the getAuditActivityTypes method.
 func (m *AuditEventsRequestBuilder) GetAuditActivityTypesWithCategory(category *string)(*i67727b0f27c2d57d41b9f444df8b33c187a7e9b7d4bf033012802d4cd0bc0365.GetAuditActivityTypesWithCategoryRequestBuilder) {
     return i67727b0f27c2d57d41b9f444df8b33c187a7e9b7d4bf033012802d4cd0bc0365.NewGetAuditActivityTypesWithCategoryRequestBuilderInternal(m.pathParameters, m.requestAdapter, category);
@@ -120,12 +124,8 @@ func (m *AuditEventsRequestBuilder) GetAuditActivityTypesWithCategory(category *
 func (m *AuditEventsRequestBuilder) GetAuditCategories()(*ib4e5c6a7c7551cb9685aa79efe44df0077ee2b23b90f1c51ae212de08151e065.GetAuditCategoriesRequestBuilder) {
     return ib4e5c6a7c7551cb9685aa79efe44df0077ee2b23b90f1c51ae212de08151e065.NewGetAuditCategoriesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the Audit Events
-func (m *AuditEventsRequestBuilder) GetWithResponseHandler(requestConfiguration *AuditEventsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler the Audit Events
-func (m *AuditEventsRequestBuilder) GetWithResponseHandler(requestConfiguration *AuditEventsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the Audit Events
+func (m *AuditEventsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AuditEventsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -140,12 +140,12 @@ func (m *AuditEventsRequestBuilder) GetWithResponseHandler(requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to auditEvents for deviceManagement
-func (m *AuditEventsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventable, requestConfiguration *AuditEventsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to auditEvents for deviceManagement
+func (m *AuditEventsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to auditEvents for deviceManagement
-func (m *AuditEventsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventable, requestConfiguration *AuditEventsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to auditEvents for deviceManagement
+func (m *AuditEventsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventable, requestConfiguration *AuditEventsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditEventable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

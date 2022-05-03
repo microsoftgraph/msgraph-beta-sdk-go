@@ -40,8 +40,8 @@ func NewUploadPkcs12RequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewUploadPkcs12RequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action uploadPkcs12
-func (m *UploadPkcs12RequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadPkcs12RequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action uploadPkcs12
+func (m *UploadPkcs12RequestBuilder) CreatePostRequestInformation(body UploadPkcs12RequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action uploadPkcs12
@@ -57,12 +57,12 @@ func (m *UploadPkcs12RequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action uploadPkcs12
-func (m *UploadPkcs12RequestBuilder) PostWithResponseHandler(body UploadPkcs12RequestBodyable, requestConfiguration *UploadPkcs12RequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action uploadPkcs12
+func (m *UploadPkcs12RequestBuilder) Post(body UploadPkcs12RequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action uploadPkcs12
-func (m *UploadPkcs12RequestBuilder) PostWithResponseHandler(body UploadPkcs12RequestBodyable, requestConfiguration *UploadPkcs12RequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action uploadPkcs12
+func (m *UploadPkcs12RequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UploadPkcs12RequestBodyable, requestConfiguration *UploadPkcs12RequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

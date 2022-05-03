@@ -64,8 +64,8 @@ func NewUserExperienceAnalyticsImpactingProcessItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsImpactingProcessItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsImpactingProcess for deviceManagement
-func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userExperienceAnalyticsImpactingProcess for deviceManagement
+func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsImpactingProcess for deviceManagement
@@ -80,8 +80,8 @@ func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) CreateDelete
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration user experience analytics impacting process
-func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation user experience analytics impacting process
+func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration user experience analytics impacting process
@@ -99,8 +99,8 @@ func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsImpactingProcess in deviceManagement
-func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsImpactingProcessable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userExperienceAnalyticsImpactingProcess in deviceManagement
+func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsImpactingProcessable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsImpactingProcess in deviceManagement
@@ -116,12 +116,12 @@ func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) CreatePatchR
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsImpactingProcess for deviceManagement
-func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsImpactingProcessItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userExperienceAnalyticsImpactingProcess for deviceManagement
+func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsImpactingProcess for deviceManagement
-func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsImpactingProcessItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userExperienceAnalyticsImpactingProcess for deviceManagement
+func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsImpactingProcessItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) DeleteWithRe
     }
     return nil
 }
-// GetWithResponseHandler user experience analytics impacting process
-func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsImpactingProcessItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsImpactingProcessable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get user experience analytics impacting process
+func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsImpactingProcessable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler user experience analytics impacting process
-func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsImpactingProcessItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsImpactingProcessable, error) {
+// GetWithRequestConfigurationAndResponseHandler user experience analytics impacting process
+func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsImpactingProcessItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsImpactingProcessable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) GetWithRespo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsImpactingProcessable), nil
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsImpactingProcess in deviceManagement
-func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsImpactingProcessable, requestConfiguration *UserExperienceAnalyticsImpactingProcessItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userExperienceAnalyticsImpactingProcess in deviceManagement
+func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsImpactingProcessable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsImpactingProcess in deviceManagement
-func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsImpactingProcessable, requestConfiguration *UserExperienceAnalyticsImpactingProcessItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userExperienceAnalyticsImpactingProcess in deviceManagement
+func (m *UserExperienceAnalyticsImpactingProcessItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsImpactingProcessable, requestConfiguration *UserExperienceAnalyticsImpactingProcessItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

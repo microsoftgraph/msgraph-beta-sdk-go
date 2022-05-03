@@ -67,8 +67,8 @@ func NewClassesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *ClassesRequestBuilder) Count()(*i5c9943c03fb95dda5cc896fc3923e9abdb2b962e72ed108f0f180dce9a9a6de0.CountRequestBuilder) {
     return i5c9943c03fb95dda5cc896fc3923e9abdb2b962e72ed108f0f180dce9a9a6de0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration classes to which the user belongs. Nullable.
-func (m *ClassesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation classes to which the user belongs. Nullable.
+func (m *ClassesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration classes to which the user belongs. Nullable.
@@ -86,12 +86,12 @@ func (m *ClassesRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler classes to which the user belongs. Nullable.
-func (m *ClassesRequestBuilder) GetWithResponseHandler(requestConfiguration *ClassesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get classes to which the user belongs. Nullable.
+func (m *ClassesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler classes to which the user belongs. Nullable.
-func (m *ClassesRequestBuilder) GetWithResponseHandler(requestConfiguration *ClassesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler classes to which the user belongs. Nullable.
+func (m *ClassesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ClassesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

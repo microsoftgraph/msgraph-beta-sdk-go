@@ -51,8 +51,8 @@ func NewApplicationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
-func (m *ApplicationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only. Nullable.
+func (m *ApplicationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
@@ -70,12 +70,12 @@ func (m *ApplicationItemRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler read-only. Nullable.
-func (m *ApplicationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ApplicationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only. Nullable.
+func (m *ApplicationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only. Nullable.
-func (m *ApplicationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ApplicationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+func (m *ApplicationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ApplicationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

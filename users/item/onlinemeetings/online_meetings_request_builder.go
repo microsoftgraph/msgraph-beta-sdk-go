@@ -75,8 +75,8 @@ func NewOnlineMeetingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *OnlineMeetingsRequestBuilder) Count()(*id1b436cc765ed7317ff7cc69dafaa0629bf0e0ffd4077b26e573cf6970edccfb.CountRequestBuilder) {
     return id1b436cc765ed7317ff7cc69dafaa0629bf0e0ffd4077b26e573cf6970edccfb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get onlineMeetings from users
-func (m *OnlineMeetingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get onlineMeetings from users
+func (m *OnlineMeetingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get onlineMeetings from users
@@ -98,8 +98,8 @@ func (m *OnlineMeetingsRequestBuilder) CreateGetRequestInformationWithRequestCon
 func (m *OnlineMeetingsRequestBuilder) CreateOrGet()(*i7f0457c330fb7002ed1748ddb76d802048578e50f9ee8b4b46adc977ac27147a.CreateOrGetRequestBuilder) {
     return i7f0457c330fb7002ed1748ddb76d802048578e50f9ee8b4b46adc977ac27147a.NewCreateOrGetRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to onlineMeetings for users
-func (m *OnlineMeetingsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to onlineMeetings for users
+func (m *OnlineMeetingsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to onlineMeetings for users
@@ -115,12 +115,12 @@ func (m *OnlineMeetingsRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get onlineMeetings from users
-func (m *OnlineMeetingsRequestBuilder) GetWithResponseHandler(requestConfiguration *OnlineMeetingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get onlineMeetings from users
+func (m *OnlineMeetingsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get onlineMeetings from users
-func (m *OnlineMeetingsRequestBuilder) GetWithResponseHandler(requestConfiguration *OnlineMeetingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get onlineMeetings from users
+func (m *OnlineMeetingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OnlineMeetingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *OnlineMeetingsRequestBuilder) GetWithResponseHandler(requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to onlineMeetings for users
-func (m *OnlineMeetingsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, requestConfiguration *OnlineMeetingsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to onlineMeetings for users
+func (m *OnlineMeetingsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to onlineMeetings for users
-func (m *OnlineMeetingsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, requestConfiguration *OnlineMeetingsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to onlineMeetings for users
+func (m *OnlineMeetingsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, requestConfiguration *OnlineMeetingsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -67,8 +67,8 @@ func NewOwnedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *OwnedDevicesRequestBuilder) Count()(*i8b7d9073db9925707cab3c3aa81caffdec75b8eb0e2aea61ec6ead265a48db9f.CountRequestBuilder) {
     return i8b7d9073db9925707cab3c3aa81caffdec75b8eb0e2aea61ec6ead265a48db9f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration devices that are owned by the user. Read-only. Nullable. Supports $expand.
-func (m *OwnedDevicesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation devices that are owned by the user. Read-only. Nullable. Supports $expand.
+func (m *OwnedDevicesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration devices that are owned by the user. Read-only. Nullable. Supports $expand.
@@ -86,12 +86,12 @@ func (m *OwnedDevicesRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler devices that are owned by the user. Read-only. Nullable. Supports $expand.
-func (m *OwnedDevicesRequestBuilder) GetWithResponseHandler(requestConfiguration *OwnedDevicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get devices that are owned by the user. Read-only. Nullable. Supports $expand.
+func (m *OwnedDevicesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler devices that are owned by the user. Read-only. Nullable. Supports $expand.
-func (m *OwnedDevicesRequestBuilder) GetWithResponseHandler(requestConfiguration *OwnedDevicesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler devices that are owned by the user. Read-only. Nullable. Supports $expand.
+func (m *OwnedDevicesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OwnedDevicesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

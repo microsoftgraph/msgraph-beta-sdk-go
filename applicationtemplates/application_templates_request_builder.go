@@ -74,8 +74,8 @@ func NewApplicationTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ApplicationTemplatesRequestBuilder) Count()(*i2b06e75c5e26d037ad05a5621b8e6f143a35d092182f16139866075be3fb1f06.CountRequestBuilder) {
     return i2b06e75c5e26d037ad05a5621b8e6f143a35d092182f16139866075be3fb1f06.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from applicationTemplates
-func (m *ApplicationTemplatesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from applicationTemplates
+func (m *ApplicationTemplatesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from applicationTemplates
@@ -93,8 +93,8 @@ func (m *ApplicationTemplatesRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to applicationTemplates
-func (m *ApplicationTemplatesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to applicationTemplates
+func (m *ApplicationTemplatesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to applicationTemplates
@@ -110,12 +110,12 @@ func (m *ApplicationTemplatesRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get entities from applicationTemplates
-func (m *ApplicationTemplatesRequestBuilder) GetWithResponseHandler(requestConfiguration *ApplicationTemplatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entities from applicationTemplates
+func (m *ApplicationTemplatesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entities from applicationTemplates
-func (m *ApplicationTemplatesRequestBuilder) GetWithResponseHandler(requestConfiguration *ApplicationTemplatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from applicationTemplates
+func (m *ApplicationTemplatesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ApplicationTemplatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ApplicationTemplatesRequestBuilder) GetWithResponseHandler(requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateCollectionResponseable), nil
 }
-// PostWithResponseHandler add new entity to applicationTemplates
-func (m *ApplicationTemplatesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable, requestConfiguration *ApplicationTemplatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to applicationTemplates
+func (m *ApplicationTemplatesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to applicationTemplates
-func (m *ApplicationTemplatesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable, requestConfiguration *ApplicationTemplatesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to applicationTemplates
+func (m *ApplicationTemplatesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable, requestConfiguration *ApplicationTemplatesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationTemplateable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

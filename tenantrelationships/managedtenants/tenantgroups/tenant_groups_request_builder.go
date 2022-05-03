@@ -75,8 +75,8 @@ func NewTenantGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *TenantGroupsRequestBuilder) Count()(*ia08441d1849e327095c234a187264cbf5a076c3016bbc7c3a3f4b741b9a7f50a.CountRequestBuilder) {
     return ia08441d1849e327095c234a187264cbf5a076c3016bbc7c3a3f4b741b9a7f50a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-func (m *TenantGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+func (m *TenantGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
@@ -94,8 +94,8 @@ func (m *TenantGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to tenantGroups for tenantRelationships
-func (m *TenantGroupsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to tenantGroups for tenantRelationships
+func (m *TenantGroupsRequestBuilder) CreatePostRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to tenantGroups for tenantRelationships
@@ -111,12 +111,12 @@ func (m *TenantGroupsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-func (m *TenantGroupsRequestBuilder) GetWithResponseHandler(requestConfiguration *TenantGroupsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+func (m *TenantGroupsRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-func (m *TenantGroupsRequestBuilder) GetWithResponseHandler(requestConfiguration *TenantGroupsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+func (m *TenantGroupsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TenantGroupsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -131,12 +131,12 @@ func (m *TenantGroupsRequestBuilder) GetWithResponseHandler(requestConfiguration
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to tenantGroups for tenantRelationships
-func (m *TenantGroupsRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, requestConfiguration *TenantGroupsRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to tenantGroups for tenantRelationships
+func (m *TenantGroupsRequestBuilder) Post(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to tenantGroups for tenantRelationships
-func (m *TenantGroupsRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, requestConfiguration *TenantGroupsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to tenantGroups for tenantRelationships
+func (m *TenantGroupsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, requestConfiguration *TenantGroupsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

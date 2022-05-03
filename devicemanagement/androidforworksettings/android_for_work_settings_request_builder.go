@@ -72,8 +72,8 @@ func NewAndroidForWorkSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidForWorkSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property androidForWorkSettings for deviceManagement
-func (m *AndroidForWorkSettingsRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property androidForWorkSettings for deviceManagement
+func (m *AndroidForWorkSettingsRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property androidForWorkSettings for deviceManagement
@@ -88,8 +88,8 @@ func (m *AndroidForWorkSettingsRequestBuilder) CreateDeleteRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the singleton Android for Work settings entity.
-func (m *AndroidForWorkSettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the singleton Android for Work settings entity.
+func (m *AndroidForWorkSettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the singleton Android for Work settings entity.
@@ -107,8 +107,8 @@ func (m *AndroidForWorkSettingsRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property androidForWorkSettings in deviceManagement
-func (m *AndroidForWorkSettingsRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property androidForWorkSettings in deviceManagement
+func (m *AndroidForWorkSettingsRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property androidForWorkSettings in deviceManagement
@@ -124,12 +124,12 @@ func (m *AndroidForWorkSettingsRequestBuilder) CreatePatchRequestInformationWith
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property androidForWorkSettings for deviceManagement
-func (m *AndroidForWorkSettingsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AndroidForWorkSettingsRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property androidForWorkSettings for deviceManagement
+func (m *AndroidForWorkSettingsRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property androidForWorkSettings for deviceManagement
-func (m *AndroidForWorkSettingsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AndroidForWorkSettingsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property androidForWorkSettings for deviceManagement
+func (m *AndroidForWorkSettingsRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AndroidForWorkSettingsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -144,12 +144,12 @@ func (m *AndroidForWorkSettingsRequestBuilder) DeleteWithResponseHandler(request
     }
     return nil
 }
-// GetWithResponseHandler the singleton Android for Work settings entity.
-func (m *AndroidForWorkSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *AndroidForWorkSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkSettingsable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the singleton Android for Work settings entity.
+func (m *AndroidForWorkSettingsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkSettingsable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the singleton Android for Work settings entity.
-func (m *AndroidForWorkSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *AndroidForWorkSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkSettingsable, error) {
+// GetWithRequestConfigurationAndResponseHandler the singleton Android for Work settings entity.
+func (m *AndroidForWorkSettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AndroidForWorkSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -164,12 +164,12 @@ func (m *AndroidForWorkSettingsRequestBuilder) GetWithResponseHandler(requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkSettingsable), nil
 }
-// PatchWithResponseHandler update the navigation property androidForWorkSettings in deviceManagement
-func (m *AndroidForWorkSettingsRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkSettingsable, requestConfiguration *AndroidForWorkSettingsRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property androidForWorkSettings in deviceManagement
+func (m *AndroidForWorkSettingsRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkSettingsable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property androidForWorkSettings in deviceManagement
-func (m *AndroidForWorkSettingsRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkSettingsable, requestConfiguration *AndroidForWorkSettingsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property androidForWorkSettings in deviceManagement
+func (m *AndroidForWorkSettingsRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkSettingsable, requestConfiguration *AndroidForWorkSettingsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

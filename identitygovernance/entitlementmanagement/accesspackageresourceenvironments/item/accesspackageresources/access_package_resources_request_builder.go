@@ -67,8 +67,8 @@ func NewAccessPackageResourcesRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *AccessPackageResourcesRequestBuilder) Count()(*i847e263db8f444f4835b19e0b3cb56860a388601b0dc4138b050882283015fc0.CountRequestBuilder) {
     return i847e263db8f444f4835b19e0b3cb56860a388601b0dc4138b050882283015fc0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Required.
-func (m *AccessPackageResourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only. Required.
+func (m *AccessPackageResourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only. Required.
@@ -86,12 +86,12 @@ func (m *AccessPackageResourcesRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler read-only. Required.
-func (m *AccessPackageResourcesRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageResourcesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only. Required.
+func (m *AccessPackageResourcesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only. Required.
-func (m *AccessPackageResourcesRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageResourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only. Required.
+func (m *AccessPackageResourcesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageResourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

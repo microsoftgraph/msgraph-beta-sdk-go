@@ -74,8 +74,8 @@ func NewActivitystatisticsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ActivitystatisticsRequestBuilder) Count()(*i1100b289262a184b79645e9437ab69a8d353c7a8598bbbb6d9f12cf99e76e827.CountRequestBuilder) {
     return i1100b289262a184b79645e9437ab69a8d353c7a8598bbbb6d9f12cf99e76e827.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from activitystatistics
-func (m *ActivitystatisticsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from activitystatistics
+func (m *ActivitystatisticsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from activitystatistics
@@ -93,8 +93,8 @@ func (m *ActivitystatisticsRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to activitystatistics
-func (m *ActivitystatisticsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to activitystatistics
+func (m *ActivitystatisticsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to activitystatistics
@@ -110,12 +110,12 @@ func (m *ActivitystatisticsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get entities from activitystatistics
-func (m *ActivitystatisticsRequestBuilder) GetWithResponseHandler(requestConfiguration *ActivitystatisticsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entities from activitystatistics
+func (m *ActivitystatisticsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entities from activitystatistics
-func (m *ActivitystatisticsRequestBuilder) GetWithResponseHandler(requestConfiguration *ActivitystatisticsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from activitystatistics
+func (m *ActivitystatisticsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ActivitystatisticsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ActivitystatisticsRequestBuilder) GetWithResponseHandler(requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsCollectionResponseable), nil
 }
-// PostWithResponseHandler add new entity to activitystatistics
-func (m *ActivitystatisticsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, requestConfiguration *ActivitystatisticsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to activitystatistics
+func (m *ActivitystatisticsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to activitystatistics
-func (m *ActivitystatisticsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, requestConfiguration *ActivitystatisticsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to activitystatistics
+func (m *ActivitystatisticsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, requestConfiguration *ActivitystatisticsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

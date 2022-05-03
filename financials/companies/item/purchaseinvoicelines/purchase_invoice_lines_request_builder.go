@@ -74,8 +74,8 @@ func NewPurchaseInvoiceLinesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *PurchaseInvoiceLinesRequestBuilder) Count()(*i8dfcfa2966b03cf9086e2aa5c4b395bd39d9934ed852d792dd952da7654d1b5e.CountRequestBuilder) {
     return i8dfcfa2966b03cf9086e2aa5c4b395bd39d9934ed852d792dd952da7654d1b5e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get purchaseInvoiceLines from financials
-func (m *PurchaseInvoiceLinesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get purchaseInvoiceLines from financials
+func (m *PurchaseInvoiceLinesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get purchaseInvoiceLines from financials
@@ -93,8 +93,8 @@ func (m *PurchaseInvoiceLinesRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to purchaseInvoiceLines for financials
-func (m *PurchaseInvoiceLinesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to purchaseInvoiceLines for financials
+func (m *PurchaseInvoiceLinesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to purchaseInvoiceLines for financials
@@ -110,12 +110,12 @@ func (m *PurchaseInvoiceLinesRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get purchaseInvoiceLines from financials
-func (m *PurchaseInvoiceLinesRequestBuilder) GetWithResponseHandler(requestConfiguration *PurchaseInvoiceLinesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get purchaseInvoiceLines from financials
+func (m *PurchaseInvoiceLinesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get purchaseInvoiceLines from financials
-func (m *PurchaseInvoiceLinesRequestBuilder) GetWithResponseHandler(requestConfiguration *PurchaseInvoiceLinesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get purchaseInvoiceLines from financials
+func (m *PurchaseInvoiceLinesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PurchaseInvoiceLinesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *PurchaseInvoiceLinesRequestBuilder) GetWithResponseHandler(requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to purchaseInvoiceLines for financials
-func (m *PurchaseInvoiceLinesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineable, requestConfiguration *PurchaseInvoiceLinesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to purchaseInvoiceLines for financials
+func (m *PurchaseInvoiceLinesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to purchaseInvoiceLines for financials
-func (m *PurchaseInvoiceLinesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineable, requestConfiguration *PurchaseInvoiceLinesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to purchaseInvoiceLines for financials
+func (m *PurchaseInvoiceLinesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineable, requestConfiguration *PurchaseInvoiceLinesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

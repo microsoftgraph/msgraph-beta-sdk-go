@@ -64,8 +64,8 @@ func NewAccessReviewPolicyRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property accessReviewPolicy for policies
-func (m *AccessReviewPolicyRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property accessReviewPolicy for policies
+func (m *AccessReviewPolicyRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property accessReviewPolicy for policies
@@ -80,8 +80,8 @@ func (m *AccessReviewPolicyRequestBuilder) CreateDeleteRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the policy that contains directory-level access review settings.
-func (m *AccessReviewPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the policy that contains directory-level access review settings.
+func (m *AccessReviewPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the policy that contains directory-level access review settings.
@@ -99,8 +99,8 @@ func (m *AccessReviewPolicyRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property accessReviewPolicy in policies
-func (m *AccessReviewPolicyRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property accessReviewPolicy in policies
+func (m *AccessReviewPolicyRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property accessReviewPolicy in policies
@@ -116,12 +116,12 @@ func (m *AccessReviewPolicyRequestBuilder) CreatePatchRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property accessReviewPolicy for policies
-func (m *AccessReviewPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AccessReviewPolicyRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property accessReviewPolicy for policies
+func (m *AccessReviewPolicyRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property accessReviewPolicy for policies
-func (m *AccessReviewPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AccessReviewPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property accessReviewPolicy for policies
+func (m *AccessReviewPolicyRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessReviewPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *AccessReviewPolicyRequestBuilder) DeleteWithResponseHandler(requestConf
     }
     return nil
 }
-// GetWithResponseHandler the policy that contains directory-level access review settings.
-func (m *AccessReviewPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessReviewPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the policy that contains directory-level access review settings.
+func (m *AccessReviewPolicyRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the policy that contains directory-level access review settings.
-func (m *AccessReviewPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessReviewPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler the policy that contains directory-level access review settings.
+func (m *AccessReviewPolicyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessReviewPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *AccessReviewPolicyRequestBuilder) GetWithResponseHandler(requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable), nil
 }
-// PatchWithResponseHandler update the navigation property accessReviewPolicy in policies
-func (m *AccessReviewPolicyRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable, requestConfiguration *AccessReviewPolicyRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property accessReviewPolicy in policies
+func (m *AccessReviewPolicyRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property accessReviewPolicy in policies
-func (m *AccessReviewPolicyRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable, requestConfiguration *AccessReviewPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property accessReviewPolicy in policies
+func (m *AccessReviewPolicyRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable, requestConfiguration *AccessReviewPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

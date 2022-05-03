@@ -71,8 +71,8 @@ func NewSynchronizationJobItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationJobItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property jobs for applications
-func (m *SynchronizationJobItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property jobs for applications
+func (m *SynchronizationJobItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property jobs for applications
@@ -87,8 +87,8 @@ func (m *SynchronizationJobItemRequestBuilder) CreateDeleteRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
-func (m *SynchronizationJobItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
+func (m *SynchronizationJobItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
@@ -106,8 +106,8 @@ func (m *SynchronizationJobItemRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property jobs in applications
-func (m *SynchronizationJobItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property jobs in applications
+func (m *SynchronizationJobItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property jobs in applications
@@ -123,12 +123,12 @@ func (m *SynchronizationJobItemRequestBuilder) CreatePatchRequestInformationWith
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property jobs for applications
-func (m *SynchronizationJobItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SynchronizationJobItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property jobs for applications
+func (m *SynchronizationJobItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property jobs for applications
-func (m *SynchronizationJobItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SynchronizationJobItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property jobs for applications
+func (m *SynchronizationJobItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *SynchronizationJobItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -143,12 +143,12 @@ func (m *SynchronizationJobItemRequestBuilder) DeleteWithResponseHandler(request
     }
     return nil
 }
-// GetWithResponseHandler performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
-func (m *SynchronizationJobItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SynchronizationJobItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
+func (m *SynchronizationJobItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
-func (m *SynchronizationJobItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SynchronizationJobItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable, error) {
+// GetWithRequestConfigurationAndResponseHandler performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
+func (m *SynchronizationJobItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SynchronizationJobItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -163,12 +163,12 @@ func (m *SynchronizationJobItemRequestBuilder) GetWithResponseHandler(requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable), nil
 }
-// PatchWithResponseHandler update the navigation property jobs in applications
-func (m *SynchronizationJobItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable, requestConfiguration *SynchronizationJobItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property jobs in applications
+func (m *SynchronizationJobItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property jobs in applications
-func (m *SynchronizationJobItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable, requestConfiguration *SynchronizationJobItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property jobs in applications
+func (m *SynchronizationJobItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable, requestConfiguration *SynchronizationJobItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

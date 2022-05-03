@@ -74,8 +74,8 @@ func NewUnitsOfMeasureRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *UnitsOfMeasureRequestBuilder) Count()(*i6923cea7867fe5ada50ab63c47a56f7a97378d5e1f7d8e2b58b54091ebb41908.CountRequestBuilder) {
     return i6923cea7867fe5ada50ab63c47a56f7a97378d5e1f7d8e2b58b54091ebb41908.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get unitsOfMeasure from financials
-func (m *UnitsOfMeasureRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get unitsOfMeasure from financials
+func (m *UnitsOfMeasureRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get unitsOfMeasure from financials
@@ -93,8 +93,8 @@ func (m *UnitsOfMeasureRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to unitsOfMeasure for financials
-func (m *UnitsOfMeasureRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to unitsOfMeasure for financials
+func (m *UnitsOfMeasureRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to unitsOfMeasure for financials
@@ -110,12 +110,12 @@ func (m *UnitsOfMeasureRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get unitsOfMeasure from financials
-func (m *UnitsOfMeasureRequestBuilder) GetWithResponseHandler(requestConfiguration *UnitsOfMeasureRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get unitsOfMeasure from financials
+func (m *UnitsOfMeasureRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get unitsOfMeasure from financials
-func (m *UnitsOfMeasureRequestBuilder) GetWithResponseHandler(requestConfiguration *UnitsOfMeasureRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get unitsOfMeasure from financials
+func (m *UnitsOfMeasureRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnitsOfMeasureRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *UnitsOfMeasureRequestBuilder) GetWithResponseHandler(requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to unitsOfMeasure for financials
-func (m *UnitsOfMeasureRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, requestConfiguration *UnitsOfMeasureRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to unitsOfMeasure for financials
+func (m *UnitsOfMeasureRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to unitsOfMeasure for financials
-func (m *UnitsOfMeasureRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, requestConfiguration *UnitsOfMeasureRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to unitsOfMeasure for financials
+func (m *UnitsOfMeasureRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, requestConfiguration *UnitsOfMeasureRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

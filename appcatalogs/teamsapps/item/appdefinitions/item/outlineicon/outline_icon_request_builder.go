@@ -65,8 +65,8 @@ func NewOutlineIconRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewOutlineIconRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property outlineIcon for appCatalogs
-func (m *OutlineIconRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property outlineIcon for appCatalogs
+func (m *OutlineIconRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property outlineIcon for appCatalogs
@@ -81,8 +81,8 @@ func (m *OutlineIconRequestBuilder) CreateDeleteRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the outline version of the Teams app's icon.
-func (m *OutlineIconRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the outline version of the Teams app's icon.
+func (m *OutlineIconRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the outline version of the Teams app's icon.
@@ -100,8 +100,8 @@ func (m *OutlineIconRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property outlineIcon in appCatalogs
-func (m *OutlineIconRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppIconable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property outlineIcon in appCatalogs
+func (m *OutlineIconRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppIconable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property outlineIcon in appCatalogs
@@ -117,12 +117,12 @@ func (m *OutlineIconRequestBuilder) CreatePatchRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property outlineIcon for appCatalogs
-func (m *OutlineIconRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OutlineIconRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property outlineIcon for appCatalogs
+func (m *OutlineIconRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property outlineIcon for appCatalogs
-func (m *OutlineIconRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OutlineIconRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property outlineIcon for appCatalogs
+func (m *OutlineIconRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *OutlineIconRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -137,12 +137,12 @@ func (m *OutlineIconRequestBuilder) DeleteWithResponseHandler(requestConfigurati
     }
     return nil
 }
-// GetWithResponseHandler the outline version of the Teams app's icon.
-func (m *OutlineIconRequestBuilder) GetWithResponseHandler(requestConfiguration *OutlineIconRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppIconable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the outline version of the Teams app's icon.
+func (m *OutlineIconRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppIconable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the outline version of the Teams app's icon.
-func (m *OutlineIconRequestBuilder) GetWithResponseHandler(requestConfiguration *OutlineIconRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppIconable, error) {
+// GetWithRequestConfigurationAndResponseHandler the outline version of the Teams app's icon.
+func (m *OutlineIconRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OutlineIconRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppIconable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -161,12 +161,12 @@ func (m *OutlineIconRequestBuilder) GetWithResponseHandler(requestConfiguration 
 func (m *OutlineIconRequestBuilder) HostedContent()(*ia8648f7f2bb54e0b171a917fd127de5fb2c2c98ba80ddde361af2195bfcce862.HostedContentRequestBuilder) {
     return ia8648f7f2bb54e0b171a917fd127de5fb2c2c98ba80ddde361af2195bfcce862.NewHostedContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property outlineIcon in appCatalogs
-func (m *OutlineIconRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppIconable, requestConfiguration *OutlineIconRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property outlineIcon in appCatalogs
+func (m *OutlineIconRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppIconable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property outlineIcon in appCatalogs
-func (m *OutlineIconRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppIconable, requestConfiguration *OutlineIconRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property outlineIcon in appCatalogs
+func (m *OutlineIconRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppIconable, requestConfiguration *OutlineIconRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

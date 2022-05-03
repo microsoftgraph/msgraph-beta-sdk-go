@@ -47,8 +47,8 @@ func NewRecordingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the content stream of the recording of a Teams live event. Read-only.
-func (m *RecordingRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the content stream of the recording of a Teams live event. Read-only.
+func (m *RecordingRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the content stream of the recording of a Teams live event. Read-only.
@@ -63,8 +63,8 @@ func (m *RecordingRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreatePutRequestInformationWithRequestConfiguration the content stream of the recording of a Teams live event. Read-only.
-func (m *RecordingRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePutRequestInformation the content stream of the recording of a Teams live event. Read-only.
+func (m *RecordingRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePutRequestInformationWithRequestConfiguration the content stream of the recording of a Teams live event. Read-only.
@@ -80,12 +80,12 @@ func (m *RecordingRequestBuilder) CreatePutRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the content stream of the recording of a Teams live event. Read-only.
-func (m *RecordingRequestBuilder) GetWithResponseHandler(requestConfiguration *RecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the content stream of the recording of a Teams live event. Read-only.
+func (m *RecordingRequestBuilder) Get()([]byte, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the content stream of the recording of a Teams live event. Read-only.
-func (m *RecordingRequestBuilder) GetWithResponseHandler(requestConfiguration *RecordingRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+// GetWithRequestConfigurationAndResponseHandler the content stream of the recording of a Teams live event. Read-only.
+func (m *RecordingRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RecordingRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -100,12 +100,12 @@ func (m *RecordingRequestBuilder) GetWithResponseHandler(requestConfiguration *R
     }
     return res.([]byte), nil
 }
-// PutWithResponseHandler the content stream of the recording of a Teams live event. Read-only.
-func (m *RecordingRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *RecordingRequestBuilderPutRequestConfiguration)(error) {
-    return m.PutWithResponseHandler(body, requestConfiguration, nil);
+// Put the content stream of the recording of a Teams live event. Read-only.
+func (m *RecordingRequestBuilder) Put(body []byte)(error) {
+    return m.PutWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PutWithResponseHandler the content stream of the recording of a Teams live event. Read-only.
-func (m *RecordingRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *RecordingRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PutWithRequestConfigurationAndResponseHandler the content stream of the recording of a Teams live event. Read-only.
+func (m *RecordingRequestBuilder) PutWithRequestConfigurationAndResponseHandler(body []byte, requestConfiguration *RecordingRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

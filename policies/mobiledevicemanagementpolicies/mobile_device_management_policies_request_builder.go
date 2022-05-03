@@ -74,8 +74,8 @@ func NewMobileDeviceManagementPoliciesRequestBuilder(rawUrl string, requestAdapt
 func (m *MobileDeviceManagementPoliciesRequestBuilder) Count()(*i28d9a3afc0aa4fda6ad0c03b50b2bc5d89f5fcb87662d328075727f59f5be6c2.CountRequestBuilder) {
     return i28d9a3afc0aa4fda6ad0c03b50b2bc5d89f5fcb87662d328075727f59f5be6c2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get mobileDeviceManagementPolicies from policies
-func (m *MobileDeviceManagementPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get mobileDeviceManagementPolicies from policies
+func (m *MobileDeviceManagementPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get mobileDeviceManagementPolicies from policies
@@ -93,8 +93,8 @@ func (m *MobileDeviceManagementPoliciesRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to mobileDeviceManagementPolicies for policies
-func (m *MobileDeviceManagementPoliciesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to mobileDeviceManagementPolicies for policies
+func (m *MobileDeviceManagementPoliciesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to mobileDeviceManagementPolicies for policies
@@ -110,12 +110,12 @@ func (m *MobileDeviceManagementPoliciesRequestBuilder) CreatePostRequestInformat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get mobileDeviceManagementPolicies from policies
-func (m *MobileDeviceManagementPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get mobileDeviceManagementPolicies from policies
+func (m *MobileDeviceManagementPoliciesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get mobileDeviceManagementPolicies from policies
-func (m *MobileDeviceManagementPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get mobileDeviceManagementPolicies from policies
+func (m *MobileDeviceManagementPoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *MobileDeviceManagementPoliciesRequestBuilder) GetWithResponseHandler(re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to mobileDeviceManagementPolicies for policies
-func (m *MobileDeviceManagementPoliciesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to mobileDeviceManagementPolicies for policies
+func (m *MobileDeviceManagementPoliciesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to mobileDeviceManagementPolicies for policies
-func (m *MobileDeviceManagementPoliciesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to mobileDeviceManagementPolicies for policies
+func (m *MobileDeviceManagementPoliciesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

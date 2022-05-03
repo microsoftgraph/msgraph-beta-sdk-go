@@ -70,8 +70,8 @@ func NewMasterCategoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *MasterCategoriesRequestBuilder) Count()(*if8eb1967124f9e217267510cc7d985f98e997d3ce4e1c8b3ee6d4377302b5a3d.CountRequestBuilder) {
     return if8eb1967124f9e217267510cc7d985f98e997d3ce4e1c8b3ee6d4377302b5a3d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration a list of categories defined for the user.
-func (m *MasterCategoriesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a list of categories defined for the user.
+func (m *MasterCategoriesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a list of categories defined for the user.
@@ -89,8 +89,8 @@ func (m *MasterCategoriesRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to masterCategories for me
-func (m *MasterCategoriesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to masterCategories for me
+func (m *MasterCategoriesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to masterCategories for me
@@ -106,12 +106,12 @@ func (m *MasterCategoriesRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler a list of categories defined for the user.
-func (m *MasterCategoriesRequestBuilder) GetWithResponseHandler(requestConfiguration *MasterCategoriesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a list of categories defined for the user.
+func (m *MasterCategoriesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a list of categories defined for the user.
-func (m *MasterCategoriesRequestBuilder) GetWithResponseHandler(requestConfiguration *MasterCategoriesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler a list of categories defined for the user.
+func (m *MasterCategoriesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MasterCategoriesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -126,12 +126,12 @@ func (m *MasterCategoriesRequestBuilder) GetWithResponseHandler(requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to masterCategories for me
-func (m *MasterCategoriesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable, requestConfiguration *MasterCategoriesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to masterCategories for me
+func (m *MasterCategoriesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to masterCategories for me
-func (m *MasterCategoriesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable, requestConfiguration *MasterCategoriesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to masterCategories for me
+func (m *MasterCategoriesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable, requestConfiguration *MasterCategoriesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookCategoryable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

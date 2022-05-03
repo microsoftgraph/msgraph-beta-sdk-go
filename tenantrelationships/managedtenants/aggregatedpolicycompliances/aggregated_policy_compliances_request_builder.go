@@ -74,8 +74,8 @@ func NewAggregatedPolicyCompliancesRequestBuilder(rawUrl string, requestAdapter 
 func (m *AggregatedPolicyCompliancesRequestBuilder) Count()(*ifda419007ce126ac54af08edc51349ddb76e58a3e74934daa9e3425acc35b33d.CountRequestBuilder) {
     return ifda419007ce126ac54af08edc51349ddb76e58a3e74934daa9e3425acc35b33d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration aggregate view of device compliance policies across managed tenants.
-func (m *AggregatedPolicyCompliancesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation aggregate view of device compliance policies across managed tenants.
+func (m *AggregatedPolicyCompliancesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration aggregate view of device compliance policies across managed tenants.
@@ -93,8 +93,8 @@ func (m *AggregatedPolicyCompliancesRequestBuilder) CreateGetRequestInformationW
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to aggregatedPolicyCompliances for tenantRelationships
-func (m *AggregatedPolicyCompliancesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to aggregatedPolicyCompliances for tenantRelationships
+func (m *AggregatedPolicyCompliancesRequestBuilder) CreatePostRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to aggregatedPolicyCompliances for tenantRelationships
@@ -110,12 +110,12 @@ func (m *AggregatedPolicyCompliancesRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler aggregate view of device compliance policies across managed tenants.
-func (m *AggregatedPolicyCompliancesRequestBuilder) GetWithResponseHandler(requestConfiguration *AggregatedPolicyCompliancesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get aggregate view of device compliance policies across managed tenants.
+func (m *AggregatedPolicyCompliancesRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler aggregate view of device compliance policies across managed tenants.
-func (m *AggregatedPolicyCompliancesRequestBuilder) GetWithResponseHandler(requestConfiguration *AggregatedPolicyCompliancesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler aggregate view of device compliance policies across managed tenants.
+func (m *AggregatedPolicyCompliancesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AggregatedPolicyCompliancesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AggregatedPolicyCompliancesRequestBuilder) GetWithResponseHandler(reque
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to aggregatedPolicyCompliances for tenantRelationships
-func (m *AggregatedPolicyCompliancesRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceable, requestConfiguration *AggregatedPolicyCompliancesRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to aggregatedPolicyCompliances for tenantRelationships
+func (m *AggregatedPolicyCompliancesRequestBuilder) Post(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to aggregatedPolicyCompliances for tenantRelationships
-func (m *AggregatedPolicyCompliancesRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceable, requestConfiguration *AggregatedPolicyCompliancesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to aggregatedPolicyCompliances for tenantRelationships
+func (m *AggregatedPolicyCompliancesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceable, requestConfiguration *AggregatedPolicyCompliancesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

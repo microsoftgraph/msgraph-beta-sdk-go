@@ -67,8 +67,8 @@ func NewBaseTypesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *BaseTypesRequestBuilder) Count()(*i93cc833dee4683e4ffb1e5377a6d412f43804c638ef9916e408c71d95ba7ebc8.CountRequestBuilder) {
     return i93cc833dee4683e4ffb1e5377a6d412f43804c638ef9916e408c71d95ba7ebc8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of content types that are ancestors of this content type.
-func (m *BaseTypesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of content types that are ancestors of this content type.
+func (m *BaseTypesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of content types that are ancestors of this content type.
@@ -86,12 +86,12 @@ func (m *BaseTypesRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the collection of content types that are ancestors of this content type.
-func (m *BaseTypesRequestBuilder) GetWithResponseHandler(requestConfiguration *BaseTypesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of content types that are ancestors of this content type.
+func (m *BaseTypesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of content types that are ancestors of this content type.
-func (m *BaseTypesRequestBuilder) GetWithResponseHandler(requestConfiguration *BaseTypesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of content types that are ancestors of this content type.
+func (m *BaseTypesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BaseTypesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

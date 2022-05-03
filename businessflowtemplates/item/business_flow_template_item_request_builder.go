@@ -64,8 +64,8 @@ func NewBusinessFlowTemplateItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessFlowTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from businessFlowTemplates
-func (m *BusinessFlowTemplateItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete entity from businessFlowTemplates
+func (m *BusinessFlowTemplateItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete entity from businessFlowTemplates
@@ -80,8 +80,8 @@ func (m *BusinessFlowTemplateItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from businessFlowTemplates by key
-func (m *BusinessFlowTemplateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entity from businessFlowTemplates by key
+func (m *BusinessFlowTemplateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entity from businessFlowTemplates by key
@@ -99,8 +99,8 @@ func (m *BusinessFlowTemplateItemRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in businessFlowTemplates
-func (m *BusinessFlowTemplateItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update entity in businessFlowTemplates
+func (m *BusinessFlowTemplateItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update entity in businessFlowTemplates
@@ -116,12 +116,12 @@ func (m *BusinessFlowTemplateItemRequestBuilder) CreatePatchRequestInformationWi
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete entity from businessFlowTemplates
-func (m *BusinessFlowTemplateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *BusinessFlowTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete entity from businessFlowTemplates
+func (m *BusinessFlowTemplateItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete entity from businessFlowTemplates
-func (m *BusinessFlowTemplateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *BusinessFlowTemplateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete entity from businessFlowTemplates
+func (m *BusinessFlowTemplateItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *BusinessFlowTemplateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *BusinessFlowTemplateItemRequestBuilder) DeleteWithResponseHandler(reque
     }
     return nil
 }
-// GetWithResponseHandler get entity from businessFlowTemplates by key
-func (m *BusinessFlowTemplateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *BusinessFlowTemplateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entity from businessFlowTemplates by key
+func (m *BusinessFlowTemplateItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entity from businessFlowTemplates by key
-func (m *BusinessFlowTemplateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *BusinessFlowTemplateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entity from businessFlowTemplates by key
+func (m *BusinessFlowTemplateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BusinessFlowTemplateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *BusinessFlowTemplateItemRequestBuilder) GetWithResponseHandler(requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable), nil
 }
-// PatchWithResponseHandler update entity in businessFlowTemplates
-func (m *BusinessFlowTemplateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable, requestConfiguration *BusinessFlowTemplateItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update entity in businessFlowTemplates
+func (m *BusinessFlowTemplateItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update entity in businessFlowTemplates
-func (m *BusinessFlowTemplateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable, requestConfiguration *BusinessFlowTemplateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update entity in businessFlowTemplates
+func (m *BusinessFlowTemplateItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateable, requestConfiguration *BusinessFlowTemplateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

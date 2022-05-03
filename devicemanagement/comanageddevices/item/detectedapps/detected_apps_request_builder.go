@@ -67,8 +67,8 @@ func NewDetectedAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *DetectedAppsRequestBuilder) Count()(*id50e9e96582e4d4128936600a37f444196612843fb3e042029c34ce209b0eda5.CountRequestBuilder) {
     return id50e9e96582e4d4128936600a37f444196612843fb3e042029c34ce209b0eda5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration all applications currently installed on the device
-func (m *DetectedAppsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation all applications currently installed on the device
+func (m *DetectedAppsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration all applications currently installed on the device
@@ -86,12 +86,12 @@ func (m *DetectedAppsRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler all applications currently installed on the device
-func (m *DetectedAppsRequestBuilder) GetWithResponseHandler(requestConfiguration *DetectedAppsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DetectedAppCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get all applications currently installed on the device
+func (m *DetectedAppsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DetectedAppCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler all applications currently installed on the device
-func (m *DetectedAppsRequestBuilder) GetWithResponseHandler(requestConfiguration *DetectedAppsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DetectedAppCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler all applications currently installed on the device
+func (m *DetectedAppsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DetectedAppsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DetectedAppCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

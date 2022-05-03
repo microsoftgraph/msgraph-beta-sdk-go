@@ -67,8 +67,8 @@ func NewCategoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *CategoriesRequestBuilder) Count()(*ie9cd11de8aad9acb387006a01dedd0cee57d3ae5e6ee7b990591ce7327848a98.CountRequestBuilder) {
     return ie9cd11de8aad9acb387006a01dedd0cee57d3ae5e6ee7b990591ce7327848a98.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of categories for this eBook.
-func (m *CategoriesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of categories for this eBook.
+func (m *CategoriesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of categories for this eBook.
@@ -86,12 +86,12 @@ func (m *CategoriesRequestBuilder) CreateGetRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the list of categories for this eBook.
-func (m *CategoriesRequestBuilder) GetWithResponseHandler(requestConfiguration *CategoriesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookCategoryCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of categories for this eBook.
+func (m *CategoriesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookCategoryCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of categories for this eBook.
-func (m *CategoriesRequestBuilder) GetWithResponseHandler(requestConfiguration *CategoriesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookCategoryCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of categories for this eBook.
+func (m *CategoriesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CategoriesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookCategoryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

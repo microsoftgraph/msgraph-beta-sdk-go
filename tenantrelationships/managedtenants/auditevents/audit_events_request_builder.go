@@ -74,8 +74,8 @@ func NewAuditEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *AuditEventsRequestBuilder) Count()(*ifee0664bf047c4dcc4b8a787d98fe632980bdfd2b8c2927c677ae3a948febac0.CountRequestBuilder) {
     return ifee0664bf047c4dcc4b8a787d98fe632980bdfd2b8c2927c677ae3a948febac0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of audit events across managed tenants.
-func (m *AuditEventsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of audit events across managed tenants.
+func (m *AuditEventsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of audit events across managed tenants.
@@ -93,8 +93,8 @@ func (m *AuditEventsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to auditEvents for tenantRelationships
-func (m *AuditEventsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to auditEvents for tenantRelationships
+func (m *AuditEventsRequestBuilder) CreatePostRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to auditEvents for tenantRelationships
@@ -110,12 +110,12 @@ func (m *AuditEventsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the collection of audit events across managed tenants.
-func (m *AuditEventsRequestBuilder) GetWithResponseHandler(requestConfiguration *AuditEventsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of audit events across managed tenants.
+func (m *AuditEventsRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of audit events across managed tenants.
-func (m *AuditEventsRequestBuilder) GetWithResponseHandler(requestConfiguration *AuditEventsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of audit events across managed tenants.
+func (m *AuditEventsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AuditEventsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AuditEventsRequestBuilder) GetWithResponseHandler(requestConfiguration 
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to auditEvents for tenantRelationships
-func (m *AuditEventsRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventable, requestConfiguration *AuditEventsRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to auditEvents for tenantRelationships
+func (m *AuditEventsRequestBuilder) Post(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to auditEvents for tenantRelationships
-func (m *AuditEventsRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventable, requestConfiguration *AuditEventsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to auditEvents for tenantRelationships
+func (m *AuditEventsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventable, requestConfiguration *AuditEventsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

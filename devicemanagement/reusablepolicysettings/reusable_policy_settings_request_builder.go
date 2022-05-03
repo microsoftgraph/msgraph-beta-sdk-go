@@ -74,8 +74,8 @@ func NewReusablePolicySettingsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ReusablePolicySettingsRequestBuilder) Count()(*idb7beacbd71a4cc5d11774ce70453e13dc7bf02d9d01c799e032a145f3ff81c3.CountRequestBuilder) {
     return idb7beacbd71a4cc5d11774ce70453e13dc7bf02d9d01c799e032a145f3ff81c3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration list of all reusable settings that can be referred in a policy
-func (m *ReusablePolicySettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation list of all reusable settings that can be referred in a policy
+func (m *ReusablePolicySettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration list of all reusable settings that can be referred in a policy
@@ -93,8 +93,8 @@ func (m *ReusablePolicySettingsRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to reusablePolicySettings for deviceManagement
-func (m *ReusablePolicySettingsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to reusablePolicySettings for deviceManagement
+func (m *ReusablePolicySettingsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to reusablePolicySettings for deviceManagement
@@ -110,12 +110,12 @@ func (m *ReusablePolicySettingsRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler list of all reusable settings that can be referred in a policy
-func (m *ReusablePolicySettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *ReusablePolicySettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get list of all reusable settings that can be referred in a policy
+func (m *ReusablePolicySettingsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler list of all reusable settings that can be referred in a policy
-func (m *ReusablePolicySettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *ReusablePolicySettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler list of all reusable settings that can be referred in a policy
+func (m *ReusablePolicySettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ReusablePolicySettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ReusablePolicySettingsRequestBuilder) GetWithResponseHandler(requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to reusablePolicySettings for deviceManagement
-func (m *ReusablePolicySettingsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, requestConfiguration *ReusablePolicySettingsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to reusablePolicySettings for deviceManagement
+func (m *ReusablePolicySettingsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to reusablePolicySettings for deviceManagement
-func (m *ReusablePolicySettingsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, requestConfiguration *ReusablePolicySettingsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to reusablePolicySettings for deviceManagement
+func (m *ReusablePolicySettingsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, requestConfiguration *ReusablePolicySettingsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReusablePolicySettingable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

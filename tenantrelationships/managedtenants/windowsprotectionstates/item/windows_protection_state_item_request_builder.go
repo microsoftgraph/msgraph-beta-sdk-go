@@ -64,8 +64,8 @@ func NewWindowsProtectionStateItemRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsProtectionStateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsProtectionStates for tenantRelationships
-func (m *WindowsProtectionStateItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property windowsProtectionStates for tenantRelationships
+func (m *WindowsProtectionStateItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsProtectionStates for tenantRelationships
@@ -80,8 +80,8 @@ func (m *WindowsProtectionStateItemRequestBuilder) CreateDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
-func (m *WindowsProtectionStateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+func (m *WindowsProtectionStateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
@@ -99,8 +99,8 @@ func (m *WindowsProtectionStateItemRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsProtectionStates in tenantRelationships
-func (m *WindowsProtectionStateItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsProtectionStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property windowsProtectionStates in tenantRelationships
+func (m *WindowsProtectionStateItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsProtectionStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsProtectionStates in tenantRelationships
@@ -116,12 +116,12 @@ func (m *WindowsProtectionStateItemRequestBuilder) CreatePatchRequestInformation
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property windowsProtectionStates for tenantRelationships
-func (m *WindowsProtectionStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsProtectionStateItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property windowsProtectionStates for tenantRelationships
+func (m *WindowsProtectionStateItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property windowsProtectionStates for tenantRelationships
-func (m *WindowsProtectionStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsProtectionStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property windowsProtectionStates for tenantRelationships
+func (m *WindowsProtectionStateItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsProtectionStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *WindowsProtectionStateItemRequestBuilder) DeleteWithResponseHandler(req
     }
     return nil
 }
-// GetWithResponseHandler the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
-func (m *WindowsProtectionStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsProtectionStateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsProtectionStateable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+func (m *WindowsProtectionStateItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsProtectionStateable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
-func (m *WindowsProtectionStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsProtectionStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsProtectionStateable, error) {
+// GetWithRequestConfigurationAndResponseHandler the protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+func (m *WindowsProtectionStateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsProtectionStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsProtectionStateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *WindowsProtectionStateItemRequestBuilder) GetWithResponseHandler(reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsProtectionStateable), nil
 }
-// PatchWithResponseHandler update the navigation property windowsProtectionStates in tenantRelationships
-func (m *WindowsProtectionStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsProtectionStateable, requestConfiguration *WindowsProtectionStateItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property windowsProtectionStates in tenantRelationships
+func (m *WindowsProtectionStateItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsProtectionStateable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property windowsProtectionStates in tenantRelationships
-func (m *WindowsProtectionStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsProtectionStateable, requestConfiguration *WindowsProtectionStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property windowsProtectionStates in tenantRelationships
+func (m *WindowsProtectionStateItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsProtectionStateable, requestConfiguration *WindowsProtectionStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

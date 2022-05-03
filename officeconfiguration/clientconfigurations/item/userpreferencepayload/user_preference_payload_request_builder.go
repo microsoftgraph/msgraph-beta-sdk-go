@@ -47,8 +47,8 @@ func NewUserPreferencePayloadRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewUserPreferencePayloadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration preference settings JSON string in binary format, these values can be overridden by the user.
-func (m *UserPreferencePayloadRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation preference settings JSON string in binary format, these values can be overridden by the user.
+func (m *UserPreferencePayloadRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration preference settings JSON string in binary format, these values can be overridden by the user.
@@ -63,8 +63,8 @@ func (m *UserPreferencePayloadRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePutRequestInformationWithRequestConfiguration preference settings JSON string in binary format, these values can be overridden by the user.
-func (m *UserPreferencePayloadRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePutRequestInformation preference settings JSON string in binary format, these values can be overridden by the user.
+func (m *UserPreferencePayloadRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePutRequestInformationWithRequestConfiguration preference settings JSON string in binary format, these values can be overridden by the user.
@@ -80,12 +80,12 @@ func (m *UserPreferencePayloadRequestBuilder) CreatePutRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler preference settings JSON string in binary format, these values can be overridden by the user.
-func (m *UserPreferencePayloadRequestBuilder) GetWithResponseHandler(requestConfiguration *UserPreferencePayloadRequestBuilderGetRequestConfiguration)([]byte, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get preference settings JSON string in binary format, these values can be overridden by the user.
+func (m *UserPreferencePayloadRequestBuilder) Get()([]byte, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler preference settings JSON string in binary format, these values can be overridden by the user.
-func (m *UserPreferencePayloadRequestBuilder) GetWithResponseHandler(requestConfiguration *UserPreferencePayloadRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+// GetWithRequestConfigurationAndResponseHandler preference settings JSON string in binary format, these values can be overridden by the user.
+func (m *UserPreferencePayloadRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserPreferencePayloadRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -100,12 +100,12 @@ func (m *UserPreferencePayloadRequestBuilder) GetWithResponseHandler(requestConf
     }
     return res.([]byte), nil
 }
-// PutWithResponseHandler preference settings JSON string in binary format, these values can be overridden by the user.
-func (m *UserPreferencePayloadRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *UserPreferencePayloadRequestBuilderPutRequestConfiguration)(error) {
-    return m.PutWithResponseHandler(body, requestConfiguration, nil);
+// Put preference settings JSON string in binary format, these values can be overridden by the user.
+func (m *UserPreferencePayloadRequestBuilder) Put(body []byte)(error) {
+    return m.PutWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PutWithResponseHandler preference settings JSON string in binary format, these values can be overridden by the user.
-func (m *UserPreferencePayloadRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *UserPreferencePayloadRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PutWithRequestConfigurationAndResponseHandler preference settings JSON string in binary format, these values can be overridden by the user.
+func (m *UserPreferencePayloadRequestBuilder) PutWithRequestConfigurationAndResponseHandler(body []byte, requestConfiguration *UserPreferencePayloadRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

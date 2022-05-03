@@ -64,8 +64,8 @@ func NewDirectoryRoleAccessReviewPolicyRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleAccessReviewPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property directoryRoleAccessReviewPolicy for policies
-func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property directoryRoleAccessReviewPolicy for policies
+func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property directoryRoleAccessReviewPolicy for policies
@@ -80,8 +80,8 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get directoryRoleAccessReviewPolicy from policies
-func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get directoryRoleAccessReviewPolicy from policies
+func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get directoryRoleAccessReviewPolicy from policies
@@ -99,8 +99,8 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property directoryRoleAccessReviewPolicy in policies
-func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property directoryRoleAccessReviewPolicy in policies
+func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property directoryRoleAccessReviewPolicy in policies
@@ -116,12 +116,12 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property directoryRoleAccessReviewPolicy for policies
-func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property directoryRoleAccessReviewPolicy for policies
+func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property directoryRoleAccessReviewPolicy for policies
-func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property directoryRoleAccessReviewPolicy for policies
+func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) DeleteWithResponseHandle
     }
     return nil
 }
-// GetWithResponseHandler get directoryRoleAccessReviewPolicy from policies
-func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get directoryRoleAccessReviewPolicy from policies
+func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get directoryRoleAccessReviewPolicy from policies
-func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) GetWithResponseHandler(requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler get directoryRoleAccessReviewPolicy from policies
+func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) GetWithResponseHandler(r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable), nil
 }
-// PatchWithResponseHandler update the navigation property directoryRoleAccessReviewPolicy in policies
-func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable, requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property directoryRoleAccessReviewPolicy in policies
+func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property directoryRoleAccessReviewPolicy in policies
-func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable, requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property directoryRoleAccessReviewPolicy in policies
+func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable, requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

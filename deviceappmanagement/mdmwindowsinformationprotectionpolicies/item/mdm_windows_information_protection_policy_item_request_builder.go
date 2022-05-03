@@ -64,8 +64,8 @@ func NewMdmWindowsInformationProtectionPolicyItemRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewMdmWindowsInformationProtectionPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
-func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
+func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
@@ -80,8 +80,8 @@ func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) CreateDeleteRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration windows information protection for apps running on devices which are MDM enrolled.
-func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation windows information protection for apps running on devices which are MDM enrolled.
+func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration windows information protection for apps running on devices which are MDM enrolled.
@@ -99,8 +99,8 @@ func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) CreateGetReque
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
-func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MdmWindowsInformationProtectionPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
+func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MdmWindowsInformationProtectionPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
@@ -116,12 +116,12 @@ func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) CreatePatchReq
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
-func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MdmWindowsInformationProtectionPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
+func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
-func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MdmWindowsInformationProtectionPolicyItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
+func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *MdmWindowsInformationProtectionPolicyItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) DeleteWithResp
     }
     return nil
 }
-// GetWithResponseHandler windows information protection for apps running on devices which are MDM enrolled.
-func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MdmWindowsInformationProtectionPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MdmWindowsInformationProtectionPolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get windows information protection for apps running on devices which are MDM enrolled.
+func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MdmWindowsInformationProtectionPolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler windows information protection for apps running on devices which are MDM enrolled.
-func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MdmWindowsInformationProtectionPolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MdmWindowsInformationProtectionPolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler windows information protection for apps running on devices which are MDM enrolled.
+func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MdmWindowsInformationProtectionPolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MdmWindowsInformationProtectionPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) GetWithRespons
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MdmWindowsInformationProtectionPolicyable), nil
 }
-// PatchWithResponseHandler update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
-func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MdmWindowsInformationProtectionPolicyable, requestConfiguration *MdmWindowsInformationProtectionPolicyItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
+func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MdmWindowsInformationProtectionPolicyable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
-func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MdmWindowsInformationProtectionPolicyable, requestConfiguration *MdmWindowsInformationProtectionPolicyItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
+func (m *MdmWindowsInformationProtectionPolicyItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MdmWindowsInformationProtectionPolicyable, requestConfiguration *MdmWindowsInformationProtectionPolicyItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

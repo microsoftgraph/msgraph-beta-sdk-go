@@ -74,8 +74,8 @@ func NewMyDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *MyDecisionsRequestBuilder) Count()(*i9a48b23f1e1040359dfa9400260d7fcc9b0a80ae50d0076b71555940e9b16546.CountRequestBuilder) {
     return i9a48b23f1e1040359dfa9400260d7fcc9b0a80ae50d0076b71555940e9b16546.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of decisions for the caller, if the caller is a reviewer.
-func (m *MyDecisionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of decisions for the caller, if the caller is a reviewer.
+func (m *MyDecisionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of decisions for the caller, if the caller is a reviewer.
@@ -93,8 +93,8 @@ func (m *MyDecisionsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to myDecisions for accessReviews
-func (m *MyDecisionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to myDecisions for accessReviews
+func (m *MyDecisionsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to myDecisions for accessReviews
@@ -110,12 +110,12 @@ func (m *MyDecisionsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the collection of decisions for the caller, if the caller is a reviewer.
-func (m *MyDecisionsRequestBuilder) GetWithResponseHandler(requestConfiguration *MyDecisionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of decisions for the caller, if the caller is a reviewer.
+func (m *MyDecisionsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of decisions for the caller, if the caller is a reviewer.
-func (m *MyDecisionsRequestBuilder) GetWithResponseHandler(requestConfiguration *MyDecisionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of decisions for the caller, if the caller is a reviewer.
+func (m *MyDecisionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MyDecisionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *MyDecisionsRequestBuilder) GetWithResponseHandler(requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to myDecisions for accessReviews
-func (m *MyDecisionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, requestConfiguration *MyDecisionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to myDecisions for accessReviews
+func (m *MyDecisionsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to myDecisions for accessReviews
-func (m *MyDecisionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, requestConfiguration *MyDecisionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to myDecisions for accessReviews
+func (m *MyDecisionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, requestConfiguration *MyDecisionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

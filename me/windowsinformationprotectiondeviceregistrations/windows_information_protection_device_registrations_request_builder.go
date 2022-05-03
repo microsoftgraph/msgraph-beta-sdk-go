@@ -67,8 +67,8 @@ func NewWindowsInformationProtectionDeviceRegistrationsRequestBuilder(rawUrl str
 func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) Count()(*id4e957ca9d3a103d1e93be2f23975e17bbefc9cb9d67d1f39923a00915b1d387.CountRequestBuilder) {
     return id4e957ca9d3a103d1e93be2f23975e17bbefc9cb9d67d1f39923a00915b1d387.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration zero or more WIP device registrations that belong to the user.
-func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation zero or more WIP device registrations that belong to the user.
+func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration zero or more WIP device registrations that belong to the user.
@@ -86,12 +86,12 @@ func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) CreateGe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler zero or more WIP device registrations that belong to the user.
-func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get zero or more WIP device registrations that belong to the user.
+func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler zero or more WIP device registrations that belong to the user.
-func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler zero or more WIP device registrations that belong to the user.
+func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

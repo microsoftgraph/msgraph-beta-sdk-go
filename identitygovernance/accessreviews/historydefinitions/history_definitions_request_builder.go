@@ -74,8 +74,8 @@ func NewHistoryDefinitionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *HistoryDefinitionsRequestBuilder) Count()(*i6e1169622aade145ce6165d11a40cca845fecc0a973ceed3c28102c0fc6dfe1a.CountRequestBuilder) {
     return i6e1169622aade145ce6165d11a40cca845fecc0a973ceed3c28102c0fc6dfe1a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents a collection of access review history data and the scopes used to collect that data.
-func (m *HistoryDefinitionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents a collection of access review history data and the scopes used to collect that data.
+func (m *HistoryDefinitionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents a collection of access review history data and the scopes used to collect that data.
@@ -93,8 +93,8 @@ func (m *HistoryDefinitionsRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to historyDefinitions for identityGovernance
-func (m *HistoryDefinitionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to historyDefinitions for identityGovernance
+func (m *HistoryDefinitionsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to historyDefinitions for identityGovernance
@@ -110,12 +110,12 @@ func (m *HistoryDefinitionsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler represents a collection of access review history data and the scopes used to collect that data.
-func (m *HistoryDefinitionsRequestBuilder) GetWithResponseHandler(requestConfiguration *HistoryDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents a collection of access review history data and the scopes used to collect that data.
+func (m *HistoryDefinitionsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents a collection of access review history data and the scopes used to collect that data.
-func (m *HistoryDefinitionsRequestBuilder) GetWithResponseHandler(requestConfiguration *HistoryDefinitionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents a collection of access review history data and the scopes used to collect that data.
+func (m *HistoryDefinitionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *HistoryDefinitionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *HistoryDefinitionsRequestBuilder) GetWithResponseHandler(requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to historyDefinitions for identityGovernance
-func (m *HistoryDefinitionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable, requestConfiguration *HistoryDefinitionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to historyDefinitions for identityGovernance
+func (m *HistoryDefinitionsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to historyDefinitions for identityGovernance
-func (m *HistoryDefinitionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable, requestConfiguration *HistoryDefinitionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to historyDefinitions for identityGovernance
+func (m *HistoryDefinitionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable, requestConfiguration *HistoryDefinitionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryDefinitionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

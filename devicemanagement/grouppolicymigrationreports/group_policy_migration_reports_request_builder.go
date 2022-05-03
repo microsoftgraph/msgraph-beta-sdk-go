@@ -75,8 +75,8 @@ func NewGroupPolicyMigrationReportsRequestBuilder(rawUrl string, requestAdapter 
 func (m *GroupPolicyMigrationReportsRequestBuilder) Count()(*if71ea97d767c5bf6d87359ea70d887651456c66fc1b43a3600e4a90f9468a396.CountRequestBuilder) {
     return if71ea97d767c5bf6d87359ea70d887651456c66fc1b43a3600e4a90f9468a396.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration a list of Group Policy migration reports.
-func (m *GroupPolicyMigrationReportsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a list of Group Policy migration reports.
+func (m *GroupPolicyMigrationReportsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a list of Group Policy migration reports.
@@ -98,8 +98,8 @@ func (m *GroupPolicyMigrationReportsRequestBuilder) CreateGetRequestInformationW
 func (m *GroupPolicyMigrationReportsRequestBuilder) CreateMigrationReport()(*id171944cf343fa2036802b84e24a061ba16a3bb530b13186963b3a3e9787cac7.CreateMigrationReportRequestBuilder) {
     return id171944cf343fa2036802b84e24a061ba16a3bb530b13186963b3a3e9787cac7.NewCreateMigrationReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to groupPolicyMigrationReports for deviceManagement
-func (m *GroupPolicyMigrationReportsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to groupPolicyMigrationReports for deviceManagement
+func (m *GroupPolicyMigrationReportsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to groupPolicyMigrationReports for deviceManagement
@@ -115,12 +115,12 @@ func (m *GroupPolicyMigrationReportsRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler a list of Group Policy migration reports.
-func (m *GroupPolicyMigrationReportsRequestBuilder) GetWithResponseHandler(requestConfiguration *GroupPolicyMigrationReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a list of Group Policy migration reports.
+func (m *GroupPolicyMigrationReportsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a list of Group Policy migration reports.
-func (m *GroupPolicyMigrationReportsRequestBuilder) GetWithResponseHandler(requestConfiguration *GroupPolicyMigrationReportsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler a list of Group Policy migration reports.
+func (m *GroupPolicyMigrationReportsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GroupPolicyMigrationReportsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *GroupPolicyMigrationReportsRequestBuilder) GetWithResponseHandler(reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to groupPolicyMigrationReports for deviceManagement
-func (m *GroupPolicyMigrationReportsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable, requestConfiguration *GroupPolicyMigrationReportsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to groupPolicyMigrationReports for deviceManagement
+func (m *GroupPolicyMigrationReportsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to groupPolicyMigrationReports for deviceManagement
-func (m *GroupPolicyMigrationReportsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable, requestConfiguration *GroupPolicyMigrationReportsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to groupPolicyMigrationReports for deviceManagement
+func (m *GroupPolicyMigrationReportsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable, requestConfiguration *GroupPolicyMigrationReportsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyMigrationReportable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

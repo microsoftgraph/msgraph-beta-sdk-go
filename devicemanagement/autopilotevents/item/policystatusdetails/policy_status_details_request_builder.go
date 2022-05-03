@@ -74,8 +74,8 @@ func NewPolicyStatusDetailsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *PolicyStatusDetailsRequestBuilder) Count()(*i68ca0025f55904d7a3ade92d288db9c39c69dc10723e252e111a7a3b6a4565d2.CountRequestBuilder) {
     return i68ca0025f55904d7a3ade92d288db9c39c69dc10723e252e111a7a3b6a4565d2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration policy and application status details for this device.
-func (m *PolicyStatusDetailsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation policy and application status details for this device.
+func (m *PolicyStatusDetailsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration policy and application status details for this device.
@@ -93,8 +93,8 @@ func (m *PolicyStatusDetailsRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to policyStatusDetails for deviceManagement
-func (m *PolicyStatusDetailsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to policyStatusDetails for deviceManagement
+func (m *PolicyStatusDetailsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to policyStatusDetails for deviceManagement
@@ -110,12 +110,12 @@ func (m *PolicyStatusDetailsRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler policy and application status details for this device.
-func (m *PolicyStatusDetailsRequestBuilder) GetWithResponseHandler(requestConfiguration *PolicyStatusDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get policy and application status details for this device.
+func (m *PolicyStatusDetailsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler policy and application status details for this device.
-func (m *PolicyStatusDetailsRequestBuilder) GetWithResponseHandler(requestConfiguration *PolicyStatusDetailsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler policy and application status details for this device.
+func (m *PolicyStatusDetailsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PolicyStatusDetailsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *PolicyStatusDetailsRequestBuilder) GetWithResponseHandler(requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to policyStatusDetails for deviceManagement
-func (m *PolicyStatusDetailsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailable, requestConfiguration *PolicyStatusDetailsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to policyStatusDetails for deviceManagement
+func (m *PolicyStatusDetailsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to policyStatusDetails for deviceManagement
-func (m *PolicyStatusDetailsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailable, requestConfiguration *PolicyStatusDetailsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to policyStatusDetails for deviceManagement
+func (m *PolicyStatusDetailsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailable, requestConfiguration *PolicyStatusDetailsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotPolicyStatusDetailable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

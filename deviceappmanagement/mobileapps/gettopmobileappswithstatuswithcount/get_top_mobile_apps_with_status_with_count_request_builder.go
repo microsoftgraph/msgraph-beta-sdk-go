@@ -46,8 +46,8 @@ func NewGetTopMobileAppsWithStatusWithCountRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewGetTopMobileAppsWithStatusWithCountRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getTopMobileApps
-func (m *GetTopMobileAppsWithStatusWithCountRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getTopMobileApps
+func (m *GetTopMobileAppsWithStatusWithCountRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getTopMobileApps
@@ -62,12 +62,12 @@ func (m *GetTopMobileAppsWithStatusWithCountRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getTopMobileApps
-func (m *GetTopMobileAppsWithStatusWithCountRequestBuilder) GetWithResponseHandler(requestConfiguration *GetTopMobileAppsWithStatusWithCountRequestBuilderGetRequestConfiguration)(GetTopMobileAppsWithStatusWithCountResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getTopMobileApps
+func (m *GetTopMobileAppsWithStatusWithCountRequestBuilder) Get()(GetTopMobileAppsWithStatusWithCountResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getTopMobileApps
-func (m *GetTopMobileAppsWithStatusWithCountRequestBuilder) GetWithResponseHandler(requestConfiguration *GetTopMobileAppsWithStatusWithCountRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTopMobileAppsWithStatusWithCountResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getTopMobileApps
+func (m *GetTopMobileAppsWithStatusWithCountRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetTopMobileAppsWithStatusWithCountRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTopMobileAppsWithStatusWithCountResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

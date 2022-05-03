@@ -66,8 +66,8 @@ func NewMobilityManagementPolicyItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewMobilityManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from mobilityManagementPolicies
-func (m *MobilityManagementPolicyItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete entity from mobilityManagementPolicies
+func (m *MobilityManagementPolicyItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete entity from mobilityManagementPolicies
@@ -82,8 +82,8 @@ func (m *MobilityManagementPolicyItemRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from mobilityManagementPolicies by key
-func (m *MobilityManagementPolicyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entity from mobilityManagementPolicies by key
+func (m *MobilityManagementPolicyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entity from mobilityManagementPolicies by key
@@ -101,8 +101,8 @@ func (m *MobilityManagementPolicyItemRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in mobilityManagementPolicies
-func (m *MobilityManagementPolicyItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update entity in mobilityManagementPolicies
+func (m *MobilityManagementPolicyItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update entity in mobilityManagementPolicies
@@ -118,12 +118,12 @@ func (m *MobilityManagementPolicyItemRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete entity from mobilityManagementPolicies
-func (m *MobilityManagementPolicyItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete entity from mobilityManagementPolicies
+func (m *MobilityManagementPolicyItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete entity from mobilityManagementPolicies
-func (m *MobilityManagementPolicyItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete entity from mobilityManagementPolicies
+func (m *MobilityManagementPolicyItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *MobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -138,12 +138,12 @@ func (m *MobilityManagementPolicyItemRequestBuilder) DeleteWithResponseHandler(r
     }
     return nil
 }
-// GetWithResponseHandler get entity from mobilityManagementPolicies by key
-func (m *MobilityManagementPolicyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MobilityManagementPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entity from mobilityManagementPolicies by key
+func (m *MobilityManagementPolicyItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entity from mobilityManagementPolicies by key
-func (m *MobilityManagementPolicyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MobilityManagementPolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entity from mobilityManagementPolicies by key
+func (m *MobilityManagementPolicyItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MobilityManagementPolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -173,12 +173,12 @@ func (m *MobilityManagementPolicyItemRequestBuilder) IncludedGroupsById(id strin
     }
     return ib76f90e7d2c4b890d829be0c6ca4b494830a3e275d5a7fde2c6e48ce74ae47c7.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update entity in mobilityManagementPolicies
-func (m *MobilityManagementPolicyItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update entity in mobilityManagementPolicies
+func (m *MobilityManagementPolicyItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update entity in mobilityManagementPolicies
-func (m *MobilityManagementPolicyItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update entity in mobilityManagementPolicies
+func (m *MobilityManagementPolicyItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

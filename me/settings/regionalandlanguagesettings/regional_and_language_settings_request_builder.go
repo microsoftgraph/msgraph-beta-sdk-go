@@ -64,8 +64,8 @@ func NewRegionalAndLanguageSettingsRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewRegionalAndLanguageSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property regionalAndLanguageSettings for me
-func (m *RegionalAndLanguageSettingsRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property regionalAndLanguageSettings for me
+func (m *RegionalAndLanguageSettingsRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property regionalAndLanguageSettings for me
@@ -80,8 +80,8 @@ func (m *RegionalAndLanguageSettingsRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the user's preferences for languages, regional locale and date/time formatting.
-func (m *RegionalAndLanguageSettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the user's preferences for languages, regional locale and date/time formatting.
+func (m *RegionalAndLanguageSettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the user's preferences for languages, regional locale and date/time formatting.
@@ -99,8 +99,8 @@ func (m *RegionalAndLanguageSettingsRequestBuilder) CreateGetRequestInformationW
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property regionalAndLanguageSettings in me
-func (m *RegionalAndLanguageSettingsRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property regionalAndLanguageSettings in me
+func (m *RegionalAndLanguageSettingsRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property regionalAndLanguageSettings in me
@@ -116,12 +116,12 @@ func (m *RegionalAndLanguageSettingsRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property regionalAndLanguageSettings for me
-func (m *RegionalAndLanguageSettingsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *RegionalAndLanguageSettingsRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property regionalAndLanguageSettings for me
+func (m *RegionalAndLanguageSettingsRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property regionalAndLanguageSettings for me
-func (m *RegionalAndLanguageSettingsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *RegionalAndLanguageSettingsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property regionalAndLanguageSettings for me
+func (m *RegionalAndLanguageSettingsRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *RegionalAndLanguageSettingsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *RegionalAndLanguageSettingsRequestBuilder) DeleteWithResponseHandler(re
     }
     return nil
 }
-// GetWithResponseHandler the user's preferences for languages, regional locale and date/time formatting.
-func (m *RegionalAndLanguageSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *RegionalAndLanguageSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the user's preferences for languages, regional locale and date/time formatting.
+func (m *RegionalAndLanguageSettingsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the user's preferences for languages, regional locale and date/time formatting.
-func (m *RegionalAndLanguageSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *RegionalAndLanguageSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, error) {
+// GetWithRequestConfigurationAndResponseHandler the user's preferences for languages, regional locale and date/time formatting.
+func (m *RegionalAndLanguageSettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RegionalAndLanguageSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *RegionalAndLanguageSettingsRequestBuilder) GetWithResponseHandler(reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable), nil
 }
-// PatchWithResponseHandler update the navigation property regionalAndLanguageSettings in me
-func (m *RegionalAndLanguageSettingsRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, requestConfiguration *RegionalAndLanguageSettingsRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property regionalAndLanguageSettings in me
+func (m *RegionalAndLanguageSettingsRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property regionalAndLanguageSettings in me
-func (m *RegionalAndLanguageSettingsRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, requestConfiguration *RegionalAndLanguageSettingsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property regionalAndLanguageSettings in me
+func (m *RegionalAndLanguageSettingsRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, requestConfiguration *RegionalAndLanguageSettingsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

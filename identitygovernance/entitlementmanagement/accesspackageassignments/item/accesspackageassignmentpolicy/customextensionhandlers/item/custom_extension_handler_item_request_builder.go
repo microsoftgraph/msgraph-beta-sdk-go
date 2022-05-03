@@ -65,8 +65,8 @@ func NewCustomExtensionHandlerItemRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewCustomExtensionHandlerItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property customExtensionHandlers for identityGovernance
-func (m *CustomExtensionHandlerItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property customExtensionHandlers for identityGovernance
+func (m *CustomExtensionHandlerItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property customExtensionHandlers for identityGovernance
@@ -81,8 +81,8 @@ func (m *CustomExtensionHandlerItemRequestBuilder) CreateDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
-func (m *CustomExtensionHandlerItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
+func (m *CustomExtensionHandlerItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
@@ -100,8 +100,8 @@ func (m *CustomExtensionHandlerItemRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property customExtensionHandlers in identityGovernance
-func (m *CustomExtensionHandlerItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionHandlerable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property customExtensionHandlers in identityGovernance
+func (m *CustomExtensionHandlerItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionHandlerable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property customExtensionHandlers in identityGovernance
@@ -121,12 +121,12 @@ func (m *CustomExtensionHandlerItemRequestBuilder) CreatePatchRequestInformation
 func (m *CustomExtensionHandlerItemRequestBuilder) CustomExtension()(*ica6fd3d59b05495ea33bfa05c5b59eff990b95769e8482254bfb18b0be967c5f.CustomExtensionRequestBuilder) {
     return ica6fd3d59b05495ea33bfa05c5b59eff990b95769e8482254bfb18b0be967c5f.NewCustomExtensionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeleteWithResponseHandler delete navigation property customExtensionHandlers for identityGovernance
-func (m *CustomExtensionHandlerItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CustomExtensionHandlerItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property customExtensionHandlers for identityGovernance
+func (m *CustomExtensionHandlerItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property customExtensionHandlers for identityGovernance
-func (m *CustomExtensionHandlerItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CustomExtensionHandlerItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property customExtensionHandlers for identityGovernance
+func (m *CustomExtensionHandlerItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *CustomExtensionHandlerItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -141,12 +141,12 @@ func (m *CustomExtensionHandlerItemRequestBuilder) DeleteWithResponseHandler(req
     }
     return nil
 }
-// GetWithResponseHandler the collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
-func (m *CustomExtensionHandlerItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CustomExtensionHandlerItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionHandlerable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
+func (m *CustomExtensionHandlerItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionHandlerable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
-func (m *CustomExtensionHandlerItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CustomExtensionHandlerItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionHandlerable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
+func (m *CustomExtensionHandlerItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CustomExtensionHandlerItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionHandlerable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -161,12 +161,12 @@ func (m *CustomExtensionHandlerItemRequestBuilder) GetWithResponseHandler(reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionHandlerable), nil
 }
-// PatchWithResponseHandler update the navigation property customExtensionHandlers in identityGovernance
-func (m *CustomExtensionHandlerItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionHandlerable, requestConfiguration *CustomExtensionHandlerItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property customExtensionHandlers in identityGovernance
+func (m *CustomExtensionHandlerItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionHandlerable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property customExtensionHandlers in identityGovernance
-func (m *CustomExtensionHandlerItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionHandlerable, requestConfiguration *CustomExtensionHandlerItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property customExtensionHandlers in identityGovernance
+func (m *CustomExtensionHandlerItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionHandlerable, requestConfiguration *CustomExtensionHandlerItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

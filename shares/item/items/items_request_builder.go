@@ -67,8 +67,8 @@ func NewItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *ItemsRequestBuilder) Count()(*ifac0410e3ac87faef543c3faa4f46b671bfb13ed3150258612227258d99c3d0c.CountRequestBuilder) {
     return ifac0410e3ac87faef543c3faa4f46b671bfb13ed3150258612227258d99c3d0c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration all driveItems contained in the sharing root. This collection cannot be enumerated.
-func (m *ItemsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation all driveItems contained in the sharing root. This collection cannot be enumerated.
+func (m *ItemsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration all driveItems contained in the sharing root. This collection cannot be enumerated.
@@ -86,12 +86,12 @@ func (m *ItemsRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler all driveItems contained in the sharing root. This collection cannot be enumerated.
-func (m *ItemsRequestBuilder) GetWithResponseHandler(requestConfiguration *ItemsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get all driveItems contained in the sharing root. This collection cannot be enumerated.
+func (m *ItemsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler all driveItems contained in the sharing root. This collection cannot be enumerated.
-func (m *ItemsRequestBuilder) GetWithResponseHandler(requestConfiguration *ItemsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler all driveItems contained in the sharing root. This collection cannot be enumerated.
+func (m *ItemsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ItemsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

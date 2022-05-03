@@ -74,8 +74,8 @@ func NewSettingDefinitionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *SettingDefinitionsRequestBuilder) Count()(*i7af85c503a1e6325a5a8f8174a03e218d41e378b73bee46489a11942be473bd5.CountRequestBuilder) {
     return i7af85c503a1e6325a5a8f8174a03e218d41e378b73bee46489a11942be473bd5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the device management intent setting definitions
-func (m *SettingDefinitionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the device management intent setting definitions
+func (m *SettingDefinitionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the device management intent setting definitions
@@ -93,8 +93,8 @@ func (m *SettingDefinitionsRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to settingDefinitions for deviceManagement
-func (m *SettingDefinitionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to settingDefinitions for deviceManagement
+func (m *SettingDefinitionsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to settingDefinitions for deviceManagement
@@ -110,12 +110,12 @@ func (m *SettingDefinitionsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the device management intent setting definitions
-func (m *SettingDefinitionsRequestBuilder) GetWithResponseHandler(requestConfiguration *SettingDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the device management intent setting definitions
+func (m *SettingDefinitionsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the device management intent setting definitions
-func (m *SettingDefinitionsRequestBuilder) GetWithResponseHandler(requestConfiguration *SettingDefinitionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the device management intent setting definitions
+func (m *SettingDefinitionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SettingDefinitionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *SettingDefinitionsRequestBuilder) GetWithResponseHandler(requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to settingDefinitions for deviceManagement
-func (m *SettingDefinitionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionable, requestConfiguration *SettingDefinitionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to settingDefinitions for deviceManagement
+func (m *SettingDefinitionsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to settingDefinitions for deviceManagement
-func (m *SettingDefinitionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionable, requestConfiguration *SettingDefinitionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to settingDefinitions for deviceManagement
+func (m *SettingDefinitionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionable, requestConfiguration *SettingDefinitionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingDefinitionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

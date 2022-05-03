@@ -68,8 +68,8 @@ func NewBaseTaskListItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewBaseTaskListItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property lists for users
-func (m *BaseTaskListItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property lists for users
+func (m *BaseTaskListItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property lists for users
@@ -84,8 +84,8 @@ func (m *BaseTaskListItemRequestBuilder) CreateDeleteRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the task lists in the users mailbox.
-func (m *BaseTaskListItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the task lists in the users mailbox.
+func (m *BaseTaskListItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the task lists in the users mailbox.
@@ -103,8 +103,8 @@ func (m *BaseTaskListItemRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property lists in users
-func (m *BaseTaskListItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property lists in users
+func (m *BaseTaskListItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property lists in users
@@ -120,12 +120,12 @@ func (m *BaseTaskListItemRequestBuilder) CreatePatchRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property lists for users
-func (m *BaseTaskListItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *BaseTaskListItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property lists for users
+func (m *BaseTaskListItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property lists for users
-func (m *BaseTaskListItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *BaseTaskListItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property lists for users
+func (m *BaseTaskListItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *BaseTaskListItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -155,12 +155,12 @@ func (m *BaseTaskListItemRequestBuilder) ExtensionsById(id string)(*i12318248cc1
     }
     return i12318248cc169f54024ab11995a4248b4aa77343bbcd19ddb1d0bc7e075304e4.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GetWithResponseHandler the task lists in the users mailbox.
-func (m *BaseTaskListItemRequestBuilder) GetWithResponseHandler(requestConfiguration *BaseTaskListItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the task lists in the users mailbox.
+func (m *BaseTaskListItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the task lists in the users mailbox.
-func (m *BaseTaskListItemRequestBuilder) GetWithResponseHandler(requestConfiguration *BaseTaskListItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable, error) {
+// GetWithRequestConfigurationAndResponseHandler the task lists in the users mailbox.
+func (m *BaseTaskListItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BaseTaskListItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -175,12 +175,12 @@ func (m *BaseTaskListItemRequestBuilder) GetWithResponseHandler(requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable), nil
 }
-// PatchWithResponseHandler update the navigation property lists in users
-func (m *BaseTaskListItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable, requestConfiguration *BaseTaskListItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property lists in users
+func (m *BaseTaskListItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property lists in users
-func (m *BaseTaskListItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable, requestConfiguration *BaseTaskListItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property lists in users
+func (m *BaseTaskListItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskListable, requestConfiguration *BaseTaskListItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

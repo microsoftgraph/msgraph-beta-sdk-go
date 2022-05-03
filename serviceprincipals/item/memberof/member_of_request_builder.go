@@ -67,8 +67,8 @@ func NewMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *MemberOfRequestBuilder) Count()(*ia7a0a7e27f54c063023b04320604dfa33d4ac71e1fba41f81315235a1f7c2d53.CountRequestBuilder) {
     return ia7a0a7e27f54c063023b04320604dfa33d4ac71e1fba41f81315235a1f7c2d53.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
-func (m *MemberOfRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
+func (m *MemberOfRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
@@ -86,12 +86,12 @@ func (m *MemberOfRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
-func (m *MemberOfRequestBuilder) GetWithResponseHandler(requestConfiguration *MemberOfRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
+func (m *MemberOfRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
-func (m *MemberOfRequestBuilder) GetWithResponseHandler(requestConfiguration *MemberOfRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
+func (m *MemberOfRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MemberOfRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

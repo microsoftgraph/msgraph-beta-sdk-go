@@ -39,8 +39,8 @@ func NewClearUserPreferredPresenceRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewClearUserPreferredPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action clearUserPreferredPresence
-func (m *ClearUserPreferredPresenceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action clearUserPreferredPresence
+func (m *ClearUserPreferredPresenceRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action clearUserPreferredPresence
@@ -55,12 +55,12 @@ func (m *ClearUserPreferredPresenceRequestBuilder) CreatePostRequestInformationW
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action clearUserPreferredPresence
-func (m *ClearUserPreferredPresenceRequestBuilder) PostWithResponseHandler(requestConfiguration *ClearUserPreferredPresenceRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action clearUserPreferredPresence
+func (m *ClearUserPreferredPresenceRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action clearUserPreferredPresence
-func (m *ClearUserPreferredPresenceRequestBuilder) PostWithResponseHandler(requestConfiguration *ClearUserPreferredPresenceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action clearUserPreferredPresence
+func (m *ClearUserPreferredPresenceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *ClearUserPreferredPresenceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

@@ -74,8 +74,8 @@ func NewIosUpdateStatusesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *IosUpdateStatusesRequestBuilder) Count()(*iaa40bbba6f03802d1217f98e74a547cd9599888c10d8a026b686587ce63fd477.CountRequestBuilder) {
     return iaa40bbba6f03802d1217f98e74a547cd9599888c10d8a026b686587ce63fd477.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the IOS software update installation statuses for this account.
-func (m *IosUpdateStatusesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the IOS software update installation statuses for this account.
+func (m *IosUpdateStatusesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the IOS software update installation statuses for this account.
@@ -93,8 +93,8 @@ func (m *IosUpdateStatusesRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to iosUpdateStatuses for deviceManagement
-func (m *IosUpdateStatusesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to iosUpdateStatuses for deviceManagement
+func (m *IosUpdateStatusesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to iosUpdateStatuses for deviceManagement
@@ -110,12 +110,12 @@ func (m *IosUpdateStatusesRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the IOS software update installation statuses for this account.
-func (m *IosUpdateStatusesRequestBuilder) GetWithResponseHandler(requestConfiguration *IosUpdateStatusesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the IOS software update installation statuses for this account.
+func (m *IosUpdateStatusesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the IOS software update installation statuses for this account.
-func (m *IosUpdateStatusesRequestBuilder) GetWithResponseHandler(requestConfiguration *IosUpdateStatusesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the IOS software update installation statuses for this account.
+func (m *IosUpdateStatusesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IosUpdateStatusesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *IosUpdateStatusesRequestBuilder) GetWithResponseHandler(requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to iosUpdateStatuses for deviceManagement
-func (m *IosUpdateStatusesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusable, requestConfiguration *IosUpdateStatusesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to iosUpdateStatuses for deviceManagement
+func (m *IosUpdateStatusesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to iosUpdateStatuses for deviceManagement
-func (m *IosUpdateStatusesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusable, requestConfiguration *IosUpdateStatusesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to iosUpdateStatuses for deviceManagement
+func (m *IosUpdateStatusesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusable, requestConfiguration *IosUpdateStatusesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosUpdateDeviceStatusable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

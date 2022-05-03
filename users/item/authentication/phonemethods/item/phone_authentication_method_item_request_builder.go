@@ -64,8 +64,8 @@ func NewPhoneAuthenticationMethodItemRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewPhoneAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property phoneMethods for users
-func (m *PhoneAuthenticationMethodItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property phoneMethods for users
+func (m *PhoneAuthenticationMethodItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property phoneMethods for users
@@ -80,8 +80,8 @@ func (m *PhoneAuthenticationMethodItemRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the phone registered to a user for authentication.
-func (m *PhoneAuthenticationMethodItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents the phone registered to a user for authentication.
+func (m *PhoneAuthenticationMethodItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents the phone registered to a user for authentication.
@@ -99,8 +99,8 @@ func (m *PhoneAuthenticationMethodItemRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property phoneMethods in users
-func (m *PhoneAuthenticationMethodItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property phoneMethods in users
+func (m *PhoneAuthenticationMethodItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property phoneMethods in users
@@ -116,12 +116,12 @@ func (m *PhoneAuthenticationMethodItemRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property phoneMethods for users
-func (m *PhoneAuthenticationMethodItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *PhoneAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property phoneMethods for users
+func (m *PhoneAuthenticationMethodItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property phoneMethods for users
-func (m *PhoneAuthenticationMethodItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *PhoneAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property phoneMethods for users
+func (m *PhoneAuthenticationMethodItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *PhoneAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *PhoneAuthenticationMethodItemRequestBuilder) DeleteWithResponseHandler(
     }
     return nil
 }
-// GetWithResponseHandler represents the phone registered to a user for authentication.
-func (m *PhoneAuthenticationMethodItemRequestBuilder) GetWithResponseHandler(requestConfiguration *PhoneAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents the phone registered to a user for authentication.
+func (m *PhoneAuthenticationMethodItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents the phone registered to a user for authentication.
-func (m *PhoneAuthenticationMethodItemRequestBuilder) GetWithResponseHandler(requestConfiguration *PhoneAuthenticationMethodItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents the phone registered to a user for authentication.
+func (m *PhoneAuthenticationMethodItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PhoneAuthenticationMethodItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *PhoneAuthenticationMethodItemRequestBuilder) GetWithResponseHandler(req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodable), nil
 }
-// PatchWithResponseHandler update the navigation property phoneMethods in users
-func (m *PhoneAuthenticationMethodItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodable, requestConfiguration *PhoneAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property phoneMethods in users
+func (m *PhoneAuthenticationMethodItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property phoneMethods in users
-func (m *PhoneAuthenticationMethodItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodable, requestConfiguration *PhoneAuthenticationMethodItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property phoneMethods in users
+func (m *PhoneAuthenticationMethodItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodable, requestConfiguration *PhoneAuthenticationMethodItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

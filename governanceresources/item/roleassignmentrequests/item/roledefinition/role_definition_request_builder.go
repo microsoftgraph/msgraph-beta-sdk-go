@@ -66,8 +66,8 @@ func NewRoleDefinitionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewRoleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property roleDefinition for governanceResources
-func (m *RoleDefinitionRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property roleDefinition for governanceResources
+func (m *RoleDefinitionRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property roleDefinition for governanceResources
@@ -82,8 +82,8 @@ func (m *RoleDefinitionRequestBuilder) CreateDeleteRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. The role definition that the request aims to.
-func (m *RoleDefinitionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only. The role definition that the request aims to.
+func (m *RoleDefinitionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only. The role definition that the request aims to.
@@ -101,8 +101,8 @@ func (m *RoleDefinitionRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property roleDefinition in governanceResources
-func (m *RoleDefinitionRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property roleDefinition in governanceResources
+func (m *RoleDefinitionRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property roleDefinition in governanceResources
@@ -118,12 +118,12 @@ func (m *RoleDefinitionRequestBuilder) CreatePatchRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property roleDefinition for governanceResources
-func (m *RoleDefinitionRequestBuilder) DeleteWithResponseHandler(requestConfiguration *RoleDefinitionRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property roleDefinition for governanceResources
+func (m *RoleDefinitionRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property roleDefinition for governanceResources
-func (m *RoleDefinitionRequestBuilder) DeleteWithResponseHandler(requestConfiguration *RoleDefinitionRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property roleDefinition for governanceResources
+func (m *RoleDefinitionRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *RoleDefinitionRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -138,12 +138,12 @@ func (m *RoleDefinitionRequestBuilder) DeleteWithResponseHandler(requestConfigur
     }
     return nil
 }
-// GetWithResponseHandler read-only. The role definition that the request aims to.
-func (m *RoleDefinitionRequestBuilder) GetWithResponseHandler(requestConfiguration *RoleDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only. The role definition that the request aims to.
+func (m *RoleDefinitionRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only. The role definition that the request aims to.
-func (m *RoleDefinitionRequestBuilder) GetWithResponseHandler(requestConfiguration *RoleDefinitionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only. The role definition that the request aims to.
+func (m *RoleDefinitionRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RoleDefinitionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -158,12 +158,12 @@ func (m *RoleDefinitionRequestBuilder) GetWithResponseHandler(requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable), nil
 }
-// PatchWithResponseHandler update the navigation property roleDefinition in governanceResources
-func (m *RoleDefinitionRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, requestConfiguration *RoleDefinitionRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property roleDefinition in governanceResources
+func (m *RoleDefinitionRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property roleDefinition in governanceResources
-func (m *RoleDefinitionRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, requestConfiguration *RoleDefinitionRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property roleDefinition in governanceResources
+func (m *RoleDefinitionRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, requestConfiguration *RoleDefinitionRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

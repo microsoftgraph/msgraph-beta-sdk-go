@@ -74,8 +74,8 @@ func NewMobileAppIntentAndStatesRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *MobileAppIntentAndStatesRequestBuilder) Count()(*i10f0da69127b83aa9f6639d5ebcbc8e6c404e22dafeb1341847ff3feb8ac5e1b.CountRequestBuilder) {
     return i10f0da69127b83aa9f6639d5ebcbc8e6c404e22dafeb1341847ff3feb8ac5e1b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of troubleshooting events for this user.
-func (m *MobileAppIntentAndStatesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of troubleshooting events for this user.
+func (m *MobileAppIntentAndStatesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of troubleshooting events for this user.
@@ -93,8 +93,8 @@ func (m *MobileAppIntentAndStatesRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to mobileAppIntentAndStates for me
-func (m *MobileAppIntentAndStatesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to mobileAppIntentAndStates for me
+func (m *MobileAppIntentAndStatesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to mobileAppIntentAndStates for me
@@ -110,12 +110,12 @@ func (m *MobileAppIntentAndStatesRequestBuilder) CreatePostRequestInformationWit
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the list of troubleshooting events for this user.
-func (m *MobileAppIntentAndStatesRequestBuilder) GetWithResponseHandler(requestConfiguration *MobileAppIntentAndStatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of troubleshooting events for this user.
+func (m *MobileAppIntentAndStatesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of troubleshooting events for this user.
-func (m *MobileAppIntentAndStatesRequestBuilder) GetWithResponseHandler(requestConfiguration *MobileAppIntentAndStatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of troubleshooting events for this user.
+func (m *MobileAppIntentAndStatesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MobileAppIntentAndStatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *MobileAppIntentAndStatesRequestBuilder) GetWithResponseHandler(requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to mobileAppIntentAndStates for me
-func (m *MobileAppIntentAndStatesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable, requestConfiguration *MobileAppIntentAndStatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to mobileAppIntentAndStates for me
+func (m *MobileAppIntentAndStatesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to mobileAppIntentAndStates for me
-func (m *MobileAppIntentAndStatesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable, requestConfiguration *MobileAppIntentAndStatesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to mobileAppIntentAndStates for me
+func (m *MobileAppIntentAndStatesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable, requestConfiguration *MobileAppIntentAndStatesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

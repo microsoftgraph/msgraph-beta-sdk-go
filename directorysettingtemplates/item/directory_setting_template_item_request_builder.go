@@ -77,8 +77,8 @@ func NewDirectorySettingTemplateItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewDirectorySettingTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from directorySettingTemplates
-func (m *DirectorySettingTemplateItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete entity from directorySettingTemplates
+func (m *DirectorySettingTemplateItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete entity from directorySettingTemplates
@@ -93,8 +93,8 @@ func (m *DirectorySettingTemplateItemRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from directorySettingTemplates by key
-func (m *DirectorySettingTemplateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entity from directorySettingTemplates by key
+func (m *DirectorySettingTemplateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entity from directorySettingTemplates by key
@@ -112,8 +112,8 @@ func (m *DirectorySettingTemplateItemRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in directorySettingTemplates
-func (m *DirectorySettingTemplateItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update entity in directorySettingTemplates
+func (m *DirectorySettingTemplateItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update entity in directorySettingTemplates
@@ -129,12 +129,12 @@ func (m *DirectorySettingTemplateItemRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete entity from directorySettingTemplates
-func (m *DirectorySettingTemplateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DirectorySettingTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete entity from directorySettingTemplates
+func (m *DirectorySettingTemplateItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete entity from directorySettingTemplates
-func (m *DirectorySettingTemplateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DirectorySettingTemplateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete entity from directorySettingTemplates
+func (m *DirectorySettingTemplateItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectorySettingTemplateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -149,6 +149,10 @@ func (m *DirectorySettingTemplateItemRequestBuilder) DeleteWithResponseHandler(r
     }
     return nil
 }
+// Get get entity from directorySettingTemplates by key
+func (m *DirectorySettingTemplateItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetMemberGroups the getMemberGroups property
 func (m *DirectorySettingTemplateItemRequestBuilder) GetMemberGroups()(*i09e0fb5ad1ad570bae5ac63f3e01cd3eeb4d487f97efe0766919eec487abbd14.GetMemberGroupsRequestBuilder) {
     return i09e0fb5ad1ad570bae5ac63f3e01cd3eeb4d487f97efe0766919eec487abbd14.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -157,12 +161,8 @@ func (m *DirectorySettingTemplateItemRequestBuilder) GetMemberGroups()(*i09e0fb5
 func (m *DirectorySettingTemplateItemRequestBuilder) GetMemberObjects()(*i350af3bac14d3575d18b98f3718632a63e909339a7e1d311aeed01b007c6326e.GetMemberObjectsRequestBuilder) {
     return i350af3bac14d3575d18b98f3718632a63e909339a7e1d311aeed01b007c6326e.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get entity from directorySettingTemplates by key
-func (m *DirectorySettingTemplateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DirectorySettingTemplateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler get entity from directorySettingTemplates by key
-func (m *DirectorySettingTemplateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DirectorySettingTemplateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entity from directorySettingTemplates by key
+func (m *DirectorySettingTemplateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectorySettingTemplateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -177,12 +177,12 @@ func (m *DirectorySettingTemplateItemRequestBuilder) GetWithResponseHandler(requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable), nil
 }
-// PatchWithResponseHandler update entity in directorySettingTemplates
-func (m *DirectorySettingTemplateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, requestConfiguration *DirectorySettingTemplateItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update entity in directorySettingTemplates
+func (m *DirectorySettingTemplateItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update entity in directorySettingTemplates
-func (m *DirectorySettingTemplateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, requestConfiguration *DirectorySettingTemplateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update entity in directorySettingTemplates
+func (m *DirectorySettingTemplateItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, requestConfiguration *DirectorySettingTemplateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

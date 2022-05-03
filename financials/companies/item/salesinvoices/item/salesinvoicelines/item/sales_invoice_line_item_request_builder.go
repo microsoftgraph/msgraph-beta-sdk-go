@@ -70,8 +70,8 @@ func NewSalesInvoiceLineItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewSalesInvoiceLineItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property salesInvoiceLines for financials
-func (m *SalesInvoiceLineItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property salesInvoiceLines for financials
+func (m *SalesInvoiceLineItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property salesInvoiceLines for financials
@@ -86,8 +86,8 @@ func (m *SalesInvoiceLineItemRequestBuilder) CreateDeleteRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get salesInvoiceLines from financials
-func (m *SalesInvoiceLineItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get salesInvoiceLines from financials
+func (m *SalesInvoiceLineItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get salesInvoiceLines from financials
@@ -105,8 +105,8 @@ func (m *SalesInvoiceLineItemRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property salesInvoiceLines in financials
-func (m *SalesInvoiceLineItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property salesInvoiceLines in financials
+func (m *SalesInvoiceLineItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property salesInvoiceLines in financials
@@ -122,12 +122,12 @@ func (m *SalesInvoiceLineItemRequestBuilder) CreatePatchRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property salesInvoiceLines for financials
-func (m *SalesInvoiceLineItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SalesInvoiceLineItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property salesInvoiceLines for financials
+func (m *SalesInvoiceLineItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property salesInvoiceLines for financials
-func (m *SalesInvoiceLineItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SalesInvoiceLineItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property salesInvoiceLines for financials
+func (m *SalesInvoiceLineItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *SalesInvoiceLineItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -142,12 +142,12 @@ func (m *SalesInvoiceLineItemRequestBuilder) DeleteWithResponseHandler(requestCo
     }
     return nil
 }
-// GetWithResponseHandler get salesInvoiceLines from financials
-func (m *SalesInvoiceLineItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SalesInvoiceLineItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get salesInvoiceLines from financials
+func (m *SalesInvoiceLineItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get salesInvoiceLines from financials
-func (m *SalesInvoiceLineItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SalesInvoiceLineItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable, error) {
+// GetWithRequestConfigurationAndResponseHandler get salesInvoiceLines from financials
+func (m *SalesInvoiceLineItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SalesInvoiceLineItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -166,12 +166,12 @@ func (m *SalesInvoiceLineItemRequestBuilder) GetWithResponseHandler(requestConfi
 func (m *SalesInvoiceLineItemRequestBuilder) Item()(*i6acc0d4423a62011c6111e1c572d000e9876bb569c59521328727db7c78cb19f.ItemRequestBuilder) {
     return i6acc0d4423a62011c6111e1c572d000e9876bb569c59521328727db7c78cb19f.NewItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property salesInvoiceLines in financials
-func (m *SalesInvoiceLineItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable, requestConfiguration *SalesInvoiceLineItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property salesInvoiceLines in financials
+func (m *SalesInvoiceLineItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property salesInvoiceLines in financials
-func (m *SalesInvoiceLineItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable, requestConfiguration *SalesInvoiceLineItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property salesInvoiceLines in financials
+func (m *SalesInvoiceLineItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable, requestConfiguration *SalesInvoiceLineItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

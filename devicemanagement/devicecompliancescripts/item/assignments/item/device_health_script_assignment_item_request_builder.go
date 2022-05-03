@@ -64,8 +64,8 @@ func NewDeviceHealthScriptAssignmentItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceHealthScriptAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignments for deviceManagement
-func (m *DeviceHealthScriptAssignmentItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property assignments for deviceManagement
+func (m *DeviceHealthScriptAssignmentItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignments for deviceManagement
@@ -80,8 +80,8 @@ func (m *DeviceHealthScriptAssignmentItemRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of group assignments for the device compliance script
-func (m *DeviceHealthScriptAssignmentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of group assignments for the device compliance script
+func (m *DeviceHealthScriptAssignmentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of group assignments for the device compliance script
@@ -99,8 +99,8 @@ func (m *DeviceHealthScriptAssignmentItemRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignments in deviceManagement
-func (m *DeviceHealthScriptAssignmentItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property assignments in deviceManagement
+func (m *DeviceHealthScriptAssignmentItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignments in deviceManagement
@@ -116,12 +116,12 @@ func (m *DeviceHealthScriptAssignmentItemRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property assignments for deviceManagement
-func (m *DeviceHealthScriptAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceHealthScriptAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property assignments for deviceManagement
+func (m *DeviceHealthScriptAssignmentItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property assignments for deviceManagement
-func (m *DeviceHealthScriptAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceHealthScriptAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property assignments for deviceManagement
+func (m *DeviceHealthScriptAssignmentItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceHealthScriptAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *DeviceHealthScriptAssignmentItemRequestBuilder) DeleteWithResponseHandl
     }
     return nil
 }
-// GetWithResponseHandler the list of group assignments for the device compliance script
-func (m *DeviceHealthScriptAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceHealthScriptAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptAssignmentable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of group assignments for the device compliance script
+func (m *DeviceHealthScriptAssignmentItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptAssignmentable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of group assignments for the device compliance script
-func (m *DeviceHealthScriptAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceHealthScriptAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptAssignmentable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of group assignments for the device compliance script
+func (m *DeviceHealthScriptAssignmentItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceHealthScriptAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *DeviceHealthScriptAssignmentItemRequestBuilder) GetWithResponseHandler(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptAssignmentable), nil
 }
-// PatchWithResponseHandler update the navigation property assignments in deviceManagement
-func (m *DeviceHealthScriptAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptAssignmentable, requestConfiguration *DeviceHealthScriptAssignmentItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property assignments in deviceManagement
+func (m *DeviceHealthScriptAssignmentItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptAssignmentable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property assignments in deviceManagement
-func (m *DeviceHealthScriptAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptAssignmentable, requestConfiguration *DeviceHealthScriptAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property assignments in deviceManagement
+func (m *DeviceHealthScriptAssignmentItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptAssignmentable, requestConfiguration *DeviceHealthScriptAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

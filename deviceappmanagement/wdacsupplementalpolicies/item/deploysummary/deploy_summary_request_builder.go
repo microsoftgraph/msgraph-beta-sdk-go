@@ -64,8 +64,8 @@ func NewDeploySummaryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewDeploySummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deploySummary for deviceAppManagement
-func (m *DeploySummaryRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property deploySummary for deviceAppManagement
+func (m *DeploySummaryRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deploySummary for deviceAppManagement
@@ -80,8 +80,8 @@ func (m *DeploySummaryRequestBuilder) CreateDeleteRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration windowsDefenderApplicationControl supplemental policy deployment summary.
-func (m *DeploySummaryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation windowsDefenderApplicationControl supplemental policy deployment summary.
+func (m *DeploySummaryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration windowsDefenderApplicationControl supplemental policy deployment summary.
@@ -99,8 +99,8 @@ func (m *DeploySummaryRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property deploySummary in deviceAppManagement
-func (m *DeploySummaryRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property deploySummary in deviceAppManagement
+func (m *DeploySummaryRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property deploySummary in deviceAppManagement
@@ -116,12 +116,12 @@ func (m *DeploySummaryRequestBuilder) CreatePatchRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property deploySummary for deviceAppManagement
-func (m *DeploySummaryRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeploySummaryRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property deploySummary for deviceAppManagement
+func (m *DeploySummaryRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property deploySummary for deviceAppManagement
-func (m *DeploySummaryRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeploySummaryRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property deploySummary for deviceAppManagement
+func (m *DeploySummaryRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeploySummaryRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *DeploySummaryRequestBuilder) DeleteWithResponseHandler(requestConfigura
     }
     return nil
 }
-// GetWithResponseHandler windowsDefenderApplicationControl supplemental policy deployment summary.
-func (m *DeploySummaryRequestBuilder) GetWithResponseHandler(requestConfiguration *DeploySummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get windowsDefenderApplicationControl supplemental policy deployment summary.
+func (m *DeploySummaryRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler windowsDefenderApplicationControl supplemental policy deployment summary.
-func (m *DeploySummaryRequestBuilder) GetWithResponseHandler(requestConfiguration *DeploySummaryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler windowsDefenderApplicationControl supplemental policy deployment summary.
+func (m *DeploySummaryRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeploySummaryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *DeploySummaryRequestBuilder) GetWithResponseHandler(requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable), nil
 }
-// PatchWithResponseHandler update the navigation property deploySummary in deviceAppManagement
-func (m *DeploySummaryRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable, requestConfiguration *DeploySummaryRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property deploySummary in deviceAppManagement
+func (m *DeploySummaryRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property deploySummary in deviceAppManagement
-func (m *DeploySummaryRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable, requestConfiguration *DeploySummaryRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property deploySummary in deviceAppManagement
+func (m *DeploySummaryRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable, requestConfiguration *DeploySummaryRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

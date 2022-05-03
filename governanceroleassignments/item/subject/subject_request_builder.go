@@ -64,8 +64,8 @@ func NewSubjectRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewSubjectRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property subject for governanceRoleAssignments
-func (m *SubjectRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property subject for governanceRoleAssignments
+func (m *SubjectRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property subject for governanceRoleAssignments
@@ -80,8 +80,8 @@ func (m *SubjectRequestBuilder) CreateDeleteRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. The subject associated with the role assignment.
-func (m *SubjectRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only. The subject associated with the role assignment.
+func (m *SubjectRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only. The subject associated with the role assignment.
@@ -99,8 +99,8 @@ func (m *SubjectRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property subject in governanceRoleAssignments
-func (m *SubjectRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceSubjectable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property subject in governanceRoleAssignments
+func (m *SubjectRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceSubjectable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property subject in governanceRoleAssignments
@@ -116,12 +116,12 @@ func (m *SubjectRequestBuilder) CreatePatchRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property subject for governanceRoleAssignments
-func (m *SubjectRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SubjectRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property subject for governanceRoleAssignments
+func (m *SubjectRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property subject for governanceRoleAssignments
-func (m *SubjectRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SubjectRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property subject for governanceRoleAssignments
+func (m *SubjectRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *SubjectRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *SubjectRequestBuilder) DeleteWithResponseHandler(requestConfiguration *
     }
     return nil
 }
-// GetWithResponseHandler read-only. The subject associated with the role assignment.
-func (m *SubjectRequestBuilder) GetWithResponseHandler(requestConfiguration *SubjectRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceSubjectable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only. The subject associated with the role assignment.
+func (m *SubjectRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceSubjectable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only. The subject associated with the role assignment.
-func (m *SubjectRequestBuilder) GetWithResponseHandler(requestConfiguration *SubjectRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceSubjectable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only. The subject associated with the role assignment.
+func (m *SubjectRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SubjectRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceSubjectable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *SubjectRequestBuilder) GetWithResponseHandler(requestConfiguration *Sub
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceSubjectable), nil
 }
-// PatchWithResponseHandler update the navigation property subject in governanceRoleAssignments
-func (m *SubjectRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceSubjectable, requestConfiguration *SubjectRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property subject in governanceRoleAssignments
+func (m *SubjectRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceSubjectable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property subject in governanceRoleAssignments
-func (m *SubjectRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceSubjectable, requestConfiguration *SubjectRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property subject in governanceRoleAssignments
+func (m *SubjectRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceSubjectable, requestConfiguration *SubjectRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -65,8 +65,8 @@ func NewWindowsAutopilotSettingsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsAutopilotSettings for deviceManagement
-func (m *WindowsAutopilotSettingsRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property windowsAutopilotSettings for deviceManagement
+func (m *WindowsAutopilotSettingsRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsAutopilotSettings for deviceManagement
@@ -81,8 +81,8 @@ func (m *WindowsAutopilotSettingsRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the Windows autopilot account settings.
-func (m *WindowsAutopilotSettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the Windows autopilot account settings.
+func (m *WindowsAutopilotSettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the Windows autopilot account settings.
@@ -100,8 +100,8 @@ func (m *WindowsAutopilotSettingsRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsAutopilotSettings in deviceManagement
-func (m *WindowsAutopilotSettingsRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property windowsAutopilotSettings in deviceManagement
+func (m *WindowsAutopilotSettingsRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsAutopilotSettings in deviceManagement
@@ -117,12 +117,12 @@ func (m *WindowsAutopilotSettingsRequestBuilder) CreatePatchRequestInformationWi
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property windowsAutopilotSettings for deviceManagement
-func (m *WindowsAutopilotSettingsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsAutopilotSettingsRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property windowsAutopilotSettings for deviceManagement
+func (m *WindowsAutopilotSettingsRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property windowsAutopilotSettings for deviceManagement
-func (m *WindowsAutopilotSettingsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsAutopilotSettingsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property windowsAutopilotSettings for deviceManagement
+func (m *WindowsAutopilotSettingsRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsAutopilotSettingsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -137,12 +137,12 @@ func (m *WindowsAutopilotSettingsRequestBuilder) DeleteWithResponseHandler(reque
     }
     return nil
 }
-// GetWithResponseHandler the Windows autopilot account settings.
-func (m *WindowsAutopilotSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsAutopilotSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the Windows autopilot account settings.
+func (m *WindowsAutopilotSettingsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the Windows autopilot account settings.
-func (m *WindowsAutopilotSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsAutopilotSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable, error) {
+// GetWithRequestConfigurationAndResponseHandler the Windows autopilot account settings.
+func (m *WindowsAutopilotSettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsAutopilotSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -157,12 +157,12 @@ func (m *WindowsAutopilotSettingsRequestBuilder) GetWithResponseHandler(requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable), nil
 }
-// PatchWithResponseHandler update the navigation property windowsAutopilotSettings in deviceManagement
-func (m *WindowsAutopilotSettingsRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable, requestConfiguration *WindowsAutopilotSettingsRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property windowsAutopilotSettings in deviceManagement
+func (m *WindowsAutopilotSettingsRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property windowsAutopilotSettings in deviceManagement
-func (m *WindowsAutopilotSettingsRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable, requestConfiguration *WindowsAutopilotSettingsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property windowsAutopilotSettings in deviceManagement
+func (m *WindowsAutopilotSettingsRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsAutopilotSettingsable, requestConfiguration *WindowsAutopilotSettingsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

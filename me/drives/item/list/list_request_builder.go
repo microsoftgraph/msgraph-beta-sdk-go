@@ -110,8 +110,8 @@ func (m *ListRequestBuilder) ContentTypesById(id string)(*i9afbcf26a085bae33bec6
     }
     return i9afbcf26a085bae33bec61cc4b40f70ee21e783407b414e87aa6707a9555ac2a.NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property list for me
-func (m *ListRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property list for me
+func (m *ListRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property list for me
@@ -126,8 +126,8 @@ func (m *ListRequestBuilder) CreateDeleteRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration for drives in SharePoint, the underlying document library list. Read-only. Nullable.
-func (m *ListRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation for drives in SharePoint, the underlying document library list. Read-only. Nullable.
+func (m *ListRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration for drives in SharePoint, the underlying document library list. Read-only. Nullable.
@@ -145,8 +145,8 @@ func (m *ListRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property list in me
-func (m *ListRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property list in me
+func (m *ListRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property list in me
@@ -162,12 +162,12 @@ func (m *ListRequestBuilder) CreatePatchRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property list for me
-func (m *ListRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ListRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property list for me
+func (m *ListRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property list for me
-func (m *ListRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ListRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property list for me
+func (m *ListRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ListRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -186,12 +186,12 @@ func (m *ListRequestBuilder) DeleteWithResponseHandler(requestConfiguration *Lis
 func (m *ListRequestBuilder) Drive()(*ib0080b16f4fd1f64bad0fc40faa8191f83bc5af05b27dabb5054539619462021.DriveRequestBuilder) {
     return ib0080b16f4fd1f64bad0fc40faa8191f83bc5af05b27dabb5054539619462021.NewDriveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler for drives in SharePoint, the underlying document library list. Read-only. Nullable.
-func (m *ListRequestBuilder) GetWithResponseHandler(requestConfiguration *ListRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get for drives in SharePoint, the underlying document library list. Read-only. Nullable.
+func (m *ListRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler for drives in SharePoint, the underlying document library list. Read-only. Nullable.
-func (m *ListRequestBuilder) GetWithResponseHandler(requestConfiguration *ListRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, error) {
+// GetWithRequestConfigurationAndResponseHandler for drives in SharePoint, the underlying document library list. Read-only. Nullable.
+func (m *ListRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ListRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -236,12 +236,12 @@ func (m *ListRequestBuilder) OperationsById(id string)(*i69531fc3cfd71461eb64582
     }
     return i69531fc3cfd71461eb64582da70e123676f0660112f5d4521198ea126071edb4.NewRichLongRunningOperationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property list in me
-func (m *ListRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, requestConfiguration *ListRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property list in me
+func (m *ListRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property list in me
-func (m *ListRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, requestConfiguration *ListRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property list in me
+func (m *ListRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, requestConfiguration *ListRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

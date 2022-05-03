@@ -50,8 +50,8 @@ func NewQuotaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewQuotaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration get quota from connections
-func (m *QuotaRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get quota from connections
+func (m *QuotaRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get quota from connections
@@ -69,12 +69,12 @@ func (m *QuotaRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get quota from connections
-func (m *QuotaRequestBuilder) GetWithResponseHandler(requestConfiguration *QuotaRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionQuotaable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get quota from connections
+func (m *QuotaRequestBuilder) Get()(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionQuotaable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get quota from connections
-func (m *QuotaRequestBuilder) GetWithResponseHandler(requestConfiguration *QuotaRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionQuotaable, error) {
+// GetWithRequestConfigurationAndResponseHandler get quota from connections
+func (m *QuotaRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *QuotaRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionQuotaable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

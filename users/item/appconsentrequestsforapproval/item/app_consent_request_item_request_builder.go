@@ -66,8 +66,8 @@ func NewAppConsentRequestItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewAppConsentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property appConsentRequestsForApproval for users
-func (m *AppConsentRequestItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property appConsentRequestsForApproval for users
+func (m *AppConsentRequestItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property appConsentRequestsForApproval for users
@@ -82,8 +82,8 @@ func (m *AppConsentRequestItemRequestBuilder) CreateDeleteRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get appConsentRequestsForApproval from users
-func (m *AppConsentRequestItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get appConsentRequestsForApproval from users
+func (m *AppConsentRequestItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get appConsentRequestsForApproval from users
@@ -101,8 +101,8 @@ func (m *AppConsentRequestItemRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property appConsentRequestsForApproval in users
-func (m *AppConsentRequestItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property appConsentRequestsForApproval in users
+func (m *AppConsentRequestItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property appConsentRequestsForApproval in users
@@ -118,12 +118,12 @@ func (m *AppConsentRequestItemRequestBuilder) CreatePatchRequestInformationWithR
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property appConsentRequestsForApproval for users
-func (m *AppConsentRequestItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AppConsentRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property appConsentRequestsForApproval for users
+func (m *AppConsentRequestItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property appConsentRequestsForApproval for users
-func (m *AppConsentRequestItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AppConsentRequestItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property appConsentRequestsForApproval for users
+func (m *AppConsentRequestItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AppConsentRequestItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -138,12 +138,12 @@ func (m *AppConsentRequestItemRequestBuilder) DeleteWithResponseHandler(requestC
     }
     return nil
 }
-// GetWithResponseHandler get appConsentRequestsForApproval from users
-func (m *AppConsentRequestItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AppConsentRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get appConsentRequestsForApproval from users
+func (m *AppConsentRequestItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get appConsentRequestsForApproval from users
-func (m *AppConsentRequestItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AppConsentRequestItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, error) {
+// GetWithRequestConfigurationAndResponseHandler get appConsentRequestsForApproval from users
+func (m *AppConsentRequestItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AppConsentRequestItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -158,12 +158,12 @@ func (m *AppConsentRequestItemRequestBuilder) GetWithResponseHandler(requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable), nil
 }
-// PatchWithResponseHandler update the navigation property appConsentRequestsForApproval in users
-func (m *AppConsentRequestItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, requestConfiguration *AppConsentRequestItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property appConsentRequestsForApproval in users
+func (m *AppConsentRequestItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property appConsentRequestsForApproval in users
-func (m *AppConsentRequestItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, requestConfiguration *AppConsentRequestItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property appConsentRequestsForApproval in users
+func (m *AppConsentRequestItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, requestConfiguration *AppConsentRequestItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

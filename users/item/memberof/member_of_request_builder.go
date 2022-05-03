@@ -67,8 +67,8 @@ func NewMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *MemberOfRequestBuilder) Count()(*ib4c7f7a18d56d667bf68eec3f5015bda0262fd6c5b0788331d4a87c1f63d09e3.CountRequestBuilder) {
     return ib4c7f7a18d56d667bf68eec3f5015bda0262fd6c5b0788331d4a87c1f63d09e3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
-func (m *MemberOfRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+func (m *MemberOfRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
@@ -86,12 +86,12 @@ func (m *MemberOfRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
-func (m *MemberOfRequestBuilder) GetWithResponseHandler(requestConfiguration *MemberOfRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+func (m *MemberOfRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
-func (m *MemberOfRequestBuilder) GetWithResponseHandler(requestConfiguration *MemberOfRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+func (m *MemberOfRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MemberOfRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

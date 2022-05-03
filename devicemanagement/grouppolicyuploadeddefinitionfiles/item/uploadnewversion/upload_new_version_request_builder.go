@@ -39,8 +39,8 @@ func NewUploadNewVersionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewUploadNewVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action uploadNewVersion
-func (m *UploadNewVersionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadNewVersionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action uploadNewVersion
+func (m *UploadNewVersionRequestBuilder) CreatePostRequestInformation(body UploadNewVersionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action uploadNewVersion
@@ -56,12 +56,12 @@ func (m *UploadNewVersionRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action uploadNewVersion
-func (m *UploadNewVersionRequestBuilder) PostWithResponseHandler(body UploadNewVersionRequestBodyable, requestConfiguration *UploadNewVersionRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action uploadNewVersion
+func (m *UploadNewVersionRequestBuilder) Post(body UploadNewVersionRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action uploadNewVersion
-func (m *UploadNewVersionRequestBuilder) PostWithResponseHandler(body UploadNewVersionRequestBodyable, requestConfiguration *UploadNewVersionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action uploadNewVersion
+func (m *UploadNewVersionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UploadNewVersionRequestBodyable, requestConfiguration *UploadNewVersionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

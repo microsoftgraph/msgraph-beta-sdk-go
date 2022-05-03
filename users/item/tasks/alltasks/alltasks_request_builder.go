@@ -75,8 +75,8 @@ func NewAlltasksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *AlltasksRequestBuilder) Count()(*i362e78128711f14fcdc9aac3cd5f44d4b80475c33fa753bd1fa25a5d1935f0ef.CountRequestBuilder) {
     return i362e78128711f14fcdc9aac3cd5f44d4b80475c33fa753bd1fa25a5d1935f0ef.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration all tasks in the users mailbox.
-func (m *AlltasksRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation all tasks in the users mailbox.
+func (m *AlltasksRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration all tasks in the users mailbox.
@@ -94,8 +94,8 @@ func (m *AlltasksRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to alltasks for users
-func (m *AlltasksRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to alltasks for users
+func (m *AlltasksRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to alltasks for users
@@ -115,12 +115,12 @@ func (m *AlltasksRequestBuilder) CreatePostRequestInformationWithRequestConfigur
 func (m *AlltasksRequestBuilder) Delta()(*i3f51d03f85d88573fb6f4b4e4d8dd2715df639be46e465f568e796188fda9437.DeltaRequestBuilder) {
     return i3f51d03f85d88573fb6f4b4e4d8dd2715df639be46e465f568e796188fda9437.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler all tasks in the users mailbox.
-func (m *AlltasksRequestBuilder) GetWithResponseHandler(requestConfiguration *AlltasksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get all tasks in the users mailbox.
+func (m *AlltasksRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler all tasks in the users mailbox.
-func (m *AlltasksRequestBuilder) GetWithResponseHandler(requestConfiguration *AlltasksRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler all tasks in the users mailbox.
+func (m *AlltasksRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AlltasksRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *AlltasksRequestBuilder) GetWithResponseHandler(requestConfiguration *Al
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to alltasks for users
-func (m *AlltasksRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, requestConfiguration *AlltasksRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to alltasks for users
+func (m *AlltasksRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to alltasks for users
-func (m *AlltasksRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, requestConfiguration *AlltasksRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to alltasks for users
+func (m *AlltasksRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, requestConfiguration *AlltasksRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

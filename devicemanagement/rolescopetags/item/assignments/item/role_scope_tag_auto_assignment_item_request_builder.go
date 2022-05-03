@@ -64,8 +64,8 @@ func NewRoleScopeTagAutoAssignmentItemRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewRoleScopeTagAutoAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignments for deviceManagement
-func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property assignments for deviceManagement
+func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignments for deviceManagement
@@ -80,8 +80,8 @@ func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of assignments for this Role Scope Tag.
-func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of assignments for this Role Scope Tag.
+func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of assignments for this Role Scope Tag.
@@ -99,8 +99,8 @@ func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignments in deviceManagement
-func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagAutoAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property assignments in deviceManagement
+func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagAutoAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignments in deviceManagement
@@ -116,12 +116,12 @@ func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property assignments for deviceManagement
-func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *RoleScopeTagAutoAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property assignments for deviceManagement
+func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property assignments for deviceManagement
-func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *RoleScopeTagAutoAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property assignments for deviceManagement
+func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *RoleScopeTagAutoAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) DeleteWithResponseHandler
     }
     return nil
 }
-// GetWithResponseHandler the list of assignments for this Role Scope Tag.
-func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *RoleScopeTagAutoAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagAutoAssignmentable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of assignments for this Role Scope Tag.
+func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagAutoAssignmentable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of assignments for this Role Scope Tag.
-func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *RoleScopeTagAutoAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagAutoAssignmentable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of assignments for this Role Scope Tag.
+func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RoleScopeTagAutoAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagAutoAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) GetWithResponseHandler(re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagAutoAssignmentable), nil
 }
-// PatchWithResponseHandler update the navigation property assignments in deviceManagement
-func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagAutoAssignmentable, requestConfiguration *RoleScopeTagAutoAssignmentItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property assignments in deviceManagement
+func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagAutoAssignmentable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property assignments in deviceManagement
-func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagAutoAssignmentable, requestConfiguration *RoleScopeTagAutoAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property assignments in deviceManagement
+func (m *RoleScopeTagAutoAssignmentItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagAutoAssignmentable, requestConfiguration *RoleScopeTagAutoAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

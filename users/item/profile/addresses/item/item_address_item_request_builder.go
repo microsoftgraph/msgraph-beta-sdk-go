@@ -64,8 +64,8 @@ func NewItemAddressItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewItemAddressItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property addresses for users
-func (m *ItemAddressItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property addresses for users
+func (m *ItemAddressItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property addresses for users
@@ -80,8 +80,8 @@ func (m *ItemAddressItemRequestBuilder) CreateDeleteRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration represents details of addresses associated with the user.
-func (m *ItemAddressItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents details of addresses associated with the user.
+func (m *ItemAddressItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents details of addresses associated with the user.
@@ -99,8 +99,8 @@ func (m *ItemAddressItemRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property addresses in users
-func (m *ItemAddressItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property addresses in users
+func (m *ItemAddressItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property addresses in users
@@ -116,12 +116,12 @@ func (m *ItemAddressItemRequestBuilder) CreatePatchRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property addresses for users
-func (m *ItemAddressItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ItemAddressItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property addresses for users
+func (m *ItemAddressItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property addresses for users
-func (m *ItemAddressItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ItemAddressItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property addresses for users
+func (m *ItemAddressItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ItemAddressItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *ItemAddressItemRequestBuilder) DeleteWithResponseHandler(requestConfigu
     }
     return nil
 }
-// GetWithResponseHandler represents details of addresses associated with the user.
-func (m *ItemAddressItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ItemAddressItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents details of addresses associated with the user.
+func (m *ItemAddressItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents details of addresses associated with the user.
-func (m *ItemAddressItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ItemAddressItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents details of addresses associated with the user.
+func (m *ItemAddressItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ItemAddressItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *ItemAddressItemRequestBuilder) GetWithResponseHandler(requestConfigurat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable), nil
 }
-// PatchWithResponseHandler update the navigation property addresses in users
-func (m *ItemAddressItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, requestConfiguration *ItemAddressItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property addresses in users
+func (m *ItemAddressItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property addresses in users
-func (m *ItemAddressItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, requestConfiguration *ItemAddressItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property addresses in users
+func (m *ItemAddressItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, requestConfiguration *ItemAddressItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

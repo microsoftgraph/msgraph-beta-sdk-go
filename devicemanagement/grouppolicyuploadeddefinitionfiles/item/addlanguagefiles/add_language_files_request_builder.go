@@ -39,8 +39,8 @@ func NewAddLanguageFilesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewAddLanguageFilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action addLanguageFiles
-func (m *AddLanguageFilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddLanguageFilesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action addLanguageFiles
+func (m *AddLanguageFilesRequestBuilder) CreatePostRequestInformation(body AddLanguageFilesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addLanguageFiles
@@ -56,12 +56,12 @@ func (m *AddLanguageFilesRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action addLanguageFiles
-func (m *AddLanguageFilesRequestBuilder) PostWithResponseHandler(body AddLanguageFilesRequestBodyable, requestConfiguration *AddLanguageFilesRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action addLanguageFiles
+func (m *AddLanguageFilesRequestBuilder) Post(body AddLanguageFilesRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action addLanguageFiles
-func (m *AddLanguageFilesRequestBuilder) PostWithResponseHandler(body AddLanguageFilesRequestBodyable, requestConfiguration *AddLanguageFilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action addLanguageFiles
+func (m *AddLanguageFilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddLanguageFilesRequestBodyable, requestConfiguration *AddLanguageFilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

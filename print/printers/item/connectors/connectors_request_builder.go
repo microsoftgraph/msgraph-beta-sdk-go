@@ -67,8 +67,8 @@ func NewConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ConnectorsRequestBuilder) Count()(*i30b2a32a4f2c41a727ac9844e73e0f7374932b46447bb6346a27760dbe26b305.CountRequestBuilder) {
     return i30b2a32a4f2c41a727ac9844e73e0f7374932b46447bb6346a27760dbe26b305.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the connectors that are associated with the printer.
-func (m *ConnectorsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the connectors that are associated with the printer.
+func (m *ConnectorsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the connectors that are associated with the printer.
@@ -86,12 +86,12 @@ func (m *ConnectorsRequestBuilder) CreateGetRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the connectors that are associated with the printer.
-func (m *ConnectorsRequestBuilder) GetWithResponseHandler(requestConfiguration *ConnectorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintConnectorCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the connectors that are associated with the printer.
+func (m *ConnectorsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintConnectorCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the connectors that are associated with the printer.
-func (m *ConnectorsRequestBuilder) GetWithResponseHandler(requestConfiguration *ConnectorsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintConnectorCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the connectors that are associated with the printer.
+func (m *ConnectorsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ConnectorsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintConnectorCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

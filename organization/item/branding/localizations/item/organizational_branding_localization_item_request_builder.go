@@ -76,8 +76,8 @@ func NewOrganizationalBrandingLocalizationItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewOrganizationalBrandingLocalizationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property localizations for organization
-func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property localizations for organization
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property localizations for organization
@@ -92,8 +92,8 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreateDeleteReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration add different branding based on a locale.
-func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation add different branding based on a locale.
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration add different branding based on a locale.
@@ -111,8 +111,8 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property localizations in organization
-func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property localizations in organization
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property localizations in organization
@@ -128,12 +128,12 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) CreatePatchReques
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property localizations for organization
-func (m *OrganizationalBrandingLocalizationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property localizations for organization
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property localizations for organization
-func (m *OrganizationalBrandingLocalizationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property localizations for organization
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -152,12 +152,12 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) DeleteWithRespons
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Favicon()(*ia7baad9e196f596f211db6cea3f24b75276809ee9ba116821ef97852759ddad3.FaviconRequestBuilder) {
     return ia7baad9e196f596f211db6cea3f24b75276809ee9ba116821ef97852759ddad3.NewFaviconRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler add different branding based on a locale.
-func (m *OrganizationalBrandingLocalizationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get add different branding based on a locale.
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler add different branding based on a locale.
-func (m *OrganizationalBrandingLocalizationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable, error) {
+// GetWithRequestConfigurationAndResponseHandler add different branding based on a locale.
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -172,12 +172,12 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) GetWithResponseHa
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable), nil
 }
-// PatchWithResponseHandler update the navigation property localizations in organization
-func (m *OrganizationalBrandingLocalizationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable, requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property localizations in organization
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property localizations in organization
-func (m *OrganizationalBrandingLocalizationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable, requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property localizations in organization
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationalBrandingLocalizationable, requestConfiguration *OrganizationalBrandingLocalizationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

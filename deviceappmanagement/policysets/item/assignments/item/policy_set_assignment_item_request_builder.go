@@ -64,8 +64,8 @@ func NewPolicySetAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewPolicySetAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignments for deviceAppManagement
-func (m *PolicySetAssignmentItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property assignments for deviceAppManagement
+func (m *PolicySetAssignmentItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignments for deviceAppManagement
@@ -80,8 +80,8 @@ func (m *PolicySetAssignmentItemRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration assignments of the PolicySet.
-func (m *PolicySetAssignmentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation assignments of the PolicySet.
+func (m *PolicySetAssignmentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration assignments of the PolicySet.
@@ -99,8 +99,8 @@ func (m *PolicySetAssignmentItemRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignments in deviceAppManagement
-func (m *PolicySetAssignmentItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property assignments in deviceAppManagement
+func (m *PolicySetAssignmentItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignments in deviceAppManagement
@@ -116,12 +116,12 @@ func (m *PolicySetAssignmentItemRequestBuilder) CreatePatchRequestInformationWit
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property assignments for deviceAppManagement
-func (m *PolicySetAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *PolicySetAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property assignments for deviceAppManagement
+func (m *PolicySetAssignmentItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property assignments for deviceAppManagement
-func (m *PolicySetAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *PolicySetAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property assignments for deviceAppManagement
+func (m *PolicySetAssignmentItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *PolicySetAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *PolicySetAssignmentItemRequestBuilder) DeleteWithResponseHandler(reques
     }
     return nil
 }
-// GetWithResponseHandler assignments of the PolicySet.
-func (m *PolicySetAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *PolicySetAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get assignments of the PolicySet.
+func (m *PolicySetAssignmentItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler assignments of the PolicySet.
-func (m *PolicySetAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *PolicySetAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable, error) {
+// GetWithRequestConfigurationAndResponseHandler assignments of the PolicySet.
+func (m *PolicySetAssignmentItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PolicySetAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *PolicySetAssignmentItemRequestBuilder) GetWithResponseHandler(requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable), nil
 }
-// PatchWithResponseHandler update the navigation property assignments in deviceAppManagement
-func (m *PolicySetAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable, requestConfiguration *PolicySetAssignmentItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property assignments in deviceAppManagement
+func (m *PolicySetAssignmentItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property assignments in deviceAppManagement
-func (m *PolicySetAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable, requestConfiguration *PolicySetAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property assignments in deviceAppManagement
+func (m *PolicySetAssignmentItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicySetAssignmentable, requestConfiguration *PolicySetAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

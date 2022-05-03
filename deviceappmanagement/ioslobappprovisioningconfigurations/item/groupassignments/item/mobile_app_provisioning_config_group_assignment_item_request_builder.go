@@ -64,8 +64,8 @@ func NewMobileAppProvisioningConfigGroupAssignmentItemRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppProvisioningConfigGroupAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property groupAssignments for deviceAppManagement
-func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property groupAssignments for deviceAppManagement
+func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property groupAssignments for deviceAppManagement
@@ -80,8 +80,8 @@ func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) CreateDel
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the associated group assignments.
-func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the associated group assignments.
+func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the associated group assignments.
@@ -99,8 +99,8 @@ func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) CreateGet
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property groupAssignments in deviceAppManagement
-func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppProvisioningConfigGroupAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property groupAssignments in deviceAppManagement
+func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppProvisioningConfigGroupAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property groupAssignments in deviceAppManagement
@@ -116,12 +116,12 @@ func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) CreatePat
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property groupAssignments for deviceAppManagement
-func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property groupAssignments for deviceAppManagement
+func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property groupAssignments for deviceAppManagement
-func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property groupAssignments for deviceAppManagement
+func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) DeleteWit
     }
     return nil
 }
-// GetWithResponseHandler the associated group assignments.
-func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppProvisioningConfigGroupAssignmentable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the associated group assignments.
+func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppProvisioningConfigGroupAssignmentable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the associated group assignments.
-func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppProvisioningConfigGroupAssignmentable, error) {
+// GetWithRequestConfigurationAndResponseHandler the associated group assignments.
+func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppProvisioningConfigGroupAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) GetWithRe
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppProvisioningConfigGroupAssignmentable), nil
 }
-// PatchWithResponseHandler update the navigation property groupAssignments in deviceAppManagement
-func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppProvisioningConfigGroupAssignmentable, requestConfiguration *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property groupAssignments in deviceAppManagement
+func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppProvisioningConfigGroupAssignmentable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property groupAssignments in deviceAppManagement
-func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppProvisioningConfigGroupAssignmentable, requestConfiguration *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property groupAssignments in deviceAppManagement
+func (m *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppProvisioningConfigGroupAssignmentable, requestConfiguration *MobileAppProvisioningConfigGroupAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

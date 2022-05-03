@@ -74,8 +74,8 @@ func NewProvisioningRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ProvisioningRequestBuilder) Count()(*ib6ed0fe31160790c2c2f412baf68154ec735f6b85155b61b0c4688cde4167837.CountRequestBuilder) {
     return ib6ed0fe31160790c2c2f412baf68154ec735f6b85155b61b0c4688cde4167837.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get provisioning from auditLogs
-func (m *ProvisioningRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get provisioning from auditLogs
+func (m *ProvisioningRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get provisioning from auditLogs
@@ -93,8 +93,8 @@ func (m *ProvisioningRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to provisioning for auditLogs
-func (m *ProvisioningRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to provisioning for auditLogs
+func (m *ProvisioningRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to provisioning for auditLogs
@@ -110,12 +110,12 @@ func (m *ProvisioningRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get provisioning from auditLogs
-func (m *ProvisioningRequestBuilder) GetWithResponseHandler(requestConfiguration *ProvisioningRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get provisioning from auditLogs
+func (m *ProvisioningRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get provisioning from auditLogs
-func (m *ProvisioningRequestBuilder) GetWithResponseHandler(requestConfiguration *ProvisioningRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get provisioning from auditLogs
+func (m *ProvisioningRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ProvisioningRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ProvisioningRequestBuilder) GetWithResponseHandler(requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to provisioning for auditLogs
-func (m *ProvisioningRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryable, requestConfiguration *ProvisioningRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to provisioning for auditLogs
+func (m *ProvisioningRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to provisioning for auditLogs
-func (m *ProvisioningRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryable, requestConfiguration *ProvisioningRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to provisioning for auditLogs
+func (m *ProvisioningRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryable, requestConfiguration *ProvisioningRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisioningObjectSummaryable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -64,8 +64,8 @@ func NewProjectParticipationItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewProjectParticipationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property projects for users
-func (m *ProjectParticipationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property projects for users
+func (m *ProjectParticipationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property projects for users
@@ -80,8 +80,8 @@ func (m *ProjectParticipationItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration represents detailed information about projects associated with a user.
-func (m *ProjectParticipationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents detailed information about projects associated with a user.
+func (m *ProjectParticipationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents detailed information about projects associated with a user.
@@ -99,8 +99,8 @@ func (m *ProjectParticipationItemRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property projects in users
-func (m *ProjectParticipationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property projects in users
+func (m *ProjectParticipationItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property projects in users
@@ -116,12 +116,12 @@ func (m *ProjectParticipationItemRequestBuilder) CreatePatchRequestInformationWi
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property projects for users
-func (m *ProjectParticipationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ProjectParticipationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property projects for users
+func (m *ProjectParticipationItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property projects for users
-func (m *ProjectParticipationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ProjectParticipationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property projects for users
+func (m *ProjectParticipationItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ProjectParticipationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *ProjectParticipationItemRequestBuilder) DeleteWithResponseHandler(reque
     }
     return nil
 }
-// GetWithResponseHandler represents detailed information about projects associated with a user.
-func (m *ProjectParticipationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ProjectParticipationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents detailed information about projects associated with a user.
+func (m *ProjectParticipationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents detailed information about projects associated with a user.
-func (m *ProjectParticipationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ProjectParticipationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents detailed information about projects associated with a user.
+func (m *ProjectParticipationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ProjectParticipationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *ProjectParticipationItemRequestBuilder) GetWithResponseHandler(requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable), nil
 }
-// PatchWithResponseHandler update the navigation property projects in users
-func (m *ProjectParticipationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, requestConfiguration *ProjectParticipationItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property projects in users
+func (m *ProjectParticipationItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property projects in users
-func (m *ProjectParticipationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, requestConfiguration *ProjectParticipationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property projects in users
+func (m *ProjectParticipationItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, requestConfiguration *ProjectParticipationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

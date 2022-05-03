@@ -39,8 +39,8 @@ func NewCloseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewCloseRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action close
-func (m *CloseRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action close
+func (m *CloseRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action close
@@ -55,12 +55,12 @@ func (m *CloseRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action close
-func (m *CloseRequestBuilder) PostWithResponseHandler(requestConfiguration *CloseRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action close
+func (m *CloseRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action close
-func (m *CloseRequestBuilder) PostWithResponseHandler(requestConfiguration *CloseRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action close
+func (m *CloseRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *CloseRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

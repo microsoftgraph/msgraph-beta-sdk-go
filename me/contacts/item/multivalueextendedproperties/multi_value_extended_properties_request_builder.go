@@ -74,8 +74,8 @@ func NewMultiValueExtendedPropertiesRequestBuilder(rawUrl string, requestAdapter
 func (m *MultiValueExtendedPropertiesRequestBuilder) Count()(*i43972f5c92e19f563e0df70870e92b15f9d745aaf53c2488089eb0420cb9c1d8.CountRequestBuilder) {
     return i43972f5c92e19f563e0df70870e92b15f9d745aaf53c2488089eb0420cb9c1d8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-func (m *MultiValueExtendedPropertiesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of multi-value extended properties defined for the contact. Read-only. Nullable.
+func (m *MultiValueExtendedPropertiesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of multi-value extended properties defined for the contact. Read-only. Nullable.
@@ -93,8 +93,8 @@ func (m *MultiValueExtendedPropertiesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to multiValueExtendedProperties for me
-func (m *MultiValueExtendedPropertiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to multiValueExtendedProperties for me
+func (m *MultiValueExtendedPropertiesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to multiValueExtendedProperties for me
@@ -110,12 +110,12 @@ func (m *MultiValueExtendedPropertiesRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-func (m *MultiValueExtendedPropertiesRequestBuilder) GetWithResponseHandler(requestConfiguration *MultiValueExtendedPropertiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of multi-value extended properties defined for the contact. Read-only. Nullable.
+func (m *MultiValueExtendedPropertiesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-func (m *MultiValueExtendedPropertiesRequestBuilder) GetWithResponseHandler(requestConfiguration *MultiValueExtendedPropertiesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of multi-value extended properties defined for the contact. Read-only. Nullable.
+func (m *MultiValueExtendedPropertiesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MultiValueExtendedPropertiesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *MultiValueExtendedPropertiesRequestBuilder) GetWithResponseHandler(requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to multiValueExtendedProperties for me
-func (m *MultiValueExtendedPropertiesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyable, requestConfiguration *MultiValueExtendedPropertiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to multiValueExtendedProperties for me
+func (m *MultiValueExtendedPropertiesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to multiValueExtendedProperties for me
-func (m *MultiValueExtendedPropertiesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyable, requestConfiguration *MultiValueExtendedPropertiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to multiValueExtendedProperties for me
+func (m *MultiValueExtendedPropertiesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyable, requestConfiguration *MultiValueExtendedPropertiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiValueLegacyExtendedPropertyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

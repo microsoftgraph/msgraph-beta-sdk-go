@@ -40,8 +40,8 @@ func NewPublishRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewPublishRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action publish
-func (m *PublishRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action publish
+func (m *PublishRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action publish
@@ -56,12 +56,12 @@ func (m *PublishRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action publish
-func (m *PublishRequestBuilder) PostWithResponseHandler(requestConfiguration *PublishRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentable, error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action publish
+func (m *PublishRequestBuilder) Post()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action publish
-func (m *PublishRequestBuilder) PostWithResponseHandler(requestConfiguration *PublishRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action publish
+func (m *PublishRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *PublishRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

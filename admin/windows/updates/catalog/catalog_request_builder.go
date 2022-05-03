@@ -66,8 +66,8 @@ func NewCatalogRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewCatalogRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property catalog for admin
-func (m *CatalogRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property catalog for admin
+func (m *CatalogRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property catalog for admin
@@ -82,8 +82,8 @@ func (m *CatalogRequestBuilder) CreateDeleteRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration catalog of content that can be approved for deployment by the deployment service. Read-only.
-func (m *CatalogRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation catalog of content that can be approved for deployment by the deployment service. Read-only.
+func (m *CatalogRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration catalog of content that can be approved for deployment by the deployment service. Read-only.
@@ -101,8 +101,8 @@ func (m *CatalogRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property catalog in admin
-func (m *CatalogRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property catalog in admin
+func (m *CatalogRequestBuilder) CreatePatchRequestInformation(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property catalog in admin
@@ -118,12 +118,12 @@ func (m *CatalogRequestBuilder) CreatePatchRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property catalog for admin
-func (m *CatalogRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CatalogRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property catalog for admin
+func (m *CatalogRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property catalog for admin
-func (m *CatalogRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CatalogRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property catalog for admin
+func (m *CatalogRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *CatalogRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -153,12 +153,12 @@ func (m *CatalogRequestBuilder) EntriesById(id string)(*id50e9b79234f49f74c6a4b5
     }
     return id50e9b79234f49f74c6a4b53cd51a15446fd59c350985c8cbaaed7993817ce91.NewCatalogEntryItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GetWithResponseHandler catalog of content that can be approved for deployment by the deployment service. Read-only.
-func (m *CatalogRequestBuilder) GetWithResponseHandler(requestConfiguration *CatalogRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get catalog of content that can be approved for deployment by the deployment service. Read-only.
+func (m *CatalogRequestBuilder) Get()(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler catalog of content that can be approved for deployment by the deployment service. Read-only.
-func (m *CatalogRequestBuilder) GetWithResponseHandler(requestConfiguration *CatalogRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable, error) {
+// GetWithRequestConfigurationAndResponseHandler catalog of content that can be approved for deployment by the deployment service. Read-only.
+func (m *CatalogRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CatalogRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -173,12 +173,12 @@ func (m *CatalogRequestBuilder) GetWithResponseHandler(requestConfiguration *Cat
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable), nil
 }
-// PatchWithResponseHandler update the navigation property catalog in admin
-func (m *CatalogRequestBuilder) PatchWithResponseHandler(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable, requestConfiguration *CatalogRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property catalog in admin
+func (m *CatalogRequestBuilder) Patch(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property catalog in admin
-func (m *CatalogRequestBuilder) PatchWithResponseHandler(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable, requestConfiguration *CatalogRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property catalog in admin
+func (m *CatalogRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable, requestConfiguration *CatalogRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -69,8 +69,8 @@ func NewPurchaseInvoiceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewPurchaseInvoiceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property purchaseInvoices for financials
-func (m *PurchaseInvoiceItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property purchaseInvoices for financials
+func (m *PurchaseInvoiceItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property purchaseInvoices for financials
@@ -85,8 +85,8 @@ func (m *PurchaseInvoiceItemRequestBuilder) CreateDeleteRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get purchaseInvoices from financials
-func (m *PurchaseInvoiceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get purchaseInvoices from financials
+func (m *PurchaseInvoiceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get purchaseInvoices from financials
@@ -104,8 +104,8 @@ func (m *PurchaseInvoiceItemRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property purchaseInvoices in financials
-func (m *PurchaseInvoiceItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property purchaseInvoices in financials
+func (m *PurchaseInvoiceItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property purchaseInvoices in financials
@@ -125,12 +125,12 @@ func (m *PurchaseInvoiceItemRequestBuilder) CreatePatchRequestInformationWithReq
 func (m *PurchaseInvoiceItemRequestBuilder) Currency()(*i66ab53c3b2ddae75121633bbd823599d4e4e48fe876a2f914d5a57f2e241b272.CurrencyRequestBuilder) {
     return i66ab53c3b2ddae75121633bbd823599d4e4e48fe876a2f914d5a57f2e241b272.NewCurrencyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeleteWithResponseHandler delete navigation property purchaseInvoices for financials
-func (m *PurchaseInvoiceItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *PurchaseInvoiceItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property purchaseInvoices for financials
+func (m *PurchaseInvoiceItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property purchaseInvoices for financials
-func (m *PurchaseInvoiceItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *PurchaseInvoiceItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property purchaseInvoices for financials
+func (m *PurchaseInvoiceItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *PurchaseInvoiceItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -145,12 +145,12 @@ func (m *PurchaseInvoiceItemRequestBuilder) DeleteWithResponseHandler(requestCon
     }
     return nil
 }
-// GetWithResponseHandler get purchaseInvoices from financials
-func (m *PurchaseInvoiceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *PurchaseInvoiceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get purchaseInvoices from financials
+func (m *PurchaseInvoiceItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get purchaseInvoices from financials
-func (m *PurchaseInvoiceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *PurchaseInvoiceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable, error) {
+// GetWithRequestConfigurationAndResponseHandler get purchaseInvoices from financials
+func (m *PurchaseInvoiceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PurchaseInvoiceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -165,12 +165,12 @@ func (m *PurchaseInvoiceItemRequestBuilder) GetWithResponseHandler(requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable), nil
 }
-// PatchWithResponseHandler update the navigation property purchaseInvoices in financials
-func (m *PurchaseInvoiceItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable, requestConfiguration *PurchaseInvoiceItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property purchaseInvoices in financials
+func (m *PurchaseInvoiceItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property purchaseInvoices in financials
-func (m *PurchaseInvoiceItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable, requestConfiguration *PurchaseInvoiceItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property purchaseInvoices in financials
+func (m *PurchaseInvoiceItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceable, requestConfiguration *PurchaseInvoiceItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

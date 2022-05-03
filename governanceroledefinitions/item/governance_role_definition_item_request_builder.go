@@ -66,8 +66,8 @@ func NewGovernanceRoleDefinitionItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceRoleDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from governanceRoleDefinitions
-func (m *GovernanceRoleDefinitionItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete entity from governanceRoleDefinitions
+func (m *GovernanceRoleDefinitionItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete entity from governanceRoleDefinitions
@@ -82,8 +82,8 @@ func (m *GovernanceRoleDefinitionItemRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from governanceRoleDefinitions by key
-func (m *GovernanceRoleDefinitionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entity from governanceRoleDefinitions by key
+func (m *GovernanceRoleDefinitionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entity from governanceRoleDefinitions by key
@@ -101,8 +101,8 @@ func (m *GovernanceRoleDefinitionItemRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in governanceRoleDefinitions
-func (m *GovernanceRoleDefinitionItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update entity in governanceRoleDefinitions
+func (m *GovernanceRoleDefinitionItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update entity in governanceRoleDefinitions
@@ -118,12 +118,12 @@ func (m *GovernanceRoleDefinitionItemRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete entity from governanceRoleDefinitions
-func (m *GovernanceRoleDefinitionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete entity from governanceRoleDefinitions
+func (m *GovernanceRoleDefinitionItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete entity from governanceRoleDefinitions
-func (m *GovernanceRoleDefinitionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete entity from governanceRoleDefinitions
+func (m *GovernanceRoleDefinitionItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -138,12 +138,12 @@ func (m *GovernanceRoleDefinitionItemRequestBuilder) DeleteWithResponseHandler(r
     }
     return nil
 }
-// GetWithResponseHandler get entity from governanceRoleDefinitions by key
-func (m *GovernanceRoleDefinitionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entity from governanceRoleDefinitions by key
+func (m *GovernanceRoleDefinitionItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entity from governanceRoleDefinitions by key
-func (m *GovernanceRoleDefinitionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entity from governanceRoleDefinitions by key
+func (m *GovernanceRoleDefinitionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -158,12 +158,12 @@ func (m *GovernanceRoleDefinitionItemRequestBuilder) GetWithResponseHandler(requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable), nil
 }
-// PatchWithResponseHandler update entity in governanceRoleDefinitions
-func (m *GovernanceRoleDefinitionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update entity in governanceRoleDefinitions
+func (m *GovernanceRoleDefinitionItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update entity in governanceRoleDefinitions
-func (m *GovernanceRoleDefinitionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update entity in governanceRoleDefinitions
+func (m *GovernanceRoleDefinitionItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleDefinitionable, requestConfiguration *GovernanceRoleDefinitionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -74,8 +74,8 @@ func NewAcronymsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *AcronymsRequestBuilder) Count()(*i4676165c3a2c7675fa9df0975e39bd9ef9f4527be649374d7054fde3700e4256.CountRequestBuilder) {
     return i4676165c3a2c7675fa9df0975e39bd9ef9f4527be649374d7054fde3700e4256.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration administrative answer in Microsoft Search results to define common acronyms in a organization.
-func (m *AcronymsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation administrative answer in Microsoft Search results to define common acronyms in a organization.
+func (m *AcronymsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration administrative answer in Microsoft Search results to define common acronyms in a organization.
@@ -93,8 +93,8 @@ func (m *AcronymsRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to acronyms for search
-func (m *AcronymsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to acronyms for search
+func (m *AcronymsRequestBuilder) CreatePostRequestInformation(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to acronyms for search
@@ -110,12 +110,12 @@ func (m *AcronymsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler administrative answer in Microsoft Search results to define common acronyms in a organization.
-func (m *AcronymsRequestBuilder) GetWithResponseHandler(requestConfiguration *AcronymsRequestBuilderGetRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.AcronymCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get administrative answer in Microsoft Search results to define common acronyms in a organization.
+func (m *AcronymsRequestBuilder) Get()(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.AcronymCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler administrative answer in Microsoft Search results to define common acronyms in a organization.
-func (m *AcronymsRequestBuilder) GetWithResponseHandler(requestConfiguration *AcronymsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.AcronymCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler administrative answer in Microsoft Search results to define common acronyms in a organization.
+func (m *AcronymsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AcronymsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.AcronymCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AcronymsRequestBuilder) GetWithResponseHandler(requestConfiguration *Ac
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.AcronymCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to acronyms for search
-func (m *AcronymsRequestBuilder) PostWithResponseHandler(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, requestConfiguration *AcronymsRequestBuilderPostRequestConfiguration)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to acronyms for search
+func (m *AcronymsRequestBuilder) Post(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to acronyms for search
-func (m *AcronymsRequestBuilder) PostWithResponseHandler(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, requestConfiguration *AcronymsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to acronyms for search
+func (m *AcronymsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, requestConfiguration *AcronymsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

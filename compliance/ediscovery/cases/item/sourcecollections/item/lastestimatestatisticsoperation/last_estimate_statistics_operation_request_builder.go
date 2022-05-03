@@ -50,8 +50,8 @@ func NewLastEstimateStatisticsOperationRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewLastEstimateStatisticsOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the last estimate operation associated with the sourceCollection.
-func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the last estimate operation associated with the sourceCollection.
+func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the last estimate operation associated with the sourceCollection.
@@ -69,12 +69,12 @@ func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the last estimate operation associated with the sourceCollection.
-func (m *LastEstimateStatisticsOperationRequestBuilder) GetWithResponseHandler(requestConfiguration *LastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.EstimateStatisticsOperationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the last estimate operation associated with the sourceCollection.
+func (m *LastEstimateStatisticsOperationRequestBuilder) Get()(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.EstimateStatisticsOperationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the last estimate operation associated with the sourceCollection.
-func (m *LastEstimateStatisticsOperationRequestBuilder) GetWithResponseHandler(requestConfiguration *LastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.EstimateStatisticsOperationable, error) {
+// GetWithRequestConfigurationAndResponseHandler the last estimate operation associated with the sourceCollection.
+func (m *LastEstimateStatisticsOperationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.EstimateStatisticsOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

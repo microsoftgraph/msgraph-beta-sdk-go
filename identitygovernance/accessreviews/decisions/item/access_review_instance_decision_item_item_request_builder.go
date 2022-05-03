@@ -67,8 +67,8 @@ func NewAccessReviewInstanceDecisionItemItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property decisions for identityGovernance
-func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property decisions for identityGovernance
+func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property decisions for identityGovernance
@@ -83,8 +83,8 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) CreateDeleteRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration represents an Azure AD access review decision on an instance of a review.
-func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents an Azure AD access review decision on an instance of a review.
+func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents an Azure AD access review decision on an instance of a review.
@@ -102,8 +102,8 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property decisions in identityGovernance
-func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property decisions in identityGovernance
+func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property decisions in identityGovernance
@@ -119,12 +119,12 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) CreatePatchRequestI
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property decisions for identityGovernance
-func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AccessReviewInstanceDecisionItemItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property decisions for identityGovernance
+func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property decisions for identityGovernance
-func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AccessReviewInstanceDecisionItemItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property decisions for identityGovernance
+func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessReviewInstanceDecisionItemItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -139,12 +139,12 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) DeleteWithResponseH
     }
     return nil
 }
-// GetWithResponseHandler represents an Azure AD access review decision on an instance of a review.
-func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessReviewInstanceDecisionItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents an Azure AD access review decision on an instance of a review.
+func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents an Azure AD access review decision on an instance of a review.
-func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessReviewInstanceDecisionItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents an Azure AD access review decision on an instance of a review.
+func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessReviewInstanceDecisionItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -178,12 +178,12 @@ func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) InsightsById(id str
 func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Instance()(*iddea72a6175d6a8760b3b83779c577dd07e208061d31e642b9ea29b0f52bf344.InstanceRequestBuilder) {
     return iddea72a6175d6a8760b3b83779c577dd07e208061d31e642b9ea29b0f52bf344.NewInstanceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property decisions in identityGovernance
-func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, requestConfiguration *AccessReviewInstanceDecisionItemItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property decisions in identityGovernance
+func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property decisions in identityGovernance
-func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, requestConfiguration *AccessReviewInstanceDecisionItemItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property decisions in identityGovernance
+func (m *AccessReviewInstanceDecisionItemItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, requestConfiguration *AccessReviewInstanceDecisionItemItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

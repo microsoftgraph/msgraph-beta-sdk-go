@@ -74,8 +74,8 @@ func NewDeploymentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *DeploymentsRequestBuilder) Count()(*id8b32e020077ef38faed8c15c55faf2a027ee380c94ea635f30aaaa71996469c.CountRequestBuilder) {
     return id8b32e020077ef38faed8c15c55faf2a027ee380c94ea635f30aaaa71996469c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration deployments created using the deployment service. Read-only.
-func (m *DeploymentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation deployments created using the deployment service. Read-only.
+func (m *DeploymentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration deployments created using the deployment service. Read-only.
@@ -93,8 +93,8 @@ func (m *DeploymentsRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to deployments for admin
-func (m *DeploymentsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to deployments for admin
+func (m *DeploymentsRequestBuilder) CreatePostRequestInformation(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to deployments for admin
@@ -110,12 +110,12 @@ func (m *DeploymentsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler deployments created using the deployment service. Read-only.
-func (m *DeploymentsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeploymentsRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get deployments created using the deployment service. Read-only.
+func (m *DeploymentsRequestBuilder) Get()(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler deployments created using the deployment service. Read-only.
-func (m *DeploymentsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeploymentsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler deployments created using the deployment service. Read-only.
+func (m *DeploymentsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeploymentsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *DeploymentsRequestBuilder) GetWithResponseHandler(requestConfiguration 
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to deployments for admin
-func (m *DeploymentsRequestBuilder) PostWithResponseHandler(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, requestConfiguration *DeploymentsRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to deployments for admin
+func (m *DeploymentsRequestBuilder) Post(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to deployments for admin
-func (m *DeploymentsRequestBuilder) PostWithResponseHandler(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, requestConfiguration *DeploymentsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to deployments for admin
+func (m *DeploymentsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, requestConfiguration *DeploymentsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

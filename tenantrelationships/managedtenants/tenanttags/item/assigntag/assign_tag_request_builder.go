@@ -40,8 +40,8 @@ func NewAssignTagRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewAssignTagRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action assignTag
-func (m *AssignTagRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssignTagRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action assignTag
+func (m *AssignTagRequestBuilder) CreatePostRequestInformation(body AssignTagRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action assignTag
@@ -57,12 +57,12 @@ func (m *AssignTagRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action assignTag
-func (m *AssignTagRequestBuilder) PostWithResponseHandler(body AssignTagRequestBodyable, requestConfiguration *AssignTagRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action assignTag
+func (m *AssignTagRequestBuilder) Post(body AssignTagRequestBodyable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action assignTag
-func (m *AssignTagRequestBuilder) PostWithResponseHandler(body AssignTagRequestBodyable, requestConfiguration *AssignTagRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action assignTag
+func (m *AssignTagRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AssignTagRequestBodyable, requestConfiguration *AssignTagRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

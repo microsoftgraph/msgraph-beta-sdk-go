@@ -64,8 +64,8 @@ func NewTeamworkTagMemberItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewTeamworkTagMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property members for groups
-func (m *TeamworkTagMemberItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property members for groups
+func (m *TeamworkTagMemberItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property members for groups
@@ -80,8 +80,8 @@ func (m *TeamworkTagMemberItemRequestBuilder) CreateDeleteRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration users assigned to the tag.
-func (m *TeamworkTagMemberItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation users assigned to the tag.
+func (m *TeamworkTagMemberItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration users assigned to the tag.
@@ -99,8 +99,8 @@ func (m *TeamworkTagMemberItemRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property members in groups
-func (m *TeamworkTagMemberItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property members in groups
+func (m *TeamworkTagMemberItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property members in groups
@@ -116,12 +116,12 @@ func (m *TeamworkTagMemberItemRequestBuilder) CreatePatchRequestInformationWithR
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property members for groups
-func (m *TeamworkTagMemberItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TeamworkTagMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property members for groups
+func (m *TeamworkTagMemberItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property members for groups
-func (m *TeamworkTagMemberItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TeamworkTagMemberItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property members for groups
+func (m *TeamworkTagMemberItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *TeamworkTagMemberItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *TeamworkTagMemberItemRequestBuilder) DeleteWithResponseHandler(requestC
     }
     return nil
 }
-// GetWithResponseHandler users assigned to the tag.
-func (m *TeamworkTagMemberItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TeamworkTagMemberItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get users assigned to the tag.
+func (m *TeamworkTagMemberItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler users assigned to the tag.
-func (m *TeamworkTagMemberItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TeamworkTagMemberItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable, error) {
+// GetWithRequestConfigurationAndResponseHandler users assigned to the tag.
+func (m *TeamworkTagMemberItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TeamworkTagMemberItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *TeamworkTagMemberItemRequestBuilder) GetWithResponseHandler(requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable), nil
 }
-// PatchWithResponseHandler update the navigation property members in groups
-func (m *TeamworkTagMemberItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable, requestConfiguration *TeamworkTagMemberItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property members in groups
+func (m *TeamworkTagMemberItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property members in groups
-func (m *TeamworkTagMemberItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable, requestConfiguration *TeamworkTagMemberItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property members in groups
+func (m *TeamworkTagMemberItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagMemberable, requestConfiguration *TeamworkTagMemberItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

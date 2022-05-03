@@ -64,8 +64,8 @@ func NewRiskyServicePrincipalHistoryItemItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyServicePrincipalHistoryItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property history for identityProtection
-func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property history for identityProtection
+func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property history for identityProtection
@@ -80,8 +80,8 @@ func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) CreateDeleteRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the risk history of Azure AD service principals.
-func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents the risk history of Azure AD service principals.
+func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents the risk history of Azure AD service principals.
@@ -99,8 +99,8 @@ func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property history in identityProtection
-func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalHistoryItemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property history in identityProtection
+func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalHistoryItemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property history in identityProtection
@@ -116,12 +116,12 @@ func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) CreatePatchRequestI
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property history for identityProtection
-func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *RiskyServicePrincipalHistoryItemItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property history for identityProtection
+func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property history for identityProtection
-func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *RiskyServicePrincipalHistoryItemItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property history for identityProtection
+func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *RiskyServicePrincipalHistoryItemItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) DeleteWithResponseH
     }
     return nil
 }
-// GetWithResponseHandler represents the risk history of Azure AD service principals.
-func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *RiskyServicePrincipalHistoryItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalHistoryItemable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents the risk history of Azure AD service principals.
+func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalHistoryItemable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents the risk history of Azure AD service principals.
-func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *RiskyServicePrincipalHistoryItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalHistoryItemable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents the risk history of Azure AD service principals.
+func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RiskyServicePrincipalHistoryItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalHistoryItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) GetWithResponseHand
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalHistoryItemable), nil
 }
-// PatchWithResponseHandler update the navigation property history in identityProtection
-func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalHistoryItemable, requestConfiguration *RiskyServicePrincipalHistoryItemItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property history in identityProtection
+func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalHistoryItemable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property history in identityProtection
-func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalHistoryItemable, requestConfiguration *RiskyServicePrincipalHistoryItemItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property history in identityProtection
+func (m *RiskyServicePrincipalHistoryItemItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalHistoryItemable, requestConfiguration *RiskyServicePrincipalHistoryItemItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

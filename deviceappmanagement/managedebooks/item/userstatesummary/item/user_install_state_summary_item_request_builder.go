@@ -66,8 +66,8 @@ func NewUserInstallStateSummaryItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewUserInstallStateSummaryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userStateSummary for deviceAppManagement
-func (m *UserInstallStateSummaryItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userStateSummary for deviceAppManagement
+func (m *UserInstallStateSummaryItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userStateSummary for deviceAppManagement
@@ -82,8 +82,8 @@ func (m *UserInstallStateSummaryItemRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of installation states for this eBook.
-func (m *UserInstallStateSummaryItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of installation states for this eBook.
+func (m *UserInstallStateSummaryItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of installation states for this eBook.
@@ -101,8 +101,8 @@ func (m *UserInstallStateSummaryItemRequestBuilder) CreateGetRequestInformationW
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userStateSummary in deviceAppManagement
-func (m *UserInstallStateSummaryItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInstallStateSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userStateSummary in deviceAppManagement
+func (m *UserInstallStateSummaryItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInstallStateSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userStateSummary in deviceAppManagement
@@ -118,12 +118,12 @@ func (m *UserInstallStateSummaryItemRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userStateSummary for deviceAppManagement
-func (m *UserInstallStateSummaryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserInstallStateSummaryItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userStateSummary for deviceAppManagement
+func (m *UserInstallStateSummaryItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userStateSummary for deviceAppManagement
-func (m *UserInstallStateSummaryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserInstallStateSummaryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userStateSummary for deviceAppManagement
+func (m *UserInstallStateSummaryItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserInstallStateSummaryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -153,12 +153,12 @@ func (m *UserInstallStateSummaryItemRequestBuilder) DeviceStatesById(id string)(
     }
     return idc329a0e0b09b202736e7f9a9174d125e0d5561944e9e3f9cae9eb436a61c885.NewDeviceInstallStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GetWithResponseHandler the list of installation states for this eBook.
-func (m *UserInstallStateSummaryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserInstallStateSummaryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInstallStateSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of installation states for this eBook.
+func (m *UserInstallStateSummaryItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInstallStateSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of installation states for this eBook.
-func (m *UserInstallStateSummaryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserInstallStateSummaryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInstallStateSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of installation states for this eBook.
+func (m *UserInstallStateSummaryItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserInstallStateSummaryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInstallStateSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -173,12 +173,12 @@ func (m *UserInstallStateSummaryItemRequestBuilder) GetWithResponseHandler(reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInstallStateSummaryable), nil
 }
-// PatchWithResponseHandler update the navigation property userStateSummary in deviceAppManagement
-func (m *UserInstallStateSummaryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInstallStateSummaryable, requestConfiguration *UserInstallStateSummaryItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userStateSummary in deviceAppManagement
+func (m *UserInstallStateSummaryItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInstallStateSummaryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userStateSummary in deviceAppManagement
-func (m *UserInstallStateSummaryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInstallStateSummaryable, requestConfiguration *UserInstallStateSummaryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userStateSummary in deviceAppManagement
+func (m *UserInstallStateSummaryItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserInstallStateSummaryable, requestConfiguration *UserInstallStateSummaryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

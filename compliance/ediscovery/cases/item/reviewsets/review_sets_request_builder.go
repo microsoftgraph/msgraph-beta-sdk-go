@@ -74,8 +74,8 @@ func NewReviewSetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ReviewSetsRequestBuilder) Count()(*i6e3a03ddbb55d6d65b45e5da6865ed6f0d9e7484173ee3867ec05a546a9255f9.CountRequestBuilder) {
     return i6e3a03ddbb55d6d65b45e5da6865ed6f0d9e7484173ee3867ec05a546a9255f9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration returns a list of reviewSet objects in the case. Read-only. Nullable.
-func (m *ReviewSetsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation returns a list of reviewSet objects in the case. Read-only. Nullable.
+func (m *ReviewSetsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration returns a list of reviewSet objects in the case. Read-only. Nullable.
@@ -93,8 +93,8 @@ func (m *ReviewSetsRequestBuilder) CreateGetRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to reviewSets for compliance
-func (m *ReviewSetsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to reviewSets for compliance
+func (m *ReviewSetsRequestBuilder) CreatePostRequestInformation(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to reviewSets for compliance
@@ -110,12 +110,12 @@ func (m *ReviewSetsRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler returns a list of reviewSet objects in the case. Read-only. Nullable.
-func (m *ReviewSetsRequestBuilder) GetWithResponseHandler(requestConfiguration *ReviewSetsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get returns a list of reviewSet objects in the case. Read-only. Nullable.
+func (m *ReviewSetsRequestBuilder) Get()(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler returns a list of reviewSet objects in the case. Read-only. Nullable.
-func (m *ReviewSetsRequestBuilder) GetWithResponseHandler(requestConfiguration *ReviewSetsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler returns a list of reviewSet objects in the case. Read-only. Nullable.
+func (m *ReviewSetsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ReviewSetsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ReviewSetsRequestBuilder) GetWithResponseHandler(requestConfiguration *
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to reviewSets for compliance
-func (m *ReviewSetsRequestBuilder) PostWithResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, requestConfiguration *ReviewSetsRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to reviewSets for compliance
+func (m *ReviewSetsRequestBuilder) Post(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to reviewSets for compliance
-func (m *ReviewSetsRequestBuilder) PostWithResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, requestConfiguration *ReviewSetsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to reviewSets for compliance
+func (m *ReviewSetsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, requestConfiguration *ReviewSetsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

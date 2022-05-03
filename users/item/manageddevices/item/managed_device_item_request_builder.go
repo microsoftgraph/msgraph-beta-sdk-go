@@ -149,8 +149,8 @@ func NewManagedDeviceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property managedDevices for users
-func (m *ManagedDeviceItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property managedDevices for users
+func (m *ManagedDeviceItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property managedDevices for users
@@ -169,8 +169,8 @@ func (m *ManagedDeviceItemRequestBuilder) CreateDeleteRequestInformationWithRequ
 func (m *ManagedDeviceItemRequestBuilder) CreateDeviceLogCollectionRequest()(*ib66cb64667854c2a0e7d0db75f68649e40b4c02fcac6575b6c9ccf277ab9effe.CreateDeviceLogCollectionRequestRequestBuilder) {
     return ib66cb64667854c2a0e7d0db75f68649e40b4c02fcac6575b6c9ccf277ab9effe.NewCreateDeviceLogCollectionRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the managed devices associated with the user.
-func (m *ManagedDeviceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the managed devices associated with the user.
+func (m *ManagedDeviceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the managed devices associated with the user.
@@ -188,8 +188,8 @@ func (m *ManagedDeviceItemRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property managedDevices in users
-func (m *ManagedDeviceItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property managedDevices in users
+func (m *ManagedDeviceItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property managedDevices in users
@@ -205,16 +205,16 @@ func (m *ManagedDeviceItemRequestBuilder) CreatePatchRequestInformationWithReque
     }
     return requestInfo, nil
 }
+// Delete delete navigation property managedDevices for users
+func (m *ManagedDeviceItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // DeleteUserFromSharedAppleDevice the deleteUserFromSharedAppleDevice property
 func (m *ManagedDeviceItemRequestBuilder) DeleteUserFromSharedAppleDevice()(*ib5439e6eec54aeb435296ae381016c23f9ae7c99bdca955a9e2cedfd3cdef69b.DeleteUserFromSharedAppleDeviceRequestBuilder) {
     return ib5439e6eec54aeb435296ae381016c23f9ae7c99bdca955a9e2cedfd3cdef69b.NewDeleteUserFromSharedAppleDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeleteWithResponseHandler delete navigation property managedDevices for users
-func (m *ManagedDeviceItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ManagedDeviceItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
-}
-// DeleteWithResponseHandler delete navigation property managedDevices for users
-func (m *ManagedDeviceItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ManagedDeviceItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property managedDevices for users
+func (m *ManagedDeviceItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedDeviceItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -294,6 +294,10 @@ func (m *ManagedDeviceItemRequestBuilder) DisableLostMode()(*i7d2e9c178f5e0b6fb0
 func (m *ManagedDeviceItemRequestBuilder) EnableLostMode()(*id0295aec7d10d18caa37f46306bc3f11adff870f41a1bb3f9739c917285dfb0e.EnableLostModeRequestBuilder) {
     return id0295aec7d10d18caa37f46306bc3f11adff870f41a1bb3f9739c917285dfb0e.NewEnableLostModeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Get the managed devices associated with the user.
+func (m *ManagedDeviceItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetCloudPcRemoteActionResults provides operations to call the getCloudPcRemoteActionResults method.
 func (m *ManagedDeviceItemRequestBuilder) GetCloudPcRemoteActionResults()(*i3a22286aea8615d29e6227b44400fd41bca6f05137314e12ee291cfa32204bf9.GetCloudPcRemoteActionResultsRequestBuilder) {
     return i3a22286aea8615d29e6227b44400fd41bca6f05137314e12ee291cfa32204bf9.NewGetCloudPcRemoteActionResultsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -314,12 +318,8 @@ func (m *ManagedDeviceItemRequestBuilder) GetNonCompliantSettings()(*i9e3c4371f9
 func (m *ManagedDeviceItemRequestBuilder) GetOemWarranty()(*i1a2c5f8ed2e88c9f4bbc42d1bfa4b2c5d073f119152a10b4b129dfbe7d2a285d.GetOemWarrantyRequestBuilder) {
     return i1a2c5f8ed2e88c9f4bbc42d1bfa4b2c5d073f119152a10b4b129dfbe7d2a285d.NewGetOemWarrantyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the managed devices associated with the user.
-func (m *ManagedDeviceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedDeviceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler the managed devices associated with the user.
-func (m *ManagedDeviceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedDeviceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
+// GetWithRequestConfigurationAndResponseHandler the managed devices associated with the user.
+func (m *ManagedDeviceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedDeviceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -376,12 +376,12 @@ func (m *ManagedDeviceItemRequestBuilder) ManagedDeviceMobileAppConfigurationSta
 func (m *ManagedDeviceItemRequestBuilder) OverrideComplianceState()(*i3bbd017aa7e7ee20890cf1da02d15ad98b393604067695a9261d601bc9f2dfbf.OverrideComplianceStateRequestBuilder) {
     return i3bbd017aa7e7ee20890cf1da02d15ad98b393604067695a9261d601bc9f2dfbf.NewOverrideComplianceStateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property managedDevices in users
-func (m *ManagedDeviceItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ManagedDeviceItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property managedDevices in users
+func (m *ManagedDeviceItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property managedDevices in users
-func (m *ManagedDeviceItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ManagedDeviceItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property managedDevices in users
+func (m *ManagedDeviceItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ManagedDeviceItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

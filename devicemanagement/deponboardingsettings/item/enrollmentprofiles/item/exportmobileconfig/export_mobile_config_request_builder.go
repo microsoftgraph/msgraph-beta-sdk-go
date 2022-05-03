@@ -39,8 +39,8 @@ func NewExportMobileConfigRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewExportMobileConfigRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration exports the mobile configuration
-func (m *ExportMobileConfigRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation exports the mobile configuration
+func (m *ExportMobileConfigRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration exports the mobile configuration
@@ -55,12 +55,12 @@ func (m *ExportMobileConfigRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler exports the mobile configuration
-func (m *ExportMobileConfigRequestBuilder) GetWithResponseHandler(requestConfiguration *ExportMobileConfigRequestBuilderGetRequestConfiguration)(ExportMobileConfigResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get exports the mobile configuration
+func (m *ExportMobileConfigRequestBuilder) Get()(ExportMobileConfigResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler exports the mobile configuration
-func (m *ExportMobileConfigRequestBuilder) GetWithResponseHandler(requestConfiguration *ExportMobileConfigRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ExportMobileConfigResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler exports the mobile configuration
+func (m *ExportMobileConfigRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExportMobileConfigRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ExportMobileConfigResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

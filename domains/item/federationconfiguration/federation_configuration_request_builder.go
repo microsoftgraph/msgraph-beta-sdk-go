@@ -74,8 +74,8 @@ func NewFederationConfigurationRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *FederationConfigurationRequestBuilder) Count()(*id870850ef5174af71604f883c640b113e53dfa198c6c5b449840479873c6d825.CountRequestBuilder) {
     return id870850ef5174af71604f883c640b113e53dfa198c6c5b449840479873c6d825.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration domain settings configured by customer when federated with Azure AD.
-func (m *FederationConfigurationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation domain settings configured by customer when federated with Azure AD.
+func (m *FederationConfigurationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration domain settings configured by customer when federated with Azure AD.
@@ -93,8 +93,8 @@ func (m *FederationConfigurationRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to federationConfiguration for domains
-func (m *FederationConfigurationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to federationConfiguration for domains
+func (m *FederationConfigurationRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to federationConfiguration for domains
@@ -110,12 +110,12 @@ func (m *FederationConfigurationRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler domain settings configured by customer when federated with Azure AD.
-func (m *FederationConfigurationRequestBuilder) GetWithResponseHandler(requestConfiguration *FederationConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get domain settings configured by customer when federated with Azure AD.
+func (m *FederationConfigurationRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler domain settings configured by customer when federated with Azure AD.
-func (m *FederationConfigurationRequestBuilder) GetWithResponseHandler(requestConfiguration *FederationConfigurationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler domain settings configured by customer when federated with Azure AD.
+func (m *FederationConfigurationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FederationConfigurationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *FederationConfigurationRequestBuilder) GetWithResponseHandler(requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to federationConfiguration for domains
-func (m *FederationConfigurationRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, requestConfiguration *FederationConfigurationRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to federationConfiguration for domains
+func (m *FederationConfigurationRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to federationConfiguration for domains
-func (m *FederationConfigurationRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, requestConfiguration *FederationConfigurationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to federationConfiguration for domains
+func (m *FederationConfigurationRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, requestConfiguration *FederationConfigurationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InternalDomainFederationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -40,8 +40,8 @@ func NewChangeDeploymentStatusRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewChangeDeploymentStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action changeDeploymentStatus
-func (m *ChangeDeploymentStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ChangeDeploymentStatusRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action changeDeploymentStatus
+func (m *ChangeDeploymentStatusRequestBuilder) CreatePostRequestInformation(body ChangeDeploymentStatusRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action changeDeploymentStatus
@@ -57,12 +57,12 @@ func (m *ChangeDeploymentStatusRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action changeDeploymentStatus
-func (m *ChangeDeploymentStatusRequestBuilder) PostWithResponseHandler(body ChangeDeploymentStatusRequestBodyable, requestConfiguration *ChangeDeploymentStatusRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action changeDeploymentStatus
+func (m *ChangeDeploymentStatusRequestBuilder) Post(body ChangeDeploymentStatusRequestBodyable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action changeDeploymentStatus
-func (m *ChangeDeploymentStatusRequestBuilder) PostWithResponseHandler(body ChangeDeploymentStatusRequestBodyable, requestConfiguration *ChangeDeploymentStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action changeDeploymentStatus
+func (m *ChangeDeploymentStatusRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ChangeDeploymentStatusRequestBodyable, requestConfiguration *ChangeDeploymentStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

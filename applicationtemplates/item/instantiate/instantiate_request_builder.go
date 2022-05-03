@@ -40,8 +40,8 @@ func NewInstantiateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewInstantiateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action instantiate
-func (m *InstantiateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body InstantiateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action instantiate
+func (m *InstantiateRequestBuilder) CreatePostRequestInformation(body InstantiateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action instantiate
@@ -57,12 +57,12 @@ func (m *InstantiateRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action instantiate
-func (m *InstantiateRequestBuilder) PostWithResponseHandler(body InstantiateRequestBodyable, requestConfiguration *InstantiateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationServicePrincipalable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action instantiate
+func (m *InstantiateRequestBuilder) Post(body InstantiateRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationServicePrincipalable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action instantiate
-func (m *InstantiateRequestBuilder) PostWithResponseHandler(body InstantiateRequestBodyable, requestConfiguration *InstantiateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationServicePrincipalable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action instantiate
+func (m *InstantiateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body InstantiateRequestBodyable, requestConfiguration *InstantiateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationServicePrincipalable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

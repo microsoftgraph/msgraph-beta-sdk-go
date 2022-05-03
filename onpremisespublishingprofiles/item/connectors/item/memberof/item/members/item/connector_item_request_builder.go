@@ -64,8 +64,8 @@ func NewConnectorItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property members for onPremisesPublishingProfiles
-func (m *ConnectorItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property members for onPremisesPublishingProfiles
+func (m *ConnectorItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property members for onPremisesPublishingProfiles
@@ -80,8 +80,8 @@ func (m *ConnectorItemRequestBuilder) CreateDeleteRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
-func (m *ConnectorItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only. Nullable.
+func (m *ConnectorItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
@@ -99,8 +99,8 @@ func (m *ConnectorItemRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property members in onPremisesPublishingProfiles
-func (m *ConnectorItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property members in onPremisesPublishingProfiles
+func (m *ConnectorItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property members in onPremisesPublishingProfiles
@@ -116,12 +116,12 @@ func (m *ConnectorItemRequestBuilder) CreatePatchRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property members for onPremisesPublishingProfiles
-func (m *ConnectorItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property members for onPremisesPublishingProfiles
+func (m *ConnectorItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property members for onPremisesPublishingProfiles
-func (m *ConnectorItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ConnectorItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property members for onPremisesPublishingProfiles
+func (m *ConnectorItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ConnectorItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *ConnectorItemRequestBuilder) DeleteWithResponseHandler(requestConfigura
     }
     return nil
 }
-// GetWithResponseHandler read-only. Nullable.
-func (m *ConnectorItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ConnectorItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only. Nullable.
+func (m *ConnectorItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only. Nullable.
-func (m *ConnectorItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ConnectorItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+func (m *ConnectorItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ConnectorItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *ConnectorItemRequestBuilder) GetWithResponseHandler(requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable), nil
 }
-// PatchWithResponseHandler update the navigation property members in onPremisesPublishingProfiles
-func (m *ConnectorItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, requestConfiguration *ConnectorItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property members in onPremisesPublishingProfiles
+func (m *ConnectorItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property members in onPremisesPublishingProfiles
-func (m *ConnectorItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, requestConfiguration *ConnectorItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property members in onPremisesPublishingProfiles
+func (m *ConnectorItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, requestConfiguration *ConnectorItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

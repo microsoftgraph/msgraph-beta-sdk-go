@@ -39,8 +39,8 @@ func NewUnblockManagedAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewUnblockManagedAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration unblocks the managed app user from app check-in.
-func (m *UnblockManagedAppsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation unblocks the managed app user from app check-in.
+func (m *UnblockManagedAppsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration unblocks the managed app user from app check-in.
@@ -55,12 +55,12 @@ func (m *UnblockManagedAppsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler unblocks the managed app user from app check-in.
-func (m *UnblockManagedAppsRequestBuilder) PostWithResponseHandler(requestConfiguration *UnblockManagedAppsRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post unblocks the managed app user from app check-in.
+func (m *UnblockManagedAppsRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler unblocks the managed app user from app check-in.
-func (m *UnblockManagedAppsRequestBuilder) PostWithResponseHandler(requestConfiguration *UnblockManagedAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler unblocks the managed app user from app check-in.
+func (m *UnblockManagedAppsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *UnblockManagedAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

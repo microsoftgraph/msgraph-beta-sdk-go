@@ -64,8 +64,8 @@ func NewTenantGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewTenantGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property tenantGroups for tenantRelationships
-func (m *TenantGroupItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property tenantGroups for tenantRelationships
+func (m *TenantGroupItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property tenantGroups for tenantRelationships
@@ -80,8 +80,8 @@ func (m *TenantGroupItemRequestBuilder) CreateDeleteRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-func (m *TenantGroupItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+func (m *TenantGroupItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
@@ -99,8 +99,8 @@ func (m *TenantGroupItemRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property tenantGroups in tenantRelationships
-func (m *TenantGroupItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property tenantGroups in tenantRelationships
+func (m *TenantGroupItemRequestBuilder) CreatePatchRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property tenantGroups in tenantRelationships
@@ -116,12 +116,12 @@ func (m *TenantGroupItemRequestBuilder) CreatePatchRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property tenantGroups for tenantRelationships
-func (m *TenantGroupItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TenantGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property tenantGroups for tenantRelationships
+func (m *TenantGroupItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property tenantGroups for tenantRelationships
-func (m *TenantGroupItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TenantGroupItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property tenantGroups for tenantRelationships
+func (m *TenantGroupItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *TenantGroupItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *TenantGroupItemRequestBuilder) DeleteWithResponseHandler(requestConfigu
     }
     return nil
 }
-// GetWithResponseHandler the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-func (m *TenantGroupItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TenantGroupItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+func (m *TenantGroupItemRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
-func (m *TenantGroupItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TenantGroupItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+func (m *TenantGroupItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TenantGroupItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *TenantGroupItemRequestBuilder) GetWithResponseHandler(requestConfigurat
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable), nil
 }
-// PatchWithResponseHandler update the navigation property tenantGroups in tenantRelationships
-func (m *TenantGroupItemRequestBuilder) PatchWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, requestConfiguration *TenantGroupItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property tenantGroups in tenantRelationships
+func (m *TenantGroupItemRequestBuilder) Patch(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property tenantGroups in tenantRelationships
-func (m *TenantGroupItemRequestBuilder) PatchWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, requestConfiguration *TenantGroupItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property tenantGroups in tenantRelationships
+func (m *TenantGroupItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, requestConfiguration *TenantGroupItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

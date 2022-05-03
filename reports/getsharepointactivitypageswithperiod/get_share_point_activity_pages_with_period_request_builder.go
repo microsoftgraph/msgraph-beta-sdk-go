@@ -42,8 +42,8 @@ func NewGetSharePointActivityPagesWithPeriodRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewGetSharePointActivityPagesWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getSharePointActivityPages
-func (m *GetSharePointActivityPagesWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getSharePointActivityPages
+func (m *GetSharePointActivityPagesWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getSharePointActivityPages
@@ -58,12 +58,12 @@ func (m *GetSharePointActivityPagesWithPeriodRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getSharePointActivityPages
-func (m *GetSharePointActivityPagesWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSharePointActivityPagesWithPeriodRequestBuilderGetRequestConfiguration)(GetSharePointActivityPagesWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getSharePointActivityPages
+func (m *GetSharePointActivityPagesWithPeriodRequestBuilder) Get()(GetSharePointActivityPagesWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getSharePointActivityPages
-func (m *GetSharePointActivityPagesWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetSharePointActivityPagesWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSharePointActivityPagesWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getSharePointActivityPages
+func (m *GetSharePointActivityPagesWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSharePointActivityPagesWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSharePointActivityPagesWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

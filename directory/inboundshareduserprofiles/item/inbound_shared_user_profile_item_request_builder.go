@@ -66,8 +66,8 @@ func NewInboundSharedUserProfileItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewInboundSharedUserProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property inboundSharedUserProfiles for directory
-func (m *InboundSharedUserProfileItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property inboundSharedUserProfiles for directory
+func (m *InboundSharedUserProfileItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property inboundSharedUserProfiles for directory
@@ -82,8 +82,8 @@ func (m *InboundSharedUserProfileItemRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get inboundSharedUserProfiles from directory
-func (m *InboundSharedUserProfileItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get inboundSharedUserProfiles from directory
+func (m *InboundSharedUserProfileItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get inboundSharedUserProfiles from directory
@@ -101,8 +101,8 @@ func (m *InboundSharedUserProfileItemRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property inboundSharedUserProfiles in directory
-func (m *InboundSharedUserProfileItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property inboundSharedUserProfiles in directory
+func (m *InboundSharedUserProfileItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property inboundSharedUserProfiles in directory
@@ -118,12 +118,12 @@ func (m *InboundSharedUserProfileItemRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property inboundSharedUserProfiles for directory
-func (m *InboundSharedUserProfileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *InboundSharedUserProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property inboundSharedUserProfiles for directory
+func (m *InboundSharedUserProfileItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property inboundSharedUserProfiles for directory
-func (m *InboundSharedUserProfileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *InboundSharedUserProfileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property inboundSharedUserProfiles for directory
+func (m *InboundSharedUserProfileItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *InboundSharedUserProfileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -142,12 +142,12 @@ func (m *InboundSharedUserProfileItemRequestBuilder) DeleteWithResponseHandler(r
 func (m *InboundSharedUserProfileItemRequestBuilder) ExportPersonalData()(*i03f81bc977f9d90efbd1427f3444ba111baf8b4fe1f097fb2522abf9ca22efc4.ExportPersonalDataRequestBuilder) {
     return i03f81bc977f9d90efbd1427f3444ba111baf8b4fe1f097fb2522abf9ca22efc4.NewExportPersonalDataRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get inboundSharedUserProfiles from directory
-func (m *InboundSharedUserProfileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *InboundSharedUserProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get inboundSharedUserProfiles from directory
+func (m *InboundSharedUserProfileItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get inboundSharedUserProfiles from directory
-func (m *InboundSharedUserProfileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *InboundSharedUserProfileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable, error) {
+// GetWithRequestConfigurationAndResponseHandler get inboundSharedUserProfiles from directory
+func (m *InboundSharedUserProfileItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *InboundSharedUserProfileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -162,12 +162,12 @@ func (m *InboundSharedUserProfileItemRequestBuilder) GetWithResponseHandler(requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable), nil
 }
-// PatchWithResponseHandler update the navigation property inboundSharedUserProfiles in directory
-func (m *InboundSharedUserProfileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable, requestConfiguration *InboundSharedUserProfileItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property inboundSharedUserProfiles in directory
+func (m *InboundSharedUserProfileItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property inboundSharedUserProfiles in directory
-func (m *InboundSharedUserProfileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable, requestConfiguration *InboundSharedUserProfileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property inboundSharedUserProfiles in directory
+func (m *InboundSharedUserProfileItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable, requestConfiguration *InboundSharedUserProfileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

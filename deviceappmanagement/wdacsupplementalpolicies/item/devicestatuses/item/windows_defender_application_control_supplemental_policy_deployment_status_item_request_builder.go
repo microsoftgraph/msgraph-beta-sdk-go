@@ -65,8 +65,8 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemR
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceStatuses for deviceAppManagement
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property deviceStatuses for deviceAppManagement
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceStatuses for deviceAppManagement
@@ -81,8 +81,8 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItem
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
@@ -100,8 +100,8 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItem
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceStatuses in deviceAppManagement
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property deviceStatuses in deviceAppManagement
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceStatuses in deviceAppManagement
@@ -117,12 +117,12 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItem
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property deviceStatuses for deviceAppManagement
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property deviceStatuses for deviceAppManagement
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property deviceStatuses for deviceAppManagement
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property deviceStatuses for deviceAppManagement
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -137,12 +137,12 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItem
     }
     return nil
 }
-// GetWithResponseHandler the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -157,12 +157,12 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItem
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable), nil
 }
-// PatchWithResponseHandler update the navigation property deviceStatuses in deviceAppManagement
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable, requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property deviceStatuses in deviceAppManagement
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property deviceStatuses in deviceAppManagement
-func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable, requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property deviceStatuses in deviceAppManagement
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable, requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

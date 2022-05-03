@@ -50,8 +50,8 @@ func NewAgreementAcceptanceItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewAgreementAcceptanceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the user's terms of use acceptance statuses. Read-only. Nullable.
-func (m *AgreementAcceptanceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the user's terms of use acceptance statuses. Read-only. Nullable.
+func (m *AgreementAcceptanceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the user's terms of use acceptance statuses. Read-only. Nullable.
@@ -69,12 +69,12 @@ func (m *AgreementAcceptanceItemRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the user's terms of use acceptance statuses. Read-only. Nullable.
-func (m *AgreementAcceptanceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AgreementAcceptanceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the user's terms of use acceptance statuses. Read-only. Nullable.
+func (m *AgreementAcceptanceItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the user's terms of use acceptance statuses. Read-only. Nullable.
-func (m *AgreementAcceptanceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AgreementAcceptanceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceable, error) {
+// GetWithRequestConfigurationAndResponseHandler the user's terms of use acceptance statuses. Read-only. Nullable.
+func (m *AgreementAcceptanceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AgreementAcceptanceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

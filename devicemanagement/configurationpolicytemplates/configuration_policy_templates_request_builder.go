@@ -74,8 +74,8 @@ func NewConfigurationPolicyTemplatesRequestBuilder(rawUrl string, requestAdapter
 func (m *ConfigurationPolicyTemplatesRequestBuilder) Count()(*ib92398fbdbeb14f9f9835ca858fd442f9f3c5e240991b94eb39190568e1c2d88.CountRequestBuilder) {
     return ib92398fbdbeb14f9f9835ca858fd442f9f3c5e240991b94eb39190568e1c2d88.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration list of all templates
-func (m *ConfigurationPolicyTemplatesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation list of all templates
+func (m *ConfigurationPolicyTemplatesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration list of all templates
@@ -93,8 +93,8 @@ func (m *ConfigurationPolicyTemplatesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to configurationPolicyTemplates for deviceManagement
-func (m *ConfigurationPolicyTemplatesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to configurationPolicyTemplates for deviceManagement
+func (m *ConfigurationPolicyTemplatesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to configurationPolicyTemplates for deviceManagement
@@ -110,12 +110,12 @@ func (m *ConfigurationPolicyTemplatesRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler list of all templates
-func (m *ConfigurationPolicyTemplatesRequestBuilder) GetWithResponseHandler(requestConfiguration *ConfigurationPolicyTemplatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get list of all templates
+func (m *ConfigurationPolicyTemplatesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler list of all templates
-func (m *ConfigurationPolicyTemplatesRequestBuilder) GetWithResponseHandler(requestConfiguration *ConfigurationPolicyTemplatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler list of all templates
+func (m *ConfigurationPolicyTemplatesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ConfigurationPolicyTemplatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ConfigurationPolicyTemplatesRequestBuilder) GetWithResponseHandler(requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to configurationPolicyTemplates for deviceManagement
-func (m *ConfigurationPolicyTemplatesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateable, requestConfiguration *ConfigurationPolicyTemplatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to configurationPolicyTemplates for deviceManagement
+func (m *ConfigurationPolicyTemplatesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to configurationPolicyTemplates for deviceManagement
-func (m *ConfigurationPolicyTemplatesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateable, requestConfiguration *ConfigurationPolicyTemplatesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to configurationPolicyTemplates for deviceManagement
+func (m *ConfigurationPolicyTemplatesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateable, requestConfiguration *ConfigurationPolicyTemplatesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyTemplateable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -39,8 +39,8 @@ func NewReuploadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewReuploadRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action reupload
-func (m *ReuploadRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action reupload
+func (m *ReuploadRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action reupload
@@ -55,12 +55,12 @@ func (m *ReuploadRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action reupload
-func (m *ReuploadRequestBuilder) PostWithResponseHandler(requestConfiguration *ReuploadRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action reupload
+func (m *ReuploadRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action reupload
-func (m *ReuploadRequestBuilder) PostWithResponseHandler(requestConfiguration *ReuploadRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action reupload
+func (m *ReuploadRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *ReuploadRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

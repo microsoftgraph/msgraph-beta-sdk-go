@@ -39,8 +39,8 @@ func NewGetManagedDevicesWithAppFailuresRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewGetManagedDevicesWithAppFailuresRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration retrieves the list of devices with failed apps
-func (m *GetManagedDevicesWithAppFailuresRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation retrieves the list of devices with failed apps
+func (m *GetManagedDevicesWithAppFailuresRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration retrieves the list of devices with failed apps
@@ -55,12 +55,12 @@ func (m *GetManagedDevicesWithAppFailuresRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler retrieves the list of devices with failed apps
-func (m *GetManagedDevicesWithAppFailuresRequestBuilder) GetWithResponseHandler(requestConfiguration *GetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration)(GetManagedDevicesWithAppFailuresResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get retrieves the list of devices with failed apps
+func (m *GetManagedDevicesWithAppFailuresRequestBuilder) Get()(GetManagedDevicesWithAppFailuresResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler retrieves the list of devices with failed apps
-func (m *GetManagedDevicesWithAppFailuresRequestBuilder) GetWithResponseHandler(requestConfiguration *GetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetManagedDevicesWithAppFailuresResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler retrieves the list of devices with failed apps
+func (m *GetManagedDevicesWithAppFailuresRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetManagedDevicesWithAppFailuresResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

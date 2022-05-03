@@ -68,8 +68,8 @@ func NewManagementTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property managementTemplates for tenantRelationships
-func (m *ManagementTemplateItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property managementTemplates for tenantRelationships
+func (m *ManagementTemplateItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property managementTemplates for tenantRelationships
@@ -84,8 +84,8 @@ func (m *ManagementTemplateItemRequestBuilder) CreateDeleteRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of baseline management templates across managed tenants.
-func (m *ManagementTemplateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of baseline management templates across managed tenants.
+func (m *ManagementTemplateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of baseline management templates across managed tenants.
@@ -103,8 +103,8 @@ func (m *ManagementTemplateItemRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property managementTemplates in tenantRelationships
-func (m *ManagementTemplateItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property managementTemplates in tenantRelationships
+func (m *ManagementTemplateItemRequestBuilder) CreatePatchRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property managementTemplates in tenantRelationships
@@ -120,12 +120,12 @@ func (m *ManagementTemplateItemRequestBuilder) CreatePatchRequestInformationWith
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property managementTemplates for tenantRelationships
-func (m *ManagementTemplateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ManagementTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property managementTemplates for tenantRelationships
+func (m *ManagementTemplateItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property managementTemplates for tenantRelationships
-func (m *ManagementTemplateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ManagementTemplateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property managementTemplates for tenantRelationships
+func (m *ManagementTemplateItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagementTemplateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -140,12 +140,12 @@ func (m *ManagementTemplateItemRequestBuilder) DeleteWithResponseHandler(request
     }
     return nil
 }
-// GetWithResponseHandler the collection of baseline management templates across managed tenants.
-func (m *ManagementTemplateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementTemplateItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of baseline management templates across managed tenants.
+func (m *ManagementTemplateItemRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of baseline management templates across managed tenants.
-func (m *ManagementTemplateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementTemplateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of baseline management templates across managed tenants.
+func (m *ManagementTemplateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagementTemplateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -190,12 +190,12 @@ func (m *ManagementTemplateItemRequestBuilder) ManagementTemplateStepsById(id st
     }
     return i8a4329461b2048f5ab516aa5f9858f10df399c74e53582a7556549d777016326.NewManagementTemplateStepItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property managementTemplates in tenantRelationships
-func (m *ManagementTemplateItemRequestBuilder) PatchWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, requestConfiguration *ManagementTemplateItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property managementTemplates in tenantRelationships
+func (m *ManagementTemplateItemRequestBuilder) Patch(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property managementTemplates in tenantRelationships
-func (m *ManagementTemplateItemRequestBuilder) PatchWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, requestConfiguration *ManagementTemplateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property managementTemplates in tenantRelationships
+func (m *ManagementTemplateItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, requestConfiguration *ManagementTemplateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

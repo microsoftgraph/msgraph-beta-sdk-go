@@ -64,8 +64,8 @@ func NewManagedAppOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewManagedAppOperationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property operations for deviceAppManagement
-func (m *ManagedAppOperationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property operations for deviceAppManagement
+func (m *ManagedAppOperationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property operations for deviceAppManagement
@@ -80,8 +80,8 @@ func (m *ManagedAppOperationItemRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration zero or more long running operations triggered on the app registration.
-func (m *ManagedAppOperationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation zero or more long running operations triggered on the app registration.
+func (m *ManagedAppOperationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration zero or more long running operations triggered on the app registration.
@@ -99,8 +99,8 @@ func (m *ManagedAppOperationItemRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property operations in deviceAppManagement
-func (m *ManagedAppOperationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppOperationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property operations in deviceAppManagement
+func (m *ManagedAppOperationItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppOperationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property operations in deviceAppManagement
@@ -116,12 +116,12 @@ func (m *ManagedAppOperationItemRequestBuilder) CreatePatchRequestInformationWit
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property operations for deviceAppManagement
-func (m *ManagedAppOperationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ManagedAppOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property operations for deviceAppManagement
+func (m *ManagedAppOperationItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property operations for deviceAppManagement
-func (m *ManagedAppOperationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ManagedAppOperationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property operations for deviceAppManagement
+func (m *ManagedAppOperationItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedAppOperationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *ManagedAppOperationItemRequestBuilder) DeleteWithResponseHandler(reques
     }
     return nil
 }
-// GetWithResponseHandler zero or more long running operations triggered on the app registration.
-func (m *ManagedAppOperationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedAppOperationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppOperationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get zero or more long running operations triggered on the app registration.
+func (m *ManagedAppOperationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppOperationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler zero or more long running operations triggered on the app registration.
-func (m *ManagedAppOperationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedAppOperationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppOperationable, error) {
+// GetWithRequestConfigurationAndResponseHandler zero or more long running operations triggered on the app registration.
+func (m *ManagedAppOperationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedAppOperationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *ManagedAppOperationItemRequestBuilder) GetWithResponseHandler(requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppOperationable), nil
 }
-// PatchWithResponseHandler update the navigation property operations in deviceAppManagement
-func (m *ManagedAppOperationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppOperationable, requestConfiguration *ManagedAppOperationItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property operations in deviceAppManagement
+func (m *ManagedAppOperationItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppOperationable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property operations in deviceAppManagement
-func (m *ManagedAppOperationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppOperationable, requestConfiguration *ManagedAppOperationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property operations in deviceAppManagement
+func (m *ManagedAppOperationItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppOperationable, requestConfiguration *ManagedAppOperationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

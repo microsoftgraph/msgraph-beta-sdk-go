@@ -81,8 +81,8 @@ func NewEdiscoveryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property ediscovery for compliance
-func (m *EdiscoveryRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property ediscovery for compliance
+func (m *EdiscoveryRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property ediscovery for compliance
@@ -97,8 +97,8 @@ func (m *EdiscoveryRequestBuilder) CreateDeleteRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get ediscovery from compliance
-func (m *EdiscoveryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get ediscovery from compliance
+func (m *EdiscoveryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get ediscovery from compliance
@@ -116,8 +116,8 @@ func (m *EdiscoveryRequestBuilder) CreateGetRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property ediscovery in compliance
-func (m *EdiscoveryRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Ediscoveryrootable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property ediscovery in compliance
+func (m *EdiscoveryRequestBuilder) CreatePatchRequestInformation(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Ediscoveryrootable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property ediscovery in compliance
@@ -133,12 +133,12 @@ func (m *EdiscoveryRequestBuilder) CreatePatchRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property ediscovery for compliance
-func (m *EdiscoveryRequestBuilder) DeleteWithResponseHandler(requestConfiguration *EdiscoveryRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property ediscovery for compliance
+func (m *EdiscoveryRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property ediscovery for compliance
-func (m *EdiscoveryRequestBuilder) DeleteWithResponseHandler(requestConfiguration *EdiscoveryRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property ediscovery for compliance
+func (m *EdiscoveryRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *EdiscoveryRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -153,12 +153,12 @@ func (m *EdiscoveryRequestBuilder) DeleteWithResponseHandler(requestConfiguratio
     }
     return nil
 }
-// GetWithResponseHandler get ediscovery from compliance
-func (m *EdiscoveryRequestBuilder) GetWithResponseHandler(requestConfiguration *EdiscoveryRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Ediscoveryrootable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get ediscovery from compliance
+func (m *EdiscoveryRequestBuilder) Get()(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Ediscoveryrootable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get ediscovery from compliance
-func (m *EdiscoveryRequestBuilder) GetWithResponseHandler(requestConfiguration *EdiscoveryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Ediscoveryrootable, error) {
+// GetWithRequestConfigurationAndResponseHandler get ediscovery from compliance
+func (m *EdiscoveryRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EdiscoveryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Ediscoveryrootable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -173,12 +173,12 @@ func (m *EdiscoveryRequestBuilder) GetWithResponseHandler(requestConfiguration *
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Ediscoveryrootable), nil
 }
-// PatchWithResponseHandler update the navigation property ediscovery in compliance
-func (m *EdiscoveryRequestBuilder) PatchWithResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Ediscoveryrootable, requestConfiguration *EdiscoveryRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property ediscovery in compliance
+func (m *EdiscoveryRequestBuilder) Patch(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Ediscoveryrootable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property ediscovery in compliance
-func (m *EdiscoveryRequestBuilder) PatchWithResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Ediscoveryrootable, requestConfiguration *EdiscoveryRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property ediscovery in compliance
+func (m *EdiscoveryRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Ediscoveryrootable, requestConfiguration *EdiscoveryRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

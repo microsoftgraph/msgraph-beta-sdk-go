@@ -66,8 +66,8 @@ func NewAuthorizationPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewAuthorizationPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property authorizationPolicy for policies
-func (m *AuthorizationPolicyItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property authorizationPolicy for policies
+func (m *AuthorizationPolicyItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property authorizationPolicy for policies
@@ -82,8 +82,8 @@ func (m *AuthorizationPolicyItemRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the policy that controls Azure AD authorization settings.
-func (m *AuthorizationPolicyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the policy that controls Azure AD authorization settings.
+func (m *AuthorizationPolicyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the policy that controls Azure AD authorization settings.
@@ -101,8 +101,8 @@ func (m *AuthorizationPolicyItemRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property authorizationPolicy in policies
-func (m *AuthorizationPolicyItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property authorizationPolicy in policies
+func (m *AuthorizationPolicyItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property authorizationPolicy in policies
@@ -133,12 +133,12 @@ func (m *AuthorizationPolicyItemRequestBuilder) DefaultUserRoleOverridesById(id 
     }
     return if552963b64d01abf5402660068a63a336053e969fbe13841bbe4817b65852c68.NewDefaultUserRoleOverrideItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// DeleteWithResponseHandler delete navigation property authorizationPolicy for policies
-func (m *AuthorizationPolicyItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AuthorizationPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property authorizationPolicy for policies
+func (m *AuthorizationPolicyItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property authorizationPolicy for policies
-func (m *AuthorizationPolicyItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AuthorizationPolicyItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property authorizationPolicy for policies
+func (m *AuthorizationPolicyItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AuthorizationPolicyItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -153,12 +153,12 @@ func (m *AuthorizationPolicyItemRequestBuilder) DeleteWithResponseHandler(reques
     }
     return nil
 }
-// GetWithResponseHandler the policy that controls Azure AD authorization settings.
-func (m *AuthorizationPolicyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AuthorizationPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the policy that controls Azure AD authorization settings.
+func (m *AuthorizationPolicyItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the policy that controls Azure AD authorization settings.
-func (m *AuthorizationPolicyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AuthorizationPolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler the policy that controls Azure AD authorization settings.
+func (m *AuthorizationPolicyItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AuthorizationPolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -173,12 +173,12 @@ func (m *AuthorizationPolicyItemRequestBuilder) GetWithResponseHandler(requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable), nil
 }
-// PatchWithResponseHandler update the navigation property authorizationPolicy in policies
-func (m *AuthorizationPolicyItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable, requestConfiguration *AuthorizationPolicyItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property authorizationPolicy in policies
+func (m *AuthorizationPolicyItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property authorizationPolicy in policies
-func (m *AuthorizationPolicyItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable, requestConfiguration *AuthorizationPolicyItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property authorizationPolicy in policies
+func (m *AuthorizationPolicyItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable, requestConfiguration *AuthorizationPolicyItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

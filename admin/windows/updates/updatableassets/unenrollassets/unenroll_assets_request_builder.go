@@ -39,8 +39,8 @@ func NewUnenrollAssetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewUnenrollAssetsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action unenrollAssets
-func (m *UnenrollAssetsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UnenrollAssetsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action unenrollAssets
+func (m *UnenrollAssetsRequestBuilder) CreatePostRequestInformation(body UnenrollAssetsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action unenrollAssets
@@ -56,12 +56,12 @@ func (m *UnenrollAssetsRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action unenrollAssets
-func (m *UnenrollAssetsRequestBuilder) PostWithResponseHandler(body UnenrollAssetsRequestBodyable, requestConfiguration *UnenrollAssetsRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action unenrollAssets
+func (m *UnenrollAssetsRequestBuilder) Post(body UnenrollAssetsRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action unenrollAssets
-func (m *UnenrollAssetsRequestBuilder) PostWithResponseHandler(body UnenrollAssetsRequestBodyable, requestConfiguration *UnenrollAssetsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action unenrollAssets
+func (m *UnenrollAssetsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UnenrollAssetsRequestBodyable, requestConfiguration *UnenrollAssetsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

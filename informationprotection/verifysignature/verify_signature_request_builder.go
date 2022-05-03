@@ -40,8 +40,8 @@ func NewVerifySignatureRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewVerifySignatureRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action verifySignature
-func (m *VerifySignatureRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body VerifySignatureRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action verifySignature
+func (m *VerifySignatureRequestBuilder) CreatePostRequestInformation(body VerifySignatureRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action verifySignature
@@ -57,12 +57,12 @@ func (m *VerifySignatureRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action verifySignature
-func (m *VerifySignatureRequestBuilder) PostWithResponseHandler(body VerifySignatureRequestBodyable, requestConfiguration *VerifySignatureRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerificationResultable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action verifySignature
+func (m *VerifySignatureRequestBuilder) Post(body VerifySignatureRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerificationResultable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action verifySignature
-func (m *VerifySignatureRequestBuilder) PostWithResponseHandler(body VerifySignatureRequestBodyable, requestConfiguration *VerifySignatureRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerificationResultable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action verifySignature
+func (m *VerifySignatureRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body VerifySignatureRequestBodyable, requestConfiguration *VerifySignatureRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerificationResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

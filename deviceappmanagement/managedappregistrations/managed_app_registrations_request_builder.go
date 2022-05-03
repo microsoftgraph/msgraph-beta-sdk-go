@@ -75,8 +75,8 @@ func NewManagedAppRegistrationsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ManagedAppRegistrationsRequestBuilder) Count()(*i57e0cd1b520bececc6032387f8e6b587569e4ce6627d07e8dce22617c2811b06.CountRequestBuilder) {
     return i57e0cd1b520bececc6032387f8e6b587569e4ce6627d07e8dce22617c2811b06.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the managed app registrations.
-func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the managed app registrations.
+func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the managed app registrations.
@@ -94,8 +94,8 @@ func (m *ManagedAppRegistrationsRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to managedAppRegistrations for deviceAppManagement
-func (m *ManagedAppRegistrationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to managedAppRegistrations for deviceAppManagement
+func (m *ManagedAppRegistrationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to managedAppRegistrations for deviceAppManagement
@@ -111,16 +111,16 @@ func (m *ManagedAppRegistrationsRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
+// Get the managed app registrations.
+func (m *ManagedAppRegistrationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetUserIdsWithFlaggedAppRegistration provides operations to call the getUserIdsWithFlaggedAppRegistration method.
 func (m *ManagedAppRegistrationsRequestBuilder) GetUserIdsWithFlaggedAppRegistration()(*i9915ebc3ce7676f85505b20eca74c2954fb51b3b53829740df9b267614166173.GetUserIdsWithFlaggedAppRegistrationRequestBuilder) {
     return i9915ebc3ce7676f85505b20eca74c2954fb51b3b53829740df9b267614166173.NewGetUserIdsWithFlaggedAppRegistrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the managed app registrations.
-func (m *ManagedAppRegistrationsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedAppRegistrationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler the managed app registrations.
-func (m *ManagedAppRegistrationsRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedAppRegistrationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the managed app registrations.
+func (m *ManagedAppRegistrationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedAppRegistrationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *ManagedAppRegistrationsRequestBuilder) GetWithResponseHandler(requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to managedAppRegistrations for deviceAppManagement
-func (m *ManagedAppRegistrationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable, requestConfiguration *ManagedAppRegistrationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to managedAppRegistrations for deviceAppManagement
+func (m *ManagedAppRegistrationsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to managedAppRegistrations for deviceAppManagement
-func (m *ManagedAppRegistrationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable, requestConfiguration *ManagedAppRegistrationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to managedAppRegistrations for deviceAppManagement
+func (m *ManagedAppRegistrationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable, requestConfiguration *ManagedAppRegistrationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

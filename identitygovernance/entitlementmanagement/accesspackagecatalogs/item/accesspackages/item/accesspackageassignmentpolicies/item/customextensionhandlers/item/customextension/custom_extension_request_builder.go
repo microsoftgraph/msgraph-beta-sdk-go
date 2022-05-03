@@ -50,8 +50,8 @@ func NewCustomExtensionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewCustomExtensionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
-func (m *CustomExtensionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
+func (m *CustomExtensionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
@@ -69,12 +69,12 @@ func (m *CustomExtensionRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
-func (m *CustomExtensionRequestBuilder) GetWithResponseHandler(requestConfiguration *CustomExtensionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
+func (m *CustomExtensionRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
-func (m *CustomExtensionRequestBuilder) GetWithResponseHandler(requestConfiguration *CustomExtensionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable, error) {
+// GetWithRequestConfigurationAndResponseHandler indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
+func (m *CustomExtensionRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CustomExtensionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

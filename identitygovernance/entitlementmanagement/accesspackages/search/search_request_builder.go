@@ -39,8 +39,8 @@ func NewSearchRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewSearchRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function Search
-func (m *SearchRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function Search
+func (m *SearchRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function Search
@@ -55,12 +55,12 @@ func (m *SearchRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function Search
-func (m *SearchRequestBuilder) GetWithResponseHandler(requestConfiguration *SearchRequestBuilderGetRequestConfiguration)(SearchResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function Search
+func (m *SearchRequestBuilder) Get()(SearchResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function Search
-func (m *SearchRequestBuilder) GetWithResponseHandler(requestConfiguration *SearchRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SearchResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function Search
+func (m *SearchRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SearchRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SearchResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -64,8 +64,8 @@ func NewSharedEmailDomainInvitationItemRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewSharedEmailDomainInvitationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property sharedEmailDomainInvitations for domains
-func (m *SharedEmailDomainInvitationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property sharedEmailDomainInvitations for domains
+func (m *SharedEmailDomainInvitationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property sharedEmailDomainInvitations for domains
@@ -80,8 +80,8 @@ func (m *SharedEmailDomainInvitationItemRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get sharedEmailDomainInvitations from domains
-func (m *SharedEmailDomainInvitationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get sharedEmailDomainInvitations from domains
+func (m *SharedEmailDomainInvitationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get sharedEmailDomainInvitations from domains
@@ -99,8 +99,8 @@ func (m *SharedEmailDomainInvitationItemRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property sharedEmailDomainInvitations in domains
-func (m *SharedEmailDomainInvitationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property sharedEmailDomainInvitations in domains
+func (m *SharedEmailDomainInvitationItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property sharedEmailDomainInvitations in domains
@@ -116,12 +116,12 @@ func (m *SharedEmailDomainInvitationItemRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property sharedEmailDomainInvitations for domains
-func (m *SharedEmailDomainInvitationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SharedEmailDomainInvitationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property sharedEmailDomainInvitations for domains
+func (m *SharedEmailDomainInvitationItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property sharedEmailDomainInvitations for domains
-func (m *SharedEmailDomainInvitationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SharedEmailDomainInvitationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property sharedEmailDomainInvitations for domains
+func (m *SharedEmailDomainInvitationItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *SharedEmailDomainInvitationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *SharedEmailDomainInvitationItemRequestBuilder) DeleteWithResponseHandle
     }
     return nil
 }
-// GetWithResponseHandler get sharedEmailDomainInvitations from domains
-func (m *SharedEmailDomainInvitationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SharedEmailDomainInvitationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get sharedEmailDomainInvitations from domains
+func (m *SharedEmailDomainInvitationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get sharedEmailDomainInvitations from domains
-func (m *SharedEmailDomainInvitationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SharedEmailDomainInvitationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, error) {
+// GetWithRequestConfigurationAndResponseHandler get sharedEmailDomainInvitations from domains
+func (m *SharedEmailDomainInvitationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SharedEmailDomainInvitationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *SharedEmailDomainInvitationItemRequestBuilder) GetWithResponseHandler(r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable), nil
 }
-// PatchWithResponseHandler update the navigation property sharedEmailDomainInvitations in domains
-func (m *SharedEmailDomainInvitationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, requestConfiguration *SharedEmailDomainInvitationItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property sharedEmailDomainInvitations in domains
+func (m *SharedEmailDomainInvitationItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property sharedEmailDomainInvitations in domains
-func (m *SharedEmailDomainInvitationItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, requestConfiguration *SharedEmailDomainInvitationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property sharedEmailDomainInvitations in domains
+func (m *SharedEmailDomainInvitationItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, requestConfiguration *SharedEmailDomainInvitationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

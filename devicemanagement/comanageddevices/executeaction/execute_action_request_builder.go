@@ -40,8 +40,8 @@ func NewExecuteActionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewExecuteActionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action executeAction
-func (m *ExecuteActionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ExecuteActionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action executeAction
+func (m *ExecuteActionRequestBuilder) CreatePostRequestInformation(body ExecuteActionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action executeAction
@@ -57,12 +57,12 @@ func (m *ExecuteActionRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action executeAction
-func (m *ExecuteActionRequestBuilder) PostWithResponseHandler(body ExecuteActionRequestBodyable, requestConfiguration *ExecuteActionRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BulkManagedDeviceActionResultable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action executeAction
+func (m *ExecuteActionRequestBuilder) Post(body ExecuteActionRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BulkManagedDeviceActionResultable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action executeAction
-func (m *ExecuteActionRequestBuilder) PostWithResponseHandler(body ExecuteActionRequestBodyable, requestConfiguration *ExecuteActionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BulkManagedDeviceActionResultable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action executeAction
+func (m *ExecuteActionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ExecuteActionRequestBodyable, requestConfiguration *ExecuteActionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BulkManagedDeviceActionResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

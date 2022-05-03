@@ -79,8 +79,8 @@ func NewManagementActionTenantDeploymentStatusesRequestBuilder(rawUrl string, re
 func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) Count()(*id677fd2cf57f8c7a79f86b3b17441e9d65b000e7afc795c0b7e5e43f29feb8f7.CountRequestBuilder) {
     return id677fd2cf57f8c7a79f86b3b17441e9d65b000e7afc795c0b7e5e43f29feb8f7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the tenant level status of management actions across managed tenants.
-func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the tenant level status of management actions across managed tenants.
+func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the tenant level status of management actions across managed tenants.
@@ -98,8 +98,8 @@ func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to managementActionTenantDeploymentStatuses for tenantRelationships
-func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to managementActionTenantDeploymentStatuses for tenantRelationships
+func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) CreatePostRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to managementActionTenantDeploymentStatuses for tenantRelationships
@@ -115,12 +115,12 @@ func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) CreatePostReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the tenant level status of management actions across managed tenants.
-func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementActionTenantDeploymentStatusesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the tenant level status of management actions across managed tenants.
+func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the tenant level status of management actions across managed tenants.
-func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementActionTenantDeploymentStatusesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the tenant level status of management actions across managed tenants.
+func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagementActionTenantDeploymentStatusesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) GetWithResponse
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to managementActionTenantDeploymentStatuses for tenantRelationships
-func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusable, requestConfiguration *ManagementActionTenantDeploymentStatusesRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to managementActionTenantDeploymentStatuses for tenantRelationships
+func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) Post(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to managementActionTenantDeploymentStatuses for tenantRelationships
-func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusable, requestConfiguration *ManagementActionTenantDeploymentStatusesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to managementActionTenantDeploymentStatuses for tenantRelationships
+func (m *ManagementActionTenantDeploymentStatusesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusable, requestConfiguration *ManagementActionTenantDeploymentStatusesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionTenantDeploymentStatusable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

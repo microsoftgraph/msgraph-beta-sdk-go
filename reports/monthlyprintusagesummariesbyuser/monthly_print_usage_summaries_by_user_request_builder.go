@@ -74,8 +74,8 @@ func NewMonthlyPrintUsageSummariesByUserRequestBuilder(rawUrl string, requestAda
 func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) Count()(*i9668cc7b11b6c73ac4f1da37f2d13e3ff3429f245db4f323609f3a5c665ddd12.CountRequestBuilder) {
     return i9668cc7b11b6c73ac4f1da37f2d13e3ff3429f245db4f323609f3a5c665ddd12.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get monthlyPrintUsageSummariesByUser from reports
-func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get monthlyPrintUsageSummariesByUser from reports
+func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get monthlyPrintUsageSummariesByUser from reports
@@ -93,8 +93,8 @@ func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to monthlyPrintUsageSummariesByUser for reports
-func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to monthlyPrintUsageSummariesByUser for reports
+func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to monthlyPrintUsageSummariesByUser for reports
@@ -110,12 +110,12 @@ func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get monthlyPrintUsageSummariesByUser from reports
-func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) GetWithResponseHandler(requestConfiguration *MonthlyPrintUsageSummariesByUserRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get monthlyPrintUsageSummariesByUser from reports
+func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get monthlyPrintUsageSummariesByUser from reports
-func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) GetWithResponseHandler(requestConfiguration *MonthlyPrintUsageSummariesByUserRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get monthlyPrintUsageSummariesByUser from reports
+func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MonthlyPrintUsageSummariesByUserRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) GetWithResponseHandler(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to monthlyPrintUsageSummariesByUser for reports
-func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable, requestConfiguration *MonthlyPrintUsageSummariesByUserRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to monthlyPrintUsageSummariesByUser for reports
+func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to monthlyPrintUsageSummariesByUser for reports
-func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable, requestConfiguration *MonthlyPrintUsageSummariesByUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to monthlyPrintUsageSummariesByUser for reports
+func (m *MonthlyPrintUsageSummariesByUserRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable, requestConfiguration *MonthlyPrintUsageSummariesByUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

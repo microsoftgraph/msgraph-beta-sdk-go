@@ -66,8 +66,8 @@ func NewUnifiedRoleDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRoleDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property roleDefinitions for roleManagement
-func (m *UnifiedRoleDefinitionItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property roleDefinitions for roleManagement
+func (m *UnifiedRoleDefinitionItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property roleDefinitions for roleManagement
@@ -82,8 +82,8 @@ func (m *UnifiedRoleDefinitionItemRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get roleDefinitions from roleManagement
-func (m *UnifiedRoleDefinitionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get roleDefinitions from roleManagement
+func (m *UnifiedRoleDefinitionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get roleDefinitions from roleManagement
@@ -101,8 +101,8 @@ func (m *UnifiedRoleDefinitionItemRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property roleDefinitions in roleManagement
-func (m *UnifiedRoleDefinitionItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property roleDefinitions in roleManagement
+func (m *UnifiedRoleDefinitionItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property roleDefinitions in roleManagement
@@ -118,12 +118,12 @@ func (m *UnifiedRoleDefinitionItemRequestBuilder) CreatePatchRequestInformationW
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property roleDefinitions for roleManagement
-func (m *UnifiedRoleDefinitionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UnifiedRoleDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property roleDefinitions for roleManagement
+func (m *UnifiedRoleDefinitionItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property roleDefinitions for roleManagement
-func (m *UnifiedRoleDefinitionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UnifiedRoleDefinitionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property roleDefinitions for roleManagement
+func (m *UnifiedRoleDefinitionItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRoleDefinitionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -138,12 +138,12 @@ func (m *UnifiedRoleDefinitionItemRequestBuilder) DeleteWithResponseHandler(requ
     }
     return nil
 }
-// GetWithResponseHandler get roleDefinitions from roleManagement
-func (m *UnifiedRoleDefinitionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UnifiedRoleDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get roleDefinitions from roleManagement
+func (m *UnifiedRoleDefinitionItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get roleDefinitions from roleManagement
-func (m *UnifiedRoleDefinitionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UnifiedRoleDefinitionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable, error) {
+// GetWithRequestConfigurationAndResponseHandler get roleDefinitions from roleManagement
+func (m *UnifiedRoleDefinitionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRoleDefinitionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -173,12 +173,12 @@ func (m *UnifiedRoleDefinitionItemRequestBuilder) InheritsPermissionsFromById(id
     }
     return i7615b2a6211571aa5566cce820cea4bd5edda575f8f25065ea1d5b880ed635f2.NewUnifiedRoleDefinitionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property roleDefinitions in roleManagement
-func (m *UnifiedRoleDefinitionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable, requestConfiguration *UnifiedRoleDefinitionItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property roleDefinitions in roleManagement
+func (m *UnifiedRoleDefinitionItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property roleDefinitions in roleManagement
-func (m *UnifiedRoleDefinitionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable, requestConfiguration *UnifiedRoleDefinitionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property roleDefinitions in roleManagement
+func (m *UnifiedRoleDefinitionItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable, requestConfiguration *UnifiedRoleDefinitionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

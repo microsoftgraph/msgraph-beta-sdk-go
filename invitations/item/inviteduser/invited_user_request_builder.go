@@ -50,8 +50,8 @@ func NewInvitedUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewInvitedUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the user created as part of the invitation creation. Read-Only
-func (m *InvitedUserRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the user created as part of the invitation creation. Read-Only
+func (m *InvitedUserRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the user created as part of the invitation creation. Read-Only
@@ -69,12 +69,12 @@ func (m *InvitedUserRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the user created as part of the invitation creation. Read-Only
-func (m *InvitedUserRequestBuilder) GetWithResponseHandler(requestConfiguration *InvitedUserRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the user created as part of the invitation creation. Read-Only
+func (m *InvitedUserRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the user created as part of the invitation creation. Read-Only
-func (m *InvitedUserRequestBuilder) GetWithResponseHandler(requestConfiguration *InvitedUserRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
+// GetWithRequestConfigurationAndResponseHandler the user created as part of the invitation creation. Read-Only
+func (m *InvitedUserRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *InvitedUserRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

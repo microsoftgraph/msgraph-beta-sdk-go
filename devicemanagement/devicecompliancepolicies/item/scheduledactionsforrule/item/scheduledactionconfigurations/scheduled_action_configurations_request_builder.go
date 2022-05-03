@@ -74,8 +74,8 @@ func NewScheduledActionConfigurationsRequestBuilder(rawUrl string, requestAdapte
 func (m *ScheduledActionConfigurationsRequestBuilder) Count()(*i954d37055bf12ed1cfd40ce08781294687f7bd3a73fd8741ca7760db5c5deaf1.CountRequestBuilder) {
     return i954d37055bf12ed1cfd40ce08781294687f7bd3a73fd8741ca7760db5c5deaf1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-func (m *ScheduledActionConfigurationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+func (m *ScheduledActionConfigurationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
@@ -93,8 +93,8 @@ func (m *ScheduledActionConfigurationsRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to scheduledActionConfigurations for deviceManagement
-func (m *ScheduledActionConfigurationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to scheduledActionConfigurations for deviceManagement
+func (m *ScheduledActionConfigurationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to scheduledActionConfigurations for deviceManagement
@@ -110,12 +110,12 @@ func (m *ScheduledActionConfigurationsRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-func (m *ScheduledActionConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *ScheduledActionConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+func (m *ScheduledActionConfigurationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-func (m *ScheduledActionConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *ScheduledActionConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+func (m *ScheduledActionConfigurationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ScheduledActionConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ScheduledActionConfigurationsRequestBuilder) GetWithResponseHandler(req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to scheduledActionConfigurations for deviceManagement
-func (m *ScheduledActionConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemable, requestConfiguration *ScheduledActionConfigurationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to scheduledActionConfigurations for deviceManagement
+func (m *ScheduledActionConfigurationsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to scheduledActionConfigurations for deviceManagement
-func (m *ScheduledActionConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemable, requestConfiguration *ScheduledActionConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to scheduledActionConfigurations for deviceManagement
+func (m *ScheduledActionConfigurationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemable, requestConfiguration *ScheduledActionConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceActionItemable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

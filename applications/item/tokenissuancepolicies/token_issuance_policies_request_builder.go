@@ -67,8 +67,8 @@ func NewTokenIssuancePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *TokenIssuancePoliciesRequestBuilder) Count()(*ie49adee9e95fdfe4bbe54d8bc31762b53264aae9ff3da9125bc85cc00e122756.CountRequestBuilder) {
     return ie49adee9e95fdfe4bbe54d8bc31762b53264aae9ff3da9125bc85cc00e122756.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get tokenIssuancePolicies from applications
-func (m *TokenIssuancePoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get tokenIssuancePolicies from applications
+func (m *TokenIssuancePoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get tokenIssuancePolicies from applications
@@ -86,12 +86,12 @@ func (m *TokenIssuancePoliciesRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get tokenIssuancePolicies from applications
-func (m *TokenIssuancePoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *TokenIssuancePoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenIssuancePolicyCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get tokenIssuancePolicies from applications
+func (m *TokenIssuancePoliciesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenIssuancePolicyCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get tokenIssuancePolicies from applications
-func (m *TokenIssuancePoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *TokenIssuancePoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenIssuancePolicyCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get tokenIssuancePolicies from applications
+func (m *TokenIssuancePoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TokenIssuancePoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenIssuancePolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

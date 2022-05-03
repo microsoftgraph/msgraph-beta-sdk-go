@@ -75,8 +75,8 @@ func NewDeviceImagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *DeviceImagesRequestBuilder) Count()(*i994da25c7b7896b3b9f06ade176260a40842298af18e721d0c64ce97cb96a5b4.CountRequestBuilder) {
     return i994da25c7b7896b3b9f06ade176260a40842298af18e721d0c64ce97cb96a5b4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the image resource on Cloud PC.
-func (m *DeviceImagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the image resource on Cloud PC.
+func (m *DeviceImagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the image resource on Cloud PC.
@@ -94,8 +94,8 @@ func (m *DeviceImagesRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceImages for deviceManagement
-func (m *DeviceImagesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to deviceImages for deviceManagement
+func (m *DeviceImagesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceImages for deviceManagement
@@ -111,16 +111,16 @@ func (m *DeviceImagesRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
+// Get the image resource on Cloud PC.
+func (m *DeviceImagesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetSourceImages provides operations to call the getSourceImages method.
 func (m *DeviceImagesRequestBuilder) GetSourceImages()(*i12a35078573f430cee22f0ba30668e2a12832971d453bb598459e612e2510100.GetSourceImagesRequestBuilder) {
     return i12a35078573f430cee22f0ba30668e2a12832971d453bb598459e612e2510100.NewGetSourceImagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the image resource on Cloud PC.
-func (m *DeviceImagesRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceImagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler the image resource on Cloud PC.
-func (m *DeviceImagesRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceImagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the image resource on Cloud PC.
+func (m *DeviceImagesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceImagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *DeviceImagesRequestBuilder) GetWithResponseHandler(requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to deviceImages for deviceManagement
-func (m *DeviceImagesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, requestConfiguration *DeviceImagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to deviceImages for deviceManagement
+func (m *DeviceImagesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to deviceImages for deviceManagement
-func (m *DeviceImagesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, requestConfiguration *DeviceImagesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to deviceImages for deviceManagement
+func (m *DeviceImagesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, requestConfiguration *DeviceImagesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

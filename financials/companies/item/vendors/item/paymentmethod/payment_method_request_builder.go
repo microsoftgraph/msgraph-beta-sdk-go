@@ -64,8 +64,8 @@ func NewPaymentMethodRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewPaymentMethodRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property paymentMethod for financials
-func (m *PaymentMethodRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property paymentMethod for financials
+func (m *PaymentMethodRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property paymentMethod for financials
@@ -80,8 +80,8 @@ func (m *PaymentMethodRequestBuilder) CreateDeleteRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get paymentMethod from financials
-func (m *PaymentMethodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get paymentMethod from financials
+func (m *PaymentMethodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get paymentMethod from financials
@@ -99,8 +99,8 @@ func (m *PaymentMethodRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property paymentMethod in financials
-func (m *PaymentMethodRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property paymentMethod in financials
+func (m *PaymentMethodRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property paymentMethod in financials
@@ -116,12 +116,12 @@ func (m *PaymentMethodRequestBuilder) CreatePatchRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property paymentMethod for financials
-func (m *PaymentMethodRequestBuilder) DeleteWithResponseHandler(requestConfiguration *PaymentMethodRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property paymentMethod for financials
+func (m *PaymentMethodRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property paymentMethod for financials
-func (m *PaymentMethodRequestBuilder) DeleteWithResponseHandler(requestConfiguration *PaymentMethodRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property paymentMethod for financials
+func (m *PaymentMethodRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *PaymentMethodRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *PaymentMethodRequestBuilder) DeleteWithResponseHandler(requestConfigura
     }
     return nil
 }
-// GetWithResponseHandler get paymentMethod from financials
-func (m *PaymentMethodRequestBuilder) GetWithResponseHandler(requestConfiguration *PaymentMethodRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get paymentMethod from financials
+func (m *PaymentMethodRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get paymentMethod from financials
-func (m *PaymentMethodRequestBuilder) GetWithResponseHandler(requestConfiguration *PaymentMethodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, error) {
+// GetWithRequestConfigurationAndResponseHandler get paymentMethod from financials
+func (m *PaymentMethodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PaymentMethodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *PaymentMethodRequestBuilder) GetWithResponseHandler(requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable), nil
 }
-// PatchWithResponseHandler update the navigation property paymentMethod in financials
-func (m *PaymentMethodRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, requestConfiguration *PaymentMethodRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property paymentMethod in financials
+func (m *PaymentMethodRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property paymentMethod in financials
-func (m *PaymentMethodRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, requestConfiguration *PaymentMethodRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property paymentMethod in financials
+func (m *PaymentMethodRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, requestConfiguration *PaymentMethodRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

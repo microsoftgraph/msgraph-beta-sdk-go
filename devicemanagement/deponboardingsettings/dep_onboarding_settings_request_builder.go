@@ -75,8 +75,8 @@ func NewDepOnboardingSettingsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *DepOnboardingSettingsRequestBuilder) Count()(*i8d497f1b42f5e108e2e2d3a44102b9cb6a45d204871c71184e1d163c09ce009f.CountRequestBuilder) {
     return i8d497f1b42f5e108e2e2d3a44102b9cb6a45d204871c71184e1d163c09ce009f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration this collections of multiple DEP tokens per-tenant.
-func (m *DepOnboardingSettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation this collections of multiple DEP tokens per-tenant.
+func (m *DepOnboardingSettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration this collections of multiple DEP tokens per-tenant.
@@ -94,8 +94,8 @@ func (m *DepOnboardingSettingsRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to depOnboardingSettings for deviceManagement
-func (m *DepOnboardingSettingsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to depOnboardingSettings for deviceManagement
+func (m *DepOnboardingSettingsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to depOnboardingSettings for deviceManagement
@@ -111,16 +111,16 @@ func (m *DepOnboardingSettingsRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
+// Get this collections of multiple DEP tokens per-tenant.
+func (m *DepOnboardingSettingsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetExpiringVppTokenCountWithExpiringBeforeDateTime provides operations to call the getExpiringVppTokenCount method.
 func (m *DepOnboardingSettingsRequestBuilder) GetExpiringVppTokenCountWithExpiringBeforeDateTime(expiringBeforeDateTime *string)(*ia653be664a0dd75c52af6e78b0cf052819bdf93d3b5de4be59dc76970e065611.GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) {
     return ia653be664a0dd75c52af6e78b0cf052819bdf93d3b5de4be59dc76970e065611.NewGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, expiringBeforeDateTime);
 }
-// GetWithResponseHandler this collections of multiple DEP tokens per-tenant.
-func (m *DepOnboardingSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *DepOnboardingSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler this collections of multiple DEP tokens per-tenant.
-func (m *DepOnboardingSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *DepOnboardingSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler this collections of multiple DEP tokens per-tenant.
+func (m *DepOnboardingSettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DepOnboardingSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *DepOnboardingSettingsRequestBuilder) GetWithResponseHandler(requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to depOnboardingSettings for deviceManagement
-func (m *DepOnboardingSettingsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, requestConfiguration *DepOnboardingSettingsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to depOnboardingSettings for deviceManagement
+func (m *DepOnboardingSettingsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to depOnboardingSettings for deviceManagement
-func (m *DepOnboardingSettingsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, requestConfiguration *DepOnboardingSettingsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to depOnboardingSettings for deviceManagement
+func (m *DepOnboardingSettingsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, requestConfiguration *DepOnboardingSettingsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

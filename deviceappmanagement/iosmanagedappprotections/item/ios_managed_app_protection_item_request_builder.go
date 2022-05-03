@@ -82,8 +82,8 @@ func NewIosManagedAppProtectionItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewIosManagedAppProtectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property iosManagedAppProtections for deviceAppManagement
-func (m *IosManagedAppProtectionItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property iosManagedAppProtections for deviceAppManagement
+func (m *IosManagedAppProtectionItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property iosManagedAppProtections for deviceAppManagement
@@ -98,8 +98,8 @@ func (m *IosManagedAppProtectionItemRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration iOS managed app policies.
-func (m *IosManagedAppProtectionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation iOS managed app policies.
+func (m *IosManagedAppProtectionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration iOS managed app policies.
@@ -117,8 +117,8 @@ func (m *IosManagedAppProtectionItemRequestBuilder) CreateGetRequestInformationW
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property iosManagedAppProtections in deviceAppManagement
-func (m *IosManagedAppProtectionItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property iosManagedAppProtections in deviceAppManagement
+func (m *IosManagedAppProtectionItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property iosManagedAppProtections in deviceAppManagement
@@ -134,12 +134,12 @@ func (m *IosManagedAppProtectionItemRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property iosManagedAppProtections for deviceAppManagement
-func (m *IosManagedAppProtectionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *IosManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property iosManagedAppProtections for deviceAppManagement
+func (m *IosManagedAppProtectionItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property iosManagedAppProtections for deviceAppManagement
-func (m *IosManagedAppProtectionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *IosManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property iosManagedAppProtections for deviceAppManagement
+func (m *IosManagedAppProtectionItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *IosManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -158,12 +158,12 @@ func (m *IosManagedAppProtectionItemRequestBuilder) DeleteWithResponseHandler(re
 func (m *IosManagedAppProtectionItemRequestBuilder) DeploymentSummary()(*i96bdcd6a8e15330fdcfeeaf87c61073aae0d06ba66a090f0507d66c527796caa.DeploymentSummaryRequestBuilder) {
     return i96bdcd6a8e15330fdcfeeaf87c61073aae0d06ba66a090f0507d66c527796caa.NewDeploymentSummaryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler iOS managed app policies.
-func (m *IosManagedAppProtectionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *IosManagedAppProtectionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get iOS managed app policies.
+func (m *IosManagedAppProtectionItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler iOS managed app policies.
-func (m *IosManagedAppProtectionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *IosManagedAppProtectionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionable, error) {
+// GetWithRequestConfigurationAndResponseHandler iOS managed app policies.
+func (m *IosManagedAppProtectionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IosManagedAppProtectionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -178,12 +178,12 @@ func (m *IosManagedAppProtectionItemRequestBuilder) GetWithResponseHandler(reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionable), nil
 }
-// PatchWithResponseHandler update the navigation property iosManagedAppProtections in deviceAppManagement
-func (m *IosManagedAppProtectionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionable, requestConfiguration *IosManagedAppProtectionItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property iosManagedAppProtections in deviceAppManagement
+func (m *IosManagedAppProtectionItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property iosManagedAppProtections in deviceAppManagement
-func (m *IosManagedAppProtectionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionable, requestConfiguration *IosManagedAppProtectionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property iosManagedAppProtections in deviceAppManagement
+func (m *IosManagedAppProtectionItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosManagedAppProtectionable, requestConfiguration *IosManagedAppProtectionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

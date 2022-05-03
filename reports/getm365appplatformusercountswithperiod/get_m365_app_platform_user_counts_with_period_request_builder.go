@@ -43,8 +43,8 @@ func NewGetM365AppPlatformUserCountsWithPeriodRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewGetM365AppPlatformUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getM365AppPlatformUserCounts
-func (m *GetM365AppPlatformUserCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getM365AppPlatformUserCounts
+func (m *GetM365AppPlatformUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getM365AppPlatformUserCounts
@@ -59,12 +59,12 @@ func (m *GetM365AppPlatformUserCountsWithPeriodRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getM365AppPlatformUserCounts
-func (m *GetM365AppPlatformUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetM365AppPlatformUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Reportable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getM365AppPlatformUserCounts
+func (m *GetM365AppPlatformUserCountsWithPeriodRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Reportable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getM365AppPlatformUserCounts
-func (m *GetM365AppPlatformUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetM365AppPlatformUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Reportable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getM365AppPlatformUserCounts
+func (m *GetM365AppPlatformUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetM365AppPlatformUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Reportable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -87,8 +87,8 @@ func NewBaseTaskItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewBaseTaskItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property tasks for me
-func (m *BaseTaskItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property tasks for me
+func (m *BaseTaskItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property tasks for me
@@ -103,8 +103,8 @@ func (m *BaseTaskItemRequestBuilder) CreateDeleteRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the tasks in this task list. Read-only. Nullable.
-func (m *BaseTaskItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the tasks in this task list. Read-only. Nullable.
+func (m *BaseTaskItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the tasks in this task list. Read-only. Nullable.
@@ -122,8 +122,8 @@ func (m *BaseTaskItemRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property tasks in me
-func (m *BaseTaskItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property tasks in me
+func (m *BaseTaskItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property tasks in me
@@ -139,12 +139,12 @@ func (m *BaseTaskItemRequestBuilder) CreatePatchRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property tasks for me
-func (m *BaseTaskItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *BaseTaskItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property tasks for me
+func (m *BaseTaskItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property tasks for me
-func (m *BaseTaskItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *BaseTaskItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property tasks for me
+func (m *BaseTaskItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *BaseTaskItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -174,12 +174,12 @@ func (m *BaseTaskItemRequestBuilder) ExtensionsById(id string)(*i49f37fa0ca8dbd0
     }
     return i49f37fa0ca8dbd0779122380b5f0f7e39b7ff61cbc48e2b361a00f669235f391.NewExtensionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GetWithResponseHandler the tasks in this task list. Read-only. Nullable.
-func (m *BaseTaskItemRequestBuilder) GetWithResponseHandler(requestConfiguration *BaseTaskItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the tasks in this task list. Read-only. Nullable.
+func (m *BaseTaskItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the tasks in this task list. Read-only. Nullable.
-func (m *BaseTaskItemRequestBuilder) GetWithResponseHandler(requestConfiguration *BaseTaskItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, error) {
+// GetWithRequestConfigurationAndResponseHandler the tasks in this task list. Read-only. Nullable.
+func (m *BaseTaskItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BaseTaskItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -217,12 +217,12 @@ func (m *BaseTaskItemRequestBuilder) Move()(*ic7aa8eb0e8aefbfa6858e7f2fc465b90d4
 func (m *BaseTaskItemRequestBuilder) ParentList()(*i7260b89120c013953545f8577655f38687e6049054459b4979fc66317449b7d4.ParentListRequestBuilder) {
     return i7260b89120c013953545f8577655f38687e6049054459b4979fc66317449b7d4.NewParentListRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property tasks in me
-func (m *BaseTaskItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, requestConfiguration *BaseTaskItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property tasks in me
+func (m *BaseTaskItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property tasks in me
-func (m *BaseTaskItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, requestConfiguration *BaseTaskItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property tasks in me
+func (m *BaseTaskItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseTaskable, requestConfiguration *BaseTaskItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

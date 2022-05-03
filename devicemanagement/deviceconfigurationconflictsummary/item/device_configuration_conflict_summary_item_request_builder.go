@@ -64,8 +64,8 @@ func NewDeviceConfigurationConflictSummaryItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationConflictSummaryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceConfigurationConflictSummary for deviceManagement
-func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property deviceConfigurationConflictSummary for deviceManagement
+func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceConfigurationConflictSummary for deviceManagement
@@ -80,8 +80,8 @@ func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) CreateDeleteReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration summary of policies in conflict state for this account.
-func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation summary of policies in conflict state for this account.
+func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration summary of policies in conflict state for this account.
@@ -99,8 +99,8 @@ func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) CreateGetRequestI
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceConfigurationConflictSummary in deviceManagement
-func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property deviceConfigurationConflictSummary in deviceManagement
+func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceConfigurationConflictSummary in deviceManagement
@@ -116,12 +116,12 @@ func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) CreatePatchReques
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property deviceConfigurationConflictSummary for deviceManagement
-func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceConfigurationConflictSummaryItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property deviceConfigurationConflictSummary for deviceManagement
+func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property deviceConfigurationConflictSummary for deviceManagement
-func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceConfigurationConflictSummaryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property deviceConfigurationConflictSummary for deviceManagement
+func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceConfigurationConflictSummaryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) DeleteWithRespons
     }
     return nil
 }
-// GetWithResponseHandler summary of policies in conflict state for this account.
-func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationConflictSummaryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get summary of policies in conflict state for this account.
+func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler summary of policies in conflict state for this account.
-func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationConflictSummaryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler summary of policies in conflict state for this account.
+func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceConfigurationConflictSummaryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) GetWithResponseHa
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable), nil
 }
-// PatchWithResponseHandler update the navigation property deviceConfigurationConflictSummary in deviceManagement
-func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, requestConfiguration *DeviceConfigurationConflictSummaryItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property deviceConfigurationConflictSummary in deviceManagement
+func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property deviceConfigurationConflictSummary in deviceManagement
-func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, requestConfiguration *DeviceConfigurationConflictSummaryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property deviceConfigurationConflictSummary in deviceManagement
+func (m *DeviceConfigurationConflictSummaryItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationConflictSummaryable, requestConfiguration *DeviceConfigurationConflictSummaryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -64,8 +64,8 @@ func NewOpenShiftChangeRequestItemRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewOpenShiftChangeRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property openShiftChangeRequests for teams
-func (m *OpenShiftChangeRequestItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property openShiftChangeRequests for teams
+func (m *OpenShiftChangeRequestItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property openShiftChangeRequests for teams
@@ -80,8 +80,8 @@ func (m *OpenShiftChangeRequestItemRequestBuilder) CreateDeleteRequestInformatio
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get openShiftChangeRequests from teams
-func (m *OpenShiftChangeRequestItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get openShiftChangeRequests from teams
+func (m *OpenShiftChangeRequestItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get openShiftChangeRequests from teams
@@ -99,8 +99,8 @@ func (m *OpenShiftChangeRequestItemRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property openShiftChangeRequests in teams
-func (m *OpenShiftChangeRequestItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property openShiftChangeRequests in teams
+func (m *OpenShiftChangeRequestItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property openShiftChangeRequests in teams
@@ -116,12 +116,12 @@ func (m *OpenShiftChangeRequestItemRequestBuilder) CreatePatchRequestInformation
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property openShiftChangeRequests for teams
-func (m *OpenShiftChangeRequestItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OpenShiftChangeRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property openShiftChangeRequests for teams
+func (m *OpenShiftChangeRequestItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property openShiftChangeRequests for teams
-func (m *OpenShiftChangeRequestItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OpenShiftChangeRequestItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property openShiftChangeRequests for teams
+func (m *OpenShiftChangeRequestItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *OpenShiftChangeRequestItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *OpenShiftChangeRequestItemRequestBuilder) DeleteWithResponseHandler(req
     }
     return nil
 }
-// GetWithResponseHandler get openShiftChangeRequests from teams
-func (m *OpenShiftChangeRequestItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OpenShiftChangeRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get openShiftChangeRequests from teams
+func (m *OpenShiftChangeRequestItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get openShiftChangeRequests from teams
-func (m *OpenShiftChangeRequestItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OpenShiftChangeRequestItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestable, error) {
+// GetWithRequestConfigurationAndResponseHandler get openShiftChangeRequests from teams
+func (m *OpenShiftChangeRequestItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OpenShiftChangeRequestItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *OpenShiftChangeRequestItemRequestBuilder) GetWithResponseHandler(reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestable), nil
 }
-// PatchWithResponseHandler update the navigation property openShiftChangeRequests in teams
-func (m *OpenShiftChangeRequestItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestable, requestConfiguration *OpenShiftChangeRequestItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property openShiftChangeRequests in teams
+func (m *OpenShiftChangeRequestItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property openShiftChangeRequests in teams
-func (m *OpenShiftChangeRequestItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestable, requestConfiguration *OpenShiftChangeRequestItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property openShiftChangeRequests in teams
+func (m *OpenShiftChangeRequestItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestable, requestConfiguration *OpenShiftChangeRequestItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

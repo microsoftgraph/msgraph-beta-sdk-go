@@ -74,8 +74,8 @@ func NewDerivedCredentialsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *DerivedCredentialsRequestBuilder) Count()(*i04e197e85583baa85285fe15d0ace213e1eb2b7effe68bbfca36a93328945318.CountRequestBuilder) {
     return i04e197e85583baa85285fe15d0ace213e1eb2b7effe68bbfca36a93328945318.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of Derived credential settings associated with account.
-func (m *DerivedCredentialsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation collection of Derived credential settings associated with account.
+func (m *DerivedCredentialsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration collection of Derived credential settings associated with account.
@@ -93,8 +93,8 @@ func (m *DerivedCredentialsRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to derivedCredentials for deviceManagement
-func (m *DerivedCredentialsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to derivedCredentials for deviceManagement
+func (m *DerivedCredentialsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to derivedCredentials for deviceManagement
@@ -110,12 +110,12 @@ func (m *DerivedCredentialsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler collection of Derived credential settings associated with account.
-func (m *DerivedCredentialsRequestBuilder) GetWithResponseHandler(requestConfiguration *DerivedCredentialsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get collection of Derived credential settings associated with account.
+func (m *DerivedCredentialsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler collection of Derived credential settings associated with account.
-func (m *DerivedCredentialsRequestBuilder) GetWithResponseHandler(requestConfiguration *DerivedCredentialsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler collection of Derived credential settings associated with account.
+func (m *DerivedCredentialsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DerivedCredentialsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *DerivedCredentialsRequestBuilder) GetWithResponseHandler(requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to derivedCredentials for deviceManagement
-func (m *DerivedCredentialsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsable, requestConfiguration *DerivedCredentialsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to derivedCredentials for deviceManagement
+func (m *DerivedCredentialsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to derivedCredentials for deviceManagement
-func (m *DerivedCredentialsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsable, requestConfiguration *DerivedCredentialsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to derivedCredentials for deviceManagement
+func (m *DerivedCredentialsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsable, requestConfiguration *DerivedCredentialsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDerivedCredentialSettingsable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

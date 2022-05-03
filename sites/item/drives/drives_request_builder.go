@@ -67,8 +67,8 @@ func NewDrivesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *DrivesRequestBuilder) Count()(*ia3555cd2c4316f1d409c6352bdec2dded1f9be507828644a528f7b4f9d1c0c6a.CountRequestBuilder) {
     return ia3555cd2c4316f1d409c6352bdec2dded1f9be507828644a528f7b4f9d1c0c6a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of drives (document libraries) under this site.
-func (m *DrivesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of drives (document libraries) under this site.
+func (m *DrivesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of drives (document libraries) under this site.
@@ -86,12 +86,12 @@ func (m *DrivesRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the collection of drives (document libraries) under this site.
-func (m *DrivesRequestBuilder) GetWithResponseHandler(requestConfiguration *DrivesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of drives (document libraries) under this site.
+func (m *DrivesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of drives (document libraries) under this site.
-func (m *DrivesRequestBuilder) GetWithResponseHandler(requestConfiguration *DrivesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of drives (document libraries) under this site.
+func (m *DrivesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DrivesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

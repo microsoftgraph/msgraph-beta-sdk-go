@@ -64,8 +64,8 @@ func NewRemoteAssistanceSettingsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewRemoteAssistanceSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property remoteAssistanceSettings for deviceManagement
-func (m *RemoteAssistanceSettingsRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property remoteAssistanceSettings for deviceManagement
+func (m *RemoteAssistanceSettingsRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property remoteAssistanceSettings for deviceManagement
@@ -80,8 +80,8 @@ func (m *RemoteAssistanceSettingsRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the remote assistance settings singleton
-func (m *RemoteAssistanceSettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the remote assistance settings singleton
+func (m *RemoteAssistanceSettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the remote assistance settings singleton
@@ -99,8 +99,8 @@ func (m *RemoteAssistanceSettingsRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property remoteAssistanceSettings in deviceManagement
-func (m *RemoteAssistanceSettingsRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteAssistanceSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property remoteAssistanceSettings in deviceManagement
+func (m *RemoteAssistanceSettingsRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteAssistanceSettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property remoteAssistanceSettings in deviceManagement
@@ -116,12 +116,12 @@ func (m *RemoteAssistanceSettingsRequestBuilder) CreatePatchRequestInformationWi
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property remoteAssistanceSettings for deviceManagement
-func (m *RemoteAssistanceSettingsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *RemoteAssistanceSettingsRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property remoteAssistanceSettings for deviceManagement
+func (m *RemoteAssistanceSettingsRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property remoteAssistanceSettings for deviceManagement
-func (m *RemoteAssistanceSettingsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *RemoteAssistanceSettingsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property remoteAssistanceSettings for deviceManagement
+func (m *RemoteAssistanceSettingsRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *RemoteAssistanceSettingsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *RemoteAssistanceSettingsRequestBuilder) DeleteWithResponseHandler(reque
     }
     return nil
 }
-// GetWithResponseHandler the remote assistance settings singleton
-func (m *RemoteAssistanceSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *RemoteAssistanceSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteAssistanceSettingsable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the remote assistance settings singleton
+func (m *RemoteAssistanceSettingsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteAssistanceSettingsable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the remote assistance settings singleton
-func (m *RemoteAssistanceSettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *RemoteAssistanceSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteAssistanceSettingsable, error) {
+// GetWithRequestConfigurationAndResponseHandler the remote assistance settings singleton
+func (m *RemoteAssistanceSettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RemoteAssistanceSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteAssistanceSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *RemoteAssistanceSettingsRequestBuilder) GetWithResponseHandler(requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteAssistanceSettingsable), nil
 }
-// PatchWithResponseHandler update the navigation property remoteAssistanceSettings in deviceManagement
-func (m *RemoteAssistanceSettingsRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteAssistanceSettingsable, requestConfiguration *RemoteAssistanceSettingsRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property remoteAssistanceSettings in deviceManagement
+func (m *RemoteAssistanceSettingsRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteAssistanceSettingsable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property remoteAssistanceSettings in deviceManagement
-func (m *RemoteAssistanceSettingsRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteAssistanceSettingsable, requestConfiguration *RemoteAssistanceSettingsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property remoteAssistanceSettings in deviceManagement
+func (m *RemoteAssistanceSettingsRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteAssistanceSettingsable, requestConfiguration *RemoteAssistanceSettingsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

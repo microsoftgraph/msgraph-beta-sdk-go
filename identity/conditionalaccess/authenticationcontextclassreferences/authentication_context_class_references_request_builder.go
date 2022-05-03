@@ -74,8 +74,8 @@ func NewAuthenticationContextClassReferencesRequestBuilder(rawUrl string, reques
 func (m *AuthenticationContextClassReferencesRequestBuilder) Count()(*i5339488e82ea60759a866bc3a5fa53f685c409004db37e930e4c5ffc16e6cfbf.CountRequestBuilder) {
     return i5339488e82ea60759a866bc3a5fa53f685c409004db37e930e4c5ffc16e6cfbf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Returns a collection of the specified authentication context class references.
-func (m *AuthenticationContextClassReferencesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only. Nullable. Returns a collection of the specified authentication context class references.
+func (m *AuthenticationContextClassReferencesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Returns a collection of the specified authentication context class references.
@@ -93,8 +93,8 @@ func (m *AuthenticationContextClassReferencesRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to authenticationContextClassReferences for identity
-func (m *AuthenticationContextClassReferencesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to authenticationContextClassReferences for identity
+func (m *AuthenticationContextClassReferencesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to authenticationContextClassReferences for identity
@@ -110,12 +110,12 @@ func (m *AuthenticationContextClassReferencesRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler read-only. Nullable. Returns a collection of the specified authentication context class references.
-func (m *AuthenticationContextClassReferencesRequestBuilder) GetWithResponseHandler(requestConfiguration *AuthenticationContextClassReferencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only. Nullable. Returns a collection of the specified authentication context class references.
+func (m *AuthenticationContextClassReferencesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only. Nullable. Returns a collection of the specified authentication context class references.
-func (m *AuthenticationContextClassReferencesRequestBuilder) GetWithResponseHandler(requestConfiguration *AuthenticationContextClassReferencesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only. Nullable. Returns a collection of the specified authentication context class references.
+func (m *AuthenticationContextClassReferencesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AuthenticationContextClassReferencesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AuthenticationContextClassReferencesRequestBuilder) GetWithResponseHand
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to authenticationContextClassReferences for identity
-func (m *AuthenticationContextClassReferencesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable, requestConfiguration *AuthenticationContextClassReferencesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to authenticationContextClassReferences for identity
+func (m *AuthenticationContextClassReferencesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to authenticationContextClassReferences for identity
-func (m *AuthenticationContextClassReferencesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable, requestConfiguration *AuthenticationContextClassReferencesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to authenticationContextClassReferences for identity
+func (m *AuthenticationContextClassReferencesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable, requestConfiguration *AuthenticationContextClassReferencesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationContextClassReferenceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

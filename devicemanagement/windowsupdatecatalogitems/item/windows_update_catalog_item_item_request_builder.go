@@ -64,8 +64,8 @@ func NewWindowsUpdateCatalogItemItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdateCatalogItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsUpdateCatalogItems for deviceManagement
-func (m *WindowsUpdateCatalogItemItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property windowsUpdateCatalogItems for deviceManagement
+func (m *WindowsUpdateCatalogItemItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property windowsUpdateCatalogItems for deviceManagement
@@ -80,8 +80,8 @@ func (m *WindowsUpdateCatalogItemItemRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of windows update catalog items (fetaure updates item , quality updates item)
-func (m *WindowsUpdateCatalogItemItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a collection of windows update catalog items (fetaure updates item , quality updates item)
+func (m *WindowsUpdateCatalogItemItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a collection of windows update catalog items (fetaure updates item , quality updates item)
@@ -99,8 +99,8 @@ func (m *WindowsUpdateCatalogItemItemRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsUpdateCatalogItems in deviceManagement
-func (m *WindowsUpdateCatalogItemItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsUpdateCatalogItemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property windowsUpdateCatalogItems in deviceManagement
+func (m *WindowsUpdateCatalogItemItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsUpdateCatalogItemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property windowsUpdateCatalogItems in deviceManagement
@@ -116,12 +116,12 @@ func (m *WindowsUpdateCatalogItemItemRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property windowsUpdateCatalogItems for deviceManagement
-func (m *WindowsUpdateCatalogItemItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsUpdateCatalogItemItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property windowsUpdateCatalogItems for deviceManagement
+func (m *WindowsUpdateCatalogItemItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property windowsUpdateCatalogItems for deviceManagement
-func (m *WindowsUpdateCatalogItemItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsUpdateCatalogItemItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property windowsUpdateCatalogItems for deviceManagement
+func (m *WindowsUpdateCatalogItemItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsUpdateCatalogItemItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *WindowsUpdateCatalogItemItemRequestBuilder) DeleteWithResponseHandler(r
     }
     return nil
 }
-// GetWithResponseHandler a collection of windows update catalog items (fetaure updates item , quality updates item)
-func (m *WindowsUpdateCatalogItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsUpdateCatalogItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsUpdateCatalogItemable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a collection of windows update catalog items (fetaure updates item , quality updates item)
+func (m *WindowsUpdateCatalogItemItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsUpdateCatalogItemable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a collection of windows update catalog items (fetaure updates item , quality updates item)
-func (m *WindowsUpdateCatalogItemItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsUpdateCatalogItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsUpdateCatalogItemable, error) {
+// GetWithRequestConfigurationAndResponseHandler a collection of windows update catalog items (fetaure updates item , quality updates item)
+func (m *WindowsUpdateCatalogItemItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsUpdateCatalogItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsUpdateCatalogItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *WindowsUpdateCatalogItemItemRequestBuilder) GetWithResponseHandler(requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsUpdateCatalogItemable), nil
 }
-// PatchWithResponseHandler update the navigation property windowsUpdateCatalogItems in deviceManagement
-func (m *WindowsUpdateCatalogItemItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsUpdateCatalogItemable, requestConfiguration *WindowsUpdateCatalogItemItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property windowsUpdateCatalogItems in deviceManagement
+func (m *WindowsUpdateCatalogItemItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsUpdateCatalogItemable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property windowsUpdateCatalogItems in deviceManagement
-func (m *WindowsUpdateCatalogItemItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsUpdateCatalogItemable, requestConfiguration *WindowsUpdateCatalogItemItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property windowsUpdateCatalogItems in deviceManagement
+func (m *WindowsUpdateCatalogItemItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsUpdateCatalogItemable, requestConfiguration *WindowsUpdateCatalogItemItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -42,8 +42,8 @@ func NewGetAzureADFeatureUsageWithPeriodRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewGetAzureADFeatureUsageWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getAzureADFeatureUsage
-func (m *GetAzureADFeatureUsageWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getAzureADFeatureUsage
+func (m *GetAzureADFeatureUsageWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getAzureADFeatureUsage
@@ -58,12 +58,12 @@ func (m *GetAzureADFeatureUsageWithPeriodRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getAzureADFeatureUsage
-func (m *GetAzureADFeatureUsageWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAzureADFeatureUsageWithPeriodRequestBuilderGetRequestConfiguration)(GetAzureADFeatureUsageWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getAzureADFeatureUsage
+func (m *GetAzureADFeatureUsageWithPeriodRequestBuilder) Get()(GetAzureADFeatureUsageWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getAzureADFeatureUsage
-func (m *GetAzureADFeatureUsageWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAzureADFeatureUsageWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAzureADFeatureUsageWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getAzureADFeatureUsage
+func (m *GetAzureADFeatureUsageWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetAzureADFeatureUsageWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAzureADFeatureUsageWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

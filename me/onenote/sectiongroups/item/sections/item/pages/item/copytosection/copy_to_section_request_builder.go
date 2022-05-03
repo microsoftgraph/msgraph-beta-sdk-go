@@ -40,8 +40,8 @@ func NewCopyToSectionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewCopyToSectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action copyToSection
-func (m *CopyToSectionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CopyToSectionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action copyToSection
+func (m *CopyToSectionRequestBuilder) CreatePostRequestInformation(body CopyToSectionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action copyToSection
@@ -57,12 +57,12 @@ func (m *CopyToSectionRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action copyToSection
-func (m *CopyToSectionRequestBuilder) PostWithResponseHandler(body CopyToSectionRequestBodyable, requestConfiguration *CopyToSectionRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action copyToSection
+func (m *CopyToSectionRequestBuilder) Post(body CopyToSectionRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action copyToSection
-func (m *CopyToSectionRequestBuilder) PostWithResponseHandler(body CopyToSectionRequestBodyable, requestConfiguration *CopyToSectionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action copyToSection
+func (m *CopyToSectionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CopyToSectionRequestBodyable, requestConfiguration *CopyToSectionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

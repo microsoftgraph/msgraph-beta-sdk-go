@@ -77,8 +77,8 @@ func NewResourceSpecificPermissionGrantItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewResourceSpecificPermissionGrantItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from permissionGrants
-func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete entity from permissionGrants
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete entity from permissionGrants
@@ -93,8 +93,8 @@ func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CreateDeleteRequestI
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from permissionGrants by key
-func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entity from permissionGrants by key
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entity from permissionGrants by key
@@ -112,8 +112,8 @@ func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in permissionGrants
-func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update entity in permissionGrants
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update entity in permissionGrants
@@ -129,12 +129,12 @@ func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CreatePatchRequestIn
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete entity from permissionGrants
-func (m *ResourceSpecificPermissionGrantItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ResourceSpecificPermissionGrantItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete entity from permissionGrants
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete entity from permissionGrants
-func (m *ResourceSpecificPermissionGrantItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ResourceSpecificPermissionGrantItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete entity from permissionGrants
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ResourceSpecificPermissionGrantItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -149,6 +149,10 @@ func (m *ResourceSpecificPermissionGrantItemRequestBuilder) DeleteWithResponseHa
     }
     return nil
 }
+// Get get entity from permissionGrants by key
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetMemberGroups the getMemberGroups property
 func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetMemberGroups()(*i751dbbe15e72bbd1122914748b96ee1a20fca8119351121e2c491922693257d9.GetMemberGroupsRequestBuilder) {
     return i751dbbe15e72bbd1122914748b96ee1a20fca8119351121e2c491922693257d9.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -157,12 +161,8 @@ func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetMemberGroups()(*i
 func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetMemberObjects()(*ibf0a4d81ee4b8a7e4e3ed9c9fb6d0882fdbab481f7b848c7db240c388dfbec2f.GetMemberObjectsRequestBuilder) {
     return ibf0a4d81ee4b8a7e4e3ed9c9fb6d0882fdbab481f7b848c7db240c388dfbec2f.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get entity from permissionGrants by key
-func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler get entity from permissionGrants by key
-func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entity from permissionGrants by key
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -177,12 +177,12 @@ func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetWithResponseHandl
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable), nil
 }
-// PatchWithResponseHandler update entity in permissionGrants
-func (m *ResourceSpecificPermissionGrantItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, requestConfiguration *ResourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update entity in permissionGrants
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update entity in permissionGrants
-func (m *ResourceSpecificPermissionGrantItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, requestConfiguration *ResourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update entity in permissionGrants
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, requestConfiguration *ResourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

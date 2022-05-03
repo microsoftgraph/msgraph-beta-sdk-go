@@ -64,8 +64,8 @@ func NewCloudPcSnapshotItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcSnapshotItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property snapshots for deviceManagement
-func (m *CloudPcSnapshotItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property snapshots for deviceManagement
+func (m *CloudPcSnapshotItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property snapshots for deviceManagement
@@ -80,8 +80,8 @@ func (m *CloudPcSnapshotItemRequestBuilder) CreateDeleteRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration cloud PC snapshots.
-func (m *CloudPcSnapshotItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation cloud PC snapshots.
+func (m *CloudPcSnapshotItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration cloud PC snapshots.
@@ -99,8 +99,8 @@ func (m *CloudPcSnapshotItemRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property snapshots in deviceManagement
-func (m *CloudPcSnapshotItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property snapshots in deviceManagement
+func (m *CloudPcSnapshotItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property snapshots in deviceManagement
@@ -116,12 +116,12 @@ func (m *CloudPcSnapshotItemRequestBuilder) CreatePatchRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property snapshots for deviceManagement
-func (m *CloudPcSnapshotItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CloudPcSnapshotItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property snapshots for deviceManagement
+func (m *CloudPcSnapshotItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property snapshots for deviceManagement
-func (m *CloudPcSnapshotItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CloudPcSnapshotItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property snapshots for deviceManagement
+func (m *CloudPcSnapshotItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *CloudPcSnapshotItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *CloudPcSnapshotItemRequestBuilder) DeleteWithResponseHandler(requestCon
     }
     return nil
 }
-// GetWithResponseHandler cloud PC snapshots.
-func (m *CloudPcSnapshotItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CloudPcSnapshotItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get cloud PC snapshots.
+func (m *CloudPcSnapshotItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler cloud PC snapshots.
-func (m *CloudPcSnapshotItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CloudPcSnapshotItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable, error) {
+// GetWithRequestConfigurationAndResponseHandler cloud PC snapshots.
+func (m *CloudPcSnapshotItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CloudPcSnapshotItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *CloudPcSnapshotItemRequestBuilder) GetWithResponseHandler(requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable), nil
 }
-// PatchWithResponseHandler update the navigation property snapshots in deviceManagement
-func (m *CloudPcSnapshotItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable, requestConfiguration *CloudPcSnapshotItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property snapshots in deviceManagement
+func (m *CloudPcSnapshotItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property snapshots in deviceManagement
-func (m *CloudPcSnapshotItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable, requestConfiguration *CloudPcSnapshotItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property snapshots in deviceManagement
+func (m *CloudPcSnapshotItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable, requestConfiguration *CloudPcSnapshotItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

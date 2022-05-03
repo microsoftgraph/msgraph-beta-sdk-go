@@ -39,8 +39,8 @@ func NewCreateDownloadUrlRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewCreateDownloadUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action createDownloadUrl
-func (m *CreateDownloadUrlRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action createDownloadUrl
+func (m *CreateDownloadUrlRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action createDownloadUrl
@@ -55,12 +55,12 @@ func (m *CreateDownloadUrlRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action createDownloadUrl
-func (m *CreateDownloadUrlRequestBuilder) PostWithResponseHandler(requestConfiguration *CreateDownloadUrlRequestBuilderPostRequestConfiguration)(CreateDownloadUrlResponseable, error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action createDownloadUrl
+func (m *CreateDownloadUrlRequestBuilder) Post()(CreateDownloadUrlResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action createDownloadUrl
-func (m *CreateDownloadUrlRequestBuilder) PostWithResponseHandler(requestConfiguration *CreateDownloadUrlRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CreateDownloadUrlResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action createDownloadUrl
+func (m *CreateDownloadUrlRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *CreateDownloadUrlRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CreateDownloadUrlResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

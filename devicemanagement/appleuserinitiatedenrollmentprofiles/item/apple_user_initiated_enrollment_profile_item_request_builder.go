@@ -82,8 +82,8 @@ func NewAppleUserInitiatedEnrollmentProfileItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewAppleUserInitiatedEnrollmentProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property appleUserInitiatedEnrollmentProfiles for deviceManagement
-func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property appleUserInitiatedEnrollmentProfiles for deviceManagement
+func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property appleUserInitiatedEnrollmentProfiles for deviceManagement
@@ -98,8 +98,8 @@ func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) CreateDeleteRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration apple user initiated enrollment profiles
-func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation apple user initiated enrollment profiles
+func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration apple user initiated enrollment profiles
@@ -117,8 +117,8 @@ func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property appleUserInitiatedEnrollmentProfiles in deviceManagement
-func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppleUserInitiatedEnrollmentProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property appleUserInitiatedEnrollmentProfiles in deviceManagement
+func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppleUserInitiatedEnrollmentProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property appleUserInitiatedEnrollmentProfiles in deviceManagement
@@ -134,12 +134,12 @@ func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) CreatePatchReque
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property appleUserInitiatedEnrollmentProfiles for deviceManagement
-func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AppleUserInitiatedEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property appleUserInitiatedEnrollmentProfiles for deviceManagement
+func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property appleUserInitiatedEnrollmentProfiles for deviceManagement
-func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AppleUserInitiatedEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property appleUserInitiatedEnrollmentProfiles for deviceManagement
+func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AppleUserInitiatedEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -154,12 +154,12 @@ func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) DeleteWithRespon
     }
     return nil
 }
-// GetWithResponseHandler apple user initiated enrollment profiles
-func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AppleUserInitiatedEnrollmentProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppleUserInitiatedEnrollmentProfileable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get apple user initiated enrollment profiles
+func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppleUserInitiatedEnrollmentProfileable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler apple user initiated enrollment profiles
-func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AppleUserInitiatedEnrollmentProfileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppleUserInitiatedEnrollmentProfileable, error) {
+// GetWithRequestConfigurationAndResponseHandler apple user initiated enrollment profiles
+func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AppleUserInitiatedEnrollmentProfileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppleUserInitiatedEnrollmentProfileable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -174,12 +174,12 @@ func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) GetWithResponseH
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppleUserInitiatedEnrollmentProfileable), nil
 }
-// PatchWithResponseHandler update the navigation property appleUserInitiatedEnrollmentProfiles in deviceManagement
-func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppleUserInitiatedEnrollmentProfileable, requestConfiguration *AppleUserInitiatedEnrollmentProfileItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property appleUserInitiatedEnrollmentProfiles in deviceManagement
+func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppleUserInitiatedEnrollmentProfileable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property appleUserInitiatedEnrollmentProfiles in deviceManagement
-func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppleUserInitiatedEnrollmentProfileable, requestConfiguration *AppleUserInitiatedEnrollmentProfileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property appleUserInitiatedEnrollmentProfiles in deviceManagement
+func (m *AppleUserInitiatedEnrollmentProfileItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppleUserInitiatedEnrollmentProfileable, requestConfiguration *AppleUserInitiatedEnrollmentProfileItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

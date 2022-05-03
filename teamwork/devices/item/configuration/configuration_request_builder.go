@@ -64,8 +64,8 @@ func NewConfigurationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property configuration for teamwork
-func (m *ConfigurationRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property configuration for teamwork
+func (m *ConfigurationRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property configuration for teamwork
@@ -80,8 +80,8 @@ func (m *ConfigurationRequestBuilder) CreateDeleteRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the configuration properties of the device.
-func (m *ConfigurationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the configuration properties of the device.
+func (m *ConfigurationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the configuration properties of the device.
@@ -99,8 +99,8 @@ func (m *ConfigurationRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property configuration in teamwork
-func (m *ConfigurationRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property configuration in teamwork
+func (m *ConfigurationRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property configuration in teamwork
@@ -116,12 +116,12 @@ func (m *ConfigurationRequestBuilder) CreatePatchRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property configuration for teamwork
-func (m *ConfigurationRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ConfigurationRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property configuration for teamwork
+func (m *ConfigurationRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property configuration for teamwork
-func (m *ConfigurationRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ConfigurationRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property configuration for teamwork
+func (m *ConfigurationRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ConfigurationRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *ConfigurationRequestBuilder) DeleteWithResponseHandler(requestConfigura
     }
     return nil
 }
-// GetWithResponseHandler the configuration properties of the device.
-func (m *ConfigurationRequestBuilder) GetWithResponseHandler(requestConfiguration *ConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceConfigurationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the configuration properties of the device.
+func (m *ConfigurationRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceConfigurationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the configuration properties of the device.
-func (m *ConfigurationRequestBuilder) GetWithResponseHandler(requestConfiguration *ConfigurationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceConfigurationable, error) {
+// GetWithRequestConfigurationAndResponseHandler the configuration properties of the device.
+func (m *ConfigurationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ConfigurationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceConfigurationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *ConfigurationRequestBuilder) GetWithResponseHandler(requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceConfigurationable), nil
 }
-// PatchWithResponseHandler update the navigation property configuration in teamwork
-func (m *ConfigurationRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceConfigurationable, requestConfiguration *ConfigurationRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property configuration in teamwork
+func (m *ConfigurationRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceConfigurationable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property configuration in teamwork
-func (m *ConfigurationRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceConfigurationable, requestConfiguration *ConfigurationRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property configuration in teamwork
+func (m *ConfigurationRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkDeviceConfigurationable, requestConfiguration *ConfigurationRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

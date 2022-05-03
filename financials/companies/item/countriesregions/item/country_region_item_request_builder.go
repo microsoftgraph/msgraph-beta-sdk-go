@@ -64,8 +64,8 @@ func NewCountryRegionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewCountryRegionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property countriesRegions for financials
-func (m *CountryRegionItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property countriesRegions for financials
+func (m *CountryRegionItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property countriesRegions for financials
@@ -80,8 +80,8 @@ func (m *CountryRegionItemRequestBuilder) CreateDeleteRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get countriesRegions from financials
-func (m *CountryRegionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get countriesRegions from financials
+func (m *CountryRegionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get countriesRegions from financials
@@ -99,8 +99,8 @@ func (m *CountryRegionItemRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property countriesRegions in financials
-func (m *CountryRegionItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CountryRegionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property countriesRegions in financials
+func (m *CountryRegionItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CountryRegionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property countriesRegions in financials
@@ -116,12 +116,12 @@ func (m *CountryRegionItemRequestBuilder) CreatePatchRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property countriesRegions for financials
-func (m *CountryRegionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CountryRegionItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property countriesRegions for financials
+func (m *CountryRegionItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property countriesRegions for financials
-func (m *CountryRegionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CountryRegionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property countriesRegions for financials
+func (m *CountryRegionItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *CountryRegionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *CountryRegionItemRequestBuilder) DeleteWithResponseHandler(requestConfi
     }
     return nil
 }
-// GetWithResponseHandler get countriesRegions from financials
-func (m *CountryRegionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CountryRegionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CountryRegionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get countriesRegions from financials
+func (m *CountryRegionItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CountryRegionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get countriesRegions from financials
-func (m *CountryRegionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CountryRegionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CountryRegionable, error) {
+// GetWithRequestConfigurationAndResponseHandler get countriesRegions from financials
+func (m *CountryRegionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CountryRegionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CountryRegionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *CountryRegionItemRequestBuilder) GetWithResponseHandler(requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CountryRegionable), nil
 }
-// PatchWithResponseHandler update the navigation property countriesRegions in financials
-func (m *CountryRegionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CountryRegionable, requestConfiguration *CountryRegionItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property countriesRegions in financials
+func (m *CountryRegionItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CountryRegionable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property countriesRegions in financials
-func (m *CountryRegionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CountryRegionable, requestConfiguration *CountryRegionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property countriesRegions in financials
+func (m *CountryRegionItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CountryRegionable, requestConfiguration *CountryRegionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

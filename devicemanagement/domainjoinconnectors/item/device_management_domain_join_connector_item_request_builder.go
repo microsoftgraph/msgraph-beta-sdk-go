@@ -64,8 +64,8 @@ func NewDeviceManagementDomainJoinConnectorItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementDomainJoinConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property domainJoinConnectors for deviceManagement
-func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property domainJoinConnectors for deviceManagement
+func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property domainJoinConnectors for deviceManagement
@@ -80,8 +80,8 @@ func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) CreateDeleteRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration a list of connector objects.
-func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a list of connector objects.
+func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a list of connector objects.
@@ -99,8 +99,8 @@ func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property domainJoinConnectors in deviceManagement
-func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDomainJoinConnectorable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property domainJoinConnectors in deviceManagement
+func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDomainJoinConnectorable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property domainJoinConnectors in deviceManagement
@@ -116,12 +116,12 @@ func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) CreatePatchReque
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property domainJoinConnectors for deviceManagement
-func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementDomainJoinConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property domainJoinConnectors for deviceManagement
+func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property domainJoinConnectors for deviceManagement
-func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementDomainJoinConnectorItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property domainJoinConnectors for deviceManagement
+func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementDomainJoinConnectorItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) DeleteWithRespon
     }
     return nil
 }
-// GetWithResponseHandler a list of connector objects.
-func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementDomainJoinConnectorItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDomainJoinConnectorable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a list of connector objects.
+func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDomainJoinConnectorable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a list of connector objects.
-func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementDomainJoinConnectorItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDomainJoinConnectorable, error) {
+// GetWithRequestConfigurationAndResponseHandler a list of connector objects.
+func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementDomainJoinConnectorItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDomainJoinConnectorable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) GetWithResponseH
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDomainJoinConnectorable), nil
 }
-// PatchWithResponseHandler update the navigation property domainJoinConnectors in deviceManagement
-func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDomainJoinConnectorable, requestConfiguration *DeviceManagementDomainJoinConnectorItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property domainJoinConnectors in deviceManagement
+func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDomainJoinConnectorable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property domainJoinConnectors in deviceManagement
-func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDomainJoinConnectorable, requestConfiguration *DeviceManagementDomainJoinConnectorItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property domainJoinConnectors in deviceManagement
+func (m *DeviceManagementDomainJoinConnectorItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementDomainJoinConnectorable, requestConfiguration *DeviceManagementDomainJoinConnectorItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -74,8 +74,8 @@ func NewRemoteActionAuditsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *RemoteActionAuditsRequestBuilder) Count()(*ie2d0f1ad3cfb84742dded290d132866aa9474f6a4361d871022e6fdc8b616c64.CountRequestBuilder) {
     return ie2d0f1ad3cfb84742dded290d132866aa9474f6a4361d871022e6fdc8b616c64.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of device remote action audits with the tenant.
-func (m *RemoteActionAuditsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of device remote action audits with the tenant.
+func (m *RemoteActionAuditsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of device remote action audits with the tenant.
@@ -93,8 +93,8 @@ func (m *RemoteActionAuditsRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to remoteActionAudits for deviceManagement
-func (m *RemoteActionAuditsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to remoteActionAudits for deviceManagement
+func (m *RemoteActionAuditsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to remoteActionAudits for deviceManagement
@@ -110,12 +110,12 @@ func (m *RemoteActionAuditsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the list of device remote action audits with the tenant.
-func (m *RemoteActionAuditsRequestBuilder) GetWithResponseHandler(requestConfiguration *RemoteActionAuditsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of device remote action audits with the tenant.
+func (m *RemoteActionAuditsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of device remote action audits with the tenant.
-func (m *RemoteActionAuditsRequestBuilder) GetWithResponseHandler(requestConfiguration *RemoteActionAuditsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of device remote action audits with the tenant.
+func (m *RemoteActionAuditsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RemoteActionAuditsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *RemoteActionAuditsRequestBuilder) GetWithResponseHandler(requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to remoteActionAudits for deviceManagement
-func (m *RemoteActionAuditsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditable, requestConfiguration *RemoteActionAuditsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to remoteActionAudits for deviceManagement
+func (m *RemoteActionAuditsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to remoteActionAudits for deviceManagement
-func (m *RemoteActionAuditsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditable, requestConfiguration *RemoteActionAuditsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to remoteActionAudits for deviceManagement
+func (m *RemoteActionAuditsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditable, requestConfiguration *RemoteActionAuditsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RemoteActionAuditable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -91,8 +91,8 @@ func NewManagedDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *ManagedDevicesRequestBuilder) Count()(*iaf61f975bbfeb9c90d8d01c8ad1c458f6730caee7a72f9bb3801c4a97ad62d62.CountRequestBuilder) {
     return iaf61f975bbfeb9c90d8d01c8ad1c458f6730caee7a72f9bb3801c4a97ad62d62.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of managed devices.
-func (m *ManagedDevicesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of managed devices.
+func (m *ManagedDevicesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of managed devices.
@@ -110,8 +110,8 @@ func (m *ManagedDevicesRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to managedDevices for deviceManagement
-func (m *ManagedDevicesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to managedDevices for deviceManagement
+func (m *ManagedDevicesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to managedDevices for deviceManagement
@@ -131,12 +131,12 @@ func (m *ManagedDevicesRequestBuilder) CreatePostRequestInformationWithRequestCo
 func (m *ManagedDevicesRequestBuilder) ExecuteAction()(*ib1edad87ec29538295d4b5f56002379bc4d111c6ca85e79b9e3b58f1a12313aa.ExecuteActionRequestBuilder) {
     return ib1edad87ec29538295d4b5f56002379bc4d111c6ca85e79b9e3b58f1a12313aa.NewExecuteActionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the list of managed devices.
-func (m *ManagedDevicesRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedDevicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of managed devices.
+func (m *ManagedDevicesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of managed devices.
-func (m *ManagedDevicesRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedDevicesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of managed devices.
+func (m *ManagedDevicesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedDevicesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -155,12 +155,12 @@ func (m *ManagedDevicesRequestBuilder) GetWithResponseHandler(requestConfigurati
 func (m *ManagedDevicesRequestBuilder) MoveDevicesToOU()(*i06835d5500346b7bc8d008091fe2b42358e5cd0e649c006b5492948c0d336599.MoveDevicesToOURequestBuilder) {
     return i06835d5500346b7bc8d008091fe2b42358e5cd0e649c006b5492948c0d336599.NewMoveDevicesToOURequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PostWithResponseHandler create new navigation property to managedDevices for deviceManagement
-func (m *ManagedDevicesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ManagedDevicesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to managedDevices for deviceManagement
+func (m *ManagedDevicesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to managedDevices for deviceManagement
-func (m *ManagedDevicesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ManagedDevicesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to managedDevices for deviceManagement
+func (m *ManagedDevicesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ManagedDevicesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

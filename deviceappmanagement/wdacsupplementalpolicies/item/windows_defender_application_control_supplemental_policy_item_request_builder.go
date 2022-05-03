@@ -89,8 +89,8 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property wdacSupplementalPolicies for deviceAppManagement
-func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property wdacSupplementalPolicies for deviceAppManagement
+func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property wdacSupplementalPolicies for deviceAppManagement
@@ -105,8 +105,8 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of Windows Defender Application Control Supplemental Policies.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of Windows Defender Application Control Supplemental Policies.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of Windows Defender Application Control Supplemental Policies.
@@ -124,8 +124,8 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property wdacSupplementalPolicies in deviceAppManagement
-func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property wdacSupplementalPolicies in deviceAppManagement
+func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property wdacSupplementalPolicies in deviceAppManagement
@@ -141,12 +141,12 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) 
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property wdacSupplementalPolicies for deviceAppManagement
-func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property wdacSupplementalPolicies for deviceAppManagement
+func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property wdacSupplementalPolicies for deviceAppManagement
-func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property wdacSupplementalPolicies for deviceAppManagement
+func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -180,12 +180,12 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) 
     }
     return if7f30d88a5e2c08a355aab945ead20a738d45d9716825973a8471d163909ac9b.NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GetWithResponseHandler the collection of Windows Defender Application Control Supplemental Policies.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of Windows Defender Application Control Supplemental Policies.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of Windows Defender Application Control Supplemental Policies.
-func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of Windows Defender Application Control Supplemental Policies.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -200,12 +200,12 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyable), nil
 }
-// PatchWithResponseHandler update the navigation property wdacSupplementalPolicies in deviceAppManagement
-func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyable, requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property wdacSupplementalPolicies in deviceAppManagement
+func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property wdacSupplementalPolicies in deviceAppManagement
-func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyable, requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property wdacSupplementalPolicies in deviceAppManagement
+func (m *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDefenderApplicationControlSupplementalPolicyable, requestConfiguration *WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

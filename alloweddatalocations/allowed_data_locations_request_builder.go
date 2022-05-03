@@ -74,8 +74,8 @@ func NewAllowedDataLocationsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *AllowedDataLocationsRequestBuilder) Count()(*i73991b2ef22211d884811241bcf1450635b1dbe828f54c6b7e8614664225dada.CountRequestBuilder) {
     return i73991b2ef22211d884811241bcf1450635b1dbe828f54c6b7e8614664225dada.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from allowedDataLocations
-func (m *AllowedDataLocationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from allowedDataLocations
+func (m *AllowedDataLocationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from allowedDataLocations
@@ -93,8 +93,8 @@ func (m *AllowedDataLocationsRequestBuilder) CreateGetRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to allowedDataLocations
-func (m *AllowedDataLocationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to allowedDataLocations
+func (m *AllowedDataLocationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to allowedDataLocations
@@ -110,12 +110,12 @@ func (m *AllowedDataLocationsRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get entities from allowedDataLocations
-func (m *AllowedDataLocationsRequestBuilder) GetWithResponseHandler(requestConfiguration *AllowedDataLocationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entities from allowedDataLocations
+func (m *AllowedDataLocationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entities from allowedDataLocations
-func (m *AllowedDataLocationsRequestBuilder) GetWithResponseHandler(requestConfiguration *AllowedDataLocationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from allowedDataLocations
+func (m *AllowedDataLocationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AllowedDataLocationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AllowedDataLocationsRequestBuilder) GetWithResponseHandler(requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationCollectionResponseable), nil
 }
-// PostWithResponseHandler add new entity to allowedDataLocations
-func (m *AllowedDataLocationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable, requestConfiguration *AllowedDataLocationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to allowedDataLocations
+func (m *AllowedDataLocationsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to allowedDataLocations
-func (m *AllowedDataLocationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable, requestConfiguration *AllowedDataLocationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to allowedDataLocations
+func (m *AllowedDataLocationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable, requestConfiguration *AllowedDataLocationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AllowedDataLocationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

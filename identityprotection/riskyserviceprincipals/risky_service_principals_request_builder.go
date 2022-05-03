@@ -80,8 +80,8 @@ func NewRiskyServicePrincipalsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *RiskyServicePrincipalsRequestBuilder) Count()(*ib48ad338b29836e614d9379952d94ca511eae67832181629704a82189ddf853c.CountRequestBuilder) {
     return ib48ad338b29836e614d9379952d94ca511eae67832181629704a82189ddf853c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration azure AD service principals that are at risk.
-func (m *RiskyServicePrincipalsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation azure AD service principals that are at risk.
+func (m *RiskyServicePrincipalsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration azure AD service principals that are at risk.
@@ -99,8 +99,8 @@ func (m *RiskyServicePrincipalsRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to riskyServicePrincipals for identityProtection
-func (m *RiskyServicePrincipalsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to riskyServicePrincipals for identityProtection
+func (m *RiskyServicePrincipalsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to riskyServicePrincipals for identityProtection
@@ -120,12 +120,12 @@ func (m *RiskyServicePrincipalsRequestBuilder) CreatePostRequestInformationWithR
 func (m *RiskyServicePrincipalsRequestBuilder) Dismiss()(*i418a1a5558948b4662e488386dc90986e3fc661f4e22322afbb353d02d78d298.DismissRequestBuilder) {
     return i418a1a5558948b4662e488386dc90986e3fc661f4e22322afbb353d02d78d298.NewDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler azure AD service principals that are at risk.
-func (m *RiskyServicePrincipalsRequestBuilder) GetWithResponseHandler(requestConfiguration *RiskyServicePrincipalsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get azure AD service principals that are at risk.
+func (m *RiskyServicePrincipalsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler azure AD service principals that are at risk.
-func (m *RiskyServicePrincipalsRequestBuilder) GetWithResponseHandler(requestConfiguration *RiskyServicePrincipalsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler azure AD service principals that are at risk.
+func (m *RiskyServicePrincipalsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RiskyServicePrincipalsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -140,12 +140,12 @@ func (m *RiskyServicePrincipalsRequestBuilder) GetWithResponseHandler(requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to riskyServicePrincipals for identityProtection
-func (m *RiskyServicePrincipalsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable, requestConfiguration *RiskyServicePrincipalsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to riskyServicePrincipals for identityProtection
+func (m *RiskyServicePrincipalsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to riskyServicePrincipals for identityProtection
-func (m *RiskyServicePrincipalsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable, requestConfiguration *RiskyServicePrincipalsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to riskyServicePrincipals for identityProtection
+func (m *RiskyServicePrincipalsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable, requestConfiguration *RiskyServicePrincipalsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

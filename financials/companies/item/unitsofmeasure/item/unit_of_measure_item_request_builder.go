@@ -64,8 +64,8 @@ func NewUnitOfMeasureItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewUnitOfMeasureItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property unitsOfMeasure for financials
-func (m *UnitOfMeasureItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property unitsOfMeasure for financials
+func (m *UnitOfMeasureItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property unitsOfMeasure for financials
@@ -80,8 +80,8 @@ func (m *UnitOfMeasureItemRequestBuilder) CreateDeleteRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get unitsOfMeasure from financials
-func (m *UnitOfMeasureItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get unitsOfMeasure from financials
+func (m *UnitOfMeasureItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get unitsOfMeasure from financials
@@ -99,8 +99,8 @@ func (m *UnitOfMeasureItemRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property unitsOfMeasure in financials
-func (m *UnitOfMeasureItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property unitsOfMeasure in financials
+func (m *UnitOfMeasureItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property unitsOfMeasure in financials
@@ -116,12 +116,12 @@ func (m *UnitOfMeasureItemRequestBuilder) CreatePatchRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property unitsOfMeasure for financials
-func (m *UnitOfMeasureItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UnitOfMeasureItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property unitsOfMeasure for financials
+func (m *UnitOfMeasureItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property unitsOfMeasure for financials
-func (m *UnitOfMeasureItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UnitOfMeasureItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property unitsOfMeasure for financials
+func (m *UnitOfMeasureItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UnitOfMeasureItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *UnitOfMeasureItemRequestBuilder) DeleteWithResponseHandler(requestConfi
     }
     return nil
 }
-// GetWithResponseHandler get unitsOfMeasure from financials
-func (m *UnitOfMeasureItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UnitOfMeasureItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get unitsOfMeasure from financials
+func (m *UnitOfMeasureItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get unitsOfMeasure from financials
-func (m *UnitOfMeasureItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UnitOfMeasureItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, error) {
+// GetWithRequestConfigurationAndResponseHandler get unitsOfMeasure from financials
+func (m *UnitOfMeasureItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnitOfMeasureItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *UnitOfMeasureItemRequestBuilder) GetWithResponseHandler(requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable), nil
 }
-// PatchWithResponseHandler update the navigation property unitsOfMeasure in financials
-func (m *UnitOfMeasureItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, requestConfiguration *UnitOfMeasureItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property unitsOfMeasure in financials
+func (m *UnitOfMeasureItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property unitsOfMeasure in financials
-func (m *UnitOfMeasureItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, requestConfiguration *UnitOfMeasureItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property unitsOfMeasure in financials
+func (m *UnitOfMeasureItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnitOfMeasureable, requestConfiguration *UnitOfMeasureItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

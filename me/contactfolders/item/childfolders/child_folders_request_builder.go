@@ -73,8 +73,8 @@ func NewChildFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ChildFoldersRequestBuilder) Count()(*ic58126a08dd5979a24fad55f5cd9767d15eca364b4fe57612d31902dd32ccfeb.CountRequestBuilder) {
     return ic58126a08dd5979a24fad55f5cd9767d15eca364b4fe57612d31902dd32ccfeb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of child folders in the folder. Navigation property. Read-only. Nullable.
-func (m *ChildFoldersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of child folders in the folder. Navigation property. Read-only. Nullable.
+func (m *ChildFoldersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of child folders in the folder. Navigation property. Read-only. Nullable.
@@ -92,8 +92,8 @@ func (m *ChildFoldersRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to childFolders for me
-func (m *ChildFoldersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to childFolders for me
+func (m *ChildFoldersRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to childFolders for me
@@ -113,12 +113,12 @@ func (m *ChildFoldersRequestBuilder) CreatePostRequestInformationWithRequestConf
 func (m *ChildFoldersRequestBuilder) Delta()(*ieaf2202c22c93189365d26c49ee120c2ea910cfbac7ffbf3d9444fbcce43cd5a.DeltaRequestBuilder) {
     return ieaf2202c22c93189365d26c49ee120c2ea910cfbac7ffbf3d9444fbcce43cd5a.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler the collection of child folders in the folder. Navigation property. Read-only. Nullable.
-func (m *ChildFoldersRequestBuilder) GetWithResponseHandler(requestConfiguration *ChildFoldersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of child folders in the folder. Navigation property. Read-only. Nullable.
+func (m *ChildFoldersRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of child folders in the folder. Navigation property. Read-only. Nullable.
-func (m *ChildFoldersRequestBuilder) GetWithResponseHandler(requestConfiguration *ChildFoldersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of child folders in the folder. Navigation property. Read-only. Nullable.
+func (m *ChildFoldersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChildFoldersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -133,12 +133,12 @@ func (m *ChildFoldersRequestBuilder) GetWithResponseHandler(requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to childFolders for me
-func (m *ChildFoldersRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, requestConfiguration *ChildFoldersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to childFolders for me
+func (m *ChildFoldersRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to childFolders for me
-func (m *ChildFoldersRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, requestConfiguration *ChildFoldersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to childFolders for me
+func (m *ChildFoldersRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, requestConfiguration *ChildFoldersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactFolderable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

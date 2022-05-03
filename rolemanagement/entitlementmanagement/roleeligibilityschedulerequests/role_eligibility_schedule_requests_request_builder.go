@@ -75,8 +75,8 @@ func NewRoleEligibilityScheduleRequestsRequestBuilder(rawUrl string, requestAdap
 func (m *RoleEligibilityScheduleRequestsRequestBuilder) Count()(*i3af7aad4fd10cebaa65286d7ca739f079b7d2f537ca96c5801a1f5f7ae420c58.CountRequestBuilder) {
     return i3af7aad4fd10cebaa65286d7ca739f079b7d2f537ca96c5801a1f5f7ae420c58.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration requests for role eligibilities for principals through PIM.
-func (m *RoleEligibilityScheduleRequestsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation requests for role eligibilities for principals through PIM.
+func (m *RoleEligibilityScheduleRequestsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration requests for role eligibilities for principals through PIM.
@@ -94,8 +94,8 @@ func (m *RoleEligibilityScheduleRequestsRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to roleEligibilityScheduleRequests for roleManagement
-func (m *RoleEligibilityScheduleRequestsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to roleEligibilityScheduleRequests for roleManagement
+func (m *RoleEligibilityScheduleRequestsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to roleEligibilityScheduleRequests for roleManagement
@@ -115,12 +115,12 @@ func (m *RoleEligibilityScheduleRequestsRequestBuilder) CreatePostRequestInforma
 func (m *RoleEligibilityScheduleRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i2df1f2ec6bcaebd8a160ad4ee70f5f93b4e72d59bdb438558429949401790abc.FilterByCurrentUserWithOnRequestBuilder) {
     return i2df1f2ec6bcaebd8a160ad4ee70f5f93b4e72d59bdb438558429949401790abc.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// GetWithResponseHandler requests for role eligibilities for principals through PIM.
-func (m *RoleEligibilityScheduleRequestsRequestBuilder) GetWithResponseHandler(requestConfiguration *RoleEligibilityScheduleRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get requests for role eligibilities for principals through PIM.
+func (m *RoleEligibilityScheduleRequestsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler requests for role eligibilities for principals through PIM.
-func (m *RoleEligibilityScheduleRequestsRequestBuilder) GetWithResponseHandler(requestConfiguration *RoleEligibilityScheduleRequestsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler requests for role eligibilities for principals through PIM.
+func (m *RoleEligibilityScheduleRequestsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RoleEligibilityScheduleRequestsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *RoleEligibilityScheduleRequestsRequestBuilder) GetWithResponseHandler(r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to roleEligibilityScheduleRequests for roleManagement
-func (m *RoleEligibilityScheduleRequestsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestable, requestConfiguration *RoleEligibilityScheduleRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to roleEligibilityScheduleRequests for roleManagement
+func (m *RoleEligibilityScheduleRequestsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to roleEligibilityScheduleRequests for roleManagement
-func (m *RoleEligibilityScheduleRequestsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestable, requestConfiguration *RoleEligibilityScheduleRequestsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to roleEligibilityScheduleRequests for roleManagement
+func (m *RoleEligibilityScheduleRequestsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestable, requestConfiguration *RoleEligibilityScheduleRequestsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleRequestable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

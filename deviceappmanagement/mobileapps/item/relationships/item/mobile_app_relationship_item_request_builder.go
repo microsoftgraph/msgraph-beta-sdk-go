@@ -64,8 +64,8 @@ func NewMobileAppRelationshipItemRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppRelationshipItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property relationships for deviceAppManagement
-func (m *MobileAppRelationshipItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property relationships for deviceAppManagement
+func (m *MobileAppRelationshipItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property relationships for deviceAppManagement
@@ -80,8 +80,8 @@ func (m *MobileAppRelationshipItemRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration list of relationships for this mobile app.
-func (m *MobileAppRelationshipItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation list of relationships for this mobile app.
+func (m *MobileAppRelationshipItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration list of relationships for this mobile app.
@@ -99,8 +99,8 @@ func (m *MobileAppRelationshipItemRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property relationships in deviceAppManagement
-func (m *MobileAppRelationshipItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property relationships in deviceAppManagement
+func (m *MobileAppRelationshipItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property relationships in deviceAppManagement
@@ -116,12 +116,12 @@ func (m *MobileAppRelationshipItemRequestBuilder) CreatePatchRequestInformationW
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property relationships for deviceAppManagement
-func (m *MobileAppRelationshipItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MobileAppRelationshipItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property relationships for deviceAppManagement
+func (m *MobileAppRelationshipItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property relationships for deviceAppManagement
-func (m *MobileAppRelationshipItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MobileAppRelationshipItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property relationships for deviceAppManagement
+func (m *MobileAppRelationshipItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *MobileAppRelationshipItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *MobileAppRelationshipItemRequestBuilder) DeleteWithResponseHandler(requ
     }
     return nil
 }
-// GetWithResponseHandler list of relationships for this mobile app.
-func (m *MobileAppRelationshipItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MobileAppRelationshipItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get list of relationships for this mobile app.
+func (m *MobileAppRelationshipItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler list of relationships for this mobile app.
-func (m *MobileAppRelationshipItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MobileAppRelationshipItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable, error) {
+// GetWithRequestConfigurationAndResponseHandler list of relationships for this mobile app.
+func (m *MobileAppRelationshipItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MobileAppRelationshipItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *MobileAppRelationshipItemRequestBuilder) GetWithResponseHandler(request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable), nil
 }
-// PatchWithResponseHandler update the navigation property relationships in deviceAppManagement
-func (m *MobileAppRelationshipItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable, requestConfiguration *MobileAppRelationshipItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property relationships in deviceAppManagement
+func (m *MobileAppRelationshipItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property relationships in deviceAppManagement
-func (m *MobileAppRelationshipItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable, requestConfiguration *MobileAppRelationshipItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property relationships in deviceAppManagement
+func (m *MobileAppRelationshipItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable, requestConfiguration *MobileAppRelationshipItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

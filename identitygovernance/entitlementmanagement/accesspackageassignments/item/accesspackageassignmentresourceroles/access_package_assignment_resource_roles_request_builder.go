@@ -75,8 +75,8 @@ func NewAccessPackageAssignmentResourceRolesRequestBuilder(rawUrl string, reques
 func (m *AccessPackageAssignmentResourceRolesRequestBuilder) Count()(*idbf5ad2ea776eddff5a54545e59df0670c3b9501fa46b09ceddafbf2437ced6c.CountRequestBuilder) {
     return idbf5ad2ea776eddff5a54545e59df0670c3b9501fa46b09ceddafbf2437ced6c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the resource roles delivered to the target user for this assignment. Read-only. Nullable.
-func (m *AccessPackageAssignmentResourceRolesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the resource roles delivered to the target user for this assignment. Read-only. Nullable.
+func (m *AccessPackageAssignmentResourceRolesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the resource roles delivered to the target user for this assignment. Read-only. Nullable.
@@ -94,8 +94,8 @@ func (m *AccessPackageAssignmentResourceRolesRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to accessPackageAssignmentResourceRoles for identityGovernance
-func (m *AccessPackageAssignmentResourceRolesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to accessPackageAssignmentResourceRoles for identityGovernance
+func (m *AccessPackageAssignmentResourceRolesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to accessPackageAssignmentResourceRoles for identityGovernance
@@ -111,12 +111,12 @@ func (m *AccessPackageAssignmentResourceRolesRequestBuilder) CreatePostRequestIn
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the resource roles delivered to the target user for this assignment. Read-only. Nullable.
-func (m *AccessPackageAssignmentResourceRolesRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageAssignmentResourceRolesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the resource roles delivered to the target user for this assignment. Read-only. Nullable.
+func (m *AccessPackageAssignmentResourceRolesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the resource roles delivered to the target user for this assignment. Read-only. Nullable.
-func (m *AccessPackageAssignmentResourceRolesRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageAssignmentResourceRolesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the resource roles delivered to the target user for this assignment. Read-only. Nullable.
+func (m *AccessPackageAssignmentResourceRolesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageAssignmentResourceRolesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *AccessPackageAssignmentResourceRolesRequestBuilder) GetWithResponseHand
 func (m *AccessPackageAssignmentResourceRolesRequestBuilder) My()(*i7e6560bdb4ca3f01918fe87d878423bda77c5b6b5bfcca013a5716b982f7f3b6.MyRequestBuilder) {
     return i7e6560bdb4ca3f01918fe87d878423bda77c5b6b5bfcca013a5716b982f7f3b6.NewMyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PostWithResponseHandler create new navigation property to accessPackageAssignmentResourceRoles for identityGovernance
-func (m *AccessPackageAssignmentResourceRolesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, requestConfiguration *AccessPackageAssignmentResourceRolesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to accessPackageAssignmentResourceRoles for identityGovernance
+func (m *AccessPackageAssignmentResourceRolesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to accessPackageAssignmentResourceRoles for identityGovernance
-func (m *AccessPackageAssignmentResourceRolesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, requestConfiguration *AccessPackageAssignmentResourceRolesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to accessPackageAssignmentResourceRoles for identityGovernance
+func (m *AccessPackageAssignmentResourceRolesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, requestConfiguration *AccessPackageAssignmentResourceRolesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

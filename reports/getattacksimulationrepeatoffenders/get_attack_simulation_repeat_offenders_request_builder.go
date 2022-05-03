@@ -39,8 +39,8 @@ func NewGetAttackSimulationRepeatOffendersRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewGetAttackSimulationRepeatOffendersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getAttackSimulationRepeatOffenders
-func (m *GetAttackSimulationRepeatOffendersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getAttackSimulationRepeatOffenders
+func (m *GetAttackSimulationRepeatOffendersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getAttackSimulationRepeatOffenders
@@ -55,12 +55,12 @@ func (m *GetAttackSimulationRepeatOffendersRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getAttackSimulationRepeatOffenders
-func (m *GetAttackSimulationRepeatOffendersRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration)(GetAttackSimulationRepeatOffendersResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getAttackSimulationRepeatOffenders
+func (m *GetAttackSimulationRepeatOffendersRequestBuilder) Get()(GetAttackSimulationRepeatOffendersResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getAttackSimulationRepeatOffenders
-func (m *GetAttackSimulationRepeatOffendersRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAttackSimulationRepeatOffendersResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getAttackSimulationRepeatOffenders
+func (m *GetAttackSimulationRepeatOffendersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAttackSimulationRepeatOffendersResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -74,8 +74,8 @@ func NewUserSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *UserSourcesRequestBuilder) Count()(*ia787d66fa956edbbb5415603adff886b0201af7c6fd5288c9329223931f7d083.CountRequestBuilder) {
     return ia787d66fa956edbbb5415603adff886b0201af7c6fd5288c9329223931f7d083.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-func (m *UserSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+func (m *UserSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
@@ -93,8 +93,8 @@ func (m *UserSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to userSources for compliance
-func (m *UserSourcesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to userSources for compliance
+func (m *UserSourcesRequestBuilder) CreatePostRequestInformation(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to userSources for compliance
@@ -110,12 +110,12 @@ func (m *UserSourcesRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-func (m *UserSourcesRequestBuilder) GetWithResponseHandler(requestConfiguration *UserSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+func (m *UserSourcesRequestBuilder) Get()(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-func (m *UserSourcesRequestBuilder) GetWithResponseHandler(requestConfiguration *UserSourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+func (m *UserSourcesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserSourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *UserSourcesRequestBuilder) GetWithResponseHandler(requestConfiguration 
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to userSources for compliance
-func (m *UserSourcesRequestBuilder) PostWithResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, requestConfiguration *UserSourcesRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to userSources for compliance
+func (m *UserSourcesRequestBuilder) Post(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to userSources for compliance
-func (m *UserSourcesRequestBuilder) PostWithResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, requestConfiguration *UserSourcesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to userSources for compliance
+func (m *UserSourcesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, requestConfiguration *UserSourcesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -50,8 +50,8 @@ func NewDeviceConfigurationRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the navigation link to the Device Configuration being targeted.
-func (m *DeviceConfigurationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the navigation link to the Device Configuration being targeted.
+func (m *DeviceConfigurationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the navigation link to the Device Configuration being targeted.
@@ -69,12 +69,12 @@ func (m *DeviceConfigurationRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the navigation link to the Device Configuration being targeted.
-func (m *DeviceConfigurationRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the navigation link to the Device Configuration being targeted.
+func (m *DeviceConfigurationRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the navigation link to the Device Configuration being targeted.
-func (m *DeviceConfigurationRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceConfigurationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable, error) {
+// GetWithRequestConfigurationAndResponseHandler the navigation link to the Device Configuration being targeted.
+func (m *DeviceConfigurationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceConfigurationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

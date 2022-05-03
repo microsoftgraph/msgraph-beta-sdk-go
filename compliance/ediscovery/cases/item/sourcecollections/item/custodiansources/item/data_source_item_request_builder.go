@@ -50,8 +50,8 @@ func NewDataSourceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewDataSourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration custodian sources that are included in the sourceCollection.
-func (m *DataSourceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation custodian sources that are included in the sourceCollection.
+func (m *DataSourceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration custodian sources that are included in the sourceCollection.
@@ -69,12 +69,12 @@ func (m *DataSourceItemRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler custodian sources that are included in the sourceCollection.
-func (m *DataSourceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DataSourceItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSourceable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get custodian sources that are included in the sourceCollection.
+func (m *DataSourceItemRequestBuilder) Get()(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSourceable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler custodian sources that are included in the sourceCollection.
-func (m *DataSourceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DataSourceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSourceable, error) {
+// GetWithRequestConfigurationAndResponseHandler custodian sources that are included in the sourceCollection.
+func (m *DataSourceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DataSourceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSourceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -55,8 +55,8 @@ func NewRootRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
 func (m *RootRequestBuilder) Content()(*i54fa39dd49ef2ad0152f58f8a5825a8dfb325e7a8a93701de76719cd098602de.ContentRequestBuilder) {
     return i54fa39dd49ef2ad0152f58f8a5825a8dfb325e7a8a93701de76719cd098602de.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration used to access the underlying driveItem. Deprecated -- use driveItem instead.
-func (m *RootRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation used to access the underlying driveItem. Deprecated -- use driveItem instead.
+func (m *RootRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration used to access the underlying driveItem. Deprecated -- use driveItem instead.
@@ -74,12 +74,12 @@ func (m *RootRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler used to access the underlying driveItem. Deprecated -- use driveItem instead.
-func (m *RootRequestBuilder) GetWithResponseHandler(requestConfiguration *RootRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get used to access the underlying driveItem. Deprecated -- use driveItem instead.
+func (m *RootRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler used to access the underlying driveItem. Deprecated -- use driveItem instead.
-func (m *RootRequestBuilder) GetWithResponseHandler(requestConfiguration *RootRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
+// GetWithRequestConfigurationAndResponseHandler used to access the underlying driveItem. Deprecated -- use driveItem instead.
+func (m *RootRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RootRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

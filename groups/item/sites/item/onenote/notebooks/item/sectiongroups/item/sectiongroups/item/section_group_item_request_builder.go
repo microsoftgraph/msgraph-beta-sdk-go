@@ -50,8 +50,8 @@ func NewSectionGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewSectionGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the section groups in the section. Read-only. Nullable.
-func (m *SectionGroupItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the section groups in the section. Read-only. Nullable.
+func (m *SectionGroupItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the section groups in the section. Read-only. Nullable.
@@ -69,12 +69,12 @@ func (m *SectionGroupItemRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the section groups in the section. Read-only. Nullable.
-func (m *SectionGroupItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SectionGroupItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the section groups in the section. Read-only. Nullable.
+func (m *SectionGroupItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the section groups in the section. Read-only. Nullable.
-func (m *SectionGroupItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SectionGroupItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupable, error) {
+// GetWithRequestConfigurationAndResponseHandler the section groups in the section. Read-only. Nullable.
+func (m *SectionGroupItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SectionGroupItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

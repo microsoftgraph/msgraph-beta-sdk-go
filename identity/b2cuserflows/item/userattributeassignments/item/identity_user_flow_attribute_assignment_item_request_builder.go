@@ -65,8 +65,8 @@ func NewIdentityUserFlowAttributeAssignmentItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityUserFlowAttributeAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userAttributeAssignments for identity
-func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userAttributeAssignments for identity
+func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userAttributeAssignments for identity
@@ -81,8 +81,8 @@ func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) CreateDeleteRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the user attribute assignments included in the user flow.
-func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the user attribute assignments included in the user flow.
+func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the user attribute assignments included in the user flow.
@@ -100,8 +100,8 @@ func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userAttributeAssignments in identity
-func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userAttributeAssignments in identity
+func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userAttributeAssignments in identity
@@ -117,12 +117,12 @@ func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) CreatePatchReque
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userAttributeAssignments for identity
-func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *IdentityUserFlowAttributeAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userAttributeAssignments for identity
+func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userAttributeAssignments for identity
-func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *IdentityUserFlowAttributeAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userAttributeAssignments for identity
+func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *IdentityUserFlowAttributeAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -137,12 +137,12 @@ func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) DeleteWithRespon
     }
     return nil
 }
-// GetWithResponseHandler the user attribute assignments included in the user flow.
-func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *IdentityUserFlowAttributeAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeAssignmentable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the user attribute assignments included in the user flow.
+func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeAssignmentable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the user attribute assignments included in the user flow.
-func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *IdentityUserFlowAttributeAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeAssignmentable, error) {
+// GetWithRequestConfigurationAndResponseHandler the user attribute assignments included in the user flow.
+func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IdentityUserFlowAttributeAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -157,12 +157,12 @@ func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) GetWithResponseH
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeAssignmentable), nil
 }
-// PatchWithResponseHandler update the navigation property userAttributeAssignments in identity
-func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeAssignmentable, requestConfiguration *IdentityUserFlowAttributeAssignmentItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userAttributeAssignments in identity
+func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeAssignmentable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userAttributeAssignments in identity
-func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeAssignmentable, requestConfiguration *IdentityUserFlowAttributeAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userAttributeAssignments in identity
+func (m *IdentityUserFlowAttributeAssignmentItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowAttributeAssignmentable, requestConfiguration *IdentityUserFlowAttributeAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

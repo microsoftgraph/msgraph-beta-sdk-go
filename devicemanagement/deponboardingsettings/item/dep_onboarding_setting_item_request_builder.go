@@ -76,8 +76,8 @@ func NewDepOnboardingSettingItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewDepOnboardingSettingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property depOnboardingSettings for deviceManagement
-func (m *DepOnboardingSettingItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property depOnboardingSettings for deviceManagement
+func (m *DepOnboardingSettingItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property depOnboardingSettings for deviceManagement
@@ -92,8 +92,8 @@ func (m *DepOnboardingSettingItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration this collections of multiple DEP tokens per-tenant.
-func (m *DepOnboardingSettingItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation this collections of multiple DEP tokens per-tenant.
+func (m *DepOnboardingSettingItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration this collections of multiple DEP tokens per-tenant.
@@ -111,8 +111,8 @@ func (m *DepOnboardingSettingItemRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property depOnboardingSettings in deviceManagement
-func (m *DepOnboardingSettingItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property depOnboardingSettings in deviceManagement
+func (m *DepOnboardingSettingItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property depOnboardingSettings in deviceManagement
@@ -136,12 +136,12 @@ func (m *DepOnboardingSettingItemRequestBuilder) DefaultIosEnrollmentProfile()(*
 func (m *DepOnboardingSettingItemRequestBuilder) DefaultMacOsEnrollmentProfile()(*i8cbc14b32444f6bc2ca617287bc7edcc041b98aeb7e5731521363f58947dd8e5.DefaultMacOsEnrollmentProfileRequestBuilder) {
     return i8cbc14b32444f6bc2ca617287bc7edcc041b98aeb7e5731521363f58947dd8e5.NewDefaultMacOsEnrollmentProfileRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeleteWithResponseHandler delete navigation property depOnboardingSettings for deviceManagement
-func (m *DepOnboardingSettingItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DepOnboardingSettingItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property depOnboardingSettings for deviceManagement
+func (m *DepOnboardingSettingItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property depOnboardingSettings for deviceManagement
-func (m *DepOnboardingSettingItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DepOnboardingSettingItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property depOnboardingSettings for deviceManagement
+func (m *DepOnboardingSettingItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DepOnboardingSettingItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -175,16 +175,16 @@ func (m *DepOnboardingSettingItemRequestBuilder) EnrollmentProfilesById(id strin
 func (m *DepOnboardingSettingItemRequestBuilder) GenerateEncryptionPublicKey()(*idc472b110ec13510663e8f300d42a723cb0feabc33f9afe042fd0354e0c25f91.GenerateEncryptionPublicKeyRequestBuilder) {
     return idc472b110ec13510663e8f300d42a723cb0feabc33f9afe042fd0354e0c25f91.NewGenerateEncryptionPublicKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Get this collections of multiple DEP tokens per-tenant.
+func (m *DepOnboardingSettingItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetEncryptionPublicKey provides operations to call the getEncryptionPublicKey method.
 func (m *DepOnboardingSettingItemRequestBuilder) GetEncryptionPublicKey()(*i0a6e758c70ffdd42835c37d486fd53bac47c3b3806c07e1d3709a2073bdf86d8.GetEncryptionPublicKeyRequestBuilder) {
     return i0a6e758c70ffdd42835c37d486fd53bac47c3b3806c07e1d3709a2073bdf86d8.NewGetEncryptionPublicKeyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler this collections of multiple DEP tokens per-tenant.
-func (m *DepOnboardingSettingItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DepOnboardingSettingItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler this collections of multiple DEP tokens per-tenant.
-func (m *DepOnboardingSettingItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DepOnboardingSettingItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, error) {
+// GetWithRequestConfigurationAndResponseHandler this collections of multiple DEP tokens per-tenant.
+func (m *DepOnboardingSettingItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DepOnboardingSettingItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -214,12 +214,12 @@ func (m *DepOnboardingSettingItemRequestBuilder) ImportedAppleDeviceIdentitiesBy
     }
     return ia6717b64f1af972b7242219bd4db44a401fd79458567d783585ee41f0fd2c0b6.NewImportedAppleDeviceIdentityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property depOnboardingSettings in deviceManagement
-func (m *DepOnboardingSettingItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, requestConfiguration *DepOnboardingSettingItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property depOnboardingSettings in deviceManagement
+func (m *DepOnboardingSettingItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property depOnboardingSettings in deviceManagement
-func (m *DepOnboardingSettingItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, requestConfiguration *DepOnboardingSettingItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property depOnboardingSettings in deviceManagement
+func (m *DepOnboardingSettingItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable, requestConfiguration *DepOnboardingSettingItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

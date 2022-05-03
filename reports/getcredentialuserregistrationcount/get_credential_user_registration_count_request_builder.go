@@ -39,8 +39,8 @@ func NewGetCredentialUserRegistrationCountRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewGetCredentialUserRegistrationCountRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getCredentialUserRegistrationCount
-func (m *GetCredentialUserRegistrationCountRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getCredentialUserRegistrationCount
+func (m *GetCredentialUserRegistrationCountRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getCredentialUserRegistrationCount
@@ -55,12 +55,12 @@ func (m *GetCredentialUserRegistrationCountRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getCredentialUserRegistrationCount
-func (m *GetCredentialUserRegistrationCountRequestBuilder) GetWithResponseHandler(requestConfiguration *GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration)(GetCredentialUserRegistrationCountResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getCredentialUserRegistrationCount
+func (m *GetCredentialUserRegistrationCountRequestBuilder) Get()(GetCredentialUserRegistrationCountResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getCredentialUserRegistrationCount
-func (m *GetCredentialUserRegistrationCountRequestBuilder) GetWithResponseHandler(requestConfiguration *GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCredentialUserRegistrationCountResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getCredentialUserRegistrationCount
+func (m *GetCredentialUserRegistrationCountRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCredentialUserRegistrationCountResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

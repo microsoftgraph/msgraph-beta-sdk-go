@@ -39,8 +39,8 @@ func NewReprovisionCloudPcRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewReprovisionCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action reprovisionCloudPc
-func (m *ReprovisionCloudPcRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action reprovisionCloudPc
+func (m *ReprovisionCloudPcRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action reprovisionCloudPc
@@ -55,12 +55,12 @@ func (m *ReprovisionCloudPcRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action reprovisionCloudPc
-func (m *ReprovisionCloudPcRequestBuilder) PostWithResponseHandler(requestConfiguration *ReprovisionCloudPcRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action reprovisionCloudPc
+func (m *ReprovisionCloudPcRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action reprovisionCloudPc
-func (m *ReprovisionCloudPcRequestBuilder) PostWithResponseHandler(requestConfiguration *ReprovisionCloudPcRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action reprovisionCloudPc
+func (m *ReprovisionCloudPcRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *ReprovisionCloudPcRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

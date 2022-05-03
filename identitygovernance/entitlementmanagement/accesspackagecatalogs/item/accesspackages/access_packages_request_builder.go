@@ -76,8 +76,8 @@ func NewAccessPackagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *AccessPackagesRequestBuilder) Count()(*ib271fde1d8c078f90ad457e938320b9049bdde0ffc33e4c7e9de723bd8ad1cbf.CountRequestBuilder) {
     return ib271fde1d8c078f90ad457e938320b9049bdde0ffc33e4c7e9de723bd8ad1cbf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the access packages in this catalog. Read-only. Nullable. Supports $expand.
-func (m *AccessPackagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the access packages in this catalog. Read-only. Nullable. Supports $expand.
+func (m *AccessPackagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the access packages in this catalog. Read-only. Nullable. Supports $expand.
@@ -95,8 +95,8 @@ func (m *AccessPackagesRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to accessPackages for identityGovernance
-func (m *AccessPackagesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to accessPackages for identityGovernance
+func (m *AccessPackagesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to accessPackages for identityGovernance
@@ -116,12 +116,12 @@ func (m *AccessPackagesRequestBuilder) CreatePostRequestInformationWithRequestCo
 func (m *AccessPackagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i1190c27674d37099924f874835ef3fdf0389dc3356b03f12ee34c53d56bcf46f.FilterByCurrentUserWithOnRequestBuilder) {
     return i1190c27674d37099924f874835ef3fdf0389dc3356b03f12ee34c53d56bcf46f.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// GetWithResponseHandler the access packages in this catalog. Read-only. Nullable. Supports $expand.
-func (m *AccessPackagesRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the access packages in this catalog. Read-only. Nullable. Supports $expand.
+func (m *AccessPackagesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the access packages in this catalog. Read-only. Nullable. Supports $expand.
-func (m *AccessPackagesRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the access packages in this catalog. Read-only. Nullable. Supports $expand.
+func (m *AccessPackagesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -136,12 +136,12 @@ func (m *AccessPackagesRequestBuilder) GetWithResponseHandler(requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to accessPackages for identityGovernance
-func (m *AccessPackagesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, requestConfiguration *AccessPackagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to accessPackages for identityGovernance
+func (m *AccessPackagesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to accessPackages for identityGovernance
-func (m *AccessPackagesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, requestConfiguration *AccessPackagesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to accessPackages for identityGovernance
+func (m *AccessPackagesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, requestConfiguration *AccessPackagesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

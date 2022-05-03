@@ -74,8 +74,8 @@ func NewSharedEmailDomainInvitationsRequestBuilder(rawUrl string, requestAdapter
 func (m *SharedEmailDomainInvitationsRequestBuilder) Count()(*i61a8df8f16bcd634d9c531bb6cab2d9b4c13bb055af4043ca4307b32747fcc5c.CountRequestBuilder) {
     return i61a8df8f16bcd634d9c531bb6cab2d9b4c13bb055af4043ca4307b32747fcc5c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get sharedEmailDomainInvitations from domains
-func (m *SharedEmailDomainInvitationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get sharedEmailDomainInvitations from domains
+func (m *SharedEmailDomainInvitationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get sharedEmailDomainInvitations from domains
@@ -93,8 +93,8 @@ func (m *SharedEmailDomainInvitationsRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to sharedEmailDomainInvitations for domains
-func (m *SharedEmailDomainInvitationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to sharedEmailDomainInvitations for domains
+func (m *SharedEmailDomainInvitationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to sharedEmailDomainInvitations for domains
@@ -110,12 +110,12 @@ func (m *SharedEmailDomainInvitationsRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get sharedEmailDomainInvitations from domains
-func (m *SharedEmailDomainInvitationsRequestBuilder) GetWithResponseHandler(requestConfiguration *SharedEmailDomainInvitationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get sharedEmailDomainInvitations from domains
+func (m *SharedEmailDomainInvitationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get sharedEmailDomainInvitations from domains
-func (m *SharedEmailDomainInvitationsRequestBuilder) GetWithResponseHandler(requestConfiguration *SharedEmailDomainInvitationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get sharedEmailDomainInvitations from domains
+func (m *SharedEmailDomainInvitationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SharedEmailDomainInvitationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *SharedEmailDomainInvitationsRequestBuilder) GetWithResponseHandler(requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to sharedEmailDomainInvitations for domains
-func (m *SharedEmailDomainInvitationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, requestConfiguration *SharedEmailDomainInvitationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to sharedEmailDomainInvitations for domains
+func (m *SharedEmailDomainInvitationsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to sharedEmailDomainInvitations for domains
-func (m *SharedEmailDomainInvitationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, requestConfiguration *SharedEmailDomainInvitationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to sharedEmailDomainInvitations for domains
+func (m *SharedEmailDomainInvitationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, requestConfiguration *SharedEmailDomainInvitationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedEmailDomainInvitationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

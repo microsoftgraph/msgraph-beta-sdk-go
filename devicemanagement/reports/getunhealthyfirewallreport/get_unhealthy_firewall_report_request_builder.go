@@ -39,8 +39,8 @@ func NewGetUnhealthyFirewallReportRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewGetUnhealthyFirewallReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getUnhealthyFirewallReport
-func (m *GetUnhealthyFirewallReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetUnhealthyFirewallReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getUnhealthyFirewallReport
+func (m *GetUnhealthyFirewallReportRequestBuilder) CreatePostRequestInformation(body GetUnhealthyFirewallReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getUnhealthyFirewallReport
@@ -56,12 +56,12 @@ func (m *GetUnhealthyFirewallReportRequestBuilder) CreatePostRequestInformationW
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getUnhealthyFirewallReport
-func (m *GetUnhealthyFirewallReportRequestBuilder) PostWithResponseHandler(body GetUnhealthyFirewallReportRequestBodyable, requestConfiguration *GetUnhealthyFirewallReportRequestBuilderPostRequestConfiguration)(GetUnhealthyFirewallReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getUnhealthyFirewallReport
+func (m *GetUnhealthyFirewallReportRequestBuilder) Post(body GetUnhealthyFirewallReportRequestBodyable)(GetUnhealthyFirewallReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getUnhealthyFirewallReport
-func (m *GetUnhealthyFirewallReportRequestBuilder) PostWithResponseHandler(body GetUnhealthyFirewallReportRequestBodyable, requestConfiguration *GetUnhealthyFirewallReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetUnhealthyFirewallReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getUnhealthyFirewallReport
+func (m *GetUnhealthyFirewallReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetUnhealthyFirewallReportRequestBodyable, requestConfiguration *GetUnhealthyFirewallReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetUnhealthyFirewallReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -39,8 +39,8 @@ func NewFilterOperatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewFilterOperatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function filterOperators
-func (m *FilterOperatorsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function filterOperators
+func (m *FilterOperatorsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function filterOperators
@@ -55,12 +55,12 @@ func (m *FilterOperatorsRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function filterOperators
-func (m *FilterOperatorsRequestBuilder) GetWithResponseHandler(requestConfiguration *FilterOperatorsRequestBuilderGetRequestConfiguration)(FilterOperatorsResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function filterOperators
+func (m *FilterOperatorsRequestBuilder) Get()(FilterOperatorsResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function filterOperators
-func (m *FilterOperatorsRequestBuilder) GetWithResponseHandler(requestConfiguration *FilterOperatorsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(FilterOperatorsResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function filterOperators
+func (m *FilterOperatorsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FilterOperatorsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(FilterOperatorsResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

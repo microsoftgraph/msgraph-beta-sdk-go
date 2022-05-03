@@ -15,6 +15,8 @@ type CredentialUserRegistrationsSummary struct {
     mfaAndSsprCapableUserCount *int32
     // The state of a conditional access policy that enforces multi-factor authentication. Optional. Read-only.
     mfaConditionalAccessPolicyState *string
+    // The mfaExcludedUserCount property
+    mfaExcludedUserCount *int32
     // The number of users registered for multi-factor authentication. Optional. Read-only.
     mfaRegisteredUserCount *int32
     // A flag indicating whether Identity Security Defaults is enabled. Optional. Read-only.
@@ -71,6 +73,16 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
         }
         if val != nil {
             m.SetMfaConditionalAccessPolicyState(val)
+        }
+        return nil
+    }
+    res["mfaExcludedUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMfaExcludedUserCount(val)
         }
         return nil
     }
@@ -170,6 +182,14 @@ func (m *CredentialUserRegistrationsSummary) GetMfaConditionalAccessPolicyState(
         return m.mfaConditionalAccessPolicyState
     }
 }
+// GetMfaExcludedUserCount gets the mfaExcludedUserCount property value. The mfaExcludedUserCount property
+func (m *CredentialUserRegistrationsSummary) GetMfaExcludedUserCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.mfaExcludedUserCount
+    }
+}
 // GetMfaRegisteredUserCount gets the mfaRegisteredUserCount property value. The number of users registered for multi-factor authentication. Optional. Read-only.
 func (m *CredentialUserRegistrationsSummary) GetMfaRegisteredUserCount()(*int32) {
     if m == nil {
@@ -251,6 +271,12 @@ func (m *CredentialUserRegistrationsSummary) Serialize(writer i878a80d2330e89d26
         }
     }
     {
+        err = writer.WriteInt32Value("mfaExcludedUserCount", m.GetMfaExcludedUserCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("mfaRegisteredUserCount", m.GetMfaRegisteredUserCount())
         if err != nil {
             return err
@@ -310,6 +336,12 @@ func (m *CredentialUserRegistrationsSummary) SetMfaAndSsprCapableUserCount(value
 func (m *CredentialUserRegistrationsSummary) SetMfaConditionalAccessPolicyState(value *string)() {
     if m != nil {
         m.mfaConditionalAccessPolicyState = value
+    }
+}
+// SetMfaExcludedUserCount sets the mfaExcludedUserCount property value. The mfaExcludedUserCount property
+func (m *CredentialUserRegistrationsSummary) SetMfaExcludedUserCount(value *int32)() {
+    if m != nil {
+        m.mfaExcludedUserCount = value
     }
 }
 // SetMfaRegisteredUserCount sets the mfaRegisteredUserCount property value. The number of users registered for multi-factor authentication. Optional. Read-only.

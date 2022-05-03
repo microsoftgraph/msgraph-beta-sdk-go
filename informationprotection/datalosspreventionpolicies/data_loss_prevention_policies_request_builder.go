@@ -75,8 +75,8 @@ func NewDataLossPreventionPoliciesRequestBuilder(rawUrl string, requestAdapter i
 func (m *DataLossPreventionPoliciesRequestBuilder) Count()(*i707a393d8f4ffbfc616c3c9573536d6545ae9e807fb8373bdaeb652f4aa49af6.CountRequestBuilder) {
     return i707a393d8f4ffbfc616c3c9573536d6545ae9e807fb8373bdaeb652f4aa49af6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get dataLossPreventionPolicies from informationProtection
-func (m *DataLossPreventionPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get dataLossPreventionPolicies from informationProtection
+func (m *DataLossPreventionPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get dataLossPreventionPolicies from informationProtection
@@ -94,8 +94,8 @@ func (m *DataLossPreventionPoliciesRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to dataLossPreventionPolicies for informationProtection
-func (m *DataLossPreventionPoliciesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to dataLossPreventionPolicies for informationProtection
+func (m *DataLossPreventionPoliciesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to dataLossPreventionPolicies for informationProtection
@@ -115,12 +115,12 @@ func (m *DataLossPreventionPoliciesRequestBuilder) CreatePostRequestInformationW
 func (m *DataLossPreventionPoliciesRequestBuilder) Evaluate()(*iadfdd2c94b77829e97dfd861211edb1169aeb2788bf74e13903e390a1d17b526.EvaluateRequestBuilder) {
     return iadfdd2c94b77829e97dfd861211edb1169aeb2788bf74e13903e390a1d17b526.NewEvaluateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get dataLossPreventionPolicies from informationProtection
-func (m *DataLossPreventionPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *DataLossPreventionPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get dataLossPreventionPolicies from informationProtection
+func (m *DataLossPreventionPoliciesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get dataLossPreventionPolicies from informationProtection
-func (m *DataLossPreventionPoliciesRequestBuilder) GetWithResponseHandler(requestConfiguration *DataLossPreventionPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get dataLossPreventionPolicies from informationProtection
+func (m *DataLossPreventionPoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DataLossPreventionPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *DataLossPreventionPoliciesRequestBuilder) GetWithResponseHandler(reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to dataLossPreventionPolicies for informationProtection
-func (m *DataLossPreventionPoliciesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, requestConfiguration *DataLossPreventionPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to dataLossPreventionPolicies for informationProtection
+func (m *DataLossPreventionPoliciesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to dataLossPreventionPolicies for informationProtection
-func (m *DataLossPreventionPoliciesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, requestConfiguration *DataLossPreventionPoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to dataLossPreventionPolicies for informationProtection
+func (m *DataLossPreventionPoliciesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, requestConfiguration *DataLossPreventionPoliciesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

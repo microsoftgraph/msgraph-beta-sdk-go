@@ -72,8 +72,8 @@ func NewThreadsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *ThreadsRequestBuilder) Count()(*i474142f7d9a4be0e8b23c8cbabbbc7aa55449aa6e2dbe83933879731d012cb8e.CountRequestBuilder) {
     return i474142f7d9a4be0e8b23c8cbabbbc7aa55449aa6e2dbe83933879731d012cb8e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
-func (m *ThreadsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+func (m *ThreadsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
@@ -91,8 +91,8 @@ func (m *ThreadsRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to threads for groups
-func (m *ThreadsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to threads for groups
+func (m *ThreadsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to threads for groups
@@ -108,12 +108,12 @@ func (m *ThreadsRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
-func (m *ThreadsRequestBuilder) GetWithResponseHandler(requestConfiguration *ThreadsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+func (m *ThreadsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
-func (m *ThreadsRequestBuilder) GetWithResponseHandler(requestConfiguration *ThreadsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler a collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+func (m *ThreadsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ThreadsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -128,12 +128,12 @@ func (m *ThreadsRequestBuilder) GetWithResponseHandler(requestConfiguration *Thr
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to threads for groups
-func (m *ThreadsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, requestConfiguration *ThreadsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to threads for groups
+func (m *ThreadsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to threads for groups
-func (m *ThreadsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, requestConfiguration *ThreadsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to threads for groups
+func (m *ThreadsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, requestConfiguration *ThreadsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationThreadable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

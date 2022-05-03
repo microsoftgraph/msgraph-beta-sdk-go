@@ -77,8 +77,8 @@ func NewContractsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *ContractsRequestBuilder) Count()(*i148da12c7a6de0e5e8523390ccb7e402e475aecb1ae8c062f6fa5b4639eb3175.CountRequestBuilder) {
     return i148da12c7a6de0e5e8523390ccb7e402e475aecb1ae8c062f6fa5b4639eb3175.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from contracts
-func (m *ContractsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from contracts
+func (m *ContractsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from contracts
@@ -96,8 +96,8 @@ func (m *ContractsRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to contracts
-func (m *ContractsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to contracts
+func (m *ContractsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to contracts
@@ -113,6 +113,10 @@ func (m *ContractsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
+// Get get entities from contracts
+func (m *ContractsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContractCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetByIds the getByIds property
 func (m *ContractsRequestBuilder) GetByIds()(*i1fa946ac2b2addfc130483edc754b91ec69f88ea812d22c6365e84350f7485d6.GetByIdsRequestBuilder) {
     return i1fa946ac2b2addfc130483edc754b91ec69f88ea812d22c6365e84350f7485d6.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -121,12 +125,8 @@ func (m *ContractsRequestBuilder) GetByIds()(*i1fa946ac2b2addfc130483edc754b91ec
 func (m *ContractsRequestBuilder) GetUserOwnedObjects()(*i53f54a5aa606f28fe09735a0230364e5b1f3d8090564c4e58d1c01a031cfb3a2.GetUserOwnedObjectsRequestBuilder) {
     return i53f54a5aa606f28fe09735a0230364e5b1f3d8090564c4e58d1c01a031cfb3a2.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get entities from contracts
-func (m *ContractsRequestBuilder) GetWithResponseHandler(requestConfiguration *ContractsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContractCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler get entities from contracts
-func (m *ContractsRequestBuilder) GetWithResponseHandler(requestConfiguration *ContractsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContractCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from contracts
+func (m *ContractsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ContractsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContractCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -141,12 +141,12 @@ func (m *ContractsRequestBuilder) GetWithResponseHandler(requestConfiguration *C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContractCollectionResponseable), nil
 }
-// PostWithResponseHandler add new entity to contracts
-func (m *ContractsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, requestConfiguration *ContractsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to contracts
+func (m *ContractsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to contracts
-func (m *ContractsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, requestConfiguration *ContractsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to contracts
+func (m *ContractsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, requestConfiguration *ContractsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

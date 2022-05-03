@@ -47,8 +47,8 @@ func NewFaviconRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewFaviconRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
-func (m *FaviconRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+func (m *FaviconRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
@@ -63,8 +63,8 @@ func (m *FaviconRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePutRequestInformationWithRequestConfiguration a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
-func (m *FaviconRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePutRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+func (m *FaviconRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePutRequestInformationWithRequestConfiguration a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
@@ -80,12 +80,12 @@ func (m *FaviconRequestBuilder) CreatePutRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
-func (m *FaviconRequestBuilder) GetWithResponseHandler(requestConfiguration *FaviconRequestBuilderGetRequestConfiguration)([]byte, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+func (m *FaviconRequestBuilder) Get()([]byte, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
-func (m *FaviconRequestBuilder) GetWithResponseHandler(requestConfiguration *FaviconRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+// GetWithRequestConfigurationAndResponseHandler a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+func (m *FaviconRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FaviconRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -100,12 +100,12 @@ func (m *FaviconRequestBuilder) GetWithResponseHandler(requestConfiguration *Fav
     }
     return res.([]byte), nil
 }
-// PutWithResponseHandler a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
-func (m *FaviconRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *FaviconRequestBuilderPutRequestConfiguration)(error) {
-    return m.PutWithResponseHandler(body, requestConfiguration, nil);
+// Put a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+func (m *FaviconRequestBuilder) Put(body []byte)(error) {
+    return m.PutWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PutWithResponseHandler a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
-func (m *FaviconRequestBuilder) PutWithResponseHandler(body []byte, requestConfiguration *FaviconRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PutWithRequestConfigurationAndResponseHandler a custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+func (m *FaviconRequestBuilder) PutWithRequestConfigurationAndResponseHandler(body []byte, requestConfiguration *FaviconRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

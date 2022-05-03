@@ -39,8 +39,8 @@ func NewEnableGlobalScriptsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewEnableGlobalScriptsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action enableGlobalScripts
-func (m *EnableGlobalScriptsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action enableGlobalScripts
+func (m *EnableGlobalScriptsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action enableGlobalScripts
@@ -55,12 +55,12 @@ func (m *EnableGlobalScriptsRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action enableGlobalScripts
-func (m *EnableGlobalScriptsRequestBuilder) PostWithResponseHandler(requestConfiguration *EnableGlobalScriptsRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action enableGlobalScripts
+func (m *EnableGlobalScriptsRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action enableGlobalScripts
-func (m *EnableGlobalScriptsRequestBuilder) PostWithResponseHandler(requestConfiguration *EnableGlobalScriptsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action enableGlobalScripts
+func (m *EnableGlobalScriptsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *EnableGlobalScriptsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

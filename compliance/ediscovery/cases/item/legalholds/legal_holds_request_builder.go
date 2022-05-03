@@ -74,8 +74,8 @@ func NewLegalHoldsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *LegalHoldsRequestBuilder) Count()(*i14188f6c6ceb79c9660b603399957b99ebb403caae8fa2bc8e2d8794f90f5dae.CountRequestBuilder) {
     return i14188f6c6ceb79c9660b603399957b99ebb403caae8fa2bc8e2d8794f90f5dae.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration returns a list of case legalHold objects for this case.  Nullable.
-func (m *LegalHoldsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation returns a list of case legalHold objects for this case.  Nullable.
+func (m *LegalHoldsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration returns a list of case legalHold objects for this case.  Nullable.
@@ -93,8 +93,8 @@ func (m *LegalHoldsRequestBuilder) CreateGetRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to legalHolds for compliance
-func (m *LegalHoldsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to legalHolds for compliance
+func (m *LegalHoldsRequestBuilder) CreatePostRequestInformation(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to legalHolds for compliance
@@ -110,12 +110,12 @@ func (m *LegalHoldsRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler returns a list of case legalHold objects for this case.  Nullable.
-func (m *LegalHoldsRequestBuilder) GetWithResponseHandler(requestConfiguration *LegalHoldsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get returns a list of case legalHold objects for this case.  Nullable.
+func (m *LegalHoldsRequestBuilder) Get()(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler returns a list of case legalHold objects for this case.  Nullable.
-func (m *LegalHoldsRequestBuilder) GetWithResponseHandler(requestConfiguration *LegalHoldsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler returns a list of case legalHold objects for this case.  Nullable.
+func (m *LegalHoldsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LegalHoldsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *LegalHoldsRequestBuilder) GetWithResponseHandler(requestConfiguration *
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to legalHolds for compliance
-func (m *LegalHoldsRequestBuilder) PostWithResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable, requestConfiguration *LegalHoldsRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to legalHolds for compliance
+func (m *LegalHoldsRequestBuilder) Post(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to legalHolds for compliance
-func (m *LegalHoldsRequestBuilder) PostWithResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable, requestConfiguration *LegalHoldsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to legalHolds for compliance
+func (m *LegalHoldsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable, requestConfiguration *LegalHoldsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.LegalHoldable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

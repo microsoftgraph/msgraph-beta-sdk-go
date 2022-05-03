@@ -67,8 +67,8 @@ func NewMembersWithLicenseErrorsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *MembersWithLicenseErrorsRequestBuilder) Count()(*i266c609a4a0b2ea717fcb9f2b5bd204123ad620a4c9d6ac6d46ac21cb41e5d12.CountRequestBuilder) {
     return i266c609a4a0b2ea717fcb9f2b5bd204123ad620a4c9d6ac6d46ac21cb41e5d12.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration a list of group members with license errors from this group-based license assignment. Read-only.
-func (m *MembersWithLicenseErrorsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a list of group members with license errors from this group-based license assignment. Read-only.
+func (m *MembersWithLicenseErrorsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a list of group members with license errors from this group-based license assignment. Read-only.
@@ -86,12 +86,12 @@ func (m *MembersWithLicenseErrorsRequestBuilder) CreateGetRequestInformationWith
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler a list of group members with license errors from this group-based license assignment. Read-only.
-func (m *MembersWithLicenseErrorsRequestBuilder) GetWithResponseHandler(requestConfiguration *MembersWithLicenseErrorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a list of group members with license errors from this group-based license assignment. Read-only.
+func (m *MembersWithLicenseErrorsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a list of group members with license errors from this group-based license assignment. Read-only.
-func (m *MembersWithLicenseErrorsRequestBuilder) GetWithResponseHandler(requestConfiguration *MembersWithLicenseErrorsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler a list of group members with license errors from this group-based license assignment. Read-only.
+func (m *MembersWithLicenseErrorsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MembersWithLicenseErrorsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

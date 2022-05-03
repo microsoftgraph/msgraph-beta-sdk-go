@@ -93,8 +93,8 @@ func NewDeviceCustomAttributeShellScriptItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCustomAttributeShellScriptItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceCustomAttributeShellScripts for deviceManagement
-func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property deviceCustomAttributeShellScripts for deviceManagement
+func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deviceCustomAttributeShellScripts for deviceManagement
@@ -109,8 +109,8 @@ func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) CreateDeleteRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of device custom attribute shell scripts associated with the tenant.
-func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of device custom attribute shell scripts associated with the tenant.
+func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of device custom attribute shell scripts associated with the tenant.
@@ -128,8 +128,8 @@ func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceCustomAttributeShellScripts in deviceManagement
-func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property deviceCustomAttributeShellScripts in deviceManagement
+func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property deviceCustomAttributeShellScripts in deviceManagement
@@ -145,12 +145,12 @@ func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) CreatePatchRequestI
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property deviceCustomAttributeShellScripts for deviceManagement
-func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceCustomAttributeShellScriptItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property deviceCustomAttributeShellScripts for deviceManagement
+func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property deviceCustomAttributeShellScripts for deviceManagement
-func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceCustomAttributeShellScriptItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property deviceCustomAttributeShellScripts for deviceManagement
+func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceCustomAttributeShellScriptItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -180,12 +180,12 @@ func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) DeviceRunStatesById
     }
     return i868d4ff15f075e109c23674f69f3c9fe368b53fdc85733d5cad6217558ffb536.NewDeviceManagementScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GetWithResponseHandler the list of device custom attribute shell scripts associated with the tenant.
-func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceCustomAttributeShellScriptItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of device custom attribute shell scripts associated with the tenant.
+func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of device custom attribute shell scripts associated with the tenant.
-func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceCustomAttributeShellScriptItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of device custom attribute shell scripts associated with the tenant.
+func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceCustomAttributeShellScriptItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -215,12 +215,12 @@ func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) GroupAssignmentsByI
     }
     return i076188fa8b5444fe1eee63d44522c5efaa3b78288e012e2ab0e0bf58bc49a392.NewDeviceManagementScriptGroupAssignmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property deviceCustomAttributeShellScripts in deviceManagement
-func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, requestConfiguration *DeviceCustomAttributeShellScriptItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property deviceCustomAttributeShellScripts in deviceManagement
+func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property deviceCustomAttributeShellScripts in deviceManagement
-func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, requestConfiguration *DeviceCustomAttributeShellScriptItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property deviceCustomAttributeShellScripts in deviceManagement
+func (m *DeviceCustomAttributeShellScriptItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, requestConfiguration *DeviceCustomAttributeShellScriptItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

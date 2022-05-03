@@ -66,8 +66,8 @@ func NewUserExperienceAnalyticsAppHealthOverviewRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsAppHealthOverviewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsAppHealthOverview for deviceManagement
-func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userExperienceAnalyticsAppHealthOverview for deviceManagement
+func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsAppHealthOverview for deviceManagement
@@ -82,8 +82,8 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreateDeleteReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration user experience analytics appHealth overview
-func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation user experience analytics appHealth overview
+func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration user experience analytics appHealth overview
@@ -101,8 +101,8 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsAppHealthOverview in deviceManagement
-func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userExperienceAnalyticsAppHealthOverview in deviceManagement
+func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsAppHealthOverview in deviceManagement
@@ -118,12 +118,12 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) CreatePatchRequ
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsAppHealthOverview for deviceManagement
-func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsAppHealthOverviewRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userExperienceAnalyticsAppHealthOverview for deviceManagement
+func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsAppHealthOverview for deviceManagement
-func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsAppHealthOverviewRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userExperienceAnalyticsAppHealthOverview for deviceManagement
+func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsAppHealthOverviewRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -138,12 +138,12 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) DeleteWithRespo
     }
     return nil
 }
-// GetWithResponseHandler user experience analytics appHealth overview
-func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsAppHealthOverviewRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get user experience analytics appHealth overview
+func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler user experience analytics appHealth overview
-func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsAppHealthOverviewRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
+// GetWithRequestConfigurationAndResponseHandler user experience analytics appHealth overview
+func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsAppHealthOverviewRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -173,12 +173,12 @@ func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) MetricValuesByI
     }
     return i52615d5294b7c09cc7abf48113e76d304d971ab6e369a32e6e648d565d5d7767.NewUserExperienceAnalyticsMetricItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsAppHealthOverview in deviceManagement
-func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, requestConfiguration *UserExperienceAnalyticsAppHealthOverviewRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userExperienceAnalyticsAppHealthOverview in deviceManagement
+func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsAppHealthOverview in deviceManagement
-func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, requestConfiguration *UserExperienceAnalyticsAppHealthOverviewRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userExperienceAnalyticsAppHealthOverview in deviceManagement
+func (m *UserExperienceAnalyticsAppHealthOverviewRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, requestConfiguration *UserExperienceAnalyticsAppHealthOverviewRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

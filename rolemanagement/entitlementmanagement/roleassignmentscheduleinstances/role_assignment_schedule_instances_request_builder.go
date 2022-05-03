@@ -75,8 +75,8 @@ func NewRoleAssignmentScheduleInstancesRequestBuilder(rawUrl string, requestAdap
 func (m *RoleAssignmentScheduleInstancesRequestBuilder) Count()(*i1526f1dfc0d05ee8398e205b32bc7700df1953a3dd38223ade6762e4f0c17c5d.CountRequestBuilder) {
     return i1526f1dfc0d05ee8398e205b32bc7700df1953a3dd38223ade6762e4f0c17c5d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration instances for active role assignments.
-func (m *RoleAssignmentScheduleInstancesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation instances for active role assignments.
+func (m *RoleAssignmentScheduleInstancesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration instances for active role assignments.
@@ -94,8 +94,8 @@ func (m *RoleAssignmentScheduleInstancesRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to roleAssignmentScheduleInstances for roleManagement
-func (m *RoleAssignmentScheduleInstancesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to roleAssignmentScheduleInstances for roleManagement
+func (m *RoleAssignmentScheduleInstancesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to roleAssignmentScheduleInstances for roleManagement
@@ -115,12 +115,12 @@ func (m *RoleAssignmentScheduleInstancesRequestBuilder) CreatePostRequestInforma
 func (m *RoleAssignmentScheduleInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ia8c4cab071c96e21125cbe53f785c45da39afa5b7fa02d3706f75bbc7425f75e.FilterByCurrentUserWithOnRequestBuilder) {
     return ia8c4cab071c96e21125cbe53f785c45da39afa5b7fa02d3706f75bbc7425f75e.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// GetWithResponseHandler instances for active role assignments.
-func (m *RoleAssignmentScheduleInstancesRequestBuilder) GetWithResponseHandler(requestConfiguration *RoleAssignmentScheduleInstancesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get instances for active role assignments.
+func (m *RoleAssignmentScheduleInstancesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler instances for active role assignments.
-func (m *RoleAssignmentScheduleInstancesRequestBuilder) GetWithResponseHandler(requestConfiguration *RoleAssignmentScheduleInstancesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler instances for active role assignments.
+func (m *RoleAssignmentScheduleInstancesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RoleAssignmentScheduleInstancesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *RoleAssignmentScheduleInstancesRequestBuilder) GetWithResponseHandler(r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to roleAssignmentScheduleInstances for roleManagement
-func (m *RoleAssignmentScheduleInstancesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceable, requestConfiguration *RoleAssignmentScheduleInstancesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to roleAssignmentScheduleInstances for roleManagement
+func (m *RoleAssignmentScheduleInstancesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to roleAssignmentScheduleInstances for roleManagement
-func (m *RoleAssignmentScheduleInstancesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceable, requestConfiguration *RoleAssignmentScheduleInstancesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to roleAssignmentScheduleInstances for roleManagement
+func (m *RoleAssignmentScheduleInstancesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceable, requestConfiguration *RoleAssignmentScheduleInstancesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleInstanceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

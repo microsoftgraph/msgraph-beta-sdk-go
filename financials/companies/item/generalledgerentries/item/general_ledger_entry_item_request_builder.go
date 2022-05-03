@@ -69,8 +69,8 @@ func NewGeneralLedgerEntryItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewGeneralLedgerEntryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property generalLedgerEntries for financials
-func (m *GeneralLedgerEntryItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property generalLedgerEntries for financials
+func (m *GeneralLedgerEntryItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property generalLedgerEntries for financials
@@ -85,8 +85,8 @@ func (m *GeneralLedgerEntryItemRequestBuilder) CreateDeleteRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get generalLedgerEntries from financials
-func (m *GeneralLedgerEntryItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get generalLedgerEntries from financials
+func (m *GeneralLedgerEntryItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get generalLedgerEntries from financials
@@ -104,8 +104,8 @@ func (m *GeneralLedgerEntryItemRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property generalLedgerEntries in financials
-func (m *GeneralLedgerEntryItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property generalLedgerEntries in financials
+func (m *GeneralLedgerEntryItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property generalLedgerEntries in financials
@@ -121,12 +121,12 @@ func (m *GeneralLedgerEntryItemRequestBuilder) CreatePatchRequestInformationWith
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property generalLedgerEntries for financials
-func (m *GeneralLedgerEntryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *GeneralLedgerEntryItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property generalLedgerEntries for financials
+func (m *GeneralLedgerEntryItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property generalLedgerEntries for financials
-func (m *GeneralLedgerEntryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *GeneralLedgerEntryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property generalLedgerEntries for financials
+func (m *GeneralLedgerEntryItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *GeneralLedgerEntryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -141,12 +141,12 @@ func (m *GeneralLedgerEntryItemRequestBuilder) DeleteWithResponseHandler(request
     }
     return nil
 }
-// GetWithResponseHandler get generalLedgerEntries from financials
-func (m *GeneralLedgerEntryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *GeneralLedgerEntryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get generalLedgerEntries from financials
+func (m *GeneralLedgerEntryItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get generalLedgerEntries from financials
-func (m *GeneralLedgerEntryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *GeneralLedgerEntryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryable, error) {
+// GetWithRequestConfigurationAndResponseHandler get generalLedgerEntries from financials
+func (m *GeneralLedgerEntryItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GeneralLedgerEntryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -161,12 +161,12 @@ func (m *GeneralLedgerEntryItemRequestBuilder) GetWithResponseHandler(requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryable), nil
 }
-// PatchWithResponseHandler update the navigation property generalLedgerEntries in financials
-func (m *GeneralLedgerEntryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryable, requestConfiguration *GeneralLedgerEntryItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property generalLedgerEntries in financials
+func (m *GeneralLedgerEntryItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property generalLedgerEntries in financials
-func (m *GeneralLedgerEntryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryable, requestConfiguration *GeneralLedgerEntryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property generalLedgerEntries in financials
+func (m *GeneralLedgerEntryItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GeneralLedgerEntryable, requestConfiguration *GeneralLedgerEntryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -64,8 +64,8 @@ func NewAccessPackageResourceScopeItemRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackageResourceScopeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property accessPackageResourceScopes for identityGovernance
-func (m *AccessPackageResourceScopeItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property accessPackageResourceScopes for identityGovernance
+func (m *AccessPackageResourceScopeItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property accessPackageResourceScopes for identityGovernance
@@ -80,8 +80,8 @@ func (m *AccessPackageResourceScopeItemRequestBuilder) CreateDeleteRequestInform
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Supports $expand.
-func (m *AccessPackageResourceScopeItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only. Nullable. Supports $expand.
+func (m *AccessPackageResourceScopeItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Supports $expand.
@@ -99,8 +99,8 @@ func (m *AccessPackageResourceScopeItemRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property accessPackageResourceScopes in identityGovernance
-func (m *AccessPackageResourceScopeItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceScopeable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property accessPackageResourceScopes in identityGovernance
+func (m *AccessPackageResourceScopeItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceScopeable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property accessPackageResourceScopes in identityGovernance
@@ -116,12 +116,12 @@ func (m *AccessPackageResourceScopeItemRequestBuilder) CreatePatchRequestInforma
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property accessPackageResourceScopes for identityGovernance
-func (m *AccessPackageResourceScopeItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AccessPackageResourceScopeItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property accessPackageResourceScopes for identityGovernance
+func (m *AccessPackageResourceScopeItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property accessPackageResourceScopes for identityGovernance
-func (m *AccessPackageResourceScopeItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AccessPackageResourceScopeItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property accessPackageResourceScopes for identityGovernance
+func (m *AccessPackageResourceScopeItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageResourceScopeItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *AccessPackageResourceScopeItemRequestBuilder) DeleteWithResponseHandler
     }
     return nil
 }
-// GetWithResponseHandler read-only. Nullable. Supports $expand.
-func (m *AccessPackageResourceScopeItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageResourceScopeItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceScopeable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only. Nullable. Supports $expand.
+func (m *AccessPackageResourceScopeItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceScopeable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only. Nullable. Supports $expand.
-func (m *AccessPackageResourceScopeItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageResourceScopeItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceScopeable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only. Nullable. Supports $expand.
+func (m *AccessPackageResourceScopeItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageResourceScopeItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceScopeable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *AccessPackageResourceScopeItemRequestBuilder) GetWithResponseHandler(re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceScopeable), nil
 }
-// PatchWithResponseHandler update the navigation property accessPackageResourceScopes in identityGovernance
-func (m *AccessPackageResourceScopeItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceScopeable, requestConfiguration *AccessPackageResourceScopeItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property accessPackageResourceScopes in identityGovernance
+func (m *AccessPackageResourceScopeItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceScopeable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property accessPackageResourceScopes in identityGovernance
-func (m *AccessPackageResourceScopeItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceScopeable, requestConfiguration *AccessPackageResourceScopeItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property accessPackageResourceScopes in identityGovernance
+func (m *AccessPackageResourceScopeItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceScopeable, requestConfiguration *AccessPackageResourceScopeItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

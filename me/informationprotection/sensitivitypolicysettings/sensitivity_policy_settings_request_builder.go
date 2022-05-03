@@ -64,8 +64,8 @@ func NewSensitivityPolicySettingsRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewSensitivityPolicySettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property sensitivityPolicySettings for me
-func (m *SensitivityPolicySettingsRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property sensitivityPolicySettings for me
+func (m *SensitivityPolicySettingsRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property sensitivityPolicySettings for me
@@ -80,8 +80,8 @@ func (m *SensitivityPolicySettingsRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get sensitivityPolicySettings from me
-func (m *SensitivityPolicySettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get sensitivityPolicySettings from me
+func (m *SensitivityPolicySettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get sensitivityPolicySettings from me
@@ -99,8 +99,8 @@ func (m *SensitivityPolicySettingsRequestBuilder) CreateGetRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property sensitivityPolicySettings in me
-func (m *SensitivityPolicySettingsRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityPolicySettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property sensitivityPolicySettings in me
+func (m *SensitivityPolicySettingsRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityPolicySettingsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property sensitivityPolicySettings in me
@@ -116,12 +116,12 @@ func (m *SensitivityPolicySettingsRequestBuilder) CreatePatchRequestInformationW
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property sensitivityPolicySettings for me
-func (m *SensitivityPolicySettingsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SensitivityPolicySettingsRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property sensitivityPolicySettings for me
+func (m *SensitivityPolicySettingsRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property sensitivityPolicySettings for me
-func (m *SensitivityPolicySettingsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SensitivityPolicySettingsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property sensitivityPolicySettings for me
+func (m *SensitivityPolicySettingsRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *SensitivityPolicySettingsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *SensitivityPolicySettingsRequestBuilder) DeleteWithResponseHandler(requ
     }
     return nil
 }
-// GetWithResponseHandler get sensitivityPolicySettings from me
-func (m *SensitivityPolicySettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *SensitivityPolicySettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityPolicySettingsable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get sensitivityPolicySettings from me
+func (m *SensitivityPolicySettingsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityPolicySettingsable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get sensitivityPolicySettings from me
-func (m *SensitivityPolicySettingsRequestBuilder) GetWithResponseHandler(requestConfiguration *SensitivityPolicySettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityPolicySettingsable, error) {
+// GetWithRequestConfigurationAndResponseHandler get sensitivityPolicySettings from me
+func (m *SensitivityPolicySettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SensitivityPolicySettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityPolicySettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *SensitivityPolicySettingsRequestBuilder) GetWithResponseHandler(request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityPolicySettingsable), nil
 }
-// PatchWithResponseHandler update the navigation property sensitivityPolicySettings in me
-func (m *SensitivityPolicySettingsRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityPolicySettingsable, requestConfiguration *SensitivityPolicySettingsRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property sensitivityPolicySettings in me
+func (m *SensitivityPolicySettingsRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityPolicySettingsable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property sensitivityPolicySettings in me
-func (m *SensitivityPolicySettingsRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityPolicySettingsable, requestConfiguration *SensitivityPolicySettingsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property sensitivityPolicySettings in me
+func (m *SensitivityPolicySettingsRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityPolicySettingsable, requestConfiguration *SensitivityPolicySettingsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

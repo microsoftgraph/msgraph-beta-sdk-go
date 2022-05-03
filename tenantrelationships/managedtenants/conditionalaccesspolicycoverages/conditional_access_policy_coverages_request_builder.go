@@ -74,8 +74,8 @@ func NewConditionalAccessPolicyCoveragesRequestBuilder(rawUrl string, requestAda
 func (m *ConditionalAccessPolicyCoveragesRequestBuilder) Count()(*i48896f3f1a598ce5455314451ce135c4f8334a1b9af78f85490c9db333900f70.CountRequestBuilder) {
     return i48896f3f1a598ce5455314451ce135c4f8334a1b9af78f85490c9db333900f70.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration aggregate view of conditional access policy coverage across managed tenants.
-func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation aggregate view of conditional access policy coverage across managed tenants.
+func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration aggregate view of conditional access policy coverage across managed tenants.
@@ -93,8 +93,8 @@ func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to conditionalAccessPolicyCoverages for tenantRelationships
-func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to conditionalAccessPolicyCoverages for tenantRelationships
+func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreatePostRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to conditionalAccessPolicyCoverages for tenantRelationships
@@ -110,12 +110,12 @@ func (m *ConditionalAccessPolicyCoveragesRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler aggregate view of conditional access policy coverage across managed tenants.
-func (m *ConditionalAccessPolicyCoveragesRequestBuilder) GetWithResponseHandler(requestConfiguration *ConditionalAccessPolicyCoveragesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get aggregate view of conditional access policy coverage across managed tenants.
+func (m *ConditionalAccessPolicyCoveragesRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler aggregate view of conditional access policy coverage across managed tenants.
-func (m *ConditionalAccessPolicyCoveragesRequestBuilder) GetWithResponseHandler(requestConfiguration *ConditionalAccessPolicyCoveragesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler aggregate view of conditional access policy coverage across managed tenants.
+func (m *ConditionalAccessPolicyCoveragesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ConditionalAccessPolicyCoveragesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ConditionalAccessPolicyCoveragesRequestBuilder) GetWithResponseHandler(
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to conditionalAccessPolicyCoverages for tenantRelationships
-func (m *ConditionalAccessPolicyCoveragesRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageable, requestConfiguration *ConditionalAccessPolicyCoveragesRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to conditionalAccessPolicyCoverages for tenantRelationships
+func (m *ConditionalAccessPolicyCoveragesRequestBuilder) Post(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to conditionalAccessPolicyCoverages for tenantRelationships
-func (m *ConditionalAccessPolicyCoveragesRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageable, requestConfiguration *ConditionalAccessPolicyCoveragesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to conditionalAccessPolicyCoverages for tenantRelationships
+func (m *ConditionalAccessPolicyCoveragesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageable, requestConfiguration *ConditionalAccessPolicyCoveragesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ConditionalAccessPolicyCoverageable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

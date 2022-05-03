@@ -74,8 +74,8 @@ func NewWindowsQualityUpdateProfilesRequestBuilder(rawUrl string, requestAdapter
 func (m *WindowsQualityUpdateProfilesRequestBuilder) Count()(*ib401e775810c58438fb5c84bcd66d3f26763c18da059fec8f94eeecfc1398186.CountRequestBuilder) {
     return ib401e775810c58438fb5c84bcd66d3f26763c18da059fec8f94eeecfc1398186.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of windows quality update profiles
-func (m *WindowsQualityUpdateProfilesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a collection of windows quality update profiles
+func (m *WindowsQualityUpdateProfilesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a collection of windows quality update profiles
@@ -93,8 +93,8 @@ func (m *WindowsQualityUpdateProfilesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to windowsQualityUpdateProfiles for deviceManagement
-func (m *WindowsQualityUpdateProfilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to windowsQualityUpdateProfiles for deviceManagement
+func (m *WindowsQualityUpdateProfilesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to windowsQualityUpdateProfiles for deviceManagement
@@ -110,12 +110,12 @@ func (m *WindowsQualityUpdateProfilesRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler a collection of windows quality update profiles
-func (m *WindowsQualityUpdateProfilesRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsQualityUpdateProfilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a collection of windows quality update profiles
+func (m *WindowsQualityUpdateProfilesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a collection of windows quality update profiles
-func (m *WindowsQualityUpdateProfilesRequestBuilder) GetWithResponseHandler(requestConfiguration *WindowsQualityUpdateProfilesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler a collection of windows quality update profiles
+func (m *WindowsQualityUpdateProfilesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *WindowsQualityUpdateProfilesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *WindowsQualityUpdateProfilesRequestBuilder) GetWithResponseHandler(requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to windowsQualityUpdateProfiles for deviceManagement
-func (m *WindowsQualityUpdateProfilesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable, requestConfiguration *WindowsQualityUpdateProfilesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to windowsQualityUpdateProfiles for deviceManagement
+func (m *WindowsQualityUpdateProfilesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to windowsQualityUpdateProfiles for deviceManagement
-func (m *WindowsQualityUpdateProfilesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable, requestConfiguration *WindowsQualityUpdateProfilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to windowsQualityUpdateProfiles for deviceManagement
+func (m *WindowsQualityUpdateProfilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable, requestConfiguration *WindowsQualityUpdateProfilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdateProfileable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

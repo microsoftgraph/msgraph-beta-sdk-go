@@ -75,8 +75,8 @@ func NewAppConsentRequestsForApprovalRequestBuilder(rawUrl string, requestAdapte
 func (m *AppConsentRequestsForApprovalRequestBuilder) Count()(*i2aff4144cd54a07b9cb5d6f8b47791f3dce8a8c0cc3b5c42867809d8e62fe624.CountRequestBuilder) {
     return i2aff4144cd54a07b9cb5d6f8b47791f3dce8a8c0cc3b5c42867809d8e62fe624.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get appConsentRequestsForApproval from users
-func (m *AppConsentRequestsForApprovalRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get appConsentRequestsForApproval from users
+func (m *AppConsentRequestsForApprovalRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get appConsentRequestsForApproval from users
@@ -94,8 +94,8 @@ func (m *AppConsentRequestsForApprovalRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to appConsentRequestsForApproval for users
-func (m *AppConsentRequestsForApprovalRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to appConsentRequestsForApproval for users
+func (m *AppConsentRequestsForApprovalRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to appConsentRequestsForApproval for users
@@ -115,12 +115,12 @@ func (m *AppConsentRequestsForApprovalRequestBuilder) CreatePostRequestInformati
 func (m *AppConsentRequestsForApprovalRequestBuilder) FilterByCurrentUserWithOn(on *string)(*i3ad7e38a1e6e366d328672a0f0b69e6cc3747fe9e03d98f0d7dcd1af3c556d28.FilterByCurrentUserWithOnRequestBuilder) {
     return i3ad7e38a1e6e366d328672a0f0b69e6cc3747fe9e03d98f0d7dcd1af3c556d28.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// GetWithResponseHandler get appConsentRequestsForApproval from users
-func (m *AppConsentRequestsForApprovalRequestBuilder) GetWithResponseHandler(requestConfiguration *AppConsentRequestsForApprovalRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get appConsentRequestsForApproval from users
+func (m *AppConsentRequestsForApprovalRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get appConsentRequestsForApproval from users
-func (m *AppConsentRequestsForApprovalRequestBuilder) GetWithResponseHandler(requestConfiguration *AppConsentRequestsForApprovalRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get appConsentRequestsForApproval from users
+func (m *AppConsentRequestsForApprovalRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AppConsentRequestsForApprovalRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *AppConsentRequestsForApprovalRequestBuilder) GetWithResponseHandler(req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to appConsentRequestsForApproval for users
-func (m *AppConsentRequestsForApprovalRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, requestConfiguration *AppConsentRequestsForApprovalRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to appConsentRequestsForApproval for users
+func (m *AppConsentRequestsForApprovalRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to appConsentRequestsForApproval for users
-func (m *AppConsentRequestsForApprovalRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, requestConfiguration *AppConsentRequestsForApprovalRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to appConsentRequestsForApproval for users
+func (m *AppConsentRequestsForApprovalRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, requestConfiguration *AppConsentRequestsForApprovalRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

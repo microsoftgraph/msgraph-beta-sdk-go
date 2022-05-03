@@ -42,8 +42,8 @@ func NewSummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewSummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function summarizeDeviceResourcePerformance
-func (m *SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function summarizeDeviceResourcePerformance
+func (m *SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function summarizeDeviceResourcePerformance
@@ -58,12 +58,12 @@ func (m *SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function summarizeDeviceResourcePerformance
-func (m *SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder) GetWithResponseHandler(requestConfiguration *SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration)(SummarizeDeviceResourcePerformanceWithSummarizeByResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function summarizeDeviceResourcePerformance
+func (m *SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder) Get()(SummarizeDeviceResourcePerformanceWithSummarizeByResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function summarizeDeviceResourcePerformance
-func (m *SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder) GetWithResponseHandler(requestConfiguration *SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SummarizeDeviceResourcePerformanceWithSummarizeByResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function summarizeDeviceResourcePerformance
+func (m *SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SummarizeDeviceResourcePerformanceWithSummarizeByResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -65,8 +65,8 @@ func NewDeviceLogCollectionResponseItemRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceLogCollectionResponseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property logCollectionRequests for deviceManagement
-func (m *DeviceLogCollectionResponseItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property logCollectionRequests for deviceManagement
+func (m *DeviceLogCollectionResponseItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property logCollectionRequests for deviceManagement
@@ -85,8 +85,8 @@ func (m *DeviceLogCollectionResponseItemRequestBuilder) CreateDeleteRequestInfor
 func (m *DeviceLogCollectionResponseItemRequestBuilder) CreateDownloadUrl()(*ifa5703506e66daeeb648bc2c0899b3b7d7e3599095e2ad4527d57f240d2bb2e0.CreateDownloadUrlRequestBuilder) {
     return ifa5703506e66daeeb648bc2c0899b3b7d7e3599095e2ad4527d57f240d2bb2e0.NewCreateDownloadUrlRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration list of log collection requests
-func (m *DeviceLogCollectionResponseItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation list of log collection requests
+func (m *DeviceLogCollectionResponseItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration list of log collection requests
@@ -104,8 +104,8 @@ func (m *DeviceLogCollectionResponseItemRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property logCollectionRequests in deviceManagement
-func (m *DeviceLogCollectionResponseItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property logCollectionRequests in deviceManagement
+func (m *DeviceLogCollectionResponseItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property logCollectionRequests in deviceManagement
@@ -121,12 +121,12 @@ func (m *DeviceLogCollectionResponseItemRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property logCollectionRequests for deviceManagement
-func (m *DeviceLogCollectionResponseItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property logCollectionRequests for deviceManagement
+func (m *DeviceLogCollectionResponseItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property logCollectionRequests for deviceManagement
-func (m *DeviceLogCollectionResponseItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property logCollectionRequests for deviceManagement
+func (m *DeviceLogCollectionResponseItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -141,12 +141,12 @@ func (m *DeviceLogCollectionResponseItemRequestBuilder) DeleteWithResponseHandle
     }
     return nil
 }
-// GetWithResponseHandler list of log collection requests
-func (m *DeviceLogCollectionResponseItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceLogCollectionResponseItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get list of log collection requests
+func (m *DeviceLogCollectionResponseItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler list of log collection requests
-func (m *DeviceLogCollectionResponseItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceLogCollectionResponseItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler list of log collection requests
+func (m *DeviceLogCollectionResponseItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceLogCollectionResponseItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -161,12 +161,12 @@ func (m *DeviceLogCollectionResponseItemRequestBuilder) GetWithResponseHandler(r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable), nil
 }
-// PatchWithResponseHandler update the navigation property logCollectionRequests in deviceManagement
-func (m *DeviceLogCollectionResponseItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, requestConfiguration *DeviceLogCollectionResponseItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property logCollectionRequests in deviceManagement
+func (m *DeviceLogCollectionResponseItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property logCollectionRequests in deviceManagement
-func (m *DeviceLogCollectionResponseItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, requestConfiguration *DeviceLogCollectionResponseItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property logCollectionRequests in deviceManagement
+func (m *DeviceLogCollectionResponseItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, requestConfiguration *DeviceLogCollectionResponseItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

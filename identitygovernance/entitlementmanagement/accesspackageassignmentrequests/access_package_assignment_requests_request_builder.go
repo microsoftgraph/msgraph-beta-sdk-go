@@ -75,8 +75,8 @@ func NewAccessPackageAssignmentRequestsRequestBuilder(rawUrl string, requestAdap
 func (m *AccessPackageAssignmentRequestsRequestBuilder) Count()(*i5c62d42239fff774554ba64c434a51d53a1aad8041a26d1794ace0ef32bafbf8.CountRequestBuilder) {
     return i5c62d42239fff774554ba64c434a51d53a1aad8041a26d1794ace0ef32bafbf8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents access package assignment requests created by or on behalf of a user.
-func (m *AccessPackageAssignmentRequestsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents access package assignment requests created by or on behalf of a user.
+func (m *AccessPackageAssignmentRequestsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents access package assignment requests created by or on behalf of a user.
@@ -94,8 +94,8 @@ func (m *AccessPackageAssignmentRequestsRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to accessPackageAssignmentRequests for identityGovernance
-func (m *AccessPackageAssignmentRequestsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to accessPackageAssignmentRequests for identityGovernance
+func (m *AccessPackageAssignmentRequestsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to accessPackageAssignmentRequests for identityGovernance
@@ -115,12 +115,12 @@ func (m *AccessPackageAssignmentRequestsRequestBuilder) CreatePostRequestInforma
 func (m *AccessPackageAssignmentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*icfc95ae58abf84399b1b56b45cd6fd6e5a60278d6839f0902e96c72d35925599.FilterByCurrentUserWithOnRequestBuilder) {
     return icfc95ae58abf84399b1b56b45cd6fd6e5a60278d6839f0902e96c72d35925599.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// GetWithResponseHandler represents access package assignment requests created by or on behalf of a user.
-func (m *AccessPackageAssignmentRequestsRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageAssignmentRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents access package assignment requests created by or on behalf of a user.
+func (m *AccessPackageAssignmentRequestsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents access package assignment requests created by or on behalf of a user.
-func (m *AccessPackageAssignmentRequestsRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageAssignmentRequestsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents access package assignment requests created by or on behalf of a user.
+func (m *AccessPackageAssignmentRequestsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageAssignmentRequestsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *AccessPackageAssignmentRequestsRequestBuilder) GetWithResponseHandler(r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to accessPackageAssignmentRequests for identityGovernance
-func (m *AccessPackageAssignmentRequestsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestable, requestConfiguration *AccessPackageAssignmentRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to accessPackageAssignmentRequests for identityGovernance
+func (m *AccessPackageAssignmentRequestsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to accessPackageAssignmentRequests for identityGovernance
-func (m *AccessPackageAssignmentRequestsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestable, requestConfiguration *AccessPackageAssignmentRequestsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to accessPackageAssignmentRequests for identityGovernance
+func (m *AccessPackageAssignmentRequestsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestable, requestConfiguration *AccessPackageAssignmentRequestsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

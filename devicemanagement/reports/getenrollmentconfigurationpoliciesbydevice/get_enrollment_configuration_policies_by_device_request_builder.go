@@ -39,8 +39,8 @@ func NewGetEnrollmentConfigurationPoliciesByDeviceRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewGetEnrollmentConfigurationPoliciesByDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getEnrollmentConfigurationPoliciesByDevice
-func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getEnrollmentConfigurationPoliciesByDevice
+func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) CreatePostRequestInformation(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getEnrollmentConfigurationPoliciesByDevice
@@ -56,12 +56,12 @@ func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) CreatePostReq
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getEnrollmentConfigurationPoliciesByDevice
-func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) PostWithResponseHandler(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable, requestConfiguration *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostRequestConfiguration)(GetEnrollmentConfigurationPoliciesByDeviceResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getEnrollmentConfigurationPoliciesByDevice
+func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) Post(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable)(GetEnrollmentConfigurationPoliciesByDeviceResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getEnrollmentConfigurationPoliciesByDevice
-func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) PostWithResponseHandler(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable, requestConfiguration *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEnrollmentConfigurationPoliciesByDeviceResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getEnrollmentConfigurationPoliciesByDevice
+func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable, requestConfiguration *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEnrollmentConfigurationPoliciesByDeviceResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

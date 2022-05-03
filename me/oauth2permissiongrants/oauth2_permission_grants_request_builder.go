@@ -67,8 +67,8 @@ func NewOauth2PermissionGrantsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *Oauth2PermissionGrantsRequestBuilder) Count()(*ibd0d9753d771d113da324135cdb6c8a2f06fd718d59cdae7d9da09e93a9f6dcf.CountRequestBuilder) {
     return ibd0d9753d771d113da324135cdb6c8a2f06fd718d59cdae7d9da09e93a9f6dcf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get oauth2PermissionGrants from me
-func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get oauth2PermissionGrants from me
+func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get oauth2PermissionGrants from me
@@ -86,12 +86,12 @@ func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get oauth2PermissionGrants from me
-func (m *Oauth2PermissionGrantsRequestBuilder) GetWithResponseHandler(requestConfiguration *Oauth2PermissionGrantsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get oauth2PermissionGrants from me
+func (m *Oauth2PermissionGrantsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get oauth2PermissionGrants from me
-func (m *Oauth2PermissionGrantsRequestBuilder) GetWithResponseHandler(requestConfiguration *Oauth2PermissionGrantsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get oauth2PermissionGrants from me
+func (m *Oauth2PermissionGrantsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *Oauth2PermissionGrantsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

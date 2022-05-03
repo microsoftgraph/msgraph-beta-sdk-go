@@ -74,8 +74,8 @@ func NewGroupPolicyOperationsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *GroupPolicyOperationsRequestBuilder) Count()(*iadd321f8d153dbf2ada79a6eae55bc1d7290f9043074ecc98308227c5921a7d4.CountRequestBuilder) {
     return iadd321f8d153dbf2ada79a6eae55bc1d7290f9043074ecc98308227c5921a7d4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of operations on the uploaded ADMX file.
-func (m *GroupPolicyOperationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of operations on the uploaded ADMX file.
+func (m *GroupPolicyOperationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of operations on the uploaded ADMX file.
@@ -93,8 +93,8 @@ func (m *GroupPolicyOperationsRequestBuilder) CreateGetRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to groupPolicyOperations for deviceManagement
-func (m *GroupPolicyOperationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to groupPolicyOperations for deviceManagement
+func (m *GroupPolicyOperationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to groupPolicyOperations for deviceManagement
@@ -110,12 +110,12 @@ func (m *GroupPolicyOperationsRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the list of operations on the uploaded ADMX file.
-func (m *GroupPolicyOperationsRequestBuilder) GetWithResponseHandler(requestConfiguration *GroupPolicyOperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of operations on the uploaded ADMX file.
+func (m *GroupPolicyOperationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of operations on the uploaded ADMX file.
-func (m *GroupPolicyOperationsRequestBuilder) GetWithResponseHandler(requestConfiguration *GroupPolicyOperationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of operations on the uploaded ADMX file.
+func (m *GroupPolicyOperationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GroupPolicyOperationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *GroupPolicyOperationsRequestBuilder) GetWithResponseHandler(requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to groupPolicyOperations for deviceManagement
-func (m *GroupPolicyOperationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationable, requestConfiguration *GroupPolicyOperationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to groupPolicyOperations for deviceManagement
+func (m *GroupPolicyOperationsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to groupPolicyOperations for deviceManagement
-func (m *GroupPolicyOperationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationable, requestConfiguration *GroupPolicyOperationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to groupPolicyOperations for deviceManagement
+func (m *GroupPolicyOperationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationable, requestConfiguration *GroupPolicyOperationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

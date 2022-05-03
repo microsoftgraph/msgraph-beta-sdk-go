@@ -70,8 +70,8 @@ func NewSalesOrderLineItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewSalesOrderLineItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property salesOrderLines for financials
-func (m *SalesOrderLineItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property salesOrderLines for financials
+func (m *SalesOrderLineItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property salesOrderLines for financials
@@ -86,8 +86,8 @@ func (m *SalesOrderLineItemRequestBuilder) CreateDeleteRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get salesOrderLines from financials
-func (m *SalesOrderLineItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get salesOrderLines from financials
+func (m *SalesOrderLineItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get salesOrderLines from financials
@@ -105,8 +105,8 @@ func (m *SalesOrderLineItemRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property salesOrderLines in financials
-func (m *SalesOrderLineItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property salesOrderLines in financials
+func (m *SalesOrderLineItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property salesOrderLines in financials
@@ -122,12 +122,12 @@ func (m *SalesOrderLineItemRequestBuilder) CreatePatchRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property salesOrderLines for financials
-func (m *SalesOrderLineItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SalesOrderLineItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property salesOrderLines for financials
+func (m *SalesOrderLineItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property salesOrderLines for financials
-func (m *SalesOrderLineItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SalesOrderLineItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property salesOrderLines for financials
+func (m *SalesOrderLineItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *SalesOrderLineItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -142,12 +142,12 @@ func (m *SalesOrderLineItemRequestBuilder) DeleteWithResponseHandler(requestConf
     }
     return nil
 }
-// GetWithResponseHandler get salesOrderLines from financials
-func (m *SalesOrderLineItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SalesOrderLineItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get salesOrderLines from financials
+func (m *SalesOrderLineItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get salesOrderLines from financials
-func (m *SalesOrderLineItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SalesOrderLineItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable, error) {
+// GetWithRequestConfigurationAndResponseHandler get salesOrderLines from financials
+func (m *SalesOrderLineItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SalesOrderLineItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -166,12 +166,12 @@ func (m *SalesOrderLineItemRequestBuilder) GetWithResponseHandler(requestConfigu
 func (m *SalesOrderLineItemRequestBuilder) Item()(*ifb4ac590fe40b87eccb5b8da345b3ff62d36cccf0aebf84f2885ec48f4d329f9.ItemRequestBuilder) {
     return ifb4ac590fe40b87eccb5b8da345b3ff62d36cccf0aebf84f2885ec48f4d329f9.NewItemRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property salesOrderLines in financials
-func (m *SalesOrderLineItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable, requestConfiguration *SalesOrderLineItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property salesOrderLines in financials
+func (m *SalesOrderLineItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property salesOrderLines in financials
-func (m *SalesOrderLineItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable, requestConfiguration *SalesOrderLineItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property salesOrderLines in financials
+func (m *SalesOrderLineItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable, requestConfiguration *SalesOrderLineItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

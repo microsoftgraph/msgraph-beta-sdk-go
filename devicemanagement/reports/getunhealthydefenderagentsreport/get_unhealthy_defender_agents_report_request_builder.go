@@ -39,8 +39,8 @@ func NewGetUnhealthyDefenderAgentsReportRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewGetUnhealthyDefenderAgentsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getUnhealthyDefenderAgentsReport
-func (m *GetUnhealthyDefenderAgentsReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetUnhealthyDefenderAgentsReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getUnhealthyDefenderAgentsReport
+func (m *GetUnhealthyDefenderAgentsReportRequestBuilder) CreatePostRequestInformation(body GetUnhealthyDefenderAgentsReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getUnhealthyDefenderAgentsReport
@@ -56,12 +56,12 @@ func (m *GetUnhealthyDefenderAgentsReportRequestBuilder) CreatePostRequestInform
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getUnhealthyDefenderAgentsReport
-func (m *GetUnhealthyDefenderAgentsReportRequestBuilder) PostWithResponseHandler(body GetUnhealthyDefenderAgentsReportRequestBodyable, requestConfiguration *GetUnhealthyDefenderAgentsReportRequestBuilderPostRequestConfiguration)(GetUnhealthyDefenderAgentsReportResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getUnhealthyDefenderAgentsReport
+func (m *GetUnhealthyDefenderAgentsReportRequestBuilder) Post(body GetUnhealthyDefenderAgentsReportRequestBodyable)(GetUnhealthyDefenderAgentsReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getUnhealthyDefenderAgentsReport
-func (m *GetUnhealthyDefenderAgentsReportRequestBuilder) PostWithResponseHandler(body GetUnhealthyDefenderAgentsReportRequestBodyable, requestConfiguration *GetUnhealthyDefenderAgentsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetUnhealthyDefenderAgentsReportResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getUnhealthyDefenderAgentsReport
+func (m *GetUnhealthyDefenderAgentsReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetUnhealthyDefenderAgentsReportRequestBodyable, requestConfiguration *GetUnhealthyDefenderAgentsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetUnhealthyDefenderAgentsReportResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

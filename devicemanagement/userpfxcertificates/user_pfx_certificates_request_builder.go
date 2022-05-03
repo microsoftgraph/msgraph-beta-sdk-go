@@ -74,8 +74,8 @@ func NewUserPfxCertificatesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *UserPfxCertificatesRequestBuilder) Count()(*id58eeed93af695ec75e670c45d5d0c348ef632f4a59ebeb2431e6d033d683709.CountRequestBuilder) {
     return id58eeed93af695ec75e670c45d5d0c348ef632f4a59ebeb2431e6d033d683709.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of PFX certificates associated with a user.
-func (m *UserPfxCertificatesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation collection of PFX certificates associated with a user.
+func (m *UserPfxCertificatesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration collection of PFX certificates associated with a user.
@@ -93,8 +93,8 @@ func (m *UserPfxCertificatesRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to userPfxCertificates for deviceManagement
-func (m *UserPfxCertificatesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to userPfxCertificates for deviceManagement
+func (m *UserPfxCertificatesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to userPfxCertificates for deviceManagement
@@ -110,12 +110,12 @@ func (m *UserPfxCertificatesRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler collection of PFX certificates associated with a user.
-func (m *UserPfxCertificatesRequestBuilder) GetWithResponseHandler(requestConfiguration *UserPfxCertificatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get collection of PFX certificates associated with a user.
+func (m *UserPfxCertificatesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler collection of PFX certificates associated with a user.
-func (m *UserPfxCertificatesRequestBuilder) GetWithResponseHandler(requestConfiguration *UserPfxCertificatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler collection of PFX certificates associated with a user.
+func (m *UserPfxCertificatesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserPfxCertificatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *UserPfxCertificatesRequestBuilder) GetWithResponseHandler(requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to userPfxCertificates for deviceManagement
-func (m *UserPfxCertificatesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateable, requestConfiguration *UserPfxCertificatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to userPfxCertificates for deviceManagement
+func (m *UserPfxCertificatesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to userPfxCertificates for deviceManagement
-func (m *UserPfxCertificatesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateable, requestConfiguration *UserPfxCertificatesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to userPfxCertificates for deviceManagement
+func (m *UserPfxCertificatesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateable, requestConfiguration *UserPfxCertificatesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserPFXCertificateable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

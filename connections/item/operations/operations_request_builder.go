@@ -74,8 +74,8 @@ func NewOperationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *OperationsRequestBuilder) Count()(*ieee99f3e0b83b9cfeef4886f5a3da37bbfd4322808e3ab8c57a81f683e752564.CountRequestBuilder) {
     return ieee99f3e0b83b9cfeef4886f5a3da37bbfd4322808e3ab8c57a81f683e752564.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
-func (m *OperationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation read-only. Nullable.
+func (m *OperationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
@@ -93,8 +93,8 @@ func (m *OperationsRequestBuilder) CreateGetRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to operations for connections
-func (m *OperationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to operations for connections
+func (m *OperationsRequestBuilder) CreatePostRequestInformation(body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to operations for connections
@@ -110,12 +110,12 @@ func (m *OperationsRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler read-only. Nullable.
-func (m *OperationsRequestBuilder) GetWithResponseHandler(requestConfiguration *OperationsRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get read-only. Nullable.
+func (m *OperationsRequestBuilder) Get()(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler read-only. Nullable.
-func (m *OperationsRequestBuilder) GetWithResponseHandler(requestConfiguration *OperationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+func (m *OperationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OperationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *OperationsRequestBuilder) GetWithResponseHandler(requestConfiguration *
     }
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to operations for connections
-func (m *OperationsRequestBuilder) PostWithResponseHandler(body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationable, requestConfiguration *OperationsRequestBuilderPostRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to operations for connections
+func (m *OperationsRequestBuilder) Post(body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationable)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to operations for connections
-func (m *OperationsRequestBuilder) PostWithResponseHandler(body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationable, requestConfiguration *OperationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to operations for connections
+func (m *OperationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationable, requestConfiguration *OperationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

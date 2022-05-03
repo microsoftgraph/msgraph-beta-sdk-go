@@ -39,8 +39,8 @@ func NewUpdatePrioritiesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewUpdatePrioritiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action updatePriorities
-func (m *UpdatePrioritiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdatePrioritiesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action updatePriorities
+func (m *UpdatePrioritiesRequestBuilder) CreatePostRequestInformation(body UpdatePrioritiesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updatePriorities
@@ -56,12 +56,12 @@ func (m *UpdatePrioritiesRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action updatePriorities
-func (m *UpdatePrioritiesRequestBuilder) PostWithResponseHandler(body UpdatePrioritiesRequestBodyable, requestConfiguration *UpdatePrioritiesRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action updatePriorities
+func (m *UpdatePrioritiesRequestBuilder) Post(body UpdatePrioritiesRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action updatePriorities
-func (m *UpdatePrioritiesRequestBuilder) PostWithResponseHandler(body UpdatePrioritiesRequestBodyable, requestConfiguration *UpdatePrioritiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action updatePriorities
+func (m *UpdatePrioritiesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdatePrioritiesRequestBodyable, requestConfiguration *UpdatePrioritiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

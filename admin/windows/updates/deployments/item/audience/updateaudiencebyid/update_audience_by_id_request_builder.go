@@ -39,8 +39,8 @@ func NewUpdateAudienceByIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateAudienceByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action updateAudienceById
-func (m *UpdateAudienceByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateAudienceByIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action updateAudienceById
+func (m *UpdateAudienceByIdRequestBuilder) CreatePostRequestInformation(body UpdateAudienceByIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateAudienceById
@@ -56,12 +56,12 @@ func (m *UpdateAudienceByIdRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action updateAudienceById
-func (m *UpdateAudienceByIdRequestBuilder) PostWithResponseHandler(body UpdateAudienceByIdRequestBodyable, requestConfiguration *UpdateAudienceByIdRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action updateAudienceById
+func (m *UpdateAudienceByIdRequestBuilder) Post(body UpdateAudienceByIdRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action updateAudienceById
-func (m *UpdateAudienceByIdRequestBuilder) PostWithResponseHandler(body UpdateAudienceByIdRequestBodyable, requestConfiguration *UpdateAudienceByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action updateAudienceById
+func (m *UpdateAudienceByIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateAudienceByIdRequestBodyable, requestConfiguration *UpdateAudienceByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

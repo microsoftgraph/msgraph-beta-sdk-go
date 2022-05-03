@@ -50,8 +50,8 @@ func NewAcceptedForRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewAcceptedForRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration get acceptedFor from tenantRelationships
-func (m *AcceptedForRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get acceptedFor from tenantRelationships
+func (m *AcceptedForRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get acceptedFor from tenantRelationships
@@ -69,12 +69,12 @@ func (m *AcceptedForRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get acceptedFor from tenantRelationships
-func (m *AcceptedForRequestBuilder) GetWithResponseHandler(requestConfiguration *AcceptedForRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get acceptedFor from tenantRelationships
+func (m *AcceptedForRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get acceptedFor from tenantRelationships
-func (m *AcceptedForRequestBuilder) GetWithResponseHandler(requestConfiguration *AcceptedForRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepable, error) {
+// GetWithRequestConfigurationAndResponseHandler get acceptedFor from tenantRelationships
+func (m *AcceptedForRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AcceptedForRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

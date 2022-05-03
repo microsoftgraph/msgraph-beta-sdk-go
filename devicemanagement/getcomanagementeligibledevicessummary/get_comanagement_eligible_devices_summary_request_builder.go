@@ -40,8 +40,8 @@ func NewGetComanagementEligibleDevicesSummaryRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewGetComanagementEligibleDevicesSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getComanagementEligibleDevicesSummary
-func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getComanagementEligibleDevicesSummary
+func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getComanagementEligibleDevicesSummary
@@ -56,12 +56,12 @@ func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getComanagementEligibleDevicesSummary
-func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) GetWithResponseHandler(requestConfiguration *GetComanagementEligibleDevicesSummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ComanagementEligibleDevicesSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getComanagementEligibleDevicesSummary
+func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ComanagementEligibleDevicesSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getComanagementEligibleDevicesSummary
-func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) GetWithResponseHandler(requestConfiguration *GetComanagementEligibleDevicesSummaryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ComanagementEligibleDevicesSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getComanagementEligibleDevicesSummary
+func (m *GetComanagementEligibleDevicesSummaryRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetComanagementEligibleDevicesSummaryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ComanagementEligibleDevicesSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -50,8 +50,8 @@ func NewManagementTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration get managementTemplates from tenantRelationships
-func (m *ManagementTemplateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get managementTemplates from tenantRelationships
+func (m *ManagementTemplateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get managementTemplates from tenantRelationships
@@ -69,12 +69,12 @@ func (m *ManagementTemplateItemRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get managementTemplates from tenantRelationships
-func (m *ManagementTemplateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementTemplateItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get managementTemplates from tenantRelationships
+func (m *ManagementTemplateItemRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get managementTemplates from tenantRelationships
-func (m *ManagementTemplateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementTemplateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, error) {
+// GetWithRequestConfigurationAndResponseHandler get managementTemplates from tenantRelationships
+func (m *ManagementTemplateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagementTemplateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -64,8 +64,8 @@ func NewUserExperienceAnalyticsMetricHistoryItemRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsMetricHistoryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsMetricHistory for deviceManagement
-func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userExperienceAnalyticsMetricHistory for deviceManagement
+func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsMetricHistory for deviceManagement
@@ -80,8 +80,8 @@ func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) CreateDeleteReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration user experience analytics metric history
-func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation user experience analytics metric history
+func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration user experience analytics metric history
@@ -99,8 +99,8 @@ func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsMetricHistory in deviceManagement
-func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsMetricHistoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userExperienceAnalyticsMetricHistory in deviceManagement
+func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsMetricHistoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsMetricHistory in deviceManagement
@@ -116,12 +116,12 @@ func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) CreatePatchRequ
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsMetricHistory for deviceManagement
-func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsMetricHistoryItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userExperienceAnalyticsMetricHistory for deviceManagement
+func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsMetricHistory for deviceManagement
-func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsMetricHistoryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userExperienceAnalyticsMetricHistory for deviceManagement
+func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsMetricHistoryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) DeleteWithRespo
     }
     return nil
 }
-// GetWithResponseHandler user experience analytics metric history
-func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsMetricHistoryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsMetricHistoryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get user experience analytics metric history
+func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsMetricHistoryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler user experience analytics metric history
-func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsMetricHistoryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsMetricHistoryable, error) {
+// GetWithRequestConfigurationAndResponseHandler user experience analytics metric history
+func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsMetricHistoryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsMetricHistoryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) GetWithResponse
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsMetricHistoryable), nil
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsMetricHistory in deviceManagement
-func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsMetricHistoryable, requestConfiguration *UserExperienceAnalyticsMetricHistoryItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userExperienceAnalyticsMetricHistory in deviceManagement
+func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsMetricHistoryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsMetricHistory in deviceManagement
-func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsMetricHistoryable, requestConfiguration *UserExperienceAnalyticsMetricHistoryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userExperienceAnalyticsMetricHistory in deviceManagement
+func (m *UserExperienceAnalyticsMetricHistoryItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsMetricHistoryable, requestConfiguration *UserExperienceAnalyticsMetricHistoryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

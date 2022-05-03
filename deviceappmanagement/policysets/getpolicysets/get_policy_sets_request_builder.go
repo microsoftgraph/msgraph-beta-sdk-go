@@ -39,8 +39,8 @@ func NewGetPolicySetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewGetPolicySetsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getPolicySets
-func (m *GetPolicySetsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetPolicySetsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getPolicySets
+func (m *GetPolicySetsRequestBuilder) CreatePostRequestInformation(body GetPolicySetsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getPolicySets
@@ -56,12 +56,12 @@ func (m *GetPolicySetsRequestBuilder) CreatePostRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getPolicySets
-func (m *GetPolicySetsRequestBuilder) PostWithResponseHandler(body GetPolicySetsRequestBodyable, requestConfiguration *GetPolicySetsRequestBuilderPostRequestConfiguration)(GetPolicySetsResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getPolicySets
+func (m *GetPolicySetsRequestBuilder) Post(body GetPolicySetsRequestBodyable)(GetPolicySetsResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getPolicySets
-func (m *GetPolicySetsRequestBuilder) PostWithResponseHandler(body GetPolicySetsRequestBodyable, requestConfiguration *GetPolicySetsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetPolicySetsResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getPolicySets
+func (m *GetPolicySetsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetPolicySetsRequestBodyable, requestConfiguration *GetPolicySetsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetPolicySetsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

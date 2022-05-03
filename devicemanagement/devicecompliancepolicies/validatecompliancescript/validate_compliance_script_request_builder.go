@@ -40,8 +40,8 @@ func NewValidateComplianceScriptRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewValidateComplianceScriptRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action validateComplianceScript
-func (m *ValidateComplianceScriptRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ValidateComplianceScriptRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action validateComplianceScript
+func (m *ValidateComplianceScriptRequestBuilder) CreatePostRequestInformation(body ValidateComplianceScriptRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action validateComplianceScript
@@ -57,12 +57,12 @@ func (m *ValidateComplianceScriptRequestBuilder) CreatePostRequestInformationWit
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action validateComplianceScript
-func (m *ValidateComplianceScriptRequestBuilder) PostWithResponseHandler(body ValidateComplianceScriptRequestBodyable, requestConfiguration *ValidateComplianceScriptRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptValidationResultable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action validateComplianceScript
+func (m *ValidateComplianceScriptRequestBuilder) Post(body ValidateComplianceScriptRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptValidationResultable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action validateComplianceScript
-func (m *ValidateComplianceScriptRequestBuilder) PostWithResponseHandler(body ValidateComplianceScriptRequestBodyable, requestConfiguration *ValidateComplianceScriptRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptValidationResultable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action validateComplianceScript
+func (m *ValidateComplianceScriptRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ValidateComplianceScriptRequestBodyable, requestConfiguration *ValidateComplianceScriptRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScriptValidationResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

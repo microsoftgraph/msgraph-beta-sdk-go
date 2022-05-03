@@ -74,8 +74,8 @@ func NewCustomAccessPackageWorkflowExtensionsRequestBuilder(rawUrl string, reque
 func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) Count()(*i12f2b60e2d40f6e43de210199d80a007c011921a02e987470fc3b95f2ef5cf23.CountRequestBuilder) {
     return i12f2b60e2d40f6e43de210199d80a007c011921a02e987470fc3b95f2ef5cf23.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get customAccessPackageWorkflowExtensions from identityGovernance
-func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get customAccessPackageWorkflowExtensions from identityGovernance
+func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get customAccessPackageWorkflowExtensions from identityGovernance
@@ -93,8 +93,8 @@ func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to customAccessPackageWorkflowExtensions for identityGovernance
-func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to customAccessPackageWorkflowExtensions for identityGovernance
+func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to customAccessPackageWorkflowExtensions for identityGovernance
@@ -110,12 +110,12 @@ func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) CreatePostRequestI
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get customAccessPackageWorkflowExtensions from identityGovernance
-func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) GetWithResponseHandler(requestConfiguration *CustomAccessPackageWorkflowExtensionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get customAccessPackageWorkflowExtensions from identityGovernance
+func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get customAccessPackageWorkflowExtensions from identityGovernance
-func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) GetWithResponseHandler(requestConfiguration *CustomAccessPackageWorkflowExtensionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get customAccessPackageWorkflowExtensions from identityGovernance
+func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CustomAccessPackageWorkflowExtensionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) GetWithResponseHan
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to customAccessPackageWorkflowExtensions for identityGovernance
-func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable, requestConfiguration *CustomAccessPackageWorkflowExtensionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to customAccessPackageWorkflowExtensions for identityGovernance
+func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to customAccessPackageWorkflowExtensions for identityGovernance
-func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable, requestConfiguration *CustomAccessPackageWorkflowExtensionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to customAccessPackageWorkflowExtensions for identityGovernance
+func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable, requestConfiguration *CustomAccessPackageWorkflowExtensionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAccessPackageWorkflowExtensionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -42,8 +42,8 @@ func NewGetAzureADLicenseUsageWithPeriodRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewGetAzureADLicenseUsageWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getAzureADLicenseUsage
-func (m *GetAzureADLicenseUsageWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getAzureADLicenseUsage
+func (m *GetAzureADLicenseUsageWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getAzureADLicenseUsage
@@ -58,12 +58,12 @@ func (m *GetAzureADLicenseUsageWithPeriodRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getAzureADLicenseUsage
-func (m *GetAzureADLicenseUsageWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAzureADLicenseUsageWithPeriodRequestBuilderGetRequestConfiguration)(GetAzureADLicenseUsageWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getAzureADLicenseUsage
+func (m *GetAzureADLicenseUsageWithPeriodRequestBuilder) Get()(GetAzureADLicenseUsageWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getAzureADLicenseUsage
-func (m *GetAzureADLicenseUsageWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetAzureADLicenseUsageWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAzureADLicenseUsageWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getAzureADLicenseUsage
+func (m *GetAzureADLicenseUsageWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetAzureADLicenseUsageWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAzureADLicenseUsageWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

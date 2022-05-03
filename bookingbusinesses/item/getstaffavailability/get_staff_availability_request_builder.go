@@ -39,8 +39,8 @@ func NewGetStaffAvailabilityRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewGetStaffAvailabilityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action getStaffAvailability
-func (m *GetStaffAvailabilityRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetStaffAvailabilityRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action getStaffAvailability
+func (m *GetStaffAvailabilityRequestBuilder) CreatePostRequestInformation(body GetStaffAvailabilityRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getStaffAvailability
@@ -56,12 +56,12 @@ func (m *GetStaffAvailabilityRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action getStaffAvailability
-func (m *GetStaffAvailabilityRequestBuilder) PostWithResponseHandler(body GetStaffAvailabilityRequestBodyable, requestConfiguration *GetStaffAvailabilityRequestBuilderPostRequestConfiguration)(GetStaffAvailabilityResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action getStaffAvailability
+func (m *GetStaffAvailabilityRequestBuilder) Post(body GetStaffAvailabilityRequestBodyable)(GetStaffAvailabilityResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action getStaffAvailability
-func (m *GetStaffAvailabilityRequestBuilder) PostWithResponseHandler(body GetStaffAvailabilityRequestBodyable, requestConfiguration *GetStaffAvailabilityRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetStaffAvailabilityResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action getStaffAvailability
+func (m *GetStaffAvailabilityRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetStaffAvailabilityRequestBodyable, requestConfiguration *GetStaffAvailabilityRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetStaffAvailabilityResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

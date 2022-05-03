@@ -64,8 +64,8 @@ func NewIosLobAppProvisioningConfigurationAssignmentItemRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewIosLobAppProvisioningConfigurationAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignments for deviceAppManagement
-func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property assignments for deviceAppManagement
+func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignments for deviceAppManagement
@@ -80,8 +80,8 @@ func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) CreateD
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the associated group assignments for IosLobAppProvisioningConfiguration.
-func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the associated group assignments for IosLobAppProvisioningConfiguration.
+func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the associated group assignments for IosLobAppProvisioningConfiguration.
@@ -99,8 +99,8 @@ func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) CreateG
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignments in deviceAppManagement
-func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property assignments in deviceAppManagement
+func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationAssignmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignments in deviceAppManagement
@@ -116,12 +116,12 @@ func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) CreateP
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property assignments for deviceAppManagement
-func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property assignments for deviceAppManagement
+func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property assignments for deviceAppManagement
-func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property assignments for deviceAppManagement
+func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) DeleteW
     }
     return nil
 }
-// GetWithResponseHandler the associated group assignments for IosLobAppProvisioningConfiguration.
-func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationAssignmentable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the associated group assignments for IosLobAppProvisioningConfiguration.
+func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationAssignmentable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the associated group assignments for IosLobAppProvisioningConfiguration.
-func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationAssignmentable, error) {
+// GetWithRequestConfigurationAndResponseHandler the associated group assignments for IosLobAppProvisioningConfiguration.
+func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) GetWith
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationAssignmentable), nil
 }
-// PatchWithResponseHandler update the navigation property assignments in deviceAppManagement
-func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationAssignmentable, requestConfiguration *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property assignments in deviceAppManagement
+func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationAssignmentable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property assignments in deviceAppManagement
-func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationAssignmentable, requestConfiguration *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property assignments in deviceAppManagement
+func (m *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationAssignmentable, requestConfiguration *IosLobAppProvisioningConfigurationAssignmentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -64,8 +64,8 @@ func NewBookingCustomerItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewBookingCustomerItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property customers for bookingBusinesses
-func (m *BookingCustomerItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property customers for bookingBusinesses
+func (m *BookingCustomerItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property customers for bookingBusinesses
@@ -80,8 +80,8 @@ func (m *BookingCustomerItemRequestBuilder) CreateDeleteRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration all the customers of this business. Read-only. Nullable.
-func (m *BookingCustomerItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation all the customers of this business. Read-only. Nullable.
+func (m *BookingCustomerItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration all the customers of this business. Read-only. Nullable.
@@ -99,8 +99,8 @@ func (m *BookingCustomerItemRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property customers in bookingBusinesses
-func (m *BookingCustomerItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property customers in bookingBusinesses
+func (m *BookingCustomerItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property customers in bookingBusinesses
@@ -116,12 +116,12 @@ func (m *BookingCustomerItemRequestBuilder) CreatePatchRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property customers for bookingBusinesses
-func (m *BookingCustomerItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *BookingCustomerItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property customers for bookingBusinesses
+func (m *BookingCustomerItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property customers for bookingBusinesses
-func (m *BookingCustomerItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *BookingCustomerItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property customers for bookingBusinesses
+func (m *BookingCustomerItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *BookingCustomerItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *BookingCustomerItemRequestBuilder) DeleteWithResponseHandler(requestCon
     }
     return nil
 }
-// GetWithResponseHandler all the customers of this business. Read-only. Nullable.
-func (m *BookingCustomerItemRequestBuilder) GetWithResponseHandler(requestConfiguration *BookingCustomerItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get all the customers of this business. Read-only. Nullable.
+func (m *BookingCustomerItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler all the customers of this business. Read-only. Nullable.
-func (m *BookingCustomerItemRequestBuilder) GetWithResponseHandler(requestConfiguration *BookingCustomerItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable, error) {
+// GetWithRequestConfigurationAndResponseHandler all the customers of this business. Read-only. Nullable.
+func (m *BookingCustomerItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BookingCustomerItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *BookingCustomerItemRequestBuilder) GetWithResponseHandler(requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable), nil
 }
-// PatchWithResponseHandler update the navigation property customers in bookingBusinesses
-func (m *BookingCustomerItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable, requestConfiguration *BookingCustomerItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property customers in bookingBusinesses
+func (m *BookingCustomerItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property customers in bookingBusinesses
-func (m *BookingCustomerItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable, requestConfiguration *BookingCustomerItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property customers in bookingBusinesses
+func (m *BookingCustomerItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomerable, requestConfiguration *BookingCustomerItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

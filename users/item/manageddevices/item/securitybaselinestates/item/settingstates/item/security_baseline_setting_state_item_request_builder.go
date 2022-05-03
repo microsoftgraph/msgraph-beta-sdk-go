@@ -64,8 +64,8 @@ func NewSecurityBaselineSettingStateItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityBaselineSettingStateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property settingStates for users
-func (m *SecurityBaselineSettingStateItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property settingStates for users
+func (m *SecurityBaselineSettingStateItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property settingStates for users
@@ -80,8 +80,8 @@ func (m *SecurityBaselineSettingStateItemRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the security baseline state for different settings for a device
-func (m *SecurityBaselineSettingStateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the security baseline state for different settings for a device
+func (m *SecurityBaselineSettingStateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the security baseline state for different settings for a device
@@ -99,8 +99,8 @@ func (m *SecurityBaselineSettingStateItemRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property settingStates in users
-func (m *SecurityBaselineSettingStateItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property settingStates in users
+func (m *SecurityBaselineSettingStateItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property settingStates in users
@@ -116,12 +116,12 @@ func (m *SecurityBaselineSettingStateItemRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property settingStates for users
-func (m *SecurityBaselineSettingStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SecurityBaselineSettingStateItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property settingStates for users
+func (m *SecurityBaselineSettingStateItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property settingStates for users
-func (m *SecurityBaselineSettingStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *SecurityBaselineSettingStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property settingStates for users
+func (m *SecurityBaselineSettingStateItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *SecurityBaselineSettingStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *SecurityBaselineSettingStateItemRequestBuilder) DeleteWithResponseHandl
     }
     return nil
 }
-// GetWithResponseHandler the security baseline state for different settings for a device
-func (m *SecurityBaselineSettingStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SecurityBaselineSettingStateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the security baseline state for different settings for a device
+func (m *SecurityBaselineSettingStateItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the security baseline state for different settings for a device
-func (m *SecurityBaselineSettingStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *SecurityBaselineSettingStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable, error) {
+// GetWithRequestConfigurationAndResponseHandler the security baseline state for different settings for a device
+func (m *SecurityBaselineSettingStateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SecurityBaselineSettingStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *SecurityBaselineSettingStateItemRequestBuilder) GetWithResponseHandler(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable), nil
 }
-// PatchWithResponseHandler update the navigation property settingStates in users
-func (m *SecurityBaselineSettingStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable, requestConfiguration *SecurityBaselineSettingStateItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property settingStates in users
+func (m *SecurityBaselineSettingStateItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property settingStates in users
-func (m *SecurityBaselineSettingStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable, requestConfiguration *SecurityBaselineSettingStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property settingStates in users
+func (m *SecurityBaselineSettingStateItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable, requestConfiguration *SecurityBaselineSettingStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

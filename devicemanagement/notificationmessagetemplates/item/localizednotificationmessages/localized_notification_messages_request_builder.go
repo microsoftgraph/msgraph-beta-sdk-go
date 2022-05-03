@@ -74,8 +74,8 @@ func NewLocalizedNotificationMessagesRequestBuilder(rawUrl string, requestAdapte
 func (m *LocalizedNotificationMessagesRequestBuilder) Count()(*iaac1566e8f6add44ef372569cb2370ffb0f1e3080811ce1afb3fcbfe4ba3c796.CountRequestBuilder) {
     return iaac1566e8f6add44ef372569cb2370ffb0f1e3080811ce1afb3fcbfe4ba3c796.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of localized messages for this Notification Message Template.
-func (m *LocalizedNotificationMessagesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of localized messages for this Notification Message Template.
+func (m *LocalizedNotificationMessagesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of localized messages for this Notification Message Template.
@@ -93,8 +93,8 @@ func (m *LocalizedNotificationMessagesRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to localizedNotificationMessages for deviceManagement
-func (m *LocalizedNotificationMessagesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to localizedNotificationMessages for deviceManagement
+func (m *LocalizedNotificationMessagesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to localizedNotificationMessages for deviceManagement
@@ -110,12 +110,12 @@ func (m *LocalizedNotificationMessagesRequestBuilder) CreatePostRequestInformati
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the list of localized messages for this Notification Message Template.
-func (m *LocalizedNotificationMessagesRequestBuilder) GetWithResponseHandler(requestConfiguration *LocalizedNotificationMessagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of localized messages for this Notification Message Template.
+func (m *LocalizedNotificationMessagesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of localized messages for this Notification Message Template.
-func (m *LocalizedNotificationMessagesRequestBuilder) GetWithResponseHandler(requestConfiguration *LocalizedNotificationMessagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of localized messages for this Notification Message Template.
+func (m *LocalizedNotificationMessagesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LocalizedNotificationMessagesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *LocalizedNotificationMessagesRequestBuilder) GetWithResponseHandler(req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to localizedNotificationMessages for deviceManagement
-func (m *LocalizedNotificationMessagesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable, requestConfiguration *LocalizedNotificationMessagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to localizedNotificationMessages for deviceManagement
+func (m *LocalizedNotificationMessagesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to localizedNotificationMessages for deviceManagement
-func (m *LocalizedNotificationMessagesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable, requestConfiguration *LocalizedNotificationMessagesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to localizedNotificationMessages for deviceManagement
+func (m *LocalizedNotificationMessagesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable, requestConfiguration *LocalizedNotificationMessagesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

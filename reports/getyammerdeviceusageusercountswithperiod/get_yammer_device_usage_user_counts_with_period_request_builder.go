@@ -42,8 +42,8 @@ func NewGetYammerDeviceUsageUserCountsWithPeriodRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewGetYammerDeviceUsageUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getYammerDeviceUsageUserCounts
-func (m *GetYammerDeviceUsageUserCountsWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getYammerDeviceUsageUserCounts
+func (m *GetYammerDeviceUsageUserCountsWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getYammerDeviceUsageUserCounts
@@ -58,12 +58,12 @@ func (m *GetYammerDeviceUsageUserCountsWithPeriodRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getYammerDeviceUsageUserCounts
-func (m *GetYammerDeviceUsageUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetYammerDeviceUsageUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetYammerDeviceUsageUserCountsWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getYammerDeviceUsageUserCounts
+func (m *GetYammerDeviceUsageUserCountsWithPeriodRequestBuilder) Get()(GetYammerDeviceUsageUserCountsWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getYammerDeviceUsageUserCounts
-func (m *GetYammerDeviceUsageUserCountsWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetYammerDeviceUsageUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetYammerDeviceUsageUserCountsWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getYammerDeviceUsageUserCounts
+func (m *GetYammerDeviceUsageUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetYammerDeviceUsageUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetYammerDeviceUsageUserCountsWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -68,8 +68,8 @@ func NewMicrosoftTunnelSiteItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelSiteItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property microsoftTunnelSites for deviceManagement
-func (m *MicrosoftTunnelSiteItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property microsoftTunnelSites for deviceManagement
+func (m *MicrosoftTunnelSiteItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property microsoftTunnelSites for deviceManagement
@@ -84,8 +84,8 @@ func (m *MicrosoftTunnelSiteItemRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of MicrosoftTunnelSite settings associated with account.
-func (m *MicrosoftTunnelSiteItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation collection of MicrosoftTunnelSite settings associated with account.
+func (m *MicrosoftTunnelSiteItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration collection of MicrosoftTunnelSite settings associated with account.
@@ -103,8 +103,8 @@ func (m *MicrosoftTunnelSiteItemRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property microsoftTunnelSites in deviceManagement
-func (m *MicrosoftTunnelSiteItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property microsoftTunnelSites in deviceManagement
+func (m *MicrosoftTunnelSiteItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property microsoftTunnelSites in deviceManagement
@@ -120,12 +120,12 @@ func (m *MicrosoftTunnelSiteItemRequestBuilder) CreatePatchRequestInformationWit
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property microsoftTunnelSites for deviceManagement
-func (m *MicrosoftTunnelSiteItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MicrosoftTunnelSiteItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property microsoftTunnelSites for deviceManagement
+func (m *MicrosoftTunnelSiteItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property microsoftTunnelSites for deviceManagement
-func (m *MicrosoftTunnelSiteItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MicrosoftTunnelSiteItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property microsoftTunnelSites for deviceManagement
+func (m *MicrosoftTunnelSiteItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *MicrosoftTunnelSiteItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -140,12 +140,12 @@ func (m *MicrosoftTunnelSiteItemRequestBuilder) DeleteWithResponseHandler(reques
     }
     return nil
 }
-// GetWithResponseHandler collection of MicrosoftTunnelSite settings associated with account.
-func (m *MicrosoftTunnelSiteItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MicrosoftTunnelSiteItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get collection of MicrosoftTunnelSite settings associated with account.
+func (m *MicrosoftTunnelSiteItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler collection of MicrosoftTunnelSite settings associated with account.
-func (m *MicrosoftTunnelSiteItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MicrosoftTunnelSiteItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable, error) {
+// GetWithRequestConfigurationAndResponseHandler collection of MicrosoftTunnelSite settings associated with account.
+func (m *MicrosoftTunnelSiteItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MicrosoftTunnelSiteItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -179,12 +179,12 @@ func (m *MicrosoftTunnelSiteItemRequestBuilder) MicrosoftTunnelServersById(id st
     }
     return i9350d6dec8de249f17a367f9b40b072f9094b90586b5f3d60925874bf5f54981.NewMicrosoftTunnelServerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property microsoftTunnelSites in deviceManagement
-func (m *MicrosoftTunnelSiteItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable, requestConfiguration *MicrosoftTunnelSiteItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property microsoftTunnelSites in deviceManagement
+func (m *MicrosoftTunnelSiteItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property microsoftTunnelSites in deviceManagement
-func (m *MicrosoftTunnelSiteItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable, requestConfiguration *MicrosoftTunnelSiteItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property microsoftTunnelSites in deviceManagement
+func (m *MicrosoftTunnelSiteItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelSiteable, requestConfiguration *MicrosoftTunnelSiteItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

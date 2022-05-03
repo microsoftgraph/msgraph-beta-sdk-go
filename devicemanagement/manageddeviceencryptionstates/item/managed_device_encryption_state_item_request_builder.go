@@ -64,8 +64,8 @@ func NewManagedDeviceEncryptionStateItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceEncryptionStateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property managedDeviceEncryptionStates for deviceManagement
-func (m *ManagedDeviceEncryptionStateItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property managedDeviceEncryptionStates for deviceManagement
+func (m *ManagedDeviceEncryptionStateItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property managedDeviceEncryptionStates for deviceManagement
@@ -80,8 +80,8 @@ func (m *ManagedDeviceEncryptionStateItemRequestBuilder) CreateDeleteRequestInfo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration encryption report for devices in this account
-func (m *ManagedDeviceEncryptionStateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation encryption report for devices in this account
+func (m *ManagedDeviceEncryptionStateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration encryption report for devices in this account
@@ -99,8 +99,8 @@ func (m *ManagedDeviceEncryptionStateItemRequestBuilder) CreateGetRequestInforma
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property managedDeviceEncryptionStates in deviceManagement
-func (m *ManagedDeviceEncryptionStateItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceEncryptionStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property managedDeviceEncryptionStates in deviceManagement
+func (m *ManagedDeviceEncryptionStateItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceEncryptionStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property managedDeviceEncryptionStates in deviceManagement
@@ -116,12 +116,12 @@ func (m *ManagedDeviceEncryptionStateItemRequestBuilder) CreatePatchRequestInfor
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property managedDeviceEncryptionStates for deviceManagement
-func (m *ManagedDeviceEncryptionStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ManagedDeviceEncryptionStateItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property managedDeviceEncryptionStates for deviceManagement
+func (m *ManagedDeviceEncryptionStateItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property managedDeviceEncryptionStates for deviceManagement
-func (m *ManagedDeviceEncryptionStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ManagedDeviceEncryptionStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property managedDeviceEncryptionStates for deviceManagement
+func (m *ManagedDeviceEncryptionStateItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedDeviceEncryptionStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *ManagedDeviceEncryptionStateItemRequestBuilder) DeleteWithResponseHandl
     }
     return nil
 }
-// GetWithResponseHandler encryption report for devices in this account
-func (m *ManagedDeviceEncryptionStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedDeviceEncryptionStateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceEncryptionStateable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get encryption report for devices in this account
+func (m *ManagedDeviceEncryptionStateItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceEncryptionStateable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler encryption report for devices in this account
-func (m *ManagedDeviceEncryptionStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedDeviceEncryptionStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceEncryptionStateable, error) {
+// GetWithRequestConfigurationAndResponseHandler encryption report for devices in this account
+func (m *ManagedDeviceEncryptionStateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedDeviceEncryptionStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceEncryptionStateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *ManagedDeviceEncryptionStateItemRequestBuilder) GetWithResponseHandler(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceEncryptionStateable), nil
 }
-// PatchWithResponseHandler update the navigation property managedDeviceEncryptionStates in deviceManagement
-func (m *ManagedDeviceEncryptionStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceEncryptionStateable, requestConfiguration *ManagedDeviceEncryptionStateItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property managedDeviceEncryptionStates in deviceManagement
+func (m *ManagedDeviceEncryptionStateItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceEncryptionStateable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property managedDeviceEncryptionStates in deviceManagement
-func (m *ManagedDeviceEncryptionStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceEncryptionStateable, requestConfiguration *ManagedDeviceEncryptionStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property managedDeviceEncryptionStates in deviceManagement
+func (m *ManagedDeviceEncryptionStateItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceEncryptionStateable, requestConfiguration *ManagedDeviceEncryptionStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

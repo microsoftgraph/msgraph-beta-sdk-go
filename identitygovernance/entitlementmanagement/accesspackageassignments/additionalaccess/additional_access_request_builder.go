@@ -39,8 +39,8 @@ func NewAdditionalAccessRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewAdditionalAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function additionalAccess
-func (m *AdditionalAccessRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function additionalAccess
+func (m *AdditionalAccessRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function additionalAccess
@@ -55,12 +55,12 @@ func (m *AdditionalAccessRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function additionalAccess
-func (m *AdditionalAccessRequestBuilder) GetWithResponseHandler(requestConfiguration *AdditionalAccessRequestBuilderGetRequestConfiguration)(AdditionalAccessResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function additionalAccess
+func (m *AdditionalAccessRequestBuilder) Get()(AdditionalAccessResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function additionalAccess
-func (m *AdditionalAccessRequestBuilder) GetWithResponseHandler(requestConfiguration *AdditionalAccessRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(AdditionalAccessResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function additionalAccess
+func (m *AdditionalAccessRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AdditionalAccessRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(AdditionalAccessResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

@@ -64,8 +64,8 @@ func NewLicenseDetailsItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewLicenseDetailsItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property licenseDetails for servicePrincipals
-func (m *LicenseDetailsItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property licenseDetails for servicePrincipals
+func (m *LicenseDetailsItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property licenseDetails for servicePrincipals
@@ -80,8 +80,8 @@ func (m *LicenseDetailsItemRequestBuilder) CreateDeleteRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get licenseDetails from servicePrincipals
-func (m *LicenseDetailsItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get licenseDetails from servicePrincipals
+func (m *LicenseDetailsItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get licenseDetails from servicePrincipals
@@ -99,8 +99,8 @@ func (m *LicenseDetailsItemRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property licenseDetails in servicePrincipals
-func (m *LicenseDetailsItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property licenseDetails in servicePrincipals
+func (m *LicenseDetailsItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property licenseDetails in servicePrincipals
@@ -116,12 +116,12 @@ func (m *LicenseDetailsItemRequestBuilder) CreatePatchRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property licenseDetails for servicePrincipals
-func (m *LicenseDetailsItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *LicenseDetailsItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property licenseDetails for servicePrincipals
+func (m *LicenseDetailsItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property licenseDetails for servicePrincipals
-func (m *LicenseDetailsItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *LicenseDetailsItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property licenseDetails for servicePrincipals
+func (m *LicenseDetailsItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *LicenseDetailsItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *LicenseDetailsItemRequestBuilder) DeleteWithResponseHandler(requestConf
     }
     return nil
 }
-// GetWithResponseHandler get licenseDetails from servicePrincipals
-func (m *LicenseDetailsItemRequestBuilder) GetWithResponseHandler(requestConfiguration *LicenseDetailsItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get licenseDetails from servicePrincipals
+func (m *LicenseDetailsItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get licenseDetails from servicePrincipals
-func (m *LicenseDetailsItemRequestBuilder) GetWithResponseHandler(requestConfiguration *LicenseDetailsItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, error) {
+// GetWithRequestConfigurationAndResponseHandler get licenseDetails from servicePrincipals
+func (m *LicenseDetailsItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LicenseDetailsItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *LicenseDetailsItemRequestBuilder) GetWithResponseHandler(requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable), nil
 }
-// PatchWithResponseHandler update the navigation property licenseDetails in servicePrincipals
-func (m *LicenseDetailsItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, requestConfiguration *LicenseDetailsItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property licenseDetails in servicePrincipals
+func (m *LicenseDetailsItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property licenseDetails in servicePrincipals
-func (m *LicenseDetailsItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, requestConfiguration *LicenseDetailsItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property licenseDetails in servicePrincipals
+func (m *LicenseDetailsItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, requestConfiguration *LicenseDetailsItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

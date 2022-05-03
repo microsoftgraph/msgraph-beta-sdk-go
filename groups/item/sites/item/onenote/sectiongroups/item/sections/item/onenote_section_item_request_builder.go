@@ -78,8 +78,8 @@ func (m *OnenoteSectionItemRequestBuilder) CopyToNotebook()(*ifc486f5e111f877de2
 func (m *OnenoteSectionItemRequestBuilder) CopyToSectionGroup()(*i7a5c6b8f75d105708cad6dc1f8c8573d8c604bdefdbf2769d3e91635957c0186.CopyToSectionGroupRequestBuilder) {
     return i7a5c6b8f75d105708cad6dc1f8c8573d8c604bdefdbf2769d3e91635957c0186.NewCopyToSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property sections for groups
-func (m *OnenoteSectionItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property sections for groups
+func (m *OnenoteSectionItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property sections for groups
@@ -94,8 +94,8 @@ func (m *OnenoteSectionItemRequestBuilder) CreateDeleteRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the sections in the section group. Read-only. Nullable.
-func (m *OnenoteSectionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the sections in the section group. Read-only. Nullable.
+func (m *OnenoteSectionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the sections in the section group. Read-only. Nullable.
@@ -113,8 +113,8 @@ func (m *OnenoteSectionItemRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property sections in groups
-func (m *OnenoteSectionItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property sections in groups
+func (m *OnenoteSectionItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property sections in groups
@@ -130,12 +130,12 @@ func (m *OnenoteSectionItemRequestBuilder) CreatePatchRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property sections for groups
-func (m *OnenoteSectionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OnenoteSectionItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property sections for groups
+func (m *OnenoteSectionItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property sections for groups
-func (m *OnenoteSectionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OnenoteSectionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property sections for groups
+func (m *OnenoteSectionItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *OnenoteSectionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -150,12 +150,12 @@ func (m *OnenoteSectionItemRequestBuilder) DeleteWithResponseHandler(requestConf
     }
     return nil
 }
-// GetWithResponseHandler the sections in the section group. Read-only. Nullable.
-func (m *OnenoteSectionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OnenoteSectionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the sections in the section group. Read-only. Nullable.
+func (m *OnenoteSectionItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the sections in the section group. Read-only. Nullable.
-func (m *OnenoteSectionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OnenoteSectionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable, error) {
+// GetWithRequestConfigurationAndResponseHandler the sections in the section group. Read-only. Nullable.
+func (m *OnenoteSectionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OnenoteSectionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -193,12 +193,12 @@ func (m *OnenoteSectionItemRequestBuilder) ParentNotebook()(*i1f9f163cdf6212ba77
 func (m *OnenoteSectionItemRequestBuilder) ParentSectionGroup()(*i1467f3b51342934051fc1c7fe8b683c3db742aa9149b91aa5b5c4d1427356184.ParentSectionGroupRequestBuilder) {
     return i1467f3b51342934051fc1c7fe8b683c3db742aa9149b91aa5b5c4d1427356184.NewParentSectionGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property sections in groups
-func (m *OnenoteSectionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable, requestConfiguration *OnenoteSectionItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property sections in groups
+func (m *OnenoteSectionItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property sections in groups
-func (m *OnenoteSectionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable, requestConfiguration *OnenoteSectionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property sections in groups
+func (m *OnenoteSectionItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable, requestConfiguration *OnenoteSectionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

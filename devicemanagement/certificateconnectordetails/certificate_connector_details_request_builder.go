@@ -74,8 +74,8 @@ func NewCertificateConnectorDetailsRequestBuilder(rawUrl string, requestAdapter 
 func (m *CertificateConnectorDetailsRequestBuilder) Count()(*ic60990628e9a436b080c9c0e289b1a0415b4b111857656b1ab863035832a6604.CountRequestBuilder) {
     return ic60990628e9a436b080c9c0e289b1a0415b4b111857656b1ab863035832a6604.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
-func (m *CertificateConnectorDetailsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
+func (m *CertificateConnectorDetailsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
@@ -93,8 +93,8 @@ func (m *CertificateConnectorDetailsRequestBuilder) CreateGetRequestInformationW
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to certificateConnectorDetails for deviceManagement
-func (m *CertificateConnectorDetailsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to certificateConnectorDetails for deviceManagement
+func (m *CertificateConnectorDetailsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to certificateConnectorDetails for deviceManagement
@@ -110,12 +110,12 @@ func (m *CertificateConnectorDetailsRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
-func (m *CertificateConnectorDetailsRequestBuilder) GetWithResponseHandler(requestConfiguration *CertificateConnectorDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
+func (m *CertificateConnectorDetailsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
-func (m *CertificateConnectorDetailsRequestBuilder) GetWithResponseHandler(requestConfiguration *CertificateConnectorDetailsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
+func (m *CertificateConnectorDetailsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CertificateConnectorDetailsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *CertificateConnectorDetailsRequestBuilder) GetWithResponseHandler(reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to certificateConnectorDetails for deviceManagement
-func (m *CertificateConnectorDetailsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsable, requestConfiguration *CertificateConnectorDetailsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to certificateConnectorDetails for deviceManagement
+func (m *CertificateConnectorDetailsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to certificateConnectorDetails for deviceManagement
-func (m *CertificateConnectorDetailsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsable, requestConfiguration *CertificateConnectorDetailsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to certificateConnectorDetails for deviceManagement
+func (m *CertificateConnectorDetailsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsable, requestConfiguration *CertificateConnectorDetailsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateConnectorDetailsable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -67,8 +67,8 @@ func NewMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *MembersRequestBuilder) Count()(*id9c2057c07f9eea32502b935abdd5097f1ed87a7a9d19f6ac34f8307627fbe8d.CountRequestBuilder) {
     return id9c2057c07f9eea32502b935abdd5097f1ed87a7a9d19f6ac34f8307627fbe8d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration all users in the class. Nullable.
-func (m *MembersRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation all users in the class. Nullable.
+func (m *MembersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration all users in the class. Nullable.
@@ -86,12 +86,12 @@ func (m *MembersRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler all users in the class. Nullable.
-func (m *MembersRequestBuilder) GetWithResponseHandler(requestConfiguration *MembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get all users in the class. Nullable.
+func (m *MembersRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler all users in the class. Nullable.
-func (m *MembersRequestBuilder) GetWithResponseHandler(requestConfiguration *MembersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler all users in the class. Nullable.
+func (m *MembersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MembersRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

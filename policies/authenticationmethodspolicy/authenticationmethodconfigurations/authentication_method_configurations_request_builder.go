@@ -74,8 +74,8 @@ func NewAuthenticationMethodConfigurationsRequestBuilder(rawUrl string, requestA
 func (m *AuthenticationMethodConfigurationsRequestBuilder) Count()(*i3e2ba217cd6112bb4c2efb2372b0bca6e8d386570b03192ab082e85247fff0c3.CountRequestBuilder) {
     return i3e2ba217cd6112bb4c2efb2372b0bca6e8d386570b03192ab082e85247fff0c3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-func (m *AuthenticationMethodConfigurationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+func (m *AuthenticationMethodConfigurationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
@@ -93,8 +93,8 @@ func (m *AuthenticationMethodConfigurationsRequestBuilder) CreateGetRequestInfor
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to authenticationMethodConfigurations for policies
-func (m *AuthenticationMethodConfigurationsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to authenticationMethodConfigurations for policies
+func (m *AuthenticationMethodConfigurationsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to authenticationMethodConfigurations for policies
@@ -110,12 +110,12 @@ func (m *AuthenticationMethodConfigurationsRequestBuilder) CreatePostRequestInfo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-func (m *AuthenticationMethodConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *AuthenticationMethodConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+func (m *AuthenticationMethodConfigurationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-func (m *AuthenticationMethodConfigurationsRequestBuilder) GetWithResponseHandler(requestConfiguration *AuthenticationMethodConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+func (m *AuthenticationMethodConfigurationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AuthenticationMethodConfigurationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AuthenticationMethodConfigurationsRequestBuilder) GetWithResponseHandle
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to authenticationMethodConfigurations for policies
-func (m *AuthenticationMethodConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationable, requestConfiguration *AuthenticationMethodConfigurationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to authenticationMethodConfigurations for policies
+func (m *AuthenticationMethodConfigurationsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to authenticationMethodConfigurations for policies
-func (m *AuthenticationMethodConfigurationsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationable, requestConfiguration *AuthenticationMethodConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to authenticationMethodConfigurations for policies
+func (m *AuthenticationMethodConfigurationsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationable, requestConfiguration *AuthenticationMethodConfigurationsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

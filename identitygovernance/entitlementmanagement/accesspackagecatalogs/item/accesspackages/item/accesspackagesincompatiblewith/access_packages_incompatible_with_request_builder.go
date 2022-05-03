@@ -67,8 +67,8 @@ func NewAccessPackagesIncompatibleWithRequestBuilder(rawUrl string, requestAdapt
 func (m *AccessPackagesIncompatibleWithRequestBuilder) Count()(*i7431c9e5f44a60b4708bbe79ece0a8e2a8ad6e53b0097da902e8b196e50a8b3b.CountRequestBuilder) {
     return i7431c9e5f44a60b4708bbe79ece0a8e2a8ad6e53b0097da902e8b196e50a8b3b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the access packages that are incompatible with this package. Read-only.
-func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the access packages that are incompatible with this package. Read-only.
+func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the access packages that are incompatible with this package. Read-only.
@@ -86,12 +86,12 @@ func (m *AccessPackagesIncompatibleWithRequestBuilder) CreateGetRequestInformati
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the access packages that are incompatible with this package. Read-only.
-func (m *AccessPackagesIncompatibleWithRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackagesIncompatibleWithRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the access packages that are incompatible with this package. Read-only.
+func (m *AccessPackagesIncompatibleWithRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the access packages that are incompatible with this package. Read-only.
-func (m *AccessPackagesIncompatibleWithRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackagesIncompatibleWithRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the access packages that are incompatible with this package. Read-only.
+func (m *AccessPackagesIncompatibleWithRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackagesIncompatibleWithRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

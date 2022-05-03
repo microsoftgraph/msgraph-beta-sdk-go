@@ -39,8 +39,8 @@ func NewGetEncryptionPublicKeyRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewGetEncryptionPublicKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration get a public key to use to encrypt the Apple device enrollment program token
-func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get a public key to use to encrypt the Apple device enrollment program token
+func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get a public key to use to encrypt the Apple device enrollment program token
@@ -55,12 +55,12 @@ func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get a public key to use to encrypt the Apple device enrollment program token
-func (m *GetEncryptionPublicKeyRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEncryptionPublicKeyRequestBuilderGetRequestConfiguration)(GetEncryptionPublicKeyResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get a public key to use to encrypt the Apple device enrollment program token
+func (m *GetEncryptionPublicKeyRequestBuilder) Get()(GetEncryptionPublicKeyResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get a public key to use to encrypt the Apple device enrollment program token
-func (m *GetEncryptionPublicKeyRequestBuilder) GetWithResponseHandler(requestConfiguration *GetEncryptionPublicKeyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEncryptionPublicKeyResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get a public key to use to encrypt the Apple device enrollment program token
+func (m *GetEncryptionPublicKeyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEncryptionPublicKeyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEncryptionPublicKeyResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

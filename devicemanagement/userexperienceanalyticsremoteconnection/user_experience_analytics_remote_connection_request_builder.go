@@ -75,8 +75,8 @@ func NewUserExperienceAnalyticsRemoteConnectionRequestBuilder(rawUrl string, req
 func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) Count()(*if8a0e3aa0bca48dd078a7107c57405c3ea63e38e8191999aafbe5a6827be98f1.CountRequestBuilder) {
     return if8a0e3aa0bca48dd078a7107c57405c3ea63e38e8191999aafbe5a6827be98f1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration user experience analytics remote connection
-func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation user experience analytics remote connection
+func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration user experience analytics remote connection
@@ -94,8 +94,8 @@ func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) CreateGetRequest
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to userExperienceAnalyticsRemoteConnection for deviceManagement
-func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to userExperienceAnalyticsRemoteConnection for deviceManagement
+func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to userExperienceAnalyticsRemoteConnection for deviceManagement
@@ -111,12 +111,12 @@ func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) CreatePostReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler user experience analytics remote connection
-func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsRemoteConnectionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get user experience analytics remote connection
+func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler user experience analytics remote connection
-func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsRemoteConnectionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler user experience analytics remote connection
+func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsRemoteConnectionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -131,12 +131,12 @@ func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) GetWithResponseH
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to userExperienceAnalyticsRemoteConnection for deviceManagement
-func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionable, requestConfiguration *UserExperienceAnalyticsRemoteConnectionRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to userExperienceAnalyticsRemoteConnection for deviceManagement
+func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to userExperienceAnalyticsRemoteConnection for deviceManagement
-func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionable, requestConfiguration *UserExperienceAnalyticsRemoteConnectionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to userExperienceAnalyticsRemoteConnection for deviceManagement
+func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionable, requestConfiguration *UserExperienceAnalyticsRemoteConnectionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsRemoteConnectionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

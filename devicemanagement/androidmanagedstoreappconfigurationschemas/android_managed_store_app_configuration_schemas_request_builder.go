@@ -74,8 +74,8 @@ func NewAndroidManagedStoreAppConfigurationSchemasRequestBuilder(rawUrl string, 
 func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) Count()(*i50046ad7f0c0dc69b9a80160b1a8e94717b6c54b629503f2ca0036aa3d95523e.CountRequestBuilder) {
     return i50046ad7f0c0dc69b9a80160b1a8e94717b6c54b629503f2ca0036aa3d95523e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration android Enterprise app configuration schema entities.
-func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation android Enterprise app configuration schema entities.
+func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration android Enterprise app configuration schema entities.
@@ -93,8 +93,8 @@ func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) CreateGetRequ
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to androidManagedStoreAppConfigurationSchemas for deviceManagement
-func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to androidManagedStoreAppConfigurationSchemas for deviceManagement
+func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to androidManagedStoreAppConfigurationSchemas for deviceManagement
@@ -110,12 +110,12 @@ func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) CreatePostReq
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler android Enterprise app configuration schema entities.
-func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) GetWithResponseHandler(requestConfiguration *AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get android Enterprise app configuration schema entities.
+func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler android Enterprise app configuration schema entities.
-func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) GetWithResponseHandler(requestConfiguration *AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler android Enterprise app configuration schema entities.
+func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) GetWithRespon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to androidManagedStoreAppConfigurationSchemas for deviceManagement
-func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, requestConfiguration *AndroidManagedStoreAppConfigurationSchemasRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to androidManagedStoreAppConfigurationSchemas for deviceManagement
+func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to androidManagedStoreAppConfigurationSchemas for deviceManagement
-func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, requestConfiguration *AndroidManagedStoreAppConfigurationSchemasRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to androidManagedStoreAppConfigurationSchemas for deviceManagement
+func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, requestConfiguration *AndroidManagedStoreAppConfigurationSchemasRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAppConfigurationSchemaable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

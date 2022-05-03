@@ -78,8 +78,8 @@ func NewContactsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ContactsRequestBuilder) Count()(*idc9921cc70b53e0e0915a24e8dbffa0e67b4c8c3233929cbec9702d7a8422ce4.CountRequestBuilder) {
     return idc9921cc70b53e0e0915a24e8dbffa0e67b4c8c3233929cbec9702d7a8422ce4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from contacts
-func (m *ContactsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from contacts
+func (m *ContactsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from contacts
@@ -97,8 +97,8 @@ func (m *ContactsRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to contacts
-func (m *ContactsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to contacts
+func (m *ContactsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to contacts
@@ -118,6 +118,10 @@ func (m *ContactsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
 func (m *ContactsRequestBuilder) Delta()(*i263e3a49923c8b3d5d4677d4bffaef4520d3839dbb9e191c0ead10a25a4595b3.DeltaRequestBuilder) {
     return i263e3a49923c8b3d5d4677d4bffaef4520d3839dbb9e191c0ead10a25a4595b3.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Get get entities from contacts
+func (m *ContactsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
 // GetByIds the getByIds property
 func (m *ContactsRequestBuilder) GetByIds()(*i8fa8f6aa0a9b25f3a77255c9f362eca9df147df0488d2dc3b9c1a7a0c9afe5f4.GetByIdsRequestBuilder) {
     return i8fa8f6aa0a9b25f3a77255c9f362eca9df147df0488d2dc3b9c1a7a0c9afe5f4.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -126,12 +130,8 @@ func (m *ContactsRequestBuilder) GetByIds()(*i8fa8f6aa0a9b25f3a77255c9f362eca9df
 func (m *ContactsRequestBuilder) GetUserOwnedObjects()(*i078866701ebd014ef41908c3e576ecccdc54753b23645955da30d52b28cf8773.GetUserOwnedObjectsRequestBuilder) {
     return i078866701ebd014ef41908c3e576ecccdc54753b23645955da30d52b28cf8773.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get entities from contacts
-func (m *ContactsRequestBuilder) GetWithResponseHandler(requestConfiguration *ContactsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
-}
-// GetWithResponseHandler get entities from contacts
-func (m *ContactsRequestBuilder) GetWithResponseHandler(requestConfiguration *ContactsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from contacts
+func (m *ContactsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ContactsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -146,12 +146,12 @@ func (m *ContactsRequestBuilder) GetWithResponseHandler(requestConfiguration *Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactCollectionResponseable), nil
 }
-// PostWithResponseHandler add new entity to contacts
-func (m *ContactsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable, requestConfiguration *ContactsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to contacts
+func (m *ContactsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to contacts
-func (m *ContactsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable, requestConfiguration *ContactsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to contacts
+func (m *ContactsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable, requestConfiguration *ContactsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrgContactable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

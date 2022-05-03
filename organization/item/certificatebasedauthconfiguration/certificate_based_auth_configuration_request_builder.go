@@ -67,8 +67,8 @@ func NewCertificateBasedAuthConfigurationRequestBuilder(rawUrl string, requestAd
 func (m *CertificateBasedAuthConfigurationRequestBuilder) Count()(*ic2a1fdae1ac9b1da535d080b3b6e541d25e0423b6e883ba7075f34ebd6ef5ebd.CountRequestBuilder) {
     return ic2a1fdae1ac9b1da535d080b3b6e541d25e0423b6e883ba7075f34ebd6ef5ebd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
@@ -86,12 +86,12 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-func (m *CertificateBasedAuthConfigurationRequestBuilder) GetWithResponseHandler(requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+func (m *CertificateBasedAuthConfigurationRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-func (m *CertificateBasedAuthConfigurationRequestBuilder) GetWithResponseHandler(requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+func (m *CertificateBasedAuthConfigurationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

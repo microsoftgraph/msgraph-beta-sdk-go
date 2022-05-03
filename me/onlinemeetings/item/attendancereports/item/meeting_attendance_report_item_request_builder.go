@@ -81,8 +81,8 @@ func NewMeetingAttendanceReportItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewMeetingAttendanceReportItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property attendanceReports for me
-func (m *MeetingAttendanceReportItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property attendanceReports for me
+func (m *MeetingAttendanceReportItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property attendanceReports for me
@@ -97,8 +97,8 @@ func (m *MeetingAttendanceReportItemRequestBuilder) CreateDeleteRequestInformati
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the attendance reports of an online meeting. Read-only.
-func (m *MeetingAttendanceReportItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the attendance reports of an online meeting. Read-only.
+func (m *MeetingAttendanceReportItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the attendance reports of an online meeting. Read-only.
@@ -116,8 +116,8 @@ func (m *MeetingAttendanceReportItemRequestBuilder) CreateGetRequestInformationW
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property attendanceReports in me
-func (m *MeetingAttendanceReportItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property attendanceReports in me
+func (m *MeetingAttendanceReportItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property attendanceReports in me
@@ -133,12 +133,12 @@ func (m *MeetingAttendanceReportItemRequestBuilder) CreatePatchRequestInformatio
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property attendanceReports for me
-func (m *MeetingAttendanceReportItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MeetingAttendanceReportItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property attendanceReports for me
+func (m *MeetingAttendanceReportItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property attendanceReports for me
-func (m *MeetingAttendanceReportItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *MeetingAttendanceReportItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property attendanceReports for me
+func (m *MeetingAttendanceReportItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *MeetingAttendanceReportItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -153,12 +153,12 @@ func (m *MeetingAttendanceReportItemRequestBuilder) DeleteWithResponseHandler(re
     }
     return nil
 }
-// GetWithResponseHandler the attendance reports of an online meeting. Read-only.
-func (m *MeetingAttendanceReportItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MeetingAttendanceReportItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the attendance reports of an online meeting. Read-only.
+func (m *MeetingAttendanceReportItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the attendance reports of an online meeting. Read-only.
-func (m *MeetingAttendanceReportItemRequestBuilder) GetWithResponseHandler(requestConfiguration *MeetingAttendanceReportItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, error) {
+// GetWithRequestConfigurationAndResponseHandler the attendance reports of an online meeting. Read-only.
+func (m *MeetingAttendanceReportItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MeetingAttendanceReportItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -173,12 +173,12 @@ func (m *MeetingAttendanceReportItemRequestBuilder) GetWithResponseHandler(reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable), nil
 }
-// PatchWithResponseHandler update the navigation property attendanceReports in me
-func (m *MeetingAttendanceReportItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, requestConfiguration *MeetingAttendanceReportItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property attendanceReports in me
+func (m *MeetingAttendanceReportItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property attendanceReports in me
-func (m *MeetingAttendanceReportItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, requestConfiguration *MeetingAttendanceReportItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property attendanceReports in me
+func (m *MeetingAttendanceReportItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, requestConfiguration *MeetingAttendanceReportItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

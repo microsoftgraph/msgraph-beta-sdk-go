@@ -74,8 +74,8 @@ func NewDeviceCustomAttributeShellScriptsRequestBuilder(rawUrl string, requestAd
 func (m *DeviceCustomAttributeShellScriptsRequestBuilder) Count()(*i4a89d57ce384ce311cb99fd8513c7f64a56acb422f3c199c61abcdff4980f911.CountRequestBuilder) {
     return i4a89d57ce384ce311cb99fd8513c7f64a56acb422f3c199c61abcdff4980f911.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of device custom attribute shell scripts associated with the tenant.
-func (m *DeviceCustomAttributeShellScriptsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of device custom attribute shell scripts associated with the tenant.
+func (m *DeviceCustomAttributeShellScriptsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of device custom attribute shell scripts associated with the tenant.
@@ -93,8 +93,8 @@ func (m *DeviceCustomAttributeShellScriptsRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceCustomAttributeShellScripts for deviceManagement
-func (m *DeviceCustomAttributeShellScriptsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to deviceCustomAttributeShellScripts for deviceManagement
+func (m *DeviceCustomAttributeShellScriptsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to deviceCustomAttributeShellScripts for deviceManagement
@@ -110,12 +110,12 @@ func (m *DeviceCustomAttributeShellScriptsRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the list of device custom attribute shell scripts associated with the tenant.
-func (m *DeviceCustomAttributeShellScriptsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceCustomAttributeShellScriptsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of device custom attribute shell scripts associated with the tenant.
+func (m *DeviceCustomAttributeShellScriptsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of device custom attribute shell scripts associated with the tenant.
-func (m *DeviceCustomAttributeShellScriptsRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceCustomAttributeShellScriptsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of device custom attribute shell scripts associated with the tenant.
+func (m *DeviceCustomAttributeShellScriptsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceCustomAttributeShellScriptsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *DeviceCustomAttributeShellScriptsRequestBuilder) GetWithResponseHandler
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to deviceCustomAttributeShellScripts for deviceManagement
-func (m *DeviceCustomAttributeShellScriptsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, requestConfiguration *DeviceCustomAttributeShellScriptsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to deviceCustomAttributeShellScripts for deviceManagement
+func (m *DeviceCustomAttributeShellScriptsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to deviceCustomAttributeShellScripts for deviceManagement
-func (m *DeviceCustomAttributeShellScriptsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, requestConfiguration *DeviceCustomAttributeShellScriptsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to deviceCustomAttributeShellScripts for deviceManagement
+func (m *DeviceCustomAttributeShellScriptsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, requestConfiguration *DeviceCustomAttributeShellScriptsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCustomAttributeShellScriptable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -48,6 +48,10 @@ type WindowsAutopilotDeviceIdentity struct {
     productKey *string
     // Purchase Order Identifier of the Windows autopilot device.
     purchaseOrderIdentifier *string
+    // Device Remediation State
+    remediationState *WindowsAutopilotDeviceRemediationState
+    // RemediationState set time of Autopilot device.
+    remediationStateLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Resource Name.
     resourceName *string
     // Serial number of the Windows autopilot device.
@@ -369,6 +373,26 @@ func (m *WindowsAutopilotDeviceIdentity) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["remediationState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindowsAutopilotDeviceRemediationState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRemediationState(val.(*WindowsAutopilotDeviceRemediationState))
+        }
+        return nil
+    }
+    res["remediationStateLastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRemediationStateLastModifiedDateTime(val)
+        }
+        return nil
+    }
     res["resourceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -483,6 +507,22 @@ func (m *WindowsAutopilotDeviceIdentity) GetPurchaseOrderIdentifier()(*string) {
         return nil
     } else {
         return m.purchaseOrderIdentifier
+    }
+}
+// GetRemediationState gets the remediationState property value. Device Remediation State
+func (m *WindowsAutopilotDeviceIdentity) GetRemediationState()(*WindowsAutopilotDeviceRemediationState) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediationState
+    }
+}
+// GetRemediationStateLastModifiedDateTime gets the remediationStateLastModifiedDateTime property value. RemediationState set time of Autopilot device.
+func (m *WindowsAutopilotDeviceIdentity) GetRemediationStateLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.remediationStateLastModifiedDateTime
     }
 }
 // GetResourceName gets the resourceName property value. Resource Name.
@@ -654,6 +694,19 @@ func (m *WindowsAutopilotDeviceIdentity) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    if m.GetRemediationState() != nil {
+        cast := (*m.GetRemediationState()).String()
+        err = writer.WriteStringValue("remediationState", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("remediationStateLastModifiedDateTime", m.GetRemediationStateLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("resourceName", m.GetResourceName())
         if err != nil {
@@ -804,6 +857,18 @@ func (m *WindowsAutopilotDeviceIdentity) SetProductKey(value *string)() {
 func (m *WindowsAutopilotDeviceIdentity) SetPurchaseOrderIdentifier(value *string)() {
     if m != nil {
         m.purchaseOrderIdentifier = value
+    }
+}
+// SetRemediationState sets the remediationState property value. Device Remediation State
+func (m *WindowsAutopilotDeviceIdentity) SetRemediationState(value *WindowsAutopilotDeviceRemediationState)() {
+    if m != nil {
+        m.remediationState = value
+    }
+}
+// SetRemediationStateLastModifiedDateTime sets the remediationStateLastModifiedDateTime property value. RemediationState set time of Autopilot device.
+func (m *WindowsAutopilotDeviceIdentity) SetRemediationStateLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    if m != nil {
+        m.remediationStateLastModifiedDateTime = value
     }
 }
 // SetResourceName sets the resourceName property value. Resource Name.

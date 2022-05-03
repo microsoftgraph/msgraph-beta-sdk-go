@@ -70,8 +70,8 @@ func NewPrivilegedRoleAssignmentRequestItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedRoleAssignmentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete entity from privilegedRoleAssignmentRequests
+func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete entity from privilegedRoleAssignmentRequests
@@ -86,8 +86,8 @@ func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) CreateDeleteRequestI
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from privilegedRoleAssignmentRequests by key
-func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entity from privilegedRoleAssignmentRequests by key
+func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entity from privilegedRoleAssignmentRequests by key
@@ -105,8 +105,8 @@ func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update entity in privilegedRoleAssignmentRequests
+func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update entity in privilegedRoleAssignmentRequests
@@ -122,12 +122,12 @@ func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) CreatePatchRequestIn
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete entity from privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete entity from privilegedRoleAssignmentRequests
+func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete entity from privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete entity from privilegedRoleAssignmentRequests
+func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -142,12 +142,12 @@ func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) DeleteWithResponseHa
     }
     return nil
 }
-// GetWithResponseHandler get entity from privilegedRoleAssignmentRequests by key
-func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) GetWithResponseHandler(requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entity from privilegedRoleAssignmentRequests by key
+func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entity from privilegedRoleAssignmentRequests by key
-func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) GetWithResponseHandler(requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entity from privilegedRoleAssignmentRequests by key
+func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -162,12 +162,12 @@ func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) GetWithResponseHandl
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable), nil
 }
-// PatchWithResponseHandler update entity in privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update entity in privilegedRoleAssignmentRequests
+func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update entity in privilegedRoleAssignmentRequests
-func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update entity in privilegedRoleAssignmentRequests
+func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, requestConfiguration *PrivilegedRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -39,8 +39,8 @@ func NewValidateCredentialsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewValidateCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action validateCredentials
-func (m *ValidateCredentialsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ValidateCredentialsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action validateCredentials
+func (m *ValidateCredentialsRequestBuilder) CreatePostRequestInformation(body ValidateCredentialsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action validateCredentials
@@ -56,12 +56,12 @@ func (m *ValidateCredentialsRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action validateCredentials
-func (m *ValidateCredentialsRequestBuilder) PostWithResponseHandler(body ValidateCredentialsRequestBodyable, requestConfiguration *ValidateCredentialsRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action validateCredentials
+func (m *ValidateCredentialsRequestBuilder) Post(body ValidateCredentialsRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action validateCredentials
-func (m *ValidateCredentialsRequestBuilder) PostWithResponseHandler(body ValidateCredentialsRequestBodyable, requestConfiguration *ValidateCredentialsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action validateCredentials
+func (m *ValidateCredentialsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ValidateCredentialsRequestBodyable, requestConfiguration *ValidateCredentialsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

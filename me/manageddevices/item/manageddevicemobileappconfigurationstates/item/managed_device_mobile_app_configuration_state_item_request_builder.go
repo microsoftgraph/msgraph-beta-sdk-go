@@ -64,8 +64,8 @@ func NewManagedDeviceMobileAppConfigurationStateItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceMobileAppConfigurationStateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property managedDeviceMobileAppConfigurationStates for me
-func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property managedDeviceMobileAppConfigurationStates for me
+func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property managedDeviceMobileAppConfigurationStates for me
@@ -80,8 +80,8 @@ func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) CreateDelet
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration managed device mobile app configuration states for this device.
-func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation managed device mobile app configuration states for this device.
+func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration managed device mobile app configuration states for this device.
@@ -99,8 +99,8 @@ func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) CreateGetRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property managedDeviceMobileAppConfigurationStates in me
-func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceMobileAppConfigurationStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property managedDeviceMobileAppConfigurationStates in me
+func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceMobileAppConfigurationStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property managedDeviceMobileAppConfigurationStates in me
@@ -116,12 +116,12 @@ func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) CreatePatch
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property managedDeviceMobileAppConfigurationStates for me
-func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ManagedDeviceMobileAppConfigurationStateItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property managedDeviceMobileAppConfigurationStates for me
+func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property managedDeviceMobileAppConfigurationStates for me
-func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ManagedDeviceMobileAppConfigurationStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property managedDeviceMobileAppConfigurationStates for me
+func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedDeviceMobileAppConfigurationStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) DeleteWithR
     }
     return nil
 }
-// GetWithResponseHandler managed device mobile app configuration states for this device.
-func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedDeviceMobileAppConfigurationStateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceMobileAppConfigurationStateable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get managed device mobile app configuration states for this device.
+func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceMobileAppConfigurationStateable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler managed device mobile app configuration states for this device.
-func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagedDeviceMobileAppConfigurationStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceMobileAppConfigurationStateable, error) {
+// GetWithRequestConfigurationAndResponseHandler managed device mobile app configuration states for this device.
+func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagedDeviceMobileAppConfigurationStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceMobileAppConfigurationStateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) GetWithResp
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceMobileAppConfigurationStateable), nil
 }
-// PatchWithResponseHandler update the navigation property managedDeviceMobileAppConfigurationStates in me
-func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceMobileAppConfigurationStateable, requestConfiguration *ManagedDeviceMobileAppConfigurationStateItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property managedDeviceMobileAppConfigurationStates in me
+func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceMobileAppConfigurationStateable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property managedDeviceMobileAppConfigurationStates in me
-func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceMobileAppConfigurationStateable, requestConfiguration *ManagedDeviceMobileAppConfigurationStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property managedDeviceMobileAppConfigurationStates in me
+func (m *ManagedDeviceMobileAppConfigurationStateItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceMobileAppConfigurationStateable, requestConfiguration *ManagedDeviceMobileAppConfigurationStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

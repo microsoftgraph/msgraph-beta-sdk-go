@@ -64,8 +64,8 @@ func NewUserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property metricDevices for deviceManagement
-func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property metricDevices for deviceManagement
+func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property metricDevices for deviceManagement
@@ -80,8 +80,8 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the work from anywhere metric devices.
-func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the work from anywhere metric devices.
+func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the work from anywhere metric devices.
@@ -99,8 +99,8 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property metricDevices in deviceManagement
-func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsWorkFromAnywhereDeviceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property metricDevices in deviceManagement
+func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsWorkFromAnywhereDeviceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property metricDevices in deviceManagement
@@ -116,12 +116,12 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) Create
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property metricDevices for deviceManagement
-func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property metricDevices for deviceManagement
+func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property metricDevices for deviceManagement
-func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property metricDevices for deviceManagement
+func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) Delete
     }
     return nil
 }
-// GetWithResponseHandler the work from anywhere metric devices.
-func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsWorkFromAnywhereDeviceable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the work from anywhere metric devices.
+func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsWorkFromAnywhereDeviceable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the work from anywhere metric devices.
-func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsWorkFromAnywhereDeviceable, error) {
+// GetWithRequestConfigurationAndResponseHandler the work from anywhere metric devices.
+func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsWorkFromAnywhereDeviceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) GetWit
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsWorkFromAnywhereDeviceable), nil
 }
-// PatchWithResponseHandler update the navigation property metricDevices in deviceManagement
-func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsWorkFromAnywhereDeviceable, requestConfiguration *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property metricDevices in deviceManagement
+func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsWorkFromAnywhereDeviceable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property metricDevices in deviceManagement
-func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsWorkFromAnywhereDeviceable, requestConfiguration *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property metricDevices in deviceManagement
+func (m *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsWorkFromAnywhereDeviceable, requestConfiguration *UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

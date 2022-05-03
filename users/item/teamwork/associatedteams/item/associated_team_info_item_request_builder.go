@@ -64,8 +64,8 @@ func NewAssociatedTeamInfoItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewAssociatedTeamInfoItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property associatedTeams for users
-func (m *AssociatedTeamInfoItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property associatedTeams for users
+func (m *AssociatedTeamInfoItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property associatedTeams for users
@@ -80,8 +80,8 @@ func (m *AssociatedTeamInfoItemRequestBuilder) CreateDeleteRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the list of associatedTeamInfo objects that a user is associated with.
-func (m *AssociatedTeamInfoItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the list of associatedTeamInfo objects that a user is associated with.
+func (m *AssociatedTeamInfoItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the list of associatedTeamInfo objects that a user is associated with.
@@ -99,8 +99,8 @@ func (m *AssociatedTeamInfoItemRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property associatedTeams in users
-func (m *AssociatedTeamInfoItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property associatedTeams in users
+func (m *AssociatedTeamInfoItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property associatedTeams in users
@@ -116,12 +116,12 @@ func (m *AssociatedTeamInfoItemRequestBuilder) CreatePatchRequestInformationWith
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property associatedTeams for users
-func (m *AssociatedTeamInfoItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AssociatedTeamInfoItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property associatedTeams for users
+func (m *AssociatedTeamInfoItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property associatedTeams for users
-func (m *AssociatedTeamInfoItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AssociatedTeamInfoItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property associatedTeams for users
+func (m *AssociatedTeamInfoItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AssociatedTeamInfoItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *AssociatedTeamInfoItemRequestBuilder) DeleteWithResponseHandler(request
     }
     return nil
 }
-// GetWithResponseHandler the list of associatedTeamInfo objects that a user is associated with.
-func (m *AssociatedTeamInfoItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AssociatedTeamInfoItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the list of associatedTeamInfo objects that a user is associated with.
+func (m *AssociatedTeamInfoItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the list of associatedTeamInfo objects that a user is associated with.
-func (m *AssociatedTeamInfoItemRequestBuilder) GetWithResponseHandler(requestConfiguration *AssociatedTeamInfoItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable, error) {
+// GetWithRequestConfigurationAndResponseHandler the list of associatedTeamInfo objects that a user is associated with.
+func (m *AssociatedTeamInfoItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AssociatedTeamInfoItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *AssociatedTeamInfoItemRequestBuilder) GetWithResponseHandler(requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable), nil
 }
-// PatchWithResponseHandler update the navigation property associatedTeams in users
-func (m *AssociatedTeamInfoItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable, requestConfiguration *AssociatedTeamInfoItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property associatedTeams in users
+func (m *AssociatedTeamInfoItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property associatedTeams in users
-func (m *AssociatedTeamInfoItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable, requestConfiguration *AssociatedTeamInfoItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property associatedTeams in users
+func (m *AssociatedTeamInfoItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable, requestConfiguration *AssociatedTeamInfoItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

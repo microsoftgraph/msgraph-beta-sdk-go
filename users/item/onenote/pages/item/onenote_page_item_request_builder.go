@@ -78,8 +78,8 @@ func (m *OnenotePageItemRequestBuilder) Content()(*ic1dde0489220b401ddce60f4d771
 func (m *OnenotePageItemRequestBuilder) CopyToSection()(*i6f0db3c9a10b7adff30a3ede5912a026ed0ef56988193ac07c98a1789af6b242.CopyToSectionRequestBuilder) {
     return i6f0db3c9a10b7adff30a3ede5912a026ed0ef56988193ac07c98a1789af6b242.NewCopyToSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property pages for users
-func (m *OnenotePageItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property pages for users
+func (m *OnenotePageItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property pages for users
@@ -94,8 +94,8 @@ func (m *OnenotePageItemRequestBuilder) CreateDeleteRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-func (m *OnenotePageItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+func (m *OnenotePageItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
@@ -113,8 +113,8 @@ func (m *OnenotePageItemRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property pages in users
-func (m *OnenotePageItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenotePageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property pages in users
+func (m *OnenotePageItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenotePageable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property pages in users
@@ -130,12 +130,12 @@ func (m *OnenotePageItemRequestBuilder) CreatePatchRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property pages for users
-func (m *OnenotePageItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OnenotePageItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property pages for users
+func (m *OnenotePageItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property pages for users
-func (m *OnenotePageItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *OnenotePageItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property pages for users
+func (m *OnenotePageItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *OnenotePageItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -150,12 +150,12 @@ func (m *OnenotePageItemRequestBuilder) DeleteWithResponseHandler(requestConfigu
     }
     return nil
 }
-// GetWithResponseHandler the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-func (m *OnenotePageItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OnenotePageItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenotePageable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+func (m *OnenotePageItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenotePageable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-func (m *OnenotePageItemRequestBuilder) GetWithResponseHandler(requestConfiguration *OnenotePageItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenotePageable, error) {
+// GetWithRequestConfigurationAndResponseHandler the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+func (m *OnenotePageItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *OnenotePageItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenotePageable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -182,12 +182,12 @@ func (m *OnenotePageItemRequestBuilder) ParentNotebook()(*i1caba1f27f11980269f83
 func (m *OnenotePageItemRequestBuilder) ParentSection()(*id128a1fdf762fd57ad499e421990f4d8a1cdd77672e8977ee6bbc8ab31c0f0e8.ParentSectionRequestBuilder) {
     return id128a1fdf762fd57ad499e421990f4d8a1cdd77672e8977ee6bbc8ab31c0f0e8.NewParentSectionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PatchWithResponseHandler update the navigation property pages in users
-func (m *OnenotePageItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenotePageable, requestConfiguration *OnenotePageItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property pages in users
+func (m *OnenotePageItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenotePageable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property pages in users
-func (m *OnenotePageItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenotePageable, requestConfiguration *OnenotePageItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property pages in users
+func (m *OnenotePageItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenotePageable, requestConfiguration *OnenotePageItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

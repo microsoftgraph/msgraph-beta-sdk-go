@@ -64,8 +64,8 @@ func NewAssignmentDefaultsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentDefaultsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignmentDefaults for education
-func (m *AssignmentDefaultsRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property assignmentDefaults for education
+func (m *AssignmentDefaultsRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property assignmentDefaults for education
@@ -80,8 +80,8 @@ func (m *AssignmentDefaultsRequestBuilder) CreateDeleteRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration specifies class-level defaults respected by new assignments created in the class.
-func (m *AssignmentDefaultsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation specifies class-level defaults respected by new assignments created in the class.
+func (m *AssignmentDefaultsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration specifies class-level defaults respected by new assignments created in the class.
@@ -99,8 +99,8 @@ func (m *AssignmentDefaultsRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignmentDefaults in education
-func (m *AssignmentDefaultsRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property assignmentDefaults in education
+func (m *AssignmentDefaultsRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property assignmentDefaults in education
@@ -116,12 +116,12 @@ func (m *AssignmentDefaultsRequestBuilder) CreatePatchRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property assignmentDefaults for education
-func (m *AssignmentDefaultsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AssignmentDefaultsRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property assignmentDefaults for education
+func (m *AssignmentDefaultsRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property assignmentDefaults for education
-func (m *AssignmentDefaultsRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AssignmentDefaultsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property assignmentDefaults for education
+func (m *AssignmentDefaultsRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AssignmentDefaultsRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *AssignmentDefaultsRequestBuilder) DeleteWithResponseHandler(requestConf
     }
     return nil
 }
-// GetWithResponseHandler specifies class-level defaults respected by new assignments created in the class.
-func (m *AssignmentDefaultsRequestBuilder) GetWithResponseHandler(requestConfiguration *AssignmentDefaultsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get specifies class-level defaults respected by new assignments created in the class.
+func (m *AssignmentDefaultsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler specifies class-level defaults respected by new assignments created in the class.
-func (m *AssignmentDefaultsRequestBuilder) GetWithResponseHandler(requestConfiguration *AssignmentDefaultsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable, error) {
+// GetWithRequestConfigurationAndResponseHandler specifies class-level defaults respected by new assignments created in the class.
+func (m *AssignmentDefaultsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AssignmentDefaultsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *AssignmentDefaultsRequestBuilder) GetWithResponseHandler(requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable), nil
 }
-// PatchWithResponseHandler update the navigation property assignmentDefaults in education
-func (m *AssignmentDefaultsRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable, requestConfiguration *AssignmentDefaultsRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property assignmentDefaults in education
+func (m *AssignmentDefaultsRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property assignmentDefaults in education
-func (m *AssignmentDefaultsRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable, requestConfiguration *AssignmentDefaultsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property assignmentDefaults in education
+func (m *AssignmentDefaultsRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentDefaultsable, requestConfiguration *AssignmentDefaultsRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

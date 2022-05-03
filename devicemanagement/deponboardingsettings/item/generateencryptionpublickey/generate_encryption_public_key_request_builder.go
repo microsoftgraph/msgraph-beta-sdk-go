@@ -39,8 +39,8 @@ func NewGenerateEncryptionPublicKeyRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewGenerateEncryptionPublicKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration generate a public key to use to encrypt the Apple device enrollment program token
-func (m *GenerateEncryptionPublicKeyRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation generate a public key to use to encrypt the Apple device enrollment program token
+func (m *GenerateEncryptionPublicKeyRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration generate a public key to use to encrypt the Apple device enrollment program token
@@ -55,12 +55,12 @@ func (m *GenerateEncryptionPublicKeyRequestBuilder) CreatePostRequestInformation
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler generate a public key to use to encrypt the Apple device enrollment program token
-func (m *GenerateEncryptionPublicKeyRequestBuilder) PostWithResponseHandler(requestConfiguration *GenerateEncryptionPublicKeyRequestBuilderPostRequestConfiguration)(GenerateEncryptionPublicKeyResponseable, error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post generate a public key to use to encrypt the Apple device enrollment program token
+func (m *GenerateEncryptionPublicKeyRequestBuilder) Post()(GenerateEncryptionPublicKeyResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler generate a public key to use to encrypt the Apple device enrollment program token
-func (m *GenerateEncryptionPublicKeyRequestBuilder) PostWithResponseHandler(requestConfiguration *GenerateEncryptionPublicKeyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GenerateEncryptionPublicKeyResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler generate a public key to use to encrypt the Apple device enrollment program token
+func (m *GenerateEncryptionPublicKeyRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *GenerateEncryptionPublicKeyRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GenerateEncryptionPublicKeyResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

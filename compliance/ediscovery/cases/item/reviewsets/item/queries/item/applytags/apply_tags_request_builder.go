@@ -39,8 +39,8 @@ func NewApplyTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewApplyTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action applyTags
-func (m *ApplyTagsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ApplyTagsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action applyTags
+func (m *ApplyTagsRequestBuilder) CreatePostRequestInformation(body ApplyTagsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action applyTags
@@ -56,12 +56,12 @@ func (m *ApplyTagsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action applyTags
-func (m *ApplyTagsRequestBuilder) PostWithResponseHandler(body ApplyTagsRequestBodyable, requestConfiguration *ApplyTagsRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action applyTags
+func (m *ApplyTagsRequestBuilder) Post(body ApplyTagsRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action applyTags
-func (m *ApplyTagsRequestBuilder) PostWithResponseHandler(body ApplyTagsRequestBodyable, requestConfiguration *ApplyTagsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action applyTags
+func (m *ApplyTagsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ApplyTagsRequestBodyable, requestConfiguration *ApplyTagsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

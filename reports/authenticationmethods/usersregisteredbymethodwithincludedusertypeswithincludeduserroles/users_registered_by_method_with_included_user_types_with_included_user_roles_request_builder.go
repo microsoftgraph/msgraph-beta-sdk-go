@@ -46,8 +46,8 @@ func NewUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequest
     urlParams["request-raw-url"] = rawUrl
     return NewUsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function usersRegisteredByMethod
-func (m *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function usersRegisteredByMethod
+func (m *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function usersRegisteredByMethod
@@ -62,12 +62,12 @@ func (m *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function usersRegisteredByMethod
-func (m *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder) GetWithResponseHandler(requestConfiguration *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRegistrationMethodSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function usersRegisteredByMethod
+func (m *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRegistrationMethodSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function usersRegisteredByMethod
-func (m *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder) GetWithResponseHandler(requestConfiguration *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRegistrationMethodSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function usersRegisteredByMethod
+func (m *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRegistrationMethodSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

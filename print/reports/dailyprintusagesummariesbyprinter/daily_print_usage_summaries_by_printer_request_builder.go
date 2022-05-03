@@ -74,8 +74,8 @@ func NewDailyPrintUsageSummariesByPrinterRequestBuilder(rawUrl string, requestAd
 func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) Count()(*i4a7e2ba00efb8ec3898830a58cf60eee79f1ce9769ea62cc4274572d5454ba5d.CountRequestBuilder) {
     return i4a7e2ba00efb8ec3898830a58cf60eee79f1ce9769ea62cc4274572d5454ba5d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get dailyPrintUsageSummariesByPrinter from print
-func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get dailyPrintUsageSummariesByPrinter from print
+func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get dailyPrintUsageSummariesByPrinter from print
@@ -93,8 +93,8 @@ func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to dailyPrintUsageSummariesByPrinter for print
-func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to dailyPrintUsageSummariesByPrinter for print
+func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to dailyPrintUsageSummariesByPrinter for print
@@ -110,12 +110,12 @@ func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get dailyPrintUsageSummariesByPrinter from print
-func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) GetWithResponseHandler(requestConfiguration *DailyPrintUsageSummariesByPrinterRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get dailyPrintUsageSummariesByPrinter from print
+func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get dailyPrintUsageSummariesByPrinter from print
-func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) GetWithResponseHandler(requestConfiguration *DailyPrintUsageSummariesByPrinterRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get dailyPrintUsageSummariesByPrinter from print
+func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DailyPrintUsageSummariesByPrinterRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) GetWithResponseHandler
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to dailyPrintUsageSummariesByPrinter for print
-func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, requestConfiguration *DailyPrintUsageSummariesByPrinterRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to dailyPrintUsageSummariesByPrinter for print
+func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to dailyPrintUsageSummariesByPrinter for print
-func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, requestConfiguration *DailyPrintUsageSummariesByPrinterRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to dailyPrintUsageSummariesByPrinter for print
+func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, requestConfiguration *DailyPrintUsageSummariesByPrinterRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

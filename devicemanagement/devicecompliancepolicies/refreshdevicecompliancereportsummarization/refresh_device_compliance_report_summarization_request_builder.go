@@ -39,8 +39,8 @@ func NewRefreshDeviceComplianceReportSummarizationRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewRefreshDeviceComplianceReportSummarizationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action refreshDeviceComplianceReportSummarization
-func (m *RefreshDeviceComplianceReportSummarizationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action refreshDeviceComplianceReportSummarization
+func (m *RefreshDeviceComplianceReportSummarizationRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action refreshDeviceComplianceReportSummarization
@@ -55,12 +55,12 @@ func (m *RefreshDeviceComplianceReportSummarizationRequestBuilder) CreatePostReq
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action refreshDeviceComplianceReportSummarization
-func (m *RefreshDeviceComplianceReportSummarizationRequestBuilder) PostWithResponseHandler(requestConfiguration *RefreshDeviceComplianceReportSummarizationRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(requestConfiguration, nil);
+// Post invoke action refreshDeviceComplianceReportSummarization
+func (m *RefreshDeviceComplianceReportSummarizationRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// PostWithResponseHandler invoke action refreshDeviceComplianceReportSummarization
-func (m *RefreshDeviceComplianceReportSummarizationRequestBuilder) PostWithResponseHandler(requestConfiguration *RefreshDeviceComplianceReportSummarizationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action refreshDeviceComplianceReportSummarization
+func (m *RefreshDeviceComplianceReportSummarizationRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *RefreshDeviceComplianceReportSummarizationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err

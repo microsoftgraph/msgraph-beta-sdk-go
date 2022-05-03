@@ -64,8 +64,8 @@ func NewCredentialUserRegistrationDetailsItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewCredentialUserRegistrationDetailsItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property credentialUserRegistrationDetails for reports
-func (m *CredentialUserRegistrationDetailsItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property credentialUserRegistrationDetails for reports
+func (m *CredentialUserRegistrationDetailsItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property credentialUserRegistrationDetails for reports
@@ -80,8 +80,8 @@ func (m *CredentialUserRegistrationDetailsItemRequestBuilder) CreateDeleteReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
-func (m *CredentialUserRegistrationDetailsItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+func (m *CredentialUserRegistrationDetailsItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
@@ -99,8 +99,8 @@ func (m *CredentialUserRegistrationDetailsItemRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property credentialUserRegistrationDetails in reports
-func (m *CredentialUserRegistrationDetailsItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property credentialUserRegistrationDetails in reports
+func (m *CredentialUserRegistrationDetailsItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property credentialUserRegistrationDetails in reports
@@ -116,12 +116,12 @@ func (m *CredentialUserRegistrationDetailsItemRequestBuilder) CreatePatchRequest
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property credentialUserRegistrationDetails for reports
-func (m *CredentialUserRegistrationDetailsItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CredentialUserRegistrationDetailsItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property credentialUserRegistrationDetails for reports
+func (m *CredentialUserRegistrationDetailsItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property credentialUserRegistrationDetails for reports
-func (m *CredentialUserRegistrationDetailsItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CredentialUserRegistrationDetailsItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property credentialUserRegistrationDetails for reports
+func (m *CredentialUserRegistrationDetailsItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *CredentialUserRegistrationDetailsItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *CredentialUserRegistrationDetailsItemRequestBuilder) DeleteWithResponse
     }
     return nil
 }
-// GetWithResponseHandler details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
-func (m *CredentialUserRegistrationDetailsItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CredentialUserRegistrationDetailsItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+func (m *CredentialUserRegistrationDetailsItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
-func (m *CredentialUserRegistrationDetailsItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CredentialUserRegistrationDetailsItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, error) {
+// GetWithRequestConfigurationAndResponseHandler details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+func (m *CredentialUserRegistrationDetailsItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CredentialUserRegistrationDetailsItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *CredentialUserRegistrationDetailsItemRequestBuilder) GetWithResponseHan
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable), nil
 }
-// PatchWithResponseHandler update the navigation property credentialUserRegistrationDetails in reports
-func (m *CredentialUserRegistrationDetailsItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, requestConfiguration *CredentialUserRegistrationDetailsItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property credentialUserRegistrationDetails in reports
+func (m *CredentialUserRegistrationDetailsItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property credentialUserRegistrationDetails in reports
-func (m *CredentialUserRegistrationDetailsItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, requestConfiguration *CredentialUserRegistrationDetailsItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property credentialUserRegistrationDetails in reports
+func (m *CredentialUserRegistrationDetailsItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable, requestConfiguration *CredentialUserRegistrationDetailsItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

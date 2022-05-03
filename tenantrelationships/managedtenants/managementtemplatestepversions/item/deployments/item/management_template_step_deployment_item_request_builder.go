@@ -70,8 +70,8 @@ func NewManagementTemplateStepDeploymentItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateStepDeploymentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deployments for tenantRelationships
-func (m *ManagementTemplateStepDeploymentItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property deployments for tenantRelationships
+func (m *ManagementTemplateStepDeploymentItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property deployments for tenantRelationships
@@ -86,8 +86,8 @@ func (m *ManagementTemplateStepDeploymentItemRequestBuilder) CreateDeleteRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration get deployments from tenantRelationships
-func (m *ManagementTemplateStepDeploymentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get deployments from tenantRelationships
+func (m *ManagementTemplateStepDeploymentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get deployments from tenantRelationships
@@ -105,8 +105,8 @@ func (m *ManagementTemplateStepDeploymentItemRequestBuilder) CreateGetRequestInf
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property deployments in tenantRelationships
-func (m *ManagementTemplateStepDeploymentItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property deployments in tenantRelationships
+func (m *ManagementTemplateStepDeploymentItemRequestBuilder) CreatePatchRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property deployments in tenantRelationships
@@ -122,12 +122,12 @@ func (m *ManagementTemplateStepDeploymentItemRequestBuilder) CreatePatchRequestI
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property deployments for tenantRelationships
-func (m *ManagementTemplateStepDeploymentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ManagementTemplateStepDeploymentItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property deployments for tenantRelationships
+func (m *ManagementTemplateStepDeploymentItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property deployments for tenantRelationships
-func (m *ManagementTemplateStepDeploymentItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *ManagementTemplateStepDeploymentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property deployments for tenantRelationships
+func (m *ManagementTemplateStepDeploymentItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagementTemplateStepDeploymentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -142,12 +142,12 @@ func (m *ManagementTemplateStepDeploymentItemRequestBuilder) DeleteWithResponseH
     }
     return nil
 }
-// GetWithResponseHandler get deployments from tenantRelationships
-func (m *ManagementTemplateStepDeploymentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementTemplateStepDeploymentItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get deployments from tenantRelationships
+func (m *ManagementTemplateStepDeploymentItemRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get deployments from tenantRelationships
-func (m *ManagementTemplateStepDeploymentItemRequestBuilder) GetWithResponseHandler(requestConfiguration *ManagementTemplateStepDeploymentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, error) {
+// GetWithRequestConfigurationAndResponseHandler get deployments from tenantRelationships
+func (m *ManagementTemplateStepDeploymentItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ManagementTemplateStepDeploymentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -162,12 +162,12 @@ func (m *ManagementTemplateStepDeploymentItemRequestBuilder) GetWithResponseHand
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable), nil
 }
-// PatchWithResponseHandler update the navigation property deployments in tenantRelationships
-func (m *ManagementTemplateStepDeploymentItemRequestBuilder) PatchWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, requestConfiguration *ManagementTemplateStepDeploymentItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property deployments in tenantRelationships
+func (m *ManagementTemplateStepDeploymentItemRequestBuilder) Patch(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property deployments in tenantRelationships
-func (m *ManagementTemplateStepDeploymentItemRequestBuilder) PatchWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, requestConfiguration *ManagementTemplateStepDeploymentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property deployments in tenantRelationships
+func (m *ManagementTemplateStepDeploymentItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, requestConfiguration *ManagementTemplateStepDeploymentItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -42,8 +42,8 @@ func NewGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getExpiringVppTokenCount
-func (m *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getExpiringVppTokenCount
+func (m *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getExpiringVppTokenCount
@@ -58,12 +58,12 @@ func (m *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) Creat
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getExpiringVppTokenCount
-func (m *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) GetWithResponseHandler(requestConfiguration *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetRequestConfiguration)(GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getExpiringVppTokenCount
+func (m *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) Get()(GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getExpiringVppTokenCount
-func (m *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) GetWithResponseHandler(requestConfiguration *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getExpiringVppTokenCount
+func (m *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

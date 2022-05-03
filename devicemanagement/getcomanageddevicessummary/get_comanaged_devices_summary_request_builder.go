@@ -40,8 +40,8 @@ func NewGetComanagedDevicesSummaryRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewGetComanagedDevicesSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getComanagedDevicesSummary
-func (m *GetComanagedDevicesSummaryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getComanagedDevicesSummary
+func (m *GetComanagedDevicesSummaryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getComanagedDevicesSummary
@@ -56,12 +56,12 @@ func (m *GetComanagedDevicesSummaryRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getComanagedDevicesSummary
-func (m *GetComanagedDevicesSummaryRequestBuilder) GetWithResponseHandler(requestConfiguration *GetComanagedDevicesSummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ComanagedDevicesSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getComanagedDevicesSummary
+func (m *GetComanagedDevicesSummaryRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ComanagedDevicesSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getComanagedDevicesSummary
-func (m *GetComanagedDevicesSummaryRequestBuilder) GetWithResponseHandler(requestConfiguration *GetComanagedDevicesSummaryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ComanagedDevicesSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getComanagedDevicesSummary
+func (m *GetComanagedDevicesSummaryRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetComanagedDevicesSummaryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ComanagedDevicesSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

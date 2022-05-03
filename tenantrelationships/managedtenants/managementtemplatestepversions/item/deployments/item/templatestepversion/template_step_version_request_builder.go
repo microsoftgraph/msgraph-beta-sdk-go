@@ -50,8 +50,8 @@ func NewTemplateStepVersionRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewTemplateStepVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration get templateStepVersion from tenantRelationships
-func (m *TemplateStepVersionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get templateStepVersion from tenantRelationships
+func (m *TemplateStepVersionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get templateStepVersion from tenantRelationships
@@ -69,12 +69,12 @@ func (m *TemplateStepVersionRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get templateStepVersion from tenantRelationships
-func (m *TemplateStepVersionRequestBuilder) GetWithResponseHandler(requestConfiguration *TemplateStepVersionRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get templateStepVersion from tenantRelationships
+func (m *TemplateStepVersionRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get templateStepVersion from tenantRelationships
-func (m *TemplateStepVersionRequestBuilder) GetWithResponseHandler(requestConfiguration *TemplateStepVersionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, error) {
+// GetWithRequestConfigurationAndResponseHandler get templateStepVersion from tenantRelationships
+func (m *TemplateStepVersionRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TemplateStepVersionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepVersionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

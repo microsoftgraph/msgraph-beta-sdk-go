@@ -64,8 +64,8 @@ func NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuild
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory for deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory for deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory for deviceManagement
@@ -80,8 +80,8 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuil
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration user Experience Analytics Battery Health Device Runtime History
-func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation user Experience Analytics Battery Health Device Runtime History
+func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration user Experience Analytics Battery Health Device Runtime History
@@ -99,8 +99,8 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuil
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory in deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory in deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory in deviceManagement
@@ -116,12 +116,12 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuil
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory for deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory for deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory for deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory for deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuil
     }
     return nil
 }
-// GetWithResponseHandler user Experience Analytics Battery Health Device Runtime History
-func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get user Experience Analytics Battery Health Device Runtime History
+func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler user Experience Analytics Battery Health Device Runtime History
-func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable, error) {
+// GetWithRequestConfigurationAndResponseHandler user Experience Analytics Battery Health Device Runtime History
+func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable), nil
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory in deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable, requestConfiguration *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory in deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory in deviceManagement
-func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable, requestConfiguration *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory in deviceManagement
+func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable, requestConfiguration *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

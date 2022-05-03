@@ -74,8 +74,8 @@ func NewAndroidForWorkAppConfigurationSchemasRequestBuilder(rawUrl string, reque
 func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) Count()(*idf6491d66de81f5753db06b63da67cd4b5fde9c994a7d8ecd460f9d7832c0cc6.CountRequestBuilder) {
     return idf6491d66de81f5753db06b63da67cd4b5fde9c994a7d8ecd460f9d7832c0cc6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration android for Work app configuration schema entities.
-func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation android for Work app configuration schema entities.
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration android for Work app configuration schema entities.
@@ -93,8 +93,8 @@ func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) CreateGetRequestIn
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
-func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
@@ -110,12 +110,12 @@ func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) CreatePostRequestI
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler android for Work app configuration schema entities.
-func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) GetWithResponseHandler(requestConfiguration *AndroidForWorkAppConfigurationSchemasRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get android for Work app configuration schema entities.
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler android for Work app configuration schema entities.
-func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) GetWithResponseHandler(requestConfiguration *AndroidForWorkAppConfigurationSchemasRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler android for Work app configuration schema entities.
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AndroidForWorkAppConfigurationSchemasRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) GetWithResponseHan
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
-func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, requestConfiguration *AndroidForWorkAppConfigurationSchemasRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
-func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, requestConfiguration *AndroidForWorkAppConfigurationSchemasRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, requestConfiguration *AndroidForWorkAppConfigurationSchemasRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

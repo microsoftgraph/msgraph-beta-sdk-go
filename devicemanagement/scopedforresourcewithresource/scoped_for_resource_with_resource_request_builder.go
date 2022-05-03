@@ -42,8 +42,8 @@ func NewScopedForResourceWithResourceRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewScopedForResourceWithResourceRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function scopedForResource
-func (m *ScopedForResourceWithResourceRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function scopedForResource
+func (m *ScopedForResourceWithResourceRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function scopedForResource
@@ -58,12 +58,12 @@ func (m *ScopedForResourceWithResourceRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function scopedForResource
-func (m *ScopedForResourceWithResourceRequestBuilder) GetWithResponseHandler(requestConfiguration *ScopedForResourceWithResourceRequestBuilderGetRequestConfiguration)(ScopedForResourceWithResourceResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function scopedForResource
+func (m *ScopedForResourceWithResourceRequestBuilder) Get()(ScopedForResourceWithResourceResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function scopedForResource
-func (m *ScopedForResourceWithResourceRequestBuilder) GetWithResponseHandler(requestConfiguration *ScopedForResourceWithResourceRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ScopedForResourceWithResourceResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function scopedForResource
+func (m *ScopedForResourceWithResourceRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ScopedForResourceWithResourceRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ScopedForResourceWithResourceResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

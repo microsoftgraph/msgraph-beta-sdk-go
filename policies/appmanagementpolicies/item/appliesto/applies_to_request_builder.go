@@ -67,8 +67,8 @@ func NewAppliesToRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *AppliesToRequestBuilder) Count()(*if5895666d1421d52567c1846a02713b3c4e3ff84538df81b67d155afed76354c.CountRequestBuilder) {
     return if5895666d1421d52567c1846a02713b3c4e3ff84538df81b67d155afed76354c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get appliesTo from policies
-func (m *AppliesToRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get appliesTo from policies
+func (m *AppliesToRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get appliesTo from policies
@@ -86,12 +86,12 @@ func (m *AppliesToRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get appliesTo from policies
-func (m *AppliesToRequestBuilder) GetWithResponseHandler(requestConfiguration *AppliesToRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get appliesTo from policies
+func (m *AppliesToRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get appliesTo from policies
-func (m *AppliesToRequestBuilder) GetWithResponseHandler(requestConfiguration *AppliesToRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get appliesTo from policies
+func (m *AppliesToRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AppliesToRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

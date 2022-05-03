@@ -39,8 +39,8 @@ func NewRestartRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewRestartRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action restart
-func (m *RestartRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RestartRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action restart
+func (m *RestartRequestBuilder) CreatePostRequestInformation(body RestartRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action restart
@@ -56,12 +56,12 @@ func (m *RestartRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action restart
-func (m *RestartRequestBuilder) PostWithResponseHandler(body RestartRequestBodyable, requestConfiguration *RestartRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action restart
+func (m *RestartRequestBuilder) Post(body RestartRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action restart
-func (m *RestartRequestBuilder) PostWithResponseHandler(body RestartRequestBodyable, requestConfiguration *RestartRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action restart
+func (m *RestartRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RestartRequestBodyable, requestConfiguration *RestartRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

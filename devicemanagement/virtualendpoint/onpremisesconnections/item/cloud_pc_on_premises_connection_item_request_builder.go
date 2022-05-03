@@ -66,8 +66,8 @@ func NewCloudPcOnPremisesConnectionItemRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcOnPremisesConnectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property onPremisesConnections for deviceManagement
-func (m *CloudPcOnPremisesConnectionItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property onPremisesConnections for deviceManagement
+func (m *CloudPcOnPremisesConnectionItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property onPremisesConnections for deviceManagement
@@ -82,8 +82,8 @@ func (m *CloudPcOnPremisesConnectionItemRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
-func (m *CloudPcOnPremisesConnectionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+func (m *CloudPcOnPremisesConnectionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
@@ -101,8 +101,8 @@ func (m *CloudPcOnPremisesConnectionItemRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property onPremisesConnections in deviceManagement
-func (m *CloudPcOnPremisesConnectionItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcOnPremisesConnectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property onPremisesConnections in deviceManagement
+func (m *CloudPcOnPremisesConnectionItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcOnPremisesConnectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property onPremisesConnections in deviceManagement
@@ -118,12 +118,12 @@ func (m *CloudPcOnPremisesConnectionItemRequestBuilder) CreatePatchRequestInform
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property onPremisesConnections for deviceManagement
-func (m *CloudPcOnPremisesConnectionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CloudPcOnPremisesConnectionItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property onPremisesConnections for deviceManagement
+func (m *CloudPcOnPremisesConnectionItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property onPremisesConnections for deviceManagement
-func (m *CloudPcOnPremisesConnectionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *CloudPcOnPremisesConnectionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property onPremisesConnections for deviceManagement
+func (m *CloudPcOnPremisesConnectionItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *CloudPcOnPremisesConnectionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -138,12 +138,12 @@ func (m *CloudPcOnPremisesConnectionItemRequestBuilder) DeleteWithResponseHandle
     }
     return nil
 }
-// GetWithResponseHandler a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
-func (m *CloudPcOnPremisesConnectionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CloudPcOnPremisesConnectionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcOnPremisesConnectionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+func (m *CloudPcOnPremisesConnectionItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcOnPremisesConnectionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
-func (m *CloudPcOnPremisesConnectionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *CloudPcOnPremisesConnectionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcOnPremisesConnectionable, error) {
+// GetWithRequestConfigurationAndResponseHandler a defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+func (m *CloudPcOnPremisesConnectionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CloudPcOnPremisesConnectionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcOnPremisesConnectionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -158,12 +158,12 @@ func (m *CloudPcOnPremisesConnectionItemRequestBuilder) GetWithResponseHandler(r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcOnPremisesConnectionable), nil
 }
-// PatchWithResponseHandler update the navigation property onPremisesConnections in deviceManagement
-func (m *CloudPcOnPremisesConnectionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcOnPremisesConnectionable, requestConfiguration *CloudPcOnPremisesConnectionItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property onPremisesConnections in deviceManagement
+func (m *CloudPcOnPremisesConnectionItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcOnPremisesConnectionable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property onPremisesConnections in deviceManagement
-func (m *CloudPcOnPremisesConnectionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcOnPremisesConnectionable, requestConfiguration *CloudPcOnPremisesConnectionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property onPremisesConnections in deviceManagement
+func (m *CloudPcOnPremisesConnectionItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcOnPremisesConnectionable, requestConfiguration *CloudPcOnPremisesConnectionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

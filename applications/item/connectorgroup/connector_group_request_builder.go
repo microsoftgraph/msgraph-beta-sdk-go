@@ -50,8 +50,8 @@ func NewConnectorGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewConnectorGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
-func (m *ConnectorGroupRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
+func (m *ConnectorGroupRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
@@ -69,12 +69,12 @@ func (m *ConnectorGroupRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
-func (m *ConnectorGroupRequestBuilder) GetWithResponseHandler(requestConfiguration *ConnectorGroupRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
+func (m *ConnectorGroupRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
-func (m *ConnectorGroupRequestBuilder) GetWithResponseHandler(requestConfiguration *ConnectorGroupRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, error) {
+// GetWithRequestConfigurationAndResponseHandler the connectorGroup the application is using with Azure AD Application Proxy. Nullable.
+func (m *ConnectorGroupRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ConnectorGroupRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

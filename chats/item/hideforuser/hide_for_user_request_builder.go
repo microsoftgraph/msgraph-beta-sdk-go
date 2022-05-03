@@ -39,8 +39,8 @@ func NewHideForUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewHideForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action hideForUser
-func (m *HideForUserRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body HideForUserRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action hideForUser
+func (m *HideForUserRequestBuilder) CreatePostRequestInformation(body HideForUserRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action hideForUser
@@ -56,12 +56,12 @@ func (m *HideForUserRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action hideForUser
-func (m *HideForUserRequestBuilder) PostWithResponseHandler(body HideForUserRequestBodyable, requestConfiguration *HideForUserRequestBuilderPostRequestConfiguration)(error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action hideForUser
+func (m *HideForUserRequestBuilder) Post(body HideForUserRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action hideForUser
-func (m *HideForUserRequestBuilder) PostWithResponseHandler(body HideForUserRequestBodyable, requestConfiguration *HideForUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action hideForUser
+func (m *HideForUserRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body HideForUserRequestBodyable, requestConfiguration *HideForUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

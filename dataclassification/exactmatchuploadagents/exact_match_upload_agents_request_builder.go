@@ -74,8 +74,8 @@ func NewExactMatchUploadAgentsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ExactMatchUploadAgentsRequestBuilder) Count()(*ibb233fb09f4649d2f70a5b6df932868d9a9e320bb5d588af49465e4192249ef2.CountRequestBuilder) {
     return ibb233fb09f4649d2f70a5b6df932868d9a9e320bb5d588af49465e4192249ef2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get exactMatchUploadAgents from dataClassification
-func (m *ExactMatchUploadAgentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get exactMatchUploadAgents from dataClassification
+func (m *ExactMatchUploadAgentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get exactMatchUploadAgents from dataClassification
@@ -93,8 +93,8 @@ func (m *ExactMatchUploadAgentsRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to exactMatchUploadAgents for dataClassification
-func (m *ExactMatchUploadAgentsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to exactMatchUploadAgents for dataClassification
+func (m *ExactMatchUploadAgentsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to exactMatchUploadAgents for dataClassification
@@ -110,12 +110,12 @@ func (m *ExactMatchUploadAgentsRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get exactMatchUploadAgents from dataClassification
-func (m *ExactMatchUploadAgentsRequestBuilder) GetWithResponseHandler(requestConfiguration *ExactMatchUploadAgentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get exactMatchUploadAgents from dataClassification
+func (m *ExactMatchUploadAgentsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get exactMatchUploadAgents from dataClassification
-func (m *ExactMatchUploadAgentsRequestBuilder) GetWithResponseHandler(requestConfiguration *ExactMatchUploadAgentsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get exactMatchUploadAgents from dataClassification
+func (m *ExactMatchUploadAgentsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExactMatchUploadAgentsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *ExactMatchUploadAgentsRequestBuilder) GetWithResponseHandler(requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to exactMatchUploadAgents for dataClassification
-func (m *ExactMatchUploadAgentsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable, requestConfiguration *ExactMatchUploadAgentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to exactMatchUploadAgents for dataClassification
+func (m *ExactMatchUploadAgentsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to exactMatchUploadAgents for dataClassification
-func (m *ExactMatchUploadAgentsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable, requestConfiguration *ExactMatchUploadAgentsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to exactMatchUploadAgents for dataClassification
+func (m *ExactMatchUploadAgentsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable, requestConfiguration *ExactMatchUploadAgentsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

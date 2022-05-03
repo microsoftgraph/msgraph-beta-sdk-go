@@ -50,8 +50,8 @@ func NewSiteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewSiteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration the SharePoint site associated with the siteSource.
-func (m *SiteRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the SharePoint site associated with the siteSource.
+func (m *SiteRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the SharePoint site associated with the siteSource.
@@ -69,12 +69,12 @@ func (m *SiteRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the SharePoint site associated with the siteSource.
-func (m *SiteRequestBuilder) GetWithResponseHandler(requestConfiguration *SiteRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the SharePoint site associated with the siteSource.
+func (m *SiteRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the SharePoint site associated with the siteSource.
-func (m *SiteRequestBuilder) GetWithResponseHandler(requestConfiguration *SiteRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
+// GetWithRequestConfigurationAndResponseHandler the SharePoint site associated with the siteSource.
+func (m *SiteRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SiteRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

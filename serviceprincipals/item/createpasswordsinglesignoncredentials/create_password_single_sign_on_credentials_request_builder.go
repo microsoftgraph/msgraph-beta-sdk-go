@@ -40,8 +40,8 @@ func NewCreatePasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewCreatePasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action createPasswordSingleSignOnCredentials
-func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreatePasswordSingleSignOnCredentialsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action createPasswordSingleSignOnCredentials
+func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformation(body CreatePasswordSingleSignOnCredentialsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action createPasswordSingleSignOnCredentials
@@ -57,12 +57,12 @@ func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestI
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action createPasswordSingleSignOnCredentials
-func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) PostWithResponseHandler(body CreatePasswordSingleSignOnCredentialsRequestBodyable, requestConfiguration *CreatePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordSingleSignOnCredentialSetable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action createPasswordSingleSignOnCredentials
+func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) Post(body CreatePasswordSingleSignOnCredentialsRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordSingleSignOnCredentialSetable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action createPasswordSingleSignOnCredentials
-func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) PostWithResponseHandler(body CreatePasswordSingleSignOnCredentialsRequestBodyable, requestConfiguration *CreatePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordSingleSignOnCredentialSetable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action createPasswordSingleSignOnCredentials
+func (m *CreatePasswordSingleSignOnCredentialsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreatePasswordSingleSignOnCredentialsRequestBodyable, requestConfiguration *CreatePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordSingleSignOnCredentialSetable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

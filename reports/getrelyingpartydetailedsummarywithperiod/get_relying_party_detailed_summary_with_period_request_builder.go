@@ -42,8 +42,8 @@ func NewGetRelyingPartyDetailedSummaryWithPeriodRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewGetRelyingPartyDetailedSummaryWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getRelyingPartyDetailedSummary
-func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getRelyingPartyDetailedSummary
+func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getRelyingPartyDetailedSummary
@@ -58,12 +58,12 @@ func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getRelyingPartyDetailedSummary
-func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetRelyingPartyDetailedSummaryWithPeriodResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getRelyingPartyDetailedSummary
+func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) Get()(GetRelyingPartyDetailedSummaryWithPeriodResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getRelyingPartyDetailedSummary
-func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) GetWithResponseHandler(requestConfiguration *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRelyingPartyDetailedSummaryWithPeriodResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getRelyingPartyDetailedSummary
+func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRelyingPartyDetailedSummaryWithPeriodResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

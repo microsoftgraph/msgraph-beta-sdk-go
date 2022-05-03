@@ -66,8 +66,8 @@ func NewDeviceManagementTemplateSettingCategoryItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementTemplateSettingCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property categories for deviceManagement
-func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property categories for deviceManagement
+func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property categories for deviceManagement
@@ -82,8 +82,8 @@ func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) CreateDelete
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of setting categories within the template
-func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation collection of setting categories within the template
+func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration collection of setting categories within the template
@@ -101,8 +101,8 @@ func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) CreateGetReq
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property categories in deviceManagement
-func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateSettingCategoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property categories in deviceManagement
+func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateSettingCategoryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property categories in deviceManagement
@@ -118,12 +118,12 @@ func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) CreatePatchR
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property categories for deviceManagement
-func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementTemplateSettingCategoryItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property categories for deviceManagement
+func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property categories for deviceManagement
-func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementTemplateSettingCategoryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property categories for deviceManagement
+func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementTemplateSettingCategoryItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -138,12 +138,12 @@ func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) DeleteWithRe
     }
     return nil
 }
-// GetWithResponseHandler collection of setting categories within the template
-func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementTemplateSettingCategoryItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateSettingCategoryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get collection of setting categories within the template
+func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateSettingCategoryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler collection of setting categories within the template
-func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementTemplateSettingCategoryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateSettingCategoryable, error) {
+// GetWithRequestConfigurationAndResponseHandler collection of setting categories within the template
+func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementTemplateSettingCategoryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateSettingCategoryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -158,12 +158,12 @@ func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) GetWithRespo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateSettingCategoryable), nil
 }
-// PatchWithResponseHandler update the navigation property categories in deviceManagement
-func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateSettingCategoryable, requestConfiguration *DeviceManagementTemplateSettingCategoryItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property categories in deviceManagement
+func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateSettingCategoryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property categories in deviceManagement
-func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateSettingCategoryable, requestConfiguration *DeviceManagementTemplateSettingCategoryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property categories in deviceManagement
+func (m *DeviceManagementTemplateSettingCategoryItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateSettingCategoryable, requestConfiguration *DeviceManagementTemplateSettingCategoryItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

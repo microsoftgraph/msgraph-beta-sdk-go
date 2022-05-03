@@ -74,8 +74,8 @@ func NewCloudPcConnectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *CloudPcConnectionsRequestBuilder) Count()(*i91c04ba14c6306f74dd7597b0f2148c1d7c68869e2fe0d596cbe0de40edb2a34.CountRequestBuilder) {
     return i91c04ba14c6306f74dd7597b0f2148c1d7c68869e2fe0d596cbe0de40edb2a34.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of cloud PC connections across managed tenants.
-func (m *CloudPcConnectionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of cloud PC connections across managed tenants.
+func (m *CloudPcConnectionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of cloud PC connections across managed tenants.
@@ -93,8 +93,8 @@ func (m *CloudPcConnectionsRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to cloudPcConnections for tenantRelationships
-func (m *CloudPcConnectionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to cloudPcConnections for tenantRelationships
+func (m *CloudPcConnectionsRequestBuilder) CreatePostRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to cloudPcConnections for tenantRelationships
@@ -110,12 +110,12 @@ func (m *CloudPcConnectionsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the collection of cloud PC connections across managed tenants.
-func (m *CloudPcConnectionsRequestBuilder) GetWithResponseHandler(requestConfiguration *CloudPcConnectionsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of cloud PC connections across managed tenants.
+func (m *CloudPcConnectionsRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of cloud PC connections across managed tenants.
-func (m *CloudPcConnectionsRequestBuilder) GetWithResponseHandler(requestConfiguration *CloudPcConnectionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of cloud PC connections across managed tenants.
+func (m *CloudPcConnectionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CloudPcConnectionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *CloudPcConnectionsRequestBuilder) GetWithResponseHandler(requestConfigu
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to cloudPcConnections for tenantRelationships
-func (m *CloudPcConnectionsRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionable, requestConfiguration *CloudPcConnectionsRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to cloudPcConnections for tenantRelationships
+func (m *CloudPcConnectionsRequestBuilder) Post(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to cloudPcConnections for tenantRelationships
-func (m *CloudPcConnectionsRequestBuilder) PostWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionable, requestConfiguration *CloudPcConnectionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to cloudPcConnections for tenantRelationships
+func (m *CloudPcConnectionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionable, requestConfiguration *CloudPcConnectionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

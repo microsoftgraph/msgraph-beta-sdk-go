@@ -75,8 +75,8 @@ func NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilder(rawUrl string, re
 func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Count()(*i611aa4102282c0f13028b90d38cf1cff4567e84626f417e14f811917b4228636.CountRequestBuilder) {
     return i611aa4102282c0f13028b90d38cf1cff4567e84626f417e14f811917b4228636.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration collection of imported Windows autopilot devices.
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation collection of imported Windows autopilot devices.
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration collection of imported Windows autopilot devices.
@@ -94,8 +94,8 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreateGetReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
@@ -111,12 +111,12 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) CreatePostReque
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler collection of imported Windows autopilot devices.
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) GetWithResponseHandler(requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get collection of imported Windows autopilot devices.
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler collection of imported Windows autopilot devices.
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) GetWithResponseHandler(requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler collection of imported Windows autopilot devices.
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) GetWithResponse
 func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Import_escaped()(*i8a259409215ade9230da33cd772df83ffd3fb56d6e0feedce6800757cfe3df34.ImportRequestBuilder) {
     return i8a259409215ade9230da33cd772df83ffd3fb56d6e0feedce6800757cfe3df34.NewImportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// PostWithResponseHandler create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityable, requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
-func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityable, requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
+func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityable, requestConfiguration *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImportedWindowsAutopilotDeviceIdentityable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

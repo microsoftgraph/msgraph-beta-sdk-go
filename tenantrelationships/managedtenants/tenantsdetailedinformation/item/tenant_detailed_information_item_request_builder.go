@@ -64,8 +64,8 @@ func NewTenantDetailedInformationItemRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewTenantDetailedInformationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property tenantsDetailedInformation for tenantRelationships
-func (m *TenantDetailedInformationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property tenantsDetailedInformation for tenantRelationships
+func (m *TenantDetailedInformationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property tenantsDetailedInformation for tenantRelationships
@@ -80,8 +80,8 @@ func (m *TenantDetailedInformationItemRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection tenant level detailed information across managed tenants.
-func (m *TenantDetailedInformationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection tenant level detailed information across managed tenants.
+func (m *TenantDetailedInformationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection tenant level detailed information across managed tenants.
@@ -99,8 +99,8 @@ func (m *TenantDetailedInformationItemRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property tenantsDetailedInformation in tenantRelationships
-func (m *TenantDetailedInformationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property tenantsDetailedInformation in tenantRelationships
+func (m *TenantDetailedInformationItemRequestBuilder) CreatePatchRequestInformation(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property tenantsDetailedInformation in tenantRelationships
@@ -116,12 +116,12 @@ func (m *TenantDetailedInformationItemRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property tenantsDetailedInformation for tenantRelationships
-func (m *TenantDetailedInformationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TenantDetailedInformationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property tenantsDetailedInformation for tenantRelationships
+func (m *TenantDetailedInformationItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property tenantsDetailedInformation for tenantRelationships
-func (m *TenantDetailedInformationItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *TenantDetailedInformationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property tenantsDetailedInformation for tenantRelationships
+func (m *TenantDetailedInformationItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *TenantDetailedInformationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -136,12 +136,12 @@ func (m *TenantDetailedInformationItemRequestBuilder) DeleteWithResponseHandler(
     }
     return nil
 }
-// GetWithResponseHandler the collection tenant level detailed information across managed tenants.
-func (m *TenantDetailedInformationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TenantDetailedInformationItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection tenant level detailed information across managed tenants.
+func (m *TenantDetailedInformationItemRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection tenant level detailed information across managed tenants.
-func (m *TenantDetailedInformationItemRequestBuilder) GetWithResponseHandler(requestConfiguration *TenantDetailedInformationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection tenant level detailed information across managed tenants.
+func (m *TenantDetailedInformationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TenantDetailedInformationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -156,12 +156,12 @@ func (m *TenantDetailedInformationItemRequestBuilder) GetWithResponseHandler(req
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationable), nil
 }
-// PatchWithResponseHandler update the navigation property tenantsDetailedInformation in tenantRelationships
-func (m *TenantDetailedInformationItemRequestBuilder) PatchWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationable, requestConfiguration *TenantDetailedInformationItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property tenantsDetailedInformation in tenantRelationships
+func (m *TenantDetailedInformationItemRequestBuilder) Patch(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property tenantsDetailedInformation in tenantRelationships
-func (m *TenantDetailedInformationItemRequestBuilder) PatchWithResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationable, requestConfiguration *TenantDetailedInformationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property tenantsDetailedInformation in tenantRelationships
+func (m *TenantDetailedInformationItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantDetailedInformationable, requestConfiguration *TenantDetailedInformationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

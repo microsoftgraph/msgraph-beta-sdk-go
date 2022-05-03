@@ -74,8 +74,8 @@ func NewMonthlyPrintUsageByPrinterRequestBuilder(rawUrl string, requestAdapter i
 func (m *MonthlyPrintUsageByPrinterRequestBuilder) Count()(*i2ee4373f056e6c74c61bf7fb0454995566c45d862fe70a1968ab99796049b41a.CountRequestBuilder) {
     return i2ee4373f056e6c74c61bf7fb0454995566c45d862fe70a1968ab99796049b41a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get monthlyPrintUsageByPrinter from reports
-func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get monthlyPrintUsageByPrinter from reports
+func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get monthlyPrintUsageByPrinter from reports
@@ -93,8 +93,8 @@ func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreateGetRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to monthlyPrintUsageByPrinter for reports
-func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to monthlyPrintUsageByPrinter for reports
+func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to monthlyPrintUsageByPrinter for reports
@@ -110,12 +110,12 @@ func (m *MonthlyPrintUsageByPrinterRequestBuilder) CreatePostRequestInformationW
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get monthlyPrintUsageByPrinter from reports
-func (m *MonthlyPrintUsageByPrinterRequestBuilder) GetWithResponseHandler(requestConfiguration *MonthlyPrintUsageByPrinterRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get monthlyPrintUsageByPrinter from reports
+func (m *MonthlyPrintUsageByPrinterRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get monthlyPrintUsageByPrinter from reports
-func (m *MonthlyPrintUsageByPrinterRequestBuilder) GetWithResponseHandler(requestConfiguration *MonthlyPrintUsageByPrinterRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get monthlyPrintUsageByPrinter from reports
+func (m *MonthlyPrintUsageByPrinterRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MonthlyPrintUsageByPrinterRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *MonthlyPrintUsageByPrinterRequestBuilder) GetWithResponseHandler(reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to monthlyPrintUsageByPrinter for reports
-func (m *MonthlyPrintUsageByPrinterRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, requestConfiguration *MonthlyPrintUsageByPrinterRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to monthlyPrintUsageByPrinter for reports
+func (m *MonthlyPrintUsageByPrinterRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to monthlyPrintUsageByPrinter for reports
-func (m *MonthlyPrintUsageByPrinterRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, requestConfiguration *MonthlyPrintUsageByPrinterRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to monthlyPrintUsageByPrinter for reports
+func (m *MonthlyPrintUsageByPrinterRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, requestConfiguration *MonthlyPrintUsageByPrinterRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByPrinterable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

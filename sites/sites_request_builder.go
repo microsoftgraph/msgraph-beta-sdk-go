@@ -74,8 +74,8 @@ func NewSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *SitesRequestBuilder) Count()(*ib81c95029d979466d91938adeca5dddd85b40bf0f696454eb18f46a1732d3a9c.CountRequestBuilder) {
     return ib81c95029d979466d91938adeca5dddd85b40bf0f696454eb18f46a1732d3a9c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from sites
-func (m *SitesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from sites
+func (m *SitesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from sites
@@ -97,12 +97,12 @@ func (m *SitesRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
 func (m *SitesRequestBuilder) Delta()(*i78c52f4a1bffb07514485793e74ce9ff957279c79c8593b58f1d24032586a995.DeltaRequestBuilder) {
     return i78c52f4a1bffb07514485793e74ce9ff957279c79c8593b58f1d24032586a995.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithResponseHandler get entities from sites
-func (m *SitesRequestBuilder) GetWithResponseHandler(requestConfiguration *SitesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entities from sites
+func (m *SitesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entities from sites
-func (m *SitesRequestBuilder) GetWithResponseHandler(requestConfiguration *SitesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from sites
+func (m *SitesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SitesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

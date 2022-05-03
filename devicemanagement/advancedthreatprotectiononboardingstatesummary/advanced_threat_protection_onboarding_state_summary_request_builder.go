@@ -81,8 +81,8 @@ func NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property advancedThreatProtectionOnboardingStateSummary for deviceManagement
-func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property advancedThreatProtectionOnboardingStateSummary for deviceManagement
+func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property advancedThreatProtectionOnboardingStateSummary for deviceManagement
@@ -97,8 +97,8 @@ func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreateDel
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration the summary state of ATP onboarding state for this account.
-func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the summary state of ATP onboarding state for this account.
+func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the summary state of ATP onboarding state for this account.
@@ -116,8 +116,8 @@ func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreateGet
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property advancedThreatProtectionOnboardingStateSummary in deviceManagement
-func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingStateSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property advancedThreatProtectionOnboardingStateSummary in deviceManagement
+func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingStateSummaryable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property advancedThreatProtectionOnboardingStateSummary in deviceManagement
@@ -133,12 +133,12 @@ func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) CreatePat
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property advancedThreatProtectionOnboardingStateSummary for deviceManagement
-func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property advancedThreatProtectionOnboardingStateSummary for deviceManagement
+func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property advancedThreatProtectionOnboardingStateSummary for deviceManagement
-func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) DeleteWithResponseHandler(requestConfiguration *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property advancedThreatProtectionOnboardingStateSummary for deviceManagement
+func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -153,12 +153,12 @@ func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) DeleteWit
     }
     return nil
 }
-// GetWithResponseHandler the summary state of ATP onboarding state for this account.
-func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) GetWithResponseHandler(requestConfiguration *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingStateSummaryable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the summary state of ATP onboarding state for this account.
+func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingStateSummaryable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the summary state of ATP onboarding state for this account.
-func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) GetWithResponseHandler(requestConfiguration *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingStateSummaryable, error) {
+// GetWithRequestConfigurationAndResponseHandler the summary state of ATP onboarding state for this account.
+func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingStateSummaryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -173,12 +173,12 @@ func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) GetWithRe
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingStateSummaryable), nil
 }
-// PatchWithResponseHandler update the navigation property advancedThreatProtectionOnboardingStateSummary in deviceManagement
-func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingStateSummaryable, requestConfiguration *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property advancedThreatProtectionOnboardingStateSummary in deviceManagement
+func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingStateSummaryable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property advancedThreatProtectionOnboardingStateSummary in deviceManagement
-func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingStateSummaryable, requestConfiguration *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property advancedThreatProtectionOnboardingStateSummary in deviceManagement
+func (m *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdvancedThreatProtectionOnboardingStateSummaryable, requestConfiguration *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

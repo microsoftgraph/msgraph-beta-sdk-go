@@ -39,8 +39,8 @@ func NewUpdateAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewUpdateAlertsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreatePostRequestInformationWithRequestConfiguration invoke action updateAlerts
-func (m *UpdateAlertsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateAlertsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation invoke action updateAlerts
+func (m *UpdateAlertsRequestBuilder) CreatePostRequestInformation(body UpdateAlertsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateAlerts
@@ -56,12 +56,12 @@ func (m *UpdateAlertsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// PostWithResponseHandler invoke action updateAlerts
-func (m *UpdateAlertsRequestBuilder) PostWithResponseHandler(body UpdateAlertsRequestBodyable, requestConfiguration *UpdateAlertsRequestBuilderPostRequestConfiguration)(UpdateAlertsResponseable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post invoke action updateAlerts
+func (m *UpdateAlertsRequestBuilder) Post(body UpdateAlertsRequestBodyable)(UpdateAlertsResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler invoke action updateAlerts
-func (m *UpdateAlertsRequestBuilder) PostWithResponseHandler(body UpdateAlertsRequestBodyable, requestConfiguration *UpdateAlertsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(UpdateAlertsResponseable, error) {
+// PostWithRequestConfigurationAndResponseHandler invoke action updateAlerts
+func (m *UpdateAlertsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateAlertsRequestBodyable, requestConfiguration *UpdateAlertsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(UpdateAlertsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -75,8 +75,8 @@ func NewPendingAccessReviewInstancesRequestBuilder(rawUrl string, requestAdapter
 func (m *PendingAccessReviewInstancesRequestBuilder) Count()(*ie1b8baf49b32dcd5706df66fa583c0923ab3644a3d5b419e4fb6f068ead3289c.CountRequestBuilder) {
     return ie1b8baf49b32dcd5706df66fa583c0923ab3644a3d5b419e4fb6f068ead3289c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration navigation property to get list of access reviews pending approval by reviewer.
-func (m *PendingAccessReviewInstancesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation navigation property to get list of access reviews pending approval by reviewer.
+func (m *PendingAccessReviewInstancesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration navigation property to get list of access reviews pending approval by reviewer.
@@ -94,8 +94,8 @@ func (m *PendingAccessReviewInstancesRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to pendingAccessReviewInstances for users
-func (m *PendingAccessReviewInstancesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to pendingAccessReviewInstances for users
+func (m *PendingAccessReviewInstancesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to pendingAccessReviewInstances for users
@@ -115,12 +115,12 @@ func (m *PendingAccessReviewInstancesRequestBuilder) CreatePostRequestInformatio
 func (m *PendingAccessReviewInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*icd140e8bb1f02a61e278e575e81ce28edf4932c7b2fb84262231e6126e50d6e0.FilterByCurrentUserWithOnRequestBuilder) {
     return icd140e8bb1f02a61e278e575e81ce28edf4932c7b2fb84262231e6126e50d6e0.NewFilterByCurrentUserWithOnRequestBuilderInternal(m.pathParameters, m.requestAdapter, on);
 }
-// GetWithResponseHandler navigation property to get list of access reviews pending approval by reviewer.
-func (m *PendingAccessReviewInstancesRequestBuilder) GetWithResponseHandler(requestConfiguration *PendingAccessReviewInstancesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get navigation property to get list of access reviews pending approval by reviewer.
+func (m *PendingAccessReviewInstancesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler navigation property to get list of access reviews pending approval by reviewer.
-func (m *PendingAccessReviewInstancesRequestBuilder) GetWithResponseHandler(requestConfiguration *PendingAccessReviewInstancesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler navigation property to get list of access reviews pending approval by reviewer.
+func (m *PendingAccessReviewInstancesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PendingAccessReviewInstancesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -135,12 +135,12 @@ func (m *PendingAccessReviewInstancesRequestBuilder) GetWithResponseHandler(requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to pendingAccessReviewInstances for users
-func (m *PendingAccessReviewInstancesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, requestConfiguration *PendingAccessReviewInstancesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to pendingAccessReviewInstances for users
+func (m *PendingAccessReviewInstancesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to pendingAccessReviewInstances for users
-func (m *PendingAccessReviewInstancesRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, requestConfiguration *PendingAccessReviewInstancesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to pendingAccessReviewInstances for users
+func (m *PendingAccessReviewInstancesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, requestConfiguration *PendingAccessReviewInstancesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

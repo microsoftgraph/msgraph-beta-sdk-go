@@ -74,8 +74,8 @@ func NewCertificateBasedAuthConfigurationRequestBuilder(rawUrl string, requestAd
 func (m *CertificateBasedAuthConfigurationRequestBuilder) Count()(*i305ca0eaba4e6082092b2a1391a19d3bcc50e935a226dc0e215f365acc2e8296.CountRequestBuilder) {
     return i305ca0eaba4e6082092b2a1391a19d3bcc50e935a226dc0e215f365acc2e8296.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from certificateBasedAuthConfiguration
-func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation get entities from certificateBasedAuthConfiguration
+func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration get entities from certificateBasedAuthConfiguration
@@ -93,8 +93,8 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to certificateBasedAuthConfiguration
-func (m *CertificateBasedAuthConfigurationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation add new entity to certificateBasedAuthConfiguration
+func (m *CertificateBasedAuthConfigurationRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration add new entity to certificateBasedAuthConfiguration
@@ -110,12 +110,12 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler get entities from certificateBasedAuthConfiguration
-func (m *CertificateBasedAuthConfigurationRequestBuilder) GetWithResponseHandler(requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get get entities from certificateBasedAuthConfiguration
+func (m *CertificateBasedAuthConfigurationRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler get entities from certificateBasedAuthConfiguration
-func (m *CertificateBasedAuthConfigurationRequestBuilder) GetWithResponseHandler(requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler get entities from certificateBasedAuthConfiguration
+func (m *CertificateBasedAuthConfigurationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *CertificateBasedAuthConfigurationRequestBuilder) GetWithResponseHandler
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationCollectionResponseable), nil
 }
-// PostWithResponseHandler add new entity to certificateBasedAuthConfiguration
-func (m *CertificateBasedAuthConfigurationRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable, requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post add new entity to certificateBasedAuthConfiguration
+func (m *CertificateBasedAuthConfigurationRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler add new entity to certificateBasedAuthConfiguration
-func (m *CertificateBasedAuthConfigurationRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable, requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable, error) {
+// PostWithRequestConfigurationAndResponseHandler add new entity to certificateBasedAuthConfiguration
+func (m *CertificateBasedAuthConfigurationRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable, requestConfiguration *CertificateBasedAuthConfigurationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedAuthConfigurationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

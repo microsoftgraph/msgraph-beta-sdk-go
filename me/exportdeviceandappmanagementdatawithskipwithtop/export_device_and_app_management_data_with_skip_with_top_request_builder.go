@@ -47,8 +47,8 @@ func NewExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function exportDeviceAndAppManagementData
-func (m *ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function exportDeviceAndAppManagementData
+func (m *ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function exportDeviceAndAppManagementData
@@ -63,12 +63,12 @@ func (m *ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) CreateGe
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function exportDeviceAndAppManagementData
-func (m *ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) GetWithResponseHandler(requestConfiguration *ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementDataable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function exportDeviceAndAppManagementData
+func (m *ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementDataable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function exportDeviceAndAppManagementData
-func (m *ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) GetWithResponseHandler(requestConfiguration *ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementDataable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function exportDeviceAndAppManagementData
+func (m *ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAndAppManagementDataable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

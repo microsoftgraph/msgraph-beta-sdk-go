@@ -39,8 +39,8 @@ func NewGetOffice365ActivationCountsRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewGetOffice365ActivationCountsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformationWithRequestConfiguration invoke function getOffice365ActivationCounts
-func (m *GetOffice365ActivationCountsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation invoke function getOffice365ActivationCounts
+func (m *GetOffice365ActivationCountsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration invoke function getOffice365ActivationCounts
@@ -55,12 +55,12 @@ func (m *GetOffice365ActivationCountsRequestBuilder) CreateGetRequestInformation
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler invoke function getOffice365ActivationCounts
-func (m *GetOffice365ActivationCountsRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOffice365ActivationCountsRequestBuilderGetRequestConfiguration)(GetOffice365ActivationCountsResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get invoke function getOffice365ActivationCounts
+func (m *GetOffice365ActivationCountsRequestBuilder) Get()(GetOffice365ActivationCountsResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler invoke function getOffice365ActivationCounts
-func (m *GetOffice365ActivationCountsRequestBuilder) GetWithResponseHandler(requestConfiguration *GetOffice365ActivationCountsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOffice365ActivationCountsResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler invoke function getOffice365ActivationCounts
+func (m *GetOffice365ActivationCountsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetOffice365ActivationCountsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetOffice365ActivationCountsResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

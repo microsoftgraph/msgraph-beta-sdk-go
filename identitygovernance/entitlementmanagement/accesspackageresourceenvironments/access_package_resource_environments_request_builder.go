@@ -74,8 +74,8 @@ func NewAccessPackageResourceEnvironmentsRequestBuilder(rawUrl string, requestAd
 func (m *AccessPackageResourceEnvironmentsRequestBuilder) Count()(*ied182edcf62383eee44274e363517ab0eff03ffd96359e912649ecc89ea856cb.CountRequestBuilder) {
     return ied182edcf62383eee44274e363517ab0eff03ffd96359e912649ecc89ea856cb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration a reference to the geolocation environment in which a resource is located.
-func (m *AccessPackageResourceEnvironmentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation a reference to the geolocation environment in which a resource is located.
+func (m *AccessPackageResourceEnvironmentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration a reference to the geolocation environment in which a resource is located.
@@ -93,8 +93,8 @@ func (m *AccessPackageResourceEnvironmentsRequestBuilder) CreateGetRequestInform
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to accessPackageResourceEnvironments for identityGovernance
-func (m *AccessPackageResourceEnvironmentsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePostRequestInformation create new navigation property to accessPackageResourceEnvironments for identityGovernance
+func (m *AccessPackageResourceEnvironmentsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration create new navigation property to accessPackageResourceEnvironments for identityGovernance
@@ -110,12 +110,12 @@ func (m *AccessPackageResourceEnvironmentsRequestBuilder) CreatePostRequestInfor
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler a reference to the geolocation environment in which a resource is located.
-func (m *AccessPackageResourceEnvironmentsRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageResourceEnvironmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get a reference to the geolocation environment in which a resource is located.
+func (m *AccessPackageResourceEnvironmentsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler a reference to the geolocation environment in which a resource is located.
-func (m *AccessPackageResourceEnvironmentsRequestBuilder) GetWithResponseHandler(requestConfiguration *AccessPackageResourceEnvironmentsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler a reference to the geolocation environment in which a resource is located.
+func (m *AccessPackageResourceEnvironmentsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageResourceEnvironmentsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -130,12 +130,12 @@ func (m *AccessPackageResourceEnvironmentsRequestBuilder) GetWithResponseHandler
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentCollectionResponseable), nil
 }
-// PostWithResponseHandler create new navigation property to accessPackageResourceEnvironments for identityGovernance
-func (m *AccessPackageResourceEnvironmentsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentable, requestConfiguration *AccessPackageResourceEnvironmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentable, error) {
-    return m.PostWithResponseHandler(body, requestConfiguration, nil);
+// Post create new navigation property to accessPackageResourceEnvironments for identityGovernance
+func (m *AccessPackageResourceEnvironmentsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithResponseHandler create new navigation property to accessPackageResourceEnvironments for identityGovernance
-func (m *AccessPackageResourceEnvironmentsRequestBuilder) PostWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentable, requestConfiguration *AccessPackageResourceEnvironmentsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentable, error) {
+// PostWithRequestConfigurationAndResponseHandler create new navigation property to accessPackageResourceEnvironments for identityGovernance
+func (m *AccessPackageResourceEnvironmentsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentable, requestConfiguration *AccessPackageResourceEnvironmentsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceEnvironmentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

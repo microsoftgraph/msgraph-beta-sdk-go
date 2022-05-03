@@ -65,8 +65,8 @@ func NewUnifiedRbacResourceActionItemRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewUnifiedRbacResourceActionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property resourceActions for roleManagement
-func (m *UnifiedRbacResourceActionItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property resourceActions for roleManagement
+func (m *UnifiedRbacResourceActionItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property resourceActions for roleManagement
@@ -81,8 +81,8 @@ func (m *UnifiedRbacResourceActionItemRequestBuilder) CreateDeleteRequestInforma
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration operations that an authorized principal are allowed to perform.
-func (m *UnifiedRbacResourceActionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation operations that an authorized principal are allowed to perform.
+func (m *UnifiedRbacResourceActionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration operations that an authorized principal are allowed to perform.
@@ -100,8 +100,8 @@ func (m *UnifiedRbacResourceActionItemRequestBuilder) CreateGetRequestInformatio
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property resourceActions in roleManagement
-func (m *UnifiedRbacResourceActionItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property resourceActions in roleManagement
+func (m *UnifiedRbacResourceActionItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property resourceActions in roleManagement
@@ -117,12 +117,12 @@ func (m *UnifiedRbacResourceActionItemRequestBuilder) CreatePatchRequestInformat
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property resourceActions for roleManagement
-func (m *UnifiedRbacResourceActionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property resourceActions for roleManagement
+func (m *UnifiedRbacResourceActionItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property resourceActions for roleManagement
-func (m *UnifiedRbacResourceActionItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *UnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property resourceActions for roleManagement
+func (m *UnifiedRbacResourceActionItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRbacResourceActionItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -137,12 +137,12 @@ func (m *UnifiedRbacResourceActionItemRequestBuilder) DeleteWithResponseHandler(
     }
     return nil
 }
-// GetWithResponseHandler operations that an authorized principal are allowed to perform.
-func (m *UnifiedRbacResourceActionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UnifiedRbacResourceActionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get operations that an authorized principal are allowed to perform.
+func (m *UnifiedRbacResourceActionItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler operations that an authorized principal are allowed to perform.
-func (m *UnifiedRbacResourceActionItemRequestBuilder) GetWithResponseHandler(requestConfiguration *UnifiedRbacResourceActionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable, error) {
+// GetWithRequestConfigurationAndResponseHandler operations that an authorized principal are allowed to perform.
+func (m *UnifiedRbacResourceActionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRbacResourceActionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -157,12 +157,12 @@ func (m *UnifiedRbacResourceActionItemRequestBuilder) GetWithResponseHandler(req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable), nil
 }
-// PatchWithResponseHandler update the navigation property resourceActions in roleManagement
-func (m *UnifiedRbacResourceActionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable, requestConfiguration *UnifiedRbacResourceActionItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property resourceActions in roleManagement
+func (m *UnifiedRbacResourceActionItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property resourceActions in roleManagement
-func (m *UnifiedRbacResourceActionItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable, requestConfiguration *UnifiedRbacResourceActionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property resourceActions in roleManagement
+func (m *UnifiedRbacResourceActionItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable, requestConfiguration *UnifiedRbacResourceActionItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

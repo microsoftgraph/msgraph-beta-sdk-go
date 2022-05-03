@@ -67,8 +67,8 @@ func NewExternalColumnsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ExternalColumnsRequestBuilder) Count()(*i92c775b594066b4ab2acf03df5225c6b9b63f03bd752141f99b4064d41951c12.CountRequestBuilder) {
     return i92c775b594066b4ab2acf03df5225c6b9b63f03bd752141f99b4064d41951c12.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
@@ -86,12 +86,12 @@ func (m *ExternalColumnsRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// GetWithResponseHandler the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-func (m *ExternalColumnsRequestBuilder) GetWithResponseHandler(requestConfiguration *ExternalColumnsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+func (m *ExternalColumnsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-func (m *ExternalColumnsRequestBuilder) GetWithResponseHandler(requestConfiguration *ExternalColumnsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
+// GetWithRequestConfigurationAndResponseHandler the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+func (m *ExternalColumnsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExternalColumnsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err

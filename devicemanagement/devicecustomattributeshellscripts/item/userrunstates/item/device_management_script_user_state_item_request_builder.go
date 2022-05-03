@@ -66,8 +66,8 @@ func NewDeviceManagementScriptUserStateItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementScriptUserStateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userRunStates for deviceManagement
-func (m *DeviceManagementScriptUserStateItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateDeleteRequestInformation delete navigation property userRunStates for deviceManagement
+func (m *DeviceManagementScriptUserStateItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
 // CreateDeleteRequestInformationWithRequestConfiguration delete navigation property userRunStates for deviceManagement
@@ -82,8 +82,8 @@ func (m *DeviceManagementScriptUserStateItemRequestBuilder) CreateDeleteRequestI
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformationWithRequestConfiguration list of run states for this script across all users.
-func (m *DeviceManagementScriptUserStateItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreateGetRequestInformation list of run states for this script across all users.
+func (m *DeviceManagementScriptUserStateItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
 // CreateGetRequestInformationWithRequestConfiguration list of run states for this script across all users.
@@ -101,8 +101,8 @@ func (m *DeviceManagementScriptUserStateItemRequestBuilder) CreateGetRequestInfo
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property userRunStates in deviceManagement
-func (m *DeviceManagementScriptUserStateItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptUserStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// CreatePatchRequestInformation update the navigation property userRunStates in deviceManagement
+func (m *DeviceManagementScriptUserStateItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptUserStateable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePatchRequestInformationWithRequestConfiguration update the navigation property userRunStates in deviceManagement
@@ -118,12 +118,12 @@ func (m *DeviceManagementScriptUserStateItemRequestBuilder) CreatePatchRequestIn
     }
     return requestInfo, nil
 }
-// DeleteWithResponseHandler delete navigation property userRunStates for deviceManagement
-func (m *DeviceManagementScriptUserStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementScriptUserStateItemRequestBuilderDeleteRequestConfiguration)(error) {
-    return m.DeleteWithResponseHandler(requestConfiguration, nil);
+// Delete delete navigation property userRunStates for deviceManagement
+func (m *DeviceManagementScriptUserStateItemRequestBuilder) Delete()(error) {
+    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithResponseHandler delete navigation property userRunStates for deviceManagement
-func (m *DeviceManagementScriptUserStateItemRequestBuilder) DeleteWithResponseHandler(requestConfiguration *DeviceManagementScriptUserStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// DeleteWithRequestConfigurationAndResponseHandler delete navigation property userRunStates for deviceManagement
+func (m *DeviceManagementScriptUserStateItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementScriptUserStateItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
@@ -153,12 +153,12 @@ func (m *DeviceManagementScriptUserStateItemRequestBuilder) DeviceRunStatesById(
     }
     return i69ac4d6dd0ea7a1fd9ad31fc82abecc3940a480dea2ebf94b01aac89ae2d135d.NewDeviceManagementScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// GetWithResponseHandler list of run states for this script across all users.
-func (m *DeviceManagementScriptUserStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementScriptUserStateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptUserStateable, error) {
-    return m.GetWithResponseHandler(requestConfiguration, nil);
+// Get list of run states for this script across all users.
+func (m *DeviceManagementScriptUserStateItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptUserStateable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithResponseHandler list of run states for this script across all users.
-func (m *DeviceManagementScriptUserStateItemRequestBuilder) GetWithResponseHandler(requestConfiguration *DeviceManagementScriptUserStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptUserStateable, error) {
+// GetWithRequestConfigurationAndResponseHandler list of run states for this script across all users.
+func (m *DeviceManagementScriptUserStateItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceManagementScriptUserStateItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptUserStateable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
@@ -173,12 +173,12 @@ func (m *DeviceManagementScriptUserStateItemRequestBuilder) GetWithResponseHandl
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptUserStateable), nil
 }
-// PatchWithResponseHandler update the navigation property userRunStates in deviceManagement
-func (m *DeviceManagementScriptUserStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptUserStateable, requestConfiguration *DeviceManagementScriptUserStateItemRequestBuilderPatchRequestConfiguration)(error) {
-    return m.PatchWithResponseHandler(body, requestConfiguration, nil);
+// Patch update the navigation property userRunStates in deviceManagement
+func (m *DeviceManagementScriptUserStateItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptUserStateable)(error) {
+    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithResponseHandler update the navigation property userRunStates in deviceManagement
-func (m *DeviceManagementScriptUserStateItemRequestBuilder) PatchWithResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptUserStateable, requestConfiguration *DeviceManagementScriptUserStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+// PatchWithRequestConfigurationAndResponseHandler update the navigation property userRunStates in deviceManagement
+func (m *DeviceManagementScriptUserStateItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptUserStateable, requestConfiguration *DeviceManagementScriptUserStateItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
