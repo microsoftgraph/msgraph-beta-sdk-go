@@ -8,7 +8,7 @@ import (
 
 // EdiscoveryCase 
 type EdiscoveryCase struct {
-    Case
+    Case_escaped
     // The closedBy property
     closedBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable
     // The closedDateTime property
@@ -35,7 +35,7 @@ type EdiscoveryCase struct {
 // NewEdiscoveryCase instantiates a new ediscoveryCase and sets the default values.
 func NewEdiscoveryCase()(*EdiscoveryCase) {
     m := &EdiscoveryCase{
-        Case: *NewCase(),
+        Case: *NewCase_escaped(),
     }
     return m
 }
