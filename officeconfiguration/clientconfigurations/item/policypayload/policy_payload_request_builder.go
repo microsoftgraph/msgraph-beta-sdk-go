@@ -14,25 +14,19 @@ type PolicyPayloadRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PolicyPayloadRequestBuilderGetOptions options for Get
-type PolicyPayloadRequestBuilderGetOptions struct {
+// PolicyPayloadRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type PolicyPayloadRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
-// PolicyPayloadRequestBuilderPutOptions options for Put
-type PolicyPayloadRequestBuilderPutOptions struct {
-    // Binary request body
-    Body []byte
+// PolicyPayloadRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type PolicyPayloadRequestBuilderPutRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewPolicyPayloadRequestBuilderInternal instantiates a new PolicyPayloadRequestBuilder and sets the default values.
 func NewPolicyPayloadRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicyPayloadRequestBuilder) {
@@ -54,43 +48,45 @@ func NewPolicyPayloadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewPolicyPayloadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) CreateGetRequestInformation(options *PolicyPayloadRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PolicyPayloadRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration policy settings JSON string in binary format, these values cannot be changed by the user.
+func (m *PolicyPayloadRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PolicyPayloadRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // CreatePutRequestInformation policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) CreatePutRequestInformation(options *PolicyPayloadRequestBuilderPutOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PolicyPayloadRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePutRequestInformationWithRequestConfiguration policy settings JSON string in binary format, these values cannot be changed by the user.
+func (m *PolicyPayloadRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *PolicyPayloadRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
-    requestInfo.SetStreamContent(options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetStreamContent(body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) Get(options *PolicyPayloadRequestBuilderGetOptions)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+func (m *PolicyPayloadRequestBuilder) Get()([]byte, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetWithRequestConfigurationAndResponseHandler policy settings JSON string in binary format, these values cannot be changed by the user.
+func (m *PolicyPayloadRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PolicyPayloadRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -98,15 +94,19 @@ func (m *PolicyPayloadRequestBuilder) Get(options *PolicyPayloadRequestBuilderGe
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", nil, errorMapping)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, errorMapping)
     if err != nil {
         return nil, err
     }
     return res.([]byte), nil
 }
 // Put policy settings JSON string in binary format, these values cannot be changed by the user.
-func (m *PolicyPayloadRequestBuilder) Put(options *PolicyPayloadRequestBuilderPutOptions)(error) {
-    requestInfo, err := m.CreatePutRequestInformation(options);
+func (m *PolicyPayloadRequestBuilder) Put(body []byte)(error) {
+    return m.PutWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PutWithRequestConfigurationAndResponseHandler policy settings JSON string in binary format, these values cannot be changed by the user.
+func (m *PolicyPayloadRequestBuilder) PutWithRequestConfigurationAndResponseHandler(body []byte, requestConfiguration *PolicyPayloadRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -114,7 +114,7 @@ func (m *PolicyPayloadRequestBuilder) Put(options *PolicyPayloadRequestBuilderPu
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
     if err != nil {
         return err
     }

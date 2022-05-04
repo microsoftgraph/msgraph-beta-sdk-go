@@ -13,14 +13,12 @@ type AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBu
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderGetOptions options for Get
-type AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderGetOptions struct {
+// AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderInternal instantiates a new AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder and sets the default values.
 func NewAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, accessPackageId *string, incompatibleAccessPackageId *string)(*AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) {
@@ -48,29 +46,32 @@ func NewAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdReques
     return NewAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 // CreateGetRequestInformation invoke function additionalAccess
-func (m *AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) CreateGetRequestInformation(options *AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration invoke function additionalAccess
+func (m *AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get invoke function additionalAccess
-func (m *AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) Get(options *AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderGetOptions)(AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+func (m *AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) Get()(AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetWithRequestConfigurationAndResponseHandler invoke function additionalAccess
+func (m *AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponseable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

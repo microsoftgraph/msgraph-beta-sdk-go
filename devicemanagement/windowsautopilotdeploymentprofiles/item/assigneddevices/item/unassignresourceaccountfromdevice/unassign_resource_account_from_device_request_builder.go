@@ -13,14 +13,12 @@ type UnassignResourceAccountFromDeviceRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UnassignResourceAccountFromDeviceRequestBuilderPostOptions options for Post
-type UnassignResourceAccountFromDeviceRequestBuilderPostOptions struct {
+// UnassignResourceAccountFromDeviceRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type UnassignResourceAccountFromDeviceRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewUnassignResourceAccountFromDeviceRequestBuilderInternal instantiates a new UnassignResourceAccountFromDeviceRequestBuilder and sets the default values.
 func NewUnassignResourceAccountFromDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UnassignResourceAccountFromDeviceRequestBuilder) {
@@ -42,29 +40,32 @@ func NewUnassignResourceAccountFromDeviceRequestBuilder(rawUrl string, requestAd
     return NewUnassignResourceAccountFromDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation unassigns the resource account from an Autopilot device.
-func (m *UnassignResourceAccountFromDeviceRequestBuilder) CreatePostRequestInformation(options *UnassignResourceAccountFromDeviceRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UnassignResourceAccountFromDeviceRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration unassigns the resource account from an Autopilot device.
+func (m *UnassignResourceAccountFromDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UnassignResourceAccountFromDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post unassigns the resource account from an Autopilot device.
-func (m *UnassignResourceAccountFromDeviceRequestBuilder) Post(options *UnassignResourceAccountFromDeviceRequestBuilderPostOptions)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *UnassignResourceAccountFromDeviceRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler unassigns the resource account from an Autopilot device.
+func (m *UnassignResourceAccountFromDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *UnassignResourceAccountFromDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, nil)
     if err != nil {
         return err
     }

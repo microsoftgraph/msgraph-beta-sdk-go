@@ -13,14 +13,12 @@ type GetManagedDevicesWithAppFailuresRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetManagedDevicesWithAppFailuresRequestBuilderGetOptions options for Get
-type GetManagedDevicesWithAppFailuresRequestBuilderGetOptions struct {
+// GetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetManagedDevicesWithAppFailuresRequestBuilderInternal instantiates a new GetManagedDevicesWithAppFailuresRequestBuilder and sets the default values.
 func NewGetManagedDevicesWithAppFailuresRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetManagedDevicesWithAppFailuresRequestBuilder) {
@@ -42,29 +40,32 @@ func NewGetManagedDevicesWithAppFailuresRequestBuilder(rawUrl string, requestAda
     return NewGetManagedDevicesWithAppFailuresRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation retrieves the list of devices with failed apps
-func (m *GetManagedDevicesWithAppFailuresRequestBuilder) CreateGetRequestInformation(options *GetManagedDevicesWithAppFailuresRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetManagedDevicesWithAppFailuresRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration retrieves the list of devices with failed apps
+func (m *GetManagedDevicesWithAppFailuresRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get retrieves the list of devices with failed apps
-func (m *GetManagedDevicesWithAppFailuresRequestBuilder) Get(options *GetManagedDevicesWithAppFailuresRequestBuilderGetOptions)(GetManagedDevicesWithAppFailuresResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+func (m *GetManagedDevicesWithAppFailuresRequestBuilder) Get()(GetManagedDevicesWithAppFailuresResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetWithRequestConfigurationAndResponseHandler retrieves the list of devices with failed apps
+func (m *GetManagedDevicesWithAppFailuresRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetManagedDevicesWithAppFailuresResponseable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetManagedDevicesWithAppFailuresResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetManagedDevicesWithAppFailuresResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

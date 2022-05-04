@@ -13,14 +13,12 @@ type UnblockManagedAppsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UnblockManagedAppsRequestBuilderPostOptions options for Post
-type UnblockManagedAppsRequestBuilderPostOptions struct {
+// UnblockManagedAppsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type UnblockManagedAppsRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewUnblockManagedAppsRequestBuilderInternal instantiates a new UnblockManagedAppsRequestBuilder and sets the default values.
 func NewUnblockManagedAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UnblockManagedAppsRequestBuilder) {
@@ -42,29 +40,32 @@ func NewUnblockManagedAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewUnblockManagedAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation unblocks the managed app user from app check-in.
-func (m *UnblockManagedAppsRequestBuilder) CreatePostRequestInformation(options *UnblockManagedAppsRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UnblockManagedAppsRequestBuilder) CreatePostRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration unblocks the managed app user from app check-in.
+func (m *UnblockManagedAppsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(requestConfiguration *UnblockManagedAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post unblocks the managed app user from app check-in.
-func (m *UnblockManagedAppsRequestBuilder) Post(options *UnblockManagedAppsRequestBuilderPostOptions)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *UnblockManagedAppsRequestBuilder) Post()(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler unblocks the managed app user from app check-in.
+func (m *UnblockManagedAppsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(requestConfiguration *UnblockManagedAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, nil)
     if err != nil {
         return err
     }

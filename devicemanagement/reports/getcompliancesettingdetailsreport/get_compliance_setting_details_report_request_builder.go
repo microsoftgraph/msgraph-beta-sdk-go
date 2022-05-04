@@ -13,16 +13,12 @@ type GetComplianceSettingDetailsReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetComplianceSettingDetailsReportRequestBuilderPostOptions options for Post
-type GetComplianceSettingDetailsReportRequestBuilderPostOptions struct {
-    // 
-    Body GetComplianceSettingDetailsReportRequestBodyable
+// GetComplianceSettingDetailsReportRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetComplianceSettingDetailsReportRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetComplianceSettingDetailsReportRequestBuilderInternal instantiates a new GetComplianceSettingDetailsReportRequestBuilder and sets the default values.
 func NewGetComplianceSettingDetailsReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetComplianceSettingDetailsReportRequestBuilder) {
@@ -44,30 +40,33 @@ func NewGetComplianceSettingDetailsReportRequestBuilder(rawUrl string, requestAd
     return NewGetComplianceSettingDetailsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getComplianceSettingDetailsReport
-func (m *GetComplianceSettingDetailsReportRequestBuilder) CreatePostRequestInformation(options *GetComplianceSettingDetailsReportRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetComplianceSettingDetailsReportRequestBuilder) CreatePostRequestInformation(body GetComplianceSettingDetailsReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action getComplianceSettingDetailsReport
+func (m *GetComplianceSettingDetailsReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetComplianceSettingDetailsReportRequestBodyable, requestConfiguration *GetComplianceSettingDetailsReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post invoke action getComplianceSettingDetailsReport
-func (m *GetComplianceSettingDetailsReportRequestBuilder) Post(options *GetComplianceSettingDetailsReportRequestBuilderPostOptions)(GetComplianceSettingDetailsReportResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *GetComplianceSettingDetailsReportRequestBuilder) Post(body GetComplianceSettingDetailsReportRequestBodyable)(GetComplianceSettingDetailsReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler invoke action getComplianceSettingDetailsReport
+func (m *GetComplianceSettingDetailsReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetComplianceSettingDetailsReportRequestBodyable, requestConfiguration *GetComplianceSettingDetailsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetComplianceSettingDetailsReportResponseable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetComplianceSettingDetailsReportResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetComplianceSettingDetailsReportResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

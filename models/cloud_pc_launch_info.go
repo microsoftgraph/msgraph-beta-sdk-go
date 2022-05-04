@@ -8,9 +8,9 @@ import (
 type CloudPcLaunchInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The cloudPcId property
+    // The unique identifier of the Cloud PC.
     cloudPcId *string
-    // The cloudPcLaunchUrl property
+    // The connect URL of the Cloud PC.
     cloudPcLaunchUrl *string
 }
 // NewCloudPcLaunchInfo instantiates a new cloudPcLaunchInfo and sets the default values.
@@ -32,7 +32,7 @@ func (m *CloudPcLaunchInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetCloudPcId gets the cloudPcId property value. The cloudPcId property
+// GetCloudPcId gets the cloudPcId property value. The unique identifier of the Cloud PC.
 func (m *CloudPcLaunchInfo) GetCloudPcId()(*string) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *CloudPcLaunchInfo) GetCloudPcId()(*string) {
         return m.cloudPcId
     }
 }
-// GetCloudPcLaunchUrl gets the cloudPcLaunchUrl property value. The cloudPcLaunchUrl property
+// GetCloudPcLaunchUrl gets the cloudPcLaunchUrl property value. The connect URL of the Cloud PC.
 func (m *CloudPcLaunchInfo) GetCloudPcLaunchUrl()(*string) {
     if m == nil {
         return nil
@@ -101,13 +101,13 @@ func (m *CloudPcLaunchInfo) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetCloudPcId sets the cloudPcId property value. The cloudPcId property
+// SetCloudPcId sets the cloudPcId property value. The unique identifier of the Cloud PC.
 func (m *CloudPcLaunchInfo) SetCloudPcId(value *string)() {
     if m != nil {
         m.cloudPcId = value
     }
 }
-// SetCloudPcLaunchUrl sets the cloudPcLaunchUrl property value. The cloudPcLaunchUrl property
+// SetCloudPcLaunchUrl sets the cloudPcLaunchUrl property value. The connect URL of the Cloud PC.
 func (m *CloudPcLaunchInfo) SetCloudPcLaunchUrl(value *string)() {
     if m != nil {
         m.cloudPcLaunchUrl = value

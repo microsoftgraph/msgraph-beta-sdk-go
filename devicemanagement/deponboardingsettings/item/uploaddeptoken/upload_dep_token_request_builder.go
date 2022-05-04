@@ -13,16 +13,12 @@ type UploadDepTokenRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UploadDepTokenRequestBuilderPostOptions options for Post
-type UploadDepTokenRequestBuilderPostOptions struct {
-    // 
-    Body UploadDepTokenRequestBodyable
+// UploadDepTokenRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type UploadDepTokenRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewUploadDepTokenRequestBuilderInternal instantiates a new UploadDepTokenRequestBuilder and sets the default values.
 func NewUploadDepTokenRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UploadDepTokenRequestBuilder) {
@@ -44,30 +40,33 @@ func NewUploadDepTokenRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewUploadDepTokenRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation uploads a new Device Enrollment Program token
-func (m *UploadDepTokenRequestBuilder) CreatePostRequestInformation(options *UploadDepTokenRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UploadDepTokenRequestBuilder) CreatePostRequestInformation(body UploadDepTokenRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration uploads a new Device Enrollment Program token
+func (m *UploadDepTokenRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadDepTokenRequestBodyable, requestConfiguration *UploadDepTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post uploads a new Device Enrollment Program token
-func (m *UploadDepTokenRequestBuilder) Post(options *UploadDepTokenRequestBuilderPostOptions)(error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *UploadDepTokenRequestBuilder) Post(body UploadDepTokenRequestBodyable)(error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler uploads a new Device Enrollment Program token
+func (m *UploadDepTokenRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UploadDepTokenRequestBodyable, requestConfiguration *UploadDepTokenRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, nil)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, nil)
     if err != nil {
         return err
     }

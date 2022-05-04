@@ -13,16 +13,12 @@ type GetConfigManagerDevicePolicyStatusReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetConfigManagerDevicePolicyStatusReportRequestBuilderPostOptions options for Post
-type GetConfigManagerDevicePolicyStatusReportRequestBuilderPostOptions struct {
-    // 
-    Body GetConfigManagerDevicePolicyStatusReportRequestBodyable
+// GetConfigManagerDevicePolicyStatusReportRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetConfigManagerDevicePolicyStatusReportRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetConfigManagerDevicePolicyStatusReportRequestBuilderInternal instantiates a new GetConfigManagerDevicePolicyStatusReportRequestBuilder and sets the default values.
 func NewGetConfigManagerDevicePolicyStatusReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetConfigManagerDevicePolicyStatusReportRequestBuilder) {
@@ -44,30 +40,33 @@ func NewGetConfigManagerDevicePolicyStatusReportRequestBuilder(rawUrl string, re
     return NewGetConfigManagerDevicePolicyStatusReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getConfigManagerDevicePolicyStatusReport
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) CreatePostRequestInformation(options *GetConfigManagerDevicePolicyStatusReportRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) CreatePostRequestInformation(body GetConfigManagerDevicePolicyStatusReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action getConfigManagerDevicePolicyStatusReport
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigManagerDevicePolicyStatusReportRequestBodyable, requestConfiguration *GetConfigManagerDevicePolicyStatusReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post invoke action getConfigManagerDevicePolicyStatusReport
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) Post(options *GetConfigManagerDevicePolicyStatusReportRequestBuilderPostOptions)(GetConfigManagerDevicePolicyStatusReportResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) Post(body GetConfigManagerDevicePolicyStatusReportRequestBodyable)(GetConfigManagerDevicePolicyStatusReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler invoke action getConfigManagerDevicePolicyStatusReport
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigManagerDevicePolicyStatusReportRequestBodyable, requestConfiguration *GetConfigManagerDevicePolicyStatusReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetConfigManagerDevicePolicyStatusReportResponseable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetConfigManagerDevicePolicyStatusReportResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetConfigManagerDevicePolicyStatusReportResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

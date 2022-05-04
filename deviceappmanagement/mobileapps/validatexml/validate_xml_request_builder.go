@@ -13,16 +13,12 @@ type ValidateXmlRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ValidateXmlRequestBuilderPostOptions options for Post
-type ValidateXmlRequestBuilderPostOptions struct {
-    // 
-    Body ValidateXmlRequestBodyable
+// ValidateXmlRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ValidateXmlRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewValidateXmlRequestBuilderInternal instantiates a new ValidateXmlRequestBuilder and sets the default values.
 func NewValidateXmlRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ValidateXmlRequestBuilder) {
@@ -44,30 +40,33 @@ func NewValidateXmlRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewValidateXmlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action validateXml
-func (m *ValidateXmlRequestBuilder) CreatePostRequestInformation(options *ValidateXmlRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ValidateXmlRequestBuilder) CreatePostRequestInformation(body ValidateXmlRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action validateXml
+func (m *ValidateXmlRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ValidateXmlRequestBodyable, requestConfiguration *ValidateXmlRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post invoke action validateXml
-func (m *ValidateXmlRequestBuilder) Post(options *ValidateXmlRequestBuilderPostOptions)(ValidateXmlResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *ValidateXmlRequestBuilder) Post(body ValidateXmlRequestBodyable)(ValidateXmlResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler invoke action validateXml
+func (m *ValidateXmlRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ValidateXmlRequestBodyable, requestConfiguration *ValidateXmlRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ValidateXmlResponseable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateValidateXmlResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateValidateXmlResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

@@ -146,7 +146,7 @@ type DeviceManagement struct {
     importedWindowsAutopilotDeviceIdentities []ImportedWindowsAutopilotDeviceIdentityable
     // The device management intents
     intents []DeviceManagementIntentable
-    // Intune Account Id for given tenant
+    // Intune Account ID for given tenant
     intuneAccountId *string
     // intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
     intuneBrand IntuneBrandable
@@ -168,10 +168,6 @@ type DeviceManagement struct {
     managedDeviceOverview ManagedDeviceOverviewable
     // The list of managed devices.
     managedDevices []ManagedDeviceable
-    // The management conditions associated with device management of the company.
-    managementConditions []ManagementConditionable
-    // The management condition statements associated with device management of the company.
-    managementConditionStatements []ManagementConditionStatementable
     // Maximum number of DEP tokens allowed per-tenant.
     maximumDepTokens *int32
     // Collection of MicrosoftTunnelConfiguration settings associated with account.
@@ -282,6 +278,10 @@ type DeviceManagement struct {
     userExperienceAnalyticsDeviceMetricHistory []UserExperienceAnalyticsMetricHistoryable
     // User experience analytics device performance
     userExperienceAnalyticsDevicePerformance []UserExperienceAnalyticsDevicePerformanceable
+    // The user experience analytics device scope entity endpoint to trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
+    userExperienceAnalyticsDeviceScope UserExperienceAnalyticsDeviceScopeable
+    // The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.
+    userExperienceAnalyticsDeviceScopes []UserExperienceAnalyticsDeviceScopeable
     // User experience analytics device scores
     userExperienceAnalyticsDeviceScores []UserExperienceAnalyticsDeviceScoresable
     // User experience analytics device Startup History
@@ -344,6 +344,12 @@ type DeviceManagement struct {
     windowsQualityUpdateProfiles []WindowsQualityUpdateProfileable
     // A collection of windows update catalog items (fetaure updates item , quality updates item)
     windowsUpdateCatalogItems []WindowsUpdateCatalogItemable
+    // The Collection of ZebraFotaArtifacts.
+    zebraFotaArtifacts []ZebraFotaArtifactable
+    // The singleton ZebraFotaConnector associated with account.
+    zebraFotaConnector ZebraFotaConnectorable
+    // Collection of ZebraFotaDeployments associated with account.
+    zebraFotaDeployments []ZebraFotaDeploymentable
 }
 // NewDeviceManagement instantiates a new deviceManagement and sets the default values.
 func NewDeviceManagement()(*DeviceManagement) {
@@ -1875,34 +1881,6 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["managementConditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagementConditionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagementConditionable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagementConditionable)
-            }
-            m.SetManagementConditions(res)
-        }
-        return nil
-    }
-    res["managementConditionStatements"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagementConditionStatementFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagementConditionStatementable, len(val))
-            for i, v := range val {
-                res[i] = v.(ManagementConditionStatementable)
-            }
-            m.SetManagementConditionStatements(res)
-        }
-        return nil
-    }
     res["maximumDepTokens"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -2625,6 +2603,30 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["userExperienceAnalyticsDeviceScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsDeviceScopeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserExperienceAnalyticsDeviceScope(val.(UserExperienceAnalyticsDeviceScopeable))
+        }
+        return nil
+    }
+    res["userExperienceAnalyticsDeviceScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsDeviceScopeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserExperienceAnalyticsDeviceScopeable, len(val))
+            for i, v := range val {
+                res[i] = v.(UserExperienceAnalyticsDeviceScopeable)
+            }
+            m.SetUserExperienceAnalyticsDeviceScopes(res)
+        }
+        return nil
+    }
     res["userExperienceAnalyticsDeviceScores"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserExperienceAnalyticsDeviceScoresFromDiscriminatorValue)
         if err != nil {
@@ -3031,6 +3033,44 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["zebraFotaArtifacts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateZebraFotaArtifactFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ZebraFotaArtifactable, len(val))
+            for i, v := range val {
+                res[i] = v.(ZebraFotaArtifactable)
+            }
+            m.SetZebraFotaArtifacts(res)
+        }
+        return nil
+    }
+    res["zebraFotaConnector"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateZebraFotaConnectorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetZebraFotaConnector(val.(ZebraFotaConnectorable))
+        }
+        return nil
+    }
+    res["zebraFotaDeployments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateZebraFotaDeploymentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ZebraFotaDeploymentable, len(val))
+            for i, v := range val {
+                res[i] = v.(ZebraFotaDeploymentable)
+            }
+            m.SetZebraFotaDeployments(res)
+        }
+        return nil
+    }
     return res
 }
 // GetGroupPolicyCategories gets the groupPolicyCategories property value. The available group policy categories for this account.
@@ -3113,7 +3153,7 @@ func (m *DeviceManagement) GetIntents()([]DeviceManagementIntentable) {
         return m.intents
     }
 }
-// GetIntuneAccountId gets the intuneAccountId property value. Intune Account Id for given tenant
+// GetIntuneAccountId gets the intuneAccountId property value. Intune Account ID for given tenant
 func (m *DeviceManagement) GetIntuneAccountId()(*string) {
     if m == nil {
         return nil
@@ -3199,22 +3239,6 @@ func (m *DeviceManagement) GetManagedDevices()([]ManagedDeviceable) {
         return nil
     } else {
         return m.managedDevices
-    }
-}
-// GetManagementConditions gets the managementConditions property value. The management conditions associated with device management of the company.
-func (m *DeviceManagement) GetManagementConditions()([]ManagementConditionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementConditions
-    }
-}
-// GetManagementConditionStatements gets the managementConditionStatements property value. The management condition statements associated with device management of the company.
-func (m *DeviceManagement) GetManagementConditionStatements()([]ManagementConditionStatementable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementConditionStatements
     }
 }
 // GetMaximumDepTokens gets the maximumDepTokens property value. Maximum number of DEP tokens allowed per-tenant.
@@ -3657,6 +3681,22 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDevicePerformance()([]UserE
         return m.userExperienceAnalyticsDevicePerformance
     }
 }
+// GetUserExperienceAnalyticsDeviceScope gets the userExperienceAnalyticsDeviceScope property value. The user experience analytics device scope entity endpoint to trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
+func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceScope()(UserExperienceAnalyticsDeviceScopeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userExperienceAnalyticsDeviceScope
+    }
+}
+// GetUserExperienceAnalyticsDeviceScopes gets the userExperienceAnalyticsDeviceScopes property value. The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.
+func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceScopes()([]UserExperienceAnalyticsDeviceScopeable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userExperienceAnalyticsDeviceScopes
+    }
+}
 // GetUserExperienceAnalyticsDeviceScores gets the userExperienceAnalyticsDeviceScores property value. User experience analytics device scores
 func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceScores()([]UserExperienceAnalyticsDeviceScoresable) {
     if m == nil {
@@ -3903,6 +3943,30 @@ func (m *DeviceManagement) GetWindowsUpdateCatalogItems()([]WindowsUpdateCatalog
         return nil
     } else {
         return m.windowsUpdateCatalogItems
+    }
+}
+// GetZebraFotaArtifacts gets the zebraFotaArtifacts property value. The Collection of ZebraFotaArtifacts.
+func (m *DeviceManagement) GetZebraFotaArtifacts()([]ZebraFotaArtifactable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.zebraFotaArtifacts
+    }
+}
+// GetZebraFotaConnector gets the zebraFotaConnector property value. The singleton ZebraFotaConnector associated with account.
+func (m *DeviceManagement) GetZebraFotaConnector()(ZebraFotaConnectorable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.zebraFotaConnector
+    }
+}
+// GetZebraFotaDeployments gets the zebraFotaDeployments property value. Collection of ZebraFotaDeployments associated with account.
+func (m *DeviceManagement) GetZebraFotaDeployments()([]ZebraFotaDeploymentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.zebraFotaDeployments
     }
 }
 // Serialize serializes information the current object
@@ -4635,26 +4699,6 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    if m.GetManagementConditions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementConditions()))
-        for i, v := range m.GetManagementConditions() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
-        err = writer.WriteCollectionOfObjectValues("managementConditions", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetManagementConditionStatements() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagementConditionStatements()))
-        for i, v := range m.GetManagementConditionStatements() {
-            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-        }
-        err = writer.WriteCollectionOfObjectValues("managementConditionStatements", cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteInt32Value("maximumDepTokens", m.GetMaximumDepTokens())
         if err != nil {
@@ -5159,6 +5203,22 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("userExperienceAnalyticsDeviceScope", m.GetUserExperienceAnalyticsDeviceScope())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetUserExperienceAnalyticsDeviceScopes() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserExperienceAnalyticsDeviceScopes()))
+        for i, v := range m.GetUserExperienceAnalyticsDeviceScopes() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("userExperienceAnalyticsDeviceScopes", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserExperienceAnalyticsDeviceScores() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserExperienceAnalyticsDeviceScores()))
         for i, v := range m.GetUserExperienceAnalyticsDeviceScores() {
@@ -5437,6 +5497,32 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("windowsUpdateCatalogItems", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetZebraFotaArtifacts() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetZebraFotaArtifacts()))
+        for i, v := range m.GetZebraFotaArtifacts() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("zebraFotaArtifacts", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("zebraFotaConnector", m.GetZebraFotaConnector())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetZebraFotaDeployments() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetZebraFotaDeployments()))
+        for i, v := range m.GetZebraFotaDeployments() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("zebraFotaDeployments", cast)
         if err != nil {
             return err
         }
@@ -5857,7 +5943,7 @@ func (m *DeviceManagement) SetIntents(value []DeviceManagementIntentable)() {
         m.intents = value
     }
 }
-// SetIntuneAccountId sets the intuneAccountId property value. Intune Account Id for given tenant
+// SetIntuneAccountId sets the intuneAccountId property value. Intune Account ID for given tenant
 func (m *DeviceManagement) SetIntuneAccountId(value *string)() {
     if m != nil {
         m.intuneAccountId = value
@@ -5921,18 +6007,6 @@ func (m *DeviceManagement) SetManagedDeviceOverview(value ManagedDeviceOverviewa
 func (m *DeviceManagement) SetManagedDevices(value []ManagedDeviceable)() {
     if m != nil {
         m.managedDevices = value
-    }
-}
-// SetManagementConditions sets the managementConditions property value. The management conditions associated with device management of the company.
-func (m *DeviceManagement) SetManagementConditions(value []ManagementConditionable)() {
-    if m != nil {
-        m.managementConditions = value
-    }
-}
-// SetManagementConditionStatements sets the managementConditionStatements property value. The management condition statements associated with device management of the company.
-func (m *DeviceManagement) SetManagementConditionStatements(value []ManagementConditionStatementable)() {
-    if m != nil {
-        m.managementConditionStatements = value
     }
 }
 // SetMaximumDepTokens sets the maximumDepTokens property value. Maximum number of DEP tokens allowed per-tenant.
@@ -6265,6 +6339,18 @@ func (m *DeviceManagement) SetUserExperienceAnalyticsDevicePerformance(value []U
         m.userExperienceAnalyticsDevicePerformance = value
     }
 }
+// SetUserExperienceAnalyticsDeviceScope sets the userExperienceAnalyticsDeviceScope property value. The user experience analytics device scope entity endpoint to trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
+func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceScope(value UserExperienceAnalyticsDeviceScopeable)() {
+    if m != nil {
+        m.userExperienceAnalyticsDeviceScope = value
+    }
+}
+// SetUserExperienceAnalyticsDeviceScopes sets the userExperienceAnalyticsDeviceScopes property value. The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.
+func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceScopes(value []UserExperienceAnalyticsDeviceScopeable)() {
+    if m != nil {
+        m.userExperienceAnalyticsDeviceScopes = value
+    }
+}
 // SetUserExperienceAnalyticsDeviceScores sets the userExperienceAnalyticsDeviceScores property value. User experience analytics device scores
 func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceScores(value []UserExperienceAnalyticsDeviceScoresable)() {
     if m != nil {
@@ -6449,5 +6535,23 @@ func (m *DeviceManagement) SetWindowsQualityUpdateProfiles(value []WindowsQualit
 func (m *DeviceManagement) SetWindowsUpdateCatalogItems(value []WindowsUpdateCatalogItemable)() {
     if m != nil {
         m.windowsUpdateCatalogItems = value
+    }
+}
+// SetZebraFotaArtifacts sets the zebraFotaArtifacts property value. The Collection of ZebraFotaArtifacts.
+func (m *DeviceManagement) SetZebraFotaArtifacts(value []ZebraFotaArtifactable)() {
+    if m != nil {
+        m.zebraFotaArtifacts = value
+    }
+}
+// SetZebraFotaConnector sets the zebraFotaConnector property value. The singleton ZebraFotaConnector associated with account.
+func (m *DeviceManagement) SetZebraFotaConnector(value ZebraFotaConnectorable)() {
+    if m != nil {
+        m.zebraFotaConnector = value
+    }
+}
+// SetZebraFotaDeployments sets the zebraFotaDeployments property value. Collection of ZebraFotaDeployments associated with account.
+func (m *DeviceManagement) SetZebraFotaDeployments(value []ZebraFotaDeploymentable)() {
+    if m != nil {
+        m.zebraFotaDeployments = value
     }
 }

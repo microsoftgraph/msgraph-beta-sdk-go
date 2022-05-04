@@ -13,14 +13,12 @@ type GetNonCompliantSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetNonCompliantSettingsRequestBuilderGetOptions options for Get
-type GetNonCompliantSettingsRequestBuilderGetOptions struct {
+// GetNonCompliantSettingsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetNonCompliantSettingsRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetNonCompliantSettingsRequestBuilderInternal instantiates a new GetNonCompliantSettingsRequestBuilder and sets the default values.
 func NewGetNonCompliantSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetNonCompliantSettingsRequestBuilder) {
@@ -42,29 +40,32 @@ func NewGetNonCompliantSettingsRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewGetNonCompliantSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation invoke function getNonCompliantSettings
-func (m *GetNonCompliantSettingsRequestBuilder) CreateGetRequestInformation(options *GetNonCompliantSettingsRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetNonCompliantSettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration invoke function getNonCompliantSettings
+func (m *GetNonCompliantSettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetNonCompliantSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get invoke function getNonCompliantSettings
-func (m *GetNonCompliantSettingsRequestBuilder) Get(options *GetNonCompliantSettingsRequestBuilderGetOptions)(GetNonCompliantSettingsResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+func (m *GetNonCompliantSettingsRequestBuilder) Get()(GetNonCompliantSettingsResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetWithRequestConfigurationAndResponseHandler invoke function getNonCompliantSettings
+func (m *GetNonCompliantSettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetNonCompliantSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetNonCompliantSettingsResponseable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetNonCompliantSettingsResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetNonCompliantSettingsResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

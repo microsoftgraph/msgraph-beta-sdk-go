@@ -14,16 +14,12 @@ type ExtractLabelRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ExtractLabelRequestBuilderPostOptions options for Post
-type ExtractLabelRequestBuilderPostOptions struct {
-    // 
-    Body ExtractLabelRequestBodyable
+// ExtractLabelRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ExtractLabelRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewExtractLabelRequestBuilderInternal instantiates a new ExtractLabelRequestBuilder and sets the default values.
 func NewExtractLabelRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExtractLabelRequestBuilder) {
@@ -45,30 +41,33 @@ func NewExtractLabelRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewExtractLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action extractLabel
-func (m *ExtractLabelRequestBuilder) CreatePostRequestInformation(options *ExtractLabelRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ExtractLabelRequestBuilder) CreatePostRequestInformation(body ExtractLabelRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action extractLabel
+func (m *ExtractLabelRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ExtractLabelRequestBodyable, requestConfiguration *ExtractLabelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post invoke action extractLabel
-func (m *ExtractLabelRequestBuilder) Post(options *ExtractLabelRequestBuilderPostOptions)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionContentLabelable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *ExtractLabelRequestBuilder) Post(body ExtractLabelRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionContentLabelable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler invoke action extractLabel
+func (m *ExtractLabelRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ExtractLabelRequestBodyable, requestConfiguration *ExtractLabelRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionContentLabelable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateInformationProtectionContentLabelFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateInformationProtectionContentLabelFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

@@ -13,16 +13,12 @@ type GetCompliancePolicyDevicesReportRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetCompliancePolicyDevicesReportRequestBuilderPostOptions options for Post
-type GetCompliancePolicyDevicesReportRequestBuilderPostOptions struct {
-    // 
-    Body GetCompliancePolicyDevicesReportRequestBodyable
+// GetCompliancePolicyDevicesReportRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetCompliancePolicyDevicesReportRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetCompliancePolicyDevicesReportRequestBuilderInternal instantiates a new GetCompliancePolicyDevicesReportRequestBuilder and sets the default values.
 func NewGetCompliancePolicyDevicesReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetCompliancePolicyDevicesReportRequestBuilder) {
@@ -44,30 +40,33 @@ func NewGetCompliancePolicyDevicesReportRequestBuilder(rawUrl string, requestAda
     return NewGetCompliancePolicyDevicesReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getCompliancePolicyDevicesReport
-func (m *GetCompliancePolicyDevicesReportRequestBuilder) CreatePostRequestInformation(options *GetCompliancePolicyDevicesReportRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetCompliancePolicyDevicesReportRequestBuilder) CreatePostRequestInformation(body GetCompliancePolicyDevicesReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action getCompliancePolicyDevicesReport
+func (m *GetCompliancePolicyDevicesReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetCompliancePolicyDevicesReportRequestBodyable, requestConfiguration *GetCompliancePolicyDevicesReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post invoke action getCompliancePolicyDevicesReport
-func (m *GetCompliancePolicyDevicesReportRequestBuilder) Post(options *GetCompliancePolicyDevicesReportRequestBuilderPostOptions)(GetCompliancePolicyDevicesReportResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *GetCompliancePolicyDevicesReportRequestBuilder) Post(body GetCompliancePolicyDevicesReportRequestBodyable)(GetCompliancePolicyDevicesReportResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler invoke action getCompliancePolicyDevicesReport
+func (m *GetCompliancePolicyDevicesReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetCompliancePolicyDevicesReportRequestBodyable, requestConfiguration *GetCompliancePolicyDevicesReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCompliancePolicyDevicesReportResponseable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetCompliancePolicyDevicesReportResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetCompliancePolicyDevicesReportResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

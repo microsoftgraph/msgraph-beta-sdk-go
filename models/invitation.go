@@ -11,21 +11,21 @@ type Invitation struct {
     invitedUser Userable
     // The display name of the user being invited.
     invitedUserDisplayName *string
-    // The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (/|)Semicolon (;)Colon (:)Quotation marks (')Angle brackets (< >)Question mark (?)Comma (,)However, the following exceptions apply:A period (.) or a hyphen (-) is permitted anywhere in the user name, except at the beginning or end of the name.An underscore (_) is permitted anywhere in the user name. This includes at the beginning or end of the name.
+    // The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`
     invitedUserEmailAddress *string
     // Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.
     invitedUserMessageInfo InvitedUserMessageInfoable
-    // The userType of the user being invited. By default, this is Guest. You can invite as Member if you are a company administrator.
+    // The userType of the user being invited. By default, this is Guest. You can invite as Member if you're are company administrator. The default is false.
     invitedUserType *string
     // The URL the user can use to redeem their invitation. Read-only.
     inviteRedeemUrl *string
-    // The URL the user should be redirected to once the invitation is redeemed. Required.
+    // The URL user should be redirected to once the invitation is redeemed. Required.
     inviteRedirectUrl *string
     // Reset the user's redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. For more information about using this property, see Reset redemption status for a guest user (Preview).
     resetRedemption *bool
     // Indicates whether an email should be sent to the user being invited. The default is false.
     sendInvitationMessage *bool
-    // The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.
+    // The status of the invitation. Possible values: PendingAcceptance, Completed, InProgress, and Error
     status *string
 }
 // NewInvitation instantiates a new invitation and sets the default values.
@@ -160,7 +160,7 @@ func (m *Invitation) GetInvitedUserDisplayName()(*string) {
         return m.invitedUserDisplayName
     }
 }
-// GetInvitedUserEmailAddress gets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (/|)Semicolon (;)Colon (:)Quotation marks (')Angle brackets (< >)Question mark (?)Comma (,)However, the following exceptions apply:A period (.) or a hyphen (-) is permitted anywhere in the user name, except at the beginning or end of the name.An underscore (_) is permitted anywhere in the user name. This includes at the beginning or end of the name.
+// GetInvitedUserEmailAddress gets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`
 func (m *Invitation) GetInvitedUserEmailAddress()(*string) {
     if m == nil {
         return nil
@@ -176,7 +176,7 @@ func (m *Invitation) GetInvitedUserMessageInfo()(InvitedUserMessageInfoable) {
         return m.invitedUserMessageInfo
     }
 }
-// GetInvitedUserType gets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you are a company administrator.
+// GetInvitedUserType gets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you're are company administrator. The default is false.
 func (m *Invitation) GetInvitedUserType()(*string) {
     if m == nil {
         return nil
@@ -192,7 +192,7 @@ func (m *Invitation) GetInviteRedeemUrl()(*string) {
         return m.inviteRedeemUrl
     }
 }
-// GetInviteRedirectUrl gets the inviteRedirectUrl property value. The URL the user should be redirected to once the invitation is redeemed. Required.
+// GetInviteRedirectUrl gets the inviteRedirectUrl property value. The URL user should be redirected to once the invitation is redeemed. Required.
 func (m *Invitation) GetInviteRedirectUrl()(*string) {
     if m == nil {
         return nil
@@ -216,7 +216,7 @@ func (m *Invitation) GetSendInvitationMessage()(*bool) {
         return m.sendInvitationMessage
     }
 }
-// GetStatus gets the status property value. The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.
+// GetStatus gets the status property value. The status of the invitation. Possible values: PendingAcceptance, Completed, InProgress, and Error
 func (m *Invitation) GetStatus()(*string) {
     if m == nil {
         return nil
@@ -304,7 +304,7 @@ func (m *Invitation) SetInvitedUserDisplayName(value *string)() {
         m.invitedUserDisplayName = value
     }
 }
-// SetInvitedUserEmailAddress sets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (/|)Semicolon (;)Colon (:)Quotation marks (')Angle brackets (< >)Question mark (?)Comma (,)However, the following exceptions apply:A period (.) or a hyphen (-) is permitted anywhere in the user name, except at the beginning or end of the name.An underscore (_) is permitted anywhere in the user name. This includes at the beginning or end of the name.
+// SetInvitedUserEmailAddress sets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)At sign (@)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Hyphen (-)Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (`
 func (m *Invitation) SetInvitedUserEmailAddress(value *string)() {
     if m != nil {
         m.invitedUserEmailAddress = value
@@ -316,7 +316,7 @@ func (m *Invitation) SetInvitedUserMessageInfo(value InvitedUserMessageInfoable)
         m.invitedUserMessageInfo = value
     }
 }
-// SetInvitedUserType sets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you are a company administrator.
+// SetInvitedUserType sets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you're are company administrator. The default is false.
 func (m *Invitation) SetInvitedUserType(value *string)() {
     if m != nil {
         m.invitedUserType = value
@@ -328,7 +328,7 @@ func (m *Invitation) SetInviteRedeemUrl(value *string)() {
         m.inviteRedeemUrl = value
     }
 }
-// SetInviteRedirectUrl sets the inviteRedirectUrl property value. The URL the user should be redirected to once the invitation is redeemed. Required.
+// SetInviteRedirectUrl sets the inviteRedirectUrl property value. The URL user should be redirected to once the invitation is redeemed. Required.
 func (m *Invitation) SetInviteRedirectUrl(value *string)() {
     if m != nil {
         m.inviteRedirectUrl = value
@@ -346,7 +346,7 @@ func (m *Invitation) SetSendInvitationMessage(value *bool)() {
         m.sendInvitationMessage = value
     }
 }
-// SetStatus sets the status property value. The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.
+// SetStatus sets the status property value. The status of the invitation. Possible values: PendingAcceptance, Completed, InProgress, and Error
 func (m *Invitation) SetStatus(value *string)() {
     if m != nil {
         m.status = value

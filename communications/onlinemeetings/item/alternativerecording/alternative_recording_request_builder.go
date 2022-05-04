@@ -14,25 +14,19 @@ type AlternativeRecordingRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AlternativeRecordingRequestBuilderGetOptions options for Get
-type AlternativeRecordingRequestBuilderGetOptions struct {
+// AlternativeRecordingRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type AlternativeRecordingRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
-// AlternativeRecordingRequestBuilderPutOptions options for Put
-type AlternativeRecordingRequestBuilderPutOptions struct {
-    // Binary request body
-    Body []byte
+// AlternativeRecordingRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type AlternativeRecordingRequestBuilderPutRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewAlternativeRecordingRequestBuilderInternal instantiates a new AlternativeRecordingRequestBuilder and sets the default values.
 func NewAlternativeRecordingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AlternativeRecordingRequestBuilder) {
@@ -54,43 +48,45 @@ func NewAlternativeRecordingRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewAlternativeRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-func (m *AlternativeRecordingRequestBuilder) CreateGetRequestInformation(options *AlternativeRecordingRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AlternativeRecordingRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+func (m *AlternativeRecordingRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AlternativeRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // CreatePutRequestInformation the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-func (m *AlternativeRecordingRequestBuilder) CreatePutRequestInformation(options *AlternativeRecordingRequestBuilderPutOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AlternativeRecordingRequestBuilder) CreatePutRequestInformation(body []byte)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePutRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePutRequestInformationWithRequestConfiguration the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+func (m *AlternativeRecordingRequestBuilder) CreatePutRequestInformationWithRequestConfiguration(body []byte, requestConfiguration *AlternativeRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
-    requestInfo.SetStreamContent(options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetStreamContent(body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-func (m *AlternativeRecordingRequestBuilder) Get(options *AlternativeRecordingRequestBuilderGetOptions)([]byte, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+func (m *AlternativeRecordingRequestBuilder) Get()([]byte, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetWithRequestConfigurationAndResponseHandler the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+func (m *AlternativeRecordingRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AlternativeRecordingRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -98,15 +94,19 @@ func (m *AlternativeRecordingRequestBuilder) Get(options *AlternativeRecordingRe
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", nil, errorMapping)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, errorMapping)
     if err != nil {
         return nil, err
     }
     return res.([]byte), nil
 }
 // Put the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-func (m *AlternativeRecordingRequestBuilder) Put(options *AlternativeRecordingRequestBuilderPutOptions)(error) {
-    requestInfo, err := m.CreatePutRequestInformation(options);
+func (m *AlternativeRecordingRequestBuilder) Put(body []byte)(error) {
+    return m.PutWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PutWithRequestConfigurationAndResponseHandler the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+func (m *AlternativeRecordingRequestBuilder) PutWithRequestConfigurationAndResponseHandler(body []byte, requestConfiguration *AlternativeRecordingRequestBuilderPutRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+    requestInfo, err := m.CreatePutRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err
     }
@@ -114,7 +114,7 @@ func (m *AlternativeRecordingRequestBuilder) Put(options *AlternativeRecordingRe
         "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
         "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, nil, errorMapping)
+    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
     if err != nil {
         return err
     }

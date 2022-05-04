@@ -13,14 +13,12 @@ type GetEncryptionPublicKeyRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetEncryptionPublicKeyRequestBuilderGetOptions options for Get
-type GetEncryptionPublicKeyRequestBuilderGetOptions struct {
+// GetEncryptionPublicKeyRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetEncryptionPublicKeyRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetEncryptionPublicKeyRequestBuilderInternal instantiates a new GetEncryptionPublicKeyRequestBuilder and sets the default values.
 func NewGetEncryptionPublicKeyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetEncryptionPublicKeyRequestBuilder) {
@@ -42,29 +40,32 @@ func NewGetEncryptionPublicKeyRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewGetEncryptionPublicKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateGetRequestInformation get a public key to use to encrypt the Apple device enrollment program token
-func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformation(options *GetEncryptionPublicKeyRequestBuilderGetOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
+}
+// CreateGetRequestInformationWithRequestConfiguration get a public key to use to encrypt the Apple device enrollment program token
+func (m *GetEncryptionPublicKeyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GetEncryptionPublicKeyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Get get a public key to use to encrypt the Apple device enrollment program token
-func (m *GetEncryptionPublicKeyRequestBuilder) Get(options *GetEncryptionPublicKeyRequestBuilderGetOptions)(GetEncryptionPublicKeyResponseable, error) {
-    requestInfo, err := m.CreateGetRequestInformation(options);
+func (m *GetEncryptionPublicKeyRequestBuilder) Get()(GetEncryptionPublicKeyResponseable, error) {
+    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetWithRequestConfigurationAndResponseHandler get a public key to use to encrypt the Apple device enrollment program token
+func (m *GetEncryptionPublicKeyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetEncryptionPublicKeyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEncryptionPublicKeyResponseable, error) {
+    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEncryptionPublicKeyResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEncryptionPublicKeyResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

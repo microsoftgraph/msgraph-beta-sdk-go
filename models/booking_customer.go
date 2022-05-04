@@ -7,7 +7,7 @@ import (
 // BookingCustomer 
 type BookingCustomer struct {
     BookingPerson
-    // Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
+    // Addresses associated with the customer, including home, business and other addresses.
     addresses []PhysicalAddressable
     // Phone numbers associated with the customer, including home, business and mobile numbers.
     phones []Phoneable
@@ -23,7 +23,7 @@ func NewBookingCustomer()(*BookingCustomer) {
 func CreateBookingCustomerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingCustomer(), nil
 }
-// GetAddresses gets the addresses property value. Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
+// GetAddresses gets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
 func (m *BookingCustomer) GetAddresses()([]PhysicalAddressable) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *BookingCustomer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetAddresses sets the addresses property value. Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
+// SetAddresses sets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
 func (m *BookingCustomer) SetAddresses(value []PhysicalAddressable)() {
     if m != nil {
         m.addresses = value

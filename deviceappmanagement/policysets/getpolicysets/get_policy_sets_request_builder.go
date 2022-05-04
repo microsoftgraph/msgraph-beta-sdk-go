@@ -13,16 +13,12 @@ type GetPolicySetsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GetPolicySetsRequestBuilderPostOptions options for Post
-type GetPolicySetsRequestBuilderPostOptions struct {
-    // 
-    Body GetPolicySetsRequestBodyable
+// GetPolicySetsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type GetPolicySetsRequestBuilderPostRequestConfiguration struct {
     // Request headers
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Response handler to use in place of the default response handling provided by the core service
-    ResponseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler
 }
 // NewGetPolicySetsRequestBuilderInternal instantiates a new GetPolicySetsRequestBuilder and sets the default values.
 func NewGetPolicySetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetPolicySetsRequestBuilder) {
@@ -44,30 +40,33 @@ func NewGetPolicySetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewGetPolicySetsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getPolicySets
-func (m *GetPolicySetsRequestBuilder) CreatePostRequestInformation(options *GetPolicySetsRequestBuilderPostOptions)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetPolicySetsRequestBuilder) CreatePostRequestInformation(body GetPolicySetsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
+}
+// CreatePostRequestInformationWithRequestConfiguration invoke action getPolicySets
+func (m *GetPolicySetsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetPolicySetsRequestBodyable, requestConfiguration *GetPolicySetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", options.Body)
-    if options != nil && options.Headers != nil {
-        requestInfo.Headers = options.Headers
-    }
-    if options != nil && len(options.Options) != 0 {
-        err := requestInfo.AddRequestOptions(options.Options...)
-        if err != nil {
-            return nil, err
-        }
+    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
+    if requestConfiguration != nil {
+        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
 }
 // Post invoke action getPolicySets
-func (m *GetPolicySetsRequestBuilder) Post(options *GetPolicySetsRequestBuilderPostOptions)(GetPolicySetsResponseable, error) {
-    requestInfo, err := m.CreatePostRequestInformation(options);
+func (m *GetPolicySetsRequestBuilder) Post(body GetPolicySetsRequestBodyable)(GetPolicySetsResponseable, error) {
+    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
+}
+// PostWithRequestConfigurationAndResponseHandler invoke action getPolicySets
+func (m *GetPolicySetsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetPolicySetsRequestBodyable, requestConfiguration *GetPolicySetsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetPolicySetsResponseable, error) {
+    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetPolicySetsResponseFromDiscriminatorValue, nil, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetPolicySetsResponseFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
         return nil, err
     }

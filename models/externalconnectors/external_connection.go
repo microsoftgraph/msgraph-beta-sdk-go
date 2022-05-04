@@ -30,7 +30,7 @@ type ExternalConnection struct {
     schema Schemaable
     // The settings configuring the search experience for content in this connection, such as the display templates for search results.
     searchSettings SearchSettingsable
-    // Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
+    // Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
     state *ConnectionState
 }
 // NewExternalConnection instantiates a new externalConnection and sets the default values.
@@ -269,7 +269,7 @@ func (m *ExternalConnection) GetSearchSettings()(SearchSettingsable) {
         return m.searchSettings
     }
 }
-// GetState gets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
+// GetState gets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
 func (m *ExternalConnection) GetState()(*ConnectionState) {
     if m == nil {
         return nil
@@ -436,7 +436,7 @@ func (m *ExternalConnection) SetSearchSettings(value SearchSettingsable)() {
         m.searchSettings = value
     }
 }
-// SetState sets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
+// SetState sets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
 func (m *ExternalConnection) SetState(value *ConnectionState)() {
     if m != nil {
         m.state = value

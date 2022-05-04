@@ -34,7 +34,7 @@ type VppToken struct {
     organizationName *string
     // Role Scope Tags IDs assigned to this entity.
     roleScopeTagIds []string
-    // Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM.
+    // Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.
     state *VppTokenState
     // The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.
     token *string
@@ -341,7 +341,7 @@ func (m *VppToken) GetRoleScopeTagIds()([]string) {
         return m.roleScopeTagIds
     }
 }
-// GetState gets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM.
+// GetState gets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.
 func (m *VppToken) GetState()(*VppTokenState) {
     if m == nil {
         return nil
@@ -568,7 +568,7 @@ func (m *VppToken) SetRoleScopeTagIds(value []string)() {
         m.roleScopeTagIds = value
     }
 }
-// SetState sets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM.
+// SetState sets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.
 func (m *VppToken) SetState(value *VppTokenState)() {
     if m != nil {
         m.state = value

@@ -11,7 +11,7 @@ type ConditionalAccessRoot struct {
     authenticationContextClassReferences []AuthenticationContextClassReferenceable
     // Read-only. Nullable. Returns a collection of the specified named locations.
     namedLocations []NamedLocationable
-    // Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
+    // Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
     policies []ConditionalAccessPolicyable
 }
 // NewConditionalAccessRoot instantiates a new conditionalAccessRoot and sets the default values.
@@ -88,7 +88,7 @@ func (m *ConditionalAccessRoot) GetNamedLocations()([]NamedLocationable) {
         return m.namedLocations
     }
 }
-// GetPolicies gets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
+// GetPolicies gets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 func (m *ConditionalAccessRoot) GetPolicies()([]ConditionalAccessPolicyable) {
     if m == nil {
         return nil
@@ -146,7 +146,7 @@ func (m *ConditionalAccessRoot) SetNamedLocations(value []NamedLocationable)() {
         m.namedLocations = value
     }
 }
-// SetPolicies sets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
+// SetPolicies sets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 func (m *ConditionalAccessRoot) SetPolicies(value []ConditionalAccessPolicyable)() {
     if m != nil {
         m.policies = value
