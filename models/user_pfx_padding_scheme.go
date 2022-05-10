@@ -1,37 +1,42 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type UserPfxPaddingScheme int
 
 const (
+    // Unknown padding Scheme.
     NONE_USERPFXPADDINGSCHEME UserPfxPaddingScheme = iota
+    // Pkcs1 is no longer supported
     PKCS1_USERPFXPADDINGSCHEME
+    // OaepSha1 is no longer supported
     OAEPSHA1_USERPFXPADDINGSCHEME
+    // Use OAEP SHA-256 padding.
     OAEPSHA256_USERPFXPADDINGSCHEME
+    // Use OAEP SHA-384 padding.
     OAEPSHA384_USERPFXPADDINGSCHEME
+    // Use OAEP SHA-512 padding.
     OAEPSHA512_USERPFXPADDINGSCHEME
 )
 
 func (i UserPfxPaddingScheme) String() string {
-    return []string{"NONE", "PKCS1", "OAEPSHA1", "OAEPSHA256", "OAEPSHA384", "OAEPSHA512"}[i]
+    return []string{"none", "pkcs1", "oaepSha1", "oaepSha256", "oaepSha384", "oaepSha512"}[i]
 }
 func ParseUserPfxPaddingScheme(v string) (interface{}, error) {
     result := NONE_USERPFXPADDINGSCHEME
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_USERPFXPADDINGSCHEME
-        case "PKCS1":
+        case "pkcs1":
             result = PKCS1_USERPFXPADDINGSCHEME
-        case "OAEPSHA1":
+        case "oaepSha1":
             result = OAEPSHA1_USERPFXPADDINGSCHEME
-        case "OAEPSHA256":
+        case "oaepSha256":
             result = OAEPSHA256_USERPFXPADDINGSCHEME
-        case "OAEPSHA384":
+        case "oaepSha384":
             result = OAEPSHA384_USERPFXPADDINGSCHEME
-        case "OAEPSHA512":
+        case "oaepSha512":
             result = OAEPSHA512_USERPFXPADDINGSCHEME
         default:
             return 0, errors.New("Unknown UserPfxPaddingScheme value: " + v)

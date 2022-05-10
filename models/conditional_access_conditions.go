@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -26,42 +25,42 @@ const (
 )
 
 func (i ConditionalAccessConditions) String() string {
-    return []string{"NONE", "APPLICATION", "USERS", "DEVICEPLATFORM", "LOCATION", "CLIENTTYPE", "SIGNINRISK", "USERRISK", "TIME", "DEVICESTATE", "CLIENT", "IPADDRESSSEENBYAZUREAD", "IPADDRESSSEENBYRESOURCEPROVIDER", "UNKNOWNFUTUREVALUE", "SERVICEPRINCIPALS", "SERVICEPRINCIPALRISK"}[i]
+    return []string{"none", "application", "users", "devicePlatform", "location", "clientType", "signInRisk", "userRisk", "time", "deviceState", "client", "ipAddressSeenByAzureAD", "ipAddressSeenByResourceProvider", "unknownFutureValue", "servicePrincipals", "servicePrincipalRisk"}[i]
 }
 func ParseConditionalAccessConditions(v string) (interface{}, error) {
     result := NONE_CONDITIONALACCESSCONDITIONS
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_CONDITIONALACCESSCONDITIONS
-        case "APPLICATION":
+        case "application":
             result = APPLICATION_CONDITIONALACCESSCONDITIONS
-        case "USERS":
+        case "users":
             result = USERS_CONDITIONALACCESSCONDITIONS
-        case "DEVICEPLATFORM":
+        case "devicePlatform":
             result = DEVICEPLATFORM_CONDITIONALACCESSCONDITIONS
-        case "LOCATION":
+        case "location":
             result = LOCATION_CONDITIONALACCESSCONDITIONS
-        case "CLIENTTYPE":
+        case "clientType":
             result = CLIENTTYPE_CONDITIONALACCESSCONDITIONS
-        case "SIGNINRISK":
+        case "signInRisk":
             result = SIGNINRISK_CONDITIONALACCESSCONDITIONS
-        case "USERRISK":
+        case "userRisk":
             result = USERRISK_CONDITIONALACCESSCONDITIONS
-        case "TIME":
+        case "time":
             result = TIME_CONDITIONALACCESSCONDITIONS
-        case "DEVICESTATE":
+        case "deviceState":
             result = DEVICESTATE_CONDITIONALACCESSCONDITIONS
-        case "CLIENT":
+        case "client":
             result = CLIENT_CONDITIONALACCESSCONDITIONS
-        case "IPADDRESSSEENBYAZUREAD":
+        case "ipAddressSeenByAzureAD":
             result = IPADDRESSSEENBYAZUREAD_CONDITIONALACCESSCONDITIONS
-        case "IPADDRESSSEENBYRESOURCEPROVIDER":
+        case "ipAddressSeenByResourceProvider":
             result = IPADDRESSSEENBYRESOURCEPROVIDER_CONDITIONALACCESSCONDITIONS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSCONDITIONS
-        case "SERVICEPRINCIPALS":
+        case "servicePrincipals":
             result = SERVICEPRINCIPALS_CONDITIONALACCESSCONDITIONS
-        case "SERVICEPRINCIPALRISK":
+        case "servicePrincipalRisk":
             result = SERVICEPRINCIPALRISK_CONDITIONALACCESSCONDITIONS
         default:
             return 0, errors.New("Unknown ConditionalAccessConditions value: " + v)

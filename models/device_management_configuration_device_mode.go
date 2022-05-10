@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementConfigurationDeviceMode int
 
 const (
+    // No Device Mode specified
     NONE_DEVICEMANAGEMENTCONFIGURATIONDEVICEMODE DeviceManagementConfigurationDeviceMode = iota
+    // Device must be in kiosk mode for this setting to apply
     KIOSK_DEVICEMANAGEMENTCONFIGURATIONDEVICEMODE
 )
 
 func (i DeviceManagementConfigurationDeviceMode) String() string {
-    return []string{"NONE", "KIOSK"}[i]
+    return []string{"none", "kiosk"}[i]
 }
 func ParseDeviceManagementConfigurationDeviceMode(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONDEVICEMODE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICEMANAGEMENTCONFIGURATIONDEVICEMODE
-        case "KIOSK":
+        case "kiosk":
             result = KIOSK_DEVICEMANAGEMENTCONFIGURATIONDEVICEMODE
         default:
             return 0, errors.New("Unknown DeviceManagementConfigurationDeviceMode value: " + v)

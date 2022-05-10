@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the playPrompt method.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i PlayPromptCompletionReason) String() string {
-    return []string{"UNKNOWN", "COMPLETEDSUCCESSFULLY", "MEDIAOPERATIONCANCELED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "completedSuccessfully", "mediaOperationCanceled", "unknownFutureValue"}[i]
 }
 func ParsePlayPromptCompletionReason(v string) (interface{}, error) {
     result := UNKNOWN_PLAYPROMPTCOMPLETIONREASON
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_PLAYPROMPTCOMPLETIONREASON
-        case "COMPLETEDSUCCESSFULLY":
+        case "completedSuccessfully":
             result = COMPLETEDSUCCESSFULLY_PLAYPROMPTCOMPLETIONREASON
-        case "MEDIAOPERATIONCANCELED":
+        case "mediaOperationCanceled":
             result = MEDIAOPERATIONCANCELED_PLAYPROMPTCOMPLETIONREASON
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PLAYPROMPTCOMPLETIONREASON
         default:
             return 0, errors.New("Unknown PlayPromptCompletionReason value: " + v)

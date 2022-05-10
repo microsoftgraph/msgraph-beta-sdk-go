@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i UserExperienceAnalyticsHealthState) String() string {
-    return []string{"UNKNOWN", "INSUFFICIENTDATA", "NEEDSATTENTION", "MEETINGGOALS"}[i]
+    return []string{"unknown", "insufficientData", "needsAttention", "meetingGoals"}[i]
 }
 func ParseUserExperienceAnalyticsHealthState(v string) (interface{}, error) {
     result := UNKNOWN_USEREXPERIENCEANALYTICSHEALTHSTATE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_USEREXPERIENCEANALYTICSHEALTHSTATE
-        case "INSUFFICIENTDATA":
+        case "insufficientData":
             result = INSUFFICIENTDATA_USEREXPERIENCEANALYTICSHEALTHSTATE
-        case "NEEDSATTENTION":
+        case "needsAttention":
             result = NEEDSATTENTION_USEREXPERIENCEANALYTICSHEALTHSTATE
-        case "MEETINGGOALS":
+        case "meetingGoals":
             result = MEETINGGOALS_USEREXPERIENCEANALYTICSHEALTHSTATE
         default:
             return 0, errors.New("Unknown UserExperienceAnalyticsHealthState value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the teamwork singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i TeamworkDeviceOperationType) String() string {
-    return []string{"DEVICERESTART", "CONFIGUPDATE", "DEVICEDIAGNOSTICS", "SOFTWAREUPDATE", "DEVICEMANAGEMENTAGENTCONFIGUPDATE", "REMOTELOGIN", "REMOTELOGOUT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"deviceRestart", "configUpdate", "deviceDiagnostics", "softwareUpdate", "deviceManagementAgentConfigUpdate", "remoteLogin", "remoteLogout", "unknownFutureValue"}[i]
 }
 func ParseTeamworkDeviceOperationType(v string) (interface{}, error) {
     result := DEVICERESTART_TEAMWORKDEVICEOPERATIONTYPE
-    switch strings.ToUpper(v) {
-        case "DEVICERESTART":
+    switch v {
+        case "deviceRestart":
             result = DEVICERESTART_TEAMWORKDEVICEOPERATIONTYPE
-        case "CONFIGUPDATE":
+        case "configUpdate":
             result = CONFIGUPDATE_TEAMWORKDEVICEOPERATIONTYPE
-        case "DEVICEDIAGNOSTICS":
+        case "deviceDiagnostics":
             result = DEVICEDIAGNOSTICS_TEAMWORKDEVICEOPERATIONTYPE
-        case "SOFTWAREUPDATE":
+        case "softwareUpdate":
             result = SOFTWAREUPDATE_TEAMWORKDEVICEOPERATIONTYPE
-        case "DEVICEMANAGEMENTAGENTCONFIGUPDATE":
+        case "deviceManagementAgentConfigUpdate":
             result = DEVICEMANAGEMENTAGENTCONFIGUPDATE_TEAMWORKDEVICEOPERATIONTYPE
-        case "REMOTELOGIN":
+        case "remoteLogin":
             result = REMOTELOGIN_TEAMWORKDEVICEOPERATIONTYPE
-        case "REMOTELOGOUT":
+        case "remoteLogout":
             result = REMOTELOGOUT_TEAMWORKDEVICEOPERATIONTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKDEVICEOPERATIONTYPE
         default:
             return 0, errors.New("Unknown TeamworkDeviceOperationType value: " + v)

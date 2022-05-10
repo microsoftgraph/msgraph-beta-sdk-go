@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type EncryptionReadinessState int
 
 const (
+    // Not ready
     NOTREADY_ENCRYPTIONREADINESSSTATE EncryptionReadinessState = iota
+    // Ready
     READY_ENCRYPTIONREADINESSSTATE
 )
 
 func (i EncryptionReadinessState) String() string {
-    return []string{"NOTREADY", "READY"}[i]
+    return []string{"notReady", "ready"}[i]
 }
 func ParseEncryptionReadinessState(v string) (interface{}, error) {
     result := NOTREADY_ENCRYPTIONREADINESSSTATE
-    switch strings.ToUpper(v) {
-        case "NOTREADY":
+    switch v {
+        case "notReady":
             result = NOTREADY_ENCRYPTIONREADINESSSTATE
-        case "READY":
+        case "ready":
             result = READY_ENCRYPTIONREADINESSSTATE
         default:
             return 0, errors.New("Unknown EncryptionReadinessState value: " + v)

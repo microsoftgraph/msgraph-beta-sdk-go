@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i KerberosSignOnMappingAttributeType) String() string {
-    return []string{"USERPRINCIPALNAME", "ONPREMISESUSERPRINCIPALNAME", "USERPRINCIPALUSERNAME", "ONPREMISESUSERPRINCIPALUSERNAME", "ONPREMISESSAMACCOUNTNAME"}[i]
+    return []string{"userPrincipalName", "onPremisesUserPrincipalName", "userPrincipalUsername", "onPremisesUserPrincipalUsername", "onPremisesSAMAccountName"}[i]
 }
 func ParseKerberosSignOnMappingAttributeType(v string) (interface{}, error) {
     result := USERPRINCIPALNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
-    switch strings.ToUpper(v) {
-        case "USERPRINCIPALNAME":
+    switch v {
+        case "userPrincipalName":
             result = USERPRINCIPALNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
-        case "ONPREMISESUSERPRINCIPALNAME":
+        case "onPremisesUserPrincipalName":
             result = ONPREMISESUSERPRINCIPALNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
-        case "USERPRINCIPALUSERNAME":
+        case "userPrincipalUsername":
             result = USERPRINCIPALUSERNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
-        case "ONPREMISESUSERPRINCIPALUSERNAME":
+        case "onPremisesUserPrincipalUsername":
             result = ONPREMISESUSERPRINCIPALUSERNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
-        case "ONPREMISESSAMACCOUNTNAME":
+        case "onPremisesSAMAccountName":
             result = ONPREMISESSAMACCOUNTNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
         default:
             return 0, errors.New("Unknown KerberosSignOnMappingAttributeType value: " + v)

@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type AdminConsentState int
 
 const (
+    // Admin did not configure the item
     NOTCONFIGURED_ADMINCONSENTSTATE AdminConsentState = iota
+    // Admin granted item
     GRANTED_ADMINCONSENTSTATE
+    // Admin deos not grant item
     NOTGRANTED_ADMINCONSENTSTATE
 )
 
 func (i AdminConsentState) String() string {
-    return []string{"NOTCONFIGURED", "GRANTED", "NOTGRANTED"}[i]
+    return []string{"notConfigured", "granted", "notGranted"}[i]
 }
 func ParseAdminConsentState(v string) (interface{}, error) {
     result := NOTCONFIGURED_ADMINCONSENTSTATE
-    switch strings.ToUpper(v) {
-        case "NOTCONFIGURED":
+    switch v {
+        case "notConfigured":
             result = NOTCONFIGURED_ADMINCONSENTSTATE
-        case "GRANTED":
+        case "granted":
             result = GRANTED_ADMINCONSENTSTATE
-        case "NOTGRANTED":
+        case "notGranted":
             result = NOTGRANTED_ADMINCONSENTSTATE
         default:
             return 0, errors.New("Unknown AdminConsentState value: " + v)

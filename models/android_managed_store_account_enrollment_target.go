@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i AndroidManagedStoreAccountEnrollmentTarget) String() string {
-    return []string{"NONE", "ALL", "TARGETED", "TARGETEDASENROLLMENTRESTRICTIONS"}[i]
+    return []string{"none", "all", "targeted", "targetedAsEnrollmentRestrictions"}[i]
 }
 func ParseAndroidManagedStoreAccountEnrollmentTarget(v string) (interface{}, error) {
     result := NONE_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET
-        case "ALL":
+        case "all":
             result = ALL_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET
-        case "TARGETED":
+        case "targeted":
             result = TARGETED_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET
-        case "TARGETEDASENROLLMENTRESTRICTIONS":
+        case "targetedAsEnrollmentRestrictions":
             result = TARGETEDASENROLLMENTRESTRICTIONS_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET
         default:
             return 0, errors.New("Unknown AndroidManagedStoreAccountEnrollmentTarget value: " + v)

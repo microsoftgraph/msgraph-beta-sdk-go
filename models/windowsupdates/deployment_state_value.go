@@ -1,6 +1,5 @@
 package windowsupdates
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the admin singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i DeploymentStateValue) String() string {
-    return []string{"SCHEDULED", "OFFERING", "PAUSED", "FAULTED", "ARCHIVED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"scheduled", "offering", "paused", "faulted", "archived", "unknownFutureValue"}[i]
 }
 func ParseDeploymentStateValue(v string) (interface{}, error) {
     result := SCHEDULED_DEPLOYMENTSTATEVALUE
-    switch strings.ToUpper(v) {
-        case "SCHEDULED":
+    switch v {
+        case "scheduled":
             result = SCHEDULED_DEPLOYMENTSTATEVALUE
-        case "OFFERING":
+        case "offering":
             result = OFFERING_DEPLOYMENTSTATEVALUE
-        case "PAUSED":
+        case "paused":
             result = PAUSED_DEPLOYMENTSTATEVALUE
-        case "FAULTED":
+        case "faulted":
             result = FAULTED_DEPLOYMENTSTATEVALUE
-        case "ARCHIVED":
+        case "archived":
             result = ARCHIVED_DEPLOYMENTSTATEVALUE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEPLOYMENTSTATEVALUE
         default:
             return 0, errors.New("Unknown DeploymentStateValue value: " + v)

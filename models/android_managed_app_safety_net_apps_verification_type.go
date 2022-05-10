@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type AndroidManagedAppSafetyNetAppsVerificationType int
 
 const (
+    // no requirement set
     NONE_ANDROIDMANAGEDAPPSAFETYNETAPPSVERIFICATIONTYPE AndroidManagedAppSafetyNetAppsVerificationType = iota
+    // require that Android device has SafetyNet Apps Verification enabled
     ENABLED_ANDROIDMANAGEDAPPSAFETYNETAPPSVERIFICATIONTYPE
 )
 
 func (i AndroidManagedAppSafetyNetAppsVerificationType) String() string {
-    return []string{"NONE", "ENABLED"}[i]
+    return []string{"none", "enabled"}[i]
 }
 func ParseAndroidManagedAppSafetyNetAppsVerificationType(v string) (interface{}, error) {
     result := NONE_ANDROIDMANAGEDAPPSAFETYNETAPPSVERIFICATIONTYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_ANDROIDMANAGEDAPPSAFETYNETAPPSVERIFICATIONTYPE
-        case "ENABLED":
+        case "enabled":
             result = ENABLED_ANDROIDMANAGEDAPPSAFETYNETAPPSVERIFICATIONTYPE
         default:
             return 0, errors.New("Unknown AndroidManagedAppSafetyNetAppsVerificationType value: " + v)

@@ -1,6 +1,5 @@
 package ediscovery
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i DataSourceScopes) String() string {
-    return []string{"NONE", "ALLTENANTMAILBOXES", "ALLTENANTSITES", "ALLCASECUSTODIANS", "ALLCASENONCUSTODIALDATASOURCES", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "allTenantMailboxes", "allTenantSites", "allCaseCustodians", "allCaseNoncustodialDataSources", "unknownFutureValue"}[i]
 }
 func ParseDataSourceScopes(v string) (interface{}, error) {
     result := NONE_DATASOURCESCOPES
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DATASOURCESCOPES
-        case "ALLTENANTMAILBOXES":
+        case "allTenantMailboxes":
             result = ALLTENANTMAILBOXES_DATASOURCESCOPES
-        case "ALLTENANTSITES":
+        case "allTenantSites":
             result = ALLTENANTSITES_DATASOURCESCOPES
-        case "ALLCASECUSTODIANS":
+        case "allCaseCustodians":
             result = ALLCASECUSTODIANS_DATASOURCESCOPES
-        case "ALLCASENONCUSTODIALDATASOURCES":
+        case "allCaseNoncustodialDataSources":
             result = ALLCASENONCUSTODIALDATASOURCES_DATASOURCESCOPES
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DATASOURCESCOPES
         default:
             return 0, errors.New("Unknown DataSourceScopes value: " + v)

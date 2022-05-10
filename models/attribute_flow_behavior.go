@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i AttributeFlowBehavior) String() string {
-    return []string{"FLOWWHENCHANGED", "FLOWALWAYS"}[i]
+    return []string{"FlowWhenChanged", "FlowAlways"}[i]
 }
 func ParseAttributeFlowBehavior(v string) (interface{}, error) {
     result := FLOWWHENCHANGED_ATTRIBUTEFLOWBEHAVIOR
-    switch strings.ToUpper(v) {
-        case "FLOWWHENCHANGED":
+    switch v {
+        case "FlowWhenChanged":
             result = FLOWWHENCHANGED_ATTRIBUTEFLOWBEHAVIOR
-        case "FLOWALWAYS":
+        case "FlowAlways":
             result = FLOWALWAYS_ATTRIBUTEFLOWBEHAVIOR
         default:
             return 0, errors.New("Unknown AttributeFlowBehavior value: " + v)

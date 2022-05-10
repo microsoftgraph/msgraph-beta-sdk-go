@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementConfigurationSettingUsage int
 
 const (
+    // No setting type specified
     NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE DeviceManagementConfigurationSettingUsage = iota
+    // Configuration setting
     CONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
+    // Compliance setting
     COMPLIANCE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
 )
 
 func (i DeviceManagementConfigurationSettingUsage) String() string {
-    return []string{"NONE", "CONFIGURATION", "COMPLIANCE"}[i]
+    return []string{"none", "configuration", "compliance"}[i]
 }
 func ParseDeviceManagementConfigurationSettingUsage(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
-        case "CONFIGURATION":
+        case "configuration":
             result = CONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
-        case "COMPLIANCE":
+        case "compliance":
             result = COMPLIANCE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
         default:
             return 0, errors.New("Unknown DeviceManagementConfigurationSettingUsage value: " + v)

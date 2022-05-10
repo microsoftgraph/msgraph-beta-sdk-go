@@ -1,6 +1,5 @@
 package windowsupdates
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the admin singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i MonitoringAction) String() string {
-    return []string{"ALERTERROR", "PAUSEDEPLOYMENT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"alertError", "pauseDeployment", "unknownFutureValue"}[i]
 }
 func ParseMonitoringAction(v string) (interface{}, error) {
     result := ALERTERROR_MONITORINGACTION
-    switch strings.ToUpper(v) {
-        case "ALERTERROR":
+    switch v {
+        case "alertError":
             result = ALERTERROR_MONITORINGACTION
-        case "PAUSEDEPLOYMENT":
+        case "pauseDeployment":
             result = PAUSEDEPLOYMENT_MONITORINGACTION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MONITORINGACTION
         default:
             return 0, errors.New("Unknown MonitoringAction value: " + v)

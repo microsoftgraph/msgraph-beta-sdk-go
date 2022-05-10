@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -11,12 +10,12 @@ const (
 )
 
 func (i ConnectorGroupType) String() string {
-    return []string{"APPLICATIONPROXY"}[i]
+    return []string{"applicationProxy"}[i]
 }
 func ParseConnectorGroupType(v string) (interface{}, error) {
     result := APPLICATIONPROXY_CONNECTORGROUPTYPE
-    switch strings.ToUpper(v) {
-        case "APPLICATIONPROXY":
+    switch v {
+        case "applicationProxy":
             result = APPLICATIONPROXY_CONNECTORGROUPTYPE
         default:
             return 0, errors.New("Unknown ConnectorGroupType value: " + v)

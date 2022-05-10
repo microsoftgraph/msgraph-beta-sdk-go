@@ -1,9 +1,8 @@
 package externalconnectors
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the collection of externalConnection entities.
+// Provides operations to manage the external singleton.
 type IdentitySourceType int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i IdentitySourceType) String() string {
-    return []string{"AZUREACTIVEDIRECTORY", "EXTERNAL", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"azureActiveDirectory", "external", "unknownFutureValue"}[i]
 }
 func ParseIdentitySourceType(v string) (interface{}, error) {
     result := AZUREACTIVEDIRECTORY_IDENTITYSOURCETYPE
-    switch strings.ToUpper(v) {
-        case "AZUREACTIVEDIRECTORY":
+    switch v {
+        case "azureActiveDirectory":
             result = AZUREACTIVEDIRECTORY_IDENTITYSOURCETYPE
-        case "EXTERNAL":
+        case "external":
             result = EXTERNAL_IDENTITYSOURCETYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_IDENTITYSOURCETYPE
         default:
             return 0, errors.New("Unknown IdentitySourceType value: " + v)

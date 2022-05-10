@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i DeviceManagementAutopilotPolicyType) String() string {
-    return []string{"UNKNOWN", "APPLICATION", "APPMODEL", "CONFIGURATIONPOLICY"}[i]
+    return []string{"unknown", "application", "appModel", "configurationPolicy"}[i]
 }
 func ParseDeviceManagementAutopilotPolicyType(v string) (interface{}, error) {
     result := UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
-        case "APPLICATION":
+        case "application":
             result = APPLICATION_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
-        case "APPMODEL":
+        case "appModel":
             result = APPMODEL_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
-        case "CONFIGURATIONPOLICY":
+        case "configurationPolicy":
             result = CONFIGURATIONPOLICY_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
         default:
             return 0, errors.New("Unknown DeviceManagementAutopilotPolicyType value: " + v)

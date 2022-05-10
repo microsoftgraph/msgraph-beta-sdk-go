@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DriverApprovalStatus int
 
 const (
+    // This indicates a driver needs IT admin's review.
     NEEDSREVIEW_DRIVERAPPROVALSTATUS DriverApprovalStatus = iota
+    // This indicates IT admin has declined a driver.
     DECLINED_DRIVERAPPROVALSTATUS
+    // This indicates IT admin has approved a driver.
     APPROVED_DRIVERAPPROVALSTATUS
+    // This indicates IT admin has suspended a driver.
     SUSPENDED_DRIVERAPPROVALSTATUS
 )
 
 func (i DriverApprovalStatus) String() string {
-    return []string{"NEEDSREVIEW", "DECLINED", "APPROVED", "SUSPENDED"}[i]
+    return []string{"needsReview", "declined", "approved", "suspended"}[i]
 }
 func ParseDriverApprovalStatus(v string) (interface{}, error) {
     result := NEEDSREVIEW_DRIVERAPPROVALSTATUS
-    switch strings.ToUpper(v) {
-        case "NEEDSREVIEW":
+    switch v {
+        case "needsReview":
             result = NEEDSREVIEW_DRIVERAPPROVALSTATUS
-        case "DECLINED":
+        case "declined":
             result = DECLINED_DRIVERAPPROVALSTATUS
-        case "APPROVED":
+        case "approved":
             result = APPROVED_DRIVERAPPROVALSTATUS
-        case "SUSPENDED":
+        case "suspended":
             result = SUSPENDED_DRIVERAPPROVALSTATUS
         default:
             return 0, errors.New("Unknown DriverApprovalStatus value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the directory singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i RecommendationPriority) String() string {
-    return []string{"LOW", "MEDIUM", "HIGH"}[i]
+    return []string{"low", "medium", "high"}[i]
 }
 func ParseRecommendationPriority(v string) (interface{}, error) {
     result := LOW_RECOMMENDATIONPRIORITY
-    switch strings.ToUpper(v) {
-        case "LOW":
+    switch v {
+        case "low":
             result = LOW_RECOMMENDATIONPRIORITY
-        case "MEDIUM":
+        case "medium":
             result = MEDIUM_RECOMMENDATIONPRIORITY
-        case "HIGH":
+        case "high":
             result = HIGH_RECOMMENDATIONPRIORITY
         default:
             return 0, errors.New("Unknown RecommendationPriority value: " + v)

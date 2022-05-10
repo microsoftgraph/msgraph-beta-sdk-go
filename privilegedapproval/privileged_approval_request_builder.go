@@ -17,7 +17,7 @@ type PrivilegedApprovalRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PrivilegedApprovalRequestBuilderGetQueryParameters get entities from privilegedApproval
+// PrivilegedApprovalRequestBuilderGetQueryParameters list privilegedApproval
 type PrivilegedApprovalRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewPrivilegedApprovalRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *PrivilegedApprovalRequestBuilder) Count()(*i3ee2086b7b798093b788263bb79127a00debee9e39e3058dac01e80bba4c4ba0.CountRequestBuilder) {
     return i3ee2086b7b798093b788263bb79127a00debee9e39e3058dac01e80bba4c4ba0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get entities from privilegedApproval
+// CreateGetRequestInformation list privilegedApproval
 func (m *PrivilegedApprovalRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from privilegedApproval
+// CreateGetRequestInformationWithRequestConfiguration list privilegedApproval
 func (m *PrivilegedApprovalRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PrivilegedApprovalRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -94,11 +94,11 @@ func (m *PrivilegedApprovalRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation add new entity to privilegedApproval
+// CreatePostRequestInformation create privilegedApproval
 func (m *PrivilegedApprovalRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to privilegedApproval
+// CreatePostRequestInformationWithRequestConfiguration create privilegedApproval
 func (m *PrivilegedApprovalRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable, requestConfiguration *PrivilegedApprovalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,11 +111,11 @@ func (m *PrivilegedApprovalRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Get get entities from privilegedApproval
+// Get list privilegedApproval
 func (m *PrivilegedApprovalRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get entities from privilegedApproval
+// GetWithRequestConfigurationAndResponseHandler list privilegedApproval
 func (m *PrivilegedApprovalRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PrivilegedApprovalRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -135,11 +135,11 @@ func (m *PrivilegedApprovalRequestBuilder) GetWithRequestConfigurationAndRespons
 func (m *PrivilegedApprovalRequestBuilder) MyRequests()(*if17dca57674287967656a13b54c8ccf00e884141c664d0612de3a3a1cb5aa5ab.MyRequestsRequestBuilder) {
     return if17dca57674287967656a13b54c8ccf00e884141c664d0612de3a3a1cb5aa5ab.NewMyRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Post add new entity to privilegedApproval
+// Post create privilegedApproval
 func (m *PrivilegedApprovalRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithRequestConfigurationAndResponseHandler add new entity to privilegedApproval
+// PostWithRequestConfigurationAndResponseHandler create privilegedApproval
 func (m *PrivilegedApprovalRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable, requestConfiguration *PrivilegedApprovalRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -1,49 +1,58 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementTemplateSubtype int
 
 const (
+    // Template has no subtype
     NONE_DEVICEMANAGEMENTTEMPLATESUBTYPE DeviceManagementTemplateSubtype = iota
+    // Endpoint security firewall subtype
     FIREWALL_DEVICEMANAGEMENTTEMPLATESUBTYPE
+    // Endpoint security disk encryption subtype
     DISKENCRYPTION_DEVICEMANAGEMENTTEMPLATESUBTYPE
+    // Endpoint security attack surface reduction subtype
     ATTACKSURFACEREDUCTION_DEVICEMANAGEMENTTEMPLATESUBTYPE
+    // Endpoint security endpoint detection and response subtype
     ENDPOINTDETECTIONREPONSE_DEVICEMANAGEMENTTEMPLATESUBTYPE
+    // Endpoint security account protection subtype
     ACCOUNTPROTECTION_DEVICEMANAGEMENTTEMPLATESUBTYPE
+    // Endpoint security anitivirus subtype
     ANTIVIRUS_DEVICEMANAGEMENTTEMPLATESUBTYPE
+    // Endpoint security firewall shared app subtype
     FIREWALLSHAREDAPPLIST_DEVICEMANAGEMENTTEMPLATESUBTYPE
+    // Endpoint security firewall shared ip range list subtype
     FIREWALLSHAREDIPLIST_DEVICEMANAGEMENTTEMPLATESUBTYPE
+    // Endpoint security firewall shared port range list subtype
     FIREWALLSHAREDPORTLIST_DEVICEMANAGEMENTTEMPLATESUBTYPE
 )
 
 func (i DeviceManagementTemplateSubtype) String() string {
-    return []string{"NONE", "FIREWALL", "DISKENCRYPTION", "ATTACKSURFACEREDUCTION", "ENDPOINTDETECTIONREPONSE", "ACCOUNTPROTECTION", "ANTIVIRUS", "FIREWALLSHAREDAPPLIST", "FIREWALLSHAREDIPLIST", "FIREWALLSHAREDPORTLIST"}[i]
+    return []string{"none", "firewall", "diskEncryption", "attackSurfaceReduction", "endpointDetectionReponse", "accountProtection", "antivirus", "firewallSharedAppList", "firewallSharedIpList", "firewallSharedPortlist"}[i]
 }
 func ParseDeviceManagementTemplateSubtype(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTTEMPLATESUBTYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICEMANAGEMENTTEMPLATESUBTYPE
-        case "FIREWALL":
+        case "firewall":
             result = FIREWALL_DEVICEMANAGEMENTTEMPLATESUBTYPE
-        case "DISKENCRYPTION":
+        case "diskEncryption":
             result = DISKENCRYPTION_DEVICEMANAGEMENTTEMPLATESUBTYPE
-        case "ATTACKSURFACEREDUCTION":
+        case "attackSurfaceReduction":
             result = ATTACKSURFACEREDUCTION_DEVICEMANAGEMENTTEMPLATESUBTYPE
-        case "ENDPOINTDETECTIONREPONSE":
+        case "endpointDetectionReponse":
             result = ENDPOINTDETECTIONREPONSE_DEVICEMANAGEMENTTEMPLATESUBTYPE
-        case "ACCOUNTPROTECTION":
+        case "accountProtection":
             result = ACCOUNTPROTECTION_DEVICEMANAGEMENTTEMPLATESUBTYPE
-        case "ANTIVIRUS":
+        case "antivirus":
             result = ANTIVIRUS_DEVICEMANAGEMENTTEMPLATESUBTYPE
-        case "FIREWALLSHAREDAPPLIST":
+        case "firewallSharedAppList":
             result = FIREWALLSHAREDAPPLIST_DEVICEMANAGEMENTTEMPLATESUBTYPE
-        case "FIREWALLSHAREDIPLIST":
+        case "firewallSharedIpList":
             result = FIREWALLSHAREDIPLIST_DEVICEMANAGEMENTTEMPLATESUBTYPE
-        case "FIREWALLSHAREDPORTLIST":
+        case "firewallSharedPortlist":
             result = FIREWALLSHAREDPORTLIST_DEVICEMANAGEMENTTEMPLATESUBTYPE
         default:
             return 0, errors.New("Unknown DeviceManagementTemplateSubtype value: " + v)

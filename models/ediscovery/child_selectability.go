@@ -1,6 +1,5 @@
 package ediscovery
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i ChildSelectability) String() string {
-    return []string{"ONE", "MANY"}[i]
+    return []string{"One", "Many"}[i]
 }
 func ParseChildSelectability(v string) (interface{}, error) {
     result := ONE_CHILDSELECTABILITY
-    switch strings.ToUpper(v) {
-        case "ONE":
+    switch v {
+        case "One":
             result = ONE_CHILDSELECTABILITY
-        case "MANY":
+        case "Many":
             result = MANY_CHILDSELECTABILITY
         default:
             return 0, errors.New("Unknown ChildSelectability value: " + v)

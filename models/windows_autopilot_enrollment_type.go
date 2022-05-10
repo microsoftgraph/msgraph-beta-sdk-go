@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -19,28 +18,28 @@ const (
 )
 
 func (i WindowsAutopilotEnrollmentType) String() string {
-    return []string{"UNKNOWN", "AZUREADJOINEDWITHAUTOPILOTPROFILE", "OFFLINEDOMAINJOINED", "AZUREADJOINEDUSINGDEVICEAUTHWITHAUTOPILOTPROFILE", "AZUREADJOINEDUSINGDEVICEAUTHWITHOUTAUTOPILOTPROFILE", "AZUREADJOINEDWITHOFFLINEAUTOPILOTPROFILE", "AZUREADJOINEDWITHWHITEGLOVE", "OFFLINEDOMAINJOINEDWITHWHITEGLOVE", "OFFLINEDOMAINJOINEDWITHOFFLINEAUTOPILOTPROFILE"}[i]
+    return []string{"unknown", "azureADJoinedWithAutopilotProfile", "offlineDomainJoined", "azureADJoinedUsingDeviceAuthWithAutopilotProfile", "azureADJoinedUsingDeviceAuthWithoutAutopilotProfile", "azureADJoinedWithOfflineAutopilotProfile", "azureADJoinedWithWhiteGlove", "offlineDomainJoinedWithWhiteGlove", "offlineDomainJoinedWithOfflineAutopilotProfile"}[i]
 }
 func ParseWindowsAutopilotEnrollmentType(v string) (interface{}, error) {
     result := UNKNOWN_WINDOWSAUTOPILOTENROLLMENTTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_WINDOWSAUTOPILOTENROLLMENTTYPE
-        case "AZUREADJOINEDWITHAUTOPILOTPROFILE":
+        case "azureADJoinedWithAutopilotProfile":
             result = AZUREADJOINEDWITHAUTOPILOTPROFILE_WINDOWSAUTOPILOTENROLLMENTTYPE
-        case "OFFLINEDOMAINJOINED":
+        case "offlineDomainJoined":
             result = OFFLINEDOMAINJOINED_WINDOWSAUTOPILOTENROLLMENTTYPE
-        case "AZUREADJOINEDUSINGDEVICEAUTHWITHAUTOPILOTPROFILE":
+        case "azureADJoinedUsingDeviceAuthWithAutopilotProfile":
             result = AZUREADJOINEDUSINGDEVICEAUTHWITHAUTOPILOTPROFILE_WINDOWSAUTOPILOTENROLLMENTTYPE
-        case "AZUREADJOINEDUSINGDEVICEAUTHWITHOUTAUTOPILOTPROFILE":
+        case "azureADJoinedUsingDeviceAuthWithoutAutopilotProfile":
             result = AZUREADJOINEDUSINGDEVICEAUTHWITHOUTAUTOPILOTPROFILE_WINDOWSAUTOPILOTENROLLMENTTYPE
-        case "AZUREADJOINEDWITHOFFLINEAUTOPILOTPROFILE":
+        case "azureADJoinedWithOfflineAutopilotProfile":
             result = AZUREADJOINEDWITHOFFLINEAUTOPILOTPROFILE_WINDOWSAUTOPILOTENROLLMENTTYPE
-        case "AZUREADJOINEDWITHWHITEGLOVE":
+        case "azureADJoinedWithWhiteGlove":
             result = AZUREADJOINEDWITHWHITEGLOVE_WINDOWSAUTOPILOTENROLLMENTTYPE
-        case "OFFLINEDOMAINJOINEDWITHWHITEGLOVE":
+        case "offlineDomainJoinedWithWhiteGlove":
             result = OFFLINEDOMAINJOINEDWITHWHITEGLOVE_WINDOWSAUTOPILOTENROLLMENTTYPE
-        case "OFFLINEDOMAINJOINEDWITHOFFLINEAUTOPILOTPROFILE":
+        case "offlineDomainJoinedWithOfflineAutopilotProfile":
             result = OFFLINEDOMAINJOINEDWITHOFFLINEAUTOPILOTPROFILE_WINDOWSAUTOPILOTENROLLMENTTYPE
         default:
             return 0, errors.New("Unknown WindowsAutopilotEnrollmentType value: " + v)

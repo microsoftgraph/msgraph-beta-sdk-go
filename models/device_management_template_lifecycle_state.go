@@ -1,37 +1,42 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementTemplateLifecycleState int
 
 const (
+    // Invalid
     INVALID_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE DeviceManagementTemplateLifecycleState = iota
+    // Draft
     DRAFT_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+    // Active
     ACTIVE_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+    // Superseded
     SUPERSEDED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+    // Deprecated
     DEPRECATED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+    // Retired
     RETIRED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
 )
 
 func (i DeviceManagementTemplateLifecycleState) String() string {
-    return []string{"INVALID", "DRAFT", "ACTIVE", "SUPERSEDED", "DEPRECATED", "RETIRED"}[i]
+    return []string{"invalid", "draft", "active", "superseded", "deprecated", "retired"}[i]
 }
 func ParseDeviceManagementTemplateLifecycleState(v string) (interface{}, error) {
     result := INVALID_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-    switch strings.ToUpper(v) {
-        case "INVALID":
+    switch v {
+        case "invalid":
             result = INVALID_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-        case "DRAFT":
+        case "draft":
             result = DRAFT_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-        case "ACTIVE":
+        case "active":
             result = ACTIVE_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-        case "SUPERSEDED":
+        case "superseded":
             result = SUPERSEDED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-        case "DEPRECATED":
+        case "deprecated":
             result = DEPRECATED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-        case "RETIRED":
+        case "retired":
             result = RETIRED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
         default:
             return 0, errors.New("Unknown DeviceManagementTemplateLifecycleState value: " + v)

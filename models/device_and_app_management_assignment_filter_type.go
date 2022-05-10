@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type DeviceAndAppManagementAssignmentFilterType int
 
 const (
+    // Default value. Do not use.
     NONE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE DeviceAndAppManagementAssignmentFilterType = iota
+    // Indicates in-filter, rule matching will offer the payload to devices.
     INCLUDE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE
+    // Indicates out-filter, rule matching will not offer the payload to devices.
     EXCLUDE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE
 )
 
 func (i DeviceAndAppManagementAssignmentFilterType) String() string {
-    return []string{"NONE", "INCLUDE", "EXCLUDE"}[i]
+    return []string{"none", "include", "exclude"}[i]
 }
 func ParseDeviceAndAppManagementAssignmentFilterType(v string) (interface{}, error) {
     result := NONE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE
-        case "INCLUDE":
+        case "include":
             result = INCLUDE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE
-        case "EXCLUDE":
+        case "exclude":
             result = EXCLUDE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE
         default:
             return 0, errors.New("Unknown DeviceAndAppManagementAssignmentFilterType value: " + v)

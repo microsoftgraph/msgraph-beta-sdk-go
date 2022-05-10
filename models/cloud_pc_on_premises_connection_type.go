@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i CloudPcOnPremisesConnectionType) String() string {
-    return []string{"HYBRIDAZUREADJOIN", "AZUREADJOIN", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"hybridAzureADJoin", "azureADJoin", "unknownFutureValue"}[i]
 }
 func ParseCloudPcOnPremisesConnectionType(v string) (interface{}, error) {
     result := HYBRIDAZUREADJOIN_CLOUDPCONPREMISESCONNECTIONTYPE
-    switch strings.ToUpper(v) {
-        case "HYBRIDAZUREADJOIN":
+    switch v {
+        case "hybridAzureADJoin":
             result = HYBRIDAZUREADJOIN_CLOUDPCONPREMISESCONNECTIONTYPE
-        case "AZUREADJOIN":
+        case "azureADJoin":
             result = AZUREADJOIN_CLOUDPCONPREMISESCONNECTIONTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCONPREMISESCONNECTIONTYPE
         default:
             return 0, errors.New("Unknown CloudPcOnPremisesConnectionType value: " + v)

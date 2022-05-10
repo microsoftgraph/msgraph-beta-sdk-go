@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i ConnectorStatus) String() string {
-    return []string{"ACTIVE", "INACTIVE"}[i]
+    return []string{"active", "inactive"}[i]
 }
 func ParseConnectorStatus(v string) (interface{}, error) {
     result := ACTIVE_CONNECTORSTATUS
-    switch strings.ToUpper(v) {
-        case "ACTIVE":
+    switch v {
+        case "active":
             result = ACTIVE_CONNECTORSTATUS
-        case "INACTIVE":
+        case "inactive":
             result = INACTIVE_CONNECTORSTATUS
         default:
             return 0, errors.New("Unknown ConnectorStatus value: " + v)

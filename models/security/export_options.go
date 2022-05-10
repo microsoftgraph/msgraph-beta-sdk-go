@@ -1,6 +1,5 @@
 package security
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the export method.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i ExportOptions) String() string {
-    return []string{"ORIGINALFILES", "TEXT", "PDFREPLACEMENT", "FILEINFO", "TAGS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"originalFiles", "text", "pdfReplacement", "fileInfo", "tags", "unknownFutureValue"}[i]
 }
 func ParseExportOptions(v string) (interface{}, error) {
     result := ORIGINALFILES_EXPORTOPTIONS
-    switch strings.ToUpper(v) {
-        case "ORIGINALFILES":
+    switch v {
+        case "originalFiles":
             result = ORIGINALFILES_EXPORTOPTIONS
-        case "TEXT":
+        case "text":
             result = TEXT_EXPORTOPTIONS
-        case "PDFREPLACEMENT":
+        case "pdfReplacement":
             result = PDFREPLACEMENT_EXPORTOPTIONS
-        case "FILEINFO":
+        case "fileInfo":
             result = FILEINFO_EXPORTOPTIONS
-        case "TAGS":
+        case "tags":
             result = TAGS_EXPORTOPTIONS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EXPORTOPTIONS
         default:
             return 0, errors.New("Unknown ExportOptions value: " + v)

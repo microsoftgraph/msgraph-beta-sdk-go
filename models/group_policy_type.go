@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type GroupPolicyType int
 
 const (
+    // Group Policy administrative templates built-in to the Policy configuration service provider (CSP).
     ADMXBACKED_GROUPPOLICYTYPE GroupPolicyType = iota
+    // Group Policy administrative templates installed using the Policy configuration service provider (CSP).
     ADMXINGESTED_GROUPPOLICYTYPE
 )
 
 func (i GroupPolicyType) String() string {
-    return []string{"ADMXBACKED", "ADMXINGESTED"}[i]
+    return []string{"admxBacked", "admxIngested"}[i]
 }
 func ParseGroupPolicyType(v string) (interface{}, error) {
     result := ADMXBACKED_GROUPPOLICYTYPE
-    switch strings.ToUpper(v) {
-        case "ADMXBACKED":
+    switch v {
+        case "admxBacked":
             result = ADMXBACKED_GROUPPOLICYTYPE
-        case "ADMXINGESTED":
+        case "admxIngested":
             result = ADMXINGESTED_GROUPPOLICYTYPE
         default:
             return 0, errors.New("Unknown GroupPolicyType value: " + v)

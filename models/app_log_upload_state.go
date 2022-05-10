@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type AppLogUploadState int
 
 const (
+    // Request is waiting to be processed or under processing
     PENDING_APPLOGUPLOADSTATE AppLogUploadState = iota
+    // Request is completed with file uploaded to Azure blob for download.
     COMPLETED_APPLOGUPLOADSTATE
+    // Request finished processing and in error state.
     FAILED_APPLOGUPLOADSTATE
 )
 
 func (i AppLogUploadState) String() string {
-    return []string{"PENDING", "COMPLETED", "FAILED"}[i]
+    return []string{"pending", "completed", "failed"}[i]
 }
 func ParseAppLogUploadState(v string) (interface{}, error) {
     result := PENDING_APPLOGUPLOADSTATE
-    switch strings.ToUpper(v) {
-        case "PENDING":
+    switch v {
+        case "pending":
             result = PENDING_APPLOGUPLOADSTATE
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_APPLOGUPLOADSTATE
-        case "FAILED":
+        case "failed":
             result = FAILED_APPLOGUPLOADSTATE
         default:
             return 0, errors.New("Unknown AppLogUploadState value: " + v)

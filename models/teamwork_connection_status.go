@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the teamwork singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i TeamworkConnectionStatus) String() string {
-    return []string{"UNKNOWN", "CONNECTED", "DISCONNECTED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "connected", "disconnected", "unknownFutureValue"}[i]
 }
 func ParseTeamworkConnectionStatus(v string) (interface{}, error) {
     result := UNKNOWN_TEAMWORKCONNECTIONSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_TEAMWORKCONNECTIONSTATUS
-        case "CONNECTED":
+        case "connected":
             result = CONNECTED_TEAMWORKCONNECTIONSTATUS
-        case "DISCONNECTED":
+        case "disconnected":
             result = DISCONNECTED_TEAMWORKCONNECTIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKCONNECTIONSTATUS
         default:
             return 0, errors.New("Unknown TeamworkConnectionStatus value: " + v)

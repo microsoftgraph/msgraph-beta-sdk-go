@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i AndroidForWorkSyncStatus) String() string {
-    return []string{"SUCCESS", "CREDENTIALSNOTVALID", "ANDROIDFORWORKAPIERROR", "MANAGEMENTSERVICEERROR", "UNKNOWNERROR", "NONE"}[i]
+    return []string{"success", "credentialsNotValid", "androidForWorkApiError", "managementServiceError", "unknownError", "none"}[i]
 }
 func ParseAndroidForWorkSyncStatus(v string) (interface{}, error) {
     result := SUCCESS_ANDROIDFORWORKSYNCSTATUS
-    switch strings.ToUpper(v) {
-        case "SUCCESS":
+    switch v {
+        case "success":
             result = SUCCESS_ANDROIDFORWORKSYNCSTATUS
-        case "CREDENTIALSNOTVALID":
+        case "credentialsNotValid":
             result = CREDENTIALSNOTVALID_ANDROIDFORWORKSYNCSTATUS
-        case "ANDROIDFORWORKAPIERROR":
+        case "androidForWorkApiError":
             result = ANDROIDFORWORKAPIERROR_ANDROIDFORWORKSYNCSTATUS
-        case "MANAGEMENTSERVICEERROR":
+        case "managementServiceError":
             result = MANAGEMENTSERVICEERROR_ANDROIDFORWORKSYNCSTATUS
-        case "UNKNOWNERROR":
+        case "unknownError":
             result = UNKNOWNERROR_ANDROIDFORWORKSYNCSTATUS
-        case "NONE":
+        case "none":
             result = NONE_ANDROIDFORWORKSYNCSTATUS
         default:
             return 0, errors.New("Unknown AndroidForWorkSyncStatus value: " + v)

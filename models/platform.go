@@ -1,37 +1,42 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type Platform int
 
 const (
+    // Unknown device platform
     UNKNOWN_PLATFORM Platform = iota
+    // IOS device platform
     IOS_PLATFORM
+    // Android device platform
     ANDROID_PLATFORM
+    // Windows device platform
     WINDOWS_PLATFORM
+    // WindowsMobile device platform
     WINDOWSMOBILE_PLATFORM
+    // Mac device platform
     MACOS_PLATFORM
 )
 
 func (i Platform) String() string {
-    return []string{"UNKNOWN", "IOS", "ANDROID", "WINDOWS", "WINDOWSMOBILE", "MACOS"}[i]
+    return []string{"unknown", "ios", "android", "windows", "windowsMobile", "macOS"}[i]
 }
 func ParsePlatform(v string) (interface{}, error) {
     result := UNKNOWN_PLATFORM
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_PLATFORM
-        case "IOS":
+        case "ios":
             result = IOS_PLATFORM
-        case "ANDROID":
+        case "android":
             result = ANDROID_PLATFORM
-        case "WINDOWS":
+        case "windows":
             result = WINDOWS_PLATFORM
-        case "WINDOWSMOBILE":
+        case "windowsMobile":
             result = WINDOWSMOBILE_PLATFORM
-        case "MACOS":
+        case "macOS":
             result = MACOS_PLATFORM
         default:
             return 0, errors.New("Unknown Platform value: " + v)

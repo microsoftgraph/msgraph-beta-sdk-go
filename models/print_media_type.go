@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -23,36 +22,36 @@ const (
 )
 
 func (i PrintMediaType) String() string {
-    return []string{"STATIONERY", "TRANSPARENCY", "ENVELOPE", "ENVELOPEPLAIN", "CONTINUOUS", "SCREEN", "SCREENPAGED", "CONTINUOUSLONG", "CONTINUOUSSHORT", "ENVELOPEWINDOW", "MULTIPARTFORM", "MULTILAYER", "LABELS"}[i]
+    return []string{"stationery", "transparency", "envelope", "envelopePlain", "continuous", "screen", "screenPaged", "continuousLong", "continuousShort", "envelopeWindow", "multiPartForm", "multiLayer", "labels"}[i]
 }
 func ParsePrintMediaType(v string) (interface{}, error) {
     result := STATIONERY_PRINTMEDIATYPE
-    switch strings.ToUpper(v) {
-        case "STATIONERY":
+    switch v {
+        case "stationery":
             result = STATIONERY_PRINTMEDIATYPE
-        case "TRANSPARENCY":
+        case "transparency":
             result = TRANSPARENCY_PRINTMEDIATYPE
-        case "ENVELOPE":
+        case "envelope":
             result = ENVELOPE_PRINTMEDIATYPE
-        case "ENVELOPEPLAIN":
+        case "envelopePlain":
             result = ENVELOPEPLAIN_PRINTMEDIATYPE
-        case "CONTINUOUS":
+        case "continuous":
             result = CONTINUOUS_PRINTMEDIATYPE
-        case "SCREEN":
+        case "screen":
             result = SCREEN_PRINTMEDIATYPE
-        case "SCREENPAGED":
+        case "screenPaged":
             result = SCREENPAGED_PRINTMEDIATYPE
-        case "CONTINUOUSLONG":
+        case "continuousLong":
             result = CONTINUOUSLONG_PRINTMEDIATYPE
-        case "CONTINUOUSSHORT":
+        case "continuousShort":
             result = CONTINUOUSSHORT_PRINTMEDIATYPE
-        case "ENVELOPEWINDOW":
+        case "envelopeWindow":
             result = ENVELOPEWINDOW_PRINTMEDIATYPE
-        case "MULTIPARTFORM":
+        case "multiPartForm":
             result = MULTIPARTFORM_PRINTMEDIATYPE
-        case "MULTILAYER":
+        case "multiLayer":
             result = MULTILAYER_PRINTMEDIATYPE
-        case "LABELS":
+        case "labels":
             result = LABELS_PRINTMEDIATYPE
         default:
             return 0, errors.New("Unknown PrintMediaType value: " + v)

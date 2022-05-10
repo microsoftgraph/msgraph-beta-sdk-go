@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -31,52 +30,52 @@ const (
 )
 
 func (i RequirementProvider) String() string {
-    return []string{"USER", "REQUEST", "SERVICEPRINCIPAL", "V1CONDITIONALACCESS", "MULTICONDITIONALACCESS", "TENANTSESSIONRISKPOLICY", "ACCOUNTCOMPROMISEPOLICIES", "V1CONDITIONALACCESSDEPENDENCY", "V1CONDITIONALACCESSPOLICYIDREQUESTED", "MFAREGISTRATIONREQUIREDBYIDENTITYPROTECTIONPOLICY", "BASELINEPROTECTION", "MFAREGISTRATIONREQUIREDBYBASELINEPROTECTION", "MFAREGISTRATIONREQUIREDBYMULTICONDITIONALACCESS", "ENFORCEDFORCSPADMINS", "SECURITYDEFAULTS", "MFAREGISTRATIONREQUIREDBYSECURITYDEFAULTS", "PROOFUPCODEREQUEST", "CROSSTENANTOUTBOUNDRULE", "GPSLOCATIONCONDITION", "RISKBASEDPOLICY", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"user", "request", "servicePrincipal", "v1ConditionalAccess", "multiConditionalAccess", "tenantSessionRiskPolicy", "accountCompromisePolicies", "v1ConditionalAccessDependency", "v1ConditionalAccessPolicyIdRequested", "mfaRegistrationRequiredByIdentityProtectionPolicy", "baselineProtection", "mfaRegistrationRequiredByBaselineProtection", "mfaRegistrationRequiredByMultiConditionalAccess", "enforcedForCspAdmins", "securityDefaults", "mfaRegistrationRequiredBySecurityDefaults", "proofUpCodeRequest", "crossTenantOutboundRule", "gpsLocationCondition", "riskBasedPolicy", "unknownFutureValue"}[i]
 }
 func ParseRequirementProvider(v string) (interface{}, error) {
     result := USER_REQUIREMENTPROVIDER
-    switch strings.ToUpper(v) {
-        case "USER":
+    switch v {
+        case "user":
             result = USER_REQUIREMENTPROVIDER
-        case "REQUEST":
+        case "request":
             result = REQUEST_REQUIREMENTPROVIDER
-        case "SERVICEPRINCIPAL":
+        case "servicePrincipal":
             result = SERVICEPRINCIPAL_REQUIREMENTPROVIDER
-        case "V1CONDITIONALACCESS":
+        case "v1ConditionalAccess":
             result = V1CONDITIONALACCESS_REQUIREMENTPROVIDER
-        case "MULTICONDITIONALACCESS":
+        case "multiConditionalAccess":
             result = MULTICONDITIONALACCESS_REQUIREMENTPROVIDER
-        case "TENANTSESSIONRISKPOLICY":
+        case "tenantSessionRiskPolicy":
             result = TENANTSESSIONRISKPOLICY_REQUIREMENTPROVIDER
-        case "ACCOUNTCOMPROMISEPOLICIES":
+        case "accountCompromisePolicies":
             result = ACCOUNTCOMPROMISEPOLICIES_REQUIREMENTPROVIDER
-        case "V1CONDITIONALACCESSDEPENDENCY":
+        case "v1ConditionalAccessDependency":
             result = V1CONDITIONALACCESSDEPENDENCY_REQUIREMENTPROVIDER
-        case "V1CONDITIONALACCESSPOLICYIDREQUESTED":
+        case "v1ConditionalAccessPolicyIdRequested":
             result = V1CONDITIONALACCESSPOLICYIDREQUESTED_REQUIREMENTPROVIDER
-        case "MFAREGISTRATIONREQUIREDBYIDENTITYPROTECTIONPOLICY":
+        case "mfaRegistrationRequiredByIdentityProtectionPolicy":
             result = MFAREGISTRATIONREQUIREDBYIDENTITYPROTECTIONPOLICY_REQUIREMENTPROVIDER
-        case "BASELINEPROTECTION":
+        case "baselineProtection":
             result = BASELINEPROTECTION_REQUIREMENTPROVIDER
-        case "MFAREGISTRATIONREQUIREDBYBASELINEPROTECTION":
+        case "mfaRegistrationRequiredByBaselineProtection":
             result = MFAREGISTRATIONREQUIREDBYBASELINEPROTECTION_REQUIREMENTPROVIDER
-        case "MFAREGISTRATIONREQUIREDBYMULTICONDITIONALACCESS":
+        case "mfaRegistrationRequiredByMultiConditionalAccess":
             result = MFAREGISTRATIONREQUIREDBYMULTICONDITIONALACCESS_REQUIREMENTPROVIDER
-        case "ENFORCEDFORCSPADMINS":
+        case "enforcedForCspAdmins":
             result = ENFORCEDFORCSPADMINS_REQUIREMENTPROVIDER
-        case "SECURITYDEFAULTS":
+        case "securityDefaults":
             result = SECURITYDEFAULTS_REQUIREMENTPROVIDER
-        case "MFAREGISTRATIONREQUIREDBYSECURITYDEFAULTS":
+        case "mfaRegistrationRequiredBySecurityDefaults":
             result = MFAREGISTRATIONREQUIREDBYSECURITYDEFAULTS_REQUIREMENTPROVIDER
-        case "PROOFUPCODEREQUEST":
+        case "proofUpCodeRequest":
             result = PROOFUPCODEREQUEST_REQUIREMENTPROVIDER
-        case "CROSSTENANTOUTBOUNDRULE":
+        case "crossTenantOutboundRule":
             result = CROSSTENANTOUTBOUNDRULE_REQUIREMENTPROVIDER
-        case "GPSLOCATIONCONDITION":
+        case "gpsLocationCondition":
             result = GPSLOCATIONCONDITION_REQUIREMENTPROVIDER
-        case "RISKBASEDPOLICY":
+        case "riskBasedPolicy":
             result = RISKBASEDPOLICY_REQUIREMENTPROVIDER
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REQUIREMENTPROVIDER
         default:
             return 0, errors.New("Unknown RequirementProvider value: " + v)

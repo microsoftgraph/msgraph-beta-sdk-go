@@ -1,6 +1,5 @@
 package security
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cases property of the microsoft.graph.security entity.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i SourceType) String() string {
-    return []string{"MAILBOX", "SITE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"mailbox", "site", "unknownFutureValue"}[i]
 }
 func ParseSourceType(v string) (interface{}, error) {
     result := MAILBOX_SOURCETYPE
-    switch strings.ToUpper(v) {
-        case "MAILBOX":
+    switch v {
+        case "mailbox":
             result = MAILBOX_SOURCETYPE
-        case "SITE":
+        case "site":
             result = SITE_SOURCETYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SOURCETYPE
         default:
             return 0, errors.New("Unknown SourceType value: " + v)

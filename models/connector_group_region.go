@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i ConnectorGroupRegion) String() string {
-    return []string{"NAM", "EUR", "AUS", "ASIA", "IND", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"nam", "eur", "aus", "asia", "ind", "unknownFutureValue"}[i]
 }
 func ParseConnectorGroupRegion(v string) (interface{}, error) {
     result := NAM_CONNECTORGROUPREGION
-    switch strings.ToUpper(v) {
-        case "NAM":
+    switch v {
+        case "nam":
             result = NAM_CONNECTORGROUPREGION
-        case "EUR":
+        case "eur":
             result = EUR_CONNECTORGROUPREGION
-        case "AUS":
+        case "aus":
             result = AUS_CONNECTORGROUPREGION
-        case "ASIA":
+        case "asia":
             result = ASIA_CONNECTORGROUPREGION
-        case "IND":
+        case "ind":
             result = IND_CONNECTORGROUPREGION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONNECTORGROUPREGION
         default:
             return 0, errors.New("Unknown ConnectorGroupRegion value: " + v)

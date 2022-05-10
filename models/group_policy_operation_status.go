@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type GroupPolicyOperationStatus int
 
 const (
+    // Group Policy unknown operation status.
     UNKNOWN_GROUPPOLICYOPERATIONSTATUS GroupPolicyOperationStatus = iota
+    // Group Policy in progress operation status.
     INPROGRESS_GROUPPOLICYOPERATIONSTATUS
+    // Group Policy successful operation status.
     SUCCESS_GROUPPOLICYOPERATIONSTATUS
+    // Group Policy failed operation status.
     FAILED_GROUPPOLICYOPERATIONSTATUS
 )
 
 func (i GroupPolicyOperationStatus) String() string {
-    return []string{"UNKNOWN", "INPROGRESS", "SUCCESS", "FAILED"}[i]
+    return []string{"unknown", "inProgress", "success", "failed"}[i]
 }
 func ParseGroupPolicyOperationStatus(v string) (interface{}, error) {
     result := UNKNOWN_GROUPPOLICYOPERATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_GROUPPOLICYOPERATIONSTATUS
-        case "INPROGRESS":
+        case "inProgress":
             result = INPROGRESS_GROUPPOLICYOPERATIONSTATUS
-        case "SUCCESS":
+        case "success":
             result = SUCCESS_GROUPPOLICYOPERATIONSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_GROUPPOLICYOPERATIONSTATUS
         default:
             return 0, errors.New("Unknown GroupPolicyOperationStatus value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i DiamondModel) String() string {
-    return []string{"UNKNOWN", "ADVERSARY", "CAPABILITY", "INFRASTRUCTURE", "VICTIM", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "adversary", "capability", "infrastructure", "victim", "unknownFutureValue"}[i]
 }
 func ParseDiamondModel(v string) (interface{}, error) {
     result := UNKNOWN_DIAMONDMODEL
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_DIAMONDMODEL
-        case "ADVERSARY":
+        case "adversary":
             result = ADVERSARY_DIAMONDMODEL
-        case "CAPABILITY":
+        case "capability":
             result = CAPABILITY_DIAMONDMODEL
-        case "INFRASTRUCTURE":
+        case "infrastructure":
             result = INFRASTRUCTURE_DIAMONDMODEL
-        case "VICTIM":
+        case "victim":
             result = VICTIM_DIAMONDMODEL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DIAMONDMODEL
         default:
             return 0, errors.New("Unknown DiamondModel value: " + v)

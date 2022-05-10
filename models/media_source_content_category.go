@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i MediaSourceContentCategory) String() string {
-    return []string{"MEETING", "LIVESTREAM", "PRESENTATION", "SCREENRECORDING", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"meeting", "liveStream", "presentation", "screenRecording", "unknownFutureValue"}[i]
 }
 func ParseMediaSourceContentCategory(v string) (interface{}, error) {
     result := MEETING_MEDIASOURCECONTENTCATEGORY
-    switch strings.ToUpper(v) {
-        case "MEETING":
+    switch v {
+        case "meeting":
             result = MEETING_MEDIASOURCECONTENTCATEGORY
-        case "LIVESTREAM":
+        case "liveStream":
             result = LIVESTREAM_MEDIASOURCECONTENTCATEGORY
-        case "PRESENTATION":
+        case "presentation":
             result = PRESENTATION_MEDIASOURCECONTENTCATEGORY
-        case "SCREENRECORDING":
+        case "screenRecording":
             result = SCREENRECORDING_MEDIASOURCECONTENTCATEGORY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MEDIASOURCECONTENTCATEGORY
         default:
             return 0, errors.New("Unknown MediaSourceContentCategory value: " + v)

@@ -1,6 +1,5 @@
 package security
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cases property of the microsoft.graph.security entity.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i PolicyStatus) String() string {
-    return []string{"PENDING", "ERROR", "SUCCESS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"pending", "error", "success", "unknownFutureValue"}[i]
 }
 func ParsePolicyStatus(v string) (interface{}, error) {
     result := PENDING_POLICYSTATUS
-    switch strings.ToUpper(v) {
-        case "PENDING":
+    switch v {
+        case "pending":
             result = PENDING_POLICYSTATUS
-        case "ERROR":
+        case "error":
             result = ERROR_POLICYSTATUS
-        case "SUCCESS":
+        case "success":
             result = SUCCESS_POLICYSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_POLICYSTATUS
         default:
             return 0, errors.New("Unknown PolicyStatus value: " + v)

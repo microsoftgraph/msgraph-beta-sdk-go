@@ -17,7 +17,7 @@ type RepliesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RepliesRequestBuilderGetQueryParameters replies for a specified message.
+// RepliesRequestBuilderGetQueryParameters replies for a specified message. Supports $expand for channel messages.
 type RepliesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewRepliesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *RepliesRequestBuilder) Count()(*i52b27557e6a4ba8b6a469bd2be72694533fa3cdf4752e31234ee8086a37060f1.CountRequestBuilder) {
     return i52b27557e6a4ba8b6a469bd2be72694533fa3cdf4752e31234ee8086a37060f1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation replies for a specified message.
+// CreateGetRequestInformation replies for a specified message. Supports $expand for channel messages.
 func (m *RepliesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration replies for a specified message.
+// CreateGetRequestInformationWithRequestConfiguration replies for a specified message. Supports $expand for channel messages.
 func (m *RepliesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RepliesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,11 +115,11 @@ func (m *RepliesRequestBuilder) CreatePostRequestInformationWithRequestConfigura
 func (m *RepliesRequestBuilder) Delta()(*idee7c6b0934d0a939ed18f237c826dc1144317c844a8f1c14791ece31de0a337.DeltaRequestBuilder) {
     return idee7c6b0934d0a939ed18f237c826dc1144317c844a8f1c14791ece31de0a337.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get replies for a specified message.
+// Get replies for a specified message. Supports $expand for channel messages.
 func (m *RepliesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler replies for a specified message.
+// GetWithRequestConfigurationAndResponseHandler replies for a specified message. Supports $expand for channel messages.
 func (m *RepliesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RepliesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

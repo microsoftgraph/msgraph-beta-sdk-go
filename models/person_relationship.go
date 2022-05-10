@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -26,42 +25,42 @@ const (
 )
 
 func (i PersonRelationship) String() string {
-    return []string{"MANAGER", "COLLEAGUE", "DIRECTREPORT", "DOTLINEREPORT", "ASSISTANT", "DOTLINEMANAGER", "ALTERNATECONTACT", "FRIEND", "SPOUSE", "SIBLING", "CHILD", "PARENT", "SPONSOR", "EMERGENCYCONTACT", "OTHER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"manager", "colleague", "directReport", "dotLineReport", "assistant", "dotLineManager", "alternateContact", "friend", "spouse", "sibling", "child", "parent", "sponsor", "emergencyContact", "other", "unknownFutureValue"}[i]
 }
 func ParsePersonRelationship(v string) (interface{}, error) {
     result := MANAGER_PERSONRELATIONSHIP
-    switch strings.ToUpper(v) {
-        case "MANAGER":
+    switch v {
+        case "manager":
             result = MANAGER_PERSONRELATIONSHIP
-        case "COLLEAGUE":
+        case "colleague":
             result = COLLEAGUE_PERSONRELATIONSHIP
-        case "DIRECTREPORT":
+        case "directReport":
             result = DIRECTREPORT_PERSONRELATIONSHIP
-        case "DOTLINEREPORT":
+        case "dotLineReport":
             result = DOTLINEREPORT_PERSONRELATIONSHIP
-        case "ASSISTANT":
+        case "assistant":
             result = ASSISTANT_PERSONRELATIONSHIP
-        case "DOTLINEMANAGER":
+        case "dotLineManager":
             result = DOTLINEMANAGER_PERSONRELATIONSHIP
-        case "ALTERNATECONTACT":
+        case "alternateContact":
             result = ALTERNATECONTACT_PERSONRELATIONSHIP
-        case "FRIEND":
+        case "friend":
             result = FRIEND_PERSONRELATIONSHIP
-        case "SPOUSE":
+        case "spouse":
             result = SPOUSE_PERSONRELATIONSHIP
-        case "SIBLING":
+        case "sibling":
             result = SIBLING_PERSONRELATIONSHIP
-        case "CHILD":
+        case "child":
             result = CHILD_PERSONRELATIONSHIP
-        case "PARENT":
+        case "parent":
             result = PARENT_PERSONRELATIONSHIP
-        case "SPONSOR":
+        case "sponsor":
             result = SPONSOR_PERSONRELATIONSHIP
-        case "EMERGENCYCONTACT":
+        case "emergencyContact":
             result = EMERGENCYCONTACT_PERSONRELATIONSHIP
-        case "OTHER":
+        case "other":
             result = OTHER_PERSONRELATIONSHIP
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PERSONRELATIONSHIP
         default:
             return 0, errors.New("Unknown PersonRelationship value: " + v)

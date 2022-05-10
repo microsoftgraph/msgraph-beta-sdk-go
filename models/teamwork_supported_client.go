@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the teamwork singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i TeamworkSupportedClient) String() string {
-    return []string{"UNKNOWN", "SKYPEDEFAULTANDTEAMS", "TEAMSDEFAULTANDSKYPE", "SKYPEONLY", "TEAMSONLY", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "skypeDefaultAndTeams", "teamsDefaultAndSkype", "skypeOnly", "teamsOnly", "unknownFutureValue"}[i]
 }
 func ParseTeamworkSupportedClient(v string) (interface{}, error) {
     result := UNKNOWN_TEAMWORKSUPPORTEDCLIENT
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_TEAMWORKSUPPORTEDCLIENT
-        case "SKYPEDEFAULTANDTEAMS":
+        case "skypeDefaultAndTeams":
             result = SKYPEDEFAULTANDTEAMS_TEAMWORKSUPPORTEDCLIENT
-        case "TEAMSDEFAULTANDSKYPE":
+        case "teamsDefaultAndSkype":
             result = TEAMSDEFAULTANDSKYPE_TEAMWORKSUPPORTEDCLIENT
-        case "SKYPEONLY":
+        case "skypeOnly":
             result = SKYPEONLY_TEAMWORKSUPPORTEDCLIENT
-        case "TEAMSONLY":
+        case "teamsOnly":
             result = TEAMSONLY_TEAMWORKSUPPORTEDCLIENT
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKSUPPORTEDCLIENT
         default:
             return 0, errors.New("Unknown TeamworkSupportedClient value: " + v)

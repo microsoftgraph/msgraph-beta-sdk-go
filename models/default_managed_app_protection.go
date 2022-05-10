@@ -23,11 +23,11 @@ type DefaultManagedAppProtection struct {
     appActionIfAndroidSafetyNetDeviceAttestationFailed *ManagedAppRemediationAction
     // Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on device but is not set. (android only). Possible values are: block, wipe, warn.
     appActionIfDeviceLockNotSet *ManagedAppRemediationAction
-    // If the device does not have a passcode of high complexity or higher, trigger the stored action.
+    // If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
     appActionIfDevicePasscodeComplexityLessThanHigh *ManagedAppRemediationAction
-    // If the device does not have a passcode of low complexity or higher, trigger the stored action.
+    // If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
     appActionIfDevicePasscodeComplexityLessThanLow *ManagedAppRemediationAction
-    // If the device does not have a passcode of medium complexity or higher, trigger the stored action.
+    // If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
     appActionIfDevicePasscodeComplexityLessThanMedium *ManagedAppRemediationAction
     // Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. (iOS Only). Possible values are: block, wipe, warn.
     appActionIfIosDeviceModelNotAllowed *ManagedAppRemediationAction
@@ -183,7 +183,7 @@ func (m *DefaultManagedAppProtection) GetAppActionIfDeviceLockNotSet()(*ManagedA
         return m.appActionIfDeviceLockNotSet
     }
 }
-// GetAppActionIfDevicePasscodeComplexityLessThanHigh gets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action.
+// GetAppActionIfDevicePasscodeComplexityLessThanHigh gets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanHigh()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -191,7 +191,7 @@ func (m *DefaultManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLess
         return m.appActionIfDevicePasscodeComplexityLessThanHigh
     }
 }
-// GetAppActionIfDevicePasscodeComplexityLessThanLow gets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action.
+// GetAppActionIfDevicePasscodeComplexityLessThanLow gets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanLow()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -199,7 +199,7 @@ func (m *DefaultManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLess
         return m.appActionIfDevicePasscodeComplexityLessThanLow
     }
 }
-// GetAppActionIfDevicePasscodeComplexityLessThanMedium gets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action.
+// GetAppActionIfDevicePasscodeComplexityLessThanMedium gets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanMedium()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -1429,19 +1429,19 @@ func (m *DefaultManagedAppProtection) SetAppActionIfDeviceLockNotSet(value *Mana
         m.appActionIfDeviceLockNotSet = value
     }
 }
-// SetAppActionIfDevicePasscodeComplexityLessThanHigh sets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action.
+// SetAppActionIfDevicePasscodeComplexityLessThanHigh sets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanHigh(value *ManagedAppRemediationAction)() {
     if m != nil {
         m.appActionIfDevicePasscodeComplexityLessThanHigh = value
     }
 }
-// SetAppActionIfDevicePasscodeComplexityLessThanLow sets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action.
+// SetAppActionIfDevicePasscodeComplexityLessThanLow sets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanLow(value *ManagedAppRemediationAction)() {
     if m != nil {
         m.appActionIfDevicePasscodeComplexityLessThanLow = value
     }
 }
-// SetAppActionIfDevicePasscodeComplexityLessThanMedium sets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action.
+// SetAppActionIfDevicePasscodeComplexityLessThanMedium sets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
 func (m *DefaultManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanMedium(value *ManagedAppRemediationAction)() {
     if m != nil {
         m.appActionIfDevicePasscodeComplexityLessThanMedium = value

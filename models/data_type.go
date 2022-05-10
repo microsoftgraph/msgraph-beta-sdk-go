@@ -1,64 +1,78 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the validateComplianceScript method.
 type DataType int
 
 const (
+    // None data type.
     NONE_DATATYPE DataType = iota
+    // Boolean data type.
     BOOLEAN_DATATYPE
+    // Int64 data type.
     INT64_DATATYPE
+    // Double data type.
     DOUBLE_DATATYPE
+    // String data type.
     STRING_DATATYPE
+    // DateTime data type.
     DATETIME_DATATYPE
+    // Version data type.
     VERSION_DATATYPE
+    // Base64 data type.
     BASE64_DATATYPE
+    // Xml data type.
     XML_DATATYPE
+    // Boolean array data type.
     BOOLEANARRAY_DATATYPE
+    // Int64 array data type.
     INT64ARRAY_DATATYPE
+    // Double array data type.
     DOUBLEARRAY_DATATYPE
+    // String array data type.
     STRINGARRAY_DATATYPE
+    // DateTime array data type.
     DATETIMEARRAY_DATATYPE
+    // Version array data type.
     VERSIONARRAY_DATATYPE
 )
 
 func (i DataType) String() string {
-    return []string{"NONE", "BOOLEAN", "INT64", "DOUBLE", "STRING", "DATETIME", "VERSION", "BASE64", "XML", "BOOLEANARRAY", "INT64ARRAY", "DOUBLEARRAY", "STRINGARRAY", "DATETIMEARRAY", "VERSIONARRAY"}[i]
+    return []string{"none", "boolean", "int64", "double", "string", "dateTime", "version", "base64", "xml", "booleanArray", "int64Array", "doubleArray", "stringArray", "dateTimeArray", "versionArray"}[i]
 }
 func ParseDataType(v string) (interface{}, error) {
     result := NONE_DATATYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DATATYPE
-        case "BOOLEAN":
+        case "boolean":
             result = BOOLEAN_DATATYPE
-        case "INT64":
+        case "int64":
             result = INT64_DATATYPE
-        case "DOUBLE":
+        case "double":
             result = DOUBLE_DATATYPE
-        case "STRING":
+        case "string":
             result = STRING_DATATYPE
-        case "DATETIME":
+        case "dateTime":
             result = DATETIME_DATATYPE
-        case "VERSION":
+        case "version":
             result = VERSION_DATATYPE
-        case "BASE64":
+        case "base64":
             result = BASE64_DATATYPE
-        case "XML":
+        case "xml":
             result = XML_DATATYPE
-        case "BOOLEANARRAY":
+        case "booleanArray":
             result = BOOLEANARRAY_DATATYPE
-        case "INT64ARRAY":
+        case "int64Array":
             result = INT64ARRAY_DATATYPE
-        case "DOUBLEARRAY":
+        case "doubleArray":
             result = DOUBLEARRAY_DATATYPE
-        case "STRINGARRAY":
+        case "stringArray":
             result = STRINGARRAY_DATATYPE
-        case "DATETIMEARRAY":
+        case "dateTimeArray":
             result = DATETIMEARRAY_DATATYPE
-        case "VERSIONARRAY":
+        case "versionArray":
             result = VERSIONARRAY_DATATYPE
         default:
             return 0, errors.New("Unknown DataType value: " + v)

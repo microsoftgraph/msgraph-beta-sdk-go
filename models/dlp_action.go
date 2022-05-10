@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the evaluate method.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i DlpAction) String() string {
-    return []string{"NOTIFYUSER", "BLOCKACCESS", "DEVICERESTRICTION"}[i]
+    return []string{"notifyUser", "blockAccess", "deviceRestriction"}[i]
 }
 func ParseDlpAction(v string) (interface{}, error) {
     result := NOTIFYUSER_DLPACTION
-    switch strings.ToUpper(v) {
-        case "NOTIFYUSER":
+    switch v {
+        case "notifyUser":
             result = NOTIFYUSER_DLPACTION
-        case "BLOCKACCESS":
+        case "blockAccess":
             result = BLOCKACCESS_DLPACTION
-        case "DEVICERESTRICTION":
+        case "deviceRestriction":
             result = DEVICERESTRICTION_DLPACTION
         default:
             return 0, errors.New("Unknown DlpAction value: " + v)

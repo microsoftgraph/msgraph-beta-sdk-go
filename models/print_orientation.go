@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i PrintOrientation) String() string {
-    return []string{"PORTRAIT", "LANDSCAPE", "REVERSELANDSCAPE", "REVERSEPORTRAIT"}[i]
+    return []string{"portrait", "landscape", "reverseLandscape", "reversePortrait"}[i]
 }
 func ParsePrintOrientation(v string) (interface{}, error) {
     result := PORTRAIT_PRINTORIENTATION
-    switch strings.ToUpper(v) {
-        case "PORTRAIT":
+    switch v {
+        case "portrait":
             result = PORTRAIT_PRINTORIENTATION
-        case "LANDSCAPE":
+        case "landscape":
             result = LANDSCAPE_PRINTORIENTATION
-        case "REVERSELANDSCAPE":
+        case "reverseLandscape":
             result = REVERSELANDSCAPE_PRINTORIENTATION
-        case "REVERSEPORTRAIT":
+        case "reversePortrait":
             result = REVERSEPORTRAIT_PRINTORIENTATION
         default:
             return 0, errors.New("Unknown PrintOrientation value: " + v)

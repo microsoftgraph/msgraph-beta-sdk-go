@@ -1,37 +1,42 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManangementIntentValueType int
 
 const (
+    // The setting value is an integer
     INTEGER_DEVICEMANANGEMENTINTENTVALUETYPE DeviceManangementIntentValueType = iota
+    // The setting value is a boolean
     BOOLEAN_DEVICEMANANGEMENTINTENTVALUETYPE
+    // The setting value is a string
     STRING_DEVICEMANANGEMENTINTENTVALUETYPE
+    // The setting value is a complex object
     COMPLEX_DEVICEMANANGEMENTINTENTVALUETYPE
+    // The setting value is a collection
     COLLECTION_DEVICEMANANGEMENTINTENTVALUETYPE
+    // The setting value is an abstract complex object
     ABSTRACTCOMPLEX_DEVICEMANANGEMENTINTENTVALUETYPE
 )
 
 func (i DeviceManangementIntentValueType) String() string {
-    return []string{"INTEGER", "BOOLEAN", "STRING", "COMPLEX", "COLLECTION", "ABSTRACTCOMPLEX"}[i]
+    return []string{"integer", "boolean", "string", "complex", "collection", "abstractComplex"}[i]
 }
 func ParseDeviceManangementIntentValueType(v string) (interface{}, error) {
     result := INTEGER_DEVICEMANANGEMENTINTENTVALUETYPE
-    switch strings.ToUpper(v) {
-        case "INTEGER":
+    switch v {
+        case "integer":
             result = INTEGER_DEVICEMANANGEMENTINTENTVALUETYPE
-        case "BOOLEAN":
+        case "boolean":
             result = BOOLEAN_DEVICEMANANGEMENTINTENTVALUETYPE
-        case "STRING":
+        case "string":
             result = STRING_DEVICEMANANGEMENTINTENTVALUETYPE
-        case "COMPLEX":
+        case "complex":
             result = COMPLEX_DEVICEMANANGEMENTINTENTVALUETYPE
-        case "COLLECTION":
+        case "collection":
             result = COLLECTION_DEVICEMANANGEMENTINTENTVALUETYPE
-        case "ABSTRACTCOMPLEX":
+        case "abstractComplex":
             result = ABSTRACTCOMPLEX_DEVICEMANANGEMENTINTENTVALUETYPE
         default:
             return 0, errors.New("Unknown DeviceManangementIntentValueType value: " + v)

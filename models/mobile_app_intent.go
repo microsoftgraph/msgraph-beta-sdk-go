@@ -1,40 +1,46 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type MobileAppIntent int
 
 const (
+    // Available
     AVAILABLE_MOBILEAPPINTENT MobileAppIntent = iota
+    // Not Available
     NOTAVAILABLE_MOBILEAPPINTENT
+    // Required Install
     REQUIREDINSTALL_MOBILEAPPINTENT
+    // Required Uninstall
     REQUIREDUNINSTALL_MOBILEAPPINTENT
+    // RequiredAndAvailableInstall
     REQUIREDANDAVAILABLEINSTALL_MOBILEAPPINTENT
+    // AvailableInstallWithoutEnrollment
     AVAILABLEINSTALLWITHOUTENROLLMENT_MOBILEAPPINTENT
+    // Exclude
     EXCLUDE_MOBILEAPPINTENT
 )
 
 func (i MobileAppIntent) String() string {
-    return []string{"AVAILABLE", "NOTAVAILABLE", "REQUIREDINSTALL", "REQUIREDUNINSTALL", "REQUIREDANDAVAILABLEINSTALL", "AVAILABLEINSTALLWITHOUTENROLLMENT", "EXCLUDE"}[i]
+    return []string{"available", "notAvailable", "requiredInstall", "requiredUninstall", "requiredAndAvailableInstall", "availableInstallWithoutEnrollment", "exclude"}[i]
 }
 func ParseMobileAppIntent(v string) (interface{}, error) {
     result := AVAILABLE_MOBILEAPPINTENT
-    switch strings.ToUpper(v) {
-        case "AVAILABLE":
+    switch v {
+        case "available":
             result = AVAILABLE_MOBILEAPPINTENT
-        case "NOTAVAILABLE":
+        case "notAvailable":
             result = NOTAVAILABLE_MOBILEAPPINTENT
-        case "REQUIREDINSTALL":
+        case "requiredInstall":
             result = REQUIREDINSTALL_MOBILEAPPINTENT
-        case "REQUIREDUNINSTALL":
+        case "requiredUninstall":
             result = REQUIREDUNINSTALL_MOBILEAPPINTENT
-        case "REQUIREDANDAVAILABLEINSTALL":
+        case "requiredAndAvailableInstall":
             result = REQUIREDANDAVAILABLEINSTALL_MOBILEAPPINTENT
-        case "AVAILABLEINSTALLWITHOUTENROLLMENT":
+        case "availableInstallWithoutEnrollment":
             result = AVAILABLEINSTALLWITHOUTENROLLMENT_MOBILEAPPINTENT
-        case "EXCLUDE":
+        case "exclude":
             result = EXCLUDE_MOBILEAPPINTENT
         default:
             return 0, errors.New("Unknown MobileAppIntent value: " + v)

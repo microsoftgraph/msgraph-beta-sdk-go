@@ -1,6 +1,5 @@
 package windowsupdates
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the admin singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i SafeguardCategory) String() string {
-    return []string{"LIKELYISSUES", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"likelyIssues", "unknownFutureValue"}[i]
 }
 func ParseSafeguardCategory(v string) (interface{}, error) {
     result := LIKELYISSUES_SAFEGUARDCATEGORY
-    switch strings.ToUpper(v) {
-        case "LIKELYISSUES":
+    switch v {
+        case "likelyIssues":
             result = LIKELYISSUES_SAFEGUARDCATEGORY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SAFEGUARDCATEGORY
         default:
             return 0, errors.New("Unknown SafeguardCategory value: " + v)

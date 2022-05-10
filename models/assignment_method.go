@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the evaluateApplication method.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AssignmentMethod) String() string {
-    return []string{"STANDARD", "PRIVILEGED", "AUTO"}[i]
+    return []string{"standard", "privileged", "auto"}[i]
 }
 func ParseAssignmentMethod(v string) (interface{}, error) {
     result := STANDARD_ASSIGNMENTMETHOD
-    switch strings.ToUpper(v) {
-        case "STANDARD":
+    switch v {
+        case "standard":
             result = STANDARD_ASSIGNMENTMETHOD
-        case "PRIVILEGED":
+        case "privileged":
             result = PRIVILEGED_ASSIGNMENTMETHOD
-        case "AUTO":
+        case "auto":
             result = AUTO_ASSIGNMENTMETHOD
         default:
             return 0, errors.New("Unknown AssignmentMethod value: " + v)

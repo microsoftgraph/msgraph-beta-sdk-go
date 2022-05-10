@@ -1,9 +1,8 @@
 package externalconnectors
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the collection of externalConnection entities.
+// Provides operations to manage the external singleton.
 type RuleOperation int
 
 const (
@@ -18,26 +17,26 @@ const (
 )
 
 func (i RuleOperation) String() string {
-    return []string{"EQUALS", "NOTEQUALS", "CONTAINS", "NOTCONTAINS", "LESSTHAN", "GREATERTHAN", "STARTSWITH", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"equals", "notEquals", "contains", "notContains", "lessThan", "greaterThan", "startsWith", "unknownFutureValue"}[i]
 }
 func ParseRuleOperation(v string) (interface{}, error) {
     result := EQUALS_RULEOPERATION
-    switch strings.ToUpper(v) {
-        case "EQUALS":
+    switch v {
+        case "equals":
             result = EQUALS_RULEOPERATION
-        case "NOTEQUALS":
+        case "notEquals":
             result = NOTEQUALS_RULEOPERATION
-        case "CONTAINS":
+        case "contains":
             result = CONTAINS_RULEOPERATION
-        case "NOTCONTAINS":
+        case "notContains":
             result = NOTCONTAINS_RULEOPERATION
-        case "LESSTHAN":
+        case "lessThan":
             result = LESSTHAN_RULEOPERATION
-        case "GREATERTHAN":
+        case "greaterThan":
             result = GREATERTHAN_RULEOPERATION
-        case "STARTSWITH":
+        case "startsWith":
             result = STARTSWITH_RULEOPERATION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RULEOPERATION
         default:
             return 0, errors.New("Unknown RuleOperation value: " + v)

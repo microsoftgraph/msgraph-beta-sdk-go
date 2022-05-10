@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type ManagedAppDataIngestionLocation int
 
 const (
+    // OneDrive for business
     ONEDRIVEFORBUSINESS_MANAGEDAPPDATAINGESTIONLOCATION ManagedAppDataIngestionLocation = iota
+    // SharePoint Online
     SHAREPOINT_MANAGEDAPPDATAINGESTIONLOCATION
+    // The device's camera
     CAMERA_MANAGEDAPPDATAINGESTIONLOCATION
 )
 
 func (i ManagedAppDataIngestionLocation) String() string {
-    return []string{"ONEDRIVEFORBUSINESS", "SHAREPOINT", "CAMERA"}[i]
+    return []string{"oneDriveForBusiness", "sharePoint", "camera"}[i]
 }
 func ParseManagedAppDataIngestionLocation(v string) (interface{}, error) {
     result := ONEDRIVEFORBUSINESS_MANAGEDAPPDATAINGESTIONLOCATION
-    switch strings.ToUpper(v) {
-        case "ONEDRIVEFORBUSINESS":
+    switch v {
+        case "oneDriveForBusiness":
             result = ONEDRIVEFORBUSINESS_MANAGEDAPPDATAINGESTIONLOCATION
-        case "SHAREPOINT":
+        case "sharePoint":
             result = SHAREPOINT_MANAGEDAPPDATAINGESTIONLOCATION
-        case "CAMERA":
+        case "camera":
             result = CAMERA_MANAGEDAPPDATAINGESTIONLOCATION
         default:
             return 0, errors.New("Unknown ManagedAppDataIngestionLocation value: " + v)

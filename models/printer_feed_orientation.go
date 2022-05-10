@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i PrinterFeedOrientation) String() string {
-    return []string{"LONGEDGEFIRST", "SHORTEDGEFIRST"}[i]
+    return []string{"longEdgeFirst", "shortEdgeFirst"}[i]
 }
 func ParsePrinterFeedOrientation(v string) (interface{}, error) {
     result := LONGEDGEFIRST_PRINTERFEEDORIENTATION
-    switch strings.ToUpper(v) {
-        case "LONGEDGEFIRST":
+    switch v {
+        case "longEdgeFirst":
             result = LONGEDGEFIRST_PRINTERFEEDORIENTATION
-        case "SHORTEDGEFIRST":
+        case "shortEdgeFirst":
             result = SHORTEDGEFIRST_PRINTERFEEDORIENTATION
         default:
             return 0, errors.New("Unknown PrinterFeedOrientation value: " + v)

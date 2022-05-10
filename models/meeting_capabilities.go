@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the commsApplication singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i MeetingCapabilities) String() string {
-    return []string{"QUESTIONANDANSWER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"questionAndAnswer", "unknownFutureValue"}[i]
 }
 func ParseMeetingCapabilities(v string) (interface{}, error) {
     result := QUESTIONANDANSWER_MEETINGCAPABILITIES
-    switch strings.ToUpper(v) {
-        case "QUESTIONANDANSWER":
+    switch v {
+        case "questionAndAnswer":
             result = QUESTIONANDANSWER_MEETINGCAPABILITIES
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MEETINGCAPABILITIES
         default:
             return 0, errors.New("Unknown MeetingCapabilities value: " + v)

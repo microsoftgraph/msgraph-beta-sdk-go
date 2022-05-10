@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i DecisionItemPrincipalResourceMembershipType) String() string {
-    return []string{"DIRECT", "INDIRECT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"direct", "indirect", "unknownFutureValue"}[i]
 }
 func ParseDecisionItemPrincipalResourceMembershipType(v string) (interface{}, error) {
     result := DIRECT_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE
-    switch strings.ToUpper(v) {
-        case "DIRECT":
+    switch v {
+        case "direct":
             result = DIRECT_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE
-        case "INDIRECT":
+        case "indirect":
             result = INDIRECT_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE
         default:
             return 0, errors.New("Unknown DecisionItemPrincipalResourceMembershipType value: " + v)

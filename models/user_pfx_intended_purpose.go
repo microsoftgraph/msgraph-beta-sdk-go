@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type UserPfxIntendedPurpose int
 
 const (
+    // No roles/usages assigned.
     UNASSIGNED_USERPFXINTENDEDPURPOSE UserPfxIntendedPurpose = iota
+    // Valid for S/MIME encryption.
     SMIMEENCRYPTION_USERPFXINTENDEDPURPOSE
+    // Valid for S/MIME signing.
     SMIMESIGNING_USERPFXINTENDEDPURPOSE
+    // Valid for use in VPN.
     VPN_USERPFXINTENDEDPURPOSE
+    // Valid for use in WiFi.
     WIFI_USERPFXINTENDEDPURPOSE
 )
 
 func (i UserPfxIntendedPurpose) String() string {
-    return []string{"UNASSIGNED", "SMIMEENCRYPTION", "SMIMESIGNING", "VPN", "WIFI"}[i]
+    return []string{"unassigned", "smimeEncryption", "smimeSigning", "vpn", "wifi"}[i]
 }
 func ParseUserPfxIntendedPurpose(v string) (interface{}, error) {
     result := UNASSIGNED_USERPFXINTENDEDPURPOSE
-    switch strings.ToUpper(v) {
-        case "UNASSIGNED":
+    switch v {
+        case "unassigned":
             result = UNASSIGNED_USERPFXINTENDEDPURPOSE
-        case "SMIMEENCRYPTION":
+        case "smimeEncryption":
             result = SMIMEENCRYPTION_USERPFXINTENDEDPURPOSE
-        case "SMIMESIGNING":
+        case "smimeSigning":
             result = SMIMESIGNING_USERPFXINTENDEDPURPOSE
-        case "VPN":
+        case "vpn":
             result = VPN_USERPFXINTENDEDPURPOSE
-        case "WIFI":
+        case "wifi":
             result = WIFI_USERPFXINTENDEDPURPOSE
         default:
             return 0, errors.New("Unknown UserPfxIntendedPurpose value: " + v)

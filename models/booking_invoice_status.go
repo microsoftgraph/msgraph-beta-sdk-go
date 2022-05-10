@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of bookingBusiness entities.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i BookingInvoiceStatus) String() string {
-    return []string{"DRAFT", "REVIEWING", "OPEN", "CANCELED", "PAID", "CORRECTIVE"}[i]
+    return []string{"draft", "reviewing", "open", "canceled", "paid", "corrective"}[i]
 }
 func ParseBookingInvoiceStatus(v string) (interface{}, error) {
     result := DRAFT_BOOKINGINVOICESTATUS
-    switch strings.ToUpper(v) {
-        case "DRAFT":
+    switch v {
+        case "draft":
             result = DRAFT_BOOKINGINVOICESTATUS
-        case "REVIEWING":
+        case "reviewing":
             result = REVIEWING_BOOKINGINVOICESTATUS
-        case "OPEN":
+        case "open":
             result = OPEN_BOOKINGINVOICESTATUS
-        case "CANCELED":
+        case "canceled":
             result = CANCELED_BOOKINGINVOICESTATUS
-        case "PAID":
+        case "paid":
             result = PAID_BOOKINGINVOICESTATUS
-        case "CORRECTIVE":
+        case "corrective":
             result = CORRECTIVE_BOOKINGINVOICESTATUS
         default:
             return 0, errors.New("Unknown BookingInvoiceStatus value: " + v)

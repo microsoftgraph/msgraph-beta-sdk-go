@@ -8,7 +8,7 @@ import (
 type SynchronizationJobApplicationParameters struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The identifier of a the synchronizationRule to be applied.
+    // The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.
     ruleId *string
     // The identifiers of one or more objects to which a synchronizationJob is to be applied.
     subjects []SynchronizationJobSubjectable
@@ -61,7 +61,7 @@ func (m *SynchronizationJobApplicationParameters) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetRuleId gets the ruleId property value. The identifier of a the synchronizationRule to be applied.
+// GetRuleId gets the ruleId property value. The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.
 func (m *SynchronizationJobApplicationParameters) GetRuleId()(*string) {
     if m == nil {
         return nil
@@ -109,7 +109,7 @@ func (m *SynchronizationJobApplicationParameters) SetAdditionalData(value map[st
         m.additionalData = value
     }
 }
-// SetRuleId sets the ruleId property value. The identifier of a the synchronizationRule to be applied.
+// SetRuleId sets the ruleId property value. The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.
 func (m *SynchronizationJobApplicationParameters) SetRuleId(value *string)() {
     if m != nil {
         m.ruleId = value

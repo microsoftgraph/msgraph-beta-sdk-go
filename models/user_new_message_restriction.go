@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i UserNewMessageRestriction) String() string {
-    return []string{"EVERYONE", "EVERYONEEXCEPTGUESTS", "MODERATORS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"everyone", "everyoneExceptGuests", "moderators", "unknownFutureValue"}[i]
 }
 func ParseUserNewMessageRestriction(v string) (interface{}, error) {
     result := EVERYONE_USERNEWMESSAGERESTRICTION
-    switch strings.ToUpper(v) {
-        case "EVERYONE":
+    switch v {
+        case "everyone":
             result = EVERYONE_USERNEWMESSAGERESTRICTION
-        case "EVERYONEEXCEPTGUESTS":
+        case "everyoneExceptGuests":
             result = EVERYONEEXCEPTGUESTS_USERNEWMESSAGERESTRICTION
-        case "MODERATORS":
+        case "moderators":
             result = MODERATORS_USERNEWMESSAGERESTRICTION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERNEWMESSAGERESTRICTION
         default:
             return 0, errors.New("Unknown UserNewMessageRestriction value: " + v)

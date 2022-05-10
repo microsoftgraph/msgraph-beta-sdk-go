@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i SimulationAttackType) String() string {
-    return []string{"UNKNOWN", "SOCIAL", "CLOUD", "ENDPOINT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "social", "cloud", "endpoint", "unknownFutureValue"}[i]
 }
 func ParseSimulationAttackType(v string) (interface{}, error) {
     result := UNKNOWN_SIMULATIONATTACKTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_SIMULATIONATTACKTYPE
-        case "SOCIAL":
+        case "social":
             result = SOCIAL_SIMULATIONATTACKTYPE
-        case "CLOUD":
+        case "cloud":
             result = CLOUD_SIMULATIONATTACKTYPE
-        case "ENDPOINT":
+        case "endpoint":
             result = ENDPOINT_SIMULATIONATTACKTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIMULATIONATTACKTYPE
         default:
             return 0, errors.New("Unknown SimulationAttackType value: " + v)

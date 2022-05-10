@@ -1,6 +1,5 @@
 package security
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the export method.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ExportFileStructure) String() string {
-    return []string{"NONE", "DIRECTORY", "PST", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "directory", "pst", "unknownFutureValue"}[i]
 }
 func ParseExportFileStructure(v string) (interface{}, error) {
     result := NONE_EXPORTFILESTRUCTURE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_EXPORTFILESTRUCTURE
-        case "DIRECTORY":
+        case "directory":
             result = DIRECTORY_EXPORTFILESTRUCTURE
-        case "PST":
+        case "pst":
             result = PST_EXPORTFILESTRUCTURE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EXPORTFILESTRUCTURE
         default:
             return 0, errors.New("Unknown ExportFileStructure value: " + v)

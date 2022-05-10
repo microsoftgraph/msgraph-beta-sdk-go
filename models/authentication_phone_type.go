@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i AuthenticationPhoneType) String() string {
-    return []string{"MOBILE", "ALTERNATEMOBILE", "OFFICE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"mobile", "alternateMobile", "office", "unknownFutureValue"}[i]
 }
 func ParseAuthenticationPhoneType(v string) (interface{}, error) {
     result := MOBILE_AUTHENTICATIONPHONETYPE
-    switch strings.ToUpper(v) {
-        case "MOBILE":
+    switch v {
+        case "mobile":
             result = MOBILE_AUTHENTICATIONPHONETYPE
-        case "ALTERNATEMOBILE":
+        case "alternateMobile":
             result = ALTERNATEMOBILE_AUTHENTICATIONPHONETYPE
-        case "OFFICE":
+        case "office":
             result = OFFICE_AUTHENTICATIONPHONETYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONPHONETYPE
         default:
             return 0, errors.New("Unknown AuthenticationPhoneType value: " + v)

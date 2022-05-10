@@ -1,6 +1,5 @@
 package ediscovery
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i DataSourceHoldStatus) String() string {
-    return []string{"NOTAPPLIED", "APPLIED", "APPLYING", "REMOVING", "PARTIAL", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notApplied", "applied", "applying", "removing", "partial", "unknownFutureValue"}[i]
 }
 func ParseDataSourceHoldStatus(v string) (interface{}, error) {
     result := NOTAPPLIED_DATASOURCEHOLDSTATUS
-    switch strings.ToUpper(v) {
-        case "NOTAPPLIED":
+    switch v {
+        case "notApplied":
             result = NOTAPPLIED_DATASOURCEHOLDSTATUS
-        case "APPLIED":
+        case "applied":
             result = APPLIED_DATASOURCEHOLDSTATUS
-        case "APPLYING":
+        case "applying":
             result = APPLYING_DATASOURCEHOLDSTATUS
-        case "REMOVING":
+        case "removing":
             result = REMOVING_DATASOURCEHOLDSTATUS
-        case "PARTIAL":
+        case "partial":
             result = PARTIAL_DATASOURCEHOLDSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DATASOURCEHOLDSTATUS
         default:
             return 0, errors.New("Unknown DataSourceHoldStatus value: " + v)

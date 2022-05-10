@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the appCatalogs singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i TeamsAppInstallationScopes) String() string {
-    return []string{"TEAM", "GROUPCHAT", "PERSONAL", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"team", "groupChat", "personal", "unknownFutureValue"}[i]
 }
 func ParseTeamsAppInstallationScopes(v string) (interface{}, error) {
     result := TEAM_TEAMSAPPINSTALLATIONSCOPES
-    switch strings.ToUpper(v) {
-        case "TEAM":
+    switch v {
+        case "team":
             result = TEAM_TEAMSAPPINSTALLATIONSCOPES
-        case "GROUPCHAT":
+        case "groupChat":
             result = GROUPCHAT_TEAMSAPPINSTALLATIONSCOPES
-        case "PERSONAL":
+        case "personal":
             result = PERSONAL_TEAMSAPPINSTALLATIONSCOPES
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMSAPPINSTALLATIONSCOPES
         default:
             return 0, errors.New("Unknown TeamsAppInstallationScopes value: " + v)

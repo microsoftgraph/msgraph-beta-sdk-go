@@ -158,7 +158,7 @@ type ManagedDevice struct {
     serialNumber *string
     // Device sku family
     skuFamily *string
-    // Device sku number, see also: GetProductInfo function (sysinfoapi.h). Valid values 0 to 2147483647. This property is read-only.
+    // Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
     skuNumber *int32
     // Specification version. This property is read-only.
     specificationVersion *string
@@ -1745,7 +1745,7 @@ func (m *ManagedDevice) GetSkuFamily()(*string) {
         return m.skuFamily
     }
 }
-// GetSkuNumber gets the skuNumber property value. Device sku number, see also: GetProductInfo function (sysinfoapi.h). Valid values 0 to 2147483647. This property is read-only.
+// GetSkuNumber gets the skuNumber property value. Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
 func (m *ManagedDevice) GetSkuNumber()(*int32) {
     if m == nil {
         return nil
@@ -2913,7 +2913,7 @@ func (m *ManagedDevice) SetSkuFamily(value *string)() {
         m.skuFamily = value
     }
 }
-// SetSkuNumber sets the skuNumber property value. Device sku number, see also: GetProductInfo function (sysinfoapi.h). Valid values 0 to 2147483647. This property is read-only.
+// SetSkuNumber sets the skuNumber property value. Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
 func (m *ManagedDevice) SetSkuNumber(value *int32)() {
     if m != nil {
         m.skuNumber = value

@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the areGlobalScriptsAvailable method.
 type GlobalDeviceHealthScriptState int
 
 const (
+    // Global device health scripts are not configured
     NOTCONFIGURED_GLOBALDEVICEHEALTHSCRIPTSTATE GlobalDeviceHealthScriptState = iota
+    // Global device health scripts are configured but not fully enabled
     PENDING_GLOBALDEVICEHEALTHSCRIPTSTATE
+    // Global device health scripts are enabled and ready to use
     ENABLED_GLOBALDEVICEHEALTHSCRIPTSTATE
 )
 
 func (i GlobalDeviceHealthScriptState) String() string {
-    return []string{"NOTCONFIGURED", "PENDING", "ENABLED"}[i]
+    return []string{"notConfigured", "pending", "enabled"}[i]
 }
 func ParseGlobalDeviceHealthScriptState(v string) (interface{}, error) {
     result := NOTCONFIGURED_GLOBALDEVICEHEALTHSCRIPTSTATE
-    switch strings.ToUpper(v) {
-        case "NOTCONFIGURED":
+    switch v {
+        case "notConfigured":
             result = NOTCONFIGURED_GLOBALDEVICEHEALTHSCRIPTSTATE
-        case "PENDING":
+        case "pending":
             result = PENDING_GLOBALDEVICEHEALTHSCRIPTSTATE
-        case "ENABLED":
+        case "enabled":
             result = ENABLED_GLOBALDEVICEHEALTHSCRIPTSTATE
         default:
             return 0, errors.New("Unknown GlobalDeviceHealthScriptState value: " + v)

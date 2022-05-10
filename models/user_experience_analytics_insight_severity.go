@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i UserExperienceAnalyticsInsightSeverity) String() string {
-    return []string{"NONE", "INFORMATIONAL", "WARNING", "ERROR"}[i]
+    return []string{"none", "informational", "warning", "error"}[i]
 }
 func ParseUserExperienceAnalyticsInsightSeverity(v string) (interface{}, error) {
     result := NONE_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
-        case "INFORMATIONAL":
+        case "informational":
             result = INFORMATIONAL_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
-        case "WARNING":
+        case "warning":
             result = WARNING_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
-        case "ERROR":
+        case "error":
             result = ERROR_USEREXPERIENCEANALYTICSINSIGHTSEVERITY
         default:
             return 0, errors.New("Unknown UserExperienceAnalyticsInsightSeverity value: " + v)

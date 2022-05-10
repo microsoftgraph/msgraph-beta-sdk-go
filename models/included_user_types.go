@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the usersRegisteredByFeature method.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i IncludedUserTypes) String() string {
-    return []string{"ALL", "MEMBER", "GUEST", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"all", "member", "guest", "unknownFutureValue"}[i]
 }
 func ParseIncludedUserTypes(v string) (interface{}, error) {
     result := ALL_INCLUDEDUSERTYPES
-    switch strings.ToUpper(v) {
-        case "ALL":
+    switch v {
+        case "all":
             result = ALL_INCLUDEDUSERTYPES
-        case "MEMBER":
+        case "member":
             result = MEMBER_INCLUDEDUSERTYPES
-        case "GUEST":
+        case "guest":
             result = GUEST_INCLUDEDUSERTYPES
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_INCLUDEDUSERTYPES
         default:
             return 0, errors.New("Unknown IncludedUserTypes value: " + v)

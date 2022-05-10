@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type HealthState int
 
 const (
+    // Unknown state.
     UNKNOWN_HEALTHSTATE HealthState = iota
+    // Healthy state.
     HEALTHY_HEALTHSTATE
+    // Unhealthy state.
     UNHEALTHY_HEALTHSTATE
 )
 
 func (i HealthState) String() string {
-    return []string{"UNKNOWN", "HEALTHY", "UNHEALTHY"}[i]
+    return []string{"unknown", "healthy", "unhealthy"}[i]
 }
 func ParseHealthState(v string) (interface{}, error) {
     result := UNKNOWN_HEALTHSTATE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_HEALTHSTATE
-        case "HEALTHY":
+        case "healthy":
             result = HEALTHY_HEALTHSTATE
-        case "UNHEALTHY":
+        case "unhealthy":
             result = UNHEALTHY_HEALTHSTATE
         default:
             return 0, errors.New("Unknown HealthState value: " + v)

@@ -1,6 +1,5 @@
 package ediscovery
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i SourceType) String() string {
-    return []string{"MAILBOX", "SITE"}[i]
+    return []string{"mailbox", "site"}[i]
 }
 func ParseSourceType(v string) (interface{}, error) {
     result := MAILBOX_SOURCETYPE
-    switch strings.ToUpper(v) {
-        case "MAILBOX":
+    switch v {
+        case "mailbox":
             result = MAILBOX_SOURCETYPE
-        case "SITE":
+        case "site":
             result = SITE_SOURCETYPE
         default:
             return 0, errors.New("Unknown SourceType value: " + v)

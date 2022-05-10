@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i AndroidManagedStoreAccountBindStatus) String() string {
-    return []string{"NOTBOUND", "BOUND", "BOUNDANDVALIDATED", "UNBINDING"}[i]
+    return []string{"notBound", "bound", "boundAndValidated", "unbinding"}[i]
 }
 func ParseAndroidManagedStoreAccountBindStatus(v string) (interface{}, error) {
     result := NOTBOUND_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS
-    switch strings.ToUpper(v) {
-        case "NOTBOUND":
+    switch v {
+        case "notBound":
             result = NOTBOUND_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS
-        case "BOUND":
+        case "bound":
             result = BOUND_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS
-        case "BOUNDANDVALIDATED":
+        case "boundAndValidated":
             result = BOUNDANDVALIDATED_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS
-        case "UNBINDING":
+        case "unbinding":
             result = UNBINDING_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS
         default:
             return 0, errors.New("Unknown AndroidManagedStoreAccountBindStatus value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i CloudPcDomainJoinType) String() string {
-    return []string{"AZUREADJOIN", "HYBRIDAZUREADJOIN", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"azureADJoin", "hybridAzureADJoin", "unknownFutureValue"}[i]
 }
 func ParseCloudPcDomainJoinType(v string) (interface{}, error) {
     result := AZUREADJOIN_CLOUDPCDOMAINJOINTYPE
-    switch strings.ToUpper(v) {
-        case "AZUREADJOIN":
+    switch v {
+        case "azureADJoin":
             result = AZUREADJOIN_CLOUDPCDOMAINJOINTYPE
-        case "HYBRIDAZUREADJOIN":
+        case "hybridAzureADJoin":
             result = HYBRIDAZUREADJOIN_CLOUDPCDOMAINJOINTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCDOMAINJOINTYPE
         default:
             return 0, errors.New("Unknown CloudPcDomainJoinType value: " + v)

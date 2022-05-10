@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i Priority) String() string {
-    return []string{"NONE", "HIGH", "LOW"}[i]
+    return []string{"None", "High", "Low"}[i]
 }
 func ParsePriority(v string) (interface{}, error) {
     result := NONE_PRIORITY
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "None":
             result = NONE_PRIORITY
-        case "HIGH":
+        case "High":
             result = HIGH_PRIORITY
-        case "LOW":
+        case "Low":
             result = LOW_PRIORITY
         default:
             return 0, errors.New("Unknown Priority value: " + v)

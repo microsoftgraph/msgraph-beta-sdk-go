@@ -35,7 +35,7 @@ type DepEnrollmentBaseProfile struct {
     screenTimeScreenDisabled *bool
     // Indicates if siri setup pane is disabled
     siriDisabled *bool
-    // Supervised mode, True to enable, false otherwise. See Enroll devices in Microsoft Intune for additional information.
+    // Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
     supervisedModeEnabled *bool
     // Support department information
     supportDepartment *string
@@ -364,7 +364,7 @@ func (m *DepEnrollmentBaseProfile) GetSiriDisabled()(*bool) {
         return m.siriDisabled
     }
 }
-// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See Enroll devices in Microsoft Intune for additional information.
+// GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
 func (m *DepEnrollmentBaseProfile) GetSupervisedModeEnabled()(*bool) {
     if m == nil {
         return nil
@@ -610,7 +610,7 @@ func (m *DepEnrollmentBaseProfile) SetSiriDisabled(value *bool)() {
         m.siriDisabled = value
     }
 }
-// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See Enroll devices in Microsoft Intune for additional information.
+// SetSupervisedModeEnabled sets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
 func (m *DepEnrollmentBaseProfile) SetSupervisedModeEnabled(value *bool)() {
     if m != nil {
         m.supervisedModeEnabled = value

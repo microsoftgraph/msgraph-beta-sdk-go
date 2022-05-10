@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i SynchronizationStatusCode) String() string {
-    return []string{"NOTCONFIGURED", "NOTRUN", "ACTIVE", "PAUSED", "QUARANTINE"}[i]
+    return []string{"NotConfigured", "NotRun", "Active", "Paused", "Quarantine"}[i]
 }
 func ParseSynchronizationStatusCode(v string) (interface{}, error) {
     result := NOTCONFIGURED_SYNCHRONIZATIONSTATUSCODE
-    switch strings.ToUpper(v) {
-        case "NOTCONFIGURED":
+    switch v {
+        case "NotConfigured":
             result = NOTCONFIGURED_SYNCHRONIZATIONSTATUSCODE
-        case "NOTRUN":
+        case "NotRun":
             result = NOTRUN_SYNCHRONIZATIONSTATUSCODE
-        case "ACTIVE":
+        case "Active":
             result = ACTIVE_SYNCHRONIZATIONSTATUSCODE
-        case "PAUSED":
+        case "Paused":
             result = PAUSED_SYNCHRONIZATIONSTATUSCODE
-        case "QUARANTINE":
+        case "Quarantine":
             result = QUARANTINE_SYNCHRONIZATIONSTATUSCODE
         default:
             return 0, errors.New("Unknown SynchronizationStatusCode value: " + v)

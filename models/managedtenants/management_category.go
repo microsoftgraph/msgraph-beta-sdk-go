@@ -1,6 +1,5 @@
 package managedtenants
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i ManagementCategory) String() string {
-    return []string{"CUSTOM", "DEVICES", "IDENTITY", "DATA", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"custom", "devices", "identity", "data", "unknownFutureValue"}[i]
 }
 func ParseManagementCategory(v string) (interface{}, error) {
     result := CUSTOM_MANAGEMENTCATEGORY
-    switch strings.ToUpper(v) {
-        case "CUSTOM":
+    switch v {
+        case "custom":
             result = CUSTOM_MANAGEMENTCATEGORY
-        case "DEVICES":
+        case "devices":
             result = DEVICES_MANAGEMENTCATEGORY
-        case "IDENTITY":
+        case "identity":
             result = IDENTITY_MANAGEMENTCATEGORY
-        case "DATA":
+        case "data":
             result = DATA_MANAGEMENTCATEGORY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MANAGEMENTCATEGORY
         default:
             return 0, errors.New("Unknown ManagementCategory value: " + v)

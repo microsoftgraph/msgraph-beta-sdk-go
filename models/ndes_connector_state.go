@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type NdesConnectorState int
 
 const (
+    // State not available yet for this connector.
     NONE_NDESCONNECTORSTATE NdesConnectorState = iota
+    // Ndes connector has connected recently
     ACTIVE_NDESCONNECTORSTATE
+    // No recent activity for the Ndes connector
     INACTIVE_NDESCONNECTORSTATE
 )
 
 func (i NdesConnectorState) String() string {
-    return []string{"NONE", "ACTIVE", "INACTIVE"}[i]
+    return []string{"none", "active", "inactive"}[i]
 }
 func ParseNdesConnectorState(v string) (interface{}, error) {
     result := NONE_NDESCONNECTORSTATE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_NDESCONNECTORSTATE
-        case "ACTIVE":
+        case "active":
             result = ACTIVE_NDESCONNECTORSTATE
-        case "INACTIVE":
+        case "inactive":
             result = INACTIVE_NDESCONNECTORSTATE
         default:
             return 0, errors.New("Unknown NdesConnectorState value: " + v)

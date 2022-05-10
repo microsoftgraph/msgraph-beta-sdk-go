@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i AppKeyCredentialRestrictionType) String() string {
-    return []string{"ASYMMETRICKEYLIFETIME", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"asymmetricKeyLifetime", "unknownFutureValue"}[i]
 }
 func ParseAppKeyCredentialRestrictionType(v string) (interface{}, error) {
     result := ASYMMETRICKEYLIFETIME_APPKEYCREDENTIALRESTRICTIONTYPE
-    switch strings.ToUpper(v) {
-        case "ASYMMETRICKEYLIFETIME":
+    switch v {
+        case "asymmetricKeyLifetime":
             result = ASYMMETRICKEYLIFETIME_APPKEYCREDENTIALRESTRICTIONTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_APPKEYCREDENTIALRESTRICTIONTYPE
         default:
             return 0, errors.New("Unknown AppKeyCredentialRestrictionType value: " + v)

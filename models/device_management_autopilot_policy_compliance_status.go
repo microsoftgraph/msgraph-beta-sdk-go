@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i DeviceManagementAutopilotPolicyComplianceStatus) String() string {
-    return []string{"UNKNOWN", "COMPLIANT", "INSTALLED", "NOTCOMPLIANT", "NOTINSTALLED", "ERROR"}[i]
+    return []string{"unknown", "compliant", "installed", "notCompliant", "notInstalled", "error"}[i]
 }
 func ParseDeviceManagementAutopilotPolicyComplianceStatus(v string) (interface{}, error) {
     result := UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
-        case "COMPLIANT":
+        case "compliant":
             result = COMPLIANT_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
-        case "INSTALLED":
+        case "installed":
             result = INSTALLED_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
-        case "NOTCOMPLIANT":
+        case "notCompliant":
             result = NOTCOMPLIANT_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
-        case "NOTINSTALLED":
+        case "notInstalled":
             result = NOTINSTALLED_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
-        case "ERROR":
+        case "error":
             result = ERROR_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
         default:
             return 0, errors.New("Unknown DeviceManagementAutopilotPolicyComplianceStatus value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i DelegatedAdminRelationshipRequestStatus) String() string {
-    return []string{"CREATED", "PENDING", "COMPLETE", "FAILED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"created", "pending", "complete", "failed", "unknownFutureValue"}[i]
 }
 func ParseDelegatedAdminRelationshipRequestStatus(v string) (interface{}, error) {
     result := CREATED_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
-    switch strings.ToUpper(v) {
-        case "CREATED":
+    switch v {
+        case "created":
             result = CREATED_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
-        case "PENDING":
+        case "pending":
             result = PENDING_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
-        case "COMPLETE":
+        case "complete":
             result = COMPLETE_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
         default:
             return 0, errors.New("Unknown DelegatedAdminRelationshipRequestStatus value: " + v)

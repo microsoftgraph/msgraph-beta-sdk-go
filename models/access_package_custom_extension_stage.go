@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i AccessPackageCustomExtensionStage) String() string {
-    return []string{"ASSIGNMENTREQUESTCREATED", "ASSIGNMENTREQUESTAPPROVED", "ASSIGNMENTREQUESTGRANTED", "ASSIGNMENTREQUESTREMOVED", "ASSIGNMENTFOURTEENDAYSBEFOREEXPIRATION", "ASSIGNMENTONEDAYBEFOREEXPIRATION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"assignmentRequestCreated", "assignmentRequestApproved", "assignmentRequestGranted", "assignmentRequestRemoved", "assignmentFourteenDaysBeforeExpiration", "assignmentOneDayBeforeExpiration", "unknownFutureValue"}[i]
 }
 func ParseAccessPackageCustomExtensionStage(v string) (interface{}, error) {
     result := ASSIGNMENTREQUESTCREATED_ACCESSPACKAGECUSTOMEXTENSIONSTAGE
-    switch strings.ToUpper(v) {
-        case "ASSIGNMENTREQUESTCREATED":
+    switch v {
+        case "assignmentRequestCreated":
             result = ASSIGNMENTREQUESTCREATED_ACCESSPACKAGECUSTOMEXTENSIONSTAGE
-        case "ASSIGNMENTREQUESTAPPROVED":
+        case "assignmentRequestApproved":
             result = ASSIGNMENTREQUESTAPPROVED_ACCESSPACKAGECUSTOMEXTENSIONSTAGE
-        case "ASSIGNMENTREQUESTGRANTED":
+        case "assignmentRequestGranted":
             result = ASSIGNMENTREQUESTGRANTED_ACCESSPACKAGECUSTOMEXTENSIONSTAGE
-        case "ASSIGNMENTREQUESTREMOVED":
+        case "assignmentRequestRemoved":
             result = ASSIGNMENTREQUESTREMOVED_ACCESSPACKAGECUSTOMEXTENSIONSTAGE
-        case "ASSIGNMENTFOURTEENDAYSBEFOREEXPIRATION":
+        case "assignmentFourteenDaysBeforeExpiration":
             result = ASSIGNMENTFOURTEENDAYSBEFOREEXPIRATION_ACCESSPACKAGECUSTOMEXTENSIONSTAGE
-        case "ASSIGNMENTONEDAYBEFOREEXPIRATION":
+        case "assignmentOneDayBeforeExpiration":
             result = ASSIGNMENTONEDAYBEFOREEXPIRATION_ACCESSPACKAGECUSTOMEXTENSIONSTAGE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGECUSTOMEXTENSIONSTAGE
         default:
             return 0, errors.New("Unknown AccessPackageCustomExtensionStage value: " + v)

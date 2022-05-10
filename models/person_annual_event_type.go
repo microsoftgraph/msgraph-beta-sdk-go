@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i PersonAnnualEventType) String() string {
-    return []string{"BIRTHDAY", "WEDDING", "WORK", "OTHER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"birthday", "wedding", "work", "other", "unknownFutureValue"}[i]
 }
 func ParsePersonAnnualEventType(v string) (interface{}, error) {
     result := BIRTHDAY_PERSONANNUALEVENTTYPE
-    switch strings.ToUpper(v) {
-        case "BIRTHDAY":
+    switch v {
+        case "birthday":
             result = BIRTHDAY_PERSONANNUALEVENTTYPE
-        case "WEDDING":
+        case "wedding":
             result = WEDDING_PERSONANNUALEVENTTYPE
-        case "WORK":
+        case "work":
             result = WORK_PERSONANNUALEVENTTYPE
-        case "OTHER":
+        case "other":
             result = OTHER_PERSONANNUALEVENTTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PERSONANNUALEVENTTYPE
         default:
             return 0, errors.New("Unknown PersonAnnualEventType value: " + v)

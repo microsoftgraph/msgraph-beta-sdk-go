@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i CloudPcAuditActivityOperationType) String() string {
-    return []string{"CREATE", "DELETE", "PATCH", "OTHER"}[i]
+    return []string{"create", "delete", "patch", "other"}[i]
 }
 func ParseCloudPcAuditActivityOperationType(v string) (interface{}, error) {
     result := CREATE_CLOUDPCAUDITACTIVITYOPERATIONTYPE
-    switch strings.ToUpper(v) {
-        case "CREATE":
+    switch v {
+        case "create":
             result = CREATE_CLOUDPCAUDITACTIVITYOPERATIONTYPE
-        case "DELETE":
+        case "delete":
             result = DELETE_CLOUDPCAUDITACTIVITYOPERATIONTYPE
-        case "PATCH":
+        case "patch":
             result = PATCH_CLOUDPCAUDITACTIVITYOPERATIONTYPE
-        case "OTHER":
+        case "other":
             result = OTHER_CLOUDPCAUDITACTIVITYOPERATIONTYPE
         default:
             return 0, errors.New("Unknown CloudPcAuditActivityOperationType value: " + v)

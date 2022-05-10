@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i CloudPcDeviceImageStatusDetails) String() string {
-    return []string{"INTERNALSERVERERROR", "SOURCEIMAGENOTFOUND", "OSVERSIONNOTSUPPORTED", "SOURCEIMAGEINVALID", "SOURCEIMAGENOTGENERALIZED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"internalServerError", "sourceImageNotFound", "osVersionNotSupported", "sourceImageInvalid", "sourceImageNotGeneralized", "unknownFutureValue"}[i]
 }
 func ParseCloudPcDeviceImageStatusDetails(v string) (interface{}, error) {
     result := INTERNALSERVERERROR_CLOUDPCDEVICEIMAGESTATUSDETAILS
-    switch strings.ToUpper(v) {
-        case "INTERNALSERVERERROR":
+    switch v {
+        case "internalServerError":
             result = INTERNALSERVERERROR_CLOUDPCDEVICEIMAGESTATUSDETAILS
-        case "SOURCEIMAGENOTFOUND":
+        case "sourceImageNotFound":
             result = SOURCEIMAGENOTFOUND_CLOUDPCDEVICEIMAGESTATUSDETAILS
-        case "OSVERSIONNOTSUPPORTED":
+        case "osVersionNotSupported":
             result = OSVERSIONNOTSUPPORTED_CLOUDPCDEVICEIMAGESTATUSDETAILS
-        case "SOURCEIMAGEINVALID":
+        case "sourceImageInvalid":
             result = SOURCEIMAGEINVALID_CLOUDPCDEVICEIMAGESTATUSDETAILS
-        case "SOURCEIMAGENOTGENERALIZED":
+        case "sourceImageNotGeneralized":
             result = SOURCEIMAGENOTGENERALIZED_CLOUDPCDEVICEIMAGESTATUSDETAILS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCDEVICEIMAGESTATUSDETAILS
         default:
             return 0, errors.New("Unknown CloudPcDeviceImageStatusDetails value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i CloudPcProvisioningPolicyImageType) String() string {
-    return []string{"GALLERY", "CUSTOM"}[i]
+    return []string{"gallery", "custom"}[i]
 }
 func ParseCloudPcProvisioningPolicyImageType(v string) (interface{}, error) {
     result := GALLERY_CLOUDPCPROVISIONINGPOLICYIMAGETYPE
-    switch strings.ToUpper(v) {
-        case "GALLERY":
+    switch v {
+        case "gallery":
             result = GALLERY_CLOUDPCPROVISIONINGPOLICYIMAGETYPE
-        case "CUSTOM":
+        case "custom":
             result = CUSTOM_CLOUDPCPROVISIONINGPOLICYIMAGETYPE
         default:
             return 0, errors.New("Unknown CloudPcProvisioningPolicyImageType value: " + v)

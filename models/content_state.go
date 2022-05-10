@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the evaluateApplication method.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ContentState) String() string {
-    return []string{"REST", "MOTION", "USE"}[i]
+    return []string{"rest", "motion", "use"}[i]
 }
 func ParseContentState(v string) (interface{}, error) {
     result := REST_CONTENTSTATE
-    switch strings.ToUpper(v) {
-        case "REST":
+    switch v {
+        case "rest":
             result = REST_CONTENTSTATE
-        case "MOTION":
+        case "motion":
             result = MOTION_CONTENTSTATE
-        case "USE":
+        case "use":
             result = USE_CONTENTSTATE
         default:
             return 0, errors.New("Unknown ContentState value: " + v)

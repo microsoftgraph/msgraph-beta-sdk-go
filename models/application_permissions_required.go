@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i ApplicationPermissionsRequired) String() string {
-    return []string{"UNKNOWN", "ANONYMOUS", "GUEST", "USER", "ADMINISTRATOR", "SYSTEM", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "anonymous", "guest", "user", "administrator", "system", "unknownFutureValue"}[i]
 }
 func ParseApplicationPermissionsRequired(v string) (interface{}, error) {
     result := UNKNOWN_APPLICATIONPERMISSIONSREQUIRED
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_APPLICATIONPERMISSIONSREQUIRED
-        case "ANONYMOUS":
+        case "anonymous":
             result = ANONYMOUS_APPLICATIONPERMISSIONSREQUIRED
-        case "GUEST":
+        case "guest":
             result = GUEST_APPLICATIONPERMISSIONSREQUIRED
-        case "USER":
+        case "user":
             result = USER_APPLICATIONPERMISSIONSREQUIRED
-        case "ADMINISTRATOR":
+        case "administrator":
             result = ADMINISTRATOR_APPLICATIONPERMISSIONSREQUIRED
-        case "SYSTEM":
+        case "system":
             result = SYSTEM_APPLICATIONPERMISSIONSREQUIRED
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_APPLICATIONPERMISSIONSREQUIRED
         default:
             return 0, errors.New("Unknown ApplicationPermissionsRequired value: " + v)

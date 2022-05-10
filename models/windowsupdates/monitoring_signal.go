@@ -1,6 +1,5 @@
 package windowsupdates
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the admin singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i MonitoringSignal) String() string {
-    return []string{"ROLLBACK", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"rollback", "unknownFutureValue"}[i]
 }
 func ParseMonitoringSignal(v string) (interface{}, error) {
     result := ROLLBACK_MONITORINGSIGNAL
-    switch strings.ToUpper(v) {
-        case "ROLLBACK":
+    switch v {
+        case "rollback":
             result = ROLLBACK_MONITORINGSIGNAL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MONITORINGSIGNAL
         default:
             return 0, errors.New("Unknown MonitoringSignal value: " + v)

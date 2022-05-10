@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i UsageRightState) String() string {
-    return []string{"ACTIVE", "INACTIVE", "WARNING", "SUSPENDED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"active", "inactive", "warning", "suspended", "unknownFutureValue"}[i]
 }
 func ParseUsageRightState(v string) (interface{}, error) {
     result := ACTIVE_USAGERIGHTSTATE
-    switch strings.ToUpper(v) {
-        case "ACTIVE":
+    switch v {
+        case "active":
             result = ACTIVE_USAGERIGHTSTATE
-        case "INACTIVE":
+        case "inactive":
             result = INACTIVE_USAGERIGHTSTATE
-        case "WARNING":
+        case "warning":
             result = WARNING_USAGERIGHTSTATE
-        case "SUSPENDED":
+        case "suspended":
             result = SUSPENDED_USAGERIGHTSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USAGERIGHTSTATE
         default:
             return 0, errors.New("Unknown UsageRightState value: " + v)

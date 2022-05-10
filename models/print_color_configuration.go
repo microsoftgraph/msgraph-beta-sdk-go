@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i PrintColorConfiguration) String() string {
-    return []string{"BLACKANDWHITE", "GRAYSCALE", "COLOR", "AUTO"}[i]
+    return []string{"blackAndWhite", "grayscale", "color", "auto"}[i]
 }
 func ParsePrintColorConfiguration(v string) (interface{}, error) {
     result := BLACKANDWHITE_PRINTCOLORCONFIGURATION
-    switch strings.ToUpper(v) {
-        case "BLACKANDWHITE":
+    switch v {
+        case "blackAndWhite":
             result = BLACKANDWHITE_PRINTCOLORCONFIGURATION
-        case "GRAYSCALE":
+        case "grayscale":
             result = GRAYSCALE_PRINTCOLORCONFIGURATION
-        case "COLOR":
+        case "color":
             result = COLOR_PRINTCOLORCONFIGURATION
-        case "AUTO":
+        case "auto":
             result = AUTO_PRINTCOLORCONFIGURATION
         default:
             return 0, errors.New("Unknown PrintColorConfiguration value: " + v)

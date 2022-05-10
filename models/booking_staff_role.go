@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of bookingBusiness entities.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i BookingStaffRole) String() string {
-    return []string{"GUEST", "ADMINISTRATOR", "VIEWER", "EXTERNALGUEST"}[i]
+    return []string{"guest", "administrator", "viewer", "externalGuest"}[i]
 }
 func ParseBookingStaffRole(v string) (interface{}, error) {
     result := GUEST_BOOKINGSTAFFROLE
-    switch strings.ToUpper(v) {
-        case "GUEST":
+    switch v {
+        case "guest":
             result = GUEST_BOOKINGSTAFFROLE
-        case "ADMINISTRATOR":
+        case "administrator":
             result = ADMINISTRATOR_BOOKINGSTAFFROLE
-        case "VIEWER":
+        case "viewer":
             result = VIEWER_BOOKINGSTAFFROLE
-        case "EXTERNALGUEST":
+        case "externalGuest":
             result = EXTERNALGUEST_BOOKINGSTAFFROLE
         default:
             return 0, errors.New("Unknown BookingStaffRole value: " + v)

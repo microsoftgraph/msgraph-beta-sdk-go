@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type GroupPolicyMigrationReadiness int
 
 const (
+    // No Intune coverage
     NONE_GROUPPOLICYMIGRATIONREADINESS GroupPolicyMigrationReadiness = iota
+    // Partial Intune coverage
     PARTIAL_GROUPPOLICYMIGRATIONREADINESS
+    // Complete Intune coverage
     COMPLETE_GROUPPOLICYMIGRATIONREADINESS
+    // Error when analyzing coverage
     ERROR_GROUPPOLICYMIGRATIONREADINESS
+    // No Group Policy settings in GPO
     NOTAPPLICABLE_GROUPPOLICYMIGRATIONREADINESS
 )
 
 func (i GroupPolicyMigrationReadiness) String() string {
-    return []string{"NONE", "PARTIAL", "COMPLETE", "ERROR", "NOTAPPLICABLE"}[i]
+    return []string{"none", "partial", "complete", "error", "notApplicable"}[i]
 }
 func ParseGroupPolicyMigrationReadiness(v string) (interface{}, error) {
     result := NONE_GROUPPOLICYMIGRATIONREADINESS
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_GROUPPOLICYMIGRATIONREADINESS
-        case "PARTIAL":
+        case "partial":
             result = PARTIAL_GROUPPOLICYMIGRATIONREADINESS
-        case "COMPLETE":
+        case "complete":
             result = COMPLETE_GROUPPOLICYMIGRATIONREADINESS
-        case "ERROR":
+        case "error":
             result = ERROR_GROUPPOLICYMIGRATIONREADINESS
-        case "NOTAPPLICABLE":
+        case "notApplicable":
             result = NOTAPPLICABLE_GROUPPOLICYMIGRATIONREADINESS
         default:
             return 0, errors.New("Unknown GroupPolicyMigrationReadiness value: " + v)

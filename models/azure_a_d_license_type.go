@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the getAzureADLicenseUsage method.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i AzureADLicenseType) String() string {
-    return []string{"NONE", "FREE", "BASIC", "PREMIUMP1", "PREMIUMP2", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "free", "basic", "premiumP1", "premiumP2", "unknownFutureValue"}[i]
 }
 func ParseAzureADLicenseType(v string) (interface{}, error) {
     result := NONE_AZUREADLICENSETYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_AZUREADLICENSETYPE
-        case "FREE":
+        case "free":
             result = FREE_AZUREADLICENSETYPE
-        case "BASIC":
+        case "basic":
             result = BASIC_AZUREADLICENSETYPE
-        case "PREMIUMP1":
+        case "premiumP1":
             result = PREMIUMP1_AZUREADLICENSETYPE
-        case "PREMIUMP2":
+        case "premiumP2":
             result = PREMIUMP2_AZUREADLICENSETYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AZUREADLICENSETYPE
         default:
             return 0, errors.New("Unknown AzureADLicenseType value: " + v)

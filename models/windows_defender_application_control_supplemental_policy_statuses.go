@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type WindowsDefenderApplicationControlSupplementalPolicyStatuses int
 
 const (
+    // The status of the WindowsDefenderApplicationControl supplemental policy is not known.
     UNKNOWN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES WindowsDefenderApplicationControlSupplementalPolicyStatuses = iota
+    // The WindowsDefenderApplicationControl supplemental policy is in effect.
     SUCCESS_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+    // The WindowsDefenderApplicationControl supplemental policy is structurally okay but there is an error with authorizing the token.
     TOKENERROR_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+    // The token does not authorize this WindowsDefenderApplicationControl supplemental policy.
     NOTAUTHORIZEDBYTOKEN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+    // The WindowsDefenderApplicationControl supplemental policy is not found.
     POLICYNOTFOUND_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
 )
 
 func (i WindowsDefenderApplicationControlSupplementalPolicyStatuses) String() string {
-    return []string{"UNKNOWN", "SUCCESS", "TOKENERROR", "NOTAUTHORIZEDBYTOKEN", "POLICYNOTFOUND"}[i]
+    return []string{"unknown", "success", "tokenError", "notAuthorizedByToken", "policyNotFound"}[i]
 }
 func ParseWindowsDefenderApplicationControlSupplementalPolicyStatuses(v string) (interface{}, error) {
     result := UNKNOWN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-        case "SUCCESS":
+        case "success":
             result = SUCCESS_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-        case "TOKENERROR":
+        case "tokenError":
             result = TOKENERROR_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-        case "NOTAUTHORIZEDBYTOKEN":
+        case "notAuthorizedByToken":
             result = NOTAUTHORIZEDBYTOKEN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-        case "POLICYNOTFOUND":
+        case "policyNotFound":
             result = POLICYNOTFOUND_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
         default:
             return 0, errors.New("Unknown WindowsDefenderApplicationControlSupplementalPolicyStatuses value: " + v)

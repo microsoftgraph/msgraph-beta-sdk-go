@@ -1,40 +1,46 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type DeviceGuardVirtualizationBasedSecurityState int
 
 const (
+    // Running
     RUNNING_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE DeviceGuardVirtualizationBasedSecurityState = iota
+    // Root required
     REBOOTREQUIRED_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
+    // 64 bit architecture required
     REQUIRE64BITARCHITECTURE_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
+    // Not licensed
     NOTLICENSED_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
+    // Not configured
     NOTCONFIGURED_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
+    // System does not meet hardware requirements
     DOESNOTMEETHARDWAREREQUIREMENTS_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
+    // Other. Event logs in microsoft-Windows-DeviceGuard have more details.
     OTHER_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
 )
 
 func (i DeviceGuardVirtualizationBasedSecurityState) String() string {
-    return []string{"RUNNING", "REBOOTREQUIRED", "REQUIRE64BITARCHITECTURE", "NOTLICENSED", "NOTCONFIGURED", "DOESNOTMEETHARDWAREREQUIREMENTS", "OTHER"}[i]
+    return []string{"running", "rebootRequired", "require64BitArchitecture", "notLicensed", "notConfigured", "doesNotMeetHardwareRequirements", "other"}[i]
 }
 func ParseDeviceGuardVirtualizationBasedSecurityState(v string) (interface{}, error) {
     result := RUNNING_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
-    switch strings.ToUpper(v) {
-        case "RUNNING":
+    switch v {
+        case "running":
             result = RUNNING_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
-        case "REBOOTREQUIRED":
+        case "rebootRequired":
             result = REBOOTREQUIRED_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
-        case "REQUIRE64BITARCHITECTURE":
+        case "require64BitArchitecture":
             result = REQUIRE64BITARCHITECTURE_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
-        case "NOTLICENSED":
+        case "notLicensed":
             result = NOTLICENSED_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
-        case "NOTCONFIGURED":
+        case "notConfigured":
             result = NOTCONFIGURED_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
-        case "DOESNOTMEETHARDWAREREQUIREMENTS":
+        case "doesNotMeetHardwareRequirements":
             result = DOESNOTMEETHARDWAREREQUIREMENTS_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
-        case "OTHER":
+        case "other":
             result = OTHER_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
         default:
             return 0, errors.New("Unknown DeviceGuardVirtualizationBasedSecurityState value: " + v)

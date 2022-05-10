@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the collection of externalConnection entities.
+// Provides operations to manage the external singleton.
 type BinaryOperator int
 
 const (
@@ -12,14 +11,14 @@ const (
 )
 
 func (i BinaryOperator) String() string {
-    return []string{"OR", "AND"}[i]
+    return []string{"or", "and"}[i]
 }
 func ParseBinaryOperator(v string) (interface{}, error) {
     result := OR_BINARYOPERATOR
-    switch strings.ToUpper(v) {
-        case "OR":
+    switch v {
+        case "or":
             result = OR_BINARYOPERATOR
-        case "AND":
+        case "and":
             result = AND_BINARYOPERATOR
         default:
             return 0, errors.New("Unknown BinaryOperator value: " + v)

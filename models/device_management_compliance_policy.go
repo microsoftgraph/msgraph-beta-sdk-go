@@ -32,7 +32,7 @@ type DeviceManagementCompliancePolicy struct {
     settingCount *int32
     // Policy settings
     settings []DeviceManagementConfigurationSettingable
-    // Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+    // Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
     technologies *DeviceManagementConfigurationTechnologies
 }
 // NewDeviceManagementCompliancePolicy instantiates a new deviceManagementCompliancePolicy and sets the default values.
@@ -293,7 +293,7 @@ func (m *DeviceManagementCompliancePolicy) GetSettings()([]DeviceManagementConfi
         return m.settings
     }
 }
-// GetTechnologies gets the technologies property value. Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// GetTechnologies gets the technologies property value. Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
 func (m *DeviceManagementCompliancePolicy) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
     if m == nil {
         return nil
@@ -473,7 +473,7 @@ func (m *DeviceManagementCompliancePolicy) SetSettings(value []DeviceManagementC
         m.settings = value
     }
 }
-// SetTechnologies sets the technologies property value. Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// SetTechnologies sets the technologies property value. Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
 func (m *DeviceManagementCompliancePolicy) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
     if m != nil {
         m.technologies = value

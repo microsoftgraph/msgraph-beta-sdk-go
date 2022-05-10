@@ -1,6 +1,5 @@
 package managedtenants
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -19,28 +18,28 @@ const (
 )
 
 func (i ManagementParameterValueType) String() string {
-    return []string{"STRING", "INTEGER", "BOOLEAN", "GUID", "STRINGCOLLECTION", "INTEGERCOLLECTION", "BOOLEANCOLLECTION", "GUIDCOLLECTION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"string", "integer", "boolean", "guid", "stringCollection", "integerCollection", "booleanCollection", "guidCollection", "unknownFutureValue"}[i]
 }
 func ParseManagementParameterValueType(v string) (interface{}, error) {
     result := STRING_MANAGEMENTPARAMETERVALUETYPE
-    switch strings.ToUpper(v) {
-        case "STRING":
+    switch v {
+        case "string":
             result = STRING_MANAGEMENTPARAMETERVALUETYPE
-        case "INTEGER":
+        case "integer":
             result = INTEGER_MANAGEMENTPARAMETERVALUETYPE
-        case "BOOLEAN":
+        case "boolean":
             result = BOOLEAN_MANAGEMENTPARAMETERVALUETYPE
-        case "GUID":
+        case "guid":
             result = GUID_MANAGEMENTPARAMETERVALUETYPE
-        case "STRINGCOLLECTION":
+        case "stringCollection":
             result = STRINGCOLLECTION_MANAGEMENTPARAMETERVALUETYPE
-        case "INTEGERCOLLECTION":
+        case "integerCollection":
             result = INTEGERCOLLECTION_MANAGEMENTPARAMETERVALUETYPE
-        case "BOOLEANCOLLECTION":
+        case "booleanCollection":
             result = BOOLEANCOLLECTION_MANAGEMENTPARAMETERVALUETYPE
-        case "GUIDCOLLECTION":
+        case "guidCollection":
             result = GUIDCOLLECTION_MANAGEMENTPARAMETERVALUETYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MANAGEMENTPARAMETERVALUETYPE
         default:
             return 0, errors.New("Unknown ManagementParameterValueType value: " + v)

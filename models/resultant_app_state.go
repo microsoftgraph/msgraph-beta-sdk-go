@@ -1,40 +1,46 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type ResultantAppState int
 
 const (
+    // The application is not applicable.
     NOTAPPLICABLE_RESULTANTAPPSTATE ResultantAppState = iota
+    // The application is installed with no errors.
     INSTALLED_RESULTANTAPPSTATE
+    // The application failed to install.
     FAILED_RESULTANTAPPSTATE
+    // The application is not installed.
     NOTINSTALLED_RESULTANTAPPSTATE
+    // The application failed to uninstall.
     UNINSTALLFAILED_RESULTANTAPPSTATE
+    // The installation of the application is in progress.
     PENDINGINSTALL_RESULTANTAPPSTATE
+    // The status of the application is unknown.
     UNKNOWN_RESULTANTAPPSTATE
 )
 
 func (i ResultantAppState) String() string {
-    return []string{"NOTAPPLICABLE", "INSTALLED", "FAILED", "NOTINSTALLED", "UNINSTALLFAILED", "PENDINGINSTALL", "UNKNOWN"}[i]
+    return []string{"notApplicable", "installed", "failed", "notInstalled", "uninstallFailed", "pendingInstall", "unknown"}[i]
 }
 func ParseResultantAppState(v string) (interface{}, error) {
     result := NOTAPPLICABLE_RESULTANTAPPSTATE
-    switch strings.ToUpper(v) {
-        case "NOTAPPLICABLE":
+    switch v {
+        case "notApplicable":
             result = NOTAPPLICABLE_RESULTANTAPPSTATE
-        case "INSTALLED":
+        case "installed":
             result = INSTALLED_RESULTANTAPPSTATE
-        case "FAILED":
+        case "failed":
             result = FAILED_RESULTANTAPPSTATE
-        case "NOTINSTALLED":
+        case "notInstalled":
             result = NOTINSTALLED_RESULTANTAPPSTATE
-        case "UNINSTALLFAILED":
+        case "uninstallFailed":
             result = UNINSTALLFAILED_RESULTANTAPPSTATE
-        case "PENDINGINSTALL":
+        case "pendingInstall":
             result = PENDINGINSTALL_RESULTANTAPPSTATE
-        case "UNKNOWN":
+        case "unknown":
             result = UNKNOWN_RESULTANTAPPSTATE
         default:
             return 0, errors.New("Unknown ResultantAppState value: " + v)

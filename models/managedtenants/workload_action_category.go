@@ -1,6 +1,5 @@
 package managedtenants
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i WorkloadActionCategory) String() string {
-    return []string{"AUTOMATED", "MANUAL", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"automated", "manual", "unknownFutureValue"}[i]
 }
 func ParseWorkloadActionCategory(v string) (interface{}, error) {
     result := AUTOMATED_WORKLOADACTIONCATEGORY
-    switch strings.ToUpper(v) {
-        case "AUTOMATED":
+    switch v {
+        case "automated":
             result = AUTOMATED_WORKLOADACTIONCATEGORY
-        case "MANUAL":
+        case "manual":
             result = MANUAL_WORKLOADACTIONCATEGORY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WORKLOADACTIONCATEGORY
         default:
             return 0, errors.New("Unknown WorkloadActionCategory value: " + v)

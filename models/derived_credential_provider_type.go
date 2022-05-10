@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DerivedCredentialProviderType int
 
 const (
+    // No Derived Credential Provider Configured.
     NOTCONFIGURED_DERIVEDCREDENTIALPROVIDERTYPE DerivedCredentialProviderType = iota
+    // Entrust.
     ENTRUSTDATACARD_DERIVEDCREDENTIALPROVIDERTYPE
+    // Purebred - Defense Information Systems Agency.
     PUREBRED_DERIVEDCREDENTIALPROVIDERTYPE
+    // Xtec - AuthentX.
     XTEC_DERIVEDCREDENTIALPROVIDERTYPE
+    // Intercede.
     INTERCEDE_DERIVEDCREDENTIALPROVIDERTYPE
 )
 
 func (i DerivedCredentialProviderType) String() string {
-    return []string{"NOTCONFIGURED", "ENTRUSTDATACARD", "PUREBRED", "XTEC", "INTERCEDE"}[i]
+    return []string{"notConfigured", "entrustDataCard", "purebred", "xTec", "intercede"}[i]
 }
 func ParseDerivedCredentialProviderType(v string) (interface{}, error) {
     result := NOTCONFIGURED_DERIVEDCREDENTIALPROVIDERTYPE
-    switch strings.ToUpper(v) {
-        case "NOTCONFIGURED":
+    switch v {
+        case "notConfigured":
             result = NOTCONFIGURED_DERIVEDCREDENTIALPROVIDERTYPE
-        case "ENTRUSTDATACARD":
+        case "entrustDataCard":
             result = ENTRUSTDATACARD_DERIVEDCREDENTIALPROVIDERTYPE
-        case "PUREBRED":
+        case "purebred":
             result = PUREBRED_DERIVEDCREDENTIALPROVIDERTYPE
-        case "XTEC":
+        case "xTec":
             result = XTEC_DERIVEDCREDENTIALPROVIDERTYPE
-        case "INTERCEDE":
+        case "intercede":
             result = INTERCEDE_DERIVEDCREDENTIALPROVIDERTYPE
         default:
             return 0, errors.New("Unknown DerivedCredentialProviderType value: " + v)

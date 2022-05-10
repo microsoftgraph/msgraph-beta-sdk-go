@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the teamwork singleton.
@@ -21,32 +20,32 @@ const (
 )
 
 func (i TeamworkDeviceType) String() string {
-    return []string{"UNKNOWN", "IPPHONE", "TEAMSROOM", "SURFACEHUB", "COLLABORATIONBAR", "TEAMSDISPLAY", "TOUCHCONSOLE", "LOWCOSTPHONE", "TEAMSPANEL", "SIP", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "ipPhone", "teamsRoom", "surfaceHub", "collaborationBar", "teamsDisplay", "touchConsole", "lowCostPhone", "teamsPanel", "sip", "unknownFutureValue"}[i]
 }
 func ParseTeamworkDeviceType(v string) (interface{}, error) {
     result := UNKNOWN_TEAMWORKDEVICETYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_TEAMWORKDEVICETYPE
-        case "IPPHONE":
+        case "ipPhone":
             result = IPPHONE_TEAMWORKDEVICETYPE
-        case "TEAMSROOM":
+        case "teamsRoom":
             result = TEAMSROOM_TEAMWORKDEVICETYPE
-        case "SURFACEHUB":
+        case "surfaceHub":
             result = SURFACEHUB_TEAMWORKDEVICETYPE
-        case "COLLABORATIONBAR":
+        case "collaborationBar":
             result = COLLABORATIONBAR_TEAMWORKDEVICETYPE
-        case "TEAMSDISPLAY":
+        case "teamsDisplay":
             result = TEAMSDISPLAY_TEAMWORKDEVICETYPE
-        case "TOUCHCONSOLE":
+        case "touchConsole":
             result = TOUCHCONSOLE_TEAMWORKDEVICETYPE
-        case "LOWCOSTPHONE":
+        case "lowCostPhone":
             result = LOWCOSTPHONE_TEAMWORKDEVICETYPE
-        case "TEAMSPANEL":
+        case "teamsPanel":
             result = TEAMSPANEL_TEAMWORKDEVICETYPE
-        case "SIP":
+        case "sip":
             result = SIP_TEAMWORKDEVICETYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKDEVICETYPE
         default:
             return 0, errors.New("Unknown TeamworkDeviceType value: " + v)

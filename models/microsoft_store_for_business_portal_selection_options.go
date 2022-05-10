@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type MicrosoftStoreForBusinessPortalSelectionOptions int
 
 const (
+    // This option is not available for the account
     NONE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS MicrosoftStoreForBusinessPortalSelectionOptions = iota
+    // Intune Company Portal only.
     COMPANYPORTAL_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
+    // MSFB Private store only.
     PRIVATESTORE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
 )
 
 func (i MicrosoftStoreForBusinessPortalSelectionOptions) String() string {
-    return []string{"NONE", "COMPANYPORTAL", "PRIVATESTORE"}[i]
+    return []string{"none", "companyPortal", "privateStore"}[i]
 }
 func ParseMicrosoftStoreForBusinessPortalSelectionOptions(v string) (interface{}, error) {
     result := NONE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
-        case "COMPANYPORTAL":
+        case "companyPortal":
             result = COMPANYPORTAL_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
-        case "PRIVATESTORE":
+        case "privateStore":
             result = PRIVATESTORE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
         default:
             return 0, errors.New("Unknown MicrosoftStoreForBusinessPortalSelectionOptions value: " + v)

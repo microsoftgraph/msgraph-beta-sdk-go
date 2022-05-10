@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type DeviceGuardLocalSystemAuthorityCredentialGuardState int
 
 const (
+    // Running
     RUNNING_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE DeviceGuardLocalSystemAuthorityCredentialGuardState = iota
+    // Reboot required
     REBOOTREQUIRED_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
+    // Not licensed for Credential Guard
     NOTLICENSED_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
+    // Not configured
     NOTCONFIGURED_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
+    // Virtualization Based security is not running
     VIRTUALIZATIONBASEDSECURITYNOTRUNNING_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
 )
 
 func (i DeviceGuardLocalSystemAuthorityCredentialGuardState) String() string {
-    return []string{"RUNNING", "REBOOTREQUIRED", "NOTLICENSED", "NOTCONFIGURED", "VIRTUALIZATIONBASEDSECURITYNOTRUNNING"}[i]
+    return []string{"running", "rebootRequired", "notLicensed", "notConfigured", "virtualizationBasedSecurityNotRunning"}[i]
 }
 func ParseDeviceGuardLocalSystemAuthorityCredentialGuardState(v string) (interface{}, error) {
     result := RUNNING_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
-    switch strings.ToUpper(v) {
-        case "RUNNING":
+    switch v {
+        case "running":
             result = RUNNING_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
-        case "REBOOTREQUIRED":
+        case "rebootRequired":
             result = REBOOTREQUIRED_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
-        case "NOTLICENSED":
+        case "notLicensed":
             result = NOTLICENSED_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
-        case "NOTCONFIGURED":
+        case "notConfigured":
             result = NOTCONFIGURED_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
-        case "VIRTUALIZATIONBASEDSECURITYNOTRUNNING":
+        case "virtualizationBasedSecurityNotRunning":
             result = VIRTUALIZATIONBASEDSECURITYNOTRUNNING_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
         default:
             return 0, errors.New("Unknown DeviceGuardLocalSystemAuthorityCredentialGuardState value: " + v)

@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type DeviceGuardVirtualizationBasedSecurityHardwareRequirementState int
 
 const (
+    // System meets hardware configuration requirements
     MEETHARDWAREREQUIREMENTS_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYHARDWAREREQUIREMENTSTATE DeviceGuardVirtualizationBasedSecurityHardwareRequirementState = iota
+    // Secure boot required
     SECUREBOOTREQUIRED_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYHARDWAREREQUIREMENTSTATE
+    // DMA protection required
     DMAPROTECTIONREQUIRED_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYHARDWAREREQUIREMENTSTATE
+    // HyperV not supported for Guest VM
     HYPERVNOTSUPPORTEDFORGUESTVM_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYHARDWAREREQUIREMENTSTATE
+    // HyperV feature is not available
     HYPERVNOTAVAILABLE_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYHARDWAREREQUIREMENTSTATE
 )
 
 func (i DeviceGuardVirtualizationBasedSecurityHardwareRequirementState) String() string {
-    return []string{"MEETHARDWAREREQUIREMENTS", "SECUREBOOTREQUIRED", "DMAPROTECTIONREQUIRED", "HYPERVNOTSUPPORTEDFORGUESTVM", "HYPERVNOTAVAILABLE"}[i]
+    return []string{"meetHardwareRequirements", "secureBootRequired", "dmaProtectionRequired", "hyperVNotSupportedForGuestVM", "hyperVNotAvailable"}[i]
 }
 func ParseDeviceGuardVirtualizationBasedSecurityHardwareRequirementState(v string) (interface{}, error) {
     result := MEETHARDWAREREQUIREMENTS_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYHARDWAREREQUIREMENTSTATE
-    switch strings.ToUpper(v) {
-        case "MEETHARDWAREREQUIREMENTS":
+    switch v {
+        case "meetHardwareRequirements":
             result = MEETHARDWAREREQUIREMENTS_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYHARDWAREREQUIREMENTSTATE
-        case "SECUREBOOTREQUIRED":
+        case "secureBootRequired":
             result = SECUREBOOTREQUIRED_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYHARDWAREREQUIREMENTSTATE
-        case "DMAPROTECTIONREQUIRED":
+        case "dmaProtectionRequired":
             result = DMAPROTECTIONREQUIRED_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYHARDWAREREQUIREMENTSTATE
-        case "HYPERVNOTSUPPORTEDFORGUESTVM":
+        case "hyperVNotSupportedForGuestVM":
             result = HYPERVNOTSUPPORTEDFORGUESTVM_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYHARDWAREREQUIREMENTSTATE
-        case "HYPERVNOTAVAILABLE":
+        case "hyperVNotAvailable":
             result = HYPERVNOTAVAILABLE_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYHARDWAREREQUIREMENTSTATE
         default:
             return 0, errors.New("Unknown DeviceGuardVirtualizationBasedSecurityHardwareRequirementState value: " + v)

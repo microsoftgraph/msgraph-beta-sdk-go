@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i TaskStatus_v2) String() string {
-    return []string{"NOTSTARTED", "INPROGRESS", "COMPLETED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notStarted", "inProgress", "completed", "unknownFutureValue"}[i]
 }
 func ParseTaskStatus_v2(v string) (interface{}, error) {
     result := NOTSTARTED_TASKSTATUS_V2
-    switch strings.ToUpper(v) {
-        case "NOTSTARTED":
+    switch v {
+        case "notStarted":
             result = NOTSTARTED_TASKSTATUS_V2
-        case "INPROGRESS":
+        case "inProgress":
             result = INPROGRESS_TASKSTATUS_V2
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_TASKSTATUS_V2
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TASKSTATUS_V2
         default:
             return 0, errors.New("Unknown TaskStatus_v2 value: " + v)

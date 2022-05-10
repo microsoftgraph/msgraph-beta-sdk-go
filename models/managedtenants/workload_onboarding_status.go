@@ -1,6 +1,5 @@
 package managedtenants
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i WorkloadOnboardingStatus) String() string {
-    return []string{"NOTONBOARDED", "ONBOARDED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notOnboarded", "onboarded", "unknownFutureValue"}[i]
 }
 func ParseWorkloadOnboardingStatus(v string) (interface{}, error) {
     result := NOTONBOARDED_WORKLOADONBOARDINGSTATUS
-    switch strings.ToUpper(v) {
-        case "NOTONBOARDED":
+    switch v {
+        case "notOnboarded":
             result = NOTONBOARDED_WORKLOADONBOARDINGSTATUS
-        case "ONBOARDED":
+        case "onboarded":
             result = ONBOARDED_WORKLOADONBOARDINGSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WORKLOADONBOARDINGSTATUS
         default:
             return 0, errors.New("Unknown WorkloadOnboardingStatus value: " + v)

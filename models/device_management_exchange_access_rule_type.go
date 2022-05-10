@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementExchangeAccessRuleType int
 
 const (
+    // Family of devices
     FAMILY_DEVICEMANAGEMENTEXCHANGEACCESSRULETYPE DeviceManagementExchangeAccessRuleType = iota
+    // Specific model of device
     MODEL_DEVICEMANAGEMENTEXCHANGEACCESSRULETYPE
 )
 
 func (i DeviceManagementExchangeAccessRuleType) String() string {
-    return []string{"FAMILY", "MODEL"}[i]
+    return []string{"family", "model"}[i]
 }
 func ParseDeviceManagementExchangeAccessRuleType(v string) (interface{}, error) {
     result := FAMILY_DEVICEMANAGEMENTEXCHANGEACCESSRULETYPE
-    switch strings.ToUpper(v) {
-        case "FAMILY":
+    switch v {
+        case "family":
             result = FAMILY_DEVICEMANAGEMENTEXCHANGEACCESSRULETYPE
-        case "MODEL":
+        case "model":
             result = MODEL_DEVICEMANAGEMENTEXCHANGEACCESSRULETYPE
         default:
             return 0, errors.New("Unknown DeviceManagementExchangeAccessRuleType value: " + v)

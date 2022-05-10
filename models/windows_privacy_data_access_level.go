@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the windowsPrivacyAccessControls method.
 type WindowsPrivacyDataAccessLevel int
 
 const (
+    // No access level specified, no intents. Device may behave either as in UserInControl or ForceAllow. It may depend on the privacy data been accessed, Windows versions and other factors.
     NOTCONFIGURED_WINDOWSPRIVACYDATAACCESSLEVEL WindowsPrivacyDataAccessLevel = iota
+    // Apps will be allowed to access the specified privacy data.
     FORCEALLOW_WINDOWSPRIVACYDATAACCESSLEVEL
+    // Apps will be denied to access specified privacy data.
     FORCEDENY_WINDOWSPRIVACYDATAACCESSLEVEL
+    // Users will be prompted when apps try to access specified privacy data.
     USERINCONTROL_WINDOWSPRIVACYDATAACCESSLEVEL
 )
 
 func (i WindowsPrivacyDataAccessLevel) String() string {
-    return []string{"NOTCONFIGURED", "FORCEALLOW", "FORCEDENY", "USERINCONTROL"}[i]
+    return []string{"notConfigured", "forceAllow", "forceDeny", "userInControl"}[i]
 }
 func ParseWindowsPrivacyDataAccessLevel(v string) (interface{}, error) {
     result := NOTCONFIGURED_WINDOWSPRIVACYDATAACCESSLEVEL
-    switch strings.ToUpper(v) {
-        case "NOTCONFIGURED":
+    switch v {
+        case "notConfigured":
             result = NOTCONFIGURED_WINDOWSPRIVACYDATAACCESSLEVEL
-        case "FORCEALLOW":
+        case "forceAllow":
             result = FORCEALLOW_WINDOWSPRIVACYDATAACCESSLEVEL
-        case "FORCEDENY":
+        case "forceDeny":
             result = FORCEDENY_WINDOWSPRIVACYDATAACCESSLEVEL
-        case "USERINCONTROL":
+        case "userInControl":
             result = USERINCONTROL_WINDOWSPRIVACYDATAACCESSLEVEL
         default:
             return 0, errors.New("Unknown WindowsPrivacyDataAccessLevel value: " + v)

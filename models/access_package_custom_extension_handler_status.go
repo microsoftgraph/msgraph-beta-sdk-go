@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AccessPackageCustomExtensionHandlerStatus) String() string {
-    return []string{"REQUESTSENT", "REQUESTRECEIVED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"requestSent", "requestReceived", "unknownFutureValue"}[i]
 }
 func ParseAccessPackageCustomExtensionHandlerStatus(v string) (interface{}, error) {
     result := REQUESTSENT_ACCESSPACKAGECUSTOMEXTENSIONHANDLERSTATUS
-    switch strings.ToUpper(v) {
-        case "REQUESTSENT":
+    switch v {
+        case "requestSent":
             result = REQUESTSENT_ACCESSPACKAGECUSTOMEXTENSIONHANDLERSTATUS
-        case "REQUESTRECEIVED":
+        case "requestReceived":
             result = REQUESTRECEIVED_ACCESSPACKAGECUSTOMEXTENSIONHANDLERSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGECUSTOMEXTENSIONHANDLERSTATUS
         default:
             return 0, errors.New("Unknown AccessPackageCustomExtensionHandlerStatus value: " + v)

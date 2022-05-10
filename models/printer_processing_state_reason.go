@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -45,80 +44,80 @@ const (
 )
 
 func (i PrinterProcessingStateReason) String() string {
-    return []string{"PAUSED", "MEDIAJAM", "MEDIANEEDED", "MEDIALOW", "MEDIAEMPTY", "COVEROPEN", "INTERLOCKOPEN", "OUTPUTTRAYMISSING", "OUTPUTAREAFULL", "MARKERSUPPLYLOW", "MARKERSUPPLYEMPTY", "INPUTTRAYMISSING", "OUTPUTAREAALMOSTFULL", "MARKERWASTEALMOSTFULL", "MARKERWASTEFULL", "FUSEROVERTEMP", "FUSERUNDERTEMP", "OTHER", "NONE", "MOVINGTOPAUSED", "SHUTDOWN", "CONNECTINGTODEVICE", "TIMEDOUT", "STOPPING", "STOPPEDPARTIALLY", "TONERLOW", "TONEREMPTY", "SPOOLAREAFULL", "DOOROPEN", "OPTICALPHOTOCONDUCTORNEARENDOFLIFE", "OPTICALPHOTOCONDUCTORLIFEOVER", "DEVELOPERLOW", "DEVELOPEREMPTY", "INTERPRETERRESOURCEUNAVAILABLE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"paused", "mediaJam", "mediaNeeded", "mediaLow", "mediaEmpty", "coverOpen", "interlockOpen", "outputTrayMissing", "outputAreaFull", "markerSupplyLow", "markerSupplyEmpty", "inputTrayMissing", "outputAreaAlmostFull", "markerWasteAlmostFull", "markerWasteFull", "fuserOverTemp", "fuserUnderTemp", "other", "none", "movingToPaused", "shutdown", "connectingToDevice", "timedOut", "stopping", "stoppedPartially", "tonerLow", "tonerEmpty", "spoolAreaFull", "doorOpen", "opticalPhotoConductorNearEndOfLife", "opticalPhotoConductorLifeOver", "developerLow", "developerEmpty", "interpreterResourceUnavailable", "unknownFutureValue"}[i]
 }
 func ParsePrinterProcessingStateReason(v string) (interface{}, error) {
     result := PAUSED_PRINTERPROCESSINGSTATEREASON
-    switch strings.ToUpper(v) {
-        case "PAUSED":
+    switch v {
+        case "paused":
             result = PAUSED_PRINTERPROCESSINGSTATEREASON
-        case "MEDIAJAM":
+        case "mediaJam":
             result = MEDIAJAM_PRINTERPROCESSINGSTATEREASON
-        case "MEDIANEEDED":
+        case "mediaNeeded":
             result = MEDIANEEDED_PRINTERPROCESSINGSTATEREASON
-        case "MEDIALOW":
+        case "mediaLow":
             result = MEDIALOW_PRINTERPROCESSINGSTATEREASON
-        case "MEDIAEMPTY":
+        case "mediaEmpty":
             result = MEDIAEMPTY_PRINTERPROCESSINGSTATEREASON
-        case "COVEROPEN":
+        case "coverOpen":
             result = COVEROPEN_PRINTERPROCESSINGSTATEREASON
-        case "INTERLOCKOPEN":
+        case "interlockOpen":
             result = INTERLOCKOPEN_PRINTERPROCESSINGSTATEREASON
-        case "OUTPUTTRAYMISSING":
+        case "outputTrayMissing":
             result = OUTPUTTRAYMISSING_PRINTERPROCESSINGSTATEREASON
-        case "OUTPUTAREAFULL":
+        case "outputAreaFull":
             result = OUTPUTAREAFULL_PRINTERPROCESSINGSTATEREASON
-        case "MARKERSUPPLYLOW":
+        case "markerSupplyLow":
             result = MARKERSUPPLYLOW_PRINTERPROCESSINGSTATEREASON
-        case "MARKERSUPPLYEMPTY":
+        case "markerSupplyEmpty":
             result = MARKERSUPPLYEMPTY_PRINTERPROCESSINGSTATEREASON
-        case "INPUTTRAYMISSING":
+        case "inputTrayMissing":
             result = INPUTTRAYMISSING_PRINTERPROCESSINGSTATEREASON
-        case "OUTPUTAREAALMOSTFULL":
+        case "outputAreaAlmostFull":
             result = OUTPUTAREAALMOSTFULL_PRINTERPROCESSINGSTATEREASON
-        case "MARKERWASTEALMOSTFULL":
+        case "markerWasteAlmostFull":
             result = MARKERWASTEALMOSTFULL_PRINTERPROCESSINGSTATEREASON
-        case "MARKERWASTEFULL":
+        case "markerWasteFull":
             result = MARKERWASTEFULL_PRINTERPROCESSINGSTATEREASON
-        case "FUSEROVERTEMP":
+        case "fuserOverTemp":
             result = FUSEROVERTEMP_PRINTERPROCESSINGSTATEREASON
-        case "FUSERUNDERTEMP":
+        case "fuserUnderTemp":
             result = FUSERUNDERTEMP_PRINTERPROCESSINGSTATEREASON
-        case "OTHER":
+        case "other":
             result = OTHER_PRINTERPROCESSINGSTATEREASON
-        case "NONE":
+        case "none":
             result = NONE_PRINTERPROCESSINGSTATEREASON
-        case "MOVINGTOPAUSED":
+        case "movingToPaused":
             result = MOVINGTOPAUSED_PRINTERPROCESSINGSTATEREASON
-        case "SHUTDOWN":
+        case "shutdown":
             result = SHUTDOWN_PRINTERPROCESSINGSTATEREASON
-        case "CONNECTINGTODEVICE":
+        case "connectingToDevice":
             result = CONNECTINGTODEVICE_PRINTERPROCESSINGSTATEREASON
-        case "TIMEDOUT":
+        case "timedOut":
             result = TIMEDOUT_PRINTERPROCESSINGSTATEREASON
-        case "STOPPING":
+        case "stopping":
             result = STOPPING_PRINTERPROCESSINGSTATEREASON
-        case "STOPPEDPARTIALLY":
+        case "stoppedPartially":
             result = STOPPEDPARTIALLY_PRINTERPROCESSINGSTATEREASON
-        case "TONERLOW":
+        case "tonerLow":
             result = TONERLOW_PRINTERPROCESSINGSTATEREASON
-        case "TONEREMPTY":
+        case "tonerEmpty":
             result = TONEREMPTY_PRINTERPROCESSINGSTATEREASON
-        case "SPOOLAREAFULL":
+        case "spoolAreaFull":
             result = SPOOLAREAFULL_PRINTERPROCESSINGSTATEREASON
-        case "DOOROPEN":
+        case "doorOpen":
             result = DOOROPEN_PRINTERPROCESSINGSTATEREASON
-        case "OPTICALPHOTOCONDUCTORNEARENDOFLIFE":
+        case "opticalPhotoConductorNearEndOfLife":
             result = OPTICALPHOTOCONDUCTORNEARENDOFLIFE_PRINTERPROCESSINGSTATEREASON
-        case "OPTICALPHOTOCONDUCTORLIFEOVER":
+        case "opticalPhotoConductorLifeOver":
             result = OPTICALPHOTOCONDUCTORLIFEOVER_PRINTERPROCESSINGSTATEREASON
-        case "DEVELOPERLOW":
+        case "developerLow":
             result = DEVELOPERLOW_PRINTERPROCESSINGSTATEREASON
-        case "DEVELOPEREMPTY":
+        case "developerEmpty":
             result = DEVELOPEREMPTY_PRINTERPROCESSINGSTATEREASON
-        case "INTERPRETERRESOURCEUNAVAILABLE":
+        case "interpreterResourceUnavailable":
             result = INTERPRETERRESOURCEUNAVAILABLE_PRINTERPROCESSINGSTATEREASON
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRINTERPROCESSINGSTATEREASON
         default:
             return 0, errors.New("Unknown PrinterProcessingStateReason value: " + v)

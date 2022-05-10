@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of domain entities.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AuthenticationProtocol) String() string {
-    return []string{"WSFED", "SAML", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"wsFed", "saml", "unknownFutureValue"}[i]
 }
 func ParseAuthenticationProtocol(v string) (interface{}, error) {
     result := WSFED_AUTHENTICATIONPROTOCOL
-    switch strings.ToUpper(v) {
-        case "WSFED":
+    switch v {
+        case "wsFed":
             result = WSFED_AUTHENTICATIONPROTOCOL
-        case "SAML":
+        case "saml":
             result = SAML_AUTHENTICATIONPROTOCOL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONPROTOCOL
         default:
             return 0, errors.New("Unknown AuthenticationProtocol value: " + v)

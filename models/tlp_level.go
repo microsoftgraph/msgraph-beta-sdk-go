@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i TlpLevel) String() string {
-    return []string{"UNKNOWN", "WHITE", "GREEN", "AMBER", "RED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "white", "green", "amber", "red", "unknownFutureValue"}[i]
 }
 func ParseTlpLevel(v string) (interface{}, error) {
     result := UNKNOWN_TLPLEVEL
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_TLPLEVEL
-        case "WHITE":
+        case "white":
             result = WHITE_TLPLEVEL
-        case "GREEN":
+        case "green":
             result = GREEN_TLPLEVEL
-        case "AMBER":
+        case "amber":
             result = AMBER_TLPLEVEL
-        case "RED":
+        case "red":
             result = RED_TLPLEVEL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TLPLEVEL
         default:
             return 0, errors.New("Unknown TlpLevel value: " + v)

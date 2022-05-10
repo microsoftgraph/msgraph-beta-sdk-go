@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -21,32 +20,32 @@ const (
 )
 
 func (i DelegatedAdminRelationshipStatus) String() string {
-    return []string{"ACTIVATING", "ACTIVE", "APPROVALPENDING", "APPROVED", "CREATED", "EXPIRED", "EXPIRING", "TERMINATED", "TERMINATING", "TERMINATIONREQUESTED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"activating", "active", "approvalPending", "approved", "created", "expired", "expiring", "terminated", "terminating", "terminationRequested", "unknownFutureValue"}[i]
 }
 func ParseDelegatedAdminRelationshipStatus(v string) (interface{}, error) {
     result := ACTIVATING_DELEGATEDADMINRELATIONSHIPSTATUS
-    switch strings.ToUpper(v) {
-        case "ACTIVATING":
+    switch v {
+        case "activating":
             result = ACTIVATING_DELEGATEDADMINRELATIONSHIPSTATUS
-        case "ACTIVE":
+        case "active":
             result = ACTIVE_DELEGATEDADMINRELATIONSHIPSTATUS
-        case "APPROVALPENDING":
+        case "approvalPending":
             result = APPROVALPENDING_DELEGATEDADMINRELATIONSHIPSTATUS
-        case "APPROVED":
+        case "approved":
             result = APPROVED_DELEGATEDADMINRELATIONSHIPSTATUS
-        case "CREATED":
+        case "created":
             result = CREATED_DELEGATEDADMINRELATIONSHIPSTATUS
-        case "EXPIRED":
+        case "expired":
             result = EXPIRED_DELEGATEDADMINRELATIONSHIPSTATUS
-        case "EXPIRING":
+        case "expiring":
             result = EXPIRING_DELEGATEDADMINRELATIONSHIPSTATUS
-        case "TERMINATED":
+        case "terminated":
             result = TERMINATED_DELEGATEDADMINRELATIONSHIPSTATUS
-        case "TERMINATING":
+        case "terminating":
             result = TERMINATING_DELEGATEDADMINRELATIONSHIPSTATUS
-        case "TERMINATIONREQUESTED":
+        case "terminationRequested":
             result = TERMINATIONREQUESTED_DELEGATEDADMINRELATIONSHIPSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DELEGATEDADMINRELATIONSHIPSTATUS
         default:
             return 0, errors.New("Unknown DelegatedAdminRelationshipStatus value: " + v)

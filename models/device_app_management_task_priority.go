@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type DeviceAppManagementTaskPriority int
 
 const (
+    // No priority set.
     NONE_DEVICEAPPMANAGEMENTTASKPRIORITY DeviceAppManagementTaskPriority = iota
+    // High priority.
     HIGH_DEVICEAPPMANAGEMENTTASKPRIORITY
+    // Low priority.
     LOW_DEVICEAPPMANAGEMENTTASKPRIORITY
 )
 
 func (i DeviceAppManagementTaskPriority) String() string {
-    return []string{"NONE", "HIGH", "LOW"}[i]
+    return []string{"none", "high", "low"}[i]
 }
 func ParseDeviceAppManagementTaskPriority(v string) (interface{}, error) {
     result := NONE_DEVICEAPPMANAGEMENTTASKPRIORITY
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICEAPPMANAGEMENTTASKPRIORITY
-        case "HIGH":
+        case "high":
             result = HIGH_DEVICEAPPMANAGEMENTTASKPRIORITY
-        case "LOW":
+        case "low":
             result = LOW_DEVICEAPPMANAGEMENTTASKPRIORITY
         default:
             return 0, errors.New("Unknown DeviceAppManagementTaskPriority value: " + v)

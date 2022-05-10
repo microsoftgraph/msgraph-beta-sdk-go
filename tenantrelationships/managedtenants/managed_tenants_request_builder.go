@@ -14,6 +14,7 @@ import (
     i39d20a98967701e034567f952771787304d37316148dcd57a17798ecd8e6b196 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementactiontenantdeploymentstatuses"
     i507510374fef5a86fcce6eb7ecdb044e4a7bc928ee54765d0620b2b896a746e1 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenants"
     i65beab9150aa7abd814be391125d812f4d3c3bdfde9d2016db1f22a146166aee "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/windowsprotectionstates"
+    i71e724937f2266c62830468204cfd18d9303a53fb8e960124d76a13f5477fb03 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/myroles"
     i824a81edbead3d58bdec21d61a960b3c5f03f44f0e89355db9cc5414e1d67e10 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenantscustomizedinformation"
     i83b6ac56968781119a7493f0b33b04d11b021d336f7c7003dc04aacb7b9c9bb0 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/auditevents"
     i86ccee4069fa2a8887f6c01c1bd59869700242c19224ee8b7aa8d4ad7bfbb89f "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatecollections"
@@ -48,6 +49,7 @@ import (
     ibeef58461c8396867818d36875356dc3e16db01443724532b324a94c46ca8d52 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementtemplatestepversions/item"
     ic4d32f9937154ecb1938a14d8397e02282c93535909cb4eb03a94798fefb2623 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/conditionalaccesspolicycoverages/item"
     ic98453c829b49eb4768ddc3245c452c7c68722a915539ad220764ab7c19350c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/tenantsdetailedinformation/item"
+    id8a75758c62dfd2efe128ae3797671432b468fe56c4706706dfeb1c3655c9799 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/myroles/item"
     idf8987c670699b4ba0e9e1d460cbd94442affa23953d4b483a7d372543e0f818 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/manageddevicecompliances/item"
     ief008158d809c9b248f0635950f9a44dacadb584a83e78751c8b87051d125c7a "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/managementactions/item"
     ief1a51d13b4379383242b889e4364a07fc548b896256031dfb57941100b7e3b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships/managedtenants/cloudpcconnections/item"
@@ -458,6 +460,21 @@ func (m *ManagedTenantsRequestBuilder) ManagementTemplateStepVersionsById(id str
         urlTplParams["managementTemplateStepVersion%2Did"] = id
     }
     return ibeef58461c8396867818d36875356dc3e16db01443724532b324a94c46ca8d52.NewManagementTemplateStepVersionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// MyRoles the myRoles property
+func (m *ManagedTenantsRequestBuilder) MyRoles()(*i71e724937f2266c62830468204cfd18d9303a53fb8e960124d76a13f5477fb03.MyRolesRequestBuilder) {
+    return i71e724937f2266c62830468204cfd18d9303a53fb8e960124d76a13f5477fb03.NewMyRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MyRolesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.myRoles.item collection
+func (m *ManagedTenantsRequestBuilder) MyRolesById(id string)(*id8a75758c62dfd2efe128ae3797671432b468fe56c4706706dfeb1c3655c9799.MyRoleItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["myRole%2DtenantId"] = id
+    }
+    return id8a75758c62dfd2efe128ae3797671432b468fe56c4706706dfeb1c3655c9799.NewMyRoleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property managedTenants in tenantRelationships
 func (m *ManagedTenantsRequestBuilder) Patch(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantable)(error) {

@@ -1,40 +1,46 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type MicrosoftTunnelServerHealthStatus int
 
 const (
+    // The state is unknown
     UNKNOWN_MICROSOFTTUNNELSERVERHEALTHSTATUS MicrosoftTunnelServerHealthStatus = iota
+    // The state is healthy
     HEALTHY_MICROSOFTTUNNELSERVERHEALTHSTATUS
+    // The state is unhealthy
     UNHEALTHY_MICROSOFTTUNNELSERVERHEALTHSTATUS
+    // The state is warning
     WARNING_MICROSOFTTUNNELSERVERHEALTHSTATUS
+    // The state is offline
     OFFLINE_MICROSOFTTUNNELSERVERHEALTHSTATUS
+    // The state is upgradeInProgress
     UPGRADEINPROGRESS_MICROSOFTTUNNELSERVERHEALTHSTATUS
+    // The state is upgradeFailed
     UPGRADEFAILED_MICROSOFTTUNNELSERVERHEALTHSTATUS
 )
 
 func (i MicrosoftTunnelServerHealthStatus) String() string {
-    return []string{"UNKNOWN", "HEALTHY", "UNHEALTHY", "WARNING", "OFFLINE", "UPGRADEINPROGRESS", "UPGRADEFAILED"}[i]
+    return []string{"unknown", "healthy", "unhealthy", "warning", "offline", "upgradeInProgress", "upgradeFailed"}[i]
 }
 func ParseMicrosoftTunnelServerHealthStatus(v string) (interface{}, error) {
     result := UNKNOWN_MICROSOFTTUNNELSERVERHEALTHSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_MICROSOFTTUNNELSERVERHEALTHSTATUS
-        case "HEALTHY":
+        case "healthy":
             result = HEALTHY_MICROSOFTTUNNELSERVERHEALTHSTATUS
-        case "UNHEALTHY":
+        case "unhealthy":
             result = UNHEALTHY_MICROSOFTTUNNELSERVERHEALTHSTATUS
-        case "WARNING":
+        case "warning":
             result = WARNING_MICROSOFTTUNNELSERVERHEALTHSTATUS
-        case "OFFLINE":
+        case "offline":
             result = OFFLINE_MICROSOFTTUNNELSERVERHEALTHSTATUS
-        case "UPGRADEINPROGRESS":
+        case "upgradeInProgress":
             result = UPGRADEINPROGRESS_MICROSOFTTUNNELSERVERHEALTHSTATUS
-        case "UPGRADEFAILED":
+        case "upgradeFailed":
             result = UPGRADEFAILED_MICROSOFTTUNNELSERVERHEALTHSTATUS
         default:
             return 0, errors.New("Unknown MicrosoftTunnelServerHealthStatus value: " + v)

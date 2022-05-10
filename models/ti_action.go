@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i TiAction) String() string {
-    return []string{"UNKNOWN", "ALLOW", "BLOCK", "ALERT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "allow", "block", "alert", "unknownFutureValue"}[i]
 }
 func ParseTiAction(v string) (interface{}, error) {
     result := UNKNOWN_TIACTION
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_TIACTION
-        case "ALLOW":
+        case "allow":
             result = ALLOW_TIACTION
-        case "BLOCK":
+        case "block":
             result = BLOCK_TIACTION
-        case "ALERT":
+        case "alert":
             result = ALERT_TIACTION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TIACTION
         default:
             return 0, errors.New("Unknown TiAction value: " + v)

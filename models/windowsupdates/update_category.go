@@ -1,6 +1,5 @@
 package windowsupdates
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the enrollAssets method.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i UpdateCategory) String() string {
-    return []string{"FEATURE", "QUALITY", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"feature", "quality", "unknownFutureValue"}[i]
 }
 func ParseUpdateCategory(v string) (interface{}, error) {
     result := FEATURE_UPDATECATEGORY
-    switch strings.ToUpper(v) {
-        case "FEATURE":
+    switch v {
+        case "feature":
             result = FEATURE_UPDATECATEGORY
-        case "QUALITY":
+        case "quality":
             result = QUALITY_UPDATECATEGORY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_UPDATECATEGORY
         default:
             return 0, errors.New("Unknown UpdateCategory value: " + v)

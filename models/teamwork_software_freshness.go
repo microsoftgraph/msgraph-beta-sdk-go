@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the teamwork singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i TeamworkSoftwareFreshness) String() string {
-    return []string{"UNKNOWN", "LATEST", "UPDATEAVAILABLE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "latest", "updateAvailable", "unknownFutureValue"}[i]
 }
 func ParseTeamworkSoftwareFreshness(v string) (interface{}, error) {
     result := UNKNOWN_TEAMWORKSOFTWAREFRESHNESS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_TEAMWORKSOFTWAREFRESHNESS
-        case "LATEST":
+        case "latest":
             result = LATEST_TEAMWORKSOFTWAREFRESHNESS
-        case "UPDATEAVAILABLE":
+        case "updateAvailable":
             result = UPDATEAVAILABLE_TEAMWORKSOFTWAREFRESHNESS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKSOFTWAREFRESHNESS
         default:
             return 0, errors.New("Unknown TeamworkSoftwareFreshness value: " + v)

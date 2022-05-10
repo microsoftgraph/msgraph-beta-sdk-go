@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i CloudPcOnPremisesConnectionStatus) String() string {
-    return []string{"PENDING", "RUNNING", "PASSED", "FAILED", "WARNING", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"pending", "running", "passed", "failed", "warning", "unknownFutureValue"}[i]
 }
 func ParseCloudPcOnPremisesConnectionStatus(v string) (interface{}, error) {
     result := PENDING_CLOUDPCONPREMISESCONNECTIONSTATUS
-    switch strings.ToUpper(v) {
-        case "PENDING":
+    switch v {
+        case "pending":
             result = PENDING_CLOUDPCONPREMISESCONNECTIONSTATUS
-        case "RUNNING":
+        case "running":
             result = RUNNING_CLOUDPCONPREMISESCONNECTIONSTATUS
-        case "PASSED":
+        case "passed":
             result = PASSED_CLOUDPCONPREMISESCONNECTIONSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_CLOUDPCONPREMISESCONNECTIONSTATUS
-        case "WARNING":
+        case "warning":
             result = WARNING_CLOUDPCONPREMISESCONNECTIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCONPREMISESCONNECTIONSTATUS
         default:
             return 0, errors.New("Unknown CloudPcOnPremisesConnectionStatus value: " + v)

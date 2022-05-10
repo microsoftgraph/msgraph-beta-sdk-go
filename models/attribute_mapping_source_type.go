@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AttributeMappingSourceType) String() string {
-    return []string{"ATTRIBUTE", "CONSTANT", "FUNCTION"}[i]
+    return []string{"Attribute", "Constant", "Function"}[i]
 }
 func ParseAttributeMappingSourceType(v string) (interface{}, error) {
     result := ATTRIBUTE_ATTRIBUTEMAPPINGSOURCETYPE
-    switch strings.ToUpper(v) {
-        case "ATTRIBUTE":
+    switch v {
+        case "Attribute":
             result = ATTRIBUTE_ATTRIBUTEMAPPINGSOURCETYPE
-        case "CONSTANT":
+        case "Constant":
             result = CONSTANT_ATTRIBUTEMAPPINGSOURCETYPE
-        case "FUNCTION":
+        case "Function":
             result = FUNCTION_ATTRIBUTEMAPPINGSOURCETYPE
         default:
             return 0, errors.New("Unknown AttributeMappingSourceType value: " + v)

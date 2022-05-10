@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the getAttackSimulationTrainingUserCoverage method.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i TrainingStatus) String() string {
-    return []string{"UNKNOWN", "ASSIGNED", "INPROGRESS", "COMPLETED", "OVERDUE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "assigned", "inProgress", "completed", "overdue", "unknownFutureValue"}[i]
 }
 func ParseTrainingStatus(v string) (interface{}, error) {
     result := UNKNOWN_TRAININGSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_TRAININGSTATUS
-        case "ASSIGNED":
+        case "assigned":
             result = ASSIGNED_TRAININGSTATUS
-        case "INPROGRESS":
+        case "inProgress":
             result = INPROGRESS_TRAININGSTATUS
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_TRAININGSTATUS
-        case "OVERDUE":
+        case "overdue":
             result = OVERDUE_TRAININGSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TRAININGSTATUS
         default:
             return 0, errors.New("Unknown TrainingStatus value: " + v)

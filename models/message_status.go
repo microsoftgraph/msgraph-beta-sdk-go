@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of messageRecipient entities.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i MessageStatus) String() string {
-    return []string{"GETTINGSTATUS", "PENDING", "FAILED", "DELIVERED", "EXPANDED", "QUARANTINED", "FILTEREDASSPAM", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"gettingStatus", "pending", "failed", "delivered", "expanded", "quarantined", "filteredAsSpam", "unknownFutureValue"}[i]
 }
 func ParseMessageStatus(v string) (interface{}, error) {
     result := GETTINGSTATUS_MESSAGESTATUS
-    switch strings.ToUpper(v) {
-        case "GETTINGSTATUS":
+    switch v {
+        case "gettingStatus":
             result = GETTINGSTATUS_MESSAGESTATUS
-        case "PENDING":
+        case "pending":
             result = PENDING_MESSAGESTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_MESSAGESTATUS
-        case "DELIVERED":
+        case "delivered":
             result = DELIVERED_MESSAGESTATUS
-        case "EXPANDED":
+        case "expanded":
             result = EXPANDED_MESSAGESTATUS
-        case "QUARANTINED":
+        case "quarantined":
             result = QUARANTINED_MESSAGESTATUS
-        case "FILTEREDASSPAM":
+        case "filteredAsSpam":
             result = FILTEREDASSPAM_MESSAGESTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MESSAGESTATUS
         default:
             return 0, errors.New("Unknown MessageStatus value: " + v)

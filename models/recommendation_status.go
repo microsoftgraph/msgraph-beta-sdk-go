@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the directory singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i RecommendationStatus) String() string {
-    return []string{"ACTIVE", "COMPLETEDBYSYSTEM", "COMPLETEDBYUSER", "DISMISSED", "POSTPONED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"active", "completedBySystem", "completedByUser", "dismissed", "postponed", "unknownFutureValue"}[i]
 }
 func ParseRecommendationStatus(v string) (interface{}, error) {
     result := ACTIVE_RECOMMENDATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "ACTIVE":
+    switch v {
+        case "active":
             result = ACTIVE_RECOMMENDATIONSTATUS
-        case "COMPLETEDBYSYSTEM":
+        case "completedBySystem":
             result = COMPLETEDBYSYSTEM_RECOMMENDATIONSTATUS
-        case "COMPLETEDBYUSER":
+        case "completedByUser":
             result = COMPLETEDBYUSER_RECOMMENDATIONSTATUS
-        case "DISMISSED":
+        case "dismissed":
             result = DISMISSED_RECOMMENDATIONSTATUS
-        case "POSTPONED":
+        case "postponed":
             result = POSTPONED_RECOMMENDATIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RECOMMENDATIONSTATUS
         default:
             return 0, errors.New("Unknown RecommendationStatus value: " + v)

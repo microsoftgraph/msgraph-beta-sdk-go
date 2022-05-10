@@ -1,52 +1,62 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the getSupportedProperties method.
 type AssignmentFilterOperator int
 
 const (
+    // NotSet.
     NOTSET_ASSIGNMENTFILTEROPERATOR AssignmentFilterOperator = iota
+    // Equals.
     EQUALS_ASSIGNMENTFILTEROPERATOR
+    // NotEquals.
     NOTEQUALS_ASSIGNMENTFILTEROPERATOR
+    // StartsWith.
     STARTSWITH_ASSIGNMENTFILTEROPERATOR
+    // NotStartsWith.
     NOTSTARTSWITH_ASSIGNMENTFILTEROPERATOR
+    // Contains.
     CONTAINS_ASSIGNMENTFILTEROPERATOR
+    // NotContains.
     NOTCONTAINS_ASSIGNMENTFILTEROPERATOR
+    // In.
     IN_ASSIGNMENTFILTEROPERATOR
+    // NotIn.
     NOTIN_ASSIGNMENTFILTEROPERATOR
+    // EndsWith.
     ENDSWITH_ASSIGNMENTFILTEROPERATOR
+    // NotEndsWith.
     NOTENDSWITH_ASSIGNMENTFILTEROPERATOR
 )
 
 func (i AssignmentFilterOperator) String() string {
-    return []string{"NOTSET", "EQUALS", "NOTEQUALS", "STARTSWITH", "NOTSTARTSWITH", "CONTAINS", "NOTCONTAINS", "IN", "NOTIN", "ENDSWITH", "NOTENDSWITH"}[i]
+    return []string{"notSet", "equals", "notEquals", "startsWith", "notStartsWith", "contains", "notContains", "in", "notIn", "endsWith", "notEndsWith"}[i]
 }
 func ParseAssignmentFilterOperator(v string) (interface{}, error) {
     result := NOTSET_ASSIGNMENTFILTEROPERATOR
-    switch strings.ToUpper(v) {
-        case "NOTSET":
+    switch v {
+        case "notSet":
             result = NOTSET_ASSIGNMENTFILTEROPERATOR
-        case "EQUALS":
+        case "equals":
             result = EQUALS_ASSIGNMENTFILTEROPERATOR
-        case "NOTEQUALS":
+        case "notEquals":
             result = NOTEQUALS_ASSIGNMENTFILTEROPERATOR
-        case "STARTSWITH":
+        case "startsWith":
             result = STARTSWITH_ASSIGNMENTFILTEROPERATOR
-        case "NOTSTARTSWITH":
+        case "notStartsWith":
             result = NOTSTARTSWITH_ASSIGNMENTFILTEROPERATOR
-        case "CONTAINS":
+        case "contains":
             result = CONTAINS_ASSIGNMENTFILTEROPERATOR
-        case "NOTCONTAINS":
+        case "notContains":
             result = NOTCONTAINS_ASSIGNMENTFILTEROPERATOR
-        case "IN":
+        case "in":
             result = IN_ASSIGNMENTFILTEROPERATOR
-        case "NOTIN":
+        case "notIn":
             result = NOTIN_ASSIGNMENTFILTEROPERATOR
-        case "ENDSWITH":
+        case "endsWith":
             result = ENDSWITH_ASSIGNMENTFILTEROPERATOR
-        case "NOTENDSWITH":
+        case "notEndsWith":
             result = NOTENDSWITH_ASSIGNMENTFILTEROPERATOR
         default:
             return 0, errors.New("Unknown AssignmentFilterOperator value: " + v)

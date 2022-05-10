@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i AccountStatus) String() string {
-    return []string{"UNKNOWN", "STAGED", "ACTIVE", "SUSPENDED", "DELETED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "staged", "active", "suspended", "deleted", "unknownFutureValue"}[i]
 }
 func ParseAccountStatus(v string) (interface{}, error) {
     result := UNKNOWN_ACCOUNTSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_ACCOUNTSTATUS
-        case "STAGED":
+        case "staged":
             result = STAGED_ACCOUNTSTATUS
-        case "ACTIVE":
+        case "active":
             result = ACTIVE_ACCOUNTSTATUS
-        case "SUSPENDED":
+        case "suspended":
             result = SUSPENDED_ACCOUNTSTATUS
-        case "DELETED":
+        case "deleted":
             result = DELETED_ACCOUNTSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCOUNTSTATUS
         default:
             return 0, errors.New("Unknown AccountStatus value: " + v)

@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type GroupPolicyDefinitionClassType int
 
 const (
+    // Identifies placement of the policy setting under the user configuration node.
     USER_GROUPPOLICYDEFINITIONCLASSTYPE GroupPolicyDefinitionClassType = iota
+    // Identifies placement of the policy setting under the computer configuration node.
     MACHINE_GROUPPOLICYDEFINITIONCLASSTYPE
 )
 
 func (i GroupPolicyDefinitionClassType) String() string {
-    return []string{"USER", "MACHINE"}[i]
+    return []string{"user", "machine"}[i]
 }
 func ParseGroupPolicyDefinitionClassType(v string) (interface{}, error) {
     result := USER_GROUPPOLICYDEFINITIONCLASSTYPE
-    switch strings.ToUpper(v) {
-        case "USER":
+    switch v {
+        case "user":
             result = USER_GROUPPOLICYDEFINITIONCLASSTYPE
-        case "MACHINE":
+        case "machine":
             result = MACHINE_GROUPPOLICYDEFINITIONCLASSTYPE
         default:
             return 0, errors.New("Unknown GroupPolicyDefinitionClassType value: " + v)

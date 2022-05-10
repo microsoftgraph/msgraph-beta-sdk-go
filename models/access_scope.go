@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the evaluate method.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i AccessScope) String() string {
-    return []string{"INORGANIZATION", "NOTINORGANIZATION"}[i]
+    return []string{"inOrganization", "notInOrganization"}[i]
 }
 func ParseAccessScope(v string) (interface{}, error) {
     result := INORGANIZATION_ACCESSSCOPE
-    switch strings.ToUpper(v) {
-        case "INORGANIZATION":
+    switch v {
+        case "inOrganization":
             result = INORGANIZATION_ACCESSSCOPE
-        case "NOTINORGANIZATION":
+        case "notInOrganization":
             result = NOTINORGANIZATION_ACCESSSCOPE
         default:
             return 0, errors.New("Unknown AccessScope value: " + v)

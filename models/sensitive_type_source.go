@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the dataClassificationService singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i SensitiveTypeSource) String() string {
-    return []string{"OUTOFBOX", "TENANT"}[i]
+    return []string{"outOfBox", "tenant"}[i]
 }
 func ParseSensitiveTypeSource(v string) (interface{}, error) {
     result := OUTOFBOX_SENSITIVETYPESOURCE
-    switch strings.ToUpper(v) {
-        case "OUTOFBOX":
+    switch v {
+        case "outOfBox":
             result = OUTOFBOX_SENSITIVETYPESOURCE
-        case "TENANT":
+        case "tenant":
             result = TENANT_SENSITIVETYPESOURCE
         default:
             return 0, errors.New("Unknown SensitiveTypeSource value: " + v)

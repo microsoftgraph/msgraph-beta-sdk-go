@@ -1,40 +1,46 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type GroupPolicyUploadedDefinitionFileStatus int
 
 const (
+    // Group Policy uploaded definition file invalid upload status.
     NONE_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS GroupPolicyUploadedDefinitionFileStatus = iota
+    // Group Policy uploaded definition file upload in progress.
     UPLOADINPROGRESS_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
+    // Group Policy uploaded definition file available.
     AVAILABLE_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
+    // Group Policy uploaded definition file assigned to policy.
     ASSIGNED_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
+    // Group Policy uploaded definition file removal in progress.
     REMOVALINPROGRESS_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
+    // Group Policy uploaded definition file upload failed.
     UPLOADFAILED_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
+    // Group Policy uploaded definition file removal failed.
     REMOVALFAILED_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
 )
 
 func (i GroupPolicyUploadedDefinitionFileStatus) String() string {
-    return []string{"NONE", "UPLOADINPROGRESS", "AVAILABLE", "ASSIGNED", "REMOVALINPROGRESS", "UPLOADFAILED", "REMOVALFAILED"}[i]
+    return []string{"none", "uploadInProgress", "available", "assigned", "removalInProgress", "uploadFailed", "removalFailed"}[i]
 }
 func ParseGroupPolicyUploadedDefinitionFileStatus(v string) (interface{}, error) {
     result := NONE_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
-        case "UPLOADINPROGRESS":
+        case "uploadInProgress":
             result = UPLOADINPROGRESS_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
-        case "AVAILABLE":
+        case "available":
             result = AVAILABLE_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
-        case "ASSIGNED":
+        case "assigned":
             result = ASSIGNED_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
-        case "REMOVALINPROGRESS":
+        case "removalInProgress":
             result = REMOVALINPROGRESS_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
-        case "UPLOADFAILED":
+        case "uploadFailed":
             result = UPLOADFAILED_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
-        case "REMOVALFAILED":
+        case "removalFailed":
             result = REMOVALFAILED_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
         default:
             return 0, errors.New("Unknown GroupPolicyUploadedDefinitionFileStatus value: " + v)

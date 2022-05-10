@@ -1,6 +1,5 @@
 package ediscovery
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the addToReviewSet method.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AdditionalDataOptions) String() string {
-    return []string{"ALLVERSIONS", "LINKEDFILES", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"allVersions", "linkedFiles", "unknownFutureValue"}[i]
 }
 func ParseAdditionalDataOptions(v string) (interface{}, error) {
     result := ALLVERSIONS_ADDITIONALDATAOPTIONS
-    switch strings.ToUpper(v) {
-        case "ALLVERSIONS":
+    switch v {
+        case "allVersions":
             result = ALLVERSIONS_ADDITIONALDATAOPTIONS
-        case "LINKEDFILES":
+        case "linkedFiles":
             result = LINKEDFILES_ADDITIONALDATAOPTIONS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ADDITIONALDATAOPTIONS
         default:
             return 0, errors.New("Unknown AdditionalDataOptions value: " + v)

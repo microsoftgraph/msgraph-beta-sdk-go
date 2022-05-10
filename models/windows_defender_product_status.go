@@ -1,97 +1,122 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type WindowsDefenderProductStatus int
 
 const (
+    // No status
     NOSTATUS_WINDOWSDEFENDERPRODUCTSTATUS WindowsDefenderProductStatus = iota
+    // Service not running
     SERVICENOTRUNNING_WINDOWSDEFENDERPRODUCTSTATUS
+    // Service started without any malware protection engine
     SERVICESTARTEDWITHOUTMALWAREPROTECTION_WINDOWSDEFENDERPRODUCTSTATUS
+    // Pending full scan due to threat action
     PENDINGFULLSCANDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS
+    // Pending reboot due to threat action
     PENDINGREBOOTDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS
+    // Pending manual steps due to threat action 
     PENDINGMANUALSTEPSDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS
+    // AV signatures out of date
     AVSIGNATURESOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS
+    // AS signatures out of date
     ASSIGNATURESOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS
+    // No quick scan has happened for a specified period
     NOQUICKSCANHAPPENEDFORSPECIFIEDPERIOD_WINDOWSDEFENDERPRODUCTSTATUS
+    // No full scan has happened for a specified period
     NOFULLSCANHAPPENEDFORSPECIFIEDPERIOD_WINDOWSDEFENDERPRODUCTSTATUS
+    // System initiated scan in progress
     SYSTEMINITIATEDSCANINPROGRESS_WINDOWSDEFENDERPRODUCTSTATUS
+    // System initiated clean in progress
     SYSTEMINITIATEDCLEANINPROGRESS_WINDOWSDEFENDERPRODUCTSTATUS
+    // There are samples pending submission
     SAMPLESPENDINGSUBMISSION_WINDOWSDEFENDERPRODUCTSTATUS
+    // Product running in evaluation mode
     PRODUCTRUNNINGINEVALUATIONMODE_WINDOWSDEFENDERPRODUCTSTATUS
+    // Product running in non-genuine Windows mode
     PRODUCTRUNNINGINNONGENUINEMODE_WINDOWSDEFENDERPRODUCTSTATUS
+    // Product expired
     PRODUCTEXPIRED_WINDOWSDEFENDERPRODUCTSTATUS
+    // Off-line scan required
     OFFLINESCANREQUIRED_WINDOWSDEFENDERPRODUCTSTATUS
+    // Service is shutting down as part of system shutdown
     SERVICESHUTDOWNASPARTOFSYSTEMSHUTDOWN_WINDOWSDEFENDERPRODUCTSTATUS
+    // Threat remediation failed critically
     THREATREMEDIATIONFAILEDCRITICALLY_WINDOWSDEFENDERPRODUCTSTATUS
+    // Threat remediation failed non-critically
     THREATREMEDIATIONFAILEDNONCRITICALLY_WINDOWSDEFENDERPRODUCTSTATUS
+    // No status flags set (well initialized state)
     NOSTATUSFLAGSSET_WINDOWSDEFENDERPRODUCTSTATUS
+    // Platform is out of date
     PLATFORMOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS
+    // Platform update is in progress
     PLATFORMUPDATEINPROGRESS_WINDOWSDEFENDERPRODUCTSTATUS
+    // Platform is about to be outdated
     PLATFORMABOUTTOBEOUTDATED_WINDOWSDEFENDERPRODUCTSTATUS
+    // Signature or platform end of life is past or is impending
     SIGNATUREORPLATFORMENDOFLIFEISPASTORISIMPENDING_WINDOWSDEFENDERPRODUCTSTATUS
+    // Windows SMode signatures still in use on non-Win10S install
     WINDOWSSMODESIGNATURESINUSEONNONWIN10SINSTALL_WINDOWSDEFENDERPRODUCTSTATUS
 )
 
 func (i WindowsDefenderProductStatus) String() string {
-    return []string{"NOSTATUS", "SERVICENOTRUNNING", "SERVICESTARTEDWITHOUTMALWAREPROTECTION", "PENDINGFULLSCANDUETOTHREATACTION", "PENDINGREBOOTDUETOTHREATACTION", "PENDINGMANUALSTEPSDUETOTHREATACTION", "AVSIGNATURESOUTOFDATE", "ASSIGNATURESOUTOFDATE", "NOQUICKSCANHAPPENEDFORSPECIFIEDPERIOD", "NOFULLSCANHAPPENEDFORSPECIFIEDPERIOD", "SYSTEMINITIATEDSCANINPROGRESS", "SYSTEMINITIATEDCLEANINPROGRESS", "SAMPLESPENDINGSUBMISSION", "PRODUCTRUNNINGINEVALUATIONMODE", "PRODUCTRUNNINGINNONGENUINEMODE", "PRODUCTEXPIRED", "OFFLINESCANREQUIRED", "SERVICESHUTDOWNASPARTOFSYSTEMSHUTDOWN", "THREATREMEDIATIONFAILEDCRITICALLY", "THREATREMEDIATIONFAILEDNONCRITICALLY", "NOSTATUSFLAGSSET", "PLATFORMOUTOFDATE", "PLATFORMUPDATEINPROGRESS", "PLATFORMABOUTTOBEOUTDATED", "SIGNATUREORPLATFORMENDOFLIFEISPASTORISIMPENDING", "WINDOWSSMODESIGNATURESINUSEONNONWIN10SINSTALL"}[i]
+    return []string{"noStatus", "serviceNotRunning", "serviceStartedWithoutMalwareProtection", "pendingFullScanDueToThreatAction", "pendingRebootDueToThreatAction", "pendingManualStepsDueToThreatAction", "avSignaturesOutOfDate", "asSignaturesOutOfDate", "noQuickScanHappenedForSpecifiedPeriod", "noFullScanHappenedForSpecifiedPeriod", "systemInitiatedScanInProgress", "systemInitiatedCleanInProgress", "samplesPendingSubmission", "productRunningInEvaluationMode", "productRunningInNonGenuineMode", "productExpired", "offlineScanRequired", "serviceShutdownAsPartOfSystemShutdown", "threatRemediationFailedCritically", "threatRemediationFailedNonCritically", "noStatusFlagsSet", "platformOutOfDate", "platformUpdateInProgress", "platformAboutToBeOutdated", "signatureOrPlatformEndOfLifeIsPastOrIsImpending", "windowsSModeSignaturesInUseOnNonWin10SInstall"}[i]
 }
 func ParseWindowsDefenderProductStatus(v string) (interface{}, error) {
     result := NOSTATUS_WINDOWSDEFENDERPRODUCTSTATUS
-    switch strings.ToUpper(v) {
-        case "NOSTATUS":
+    switch v {
+        case "noStatus":
             result = NOSTATUS_WINDOWSDEFENDERPRODUCTSTATUS
-        case "SERVICENOTRUNNING":
+        case "serviceNotRunning":
             result = SERVICENOTRUNNING_WINDOWSDEFENDERPRODUCTSTATUS
-        case "SERVICESTARTEDWITHOUTMALWAREPROTECTION":
+        case "serviceStartedWithoutMalwareProtection":
             result = SERVICESTARTEDWITHOUTMALWAREPROTECTION_WINDOWSDEFENDERPRODUCTSTATUS
-        case "PENDINGFULLSCANDUETOTHREATACTION":
+        case "pendingFullScanDueToThreatAction":
             result = PENDINGFULLSCANDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS
-        case "PENDINGREBOOTDUETOTHREATACTION":
+        case "pendingRebootDueToThreatAction":
             result = PENDINGREBOOTDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS
-        case "PENDINGMANUALSTEPSDUETOTHREATACTION":
+        case "pendingManualStepsDueToThreatAction":
             result = PENDINGMANUALSTEPSDUETOTHREATACTION_WINDOWSDEFENDERPRODUCTSTATUS
-        case "AVSIGNATURESOUTOFDATE":
+        case "avSignaturesOutOfDate":
             result = AVSIGNATURESOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS
-        case "ASSIGNATURESOUTOFDATE":
+        case "asSignaturesOutOfDate":
             result = ASSIGNATURESOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS
-        case "NOQUICKSCANHAPPENEDFORSPECIFIEDPERIOD":
+        case "noQuickScanHappenedForSpecifiedPeriod":
             result = NOQUICKSCANHAPPENEDFORSPECIFIEDPERIOD_WINDOWSDEFENDERPRODUCTSTATUS
-        case "NOFULLSCANHAPPENEDFORSPECIFIEDPERIOD":
+        case "noFullScanHappenedForSpecifiedPeriod":
             result = NOFULLSCANHAPPENEDFORSPECIFIEDPERIOD_WINDOWSDEFENDERPRODUCTSTATUS
-        case "SYSTEMINITIATEDSCANINPROGRESS":
+        case "systemInitiatedScanInProgress":
             result = SYSTEMINITIATEDSCANINPROGRESS_WINDOWSDEFENDERPRODUCTSTATUS
-        case "SYSTEMINITIATEDCLEANINPROGRESS":
+        case "systemInitiatedCleanInProgress":
             result = SYSTEMINITIATEDCLEANINPROGRESS_WINDOWSDEFENDERPRODUCTSTATUS
-        case "SAMPLESPENDINGSUBMISSION":
+        case "samplesPendingSubmission":
             result = SAMPLESPENDINGSUBMISSION_WINDOWSDEFENDERPRODUCTSTATUS
-        case "PRODUCTRUNNINGINEVALUATIONMODE":
+        case "productRunningInEvaluationMode":
             result = PRODUCTRUNNINGINEVALUATIONMODE_WINDOWSDEFENDERPRODUCTSTATUS
-        case "PRODUCTRUNNINGINNONGENUINEMODE":
+        case "productRunningInNonGenuineMode":
             result = PRODUCTRUNNINGINNONGENUINEMODE_WINDOWSDEFENDERPRODUCTSTATUS
-        case "PRODUCTEXPIRED":
+        case "productExpired":
             result = PRODUCTEXPIRED_WINDOWSDEFENDERPRODUCTSTATUS
-        case "OFFLINESCANREQUIRED":
+        case "offlineScanRequired":
             result = OFFLINESCANREQUIRED_WINDOWSDEFENDERPRODUCTSTATUS
-        case "SERVICESHUTDOWNASPARTOFSYSTEMSHUTDOWN":
+        case "serviceShutdownAsPartOfSystemShutdown":
             result = SERVICESHUTDOWNASPARTOFSYSTEMSHUTDOWN_WINDOWSDEFENDERPRODUCTSTATUS
-        case "THREATREMEDIATIONFAILEDCRITICALLY":
+        case "threatRemediationFailedCritically":
             result = THREATREMEDIATIONFAILEDCRITICALLY_WINDOWSDEFENDERPRODUCTSTATUS
-        case "THREATREMEDIATIONFAILEDNONCRITICALLY":
+        case "threatRemediationFailedNonCritically":
             result = THREATREMEDIATIONFAILEDNONCRITICALLY_WINDOWSDEFENDERPRODUCTSTATUS
-        case "NOSTATUSFLAGSSET":
+        case "noStatusFlagsSet":
             result = NOSTATUSFLAGSSET_WINDOWSDEFENDERPRODUCTSTATUS
-        case "PLATFORMOUTOFDATE":
+        case "platformOutOfDate":
             result = PLATFORMOUTOFDATE_WINDOWSDEFENDERPRODUCTSTATUS
-        case "PLATFORMUPDATEINPROGRESS":
+        case "platformUpdateInProgress":
             result = PLATFORMUPDATEINPROGRESS_WINDOWSDEFENDERPRODUCTSTATUS
-        case "PLATFORMABOUTTOBEOUTDATED":
+        case "platformAboutToBeOutdated":
             result = PLATFORMABOUTTOBEOUTDATED_WINDOWSDEFENDERPRODUCTSTATUS
-        case "SIGNATUREORPLATFORMENDOFLIFEISPASTORISIMPENDING":
+        case "signatureOrPlatformEndOfLifeIsPastOrIsImpending":
             result = SIGNATUREORPLATFORMENDOFLIFEISPASTORISIMPENDING_WINDOWSDEFENDERPRODUCTSTATUS
-        case "WINDOWSSMODESIGNATURESINUSEONNONWIN10SINSTALL":
+        case "windowsSModeSignaturesInUseOnNonWin10SInstall":
             result = WINDOWSSMODESIGNATURESINUSEONNONWIN10SINSTALL_WINDOWSDEFENDERPRODUCTSTATUS
         default:
             return 0, errors.New("Unknown WindowsDefenderProductStatus value: " + v)

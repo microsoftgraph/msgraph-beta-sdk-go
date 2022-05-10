@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i SingleSignOnMode) String() string {
-    return []string{"NONE", "ONPREMISESKERBEROS", "SAML", "PINGHEADERBASED", "AADHEADERBASED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "onPremisesKerberos", "saml", "pingHeaderBased", "aadHeaderBased", "unknownFutureValue"}[i]
 }
 func ParseSingleSignOnMode(v string) (interface{}, error) {
     result := NONE_SINGLESIGNONMODE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_SINGLESIGNONMODE
-        case "ONPREMISESKERBEROS":
+        case "onPremisesKerberos":
             result = ONPREMISESKERBEROS_SINGLESIGNONMODE
-        case "SAML":
+        case "saml":
             result = SAML_SINGLESIGNONMODE
-        case "PINGHEADERBASED":
+        case "pingHeaderBased":
             result = PINGHEADERBASED_SINGLESIGNONMODE
-        case "AADHEADERBASED":
+        case "aadHeaderBased":
             result = AADHEADERBASED_SINGLESIGNONMODE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SINGLESIGNONMODE
         default:
             return 0, errors.New("Unknown SingleSignOnMode value: " + v)

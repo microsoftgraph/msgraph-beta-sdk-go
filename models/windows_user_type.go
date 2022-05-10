@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i WindowsUserType) String() string {
-    return []string{"ADMINISTRATOR", "STANDARD"}[i]
+    return []string{"administrator", "standard"}[i]
 }
 func ParseWindowsUserType(v string) (interface{}, error) {
     result := ADMINISTRATOR_WINDOWSUSERTYPE
-    switch strings.ToUpper(v) {
-        case "ADMINISTRATOR":
+    switch v {
+        case "administrator":
             result = ADMINISTRATOR_WINDOWSUSERTYPE
-        case "STANDARD":
+        case "standard":
             result = STANDARD_WINDOWSUSERTYPE
         default:
             return 0, errors.New("Unknown WindowsUserType value: " + v)

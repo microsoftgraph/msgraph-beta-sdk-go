@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type Windows10DeviceModeType int
 
 const (
+    // Standard Configuration
     STANDARDCONFIGURATION_WINDOWS10DEVICEMODETYPE Windows10DeviceModeType = iota
+    // S Mode Configuration
     SMODECONFIGURATION_WINDOWS10DEVICEMODETYPE
 )
 
 func (i Windows10DeviceModeType) String() string {
-    return []string{"STANDARDCONFIGURATION", "SMODECONFIGURATION"}[i]
+    return []string{"standardConfiguration", "sModeConfiguration"}[i]
 }
 func ParseWindows10DeviceModeType(v string) (interface{}, error) {
     result := STANDARDCONFIGURATION_WINDOWS10DEVICEMODETYPE
-    switch strings.ToUpper(v) {
-        case "STANDARDCONFIGURATION":
+    switch v {
+        case "standardConfiguration":
             result = STANDARDCONFIGURATION_WINDOWS10DEVICEMODETYPE
-        case "SMODECONFIGURATION":
+        case "sModeConfiguration":
             result = SMODECONFIGURATION_WINDOWS10DEVICEMODETYPE
         default:
             return 0, errors.New("Unknown Windows10DeviceModeType value: " + v)

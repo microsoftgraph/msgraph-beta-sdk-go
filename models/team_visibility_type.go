@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i TeamVisibilityType) String() string {
-    return []string{"PRIVATE", "PUBLIC", "HIDDENMEMBERSHIP", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"private", "public", "hiddenMembership", "unknownFutureValue"}[i]
 }
 func ParseTeamVisibilityType(v string) (interface{}, error) {
     result := PRIVATE_TEAMVISIBILITYTYPE
-    switch strings.ToUpper(v) {
-        case "PRIVATE":
+    switch v {
+        case "private":
             result = PRIVATE_TEAMVISIBILITYTYPE
-        case "PUBLIC":
+        case "public":
             result = PUBLIC_TEAMVISIBILITYTYPE
-        case "HIDDENMEMBERSHIP":
+        case "hiddenMembership":
             result = HIDDENMEMBERSHIP_TEAMVISIBILITYTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMVISIBILITYTYPE
         default:
             return 0, errors.New("Unknown TeamVisibilityType value: " + v)

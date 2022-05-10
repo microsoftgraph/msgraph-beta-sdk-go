@@ -1,49 +1,58 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DevicePlatformType int
 
 const (
+    // Android.
     ANDROID_DEVICEPLATFORMTYPE DevicePlatformType = iota
+    // AndroidForWork.
     ANDROIDFORWORK_DEVICEPLATFORMTYPE
+    // iOS.
     IOS_DEVICEPLATFORMTYPE
+    // MacOS.
     MACOS_DEVICEPLATFORMTYPE
+    // WindowsPhone 8.1.
     WINDOWSPHONE81_DEVICEPLATFORMTYPE
+    // Windows 8.1 and later
     WINDOWS81ANDLATER_DEVICEPLATFORMTYPE
+    // Windows 10 and later.
     WINDOWS10ANDLATER_DEVICEPLATFORMTYPE
+    // Android Work Profile.
     ANDROIDWORKPROFILE_DEVICEPLATFORMTYPE
+    // Unknown.
     UNKNOWN_DEVICEPLATFORMTYPE
+    // Android AOSP.
     ANDROIDAOSP_DEVICEPLATFORMTYPE
 )
 
 func (i DevicePlatformType) String() string {
-    return []string{"ANDROID", "ANDROIDFORWORK", "IOS", "MACOS", "WINDOWSPHONE81", "WINDOWS81ANDLATER", "WINDOWS10ANDLATER", "ANDROIDWORKPROFILE", "UNKNOWN", "ANDROIDAOSP"}[i]
+    return []string{"android", "androidForWork", "iOS", "macOS", "windowsPhone81", "windows81AndLater", "windows10AndLater", "androidWorkProfile", "unknown", "androidAOSP"}[i]
 }
 func ParseDevicePlatformType(v string) (interface{}, error) {
     result := ANDROID_DEVICEPLATFORMTYPE
-    switch strings.ToUpper(v) {
-        case "ANDROID":
+    switch v {
+        case "android":
             result = ANDROID_DEVICEPLATFORMTYPE
-        case "ANDROIDFORWORK":
+        case "androidForWork":
             result = ANDROIDFORWORK_DEVICEPLATFORMTYPE
-        case "IOS":
+        case "iOS":
             result = IOS_DEVICEPLATFORMTYPE
-        case "MACOS":
+        case "macOS":
             result = MACOS_DEVICEPLATFORMTYPE
-        case "WINDOWSPHONE81":
+        case "windowsPhone81":
             result = WINDOWSPHONE81_DEVICEPLATFORMTYPE
-        case "WINDOWS81ANDLATER":
+        case "windows81AndLater":
             result = WINDOWS81ANDLATER_DEVICEPLATFORMTYPE
-        case "WINDOWS10ANDLATER":
+        case "windows10AndLater":
             result = WINDOWS10ANDLATER_DEVICEPLATFORMTYPE
-        case "ANDROIDWORKPROFILE":
+        case "androidWorkProfile":
             result = ANDROIDWORKPROFILE_DEVICEPLATFORMTYPE
-        case "UNKNOWN":
+        case "unknown":
             result = UNKNOWN_DEVICEPLATFORMTYPE
-        case "ANDROIDAOSP":
+        case "androidAOSP":
             result = ANDROIDAOSP_DEVICEPLATFORMTYPE
         default:
             return 0, errors.New("Unknown DevicePlatformType value: " + v)

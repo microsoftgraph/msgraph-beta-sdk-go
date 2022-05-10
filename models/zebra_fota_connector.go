@@ -16,7 +16,7 @@ type ZebraFotaConnector struct {
     fotaAppsApproved *bool
     // Date and time when the account was last synched with Zebra
     lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The Zebra connector state.
+    // The Zebra connector state. Possible values are: none, connected, disconnected, unknownFutureValue.
     state *ZebraFotaConnectorState
 }
 // NewZebraFotaConnector instantiates a new zebraFotaConnector and sets the default values.
@@ -117,7 +117,7 @@ func (m *ZebraFotaConnector) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3a
         return m.lastSyncDateTime
     }
 }
-// GetState gets the state property value. The Zebra connector state.
+// GetState gets the state property value. The Zebra connector state. Possible values are: none, connected, disconnected, unknownFutureValue.
 func (m *ZebraFotaConnector) GetState()(*ZebraFotaConnectorState) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *ZebraFotaConnector) SetLastSyncDateTime(value *i336074805fc853987abe6f7
         m.lastSyncDateTime = value
     }
 }
-// SetState sets the state property value. The Zebra connector state.
+// SetState sets the state property value. The Zebra connector state. Possible values are: none, connected, disconnected, unknownFutureValue.
 func (m *ZebraFotaConnector) SetState(value *ZebraFotaConnectorState)() {
     if m != nil {
         m.state = value

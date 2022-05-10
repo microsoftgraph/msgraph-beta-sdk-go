@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i97d849f128c1721d852c25d639b5eaa73ccd464ed7702d612ac4c5aed1c0df3d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/manageddevices/item/users/count"
 )
 
 // UsersRequestBuilder provides operations to manage the users property of the microsoft.graph.managedDevice entity.
@@ -61,6 +62,10 @@ func NewUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsersRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Count the count property
+func (m *UsersRequestBuilder) Count()(*i97d849f128c1721d852c25d639b5eaa73ccd464ed7702d612ac4c5aed1c0df3d.CountRequestBuilder) {
+    return i97d849f128c1721d852c25d639b5eaa73ccd464ed7702d612ac4c5aed1c0df3d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation the primary users associated with the managed device.
 func (m *UsersRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

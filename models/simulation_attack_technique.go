@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i SimulationAttackTechnique) String() string {
-    return []string{"UNKNOWN", "CREDENTIALHARVESTING", "ATTACHMENTMALWARE", "DRIVEBYURL", "LINKINATTACHMENT", "LINKTOMALWAREFILE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "credentialHarvesting", "attachmentMalware", "driveByUrl", "linkInAttachment", "linkToMalwareFile", "unknownFutureValue"}[i]
 }
 func ParseSimulationAttackTechnique(v string) (interface{}, error) {
     result := UNKNOWN_SIMULATIONATTACKTECHNIQUE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_SIMULATIONATTACKTECHNIQUE
-        case "CREDENTIALHARVESTING":
+        case "credentialHarvesting":
             result = CREDENTIALHARVESTING_SIMULATIONATTACKTECHNIQUE
-        case "ATTACHMENTMALWARE":
+        case "attachmentMalware":
             result = ATTACHMENTMALWARE_SIMULATIONATTACKTECHNIQUE
-        case "DRIVEBYURL":
+        case "driveByUrl":
             result = DRIVEBYURL_SIMULATIONATTACKTECHNIQUE
-        case "LINKINATTACHMENT":
+        case "linkInAttachment":
             result = LINKINATTACHMENT_SIMULATIONATTACKTECHNIQUE
-        case "LINKTOMALWAREFILE":
+        case "linkToMalwareFile":
             result = LINKTOMALWAREFILE_SIMULATIONATTACKTECHNIQUE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIMULATIONATTACKTECHNIQUE
         default:
             return 0, errors.New("Unknown SimulationAttackTechnique value: " + v)

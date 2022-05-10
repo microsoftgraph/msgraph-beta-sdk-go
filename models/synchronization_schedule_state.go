@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i SynchronizationScheduleState) String() string {
-    return []string{"ACTIVE", "DISABLED", "PAUSED"}[i]
+    return []string{"Active", "Disabled", "Paused"}[i]
 }
 func ParseSynchronizationScheduleState(v string) (interface{}, error) {
     result := ACTIVE_SYNCHRONIZATIONSCHEDULESTATE
-    switch strings.ToUpper(v) {
-        case "ACTIVE":
+    switch v {
+        case "Active":
             result = ACTIVE_SYNCHRONIZATIONSCHEDULESTATE
-        case "DISABLED":
+        case "Disabled":
             result = DISABLED_SYNCHRONIZATIONSCHEDULESTATE
-        case "PAUSED":
+        case "Paused":
             result = PAUSED_SYNCHRONIZATIONSCHEDULESTATE
         default:
             return 0, errors.New("Unknown SynchronizationScheduleState value: " + v)

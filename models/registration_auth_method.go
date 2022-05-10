@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the reportRoot singleton.
@@ -20,30 +19,30 @@ const (
 )
 
 func (i RegistrationAuthMethod) String() string {
-    return []string{"EMAIL", "MOBILEPHONE", "OFFICEPHONE", "SECURITYQUESTION", "APPNOTIFICATION", "APPCODE", "ALTERNATEMOBILEPHONE", "FIDO", "APPPASSWORD", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"email", "mobilePhone", "officePhone", "securityQuestion", "appNotification", "appCode", "alternateMobilePhone", "fido", "appPassword", "unknownFutureValue"}[i]
 }
 func ParseRegistrationAuthMethod(v string) (interface{}, error) {
     result := EMAIL_REGISTRATIONAUTHMETHOD
-    switch strings.ToUpper(v) {
-        case "EMAIL":
+    switch v {
+        case "email":
             result = EMAIL_REGISTRATIONAUTHMETHOD
-        case "MOBILEPHONE":
+        case "mobilePhone":
             result = MOBILEPHONE_REGISTRATIONAUTHMETHOD
-        case "OFFICEPHONE":
+        case "officePhone":
             result = OFFICEPHONE_REGISTRATIONAUTHMETHOD
-        case "SECURITYQUESTION":
+        case "securityQuestion":
             result = SECURITYQUESTION_REGISTRATIONAUTHMETHOD
-        case "APPNOTIFICATION":
+        case "appNotification":
             result = APPNOTIFICATION_REGISTRATIONAUTHMETHOD
-        case "APPCODE":
+        case "appCode":
             result = APPCODE_REGISTRATIONAUTHMETHOD
-        case "ALTERNATEMOBILEPHONE":
+        case "alternateMobilePhone":
             result = ALTERNATEMOBILEPHONE_REGISTRATIONAUTHMETHOD
-        case "FIDO":
+        case "fido":
             result = FIDO_REGISTRATIONAUTHMETHOD
-        case "APPPASSWORD":
+        case "appPassword":
             result = APPPASSWORD_REGISTRATIONAUTHMETHOD
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REGISTRATIONAUTHMETHOD
         default:
             return 0, errors.New("Unknown RegistrationAuthMethod value: " + v)

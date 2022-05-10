@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i TranslationBehavior) String() string {
-    return []string{"ASK", "YES", "NO"}[i]
+    return []string{"Ask", "Yes", "No"}[i]
 }
 func ParseTranslationBehavior(v string) (interface{}, error) {
     result := ASK_TRANSLATIONBEHAVIOR
-    switch strings.ToUpper(v) {
-        case "ASK":
+    switch v {
+        case "Ask":
             result = ASK_TRANSLATIONBEHAVIOR
-        case "YES":
+        case "Yes":
             result = YES_TRANSLATIONBEHAVIOR
-        case "NO":
+        case "No":
             result = NO_TRANSLATIONBEHAVIOR
         default:
             return 0, errors.New("Unknown TranslationBehavior value: " + v)

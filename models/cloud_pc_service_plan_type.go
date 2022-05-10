@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i CloudPcServicePlanType) String() string {
-    return []string{"ENTERPRISE", "BUSINESS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"enterprise", "business", "unknownFutureValue"}[i]
 }
 func ParseCloudPcServicePlanType(v string) (interface{}, error) {
     result := ENTERPRISE_CLOUDPCSERVICEPLANTYPE
-    switch strings.ToUpper(v) {
-        case "ENTERPRISE":
+    switch v {
+        case "enterprise":
             result = ENTERPRISE_CLOUDPCSERVICEPLANTYPE
-        case "BUSINESS":
+        case "business":
             result = BUSINESS_CLOUDPCSERVICEPLANTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCSERVICEPLANTYPE
         default:
             return 0, errors.New("Unknown CloudPcServicePlanType value: " + v)

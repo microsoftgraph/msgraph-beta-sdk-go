@@ -1,6 +1,5 @@
 package managedtenants
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i ManagementProvider) String() string {
-    return []string{"MICROSOFT", "COMMUNITY", "INDIRECTPROVIDER", "SELF", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"microsoft", "community", "indirectProvider", "self", "unknownFutureValue"}[i]
 }
 func ParseManagementProvider(v string) (interface{}, error) {
     result := MICROSOFT_MANAGEMENTPROVIDER
-    switch strings.ToUpper(v) {
-        case "MICROSOFT":
+    switch v {
+        case "microsoft":
             result = MICROSOFT_MANAGEMENTPROVIDER
-        case "COMMUNITY":
+        case "community":
             result = COMMUNITY_MANAGEMENTPROVIDER
-        case "INDIRECTPROVIDER":
+        case "indirectProvider":
             result = INDIRECTPROVIDER_MANAGEMENTPROVIDER
-        case "SELF":
+        case "self":
             result = SELF_MANAGEMENTPROVIDER
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MANAGEMENTPROVIDER
         default:
             return 0, errors.New("Unknown ManagementProvider value: " + v)

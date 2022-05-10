@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i IncomingTokenType) String() string {
-    return []string{"NONE", "PRIMARYREFRESHTOKEN", "SAML11", "SAML20", "UNKNOWNFUTUREVALUE", "REMOTEDESKTOPTOKEN"}[i]
+    return []string{"none", "primaryRefreshToken", "saml11", "saml20", "unknownFutureValue", "remoteDesktopToken"}[i]
 }
 func ParseIncomingTokenType(v string) (interface{}, error) {
     result := NONE_INCOMINGTOKENTYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_INCOMINGTOKENTYPE
-        case "PRIMARYREFRESHTOKEN":
+        case "primaryRefreshToken":
             result = PRIMARYREFRESHTOKEN_INCOMINGTOKENTYPE
-        case "SAML11":
+        case "saml11":
             result = SAML11_INCOMINGTOKENTYPE
-        case "SAML20":
+        case "saml20":
             result = SAML20_INCOMINGTOKENTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_INCOMINGTOKENTYPE
-        case "REMOTEDESKTOPTOKEN":
+        case "remoteDesktopToken":
             result = REMOTEDESKTOPTOKEN_INCOMINGTOKENTYPE
         default:
             return 0, errors.New("Unknown IncomingTokenType value: " + v)

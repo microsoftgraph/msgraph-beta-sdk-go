@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of onPremisesPublishingProfile entities.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i OnPremisesPublishingType) String() string {
-    return []string{"APPLICATIONPROXY", "EXCHANGEONLINE", "AUTHENTICATION", "PROVISIONING", "INTUNEPFX", "OFLINEDOMAINJOIN", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"applicationProxy", "exchangeOnline", "authentication", "provisioning", "intunePfx", "oflineDomainJoin", "unknownFutureValue"}[i]
 }
 func ParseOnPremisesPublishingType(v string) (interface{}, error) {
     result := APPLICATIONPROXY_ONPREMISESPUBLISHINGTYPE
-    switch strings.ToUpper(v) {
-        case "APPLICATIONPROXY":
+    switch v {
+        case "applicationProxy":
             result = APPLICATIONPROXY_ONPREMISESPUBLISHINGTYPE
-        case "EXCHANGEONLINE":
+        case "exchangeOnline":
             result = EXCHANGEONLINE_ONPREMISESPUBLISHINGTYPE
-        case "AUTHENTICATION":
+        case "authentication":
             result = AUTHENTICATION_ONPREMISESPUBLISHINGTYPE
-        case "PROVISIONING":
+        case "provisioning":
             result = PROVISIONING_ONPREMISESPUBLISHINGTYPE
-        case "INTUNEPFX":
+        case "intunePfx":
             result = INTUNEPFX_ONPREMISESPUBLISHINGTYPE
-        case "OFLINEDOMAINJOIN":
+        case "oflineDomainJoin":
             result = OFLINEDOMAINJOIN_ONPREMISESPUBLISHINGTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ONPREMISESPUBLISHINGTYPE
         default:
             return 0, errors.New("Unknown OnPremisesPublishingType value: " + v)

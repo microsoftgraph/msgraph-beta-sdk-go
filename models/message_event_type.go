@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of messageEvent entities.
@@ -32,54 +31,54 @@ const (
 )
 
 func (i MessageEventType) String() string {
-    return []string{"RECEIVED", "SENT", "DELIVERED", "FAILED", "PROCESSINGFAILED", "DISTRIBUTIONGROUPEXPANDED", "SUBMITTED", "DELAYED", "REDIRECTED", "RESOLVED", "DROPPED", "RECIPIENTSADDED", "MALWAREDETECTED", "MALWAREDETECTEDINMESSAGE", "MALWAREDETECTEDINATTACHMENT", "TTZAPPED", "TTDELIVERED", "SPAMDETECTED", "TRANSPORTRULETRIGGERED", "DLPRULETRIGGERED", "JOURNALED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"received", "sent", "delivered", "failed", "processingFailed", "distributionGroupExpanded", "submitted", "delayed", "redirected", "resolved", "dropped", "recipientsAdded", "malwareDetected", "malwareDetectedInMessage", "malwareDetectedInAttachment", "ttZapped", "ttDelivered", "spamDetected", "transportRuleTriggered", "dlpRuleTriggered", "journaled", "unknownFutureValue"}[i]
 }
 func ParseMessageEventType(v string) (interface{}, error) {
     result := RECEIVED_MESSAGEEVENTTYPE
-    switch strings.ToUpper(v) {
-        case "RECEIVED":
+    switch v {
+        case "received":
             result = RECEIVED_MESSAGEEVENTTYPE
-        case "SENT":
+        case "sent":
             result = SENT_MESSAGEEVENTTYPE
-        case "DELIVERED":
+        case "delivered":
             result = DELIVERED_MESSAGEEVENTTYPE
-        case "FAILED":
+        case "failed":
             result = FAILED_MESSAGEEVENTTYPE
-        case "PROCESSINGFAILED":
+        case "processingFailed":
             result = PROCESSINGFAILED_MESSAGEEVENTTYPE
-        case "DISTRIBUTIONGROUPEXPANDED":
+        case "distributionGroupExpanded":
             result = DISTRIBUTIONGROUPEXPANDED_MESSAGEEVENTTYPE
-        case "SUBMITTED":
+        case "submitted":
             result = SUBMITTED_MESSAGEEVENTTYPE
-        case "DELAYED":
+        case "delayed":
             result = DELAYED_MESSAGEEVENTTYPE
-        case "REDIRECTED":
+        case "redirected":
             result = REDIRECTED_MESSAGEEVENTTYPE
-        case "RESOLVED":
+        case "resolved":
             result = RESOLVED_MESSAGEEVENTTYPE
-        case "DROPPED":
+        case "dropped":
             result = DROPPED_MESSAGEEVENTTYPE
-        case "RECIPIENTSADDED":
+        case "recipientsAdded":
             result = RECIPIENTSADDED_MESSAGEEVENTTYPE
-        case "MALWAREDETECTED":
+        case "malwareDetected":
             result = MALWAREDETECTED_MESSAGEEVENTTYPE
-        case "MALWAREDETECTEDINMESSAGE":
+        case "malwareDetectedInMessage":
             result = MALWAREDETECTEDINMESSAGE_MESSAGEEVENTTYPE
-        case "MALWAREDETECTEDINATTACHMENT":
+        case "malwareDetectedInAttachment":
             result = MALWAREDETECTEDINATTACHMENT_MESSAGEEVENTTYPE
-        case "TTZAPPED":
+        case "ttZapped":
             result = TTZAPPED_MESSAGEEVENTTYPE
-        case "TTDELIVERED":
+        case "ttDelivered":
             result = TTDELIVERED_MESSAGEEVENTTYPE
-        case "SPAMDETECTED":
+        case "spamDetected":
             result = SPAMDETECTED_MESSAGEEVENTTYPE
-        case "TRANSPORTRULETRIGGERED":
+        case "transportRuleTriggered":
             result = TRANSPORTRULETRIGGERED_MESSAGEEVENTTYPE
-        case "DLPRULETRIGGERED":
+        case "dlpRuleTriggered":
             result = DLPRULETRIGGERED_MESSAGEEVENTTYPE
-        case "JOURNALED":
+        case "journaled":
             result = JOURNALED_MESSAGEEVENTTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MESSAGEEVENTTYPE
         default:
             return 0, errors.New("Unknown MessageEventType value: " + v)

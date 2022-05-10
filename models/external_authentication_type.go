@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i ExternalAuthenticationType) String() string {
-    return []string{"PASSTHRU", "AADPREAUTHENTICATION"}[i]
+    return []string{"passthru", "aadPreAuthentication"}[i]
 }
 func ParseExternalAuthenticationType(v string) (interface{}, error) {
     result := PASSTHRU_EXTERNALAUTHENTICATIONTYPE
-    switch strings.ToUpper(v) {
-        case "PASSTHRU":
+    switch v {
+        case "passthru":
             result = PASSTHRU_EXTERNALAUTHENTICATIONTYPE
-        case "AADPREAUTHENTICATION":
+        case "aadPreAuthentication":
             result = AADPREAUTHENTICATION_EXTERNALAUTHENTICATIONTYPE
         default:
             return 0, errors.New("Unknown ExternalAuthenticationType value: " + v)

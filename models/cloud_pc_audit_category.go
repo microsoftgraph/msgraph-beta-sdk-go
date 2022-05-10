@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i CloudPcAuditCategory) String() string {
-    return []string{"CLOUDPC", "OTHER"}[i]
+    return []string{"cloudPC", "other"}[i]
 }
 func ParseCloudPcAuditCategory(v string) (interface{}, error) {
     result := CLOUDPC_CLOUDPCAUDITCATEGORY
-    switch strings.ToUpper(v) {
-        case "CLOUDPC":
+    switch v {
+        case "cloudPC":
             result = CLOUDPC_CLOUDPCAUDITCATEGORY
-        case "OTHER":
+        case "other":
             result = OTHER_CLOUDPCAUDITCATEGORY
         default:
             return 0, errors.New("Unknown CloudPcAuditCategory value: " + v)

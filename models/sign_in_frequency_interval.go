@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the identityContainer singleton.
+// Provides operations to manage the policyRoot singleton.
 type SignInFrequencyInterval int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i SignInFrequencyInterval) String() string {
-    return []string{"TIMEBASED", "EVERYTIME", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"timeBased", "everyTime", "unknownFutureValue"}[i]
 }
 func ParseSignInFrequencyInterval(v string) (interface{}, error) {
     result := TIMEBASED_SIGNINFREQUENCYINTERVAL
-    switch strings.ToUpper(v) {
-        case "TIMEBASED":
+    switch v {
+        case "timeBased":
             result = TIMEBASED_SIGNINFREQUENCYINTERVAL
-        case "EVERYTIME":
+        case "everyTime":
             result = EVERYTIME_SIGNINFREQUENCYINTERVAL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIGNINFREQUENCYINTERVAL
         default:
             return 0, errors.New("Unknown SignInFrequencyInterval value: " + v)

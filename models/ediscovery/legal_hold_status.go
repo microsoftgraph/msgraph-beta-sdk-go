@@ -1,6 +1,5 @@
 package ediscovery
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i LegalHoldStatus) String() string {
-    return []string{"PENDING", "ERROR", "SUCCESS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"Pending", "Error", "Success", "UnknownFutureValue"}[i]
 }
 func ParseLegalHoldStatus(v string) (interface{}, error) {
     result := PENDING_LEGALHOLDSTATUS
-    switch strings.ToUpper(v) {
-        case "PENDING":
+    switch v {
+        case "Pending":
             result = PENDING_LEGALHOLDSTATUS
-        case "ERROR":
+        case "Error":
             result = ERROR_LEGALHOLDSTATUS
-        case "SUCCESS":
+        case "Success":
             result = SUCCESS_LEGALHOLDSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "UnknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LEGALHOLDSTATUS
         default:
             return 0, errors.New("Unknown LegalHoldStatus value: " + v)

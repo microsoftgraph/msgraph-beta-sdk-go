@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the reportRoot singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i FeatureType) String() string {
-    return []string{"REGISTRATION", "RESET", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"registration", "reset", "unknownFutureValue"}[i]
 }
 func ParseFeatureType(v string) (interface{}, error) {
     result := REGISTRATION_FEATURETYPE
-    switch strings.ToUpper(v) {
-        case "REGISTRATION":
+    switch v {
+        case "registration":
             result = REGISTRATION_FEATURETYPE
-        case "RESET":
+        case "reset":
             result = RESET_FEATURETYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FEATURETYPE
         default:
             return 0, errors.New("Unknown FeatureType value: " + v)

@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the identityContainer singleton.
+// Provides operations to manage the policyRoot singleton.
 type SignInFrequencyAuthenticationType int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i SignInFrequencyAuthenticationType) String() string {
-    return []string{"PRIMARYANDSECONDARYAUTHENTICATION", "SECONDARYAUTHENTICATION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"primaryAndSecondaryAuthentication", "secondaryAuthentication", "unknownFutureValue"}[i]
 }
 func ParseSignInFrequencyAuthenticationType(v string) (interface{}, error) {
     result := PRIMARYANDSECONDARYAUTHENTICATION_SIGNINFREQUENCYAUTHENTICATIONTYPE
-    switch strings.ToUpper(v) {
-        case "PRIMARYANDSECONDARYAUTHENTICATION":
+    switch v {
+        case "primaryAndSecondaryAuthentication":
             result = PRIMARYANDSECONDARYAUTHENTICATION_SIGNINFREQUENCYAUTHENTICATIONTYPE
-        case "SECONDARYAUTHENTICATION":
+        case "secondaryAuthentication":
             result = SECONDARYAUTHENTICATION_SIGNINFREQUENCYAUTHENTICATIONTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIGNINFREQUENCYAUTHENTICATIONTYPE
         default:
             return 0, errors.New("Unknown SignInFrequencyAuthenticationType value: " + v)

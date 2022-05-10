@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type AndroidDeviceOwnerEnrollmentTokenType int
 
 const (
+    // Default token type.
     DEFAULT_ESCAPED_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE AndroidDeviceOwnerEnrollmentTokenType = iota
+    // Token type for Azure AD shared dedicated device enrollment. It applies to CorporateOwnedDedicatedDevice enrollment mode only.
     CORPORATEOWNEDDEDICATEDDEVICEWITHAZUREADSHAREDMODE_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
 )
 
 func (i AndroidDeviceOwnerEnrollmentTokenType) String() string {
-    return []string{"DEFAULT_ESCAPED", "CORPORATEOWNEDDEDICATEDDEVICEWITHAZUREADSHAREDMODE"}[i]
+    return []string{"default", "corporateOwnedDedicatedDeviceWithAzureADSharedMode"}[i]
 }
 func ParseAndroidDeviceOwnerEnrollmentTokenType(v string) (interface{}, error) {
     result := DEFAULT_ESCAPED_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
-    switch strings.ToUpper(v) {
-        case "DEFAULT_ESCAPED":
+    switch v {
+        case "default":
             result = DEFAULT_ESCAPED_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
-        case "CORPORATEOWNEDDEDICATEDDEVICEWITHAZUREADSHAREDMODE":
+        case "corporateOwnedDedicatedDeviceWithAzureADSharedMode":
             result = CORPORATEOWNEDDEDICATEDDEVICEWITHAZUREADSHAREDMODE_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
         default:
             return 0, errors.New("Unknown AndroidDeviceOwnerEnrollmentTokenType value: " + v)

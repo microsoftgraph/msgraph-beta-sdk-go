@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DriverCategory int
 
 const (
+    // This indicates a driver is recommended by Microsoft.
     RECOMMENDED_DRIVERCATEGORY DriverCategory = iota
+    // This indicates a driver was recommended by Microsoft and IT admin has taken some approval action on it.
     PREVIOUSLYAPPROVED_DRIVERCATEGORY
+    // This indicates a driver is never recommended by Microsoft.
     OTHER_DRIVERCATEGORY
 )
 
 func (i DriverCategory) String() string {
-    return []string{"RECOMMENDED", "PREVIOUSLYAPPROVED", "OTHER"}[i]
+    return []string{"recommended", "previouslyApproved", "other"}[i]
 }
 func ParseDriverCategory(v string) (interface{}, error) {
     result := RECOMMENDED_DRIVERCATEGORY
-    switch strings.ToUpper(v) {
-        case "RECOMMENDED":
+    switch v {
+        case "recommended":
             result = RECOMMENDED_DRIVERCATEGORY
-        case "PREVIOUSLYAPPROVED":
+        case "previouslyApproved":
             result = PREVIOUSLYAPPROVED_DRIVERCATEGORY
-        case "OTHER":
+        case "other":
             result = OTHER_DRIVERCATEGORY
         default:
             return 0, errors.New("Unknown DriverCategory value: " + v)

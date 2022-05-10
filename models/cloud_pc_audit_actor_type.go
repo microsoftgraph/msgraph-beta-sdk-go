@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i CloudPcAuditActorType) String() string {
-    return []string{"ITPRO", "APPLICATION", "PARTNER", "UNKNOWN"}[i]
+    return []string{"itPro", "application", "partner", "unknown"}[i]
 }
 func ParseCloudPcAuditActorType(v string) (interface{}, error) {
     result := ITPRO_CLOUDPCAUDITACTORTYPE
-    switch strings.ToUpper(v) {
-        case "ITPRO":
+    switch v {
+        case "itPro":
             result = ITPRO_CLOUDPCAUDITACTORTYPE
-        case "APPLICATION":
+        case "application":
             result = APPLICATION_CLOUDPCAUDITACTORTYPE
-        case "PARTNER":
+        case "partner":
             result = PARTNER_CLOUDPCAUDITACTORTYPE
-        case "UNKNOWN":
+        case "unknown":
             result = UNKNOWN_CLOUDPCAUDITACTORTYPE
         default:
             return 0, errors.New("Unknown CloudPcAuditActorType value: " + v)

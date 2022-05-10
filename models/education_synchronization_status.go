@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the educationRoot singleton.
@@ -19,28 +18,28 @@ const (
 )
 
 func (i EducationSynchronizationStatus) String() string {
-    return []string{"PAUSED", "INPROGRESS", "SUCCESS", "ERROR", "VALIDATIONERROR", "QUARANTINED", "UNKNOWNFUTUREVALUE", "EXTRACTING", "VALIDATING"}[i]
+    return []string{"paused", "inProgress", "success", "error", "validationError", "quarantined", "unknownFutureValue", "extracting", "validating"}[i]
 }
 func ParseEducationSynchronizationStatus(v string) (interface{}, error) {
     result := PAUSED_EDUCATIONSYNCHRONIZATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "PAUSED":
+    switch v {
+        case "paused":
             result = PAUSED_EDUCATIONSYNCHRONIZATIONSTATUS
-        case "INPROGRESS":
+        case "inProgress":
             result = INPROGRESS_EDUCATIONSYNCHRONIZATIONSTATUS
-        case "SUCCESS":
+        case "success":
             result = SUCCESS_EDUCATIONSYNCHRONIZATIONSTATUS
-        case "ERROR":
+        case "error":
             result = ERROR_EDUCATIONSYNCHRONIZATIONSTATUS
-        case "VALIDATIONERROR":
+        case "validationError":
             result = VALIDATIONERROR_EDUCATIONSYNCHRONIZATIONSTATUS
-        case "QUARANTINED":
+        case "quarantined":
             result = QUARANTINED_EDUCATIONSYNCHRONIZATIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONSYNCHRONIZATIONSTATUS
-        case "EXTRACTING":
+        case "extracting":
             result = EXTRACTING_EDUCATIONSYNCHRONIZATIONSTATUS
-        case "VALIDATING":
+        case "validating":
             result = VALIDATING_EDUCATIONSYNCHRONIZATIONSTATUS
         default:
             return 0, errors.New("Unknown EducationSynchronizationStatus value: " + v)

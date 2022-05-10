@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
@@ -19,28 +18,28 @@ const (
 )
 
 func (i SimulationStatus) String() string {
-    return []string{"UNKNOWN", "DRAFT", "RUNNING", "SCHEDULED", "SUCCEEDED", "FAILED", "CANCELLED", "EXCLUDED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "draft", "running", "scheduled", "succeeded", "failed", "cancelled", "excluded", "unknownFutureValue"}[i]
 }
 func ParseSimulationStatus(v string) (interface{}, error) {
     result := UNKNOWN_SIMULATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_SIMULATIONSTATUS
-        case "DRAFT":
+        case "draft":
             result = DRAFT_SIMULATIONSTATUS
-        case "RUNNING":
+        case "running":
             result = RUNNING_SIMULATIONSTATUS
-        case "SCHEDULED":
+        case "scheduled":
             result = SCHEDULED_SIMULATIONSTATUS
-        case "SUCCEEDED":
+        case "succeeded":
             result = SUCCEEDED_SIMULATIONSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_SIMULATIONSTATUS
-        case "CANCELLED":
+        case "cancelled":
             result = CANCELLED_SIMULATIONSTATUS
-        case "EXCLUDED":
+        case "excluded":
             result = EXCLUDED_SIMULATIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIMULATIONSTATUS
         default:
             return 0, errors.New("Unknown SimulationStatus value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i SynchronizationTaskExecutionResult) String() string {
-    return []string{"SUCCEEDED", "FAILED", "ENTRYLEVELERRORS"}[i]
+    return []string{"Succeeded", "Failed", "EntryLevelErrors"}[i]
 }
 func ParseSynchronizationTaskExecutionResult(v string) (interface{}, error) {
     result := SUCCEEDED_SYNCHRONIZATIONTASKEXECUTIONRESULT
-    switch strings.ToUpper(v) {
-        case "SUCCEEDED":
+    switch v {
+        case "Succeeded":
             result = SUCCEEDED_SYNCHRONIZATIONTASKEXECUTIONRESULT
-        case "FAILED":
+        case "Failed":
             result = FAILED_SYNCHRONIZATIONTASKEXECUTIONRESULT
-        case "ENTRYLEVELERRORS":
+        case "EntryLevelErrors":
             result = ENTRYLEVELERRORS_SYNCHRONIZATIONTASKEXECUTIONRESULT
         default:
             return 0, errors.New("Unknown SynchronizationTaskExecutionResult value: " + v)

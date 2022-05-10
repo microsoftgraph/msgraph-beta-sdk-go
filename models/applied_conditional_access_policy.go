@@ -28,6 +28,8 @@ type AppliedConditionalAccessPolicy struct {
     includeRulesSatisfied []ConditionalAccessRuleSatisfiedable
     // Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.
     result *AppliedConditionalAccessPolicyResult
+    // The sessionControlsNotSatisfied property
+    sessionControlsNotSatisfied []string
 }
 // NewAppliedConditionalAccessPolicy instantiates a new appliedConditionalAccessPolicy and sets the default values.
 func NewAppliedConditionalAccessPolicy()(*AppliedConditionalAccessPolicy) {
@@ -223,6 +225,20 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["sessionControlsNotSatisfied"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSessionControlsNotSatisfied(res)
+        }
+        return nil
+    }
     return res
 }
 // GetId gets the id property value. Identifier of the conditional access policy.
@@ -247,6 +263,14 @@ func (m *AppliedConditionalAccessPolicy) GetResult()(*AppliedConditionalAccessPo
         return nil
     } else {
         return m.result
+    }
+}
+// GetSessionControlsNotSatisfied gets the sessionControlsNotSatisfied property value. The sessionControlsNotSatisfied property
+func (m *AppliedConditionalAccessPolicy) GetSessionControlsNotSatisfied()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.sessionControlsNotSatisfied
     }
 }
 // Serialize serializes information the current object
@@ -318,6 +342,12 @@ func (m *AppliedConditionalAccessPolicy) Serialize(writer i878a80d2330e89d268963
     if m.GetResult() != nil {
         cast := (*m.GetResult()).String()
         err := writer.WriteStringValue("result", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSessionControlsNotSatisfied() != nil {
+        err := writer.WriteCollectionOfStringValues("sessionControlsNotSatisfied", m.GetSessionControlsNotSatisfied())
         if err != nil {
             return err
         }
@@ -394,5 +424,11 @@ func (m *AppliedConditionalAccessPolicy) SetIncludeRulesSatisfied(value []Condit
 func (m *AppliedConditionalAccessPolicy) SetResult(value *AppliedConditionalAccessPolicyResult)() {
     if m != nil {
         m.result = value
+    }
+}
+// SetSessionControlsNotSatisfied sets the sessionControlsNotSatisfied property value. The sessionControlsNotSatisfied property
+func (m *AppliedConditionalAccessPolicy) SetSessionControlsNotSatisfied(value []string)() {
+    if m != nil {
+        m.sessionControlsNotSatisfied = value
     }
 }

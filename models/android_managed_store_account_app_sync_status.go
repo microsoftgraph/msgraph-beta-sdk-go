@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i AndroidManagedStoreAccountAppSyncStatus) String() string {
-    return []string{"SUCCESS", "CREDENTIALSNOTVALID", "ANDROIDFORWORKAPIERROR", "MANAGEMENTSERVICEERROR", "UNKNOWNERROR", "NONE"}[i]
+    return []string{"success", "credentialsNotValid", "androidForWorkApiError", "managementServiceError", "unknownError", "none"}[i]
 }
 func ParseAndroidManagedStoreAccountAppSyncStatus(v string) (interface{}, error) {
     result := SUCCESS_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
-    switch strings.ToUpper(v) {
-        case "SUCCESS":
+    switch v {
+        case "success":
             result = SUCCESS_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
-        case "CREDENTIALSNOTVALID":
+        case "credentialsNotValid":
             result = CREDENTIALSNOTVALID_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
-        case "ANDROIDFORWORKAPIERROR":
+        case "androidForWorkApiError":
             result = ANDROIDFORWORKAPIERROR_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
-        case "MANAGEMENTSERVICEERROR":
+        case "managementServiceError":
             result = MANAGEMENTSERVICEERROR_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
-        case "UNKNOWNERROR":
+        case "unknownError":
             result = UNKNOWNERROR_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
-        case "NONE":
+        case "none":
             result = NONE_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
         default:
             return 0, errors.New("Unknown AndroidManagedStoreAccountAppSyncStatus value: " + v)

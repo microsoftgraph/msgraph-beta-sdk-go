@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type RestrictedAppsState int
 
 const (
+    // Prohibited apps
     PROHIBITEDAPPS_RESTRICTEDAPPSSTATE RestrictedAppsState = iota
+    // Not approved apps
     NOTAPPROVEDAPPS_RESTRICTEDAPPSSTATE
 )
 
 func (i RestrictedAppsState) String() string {
-    return []string{"PROHIBITEDAPPS", "NOTAPPROVEDAPPS"}[i]
+    return []string{"prohibitedApps", "notApprovedApps"}[i]
 }
 func ParseRestrictedAppsState(v string) (interface{}, error) {
     result := PROHIBITEDAPPS_RESTRICTEDAPPSSTATE
-    switch strings.ToUpper(v) {
-        case "PROHIBITEDAPPS":
+    switch v {
+        case "prohibitedApps":
             result = PROHIBITEDAPPS_RESTRICTEDAPPSSTATE
-        case "NOTAPPROVEDAPPS":
+        case "notApprovedApps":
             result = NOTAPPROVEDAPPS_RESTRICTEDAPPSSTATE
         default:
             return 0, errors.New("Unknown RestrictedAppsState value: " + v)

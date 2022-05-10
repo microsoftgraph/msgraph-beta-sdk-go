@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the policyRoot singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i CrossTenantAccessPolicyTargetConfigurationAccessType) String() string {
-    return []string{"ALLOWED", "BLOCKED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"allowed", "blocked", "unknownFutureValue"}[i]
 }
 func ParseCrossTenantAccessPolicyTargetConfigurationAccessType(v string) (interface{}, error) {
     result := ALLOWED_CROSSTENANTACCESSPOLICYTARGETCONFIGURATIONACCESSTYPE
-    switch strings.ToUpper(v) {
-        case "ALLOWED":
+    switch v {
+        case "allowed":
             result = ALLOWED_CROSSTENANTACCESSPOLICYTARGETCONFIGURATIONACCESSTYPE
-        case "BLOCKED":
+        case "blocked":
             result = BLOCKED_CROSSTENANTACCESSPOLICYTARGETCONFIGURATIONACCESSTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CROSSTENANTACCESSPOLICYTARGETCONFIGURATIONACCESSTYPE
         default:
             return 0, errors.New("Unknown CrossTenantAccessPolicyTargetConfigurationAccessType value: " + v)

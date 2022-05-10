@@ -8,7 +8,7 @@ import (
 type AndroidFotaDeploymentAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    //  Key for the Android FOTA Assignment entity
+    // Key for the Android FOTA Assignment entity
     id *string
     // The AAD Group we are deploying firmware updates to
     target AndroidFotaDeploymentAssignmentTargetable
@@ -57,7 +57,7 @@ func (m *AndroidFotaDeploymentAssignment) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetId gets the id property value.  Key for the Android FOTA Assignment entity
+// GetId gets the id property value. Key for the Android FOTA Assignment entity
 func (m *AndroidFotaDeploymentAssignment) GetId()(*string) {
     if m == nil {
         return nil
@@ -101,7 +101,7 @@ func (m *AndroidFotaDeploymentAssignment) SetAdditionalData(value map[string]int
         m.additionalData = value
     }
 }
-// SetId sets the id property value.  Key for the Android FOTA Assignment entity
+// SetId sets the id property value. Key for the Android FOTA Assignment entity
 func (m *AndroidFotaDeploymentAssignment) SetId(value *string)() {
     if m != nil {
         m.id = value

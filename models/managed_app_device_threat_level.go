@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type ManagedAppDeviceThreatLevel int
 
 const (
+    // Value not configured
     NOTCONFIGURED_MANAGEDAPPDEVICETHREATLEVEL ManagedAppDeviceThreatLevel = iota
+    // Device needs to have no threat
     SECURED_MANAGEDAPPDEVICETHREATLEVEL
+    // Device needs to have a low threat.
     LOW_MANAGEDAPPDEVICETHREATLEVEL
+    // Device needs to have not more than medium threat.
     MEDIUM_MANAGEDAPPDEVICETHREATLEVEL
+    // Device needs to have not more than high threat
     HIGH_MANAGEDAPPDEVICETHREATLEVEL
 )
 
 func (i ManagedAppDeviceThreatLevel) String() string {
-    return []string{"NOTCONFIGURED", "SECURED", "LOW", "MEDIUM", "HIGH"}[i]
+    return []string{"notConfigured", "secured", "low", "medium", "high"}[i]
 }
 func ParseManagedAppDeviceThreatLevel(v string) (interface{}, error) {
     result := NOTCONFIGURED_MANAGEDAPPDEVICETHREATLEVEL
-    switch strings.ToUpper(v) {
-        case "NOTCONFIGURED":
+    switch v {
+        case "notConfigured":
             result = NOTCONFIGURED_MANAGEDAPPDEVICETHREATLEVEL
-        case "SECURED":
+        case "secured":
             result = SECURED_MANAGEDAPPDEVICETHREATLEVEL
-        case "LOW":
+        case "low":
             result = LOW_MANAGEDAPPDEVICETHREATLEVEL
-        case "MEDIUM":
+        case "medium":
             result = MEDIUM_MANAGEDAPPDEVICETHREATLEVEL
-        case "HIGH":
+        case "high":
             result = HIGH_MANAGEDAPPDEVICETHREATLEVEL
         default:
             return 0, errors.New("Unknown ManagedAppDeviceThreatLevel value: " + v)

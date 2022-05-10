@@ -1,6 +1,5 @@
 package ediscovery
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i DataSourceContainerStatus) String() string {
-    return []string{"ACTIVE", "RELEASED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"Active", "Released", "UnknownFutureValue"}[i]
 }
 func ParseDataSourceContainerStatus(v string) (interface{}, error) {
     result := ACTIVE_DATASOURCECONTAINERSTATUS
-    switch strings.ToUpper(v) {
-        case "ACTIVE":
+    switch v {
+        case "Active":
             result = ACTIVE_DATASOURCECONTAINERSTATUS
-        case "RELEASED":
+        case "Released":
             result = RELEASED_DATASOURCECONTAINERSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "UnknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DATASOURCECONTAINERSTATUS
         default:
             return 0, errors.New("Unknown DataSourceContainerStatus value: " + v)

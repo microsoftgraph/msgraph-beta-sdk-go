@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the setScheduledRetireState method.
 type ScheduledRetireState int
 
 const (
+    // Cancel retire.
     CANCELRETIRE_SCHEDULEDRETIRESTATE ScheduledRetireState = iota
+    // Retire these devices.
     COMFIRMRETIRE_SCHEDULEDRETIRESTATE
 )
 
 func (i ScheduledRetireState) String() string {
-    return []string{"CANCELRETIRE", "COMFIRMRETIRE"}[i]
+    return []string{"cancelRetire", "comfirmRetire"}[i]
 }
 func ParseScheduledRetireState(v string) (interface{}, error) {
     result := CANCELRETIRE_SCHEDULEDRETIRESTATE
-    switch strings.ToUpper(v) {
-        case "CANCELRETIRE":
+    switch v {
+        case "cancelRetire":
             result = CANCELRETIRE_SCHEDULEDRETIRESTATE
-        case "COMFIRMRETIRE":
+        case "comfirmRetire":
             result = COMFIRMRETIRE_SCHEDULEDRETIRESTATE
         default:
             return 0, errors.New("Unknown ScheduledRetireState value: " + v)

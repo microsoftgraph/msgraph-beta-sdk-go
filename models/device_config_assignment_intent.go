@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceConfigAssignmentIntent int
 
 const (
+    // Ensure that the configuration profile is applied to the devices in the assignment.
     APPLY_DEVICECONFIGASSIGNMENTINTENT DeviceConfigAssignmentIntent = iota
+    // Ensure that the configuration profile is removed from devices that have previously installed the configuration profile.
     REMOVE_DEVICECONFIGASSIGNMENTINTENT
 )
 
 func (i DeviceConfigAssignmentIntent) String() string {
-    return []string{"APPLY", "REMOVE"}[i]
+    return []string{"apply", "remove"}[i]
 }
 func ParseDeviceConfigAssignmentIntent(v string) (interface{}, error) {
     result := APPLY_DEVICECONFIGASSIGNMENTINTENT
-    switch strings.ToUpper(v) {
-        case "APPLY":
+    switch v {
+        case "apply":
             result = APPLY_DEVICECONFIGASSIGNMENTINTENT
-        case "REMOVE":
+        case "remove":
             result = REMOVE_DEVICECONFIGASSIGNMENTINTENT
         default:
             return 0, errors.New("Unknown DeviceConfigAssignmentIntent value: " + v)

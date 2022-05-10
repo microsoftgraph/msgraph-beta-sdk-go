@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i AttributeFlowType) String() string {
-    return []string{"ALWAYS", "OBJECTADDONLY", "MULTIVALUEADDONLY", "VALUEADDONLY", "ATTRIBUTEADDONLY"}[i]
+    return []string{"Always", "ObjectAddOnly", "MultiValueAddOnly", "ValueAddOnly", "AttributeAddOnly"}[i]
 }
 func ParseAttributeFlowType(v string) (interface{}, error) {
     result := ALWAYS_ATTRIBUTEFLOWTYPE
-    switch strings.ToUpper(v) {
-        case "ALWAYS":
+    switch v {
+        case "Always":
             result = ALWAYS_ATTRIBUTEFLOWTYPE
-        case "OBJECTADDONLY":
+        case "ObjectAddOnly":
             result = OBJECTADDONLY_ATTRIBUTEFLOWTYPE
-        case "MULTIVALUEADDONLY":
+        case "MultiValueAddOnly":
             result = MULTIVALUEADDONLY_ATTRIBUTEFLOWTYPE
-        case "VALUEADDONLY":
+        case "ValueAddOnly":
             result = VALUEADDONLY_ATTRIBUTEFLOWTYPE
-        case "ATTRIBUTEADDONLY":
+        case "AttributeAddOnly":
             result = ATTRIBUTEADDONLY_ATTRIBUTEFLOWTYPE
         default:
             return 0, errors.New("Unknown AttributeFlowType value: " + v)

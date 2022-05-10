@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i AttributeType) String() string {
-    return []string{"STRING", "INTEGER", "REFERENCE", "BINARY", "BOOLEAN", "DATETIME"}[i]
+    return []string{"String", "Integer", "Reference", "Binary", "Boolean", "DateTime"}[i]
 }
 func ParseAttributeType(v string) (interface{}, error) {
     result := STRING_ATTRIBUTETYPE
-    switch strings.ToUpper(v) {
-        case "STRING":
+    switch v {
+        case "String":
             result = STRING_ATTRIBUTETYPE
-        case "INTEGER":
+        case "Integer":
             result = INTEGER_ATTRIBUTETYPE
-        case "REFERENCE":
+        case "Reference":
             result = REFERENCE_ATTRIBUTETYPE
-        case "BINARY":
+        case "Binary":
             result = BINARY_ATTRIBUTETYPE
-        case "BOOLEAN":
+        case "Boolean":
             result = BOOLEAN_ATTRIBUTETYPE
-        case "DATETIME":
+        case "DateTime":
             result = DATETIME_ATTRIBUTETYPE
         default:
             return 0, errors.New("Unknown AttributeType value: " + v)

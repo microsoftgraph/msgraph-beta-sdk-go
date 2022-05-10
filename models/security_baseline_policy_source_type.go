@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i SecurityBaselinePolicySourceType) String() string {
-    return []string{"DEVICECONFIGURATION", "DEVICEINTENT"}[i]
+    return []string{"deviceConfiguration", "deviceIntent"}[i]
 }
 func ParseSecurityBaselinePolicySourceType(v string) (interface{}, error) {
     result := DEVICECONFIGURATION_SECURITYBASELINEPOLICYSOURCETYPE
-    switch strings.ToUpper(v) {
-        case "DEVICECONFIGURATION":
+    switch v {
+        case "deviceConfiguration":
             result = DEVICECONFIGURATION_SECURITYBASELINEPOLICYSOURCETYPE
-        case "DEVICEINTENT":
+        case "deviceIntent":
             result = DEVICEINTENT_SECURITYBASELINEPOLICYSOURCETYPE
         default:
             return 0, errors.New("Unknown SecurityBaselinePolicySourceType value: " + v)

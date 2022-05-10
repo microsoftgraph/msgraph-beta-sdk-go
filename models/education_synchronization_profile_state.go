@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the educationRoot singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i EducationSynchronizationProfileState) String() string {
-    return []string{"DELETING", "DELETIONFAILED", "PROVISIONINGFAILED", "PROVISIONED", "PROVISIONING", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"deleting", "deletionFailed", "provisioningFailed", "provisioned", "provisioning", "unknownFutureValue"}[i]
 }
 func ParseEducationSynchronizationProfileState(v string) (interface{}, error) {
     result := DELETING_EDUCATIONSYNCHRONIZATIONPROFILESTATE
-    switch strings.ToUpper(v) {
-        case "DELETING":
+    switch v {
+        case "deleting":
             result = DELETING_EDUCATIONSYNCHRONIZATIONPROFILESTATE
-        case "DELETIONFAILED":
+        case "deletionFailed":
             result = DELETIONFAILED_EDUCATIONSYNCHRONIZATIONPROFILESTATE
-        case "PROVISIONINGFAILED":
+        case "provisioningFailed":
             result = PROVISIONINGFAILED_EDUCATIONSYNCHRONIZATIONPROFILESTATE
-        case "PROVISIONED":
+        case "provisioned":
             result = PROVISIONED_EDUCATIONSYNCHRONIZATIONPROFILESTATE
-        case "PROVISIONING":
+        case "provisioning":
             result = PROVISIONING_EDUCATIONSYNCHRONIZATIONPROFILESTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONSYNCHRONIZATIONPROFILESTATE
         default:
             return 0, errors.New("Unknown EducationSynchronizationProfileState value: " + v)

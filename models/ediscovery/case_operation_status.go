@@ -1,6 +1,5 @@
 package ediscovery
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i CaseOperationStatus) String() string {
-    return []string{"NOTSTARTED", "SUBMISSIONFAILED", "RUNNING", "SUCCEEDED", "PARTIALLYSUCCEEDED", "FAILED"}[i]
+    return []string{"notStarted", "submissionFailed", "running", "succeeded", "partiallySucceeded", "failed"}[i]
 }
 func ParseCaseOperationStatus(v string) (interface{}, error) {
     result := NOTSTARTED_CASEOPERATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "NOTSTARTED":
+    switch v {
+        case "notStarted":
             result = NOTSTARTED_CASEOPERATIONSTATUS
-        case "SUBMISSIONFAILED":
+        case "submissionFailed":
             result = SUBMISSIONFAILED_CASEOPERATIONSTATUS
-        case "RUNNING":
+        case "running":
             result = RUNNING_CASEOPERATIONSTATUS
-        case "SUCCEEDED":
+        case "succeeded":
             result = SUCCEEDED_CASEOPERATIONSTATUS
-        case "PARTIALLYSUCCEEDED":
+        case "partiallySucceeded":
             result = PARTIALLYSUCCEEDED_CASEOPERATIONSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_CASEOPERATIONSTATUS
         default:
             return 0, errors.New("Unknown CaseOperationStatus value: " + v)

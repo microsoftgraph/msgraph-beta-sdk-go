@@ -1,6 +1,5 @@
 package windowsupdates
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the admin singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i DeploymentStateReasonValue) String() string {
-    return []string{"SCHEDULEDBYOFFERWINDOW", "OFFERINGBYREQUEST", "PAUSEDBYREQUEST", "PAUSEDBYMONITORING", "UNKNOWNFUTUREVALUE", "FAULTEDBYCONTENTOUTDATED"}[i]
+    return []string{"scheduledByOfferWindow", "offeringByRequest", "pausedByRequest", "pausedByMonitoring", "unknownFutureValue", "faultedByContentOutdated"}[i]
 }
 func ParseDeploymentStateReasonValue(v string) (interface{}, error) {
     result := SCHEDULEDBYOFFERWINDOW_DEPLOYMENTSTATEREASONVALUE
-    switch strings.ToUpper(v) {
-        case "SCHEDULEDBYOFFERWINDOW":
+    switch v {
+        case "scheduledByOfferWindow":
             result = SCHEDULEDBYOFFERWINDOW_DEPLOYMENTSTATEREASONVALUE
-        case "OFFERINGBYREQUEST":
+        case "offeringByRequest":
             result = OFFERINGBYREQUEST_DEPLOYMENTSTATEREASONVALUE
-        case "PAUSEDBYREQUEST":
+        case "pausedByRequest":
             result = PAUSEDBYREQUEST_DEPLOYMENTSTATEREASONVALUE
-        case "PAUSEDBYMONITORING":
+        case "pausedByMonitoring":
             result = PAUSEDBYMONITORING_DEPLOYMENTSTATEREASONVALUE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEPLOYMENTSTATEREASONVALUE
-        case "FAULTEDBYCONTENTOUTDATED":
+        case "faultedByContentOutdated":
             result = FAULTEDBYCONTENTOUTDATED_DEPLOYMENTSTATEREASONVALUE
         default:
             return 0, errors.New("Unknown DeploymentStateReasonValue value: " + v)

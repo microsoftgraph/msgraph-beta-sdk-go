@@ -1,6 +1,5 @@
 package managedtenants
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -20,30 +19,30 @@ const (
 )
 
 func (i ManagementActionStatus) String() string {
-    return []string{"TOADDRESS", "COMPLETED", "ERROR", "TIMEOUT", "INPROGRESS", "PLANNED", "RESOLVEDBY3RDPARTY", "RESOLVEDTHROUGHALTERNATEMITIGATION", "RISKACCEPTED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"toAddress", "completed", "error", "timeOut", "inProgress", "planned", "resolvedBy3rdParty", "resolvedThroughAlternateMitigation", "riskAccepted", "unknownFutureValue"}[i]
 }
 func ParseManagementActionStatus(v string) (interface{}, error) {
     result := TOADDRESS_MANAGEMENTACTIONSTATUS
-    switch strings.ToUpper(v) {
-        case "TOADDRESS":
+    switch v {
+        case "toAddress":
             result = TOADDRESS_MANAGEMENTACTIONSTATUS
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_MANAGEMENTACTIONSTATUS
-        case "ERROR":
+        case "error":
             result = ERROR_MANAGEMENTACTIONSTATUS
-        case "TIMEOUT":
+        case "timeOut":
             result = TIMEOUT_MANAGEMENTACTIONSTATUS
-        case "INPROGRESS":
+        case "inProgress":
             result = INPROGRESS_MANAGEMENTACTIONSTATUS
-        case "PLANNED":
+        case "planned":
             result = PLANNED_MANAGEMENTACTIONSTATUS
-        case "RESOLVEDBY3RDPARTY":
+        case "resolvedBy3rdParty":
             result = RESOLVEDBY3RDPARTY_MANAGEMENTACTIONSTATUS
-        case "RESOLVEDTHROUGHALTERNATEMITIGATION":
+        case "resolvedThroughAlternateMitigation":
             result = RESOLVEDTHROUGHALTERNATEMITIGATION_MANAGEMENTACTIONSTATUS
-        case "RISKACCEPTED":
+        case "riskAccepted":
             result = RISKACCEPTED_MANAGEMENTACTIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MANAGEMENTACTIONSTATUS
         default:
             return 0, errors.New("Unknown ManagementActionStatus value: " + v)

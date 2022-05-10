@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the teamwork singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i EligibilityFilteringEnabledEntities) String() string {
-    return []string{"NONE", "SWAPREQUEST", "OFFERSHIFTREQUEST", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "swapRequest", "offerShiftRequest", "unknownFutureValue"}[i]
 }
 func ParseEligibilityFilteringEnabledEntities(v string) (interface{}, error) {
     result := NONE_ELIGIBILITYFILTERINGENABLEDENTITIES
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_ELIGIBILITYFILTERINGENABLEDENTITIES
-        case "SWAPREQUEST":
+        case "swapRequest":
             result = SWAPREQUEST_ELIGIBILITYFILTERINGENABLEDENTITIES
-        case "OFFERSHIFTREQUEST":
+        case "offerShiftRequest":
             result = OFFERSHIFTREQUEST_ELIGIBILITYFILTERINGENABLEDENTITIES
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ELIGIBILITYFILTERINGENABLEDENTITIES
         default:
             return 0, errors.New("Unknown EligibilityFilteringEnabledEntities value: " + v)

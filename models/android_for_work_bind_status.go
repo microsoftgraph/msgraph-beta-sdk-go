@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i AndroidForWorkBindStatus) String() string {
-    return []string{"NOTBOUND", "BOUND", "BOUNDANDVALIDATED", "UNBINDING"}[i]
+    return []string{"notBound", "bound", "boundAndValidated", "unbinding"}[i]
 }
 func ParseAndroidForWorkBindStatus(v string) (interface{}, error) {
     result := NOTBOUND_ANDROIDFORWORKBINDSTATUS
-    switch strings.ToUpper(v) {
-        case "NOTBOUND":
+    switch v {
+        case "notBound":
             result = NOTBOUND_ANDROIDFORWORKBINDSTATUS
-        case "BOUND":
+        case "bound":
             result = BOUND_ANDROIDFORWORKBINDSTATUS
-        case "BOUNDANDVALIDATED":
+        case "boundAndValidated":
             result = BOUNDANDVALIDATED_ANDROIDFORWORKBINDSTATUS
-        case "UNBINDING":
+        case "unbinding":
             result = UNBINDING_ANDROIDFORWORKBINDSTATUS
         default:
             return 0, errors.New("Unknown AndroidForWorkBindStatus value: " + v)

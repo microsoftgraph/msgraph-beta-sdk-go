@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i DeviceManagementConfigurationSettingAccessTypes) String() string {
-    return []string{"NONE", "ADD", "COPY", "DELETE", "GET", "REPLACE", "EXECUTE"}[i]
+    return []string{"none", "add", "copy", "delete", "get", "replace", "execute"}[i]
 }
 func ParseDeviceManagementConfigurationSettingAccessTypes(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
-        case "ADD":
+        case "add":
             result = ADD_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
-        case "COPY":
+        case "copy":
             result = COPY_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
-        case "DELETE":
+        case "delete":
             result = DELETE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
-        case "GET":
+        case "get":
             result = GET_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
-        case "REPLACE":
+        case "replace":
             result = REPLACE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
-        case "EXECUTE":
+        case "execute":
             result = EXECUTE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
         default:
             return 0, errors.New("Unknown DeviceManagementConfigurationSettingAccessTypes value: " + v)

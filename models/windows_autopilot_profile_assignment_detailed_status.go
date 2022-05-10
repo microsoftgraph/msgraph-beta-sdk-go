@@ -1,40 +1,46 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type WindowsAutopilotProfileAssignmentDetailedStatus int
 
 const (
+    // No assignment detailed status
     NONE_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS WindowsAutopilotProfileAssignmentDetailedStatus = iota
+    // Hardware requirements are not met. This can happen if a self-deploying AutoPilot Profile is assigned to a device without TPM 2.0.
     HARDWAREREQUIREMENTSNOTMET_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
+    // Indicates that a Surface Hub AutoPilot Profile is assigned to a device that is not Surface Hub(Aruba).
     SURFACEHUBPROFILENOTSUPPORTED_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
+    // Indicates that a HoloLens AutoPilot Profile is assigned to a device that is not HoloLens.
     HOLOLENSPROFILENOTSUPPORTED_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
+    // Indicates that a Windows PC AutoPilot Profile is assigned to a device that is not Windows PC.
     WINDOWSPCPROFILENOTSUPPORTED_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
+    // Indicates that a surface Hub 2S  AutoPilot Profile is assigned to a device that is not surface Hub 2S.
     SURFACEHUB2SPROFILENOTSUPPORTED_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
+    // Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn't be necessary.
     UNKNOWNFUTUREVALUE_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
 )
 
 func (i WindowsAutopilotProfileAssignmentDetailedStatus) String() string {
-    return []string{"NONE", "HARDWAREREQUIREMENTSNOTMET", "SURFACEHUBPROFILENOTSUPPORTED", "HOLOLENSPROFILENOTSUPPORTED", "WINDOWSPCPROFILENOTSUPPORTED", "SURFACEHUB2SPROFILENOTSUPPORTED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "hardwareRequirementsNotMet", "surfaceHubProfileNotSupported", "holoLensProfileNotSupported", "windowsPcProfileNotSupported", "surfaceHub2SProfileNotSupported", "unknownFutureValue"}[i]
 }
 func ParseWindowsAutopilotProfileAssignmentDetailedStatus(v string) (interface{}, error) {
     result := NONE_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
-        case "HARDWAREREQUIREMENTSNOTMET":
+        case "hardwareRequirementsNotMet":
             result = HARDWAREREQUIREMENTSNOTMET_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
-        case "SURFACEHUBPROFILENOTSUPPORTED":
+        case "surfaceHubProfileNotSupported":
             result = SURFACEHUBPROFILENOTSUPPORTED_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
-        case "HOLOLENSPROFILENOTSUPPORTED":
+        case "holoLensProfileNotSupported":
             result = HOLOLENSPROFILENOTSUPPORTED_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
-        case "WINDOWSPCPROFILENOTSUPPORTED":
+        case "windowsPcProfileNotSupported":
             result = WINDOWSPCPROFILENOTSUPPORTED_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
-        case "SURFACEHUB2SPROFILENOTSUPPORTED":
+        case "surfaceHub2SProfileNotSupported":
             result = SURFACEHUB2SPROFILENOTSUPPORTED_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WINDOWSAUTOPILOTPROFILEASSIGNMENTDETAILEDSTATUS
         default:
             return 0, errors.New("Unknown WindowsAutopilotProfileAssignmentDetailedStatus value: " + v)

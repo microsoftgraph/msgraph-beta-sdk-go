@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ObjectFlowTypes) String() string {
-    return []string{"NONE", "ADD", "UPDATE", "DELETE"}[i]
+    return []string{"None", "Add", "Update", "Delete"}[i]
 }
 func ParseObjectFlowTypes(v string) (interface{}, error) {
     result := NONE_OBJECTFLOWTYPES
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "None":
             result = NONE_OBJECTFLOWTYPES
-        case "ADD":
+        case "Add":
             result = ADD_OBJECTFLOWTYPES
-        case "UPDATE":
+        case "Update":
             result = UPDATE_OBJECTFLOWTYPES
-        case "DELETE":
+        case "Delete":
             result = DELETE_OBJECTFLOWTYPES
         default:
             return 0, errors.New("Unknown ObjectFlowTypes value: " + v)

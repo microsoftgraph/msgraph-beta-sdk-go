@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of privilegedSignupStatus entities.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i SetupStatus) String() string {
-    return []string{"UNKNOWN", "NOTREGISTEREDYET", "REGISTEREDSETUPNOTSTARTED", "REGISTEREDSETUPINPROGRESS", "REGISTRATIONANDSETUPCOMPLETED", "REGISTRATIONFAILED", "REGISTRATIONTIMEDOUT", "DISABLED"}[i]
+    return []string{"unknown", "notRegisteredYet", "registeredSetupNotStarted", "registeredSetupInProgress", "registrationAndSetupCompleted", "registrationFailed", "registrationTimedOut", "disabled"}[i]
 }
 func ParseSetupStatus(v string) (interface{}, error) {
     result := UNKNOWN_SETUPSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_SETUPSTATUS
-        case "NOTREGISTEREDYET":
+        case "notRegisteredYet":
             result = NOTREGISTEREDYET_SETUPSTATUS
-        case "REGISTEREDSETUPNOTSTARTED":
+        case "registeredSetupNotStarted":
             result = REGISTEREDSETUPNOTSTARTED_SETUPSTATUS
-        case "REGISTEREDSETUPINPROGRESS":
+        case "registeredSetupInProgress":
             result = REGISTEREDSETUPINPROGRESS_SETUPSTATUS
-        case "REGISTRATIONANDSETUPCOMPLETED":
+        case "registrationAndSetupCompleted":
             result = REGISTRATIONANDSETUPCOMPLETED_SETUPSTATUS
-        case "REGISTRATIONFAILED":
+        case "registrationFailed":
             result = REGISTRATIONFAILED_SETUPSTATUS
-        case "REGISTRATIONTIMEDOUT":
+        case "registrationTimedOut":
             result = REGISTRATIONTIMEDOUT_SETUPSTATUS
-        case "DISABLED":
+        case "disabled":
             result = DISABLED_SETUPSTATUS
         default:
             return 0, errors.New("Unknown SetupStatus value: " + v)

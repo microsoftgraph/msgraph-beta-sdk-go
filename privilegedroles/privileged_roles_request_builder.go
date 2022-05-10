@@ -16,7 +16,7 @@ type PrivilegedRolesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PrivilegedRolesRequestBuilderGetQueryParameters get entities from privilegedRoles
+// PrivilegedRolesRequestBuilderGetQueryParameters list privilegedRoles
 type PrivilegedRolesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewPrivilegedRolesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *PrivilegedRolesRequestBuilder) Count()(*i4e80291c9198a3ac2650632538595ef6e41a48baf94c795043e914ea51607b77.CountRequestBuilder) {
     return i4e80291c9198a3ac2650632538595ef6e41a48baf94c795043e914ea51607b77.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get entities from privilegedRoles
+// CreateGetRequestInformation list privilegedRoles
 func (m *PrivilegedRolesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from privilegedRoles
+// CreateGetRequestInformationWithRequestConfiguration list privilegedRoles
 func (m *PrivilegedRolesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PrivilegedRolesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +110,11 @@ func (m *PrivilegedRolesRequestBuilder) CreatePostRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// Get get entities from privilegedRoles
+// Get list privilegedRoles
 func (m *PrivilegedRolesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get entities from privilegedRoles
+// GetWithRequestConfigurationAndResponseHandler list privilegedRoles
 func (m *PrivilegedRolesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PrivilegedRolesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
