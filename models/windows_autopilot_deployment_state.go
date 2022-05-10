@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i WindowsAutopilotDeploymentState) String() string {
-    return []string{"UNKNOWN", "SUCCESS", "INPROGRESS", "FAILURE", "SUCCESSWITHTIMEOUT", "NOTATTEMPTED", "DISABLED"}[i]
+    return []string{"unknown", "success", "inProgress", "failure", "successWithTimeout", "notAttempted", "disabled"}[i]
 }
 func ParseWindowsAutopilotDeploymentState(v string) (interface{}, error) {
     result := UNKNOWN_WINDOWSAUTOPILOTDEPLOYMENTSTATE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_WINDOWSAUTOPILOTDEPLOYMENTSTATE
-        case "SUCCESS":
+        case "success":
             result = SUCCESS_WINDOWSAUTOPILOTDEPLOYMENTSTATE
-        case "INPROGRESS":
+        case "inProgress":
             result = INPROGRESS_WINDOWSAUTOPILOTDEPLOYMENTSTATE
-        case "FAILURE":
+        case "failure":
             result = FAILURE_WINDOWSAUTOPILOTDEPLOYMENTSTATE
-        case "SUCCESSWITHTIMEOUT":
+        case "successWithTimeout":
             result = SUCCESSWITHTIMEOUT_WINDOWSAUTOPILOTDEPLOYMENTSTATE
-        case "NOTATTEMPTED":
+        case "notAttempted":
             result = NOTATTEMPTED_WINDOWSAUTOPILOTDEPLOYMENTSTATE
-        case "DISABLED":
+        case "disabled":
             result = DISABLED_WINDOWSAUTOPILOTDEPLOYMENTSTATE
         default:
             return 0, errors.New("Unknown WindowsAutopilotDeploymentState value: " + v)

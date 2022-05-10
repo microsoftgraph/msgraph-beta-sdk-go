@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i CloudPcAuditActivityResult) String() string {
-    return []string{"SUCCESS", "CLIENTERROR", "FAILURE", "TIMEOUT", "OTHER"}[i]
+    return []string{"success", "clientError", "failure", "timeout", "other"}[i]
 }
 func ParseCloudPcAuditActivityResult(v string) (interface{}, error) {
     result := SUCCESS_CLOUDPCAUDITACTIVITYRESULT
-    switch strings.ToUpper(v) {
-        case "SUCCESS":
+    switch v {
+        case "success":
             result = SUCCESS_CLOUDPCAUDITACTIVITYRESULT
-        case "CLIENTERROR":
+        case "clientError":
             result = CLIENTERROR_CLOUDPCAUDITACTIVITYRESULT
-        case "FAILURE":
+        case "failure":
             result = FAILURE_CLOUDPCAUDITACTIVITYRESULT
-        case "TIMEOUT":
+        case "timeout":
             result = TIMEOUT_CLOUDPCAUDITACTIVITYRESULT
-        case "OTHER":
+        case "other":
             result = OTHER_CLOUDPCAUDITACTIVITYRESULT
         default:
             return 0, errors.New("Unknown CloudPcAuditActivityResult value: " + v)

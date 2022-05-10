@@ -16,7 +16,7 @@ type BookingBusinessesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// BookingBusinessesRequestBuilderGetQueryParameters get entities from bookingBusinesses
+// BookingBusinessesRequestBuilderGetQueryParameters list bookingBusinesses
 type BookingBusinessesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewBookingBusinessesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *BookingBusinessesRequestBuilder) Count()(*i21e6461c531c37228ca40c80cc5c229757e5d19fc7fb28224567d94fe8cba0a3.CountRequestBuilder) {
     return i21e6461c531c37228ca40c80cc5c229757e5d19fc7fb28224567d94fe8cba0a3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get entities from bookingBusinesses
+// CreateGetRequestInformation list bookingBusinesses
 func (m *BookingBusinessesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from bookingBusinesses
+// CreateGetRequestInformationWithRequestConfiguration list bookingBusinesses
 func (m *BookingBusinessesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *BookingBusinessesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,11 +93,11 @@ func (m *BookingBusinessesRequestBuilder) CreateGetRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation add new entity to bookingBusinesses
+// CreatePostRequestInformation create bookingBusiness
 func (m *BookingBusinessesRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration add new entity to bookingBusinesses
+// CreatePostRequestInformationWithRequestConfiguration create bookingBusiness
 func (m *BookingBusinessesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable, requestConfiguration *BookingBusinessesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +110,11 @@ func (m *BookingBusinessesRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get get entities from bookingBusinesses
+// Get list bookingBusinesses
 func (m *BookingBusinessesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get entities from bookingBusinesses
+// GetWithRequestConfigurationAndResponseHandler list bookingBusinesses
 func (m *BookingBusinessesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BookingBusinessesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -130,11 +130,11 @@ func (m *BookingBusinessesRequestBuilder) GetWithRequestConfigurationAndResponse
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessCollectionResponseable), nil
 }
-// Post add new entity to bookingBusinesses
+// Post create bookingBusiness
 func (m *BookingBusinessesRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithRequestConfigurationAndResponseHandler add new entity to bookingBusinesses
+// PostWithRequestConfigurationAndResponseHandler create bookingBusiness
 func (m *BookingBusinessesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable, requestConfiguration *BookingBusinessesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

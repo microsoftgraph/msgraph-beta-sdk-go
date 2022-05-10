@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type MacOSSoftwareUpdateCategory int
 
 const (
+    // A critical update
     CRITICAL_MACOSSOFTWAREUPDATECATEGORY MacOSSoftwareUpdateCategory = iota
+    // A configuration data file update
     CONFIGURATIONDATAFILE_MACOSSOFTWAREUPDATECATEGORY
+    // A firmware update
     FIRMWARE_MACOSSOFTWAREUPDATECATEGORY
+    // All other update types
     OTHER_MACOSSOFTWAREUPDATECATEGORY
 )
 
 func (i MacOSSoftwareUpdateCategory) String() string {
-    return []string{"CRITICAL", "CONFIGURATIONDATAFILE", "FIRMWARE", "OTHER"}[i]
+    return []string{"critical", "configurationDataFile", "firmware", "other"}[i]
 }
 func ParseMacOSSoftwareUpdateCategory(v string) (interface{}, error) {
     result := CRITICAL_MACOSSOFTWAREUPDATECATEGORY
-    switch strings.ToUpper(v) {
-        case "CRITICAL":
+    switch v {
+        case "critical":
             result = CRITICAL_MACOSSOFTWAREUPDATECATEGORY
-        case "CONFIGURATIONDATAFILE":
+        case "configurationDataFile":
             result = CONFIGURATIONDATAFILE_MACOSSOFTWAREUPDATECATEGORY
-        case "FIRMWARE":
+        case "firmware":
             result = FIRMWARE_MACOSSOFTWAREUPDATECATEGORY
-        case "OTHER":
+        case "other":
             result = OTHER_MACOSSOFTWAREUPDATECATEGORY
         default:
             return 0, errors.New("Unknown MacOSSoftwareUpdateCategory value: " + v)

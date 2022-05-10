@@ -1,6 +1,5 @@
 package ediscovery
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -19,28 +18,28 @@ const (
 )
 
 func (i CaseAction) String() string {
-    return []string{"CONTENTEXPORT", "APPLYTAGS", "CONVERTTOPDF", "INDEX", "ESTIMATESTATISTICS", "ADDTOREVIEWSET", "HOLDUPDATE", "UNKNOWNFUTUREVALUE", "PURGEDATA"}[i]
+    return []string{"contentExport", "applyTags", "convertToPdf", "index", "estimateStatistics", "addToReviewSet", "holdUpdate", "unknownFutureValue", "purgeData"}[i]
 }
 func ParseCaseAction(v string) (interface{}, error) {
     result := CONTENTEXPORT_CASEACTION
-    switch strings.ToUpper(v) {
-        case "CONTENTEXPORT":
+    switch v {
+        case "contentExport":
             result = CONTENTEXPORT_CASEACTION
-        case "APPLYTAGS":
+        case "applyTags":
             result = APPLYTAGS_CASEACTION
-        case "CONVERTTOPDF":
+        case "convertToPdf":
             result = CONVERTTOPDF_CASEACTION
-        case "INDEX":
+        case "index":
             result = INDEX_CASEACTION
-        case "ESTIMATESTATISTICS":
+        case "estimateStatistics":
             result = ESTIMATESTATISTICS_CASEACTION
-        case "ADDTOREVIEWSET":
+        case "addToReviewSet":
             result = ADDTOREVIEWSET_CASEACTION
-        case "HOLDUPDATE":
+        case "holdUpdate":
             result = HOLDUPDATE_CASEACTION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CASEACTION
-        case "PURGEDATA":
+        case "purgeData":
             result = PURGEDATA_CASEACTION
         default:
             return 0, errors.New("Unknown CaseAction value: " + v)

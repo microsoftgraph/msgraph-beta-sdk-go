@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -10,25 +9,27 @@ const (
     CORPORATEOWNEDDEDICATEDDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE AndroidDeviceOwnerEnrollmentMode = iota
     CORPORATEOWNEDFULLYMANAGED_ANDROIDDEVICEOWNERENROLLMENTMODE
     CORPORATEOWNEDWORKPROFILE_ANDROIDDEVICEOWNERENROLLMENTMODE
+    // Corporate owned, userless Android Open Source Project (AOSP) device, without Google Mobile Services.
     CORPORATEOWNEDAOSPUSERLESSDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
+    // Corporate owned, user-associated Android Open Source Project (AOSP) device, without Google Mobile Services.
     CORPORATEOWNEDAOSPUSERASSOCIATEDDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
 )
 
 func (i AndroidDeviceOwnerEnrollmentMode) String() string {
-    return []string{"CORPORATEOWNEDDEDICATEDDEVICE", "CORPORATEOWNEDFULLYMANAGED", "CORPORATEOWNEDWORKPROFILE", "CORPORATEOWNEDAOSPUSERLESSDEVICE", "CORPORATEOWNEDAOSPUSERASSOCIATEDDEVICE"}[i]
+    return []string{"corporateOwnedDedicatedDevice", "corporateOwnedFullyManaged", "corporateOwnedWorkProfile", "corporateOwnedAOSPUserlessDevice", "corporateOwnedAOSPUserAssociatedDevice"}[i]
 }
 func ParseAndroidDeviceOwnerEnrollmentMode(v string) (interface{}, error) {
     result := CORPORATEOWNEDDEDICATEDDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
-    switch strings.ToUpper(v) {
-        case "CORPORATEOWNEDDEDICATEDDEVICE":
+    switch v {
+        case "corporateOwnedDedicatedDevice":
             result = CORPORATEOWNEDDEDICATEDDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
-        case "CORPORATEOWNEDFULLYMANAGED":
+        case "corporateOwnedFullyManaged":
             result = CORPORATEOWNEDFULLYMANAGED_ANDROIDDEVICEOWNERENROLLMENTMODE
-        case "CORPORATEOWNEDWORKPROFILE":
+        case "corporateOwnedWorkProfile":
             result = CORPORATEOWNEDWORKPROFILE_ANDROIDDEVICEOWNERENROLLMENTMODE
-        case "CORPORATEOWNEDAOSPUSERLESSDEVICE":
+        case "corporateOwnedAOSPUserlessDevice":
             result = CORPORATEOWNEDAOSPUSERLESSDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
-        case "CORPORATEOWNEDAOSPUSERASSOCIATEDDEVICE":
+        case "corporateOwnedAOSPUserAssociatedDevice":
             result = CORPORATEOWNEDAOSPUSERASSOCIATEDDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
         default:
             return 0, errors.New("Unknown AndroidDeviceOwnerEnrollmentMode value: " + v)

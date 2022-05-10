@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i AndroidManagedStoreAppConfigurationSchemaItemDataType) String() string {
-    return []string{"BOOL", "INTEGER", "STRING", "CHOICE", "MULTISELECT", "BUNDLE", "BUNDLEARRAY", "HIDDEN"}[i]
+    return []string{"bool", "integer", "string", "choice", "multiselect", "bundle", "bundleArray", "hidden"}[i]
 }
 func ParseAndroidManagedStoreAppConfigurationSchemaItemDataType(v string) (interface{}, error) {
     result := BOOL_ANDROIDMANAGEDSTOREAPPCONFIGURATIONSCHEMAITEMDATATYPE
-    switch strings.ToUpper(v) {
-        case "BOOL":
+    switch v {
+        case "bool":
             result = BOOL_ANDROIDMANAGEDSTOREAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "INTEGER":
+        case "integer":
             result = INTEGER_ANDROIDMANAGEDSTOREAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "STRING":
+        case "string":
             result = STRING_ANDROIDMANAGEDSTOREAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "CHOICE":
+        case "choice":
             result = CHOICE_ANDROIDMANAGEDSTOREAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "MULTISELECT":
+        case "multiselect":
             result = MULTISELECT_ANDROIDMANAGEDSTOREAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "BUNDLE":
+        case "bundle":
             result = BUNDLE_ANDROIDMANAGEDSTOREAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "BUNDLEARRAY":
+        case "bundleArray":
             result = BUNDLEARRAY_ANDROIDMANAGEDSTOREAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "HIDDEN":
+        case "hidden":
             result = HIDDEN_ANDROIDMANAGEDSTOREAPPCONFIGURATIONSCHEMAITEMDATATYPE
         default:
             return 0, errors.New("Unknown AndroidManagedStoreAppConfigurationSchemaItemDataType value: " + v)

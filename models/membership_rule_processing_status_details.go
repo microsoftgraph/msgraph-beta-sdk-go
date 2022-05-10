@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i MembershipRuleProcessingStatusDetails) String() string {
-    return []string{"NOTSTARTED", "RUNNING", "FAILED", "SUCCEEDED", "UNSUPPORTEDFUTUREVALUE"}[i]
+    return []string{"NotStarted", "Running", "Failed", "Succeeded", "UnsupportedFutureValue"}[i]
 }
 func ParseMembershipRuleProcessingStatusDetails(v string) (interface{}, error) {
     result := NOTSTARTED_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS
-    switch strings.ToUpper(v) {
-        case "NOTSTARTED":
+    switch v {
+        case "NotStarted":
             result = NOTSTARTED_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS
-        case "RUNNING":
+        case "Running":
             result = RUNNING_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS
-        case "FAILED":
+        case "Failed":
             result = FAILED_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS
-        case "SUCCEEDED":
+        case "Succeeded":
             result = SUCCEEDED_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS
-        case "UNSUPPORTEDFUTUREVALUE":
+        case "UnsupportedFutureValue":
             result = UNSUPPORTEDFUTUREVALUE_MEMBERSHIPRULEPROCESSINGSTATUSDETAILS
         default:
             return 0, errors.New("Unknown MembershipRuleProcessingStatusDetails value: " + v)

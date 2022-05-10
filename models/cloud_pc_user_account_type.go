@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i CloudPcUserAccountType) String() string {
-    return []string{"STANDARDUSER", "ADMINISTRATOR", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"standardUser", "administrator", "unknownFutureValue"}[i]
 }
 func ParseCloudPcUserAccountType(v string) (interface{}, error) {
     result := STANDARDUSER_CLOUDPCUSERACCOUNTTYPE
-    switch strings.ToUpper(v) {
-        case "STANDARDUSER":
+    switch v {
+        case "standardUser":
             result = STANDARDUSER_CLOUDPCUSERACCOUNTTYPE
-        case "ADMINISTRATOR":
+        case "administrator":
             result = ADMINISTRATOR_CLOUDPCUSERACCOUNTTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCUSERACCOUNTTYPE
         default:
             return 0, errors.New("Unknown CloudPcUserAccountType value: " + v)

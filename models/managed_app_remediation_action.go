@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type ManagedAppRemediationAction int
 
 const (
+    // app and the corresponding company data to be blocked
     BLOCK_MANAGEDAPPREMEDIATIONACTION ManagedAppRemediationAction = iota
+    // app and the corresponding company data to be wiped
     WIPE_MANAGEDAPPREMEDIATIONACTION
+    // app and the corresponding user to be warned
     WARN_MANAGEDAPPREMEDIATIONACTION
 )
 
 func (i ManagedAppRemediationAction) String() string {
-    return []string{"BLOCK", "WIPE", "WARN"}[i]
+    return []string{"block", "wipe", "warn"}[i]
 }
 func ParseManagedAppRemediationAction(v string) (interface{}, error) {
     result := BLOCK_MANAGEDAPPREMEDIATIONACTION
-    switch strings.ToUpper(v) {
-        case "BLOCK":
+    switch v {
+        case "block":
             result = BLOCK_MANAGEDAPPREMEDIATIONACTION
-        case "WIPE":
+        case "wipe":
             result = WIPE_MANAGEDAPPREMEDIATIONACTION
-        case "WARN":
+        case "warn":
             result = WARN_MANAGEDAPPREMEDIATIONACTION
         default:
             return 0, errors.New("Unknown ManagedAppRemediationAction value: " + v)

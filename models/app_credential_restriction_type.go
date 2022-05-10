@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i AppCredentialRestrictionType) String() string {
-    return []string{"PASSWORDADDITION", "PASSWORDLIFETIME", "SYMMETRICKEYADDITION", "SYMMETRICKEYLIFETIME", "CUSTOMPASSWORDADDITION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"passwordAddition", "passwordLifetime", "symmetricKeyAddition", "symmetricKeyLifetime", "customPasswordAddition", "unknownFutureValue"}[i]
 }
 func ParseAppCredentialRestrictionType(v string) (interface{}, error) {
     result := PASSWORDADDITION_APPCREDENTIALRESTRICTIONTYPE
-    switch strings.ToUpper(v) {
-        case "PASSWORDADDITION":
+    switch v {
+        case "passwordAddition":
             result = PASSWORDADDITION_APPCREDENTIALRESTRICTIONTYPE
-        case "PASSWORDLIFETIME":
+        case "passwordLifetime":
             result = PASSWORDLIFETIME_APPCREDENTIALRESTRICTIONTYPE
-        case "SYMMETRICKEYADDITION":
+        case "symmetricKeyAddition":
             result = SYMMETRICKEYADDITION_APPCREDENTIALRESTRICTIONTYPE
-        case "SYMMETRICKEYLIFETIME":
+        case "symmetricKeyLifetime":
             result = SYMMETRICKEYLIFETIME_APPCREDENTIALRESTRICTIONTYPE
-        case "CUSTOMPASSWORDADDITION":
+        case "customPasswordAddition":
             result = CUSTOMPASSWORDADDITION_APPCREDENTIALRESTRICTIONTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_APPCREDENTIALRESTRICTIONTYPE
         default:
             return 0, errors.New("Unknown AppCredentialRestrictionType value: " + v)

@@ -1,37 +1,42 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type RunState int
 
 const (
+    // Unknown result.
     UNKNOWN_RUNSTATE RunState = iota
+    // Script is run successfully.
     SUCCESS_RUNSTATE
+    // Script failed to run.
     FAIL_RUNSTATE
+    // Discovery script hits error.
     SCRIPTERROR_RUNSTATE
+    // Script is pending to execute.
     PENDING_RUNSTATE
+    // Script is not applicable for this device.
     NOTAPPLICABLE_RUNSTATE
 )
 
 func (i RunState) String() string {
-    return []string{"UNKNOWN", "SUCCESS", "FAIL", "SCRIPTERROR", "PENDING", "NOTAPPLICABLE"}[i]
+    return []string{"unknown", "success", "fail", "scriptError", "pending", "notApplicable"}[i]
 }
 func ParseRunState(v string) (interface{}, error) {
     result := UNKNOWN_RUNSTATE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_RUNSTATE
-        case "SUCCESS":
+        case "success":
             result = SUCCESS_RUNSTATE
-        case "FAIL":
+        case "fail":
             result = FAIL_RUNSTATE
-        case "SCRIPTERROR":
+        case "scriptError":
             result = SCRIPTERROR_RUNSTATE
-        case "PENDING":
+        case "pending":
             result = PENDING_RUNSTATE
-        case "NOTAPPLICABLE":
+        case "notApplicable":
             result = NOTAPPLICABLE_RUNSTATE
         default:
             return 0, errors.New("Unknown RunState value: " + v)

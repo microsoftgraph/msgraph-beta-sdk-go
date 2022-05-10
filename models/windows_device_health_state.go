@@ -1,37 +1,42 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type WindowsDeviceHealthState int
 
 const (
+    // Computer is clean and no action is required
     CLEAN_WINDOWSDEVICEHEALTHSTATE WindowsDeviceHealthState = iota
+    // Computer is in pending full scan state
     FULLSCANPENDING_WINDOWSDEVICEHEALTHSTATE
+    // Computer is in pending reboot state
     REBOOTPENDING_WINDOWSDEVICEHEALTHSTATE
+    // Computer is in pending manual steps state
     MANUALSTEPSPENDING_WINDOWSDEVICEHEALTHSTATE
+    // Computer is in pending offline scan state
     OFFLINESCANPENDING_WINDOWSDEVICEHEALTHSTATE
+    // Computer is in critical failure state
     CRITICAL_WINDOWSDEVICEHEALTHSTATE
 )
 
 func (i WindowsDeviceHealthState) String() string {
-    return []string{"CLEAN", "FULLSCANPENDING", "REBOOTPENDING", "MANUALSTEPSPENDING", "OFFLINESCANPENDING", "CRITICAL"}[i]
+    return []string{"clean", "fullScanPending", "rebootPending", "manualStepsPending", "offlineScanPending", "critical"}[i]
 }
 func ParseWindowsDeviceHealthState(v string) (interface{}, error) {
     result := CLEAN_WINDOWSDEVICEHEALTHSTATE
-    switch strings.ToUpper(v) {
-        case "CLEAN":
+    switch v {
+        case "clean":
             result = CLEAN_WINDOWSDEVICEHEALTHSTATE
-        case "FULLSCANPENDING":
+        case "fullScanPending":
             result = FULLSCANPENDING_WINDOWSDEVICEHEALTHSTATE
-        case "REBOOTPENDING":
+        case "rebootPending":
             result = REBOOTPENDING_WINDOWSDEVICEHEALTHSTATE
-        case "MANUALSTEPSPENDING":
+        case "manualStepsPending":
             result = MANUALSTEPSPENDING_WINDOWSDEVICEHEALTHSTATE
-        case "OFFLINESCANPENDING":
+        case "offlineScanPending":
             result = OFFLINESCANPENDING_WINDOWSDEVICEHEALTHSTATE
-        case "CRITICAL":
+        case "critical":
             result = CRITICAL_WINDOWSDEVICEHEALTHSTATE
         default:
             return 0, errors.New("Unknown WindowsDeviceHealthState value: " + v)

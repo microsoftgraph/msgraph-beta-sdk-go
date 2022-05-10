@@ -24,7 +24,7 @@ type PrivilegedApprovalItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrivilegedApprovalItemRequestBuilderGetQueryParameters get entity from privilegedApproval by key
+// PrivilegedApprovalItemRequestBuilderGetQueryParameters get privilegedApproval
 type PrivilegedApprovalItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,11 +82,11 @@ func (m *PrivilegedApprovalItemRequestBuilder) CreateDeleteRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get entity from privilegedApproval by key
+// CreateGetRequestInformation get privilegedApproval
 func (m *PrivilegedApprovalItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from privilegedApproval by key
+// CreateGetRequestInformationWithRequestConfiguration get privilegedApproval
 func (m *PrivilegedApprovalItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PrivilegedApprovalItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,11 +101,11 @@ func (m *PrivilegedApprovalItemRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update entity in privilegedApproval
+// CreatePatchRequestInformation update privilegedapproval
 func (m *PrivilegedApprovalItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in privilegedApproval
+// CreatePatchRequestInformationWithRequestConfiguration update privilegedapproval
 func (m *PrivilegedApprovalItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable, requestConfiguration *PrivilegedApprovalItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,11 +138,11 @@ func (m *PrivilegedApprovalItemRequestBuilder) DeleteWithRequestConfigurationAnd
     }
     return nil
 }
-// Get get entity from privilegedApproval by key
+// Get get privilegedApproval
 func (m *PrivilegedApprovalItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get entity from privilegedApproval by key
+// GetWithRequestConfigurationAndResponseHandler get privilegedApproval
 func (m *PrivilegedApprovalItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PrivilegedApprovalItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -158,11 +158,11 @@ func (m *PrivilegedApprovalItemRequestBuilder) GetWithRequestConfigurationAndRes
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable), nil
 }
-// Patch update entity in privilegedApproval
+// Patch update privilegedapproval
 func (m *PrivilegedApprovalItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithRequestConfigurationAndResponseHandler update entity in privilegedApproval
+// PatchWithRequestConfigurationAndResponseHandler update privilegedapproval
 func (m *PrivilegedApprovalItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalable, requestConfiguration *PrivilegedApprovalItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

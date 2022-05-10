@@ -1,40 +1,46 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the triggerConfigurationManagerAction method.
 type ConfigurationManagerActionType int
 
 const (
+    // Refresh machine policy on Configuration Manager client
     REFRESHMACHINEPOLICY_CONFIGURATIONMANAGERACTIONTYPE ConfigurationManagerActionType = iota
+    // Refresh user policy on Configuration Manager client
     REFRESHUSERPOLICY_CONFIGURATIONMANAGERACTIONTYPE
+    // Wake up Configuration Manager client
     WAKEUPCLIENT_CONFIGURATIONMANAGERACTIONTYPE
+    // Evaluation application policy on Configuration Manager client
     APPEVALUATION_CONFIGURATIONMANAGERACTIONTYPE
+    // Evaluation application policy on Configuration Manager client
     QUICKSCAN_CONFIGURATIONMANAGERACTIONTYPE
+    // Evaluation application policy on Configuration Manager client
     FULLSCAN_CONFIGURATIONMANAGERACTIONTYPE
+    // Evaluation application policy on Configuration Manager client
     WINDOWSDEFENDERUPDATESIGNATURES_CONFIGURATIONMANAGERACTIONTYPE
 )
 
 func (i ConfigurationManagerActionType) String() string {
-    return []string{"REFRESHMACHINEPOLICY", "REFRESHUSERPOLICY", "WAKEUPCLIENT", "APPEVALUATION", "QUICKSCAN", "FULLSCAN", "WINDOWSDEFENDERUPDATESIGNATURES"}[i]
+    return []string{"refreshMachinePolicy", "refreshUserPolicy", "wakeUpClient", "appEvaluation", "quickScan", "fullScan", "windowsDefenderUpdateSignatures"}[i]
 }
 func ParseConfigurationManagerActionType(v string) (interface{}, error) {
     result := REFRESHMACHINEPOLICY_CONFIGURATIONMANAGERACTIONTYPE
-    switch strings.ToUpper(v) {
-        case "REFRESHMACHINEPOLICY":
+    switch v {
+        case "refreshMachinePolicy":
             result = REFRESHMACHINEPOLICY_CONFIGURATIONMANAGERACTIONTYPE
-        case "REFRESHUSERPOLICY":
+        case "refreshUserPolicy":
             result = REFRESHUSERPOLICY_CONFIGURATIONMANAGERACTIONTYPE
-        case "WAKEUPCLIENT":
+        case "wakeUpClient":
             result = WAKEUPCLIENT_CONFIGURATIONMANAGERACTIONTYPE
-        case "APPEVALUATION":
+        case "appEvaluation":
             result = APPEVALUATION_CONFIGURATIONMANAGERACTIONTYPE
-        case "QUICKSCAN":
+        case "quickScan":
             result = QUICKSCAN_CONFIGURATIONMANAGERACTIONTYPE
-        case "FULLSCAN":
+        case "fullScan":
             result = FULLSCAN_CONFIGURATIONMANAGERACTIONTYPE
-        case "WINDOWSDEFENDERUPDATESIGNATURES":
+        case "windowsDefenderUpdateSignatures":
             result = WINDOWSDEFENDERUPDATESIGNATURES_CONFIGURATIONMANAGERACTIONTYPE
         default:
             return 0, errors.New("Unknown ConfigurationManagerActionType value: " + v)

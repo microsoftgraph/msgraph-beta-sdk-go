@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the commsApplication singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i RoutingPolicy) String() string {
-    return []string{"NONE", "NOMISSEDCALL", "DISABLEFORWARDINGEXCEPTPHONE", "DISABLEFORWARDING", "PREFERSKYPEFORBUSINESS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "noMissedCall", "disableForwardingExceptPhone", "disableForwarding", "preferSkypeForBusiness", "unknownFutureValue"}[i]
 }
 func ParseRoutingPolicy(v string) (interface{}, error) {
     result := NONE_ROUTINGPOLICY
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_ROUTINGPOLICY
-        case "NOMISSEDCALL":
+        case "noMissedCall":
             result = NOMISSEDCALL_ROUTINGPOLICY
-        case "DISABLEFORWARDINGEXCEPTPHONE":
+        case "disableForwardingExceptPhone":
             result = DISABLEFORWARDINGEXCEPTPHONE_ROUTINGPOLICY
-        case "DISABLEFORWARDING":
+        case "disableForwarding":
             result = DISABLEFORWARDING_ROUTINGPOLICY
-        case "PREFERSKYPEFORBUSINESS":
+        case "preferSkypeForBusiness":
             result = PREFERSKYPEFORBUSINESS_ROUTINGPOLICY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ROUTINGPOLICY
         default:
             return 0, errors.New("Unknown RoutingPolicy value: " + v)

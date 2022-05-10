@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the record method.
@@ -19,28 +18,28 @@ const (
 )
 
 func (i RecordCompletionReason) String() string {
-    return []string{"OPERATIONCANCELED", "STOPTONEDETECTED", "MAXRECORDDURATIONREACHED", "INITIALSILENCETIMEOUT", "MAXSILENCETIMEOUT", "PLAYPROMPTFAILED", "PLAYBEEPFAILED", "MEDIARECEIVETIMEOUT", "UNSPECIFIEDERROR"}[i]
+    return []string{"operationCanceled", "stopToneDetected", "maxRecordDurationReached", "initialSilenceTimeout", "maxSilenceTimeout", "playPromptFailed", "playBeepFailed", "mediaReceiveTimeout", "unspecifiedError"}[i]
 }
 func ParseRecordCompletionReason(v string) (interface{}, error) {
     result := OPERATIONCANCELED_RECORDCOMPLETIONREASON
-    switch strings.ToUpper(v) {
-        case "OPERATIONCANCELED":
+    switch v {
+        case "operationCanceled":
             result = OPERATIONCANCELED_RECORDCOMPLETIONREASON
-        case "STOPTONEDETECTED":
+        case "stopToneDetected":
             result = STOPTONEDETECTED_RECORDCOMPLETIONREASON
-        case "MAXRECORDDURATIONREACHED":
+        case "maxRecordDurationReached":
             result = MAXRECORDDURATIONREACHED_RECORDCOMPLETIONREASON
-        case "INITIALSILENCETIMEOUT":
+        case "initialSilenceTimeout":
             result = INITIALSILENCETIMEOUT_RECORDCOMPLETIONREASON
-        case "MAXSILENCETIMEOUT":
+        case "maxSilenceTimeout":
             result = MAXSILENCETIMEOUT_RECORDCOMPLETIONREASON
-        case "PLAYPROMPTFAILED":
+        case "playPromptFailed":
             result = PLAYPROMPTFAILED_RECORDCOMPLETIONREASON
-        case "PLAYBEEPFAILED":
+        case "playBeepFailed":
             result = PLAYBEEPFAILED_RECORDCOMPLETIONREASON
-        case "MEDIARECEIVETIMEOUT":
+        case "mediaReceiveTimeout":
             result = MEDIARECEIVETIMEOUT_RECORDCOMPLETIONREASON
-        case "UNSPECIFIEDERROR":
+        case "unspecifiedError":
             result = UNSPECIFIEDERROR_RECORDCOMPLETIONREASON
         default:
             return 0, errors.New("Unknown RecordCompletionReason value: " + v)

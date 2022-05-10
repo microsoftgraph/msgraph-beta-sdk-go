@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type RemoteAssistanceState int
 
 const (
+    // Remote assistance is disabled for the account. With this value, Quick Assist remote assistance sessions are not allowed for the account.
     DISABLED_REMOTEASSISTANCESTATE RemoteAssistanceState = iota
+    // Remote assistance is enabled for the account. With this value, enterprise Quick Assist remote assistance features are provided.
     ENABLED_REMOTEASSISTANCESTATE
 )
 
 func (i RemoteAssistanceState) String() string {
-    return []string{"DISABLED", "ENABLED"}[i]
+    return []string{"disabled", "enabled"}[i]
 }
 func ParseRemoteAssistanceState(v string) (interface{}, error) {
     result := DISABLED_REMOTEASSISTANCESTATE
-    switch strings.ToUpper(v) {
-        case "DISABLED":
+    switch v {
+        case "disabled":
             result = DISABLED_REMOTEASSISTANCESTATE
-        case "ENABLED":
+        case "enabled":
             result = ENABLED_REMOTEASSISTANCESTATE
         default:
             return 0, errors.New("Unknown RemoteAssistanceState value: " + v)

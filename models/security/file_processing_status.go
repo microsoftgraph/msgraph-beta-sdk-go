@@ -1,6 +1,5 @@
 package security
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cases property of the microsoft.graph.security entity.
@@ -29,48 +28,48 @@ const (
 )
 
 func (i FileProcessingStatus) String() string {
-    return []string{"SUCCESS", "INTERNALERROR", "UNKNOWNERROR", "PROCESSINGTIMEOUT", "INVALIDFILEID", "FILESIZEISZERO", "FILESIZEISTOOLARGE", "FILEDEPTHLIMITEXCEEDED", "FILEBODYISTOOLONG", "FILETYPEISUNKNOWN", "FILETYPEISNOTSUPPORTED", "MALFORMEDFILE", "PROTECTEDFILE", "POISONFILE", "NOREVIEWSETSUMMARYGENERATED", "EXTRACTIONEXCEPTION", "OCRPROCESSINGTIMEOUT", "OCRFILESIZEEXCEEDSLIMIT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"success", "internalError", "unknownError", "processingTimeout", "invalidFileId", "fileSizeIsZero", "fileSizeIsTooLarge", "fileDepthLimitExceeded", "fileBodyIsTooLong", "fileTypeIsUnknown", "fileTypeIsNotSupported", "malformedFile", "protectedFile", "poisonFile", "noReviewSetSummaryGenerated", "extractionException", "ocrProcessingTimeout", "ocrFileSizeExceedsLimit", "unknownFutureValue"}[i]
 }
 func ParseFileProcessingStatus(v string) (interface{}, error) {
     result := SUCCESS_FILEPROCESSINGSTATUS
-    switch strings.ToUpper(v) {
-        case "SUCCESS":
+    switch v {
+        case "success":
             result = SUCCESS_FILEPROCESSINGSTATUS
-        case "INTERNALERROR":
+        case "internalError":
             result = INTERNALERROR_FILEPROCESSINGSTATUS
-        case "UNKNOWNERROR":
+        case "unknownError":
             result = UNKNOWNERROR_FILEPROCESSINGSTATUS
-        case "PROCESSINGTIMEOUT":
+        case "processingTimeout":
             result = PROCESSINGTIMEOUT_FILEPROCESSINGSTATUS
-        case "INVALIDFILEID":
+        case "invalidFileId":
             result = INVALIDFILEID_FILEPROCESSINGSTATUS
-        case "FILESIZEISZERO":
+        case "fileSizeIsZero":
             result = FILESIZEISZERO_FILEPROCESSINGSTATUS
-        case "FILESIZEISTOOLARGE":
+        case "fileSizeIsTooLarge":
             result = FILESIZEISTOOLARGE_FILEPROCESSINGSTATUS
-        case "FILEDEPTHLIMITEXCEEDED":
+        case "fileDepthLimitExceeded":
             result = FILEDEPTHLIMITEXCEEDED_FILEPROCESSINGSTATUS
-        case "FILEBODYISTOOLONG":
+        case "fileBodyIsTooLong":
             result = FILEBODYISTOOLONG_FILEPROCESSINGSTATUS
-        case "FILETYPEISUNKNOWN":
+        case "fileTypeIsUnknown":
             result = FILETYPEISUNKNOWN_FILEPROCESSINGSTATUS
-        case "FILETYPEISNOTSUPPORTED":
+        case "fileTypeIsNotSupported":
             result = FILETYPEISNOTSUPPORTED_FILEPROCESSINGSTATUS
-        case "MALFORMEDFILE":
+        case "malformedFile":
             result = MALFORMEDFILE_FILEPROCESSINGSTATUS
-        case "PROTECTEDFILE":
+        case "protectedFile":
             result = PROTECTEDFILE_FILEPROCESSINGSTATUS
-        case "POISONFILE":
+        case "poisonFile":
             result = POISONFILE_FILEPROCESSINGSTATUS
-        case "NOREVIEWSETSUMMARYGENERATED":
+        case "noReviewSetSummaryGenerated":
             result = NOREVIEWSETSUMMARYGENERATED_FILEPROCESSINGSTATUS
-        case "EXTRACTIONEXCEPTION":
+        case "extractionException":
             result = EXTRACTIONEXCEPTION_FILEPROCESSINGSTATUS
-        case "OCRPROCESSINGTIMEOUT":
+        case "ocrProcessingTimeout":
             result = OCRPROCESSINGTIMEOUT_FILEPROCESSINGSTATUS
-        case "OCRFILESIZEEXCEEDSLIMIT":
+        case "ocrFileSizeExceedsLimit":
             result = OCRFILESIZEEXCEEDSLIMIT_FILEPROCESSINGSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FILEPROCESSINGSTATUS
         default:
             return 0, errors.New("Unknown FileProcessingStatus value: " + v)

@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type MicrosoftTunnelLogCollectionStatus int
 
 const (
+    // Log collection is in progress
     PENDING_MICROSOFTTUNNELLOGCOLLECTIONSTATUS MicrosoftTunnelLogCollectionStatus = iota
+    // Log collection is completed
     COMPLETED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
+    // Log collection has failed
     FAILED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
 )
 
 func (i MicrosoftTunnelLogCollectionStatus) String() string {
-    return []string{"PENDING", "COMPLETED", "FAILED"}[i]
+    return []string{"pending", "completed", "failed"}[i]
 }
 func ParseMicrosoftTunnelLogCollectionStatus(v string) (interface{}, error) {
     result := PENDING_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
-    switch strings.ToUpper(v) {
-        case "PENDING":
+    switch v {
+        case "pending":
             result = PENDING_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
         default:
             return 0, errors.New("Unknown MicrosoftTunnelLogCollectionStatus value: " + v)

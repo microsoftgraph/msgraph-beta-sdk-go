@@ -1,6 +1,5 @@
 package managedtenants
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i TenantOnboardingStatus) String() string {
-    return []string{"INELIGIBLE", "INPROCESS", "ACTIVE", "INACTIVE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"ineligible", "inProcess", "active", "inactive", "unknownFutureValue"}[i]
 }
 func ParseTenantOnboardingStatus(v string) (interface{}, error) {
     result := INELIGIBLE_TENANTONBOARDINGSTATUS
-    switch strings.ToUpper(v) {
-        case "INELIGIBLE":
+    switch v {
+        case "ineligible":
             result = INELIGIBLE_TENANTONBOARDINGSTATUS
-        case "INPROCESS":
+        case "inProcess":
             result = INPROCESS_TENANTONBOARDINGSTATUS
-        case "ACTIVE":
+        case "active":
             result = ACTIVE_TENANTONBOARDINGSTATUS
-        case "INACTIVE":
+        case "inactive":
             result = INACTIVE_TENANTONBOARDINGSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TENANTONBOARDINGSTATUS
         default:
             return 0, errors.New("Unknown TenantOnboardingStatus value: " + v)

@@ -57,6 +57,7 @@ import (
     ife6aae505188bb4c2c63cb0aacab82413df394100290381167a1feb35be9f935 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/overridecompliancestate"
     i1bc1487940b05ce412b4ae41cbb75ff7066428095ef5956e8b49523af739ae12 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/logcollectionrequests/item"
     i1cf54773ea201b86cd3ff29dc00e0c4acb254a4bdf0fd5df1f70ef4013a36e72 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/devicecompliancepolicystates/item"
+    i255c4273a80b5768e201f767dfae8c3be077983537578f747de11273c0e1e85a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/users/item"
     i287d2bc1eaa2bb4787a75a13a96c399c86ed7cfa8a05bd662963aca0b4dc468f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/securitybaselinestates/item"
     i3854f67f765bed0207af3dba7d579b83beb1633e1d2a7d9e98b9579399e553ae "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/manageddevicemobileappconfigurationstates/item"
     i5dc257ef96bb41a9e3879997e09e81748fc97e12e3da1dde48e90051be5904b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/assignmentfilterevaluationstatusdetails/item"
@@ -498,6 +499,17 @@ func (m *ManagedDeviceItemRequestBuilder) UpdateWindowsDeviceAccount()(*iddee818
 // Users the users property
 func (m *ManagedDeviceItemRequestBuilder) Users()(*i69683f121195c82c8db1f6f852405aa25762f58bd7b0efa9c356fb6260734ed3.UsersRequestBuilder) {
     return i69683f121195c82c8db1f6f852405aa25762f58bd7b0efa9c356fb6260734ed3.NewUsersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UsersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.comanagedDevices.item.users.item collection
+func (m *ManagedDeviceItemRequestBuilder) UsersById(id string)(*i255c4273a80b5768e201f767dfae8c3be077983537578f747de11273c0e1e85a.UserItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["user%2Did"] = id
+    }
+    return i255c4273a80b5768e201f767dfae8c3be077983537578f747de11273c0e1e85a.NewUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WindowsDefenderScan the windowsDefenderScan property
 func (m *ManagedDeviceItemRequestBuilder) WindowsDefenderScan()(*i145cd047a0f177065361e7e02b132b0f8ce1e436d675e88c887b86e5f37651a9.WindowsDefenderScanRequestBuilder) {

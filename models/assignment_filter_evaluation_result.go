@@ -1,37 +1,42 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the getAssignmentFiltersStatusDetails method.
 type AssignmentFilterEvaluationResult int
 
 const (
+    // Unknown.
     UNKNOWN_ASSIGNMENTFILTEREVALUATIONRESULT AssignmentFilterEvaluationResult = iota
+    // Match.
     MATCH_ASSIGNMENTFILTEREVALUATIONRESULT
+    // NotMatch.
     NOTMATCH_ASSIGNMENTFILTEREVALUATIONRESULT
+    // Inconclusive.
     INCONCLUSIVE_ASSIGNMENTFILTEREVALUATIONRESULT
+    // Failure.
     FAILURE_ASSIGNMENTFILTEREVALUATIONRESULT
+    // NotEvaluated.
     NOTEVALUATED_ASSIGNMENTFILTEREVALUATIONRESULT
 )
 
 func (i AssignmentFilterEvaluationResult) String() string {
-    return []string{"UNKNOWN", "MATCH", "NOTMATCH", "INCONCLUSIVE", "FAILURE", "NOTEVALUATED"}[i]
+    return []string{"unknown", "match", "notMatch", "inconclusive", "failure", "notEvaluated"}[i]
 }
 func ParseAssignmentFilterEvaluationResult(v string) (interface{}, error) {
     result := UNKNOWN_ASSIGNMENTFILTEREVALUATIONRESULT
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_ASSIGNMENTFILTEREVALUATIONRESULT
-        case "MATCH":
+        case "match":
             result = MATCH_ASSIGNMENTFILTEREVALUATIONRESULT
-        case "NOTMATCH":
+        case "notMatch":
             result = NOTMATCH_ASSIGNMENTFILTEREVALUATIONRESULT
-        case "INCONCLUSIVE":
+        case "inconclusive":
             result = INCONCLUSIVE_ASSIGNMENTFILTEREVALUATIONRESULT
-        case "FAILURE":
+        case "failure":
             result = FAILURE_ASSIGNMENTFILTEREVALUATIONRESULT
-        case "NOTEVALUATED":
+        case "notEvaluated":
             result = NOTEVALUATED_ASSIGNMENTFILTEREVALUATIONRESULT
         default:
             return 0, errors.New("Unknown AssignmentFilterEvaluationResult value: " + v)

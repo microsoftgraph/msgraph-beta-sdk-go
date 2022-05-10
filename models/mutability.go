@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i Mutability) String() string {
-    return []string{"READWRITE", "READONLY", "IMMUTABLE", "WRITEONLY"}[i]
+    return []string{"ReadWrite", "ReadOnly", "Immutable", "WriteOnly"}[i]
 }
 func ParseMutability(v string) (interface{}, error) {
     result := READWRITE_MUTABILITY
-    switch strings.ToUpper(v) {
-        case "READWRITE":
+    switch v {
+        case "ReadWrite":
             result = READWRITE_MUTABILITY
-        case "READONLY":
+        case "ReadOnly":
             result = READONLY_MUTABILITY
-        case "IMMUTABLE":
+        case "Immutable":
             result = IMMUTABLE_MUTABILITY
-        case "WRITEONLY":
+        case "WriteOnly":
             result = WRITEONLY_MUTABILITY
         default:
             return 0, errors.New("Unknown Mutability value: " + v)

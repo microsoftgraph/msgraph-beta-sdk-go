@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i CloudPcDeviceImageStatus) String() string {
-    return []string{"PENDING", "READY", "FAILED"}[i]
+    return []string{"pending", "ready", "failed"}[i]
 }
 func ParseCloudPcDeviceImageStatus(v string) (interface{}, error) {
     result := PENDING_CLOUDPCDEVICEIMAGESTATUS
-    switch strings.ToUpper(v) {
-        case "PENDING":
+    switch v {
+        case "pending":
             result = PENDING_CLOUDPCDEVICEIMAGESTATUS
-        case "READY":
+        case "ready":
             result = READY_CLOUDPCDEVICEIMAGESTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_CLOUDPCDEVICEIMAGESTATUS
         default:
             return 0, errors.New("Unknown CloudPcDeviceImageStatus value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the usersRegisteredByFeature method.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i AuthenticationMethodFeature) String() string {
-    return []string{"SSPRREGISTERED", "SSPRENABLED", "SSPRCAPABLE", "PASSWORDLESSCAPABLE", "MFACAPABLE"}[i]
+    return []string{"ssprRegistered", "ssprEnabled", "ssprCapable", "passwordlessCapable", "mfaCapable"}[i]
 }
 func ParseAuthenticationMethodFeature(v string) (interface{}, error) {
     result := SSPRREGISTERED_AUTHENTICATIONMETHODFEATURE
-    switch strings.ToUpper(v) {
-        case "SSPRREGISTERED":
+    switch v {
+        case "ssprRegistered":
             result = SSPRREGISTERED_AUTHENTICATIONMETHODFEATURE
-        case "SSPRENABLED":
+        case "ssprEnabled":
             result = SSPRENABLED_AUTHENTICATIONMETHODFEATURE
-        case "SSPRCAPABLE":
+        case "ssprCapable":
             result = SSPRCAPABLE_AUTHENTICATIONMETHODFEATURE
-        case "PASSWORDLESSCAPABLE":
+        case "passwordlessCapable":
             result = PASSWORDLESSCAPABLE_AUTHENTICATIONMETHODFEATURE
-        case "MFACAPABLE":
+        case "mfaCapable":
             result = MFACAPABLE_AUTHENTICATIONMETHODFEATURE
         default:
             return 0, errors.New("Unknown AuthenticationMethodFeature value: " + v)

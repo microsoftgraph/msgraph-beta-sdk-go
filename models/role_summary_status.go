@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the collection of privilegedRole entities.
+// Provides operations to manage the collection of privilegedRoleAssignment entities.
 type RoleSummaryStatus int
 
 const (
@@ -12,14 +11,14 @@ const (
 )
 
 func (i RoleSummaryStatus) String() string {
-    return []string{"OK", "BAD"}[i]
+    return []string{"ok", "bad"}[i]
 }
 func ParseRoleSummaryStatus(v string) (interface{}, error) {
     result := OK_ROLESUMMARYSTATUS
-    switch strings.ToUpper(v) {
-        case "OK":
+    switch v {
+        case "ok":
             result = OK_ROLESUMMARYSTATUS
-        case "BAD":
+        case "bad":
             result = BAD_ROLESUMMARYSTATUS
         default:
             return 0, errors.New("Unknown RoleSummaryStatus value: " + v)

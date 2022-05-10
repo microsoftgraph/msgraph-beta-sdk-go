@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type NotificationTemplateBrandingOptions int
 
 const (
+    // No Branding.
     NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS NotificationTemplateBrandingOptions = iota
+    // Include Company Logo.
     INCLUDECOMPANYLOGO_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+    // Include Company Name.
     INCLUDECOMPANYNAME_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+    // Include Contact Info.
     INCLUDECONTACTINFORMATION_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+    // Include Company Portal Link.
     INCLUDECOMPANYPORTALLINK_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
 )
 
 func (i NotificationTemplateBrandingOptions) String() string {
-    return []string{"NONE", "INCLUDECOMPANYLOGO", "INCLUDECOMPANYNAME", "INCLUDECONTACTINFORMATION", "INCLUDECOMPANYPORTALLINK"}[i]
+    return []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink"}[i]
 }
 func ParseNotificationTemplateBrandingOptions(v string) (interface{}, error) {
     result := NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-        case "INCLUDECOMPANYLOGO":
+        case "includeCompanyLogo":
             result = INCLUDECOMPANYLOGO_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-        case "INCLUDECOMPANYNAME":
+        case "includeCompanyName":
             result = INCLUDECOMPANYNAME_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-        case "INCLUDECONTACTINFORMATION":
+        case "includeContactInformation":
             result = INCLUDECONTACTINFORMATION_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
-        case "INCLUDECOMPANYPORTALLINK":
+        case "includeCompanyPortalLink":
             result = INCLUDECOMPANYPORTALLINK_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
         default:
             return 0, errors.New("Unknown NotificationTemplateBrandingOptions value: " + v)

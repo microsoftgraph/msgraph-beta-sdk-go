@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i DelegatedAdminRelationshipOperationType) String() string {
-    return []string{"DELEGATEDADMINACCESSASSIGNMENTUPDATE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"delegatedAdminAccessAssignmentUpdate", "unknownFutureValue"}[i]
 }
 func ParseDelegatedAdminRelationshipOperationType(v string) (interface{}, error) {
     result := DELEGATEDADMINACCESSASSIGNMENTUPDATE_DELEGATEDADMINRELATIONSHIPOPERATIONTYPE
-    switch strings.ToUpper(v) {
-        case "DELEGATEDADMINACCESSASSIGNMENTUPDATE":
+    switch v {
+        case "delegatedAdminAccessAssignmentUpdate":
             result = DELEGATEDADMINACCESSASSIGNMENTUPDATE_DELEGATEDADMINRELATIONSHIPOPERATIONTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DELEGATEDADMINRELATIONSHIPOPERATIONTYPE
         default:
             return 0, errors.New("Unknown DelegatedAdminRelationshipOperationType value: " + v)

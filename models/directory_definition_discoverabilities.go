@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i DirectoryDefinitionDiscoverabilities) String() string {
-    return []string{"NONE", "ATTRIBUTENAMES", "ATTRIBUTEDATATYPES", "ATTRIBUTEREADONLY", "REFERENCEATTRIBUTES", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"None", "AttributeNames", "AttributeDataTypes", "AttributeReadOnly", "ReferenceAttributes", "UnknownFutureValue"}[i]
 }
 func ParseDirectoryDefinitionDiscoverabilities(v string) (interface{}, error) {
     result := NONE_DIRECTORYDEFINITIONDISCOVERABILITIES
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "None":
             result = NONE_DIRECTORYDEFINITIONDISCOVERABILITIES
-        case "ATTRIBUTENAMES":
+        case "AttributeNames":
             result = ATTRIBUTENAMES_DIRECTORYDEFINITIONDISCOVERABILITIES
-        case "ATTRIBUTEDATATYPES":
+        case "AttributeDataTypes":
             result = ATTRIBUTEDATATYPES_DIRECTORYDEFINITIONDISCOVERABILITIES
-        case "ATTRIBUTEREADONLY":
+        case "AttributeReadOnly":
             result = ATTRIBUTEREADONLY_DIRECTORYDEFINITIONDISCOVERABILITIES
-        case "REFERENCEATTRIBUTES":
+        case "ReferenceAttributes":
             result = REFERENCEATTRIBUTES_DIRECTORYDEFINITIONDISCOVERABILITIES
-        case "UNKNOWNFUTUREVALUE":
+        case "UnknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DIRECTORYDEFINITIONDISCOVERABILITIES
         default:
             return 0, errors.New("Unknown DirectoryDefinitionDiscoverabilities value: " + v)

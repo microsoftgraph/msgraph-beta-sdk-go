@@ -16,7 +16,7 @@ type PrivilegedOperationEventsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PrivilegedOperationEventsRequestBuilderGetQueryParameters get entities from privilegedOperationEvents
+// PrivilegedOperationEventsRequestBuilderGetQueryParameters list privilegedOperationEvents
 type PrivilegedOperationEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewPrivilegedOperationEventsRequestBuilder(rawUrl string, requestAdapter i2
 func (m *PrivilegedOperationEventsRequestBuilder) Count()(*ib465632eeafe5c1fb5f95c4f0045f1d5a771a32b1a937d4bdefb5bcf19c10e08.CountRequestBuilder) {
     return ib465632eeafe5c1fb5f95c4f0045f1d5a771a32b1a937d4bdefb5bcf19c10e08.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get entities from privilegedOperationEvents
+// CreateGetRequestInformation list privilegedOperationEvents
 func (m *PrivilegedOperationEventsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from privilegedOperationEvents
+// CreateGetRequestInformationWithRequestConfiguration list privilegedOperationEvents
 func (m *PrivilegedOperationEventsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PrivilegedOperationEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +110,11 @@ func (m *PrivilegedOperationEventsRequestBuilder) CreatePostRequestInformationWi
     }
     return requestInfo, nil
 }
-// Get get entities from privilegedOperationEvents
+// Get list privilegedOperationEvents
 func (m *PrivilegedOperationEventsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedOperationEventCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get entities from privilegedOperationEvents
+// GetWithRequestConfigurationAndResponseHandler list privilegedOperationEvents
 func (m *PrivilegedOperationEventsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PrivilegedOperationEventsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedOperationEventCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

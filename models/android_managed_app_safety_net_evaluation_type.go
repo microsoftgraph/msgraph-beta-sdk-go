@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type AndroidManagedAppSafetyNetEvaluationType int
 
 const (
+    // Require basic evaluation
     BASIC_ANDROIDMANAGEDAPPSAFETYNETEVALUATIONTYPE AndroidManagedAppSafetyNetEvaluationType = iota
+    // Require hardware backed evaluation
     HARDWAREBACKED_ANDROIDMANAGEDAPPSAFETYNETEVALUATIONTYPE
 )
 
 func (i AndroidManagedAppSafetyNetEvaluationType) String() string {
-    return []string{"BASIC", "HARDWAREBACKED"}[i]
+    return []string{"basic", "hardwareBacked"}[i]
 }
 func ParseAndroidManagedAppSafetyNetEvaluationType(v string) (interface{}, error) {
     result := BASIC_ANDROIDMANAGEDAPPSAFETYNETEVALUATIONTYPE
-    switch strings.ToUpper(v) {
-        case "BASIC":
+    switch v {
+        case "basic":
             result = BASIC_ANDROIDMANAGEDAPPSAFETYNETEVALUATIONTYPE
-        case "HARDWAREBACKED":
+        case "hardwareBacked":
             result = HARDWAREBACKED_ANDROIDMANAGEDAPPSAFETYNETEVALUATIONTYPE
         default:
             return 0, errors.New("Unknown AndroidManagedAppSafetyNetEvaluationType value: " + v)

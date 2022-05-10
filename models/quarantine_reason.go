@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i QuarantineReason) String() string {
-    return []string{"ENCOUNTEREDBASEESCROWTHRESHOLD", "ENCOUNTEREDTOTALESCROWTHRESHOLD", "ENCOUNTEREDESCROWPROPORTIONTHRESHOLD", "ENCOUNTEREDQUARANTINEEXCEPTION", "UNKNOWN", "QUARANTINEDONDEMAND", "TOOMANYDELETES", "INGESTIONINTERRUPTED"}[i]
+    return []string{"EncounteredBaseEscrowThreshold", "EncounteredTotalEscrowThreshold", "EncounteredEscrowProportionThreshold", "EncounteredQuarantineException", "Unknown", "QuarantinedOnDemand", "TooManyDeletes", "IngestionInterrupted"}[i]
 }
 func ParseQuarantineReason(v string) (interface{}, error) {
     result := ENCOUNTEREDBASEESCROWTHRESHOLD_QUARANTINEREASON
-    switch strings.ToUpper(v) {
-        case "ENCOUNTEREDBASEESCROWTHRESHOLD":
+    switch v {
+        case "EncounteredBaseEscrowThreshold":
             result = ENCOUNTEREDBASEESCROWTHRESHOLD_QUARANTINEREASON
-        case "ENCOUNTEREDTOTALESCROWTHRESHOLD":
+        case "EncounteredTotalEscrowThreshold":
             result = ENCOUNTEREDTOTALESCROWTHRESHOLD_QUARANTINEREASON
-        case "ENCOUNTEREDESCROWPROPORTIONTHRESHOLD":
+        case "EncounteredEscrowProportionThreshold":
             result = ENCOUNTEREDESCROWPROPORTIONTHRESHOLD_QUARANTINEREASON
-        case "ENCOUNTEREDQUARANTINEEXCEPTION":
+        case "EncounteredQuarantineException":
             result = ENCOUNTEREDQUARANTINEEXCEPTION_QUARANTINEREASON
-        case "UNKNOWN":
+        case "Unknown":
             result = UNKNOWN_QUARANTINEREASON
-        case "QUARANTINEDONDEMAND":
+        case "QuarantinedOnDemand":
             result = QUARANTINEDONDEMAND_QUARANTINEREASON
-        case "TOOMANYDELETES":
+        case "TooManyDeletes":
             result = TOOMANYDELETES_QUARANTINEREASON
-        case "INGESTIONINTERRUPTED":
+        case "IngestionInterrupted":
             result = INGESTIONINTERRUPTED_QUARANTINEREASON
         default:
             return 0, errors.New("Unknown QuarantineReason value: " + v)

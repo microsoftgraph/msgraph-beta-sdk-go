@@ -16,7 +16,7 @@ type DataPolicyOperationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DataPolicyOperationsRequestBuilderGetQueryParameters get entities from dataPolicyOperations
+// DataPolicyOperationsRequestBuilderGetQueryParameters get dataPolicyOperation
 type DataPolicyOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewDataPolicyOperationsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *DataPolicyOperationsRequestBuilder) Count()(*i9ffb068aa197e6dd63bde9ecee1ecdc2c0988de2ba059e57d722afec377bc449.CountRequestBuilder) {
     return i9ffb068aa197e6dd63bde9ecee1ecdc2c0988de2ba059e57d722afec377bc449.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get entities from dataPolicyOperations
+// CreateGetRequestInformation get dataPolicyOperation
 func (m *DataPolicyOperationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entities from dataPolicyOperations
+// CreateGetRequestInformationWithRequestConfiguration get dataPolicyOperation
 func (m *DataPolicyOperationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DataPolicyOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +110,11 @@ func (m *DataPolicyOperationsRequestBuilder) CreatePostRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// Get get entities from dataPolicyOperations
+// Get get dataPolicyOperation
 func (m *DataPolicyOperationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataPolicyOperationCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get entities from dataPolicyOperations
+// GetWithRequestConfigurationAndResponseHandler get dataPolicyOperation
 func (m *DataPolicyOperationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DataPolicyOperationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataPolicyOperationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

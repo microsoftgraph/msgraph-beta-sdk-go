@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i CloudPcDeviceImageOsStatus) String() string {
-    return []string{"SUPPORTED", "SUPPORTEDWITHWARNING", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"supported", "supportedWithWarning", "unknownFutureValue"}[i]
 }
 func ParseCloudPcDeviceImageOsStatus(v string) (interface{}, error) {
     result := SUPPORTED_CLOUDPCDEVICEIMAGEOSSTATUS
-    switch strings.ToUpper(v) {
-        case "SUPPORTED":
+    switch v {
+        case "supported":
             result = SUPPORTED_CLOUDPCDEVICEIMAGEOSSTATUS
-        case "SUPPORTEDWITHWARNING":
+        case "supportedWithWarning":
             result = SUPPORTEDWITHWARNING_CLOUDPCDEVICEIMAGEOSSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCDEVICEIMAGEOSSTATUS
         default:
             return 0, errors.New("Unknown CloudPcDeviceImageOsStatus value: " + v)

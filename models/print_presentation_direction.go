@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i PrintPresentationDirection) String() string {
-    return []string{"CLOCKWISEFROMTOPLEFT", "COUNTERCLOCKWISEFROMTOPLEFT", "COUNTERCLOCKWISEFROMTOPRIGHT", "CLOCKWISEFROMTOPRIGHT", "COUNTERCLOCKWISEFROMBOTTOMLEFT", "CLOCKWISEFROMBOTTOMLEFT", "COUNTERCLOCKWISEFROMBOTTOMRIGHT", "CLOCKWISEFROMBOTTOMRIGHT"}[i]
+    return []string{"clockwiseFromTopLeft", "counterClockwiseFromTopLeft", "counterClockwiseFromTopRight", "clockwiseFromTopRight", "counterClockwiseFromBottomLeft", "clockwiseFromBottomLeft", "counterClockwiseFromBottomRight", "clockwiseFromBottomRight"}[i]
 }
 func ParsePrintPresentationDirection(v string) (interface{}, error) {
     result := CLOCKWISEFROMTOPLEFT_PRINTPRESENTATIONDIRECTION
-    switch strings.ToUpper(v) {
-        case "CLOCKWISEFROMTOPLEFT":
+    switch v {
+        case "clockwiseFromTopLeft":
             result = CLOCKWISEFROMTOPLEFT_PRINTPRESENTATIONDIRECTION
-        case "COUNTERCLOCKWISEFROMTOPLEFT":
+        case "counterClockwiseFromTopLeft":
             result = COUNTERCLOCKWISEFROMTOPLEFT_PRINTPRESENTATIONDIRECTION
-        case "COUNTERCLOCKWISEFROMTOPRIGHT":
+        case "counterClockwiseFromTopRight":
             result = COUNTERCLOCKWISEFROMTOPRIGHT_PRINTPRESENTATIONDIRECTION
-        case "CLOCKWISEFROMTOPRIGHT":
+        case "clockwiseFromTopRight":
             result = CLOCKWISEFROMTOPRIGHT_PRINTPRESENTATIONDIRECTION
-        case "COUNTERCLOCKWISEFROMBOTTOMLEFT":
+        case "counterClockwiseFromBottomLeft":
             result = COUNTERCLOCKWISEFROMBOTTOMLEFT_PRINTPRESENTATIONDIRECTION
-        case "CLOCKWISEFROMBOTTOMLEFT":
+        case "clockwiseFromBottomLeft":
             result = CLOCKWISEFROMBOTTOMLEFT_PRINTPRESENTATIONDIRECTION
-        case "COUNTERCLOCKWISEFROMBOTTOMRIGHT":
+        case "counterClockwiseFromBottomRight":
             result = COUNTERCLOCKWISEFROMBOTTOMRIGHT_PRINTPRESENTATIONDIRECTION
-        case "CLOCKWISEFROMBOTTOMRIGHT":
+        case "clockwiseFromBottomRight":
             result = CLOCKWISEFROMBOTTOMRIGHT_PRINTPRESENTATIONDIRECTION
         default:
             return 0, errors.New("Unknown PrintPresentationDirection value: " + v)

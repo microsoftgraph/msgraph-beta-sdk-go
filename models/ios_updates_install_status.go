@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -32,54 +31,54 @@ const (
 )
 
 func (i IosUpdatesInstallStatus) String() string {
-    return []string{"UPDATESCANFAILED", "DEVICEOSHIGHERTHANDESIREDOSVERSION", "UPDATEERROR", "SHAREDDEVICEUSERLOGGEDINERROR", "NOTSUPPORTEDOPERATION", "INSTALLFAILED", "INSTALLPHONECALLINPROGRESS", "INSTALLINSUFFICIENTPOWER", "INSTALLINSUFFICIENTSPACE", "INSTALLING", "DOWNLOADINSUFFICIENTNETWORK", "DOWNLOADINSUFFICIENTPOWER", "DOWNLOADINSUFFICIENTSPACE", "DOWNLOADREQUIRESCOMPUTER", "DOWNLOADFAILED", "DOWNLOADING", "TIMEOUT", "MDMCLIENTCRASHED", "SUCCESS", "AVAILABLE", "IDLE", "UNKNOWN"}[i]
+    return []string{"updateScanFailed", "deviceOsHigherThanDesiredOsVersion", "updateError", "sharedDeviceUserLoggedInError", "notSupportedOperation", "installFailed", "installPhoneCallInProgress", "installInsufficientPower", "installInsufficientSpace", "installing", "downloadInsufficientNetwork", "downloadInsufficientPower", "downloadInsufficientSpace", "downloadRequiresComputer", "downloadFailed", "downloading", "timeout", "mdmClientCrashed", "success", "available", "idle", "unknown"}[i]
 }
 func ParseIosUpdatesInstallStatus(v string) (interface{}, error) {
     result := UPDATESCANFAILED_IOSUPDATESINSTALLSTATUS
-    switch strings.ToUpper(v) {
-        case "UPDATESCANFAILED":
+    switch v {
+        case "updateScanFailed":
             result = UPDATESCANFAILED_IOSUPDATESINSTALLSTATUS
-        case "DEVICEOSHIGHERTHANDESIREDOSVERSION":
+        case "deviceOsHigherThanDesiredOsVersion":
             result = DEVICEOSHIGHERTHANDESIREDOSVERSION_IOSUPDATESINSTALLSTATUS
-        case "UPDATEERROR":
+        case "updateError":
             result = UPDATEERROR_IOSUPDATESINSTALLSTATUS
-        case "SHAREDDEVICEUSERLOGGEDINERROR":
+        case "sharedDeviceUserLoggedInError":
             result = SHAREDDEVICEUSERLOGGEDINERROR_IOSUPDATESINSTALLSTATUS
-        case "NOTSUPPORTEDOPERATION":
+        case "notSupportedOperation":
             result = NOTSUPPORTEDOPERATION_IOSUPDATESINSTALLSTATUS
-        case "INSTALLFAILED":
+        case "installFailed":
             result = INSTALLFAILED_IOSUPDATESINSTALLSTATUS
-        case "INSTALLPHONECALLINPROGRESS":
+        case "installPhoneCallInProgress":
             result = INSTALLPHONECALLINPROGRESS_IOSUPDATESINSTALLSTATUS
-        case "INSTALLINSUFFICIENTPOWER":
+        case "installInsufficientPower":
             result = INSTALLINSUFFICIENTPOWER_IOSUPDATESINSTALLSTATUS
-        case "INSTALLINSUFFICIENTSPACE":
+        case "installInsufficientSpace":
             result = INSTALLINSUFFICIENTSPACE_IOSUPDATESINSTALLSTATUS
-        case "INSTALLING":
+        case "installing":
             result = INSTALLING_IOSUPDATESINSTALLSTATUS
-        case "DOWNLOADINSUFFICIENTNETWORK":
+        case "downloadInsufficientNetwork":
             result = DOWNLOADINSUFFICIENTNETWORK_IOSUPDATESINSTALLSTATUS
-        case "DOWNLOADINSUFFICIENTPOWER":
+        case "downloadInsufficientPower":
             result = DOWNLOADINSUFFICIENTPOWER_IOSUPDATESINSTALLSTATUS
-        case "DOWNLOADINSUFFICIENTSPACE":
+        case "downloadInsufficientSpace":
             result = DOWNLOADINSUFFICIENTSPACE_IOSUPDATESINSTALLSTATUS
-        case "DOWNLOADREQUIRESCOMPUTER":
+        case "downloadRequiresComputer":
             result = DOWNLOADREQUIRESCOMPUTER_IOSUPDATESINSTALLSTATUS
-        case "DOWNLOADFAILED":
+        case "downloadFailed":
             result = DOWNLOADFAILED_IOSUPDATESINSTALLSTATUS
-        case "DOWNLOADING":
+        case "downloading":
             result = DOWNLOADING_IOSUPDATESINSTALLSTATUS
-        case "TIMEOUT":
+        case "timeout":
             result = TIMEOUT_IOSUPDATESINSTALLSTATUS
-        case "MDMCLIENTCRASHED":
+        case "mdmClientCrashed":
             result = MDMCLIENTCRASHED_IOSUPDATESINSTALLSTATUS
-        case "SUCCESS":
+        case "success":
             result = SUCCESS_IOSUPDATESINSTALLSTATUS
-        case "AVAILABLE":
+        case "available":
             result = AVAILABLE_IOSUPDATESINSTALLSTATUS
-        case "IDLE":
+        case "idle":
             result = IDLE_IOSUPDATESINSTALLSTATUS
-        case "UNKNOWN":
+        case "unknown":
             result = UNKNOWN_IOSUPDATESINSTALLSTATUS
         default:
             return 0, errors.New("Unknown IosUpdatesInstallStatus value: " + v)

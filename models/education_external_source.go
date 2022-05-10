@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the educationRoot singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i EducationExternalSource) String() string {
-    return []string{"SIS", "MANUAL", "UNKNOWNFUTUREVALUE", "LMS"}[i]
+    return []string{"sis", "manual", "unknownFutureValue", "lms"}[i]
 }
 func ParseEducationExternalSource(v string) (interface{}, error) {
     result := SIS_EDUCATIONEXTERNALSOURCE
-    switch strings.ToUpper(v) {
-        case "SIS":
+    switch v {
+        case "sis":
             result = SIS_EDUCATIONEXTERNALSOURCE
-        case "MANUAL":
+        case "manual":
             result = MANUAL_EDUCATIONEXTERNALSOURCE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONEXTERNALSOURCE
-        case "LMS":
+        case "lms":
             result = LMS_EDUCATIONEXTERNALSOURCE
         default:
             return 0, errors.New("Unknown EducationExternalSource value: " + v)

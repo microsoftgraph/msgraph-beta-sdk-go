@@ -1,46 +1,54 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type UserExperienceAnalyticsOperatingSystemRestartCategory int
 
 const (
+    // Unknown
     UNKNOWN_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY UserExperienceAnalyticsOperatingSystemRestartCategory = iota
+    // Restart with update
     RESTARTWITHUPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
+    // Restart without update
     RESTARTWITHOUTUPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
+    // Blue screen restart
     BLUESCREEN_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
+    // Shutdown with update
     SHUTDOWNWITHUPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
+    // Shutdown without update
     SHUTDOWNWITHOUTUPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
+    // Long power button press
     LONGPOWERBUTTONPRESS_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
+    // Boot error
     BOOTERROR_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
+    // Update
     UPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
 )
 
 func (i UserExperienceAnalyticsOperatingSystemRestartCategory) String() string {
-    return []string{"UNKNOWN", "RESTARTWITHUPDATE", "RESTARTWITHOUTUPDATE", "BLUESCREEN", "SHUTDOWNWITHUPDATE", "SHUTDOWNWITHOUTUPDATE", "LONGPOWERBUTTONPRESS", "BOOTERROR", "UPDATE"}[i]
+    return []string{"unknown", "restartWithUpdate", "restartWithoutUpdate", "blueScreen", "shutdownWithUpdate", "shutdownWithoutUpdate", "longPowerButtonPress", "bootError", "update"}[i]
 }
 func ParseUserExperienceAnalyticsOperatingSystemRestartCategory(v string) (interface{}, error) {
     result := UNKNOWN_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-        case "RESTARTWITHUPDATE":
+        case "restartWithUpdate":
             result = RESTARTWITHUPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-        case "RESTARTWITHOUTUPDATE":
+        case "restartWithoutUpdate":
             result = RESTARTWITHOUTUPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-        case "BLUESCREEN":
+        case "blueScreen":
             result = BLUESCREEN_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-        case "SHUTDOWNWITHUPDATE":
+        case "shutdownWithUpdate":
             result = SHUTDOWNWITHUPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-        case "SHUTDOWNWITHOUTUPDATE":
+        case "shutdownWithoutUpdate":
             result = SHUTDOWNWITHOUTUPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-        case "LONGPOWERBUTTONPRESS":
+        case "longPowerButtonPress":
             result = LONGPOWERBUTTONPRESS_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-        case "BOOTERROR":
+        case "bootError":
             result = BOOTERROR_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
-        case "UPDATE":
+        case "update":
             result = UPDATE_USEREXPERIENCEANALYTICSOPERATINGSYSTEMRESTARTCATEGORY
         default:
             return 0, errors.New("Unknown UserExperienceAnalyticsOperatingSystemRestartCategory value: " + v)

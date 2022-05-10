@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type JoinType int
 
 const (
+    // Unknown enrollment join type.
     UNKNOWN_JOINTYPE JoinType = iota
+    // The device is joined by Azure AD.
     AZUREADJOINED_JOINTYPE
+    // The device is registered by Azure AD.
     AZUREADREGISTERED_JOINTYPE
+    // The device is joined by hybrid Azure AD.
     HYBRIDAZUREADJOINED_JOINTYPE
 )
 
 func (i JoinType) String() string {
-    return []string{"UNKNOWN", "AZUREADJOINED", "AZUREADREGISTERED", "HYBRIDAZUREADJOINED"}[i]
+    return []string{"unknown", "azureADJoined", "azureADRegistered", "hybridAzureADJoined"}[i]
 }
 func ParseJoinType(v string) (interface{}, error) {
     result := UNKNOWN_JOINTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_JOINTYPE
-        case "AZUREADJOINED":
+        case "azureADJoined":
             result = AZUREADJOINED_JOINTYPE
-        case "AZUREADREGISTERED":
+        case "azureADRegistered":
             result = AZUREADREGISTERED_JOINTYPE
-        case "HYBRIDAZUREADJOINED":
+        case "hybridAzureADJoined":
             result = HYBRIDAZUREADJOINED_JOINTYPE
         default:
             return 0, errors.New("Unknown JoinType value: " + v)

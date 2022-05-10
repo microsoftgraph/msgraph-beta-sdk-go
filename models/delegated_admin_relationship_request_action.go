@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i DelegatedAdminRelationshipRequestAction) String() string {
-    return []string{"LOCKFORAPPROVAL", "APPROVE", "TERMINATE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"lockForApproval", "approve", "terminate", "unknownFutureValue"}[i]
 }
 func ParseDelegatedAdminRelationshipRequestAction(v string) (interface{}, error) {
     result := LOCKFORAPPROVAL_DELEGATEDADMINRELATIONSHIPREQUESTACTION
-    switch strings.ToUpper(v) {
-        case "LOCKFORAPPROVAL":
+    switch v {
+        case "lockForApproval":
             result = LOCKFORAPPROVAL_DELEGATEDADMINRELATIONSHIPREQUESTACTION
-        case "APPROVE":
+        case "approve":
             result = APPROVE_DELEGATEDADMINRELATIONSHIPREQUESTACTION
-        case "TERMINATE":
+        case "terminate":
             result = TERMINATE_DELEGATEDADMINRELATIONSHIPREQUESTACTION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DELEGATEDADMINRELATIONSHIPREQUESTACTION
         default:
             return 0, errors.New("Unknown DelegatedAdminRelationshipRequestAction value: " + v)

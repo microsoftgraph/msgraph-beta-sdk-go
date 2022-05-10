@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i DelegatedAdminAccessAssignmentStatus) String() string {
-    return []string{"PENDING", "ACTIVE", "DELETING", "DELETED", "ERROR", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"pending", "active", "deleting", "deleted", "error", "unknownFutureValue"}[i]
 }
 func ParseDelegatedAdminAccessAssignmentStatus(v string) (interface{}, error) {
     result := PENDING_DELEGATEDADMINACCESSASSIGNMENTSTATUS
-    switch strings.ToUpper(v) {
-        case "PENDING":
+    switch v {
+        case "pending":
             result = PENDING_DELEGATEDADMINACCESSASSIGNMENTSTATUS
-        case "ACTIVE":
+        case "active":
             result = ACTIVE_DELEGATEDADMINACCESSASSIGNMENTSTATUS
-        case "DELETING":
+        case "deleting":
             result = DELETING_DELEGATEDADMINACCESSASSIGNMENTSTATUS
-        case "DELETED":
+        case "deleted":
             result = DELETED_DELEGATEDADMINACCESSASSIGNMENTSTATUS
-        case "ERROR":
+        case "error":
             result = ERROR_DELEGATEDADMINACCESSASSIGNMENTSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DELEGATEDADMINACCESSASSIGNMENTSTATUS
         default:
             return 0, errors.New("Unknown DelegatedAdminAccessAssignmentStatus value: " + v)

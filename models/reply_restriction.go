@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ReplyRestriction) String() string {
-    return []string{"EVERYONE", "AUTHORANDMODERATORS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"everyone", "authorAndModerators", "unknownFutureValue"}[i]
 }
 func ParseReplyRestriction(v string) (interface{}, error) {
     result := EVERYONE_REPLYRESTRICTION
-    switch strings.ToUpper(v) {
-        case "EVERYONE":
+    switch v {
+        case "everyone":
             result = EVERYONE_REPLYRESTRICTION
-        case "AUTHORANDMODERATORS":
+        case "authorAndModerators":
             result = AUTHORANDMODERATORS_REPLYRESTRICTION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REPLYRESTRICTION
         default:
             return 0, errors.New("Unknown ReplyRestriction value: " + v)

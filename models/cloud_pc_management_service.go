@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i CloudPcManagementService) String() string {
-    return []string{"WINDOWS365", "DEVBOX", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"windows365", "devBox", "unknownFutureValue"}[i]
 }
 func ParseCloudPcManagementService(v string) (interface{}, error) {
     result := WINDOWS365_CLOUDPCMANAGEMENTSERVICE
-    switch strings.ToUpper(v) {
-        case "WINDOWS365":
+    switch v {
+        case "windows365":
             result = WINDOWS365_CLOUDPCMANAGEMENTSERVICE
-        case "DEVBOX":
+        case "devBox":
             result = DEVBOX_CLOUDPCMANAGEMENTSERVICE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCMANAGEMENTSERVICE
         default:
             return 0, errors.New("Unknown CloudPcManagementService value: " + v)

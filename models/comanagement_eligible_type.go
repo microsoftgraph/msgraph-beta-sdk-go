@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i ComanagementEligibleType) String() string {
-    return []string{"COMANAGED", "ELIGIBLE", "ELIGIBLEBUTNOTAZUREADJOINED", "NEEDSOSUPDATE", "INELIGIBLE"}[i]
+    return []string{"comanaged", "eligible", "eligibleButNotAzureAdJoined", "needsOsUpdate", "ineligible"}[i]
 }
 func ParseComanagementEligibleType(v string) (interface{}, error) {
     result := COMANAGED_COMANAGEMENTELIGIBLETYPE
-    switch strings.ToUpper(v) {
-        case "COMANAGED":
+    switch v {
+        case "comanaged":
             result = COMANAGED_COMANAGEMENTELIGIBLETYPE
-        case "ELIGIBLE":
+        case "eligible":
             result = ELIGIBLE_COMANAGEMENTELIGIBLETYPE
-        case "ELIGIBLEBUTNOTAZUREADJOINED":
+        case "eligibleButNotAzureAdJoined":
             result = ELIGIBLEBUTNOTAZUREADJOINED_COMANAGEMENTELIGIBLETYPE
-        case "NEEDSOSUPDATE":
+        case "needsOsUpdate":
             result = NEEDSOSUPDATE_COMANAGEMENTELIGIBLETYPE
-        case "INELIGIBLE":
+        case "ineligible":
             result = INELIGIBLE_COMANAGEMENTELIGIBLETYPE
         default:
             return 0, errors.New("Unknown ComanagementEligibleType value: " + v)

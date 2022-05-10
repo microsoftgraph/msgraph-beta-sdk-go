@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the filterOperators method.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i ScopeOperatorType) String() string {
-    return []string{"BINARY", "UNARY"}[i]
+    return []string{"Binary", "Unary"}[i]
 }
 func ParseScopeOperatorType(v string) (interface{}, error) {
     result := BINARY_SCOPEOPERATORTYPE
-    switch strings.ToUpper(v) {
-        case "BINARY":
+    switch v {
+        case "Binary":
             result = BINARY_SCOPEOPERATORTYPE
-        case "UNARY":
+        case "Unary":
             result = UNARY_SCOPEOPERATORTYPE
         default:
             return 0, errors.New("Unknown ScopeOperatorType value: " + v)

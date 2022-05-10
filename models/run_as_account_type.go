@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type RunAsAccountType int
 
 const (
+    // System context
     SYSTEM_RUNASACCOUNTTYPE RunAsAccountType = iota
+    // User context
     USER_RUNASACCOUNTTYPE
 )
 
 func (i RunAsAccountType) String() string {
-    return []string{"SYSTEM", "USER"}[i]
+    return []string{"system", "user"}[i]
 }
 func ParseRunAsAccountType(v string) (interface{}, error) {
     result := SYSTEM_RUNASACCOUNTTYPE
-    switch strings.ToUpper(v) {
-        case "SYSTEM":
+    switch v {
+        case "system":
             result = SYSTEM_RUNASACCOUNTTYPE
-        case "USER":
+        case "user":
             result = USER_RUNASACCOUNTTYPE
         default:
             return 0, errors.New("Unknown RunAsAccountType value: " + v)

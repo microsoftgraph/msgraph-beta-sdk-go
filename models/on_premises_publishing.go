@@ -30,7 +30,7 @@ type OnPremisesPublishing struct {
     isPersistentCookieEnabled *bool
     // Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.
     isSecureCookieEnabled *bool
-    // The isStateSessionEnabled property
+    // Indicates whether validation of the state parameter when the client uses the OAuth 2.0 authorization code grant flow is enabled. This setting allows admins to specify whether they want to enable CSRF protection for their apps.
     isStateSessionEnabled *bool
     // Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
     isTranslateHostHeaderEnabled *bool
@@ -365,7 +365,7 @@ func (m *OnPremisesPublishing) GetIsSecureCookieEnabled()(*bool) {
         return m.isSecureCookieEnabled
     }
 }
-// GetIsStateSessionEnabled gets the isStateSessionEnabled property value. The isStateSessionEnabled property
+// GetIsStateSessionEnabled gets the isStateSessionEnabled property value. Indicates whether validation of the state parameter when the client uses the OAuth 2.0 authorization code grant flow is enabled. This setting allows admins to specify whether they want to enable CSRF protection for their apps.
 func (m *OnPremisesPublishing) GetIsStateSessionEnabled()(*bool) {
     if m == nil {
         return nil
@@ -644,7 +644,7 @@ func (m *OnPremisesPublishing) SetIsSecureCookieEnabled(value *bool)() {
         m.isSecureCookieEnabled = value
     }
 }
-// SetIsStateSessionEnabled sets the isStateSessionEnabled property value. The isStateSessionEnabled property
+// SetIsStateSessionEnabled sets the isStateSessionEnabled property value. Indicates whether validation of the state parameter when the client uses the OAuth 2.0 authorization code grant flow is enabled. This setting allows admins to specify whether they want to enable CSRF protection for their apps.
 func (m *OnPremisesPublishing) SetIsStateSessionEnabled(value *bool)() {
     if m != nil {
         m.isStateSessionEnabled = value

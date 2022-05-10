@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i GroupAccessType) String() string {
-    return []string{"NONE", "PRIVATE", "SECRET", "PUBLIC"}[i]
+    return []string{"none", "private", "secret", "public"}[i]
 }
 func ParseGroupAccessType(v string) (interface{}, error) {
     result := NONE_GROUPACCESSTYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_GROUPACCESSTYPE
-        case "PRIVATE":
+        case "private":
             result = PRIVATE_GROUPACCESSTYPE
-        case "SECRET":
+        case "secret":
             result = SECRET_GROUPACCESSTYPE
-        case "PUBLIC":
+        case "public":
             result = PUBLIC_GROUPACCESSTYPE
         default:
             return 0, errors.New("Unknown GroupAccessType value: " + v)

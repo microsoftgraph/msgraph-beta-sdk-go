@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementExchangeAccessLevel int
 
 const (
+    // No device access rule has been configured in Exchange.
     NONE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL DeviceManagementExchangeAccessLevel = iota
+    // Allow the device access to Exchange.
     ALLOW_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
+    // Block the device from accessing Exchange.
     BLOCK_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
+    // Quarantine the device in Exchange.
     QUARANTINE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
 )
 
 func (i DeviceManagementExchangeAccessLevel) String() string {
-    return []string{"NONE", "ALLOW", "BLOCK", "QUARANTINE"}[i]
+    return []string{"none", "allow", "block", "quarantine"}[i]
 }
 func ParseDeviceManagementExchangeAccessLevel(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
-        case "ALLOW":
+        case "allow":
             result = ALLOW_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
-        case "BLOCK":
+        case "block":
             result = BLOCK_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
-        case "QUARANTINE":
+        case "quarantine":
             result = QUARANTINE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
         default:
             return 0, errors.New("Unknown DeviceManagementExchangeAccessLevel value: " + v)

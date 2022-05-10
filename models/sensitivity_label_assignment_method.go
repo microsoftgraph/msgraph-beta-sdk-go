@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the extractSensitivityLabels method.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i SensitivityLabelAssignmentMethod) String() string {
-    return []string{"STANDARD", "PRIVILEGED", "AUTO", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"standard", "privileged", "auto", "unknownFutureValue"}[i]
 }
 func ParseSensitivityLabelAssignmentMethod(v string) (interface{}, error) {
     result := STANDARD_SENSITIVITYLABELASSIGNMENTMETHOD
-    switch strings.ToUpper(v) {
-        case "STANDARD":
+    switch v {
+        case "standard":
             result = STANDARD_SENSITIVITYLABELASSIGNMENTMETHOD
-        case "PRIVILEGED":
+        case "privileged":
             result = PRIVILEGED_SENSITIVITYLABELASSIGNMENTMETHOD
-        case "AUTO":
+        case "auto":
             result = AUTO_SENSITIVITYLABELASSIGNMENTMETHOD
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SENSITIVITYLABELASSIGNMENTMETHOD
         default:
             return 0, errors.New("Unknown SensitivityLabelAssignmentMethod value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i PrintJobProcessingState) String() string {
-    return []string{"UNKNOWN", "PENDING", "PROCESSING", "PAUSED", "STOPPED", "COMPLETED", "CANCELED", "ABORTED"}[i]
+    return []string{"unknown", "pending", "processing", "paused", "stopped", "completed", "canceled", "aborted"}[i]
 }
 func ParsePrintJobProcessingState(v string) (interface{}, error) {
     result := UNKNOWN_PRINTJOBPROCESSINGSTATE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_PRINTJOBPROCESSINGSTATE
-        case "PENDING":
+        case "pending":
             result = PENDING_PRINTJOBPROCESSINGSTATE
-        case "PROCESSING":
+        case "processing":
             result = PROCESSING_PRINTJOBPROCESSINGSTATE
-        case "PAUSED":
+        case "paused":
             result = PAUSED_PRINTJOBPROCESSINGSTATE
-        case "STOPPED":
+        case "stopped":
             result = STOPPED_PRINTJOBPROCESSINGSTATE
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_PRINTJOBPROCESSINGSTATE
-        case "CANCELED":
+        case "canceled":
             result = CANCELED_PRINTJOBPROCESSINGSTATE
-        case "ABORTED":
+        case "aborted":
             result = ABORTED_PRINTJOBPROCESSINGSTATE
         default:
             return 0, errors.New("Unknown PrintJobProcessingState value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -33,56 +32,56 @@ const (
 )
 
 func (i ConditionalAccessRule) String() string {
-    return []string{"ALLAPPS", "FIRSTPARTYAPPS", "OFFICE365", "APPID", "ACR", "APPFILTER", "ALLUSERS", "GUEST", "GROUPID", "ROLEID", "USERID", "ALLDEVICEPLATFORMS", "DEVICEPLATFORM", "ALLLOCATIONS", "INSIDECORPNET", "ALLTRUSTEDLOCATIONS", "LOCATIONID", "ALLDEVICES", "DEVICEFILTER", "DEVICESTATE", "UNKNOWNFUTUREVALUE", "DEVICEFILTERINCLUDERULENOTMATCHED", "ALLDEVICESTATES"}[i]
+    return []string{"allApps", "firstPartyApps", "office365", "appId", "acr", "appFilter", "allUsers", "guest", "groupId", "roleId", "userId", "allDevicePlatforms", "devicePlatform", "allLocations", "insideCorpnet", "allTrustedLocations", "locationId", "allDevices", "deviceFilter", "deviceState", "unknownFutureValue", "deviceFilterIncludeRuleNotMatched", "allDeviceStates"}[i]
 }
 func ParseConditionalAccessRule(v string) (interface{}, error) {
     result := ALLAPPS_CONDITIONALACCESSRULE
-    switch strings.ToUpper(v) {
-        case "ALLAPPS":
+    switch v {
+        case "allApps":
             result = ALLAPPS_CONDITIONALACCESSRULE
-        case "FIRSTPARTYAPPS":
+        case "firstPartyApps":
             result = FIRSTPARTYAPPS_CONDITIONALACCESSRULE
-        case "OFFICE365":
+        case "office365":
             result = OFFICE365_CONDITIONALACCESSRULE
-        case "APPID":
+        case "appId":
             result = APPID_CONDITIONALACCESSRULE
-        case "ACR":
+        case "acr":
             result = ACR_CONDITIONALACCESSRULE
-        case "APPFILTER":
+        case "appFilter":
             result = APPFILTER_CONDITIONALACCESSRULE
-        case "ALLUSERS":
+        case "allUsers":
             result = ALLUSERS_CONDITIONALACCESSRULE
-        case "GUEST":
+        case "guest":
             result = GUEST_CONDITIONALACCESSRULE
-        case "GROUPID":
+        case "groupId":
             result = GROUPID_CONDITIONALACCESSRULE
-        case "ROLEID":
+        case "roleId":
             result = ROLEID_CONDITIONALACCESSRULE
-        case "USERID":
+        case "userId":
             result = USERID_CONDITIONALACCESSRULE
-        case "ALLDEVICEPLATFORMS":
+        case "allDevicePlatforms":
             result = ALLDEVICEPLATFORMS_CONDITIONALACCESSRULE
-        case "DEVICEPLATFORM":
+        case "devicePlatform":
             result = DEVICEPLATFORM_CONDITIONALACCESSRULE
-        case "ALLLOCATIONS":
+        case "allLocations":
             result = ALLLOCATIONS_CONDITIONALACCESSRULE
-        case "INSIDECORPNET":
+        case "insideCorpnet":
             result = INSIDECORPNET_CONDITIONALACCESSRULE
-        case "ALLTRUSTEDLOCATIONS":
+        case "allTrustedLocations":
             result = ALLTRUSTEDLOCATIONS_CONDITIONALACCESSRULE
-        case "LOCATIONID":
+        case "locationId":
             result = LOCATIONID_CONDITIONALACCESSRULE
-        case "ALLDEVICES":
+        case "allDevices":
             result = ALLDEVICES_CONDITIONALACCESSRULE
-        case "DEVICEFILTER":
+        case "deviceFilter":
             result = DEVICEFILTER_CONDITIONALACCESSRULE
-        case "DEVICESTATE":
+        case "deviceState":
             result = DEVICESTATE_CONDITIONALACCESSRULE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSRULE
-        case "DEVICEFILTERINCLUDERULENOTMATCHED":
+        case "deviceFilterIncludeRuleNotMatched":
             result = DEVICEFILTERINCLUDERULENOTMATCHED_CONDITIONALACCESSRULE
-        case "ALLDEVICESTATES":
+        case "allDeviceStates":
             result = ALLDEVICESTATES_CONDITIONALACCESSRULE
         default:
             return 0, errors.New("Unknown ConditionalAccessRule value: " + v)

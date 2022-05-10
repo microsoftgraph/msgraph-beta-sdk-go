@@ -1,6 +1,5 @@
 package managedtenants
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i ManagementTemplateDeploymentStatus) String() string {
-    return []string{"UNKNOWN", "INPROGRESS", "COMPLETED", "FAILED", "INELIGIBLE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "inProgress", "completed", "failed", "ineligible", "unknownFutureValue"}[i]
 }
 func ParseManagementTemplateDeploymentStatus(v string) (interface{}, error) {
     result := UNKNOWN_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
-        case "INPROGRESS":
+        case "inProgress":
             result = INPROGRESS_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
-        case "INELIGIBLE":
+        case "ineligible":
             result = INELIGIBLE_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
         default:
             return 0, errors.New("Unknown ManagementTemplateDeploymentStatus value: " + v)

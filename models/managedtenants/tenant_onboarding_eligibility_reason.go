@@ -1,6 +1,5 @@
 package managedtenants
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i TenantOnboardingEligibilityReason) String() string {
-    return []string{"NONE", "CONTRACTTYPE", "DELEGATEDADMINPRIVILEGES", "USERSCOUNT", "LICENSE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "contractType", "delegatedAdminPrivileges", "usersCount", "license", "unknownFutureValue"}[i]
 }
 func ParseTenantOnboardingEligibilityReason(v string) (interface{}, error) {
     result := NONE_TENANTONBOARDINGELIGIBILITYREASON
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_TENANTONBOARDINGELIGIBILITYREASON
-        case "CONTRACTTYPE":
+        case "contractType":
             result = CONTRACTTYPE_TENANTONBOARDINGELIGIBILITYREASON
-        case "DELEGATEDADMINPRIVILEGES":
+        case "delegatedAdminPrivileges":
             result = DELEGATEDADMINPRIVILEGES_TENANTONBOARDINGELIGIBILITYREASON
-        case "USERSCOUNT":
+        case "usersCount":
             result = USERSCOUNT_TENANTONBOARDINGELIGIBILITYREASON
-        case "LICENSE":
+        case "license":
             result = LICENSE_TENANTONBOARDINGELIGIBILITYREASON
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TENANTONBOARDINGELIGIBILITYREASON
         default:
             return 0, errors.New("Unknown TenantOnboardingEligibilityReason value: " + v)

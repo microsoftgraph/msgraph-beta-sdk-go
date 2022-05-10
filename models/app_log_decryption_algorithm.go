@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the createDownloadUrl method.
@@ -11,12 +10,12 @@ const (
 )
 
 func (i AppLogDecryptionAlgorithm) String() string {
-    return []string{"AES256"}[i]
+    return []string{"aes256"}[i]
 }
 func ParseAppLogDecryptionAlgorithm(v string) (interface{}, error) {
     result := AES256_APPLOGDECRYPTIONALGORITHM
-    switch strings.ToUpper(v) {
-        case "AES256":
+    switch v {
+        case "aes256":
             result = AES256_APPLOGDECRYPTIONALGORITHM
         default:
             return 0, errors.New("Unknown AppLogDecryptionAlgorithm value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i AllowedAudiences) String() string {
-    return []string{"ME", "FAMILY", "CONTACTS", "GROUPMEMBERS", "ORGANIZATION", "FEDERATEDORGANIZATIONS", "EVERYONE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"me", "family", "contacts", "groupMembers", "organization", "federatedOrganizations", "everyone", "unknownFutureValue"}[i]
 }
 func ParseAllowedAudiences(v string) (interface{}, error) {
     result := ME_ALLOWEDAUDIENCES
-    switch strings.ToUpper(v) {
-        case "ME":
+    switch v {
+        case "me":
             result = ME_ALLOWEDAUDIENCES
-        case "FAMILY":
+        case "family":
             result = FAMILY_ALLOWEDAUDIENCES
-        case "CONTACTS":
+        case "contacts":
             result = CONTACTS_ALLOWEDAUDIENCES
-        case "GROUPMEMBERS":
+        case "groupMembers":
             result = GROUPMEMBERS_ALLOWEDAUDIENCES
-        case "ORGANIZATION":
+        case "organization":
             result = ORGANIZATION_ALLOWEDAUDIENCES
-        case "FEDERATEDORGANIZATIONS":
+        case "federatedOrganizations":
             result = FEDERATEDORGANIZATIONS_ALLOWEDAUDIENCES
-        case "EVERYONE":
+        case "everyone":
             result = EVERYONE_ALLOWEDAUDIENCES
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALLOWEDAUDIENCES
         default:
             return 0, errors.New("Unknown AllowedAudiences value: " + v)

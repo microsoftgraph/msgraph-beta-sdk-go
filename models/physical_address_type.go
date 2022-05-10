@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of bookingBusiness entities.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i PhysicalAddressType) String() string {
-    return []string{"UNKNOWN", "HOME", "BUSINESS", "OTHER"}[i]
+    return []string{"unknown", "home", "business", "other"}[i]
 }
 func ParsePhysicalAddressType(v string) (interface{}, error) {
     result := UNKNOWN_PHYSICALADDRESSTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_PHYSICALADDRESSTYPE
-        case "HOME":
+        case "home":
             result = HOME_PHYSICALADDRESSTYPE
-        case "BUSINESS":
+        case "business":
             result = BUSINESS_PHYSICALADDRESSTYPE
-        case "OTHER":
+        case "other":
             result = OTHER_PHYSICALADDRESSTYPE
         default:
             return 0, errors.New("Unknown PhysicalAddressType value: " + v)

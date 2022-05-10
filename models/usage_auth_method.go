@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the reportRoot singleton.
@@ -21,32 +20,32 @@ const (
 )
 
 func (i UsageAuthMethod) String() string {
-    return []string{"EMAIL", "MOBILESMS", "MOBILECALL", "OFFICEPHONE", "SECURITYQUESTION", "APPNOTIFICATION", "APPCODE", "ALTERNATEMOBILECALL", "FIDO", "APPPASSWORD", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"email", "mobileSMS", "mobileCall", "officePhone", "securityQuestion", "appNotification", "appCode", "alternateMobileCall", "fido", "appPassword", "unknownFutureValue"}[i]
 }
 func ParseUsageAuthMethod(v string) (interface{}, error) {
     result := EMAIL_USAGEAUTHMETHOD
-    switch strings.ToUpper(v) {
-        case "EMAIL":
+    switch v {
+        case "email":
             result = EMAIL_USAGEAUTHMETHOD
-        case "MOBILESMS":
+        case "mobileSMS":
             result = MOBILESMS_USAGEAUTHMETHOD
-        case "MOBILECALL":
+        case "mobileCall":
             result = MOBILECALL_USAGEAUTHMETHOD
-        case "OFFICEPHONE":
+        case "officePhone":
             result = OFFICEPHONE_USAGEAUTHMETHOD
-        case "SECURITYQUESTION":
+        case "securityQuestion":
             result = SECURITYQUESTION_USAGEAUTHMETHOD
-        case "APPNOTIFICATION":
+        case "appNotification":
             result = APPNOTIFICATION_USAGEAUTHMETHOD
-        case "APPCODE":
+        case "appCode":
             result = APPCODE_USAGEAUTHMETHOD
-        case "ALTERNATEMOBILECALL":
+        case "alternateMobileCall":
             result = ALTERNATEMOBILECALL_USAGEAUTHMETHOD
-        case "FIDO":
+        case "fido":
             result = FIDO_USAGEAUTHMETHOD
-        case "APPPASSWORD":
+        case "appPassword":
             result = APPPASSWORD_USAGEAUTHMETHOD
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USAGEAUTHMETHOD
         default:
             return 0, errors.New("Unknown UsageAuthMethod value: " + v)

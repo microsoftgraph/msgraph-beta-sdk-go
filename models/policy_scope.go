@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the policyRoot singleton.
+// Provides operations to manage the collection of mobilityManagementPolicy entities.
 type PolicyScope int
 
 const (
@@ -14,18 +13,18 @@ const (
 )
 
 func (i PolicyScope) String() string {
-    return []string{"NONE", "ALL", "SELECTED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "all", "selected", "unknownFutureValue"}[i]
 }
 func ParsePolicyScope(v string) (interface{}, error) {
     result := NONE_POLICYSCOPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_POLICYSCOPE
-        case "ALL":
+        case "all":
             result = ALL_POLICYSCOPE
-        case "SELECTED":
+        case "selected":
             result = SELECTED_POLICYSCOPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_POLICYSCOPE
         default:
             return 0, errors.New("Unknown PolicyScope value: " + v)

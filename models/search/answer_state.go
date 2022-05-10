@@ -1,6 +1,5 @@
 package search
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the searchEntity singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i AnswerState) String() string {
-    return []string{"PUBLISHED", "DRAFT", "EXCLUDED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"published", "draft", "excluded", "unknownFutureValue"}[i]
 }
 func ParseAnswerState(v string) (interface{}, error) {
     result := PUBLISHED_ANSWERSTATE
-    switch strings.ToUpper(v) {
-        case "PUBLISHED":
+    switch v {
+        case "published":
             result = PUBLISHED_ANSWERSTATE
-        case "DRAFT":
+        case "draft":
             result = DRAFT_ANSWERSTATE
-        case "EXCLUDED":
+        case "excluded":
             result = EXCLUDED_ANSWERSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ANSWERSTATE
         default:
             return 0, errors.New("Unknown AnswerState value: " + v)

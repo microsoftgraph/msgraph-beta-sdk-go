@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the compliance singleton.
+// Provides operations to manage the dataClassificationService singleton.
 type SensitivityLabelTarget int
 
 const (
@@ -15,20 +14,20 @@ const (
 )
 
 func (i SensitivityLabelTarget) String() string {
-    return []string{"EMAIL", "SITE", "UNIFIEDGROUP", "UNKNOWNFUTUREVALUE", "TEAMWORK"}[i]
+    return []string{"email", "site", "unifiedGroup", "unknownFutureValue", "teamwork"}[i]
 }
 func ParseSensitivityLabelTarget(v string) (interface{}, error) {
     result := EMAIL_SENSITIVITYLABELTARGET
-    switch strings.ToUpper(v) {
-        case "EMAIL":
+    switch v {
+        case "email":
             result = EMAIL_SENSITIVITYLABELTARGET
-        case "SITE":
+        case "site":
             result = SITE_SENSITIVITYLABELTARGET
-        case "UNIFIEDGROUP":
+        case "unifiedGroup":
             result = UNIFIEDGROUP_SENSITIVITYLABELTARGET
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SENSITIVITYLABELTARGET
-        case "TEAMWORK":
+        case "teamwork":
             result = TEAMWORK_SENSITIVITYLABELTARGET
         default:
             return 0, errors.New("Unknown SensitivityLabelTarget value: " + v)

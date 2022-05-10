@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of domain entities.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i FederatedIdpMfaBehavior) String() string {
-    return []string{"ACCEPTIFMFADONEBYFEDERATEDIDP", "ENFORCEMFABYFEDERATEDIDP", "REJECTMFABYFEDERATEDIDP", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"acceptIfMfaDoneByFederatedIdp", "enforceMfaByFederatedIdp", "rejectMfaByFederatedIdp", "unknownFutureValue"}[i]
 }
 func ParseFederatedIdpMfaBehavior(v string) (interface{}, error) {
     result := ACCEPTIFMFADONEBYFEDERATEDIDP_FEDERATEDIDPMFABEHAVIOR
-    switch strings.ToUpper(v) {
-        case "ACCEPTIFMFADONEBYFEDERATEDIDP":
+    switch v {
+        case "acceptIfMfaDoneByFederatedIdp":
             result = ACCEPTIFMFADONEBYFEDERATEDIDP_FEDERATEDIDPMFABEHAVIOR
-        case "ENFORCEMFABYFEDERATEDIDP":
+        case "enforceMfaByFederatedIdp":
             result = ENFORCEMFABYFEDERATEDIDP_FEDERATEDIDPMFABEHAVIOR
-        case "REJECTMFABYFEDERATEDIDP":
+        case "rejectMfaByFederatedIdp":
             result = REJECTMFABYFEDERATEDIDP_FEDERATEDIDPMFABEHAVIOR
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FEDERATEDIDPMFABEHAVIOR
         default:
             return 0, errors.New("Unknown FederatedIdpMfaBehavior value: " + v)

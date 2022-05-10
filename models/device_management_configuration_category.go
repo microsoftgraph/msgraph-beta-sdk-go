@@ -27,7 +27,7 @@ type DeviceManagementConfigurationCategory struct {
     rootCategoryId *string
     // Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.
     settingUsage *DeviceManagementConfigurationSettingUsage
-    // Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+    // Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
     technologies *DeviceManagementConfigurationTechnologies
 }
 // NewDeviceManagementConfigurationCategory instantiates a new deviceManagementConfigurationCategory and sets the default values.
@@ -240,7 +240,7 @@ func (m *DeviceManagementConfigurationCategory) GetSettingUsage()(*DeviceManagem
         return m.settingUsage
     }
 }
-// GetTechnologies gets the technologies property value. Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// GetTechnologies gets the technologies property value. Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
 func (m *DeviceManagementConfigurationCategory) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
     if m == nil {
         return nil
@@ -385,7 +385,7 @@ func (m *DeviceManagementConfigurationCategory) SetSettingUsage(value *DeviceMan
         m.settingUsage = value
     }
 }
-// SetTechnologies sets the technologies property value. Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// SetTechnologies sets the technologies property value. Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
 func (m *DeviceManagementConfigurationCategory) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
     if m != nil {
         m.technologies = value

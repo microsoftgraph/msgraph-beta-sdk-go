@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i AndroidForWorkAppConfigurationSchemaItemDataType) String() string {
-    return []string{"BOOL", "INTEGER", "STRING", "CHOICE", "MULTISELECT", "BUNDLE", "BUNDLEARRAY", "HIDDEN"}[i]
+    return []string{"bool", "integer", "string", "choice", "multiselect", "bundle", "bundleArray", "hidden"}[i]
 }
 func ParseAndroidForWorkAppConfigurationSchemaItemDataType(v string) (interface{}, error) {
     result := BOOL_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
-    switch strings.ToUpper(v) {
-        case "BOOL":
+    switch v {
+        case "bool":
             result = BOOL_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "INTEGER":
+        case "integer":
             result = INTEGER_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "STRING":
+        case "string":
             result = STRING_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "CHOICE":
+        case "choice":
             result = CHOICE_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "MULTISELECT":
+        case "multiselect":
             result = MULTISELECT_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "BUNDLE":
+        case "bundle":
             result = BUNDLE_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "BUNDLEARRAY":
+        case "bundleArray":
             result = BUNDLEARRAY_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
-        case "HIDDEN":
+        case "hidden":
             result = HIDDEN_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
         default:
             return 0, errors.New("Unknown AndroidForWorkAppConfigurationSchemaItemDataType value: " + v)

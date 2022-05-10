@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type WindowsAutopilotSyncStatus int
 
 const (
+    // Unknown sync status
     UNKNOWN_WINDOWSAUTOPILOTSYNCSTATUS WindowsAutopilotSyncStatus = iota
+    // Sync is in progress
     INPROGRESS_WINDOWSAUTOPILOTSYNCSTATUS
+    // Sync completed.
     COMPLETED_WINDOWSAUTOPILOTSYNCSTATUS
+    // Sync failed.
     FAILED_WINDOWSAUTOPILOTSYNCSTATUS
 )
 
 func (i WindowsAutopilotSyncStatus) String() string {
-    return []string{"UNKNOWN", "INPROGRESS", "COMPLETED", "FAILED"}[i]
+    return []string{"unknown", "inProgress", "completed", "failed"}[i]
 }
 func ParseWindowsAutopilotSyncStatus(v string) (interface{}, error) {
     result := UNKNOWN_WINDOWSAUTOPILOTSYNCSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_WINDOWSAUTOPILOTSYNCSTATUS
-        case "INPROGRESS":
+        case "inProgress":
             result = INPROGRESS_WINDOWSAUTOPILOTSYNCSTATUS
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_WINDOWSAUTOPILOTSYNCSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_WINDOWSAUTOPILOTSYNCSTATUS
         default:
             return 0, errors.New("Unknown WindowsAutopilotSyncStatus value: " + v)

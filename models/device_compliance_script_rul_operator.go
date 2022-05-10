@@ -1,94 +1,118 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the validateComplianceScript method.
 type DeviceComplianceScriptRulOperator int
 
 const (
+    // None operator.
     NONE_DEVICECOMPLIANCESCRIPTRULOPERATOR DeviceComplianceScriptRulOperator = iota
+    // And operator.
     AND_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // Or operator.
     OR_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // IsEquals operator.
     ISEQUALS_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // NotEquals operator.
     NOTEQUALS_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // GreaterThan operator.
     GREATERTHAN_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // LessThan operator.
     LESSTHAN_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // Between operator.
     BETWEEN_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // NotBetween operator.
     NOTBETWEEN_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // GreaterEquals operator.
     GREATEREQUALS_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // LessEquals operator.
     LESSEQUALS_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // DayTimeBetween operator.
     DAYTIMEBETWEEN_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // BeginsWith operator.
     BEGINSWITH_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // NotBeginsWith operator.
     NOTBEGINSWITH_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // EndsWith operator.
     ENDSWITH_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // NotEndsWith operator.
     NOTENDSWITH_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // Contains operator.
     CONTAINS_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // NotContains operator.
     NOTCONTAINS_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // AllOf operator.
     ALLOF_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // OneOf operator.
     ONEOF_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // NoneOf operator.
     NONEOF_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // SetEquals operator.
     SETEQUALS_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // OrderedSetEquals operator.
     ORDEREDSETEQUALS_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // SubsetOf operator.
     SUBSETOF_DEVICECOMPLIANCESCRIPTRULOPERATOR
+    // ExcludesAll operator.
     EXCLUDESALL_DEVICECOMPLIANCESCRIPTRULOPERATOR
 )
 
 func (i DeviceComplianceScriptRulOperator) String() string {
-    return []string{"NONE", "AND", "OR", "ISEQUALS", "NOTEQUALS", "GREATERTHAN", "LESSTHAN", "BETWEEN", "NOTBETWEEN", "GREATEREQUALS", "LESSEQUALS", "DAYTIMEBETWEEN", "BEGINSWITH", "NOTBEGINSWITH", "ENDSWITH", "NOTENDSWITH", "CONTAINS", "NOTCONTAINS", "ALLOF", "ONEOF", "NONEOF", "SETEQUALS", "ORDEREDSETEQUALS", "SUBSETOF", "EXCLUDESALL"}[i]
+    return []string{"none", "and", "or", "isEquals", "notEquals", "greaterThan", "lessThan", "between", "notBetween", "greaterEquals", "lessEquals", "dayTimeBetween", "beginsWith", "notBeginsWith", "endsWith", "notEndsWith", "contains", "notContains", "allOf", "oneOf", "noneOf", "setEquals", "orderedSetEquals", "subsetOf", "excludesAll"}[i]
 }
 func ParseDeviceComplianceScriptRulOperator(v string) (interface{}, error) {
     result := NONE_DEVICECOMPLIANCESCRIPTRULOPERATOR
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "AND":
+        case "and":
             result = AND_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "OR":
+        case "or":
             result = OR_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "ISEQUALS":
+        case "isEquals":
             result = ISEQUALS_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "NOTEQUALS":
+        case "notEquals":
             result = NOTEQUALS_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "GREATERTHAN":
+        case "greaterThan":
             result = GREATERTHAN_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "LESSTHAN":
+        case "lessThan":
             result = LESSTHAN_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "BETWEEN":
+        case "between":
             result = BETWEEN_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "NOTBETWEEN":
+        case "notBetween":
             result = NOTBETWEEN_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "GREATEREQUALS":
+        case "greaterEquals":
             result = GREATEREQUALS_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "LESSEQUALS":
+        case "lessEquals":
             result = LESSEQUALS_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "DAYTIMEBETWEEN":
+        case "dayTimeBetween":
             result = DAYTIMEBETWEEN_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "BEGINSWITH":
+        case "beginsWith":
             result = BEGINSWITH_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "NOTBEGINSWITH":
+        case "notBeginsWith":
             result = NOTBEGINSWITH_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "ENDSWITH":
+        case "endsWith":
             result = ENDSWITH_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "NOTENDSWITH":
+        case "notEndsWith":
             result = NOTENDSWITH_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "CONTAINS":
+        case "contains":
             result = CONTAINS_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "NOTCONTAINS":
+        case "notContains":
             result = NOTCONTAINS_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "ALLOF":
+        case "allOf":
             result = ALLOF_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "ONEOF":
+        case "oneOf":
             result = ONEOF_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "NONEOF":
+        case "noneOf":
             result = NONEOF_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "SETEQUALS":
+        case "setEquals":
             result = SETEQUALS_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "ORDEREDSETEQUALS":
+        case "orderedSetEquals":
             result = ORDEREDSETEQUALS_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "SUBSETOF":
+        case "subsetOf":
             result = SUBSETOF_DEVICECOMPLIANCESCRIPTRULOPERATOR
-        case "EXCLUDESALL":
+        case "excludesAll":
             result = EXCLUDESALL_DEVICECOMPLIANCESCRIPTRULOPERATOR
         default:
             return 0, errors.New("Unknown DeviceComplianceScriptRulOperator value: " + v)

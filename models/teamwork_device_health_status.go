@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the teamwork singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i TeamworkDeviceHealthStatus) String() string {
-    return []string{"UNKNOWN", "OFFLINE", "CRITICAL", "NONURGENT", "HEALTHY", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "offline", "critical", "nonUrgent", "healthy", "unknownFutureValue"}[i]
 }
 func ParseTeamworkDeviceHealthStatus(v string) (interface{}, error) {
     result := UNKNOWN_TEAMWORKDEVICEHEALTHSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_TEAMWORKDEVICEHEALTHSTATUS
-        case "OFFLINE":
+        case "offline":
             result = OFFLINE_TEAMWORKDEVICEHEALTHSTATUS
-        case "CRITICAL":
+        case "critical":
             result = CRITICAL_TEAMWORKDEVICEHEALTHSTATUS
-        case "NONURGENT":
+        case "nonUrgent":
             result = NONURGENT_TEAMWORKDEVICEHEALTHSTATUS
-        case "HEALTHY":
+        case "healthy":
             result = HEALTHY_TEAMWORKDEVICEHEALTHSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKDEVICEHEALTHSTATUS
         default:
             return 0, errors.New("Unknown TeamworkDeviceHealthStatus value: " + v)

@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceScopeParameter int
 
 const (
+    // Device Scope parameter is not set
     NONE_DEVICESCOPEPARAMETER DeviceScopeParameter = iota
+    // use Scope Tag as parameter for the device scope configuration.
     SCOPETAG_DEVICESCOPEPARAMETER
+    // Placeholder value for future expansion.
     UNKNOWNFUTUREVALUE_DEVICESCOPEPARAMETER
 )
 
 func (i DeviceScopeParameter) String() string {
-    return []string{"NONE", "SCOPETAG", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "scopeTag", "unknownFutureValue"}[i]
 }
 func ParseDeviceScopeParameter(v string) (interface{}, error) {
     result := NONE_DEVICESCOPEPARAMETER
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICESCOPEPARAMETER
-        case "SCOPETAG":
+        case "scopeTag":
             result = SCOPETAG_DEVICESCOPEPARAMETER
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICESCOPEPARAMETER
         default:
             return 0, errors.New("Unknown DeviceScopeParameter value: " + v)

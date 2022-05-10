@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type ManagedAppNotificationRestriction int
 
 const (
+    // Share all notifications.
     ALLOW_MANAGEDAPPNOTIFICATIONRESTRICTION ManagedAppNotificationRestriction = iota
+    // Do not share Orgnizational data in notifications.
     BLOCKORGANIZATIONALDATA_MANAGEDAPPNOTIFICATIONRESTRICTION
+    // Do not share notifications.
     BLOCK_MANAGEDAPPNOTIFICATIONRESTRICTION
 )
 
 func (i ManagedAppNotificationRestriction) String() string {
-    return []string{"ALLOW", "BLOCKORGANIZATIONALDATA", "BLOCK"}[i]
+    return []string{"allow", "blockOrganizationalData", "block"}[i]
 }
 func ParseManagedAppNotificationRestriction(v string) (interface{}, error) {
     result := ALLOW_MANAGEDAPPNOTIFICATIONRESTRICTION
-    switch strings.ToUpper(v) {
-        case "ALLOW":
+    switch v {
+        case "allow":
             result = ALLOW_MANAGEDAPPNOTIFICATIONRESTRICTION
-        case "BLOCKORGANIZATIONALDATA":
+        case "blockOrganizationalData":
             result = BLOCKORGANIZATIONALDATA_MANAGEDAPPNOTIFICATIONRESTRICTION
-        case "BLOCK":
+        case "block":
             result = BLOCK_MANAGEDAPPNOTIFICATIONRESTRICTION
         default:
             return 0, errors.New("Unknown ManagedAppNotificationRestriction value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i SkillProficiencyLevel) String() string {
-    return []string{"ELEMENTARY", "LIMITEDWORKING", "GENERALPROFESSIONAL", "ADVANCEDPROFESSIONAL", "EXPERT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"elementary", "limitedWorking", "generalProfessional", "advancedProfessional", "expert", "unknownFutureValue"}[i]
 }
 func ParseSkillProficiencyLevel(v string) (interface{}, error) {
     result := ELEMENTARY_SKILLPROFICIENCYLEVEL
-    switch strings.ToUpper(v) {
-        case "ELEMENTARY":
+    switch v {
+        case "elementary":
             result = ELEMENTARY_SKILLPROFICIENCYLEVEL
-        case "LIMITEDWORKING":
+        case "limitedWorking":
             result = LIMITEDWORKING_SKILLPROFICIENCYLEVEL
-        case "GENERALPROFESSIONAL":
+        case "generalProfessional":
             result = GENERALPROFESSIONAL_SKILLPROFICIENCYLEVEL
-        case "ADVANCEDPROFESSIONAL":
+        case "advancedProfessional":
             result = ADVANCEDPROFESSIONAL_SKILLPROFICIENCYLEVEL
-        case "EXPERT":
+        case "expert":
             result = EXPERT_SKILLPROFICIENCYLEVEL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SKILLPROFICIENCYLEVEL
         default:
             return 0, errors.New("Unknown SkillProficiencyLevel value: " + v)

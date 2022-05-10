@@ -27,7 +27,7 @@ type ContractItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ContractItemRequestBuilderGetQueryParameters get entity from contracts by key
+// ContractItemRequestBuilderGetQueryParameters get Contract
 type ContractItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -93,11 +93,11 @@ func (m *ContractItemRequestBuilder) CreateDeleteRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get entity from contracts by key
+// CreateGetRequestInformation get Contract
 func (m *ContractItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from contracts by key
+// CreateGetRequestInformationWithRequestConfiguration get Contract
 func (m *ContractItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ContractItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,7 +149,7 @@ func (m *ContractItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHa
     }
     return nil
 }
-// Get get entity from contracts by key
+// Get get Contract
 func (m *ContractItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -161,7 +161,7 @@ func (m *ContractItemRequestBuilder) GetMemberGroups()(*ib7db9dde30bf0fa242f3a43
 func (m *ContractItemRequestBuilder) GetMemberObjects()(*i2552b8bdbc7e213a9a6eae17e0a7d61fb51f1e4c5000eabd09038e0e3bb9acaa.GetMemberObjectsRequestBuilder) {
     return i2552b8bdbc7e213a9a6eae17e0a7d61fb51f1e4c5000eabd09038e0e3bb9acaa.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler get entity from contracts by key
+// GetWithRequestConfigurationAndResponseHandler get Contract
 func (m *ContractItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ContractItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contractable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

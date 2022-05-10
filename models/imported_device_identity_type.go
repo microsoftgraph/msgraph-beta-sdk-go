@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type ImportedDeviceIdentityType int
 
 const (
+    // Unknown value of importedDeviceIdentityType.
     UNKNOWN_IMPORTEDDEVICEIDENTITYTYPE ImportedDeviceIdentityType = iota
+    // Device Identity is of type imei.
     IMEI_IMPORTEDDEVICEIDENTITYTYPE
+    // Device Identity is of type serial number.
     SERIALNUMBER_IMPORTEDDEVICEIDENTITYTYPE
 )
 
 func (i ImportedDeviceIdentityType) String() string {
-    return []string{"UNKNOWN", "IMEI", "SERIALNUMBER"}[i]
+    return []string{"unknown", "imei", "serialNumber"}[i]
 }
 func ParseImportedDeviceIdentityType(v string) (interface{}, error) {
     result := UNKNOWN_IMPORTEDDEVICEIDENTITYTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_IMPORTEDDEVICEIDENTITYTYPE
-        case "IMEI":
+        case "imei":
             result = IMEI_IMPORTEDDEVICEIDENTITYTYPE
-        case "SERIALNUMBER":
+        case "serialNumber":
             result = SERIALNUMBER_IMPORTEDDEVICEIDENTITYTYPE
         default:
             return 0, errors.New("Unknown ImportedDeviceIdentityType value: " + v)

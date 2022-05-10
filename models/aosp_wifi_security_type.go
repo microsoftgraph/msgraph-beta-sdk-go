@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type AospWifiSecurityType int
 
 const (
+    // No security type.
     NONE_AOSPWIFISECURITYTYPE AospWifiSecurityType = iota
+    // WPA-Pre-shared-key
     WPA_AOSPWIFISECURITYTYPE
+    // WEP-Pre-shared-key
     WEP_AOSPWIFISECURITYTYPE
 )
 
 func (i AospWifiSecurityType) String() string {
-    return []string{"NONE", "WPA", "WEP"}[i]
+    return []string{"none", "wpa", "wep"}[i]
 }
 func ParseAospWifiSecurityType(v string) (interface{}, error) {
     result := NONE_AOSPWIFISECURITYTYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_AOSPWIFISECURITYTYPE
-        case "WPA":
+        case "wpa":
             result = WPA_AOSPWIFISECURITYTYPE
-        case "WEP":
+        case "wep":
             result = WEP_AOSPWIFISECURITYTYPE
         default:
             return 0, errors.New("Unknown AospWifiSecurityType value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i MailboxRecipientType) String() string {
-    return []string{"UNKNOWN", "USER", "LINKED", "SHARED", "ROOM", "EQUIPMENT", "OTHERS"}[i]
+    return []string{"unknown", "user", "linked", "shared", "room", "equipment", "others"}[i]
 }
 func ParseMailboxRecipientType(v string) (interface{}, error) {
     result := UNKNOWN_MAILBOXRECIPIENTTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_MAILBOXRECIPIENTTYPE
-        case "USER":
+        case "user":
             result = USER_MAILBOXRECIPIENTTYPE
-        case "LINKED":
+        case "linked":
             result = LINKED_MAILBOXRECIPIENTTYPE
-        case "SHARED":
+        case "shared":
             result = SHARED_MAILBOXRECIPIENTTYPE
-        case "ROOM":
+        case "room":
             result = ROOM_MAILBOXRECIPIENTTYPE
-        case "EQUIPMENT":
+        case "equipment":
             result = EQUIPMENT_MAILBOXRECIPIENTTYPE
-        case "OTHERS":
+        case "others":
             result = OTHERS_MAILBOXRECIPIENTTYPE
         default:
             return 0, errors.New("Unknown MailboxRecipientType value: " + v)

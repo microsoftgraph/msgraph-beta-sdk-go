@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type ManagedDeviceManagementFeatures int
 
 const (
+    // Unknown device management features.
     NONE_MANAGEDDEVICEMANAGEMENTFEATURES ManagedDeviceManagementFeatures = iota
+    // Microsoft Managed Desktop
     MICROSOFTMANAGEDDESKTOP_MANAGEDDEVICEMANAGEMENTFEATURES
 )
 
 func (i ManagedDeviceManagementFeatures) String() string {
-    return []string{"NONE", "MICROSOFTMANAGEDDESKTOP"}[i]
+    return []string{"none", "microsoftManagedDesktop"}[i]
 }
 func ParseManagedDeviceManagementFeatures(v string) (interface{}, error) {
     result := NONE_MANAGEDDEVICEMANAGEMENTFEATURES
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_MANAGEDDEVICEMANAGEMENTFEATURES
-        case "MICROSOFTMANAGEDDESKTOP":
+        case "microsoftManagedDesktop":
             result = MICROSOFTMANAGEDDESKTOP_MANAGEDDEVICEMANAGEMENTFEATURES
         default:
             return 0, errors.New("Unknown ManagedDeviceManagementFeatures value: " + v)

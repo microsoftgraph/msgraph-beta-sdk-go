@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i CloudPcSnapshotStatus) String() string {
-    return []string{"READY", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"ready", "unknownFutureValue"}[i]
 }
 func ParseCloudPcSnapshotStatus(v string) (interface{}, error) {
     result := READY_CLOUDPCSNAPSHOTSTATUS
-    switch strings.ToUpper(v) {
-        case "READY":
+    switch v {
+        case "ready":
             result = READY_CLOUDPCSNAPSHOTSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTSTATUS
         default:
             return 0, errors.New("Unknown CloudPcSnapshotStatus value: " + v)

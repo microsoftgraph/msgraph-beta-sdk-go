@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i UserPurpose) String() string {
-    return []string{"UNKNOWN", "USER", "LINKED", "SHARED", "ROOM", "EQUIPMENT", "OTHERS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "user", "linked", "shared", "room", "equipment", "others", "unknownFutureValue"}[i]
 }
 func ParseUserPurpose(v string) (interface{}, error) {
     result := UNKNOWN_USERPURPOSE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_USERPURPOSE
-        case "USER":
+        case "user":
             result = USER_USERPURPOSE
-        case "LINKED":
+        case "linked":
             result = LINKED_USERPURPOSE
-        case "SHARED":
+        case "shared":
             result = SHARED_USERPURPOSE
-        case "ROOM":
+        case "room":
             result = ROOM_USERPURPOSE
-        case "EQUIPMENT":
+        case "equipment":
             result = EQUIPMENT_USERPURPOSE
-        case "OTHERS":
+        case "others":
             result = OTHERS_USERPURPOSE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERPURPOSE
         default:
             return 0, errors.New("Unknown UserPurpose value: " + v)

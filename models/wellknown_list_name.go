@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i WellknownListName) String() string {
-    return []string{"NONE", "DEFAULTLIST", "FLAGGEDEMAILS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "defaultList", "flaggedEmails", "unknownFutureValue"}[i]
 }
 func ParseWellknownListName(v string) (interface{}, error) {
     result := NONE_WELLKNOWNLISTNAME
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_WELLKNOWNLISTNAME
-        case "DEFAULTLIST":
+        case "defaultList":
             result = DEFAULTLIST_WELLKNOWNLISTNAME
-        case "FLAGGEDEMAILS":
+        case "flaggedEmails":
             result = FLAGGEDEMAILS_WELLKNOWNLISTNAME
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WELLKNOWNLISTNAME
         default:
             return 0, errors.New("Unknown WellknownListName value: " + v)

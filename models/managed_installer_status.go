@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type ManagedInstallerStatus int
 
 const (
+    // Managed Installer is Disabled
     DISABLED_MANAGEDINSTALLERSTATUS ManagedInstallerStatus = iota
+    // Managed Installer is Enabled
     ENABLED_MANAGEDINSTALLERSTATUS
 )
 
 func (i ManagedInstallerStatus) String() string {
-    return []string{"DISABLED", "ENABLED"}[i]
+    return []string{"disabled", "enabled"}[i]
 }
 func ParseManagedInstallerStatus(v string) (interface{}, error) {
     result := DISABLED_MANAGEDINSTALLERSTATUS
-    switch strings.ToUpper(v) {
-        case "DISABLED":
+    switch v {
+        case "disabled":
             result = DISABLED_MANAGEDINSTALLERSTATUS
-        case "ENABLED":
+        case "enabled":
             result = ENABLED_MANAGEDINSTALLERSTATUS
         default:
             return 0, errors.New("Unknown ManagedInstallerStatus value: " + v)

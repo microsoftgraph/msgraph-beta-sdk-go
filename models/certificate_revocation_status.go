@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type CertificateRevocationStatus int
 
 const (
+    // Not revoked.
     NONE_CERTIFICATEREVOCATIONSTATUS CertificateRevocationStatus = iota
+    // Revocation pending.
     PENDING_CERTIFICATEREVOCATIONSTATUS
+    // Revocation command issued.
     ISSUED_CERTIFICATEREVOCATIONSTATUS
+    // Revocation failed.
     FAILED_CERTIFICATEREVOCATIONSTATUS
+    // Revoked.
     REVOKED_CERTIFICATEREVOCATIONSTATUS
 )
 
 func (i CertificateRevocationStatus) String() string {
-    return []string{"NONE", "PENDING", "ISSUED", "FAILED", "REVOKED"}[i]
+    return []string{"none", "pending", "issued", "failed", "revoked"}[i]
 }
 func ParseCertificateRevocationStatus(v string) (interface{}, error) {
     result := NONE_CERTIFICATEREVOCATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_CERTIFICATEREVOCATIONSTATUS
-        case "PENDING":
+        case "pending":
             result = PENDING_CERTIFICATEREVOCATIONSTATUS
-        case "ISSUED":
+        case "issued":
             result = ISSUED_CERTIFICATEREVOCATIONSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_CERTIFICATEREVOCATIONSTATUS
-        case "REVOKED":
+        case "revoked":
             result = REVOKED_CERTIFICATEREVOCATIONSTATUS
         default:
             return 0, errors.New("Unknown CertificateRevocationStatus value: " + v)

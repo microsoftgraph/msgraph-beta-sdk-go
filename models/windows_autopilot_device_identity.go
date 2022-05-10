@@ -48,7 +48,7 @@ type WindowsAutopilotDeviceIdentity struct {
     productKey *string
     // Purchase Order Identifier of the Windows autopilot device.
     purchaseOrderIdentifier *string
-    // Device Remediation State
+    // Device Remediation State. Possible values are: unknown, noRemediationRequired, automaticRemediationRequired, manualRemediationRequired, unknownFutureValue.
     remediationState *WindowsAutopilotDeviceRemediationState
     // RemediationState set time of Autopilot device.
     remediationStateLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -509,7 +509,7 @@ func (m *WindowsAutopilotDeviceIdentity) GetPurchaseOrderIdentifier()(*string) {
         return m.purchaseOrderIdentifier
     }
 }
-// GetRemediationState gets the remediationState property value. Device Remediation State
+// GetRemediationState gets the remediationState property value. Device Remediation State. Possible values are: unknown, noRemediationRequired, automaticRemediationRequired, manualRemediationRequired, unknownFutureValue.
 func (m *WindowsAutopilotDeviceIdentity) GetRemediationState()(*WindowsAutopilotDeviceRemediationState) {
     if m == nil {
         return nil
@@ -859,7 +859,7 @@ func (m *WindowsAutopilotDeviceIdentity) SetPurchaseOrderIdentifier(value *strin
         m.purchaseOrderIdentifier = value
     }
 }
-// SetRemediationState sets the remediationState property value. Device Remediation State
+// SetRemediationState sets the remediationState property value. Device Remediation State. Possible values are: unknown, noRemediationRequired, automaticRemediationRequired, manualRemediationRequired, unknownFutureValue.
 func (m *WindowsAutopilotDeviceIdentity) SetRemediationState(value *WindowsAutopilotDeviceRemediationState)() {
     if m != nil {
         m.remediationState = value

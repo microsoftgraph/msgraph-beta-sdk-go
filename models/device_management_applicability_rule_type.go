@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementApplicabilityRuleType int
 
 const (
+    // Include
     INCLUDE_DEVICEMANAGEMENTAPPLICABILITYRULETYPE DeviceManagementApplicabilityRuleType = iota
+    // Exclude
     EXCLUDE_DEVICEMANAGEMENTAPPLICABILITYRULETYPE
 )
 
 func (i DeviceManagementApplicabilityRuleType) String() string {
-    return []string{"INCLUDE", "EXCLUDE"}[i]
+    return []string{"include", "exclude"}[i]
 }
 func ParseDeviceManagementApplicabilityRuleType(v string) (interface{}, error) {
     result := INCLUDE_DEVICEMANAGEMENTAPPLICABILITYRULETYPE
-    switch strings.ToUpper(v) {
-        case "INCLUDE":
+    switch v {
+        case "include":
             result = INCLUDE_DEVICEMANAGEMENTAPPLICABILITYRULETYPE
-        case "EXCLUDE":
+        case "exclude":
             result = EXCLUDE_DEVICEMANAGEMENTAPPLICABILITYRULETYPE
         default:
             return 0, errors.New("Unknown DeviceManagementApplicabilityRuleType value: " + v)

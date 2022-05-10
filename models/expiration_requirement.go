@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i ExpirationRequirement) String() string {
-    return []string{"REMEMBERMULTIFACTORAUTHENTICATIONONTRUSTEDDEVICES", "TENANTTOKENLIFETIMEPOLICY", "AUDIENCETOKENLIFETIMEPOLICY", "SIGNINFREQUENCYPERIODICREAUTHENTICATION", "NGCMFA", "SIGNINFREQUENCYEVERYTIME", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"rememberMultifactorAuthenticationOnTrustedDevices", "tenantTokenLifetimePolicy", "audienceTokenLifetimePolicy", "signInFrequencyPeriodicReauthentication", "ngcMfa", "signInFrequencyEveryTime", "unknownFutureValue"}[i]
 }
 func ParseExpirationRequirement(v string) (interface{}, error) {
     result := REMEMBERMULTIFACTORAUTHENTICATIONONTRUSTEDDEVICES_EXPIRATIONREQUIREMENT
-    switch strings.ToUpper(v) {
-        case "REMEMBERMULTIFACTORAUTHENTICATIONONTRUSTEDDEVICES":
+    switch v {
+        case "rememberMultifactorAuthenticationOnTrustedDevices":
             result = REMEMBERMULTIFACTORAUTHENTICATIONONTRUSTEDDEVICES_EXPIRATIONREQUIREMENT
-        case "TENANTTOKENLIFETIMEPOLICY":
+        case "tenantTokenLifetimePolicy":
             result = TENANTTOKENLIFETIMEPOLICY_EXPIRATIONREQUIREMENT
-        case "AUDIENCETOKENLIFETIMEPOLICY":
+        case "audienceTokenLifetimePolicy":
             result = AUDIENCETOKENLIFETIMEPOLICY_EXPIRATIONREQUIREMENT
-        case "SIGNINFREQUENCYPERIODICREAUTHENTICATION":
+        case "signInFrequencyPeriodicReauthentication":
             result = SIGNINFREQUENCYPERIODICREAUTHENTICATION_EXPIRATIONREQUIREMENT
-        case "NGCMFA":
+        case "ngcMfa":
             result = NGCMFA_EXPIRATIONREQUIREMENT
-        case "SIGNINFREQUENCYEVERYTIME":
+        case "signInFrequencyEveryTime":
             result = SIGNINFREQUENCYEVERYTIME_EXPIRATIONREQUIREMENT
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EXPIRATIONREQUIREMENT
         default:
             return 0, errors.New("Unknown ExpirationRequirement value: " + v)

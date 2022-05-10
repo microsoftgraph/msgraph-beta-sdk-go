@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type AppleUserInitiatedEnrollmentType int
 
 const (
+    // Unknown enrollment type
     UNKNOWN_APPLEUSERINITIATEDENROLLMENTTYPE AppleUserInitiatedEnrollmentType = iota
+    // Device enrollment type
     DEVICE_APPLEUSERINITIATEDENROLLMENTTYPE
+    // User enrollment type
     USER_APPLEUSERINITIATEDENROLLMENTTYPE
 )
 
 func (i AppleUserInitiatedEnrollmentType) String() string {
-    return []string{"UNKNOWN", "DEVICE", "USER"}[i]
+    return []string{"unknown", "device", "user"}[i]
 }
 func ParseAppleUserInitiatedEnrollmentType(v string) (interface{}, error) {
     result := UNKNOWN_APPLEUSERINITIATEDENROLLMENTTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_APPLEUSERINITIATEDENROLLMENTTYPE
-        case "DEVICE":
+        case "device":
             result = DEVICE_APPLEUSERINITIATEDENROLLMENTTYPE
-        case "USER":
+        case "user":
             result = USER_APPLEUSERINITIATEDENROLLMENTTYPE
         default:
             return 0, errors.New("Unknown AppleUserInitiatedEnrollmentType value: " + v)

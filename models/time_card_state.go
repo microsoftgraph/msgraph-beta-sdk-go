@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i TimeCardState) String() string {
-    return []string{"CLOCKEDIN", "ONBREAK", "CLOCKEDOUT", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"clockedIn", "onBreak", "clockedOut", "unknownFutureValue"}[i]
 }
 func ParseTimeCardState(v string) (interface{}, error) {
     result := CLOCKEDIN_TIMECARDSTATE
-    switch strings.ToUpper(v) {
-        case "CLOCKEDIN":
+    switch v {
+        case "clockedIn":
             result = CLOCKEDIN_TIMECARDSTATE
-        case "ONBREAK":
+        case "onBreak":
             result = ONBREAK_TIMECARDSTATE
-        case "CLOCKEDOUT":
+        case "clockedOut":
             result = CLOCKEDOUT_TIMECARDSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TIMECARDSTATE
         default:
             return 0, errors.New("Unknown TimeCardState value: " + v)

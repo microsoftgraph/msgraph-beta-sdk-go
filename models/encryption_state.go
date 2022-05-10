@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type EncryptionState int
 
 const (
+    // Not encrypted
     NOTENCRYPTED_ENCRYPTIONSTATE EncryptionState = iota
+    // Encrypted
     ENCRYPTED_ENCRYPTIONSTATE
 )
 
 func (i EncryptionState) String() string {
-    return []string{"NOTENCRYPTED", "ENCRYPTED"}[i]
+    return []string{"notEncrypted", "encrypted"}[i]
 }
 func ParseEncryptionState(v string) (interface{}, error) {
     result := NOTENCRYPTED_ENCRYPTIONSTATE
-    switch strings.ToUpper(v) {
-        case "NOTENCRYPTED":
+    switch v {
+        case "notEncrypted":
             result = NOTENCRYPTED_ENCRYPTIONSTATE
-        case "ENCRYPTED":
+        case "encrypted":
             result = ENCRYPTED_ENCRYPTIONSTATE
         default:
             return 0, errors.New("Unknown EncryptionState value: " + v)

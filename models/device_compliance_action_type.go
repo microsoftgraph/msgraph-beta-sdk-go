@@ -1,43 +1,50 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceComplianceActionType int
 
 const (
+    // No Action
     NOACTION_DEVICECOMPLIANCEACTIONTYPE DeviceComplianceActionType = iota
+    // Send Notification
     NOTIFICATION_DEVICECOMPLIANCEACTIONTYPE
+    // Block the device in AAD
     BLOCK_DEVICECOMPLIANCEACTIONTYPE
+    // Retire the device
     RETIRE_DEVICECOMPLIANCEACTIONTYPE
+    // Wipe the device
     WIPE_DEVICECOMPLIANCEACTIONTYPE
+    // Remove Resource Access Profiles from the device
     REMOVERESOURCEACCESSPROFILES_DEVICECOMPLIANCEACTIONTYPE
+    // Send push notification to device
     PUSHNOTIFICATION_DEVICECOMPLIANCEACTIONTYPE
+    // Remotely lock the device
     REMOTELOCK_DEVICECOMPLIANCEACTIONTYPE
 )
 
 func (i DeviceComplianceActionType) String() string {
-    return []string{"NOACTION", "NOTIFICATION", "BLOCK", "RETIRE", "WIPE", "REMOVERESOURCEACCESSPROFILES", "PUSHNOTIFICATION", "REMOTELOCK"}[i]
+    return []string{"noAction", "notification", "block", "retire", "wipe", "removeResourceAccessProfiles", "pushNotification", "remoteLock"}[i]
 }
 func ParseDeviceComplianceActionType(v string) (interface{}, error) {
     result := NOACTION_DEVICECOMPLIANCEACTIONTYPE
-    switch strings.ToUpper(v) {
-        case "NOACTION":
+    switch v {
+        case "noAction":
             result = NOACTION_DEVICECOMPLIANCEACTIONTYPE
-        case "NOTIFICATION":
+        case "notification":
             result = NOTIFICATION_DEVICECOMPLIANCEACTIONTYPE
-        case "BLOCK":
+        case "block":
             result = BLOCK_DEVICECOMPLIANCEACTIONTYPE
-        case "RETIRE":
+        case "retire":
             result = RETIRE_DEVICECOMPLIANCEACTIONTYPE
-        case "WIPE":
+        case "wipe":
             result = WIPE_DEVICECOMPLIANCEACTIONTYPE
-        case "REMOVERESOURCEACCESSPROFILES":
+        case "removeResourceAccessProfiles":
             result = REMOVERESOURCEACCESSPROFILES_DEVICECOMPLIANCEACTIONTYPE
-        case "PUSHNOTIFICATION":
+        case "pushNotification":
             result = PUSHNOTIFICATION_DEVICECOMPLIANCEACTIONTYPE
-        case "REMOTELOCK":
+        case "remoteLock":
             result = REMOTELOCK_DEVICECOMPLIANCEACTIONTYPE
         default:
             return 0, errors.New("Unknown DeviceComplianceActionType value: " + v)

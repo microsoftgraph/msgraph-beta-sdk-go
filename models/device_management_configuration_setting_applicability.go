@@ -14,7 +14,7 @@ type DeviceManagementConfigurationSettingApplicability struct {
     deviceMode *DeviceManagementConfigurationDeviceMode
     // Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
     platform *DeviceManagementConfigurationPlatforms
-    // Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+    // Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
     technologies *DeviceManagementConfigurationTechnologies
 }
 // NewDeviceManagementConfigurationSettingApplicability instantiates a new deviceManagementConfigurationSettingApplicability and sets the default values.
@@ -105,7 +105,7 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetPlatform()(*Devic
         return m.platform
     }
 }
-// GetTechnologies gets the technologies property value. Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// GetTechnologies gets the technologies property value. Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
 func (m *DeviceManagementConfigurationSettingApplicability) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
     if m == nil {
         return nil
@@ -174,7 +174,7 @@ func (m *DeviceManagementConfigurationSettingApplicability) SetPlatform(value *D
         m.platform = value
     }
 }
-// SetTechnologies sets the technologies property value. Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// SetTechnologies sets the technologies property value. Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
 func (m *DeviceManagementConfigurationSettingApplicability) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
     if m != nil {
         m.technologies = value

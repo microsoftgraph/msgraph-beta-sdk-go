@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the evaluate method.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i RuleMode) String() string {
-    return []string{"AUDIT", "AUDITANDNOTIFY", "ENFORCE", "PENDINGDELETION", "TEST"}[i]
+    return []string{"audit", "auditAndNotify", "enforce", "pendingDeletion", "test"}[i]
 }
 func ParseRuleMode(v string) (interface{}, error) {
     result := AUDIT_RULEMODE
-    switch strings.ToUpper(v) {
-        case "AUDIT":
+    switch v {
+        case "audit":
             result = AUDIT_RULEMODE
-        case "AUDITANDNOTIFY":
+        case "auditAndNotify":
             result = AUDITANDNOTIFY_RULEMODE
-        case "ENFORCE":
+        case "enforce":
             result = ENFORCE_RULEMODE
-        case "PENDINGDELETION":
+        case "pendingDeletion":
             result = PENDINGDELETION_RULEMODE
-        case "TEST":
+        case "test":
             result = TEST_RULEMODE
         default:
             return 0, errors.New("Unknown RuleMode value: " + v)

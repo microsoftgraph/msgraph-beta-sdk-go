@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i CloudPcOperatingSystem) String() string {
-    return []string{"WINDOWS10", "WINDOWS11", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"windows10", "windows11", "unknownFutureValue"}[i]
 }
 func ParseCloudPcOperatingSystem(v string) (interface{}, error) {
     result := WINDOWS10_CLOUDPCOPERATINGSYSTEM
-    switch strings.ToUpper(v) {
-        case "WINDOWS10":
+    switch v {
+        case "windows10":
             result = WINDOWS10_CLOUDPCOPERATINGSYSTEM
-        case "WINDOWS11":
+        case "windows11":
             result = WINDOWS11_CLOUDPCOPERATINGSYSTEM
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCOPERATINGSYSTEM
         default:
             return 0, errors.New("Unknown CloudPcOperatingSystem value: " + v)

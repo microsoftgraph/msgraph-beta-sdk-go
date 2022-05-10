@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the getRelyingPartyDetailedSummary method.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i MigrationStatus) String() string {
-    return []string{"READY", "NEEDSREVIEW", "ADDITIONALSTEPSREQUIRED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"ready", "needsReview", "additionalStepsRequired", "unknownFutureValue"}[i]
 }
 func ParseMigrationStatus(v string) (interface{}, error) {
     result := READY_MIGRATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "READY":
+    switch v {
+        case "ready":
             result = READY_MIGRATIONSTATUS
-        case "NEEDSREVIEW":
+        case "needsReview":
             result = NEEDSREVIEW_MIGRATIONSTATUS
-        case "ADDITIONALSTEPSREQUIRED":
+        case "additionalStepsRequired":
             result = ADDITIONALSTEPSREQUIRED_MIGRATIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MIGRATIONSTATUS
         default:
             return 0, errors.New("Unknown MigrationStatus value: " + v)

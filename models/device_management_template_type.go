@@ -1,55 +1,66 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementTemplateType int
 
 const (
+    // Security baseline template
     SECURITYBASELINE_DEVICEMANAGEMENTTEMPLATETYPE DeviceManagementTemplateType = iota
+    // Specialized devices template
     SPECIALIZEDDEVICES_DEVICEMANAGEMENTTEMPLATETYPE
+    // Advanced Threat Protection security baseline template
     ADVANCEDTHREATPROTECTIONSECURITYBASELINE_DEVICEMANAGEMENTTEMPLATETYPE
+    // Device configuration template
     DEVICECONFIGURATION_DEVICEMANAGEMENTTEMPLATETYPE
+    // Custom admin defined template
     CUSTOM_DEVICEMANAGEMENTTEMPLATETYPE
+    // Templates containing specific security focused settings
     SECURITYTEMPLATE_DEVICEMANAGEMENTTEMPLATETYPE
+    // Microsoft Edge security baseline template
     MICROSOFTEDGESECURITYBASELINE_DEVICEMANAGEMENTTEMPLATETYPE
+    // Microsoft Office 365 ProPlus security baseline template
     MICROSOFTOFFICE365PROPLUSSECURITYBASELINE_DEVICEMANAGEMENTTEMPLATETYPE
+    // Device compliance template
     DEVICECOMPLIANCE_DEVICEMANAGEMENTTEMPLATETYPE
+    // Device Configuration for Microsoft Office 365 settings
     DEVICECONFIGURATIONFOROFFICE365_DEVICEMANAGEMENTTEMPLATETYPE
+    // Windows 365 security baseline template
     CLOUDPC_DEVICEMANAGEMENTTEMPLATETYPE
+    // Firewall Shared Object templates for reference settings
     FIREWALLSHAREDSETTINGS_DEVICEMANAGEMENTTEMPLATETYPE
 )
 
 func (i DeviceManagementTemplateType) String() string {
-    return []string{"SECURITYBASELINE", "SPECIALIZEDDEVICES", "ADVANCEDTHREATPROTECTIONSECURITYBASELINE", "DEVICECONFIGURATION", "CUSTOM", "SECURITYTEMPLATE", "MICROSOFTEDGESECURITYBASELINE", "MICROSOFTOFFICE365PROPLUSSECURITYBASELINE", "DEVICECOMPLIANCE", "DEVICECONFIGURATIONFOROFFICE365", "CLOUDPC", "FIREWALLSHAREDSETTINGS"}[i]
+    return []string{"securityBaseline", "specializedDevices", "advancedThreatProtectionSecurityBaseline", "deviceConfiguration", "custom", "securityTemplate", "microsoftEdgeSecurityBaseline", "microsoftOffice365ProPlusSecurityBaseline", "deviceCompliance", "deviceConfigurationForOffice365", "cloudPC", "firewallSharedSettings"}[i]
 }
 func ParseDeviceManagementTemplateType(v string) (interface{}, error) {
     result := SECURITYBASELINE_DEVICEMANAGEMENTTEMPLATETYPE
-    switch strings.ToUpper(v) {
-        case "SECURITYBASELINE":
+    switch v {
+        case "securityBaseline":
             result = SECURITYBASELINE_DEVICEMANAGEMENTTEMPLATETYPE
-        case "SPECIALIZEDDEVICES":
+        case "specializedDevices":
             result = SPECIALIZEDDEVICES_DEVICEMANAGEMENTTEMPLATETYPE
-        case "ADVANCEDTHREATPROTECTIONSECURITYBASELINE":
+        case "advancedThreatProtectionSecurityBaseline":
             result = ADVANCEDTHREATPROTECTIONSECURITYBASELINE_DEVICEMANAGEMENTTEMPLATETYPE
-        case "DEVICECONFIGURATION":
+        case "deviceConfiguration":
             result = DEVICECONFIGURATION_DEVICEMANAGEMENTTEMPLATETYPE
-        case "CUSTOM":
+        case "custom":
             result = CUSTOM_DEVICEMANAGEMENTTEMPLATETYPE
-        case "SECURITYTEMPLATE":
+        case "securityTemplate":
             result = SECURITYTEMPLATE_DEVICEMANAGEMENTTEMPLATETYPE
-        case "MICROSOFTEDGESECURITYBASELINE":
+        case "microsoftEdgeSecurityBaseline":
             result = MICROSOFTEDGESECURITYBASELINE_DEVICEMANAGEMENTTEMPLATETYPE
-        case "MICROSOFTOFFICE365PROPLUSSECURITYBASELINE":
+        case "microsoftOffice365ProPlusSecurityBaseline":
             result = MICROSOFTOFFICE365PROPLUSSECURITYBASELINE_DEVICEMANAGEMENTTEMPLATETYPE
-        case "DEVICECOMPLIANCE":
+        case "deviceCompliance":
             result = DEVICECOMPLIANCE_DEVICEMANAGEMENTTEMPLATETYPE
-        case "DEVICECONFIGURATIONFOROFFICE365":
+        case "deviceConfigurationForOffice365":
             result = DEVICECONFIGURATIONFOROFFICE365_DEVICEMANAGEMENTTEMPLATETYPE
-        case "CLOUDPC":
+        case "cloudPC":
             result = CLOUDPC_DEVICEMANAGEMENTTEMPLATETYPE
-        case "FIREWALLSHAREDSETTINGS":
+        case "firewallSharedSettings":
             result = FIREWALLSHAREDSETTINGS_DEVICEMANAGEMENTTEMPLATETYPE
         default:
             return 0, errors.New("Unknown DeviceManagementTemplateType value: " + v)

@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementResourceAccessProfileIntent int
 
 const (
+    // Apply the profile.
     APPLY_DEVICEMANAGEMENTRESOURCEACCESSPROFILEINTENT DeviceManagementResourceAccessProfileIntent = iota
+    // Remove the profile from devices that have installed the profile.
     REMOVE_DEVICEMANAGEMENTRESOURCEACCESSPROFILEINTENT
 )
 
 func (i DeviceManagementResourceAccessProfileIntent) String() string {
-    return []string{"APPLY", "REMOVE"}[i]
+    return []string{"apply", "remove"}[i]
 }
 func ParseDeviceManagementResourceAccessProfileIntent(v string) (interface{}, error) {
     result := APPLY_DEVICEMANAGEMENTRESOURCEACCESSPROFILEINTENT
-    switch strings.ToUpper(v) {
-        case "APPLY":
+    switch v {
+        case "apply":
             result = APPLY_DEVICEMANAGEMENTRESOURCEACCESSPROFILEINTENT
-        case "REMOVE":
+        case "remove":
             result = REMOVE_DEVICEMANAGEMENTRESOURCEACCESSPROFILEINTENT
         default:
             return 0, errors.New("Unknown DeviceManagementResourceAccessProfileIntent value: " + v)

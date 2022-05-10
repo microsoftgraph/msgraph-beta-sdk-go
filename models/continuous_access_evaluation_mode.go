@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the identityContainer singleton.
+// Provides operations to manage the policyRoot singleton.
 type ContinuousAccessEvaluationMode int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ContinuousAccessEvaluationMode) String() string {
-    return []string{"STRICTENFORCEMENT", "DISABLED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"strictEnforcement", "disabled", "unknownFutureValue"}[i]
 }
 func ParseContinuousAccessEvaluationMode(v string) (interface{}, error) {
     result := STRICTENFORCEMENT_CONTINUOUSACCESSEVALUATIONMODE
-    switch strings.ToUpper(v) {
-        case "STRICTENFORCEMENT":
+    switch v {
+        case "strictEnforcement":
             result = STRICTENFORCEMENT_CONTINUOUSACCESSEVALUATIONMODE
-        case "DISABLED":
+        case "disabled":
             result = DISABLED_CONTINUOUSACCESSEVALUATIONMODE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONTINUOUSACCESSEVALUATIONMODE
         default:
             return 0, errors.New("Unknown ContinuousAccessEvaluationMode value: " + v)

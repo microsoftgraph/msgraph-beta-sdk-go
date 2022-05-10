@@ -25,7 +25,7 @@ type DeviceManagementConfigurationPolicyTemplate struct {
     settingTemplateCount *int32
     // Setting templates
     settingTemplates []DeviceManagementConfigurationSettingTemplateable
-    // Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+    // Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
     technologies *DeviceManagementConfigurationTechnologies
     // TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
     templateFamily *DeviceManagementConfigurationTemplateFamily
@@ -244,7 +244,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetSettingTemplates()([]De
         return m.settingTemplates
     }
 }
-// GetTechnologies gets the technologies property value. Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// GetTechnologies gets the technologies property value. Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
 func (m *DeviceManagementConfigurationPolicyTemplate) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
     if m == nil {
         return nil
@@ -410,7 +410,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) SetSettingTemplates(value 
         m.settingTemplates = value
     }
 }
-// SetTechnologies sets the technologies property value. Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// SetTechnologies sets the technologies property value. Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
 func (m *DeviceManagementConfigurationPolicyTemplate) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
     if m != nil {
         m.technologies = value

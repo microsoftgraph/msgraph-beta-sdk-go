@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the commsApplication singleton.
@@ -21,32 +20,32 @@ const (
 )
 
 func (i CallState) String() string {
-    return []string{"INCOMING", "ESTABLISHING", "RINGING", "ESTABLISHED", "HOLD", "TRANSFERRING", "TRANSFERACCEPTED", "REDIRECTING", "TERMINATING", "TERMINATED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"incoming", "establishing", "ringing", "established", "hold", "transferring", "transferAccepted", "redirecting", "terminating", "terminated", "unknownFutureValue"}[i]
 }
 func ParseCallState(v string) (interface{}, error) {
     result := INCOMING_CALLSTATE
-    switch strings.ToUpper(v) {
-        case "INCOMING":
+    switch v {
+        case "incoming":
             result = INCOMING_CALLSTATE
-        case "ESTABLISHING":
+        case "establishing":
             result = ESTABLISHING_CALLSTATE
-        case "RINGING":
+        case "ringing":
             result = RINGING_CALLSTATE
-        case "ESTABLISHED":
+        case "established":
             result = ESTABLISHED_CALLSTATE
-        case "HOLD":
+        case "hold":
             result = HOLD_CALLSTATE
-        case "TRANSFERRING":
+        case "transferring":
             result = TRANSFERRING_CALLSTATE
-        case "TRANSFERACCEPTED":
+        case "transferAccepted":
             result = TRANSFERACCEPTED_CALLSTATE
-        case "REDIRECTING":
+        case "redirecting":
             result = REDIRECTING_CALLSTATE
-        case "TERMINATING":
+        case "terminating":
             result = TERMINATING_CALLSTATE
-        case "TERMINATED":
+        case "terminated":
             result = TERMINATED_CALLSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CALLSTATE
         default:
             return 0, errors.New("Unknown CallState value: " + v)

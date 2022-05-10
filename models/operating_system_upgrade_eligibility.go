@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type OperatingSystemUpgradeEligibility int
 
 const (
+    // The device is upgraded to latest version of windows
     UPGRADED_OPERATINGSYSTEMUPGRADEELIGIBILITY OperatingSystemUpgradeEligibility = iota
+    // Not enough data available to compute the eligibility of device for windows upgrade
     UNKNOWN_OPERATINGSYSTEMUPGRADEELIGIBILITY
+    // The device is not capable for windows upgrade
     NOTCAPABLE_OPERATINGSYSTEMUPGRADEELIGIBILITY
+    // The device is capable for windows upgrade
     CAPABLE_OPERATINGSYSTEMUPGRADEELIGIBILITY
 )
 
 func (i OperatingSystemUpgradeEligibility) String() string {
-    return []string{"UPGRADED", "UNKNOWN", "NOTCAPABLE", "CAPABLE"}[i]
+    return []string{"upgraded", "unknown", "notCapable", "capable"}[i]
 }
 func ParseOperatingSystemUpgradeEligibility(v string) (interface{}, error) {
     result := UPGRADED_OPERATINGSYSTEMUPGRADEELIGIBILITY
-    switch strings.ToUpper(v) {
-        case "UPGRADED":
+    switch v {
+        case "upgraded":
             result = UPGRADED_OPERATINGSYSTEMUPGRADEELIGIBILITY
-        case "UNKNOWN":
+        case "unknown":
             result = UNKNOWN_OPERATINGSYSTEMUPGRADEELIGIBILITY
-        case "NOTCAPABLE":
+        case "notCapable":
             result = NOTCAPABLE_OPERATINGSYSTEMUPGRADEELIGIBILITY
-        case "CAPABLE":
+        case "capable":
             result = CAPABLE_OPERATINGSYSTEMUPGRADEELIGIBILITY
         default:
             return 0, errors.New("Unknown OperatingSystemUpgradeEligibility value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i CertificateStatus) String() string {
-    return []string{"NOTPROVISIONED", "PROVISIONED"}[i]
+    return []string{"notProvisioned", "provisioned"}[i]
 }
 func ParseCertificateStatus(v string) (interface{}, error) {
     result := NOTPROVISIONED_CERTIFICATESTATUS
-    switch strings.ToUpper(v) {
-        case "NOTPROVISIONED":
+    switch v {
+        case "notProvisioned":
             result = NOTPROVISIONED_CERTIFICATESTATUS
-        case "PROVISIONED":
+        case "provisioned":
             result = PROVISIONED_CERTIFICATESTATUS
         default:
             return 0, errors.New("Unknown CertificateStatus value: " + v)

@@ -1,22 +1,22 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the createDeviceLogCollectionRequest method.
 type DeviceLogCollectionTemplateType int
 
 const (
+    // Predefined template for what will be collected
     PREDEFINED_DEVICELOGCOLLECTIONTEMPLATETYPE DeviceLogCollectionTemplateType = iota
 )
 
 func (i DeviceLogCollectionTemplateType) String() string {
-    return []string{"PREDEFINED"}[i]
+    return []string{"predefined"}[i]
 }
 func ParseDeviceLogCollectionTemplateType(v string) (interface{}, error) {
     result := PREDEFINED_DEVICELOGCOLLECTIONTEMPLATETYPE
-    switch strings.ToUpper(v) {
-        case "PREDEFINED":
+    switch v {
+        case "predefined":
             result = PREDEFINED_DEVICELOGCOLLECTIONTEMPLATETYPE
         default:
             return 0, errors.New("Unknown DeviceLogCollectionTemplateType value: " + v)

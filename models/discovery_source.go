@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DiscoverySource int
 
 const (
+    // DiscoverySource is Unknown.
     UNKNOWN_DISCOVERYSOURCE DiscoverySource = iota
+    // Device is imported by admin.
     ADMINIMPORT_DISCOVERYSOURCE
+    // Device is added by Apple device enrollment program (Dep).
     DEVICEENROLLMENTPROGRAM_DISCOVERYSOURCE
 )
 
 func (i DiscoverySource) String() string {
-    return []string{"UNKNOWN", "ADMINIMPORT", "DEVICEENROLLMENTPROGRAM"}[i]
+    return []string{"unknown", "adminImport", "deviceEnrollmentProgram"}[i]
 }
 func ParseDiscoverySource(v string) (interface{}, error) {
     result := UNKNOWN_DISCOVERYSOURCE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_DISCOVERYSOURCE
-        case "ADMINIMPORT":
+        case "adminImport":
             result = ADMINIMPORT_DISCOVERYSOURCE
-        case "DEVICEENROLLMENTPROGRAM":
+        case "deviceEnrollmentProgram":
             result = DEVICEENROLLMENTPROGRAM_DISCOVERYSOURCE
         default:
             return 0, errors.New("Unknown DiscoverySource value: " + v)

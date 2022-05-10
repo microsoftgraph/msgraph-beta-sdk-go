@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i SimulationAutomationStatus) String() string {
-    return []string{"UNKNOWN", "DRAFT", "NOTRUNNING", "RUNNING", "COMPLETED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "draft", "notRunning", "running", "completed", "unknownFutureValue"}[i]
 }
 func ParseSimulationAutomationStatus(v string) (interface{}, error) {
     result := UNKNOWN_SIMULATIONAUTOMATIONSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_SIMULATIONAUTOMATIONSTATUS
-        case "DRAFT":
+        case "draft":
             result = DRAFT_SIMULATIONAUTOMATIONSTATUS
-        case "NOTRUNNING":
+        case "notRunning":
             result = NOTRUNNING_SIMULATIONAUTOMATIONSTATUS
-        case "RUNNING":
+        case "running":
             result = RUNNING_SIMULATIONAUTOMATIONSTATUS
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_SIMULATIONAUTOMATIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIMULATIONAUTOMATIONSTATUS
         default:
             return 0, errors.New("Unknown SimulationAutomationStatus value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of onPremisesPublishingProfile entities.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i AgentStatus) String() string {
-    return []string{"ACTIVE", "INACTIVE"}[i]
+    return []string{"active", "inactive"}[i]
 }
 func ParseAgentStatus(v string) (interface{}, error) {
     result := ACTIVE_AGENTSTATUS
-    switch strings.ToUpper(v) {
-        case "ACTIVE":
+    switch v {
+        case "active":
             result = ACTIVE_AGENTSTATUS
-        case "INACTIVE":
+        case "inactive":
             result = INACTIVE_AGENTSTATUS
         default:
             return 0, errors.New("Unknown AgentStatus value: " + v)

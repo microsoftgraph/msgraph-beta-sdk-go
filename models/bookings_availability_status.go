@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the getStaffAvailability method.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i BookingsAvailabilityStatus) String() string {
-    return []string{"AVAILABLE", "BUSY", "SLOTSAVAILABLE", "OUTOFOFFICE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"available", "busy", "slotsAvailable", "outOfOffice", "unknownFutureValue"}[i]
 }
 func ParseBookingsAvailabilityStatus(v string) (interface{}, error) {
     result := AVAILABLE_BOOKINGSAVAILABILITYSTATUS
-    switch strings.ToUpper(v) {
-        case "AVAILABLE":
+    switch v {
+        case "available":
             result = AVAILABLE_BOOKINGSAVAILABILITYSTATUS
-        case "BUSY":
+        case "busy":
             result = BUSY_BOOKINGSAVAILABILITYSTATUS
-        case "SLOTSAVAILABLE":
+        case "slotsAvailable":
             result = SLOTSAVAILABLE_BOOKINGSAVAILABILITYSTATUS
-        case "OUTOFOFFICE":
+        case "outOfOffice":
             result = OUTOFOFFICE_BOOKINGSAVAILABILITYSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BOOKINGSAVAILABILITYSTATUS
         default:
             return 0, errors.New("Unknown BookingsAvailabilityStatus value: " + v)

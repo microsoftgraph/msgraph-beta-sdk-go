@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the overrideComplianceState method.
 type AdministratorConfiguredDeviceComplianceState int
 
 const (
+    // Set compliance state based on other compliance polices
     BASEDONDEVICECOMPLIANCEPOLICY_ADMINISTRATORCONFIGUREDDEVICECOMPLIANCESTATE AdministratorConfiguredDeviceComplianceState = iota
+    // Set compliance to nonCompliant
     NONCOMPLIANT_ADMINISTRATORCONFIGUREDDEVICECOMPLIANCESTATE
 )
 
 func (i AdministratorConfiguredDeviceComplianceState) String() string {
-    return []string{"BASEDONDEVICECOMPLIANCEPOLICY", "NONCOMPLIANT"}[i]
+    return []string{"basedOnDeviceCompliancePolicy", "nonCompliant"}[i]
 }
 func ParseAdministratorConfiguredDeviceComplianceState(v string) (interface{}, error) {
     result := BASEDONDEVICECOMPLIANCEPOLICY_ADMINISTRATORCONFIGUREDDEVICECOMPLIANCESTATE
-    switch strings.ToUpper(v) {
-        case "BASEDONDEVICECOMPLIANCEPOLICY":
+    switch v {
+        case "basedOnDeviceCompliancePolicy":
             result = BASEDONDEVICECOMPLIANCEPOLICY_ADMINISTRATORCONFIGUREDDEVICECOMPLIANCESTATE
-        case "NONCOMPLIANT":
+        case "nonCompliant":
             result = NONCOMPLIANT_ADMINISTRATORCONFIGUREDDEVICECOMPLIANCESTATE
         default:
             return 0, errors.New("Unknown AdministratorConfiguredDeviceComplianceState value: " + v)

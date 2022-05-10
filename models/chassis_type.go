@@ -1,46 +1,54 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type ChassisType int
 
 const (
+    // Unknown.
     UNKNOWN_CHASSISTYPE ChassisType = iota
+    // Desktop.
     DESKTOP_CHASSISTYPE
+    // Laptop.
     LAPTOP_CHASSISTYPE
+    // Workstation.
     WORKSWORKSTATION_CHASSISTYPE
+    // Enterprise server.
     ENTERPRISESERVER_CHASSISTYPE
+    // Phone.
     PHONE_CHASSISTYPE
+    // Mobile tablet.
     TABLET_CHASSISTYPE
+    // Other mobile.
     MOBILEOTHER_CHASSISTYPE
+    // Unknown mobile.
     MOBILEUNKNOWN_CHASSISTYPE
 )
 
 func (i ChassisType) String() string {
-    return []string{"UNKNOWN", "DESKTOP", "LAPTOP", "WORKSWORKSTATION", "ENTERPRISESERVER", "PHONE", "TABLET", "MOBILEOTHER", "MOBILEUNKNOWN"}[i]
+    return []string{"unknown", "desktop", "laptop", "worksWorkstation", "enterpriseServer", "phone", "tablet", "mobileOther", "mobileUnknown"}[i]
 }
 func ParseChassisType(v string) (interface{}, error) {
     result := UNKNOWN_CHASSISTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_CHASSISTYPE
-        case "DESKTOP":
+        case "desktop":
             result = DESKTOP_CHASSISTYPE
-        case "LAPTOP":
+        case "laptop":
             result = LAPTOP_CHASSISTYPE
-        case "WORKSWORKSTATION":
+        case "worksWorkstation":
             result = WORKSWORKSTATION_CHASSISTYPE
-        case "ENTERPRISESERVER":
+        case "enterpriseServer":
             result = ENTERPRISESERVER_CHASSISTYPE
-        case "PHONE":
+        case "phone":
             result = PHONE_CHASSISTYPE
-        case "TABLET":
+        case "tablet":
             result = TABLET_CHASSISTYPE
-        case "MOBILEOTHER":
+        case "mobileOther":
             result = MOBILEOTHER_CHASSISTYPE
-        case "MOBILEUNKNOWN":
+        case "mobileUnknown":
             result = MOBILEUNKNOWN_CHASSISTYPE
         default:
             return 0, errors.New("Unknown ChassisType value: " + v)

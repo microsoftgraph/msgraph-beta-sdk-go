@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the filterOperators method.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i ScopeOperatorMultiValuedComparisonType) String() string {
-    return []string{"ALL", "ANY"}[i]
+    return []string{"All", "Any"}[i]
 }
 func ParseScopeOperatorMultiValuedComparisonType(v string) (interface{}, error) {
     result := ALL_SCOPEOPERATORMULTIVALUEDCOMPARISONTYPE
-    switch strings.ToUpper(v) {
-        case "ALL":
+    switch v {
+        case "All":
             result = ALL_SCOPEOPERATORMULTIVALUEDCOMPARISONTYPE
-        case "ANY":
+        case "Any":
             result = ANY_SCOPEOPERATORMULTIVALUEDCOMPARISONTYPE
         default:
             return 0, errors.New("Unknown ScopeOperatorMultiValuedComparisonType value: " + v)

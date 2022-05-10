@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementConfigurationSettingVisibility int
 
 const (
+    // Not visible
     NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY DeviceManagementConfigurationSettingVisibility = iota
+    // Visible to setting catalog UX
     SETTINGSCATALOG_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
+    // Visible to template
     TEMPLATE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
 )
 
 func (i DeviceManagementConfigurationSettingVisibility) String() string {
-    return []string{"NONE", "SETTINGSCATALOG", "TEMPLATE"}[i]
+    return []string{"none", "settingsCatalog", "template"}[i]
 }
 func ParseDeviceManagementConfigurationSettingVisibility(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
-        case "SETTINGSCATALOG":
+        case "settingsCatalog":
             result = SETTINGSCATALOG_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
-        case "TEMPLATE":
+        case "template":
             result = TEMPLATE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
         default:
             return 0, errors.New("Unknown DeviceManagementConfigurationSettingVisibility value: " + v)

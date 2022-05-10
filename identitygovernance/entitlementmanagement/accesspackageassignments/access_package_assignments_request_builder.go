@@ -4,7 +4,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i049626d45b2c2e5eba3958e778c106587f9ea12daffa6af0f49d44162d7f7757 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/additionalaccesswithaccesspackageid"
     i2610e8d5a79e56e9671744795aeb6b914715da0e0d5ebe2f35403e5076d2f3e2 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/additionalaccesswithaccesspackageidwithincompatibleaccesspackageid"
     i3fee9b70f56659fe1b99e4947654ed4f9a91b0f0dff2009051251b4b2fadde3e "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/additionalaccess"
     i4ca4402d2a675564f16e1906c3258cbb280823aba29ac5775bd16baed3dcc0b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments/count"
@@ -58,10 +57,6 @@ type AccessPackageAssignmentsRequestBuilderPostRequestConfiguration struct {
 // AdditionalAccess provides operations to call the additionalAccess method.
 func (m *AccessPackageAssignmentsRequestBuilder) AdditionalAccess()(*i3fee9b70f56659fe1b99e4947654ed4f9a91b0f0dff2009051251b4b2fadde3e.AdditionalAccessRequestBuilder) {
     return i3fee9b70f56659fe1b99e4947654ed4f9a91b0f0dff2009051251b4b2fadde3e.NewAdditionalAccessRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// AdditionalAccessWithAccessPackageId provides operations to call the additionalAccess method.
-func (m *AccessPackageAssignmentsRequestBuilder) AdditionalAccessWithAccessPackageId(accessPackageId *string)(*i049626d45b2c2e5eba3958e778c106587f9ea12daffa6af0f49d44162d7f7757.AdditionalAccessWithAccessPackageIdRequestBuilder) {
-    return i049626d45b2c2e5eba3958e778c106587f9ea12daffa6af0f49d44162d7f7757.NewAdditionalAccessWithAccessPackageIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, accessPackageId);
 }
 // AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId provides operations to call the additionalAccess method.
 func (m *AccessPackageAssignmentsRequestBuilder) AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId(accessPackageId *string, incompatibleAccessPackageId *string)(*i2610e8d5a79e56e9671744795aeb6b914715da0e0d5ebe2f35403e5076d2f3e2.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder) {

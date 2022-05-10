@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type ErrorCode int
 
 const (
+    // Default Value to indicate no error.
     NOERROR_ERRORCODE ErrorCode = iota
+    // The current user does not have access due to lack of RBAC permissions on the resource.
     UNAUTHORIZED_ERRORCODE
+    // The current user does not have access due to lack of RBAC Scope Tags on the resource.
     NOTFOUND_ERRORCODE
+    // The resource has been deleted.
     DELETED_ERRORCODE
 )
 
 func (i ErrorCode) String() string {
-    return []string{"NOERROR", "UNAUTHORIZED", "NOTFOUND", "DELETED"}[i]
+    return []string{"noError", "unauthorized", "notFound", "deleted"}[i]
 }
 func ParseErrorCode(v string) (interface{}, error) {
     result := NOERROR_ERRORCODE
-    switch strings.ToUpper(v) {
-        case "NOERROR":
+    switch v {
+        case "noError":
             result = NOERROR_ERRORCODE
-        case "UNAUTHORIZED":
+        case "unauthorized":
             result = UNAUTHORIZED_ERRORCODE
-        case "NOTFOUND":
+        case "notFound":
             result = NOTFOUND_ERRORCODE
-        case "DELETED":
+        case "deleted":
             result = DELETED_ERRORCODE
         default:
             return 0, errors.New("Unknown ErrorCode value: " + v)

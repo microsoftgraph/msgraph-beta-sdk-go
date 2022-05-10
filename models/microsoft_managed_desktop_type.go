@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i MicrosoftManagedDesktopType) String() string {
-    return []string{"NOTMANAGED", "PREMIUMMANAGED", "STANDARDMANAGED", "STARTERMANAGED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notManaged", "premiumManaged", "standardManaged", "starterManaged", "unknownFutureValue"}[i]
 }
 func ParseMicrosoftManagedDesktopType(v string) (interface{}, error) {
     result := NOTMANAGED_MICROSOFTMANAGEDDESKTOPTYPE
-    switch strings.ToUpper(v) {
-        case "NOTMANAGED":
+    switch v {
+        case "notManaged":
             result = NOTMANAGED_MICROSOFTMANAGEDDESKTOPTYPE
-        case "PREMIUMMANAGED":
+        case "premiumManaged":
             result = PREMIUMMANAGED_MICROSOFTMANAGEDDESKTOPTYPE
-        case "STANDARDMANAGED":
+        case "standardManaged":
             result = STANDARDMANAGED_MICROSOFTMANAGEDDESKTOPTYPE
-        case "STARTERMANAGED":
+        case "starterManaged":
             result = STARTERMANAGED_MICROSOFTMANAGEDDESKTOPTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MICROSOFTMANAGEDDESKTOPTYPE
         default:
             return 0, errors.New("Unknown MicrosoftManagedDesktopType value: " + v)

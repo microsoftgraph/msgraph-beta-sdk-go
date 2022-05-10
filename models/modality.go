@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the commsApplication singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i Modality) String() string {
-    return []string{"UNKNOWN", "AUDIO", "VIDEO", "VIDEOBASEDSCREENSHARING", "DATA", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "audio", "video", "videoBasedScreenSharing", "data", "unknownFutureValue"}[i]
 }
 func ParseModality(v string) (interface{}, error) {
     result := UNKNOWN_MODALITY
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_MODALITY
-        case "AUDIO":
+        case "audio":
             result = AUDIO_MODALITY
-        case "VIDEO":
+        case "video":
             result = VIDEO_MODALITY
-        case "VIDEOBASEDSCREENSHARING":
+        case "videoBasedScreenSharing":
             result = VIDEOBASEDSCREENSHARING_MODALITY
-        case "DATA":
+        case "data":
             result = DATA_MODALITY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MODALITY
         default:
             return 0, errors.New("Unknown Modality value: " + v)

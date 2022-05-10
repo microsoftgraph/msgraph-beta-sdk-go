@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the directory singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i RecommendationCategory) String() string {
-    return []string{"USAGEANDCOMPLIANCE", "SECURITY", "PRODUCTIVITY", "HEALTH", "CONFIGURATION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"usageAndCompliance", "security", "productivity", "health", "configuration", "unknownFutureValue"}[i]
 }
 func ParseRecommendationCategory(v string) (interface{}, error) {
     result := USAGEANDCOMPLIANCE_RECOMMENDATIONCATEGORY
-    switch strings.ToUpper(v) {
-        case "USAGEANDCOMPLIANCE":
+    switch v {
+        case "usageAndCompliance":
             result = USAGEANDCOMPLIANCE_RECOMMENDATIONCATEGORY
-        case "SECURITY":
+        case "security":
             result = SECURITY_RECOMMENDATIONCATEGORY
-        case "PRODUCTIVITY":
+        case "productivity":
             result = PRODUCTIVITY_RECOMMENDATIONCATEGORY
-        case "HEALTH":
+        case "health":
             result = HEALTH_RECOMMENDATIONCATEGORY
-        case "CONFIGURATION":
+        case "configuration":
             result = CONFIGURATION_RECOMMENDATIONCATEGORY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RECOMMENDATIONCATEGORY
         default:
             return 0, errors.New("Unknown RecommendationCategory value: " + v)

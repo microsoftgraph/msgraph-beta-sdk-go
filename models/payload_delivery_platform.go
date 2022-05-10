@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i PayloadDeliveryPlatform) String() string {
-    return []string{"UNKNOWN", "SMS", "EMAIL", "TEAMS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "sms", "email", "teams", "unknownFutureValue"}[i]
 }
 func ParsePayloadDeliveryPlatform(v string) (interface{}, error) {
     result := UNKNOWN_PAYLOADDELIVERYPLATFORM
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_PAYLOADDELIVERYPLATFORM
-        case "SMS":
+        case "sms":
             result = SMS_PAYLOADDELIVERYPLATFORM
-        case "EMAIL":
+        case "email":
             result = EMAIL_PAYLOADDELIVERYPLATFORM
-        case "TEAMS":
+        case "teams":
             result = TEAMS_PAYLOADDELIVERYPLATFORM
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PAYLOADDELIVERYPLATFORM
         default:
             return 0, errors.New("Unknown PayloadDeliveryPlatform value: " + v)

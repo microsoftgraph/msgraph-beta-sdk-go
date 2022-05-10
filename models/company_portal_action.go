@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type CompanyPortalAction int
 
 const (
+    // Unknown device action
     UNKNOWN_COMPANYPORTALACTION CompanyPortalAction = iota
+    // Remove device from Company Portal
     REMOVE_COMPANYPORTALACTION
+    // Reset device enrolled in Company Portal
     RESET_COMPANYPORTALACTION
 )
 
 func (i CompanyPortalAction) String() string {
-    return []string{"UNKNOWN", "REMOVE", "RESET"}[i]
+    return []string{"unknown", "remove", "reset"}[i]
 }
 func ParseCompanyPortalAction(v string) (interface{}, error) {
     result := UNKNOWN_COMPANYPORTALACTION
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_COMPANYPORTALACTION
-        case "REMOVE":
+        case "remove":
             result = REMOVE_COMPANYPORTALACTION
-        case "RESET":
+        case "reset":
             result = RESET_COMPANYPORTALACTION
         default:
             return 0, errors.New("Unknown CompanyPortalAction value: " + v)

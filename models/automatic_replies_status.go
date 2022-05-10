@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i AutomaticRepliesStatus) String() string {
-    return []string{"DISABLED", "ALWAYSENABLED", "SCHEDULED"}[i]
+    return []string{"disabled", "alwaysEnabled", "scheduled"}[i]
 }
 func ParseAutomaticRepliesStatus(v string) (interface{}, error) {
     result := DISABLED_AUTOMATICREPLIESSTATUS
-    switch strings.ToUpper(v) {
-        case "DISABLED":
+    switch v {
+        case "disabled":
             result = DISABLED_AUTOMATICREPLIESSTATUS
-        case "ALWAYSENABLED":
+        case "alwaysEnabled":
             result = ALWAYSENABLED_AUTOMATICREPLIESSTATUS
-        case "SCHEDULED":
+        case "scheduled":
             result = SCHEDULED_AUTOMATICREPLIESSTATUS
         default:
             return 0, errors.New("Unknown AutomaticRepliesStatus value: " + v)

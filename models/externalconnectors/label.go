@@ -1,9 +1,8 @@
 package externalconnectors
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the collection of externalConnection entities.
+// Provides operations to manage the external singleton.
 type Label int
 
 const (
@@ -23,36 +22,36 @@ const (
 )
 
 func (i Label) String() string {
-    return []string{"TITLE", "URL", "CREATEDBY", "LASTMODIFIEDBY", "AUTHORS", "CREATEDDATETIME", "LASTMODIFIEDDATETIME", "FILENAME", "FILEEXTENSION", "UNKNOWNFUTUREVALUE", "ICONURL", "CONTAINERNAME", "CONTAINERURL"}[i]
+    return []string{"title", "url", "createdBy", "lastModifiedBy", "authors", "createdDateTime", "lastModifiedDateTime", "fileName", "fileExtension", "unknownFutureValue", "iconUrl", "containerName", "containerUrl"}[i]
 }
 func ParseLabel(v string) (interface{}, error) {
     result := TITLE_LABEL
-    switch strings.ToUpper(v) {
-        case "TITLE":
+    switch v {
+        case "title":
             result = TITLE_LABEL
-        case "URL":
+        case "url":
             result = URL_LABEL
-        case "CREATEDBY":
+        case "createdBy":
             result = CREATEDBY_LABEL
-        case "LASTMODIFIEDBY":
+        case "lastModifiedBy":
             result = LASTMODIFIEDBY_LABEL
-        case "AUTHORS":
+        case "authors":
             result = AUTHORS_LABEL
-        case "CREATEDDATETIME":
+        case "createdDateTime":
             result = CREATEDDATETIME_LABEL
-        case "LASTMODIFIEDDATETIME":
+        case "lastModifiedDateTime":
             result = LASTMODIFIEDDATETIME_LABEL
-        case "FILENAME":
+        case "fileName":
             result = FILENAME_LABEL
-        case "FILEEXTENSION":
+        case "fileExtension":
             result = FILEEXTENSION_LABEL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LABEL
-        case "ICONURL":
+        case "iconUrl":
             result = ICONURL_LABEL
-        case "CONTAINERNAME":
+        case "containerName":
             result = CONTAINERNAME_LABEL
-        case "CONTAINERURL":
+        case "containerUrl":
             result = CONTAINERURL_LABEL
         default:
             return 0, errors.New("Unknown Label value: " + v)

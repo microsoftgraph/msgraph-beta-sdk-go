@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type RoleAssignmentScopeType int
 
 const (
+    // Allow assignments to the specified ResourceScopes.
     RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE RoleAssignmentScopeType = iota
+    // Allow assignments to all Intune devices.
     ALLDEVICES_ROLEASSIGNMENTSCOPETYPE
+    // Allow assignments to all Intune licensed users.
     ALLLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
+    // Allow assignments to all Intune devices and licensed users.
     ALLDEVICESANDLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
 )
 
 func (i RoleAssignmentScopeType) String() string {
-    return []string{"RESOURCESCOPE", "ALLDEVICES", "ALLLICENSEDUSERS", "ALLDEVICESANDLICENSEDUSERS"}[i]
+    return []string{"resourceScope", "allDevices", "allLicensedUsers", "allDevicesAndLicensedUsers"}[i]
 }
 func ParseRoleAssignmentScopeType(v string) (interface{}, error) {
     result := RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE
-    switch strings.ToUpper(v) {
-        case "RESOURCESCOPE":
+    switch v {
+        case "resourceScope":
             result = RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE
-        case "ALLDEVICES":
+        case "allDevices":
             result = ALLDEVICES_ROLEASSIGNMENTSCOPETYPE
-        case "ALLLICENSEDUSERS":
+        case "allLicensedUsers":
             result = ALLLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
-        case "ALLDEVICESANDLICENSEDUSERS":
+        case "allDevicesAndLicensedUsers":
             result = ALLDEVICESANDLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
         default:
             return 0, errors.New("Unknown RoleAssignmentScopeType value: " + v)

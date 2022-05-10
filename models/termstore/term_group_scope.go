@@ -1,6 +1,5 @@
 package termstore
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i TermGroupScope) String() string {
-    return []string{"GLOBAL", "SYSTEM", "SITECOLLECTION"}[i]
+    return []string{"global", "system", "siteCollection"}[i]
 }
 func ParseTermGroupScope(v string) (interface{}, error) {
     result := GLOBAL_TERMGROUPSCOPE
-    switch strings.ToUpper(v) {
-        case "GLOBAL":
+    switch v {
+        case "global":
             result = GLOBAL_TERMGROUPSCOPE
-        case "SYSTEM":
+        case "system":
             result = SYSTEM_TERMGROUPSCOPE
-        case "SITECOLLECTION":
+        case "siteCollection":
             result = SITECOLLECTION_TERMGROUPSCOPE
         default:
             return 0, errors.New("Unknown TermGroupScope value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the executeAction method.
@@ -17,51 +16,57 @@ const (
     REBOOTNOW_MANAGEDDEVICEREMOTEACTION
     SETDEVICENAME_MANAGEDDEVICEREMOTEACTION
     SYNCDEVICE_MANAGEDDEVICEREMOTEACTION
+    // Name of the deprovision action.
     DEPROVISION_MANAGEDDEVICEREMOTEACTION
+    // Name of the disable action.
     DISABLE_MANAGEDDEVICEREMOTEACTION
+    // Name of the reenable action.
     REENABLE_MANAGEDDEVICEREMOTEACTION
+    // Name of the moveDevicesToOU action.
     MOVEDEVICETOORGANIZATIONALUNIT_MANAGEDDEVICEREMOTEACTION
+    // Name of action to Activate eSIM on the device.
     ACTIVATEDEVICEESIM_MANAGEDDEVICEREMOTEACTION
+    // Name of the collectDiagnostics action.
     COLLECTDIAGNOSTICS_MANAGEDDEVICEREMOTEACTION
 )
 
 func (i ManagedDeviceRemoteAction) String() string {
-    return []string{"RETIRE", "DELETE", "FULLSCAN", "QUICKSCAN", "SIGNATUREUPDATE", "WIPE", "CUSTOMTEXTNOTIFICATION", "REBOOTNOW", "SETDEVICENAME", "SYNCDEVICE", "DEPROVISION", "DISABLE", "REENABLE", "MOVEDEVICETOORGANIZATIONALUNIT", "ACTIVATEDEVICEESIM", "COLLECTDIAGNOSTICS"}[i]
+    return []string{"retire", "delete", "fullScan", "quickScan", "signatureUpdate", "wipe", "customTextNotification", "rebootNow", "setDeviceName", "syncDevice", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "activateDeviceEsim", "collectDiagnostics"}[i]
 }
 func ParseManagedDeviceRemoteAction(v string) (interface{}, error) {
     result := RETIRE_MANAGEDDEVICEREMOTEACTION
-    switch strings.ToUpper(v) {
-        case "RETIRE":
+    switch v {
+        case "retire":
             result = RETIRE_MANAGEDDEVICEREMOTEACTION
-        case "DELETE":
+        case "delete":
             result = DELETE_MANAGEDDEVICEREMOTEACTION
-        case "FULLSCAN":
+        case "fullScan":
             result = FULLSCAN_MANAGEDDEVICEREMOTEACTION
-        case "QUICKSCAN":
+        case "quickScan":
             result = QUICKSCAN_MANAGEDDEVICEREMOTEACTION
-        case "SIGNATUREUPDATE":
+        case "signatureUpdate":
             result = SIGNATUREUPDATE_MANAGEDDEVICEREMOTEACTION
-        case "WIPE":
+        case "wipe":
             result = WIPE_MANAGEDDEVICEREMOTEACTION
-        case "CUSTOMTEXTNOTIFICATION":
+        case "customTextNotification":
             result = CUSTOMTEXTNOTIFICATION_MANAGEDDEVICEREMOTEACTION
-        case "REBOOTNOW":
+        case "rebootNow":
             result = REBOOTNOW_MANAGEDDEVICEREMOTEACTION
-        case "SETDEVICENAME":
+        case "setDeviceName":
             result = SETDEVICENAME_MANAGEDDEVICEREMOTEACTION
-        case "SYNCDEVICE":
+        case "syncDevice":
             result = SYNCDEVICE_MANAGEDDEVICEREMOTEACTION
-        case "DEPROVISION":
+        case "deprovision":
             result = DEPROVISION_MANAGEDDEVICEREMOTEACTION
-        case "DISABLE":
+        case "disable":
             result = DISABLE_MANAGEDDEVICEREMOTEACTION
-        case "REENABLE":
+        case "reenable":
             result = REENABLE_MANAGEDDEVICEREMOTEACTION
-        case "MOVEDEVICETOORGANIZATIONALUNIT":
+        case "moveDeviceToOrganizationalUnit":
             result = MOVEDEVICETOORGANIZATIONALUNIT_MANAGEDDEVICEREMOTEACTION
-        case "ACTIVATEDEVICEESIM":
+        case "activateDeviceEsim":
             result = ACTIVATEDEVICEESIM_MANAGEDDEVICEREMOTEACTION
-        case "COLLECTDIAGNOSTICS":
+        case "collectDiagnostics":
             result = COLLECTDIAGNOSTICS_MANAGEDDEVICEREMOTEACTION
         default:
             return 0, errors.New("Unknown ManagedDeviceRemoteAction value: " + v)

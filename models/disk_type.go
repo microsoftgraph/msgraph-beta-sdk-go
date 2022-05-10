@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DiskType int
 
 const (
+    // Enum member for unknown or default diskType
     UNKNOWN_DISKTYPE DiskType = iota
+    // Enum member for HDD devices
     HDD_DISKTYPE
+    // Enum member for SSD devices
     SSD_DISKTYPE
+    // Evolvable enum member
     UNKNOWNFUTUREVALUE_DISKTYPE
 )
 
 func (i DiskType) String() string {
-    return []string{"UNKNOWN", "HDD", "SSD", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "hdd", "ssd", "unknownFutureValue"}[i]
 }
 func ParseDiskType(v string) (interface{}, error) {
     result := UNKNOWN_DISKTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_DISKTYPE
-        case "HDD":
+        case "hdd":
             result = HDD_DISKTYPE
-        case "SSD":
+        case "ssd":
             result = SSD_DISKTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DISKTYPE
         default:
             return 0, errors.New("Unknown DiskType value: " + v)

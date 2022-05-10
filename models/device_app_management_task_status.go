@@ -1,34 +1,38 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type DeviceAppManagementTaskStatus int
 
 const (
+    // State is undefined.
     UNKNOWN_DEVICEAPPMANAGEMENTTASKSTATUS DeviceAppManagementTaskStatus = iota
+    // The task is ready for review.
     PENDING_DEVICEAPPMANAGEMENTTASKSTATUS
+    // The task has been accepted and is being worked on.
     ACTIVE_DEVICEAPPMANAGEMENTTASKSTATUS
+    // The work is complete.
     COMPLETED_DEVICEAPPMANAGEMENTTASKSTATUS
+    // The task was rejected.
     REJECTED_DEVICEAPPMANAGEMENTTASKSTATUS
 )
 
 func (i DeviceAppManagementTaskStatus) String() string {
-    return []string{"UNKNOWN", "PENDING", "ACTIVE", "COMPLETED", "REJECTED"}[i]
+    return []string{"unknown", "pending", "active", "completed", "rejected"}[i]
 }
 func ParseDeviceAppManagementTaskStatus(v string) (interface{}, error) {
     result := UNKNOWN_DEVICEAPPMANAGEMENTTASKSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_DEVICEAPPMANAGEMENTTASKSTATUS
-        case "PENDING":
+        case "pending":
             result = PENDING_DEVICEAPPMANAGEMENTTASKSTATUS
-        case "ACTIVE":
+        case "active":
             result = ACTIVE_DEVICEAPPMANAGEMENTTASKSTATUS
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_DEVICEAPPMANAGEMENTTASKSTATUS
-        case "REJECTED":
+        case "rejected":
             result = REJECTED_DEVICEAPPMANAGEMENTTASKSTATUS
         default:
             return 0, errors.New("Unknown DeviceAppManagementTaskStatus value: " + v)

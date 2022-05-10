@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the commsApplication singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i AutoAdmittedUsersType) String() string {
-    return []string{"EVERYONEINCOMPANY", "EVERYONE"}[i]
+    return []string{"everyoneInCompany", "everyone"}[i]
 }
 func ParseAutoAdmittedUsersType(v string) (interface{}, error) {
     result := EVERYONEINCOMPANY_AUTOADMITTEDUSERSTYPE
-    switch strings.ToUpper(v) {
-        case "EVERYONEINCOMPANY":
+    switch v {
+        case "everyoneInCompany":
             result = EVERYONEINCOMPANY_AUTOADMITTEDUSERSTYPE
-        case "EVERYONE":
+        case "everyone":
             result = EVERYONE_AUTOADMITTEDUSERSTYPE
         default:
             return 0, errors.New("Unknown AutoAdmittedUsersType value: " + v)

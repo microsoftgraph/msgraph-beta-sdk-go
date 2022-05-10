@@ -15,9 +15,9 @@ type ZebraFotaDeploymentSettings struct {
     batteryRuleRequireCharger *bool
     // Deploy update for devices with this model only.
     deviceModel *string
-    // Download network type as described in 'zebraFotaNetworkType'. Default: any
+    // Download network type as described in 'zebraFotaNetworkType'. Default: any. Possible values are: any, wifi, cellular, wifiAndCellular, unknownFutureValue.
     downloadRuleNetworkType *ZebraFotaNetworkType
-    // Date and time in the device time zone when the download will start (e.g., `2018-07-25T10:20:32`). The default value is UTC now and the maximum is 10 days from deployment creation.
+    // Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.
     downloadRuleStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Deployment's Board Support Package (BSP. E.g.: '01.18.02.00'). Required only for custom update type.
     firmwareTargetBoardSupportPackageVersion *string
@@ -33,11 +33,11 @@ type ZebraFotaDeploymentSettings struct {
     installRuleWindowStartTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // Maximum 28 days. Default is 28 days. Sequence of dates are: 1) Download start date. 2) Install start date. 3) Schedule end date. If any of the values are not provided, the date provided in the preceding step of the sequence is used. If no values are provided, the string value of the current UTC is used.
     scheduleDurationInDays *int32
-    // Deployment installation schedule mode. Default is installNow. All scheduled deployments date and time are in the device’s timezone. For Install Now, the date and time are in UTC (same date and time anywhere in the world).
+    // Deployment installation schedule mode. Default is installNow. All scheduled deployments date and time are in the device’s timezone. For Install Now, the date and time are in UTC (same date and time anywhere in the world). Possible values are: installNow, scheduled, unknownFutureValue.
     scheduleMode *ZebraFotaScheduleMode
-    // This attribute indicates the deployment time offset (e.g.`180` represents an offset of `+03:00`, and `-270` represents an offset of `-04:30`). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone
+    // This attribute indicates the deployment time offset (e.g.180 represents an offset of +03:00, and -270 represents an offset of -04:30). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone
     timeZoneOffsetInMinutes *int32
-    // The deployment's update type. Possible values are custom, latest, and auto. When custom mode is set, the request must provide artifact values. When latest type is set, the latest released update becomes the target OS. If latest is specified, the firmware target values are not required. Note: latest may update the device to a new Android version. When the value is set to auto, the device always looks for the latest package available and tries to update whenever a new package is available. This continues until the admin cancels the auto update. While other modes return an ID starting with FOTA-x, auto mode returns an ID starting with AUTO-x.
+    // The deployment's update type. Possible values are custom, latest, and auto. When custom mode is set, the request must provide artifact values. When latest type is set, the latest released update becomes the target OS. If latest is specified, the firmware target values are not required. Note: latest may update the device to a new Android version. When the value is set to auto, the device always looks for the latest package available and tries to update whenever a new package is available. This continues until the admin cancels the auto update. While other modes return an ID starting with FOTA-x, auto mode returns an ID starting with AUTO-x. Possible values are: custom, latest, auto, unknownFutureValue.
     updateType *ZebraFotaUpdateType
 }
 // NewZebraFotaDeploymentSettings instantiates a new zebraFotaDeploymentSettings and sets the default values.
@@ -83,7 +83,7 @@ func (m *ZebraFotaDeploymentSettings) GetDeviceModel()(*string) {
         return m.deviceModel
     }
 }
-// GetDownloadRuleNetworkType gets the downloadRuleNetworkType property value. Download network type as described in 'zebraFotaNetworkType'. Default: any
+// GetDownloadRuleNetworkType gets the downloadRuleNetworkType property value. Download network type as described in 'zebraFotaNetworkType'. Default: any. Possible values are: any, wifi, cellular, wifiAndCellular, unknownFutureValue.
 func (m *ZebraFotaDeploymentSettings) GetDownloadRuleNetworkType()(*ZebraFotaNetworkType) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *ZebraFotaDeploymentSettings) GetDownloadRuleNetworkType()(*ZebraFotaNet
         return m.downloadRuleNetworkType
     }
 }
-// GetDownloadRuleStartDateTime gets the downloadRuleStartDateTime property value. Date and time in the device time zone when the download will start (e.g., `2018-07-25T10:20:32`). The default value is UTC now and the maximum is 10 days from deployment creation.
+// GetDownloadRuleStartDateTime gets the downloadRuleStartDateTime property value. Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.
 func (m *ZebraFotaDeploymentSettings) GetDownloadRuleStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -310,7 +310,7 @@ func (m *ZebraFotaDeploymentSettings) GetScheduleDurationInDays()(*int32) {
         return m.scheduleDurationInDays
     }
 }
-// GetScheduleMode gets the scheduleMode property value. Deployment installation schedule mode. Default is installNow. All scheduled deployments date and time are in the device’s timezone. For Install Now, the date and time are in UTC (same date and time anywhere in the world).
+// GetScheduleMode gets the scheduleMode property value. Deployment installation schedule mode. Default is installNow. All scheduled deployments date and time are in the device’s timezone. For Install Now, the date and time are in UTC (same date and time anywhere in the world). Possible values are: installNow, scheduled, unknownFutureValue.
 func (m *ZebraFotaDeploymentSettings) GetScheduleMode()(*ZebraFotaScheduleMode) {
     if m == nil {
         return nil
@@ -318,7 +318,7 @@ func (m *ZebraFotaDeploymentSettings) GetScheduleMode()(*ZebraFotaScheduleMode) 
         return m.scheduleMode
     }
 }
-// GetTimeZoneOffsetInMinutes gets the timeZoneOffsetInMinutes property value. This attribute indicates the deployment time offset (e.g.`180` represents an offset of `+03:00`, and `-270` represents an offset of `-04:30`). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone
+// GetTimeZoneOffsetInMinutes gets the timeZoneOffsetInMinutes property value. This attribute indicates the deployment time offset (e.g.180 represents an offset of +03:00, and -270 represents an offset of -04:30). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone
 func (m *ZebraFotaDeploymentSettings) GetTimeZoneOffsetInMinutes()(*int32) {
     if m == nil {
         return nil
@@ -326,7 +326,7 @@ func (m *ZebraFotaDeploymentSettings) GetTimeZoneOffsetInMinutes()(*int32) {
         return m.timeZoneOffsetInMinutes
     }
 }
-// GetUpdateType gets the updateType property value. The deployment's update type. Possible values are custom, latest, and auto. When custom mode is set, the request must provide artifact values. When latest type is set, the latest released update becomes the target OS. If latest is specified, the firmware target values are not required. Note: latest may update the device to a new Android version. When the value is set to auto, the device always looks for the latest package available and tries to update whenever a new package is available. This continues until the admin cancels the auto update. While other modes return an ID starting with FOTA-x, auto mode returns an ID starting with AUTO-x.
+// GetUpdateType gets the updateType property value. The deployment's update type. Possible values are custom, latest, and auto. When custom mode is set, the request must provide artifact values. When latest type is set, the latest released update becomes the target OS. If latest is specified, the firmware target values are not required. Note: latest may update the device to a new Android version. When the value is set to auto, the device always looks for the latest package available and tries to update whenever a new package is available. This continues until the admin cancels the auto update. While other modes return an ID starting with FOTA-x, auto mode returns an ID starting with AUTO-x. Possible values are: custom, latest, auto, unknownFutureValue.
 func (m *ZebraFotaDeploymentSettings) GetUpdateType()(*ZebraFotaUpdateType) {
     if m == nil {
         return nil
@@ -461,13 +461,13 @@ func (m *ZebraFotaDeploymentSettings) SetDeviceModel(value *string)() {
         m.deviceModel = value
     }
 }
-// SetDownloadRuleNetworkType sets the downloadRuleNetworkType property value. Download network type as described in 'zebraFotaNetworkType'. Default: any
+// SetDownloadRuleNetworkType sets the downloadRuleNetworkType property value. Download network type as described in 'zebraFotaNetworkType'. Default: any. Possible values are: any, wifi, cellular, wifiAndCellular, unknownFutureValue.
 func (m *ZebraFotaDeploymentSettings) SetDownloadRuleNetworkType(value *ZebraFotaNetworkType)() {
     if m != nil {
         m.downloadRuleNetworkType = value
     }
 }
-// SetDownloadRuleStartDateTime sets the downloadRuleStartDateTime property value. Date and time in the device time zone when the download will start (e.g., `2018-07-25T10:20:32`). The default value is UTC now and the maximum is 10 days from deployment creation.
+// SetDownloadRuleStartDateTime sets the downloadRuleStartDateTime property value. Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.
 func (m *ZebraFotaDeploymentSettings) SetDownloadRuleStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.downloadRuleStartDateTime = value
@@ -515,19 +515,19 @@ func (m *ZebraFotaDeploymentSettings) SetScheduleDurationInDays(value *int32)() 
         m.scheduleDurationInDays = value
     }
 }
-// SetScheduleMode sets the scheduleMode property value. Deployment installation schedule mode. Default is installNow. All scheduled deployments date and time are in the device’s timezone. For Install Now, the date and time are in UTC (same date and time anywhere in the world).
+// SetScheduleMode sets the scheduleMode property value. Deployment installation schedule mode. Default is installNow. All scheduled deployments date and time are in the device’s timezone. For Install Now, the date and time are in UTC (same date and time anywhere in the world). Possible values are: installNow, scheduled, unknownFutureValue.
 func (m *ZebraFotaDeploymentSettings) SetScheduleMode(value *ZebraFotaScheduleMode)() {
     if m != nil {
         m.scheduleMode = value
     }
 }
-// SetTimeZoneOffsetInMinutes sets the timeZoneOffsetInMinutes property value. This attribute indicates the deployment time offset (e.g.`180` represents an offset of `+03:00`, and `-270` represents an offset of `-04:30`). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone
+// SetTimeZoneOffsetInMinutes sets the timeZoneOffsetInMinutes property value. This attribute indicates the deployment time offset (e.g.180 represents an offset of +03:00, and -270 represents an offset of -04:30). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone
 func (m *ZebraFotaDeploymentSettings) SetTimeZoneOffsetInMinutes(value *int32)() {
     if m != nil {
         m.timeZoneOffsetInMinutes = value
     }
 }
-// SetUpdateType sets the updateType property value. The deployment's update type. Possible values are custom, latest, and auto. When custom mode is set, the request must provide artifact values. When latest type is set, the latest released update becomes the target OS. If latest is specified, the firmware target values are not required. Note: latest may update the device to a new Android version. When the value is set to auto, the device always looks for the latest package available and tries to update whenever a new package is available. This continues until the admin cancels the auto update. While other modes return an ID starting with FOTA-x, auto mode returns an ID starting with AUTO-x.
+// SetUpdateType sets the updateType property value. The deployment's update type. Possible values are custom, latest, and auto. When custom mode is set, the request must provide artifact values. When latest type is set, the latest released update becomes the target OS. If latest is specified, the firmware target values are not required. Note: latest may update the device to a new Android version. When the value is set to auto, the device always looks for the latest package available and tries to update whenever a new package is available. This continues until the admin cancels the auto update. While other modes return an ID starting with FOTA-x, auto mode returns an ID starting with AUTO-x. Possible values are: custom, latest, auto, unknownFutureValue.
 func (m *ZebraFotaDeploymentSettings) SetUpdateType(value *ZebraFotaUpdateType)() {
     if m != nil {
         m.updateType = value

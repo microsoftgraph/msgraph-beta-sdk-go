@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type ITunesPairingMode int
 
 const (
+    // Pairing is not allowed
     DISALLOW_ITUNESPAIRINGMODE ITunesPairingMode = iota
+    // Pairing allowed
     ALLOW_ITUNESPAIRINGMODE
+    // Certificate required to pair with iTunes
     REQUIRESCERTIFICATE_ITUNESPAIRINGMODE
 )
 
 func (i ITunesPairingMode) String() string {
-    return []string{"DISALLOW", "ALLOW", "REQUIRESCERTIFICATE"}[i]
+    return []string{"disallow", "allow", "requiresCertificate"}[i]
 }
 func ParseITunesPairingMode(v string) (interface{}, error) {
     result := DISALLOW_ITUNESPAIRINGMODE
-    switch strings.ToUpper(v) {
-        case "DISALLOW":
+    switch v {
+        case "disallow":
             result = DISALLOW_ITUNESPAIRINGMODE
-        case "ALLOW":
+        case "allow":
             result = ALLOW_ITUNESPAIRINGMODE
-        case "REQUIRESCERTIFICATE":
+        case "requiresCertificate":
             result = REQUIRESCERTIFICATE_ITUNESPAIRINGMODE
         default:
             return 0, errors.New("Unknown ITunesPairingMode value: " + v)

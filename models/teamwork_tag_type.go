@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -11,12 +10,12 @@ const (
 )
 
 func (i TeamworkTagType) String() string {
-    return []string{"STANDARD"}[i]
+    return []string{"standard"}[i]
 }
 func ParseTeamworkTagType(v string) (interface{}, error) {
     result := STANDARD_TEAMWORKTAGTYPE
-    switch strings.ToUpper(v) {
-        case "STANDARD":
+    switch v {
+        case "standard":
             result = STANDARD_TEAMWORKTAGTYPE
         default:
             return 0, errors.New("Unknown TeamworkTagType value: " + v)

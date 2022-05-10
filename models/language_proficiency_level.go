@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i LanguageProficiencyLevel) String() string {
-    return []string{"ELEMENTARY", "CONVERSATIONAL", "LIMITEDWORKING", "PROFESSIONALWORKING", "FULLPROFESSIONAL", "NATIVEORBILINGUAL", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"elementary", "conversational", "limitedWorking", "professionalWorking", "fullProfessional", "nativeOrBilingual", "unknownFutureValue"}[i]
 }
 func ParseLanguageProficiencyLevel(v string) (interface{}, error) {
     result := ELEMENTARY_LANGUAGEPROFICIENCYLEVEL
-    switch strings.ToUpper(v) {
-        case "ELEMENTARY":
+    switch v {
+        case "elementary":
             result = ELEMENTARY_LANGUAGEPROFICIENCYLEVEL
-        case "CONVERSATIONAL":
+        case "conversational":
             result = CONVERSATIONAL_LANGUAGEPROFICIENCYLEVEL
-        case "LIMITEDWORKING":
+        case "limitedWorking":
             result = LIMITEDWORKING_LANGUAGEPROFICIENCYLEVEL
-        case "PROFESSIONALWORKING":
+        case "professionalWorking":
             result = PROFESSIONALWORKING_LANGUAGEPROFICIENCYLEVEL
-        case "FULLPROFESSIONAL":
+        case "fullProfessional":
             result = FULLPROFESSIONAL_LANGUAGEPROFICIENCYLEVEL
-        case "NATIVEORBILINGUAL":
+        case "nativeOrBilingual":
             result = NATIVEORBILINGUAL_LANGUAGEPROFICIENCYLEVEL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LANGUAGEPROFICIENCYLEVEL
         default:
             return 0, errors.New("Unknown LanguageProficiencyLevel value: " + v)

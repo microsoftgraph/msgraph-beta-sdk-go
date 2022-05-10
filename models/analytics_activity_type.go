@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of activityStatistics entities.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i AnalyticsActivityType) String() string {
-    return []string{"EMAIL", "MEETING", "FOCUS", "CHAT", "CALL"}[i]
+    return []string{"Email", "Meeting", "Focus", "Chat", "Call"}[i]
 }
 func ParseAnalyticsActivityType(v string) (interface{}, error) {
     result := EMAIL_ANALYTICSACTIVITYTYPE
-    switch strings.ToUpper(v) {
-        case "EMAIL":
+    switch v {
+        case "Email":
             result = EMAIL_ANALYTICSACTIVITYTYPE
-        case "MEETING":
+        case "Meeting":
             result = MEETING_ANALYTICSACTIVITYTYPE
-        case "FOCUS":
+        case "Focus":
             result = FOCUS_ANALYTICSACTIVITYTYPE
-        case "CHAT":
+        case "Chat":
             result = CHAT_ANALYTICSACTIVITYTYPE
-        case "CALL":
+        case "Call":
             result = CALL_ANALYTICSACTIVITYTYPE
         default:
             return 0, errors.New("Unknown AnalyticsActivityType value: " + v)

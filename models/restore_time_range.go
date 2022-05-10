@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the bulkRestoreCloudPc method.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i RestoreTimeRange) String() string {
-    return []string{"BEFORE", "AFTER", "BEFOREORAFTER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"before", "after", "beforeOrAfter", "unknownFutureValue"}[i]
 }
 func ParseRestoreTimeRange(v string) (interface{}, error) {
     result := BEFORE_RESTORETIMERANGE
-    switch strings.ToUpper(v) {
-        case "BEFORE":
+    switch v {
+        case "before":
             result = BEFORE_RESTORETIMERANGE
-        case "AFTER":
+        case "after":
             result = AFTER_RESTORETIMERANGE
-        case "BEFOREORAFTER":
+        case "beforeOrAfter":
             result = BEFOREORAFTER_RESTORETIMERANGE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RESTORETIMERANGE
         default:
             return 0, errors.New("Unknown RestoreTimeRange value: " + v)

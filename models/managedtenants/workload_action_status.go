@@ -1,6 +1,5 @@
 package managedtenants
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i WorkloadActionStatus) String() string {
-    return []string{"TOADDRESS", "COMPLETED", "ERROR", "TIMEOUT", "INPROGRESS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"toAddress", "completed", "error", "timeOut", "inProgress", "unknownFutureValue"}[i]
 }
 func ParseWorkloadActionStatus(v string) (interface{}, error) {
     result := TOADDRESS_WORKLOADACTIONSTATUS
-    switch strings.ToUpper(v) {
-        case "TOADDRESS":
+    switch v {
+        case "toAddress":
             result = TOADDRESS_WORKLOADACTIONSTATUS
-        case "COMPLETED":
+        case "completed":
             result = COMPLETED_WORKLOADACTIONSTATUS
-        case "ERROR":
+        case "error":
             result = ERROR_WORKLOADACTIONSTATUS
-        case "TIMEOUT":
+        case "timeOut":
             result = TIMEOUT_WORKLOADACTIONSTATUS
-        case "INPROGRESS":
+        case "inProgress":
             result = INPROGRESS_WORKLOADACTIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WORKLOADACTIONSTATUS
         default:
             return 0, errors.New("Unknown WorkloadActionStatus value: " + v)

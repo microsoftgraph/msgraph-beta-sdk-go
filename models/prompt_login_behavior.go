@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of domain entities.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i PromptLoginBehavior) String() string {
-    return []string{"TRANSLATETOFRESHPASSWORDAUTHENTICATION", "NATIVESUPPORT", "DISABLED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"translateToFreshPasswordAuthentication", "nativeSupport", "disabled", "unknownFutureValue"}[i]
 }
 func ParsePromptLoginBehavior(v string) (interface{}, error) {
     result := TRANSLATETOFRESHPASSWORDAUTHENTICATION_PROMPTLOGINBEHAVIOR
-    switch strings.ToUpper(v) {
-        case "TRANSLATETOFRESHPASSWORDAUTHENTICATION":
+    switch v {
+        case "translateToFreshPasswordAuthentication":
             result = TRANSLATETOFRESHPASSWORDAUTHENTICATION_PROMPTLOGINBEHAVIOR
-        case "NATIVESUPPORT":
+        case "nativeSupport":
             result = NATIVESUPPORT_PROMPTLOGINBEHAVIOR
-        case "DISABLED":
+        case "disabled":
             result = DISABLED_PROMPTLOGINBEHAVIOR
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROMPTLOGINBEHAVIOR
         default:
             return 0, errors.New("Unknown PromptLoginBehavior value: " + v)

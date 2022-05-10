@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the getCloudPcReviewStatus method.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i CloudPcUserAccessLevel) String() string {
-    return []string{"UNRESTRICTED", "RESTRICTED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unrestricted", "restricted", "unknownFutureValue"}[i]
 }
 func ParseCloudPcUserAccessLevel(v string) (interface{}, error) {
     result := UNRESTRICTED_CLOUDPCUSERACCESSLEVEL
-    switch strings.ToUpper(v) {
-        case "UNRESTRICTED":
+    switch v {
+        case "unrestricted":
             result = UNRESTRICTED_CLOUDPCUSERACCESSLEVEL
-        case "RESTRICTED":
+        case "restricted":
             result = RESTRICTED_CLOUDPCUSERACCESSLEVEL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCUSERACCESSLEVEL
         default:
             return 0, errors.New("Unknown CloudPcUserAccessLevel value: " + v)

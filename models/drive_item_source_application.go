@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -18,26 +17,26 @@ const (
 )
 
 func (i DriveItemSourceApplication) String() string {
-    return []string{"TEAMS", "YAMMER", "SHAREPOINT", "ONEDRIVE", "STREAM", "POWERPOINT", "OFFICE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"teams", "yammer", "sharePoint", "oneDrive", "stream", "powerPoint", "office", "unknownFutureValue"}[i]
 }
 func ParseDriveItemSourceApplication(v string) (interface{}, error) {
     result := TEAMS_DRIVEITEMSOURCEAPPLICATION
-    switch strings.ToUpper(v) {
-        case "TEAMS":
+    switch v {
+        case "teams":
             result = TEAMS_DRIVEITEMSOURCEAPPLICATION
-        case "YAMMER":
+        case "yammer":
             result = YAMMER_DRIVEITEMSOURCEAPPLICATION
-        case "SHAREPOINT":
+        case "sharePoint":
             result = SHAREPOINT_DRIVEITEMSOURCEAPPLICATION
-        case "ONEDRIVE":
+        case "oneDrive":
             result = ONEDRIVE_DRIVEITEMSOURCEAPPLICATION
-        case "STREAM":
+        case "stream":
             result = STREAM_DRIVEITEMSOURCEAPPLICATION
-        case "POWERPOINT":
+        case "powerPoint":
             result = POWERPOINT_DRIVEITEMSOURCEAPPLICATION
-        case "OFFICE":
+        case "office":
             result = OFFICE_DRIVEITEMSOURCEAPPLICATION
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DRIVEITEMSOURCEAPPLICATION
         default:
             return 0, errors.New("Unknown DriveItemSourceApplication value: " + v)

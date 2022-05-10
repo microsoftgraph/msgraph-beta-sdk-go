@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i ClientCredentialType) String() string {
-    return []string{"NONE", "CLIENTSECRET", "CLIENTASSERTION", "FEDERATEDIDENTITYCREDENTIAL", "MANAGEDIDENTITY", "CERTIFICATE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "clientSecret", "clientAssertion", "federatedIdentityCredential", "managedIdentity", "certificate", "unknownFutureValue"}[i]
 }
 func ParseClientCredentialType(v string) (interface{}, error) {
     result := NONE_CLIENTCREDENTIALTYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_CLIENTCREDENTIALTYPE
-        case "CLIENTSECRET":
+        case "clientSecret":
             result = CLIENTSECRET_CLIENTCREDENTIALTYPE
-        case "CLIENTASSERTION":
+        case "clientAssertion":
             result = CLIENTASSERTION_CLIENTCREDENTIALTYPE
-        case "FEDERATEDIDENTITYCREDENTIAL":
+        case "federatedIdentityCredential":
             result = FEDERATEDIDENTITYCREDENTIAL_CLIENTCREDENTIALTYPE
-        case "MANAGEDIDENTITY":
+        case "managedIdentity":
             result = MANAGEDIDENTITY_CLIENTCREDENTIALTYPE
-        case "CERTIFICATE":
+        case "certificate":
             result = CERTIFICATE_CLIENTCREDENTIALTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLIENTCREDENTIALTYPE
         default:
             return 0, errors.New("Unknown ClientCredentialType value: " + v)

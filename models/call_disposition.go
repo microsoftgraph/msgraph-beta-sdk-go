@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the redirect method.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i CallDisposition) String() string {
-    return []string{"DEFAULT_ESCAPED", "SIMULTANEOUSRING", "FORWARD"}[i]
+    return []string{"default", "simultaneousRing", "forward"}[i]
 }
 func ParseCallDisposition(v string) (interface{}, error) {
     result := DEFAULT_ESCAPED_CALLDISPOSITION
-    switch strings.ToUpper(v) {
-        case "DEFAULT_ESCAPED":
+    switch v {
+        case "default":
             result = DEFAULT_ESCAPED_CALLDISPOSITION
-        case "SIMULTANEOUSRING":
+        case "simultaneousRing":
             result = SIMULTANEOUSRING_CALLDISPOSITION
-        case "FORWARD":
+        case "forward":
             result = FORWARD_CALLDISPOSITION
         default:
             return 0, errors.New("Unknown CallDisposition value: " + v)

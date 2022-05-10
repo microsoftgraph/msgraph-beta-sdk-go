@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of privilegedApproval entities.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i ApprovalState) String() string {
-    return []string{"PENDING", "APPROVED", "DENIED", "ABORTED", "CANCELED"}[i]
+    return []string{"pending", "approved", "denied", "aborted", "canceled"}[i]
 }
 func ParseApprovalState(v string) (interface{}, error) {
     result := PENDING_APPROVALSTATE
-    switch strings.ToUpper(v) {
-        case "PENDING":
+    switch v {
+        case "pending":
             result = PENDING_APPROVALSTATE
-        case "APPROVED":
+        case "approved":
             result = APPROVED_APPROVALSTATE
-        case "DENIED":
+        case "denied":
             result = DENIED_APPROVALSTATE
-        case "ABORTED":
+        case "aborted":
             result = ABORTED_APPROVALSTATE
-        case "CANCELED":
+        case "canceled":
             result = CANCELED_APPROVALSTATE
         default:
             return 0, errors.New("Unknown ApprovalState value: " + v)

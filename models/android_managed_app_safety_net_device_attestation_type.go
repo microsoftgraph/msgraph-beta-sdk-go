@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type AndroidManagedAppSafetyNetDeviceAttestationType int
 
 const (
+    // no requirement set
     NONE_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE AndroidManagedAppSafetyNetDeviceAttestationType = iota
+    // require that Android device passes SafetyNet Basic Integrity validation
     BASICINTEGRITY_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE
+    // require that Android device passes SafetyNet Basic Integrity and Device Certification validations
     BASICINTEGRITYANDDEVICECERTIFICATION_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE
 )
 
 func (i AndroidManagedAppSafetyNetDeviceAttestationType) String() string {
-    return []string{"NONE", "BASICINTEGRITY", "BASICINTEGRITYANDDEVICECERTIFICATION"}[i]
+    return []string{"none", "basicIntegrity", "basicIntegrityAndDeviceCertification"}[i]
 }
 func ParseAndroidManagedAppSafetyNetDeviceAttestationType(v string) (interface{}, error) {
     result := NONE_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE
-        case "BASICINTEGRITY":
+        case "basicIntegrity":
             result = BASICINTEGRITY_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE
-        case "BASICINTEGRITYANDDEVICECERTIFICATION":
+        case "basicIntegrityAndDeviceCertification":
             result = BASICINTEGRITYANDDEVICECERTIFICATION_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE
         default:
             return 0, errors.New("Unknown AndroidManagedAppSafetyNetDeviceAttestationType value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the restart method.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i SynchronizationJobRestartScope) String() string {
-    return []string{"NONE", "CONNECTORDATASTORE", "ESCROWS", "WATERMARK", "QUARANTINESTATE", "FULL", "FORCEDELETES"}[i]
+    return []string{"None", "ConnectorDataStore", "Escrows", "Watermark", "QuarantineState", "Full", "ForceDeletes"}[i]
 }
 func ParseSynchronizationJobRestartScope(v string) (interface{}, error) {
     result := NONE_SYNCHRONIZATIONJOBRESTARTSCOPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "None":
             result = NONE_SYNCHRONIZATIONJOBRESTARTSCOPE
-        case "CONNECTORDATASTORE":
+        case "ConnectorDataStore":
             result = CONNECTORDATASTORE_SYNCHRONIZATIONJOBRESTARTSCOPE
-        case "ESCROWS":
+        case "Escrows":
             result = ESCROWS_SYNCHRONIZATIONJOBRESTARTSCOPE
-        case "WATERMARK":
+        case "Watermark":
             result = WATERMARK_SYNCHRONIZATIONJOBRESTARTSCOPE
-        case "QUARANTINESTATE":
+        case "QuarantineState":
             result = QUARANTINESTATE_SYNCHRONIZATIONJOBRESTARTSCOPE
-        case "FULL":
+        case "Full":
             result = FULL_SYNCHRONIZATIONJOBRESTARTSCOPE
-        case "FORCEDELETES":
+        case "ForceDeletes":
             result = FORCEDELETES_SYNCHRONIZATIONJOBRESTARTSCOPE
         default:
             return 0, errors.New("Unknown SynchronizationJobRestartScope value: " + v)

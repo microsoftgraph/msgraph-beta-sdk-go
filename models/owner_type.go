@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type OwnerType int
 
 const (
+    // Unknown.
     UNKNOWN_OWNERTYPE OwnerType = iota
+    // Owned by company.
     COMPANY_OWNERTYPE
+    // Owned by person.
     PERSONAL_OWNERTYPE
 )
 
 func (i OwnerType) String() string {
-    return []string{"UNKNOWN", "COMPANY", "PERSONAL"}[i]
+    return []string{"unknown", "company", "personal"}[i]
 }
 func ParseOwnerType(v string) (interface{}, error) {
     result := UNKNOWN_OWNERTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_OWNERTYPE
-        case "COMPANY":
+        case "company":
             result = COMPANY_OWNERTYPE
-        case "PERSONAL":
+        case "personal":
             result = PERSONAL_OWNERTYPE
         default:
             return 0, errors.New("Unknown OwnerType value: " + v)

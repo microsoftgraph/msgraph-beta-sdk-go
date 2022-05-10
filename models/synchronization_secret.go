@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of application entities.
@@ -55,100 +54,100 @@ const (
 )
 
 func (i SynchronizationSecret) String() string {
-    return []string{"NONE", "USERNAME", "PASSWORD", "SECRETTOKEN", "APPKEY", "BASEADDRESS", "CLIENTIDENTIFIER", "CLIENTSECRET", "SINGLESIGNONTYPE", "SANDBOX", "URL", "DOMAIN", "CONSUMERKEY", "CONSUMERSECRET", "TOKENKEY", "TOKENEXPIRATION", "OAUTH2ACCESSTOKEN", "OAUTH2ACCESSTOKENCREATIONTIME", "OAUTH2REFRESHTOKEN", "SYNCALL", "INSTANCENAME", "OAUTH2CLIENTID", "OAUTH2CLIENTSECRET", "COMPANYID", "UPDATEKEYONSOFTDELETE", "SYNCHRONIZATIONSCHEDULE", "SYSTEMOFRECORD", "SANDBOXNAME", "ENFORCEDOMAIN", "SYNCNOTIFICATIONSETTINGS", "SKIPOUTOFSCOPEDELETIONS", "OAUTH2AUTHORIZATIONCODE", "OAUTH2REDIRECTURI", "APPLICATIONTEMPLATEIDENTIFIER", "OAUTH2TOKENEXCHANGEURI", "OAUTH2AUTHORIZATIONURI", "AUTHENTICATIONTYPE", "SERVER", "PERFORMINBOUNDENTITLEMENTGRANTS", "HARDDELETESENABLED", "SYNCAGENTCOMPATIBILITYKEY", "SYNCAGENTADCONTAINER", "VALIDATEDOMAIN", "TESTREFERENCES", "CONNECTIONSTRING"}[i]
+    return []string{"None", "UserName", "Password", "SecretToken", "AppKey", "BaseAddress", "ClientIdentifier", "ClientSecret", "SingleSignOnType", "Sandbox", "Url", "Domain", "ConsumerKey", "ConsumerSecret", "TokenKey", "TokenExpiration", "Oauth2AccessToken", "Oauth2AccessTokenCreationTime", "Oauth2RefreshToken", "SyncAll", "InstanceName", "Oauth2ClientId", "Oauth2ClientSecret", "CompanyId", "UpdateKeyOnSoftDelete", "SynchronizationSchedule", "SystemOfRecord", "SandboxName", "EnforceDomain", "SyncNotificationSettings", "SkipOutOfScopeDeletions", "Oauth2AuthorizationCode", "Oauth2RedirectUri", "ApplicationTemplateIdentifier", "Oauth2TokenExchangeUri", "Oauth2AuthorizationUri", "AuthenticationType", "Server", "PerformInboundEntitlementGrants", "HardDeletesEnabled", "SyncAgentCompatibilityKey", "SyncAgentADContainer", "ValidateDomain", "TestReferences", "ConnectionString"}[i]
 }
 func ParseSynchronizationSecret(v string) (interface{}, error) {
     result := NONE_SYNCHRONIZATIONSECRET
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "None":
             result = NONE_SYNCHRONIZATIONSECRET
-        case "USERNAME":
+        case "UserName":
             result = USERNAME_SYNCHRONIZATIONSECRET
-        case "PASSWORD":
+        case "Password":
             result = PASSWORD_SYNCHRONIZATIONSECRET
-        case "SECRETTOKEN":
+        case "SecretToken":
             result = SECRETTOKEN_SYNCHRONIZATIONSECRET
-        case "APPKEY":
+        case "AppKey":
             result = APPKEY_SYNCHRONIZATIONSECRET
-        case "BASEADDRESS":
+        case "BaseAddress":
             result = BASEADDRESS_SYNCHRONIZATIONSECRET
-        case "CLIENTIDENTIFIER":
+        case "ClientIdentifier":
             result = CLIENTIDENTIFIER_SYNCHRONIZATIONSECRET
-        case "CLIENTSECRET":
+        case "ClientSecret":
             result = CLIENTSECRET_SYNCHRONIZATIONSECRET
-        case "SINGLESIGNONTYPE":
+        case "SingleSignOnType":
             result = SINGLESIGNONTYPE_SYNCHRONIZATIONSECRET
-        case "SANDBOX":
+        case "Sandbox":
             result = SANDBOX_SYNCHRONIZATIONSECRET
-        case "URL":
+        case "Url":
             result = URL_SYNCHRONIZATIONSECRET
-        case "DOMAIN":
+        case "Domain":
             result = DOMAIN_SYNCHRONIZATIONSECRET
-        case "CONSUMERKEY":
+        case "ConsumerKey":
             result = CONSUMERKEY_SYNCHRONIZATIONSECRET
-        case "CONSUMERSECRET":
+        case "ConsumerSecret":
             result = CONSUMERSECRET_SYNCHRONIZATIONSECRET
-        case "TOKENKEY":
+        case "TokenKey":
             result = TOKENKEY_SYNCHRONIZATIONSECRET
-        case "TOKENEXPIRATION":
+        case "TokenExpiration":
             result = TOKENEXPIRATION_SYNCHRONIZATIONSECRET
-        case "OAUTH2ACCESSTOKEN":
+        case "Oauth2AccessToken":
             result = OAUTH2ACCESSTOKEN_SYNCHRONIZATIONSECRET
-        case "OAUTH2ACCESSTOKENCREATIONTIME":
+        case "Oauth2AccessTokenCreationTime":
             result = OAUTH2ACCESSTOKENCREATIONTIME_SYNCHRONIZATIONSECRET
-        case "OAUTH2REFRESHTOKEN":
+        case "Oauth2RefreshToken":
             result = OAUTH2REFRESHTOKEN_SYNCHRONIZATIONSECRET
-        case "SYNCALL":
+        case "SyncAll":
             result = SYNCALL_SYNCHRONIZATIONSECRET
-        case "INSTANCENAME":
+        case "InstanceName":
             result = INSTANCENAME_SYNCHRONIZATIONSECRET
-        case "OAUTH2CLIENTID":
+        case "Oauth2ClientId":
             result = OAUTH2CLIENTID_SYNCHRONIZATIONSECRET
-        case "OAUTH2CLIENTSECRET":
+        case "Oauth2ClientSecret":
             result = OAUTH2CLIENTSECRET_SYNCHRONIZATIONSECRET
-        case "COMPANYID":
+        case "CompanyId":
             result = COMPANYID_SYNCHRONIZATIONSECRET
-        case "UPDATEKEYONSOFTDELETE":
+        case "UpdateKeyOnSoftDelete":
             result = UPDATEKEYONSOFTDELETE_SYNCHRONIZATIONSECRET
-        case "SYNCHRONIZATIONSCHEDULE":
+        case "SynchronizationSchedule":
             result = SYNCHRONIZATIONSCHEDULE_SYNCHRONIZATIONSECRET
-        case "SYSTEMOFRECORD":
+        case "SystemOfRecord":
             result = SYSTEMOFRECORD_SYNCHRONIZATIONSECRET
-        case "SANDBOXNAME":
+        case "SandboxName":
             result = SANDBOXNAME_SYNCHRONIZATIONSECRET
-        case "ENFORCEDOMAIN":
+        case "EnforceDomain":
             result = ENFORCEDOMAIN_SYNCHRONIZATIONSECRET
-        case "SYNCNOTIFICATIONSETTINGS":
+        case "SyncNotificationSettings":
             result = SYNCNOTIFICATIONSETTINGS_SYNCHRONIZATIONSECRET
-        case "SKIPOUTOFSCOPEDELETIONS":
+        case "SkipOutOfScopeDeletions":
             result = SKIPOUTOFSCOPEDELETIONS_SYNCHRONIZATIONSECRET
-        case "OAUTH2AUTHORIZATIONCODE":
+        case "Oauth2AuthorizationCode":
             result = OAUTH2AUTHORIZATIONCODE_SYNCHRONIZATIONSECRET
-        case "OAUTH2REDIRECTURI":
+        case "Oauth2RedirectUri":
             result = OAUTH2REDIRECTURI_SYNCHRONIZATIONSECRET
-        case "APPLICATIONTEMPLATEIDENTIFIER":
+        case "ApplicationTemplateIdentifier":
             result = APPLICATIONTEMPLATEIDENTIFIER_SYNCHRONIZATIONSECRET
-        case "OAUTH2TOKENEXCHANGEURI":
+        case "Oauth2TokenExchangeUri":
             result = OAUTH2TOKENEXCHANGEURI_SYNCHRONIZATIONSECRET
-        case "OAUTH2AUTHORIZATIONURI":
+        case "Oauth2AuthorizationUri":
             result = OAUTH2AUTHORIZATIONURI_SYNCHRONIZATIONSECRET
-        case "AUTHENTICATIONTYPE":
+        case "AuthenticationType":
             result = AUTHENTICATIONTYPE_SYNCHRONIZATIONSECRET
-        case "SERVER":
+        case "Server":
             result = SERVER_SYNCHRONIZATIONSECRET
-        case "PERFORMINBOUNDENTITLEMENTGRANTS":
+        case "PerformInboundEntitlementGrants":
             result = PERFORMINBOUNDENTITLEMENTGRANTS_SYNCHRONIZATIONSECRET
-        case "HARDDELETESENABLED":
+        case "HardDeletesEnabled":
             result = HARDDELETESENABLED_SYNCHRONIZATIONSECRET
-        case "SYNCAGENTCOMPATIBILITYKEY":
+        case "SyncAgentCompatibilityKey":
             result = SYNCAGENTCOMPATIBILITYKEY_SYNCHRONIZATIONSECRET
-        case "SYNCAGENTADCONTAINER":
+        case "SyncAgentADContainer":
             result = SYNCAGENTADCONTAINER_SYNCHRONIZATIONSECRET
-        case "VALIDATEDOMAIN":
+        case "ValidateDomain":
             result = VALIDATEDOMAIN_SYNCHRONIZATIONSECRET
-        case "TESTREFERENCES":
+        case "TestReferences":
             result = TESTREFERENCES_SYNCHRONIZATIONSECRET
-        case "CONNECTIONSTRING":
+        case "ConnectionString":
             result = CONNECTIONSTRING_SYNCHRONIZATIONSECRET
         default:
             return 0, errors.New("Unknown SynchronizationSecret value: " + v)

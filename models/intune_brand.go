@@ -48,7 +48,7 @@ type IntuneBrand struct {
     privacyUrl *string
     // List of scope tags assigned to the default branding profile
     roleScopeTagIds []string
-    // SendDeviceOwnershipChangePushNotification will be deprecated in 06/2022 and will stop returning a value in 07/2022. A boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
+    // Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
     sendDeviceOwnershipChangePushNotification *bool
     // Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
     showAzureADEnterpriseApps *bool
@@ -525,7 +525,7 @@ func (m *IntuneBrand) GetRoleScopeTagIds()([]string) {
         return m.roleScopeTagIds
     }
 }
-// GetSendDeviceOwnershipChangePushNotification gets the sendDeviceOwnershipChangePushNotification property value. SendDeviceOwnershipChangePushNotification will be deprecated in 06/2022 and will stop returning a value in 07/2022. A boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
+// GetSendDeviceOwnershipChangePushNotification gets the sendDeviceOwnershipChangePushNotification property value. Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
 func (m *IntuneBrand) GetSendDeviceOwnershipChangePushNotification()(*bool) {
     if m == nil {
         return nil
@@ -884,7 +884,7 @@ func (m *IntuneBrand) SetRoleScopeTagIds(value []string)() {
         m.roleScopeTagIds = value
     }
 }
-// SetSendDeviceOwnershipChangePushNotification sets the sendDeviceOwnershipChangePushNotification property value. SendDeviceOwnershipChangePushNotification will be deprecated in 06/2022 and will stop returning a value in 07/2022. A boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
+// SetSendDeviceOwnershipChangePushNotification sets the sendDeviceOwnershipChangePushNotification property value. Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
 func (m *IntuneBrand) SetSendDeviceOwnershipChangePushNotification(value *bool)() {
     if m != nil {
         m.sendDeviceOwnershipChangePushNotification = value

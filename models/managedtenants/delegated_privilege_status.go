@@ -1,6 +1,5 @@
 package managedtenants
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i DelegatedPrivilegeStatus) String() string {
-    return []string{"NONE", "DELEGATEDADMINPRIVILEGES", "UNKNOWNFUTUREVALUE", "GRANULARDELEGATEDADMINPRIVILEGES", "DELEGATEDANDGRANULARDELEGETEDADMINPRIVILEGES"}[i]
+    return []string{"none", "delegatedAdminPrivileges", "unknownFutureValue", "granularDelegatedAdminPrivileges", "delegatedAndGranularDelegetedAdminPrivileges"}[i]
 }
 func ParseDelegatedPrivilegeStatus(v string) (interface{}, error) {
     result := NONE_DELEGATEDPRIVILEGESTATUS
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DELEGATEDPRIVILEGESTATUS
-        case "DELEGATEDADMINPRIVILEGES":
+        case "delegatedAdminPrivileges":
             result = DELEGATEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DELEGATEDPRIVILEGESTATUS
-        case "GRANULARDELEGATEDADMINPRIVILEGES":
+        case "granularDelegatedAdminPrivileges":
             result = GRANULARDELEGATEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
-        case "DELEGATEDANDGRANULARDELEGETEDADMINPRIVILEGES":
+        case "delegatedAndGranularDelegetedAdminPrivileges":
             result = DELEGATEDANDGRANULARDELEGETEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
         default:
             return 0, errors.New("Unknown DelegatedPrivilegeStatus value: " + v)

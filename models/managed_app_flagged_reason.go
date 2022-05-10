@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type ManagedAppFlaggedReason int
 
 const (
+    // No issue.
     NONE_MANAGEDAPPFLAGGEDREASON ManagedAppFlaggedReason = iota
+    // The app registration is running on a rooted/unlocked device.
     ROOTEDDEVICE_MANAGEDAPPFLAGGEDREASON
+    // The app registration is running on an Android device on which the bootloader is unlocked.
     ANDROIDBOOTLOADERUNLOCKED_MANAGEDAPPFLAGGEDREASON
+    // The app registration is running on an Android device on which the factory ROM has been modified.
     ANDROIDFACTORYROMMODIFIED_MANAGEDAPPFLAGGEDREASON
 )
 
 func (i ManagedAppFlaggedReason) String() string {
-    return []string{"NONE", "ROOTEDDEVICE", "ANDROIDBOOTLOADERUNLOCKED", "ANDROIDFACTORYROMMODIFIED"}[i]
+    return []string{"none", "rootedDevice", "androidBootloaderUnlocked", "androidFactoryRomModified"}[i]
 }
 func ParseManagedAppFlaggedReason(v string) (interface{}, error) {
     result := NONE_MANAGEDAPPFLAGGEDREASON
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_MANAGEDAPPFLAGGEDREASON
-        case "ROOTEDDEVICE":
+        case "rootedDevice":
             result = ROOTEDDEVICE_MANAGEDAPPFLAGGEDREASON
-        case "ANDROIDBOOTLOADERUNLOCKED":
+        case "androidBootloaderUnlocked":
             result = ANDROIDBOOTLOADERUNLOCKED_MANAGEDAPPFLAGGEDREASON
-        case "ANDROIDFACTORYROMMODIFIED":
+        case "androidFactoryRomModified":
             result = ANDROIDFACTORYROMMODIFIED_MANAGEDAPPFLAGGEDREASON
         default:
             return 0, errors.New("Unknown ManagedAppFlaggedReason value: " + v)

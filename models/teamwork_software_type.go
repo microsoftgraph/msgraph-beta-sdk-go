@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the updateSoftware method.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i TeamworkSoftwareType) String() string {
-    return []string{"ADMINAGENT", "OPERATINGSYSTEM", "TEAMSCLIENT", "FIRMWARE", "PARTNERAGENT", "COMPANYPORTAL", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"adminAgent", "operatingSystem", "teamsClient", "firmware", "partnerAgent", "companyPortal", "unknownFutureValue"}[i]
 }
 func ParseTeamworkSoftwareType(v string) (interface{}, error) {
     result := ADMINAGENT_TEAMWORKSOFTWARETYPE
-    switch strings.ToUpper(v) {
-        case "ADMINAGENT":
+    switch v {
+        case "adminAgent":
             result = ADMINAGENT_TEAMWORKSOFTWARETYPE
-        case "OPERATINGSYSTEM":
+        case "operatingSystem":
             result = OPERATINGSYSTEM_TEAMWORKSOFTWARETYPE
-        case "TEAMSCLIENT":
+        case "teamsClient":
             result = TEAMSCLIENT_TEAMWORKSOFTWARETYPE
-        case "FIRMWARE":
+        case "firmware":
             result = FIRMWARE_TEAMWORKSOFTWARETYPE
-        case "PARTNERAGENT":
+        case "partnerAgent":
             result = PARTNERAGENT_TEAMWORKSOFTWARETYPE
-        case "COMPANYPORTAL":
+        case "companyPortal":
             result = COMPANYPORTAL_TEAMWORKSOFTWARETYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKSOFTWARETYPE
         default:
             return 0, errors.New("Unknown TeamworkSoftwareType value: " + v)

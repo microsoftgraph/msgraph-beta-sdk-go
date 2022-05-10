@@ -1,100 +1,126 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type DeviceType int
 
 const (
+    // Desktop.
     DESKTOP_DEVICETYPE DeviceType = iota
+    // WindowsRT.
     WINDOWSRT_DEVICETYPE
+    // WinMO6.
     WINMO6_DEVICETYPE
+    // Nokia.
     NOKIA_DEVICETYPE
+    // Windows phone.
     WINDOWSPHONE_DEVICETYPE
+    // Mac.
     MAC_DEVICETYPE
+    // WinCE.
     WINCE_DEVICETYPE
+    // WinEmbedded.
     WINEMBEDDED_DEVICETYPE
+    // iPhone.
     IPHONE_DEVICETYPE
+    // iPad.
     IPAD_DEVICETYPE
+    // iPodTouch.
     IPOD_DEVICETYPE
+    // Android.
     ANDROID_DEVICETYPE
+    // iSocConsumer.
     ISOCCONSUMER_DEVICETYPE
+    // Unix.
     UNIX_DEVICETYPE
+    // Mac OS X client using built in MDM agent.
     MACMDM_DEVICETYPE
+    // Representing the fancy Windows 10 goggles.
     HOLOLENS_DEVICETYPE
+    // Surface HUB device.
     SURFACEHUB_DEVICETYPE
+    // Android for work device.
     ANDROIDFORWORK_DEVICETYPE
+    // Android enterprise device.
     ANDROIDENTERPRISE_DEVICETYPE
+    // Windows 10x device.
     WINDOWS10X_DEVICETYPE
+    // Android non Google managed device.
     ANDROIDNGMS_DEVICETYPE
+    // ChromeOS device.
     CHROMEOS_DEVICETYPE
+    // Linux device.
     LINUX_DEVICETYPE
+    // Blackberry.
     BLACKBERRY_DEVICETYPE
+    // Palm.
     PALM_DEVICETYPE
+    // Represents that the device type is unknown.
     UNKNOWN_DEVICETYPE
+    // Cloud PC device.
     CLOUDPC_DEVICETYPE
 )
 
 func (i DeviceType) String() string {
-    return []string{"DESKTOP", "WINDOWSRT", "WINMO6", "NOKIA", "WINDOWSPHONE", "MAC", "WINCE", "WINEMBEDDED", "IPHONE", "IPAD", "IPOD", "ANDROID", "ISOCCONSUMER", "UNIX", "MACMDM", "HOLOLENS", "SURFACEHUB", "ANDROIDFORWORK", "ANDROIDENTERPRISE", "WINDOWS10X", "ANDROIDNGMS", "CHROMEOS", "LINUX", "BLACKBERRY", "PALM", "UNKNOWN", "CLOUDPC"}[i]
+    return []string{"desktop", "windowsRT", "winMO6", "nokia", "windowsPhone", "mac", "winCE", "winEmbedded", "iPhone", "iPad", "iPod", "android", "iSocConsumer", "unix", "macMDM", "holoLens", "surfaceHub", "androidForWork", "androidEnterprise", "windows10x", "androidnGMS", "chromeOS", "linux", "blackberry", "palm", "unknown", "cloudPC"}[i]
 }
 func ParseDeviceType(v string) (interface{}, error) {
     result := DESKTOP_DEVICETYPE
-    switch strings.ToUpper(v) {
-        case "DESKTOP":
+    switch v {
+        case "desktop":
             result = DESKTOP_DEVICETYPE
-        case "WINDOWSRT":
+        case "windowsRT":
             result = WINDOWSRT_DEVICETYPE
-        case "WINMO6":
+        case "winMO6":
             result = WINMO6_DEVICETYPE
-        case "NOKIA":
+        case "nokia":
             result = NOKIA_DEVICETYPE
-        case "WINDOWSPHONE":
+        case "windowsPhone":
             result = WINDOWSPHONE_DEVICETYPE
-        case "MAC":
+        case "mac":
             result = MAC_DEVICETYPE
-        case "WINCE":
+        case "winCE":
             result = WINCE_DEVICETYPE
-        case "WINEMBEDDED":
+        case "winEmbedded":
             result = WINEMBEDDED_DEVICETYPE
-        case "IPHONE":
+        case "iPhone":
             result = IPHONE_DEVICETYPE
-        case "IPAD":
+        case "iPad":
             result = IPAD_DEVICETYPE
-        case "IPOD":
+        case "iPod":
             result = IPOD_DEVICETYPE
-        case "ANDROID":
+        case "android":
             result = ANDROID_DEVICETYPE
-        case "ISOCCONSUMER":
+        case "iSocConsumer":
             result = ISOCCONSUMER_DEVICETYPE
-        case "UNIX":
+        case "unix":
             result = UNIX_DEVICETYPE
-        case "MACMDM":
+        case "macMDM":
             result = MACMDM_DEVICETYPE
-        case "HOLOLENS":
+        case "holoLens":
             result = HOLOLENS_DEVICETYPE
-        case "SURFACEHUB":
+        case "surfaceHub":
             result = SURFACEHUB_DEVICETYPE
-        case "ANDROIDFORWORK":
+        case "androidForWork":
             result = ANDROIDFORWORK_DEVICETYPE
-        case "ANDROIDENTERPRISE":
+        case "androidEnterprise":
             result = ANDROIDENTERPRISE_DEVICETYPE
-        case "WINDOWS10X":
+        case "windows10x":
             result = WINDOWS10X_DEVICETYPE
-        case "ANDROIDNGMS":
+        case "androidnGMS":
             result = ANDROIDNGMS_DEVICETYPE
-        case "CHROMEOS":
+        case "chromeOS":
             result = CHROMEOS_DEVICETYPE
-        case "LINUX":
+        case "linux":
             result = LINUX_DEVICETYPE
-        case "BLACKBERRY":
+        case "blackberry":
             result = BLACKBERRY_DEVICETYPE
-        case "PALM":
+        case "palm":
             result = PALM_DEVICETYPE
-        case "UNKNOWN":
+        case "unknown":
             result = UNKNOWN_DEVICETYPE
-        case "CLOUDPC":
+        case "cloudPC":
             result = CLOUDPC_DEVICETYPE
         default:
             return 0, errors.New("Unknown DeviceType value: " + v)

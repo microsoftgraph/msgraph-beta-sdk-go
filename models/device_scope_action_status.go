@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the triggerDeviceScopeAction method.
 type DeviceScopeActionStatus int
 
 const (
+    // Indicates the device scope action failed to trigger.
     FAILED_DEVICESCOPEACTIONSTATUS DeviceScopeActionStatus = iota
+    // Indicates the device scope action was successfully triggered.
     SUCCEEDED_DEVICESCOPEACTIONSTATUS
+    // Placeholder value for future expansion.
     UNKNOWNFUTUREVALUE_DEVICESCOPEACTIONSTATUS
 )
 
 func (i DeviceScopeActionStatus) String() string {
-    return []string{"FAILED", "SUCCEEDED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"failed", "succeeded", "unknownFutureValue"}[i]
 }
 func ParseDeviceScopeActionStatus(v string) (interface{}, error) {
     result := FAILED_DEVICESCOPEACTIONSTATUS
-    switch strings.ToUpper(v) {
-        case "FAILED":
+    switch v {
+        case "failed":
             result = FAILED_DEVICESCOPEACTIONSTATUS
-        case "SUCCEEDED":
+        case "succeeded":
             result = SUCCEEDED_DEVICESCOPEACTIONSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICESCOPEACTIONSTATUS
         default:
             return 0, errors.New("Unknown DeviceScopeActionStatus value: " + v)

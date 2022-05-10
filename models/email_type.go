@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -15,20 +14,20 @@ const (
 )
 
 func (i EmailType) String() string {
-    return []string{"UNKNOWN", "WORK", "PERSONAL", "MAIN", "OTHER"}[i]
+    return []string{"unknown", "work", "personal", "main", "other"}[i]
 }
 func ParseEmailType(v string) (interface{}, error) {
     result := UNKNOWN_EMAILTYPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_EMAILTYPE
-        case "WORK":
+        case "work":
             result = WORK_EMAILTYPE
-        case "PERSONAL":
+        case "personal":
             result = PERSONAL_EMAILTYPE
-        case "MAIN":
+        case "main":
             result = MAIN_EMAILTYPE
-        case "OTHER":
+        case "other":
             result = OTHER_EMAILTYPE
         default:
             return 0, errors.New("Unknown EmailType value: " + v)

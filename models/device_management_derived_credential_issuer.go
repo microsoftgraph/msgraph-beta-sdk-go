@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementDerivedCredentialIssuer int
 
 const (
+    // Intercede
     INTERCEDE_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER DeviceManagementDerivedCredentialIssuer = iota
+    // Entrust
     ENTRUSTDATACARD_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
+    // Purebred
     PUREBRED_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
+    // XTec
     XTEC_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
 )
 
 func (i DeviceManagementDerivedCredentialIssuer) String() string {
-    return []string{"INTERCEDE", "ENTRUSTDATACARD", "PUREBRED", "XTEC"}[i]
+    return []string{"intercede", "entrustDatacard", "purebred", "xTec"}[i]
 }
 func ParseDeviceManagementDerivedCredentialIssuer(v string) (interface{}, error) {
     result := INTERCEDE_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
-    switch strings.ToUpper(v) {
-        case "INTERCEDE":
+    switch v {
+        case "intercede":
             result = INTERCEDE_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
-        case "ENTRUSTDATACARD":
+        case "entrustDatacard":
             result = ENTRUSTDATACARD_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
-        case "PUREBRED":
+        case "purebred":
             result = PUREBRED_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
-        case "XTEC":
+        case "xTec":
             result = XTEC_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
         default:
             return 0, errors.New("Unknown DeviceManagementDerivedCredentialIssuer value: " + v)

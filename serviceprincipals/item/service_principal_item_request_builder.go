@@ -67,7 +67,7 @@ type ServicePrincipalItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ServicePrincipalItemRequestBuilderGetQueryParameters get entity from servicePrincipals by key
+// ServicePrincipalItemRequestBuilderGetQueryParameters get servicePrincipal
 type ServicePrincipalItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -181,11 +181,11 @@ func NewServicePrincipalItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewServicePrincipalItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete entity from servicePrincipals
+// CreateDeleteRequestInformation delete servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from servicePrincipals
+// CreateDeleteRequestInformationWithRequestConfiguration delete servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *ServicePrincipalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -212,11 +212,11 @@ func (m *ServicePrincipalItemRequestBuilder) CreatedObjectsById(id string)(*i30a
     }
     return i30a88e502a1b36c0ef991fe606f7b7a5334452187e51f492fbbf02a9917ac38c.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateGetRequestInformation get entity from servicePrincipals by key
+// CreateGetRequestInformation get servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get entity from servicePrincipals by key
+// CreateGetRequestInformationWithRequestConfiguration get servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ServicePrincipalItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -235,11 +235,11 @@ func (m *ServicePrincipalItemRequestBuilder) CreateGetRequestInformationWithRequ
 func (m *ServicePrincipalItemRequestBuilder) CreatePasswordSingleSignOnCredentials()(*i357c592f2e173cff04efd24060abc2cdb7c037446a1a5fef4a892d849f510985.CreatePasswordSingleSignOnCredentialsRequestBuilder) {
     return i357c592f2e173cff04efd24060abc2cdb7c037446a1a5fef4a892d849f510985.NewCreatePasswordSingleSignOnCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreatePatchRequestInformation update entity in servicePrincipals
+// CreatePatchRequestInformation assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
 func (m *ServicePrincipalItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in servicePrincipals
+// CreatePatchRequestInformationWithRequestConfiguration assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
 func (m *ServicePrincipalItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable, requestConfiguration *ServicePrincipalItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -267,7 +267,7 @@ func (m *ServicePrincipalItemRequestBuilder) DelegatedPermissionClassificationsB
     }
     return if711a515916176e7c09aa3e5a8f78d5306dd95e446b78ea2cdac1f4050779e27.NewDelegatedPermissionClassificationItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Delete delete entity from servicePrincipals
+// Delete delete servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -275,7 +275,7 @@ func (m *ServicePrincipalItemRequestBuilder) Delete()(error) {
 func (m *ServicePrincipalItemRequestBuilder) DeletePasswordSingleSignOnCredentials()(*i3085d473efc7695c2ec95dbf6722fdb29435eb21e254c6c906e79bee48934977.DeletePasswordSingleSignOnCredentialsRequestBuilder) {
     return i3085d473efc7695c2ec95dbf6722fdb29435eb21e254c6c906e79bee48934977.NewDeletePasswordSingleSignOnCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// DeleteWithRequestConfigurationAndResponseHandler delete entity from servicePrincipals
+// DeleteWithRequestConfigurationAndResponseHandler delete servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ServicePrincipalItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -321,7 +321,7 @@ func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentialsById(id
     }
     return ied131e9801fe0f7aa043e4bd950bcb9d42a80e13246c9b382d504487c787a1d5.NewFederatedIdentityCredentialItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get entity from servicePrincipals by key
+// Get get servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -337,7 +337,7 @@ func (m *ServicePrincipalItemRequestBuilder) GetMemberObjects()(*i23a06a5bd1dd31
 func (m *ServicePrincipalItemRequestBuilder) GetPasswordSingleSignOnCredentials()(*ib1f68813a15dd20f8ba94567ec3492119dd7611b59340dd17a087d77a5cd9d6d.GetPasswordSingleSignOnCredentialsRequestBuilder) {
     return ib1f68813a15dd20f8ba94567ec3492119dd7611b59340dd17a087d77a5cd9d6d.NewGetPasswordSingleSignOnCredentialsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler get entity from servicePrincipals by key
+// GetWithRequestConfigurationAndResponseHandler get servicePrincipal
 func (m *ServicePrincipalItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ServicePrincipalItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -443,11 +443,11 @@ func (m *ServicePrincipalItemRequestBuilder) OwnersById(id string)(*i234e2b441eb
     }
     return i234e2b441eb6121a8af32a7bac5d32752edca00c3103fbe6cf51997a556c95a7.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update entity in servicePrincipals
+// Patch assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
 func (m *ServicePrincipalItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithRequestConfigurationAndResponseHandler update entity in servicePrincipals
+// PatchWithRequestConfigurationAndResponseHandler assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
 func (m *ServicePrincipalItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable, requestConfiguration *ServicePrincipalItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

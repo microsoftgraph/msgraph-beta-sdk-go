@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceCustomAttributeValueType int
 
 const (
+    // Indicates the value for a custom attribute script is an integer.
     INTEGER_DEVICECUSTOMATTRIBUTEVALUETYPE DeviceCustomAttributeValueType = iota
+    // Indicates the value for a custom attribute script is a string.
     STRING_DEVICECUSTOMATTRIBUTEVALUETYPE
+    // Indicates the value for a custom attribute script is a date conforming to ISO 8601.
     DATETIME_DEVICECUSTOMATTRIBUTEVALUETYPE
 )
 
 func (i DeviceCustomAttributeValueType) String() string {
-    return []string{"INTEGER", "STRING", "DATETIME"}[i]
+    return []string{"integer", "string", "dateTime"}[i]
 }
 func ParseDeviceCustomAttributeValueType(v string) (interface{}, error) {
     result := INTEGER_DEVICECUSTOMATTRIBUTEVALUETYPE
-    switch strings.ToUpper(v) {
-        case "INTEGER":
+    switch v {
+        case "integer":
             result = INTEGER_DEVICECUSTOMATTRIBUTEVALUETYPE
-        case "STRING":
+        case "string":
             result = STRING_DEVICECUSTOMATTRIBUTEVALUETYPE
-        case "DATETIME":
+        case "dateTime":
             result = DATETIME_DEVICECUSTOMATTRIBUTEVALUETYPE
         default:
             return 0, errors.New("Unknown DeviceCustomAttributeValueType value: " + v)

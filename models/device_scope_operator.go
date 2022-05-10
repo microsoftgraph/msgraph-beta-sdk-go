@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceScopeOperator int
 
 const (
+    // No operator set for the device scope configuration.
     NONE_DEVICESCOPEOPERATOR DeviceScopeOperator = iota
+    // Operator for the device configuration query to be used (Equals).
     EQUALS_DEVICESCOPEOPERATOR
+    // Placeholder value for future expansion enums such as notEquals, contains, notContains, greaterThan, lessThan.
     UNKNOWNFUTUREVALUE_DEVICESCOPEOPERATOR
 )
 
 func (i DeviceScopeOperator) String() string {
-    return []string{"NONE", "EQUALS", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "equals", "unknownFutureValue"}[i]
 }
 func ParseDeviceScopeOperator(v string) (interface{}, error) {
     result := NONE_DEVICESCOPEOPERATOR
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICESCOPEOPERATOR
-        case "EQUALS":
+        case "equals":
             result = EQUALS_DEVICESCOPEOPERATOR
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICESCOPEOPERATOR
         default:
             return 0, errors.New("Unknown DeviceScopeOperator value: " + v)

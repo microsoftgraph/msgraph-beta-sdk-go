@@ -1,40 +1,46 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type GroupPolicyOperationType int
 
 const (
+    // Group Policy invalid operation type.
     NONE_GROUPPOLICYOPERATIONTYPE GroupPolicyOperationType = iota
+    // Group Policy upload operation type.
     UPLOAD_GROUPPOLICYOPERATIONTYPE
+    // Group Policy upload new version operation type.
     UPLOADNEWVERSION_GROUPPOLICYOPERATIONTYPE
+    // Group Policy add new language(ADML) files operation type.
     ADDLANGUAGEFILES_GROUPPOLICYOPERATIONTYPE
+    // Group Policy remove language(ADML) files operation type.
     REMOVELANGUAGEFILES_GROUPPOLICYOPERATIONTYPE
+    // Group Policy update language(ADML) files operation type.
     UPDATELANGUAGEFILES_GROUPPOLICYOPERATIONTYPE
+    // Group Policy remove uploaded file operation type.
     REMOVE_GROUPPOLICYOPERATIONTYPE
 )
 
 func (i GroupPolicyOperationType) String() string {
-    return []string{"NONE", "UPLOAD", "UPLOADNEWVERSION", "ADDLANGUAGEFILES", "REMOVELANGUAGEFILES", "UPDATELANGUAGEFILES", "REMOVE"}[i]
+    return []string{"none", "upload", "uploadNewVersion", "addLanguageFiles", "removeLanguageFiles", "updateLanguageFiles", "remove"}[i]
 }
 func ParseGroupPolicyOperationType(v string) (interface{}, error) {
     result := NONE_GROUPPOLICYOPERATIONTYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_GROUPPOLICYOPERATIONTYPE
-        case "UPLOAD":
+        case "upload":
             result = UPLOAD_GROUPPOLICYOPERATIONTYPE
-        case "UPLOADNEWVERSION":
+        case "uploadNewVersion":
             result = UPLOADNEWVERSION_GROUPPOLICYOPERATIONTYPE
-        case "ADDLANGUAGEFILES":
+        case "addLanguageFiles":
             result = ADDLANGUAGEFILES_GROUPPOLICYOPERATIONTYPE
-        case "REMOVELANGUAGEFILES":
+        case "removeLanguageFiles":
             result = REMOVELANGUAGEFILES_GROUPPOLICYOPERATIONTYPE
-        case "UPDATELANGUAGEFILES":
+        case "updateLanguageFiles":
             result = UPDATELANGUAGEFILES_GROUPPOLICYOPERATIONTYPE
-        case "REMOVE":
+        case "remove":
             result = REMOVE_GROUPPOLICYOPERATIONTYPE
         default:
             return 0, errors.New("Unknown GroupPolicyOperationType value: " + v)

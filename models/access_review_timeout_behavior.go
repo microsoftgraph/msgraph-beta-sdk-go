@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the identityGovernance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i AccessReviewTimeoutBehavior) String() string {
-    return []string{"KEEPACCESS", "REMOVEACCESS", "ACCEPTACCESSRECOMMENDATION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"keepAccess", "removeAccess", "acceptAccessRecommendation", "unknownFutureValue"}[i]
 }
 func ParseAccessReviewTimeoutBehavior(v string) (interface{}, error) {
     result := KEEPACCESS_ACCESSREVIEWTIMEOUTBEHAVIOR
-    switch strings.ToUpper(v) {
-        case "KEEPACCESS":
+    switch v {
+        case "keepAccess":
             result = KEEPACCESS_ACCESSREVIEWTIMEOUTBEHAVIOR
-        case "REMOVEACCESS":
+        case "removeAccess":
             result = REMOVEACCESS_ACCESSREVIEWTIMEOUTBEHAVIOR
-        case "ACCEPTACCESSRECOMMENDATION":
+        case "acceptAccessRecommendation":
             result = ACCEPTACCESSRECOMMENDATION_ACCESSREVIEWTIMEOUTBEHAVIOR
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSREVIEWTIMEOUTBEHAVIOR
         default:
             return 0, errors.New("Unknown AccessReviewTimeoutBehavior value: " + v)

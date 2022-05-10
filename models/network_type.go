@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i NetworkType) String() string {
-    return []string{"INTRANET", "EXTRANET", "NAMEDNETWORK", "TRUSTED", "TRUSTEDNAMEDLOCATION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"intranet", "extranet", "namedNetwork", "trusted", "trustedNamedLocation", "unknownFutureValue"}[i]
 }
 func ParseNetworkType(v string) (interface{}, error) {
     result := INTRANET_NETWORKTYPE
-    switch strings.ToUpper(v) {
-        case "INTRANET":
+    switch v {
+        case "intranet":
             result = INTRANET_NETWORKTYPE
-        case "EXTRANET":
+        case "extranet":
             result = EXTRANET_NETWORKTYPE
-        case "NAMEDNETWORK":
+        case "namedNetwork":
             result = NAMEDNETWORK_NETWORKTYPE
-        case "TRUSTED":
+        case "trusted":
             result = TRUSTED_NETWORKTYPE
-        case "TRUSTEDNAMEDLOCATION":
+        case "trustedNamedLocation":
             result = TRUSTEDNAMEDLOCATION_NETWORKTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_NETWORKTYPE
         default:
             return 0, errors.New("Unknown NetworkType value: " + v)

@@ -1,6 +1,5 @@
 package security
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cases property of the microsoft.graph.security entity.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i DataSourceContainerStatus) String() string {
-    return []string{"ACTIVE", "RELEASED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"active", "released", "unknownFutureValue"}[i]
 }
 func ParseDataSourceContainerStatus(v string) (interface{}, error) {
     result := ACTIVE_DATASOURCECONTAINERSTATUS
-    switch strings.ToUpper(v) {
-        case "ACTIVE":
+    switch v {
+        case "active":
             result = ACTIVE_DATASOURCECONTAINERSTATUS
-        case "RELEASED":
+        case "released":
             result = RELEASED_DATASOURCECONTAINERSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DATASOURCECONTAINERSTATUS
         default:
             return 0, errors.New("Unknown DataSourceContainerStatus value: " + v)

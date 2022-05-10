@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i ProtocolType) String() string {
-    return []string{"NONE", "OAUTH2", "ROPC", "WSFEDERATION", "SAML20", "DEVICECODE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "oAuth2", "ropc", "wsFederation", "saml20", "deviceCode", "unknownFutureValue"}[i]
 }
 func ParseProtocolType(v string) (interface{}, error) {
     result := NONE_PROTOCOLTYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_PROTOCOLTYPE
-        case "OAUTH2":
+        case "oAuth2":
             result = OAUTH2_PROTOCOLTYPE
-        case "ROPC":
+        case "ropc":
             result = ROPC_PROTOCOLTYPE
-        case "WSFEDERATION":
+        case "wsFederation":
             result = WSFEDERATION_PROTOCOLTYPE
-        case "SAML20":
+        case "saml20":
             result = SAML20_PROTOCOLTYPE
-        case "DEVICECODE":
+        case "deviceCode":
             result = DEVICECODE_PROTOCOLTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROTOCOLTYPE
         default:
             return 0, errors.New("Unknown ProtocolType value: " + v)

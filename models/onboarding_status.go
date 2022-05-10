@@ -1,37 +1,42 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type OnboardingStatus int
 
 const (
+    // Unknown
     UNKNOWN_ONBOARDINGSTATUS OnboardingStatus = iota
+    // In progress
     INPROGRESS_ONBOARDINGSTATUS
+    // Onboarded
     ONBOARDED_ONBOARDINGSTATUS
+    // Failed
     FAILED_ONBOARDINGSTATUS
+    // Offboarding
     OFFBOARDING_ONBOARDINGSTATUS
+    // UnknownFutureValue
     UNKNOWNFUTUREVALUE_ONBOARDINGSTATUS
 )
 
 func (i OnboardingStatus) String() string {
-    return []string{"UNKNOWN", "INPROGRESS", "ONBOARDED", "FAILED", "OFFBOARDING", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"unknown", "inprogress", "onboarded", "failed", "offboarding", "unknownFutureValue"}[i]
 }
 func ParseOnboardingStatus(v string) (interface{}, error) {
     result := UNKNOWN_ONBOARDINGSTATUS
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_ONBOARDINGSTATUS
-        case "INPROGRESS":
+        case "inprogress":
             result = INPROGRESS_ONBOARDINGSTATUS
-        case "ONBOARDED":
+        case "onboarded":
             result = ONBOARDED_ONBOARDINGSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_ONBOARDINGSTATUS
-        case "OFFBOARDING":
+        case "offboarding":
             result = OFFBOARDING_ONBOARDINGSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ONBOARDINGSTATUS
         default:
             return 0, errors.New("Unknown OnboardingStatus value: " + v)

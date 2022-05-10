@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -17,24 +16,24 @@ const (
 )
 
 func (i AuthenticationMethodSignInState) String() string {
-    return []string{"NOTSUPPORTED", "NOTALLOWEDBYPOLICY", "NOTENABLED", "PHONENUMBERNOTUNIQUE", "READY", "NOTCONFIGURED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notSupported", "notAllowedByPolicy", "notEnabled", "phoneNumberNotUnique", "ready", "notConfigured", "unknownFutureValue"}[i]
 }
 func ParseAuthenticationMethodSignInState(v string) (interface{}, error) {
     result := NOTSUPPORTED_AUTHENTICATIONMETHODSIGNINSTATE
-    switch strings.ToUpper(v) {
-        case "NOTSUPPORTED":
+    switch v {
+        case "notSupported":
             result = NOTSUPPORTED_AUTHENTICATIONMETHODSIGNINSTATE
-        case "NOTALLOWEDBYPOLICY":
+        case "notAllowedByPolicy":
             result = NOTALLOWEDBYPOLICY_AUTHENTICATIONMETHODSIGNINSTATE
-        case "NOTENABLED":
+        case "notEnabled":
             result = NOTENABLED_AUTHENTICATIONMETHODSIGNINSTATE
-        case "PHONENUMBERNOTUNIQUE":
+        case "phoneNumberNotUnique":
             result = PHONENUMBERNOTUNIQUE_AUTHENTICATIONMETHODSIGNINSTATE
-        case "READY":
+        case "ready":
             result = READY_AUTHENTICATIONMETHODSIGNINSTATE
-        case "NOTCONFIGURED":
+        case "notConfigured":
             result = NOTCONFIGURED_AUTHENTICATIONMETHODSIGNINSTATE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONMETHODSIGNINSTATE
         default:
             return 0, errors.New("Unknown AuthenticationMethodSignInState value: " + v)

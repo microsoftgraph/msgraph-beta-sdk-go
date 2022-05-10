@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type MobileAppRelationshipType int
 
 const (
+    // Indicates that the target of a relationship is the child in the relationship.
     CHILD_MOBILEAPPRELATIONSHIPTYPE MobileAppRelationshipType = iota
+    // Indicates that the target of a relationship is the parent in the relationship.
     PARENT_MOBILEAPPRELATIONSHIPTYPE
 )
 
 func (i MobileAppRelationshipType) String() string {
-    return []string{"CHILD", "PARENT"}[i]
+    return []string{"child", "parent"}[i]
 }
 func ParseMobileAppRelationshipType(v string) (interface{}, error) {
     result := CHILD_MOBILEAPPRELATIONSHIPTYPE
-    switch strings.ToUpper(v) {
-        case "CHILD":
+    switch v {
+        case "child":
             result = CHILD_MOBILEAPPRELATIONSHIPTYPE
-        case "PARENT":
+        case "parent":
             result = PARENT_MOBILEAPPRELATIONSHIPTYPE
         default:
             return 0, errors.New("Unknown MobileAppRelationshipType value: " + v)

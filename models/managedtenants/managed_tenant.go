@@ -42,6 +42,8 @@ type ManagedTenant struct {
     managementTemplateSteps []ManagementTemplateStepable
     // The managementTemplateStepVersions property
     managementTemplateStepVersions []ManagementTemplateStepVersionable
+    // The myRoles property
+    myRoles []MyRoleable
     // The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
     tenantGroups []TenantGroupable
     // The collection of tenants associated with the managing entity.
@@ -373,6 +375,20 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["myRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMyRoleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MyRoleable, len(val))
+            for i, v := range val {
+                res[i] = v.(MyRoleable)
+            }
+            m.SetMyRoles(res)
+        }
+        return nil
+    }
     res["tenantGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTenantGroupFromDiscriminatorValue)
         if err != nil {
@@ -543,6 +559,14 @@ func (m *ManagedTenant) GetManagementTemplateStepVersions()([]ManagementTemplate
         return nil
     } else {
         return m.managementTemplateStepVersions
+    }
+}
+// GetMyRoles gets the myRoles property value. The myRoles property
+func (m *ManagedTenant) GetMyRoles()([]MyRoleable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.myRoles
     }
 }
 // GetTenantGroups gets the tenantGroups property value. The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
@@ -777,6 +801,16 @@ func (m *ManagedTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetMyRoles() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMyRoles()))
+        for i, v := range m.GetMyRoles() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("myRoles", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTenantGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTenantGroups()))
         for i, v := range m.GetTenantGroups() {
@@ -949,6 +983,12 @@ func (m *ManagedTenant) SetManagementTemplateSteps(value []ManagementTemplateSte
 func (m *ManagedTenant) SetManagementTemplateStepVersions(value []ManagementTemplateStepVersionable)() {
     if m != nil {
         m.managementTemplateStepVersions = value
+    }
+}
+// SetMyRoles sets the myRoles property value. The myRoles property
+func (m *ManagedTenant) SetMyRoles(value []MyRoleable)() {
+    if m != nil {
+        m.myRoles = value
     }
 }
 // SetTenantGroups sets the tenantGroups property value. The collection of a logical grouping of managed tenants used by the multi-tenant management platform.

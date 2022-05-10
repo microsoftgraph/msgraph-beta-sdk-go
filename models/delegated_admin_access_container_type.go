@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the tenantRelationship singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i DelegatedAdminAccessContainerType) String() string {
-    return []string{"SECURITYGROUP", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"securityGroup", "unknownFutureValue"}[i]
 }
 func ParseDelegatedAdminAccessContainerType(v string) (interface{}, error) {
     result := SECURITYGROUP_DELEGATEDADMINACCESSCONTAINERTYPE
-    switch strings.ToUpper(v) {
-        case "SECURITYGROUP":
+    switch v {
+        case "securityGroup":
             result = SECURITYGROUP_DELEGATEDADMINACCESSCONTAINERTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DELEGATEDADMINACCESSCONTAINERTYPE
         default:
             return 0, errors.New("Unknown DelegatedAdminAccessContainerType value: " + v)

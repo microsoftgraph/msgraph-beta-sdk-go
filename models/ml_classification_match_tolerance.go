@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to call the classifyText method.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i MlClassificationMatchTolerance) String() string {
-    return []string{"EXACT", "NEAR"}[i]
+    return []string{"exact", "near"}[i]
 }
 func ParseMlClassificationMatchTolerance(v string) (interface{}, error) {
     result := EXACT_MLCLASSIFICATIONMATCHTOLERANCE
-    switch strings.ToUpper(v) {
-        case "EXACT":
+    switch v {
+        case "exact":
             result = EXACT_MLCLASSIFICATIONMATCHTOLERANCE
-        case "NEAR":
+        case "near":
             result = NEAR_MLCLASSIFICATIONMATCHTOLERANCE
         default:
             return 0, errors.New("Unknown MlClassificationMatchTolerance value: " + v)

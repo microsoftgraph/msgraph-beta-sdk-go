@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ChannelMembershipType) String() string {
-    return []string{"STANDARD", "PRIVATE", "UNKNOWNFUTUREVALUE", "SHARED"}[i]
+    return []string{"standard", "private", "unknownFutureValue", "shared"}[i]
 }
 func ParseChannelMembershipType(v string) (interface{}, error) {
     result := STANDARD_CHANNELMEMBERSHIPTYPE
-    switch strings.ToUpper(v) {
-        case "STANDARD":
+    switch v {
+        case "standard":
             result = STANDARD_CHANNELMEMBERSHIPTYPE
-        case "PRIVATE":
+        case "private":
             result = PRIVATE_CHANNELMEMBERSHIPTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CHANNELMEMBERSHIPTYPE
-        case "SHARED":
+        case "shared":
             result = SHARED_CHANNELMEMBERSHIPTYPE
         default:
             return 0, errors.New("Unknown ChannelMembershipType value: " + v)

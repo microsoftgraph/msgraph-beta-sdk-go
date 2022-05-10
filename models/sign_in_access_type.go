@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i SignInAccessType) String() string {
-    return []string{"NONE", "B2BCOLLABORATION", "B2BDIRECTCONNECT", "MICROSOFTSUPPORT", "SERVICEPROVIDER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "b2bCollaboration", "b2bDirectConnect", "microsoftSupport", "serviceProvider", "unknownFutureValue"}[i]
 }
 func ParseSignInAccessType(v string) (interface{}, error) {
     result := NONE_SIGNINACCESSTYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_SIGNINACCESSTYPE
-        case "B2BCOLLABORATION":
+        case "b2bCollaboration":
             result = B2BCOLLABORATION_SIGNINACCESSTYPE
-        case "B2BDIRECTCONNECT":
+        case "b2bDirectConnect":
             result = B2BDIRECTCONNECT_SIGNINACCESSTYPE
-        case "MICROSOFTSUPPORT":
+        case "microsoftSupport":
             result = MICROSOFTSUPPORT_SIGNINACCESSTYPE
-        case "SERVICEPROVIDER":
+        case "serviceProvider":
             result = SERVICEPROVIDER_SIGNINACCESSTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIGNINACCESSTYPE
         default:
             return 0, errors.New("Unknown SignInAccessType value: " + v)

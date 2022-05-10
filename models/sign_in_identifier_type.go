@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -16,22 +15,22 @@ const (
 )
 
 func (i SignInIdentifierType) String() string {
-    return []string{"USERPRINCIPALNAME", "PHONENUMBER", "PROXYADDRESS", "QRCODE", "ONPREMISESUSERPRINCIPALNAME", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"userPrincipalName", "phoneNumber", "proxyAddress", "qrCode", "onPremisesUserPrincipalName", "unknownFutureValue"}[i]
 }
 func ParseSignInIdentifierType(v string) (interface{}, error) {
     result := USERPRINCIPALNAME_SIGNINIDENTIFIERTYPE
-    switch strings.ToUpper(v) {
-        case "USERPRINCIPALNAME":
+    switch v {
+        case "userPrincipalName":
             result = USERPRINCIPALNAME_SIGNINIDENTIFIERTYPE
-        case "PHONENUMBER":
+        case "phoneNumber":
             result = PHONENUMBER_SIGNINIDENTIFIERTYPE
-        case "PROXYADDRESS":
+        case "proxyAddress":
             result = PROXYADDRESS_SIGNINIDENTIFIERTYPE
-        case "QRCODE":
+        case "qrCode":
             result = QRCODE_SIGNINIDENTIFIERTYPE
-        case "ONPREMISESUSERPRINCIPALNAME":
+        case "onPremisesUserPrincipalName":
             result = ONPREMISESUSERPRINCIPALNAME_SIGNINIDENTIFIERTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIGNINIDENTIFIERTYPE
         default:
             return 0, errors.New("Unknown SignInIdentifierType value: " + v)

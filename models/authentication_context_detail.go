@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i AuthenticationContextDetail) String() string {
-    return []string{"REQUIRED", "PREVIOUSLYSATISFIED", "NOTAPPLICABLE", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"required", "previouslySatisfied", "notApplicable", "unknownFutureValue"}[i]
 }
 func ParseAuthenticationContextDetail(v string) (interface{}, error) {
     result := REQUIRED_AUTHENTICATIONCONTEXTDETAIL
-    switch strings.ToUpper(v) {
-        case "REQUIRED":
+    switch v {
+        case "required":
             result = REQUIRED_AUTHENTICATIONCONTEXTDETAIL
-        case "PREVIOUSLYSATISFIED":
+        case "previouslySatisfied":
             result = PREVIOUSLYSATISFIED_AUTHENTICATIONCONTEXTDETAIL
-        case "NOTAPPLICABLE":
+        case "notApplicable":
             result = NOTAPPLICABLE_AUTHENTICATIONCONTEXTDETAIL
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONCONTEXTDETAIL
         default:
             return 0, errors.New("Unknown AuthenticationContextDetail value: " + v)

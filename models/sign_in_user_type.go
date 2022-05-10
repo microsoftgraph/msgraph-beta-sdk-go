@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the auditLogRoot singleton.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i SignInUserType) String() string {
-    return []string{"MEMBER", "GUEST", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"member", "guest", "unknownFutureValue"}[i]
 }
 func ParseSignInUserType(v string) (interface{}, error) {
     result := MEMBER_SIGNINUSERTYPE
-    switch strings.ToUpper(v) {
-        case "MEMBER":
+    switch v {
+        case "member":
             result = MEMBER_SIGNINUSERTYPE
-        case "GUEST":
+        case "guest":
             result = GUEST_SIGNINUSERTYPE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIGNINUSERTYPE
         default:
             return 0, errors.New("Unknown SignInUserType value: " + v)

@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type ZebraFotaScheduleMode int
 
 const (
+    // Instructs the device to install the update as soon as it is received.
     INSTALLNOW_ZEBRAFOTASCHEDULEMODE ZebraFotaScheduleMode = iota
+    // Schedule an update to be installed at a specified date and time.
     SCHEDULED_ZEBRAFOTASCHEDULEMODE
+    // Unknown future enum value.
     UNKNOWNFUTUREVALUE_ZEBRAFOTASCHEDULEMODE
 )
 
 func (i ZebraFotaScheduleMode) String() string {
-    return []string{"INSTALLNOW", "SCHEDULED", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"installNow", "scheduled", "unknownFutureValue"}[i]
 }
 func ParseZebraFotaScheduleMode(v string) (interface{}, error) {
     result := INSTALLNOW_ZEBRAFOTASCHEDULEMODE
-    switch strings.ToUpper(v) {
-        case "INSTALLNOW":
+    switch v {
+        case "installNow":
             result = INSTALLNOW_ZEBRAFOTASCHEDULEMODE
-        case "SCHEDULED":
+        case "scheduled":
             result = SCHEDULED_ZEBRAFOTASCHEDULEMODE
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ZEBRAFOTASCHEDULEMODE
         default:
             return 0, errors.New("Unknown ZebraFotaScheduleMode value: " + v)

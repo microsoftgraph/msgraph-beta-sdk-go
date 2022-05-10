@@ -1,6 +1,5 @@
 package security
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the cases property of the microsoft.graph.security entity.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ChildSelectability) String() string {
-    return []string{"ONE", "MANY", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"One", "Many", "unknownFutureValue"}[i]
 }
 func ParseChildSelectability(v string) (interface{}, error) {
     result := ONE_CHILDSELECTABILITY
-    switch strings.ToUpper(v) {
-        case "ONE":
+    switch v {
+        case "One":
             result = ONE_CHILDSELECTABILITY
-        case "MANY":
+        case "Many":
             result = MANY_CHILDSELECTABILITY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CHILDSELECTABILITY
         default:
             return 0, errors.New("Unknown ChildSelectability value: " + v)

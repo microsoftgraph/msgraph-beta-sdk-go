@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type WindowsDriverUpdateProfileInventorySyncState int
 
 const (
+    // Pending sync.
     PENDING_WINDOWSDRIVERUPDATEPROFILEINVENTORYSYNCSTATE WindowsDriverUpdateProfileInventorySyncState = iota
+    // Successful sync.
     SUCCESS_WINDOWSDRIVERUPDATEPROFILEINVENTORYSYNCSTATE
+    // Failed sync.
     FAILURE_WINDOWSDRIVERUPDATEPROFILEINVENTORYSYNCSTATE
 )
 
 func (i WindowsDriverUpdateProfileInventorySyncState) String() string {
-    return []string{"PENDING", "SUCCESS", "FAILURE"}[i]
+    return []string{"pending", "success", "failure"}[i]
 }
 func ParseWindowsDriverUpdateProfileInventorySyncState(v string) (interface{}, error) {
     result := PENDING_WINDOWSDRIVERUPDATEPROFILEINVENTORYSYNCSTATE
-    switch strings.ToUpper(v) {
-        case "PENDING":
+    switch v {
+        case "pending":
             result = PENDING_WINDOWSDRIVERUPDATEPROFILEINVENTORYSYNCSTATE
-        case "SUCCESS":
+        case "success":
             result = SUCCESS_WINDOWSDRIVERUPDATEPROFILEINVENTORYSYNCSTATE
-        case "FAILURE":
+        case "failure":
             result = FAILURE_WINDOWSDRIVERUPDATEPROFILEINVENTORYSYNCSTATE
         default:
             return 0, errors.New("Unknown WindowsDriverUpdateProfileInventorySyncState value: " + v)

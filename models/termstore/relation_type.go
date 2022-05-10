@@ -1,6 +1,5 @@
 package termstore
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i RelationType) String() string {
-    return []string{"PIN", "REUSE"}[i]
+    return []string{"pin", "reuse"}[i]
 }
 func ParseRelationType(v string) (interface{}, error) {
     result := PIN_RELATIONTYPE
-    switch strings.ToUpper(v) {
-        case "PIN":
+    switch v {
+        case "pin":
             result = PIN_RELATIONTYPE
-        case "REUSE":
+        case "reuse":
             result = REUSE_RELATIONTYPE
         default:
             return 0, errors.New("Unknown RelationType value: " + v)

@@ -1,9 +1,8 @@
 package models
 import (
-    "strings"
     "errors"
 )
-// Provides operations to manage the compliance singleton.
+// Provides operations to manage the dataClassificationService singleton.
 type ApplicationMode int
 
 const (
@@ -13,16 +12,16 @@ const (
 )
 
 func (i ApplicationMode) String() string {
-    return []string{"MANUAL", "AUTOMATIC", "RECOMMENDED"}[i]
+    return []string{"manual", "automatic", "recommended"}[i]
 }
 func ParseApplicationMode(v string) (interface{}, error) {
     result := MANUAL_APPLICATIONMODE
-    switch strings.ToUpper(v) {
-        case "MANUAL":
+    switch v {
+        case "manual":
             result = MANUAL_APPLICATIONMODE
-        case "AUTOMATIC":
+        case "automatic":
             result = AUTOMATIC_APPLICATIONMODE
-        case "RECOMMENDED":
+        case "recommended":
             result = RECOMMENDED_APPLICATIONMODE
         default:
             return 0, errors.New("Unknown ApplicationMode value: " + v)

@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the dataClassificationService singleton.
@@ -12,14 +11,14 @@ const (
 )
 
 func (i SensitiveTypeScope) String() string {
-    return []string{"FULLDOCUMENT", "PARTIALDOCUMENT"}[i]
+    return []string{"fullDocument", "partialDocument"}[i]
 }
 func ParseSensitiveTypeScope(v string) (interface{}, error) {
     result := FULLDOCUMENT_SENSITIVETYPESCOPE
-    switch strings.ToUpper(v) {
-        case "FULLDOCUMENT":
+    switch v {
+        case "fullDocument":
             result = FULLDOCUMENT_SENSITIVETYPESCOPE
-        case "PARTIALDOCUMENT":
+        case "partialDocument":
             result = PARTIALDOCUMENT_SENSITIVETYPESCOPE
         default:
             return 0, errors.New("Unknown SensitiveTypeScope value: " + v)

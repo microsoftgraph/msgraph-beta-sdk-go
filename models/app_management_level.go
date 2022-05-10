@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceAppManagement singleton.
 type AppManagementLevel int
 
 const (
+    // Unspecified
     UNSPECIFIED_APPMANAGEMENTLEVEL AppManagementLevel = iota
+    // Unmanaged
     UNMANAGED_APPMANAGEMENTLEVEL
+    // MDM
     MDM_APPMANAGEMENTLEVEL
+    // Android Enterprise
     ANDROIDENTERPRISE_APPMANAGEMENTLEVEL
 )
 
 func (i AppManagementLevel) String() string {
-    return []string{"UNSPECIFIED", "UNMANAGED", "MDM", "ANDROIDENTERPRISE"}[i]
+    return []string{"unspecified", "unmanaged", "mdm", "androidEnterprise"}[i]
 }
 func ParseAppManagementLevel(v string) (interface{}, error) {
     result := UNSPECIFIED_APPMANAGEMENTLEVEL
-    switch strings.ToUpper(v) {
-        case "UNSPECIFIED":
+    switch v {
+        case "unspecified":
             result = UNSPECIFIED_APPMANAGEMENTLEVEL
-        case "UNMANAGED":
+        case "unmanaged":
             result = UNMANAGED_APPMANAGEMENTLEVEL
-        case "MDM":
+        case "mdm":
             result = MDM_APPMANAGEMENTLEVEL
-        case "ANDROIDENTERPRISE":
+        case "androidEnterprise":
             result = ANDROIDENTERPRISE_APPMANAGEMENTLEVEL
         default:
             return 0, errors.New("Unknown AppManagementLevel value: " + v)

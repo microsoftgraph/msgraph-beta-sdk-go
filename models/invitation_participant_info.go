@@ -8,17 +8,17 @@ import (
 type InvitationParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The type of endpoint. Possible values are: default, voicemail.
+    // The type of the endpoint. Possible values are: default, voicemail.
     endpointType *EndpointType
     // The hidden property
     hidden *bool
     // The identity property
     identity IdentitySetable
-    // The participantId property
+    // Optional. The ID of the target participant.
     participantId *string
     // The removeFromDefaultAudioRoutingGroup property
     removeFromDefaultAudioRoutingGroup *bool
-    // Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+    // Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
     replacesCallId *string
 }
 // NewInvitationParticipantInfo instantiates a new invitationParticipantInfo and sets the default values.
@@ -40,7 +40,7 @@ func (m *InvitationParticipantInfo) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// GetEndpointType gets the endpointType property value. The type of endpoint. Possible values are: default, voicemail.
+// GetEndpointType gets the endpointType property value. The type of the endpoint. Possible values are: default, voicemail.
 func (m *InvitationParticipantInfo) GetEndpointType()(*EndpointType) {
     if m == nil {
         return nil
@@ -129,7 +129,7 @@ func (m *InvitationParticipantInfo) GetIdentity()(IdentitySetable) {
         return m.identity
     }
 }
-// GetParticipantId gets the participantId property value. The participantId property
+// GetParticipantId gets the participantId property value. Optional. The ID of the target participant.
 func (m *InvitationParticipantInfo) GetParticipantId()(*string) {
     if m == nil {
         return nil
@@ -145,7 +145,7 @@ func (m *InvitationParticipantInfo) GetRemoveFromDefaultAudioRoutingGroup()(*boo
         return m.removeFromDefaultAudioRoutingGroup
     }
 }
-// GetReplacesCallId gets the replacesCallId property value. Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+// GetReplacesCallId gets the replacesCallId property value. Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
 func (m *InvitationParticipantInfo) GetReplacesCallId()(*string) {
     if m == nil {
         return nil
@@ -206,7 +206,7 @@ func (m *InvitationParticipantInfo) SetAdditionalData(value map[string]interface
         m.additionalData = value
     }
 }
-// SetEndpointType sets the endpointType property value. The type of endpoint. Possible values are: default, voicemail.
+// SetEndpointType sets the endpointType property value. The type of the endpoint. Possible values are: default, voicemail.
 func (m *InvitationParticipantInfo) SetEndpointType(value *EndpointType)() {
     if m != nil {
         m.endpointType = value
@@ -224,7 +224,7 @@ func (m *InvitationParticipantInfo) SetIdentity(value IdentitySetable)() {
         m.identity = value
     }
 }
-// SetParticipantId sets the participantId property value. The participantId property
+// SetParticipantId sets the participantId property value. Optional. The ID of the target participant.
 func (m *InvitationParticipantInfo) SetParticipantId(value *string)() {
     if m != nil {
         m.participantId = value
@@ -236,7 +236,7 @@ func (m *InvitationParticipantInfo) SetRemoveFromDefaultAudioRoutingGroup(value 
         m.removeFromDefaultAudioRoutingGroup = value
     }
 }
-// SetReplacesCallId sets the replacesCallId property value. Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+// SetReplacesCallId sets the replacesCallId property value. Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
 func (m *InvitationParticipantInfo) SetReplacesCallId(value *string)() {
     if m != nil {
         m.replacesCallId = value

@@ -1,31 +1,34 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type MdmSupportedState int
 
 const (
+    // Mdm support status of the setting is not known.
     UNKNOWN_MDMSUPPORTEDSTATE MdmSupportedState = iota
+    // Setting is supported.
     SUPPORTED_MDMSUPPORTEDSTATE
+    // Setting is unsupported.
     UNSUPPORTED_MDMSUPPORTEDSTATE
+    // Setting is depcrecated.
     DEPRECATED_MDMSUPPORTEDSTATE
 )
 
 func (i MdmSupportedState) String() string {
-    return []string{"UNKNOWN", "SUPPORTED", "UNSUPPORTED", "DEPRECATED"}[i]
+    return []string{"unknown", "supported", "unsupported", "deprecated"}[i]
 }
 func ParseMdmSupportedState(v string) (interface{}, error) {
     result := UNKNOWN_MDMSUPPORTEDSTATE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_MDMSUPPORTEDSTATE
-        case "SUPPORTED":
+        case "supported":
             result = SUPPORTED_MDMSUPPORTEDSTATE
-        case "UNSUPPORTED":
+        case "unsupported":
             result = UNSUPPORTED_MDMSUPPORTEDSTATE
-        case "DEPRECATED":
+        case "deprecated":
             result = DEPRECATED_MDMSUPPORTEDSTATE
         default:
             return 0, errors.New("Unknown MdmSupportedState value: " + v)

@@ -26,7 +26,7 @@ type ChatMessageItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ChatMessageItemRequestBuilderGetQueryParameters replies for a specified message.
+// ChatMessageItemRequestBuilderGetQueryParameters replies for a specified message. Supports $expand for channel messages.
 type ChatMessageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -84,11 +84,11 @@ func (m *ChatMessageItemRequestBuilder) CreateDeleteRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation replies for a specified message.
+// CreateGetRequestInformation replies for a specified message. Supports $expand for channel messages.
 func (m *ChatMessageItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration replies for a specified message.
+// CreateGetRequestInformationWithRequestConfiguration replies for a specified message. Supports $expand for channel messages.
 func (m *ChatMessageItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ChatMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,11 +140,11 @@ func (m *ChatMessageItemRequestBuilder) DeleteWithRequestConfigurationAndRespons
     }
     return nil
 }
-// Get replies for a specified message.
+// Get replies for a specified message. Supports $expand for channel messages.
 func (m *ChatMessageItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler replies for a specified message.
+// GetWithRequestConfigurationAndResponseHandler replies for a specified message. Supports $expand for channel messages.
 func (m *ChatMessageItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChatMessageItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

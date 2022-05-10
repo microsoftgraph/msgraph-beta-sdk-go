@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -21,32 +20,32 @@ const (
 )
 
 func (i CloudPcStatus) String() string {
-    return []string{"NOTPROVISIONED", "PROVISIONING", "PROVISIONED", "INGRACEPERIOD", "DEPROVISIONING", "FAILED", "PROVISIONEDWITHWARNINGS", "RESIZING", "RESTORING", "PENDINGPROVISION", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"notProvisioned", "provisioning", "provisioned", "inGracePeriod", "deprovisioning", "failed", "provisionedWithWarnings", "resizing", "restoring", "pendingProvision", "unknownFutureValue"}[i]
 }
 func ParseCloudPcStatus(v string) (interface{}, error) {
     result := NOTPROVISIONED_CLOUDPCSTATUS
-    switch strings.ToUpper(v) {
-        case "NOTPROVISIONED":
+    switch v {
+        case "notProvisioned":
             result = NOTPROVISIONED_CLOUDPCSTATUS
-        case "PROVISIONING":
+        case "provisioning":
             result = PROVISIONING_CLOUDPCSTATUS
-        case "PROVISIONED":
+        case "provisioned":
             result = PROVISIONED_CLOUDPCSTATUS
-        case "INGRACEPERIOD":
+        case "inGracePeriod":
             result = INGRACEPERIOD_CLOUDPCSTATUS
-        case "DEPROVISIONING":
+        case "deprovisioning":
             result = DEPROVISIONING_CLOUDPCSTATUS
-        case "FAILED":
+        case "failed":
             result = FAILED_CLOUDPCSTATUS
-        case "PROVISIONEDWITHWARNINGS":
+        case "provisionedWithWarnings":
             result = PROVISIONEDWITHWARNINGS_CLOUDPCSTATUS
-        case "RESIZING":
+        case "resizing":
             result = RESIZING_CLOUDPCSTATUS
-        case "RESTORING":
+        case "restoring":
             result = RESTORING_CLOUDPCSTATUS
-        case "PENDINGPROVISION":
+        case "pendingProvision":
             result = PENDINGPROVISION_CLOUDPCSTATUS
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCSTATUS
         default:
             return 0, errors.New("Unknown CloudPcStatus value: " + v)

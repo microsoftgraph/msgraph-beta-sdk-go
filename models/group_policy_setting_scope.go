@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type GroupPolicySettingScope int
 
 const (
+    // Device scope unknown
     UNKNOWN_GROUPPOLICYSETTINGSCOPE GroupPolicySettingScope = iota
+    // Device scope
     DEVICE_GROUPPOLICYSETTINGSCOPE
+    // User scope
     USER_GROUPPOLICYSETTINGSCOPE
 )
 
 func (i GroupPolicySettingScope) String() string {
-    return []string{"UNKNOWN", "DEVICE", "USER"}[i]
+    return []string{"unknown", "device", "user"}[i]
 }
 func ParseGroupPolicySettingScope(v string) (interface{}, error) {
     result := UNKNOWN_GROUPPOLICYSETTINGSCOPE
-    switch strings.ToUpper(v) {
-        case "UNKNOWN":
+    switch v {
+        case "unknown":
             result = UNKNOWN_GROUPPOLICYSETTINGSCOPE
-        case "DEVICE":
+        case "device":
             result = DEVICE_GROUPPOLICYSETTINGSCOPE
-        case "USER":
+        case "user":
             result = USER_GROUPPOLICYSETTINGSCOPE
         default:
             return 0, errors.New("Unknown GroupPolicySettingScope value: " + v)

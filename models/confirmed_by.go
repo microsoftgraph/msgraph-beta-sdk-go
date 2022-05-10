@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
@@ -14,18 +13,18 @@ const (
 )
 
 func (i ConfirmedBy) String() string {
-    return []string{"NONE", "USER", "MANAGER", "UNKNOWNFUTUREVALUE"}[i]
+    return []string{"none", "user", "manager", "unknownFutureValue"}[i]
 }
 func ParseConfirmedBy(v string) (interface{}, error) {
     result := NONE_CONFIRMEDBY
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_CONFIRMEDBY
-        case "USER":
+        case "user":
             result = USER_CONFIRMEDBY
-        case "MANAGER":
+        case "manager":
             result = MANAGER_CONFIRMEDBY
-        case "UNKNOWNFUTUREVALUE":
+        case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONFIRMEDBY
         default:
             return 0, errors.New("Unknown ConfirmedBy value: " + v)

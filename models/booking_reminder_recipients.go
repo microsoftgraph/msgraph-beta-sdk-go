@@ -1,6 +1,5 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the collection of bookingBusiness entities.
@@ -13,16 +12,16 @@ const (
 )
 
 func (i BookingReminderRecipients) String() string {
-    return []string{"ALLATTENDEES", "STAFF", "CUSTOMER"}[i]
+    return []string{"allAttendees", "staff", "customer"}[i]
 }
 func ParseBookingReminderRecipients(v string) (interface{}, error) {
     result := ALLATTENDEES_BOOKINGREMINDERRECIPIENTS
-    switch strings.ToUpper(v) {
-        case "ALLATTENDEES":
+    switch v {
+        case "allAttendees":
             result = ALLATTENDEES_BOOKINGREMINDERRECIPIENTS
-        case "STAFF":
+        case "staff":
             result = STAFF_BOOKINGREMINDERRECIPIENTS
-        case "CUSTOMER":
+        case "customer":
             result = CUSTOMER_BOOKINGREMINDERRECIPIENTS
         default:
             return 0, errors.New("Unknown BookingReminderRecipients value: " + v)

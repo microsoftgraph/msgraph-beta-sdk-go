@@ -1,28 +1,30 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the deviceManagement singleton.
 type DeviceManagementDerivedCredentialNotificationType int
 
 const (
+    // None
     NONE_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE DeviceManagementDerivedCredentialNotificationType = iota
+    // Company Portal
     COMPANYPORTAL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
+    // Email
     EMAIL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
 )
 
 func (i DeviceManagementDerivedCredentialNotificationType) String() string {
-    return []string{"NONE", "COMPANYPORTAL", "EMAIL"}[i]
+    return []string{"none", "companyPortal", "email"}[i]
 }
 func ParseDeviceManagementDerivedCredentialNotificationType(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
-    switch strings.ToUpper(v) {
-        case "NONE":
+    switch v {
+        case "none":
             result = NONE_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
-        case "COMPANYPORTAL":
+        case "companyPortal":
             result = COMPANYPORTAL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
-        case "EMAIL":
+        case "email":
             result = EMAIL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
         default:
             return 0, errors.New("Unknown DeviceManagementDerivedCredentialNotificationType value: " + v)

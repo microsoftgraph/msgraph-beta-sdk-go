@@ -1,25 +1,26 @@
 package models
 import (
-    "strings"
     "errors"
 )
 // Provides operations to manage the compliance singleton.
 type LostModeState int
 
 const (
+    // Lost mode is disabled.
     DISABLED_LOSTMODESTATE LostModeState = iota
+    // Lost mode is enabled.
     ENABLED_LOSTMODESTATE
 )
 
 func (i LostModeState) String() string {
-    return []string{"DISABLED", "ENABLED"}[i]
+    return []string{"disabled", "enabled"}[i]
 }
 func ParseLostModeState(v string) (interface{}, error) {
     result := DISABLED_LOSTMODESTATE
-    switch strings.ToUpper(v) {
-        case "DISABLED":
+    switch v {
+        case "disabled":
             result = DISABLED_LOSTMODESTATE
-        case "ENABLED":
+        case "enabled":
             result = ENABLED_LOSTMODESTATE
         default:
             return 0, errors.New("Unknown LostModeState value: " + v)
