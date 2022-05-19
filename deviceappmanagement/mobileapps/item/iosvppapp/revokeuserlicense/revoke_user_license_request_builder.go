@@ -40,11 +40,11 @@ func NewRevokeUserLicenseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewRevokeUserLicenseRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation revoke assigned iOS VPP user license for given app.
-func (m *RevokeUserLicenseRequestBuilder) CreatePostRequestInformation(body RevokeUserLicenseRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RevokeUserLicenseRequestBuilder) CreatePostRequestInformation(body RevokeUserLicensePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration revoke assigned iOS VPP user license for given app.
-func (m *RevokeUserLicenseRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RevokeUserLicenseRequestBodyable, requestConfiguration *RevokeUserLicenseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RevokeUserLicenseRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RevokeUserLicensePostRequestBodyable, requestConfiguration *RevokeUserLicenseRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *RevokeUserLicenseRequestBuilder) CreatePostRequestInformationWithReques
     return requestInfo, nil
 }
 // Post revoke assigned iOS VPP user license for given app.
-func (m *RevokeUserLicenseRequestBuilder) Post(body RevokeUserLicenseRequestBodyable)(error) {
+func (m *RevokeUserLicenseRequestBuilder) Post(body RevokeUserLicensePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler revoke assigned iOS VPP user license for given app.
-func (m *RevokeUserLicenseRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RevokeUserLicenseRequestBodyable, requestConfiguration *RevokeUserLicenseRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *RevokeUserLicenseRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RevokeUserLicensePostRequestBodyable, requestConfiguration *RevokeUserLicenseRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

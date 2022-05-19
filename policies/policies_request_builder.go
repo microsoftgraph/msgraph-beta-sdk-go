@@ -3,6 +3,7 @@ package policies
 import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i01d7860ea198dbe947e5a97722c9ca4edec8fd26cab7760478431192c3e470ea "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/deviceregistrationpolicy"
     i089acabe34d65ca8bb4a87f0ec051d51355817922b4d3ae2c686f574d377a384 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/featurerolloutpolicies"
     i0ea4dbcf49512a3d14a716de641b83949fd0f9b73ab17d8b05e57362070a224f "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/b2cauthenticationmethodspolicy"
     i154ced0e8b3656059650a4bd061d0aa6f15bc39d29746142cde157c94c8ce663 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/identitysecuritydefaultsenforcementpolicy"
@@ -235,6 +236,10 @@ func (m *PoliciesRequestBuilder) CrossTenantAccessPolicy()(*if3614f47055e200240f
 // DefaultAppManagementPolicy the defaultAppManagementPolicy property
 func (m *PoliciesRequestBuilder) DefaultAppManagementPolicy()(*ia66b26489abda0f16a4552e41f842faa0920a32a210488eb7684d2c0a3ac678e.DefaultAppManagementPolicyRequestBuilder) {
     return ia66b26489abda0f16a4552e41f842faa0920a32a210488eb7684d2c0a3ac678e.NewDefaultAppManagementPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// DeviceRegistrationPolicy the deviceRegistrationPolicy property
+func (m *PoliciesRequestBuilder) DeviceRegistrationPolicy()(*i01d7860ea198dbe947e5a97722c9ca4edec8fd26cab7760478431192c3e470ea.DeviceRegistrationPolicyRequestBuilder) {
+    return i01d7860ea198dbe947e5a97722c9ca4edec8fd26cab7760478431192c3e470ea.NewDeviceRegistrationPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // DirectoryRoleAccessReviewPolicy the directoryRoleAccessReviewPolicy property
 func (m *PoliciesRequestBuilder) DirectoryRoleAccessReviewPolicy()(*i9b0ad1e2bc66101ab80e51c56c0530b8d739993816ab39caf1d4ce646d70b5f6.DirectoryRoleAccessReviewPolicyRequestBuilder) {

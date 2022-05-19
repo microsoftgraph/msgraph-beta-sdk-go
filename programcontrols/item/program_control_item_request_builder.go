@@ -65,11 +65,11 @@ func NewProgramControlItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewProgramControlItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete programControl
+// CreateDeleteRequestInformation in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, delete a [programControl](../resources/programcontrol.md) object.  This unlinks an access review from a program.
 func (m *ProgramControlItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete programControl
+// CreateDeleteRequestInformationWithRequestConfiguration in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, delete a [programControl](../resources/programcontrol.md) object.  This unlinks an access review from a program.
 func (m *ProgramControlItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *ProgramControlItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,11 +117,11 @@ func (m *ProgramControlItemRequestBuilder) CreatePatchRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// Delete delete programControl
+// Delete in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, delete a [programControl](../resources/programcontrol.md) object.  This unlinks an access review from a program.
 func (m *ProgramControlItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler delete programControl
+// DeleteWithRequestConfigurationAndResponseHandler in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, delete a [programControl](../resources/programcontrol.md) object.  This unlinks an access review from a program.
 func (m *ProgramControlItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ProgramControlItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

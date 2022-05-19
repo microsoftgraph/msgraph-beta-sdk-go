@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the alerts property of the microsoft.graph.security entity.
+// Provides operations to manage the security singleton.
 type SecurityResourceType int
 
 const (

@@ -17,7 +17,7 @@ type Oauth2PermissionGrantsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// Oauth2PermissionGrantsRequestBuilderGetQueryParameters list oauth2PermissionGrants (delegated permission grants)
+// Oauth2PermissionGrantsRequestBuilderGetQueryParameters retrieve a list of [oAuth2PermissionGrant](../resources/oauth2permissiongrant.md) objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.
 type Oauth2PermissionGrantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewOauth2PermissionGrantsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *Oauth2PermissionGrantsRequestBuilder) Count()(*ied4390bf9a27240ae5a8e6cf39e58ab1ed136c12ad12306699116cff10936816.CountRequestBuilder) {
     return ied4390bf9a27240ae5a8e6cf39e58ab1ed136c12ad12306699116cff10936816.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list oauth2PermissionGrants (delegated permission grants)
+// CreateGetRequestInformation retrieve a list of [oAuth2PermissionGrant](../resources/oauth2permissiongrant.md) objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.
 func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list oauth2PermissionGrants (delegated permission grants)
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of [oAuth2PermissionGrant](../resources/oauth2permissiongrant.md) objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.
 func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *Oauth2PermissionGrantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -94,11 +94,11 @@ func (m *Oauth2PermissionGrantsRequestBuilder) CreateGetRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create oAuth2PermissionGrant (a delegated permission grant)
+// CreatePostRequestInformation create a delegated permission grant, represented by an [oAuth2PermissionGrant](../resources/oauth2permissiongrant.md) object. A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted.
 func (m *Oauth2PermissionGrantsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create oAuth2PermissionGrant (a delegated permission grant)
+// CreatePostRequestInformationWithRequestConfiguration create a delegated permission grant, represented by an [oAuth2PermissionGrant](../resources/oauth2permissiongrant.md) object. A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted.
 func (m *Oauth2PermissionGrantsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable, requestConfiguration *Oauth2PermissionGrantsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -115,11 +115,11 @@ func (m *Oauth2PermissionGrantsRequestBuilder) CreatePostRequestInformationWithR
 func (m *Oauth2PermissionGrantsRequestBuilder) Delta()(*i8feef340180609e065924000cd9b45280aa8beddbec5b0ab33463560f763b805.DeltaRequestBuilder) {
     return i8feef340180609e065924000cd9b45280aa8beddbec5b0ab33463560f763b805.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get list oauth2PermissionGrants (delegated permission grants)
+// Get retrieve a list of [oAuth2PermissionGrant](../resources/oauth2permissiongrant.md) objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.
 func (m *Oauth2PermissionGrantsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler list oauth2PermissionGrants (delegated permission grants)
+// GetWithRequestConfigurationAndResponseHandler retrieve a list of [oAuth2PermissionGrant](../resources/oauth2permissiongrant.md) objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.
 func (m *Oauth2PermissionGrantsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *Oauth2PermissionGrantsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -135,11 +135,11 @@ func (m *Oauth2PermissionGrantsRequestBuilder) GetWithRequestConfigurationAndRes
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantCollectionResponseable), nil
 }
-// Post create oAuth2PermissionGrant (a delegated permission grant)
+// Post create a delegated permission grant, represented by an [oAuth2PermissionGrant](../resources/oauth2permissiongrant.md) object. A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted.
 func (m *Oauth2PermissionGrantsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithRequestConfigurationAndResponseHandler create oAuth2PermissionGrant (a delegated permission grant)
+// PostWithRequestConfigurationAndResponseHandler create a delegated permission grant, represented by an [oAuth2PermissionGrant](../resources/oauth2permissiongrant.md) object. A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted.
 func (m *Oauth2PermissionGrantsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable, requestConfiguration *Oauth2PermissionGrantsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -40,11 +40,11 @@ func NewGetGroupPolicySettingsDeviceSettingsReportRequestBuilder(rawUrl string, 
     return NewGetGroupPolicySettingsDeviceSettingsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getGroupPolicySettingsDeviceSettingsReport
-func (m *GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) CreatePostRequestInformation(body GetGroupPolicySettingsDeviceSettingsReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) CreatePostRequestInformation(body GetGroupPolicySettingsDeviceSettingsReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getGroupPolicySettingsDeviceSettingsReport
-func (m *GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetGroupPolicySettingsDeviceSettingsReportRequestBodyable, requestConfiguration *GetGroupPolicySettingsDeviceSettingsReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetGroupPolicySettingsDeviceSettingsReportPostRequestBodyable, requestConfiguration *GetGroupPolicySettingsDeviceSettingsReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) CreatePostReq
     return requestInfo, nil
 }
 // Post invoke action getGroupPolicySettingsDeviceSettingsReport
-func (m *GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) Post(body GetGroupPolicySettingsDeviceSettingsReportRequestBodyable)(GetGroupPolicySettingsDeviceSettingsReportResponseable, error) {
+func (m *GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) Post(body GetGroupPolicySettingsDeviceSettingsReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getGroupPolicySettingsDeviceSettingsReport
-func (m *GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetGroupPolicySettingsDeviceSettingsReportRequestBodyable, requestConfiguration *GetGroupPolicySettingsDeviceSettingsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetGroupPolicySettingsDeviceSettingsReportResponseable, error) {
+func (m *GetGroupPolicySettingsDeviceSettingsReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetGroupPolicySettingsDeviceSettingsReportPostRequestBodyable, requestConfiguration *GetGroupPolicySettingsDeviceSettingsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetGroupPolicySettingsDeviceSettingsReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetGroupPolicySettingsDeviceSettingsReportResponseable), nil
+    return res.([]byte), nil
 }

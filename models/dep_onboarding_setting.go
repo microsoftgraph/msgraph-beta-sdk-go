@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DepOnboardingSetting 
+// DepOnboardingSetting the depOnboardingSetting represents an instance of the Apple DEP service being onboarded to Intune. The onboarded service instance manages an Apple Token used to synchronize data between Apple and Intune.
 type DepOnboardingSetting struct {
     Entity
     // The Apple ID used to obtain the current token.

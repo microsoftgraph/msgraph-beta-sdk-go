@@ -40,11 +40,11 @@ func NewEvaluateApplicationRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewEvaluateApplicationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action evaluateApplication
-func (m *EvaluateApplicationRequestBuilder) CreatePostRequestInformation(body EvaluateApplicationRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EvaluateApplicationRequestBuilder) CreatePostRequestInformation(body EvaluateApplicationPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action evaluateApplication
-func (m *EvaluateApplicationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateApplicationRequestBodyable, requestConfiguration *EvaluateApplicationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EvaluateApplicationRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateApplicationPostRequestBodyable, requestConfiguration *EvaluateApplicationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *EvaluateApplicationRequestBuilder) CreatePostRequestInformationWithRequ
     return requestInfo, nil
 }
 // Post invoke action evaluateApplication
-func (m *EvaluateApplicationRequestBuilder) Post(body EvaluateApplicationRequestBodyable)(EvaluateApplicationResponseable, error) {
+func (m *EvaluateApplicationRequestBuilder) Post(body EvaluateApplicationPostRequestBodyable)(EvaluateApplicationResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action evaluateApplication
-func (m *EvaluateApplicationRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EvaluateApplicationRequestBodyable, requestConfiguration *EvaluateApplicationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(EvaluateApplicationResponseable, error) {
+func (m *EvaluateApplicationRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EvaluateApplicationPostRequestBodyable, requestConfiguration *EvaluateApplicationRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(EvaluateApplicationResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

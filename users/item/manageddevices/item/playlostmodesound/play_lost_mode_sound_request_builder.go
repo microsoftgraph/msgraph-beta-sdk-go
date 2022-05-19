@@ -40,11 +40,11 @@ func NewPlayLostModeSoundRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewPlayLostModeSoundRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation play lost mode sound
-func (m *PlayLostModeSoundRequestBuilder) CreatePostRequestInformation(body PlayLostModeSoundRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PlayLostModeSoundRequestBuilder) CreatePostRequestInformation(body PlayLostModeSoundPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration play lost mode sound
-func (m *PlayLostModeSoundRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body PlayLostModeSoundRequestBodyable, requestConfiguration *PlayLostModeSoundRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PlayLostModeSoundRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body PlayLostModeSoundPostRequestBodyable, requestConfiguration *PlayLostModeSoundRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *PlayLostModeSoundRequestBuilder) CreatePostRequestInformationWithReques
     return requestInfo, nil
 }
 // Post play lost mode sound
-func (m *PlayLostModeSoundRequestBuilder) Post(body PlayLostModeSoundRequestBodyable)(error) {
+func (m *PlayLostModeSoundRequestBuilder) Post(body PlayLostModeSoundPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler play lost mode sound
-func (m *PlayLostModeSoundRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body PlayLostModeSoundRequestBodyable, requestConfiguration *PlayLostModeSoundRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *PlayLostModeSoundRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body PlayLostModeSoundPostRequestBodyable, requestConfiguration *PlayLostModeSoundRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

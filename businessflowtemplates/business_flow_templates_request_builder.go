@@ -16,7 +16,7 @@ type BusinessFlowTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// BusinessFlowTemplatesRequestBuilderGetQueryParameters list businessFlowTemplates
+// BusinessFlowTemplatesRequestBuilderGetQueryParameters in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, list all the [businessFlowTemplate](../resources/businessflowtemplate.md) objects.
 type BusinessFlowTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewBusinessFlowTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *BusinessFlowTemplatesRequestBuilder) Count()(*if38055a66c74250af2d6857bbb847959d1717e9025d0d0f368e5d26f8614f86b.CountRequestBuilder) {
     return if38055a66c74250af2d6857bbb847959d1717e9025d0d0f368e5d26f8614f86b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list businessFlowTemplates
+// CreateGetRequestInformation in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, list all the [businessFlowTemplate](../resources/businessflowtemplate.md) objects.
 func (m *BusinessFlowTemplatesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list businessFlowTemplates
+// CreateGetRequestInformationWithRequestConfiguration in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, list all the [businessFlowTemplate](../resources/businessflowtemplate.md) objects.
 func (m *BusinessFlowTemplatesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *BusinessFlowTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +110,11 @@ func (m *BusinessFlowTemplatesRequestBuilder) CreatePostRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// Get list businessFlowTemplates
+// Get in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, list all the [businessFlowTemplate](../resources/businessflowtemplate.md) objects.
 func (m *BusinessFlowTemplatesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler list businessFlowTemplates
+// GetWithRequestConfigurationAndResponseHandler in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, list all the [businessFlowTemplate](../resources/businessflowtemplate.md) objects.
 func (m *BusinessFlowTemplatesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BusinessFlowTemplatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessFlowTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

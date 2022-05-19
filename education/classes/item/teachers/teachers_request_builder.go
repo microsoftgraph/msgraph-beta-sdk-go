@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i0db9617499f9787a04f916beb72af7c5772ea91cc0cc7538b8e5a9bede4068c7 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/classes/item/teachers/ref"
     i3bfc3573df07ff30291cdb2dc838daf277edcd978141d13dc5d70e18259eb96e "github.com/microsoftgraph/msgraph-beta-sdk-go/education/classes/item/teachers/count"
 )
 
@@ -105,4 +106,8 @@ func (m *TeachersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(r
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *TeachersRequestBuilder) Ref()(*i0db9617499f9787a04f916beb72af7c5772ea91cc0cc7538b8e5a9bede4068c7.RefRequestBuilder) {
+    return i0db9617499f9787a04f916beb72af7c5772ea91cc0cc7538b8e5a9bede4068c7.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

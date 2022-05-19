@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i1db9e94739c3466c9749aa8fdf09b308c893d480f73c43f6f2ceab8602cf9047 "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/publishedresources/item/agentgroups/count"
+    i4f7d88aa21ffd96dd844ccda7cdf9cfb12a2e4b9b291e8470e3b10e685522064 "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/publishedresources/item/agentgroups/ref"
 )
 
 // AgentGroupsRequestBuilder provides operations to manage the agentGroups property of the microsoft.graph.publishedResource entity.
@@ -149,4 +150,8 @@ func (m *AgentGroupsRequestBuilder) PostWithRequestConfigurationAndResponseHandl
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable), nil
+}
+// Ref the ref property
+func (m *AgentGroupsRequestBuilder) Ref()(*i4f7d88aa21ffd96dd844ccda7cdf9cfb12a2e4b9b291e8470e3b10e685522064.RefRequestBuilder) {
+    return i4f7d88aa21ffd96dd844ccda7cdf9cfb12a2e4b9b291e8470e3b10e685522064.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

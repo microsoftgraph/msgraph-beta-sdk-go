@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of mobilityManagementPolicy entities.
+// Provides operations to manage the deviceRegistrationPolicy singleton.
 type PolicyScope int
 
 const (

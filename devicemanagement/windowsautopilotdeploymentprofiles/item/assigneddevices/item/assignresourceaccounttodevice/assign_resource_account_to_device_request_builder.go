@@ -40,11 +40,11 @@ func NewAssignResourceAccountToDeviceRequestBuilder(rawUrl string, requestAdapte
     return NewAssignResourceAccountToDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation assigns resource account to Autopilot devices.
-func (m *AssignResourceAccountToDeviceRequestBuilder) CreatePostRequestInformation(body AssignResourceAccountToDeviceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AssignResourceAccountToDeviceRequestBuilder) CreatePostRequestInformation(body AssignResourceAccountToDevicePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration assigns resource account to Autopilot devices.
-func (m *AssignResourceAccountToDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssignResourceAccountToDeviceRequestBodyable, requestConfiguration *AssignResourceAccountToDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AssignResourceAccountToDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssignResourceAccountToDevicePostRequestBodyable, requestConfiguration *AssignResourceAccountToDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *AssignResourceAccountToDeviceRequestBuilder) CreatePostRequestInformati
     return requestInfo, nil
 }
 // Post assigns resource account to Autopilot devices.
-func (m *AssignResourceAccountToDeviceRequestBuilder) Post(body AssignResourceAccountToDeviceRequestBodyable)(error) {
+func (m *AssignResourceAccountToDeviceRequestBuilder) Post(body AssignResourceAccountToDevicePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler assigns resource account to Autopilot devices.
-func (m *AssignResourceAccountToDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AssignResourceAccountToDeviceRequestBodyable, requestConfiguration *AssignResourceAccountToDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *AssignResourceAccountToDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AssignResourceAccountToDevicePostRequestBodyable, requestConfiguration *AssignResourceAccountToDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

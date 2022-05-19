@@ -40,11 +40,11 @@ func NewMigrateToTemplateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewMigrateToTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action migrateToTemplate
-func (m *MigrateToTemplateRequestBuilder) CreatePostRequestInformation(body MigrateToTemplateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MigrateToTemplateRequestBuilder) CreatePostRequestInformation(body MigrateToTemplatePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action migrateToTemplate
-func (m *MigrateToTemplateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MigrateToTemplateRequestBodyable, requestConfiguration *MigrateToTemplateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MigrateToTemplateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MigrateToTemplatePostRequestBodyable, requestConfiguration *MigrateToTemplateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *MigrateToTemplateRequestBuilder) CreatePostRequestInformationWithReques
     return requestInfo, nil
 }
 // Post invoke action migrateToTemplate
-func (m *MigrateToTemplateRequestBuilder) Post(body MigrateToTemplateRequestBodyable)(error) {
+func (m *MigrateToTemplateRequestBuilder) Post(body MigrateToTemplatePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action migrateToTemplate
-func (m *MigrateToTemplateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body MigrateToTemplateRequestBodyable, requestConfiguration *MigrateToTemplateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *MigrateToTemplateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body MigrateToTemplatePostRequestBodyable, requestConfiguration *MigrateToTemplateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

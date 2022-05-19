@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnlineMeeting 
+// OnlineMeeting provides operations to manage the commsApplication singleton.
 type OnlineMeeting struct {
     Entity
     // Indicates whether attendees can turn on their camera.
@@ -29,7 +29,7 @@ type OnlineMeeting struct {
     // Settings related to a live event.
     broadcastSettings BroadcastMeetingSettingsable
     // The capabilities property
-    capabilities []MeetingCapabilities
+    capabilities []string
     // The chat information associated with this online meeting.
     chatInfo ChatInfoable
     // The meeting creation time in UTC. Read-only.
@@ -161,7 +161,7 @@ func (m *OnlineMeeting) GetBroadcastSettings()(BroadcastMeetingSettingsable) {
     }
 }
 // GetCapabilities gets the capabilities property value. The capabilities property
-func (m *OnlineMeeting) GetCapabilities()([]MeetingCapabilities) {
+func (m *OnlineMeeting) GetCapabilities()([]string) {
     if m == nil {
         return nil
     } else {
@@ -308,14 +308,14 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["capabilities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseMeetingCapabilities)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MeetingCapabilities, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*MeetingCapabilities))
+                res[i] = *(v.(*string))
             }
             m.SetCapabilities(res)
         }
@@ -706,7 +706,7 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetCapabilities() != nil {
-        err = writer.WriteCollectionOfStringValues("capabilities", SerializeMeetingCapabilities(m.GetCapabilities()))
+        err = writer.WriteCollectionOfStringValues("capabilities", m.GetCapabilities())
         if err != nil {
             return err
         }
@@ -888,7 +888,7 @@ func (m *OnlineMeeting) SetBroadcastSettings(value BroadcastMeetingSettingsable)
     }
 }
 // SetCapabilities sets the capabilities property value. The capabilities property
-func (m *OnlineMeeting) SetCapabilities(value []MeetingCapabilities)() {
+func (m *OnlineMeeting) SetCapabilities(value []string)() {
     if m != nil {
         m.capabilities = value
     }

@@ -40,11 +40,11 @@ func NewGetCertificatesReportRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewGetCertificatesReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getCertificatesReport
-func (m *GetCertificatesReportRequestBuilder) CreatePostRequestInformation(body GetCertificatesReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetCertificatesReportRequestBuilder) CreatePostRequestInformation(body GetCertificatesReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getCertificatesReport
-func (m *GetCertificatesReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetCertificatesReportRequestBodyable, requestConfiguration *GetCertificatesReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetCertificatesReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetCertificatesReportPostRequestBodyable, requestConfiguration *GetCertificatesReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetCertificatesReportRequestBuilder) CreatePostRequestInformationWithRe
     return requestInfo, nil
 }
 // Post invoke action getCertificatesReport
-func (m *GetCertificatesReportRequestBuilder) Post(body GetCertificatesReportRequestBodyable)(GetCertificatesReportResponseable, error) {
+func (m *GetCertificatesReportRequestBuilder) Post(body GetCertificatesReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getCertificatesReport
-func (m *GetCertificatesReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetCertificatesReportRequestBodyable, requestConfiguration *GetCertificatesReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetCertificatesReportResponseable, error) {
+func (m *GetCertificatesReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetCertificatesReportPostRequestBodyable, requestConfiguration *GetCertificatesReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetCertificatesReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetCertificatesReportResponseable), nil
+    return res.([]byte), nil
 }

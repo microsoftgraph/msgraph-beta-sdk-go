@@ -15,7 +15,7 @@ type QuotaRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// QuotaRequestBuilderGetQueryParameters get quota from connections
+// QuotaRequestBuilderGetQueryParameters read-only. Nullable.
 type QuotaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,11 +50,11 @@ func NewQuotaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewQuotaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get quota from connections
+// CreateGetRequestInformation read-only. Nullable.
 func (m *QuotaRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get quota from connections
+// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
 func (m *QuotaRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *QuotaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -69,11 +69,11 @@ func (m *QuotaRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// Get get quota from connections
+// Get read-only. Nullable.
 func (m *QuotaRequestBuilder) Get()(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionQuotaable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get quota from connections
+// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
 func (m *QuotaRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *QuotaRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ConnectionQuotaable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

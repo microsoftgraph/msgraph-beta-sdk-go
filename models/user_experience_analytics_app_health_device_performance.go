@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthDevicePerformance 
+// UserExperienceAnalyticsAppHealthDevicePerformance the user experience analytics device performance entity contains device performance details.
 type UserExperienceAnalyticsAppHealthDevicePerformance struct {
     Entity
     // The number of app crashes for the device. Valid values -2147483648 to 2147483647

@@ -40,11 +40,11 @@ func NewEnrollAssetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewEnrollAssetsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action enrollAssets
-func (m *EnrollAssetsRequestBuilder) CreatePostRequestInformation(body EnrollAssetsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EnrollAssetsRequestBuilder) CreatePostRequestInformation(body EnrollAssetsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action enrollAssets
-func (m *EnrollAssetsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EnrollAssetsRequestBodyable, requestConfiguration *EnrollAssetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EnrollAssetsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EnrollAssetsPostRequestBodyable, requestConfiguration *EnrollAssetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *EnrollAssetsRequestBuilder) CreatePostRequestInformationWithRequestConf
     return requestInfo, nil
 }
 // Post invoke action enrollAssets
-func (m *EnrollAssetsRequestBuilder) Post(body EnrollAssetsRequestBodyable)(error) {
+func (m *EnrollAssetsRequestBuilder) Post(body EnrollAssetsPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action enrollAssets
-func (m *EnrollAssetsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EnrollAssetsRequestBodyable, requestConfiguration *EnrollAssetsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *EnrollAssetsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EnrollAssetsPostRequestBodyable, requestConfiguration *EnrollAssetsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

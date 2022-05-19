@@ -60,18 +60,18 @@ func (m *GetSharePointActivityUserDetailWithDateRequestBuilder) CreateGetRequest
     return requestInfo, nil
 }
 // Get invoke function getSharePointActivityUserDetail
-func (m *GetSharePointActivityUserDetailWithDateRequestBuilder) Get()(GetSharePointActivityUserDetailWithDateResponseable, error) {
+func (m *GetSharePointActivityUserDetailWithDateRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetWithRequestConfigurationAndResponseHandler invoke function getSharePointActivityUserDetail
-func (m *GetSharePointActivityUserDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSharePointActivityUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSharePointActivityUserDetailWithDateResponseable, error) {
+func (m *GetSharePointActivityUserDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSharePointActivityUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetSharePointActivityUserDetailWithDateResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetSharePointActivityUserDetailWithDateResponseable), nil
+    return res.([]byte), nil
 }

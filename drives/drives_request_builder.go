@@ -16,7 +16,7 @@ type DrivesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DrivesRequestBuilderGetQueryParameters helpers (examples that aren't included in the docs)
+// DrivesRequestBuilderGetQueryParameters 
 type DrivesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,9 @@ func NewDrivesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *DrivesRequestBuilder) Count()(*id53de4ae6cd871e3e18077c5f71c8f4ebb733bf8608a5f21e5f08e3ec95fc1b6.CountRequestBuilder) {
     return id53de4ae6cd871e3e18077c5f71c8f4ebb733bf8608a5f21e5f08e3ec95fc1b6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation helpers (examples that aren't included in the docs)
 func (m *DrivesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration helpers (examples that aren't included in the docs)
 func (m *DrivesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DrivesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +108,9 @@ func (m *DrivesRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get helpers (examples that aren't included in the docs)
 func (m *DrivesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler helpers (examples that aren't included in the docs)
 func (m *DrivesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DrivesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

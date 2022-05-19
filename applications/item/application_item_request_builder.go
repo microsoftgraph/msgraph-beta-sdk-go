@@ -51,7 +51,7 @@ type ApplicationItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ApplicationItemRequestBuilderGetQueryParameters get application
+// ApplicationItemRequestBuilderGetQueryParameters get the properties and relationships of an [application](../resources/application.md) object.
 type ApplicationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -128,11 +128,11 @@ func NewApplicationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete application
+// CreateDeleteRequestInformation deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
 func (m *ApplicationItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete application
+// CreateDeleteRequestInformationWithRequestConfiguration deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
 func (m *ApplicationItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *ApplicationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -148,11 +148,11 @@ func (m *ApplicationItemRequestBuilder) CreateDeleteRequestInformationWithReques
 func (m *ApplicationItemRequestBuilder) CreatedOnBehalfOf()(*i7f7ea3263ae77196be6ec02b1f28a4ae4b61762fbb52e65e9c9b247a2eea8db4.CreatedOnBehalfOfRequestBuilder) {
     return i7f7ea3263ae77196be6ec02b1f28a4ae4b61762fbb52e65e9c9b247a2eea8db4.NewCreatedOnBehalfOfRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get application
+// CreateGetRequestInformation get the properties and relationships of an [application](../resources/application.md) object.
 func (m *ApplicationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get application
+// CreateGetRequestInformationWithRequestConfiguration get the properties and relationships of an [application](../resources/application.md) object.
 func (m *ApplicationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ApplicationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -167,11 +167,11 @@ func (m *ApplicationItemRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation configure required Azure AD Graph permissions for an app registration
+// CreatePatchRequestInformation however, your app might still temporarily require Azure AD Graph permissions to access resources. This article describes the following four methods for configuring required Azure AD Graph permissions for your app registration:
 func (m *ApplicationItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration configure required Azure AD Graph permissions for an app registration
+// CreatePatchRequestInformationWithRequestConfiguration however, your app might still temporarily require Azure AD Graph permissions to access resources. This article describes the following four methods for configuring required Azure AD Graph permissions for your app registration:
 func (m *ApplicationItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, requestConfiguration *ApplicationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -184,11 +184,11 @@ func (m *ApplicationItemRequestBuilder) CreatePatchRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// Delete delete application
+// Delete deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
 func (m *ApplicationItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler delete application
+// DeleteWithRequestConfigurationAndResponseHandler deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
 func (m *ApplicationItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ApplicationItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -234,7 +234,7 @@ func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentialsById(id stri
     }
     return icb5d61d2d1b507de0b242478ab236165e1ff885491389b259718f3f2891d63f2.NewFederatedIdentityCredentialItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get application
+// Get get the properties and relationships of an [application](../resources/application.md) object.
 func (m *ApplicationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -246,7 +246,7 @@ func (m *ApplicationItemRequestBuilder) GetMemberGroups()(*i50081095d972d4a2a789
 func (m *ApplicationItemRequestBuilder) GetMemberObjects()(*i44c509af08fd252f2be0cb5da863d7cca5d20ac2a9548cdd1f88301d9b2601d5.GetMemberObjectsRequestBuilder) {
     return i44c509af08fd252f2be0cb5da863d7cca5d20ac2a9548cdd1f88301d9b2601d5.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler get application
+// GetWithRequestConfigurationAndResponseHandler get the properties and relationships of an [application](../resources/application.md) object.
 func (m *ApplicationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ApplicationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -296,11 +296,11 @@ func (m *ApplicationItemRequestBuilder) OwnersById(id string)(*i1057b90c33df1436
     }
     return i1057b90c33df1436be53367c28118eb82679541523cc8fa16bc6c17493049c8e.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch configure required Azure AD Graph permissions for an app registration
+// Patch however, your app might still temporarily require Azure AD Graph permissions to access resources. This article describes the following four methods for configuring required Azure AD Graph permissions for your app registration:
 func (m *ApplicationItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithRequestConfigurationAndResponseHandler configure required Azure AD Graph permissions for an app registration
+// PatchWithRequestConfigurationAndResponseHandler however, your app might still temporarily require Azure AD Graph permissions to access resources. This article describes the following four methods for configuring required Azure AD Graph permissions for your app registration:
 func (m *ApplicationItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, requestConfiguration *ApplicationItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

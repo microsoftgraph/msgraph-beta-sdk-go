@@ -11,13 +11,13 @@ type PrinterStatus struct {
     // A human-readable description of the printer's current processing state. Read-only.
     description *string
     // The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
-    details []PrinterProcessingStateDetail
+    details []string
     // The processingState property
     processingState *PrinterProcessingState
     // The processingStateDescription property
     processingStateDescription *string
     // The processingStateReasons property
-    processingStateReasons []PrinterProcessingStateReason
+    processingStateReasons []string
     // The current processing state. Valid values are described in the following table. Read-only.
     state *PrinterProcessingState
 }
@@ -49,7 +49,7 @@ func (m *PrinterStatus) GetDescription()(*string) {
     }
 }
 // GetDetails gets the details property value. The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
-func (m *PrinterStatus) GetDetails()([]PrinterProcessingStateDetail) {
+func (m *PrinterStatus) GetDetails()([]string) {
     if m == nil {
         return nil
     } else {
@@ -70,14 +70,14 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["details"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParsePrinterProcessingStateDetail)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PrinterProcessingStateDetail, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrinterProcessingStateDetail))
+                res[i] = *(v.(*string))
             }
             m.SetDetails(res)
         }
@@ -104,14 +104,14 @@ func (m *PrinterStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["processingStateReasons"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParsePrinterProcessingStateReason)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PrinterProcessingStateReason, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrinterProcessingStateReason))
+                res[i] = *(v.(*string))
             }
             m.SetProcessingStateReasons(res)
         }
@@ -146,7 +146,7 @@ func (m *PrinterStatus) GetProcessingStateDescription()(*string) {
     }
 }
 // GetProcessingStateReasons gets the processingStateReasons property value. The processingStateReasons property
-func (m *PrinterStatus) GetProcessingStateReasons()([]PrinterProcessingStateReason) {
+func (m *PrinterStatus) GetProcessingStateReasons()([]string) {
     if m == nil {
         return nil
     } else {
@@ -170,7 +170,7 @@ func (m *PrinterStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetDetails() != nil {
-        err := writer.WriteCollectionOfStringValues("details", SerializePrinterProcessingStateDetail(m.GetDetails()))
+        err := writer.WriteCollectionOfStringValues("details", m.GetDetails())
         if err != nil {
             return err
         }
@@ -189,7 +189,7 @@ func (m *PrinterStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetProcessingStateReasons() != nil {
-        err := writer.WriteCollectionOfStringValues("processingStateReasons", SerializePrinterProcessingStateReason(m.GetProcessingStateReasons()))
+        err := writer.WriteCollectionOfStringValues("processingStateReasons", m.GetProcessingStateReasons())
         if err != nil {
             return err
         }
@@ -222,7 +222,7 @@ func (m *PrinterStatus) SetDescription(value *string)() {
     }
 }
 // SetDetails sets the details property value. The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
-func (m *PrinterStatus) SetDetails(value []PrinterProcessingStateDetail)() {
+func (m *PrinterStatus) SetDetails(value []string)() {
     if m != nil {
         m.details = value
     }
@@ -240,7 +240,7 @@ func (m *PrinterStatus) SetProcessingStateDescription(value *string)() {
     }
 }
 // SetProcessingStateReasons sets the processingStateReasons property value. The processingStateReasons property
-func (m *PrinterStatus) SetProcessingStateReasons(value []PrinterProcessingStateReason)() {
+func (m *PrinterStatus) SetProcessingStateReasons(value []string)() {
     if m != nil {
         m.processingStateReasons = value
     }

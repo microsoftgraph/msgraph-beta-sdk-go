@@ -5,10 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ConnectionQuota 
+// ConnectionQuota provides operations to manage the collection of externalConnection entities.
 type ConnectionQuota struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The itemsRemaining property
+    // Returns the minimum number in a range that contains the following data: items remaining in the connection and remaining items at tenant-level. The following equation represents the formula used to calculate the minimum number: min(max capacity in the connection – number of items in the connection, tenant quota – number of items indexed in all connections). If the connection is nonmonetized (preview connector or preview content experience), then it returns the number of remaining items in the connection.
     itemsRemaining *int64
 }
 // NewConnectionQuota instantiates a new connectionQuota and sets the default values.
@@ -37,7 +37,7 @@ func (m *ConnectionQuota) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetItemsRemaining gets the itemsRemaining property value. The itemsRemaining property
+// GetItemsRemaining gets the itemsRemaining property value. Returns the minimum number in a range that contains the following data: items remaining in the connection and remaining items at tenant-level. The following equation represents the formula used to calculate the minimum number: min(max capacity in the connection – number of items in the connection, tenant quota – number of items indexed in all connections). If the connection is nonmonetized (preview connector or preview content experience), then it returns the number of remaining items in the connection.
 func (m *ConnectionQuota) GetItemsRemaining()(*int64) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *ConnectionQuota) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetItemsRemaining sets the itemsRemaining property value. The itemsRemaining property
+// SetItemsRemaining sets the itemsRemaining property value. Returns the minimum number in a range that contains the following data: items remaining in the connection and remaining items at tenant-level. The following equation represents the formula used to calculate the minimum number: min(max capacity in the connection – number of items in the connection, tenant quota – number of items indexed in all connections). If the connection is nonmonetized (preview connector or preview content experience), then it returns the number of remaining items in the connection.
 func (m *ConnectionQuota) SetItemsRemaining(value *int64)() {
     if m != nil {
         m.itemsRemaining = value

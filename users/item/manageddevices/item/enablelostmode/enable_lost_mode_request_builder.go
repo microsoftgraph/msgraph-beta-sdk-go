@@ -40,11 +40,11 @@ func NewEnableLostModeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewEnableLostModeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation enable lost mode
-func (m *EnableLostModeRequestBuilder) CreatePostRequestInformation(body EnableLostModeRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EnableLostModeRequestBuilder) CreatePostRequestInformation(body EnableLostModePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration enable lost mode
-func (m *EnableLostModeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EnableLostModeRequestBodyable, requestConfiguration *EnableLostModeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EnableLostModeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EnableLostModePostRequestBodyable, requestConfiguration *EnableLostModeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *EnableLostModeRequestBuilder) CreatePostRequestInformationWithRequestCo
     return requestInfo, nil
 }
 // Post enable lost mode
-func (m *EnableLostModeRequestBuilder) Post(body EnableLostModeRequestBodyable)(error) {
+func (m *EnableLostModeRequestBuilder) Post(body EnableLostModePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler enable lost mode
-func (m *EnableLostModeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EnableLostModeRequestBodyable, requestConfiguration *EnableLostModeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *EnableLostModeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EnableLostModePostRequestBodyable, requestConfiguration *EnableLostModeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

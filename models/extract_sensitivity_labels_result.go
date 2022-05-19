@@ -11,7 +11,7 @@ type ExtractSensitivityLabelsResult struct {
     // List of sensitivity labels assigned to a file.
     labels []SensitivityLabelAssignmentable
 }
-// NewExtractSensitivityLabelsResult instantiates a new extractSensitivityLabelsResult and sets the default values.
+// NewExtractSensitivityLabelsResult instantiates a new ExtractSensitivityLabelsResult and sets the default values.
 func NewExtractSensitivityLabelsResult()(*ExtractSensitivityLabelsResult) {
     m := &ExtractSensitivityLabelsResult{
     }

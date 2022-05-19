@@ -40,11 +40,11 @@ func NewGetTargetedUsersAndDevicesRequestBuilder(rawUrl string, requestAdapter i
     return NewGetTargetedUsersAndDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getTargetedUsersAndDevices
-func (m *GetTargetedUsersAndDevicesRequestBuilder) CreatePostRequestInformation(body GetTargetedUsersAndDevicesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetTargetedUsersAndDevicesRequestBuilder) CreatePostRequestInformation(body GetTargetedUsersAndDevicesPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getTargetedUsersAndDevices
-func (m *GetTargetedUsersAndDevicesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetTargetedUsersAndDevicesRequestBodyable, requestConfiguration *GetTargetedUsersAndDevicesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetTargetedUsersAndDevicesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetTargetedUsersAndDevicesPostRequestBodyable, requestConfiguration *GetTargetedUsersAndDevicesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *GetTargetedUsersAndDevicesRequestBuilder) CreatePostRequestInformationW
     return requestInfo, nil
 }
 // Post invoke action getTargetedUsersAndDevices
-func (m *GetTargetedUsersAndDevicesRequestBuilder) Post(body GetTargetedUsersAndDevicesRequestBodyable)(GetTargetedUsersAndDevicesResponseable, error) {
+func (m *GetTargetedUsersAndDevicesRequestBuilder) Post(body GetTargetedUsersAndDevicesPostRequestBodyable)(GetTargetedUsersAndDevicesResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getTargetedUsersAndDevices
-func (m *GetTargetedUsersAndDevicesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetTargetedUsersAndDevicesRequestBodyable, requestConfiguration *GetTargetedUsersAndDevicesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTargetedUsersAndDevicesResponseable, error) {
+func (m *GetTargetedUsersAndDevicesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetTargetedUsersAndDevicesPostRequestBodyable, requestConfiguration *GetTargetedUsersAndDevicesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetTargetedUsersAndDevicesResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

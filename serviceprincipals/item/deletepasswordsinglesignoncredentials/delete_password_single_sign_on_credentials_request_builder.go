@@ -40,11 +40,11 @@ func NewDeletePasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, reque
     return NewDeletePasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action deletePasswordSingleSignOnCredentials
-func (m *DeletePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformation(body DeletePasswordSingleSignOnCredentialsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DeletePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformation(body DeletePasswordSingleSignOnCredentialsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action deletePasswordSingleSignOnCredentials
-func (m *DeletePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DeletePasswordSingleSignOnCredentialsRequestBodyable, requestConfiguration *DeletePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DeletePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DeletePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *DeletePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *DeletePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestI
     return requestInfo, nil
 }
 // Post invoke action deletePasswordSingleSignOnCredentials
-func (m *DeletePasswordSingleSignOnCredentialsRequestBuilder) Post(body DeletePasswordSingleSignOnCredentialsRequestBodyable)(error) {
+func (m *DeletePasswordSingleSignOnCredentialsRequestBuilder) Post(body DeletePasswordSingleSignOnCredentialsPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action deletePasswordSingleSignOnCredentials
-func (m *DeletePasswordSingleSignOnCredentialsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body DeletePasswordSingleSignOnCredentialsRequestBodyable, requestConfiguration *DeletePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *DeletePasswordSingleSignOnCredentialsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body DeletePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *DeletePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

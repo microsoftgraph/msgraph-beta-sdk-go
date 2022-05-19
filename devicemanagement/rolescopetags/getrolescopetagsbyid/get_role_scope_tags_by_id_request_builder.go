@@ -40,11 +40,11 @@ func NewGetRoleScopeTagsByIdRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewGetRoleScopeTagsByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getRoleScopeTagsById
-func (m *GetRoleScopeTagsByIdRequestBuilder) CreatePostRequestInformation(body GetRoleScopeTagsByIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetRoleScopeTagsByIdRequestBuilder) CreatePostRequestInformation(body GetRoleScopeTagsByIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getRoleScopeTagsById
-func (m *GetRoleScopeTagsByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetRoleScopeTagsByIdRequestBodyable, requestConfiguration *GetRoleScopeTagsByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetRoleScopeTagsByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetRoleScopeTagsByIdPostRequestBodyable, requestConfiguration *GetRoleScopeTagsByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *GetRoleScopeTagsByIdRequestBuilder) CreatePostRequestInformationWithReq
     return requestInfo, nil
 }
 // Post invoke action getRoleScopeTagsById
-func (m *GetRoleScopeTagsByIdRequestBuilder) Post(body GetRoleScopeTagsByIdRequestBodyable)(GetRoleScopeTagsByIdResponseable, error) {
+func (m *GetRoleScopeTagsByIdRequestBuilder) Post(body GetRoleScopeTagsByIdPostRequestBodyable)(GetRoleScopeTagsByIdResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getRoleScopeTagsById
-func (m *GetRoleScopeTagsByIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetRoleScopeTagsByIdRequestBodyable, requestConfiguration *GetRoleScopeTagsByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRoleScopeTagsByIdResponseable, error) {
+func (m *GetRoleScopeTagsByIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetRoleScopeTagsByIdPostRequestBodyable, requestConfiguration *GetRoleScopeTagsByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetRoleScopeTagsByIdResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

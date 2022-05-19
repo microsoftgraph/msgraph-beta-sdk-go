@@ -40,11 +40,11 @@ func NewRecordDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewRecordDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action recordDecisions
-func (m *RecordDecisionsRequestBuilder) CreatePostRequestInformation(body RecordDecisionsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RecordDecisionsRequestBuilder) CreatePostRequestInformation(body RecordDecisionsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action recordDecisions
-func (m *RecordDecisionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RecordDecisionsRequestBodyable, requestConfiguration *RecordDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RecordDecisionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RecordDecisionsPostRequestBodyable, requestConfiguration *RecordDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *RecordDecisionsRequestBuilder) CreatePostRequestInformationWithRequestC
     return requestInfo, nil
 }
 // Post invoke action recordDecisions
-func (m *RecordDecisionsRequestBuilder) Post(body RecordDecisionsRequestBodyable)(error) {
+func (m *RecordDecisionsRequestBuilder) Post(body RecordDecisionsPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action recordDecisions
-func (m *RecordDecisionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RecordDecisionsRequestBodyable, requestConfiguration *RecordDecisionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *RecordDecisionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RecordDecisionsPostRequestBodyable, requestConfiguration *RecordDecisionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthDevicePerformance 
+// UserExperienceAnalyticsBatteryHealthDevicePerformance the user experience analytics battery health device performance entity contains device level battery information.
 type UserExperienceAnalyticsBatteryHealthDevicePerformance struct {
     Entity
     // Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647

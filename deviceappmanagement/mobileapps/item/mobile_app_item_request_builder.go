@@ -10,6 +10,8 @@ import (
     i2cc000920189f2c9f846e98b23559d1c3218e590b3b9322853afced5128198d6 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/iosvppapp"
     i3490d416205b3df42d9b8ee0ff657b79e6262e2c3b79708a8f0fb50f5a1c2499 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/devicestatuses"
     i413f580db54415c14dab7adbde8526f1b741cd16690fd87a8ff30b9108f0ec47 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/updaterelationships"
+    i80957ee44d71f11a980ce313955cee2f656a3b66d1372e89fc80b61b6062f43e "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/mobilelobapp"
+    i85115d9056b16e6e0e324de591a86441ecc189ab34b3904373387834f2f2a738 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/managedmobilelobapp"
     i9b6c1e48145f74fcaf231180b0b8a979f941d054e34a28d2e470e01c6a7ee864 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/getrelatedappstateswithuserprincipalnamewithdeviceid"
     iaca75b4f217f7322eba62ee5fd8c052d9514c3394b480376576627995983ab4a "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/relationships"
     idd22d981d731ad036f829684abde198fe174082361ffe1a63d853407dca69d18 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mobileapps/item/categories"
@@ -231,6 +233,14 @@ func (m *MobileAppItemRequestBuilder) InstallSummary()(*i019948c5cc3432cae1aa4d8
 // IosVppApp the iosVppApp property
 func (m *MobileAppItemRequestBuilder) IosVppApp()(*i2cc000920189f2c9f846e98b23559d1c3218e590b3b9322853afced5128198d6.IosVppAppRequestBuilder) {
     return i2cc000920189f2c9f846e98b23559d1c3218e590b3b9322853afced5128198d6.NewIosVppAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ManagedMobileLobApp the managedMobileLobApp property
+func (m *MobileAppItemRequestBuilder) ManagedMobileLobApp()(*i85115d9056b16e6e0e324de591a86441ecc189ab34b3904373387834f2f2a738.ManagedMobileLobAppRequestBuilder) {
+    return i85115d9056b16e6e0e324de591a86441ecc189ab34b3904373387834f2f2a738.NewManagedMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MobileLobApp the mobileLobApp property
+func (m *MobileAppItemRequestBuilder) MobileLobApp()(*i80957ee44d71f11a980ce313955cee2f656a3b66d1372e89fc80b61b6062f43e.MobileLobAppRequestBuilder) {
+    return i80957ee44d71f11a980ce313955cee2f656a3b66d1372e89fc80b61b6062f43e.NewMobileLobAppRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property mobileApps in deviceAppManagement
 func (m *MobileAppItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppable)(error) {

@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i06e1ead7728c994feb538f17f573bb02e4361bb147b51103639b4cd068edb0b6 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/mobiledevicemanagementpolicies/item/includedgroups/count"
+    i4bc5c736cf5173963d7bfd7b0159c700822c65b094b12ccfad86ff2e021082bc "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/mobiledevicemanagementpolicies/item/includedgroups/ref"
 )
 
 // IncludedGroupsRequestBuilder provides operations to manage the includedGroups property of the microsoft.graph.mobilityManagementPolicy entity.
@@ -105,4 +106,8 @@ func (m *IncludedGroupsRequestBuilder) GetWithRequestConfigurationAndResponseHan
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *IncludedGroupsRequestBuilder) Ref()(*i4bc5c736cf5173963d7bfd7b0159c700822c65b094b12ccfad86ff2e021082bc.RefRequestBuilder) {
+    return i4bc5c736cf5173963d7bfd7b0159c700822c65b094b12ccfad86ff2e021082bc.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

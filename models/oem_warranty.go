@@ -17,7 +17,7 @@ type OemWarranty struct {
     // Device warranty page URL
     deviceWarrantyUrl *string
 }
-// NewOemWarranty instantiates a new oemWarranty and sets the default values.
+// NewOemWarranty instantiates a new OemWarranty and sets the default values.
 func NewOemWarranty()(*OemWarranty) {
     m := &OemWarranty{
     }

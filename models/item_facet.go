@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemFacet 
+// ItemFacet provides operations to manage the compliance singleton.
 type ItemFacet struct {
     Entity
     // The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
@@ -34,6 +34,25 @@ func NewItemFacet()(*ItemFacet) {
 }
 // CreateItemFacetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateItemFacetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.itemFacet":
+                        return NewItemFacet(), nil
+                }
+            }
+        }
+    }
     return NewItemFacet(), nil
 }
 // GetAllowedAudiences gets the allowedAudiences property value. The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.

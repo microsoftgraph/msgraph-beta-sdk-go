@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProgramControl 
+// ProgramControl provides operations to manage the collection of program entities.
 type ProgramControl struct {
     Entity
     // The controlId of the control, in particular the identifier of an access review. Required on create.

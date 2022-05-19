@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidForWorkAppConfigurationSchema 
+// AndroidForWorkAppConfigurationSchema schema describing an Android for Work application's custom configurations.
 type AndroidForWorkAppConfigurationSchema struct {
     Entity
     // UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app

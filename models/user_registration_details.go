@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserRegistrationDetails 
+// UserRegistrationDetails provides operations to manage the print singleton.
 type UserRegistrationDetails struct {
     Entity
+    // The defaultMfaMethod property
+    defaultMfaMethod *DefaultMfaMethodType
     // Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
     isMfaCapable *bool
     // Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).
@@ -37,9 +39,27 @@ func NewUserRegistrationDetails()(*UserRegistrationDetails) {
 func CreateUserRegistrationDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserRegistrationDetails(), nil
 }
+// GetDefaultMfaMethod gets the defaultMfaMethod property value. The defaultMfaMethod property
+func (m *UserRegistrationDetails) GetDefaultMfaMethod()(*DefaultMfaMethodType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.defaultMfaMethod
+    }
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["defaultMfaMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDefaultMfaMethodType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDefaultMfaMethod(val.(*DefaultMfaMethodType))
+        }
+        return nil
+    }
     res["isMfaCapable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -214,6 +234,13 @@ func (m *UserRegistrationDetails) Serialize(writer i878a80d2330e89d26896388a3f48
     if err != nil {
         return err
     }
+    if m.GetDefaultMfaMethod() != nil {
+        cast := (*m.GetDefaultMfaMethod()).String()
+        err = writer.WriteStringValue("defaultMfaMethod", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("isMfaCapable", m.GetIsMfaCapable())
         if err != nil {
@@ -269,6 +296,12 @@ func (m *UserRegistrationDetails) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     return nil
+}
+// SetDefaultMfaMethod sets the defaultMfaMethod property value. The defaultMfaMethod property
+func (m *UserRegistrationDetails) SetDefaultMfaMethod(value *DefaultMfaMethodType)() {
+    if m != nil {
+        m.defaultMfaMethod = value
+    }
 }
 // SetIsMfaCapable sets the isMfaCapable property value. Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) SetIsMfaCapable(value *bool)() {

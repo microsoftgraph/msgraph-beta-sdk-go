@@ -4,6 +4,8 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i732269bcc02a33de1aa2369240bea831fddf95234b1db97cc1b413e90112561e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/snapshots/getsubscriptions"
+    i94faa03df0dc781ee3dc5250a32ce8c15cad1bac1731690610408ab8651bf79c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/snapshots/getstorageaccountswithsubscriptionid"
     iee7cb8e10b1f05880345830ba3bc948bc6bb2cd4066c619ef94c52bfb0fa8ffc "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/snapshots/count"
 )
 
@@ -113,6 +115,14 @@ func (m *SnapshotsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
 // Get cloud PC snapshots.
 func (m *SnapshotsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetStorageAccountsWithSubscriptionId provides operations to call the getStorageAccounts method.
+func (m *SnapshotsRequestBuilder) GetStorageAccountsWithSubscriptionId(subscriptionId *string)(*i94faa03df0dc781ee3dc5250a32ce8c15cad1bac1731690610408ab8651bf79c.GetStorageAccountsWithSubscriptionIdRequestBuilder) {
+    return i94faa03df0dc781ee3dc5250a32ce8c15cad1bac1731690610408ab8651bf79c.NewGetStorageAccountsWithSubscriptionIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, subscriptionId);
+}
+// GetSubscriptions provides operations to call the getSubscriptions method.
+func (m *SnapshotsRequestBuilder) GetSubscriptions()(*i732269bcc02a33de1aa2369240bea831fddf95234b1db97cc1b413e90112561e.GetSubscriptionsRequestBuilder) {
+    return i732269bcc02a33de1aa2369240bea831fddf95234b1db97cc1b413e90112561e.NewGetSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetWithRequestConfigurationAndResponseHandler cloud PC snapshots.
 func (m *SnapshotsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SnapshotsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotCollectionResponseable, error) {

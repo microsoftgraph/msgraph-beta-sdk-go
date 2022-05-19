@@ -40,11 +40,11 @@ func NewUpdateLanguageFilesRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewUpdateLanguageFilesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action updateLanguageFiles
-func (m *UpdateLanguageFilesRequestBuilder) CreatePostRequestInformation(body UpdateLanguageFilesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateLanguageFilesRequestBuilder) CreatePostRequestInformation(body UpdateLanguageFilesPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateLanguageFiles
-func (m *UpdateLanguageFilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateLanguageFilesRequestBodyable, requestConfiguration *UpdateLanguageFilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateLanguageFilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateLanguageFilesPostRequestBodyable, requestConfiguration *UpdateLanguageFilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UpdateLanguageFilesRequestBuilder) CreatePostRequestInformationWithRequ
     return requestInfo, nil
 }
 // Post invoke action updateLanguageFiles
-func (m *UpdateLanguageFilesRequestBuilder) Post(body UpdateLanguageFilesRequestBodyable)(error) {
+func (m *UpdateLanguageFilesRequestBuilder) Post(body UpdateLanguageFilesPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action updateLanguageFiles
-func (m *UpdateLanguageFilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateLanguageFilesRequestBodyable, requestConfiguration *UpdateLanguageFilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UpdateLanguageFilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateLanguageFilesPostRequestBodyable, requestConfiguration *UpdateLanguageFilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

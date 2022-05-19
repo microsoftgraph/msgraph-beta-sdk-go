@@ -40,11 +40,11 @@ func NewGetConfigurationPolicyDevicesReportRequestBuilder(rawUrl string, request
     return NewGetConfigurationPolicyDevicesReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getConfigurationPolicyDevicesReport
-func (m *GetConfigurationPolicyDevicesReportRequestBuilder) CreatePostRequestInformation(body GetConfigurationPolicyDevicesReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetConfigurationPolicyDevicesReportRequestBuilder) CreatePostRequestInformation(body GetConfigurationPolicyDevicesReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getConfigurationPolicyDevicesReport
-func (m *GetConfigurationPolicyDevicesReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigurationPolicyDevicesReportRequestBodyable, requestConfiguration *GetConfigurationPolicyDevicesReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetConfigurationPolicyDevicesReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigurationPolicyDevicesReportPostRequestBodyable, requestConfiguration *GetConfigurationPolicyDevicesReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetConfigurationPolicyDevicesReportRequestBuilder) CreatePostRequestInf
     return requestInfo, nil
 }
 // Post invoke action getConfigurationPolicyDevicesReport
-func (m *GetConfigurationPolicyDevicesReportRequestBuilder) Post(body GetConfigurationPolicyDevicesReportRequestBodyable)(GetConfigurationPolicyDevicesReportResponseable, error) {
+func (m *GetConfigurationPolicyDevicesReportRequestBuilder) Post(body GetConfigurationPolicyDevicesReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getConfigurationPolicyDevicesReport
-func (m *GetConfigurationPolicyDevicesReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigurationPolicyDevicesReportRequestBodyable, requestConfiguration *GetConfigurationPolicyDevicesReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetConfigurationPolicyDevicesReportResponseable, error) {
+func (m *GetConfigurationPolicyDevicesReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigurationPolicyDevicesReportPostRequestBodyable, requestConfiguration *GetConfigurationPolicyDevicesReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetConfigurationPolicyDevicesReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetConfigurationPolicyDevicesReportResponseable), nil
+    return res.([]byte), nil
 }

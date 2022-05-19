@@ -41,11 +41,11 @@ func NewExtractContentLabelRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewExtractContentLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action extractContentLabel
-func (m *ExtractContentLabelRequestBuilder) CreatePostRequestInformation(body ExtractContentLabelRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ExtractContentLabelRequestBuilder) CreatePostRequestInformation(body ExtractContentLabelPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action extractContentLabel
-func (m *ExtractContentLabelRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ExtractContentLabelRequestBodyable, requestConfiguration *ExtractContentLabelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ExtractContentLabelRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ExtractContentLabelPostRequestBodyable, requestConfiguration *ExtractContentLabelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *ExtractContentLabelRequestBuilder) CreatePostRequestInformationWithRequ
     return requestInfo, nil
 }
 // Post invoke action extractContentLabel
-func (m *ExtractContentLabelRequestBuilder) Post(body ExtractContentLabelRequestBodyable)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentLabelable, error) {
+func (m *ExtractContentLabelRequestBuilder) Post(body ExtractContentLabelPostRequestBodyable)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentLabelable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action extractContentLabel
-func (m *ExtractContentLabelRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ExtractContentLabelRequestBodyable, requestConfiguration *ExtractContentLabelRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentLabelable, error) {
+func (m *ExtractContentLabelRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ExtractContentLabelPostRequestBodyable, requestConfiguration *ExtractContentLabelRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentLabelable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

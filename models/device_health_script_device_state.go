@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceHealthScriptDeviceState 
+// DeviceHealthScriptDeviceState contains properties for device run state of the device health script.
 type DeviceHealthScriptDeviceState struct {
     Entity
     // A list of the assignment filter ids used for health script applicability evaluation

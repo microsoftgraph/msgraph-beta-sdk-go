@@ -21,7 +21,7 @@ type GroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// GroupsRequestBuilderGetQueryParameters add custom data to groups using schema extensions
+// GroupsRequestBuilderGetQueryParameters imagine you're a developer in a Learning Management Software company called 'Graph Learn' that builds training courses and materials for businesses.  Microsoft 365 groups, with their rich collaborative experiences, is a fantastic way to deliver course content and record exercises among participants for both online courses and instructor-led courses.  You might want to make those Microsoft 365 groups used for training courses easily identifiable as training courses, which will allow other developers to discover your groups and build rich experiences on top of your learning courses. For this scenario, this article will show you how to:
 type GroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,11 +79,11 @@ func NewGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *GroupsRequestBuilder) Count()(*i86542b1985ccd1d6e9cd7f0b9657c459f0a8d024d32198db68c5cfe8de1e0290.CountRequestBuilder) {
     return i86542b1985ccd1d6e9cd7f0b9657c459f0a8d024d32198db68c5cfe8de1e0290.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation add custom data to groups using schema extensions
+// CreateGetRequestInformation imagine you're a developer in a Learning Management Software company called 'Graph Learn' that builds training courses and materials for businesses.  Microsoft 365 groups, with their rich collaborative experiences, is a fantastic way to deliver course content and record exercises among participants for both online courses and instructor-led courses.  You might want to make those Microsoft 365 groups used for training courses easily identifiable as training courses, which will allow other developers to discover your groups and build rich experiences on top of your learning courses. For this scenario, this article will show you how to:
 func (m *GroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration add custom data to groups using schema extensions
+// CreateGetRequestInformationWithRequestConfiguration imagine you're a developer in a Learning Management Software company called 'Graph Learn' that builds training courses and materials for businesses.  Microsoft 365 groups, with their rich collaborative experiences, is a fantastic way to deliver course content and record exercises among participants for both online courses and instructor-led courses.  You might want to make those Microsoft 365 groups used for training courses easily identifiable as training courses, which will allow other developers to discover your groups and build rich experiences on top of your learning courses. For this scenario, this article will show you how to:
 func (m *GroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *GroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -98,11 +98,11 @@ func (m *GroupsRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
+// CreatePostRequestInformation in this tutorial, a fictitious company called Contoso Limited wishes to have its IT Helpdesk manage the lifecycle of employees’ access. The company has identified the Azure AD User Administrator role as the appropriate privileged role required by IT Helpdesk, and will use the PIM API to assign the role. You'll create a role-assignable security group for IT Helpdesk and using the PIM API, assign the security group eligibility to the User Administrator role. By assigning the eligible role to a security group, Contoso has a more efficient way to manage administrator access to resources such as Azure AD roles. For example: Assigning eligibility instead of a persistently active User Administrator privilege allows the company to enforce **just-in-time access**, which grants temporary permissions to carry out the privileged tasks. After defining the role eligibility, the eligible group member then activates their assignment for a temporary period. All records of role activations will be auditable by the company.
 func (m *GroupsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
+// CreatePostRequestInformationWithRequestConfiguration in this tutorial, a fictitious company called Contoso Limited wishes to have its IT Helpdesk manage the lifecycle of employees’ access. The company has identified the Azure AD User Administrator role as the appropriate privileged role required by IT Helpdesk, and will use the PIM API to assign the role. You'll create a role-assignable security group for IT Helpdesk and using the PIM API, assign the security group eligibility to the User Administrator role. By assigning the eligible role to a security group, Contoso has a more efficient way to manage administrator access to resources such as Azure AD roles. For example: Assigning eligibility instead of a persistently active User Administrator privilege allows the company to enforce **just-in-time access**, which grants temporary permissions to carry out the privileged tasks. After defining the role eligibility, the eligible group member then activates their assignment for a temporary period. All records of role activations will be auditable by the company.
 func (m *GroupsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, requestConfiguration *GroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -123,7 +123,7 @@ func (m *GroupsRequestBuilder) Delta()(*ic020eb24df81d63ab670349e4923f4de66eebfc
 func (m *GroupsRequestBuilder) EvaluateDynamicMembership()(*i498ffd1b2f6044bdb24e5841ce70347da2962279c830c4f8e0c63e4185ecc573.EvaluateDynamicMembershipRequestBuilder) {
     return i498ffd1b2f6044bdb24e5841ce70347da2962279c830c4f8e0c63e4185ecc573.NewEvaluateDynamicMembershipRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get add custom data to groups using schema extensions
+// Get imagine you're a developer in a Learning Management Software company called 'Graph Learn' that builds training courses and materials for businesses.  Microsoft 365 groups, with their rich collaborative experiences, is a fantastic way to deliver course content and record exercises among participants for both online courses and instructor-led courses.  You might want to make those Microsoft 365 groups used for training courses easily identifiable as training courses, which will allow other developers to discover your groups and build rich experiences on top of your learning courses. For this scenario, this article will show you how to:
 func (m *GroupsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -135,7 +135,7 @@ func (m *GroupsRequestBuilder) GetByIds()(*ib37f70f6afd357219dcd43a10bc09e3ce47b
 func (m *GroupsRequestBuilder) GetUserOwnedObjects()(*i9a486fb0e4b07920959c03436a2a48c8a425e7ee639e60bb6b65abd12235a827.GetUserOwnedObjectsRequestBuilder) {
     return i9a486fb0e4b07920959c03436a2a48c8a425e7ee639e60bb6b65abd12235a827.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler add custom data to groups using schema extensions
+// GetWithRequestConfigurationAndResponseHandler imagine you're a developer in a Learning Management Software company called 'Graph Learn' that builds training courses and materials for businesses.  Microsoft 365 groups, with their rich collaborative experiences, is a fantastic way to deliver course content and record exercises among participants for both online courses and instructor-led courses.  You might want to make those Microsoft 365 groups used for training courses easily identifiable as training courses, which will allow other developers to discover your groups and build rich experiences on top of your learning courses. For this scenario, this article will show you how to:
 func (m *GroupsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GroupsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -151,11 +151,11 @@ func (m *GroupsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable), nil
 }
-// Post tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
+// Post in this tutorial, a fictitious company called Contoso Limited wishes to have its IT Helpdesk manage the lifecycle of employees’ access. The company has identified the Azure AD User Administrator role as the appropriate privileged role required by IT Helpdesk, and will use the PIM API to assign the role. You'll create a role-assignable security group for IT Helpdesk and using the PIM API, assign the security group eligibility to the User Administrator role. By assigning the eligible role to a security group, Contoso has a more efficient way to manage administrator access to resources such as Azure AD roles. For example: Assigning eligibility instead of a persistently active User Administrator privilege allows the company to enforce **just-in-time access**, which grants temporary permissions to carry out the privileged tasks. After defining the role eligibility, the eligible group member then activates their assignment for a temporary period. All records of role activations will be auditable by the company.
 func (m *GroupsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithRequestConfigurationAndResponseHandler tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
+// PostWithRequestConfigurationAndResponseHandler in this tutorial, a fictitious company called Contoso Limited wishes to have its IT Helpdesk manage the lifecycle of employees’ access. The company has identified the Azure AD User Administrator role as the appropriate privileged role required by IT Helpdesk, and will use the PIM API to assign the role. You'll create a role-assignable security group for IT Helpdesk and using the PIM API, assign the security group eligibility to the User Administrator role. By assigning the eligible role to a security group, Contoso has a more efficient way to manage administrator access to resources such as Azure AD roles. For example: Assigning eligibility instead of a persistently active User Administrator privilege allows the company to enforce **just-in-time access**, which grants temporary permissions to carry out the privileged tasks. After defining the role eligibility, the eligible group member then activates their assignment for a temporary period. All records of role activations will be auditable by the company.
 func (m *GroupsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, requestConfiguration *GroupsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

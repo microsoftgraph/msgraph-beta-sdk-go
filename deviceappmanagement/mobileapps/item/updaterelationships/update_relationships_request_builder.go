@@ -40,11 +40,11 @@ func NewUpdateRelationshipsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewUpdateRelationshipsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action updateRelationships
-func (m *UpdateRelationshipsRequestBuilder) CreatePostRequestInformation(body UpdateRelationshipsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateRelationshipsRequestBuilder) CreatePostRequestInformation(body UpdateRelationshipsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateRelationships
-func (m *UpdateRelationshipsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateRelationshipsRequestBodyable, requestConfiguration *UpdateRelationshipsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateRelationshipsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateRelationshipsPostRequestBodyable, requestConfiguration *UpdateRelationshipsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UpdateRelationshipsRequestBuilder) CreatePostRequestInformationWithRequ
     return requestInfo, nil
 }
 // Post invoke action updateRelationships
-func (m *UpdateRelationshipsRequestBuilder) Post(body UpdateRelationshipsRequestBodyable)(error) {
+func (m *UpdateRelationshipsRequestBuilder) Post(body UpdateRelationshipsPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action updateRelationships
-func (m *UpdateRelationshipsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateRelationshipsRequestBodyable, requestConfiguration *UpdateRelationshipsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UpdateRelationshipsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateRelationshipsPostRequestBodyable, requestConfiguration *UpdateRelationshipsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

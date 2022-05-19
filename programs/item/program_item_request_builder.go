@@ -81,11 +81,11 @@ func (m *ProgramItemRequestBuilder) ControlsById(id string)(*i4389f3cba37530932c
     }
     return i4389f3cba37530932c950ae7ea34269add1bb806749a0c4e1d0778b3b03f64cd.NewProgramControlItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateDeleteRequestInformation delete program
+// CreateDeleteRequestInformation in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, delete a [program](../resources/program.md) object. Do not delete a program which still has `programControl` linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
 func (m *ProgramItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete program
+// CreateDeleteRequestInformationWithRequestConfiguration in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, delete a [program](../resources/program.md) object. Do not delete a program which still has `programControl` linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
 func (m *ProgramItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *ProgramItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,11 +116,11 @@ func (m *ProgramItemRequestBuilder) CreateGetRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update program
+// CreatePatchRequestInformation in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, update an existing [program](../resources/program.md) object.
 func (m *ProgramItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update program
+// CreatePatchRequestInformationWithRequestConfiguration in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, update an existing [program](../resources/program.md) object.
 func (m *ProgramItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable, requestConfiguration *ProgramItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -133,11 +133,11 @@ func (m *ProgramItemRequestBuilder) CreatePatchRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Delete delete program
+// Delete in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, delete a [program](../resources/program.md) object. Do not delete a program which still has `programControl` linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
 func (m *ProgramItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler delete program
+// DeleteWithRequestConfigurationAndResponseHandler in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, delete a [program](../resources/program.md) object. Do not delete a program which still has `programControl` linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
 func (m *ProgramItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *ProgramItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -173,11 +173,11 @@ func (m *ProgramItemRequestBuilder) GetWithRequestConfigurationAndResponseHandle
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable), nil
 }
-// Patch update program
+// Patch in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, update an existing [program](../resources/program.md) object.
 func (m *ProgramItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithRequestConfigurationAndResponseHandler update program
+// PatchWithRequestConfigurationAndResponseHandler in the Azure AD [access reviews](../resources/accessreviews-root.md) feature, update an existing [program](../resources/program.md) object.
 func (m *ProgramItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Programable, requestConfiguration *ProgramItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

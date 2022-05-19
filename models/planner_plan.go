@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerPlan 
+// PlannerPlan provides operations to manage the compliance singleton.
 type PlannerPlan struct {
     PlannerDelta
     // Collection of buckets in the plan. Read-only. Nullable.
@@ -20,7 +20,7 @@ type PlannerPlan struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Additional details about the plan. Read-only. Nullable.
     details PlannerPlanDetailsable
-    // ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.
+    // The owner property
     owner *string
     // Collection of tasks in the plan. Read-only. Nullable.
     tasks []PlannerTaskable
@@ -189,7 +189,7 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetOwner gets the owner property value. ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.
+// GetOwner gets the owner property value. The owner property
 func (m *PlannerPlan) GetOwner()(*string) {
     if m == nil {
         return nil
@@ -319,7 +319,7 @@ func (m *PlannerPlan) SetDetails(value PlannerPlanDetailsable)() {
         m.details = value
     }
 }
-// SetOwner sets the owner property value. ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.
+// SetOwner sets the owner property value. The owner property
 func (m *PlannerPlan) SetOwner(value *string)() {
     if m != nil {
         m.owner = value

@@ -41,11 +41,11 @@ func NewCreateDeviceLogCollectionRequestRequestBuilder(rawUrl string, requestAda
     return NewCreateDeviceLogCollectionRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action createDeviceLogCollectionRequest
-func (m *CreateDeviceLogCollectionRequestRequestBuilder) CreatePostRequestInformation(body CreateDeviceLogCollectionRequestRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateDeviceLogCollectionRequestRequestBuilder) CreatePostRequestInformation(body CreateDeviceLogCollectionRequestPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action createDeviceLogCollectionRequest
-func (m *CreateDeviceLogCollectionRequestRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateDeviceLogCollectionRequestRequestBodyable, requestConfiguration *CreateDeviceLogCollectionRequestRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateDeviceLogCollectionRequestRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateDeviceLogCollectionRequestPostRequestBodyable, requestConfiguration *CreateDeviceLogCollectionRequestRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *CreateDeviceLogCollectionRequestRequestBuilder) CreatePostRequestInform
     return requestInfo, nil
 }
 // Post invoke action createDeviceLogCollectionRequest
-func (m *CreateDeviceLogCollectionRequestRequestBuilder) Post(body CreateDeviceLogCollectionRequestRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, error) {
+func (m *CreateDeviceLogCollectionRequestRequestBuilder) Post(body CreateDeviceLogCollectionRequestPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action createDeviceLogCollectionRequest
-func (m *CreateDeviceLogCollectionRequestRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateDeviceLogCollectionRequestRequestBodyable, requestConfiguration *CreateDeviceLogCollectionRequestRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, error) {
+func (m *CreateDeviceLogCollectionRequestRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateDeviceLogCollectionRequestPostRequestBodyable, requestConfiguration *CreateDeviceLogCollectionRequestRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -15,7 +15,7 @@ type BulkDriverActionResult struct {
     // List of driver Ids where the action is successful.
     successfulDriverIds []string
 }
-// NewBulkDriverActionResult instantiates a new bulkDriverActionResult and sets the default values.
+// NewBulkDriverActionResult instantiates a new BulkDriverActionResult and sets the default values.
 func NewBulkDriverActionResult()(*BulkDriverActionResult) {
     m := &BulkDriverActionResult{
     }

@@ -40,11 +40,11 @@ func NewChangeUserAccountTypeRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewChangeUserAccountTypeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action changeUserAccountType
-func (m *ChangeUserAccountTypeRequestBuilder) CreatePostRequestInformation(body ChangeUserAccountTypeRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ChangeUserAccountTypeRequestBuilder) CreatePostRequestInformation(body ChangeUserAccountTypePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action changeUserAccountType
-func (m *ChangeUserAccountTypeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ChangeUserAccountTypeRequestBodyable, requestConfiguration *ChangeUserAccountTypeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ChangeUserAccountTypeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ChangeUserAccountTypePostRequestBodyable, requestConfiguration *ChangeUserAccountTypeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ChangeUserAccountTypeRequestBuilder) CreatePostRequestInformationWithRe
     return requestInfo, nil
 }
 // Post invoke action changeUserAccountType
-func (m *ChangeUserAccountTypeRequestBuilder) Post(body ChangeUserAccountTypeRequestBodyable)(error) {
+func (m *ChangeUserAccountTypeRequestBuilder) Post(body ChangeUserAccountTypePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action changeUserAccountType
-func (m *ChangeUserAccountTypeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ChangeUserAccountTypeRequestBodyable, requestConfiguration *ChangeUserAccountTypeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ChangeUserAccountTypeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ChangeUserAccountTypePostRequestBodyable, requestConfiguration *ChangeUserAccountTypeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

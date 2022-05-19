@@ -41,11 +41,11 @@ func NewCreateReplyAllRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewCreateReplyAllRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action createReplyAll
-func (m *CreateReplyAllRequestBuilder) CreatePostRequestInformation(body CreateReplyAllRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateReplyAllRequestBuilder) CreatePostRequestInformation(body CreateReplyAllPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action createReplyAll
-func (m *CreateReplyAllRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateReplyAllRequestBodyable, requestConfiguration *CreateReplyAllRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateReplyAllRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateReplyAllPostRequestBodyable, requestConfiguration *CreateReplyAllRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *CreateReplyAllRequestBuilder) CreatePostRequestInformationWithRequestCo
     return requestInfo, nil
 }
 // Post invoke action createReplyAll
-func (m *CreateReplyAllRequestBuilder) Post(body CreateReplyAllRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
+func (m *CreateReplyAllRequestBuilder) Post(body CreateReplyAllPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action createReplyAll
-func (m *CreateReplyAllRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateReplyAllRequestBodyable, requestConfiguration *CreateReplyAllRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
+func (m *CreateReplyAllRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateReplyAllPostRequestBodyable, requestConfiguration *CreateReplyAllRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

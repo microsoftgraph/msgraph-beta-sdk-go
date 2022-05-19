@@ -40,11 +40,11 @@ func NewMarkChatUnreadForUserRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewMarkChatUnreadForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action markChatUnreadForUser
-func (m *MarkChatUnreadForUserRequestBuilder) CreatePostRequestInformation(body MarkChatUnreadForUserRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MarkChatUnreadForUserRequestBuilder) CreatePostRequestInformation(body MarkChatUnreadForUserPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action markChatUnreadForUser
-func (m *MarkChatUnreadForUserRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MarkChatUnreadForUserRequestBodyable, requestConfiguration *MarkChatUnreadForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MarkChatUnreadForUserRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MarkChatUnreadForUserPostRequestBodyable, requestConfiguration *MarkChatUnreadForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *MarkChatUnreadForUserRequestBuilder) CreatePostRequestInformationWithRe
     return requestInfo, nil
 }
 // Post invoke action markChatUnreadForUser
-func (m *MarkChatUnreadForUserRequestBuilder) Post(body MarkChatUnreadForUserRequestBodyable)(error) {
+func (m *MarkChatUnreadForUserRequestBuilder) Post(body MarkChatUnreadForUserPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action markChatUnreadForUser
-func (m *MarkChatUnreadForUserRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body MarkChatUnreadForUserRequestBodyable, requestConfiguration *MarkChatUnreadForUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *MarkChatUnreadForUserRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body MarkChatUnreadForUserPostRequestBodyable, requestConfiguration *MarkChatUnreadForUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

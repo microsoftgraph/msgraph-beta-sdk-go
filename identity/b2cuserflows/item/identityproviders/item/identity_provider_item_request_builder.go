@@ -2,11 +2,10 @@ package item
 
 import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i38206d39ea5f422af2e9cd600d589c67ed3afc8b6dac7ef86b13c2c78850bddf "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/item/identityproviders/item/ref"
 )
 
-// IdentityProviderItemRequestBuilder provides operations to manage the identityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.
+// IdentityProviderItemRequestBuilder builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\identityProviders\{identityProvider-id}
 type IdentityProviderItemRequestBuilder struct {
     // Path parameters for the request
     pathParameters map[string]string
@@ -15,27 +14,11 @@ type IdentityProviderItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// IdentityProviderItemRequestBuilderGetQueryParameters get identityProviders from identity
-type IdentityProviderItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
-    // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
-}
-// IdentityProviderItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type IdentityProviderItemRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *IdentityProviderItemRequestBuilderGetQueryParameters
-}
 // NewIdentityProviderItemRequestBuilderInternal instantiates a new IdentityProviderItemRequestBuilder and sets the default values.
 func NewIdentityProviderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityProviderItemRequestBuilder) {
     m := &IdentityProviderItemRequestBuilder{
     }
-    m.urlTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/identityProviders/{identityProvider%2Did}{?%24select,%24expand}";
+    m.urlTemplate = "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/identityProviders/{identityProvider%2Did}";
     urlTplParams := make(map[string]string)
     for idx, item := range pathParameters {
         urlTplParams[idx] = item
@@ -50,42 +33,7 @@ func NewIdentityProviderItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityProviderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get identityProviders from identity
-func (m *IdentityProviderItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateGetRequestInformationWithRequestConfiguration(nil);
-}
-// CreateGetRequestInformationWithRequestConfiguration get identityProviders from identity
-func (m *IdentityProviderItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *IdentityProviderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// Get get identityProviders from identity
-func (m *IdentityProviderItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderable, error) {
-    return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// GetWithRequestConfigurationAndResponseHandler get identityProviders from identity
-func (m *IdentityProviderItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *IdentityProviderItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderable, error) {
-    requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateIdentityProviderFromDiscriminatorValue, responseHandler, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderable), nil
+// Ref the ref property
+func (m *IdentityProviderItemRequestBuilder) Ref()(*i38206d39ea5f422af2e9cd600d589c67ed3afc8b6dac7ef86b13c2c78850bddf.RefRequestBuilder) {
+    return i38206d39ea5f422af2e9cd600d589c67ed3afc8b6dac7ef86b13c2c78850bddf.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

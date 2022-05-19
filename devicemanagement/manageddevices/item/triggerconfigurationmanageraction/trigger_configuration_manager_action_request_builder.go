@@ -40,11 +40,11 @@ func NewTriggerConfigurationManagerActionRequestBuilder(rawUrl string, requestAd
     return NewTriggerConfigurationManagerActionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation trigger action on ConfigurationManager client
-func (m *TriggerConfigurationManagerActionRequestBuilder) CreatePostRequestInformation(body TriggerConfigurationManagerActionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TriggerConfigurationManagerActionRequestBuilder) CreatePostRequestInformation(body TriggerConfigurationManagerActionPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration trigger action on ConfigurationManager client
-func (m *TriggerConfigurationManagerActionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body TriggerConfigurationManagerActionRequestBodyable, requestConfiguration *TriggerConfigurationManagerActionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TriggerConfigurationManagerActionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body TriggerConfigurationManagerActionPostRequestBodyable, requestConfiguration *TriggerConfigurationManagerActionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *TriggerConfigurationManagerActionRequestBuilder) CreatePostRequestInfor
     return requestInfo, nil
 }
 // Post trigger action on ConfigurationManager client
-func (m *TriggerConfigurationManagerActionRequestBuilder) Post(body TriggerConfigurationManagerActionRequestBodyable)(error) {
+func (m *TriggerConfigurationManagerActionRequestBuilder) Post(body TriggerConfigurationManagerActionPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler trigger action on ConfigurationManager client
-func (m *TriggerConfigurationManagerActionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body TriggerConfigurationManagerActionRequestBodyable, requestConfiguration *TriggerConfigurationManagerActionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *TriggerConfigurationManagerActionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body TriggerConfigurationManagerActionPostRequestBodyable, requestConfiguration *TriggerConfigurationManagerActionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -40,11 +40,11 @@ func NewUpdateTiIndicatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewUpdateTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action updateTiIndicators
-func (m *UpdateTiIndicatorsRequestBuilder) CreatePostRequestInformation(body UpdateTiIndicatorsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateTiIndicatorsRequestBuilder) CreatePostRequestInformation(body UpdateTiIndicatorsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateTiIndicators
-func (m *UpdateTiIndicatorsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateTiIndicatorsRequestBodyable, requestConfiguration *UpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateTiIndicatorsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateTiIndicatorsPostRequestBodyable, requestConfiguration *UpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UpdateTiIndicatorsRequestBuilder) CreatePostRequestInformationWithReque
     return requestInfo, nil
 }
 // Post invoke action updateTiIndicators
-func (m *UpdateTiIndicatorsRequestBuilder) Post(body UpdateTiIndicatorsRequestBodyable)(UpdateTiIndicatorsResponseable, error) {
+func (m *UpdateTiIndicatorsRequestBuilder) Post(body UpdateTiIndicatorsPostRequestBodyable)(UpdateTiIndicatorsResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action updateTiIndicators
-func (m *UpdateTiIndicatorsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateTiIndicatorsRequestBodyable, requestConfiguration *UpdateTiIndicatorsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(UpdateTiIndicatorsResponseable, error) {
+func (m *UpdateTiIndicatorsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateTiIndicatorsPostRequestBodyable, requestConfiguration *UpdateTiIndicatorsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(UpdateTiIndicatorsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

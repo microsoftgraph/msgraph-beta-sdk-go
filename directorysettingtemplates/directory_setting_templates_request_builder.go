@@ -19,7 +19,7 @@ type DirectorySettingTemplatesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DirectorySettingTemplatesRequestBuilderGetQueryParameters list directorySettingTemplates
+// DirectorySettingTemplatesRequestBuilderGetQueryParameters directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available **directorySettingTemplates** objects.
 type DirectorySettingTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,11 +77,11 @@ func NewDirectorySettingTemplatesRequestBuilder(rawUrl string, requestAdapter i2
 func (m *DirectorySettingTemplatesRequestBuilder) Count()(*i3e3d34bb699d11aa64144db93f08af6b84b0ca9e890e8ff63fec68307143ba9d.CountRequestBuilder) {
     return i3e3d34bb699d11aa64144db93f08af6b84b0ca9e890e8ff63fec68307143ba9d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list directorySettingTemplates
+// CreateGetRequestInformation directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available **directorySettingTemplates** objects.
 func (m *DirectorySettingTemplatesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list directorySettingTemplates
+// CreateGetRequestInformationWithRequestConfiguration directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available **directorySettingTemplates** objects.
 func (m *DirectorySettingTemplatesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DirectorySettingTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *DirectorySettingTemplatesRequestBuilder) CreatePostRequestInformationWi
     }
     return requestInfo, nil
 }
-// Get list directorySettingTemplates
+// Get directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available **directorySettingTemplates** objects.
 func (m *DirectorySettingTemplatesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -125,7 +125,7 @@ func (m *DirectorySettingTemplatesRequestBuilder) GetByIds()(*i8b3159fe7053462b6
 func (m *DirectorySettingTemplatesRequestBuilder) GetUserOwnedObjects()(*if2eec762f4a60cfa480122020666674cae3dd0c0dd67417b7da42d6d7d9efc9f.GetUserOwnedObjectsRequestBuilder) {
     return if2eec762f4a60cfa480122020666674cae3dd0c0dd67417b7da42d6d7d9efc9f.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler list directorySettingTemplates
+// GetWithRequestConfigurationAndResponseHandler directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available **directorySettingTemplates** objects.
 func (m *DirectorySettingTemplatesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectorySettingTemplatesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -40,11 +40,11 @@ func NewGetUserInstallStatusReportRequestBuilder(rawUrl string, requestAdapter i
     return NewGetUserInstallStatusReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getUserInstallStatusReport
-func (m *GetUserInstallStatusReportRequestBuilder) CreatePostRequestInformation(body GetUserInstallStatusReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetUserInstallStatusReportRequestBuilder) CreatePostRequestInformation(body GetUserInstallStatusReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getUserInstallStatusReport
-func (m *GetUserInstallStatusReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetUserInstallStatusReportRequestBodyable, requestConfiguration *GetUserInstallStatusReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetUserInstallStatusReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetUserInstallStatusReportPostRequestBodyable, requestConfiguration *GetUserInstallStatusReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetUserInstallStatusReportRequestBuilder) CreatePostRequestInformationW
     return requestInfo, nil
 }
 // Post invoke action getUserInstallStatusReport
-func (m *GetUserInstallStatusReportRequestBuilder) Post(body GetUserInstallStatusReportRequestBodyable)(GetUserInstallStatusReportResponseable, error) {
+func (m *GetUserInstallStatusReportRequestBuilder) Post(body GetUserInstallStatusReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getUserInstallStatusReport
-func (m *GetUserInstallStatusReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetUserInstallStatusReportRequestBodyable, requestConfiguration *GetUserInstallStatusReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetUserInstallStatusReportResponseable, error) {
+func (m *GetUserInstallStatusReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetUserInstallStatusReportPostRequestBodyable, requestConfiguration *GetUserInstallStatusReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetUserInstallStatusReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetUserInstallStatusReportResponseable), nil
+    return res.([]byte), nil
 }

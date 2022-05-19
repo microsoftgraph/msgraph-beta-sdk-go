@@ -41,11 +41,11 @@ func NewDismissRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewDismissRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action dismiss
-func (m *DismissRequestBuilder) CreatePostRequestInformation(body DismissRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DismissRequestBuilder) CreatePostRequestInformation(body DismissPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action dismiss
-func (m *DismissRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DismissRequestBodyable, requestConfiguration *DismissRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DismissRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DismissPostRequestBodyable, requestConfiguration *DismissRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *DismissRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     return requestInfo, nil
 }
 // Post invoke action dismiss
-func (m *DismissRequestBuilder) Post(body DismissRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, error) {
+func (m *DismissRequestBuilder) Post(body DismissPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action dismiss
-func (m *DismissRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body DismissRequestBodyable, requestConfiguration *DismissRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, error) {
+func (m *DismissRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body DismissPostRequestBodyable, requestConfiguration *DismissRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

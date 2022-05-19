@@ -26,7 +26,7 @@ type CloudPcReviewStatus struct {
     // The userAccessLevel property
     userAccessLevel *CloudPcUserAccessLevel
 }
-// NewCloudPcReviewStatus instantiates a new cloudPcReviewStatus and sets the default values.
+// NewCloudPcReviewStatus instantiates a new CloudPcReviewStatus and sets the default values.
 func NewCloudPcReviewStatus()(*CloudPcReviewStatus) {
     m := &CloudPcReviewStatus{
     }

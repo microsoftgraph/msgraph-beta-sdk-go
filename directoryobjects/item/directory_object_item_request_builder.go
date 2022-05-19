@@ -27,7 +27,7 @@ type DirectoryObjectItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DirectoryObjectItemRequestBuilderGetQueryParameters get directoryObject
+// DirectoryObjectItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a directoryObject object.
 type DirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -77,11 +77,11 @@ func NewDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete directoryObject
+// CreateDeleteRequestInformation delete a directory object, for example, a group, user, application, or service principal.
 func (m *DirectoryObjectItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete directoryObject
+// CreateDeleteRequestInformationWithRequestConfiguration delete a directory object, for example, a group, user, application, or service principal.
 func (m *DirectoryObjectItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *DirectoryObjectItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -93,11 +93,11 @@ func (m *DirectoryObjectItemRequestBuilder) CreateDeleteRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get directoryObject
+// CreateGetRequestInformation retrieve the properties and relationships of a directoryObject object.
 func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get directoryObject
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of a directoryObject object.
 func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -129,11 +129,11 @@ func (m *DirectoryObjectItemRequestBuilder) CreatePatchRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// Delete delete directoryObject
+// Delete delete a directory object, for example, a group, user, application, or service principal.
 func (m *DirectoryObjectItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler delete directoryObject
+// DeleteWithRequestConfigurationAndResponseHandler delete a directory object, for example, a group, user, application, or service principal.
 func (m *DirectoryObjectItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryObjectItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -149,7 +149,7 @@ func (m *DirectoryObjectItemRequestBuilder) DeleteWithRequestConfigurationAndRes
     }
     return nil
 }
-// Get get directoryObject
+// Get retrieve the properties and relationships of a directoryObject object.
 func (m *DirectoryObjectItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -161,7 +161,7 @@ func (m *DirectoryObjectItemRequestBuilder) GetMemberGroups()(*i4010f9e207892cc0
 func (m *DirectoryObjectItemRequestBuilder) GetMemberObjects()(*i3862728ee9f421a8cc73557f4e6e38099fbb72d6624451de105fef3ae94552fd.GetMemberObjectsRequestBuilder) {
     return i3862728ee9f421a8cc73557f4e6e38099fbb72d6624451de105fef3ae94552fd.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler get directoryObject
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties and relationships of a directoryObject object.
 func (m *DirectoryObjectItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryObjectItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

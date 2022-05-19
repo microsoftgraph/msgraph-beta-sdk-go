@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Application 
+// Application provides operations to manage the collection of application entities.
 type Application struct {
     DirectoryObject
     // Specifies settings for an application that implements a web API.
@@ -32,9 +32,9 @@ type Application struct {
     disabledByMicrosoftStatus *string
     // The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     displayName *string
-    // Read-only. Nullable.
+    // Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
     extensionProperties []ExtensionPropertyable
-    // Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+    // Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
     federatedIdentityCredentials []FederatedIdentityCredentialable
     // Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
     groupMembershipClaims *string
@@ -202,7 +202,7 @@ func (m *Application) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetExtensionProperties gets the extensionProperties property value. Read-only. Nullable.
+// GetExtensionProperties gets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
 func (m *Application) GetExtensionProperties()([]ExtensionPropertyable) {
     if m == nil {
         return nil
@@ -210,7 +210,7 @@ func (m *Application) GetExtensionProperties()([]ExtensionPropertyable) {
         return m.extensionProperties
     }
 }
-// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
 func (m *Application) GetFederatedIdentityCredentials()([]FederatedIdentityCredentialable) {
     if m == nil {
         return nil
@@ -1319,13 +1319,13 @@ func (m *Application) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetExtensionProperties sets the extensionProperties property value. Read-only. Nullable.
+// SetExtensionProperties sets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
 func (m *Application) SetExtensionProperties(value []ExtensionPropertyable)() {
     if m != nil {
         m.extensionProperties = value
     }
 }
-// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
 func (m *Application) SetFederatedIdentityCredentials(value []FederatedIdentityCredentialable)() {
     if m != nil {
         m.federatedIdentityCredentials = value

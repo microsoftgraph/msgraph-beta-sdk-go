@@ -40,11 +40,11 @@ func NewGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder(rawUrl s
     return NewGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getDeviceConfigurationPolicySettingsSummaryReport
-func (m *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) CreatePostRequestInformation(body GetDeviceConfigurationPolicySettingsSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) CreatePostRequestInformation(body GetDeviceConfigurationPolicySettingsSummaryReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getDeviceConfigurationPolicySettingsSummaryReport
-func (m *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetDeviceConfigurationPolicySettingsSummaryReportRequestBodyable, requestConfiguration *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetDeviceConfigurationPolicySettingsSummaryReportPostRequestBodyable, requestConfiguration *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) Create
     return requestInfo, nil
 }
 // Post invoke action getDeviceConfigurationPolicySettingsSummaryReport
-func (m *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) Post(body GetDeviceConfigurationPolicySettingsSummaryReportRequestBodyable)(GetDeviceConfigurationPolicySettingsSummaryReportResponseable, error) {
+func (m *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) Post(body GetDeviceConfigurationPolicySettingsSummaryReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getDeviceConfigurationPolicySettingsSummaryReport
-func (m *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetDeviceConfigurationPolicySettingsSummaryReportRequestBodyable, requestConfiguration *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetDeviceConfigurationPolicySettingsSummaryReportResponseable, error) {
+func (m *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetDeviceConfigurationPolicySettingsSummaryReportPostRequestBodyable, requestConfiguration *GetDeviceConfigurationPolicySettingsSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetDeviceConfigurationPolicySettingsSummaryReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetDeviceConfigurationPolicySettingsSummaryReportResponseable), nil
+    return res.([]byte), nil
 }

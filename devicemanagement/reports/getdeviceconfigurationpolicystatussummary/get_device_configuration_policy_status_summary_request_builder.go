@@ -40,11 +40,11 @@ func NewGetDeviceConfigurationPolicyStatusSummaryRequestBuilder(rawUrl string, r
     return NewGetDeviceConfigurationPolicyStatusSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getDeviceConfigurationPolicyStatusSummary
-func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) CreatePostRequestInformation(body GetDeviceConfigurationPolicyStatusSummaryRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) CreatePostRequestInformation(body GetDeviceConfigurationPolicyStatusSummaryPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getDeviceConfigurationPolicyStatusSummary
-func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetDeviceConfigurationPolicyStatusSummaryRequestBodyable, requestConfiguration *GetDeviceConfigurationPolicyStatusSummaryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetDeviceConfigurationPolicyStatusSummaryPostRequestBodyable, requestConfiguration *GetDeviceConfigurationPolicyStatusSummaryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) CreatePostRequ
     return requestInfo, nil
 }
 // Post invoke action getDeviceConfigurationPolicyStatusSummary
-func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) Post(body GetDeviceConfigurationPolicyStatusSummaryRequestBodyable)(GetDeviceConfigurationPolicyStatusSummaryResponseable, error) {
+func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) Post(body GetDeviceConfigurationPolicyStatusSummaryPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getDeviceConfigurationPolicyStatusSummary
-func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetDeviceConfigurationPolicyStatusSummaryRequestBodyable, requestConfiguration *GetDeviceConfigurationPolicyStatusSummaryRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetDeviceConfigurationPolicyStatusSummaryResponseable, error) {
+func (m *GetDeviceConfigurationPolicyStatusSummaryRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetDeviceConfigurationPolicyStatusSummaryPostRequestBodyable, requestConfiguration *GetDeviceConfigurationPolicyStatusSummaryRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetDeviceConfigurationPolicyStatusSummaryResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetDeviceConfigurationPolicyStatusSummaryResponseable), nil
+    return res.([]byte), nil
 }

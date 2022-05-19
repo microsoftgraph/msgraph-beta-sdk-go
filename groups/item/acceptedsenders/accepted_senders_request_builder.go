@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i1c62368e52bc1e94ced1b2521a90393444d19397b351dc8490667a7bcb3a0850 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/acceptedsenders/count"
+    i7fce822c8eb09f82caa2bcc9e7604c37738f2edb5716893702145f6996245896 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/acceptedsenders/ref"
 )
 
 // AcceptedSendersRequestBuilder provides operations to manage the acceptedSenders property of the microsoft.graph.group entity.
@@ -101,4 +102,8 @@ func (m *AcceptedSendersRequestBuilder) GetWithRequestConfigurationAndResponseHa
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *AcceptedSendersRequestBuilder) Ref()(*i7fce822c8eb09f82caa2bcc9e7604c37738f2edb5716893702145f6996245896.RefRequestBuilder) {
+    return i7fce822c8eb09f82caa2bcc9e7604c37738f2edb5716893702145f6996245896.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -6,7 +6,7 @@ import (
     ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/ediscovery"
 )
 
-// SiteSource 
+// SiteSource provides operations to manage the security singleton.
 type SiteSource struct {
     ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSource
     // The site property

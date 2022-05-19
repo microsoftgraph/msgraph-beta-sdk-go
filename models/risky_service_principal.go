@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskyServicePrincipal 
+// RiskyServicePrincipal provides operations to manage the identityProtectionRoot singleton.
 type RiskyServicePrincipal struct {
     Entity
     // true if the service principal account is enabled; otherwise, false.
@@ -38,6 +38,25 @@ func NewRiskyServicePrincipal()(*RiskyServicePrincipal) {
 }
 // CreateRiskyServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateRiskyServicePrincipalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.riskyServicePrincipal":
+                        return NewRiskyServicePrincipal(), nil
+                }
+            }
+        }
+    }
     return NewRiskyServicePrincipal(), nil
 }
 // GetAccountEnabled gets the accountEnabled property value. true if the service principal account is enabled; otherwise, false.

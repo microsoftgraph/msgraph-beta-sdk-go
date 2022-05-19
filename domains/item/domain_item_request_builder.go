@@ -34,7 +34,7 @@ type DomainItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DomainItemRequestBuilderGetQueryParameters get domain
+// DomainItemRequestBuilderGetQueryParameters retrieve the properties and relationships of domain object.
 type DomainItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -76,11 +76,11 @@ func NewDomainItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewDomainItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete domain
+// CreateDeleteRequestInformation deletes a domain from a tenant.
 func (m *DomainItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete domain
+// CreateDeleteRequestInformationWithRequestConfiguration deletes a domain from a tenant.
 func (m *DomainItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *DomainItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -92,11 +92,11 @@ func (m *DomainItemRequestBuilder) CreateDeleteRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get domain
+// CreateGetRequestInformation retrieve the properties and relationships of domain object.
 func (m *DomainItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get domain
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of domain object.
 func (m *DomainItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DomainItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -111,11 +111,11 @@ func (m *DomainItemRequestBuilder) CreateGetRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update domain
+// CreatePatchRequestInformation update the properties of domain object.
 func (m *DomainItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update domain
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of domain object.
 func (m *DomainItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable, requestConfiguration *DomainItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -128,11 +128,11 @@ func (m *DomainItemRequestBuilder) CreatePatchRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Delete delete domain
+// Delete deletes a domain from a tenant.
 func (m *DomainItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler delete domain
+// DeleteWithRequestConfigurationAndResponseHandler deletes a domain from a tenant.
 func (m *DomainItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *DomainItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -182,11 +182,11 @@ func (m *DomainItemRequestBuilder) FederationConfigurationById(id string)(*i314e
 func (m *DomainItemRequestBuilder) ForceDelete()(*i7d77397ebc07bdc6c288b9583ecb10228944b85ebba0bd59a369bf31c29e9a00.ForceDeleteRequestBuilder) {
     return i7d77397ebc07bdc6c288b9583ecb10228944b85ebba0bd59a369bf31c29e9a00.NewForceDeleteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get domain
+// Get retrieve the properties and relationships of domain object.
 func (m *DomainItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get domain
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties and relationships of domain object.
 func (m *DomainItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DomainItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -202,11 +202,11 @@ func (m *DomainItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable), nil
 }
-// Patch update domain
+// Patch update the properties of domain object.
 func (m *DomainItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithRequestConfigurationAndResponseHandler update domain
+// PatchWithRequestConfigurationAndResponseHandler update the properties of domain object.
 func (m *DomainItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable, requestConfiguration *DomainItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

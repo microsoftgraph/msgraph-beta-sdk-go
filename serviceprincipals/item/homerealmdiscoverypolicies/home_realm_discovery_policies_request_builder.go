@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i411df080e4cf6f60ba796f18554d6cb880c43f585e0de4a61e3e92b4a9e5dbc6 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/homerealmdiscoverypolicies/count"
+    i81697b17a62384fbd342332564b2f84daec4cea590339e95f236754950fd7ecc "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/homerealmdiscoverypolicies/ref"
 )
 
 // HomeRealmDiscoveryPoliciesRequestBuilder provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.servicePrincipal entity.
@@ -105,4 +106,8 @@ func (m *HomeRealmDiscoveryPoliciesRequestBuilder) GetWithRequestConfigurationAn
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HomeRealmDiscoveryPolicyCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Ref()(*i81697b17a62384fbd342332564b2f84daec4cea590339e95f236754950fd7ecc.RefRequestBuilder) {
+    return i81697b17a62384fbd342332564b2f84daec4cea590339e95f236754950fd7ecc.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

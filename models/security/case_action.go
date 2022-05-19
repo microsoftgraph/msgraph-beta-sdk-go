@@ -2,7 +2,7 @@ package security
 import (
     "errors"
 )
-// Provides operations to manage the cases property of the microsoft.graph.security entity.
+// Provides operations to manage the security singleton.
 type CaseAction int
 
 const (

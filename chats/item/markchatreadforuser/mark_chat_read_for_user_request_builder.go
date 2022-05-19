@@ -40,11 +40,11 @@ func NewMarkChatReadForUserRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewMarkChatReadForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action markChatReadForUser
-func (m *MarkChatReadForUserRequestBuilder) CreatePostRequestInformation(body MarkChatReadForUserRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MarkChatReadForUserRequestBuilder) CreatePostRequestInformation(body MarkChatReadForUserPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action markChatReadForUser
-func (m *MarkChatReadForUserRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MarkChatReadForUserRequestBodyable, requestConfiguration *MarkChatReadForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MarkChatReadForUserRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body MarkChatReadForUserPostRequestBodyable, requestConfiguration *MarkChatReadForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *MarkChatReadForUserRequestBuilder) CreatePostRequestInformationWithRequ
     return requestInfo, nil
 }
 // Post invoke action markChatReadForUser
-func (m *MarkChatReadForUserRequestBuilder) Post(body MarkChatReadForUserRequestBodyable)(error) {
+func (m *MarkChatReadForUserRequestBuilder) Post(body MarkChatReadForUserPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action markChatReadForUser
-func (m *MarkChatReadForUserRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body MarkChatReadForUserRequestBodyable, requestConfiguration *MarkChatReadForUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *MarkChatReadForUserRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body MarkChatReadForUserPostRequestBodyable, requestConfiguration *MarkChatReadForUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

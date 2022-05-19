@@ -12,10 +12,10 @@ type OnPremisesAgentable interface {
     GetExternalIp()(*string)
     GetMachineName()(*string)
     GetStatus()(*AgentStatus)
-    GetSupportedPublishingTypes()([]OnPremisesPublishingType)
+    GetSupportedPublishingTypes()([]string)
     SetAgentGroups(value []OnPremisesAgentGroupable)()
     SetExternalIp(value *string)()
     SetMachineName(value *string)()
     SetStatus(value *AgentStatus)()
-    SetSupportedPublishingTypes(value []OnPremisesPublishingType)()
+    SetSupportedPublishingTypes(value []string)()
 }

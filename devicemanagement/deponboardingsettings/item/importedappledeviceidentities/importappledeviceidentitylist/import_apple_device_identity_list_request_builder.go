@@ -40,11 +40,11 @@ func NewImportAppleDeviceIdentityListRequestBuilder(rawUrl string, requestAdapte
     return NewImportAppleDeviceIdentityListRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action importAppleDeviceIdentityList
-func (m *ImportAppleDeviceIdentityListRequestBuilder) CreatePostRequestInformation(body ImportAppleDeviceIdentityListRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ImportAppleDeviceIdentityListRequestBuilder) CreatePostRequestInformation(body ImportAppleDeviceIdentityListPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action importAppleDeviceIdentityList
-func (m *ImportAppleDeviceIdentityListRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ImportAppleDeviceIdentityListRequestBodyable, requestConfiguration *ImportAppleDeviceIdentityListRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ImportAppleDeviceIdentityListRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ImportAppleDeviceIdentityListPostRequestBodyable, requestConfiguration *ImportAppleDeviceIdentityListRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ImportAppleDeviceIdentityListRequestBuilder) CreatePostRequestInformati
     return requestInfo, nil
 }
 // Post invoke action importAppleDeviceIdentityList
-func (m *ImportAppleDeviceIdentityListRequestBuilder) Post(body ImportAppleDeviceIdentityListRequestBodyable)(ImportAppleDeviceIdentityListResponseable, error) {
+func (m *ImportAppleDeviceIdentityListRequestBuilder) Post(body ImportAppleDeviceIdentityListPostRequestBodyable)(ImportAppleDeviceIdentityListResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action importAppleDeviceIdentityList
-func (m *ImportAppleDeviceIdentityListRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ImportAppleDeviceIdentityListRequestBodyable, requestConfiguration *ImportAppleDeviceIdentityListRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ImportAppleDeviceIdentityListResponseable, error) {
+func (m *ImportAppleDeviceIdentityListRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ImportAppleDeviceIdentityListPostRequestBodyable, requestConfiguration *ImportAppleDeviceIdentityListRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ImportAppleDeviceIdentityListResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -40,11 +40,11 @@ func NewUnenrollAssetsByIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewUnenrollAssetsByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action unenrollAssetsById
-func (m *UnenrollAssetsByIdRequestBuilder) CreatePostRequestInformation(body UnenrollAssetsByIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UnenrollAssetsByIdRequestBuilder) CreatePostRequestInformation(body UnenrollAssetsByIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action unenrollAssetsById
-func (m *UnenrollAssetsByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UnenrollAssetsByIdRequestBodyable, requestConfiguration *UnenrollAssetsByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UnenrollAssetsByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UnenrollAssetsByIdPostRequestBodyable, requestConfiguration *UnenrollAssetsByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UnenrollAssetsByIdRequestBuilder) CreatePostRequestInformationWithReque
     return requestInfo, nil
 }
 // Post invoke action unenrollAssetsById
-func (m *UnenrollAssetsByIdRequestBuilder) Post(body UnenrollAssetsByIdRequestBodyable)(error) {
+func (m *UnenrollAssetsByIdRequestBuilder) Post(body UnenrollAssetsByIdPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action unenrollAssetsById
-func (m *UnenrollAssetsByIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UnenrollAssetsByIdRequestBodyable, requestConfiguration *UnenrollAssetsByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UnenrollAssetsByIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UnenrollAssetsByIdPostRequestBodyable, requestConfiguration *UnenrollAssetsByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

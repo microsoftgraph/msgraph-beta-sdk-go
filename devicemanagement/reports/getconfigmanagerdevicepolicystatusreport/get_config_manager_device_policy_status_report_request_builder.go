@@ -40,11 +40,11 @@ func NewGetConfigManagerDevicePolicyStatusReportRequestBuilder(rawUrl string, re
     return NewGetConfigManagerDevicePolicyStatusReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getConfigManagerDevicePolicyStatusReport
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) CreatePostRequestInformation(body GetConfigManagerDevicePolicyStatusReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) CreatePostRequestInformation(body GetConfigManagerDevicePolicyStatusReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getConfigManagerDevicePolicyStatusReport
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigManagerDevicePolicyStatusReportRequestBodyable, requestConfiguration *GetConfigManagerDevicePolicyStatusReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetConfigManagerDevicePolicyStatusReportPostRequestBodyable, requestConfiguration *GetConfigManagerDevicePolicyStatusReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) CreatePostReque
     return requestInfo, nil
 }
 // Post invoke action getConfigManagerDevicePolicyStatusReport
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) Post(body GetConfigManagerDevicePolicyStatusReportRequestBodyable)(GetConfigManagerDevicePolicyStatusReportResponseable, error) {
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) Post(body GetConfigManagerDevicePolicyStatusReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getConfigManagerDevicePolicyStatusReport
-func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigManagerDevicePolicyStatusReportRequestBodyable, requestConfiguration *GetConfigManagerDevicePolicyStatusReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetConfigManagerDevicePolicyStatusReportResponseable, error) {
+func (m *GetConfigManagerDevicePolicyStatusReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetConfigManagerDevicePolicyStatusReportPostRequestBodyable, requestConfiguration *GetConfigManagerDevicePolicyStatusReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetConfigManagerDevicePolicyStatusReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetConfigManagerDevicePolicyStatusReportResponseable), nil
+    return res.([]byte), nil
 }

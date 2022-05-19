@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementResourceAccessProfileAssignment 
+// DeviceManagementResourceAccessProfileAssignment entity that describes tenant level settings for derived credentials
 type DeviceManagementResourceAccessProfileAssignment struct {
     Entity
     // The assignment intent for the resource access profile. Possible values are: apply, remove.

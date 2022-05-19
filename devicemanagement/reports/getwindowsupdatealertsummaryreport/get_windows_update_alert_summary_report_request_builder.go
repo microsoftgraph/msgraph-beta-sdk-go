@@ -40,11 +40,11 @@ func NewGetWindowsUpdateAlertSummaryReportRequestBuilder(rawUrl string, requestA
     return NewGetWindowsUpdateAlertSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getWindowsUpdateAlertSummaryReport
-func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) CreatePostRequestInformation(body GetWindowsUpdateAlertSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) CreatePostRequestInformation(body GetWindowsUpdateAlertSummaryReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getWindowsUpdateAlertSummaryReport
-func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetWindowsUpdateAlertSummaryReportRequestBodyable, requestConfiguration *GetWindowsUpdateAlertSummaryReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetWindowsUpdateAlertSummaryReportPostRequestBodyable, requestConfiguration *GetWindowsUpdateAlertSummaryReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) CreatePostRequestInfo
     return requestInfo, nil
 }
 // Post invoke action getWindowsUpdateAlertSummaryReport
-func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) Post(body GetWindowsUpdateAlertSummaryReportRequestBodyable)(GetWindowsUpdateAlertSummaryReportResponseable, error) {
+func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) Post(body GetWindowsUpdateAlertSummaryReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getWindowsUpdateAlertSummaryReport
-func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetWindowsUpdateAlertSummaryReportRequestBodyable, requestConfiguration *GetWindowsUpdateAlertSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetWindowsUpdateAlertSummaryReportResponseable, error) {
+func (m *GetWindowsUpdateAlertSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetWindowsUpdateAlertSummaryReportPostRequestBodyable, requestConfiguration *GetWindowsUpdateAlertSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetWindowsUpdateAlertSummaryReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetWindowsUpdateAlertSummaryReportResponseable), nil
+    return res.([]byte), nil
 }

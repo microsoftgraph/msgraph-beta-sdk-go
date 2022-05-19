@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i0d92d0ef080509e912063150ade8b0f15a01331c93fbecb0534dfbcd95f08d9f "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/connectorgroups/item/members/count"
+    i25da1df2a31f59b8d4ac3011b7b7e9b9e877ab113814dd88a9b5666c7d7fcde5 "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles/item/connectorgroups/item/members/ref"
 )
 
 // MembersRequestBuilder provides operations to manage the members property of the microsoft.graph.connectorGroup entity.
@@ -43,13 +44,6 @@ type MembersRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *MembersRequestBuilderGetQueryParameters
-}
-// MembersRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type MembersRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MembersRequestBuilder) {
@@ -93,23 +87,6 @@ func (m *MembersRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create new navigation property to members for onPremisesPublishingProfiles
-func (m *MembersRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePostRequestInformationWithRequestConfiguration create new navigation property to members for onPremisesPublishingProfiles
-func (m *MembersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, requestConfiguration *MembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // Get read-only. Nullable.
 func (m *MembersRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -130,23 +107,7 @@ func (m *MembersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorCollectionResponseable), nil
 }
-// Post create new navigation property to members for onPremisesPublishingProfiles
-func (m *MembersRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, error) {
-    return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PostWithRequestConfigurationAndResponseHandler create new navigation property to members for onPremisesPublishingProfiles
-func (m *MembersRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, requestConfiguration *MembersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable, error) {
-    requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateConnectorFromDiscriminatorValue, responseHandler, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable), nil
+// Ref the ref property
+func (m *MembersRequestBuilder) Ref()(*i25da1df2a31f59b8d4ac3011b7b7e9b9e877ab113814dd88a9b5666c7d7fcde5.RefRequestBuilder) {
+    return i25da1df2a31f59b8d4ac3011b7b7e9b9e877ab113814dd88a9b5666c7d7fcde5.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -25,7 +25,7 @@ type PrivilegedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters get privilegedRoleAssignment
+// PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters retrieve the properties and relationships of privilegedRoleAssignment object.
 type PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -67,11 +67,11 @@ func NewPrivilegedRoleAssignmentItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete privilegedRoleAssignment
+// CreateDeleteRequestInformation delete [privilegedRoleAssignment](../resources/privilegedroleassignment.md).
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete privilegedRoleAssignment
+// CreateDeleteRequestInformationWithRequestConfiguration delete [privilegedRoleAssignment](../resources/privilegedroleassignment.md).
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *PrivilegedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -83,11 +83,11 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get privilegedRoleAssignment
+// CreateGetRequestInformation retrieve the properties and relationships of privilegedRoleAssignment object.
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get privilegedRoleAssignment
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of privilegedRoleAssignment object.
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -119,11 +119,11 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) CreatePatchRequestInformati
     }
     return requestInfo, nil
 }
-// Delete delete privilegedRoleAssignment
+// Delete delete [privilegedRoleAssignment](../resources/privilegedroleassignment.md).
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler delete privilegedRoleAssignment
+// DeleteWithRequestConfigurationAndResponseHandler delete [privilegedRoleAssignment](../resources/privilegedroleassignment.md).
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *PrivilegedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -139,11 +139,11 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) DeleteWithRequestConfigurat
     }
     return nil
 }
-// Get get privilegedRoleAssignment
+// Get retrieve the properties and relationships of privilegedRoleAssignment object.
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get privilegedRoleAssignment
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties and relationships of privilegedRoleAssignment object.
 func (m *PrivilegedRoleAssignmentItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

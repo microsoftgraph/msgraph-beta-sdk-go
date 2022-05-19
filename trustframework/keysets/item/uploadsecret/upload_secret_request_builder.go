@@ -41,11 +41,11 @@ func NewUploadSecretRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewUploadSecretRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action uploadSecret
-func (m *UploadSecretRequestBuilder) CreatePostRequestInformation(body UploadSecretRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UploadSecretRequestBuilder) CreatePostRequestInformation(body UploadSecretPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action uploadSecret
-func (m *UploadSecretRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadSecretRequestBodyable, requestConfiguration *UploadSecretRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UploadSecretRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadSecretPostRequestBodyable, requestConfiguration *UploadSecretRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *UploadSecretRequestBuilder) CreatePostRequestInformationWithRequestConf
     return requestInfo, nil
 }
 // Post invoke action uploadSecret
-func (m *UploadSecretRequestBuilder) Post(body UploadSecretRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
+func (m *UploadSecretRequestBuilder) Post(body UploadSecretPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action uploadSecret
-func (m *UploadSecretRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UploadSecretRequestBodyable, requestConfiguration *UploadSecretRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
+func (m *UploadSecretRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UploadSecretPostRequestBodyable, requestConfiguration *UploadSecretRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

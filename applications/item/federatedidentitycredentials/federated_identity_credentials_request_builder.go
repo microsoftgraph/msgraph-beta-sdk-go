@@ -16,7 +16,7 @@ type FederatedIdentityCredentialsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// FederatedIdentityCredentialsRequestBuilderGetQueryParameters federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+// FederatedIdentityCredentialsRequestBuilderGetQueryParameters federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
 type FederatedIdentityCredentialsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewFederatedIdentityCredentialsRequestBuilder(rawUrl string, requestAdapter
 func (m *FederatedIdentityCredentialsRequestBuilder) Count()(*i4236e13eba926147503dbb6567733f265222d1c3bf3d5dbf1ce42e3f68afe688.CountRequestBuilder) {
     return i4236e13eba926147503dbb6567733f265222d1c3bf3d5dbf1ce42e3f68afe688.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+// CreateGetRequestInformation federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
 func (m *FederatedIdentityCredentialsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+// CreateGetRequestInformationWithRequestConfiguration federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
 func (m *FederatedIdentityCredentialsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FederatedIdentityCredentialsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +110,11 @@ func (m *FederatedIdentityCredentialsRequestBuilder) CreatePostRequestInformatio
     }
     return requestInfo, nil
 }
-// Get federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+// Get federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
 func (m *FederatedIdentityCredentialsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedIdentityCredentialCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+// GetWithRequestConfigurationAndResponseHandler federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
 func (m *FederatedIdentityCredentialsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FederatedIdentityCredentialsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedIdentityCredentialCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

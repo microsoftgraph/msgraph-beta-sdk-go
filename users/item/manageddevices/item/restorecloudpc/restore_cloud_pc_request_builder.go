@@ -40,11 +40,11 @@ func NewRestoreCloudPcRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewRestoreCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action restoreCloudPc
-func (m *RestoreCloudPcRequestBuilder) CreatePostRequestInformation(body RestoreCloudPcRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RestoreCloudPcRequestBuilder) CreatePostRequestInformation(body RestoreCloudPcPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action restoreCloudPc
-func (m *RestoreCloudPcRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RestoreCloudPcRequestBodyable, requestConfiguration *RestoreCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RestoreCloudPcRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RestoreCloudPcPostRequestBodyable, requestConfiguration *RestoreCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *RestoreCloudPcRequestBuilder) CreatePostRequestInformationWithRequestCo
     return requestInfo, nil
 }
 // Post invoke action restoreCloudPc
-func (m *RestoreCloudPcRequestBuilder) Post(body RestoreCloudPcRequestBodyable)(error) {
+func (m *RestoreCloudPcRequestBuilder) Post(body RestoreCloudPcPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action restoreCloudPc
-func (m *RestoreCloudPcRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RestoreCloudPcRequestBodyable, requestConfiguration *RestoreCloudPcRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *RestoreCloudPcRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RestoreCloudPcPostRequestBodyable, requestConfiguration *RestoreCloudPcRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

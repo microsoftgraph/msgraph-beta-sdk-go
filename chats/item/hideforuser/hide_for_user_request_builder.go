@@ -40,11 +40,11 @@ func NewHideForUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewHideForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action hideForUser
-func (m *HideForUserRequestBuilder) CreatePostRequestInformation(body HideForUserRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *HideForUserRequestBuilder) CreatePostRequestInformation(body HideForUserPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action hideForUser
-func (m *HideForUserRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body HideForUserRequestBodyable, requestConfiguration *HideForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *HideForUserRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body HideForUserPostRequestBodyable, requestConfiguration *HideForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *HideForUserRequestBuilder) CreatePostRequestInformationWithRequestConfi
     return requestInfo, nil
 }
 // Post invoke action hideForUser
-func (m *HideForUserRequestBuilder) Post(body HideForUserRequestBodyable)(error) {
+func (m *HideForUserRequestBuilder) Post(body HideForUserPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action hideForUser
-func (m *HideForUserRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body HideForUserRequestBodyable, requestConfiguration *HideForUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *HideForUserRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body HideForUserPostRequestBodyable, requestConfiguration *HideForUserRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

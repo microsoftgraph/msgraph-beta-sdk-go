@@ -40,11 +40,11 @@ func NewUpdatePasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, reque
     return NewUpdatePasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action updatePasswordSingleSignOnCredentials
-func (m *UpdatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformation(body UpdatePasswordSingleSignOnCredentialsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformation(body UpdatePasswordSingleSignOnCredentialsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updatePasswordSingleSignOnCredentials
-func (m *UpdatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdatePasswordSingleSignOnCredentialsRequestBodyable, requestConfiguration *UpdatePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdatePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *UpdatePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UpdatePasswordSingleSignOnCredentialsRequestBuilder) CreatePostRequestI
     return requestInfo, nil
 }
 // Post invoke action updatePasswordSingleSignOnCredentials
-func (m *UpdatePasswordSingleSignOnCredentialsRequestBuilder) Post(body UpdatePasswordSingleSignOnCredentialsRequestBodyable)(error) {
+func (m *UpdatePasswordSingleSignOnCredentialsRequestBuilder) Post(body UpdatePasswordSingleSignOnCredentialsPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action updatePasswordSingleSignOnCredentials
-func (m *UpdatePasswordSingleSignOnCredentialsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdatePasswordSingleSignOnCredentialsRequestBodyable, requestConfiguration *UpdatePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UpdatePasswordSingleSignOnCredentialsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdatePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *UpdatePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

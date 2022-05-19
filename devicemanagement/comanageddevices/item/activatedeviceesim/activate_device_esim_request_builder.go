@@ -40,11 +40,11 @@ func NewActivateDeviceEsimRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewActivateDeviceEsimRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation activate eSIM on the device.
-func (m *ActivateDeviceEsimRequestBuilder) CreatePostRequestInformation(body ActivateDeviceEsimRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ActivateDeviceEsimRequestBuilder) CreatePostRequestInformation(body ActivateDeviceEsimPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration activate eSIM on the device.
-func (m *ActivateDeviceEsimRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ActivateDeviceEsimRequestBodyable, requestConfiguration *ActivateDeviceEsimRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ActivateDeviceEsimRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ActivateDeviceEsimPostRequestBodyable, requestConfiguration *ActivateDeviceEsimRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ActivateDeviceEsimRequestBuilder) CreatePostRequestInformationWithReque
     return requestInfo, nil
 }
 // Post activate eSIM on the device.
-func (m *ActivateDeviceEsimRequestBuilder) Post(body ActivateDeviceEsimRequestBodyable)(error) {
+func (m *ActivateDeviceEsimRequestBuilder) Post(body ActivateDeviceEsimPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler activate eSIM on the device.
-func (m *ActivateDeviceEsimRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ActivateDeviceEsimRequestBodyable, requestConfiguration *ActivateDeviceEsimRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ActivateDeviceEsimRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ActivateDeviceEsimPostRequestBodyable, requestConfiguration *ActivateDeviceEsimRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

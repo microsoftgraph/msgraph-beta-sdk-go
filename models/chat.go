@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Chat 
+// Chat provides operations to manage the collection of chat entities.
 type Chat struct {
     Entity
     // Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
@@ -28,6 +28,8 @@ type Chat struct {
     operations []TeamsAsyncOperationable
     // A collection of permissions granted to apps for the chat.
     permissionGrants []ResourceSpecificPermissionGrantable
+    // The pinnedMessages property
+    pinnedMessages []PinnedChatMessageInfoable
     // A collection of all the tabs in the chat. Nullable.
     tabs []TeamsTabable
     // The identifier of the tenant in which the chat was created. Read-only.
@@ -189,6 +191,20 @@ func (m *Chat) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["pinnedMessages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePinnedChatMessageInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PinnedChatMessageInfoable, len(val))
+            for i, v := range val {
+                res[i] = v.(PinnedChatMessageInfoable)
+            }
+            m.SetPinnedMessages(res)
+        }
+        return nil
+    }
     res["tabs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamsTabFromDiscriminatorValue)
         if err != nil {
@@ -307,6 +323,14 @@ func (m *Chat) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
         return nil
     } else {
         return m.permissionGrants
+    }
+}
+// GetPinnedMessages gets the pinnedMessages property value. The pinnedMessages property
+func (m *Chat) GetPinnedMessages()([]PinnedChatMessageInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.pinnedMessages
     }
 }
 // GetTabs gets the tabs property value. A collection of all the tabs in the chat. Nullable.
@@ -436,6 +460,16 @@ func (m *Chat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetPinnedMessages() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPinnedMessages()))
+        for i, v := range m.GetPinnedMessages() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("pinnedMessages", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTabs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTabs()))
         for i, v := range m.GetTabs() {
@@ -530,6 +564,12 @@ func (m *Chat) SetOperations(value []TeamsAsyncOperationable)() {
 func (m *Chat) SetPermissionGrants(value []ResourceSpecificPermissionGrantable)() {
     if m != nil {
         m.permissionGrants = value
+    }
+}
+// SetPinnedMessages sets the pinnedMessages property value. The pinnedMessages property
+func (m *Chat) SetPinnedMessages(value []PinnedChatMessageInfoable)() {
+    if m != nil {
+        m.pinnedMessages = value
     }
 }
 // SetTabs sets the tabs property value. A collection of all the tabs in the chat. Nullable.

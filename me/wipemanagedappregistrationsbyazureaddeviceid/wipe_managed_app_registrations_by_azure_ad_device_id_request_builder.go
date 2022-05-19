@@ -40,11 +40,11 @@ func NewWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder(rawUrl string
     return NewWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation issues a wipe operation on an app registration with specified aad device Id.
-func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) CreatePostRequestInformation(body WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) CreatePostRequestInformation(body WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration issues a wipe operation on an app registration with specified aad device Id.
-func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBodyable, requestConfiguration *WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBodyable, requestConfiguration *WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) CreatePostR
     return requestInfo, nil
 }
 // Post issues a wipe operation on an app registration with specified aad device Id.
-func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) Post(body WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBodyable)(error) {
+func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) Post(body WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler issues a wipe operation on an app registration with specified aad device Id.
-func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBodyable, requestConfiguration *WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body WipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBodyable, requestConfiguration *WipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -20,7 +20,7 @@ type AdministrativeUnitsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AdministrativeUnitsRequestBuilderGetQueryParameters list administrativeUnits
+// AdministrativeUnitsRequestBuilderGetQueryParameters retrieve a list of [administrativeUnit](../resources/administrativeunit.md) objects.
 type AdministrativeUnitsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -78,11 +78,11 @@ func NewAdministrativeUnitsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *AdministrativeUnitsRequestBuilder) Count()(*ie34d6e09c175df342f8d2e31a7e89c831ca94bca20dfe644334c9eb691bd0191.CountRequestBuilder) {
     return ie34d6e09c175df342f8d2e31a7e89c831ca94bca20dfe644334c9eb691bd0191.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list administrativeUnits
+// CreateGetRequestInformation retrieve a list of [administrativeUnit](../resources/administrativeunit.md) objects.
 func (m *AdministrativeUnitsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list administrativeUnits
+// CreateGetRequestInformationWithRequestConfiguration retrieve a list of [administrativeUnit](../resources/administrativeunit.md) objects.
 func (m *AdministrativeUnitsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AdministrativeUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -97,11 +97,11 @@ func (m *AdministrativeUnitsRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create administrativeUnit
+// CreatePostRequestInformation use this API to create a new [administrativeUnit](../resources/administrativeunit.md).
 func (m *AdministrativeUnitsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create administrativeUnit
+// CreatePostRequestInformationWithRequestConfiguration use this API to create a new [administrativeUnit](../resources/administrativeunit.md).
 func (m *AdministrativeUnitsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, requestConfiguration *AdministrativeUnitsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *AdministrativeUnitsRequestBuilder) CreatePostRequestInformationWithRequ
 func (m *AdministrativeUnitsRequestBuilder) Delta()(*if16d334c721262585664df32b0567644d1ab8a2a5c2829d1f520c68c93e0c424.DeltaRequestBuilder) {
     return if16d334c721262585664df32b0567644d1ab8a2a5c2829d1f520c68c93e0c424.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get list administrativeUnits
+// Get retrieve a list of [administrativeUnit](../resources/administrativeunit.md) objects.
 func (m *AdministrativeUnitsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -130,7 +130,7 @@ func (m *AdministrativeUnitsRequestBuilder) GetByIds()(*i277b79a3b313ac8255d78ae
 func (m *AdministrativeUnitsRequestBuilder) GetUserOwnedObjects()(*ia5a3db4673512570eb5641390e08a082576bca30d7028287114d44432947b385.GetUserOwnedObjectsRequestBuilder) {
     return ia5a3db4673512570eb5641390e08a082576bca30d7028287114d44432947b385.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler list administrativeUnits
+// GetWithRequestConfigurationAndResponseHandler retrieve a list of [administrativeUnit](../resources/administrativeunit.md) objects.
 func (m *AdministrativeUnitsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AdministrativeUnitsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -146,11 +146,11 @@ func (m *AdministrativeUnitsRequestBuilder) GetWithRequestConfigurationAndRespon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitCollectionResponseable), nil
 }
-// Post create administrativeUnit
+// Post use this API to create a new [administrativeUnit](../resources/administrativeunit.md).
 func (m *AdministrativeUnitsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithRequestConfigurationAndResponseHandler create administrativeUnit
+// PostWithRequestConfigurationAndResponseHandler use this API to create a new [administrativeUnit](../resources/administrativeunit.md).
 func (m *AdministrativeUnitsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, requestConfiguration *AdministrativeUnitsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

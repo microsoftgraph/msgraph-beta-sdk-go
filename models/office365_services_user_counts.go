@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365ServicesUserCounts 
+// Office365ServicesUserCounts provides operations to call the getOffice365ServicesUserCounts method.
 type Office365ServicesUserCounts struct {
     Entity
     // The number of active users on Exchange. Any user who can read and send email is considered an active user.
