@@ -40,11 +40,11 @@ func NewEvaluateRemovalRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewEvaluateRemovalRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action evaluateRemoval
-func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformation(body EvaluateRemovalRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformation(body EvaluateRemovalPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action evaluateRemoval
-func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateRemovalRequestBodyable, requestConfiguration *EvaluateRemovalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateRemovalPostRequestBodyable, requestConfiguration *EvaluateRemovalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *EvaluateRemovalRequestBuilder) CreatePostRequestInformationWithRequestC
     return requestInfo, nil
 }
 // Post invoke action evaluateRemoval
-func (m *EvaluateRemovalRequestBuilder) Post(body EvaluateRemovalRequestBodyable)(EvaluateRemovalResponseable, error) {
+func (m *EvaluateRemovalRequestBuilder) Post(body EvaluateRemovalPostRequestBodyable)(EvaluateRemovalResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action evaluateRemoval
-func (m *EvaluateRemovalRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EvaluateRemovalRequestBodyable, requestConfiguration *EvaluateRemovalRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(EvaluateRemovalResponseable, error) {
+func (m *EvaluateRemovalRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EvaluateRemovalPostRequestBodyable, requestConfiguration *EvaluateRemovalRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(EvaluateRemovalResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

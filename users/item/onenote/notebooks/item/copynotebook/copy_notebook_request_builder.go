@@ -41,11 +41,11 @@ func NewCopyNotebookRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewCopyNotebookRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action copyNotebook
-func (m *CopyNotebookRequestBuilder) CreatePostRequestInformation(body CopyNotebookRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CopyNotebookRequestBuilder) CreatePostRequestInformation(body CopyNotebookPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action copyNotebook
-func (m *CopyNotebookRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CopyNotebookRequestBodyable, requestConfiguration *CopyNotebookRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CopyNotebookRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CopyNotebookPostRequestBodyable, requestConfiguration *CopyNotebookRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *CopyNotebookRequestBuilder) CreatePostRequestInformationWithRequestConf
     return requestInfo, nil
 }
 // Post invoke action copyNotebook
-func (m *CopyNotebookRequestBuilder) Post(body CopyNotebookRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable, error) {
+func (m *CopyNotebookRequestBuilder) Post(body CopyNotebookPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action copyNotebook
-func (m *CopyNotebookRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CopyNotebookRequestBodyable, requestConfiguration *CopyNotebookRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable, error) {
+func (m *CopyNotebookRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CopyNotebookPostRequestBodyable, requestConfiguration *CopyNotebookRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

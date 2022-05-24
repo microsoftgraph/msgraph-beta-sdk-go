@@ -16,7 +16,7 @@ type InformationProtectionContentLabel struct {
     // Details on the label that is currently applied to the file.
     label LabelDetailsable
 }
-// NewInformationProtectionContentLabel instantiates a new informationProtectionContentLabel and sets the default values.
+// NewInformationProtectionContentLabel instantiates a new InformationProtectionContentLabel and sets the default values.
 func NewInformationProtectionContentLabel()(*InformationProtectionContentLabel) {
     m := &InformationProtectionContentLabel{
     }

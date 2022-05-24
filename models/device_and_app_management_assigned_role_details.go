@@ -13,7 +13,7 @@ type DeviceAndAppManagementAssignedRoleDetails struct {
     // Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.
     roleDefinitionIds []string
 }
-// NewDeviceAndAppManagementAssignedRoleDetails instantiates a new deviceAndAppManagementAssignedRoleDetails and sets the default values.
+// NewDeviceAndAppManagementAssignedRoleDetails instantiates a new DeviceAndAppManagementAssignedRoleDetails and sets the default values.
 func NewDeviceAndAppManagementAssignedRoleDetails()(*DeviceAndAppManagementAssignedRoleDetails) {
     m := &DeviceAndAppManagementAssignedRoleDetails{
     }

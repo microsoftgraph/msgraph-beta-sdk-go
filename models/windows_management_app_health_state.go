@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsManagementAppHealthState 
+// WindowsManagementAppHealthState windows management app health state entity.
 type WindowsManagementAppHealthState struct {
     Entity
     // Name of the device on which Windows management app is installed.

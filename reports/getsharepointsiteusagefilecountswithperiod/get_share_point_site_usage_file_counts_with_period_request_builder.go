@@ -59,18 +59,18 @@ func (m *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) CreateGetRequ
     return requestInfo, nil
 }
 // Get invoke function getSharePointSiteUsageFileCounts
-func (m *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) Get()(GetSharePointSiteUsageFileCountsWithPeriodResponseable, error) {
+func (m *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetWithRequestConfigurationAndResponseHandler invoke function getSharePointSiteUsageFileCounts
-func (m *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSharePointSiteUsageFileCountsWithPeriodResponseable, error) {
+func (m *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSharePointSiteUsageFileCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetSharePointSiteUsageFileCountsWithPeriodResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetSharePointSiteUsageFileCountsWithPeriodResponseable), nil
+    return res.([]byte), nil
 }

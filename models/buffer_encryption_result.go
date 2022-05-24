@@ -13,7 +13,7 @@ type BufferEncryptionResult struct {
     // The publishingLicense property
     publishingLicense []byte
 }
-// NewBufferEncryptionResult instantiates a new bufferEncryptionResult and sets the default values.
+// NewBufferEncryptionResult instantiates a new BufferEncryptionResult and sets the default values.
 func NewBufferEncryptionResult()(*BufferEncryptionResult) {
     m := &BufferEncryptionResult{
     }

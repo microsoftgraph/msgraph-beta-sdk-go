@@ -23,7 +23,7 @@ type PrinterDocumentConfiguration struct {
     // The feedOrientation property
     feedOrientation *PrinterFeedOrientation
     // The finishings property
-    finishings []PrintFinishing
+    finishings []string
     // The fitPdfToPage property
     fitPdfToPage *bool
     // The inputBin property
@@ -198,14 +198,14 @@ func (m *PrinterDocumentConfiguration) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     res["finishings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParsePrintFinishing)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PrintFinishing, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*PrintFinishing))
+                res[i] = *(v.(*string))
             }
             m.SetFinishings(res)
         }
@@ -338,7 +338,7 @@ func (m *PrinterDocumentConfiguration) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetFinishings gets the finishings property value. The finishings property
-func (m *PrinterDocumentConfiguration) GetFinishings()([]PrintFinishing) {
+func (m *PrinterDocumentConfiguration) GetFinishings()([]string) {
     if m == nil {
         return nil
     } else {
@@ -490,7 +490,7 @@ func (m *PrinterDocumentConfiguration) Serialize(writer i878a80d2330e89d26896388
         }
     }
     if m.GetFinishings() != nil {
-        err := writer.WriteCollectionOfStringValues("finishings", SerializePrintFinishing(m.GetFinishings()))
+        err := writer.WriteCollectionOfStringValues("finishings", m.GetFinishings())
         if err != nil {
             return err
         }
@@ -632,7 +632,7 @@ func (m *PrinterDocumentConfiguration) SetFeedOrientation(value *PrinterFeedOrie
     }
 }
 // SetFinishings sets the finishings property value. The finishings property
-func (m *PrinterDocumentConfiguration) SetFinishings(value []PrintFinishing)() {
+func (m *PrinterDocumentConfiguration) SetFinishings(value []string)() {
     if m != nil {
         m.finishings = value
     }

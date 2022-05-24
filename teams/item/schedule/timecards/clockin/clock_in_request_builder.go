@@ -41,11 +41,11 @@ func NewClockInRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewClockInRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action clockIn
-func (m *ClockInRequestBuilder) CreatePostRequestInformation(body ClockInRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ClockInRequestBuilder) CreatePostRequestInformation(body ClockInPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action clockIn
-func (m *ClockInRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ClockInRequestBodyable, requestConfiguration *ClockInRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ClockInRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ClockInPostRequestBodyable, requestConfiguration *ClockInRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *ClockInRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     return requestInfo, nil
 }
 // Post invoke action clockIn
-func (m *ClockInRequestBuilder) Post(body ClockInRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
+func (m *ClockInRequestBuilder) Post(body ClockInPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action clockIn
-func (m *ClockInRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ClockInRequestBodyable, requestConfiguration *ClockInRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
+func (m *ClockInRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ClockInPostRequestBodyable, requestConfiguration *ClockInRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

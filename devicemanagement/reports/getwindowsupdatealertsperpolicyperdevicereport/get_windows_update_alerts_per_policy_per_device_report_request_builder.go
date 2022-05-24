@@ -40,11 +40,11 @@ func NewGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(rawUrl stri
     return NewGetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getWindowsUpdateAlertsPerPolicyPerDeviceReport
-func (m *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) CreatePostRequestInformation(body GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) CreatePostRequestInformation(body GetWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getWindowsUpdateAlertsPerPolicyPerDeviceReport
-func (m *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBodyable, requestConfiguration *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBodyable, requestConfiguration *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) CreatePos
     return requestInfo, nil
 }
 // Post invoke action getWindowsUpdateAlertsPerPolicyPerDeviceReport
-func (m *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) Post(body GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBodyable)(GetWindowsUpdateAlertsPerPolicyPerDeviceReportResponseable, error) {
+func (m *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) Post(body GetWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getWindowsUpdateAlertsPerPolicyPerDeviceReport
-func (m *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBodyable, requestConfiguration *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetWindowsUpdateAlertsPerPolicyPerDeviceReportResponseable, error) {
+func (m *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetWindowsUpdateAlertsPerPolicyPerDeviceReportPostRequestBodyable, requestConfiguration *GetWindowsUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetWindowsUpdateAlertsPerPolicyPerDeviceReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetWindowsUpdateAlertsPerPolicyPerDeviceReportResponseable), nil
+    return res.([]byte), nil
 }

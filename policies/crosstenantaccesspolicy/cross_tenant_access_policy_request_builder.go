@@ -168,7 +168,7 @@ func (m *CrossTenantAccessPolicyRequestBuilder) Partners()(*i12ec00c0cda085cf3d1
     return i12ec00c0cda085cf3d19e747ae27322079cbb18e5b556d17b1a8a5d083c42b4f.NewPartnersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // PartnersById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.policies.crossTenantAccessPolicy.partners.item collection
-func (m *CrossTenantAccessPolicyRequestBuilder) PartnersById(id string)(*i671445f12e1144f0707e713947da70fbe18307579db947c865515610f6068a76.CrossTenantAccessPolicyConfigurationPartnerItemRequestBuilder) {
+func (m *CrossTenantAccessPolicyRequestBuilder) PartnersById(id string)(*i671445f12e1144f0707e713947da70fbe18307579db947c865515610f6068a76.CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -176,7 +176,7 @@ func (m *CrossTenantAccessPolicyRequestBuilder) PartnersById(id string)(*i671445
     if id != "" {
         urlTplParams["crossTenantAccessPolicyConfigurationPartner%2DtenantId"] = id
     }
-    return i671445f12e1144f0707e713947da70fbe18307579db947c865515610f6068a76.NewCrossTenantAccessPolicyConfigurationPartnerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i671445f12e1144f0707e713947da70fbe18307579db947c865515610f6068a76.NewCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property crossTenantAccessPolicy in policies
 func (m *CrossTenantAccessPolicyRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyable)(error) {

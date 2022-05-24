@@ -40,11 +40,11 @@ func NewApplyTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewApplyTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action applyTags
-func (m *ApplyTagsRequestBuilder) CreatePostRequestInformation(body ApplyTagsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ApplyTagsRequestBuilder) CreatePostRequestInformation(body ApplyTagsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action applyTags
-func (m *ApplyTagsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ApplyTagsRequestBodyable, requestConfiguration *ApplyTagsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ApplyTagsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ApplyTagsPostRequestBodyable, requestConfiguration *ApplyTagsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ApplyTagsRequestBuilder) CreatePostRequestInformationWithRequestConfigu
     return requestInfo, nil
 }
 // Post invoke action applyTags
-func (m *ApplyTagsRequestBuilder) Post(body ApplyTagsRequestBodyable)(error) {
+func (m *ApplyTagsRequestBuilder) Post(body ApplyTagsPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action applyTags
-func (m *ApplyTagsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ApplyTagsRequestBodyable, requestConfiguration *ApplyTagsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ApplyTagsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ApplyTagsPostRequestBodyable, requestConfiguration *ApplyTagsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

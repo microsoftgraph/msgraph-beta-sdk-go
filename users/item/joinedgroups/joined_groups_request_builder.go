@@ -4,7 +4,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i9f62325ced22c8e1aa9d79956ac95a2e4bae8070ec88b01156623fe2fd9291f7 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedgroups/count"
 )
 
 // JoinedGroupsRequestBuilder provides operations to manage the joinedGroups property of the microsoft.graph.user entity.
@@ -65,10 +64,6 @@ func NewJoinedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewJoinedGroupsRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Count the count property
-func (m *JoinedGroupsRequestBuilder) Count()(*i9f62325ced22c8e1aa9d79956ac95a2e4bae8070ec88b01156623fe2fd9291f7.CountRequestBuilder) {
-    return i9f62325ced22c8e1aa9d79956ac95a2e4bae8070ec88b01156623fe2fd9291f7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CreateGetRequestInformation read-only. Nullable.
 func (m *JoinedGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

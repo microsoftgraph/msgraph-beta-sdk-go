@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthDeviceModelPerformance 
+// UserExperienceAnalyticsAppHealthDeviceModelPerformance the user experience analytics device model performance entity contains device model performance details.
 type UserExperienceAnalyticsAppHealthDeviceModelPerformance struct {
     Entity
     // The number of active devices for the model. Valid values -2147483648 to 2147483647

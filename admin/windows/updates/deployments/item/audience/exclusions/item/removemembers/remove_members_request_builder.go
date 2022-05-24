@@ -40,11 +40,11 @@ func NewRemoveMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewRemoveMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action removeMembers
-func (m *RemoveMembersRequestBuilder) CreatePostRequestInformation(body RemoveMembersRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemoveMembersRequestBuilder) CreatePostRequestInformation(body RemoveMembersPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action removeMembers
-func (m *RemoveMembersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveMembersRequestBodyable, requestConfiguration *RemoveMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemoveMembersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveMembersPostRequestBodyable, requestConfiguration *RemoveMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *RemoveMembersRequestBuilder) CreatePostRequestInformationWithRequestCon
     return requestInfo, nil
 }
 // Post invoke action removeMembers
-func (m *RemoveMembersRequestBuilder) Post(body RemoveMembersRequestBodyable)(error) {
+func (m *RemoveMembersRequestBuilder) Post(body RemoveMembersPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action removeMembers
-func (m *RemoveMembersRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveMembersRequestBodyable, requestConfiguration *RemoveMembersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *RemoveMembersRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveMembersPostRequestBodyable, requestConfiguration *RemoveMembersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

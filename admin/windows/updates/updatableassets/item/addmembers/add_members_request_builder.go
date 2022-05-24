@@ -40,11 +40,11 @@ func NewAddMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewAddMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action addMembers
-func (m *AddMembersRequestBuilder) CreatePostRequestInformation(body AddMembersRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddMembersRequestBuilder) CreatePostRequestInformation(body AddMembersPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addMembers
-func (m *AddMembersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddMembersRequestBodyable, requestConfiguration *AddMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddMembersRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddMembersPostRequestBodyable, requestConfiguration *AddMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *AddMembersRequestBuilder) CreatePostRequestInformationWithRequestConfig
     return requestInfo, nil
 }
 // Post invoke action addMembers
-func (m *AddMembersRequestBuilder) Post(body AddMembersRequestBodyable)(error) {
+func (m *AddMembersRequestBuilder) Post(body AddMembersPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action addMembers
-func (m *AddMembersRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddMembersRequestBodyable, requestConfiguration *AddMembersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *AddMembersRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddMembersPostRequestBodyable, requestConfiguration *AddMembersRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -40,11 +40,11 @@ func NewSendCustomNotificationToCompanyPortalRequestBuilder(rawUrl string, reque
     return NewSendCustomNotificationToCompanyPortalRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action sendCustomNotificationToCompanyPortal
-func (m *SendCustomNotificationToCompanyPortalRequestBuilder) CreatePostRequestInformation(body SendCustomNotificationToCompanyPortalRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SendCustomNotificationToCompanyPortalRequestBuilder) CreatePostRequestInformation(body SendCustomNotificationToCompanyPortalPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action sendCustomNotificationToCompanyPortal
-func (m *SendCustomNotificationToCompanyPortalRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SendCustomNotificationToCompanyPortalRequestBodyable, requestConfiguration *SendCustomNotificationToCompanyPortalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SendCustomNotificationToCompanyPortalRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SendCustomNotificationToCompanyPortalPostRequestBodyable, requestConfiguration *SendCustomNotificationToCompanyPortalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *SendCustomNotificationToCompanyPortalRequestBuilder) CreatePostRequestI
     return requestInfo, nil
 }
 // Post invoke action sendCustomNotificationToCompanyPortal
-func (m *SendCustomNotificationToCompanyPortalRequestBuilder) Post(body SendCustomNotificationToCompanyPortalRequestBodyable)(error) {
+func (m *SendCustomNotificationToCompanyPortalRequestBuilder) Post(body SendCustomNotificationToCompanyPortalPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action sendCustomNotificationToCompanyPortal
-func (m *SendCustomNotificationToCompanyPortalRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SendCustomNotificationToCompanyPortalRequestBodyable, requestConfiguration *SendCustomNotificationToCompanyPortalRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *SendCustomNotificationToCompanyPortalRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SendCustomNotificationToCompanyPortalPostRequestBodyable, requestConfiguration *SendCustomNotificationToCompanyPortalRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

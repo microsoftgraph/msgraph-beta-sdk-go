@@ -40,11 +40,11 @@ func NewGetFailedMobileAppsSummaryReportRequestBuilder(rawUrl string, requestAda
     return NewGetFailedMobileAppsSummaryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getFailedMobileAppsSummaryReport
-func (m *GetFailedMobileAppsSummaryReportRequestBuilder) CreatePostRequestInformation(body GetFailedMobileAppsSummaryReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetFailedMobileAppsSummaryReportRequestBuilder) CreatePostRequestInformation(body GetFailedMobileAppsSummaryReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getFailedMobileAppsSummaryReport
-func (m *GetFailedMobileAppsSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetFailedMobileAppsSummaryReportRequestBodyable, requestConfiguration *GetFailedMobileAppsSummaryReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetFailedMobileAppsSummaryReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetFailedMobileAppsSummaryReportPostRequestBodyable, requestConfiguration *GetFailedMobileAppsSummaryReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetFailedMobileAppsSummaryReportRequestBuilder) CreatePostRequestInform
     return requestInfo, nil
 }
 // Post invoke action getFailedMobileAppsSummaryReport
-func (m *GetFailedMobileAppsSummaryReportRequestBuilder) Post(body GetFailedMobileAppsSummaryReportRequestBodyable)(GetFailedMobileAppsSummaryReportResponseable, error) {
+func (m *GetFailedMobileAppsSummaryReportRequestBuilder) Post(body GetFailedMobileAppsSummaryReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getFailedMobileAppsSummaryReport
-func (m *GetFailedMobileAppsSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetFailedMobileAppsSummaryReportRequestBodyable, requestConfiguration *GetFailedMobileAppsSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetFailedMobileAppsSummaryReportResponseable, error) {
+func (m *GetFailedMobileAppsSummaryReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetFailedMobileAppsSummaryReportPostRequestBodyable, requestConfiguration *GetFailedMobileAppsSummaryReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetFailedMobileAppsSummaryReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetFailedMobileAppsSummaryReportResponseable), nil
+    return res.([]byte), nil
 }

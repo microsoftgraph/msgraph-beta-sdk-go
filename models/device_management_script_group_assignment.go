@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementScriptGroupAssignment 
+// DeviceManagementScriptGroupAssignment contains properties used to assign a device management script to a group.
 type DeviceManagementScriptGroupAssignment struct {
     Entity
     // The Id of the Azure Active Directory group we are targeting the script to.

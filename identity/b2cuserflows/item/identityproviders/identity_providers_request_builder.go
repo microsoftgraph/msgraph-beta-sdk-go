@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i0f1ee86570c7b0b309600ab6ea6196f2df0ee3c82316c2f6159de25a8a0864b2 "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/item/identityproviders/count"
+    i6365c50638527c8f8852c3f9523230e6ae3dc1eeaab96351d97e26588318017e "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2cuserflows/item/identityproviders/ref"
 )
 
 // IdentityProvidersRequestBuilder provides operations to manage the identityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.
@@ -105,4 +106,8 @@ func (m *IdentityProvidersRequestBuilder) GetWithRequestConfigurationAndResponse
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *IdentityProvidersRequestBuilder) Ref()(*i6365c50638527c8f8852c3f9523230e6ae3dc1eeaab96351d97e26588318017e.RefRequestBuilder) {
+    return i6365c50638527c8f8852c3f9523230e6ae3dc1eeaab96351d97e26588318017e.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

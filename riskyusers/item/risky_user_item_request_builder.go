@@ -24,7 +24,7 @@ type RiskyUserItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RiskyUserItemRequestBuilderGetQueryParameters get riskyUser
+// RiskyUserItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a **riskyUser** object.
 type RiskyUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -82,11 +82,11 @@ func (m *RiskyUserItemRequestBuilder) CreateDeleteRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get riskyUser
+// CreateGetRequestInformation retrieve the properties and relationships of a **riskyUser** object.
 func (m *RiskyUserItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get riskyUser
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of a **riskyUser** object.
 func (m *RiskyUserItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RiskyUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,11 +138,11 @@ func (m *RiskyUserItemRequestBuilder) DeleteWithRequestConfigurationAndResponseH
     }
     return nil
 }
-// Get get riskyUser
+// Get retrieve the properties and relationships of a **riskyUser** object.
 func (m *RiskyUserItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get riskyUser
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties and relationships of a **riskyUser** object.
 func (m *RiskyUserItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RiskyUserItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

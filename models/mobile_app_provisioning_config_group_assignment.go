@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileAppProvisioningConfigGroupAssignment 
+// MobileAppProvisioningConfigGroupAssignment contains the properties used to assign an App provisioning configuration to a group.
 type MobileAppProvisioningConfigGroupAssignment struct {
     Entity
     // The ID of the AAD group in which the app provisioning configuration is being targeted.

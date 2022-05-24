@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EmbeddedSIMActivationCodePoolAssignment 
+// EmbeddedSIMActivationCodePoolAssignment the embedded SIM activation code pool assignment entity assigns a specific embeddedSIMActivationCodePool to an AAD device group.
 type EmbeddedSIMActivationCodePoolAssignment struct {
     Entity
     // Base type for assignment targets.

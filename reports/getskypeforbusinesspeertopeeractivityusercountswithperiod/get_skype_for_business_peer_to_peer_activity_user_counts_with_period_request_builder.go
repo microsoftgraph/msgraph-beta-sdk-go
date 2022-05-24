@@ -59,18 +59,18 @@ func (m *GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilder
     return requestInfo, nil
 }
 // Get invoke function getSkypeForBusinessPeerToPeerActivityUserCounts
-func (m *GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilder) Get()(GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodResponseable, error) {
+func (m *GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetWithRequestConfigurationAndResponseHandler invoke function getSkypeForBusinessPeerToPeerActivityUserCounts
-func (m *GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodResponseable, error) {
+func (m *GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodResponseable), nil
+    return res.([]byte), nil
 }

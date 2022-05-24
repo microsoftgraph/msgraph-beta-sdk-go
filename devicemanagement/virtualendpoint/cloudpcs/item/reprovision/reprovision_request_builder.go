@@ -40,11 +40,11 @@ func NewReprovisionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewReprovisionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action reprovision
-func (m *ReprovisionRequestBuilder) CreatePostRequestInformation(body ReprovisionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ReprovisionRequestBuilder) CreatePostRequestInformation(body ReprovisionPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action reprovision
-func (m *ReprovisionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ReprovisionRequestBodyable, requestConfiguration *ReprovisionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ReprovisionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ReprovisionPostRequestBodyable, requestConfiguration *ReprovisionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ReprovisionRequestBuilder) CreatePostRequestInformationWithRequestConfi
     return requestInfo, nil
 }
 // Post invoke action reprovision
-func (m *ReprovisionRequestBuilder) Post(body ReprovisionRequestBodyable)(error) {
+func (m *ReprovisionRequestBuilder) Post(body ReprovisionPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action reprovision
-func (m *ReprovisionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ReprovisionRequestBodyable, requestConfiguration *ReprovisionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ReprovisionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ReprovisionPostRequestBodyable, requestConfiguration *ReprovisionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

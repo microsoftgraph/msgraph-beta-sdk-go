@@ -7,6 +7,7 @@ import (
     i1bcde115488e1362c679009fc0d5cf62474b9a7ba3d051b9bd8214ab3f0c2c35 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/operations"
     i38e5134ffce5124e21fd0f668bb73e5568b24566a9e956b4d12afef11bee220f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/permissiongrants"
     ia4a5a30ed707af790b1c2b15936fcf68a4ac1eaee6407d4e5837f9dee33d2717 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/installedapps"
+    ib32e501e2ee14b9c518eef16cdd1655db30b5806e5f4be17957c21a66e36c695 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/pinnedmessages"
     ibcd033263282f46cf08c9ffed250e454bfe93a5f0d41ede7466f3725b012808c "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/members"
     idead0084f5300487c412f0afd4cb69c96dab7aa445fdb45feba337598ba6e4a4 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/lastmessagepreview"
     if345d5c48676b774a18852c60a5c6a74c7235e1f5439793ed859b22d9c6e5d11 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/tabs"
@@ -15,6 +16,7 @@ import (
     i1da914fe8033359b6525954501f6aeb6fc0ad41d92f250fea01dc364798e325a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/messages/item"
     i7cae322e7e19ac03ee3835d6259dde3546087d9bc77605923cd230b57741a237 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/installedapps/item"
     i9ac05382512bc3e53d355e9c8817600d551e3fbb197180b2be3832f4e968befa "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/permissiongrants/item"
+    ib7358fe28b26b0df886473cc1c746ecee1f749db40a9123335298a7e8ff8c07b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/pinnedmessages/item"
     ibcd7e2b55750c3cf3853ab13d9a8350fa0813cc9dafb723b8df641e30a377aed "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/members/item"
     iee8e28251b196a5ca3014f3cb541ead07ac22409864668375196a8ca8542d1a9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/operations/item"
 )
@@ -267,6 +269,21 @@ func (m *ChatItemRequestBuilder) PermissionGrantsById(id string)(*i9ac05382512bc
         urlTplParams["resourceSpecificPermissionGrant%2Did"] = id
     }
     return i9ac05382512bc3e53d355e9c8817600d551e3fbb197180b2be3832f4e968befa.NewResourceSpecificPermissionGrantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// PinnedMessages the pinnedMessages property
+func (m *ChatItemRequestBuilder) PinnedMessages()(*ib32e501e2ee14b9c518eef16cdd1655db30b5806e5f4be17957c21a66e36c695.PinnedMessagesRequestBuilder) {
+    return ib32e501e2ee14b9c518eef16cdd1655db30b5806e5f4be17957c21a66e36c695.NewPinnedMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// PinnedMessagesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.chats.item.pinnedMessages.item collection
+func (m *ChatItemRequestBuilder) PinnedMessagesById(id string)(*ib7358fe28b26b0df886473cc1c746ecee1f749db40a9123335298a7e8ff8c07b.PinnedChatMessageInfoItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["pinnedChatMessageInfo%2Did"] = id
+    }
+    return ib7358fe28b26b0df886473cc1c746ecee1f749db40a9123335298a7e8ff8c07b.NewPinnedChatMessageInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Tabs the tabs property
 func (m *ChatItemRequestBuilder) Tabs()(*if345d5c48676b774a18852c60a5c6a74c7235e1f5439793ed859b22d9c6e5d11.TabsRequestBuilder) {

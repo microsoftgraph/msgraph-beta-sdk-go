@@ -4,6 +4,12 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i14340f924e5929771aaa186c84340e6e476fda052090628adf5842c405179a16 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/memberof/item/orgcontact"
+    i2ae40f83419e739c59b57a2ec8d60c78b2d9fd00eec24e27300c0ab9144b026f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/memberof/item/application"
+    i6303ea5ea445030dc02f383340d84c37261726453ff2fa3ee1b5d7aa04cbb291 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/memberof/item/user"
+    i6dd67302a179aee00c77f964bfc2919e5b395d656670c728dd40bda32a2c90c8 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/memberof/item/group"
+    iabfeca4445421409505b6f4fe1a71dfc9daa5aafdf70c75ec4698b6e48ac19f4 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/memberof/item/serviceprincipal"
+    iadd880b0451ceed1c56f4222bf84810bd71e3e6256cffc8bda5e75454887ccb7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/windowshelloforbusinessmethods/item/device/memberof/item/device"
 )
 
 // DirectoryObjectItemRequestBuilder provides operations to manage the memberOf property of the microsoft.graph.device entity.
@@ -30,6 +36,10 @@ type DirectoryObjectItemRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *DirectoryObjectItemRequestBuilderGetQueryParameters
+}
+// Application the application property
+func (m *DirectoryObjectItemRequestBuilder) Application()(*i2ae40f83419e739c59b57a2ec8d60c78b2d9fd00eec24e27300c0ab9144b026f.ApplicationRequestBuilder) {
+    return i2ae40f83419e739c59b57a2ec8d60c78b2d9fd00eec24e27300c0ab9144b026f.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryObjectItemRequestBuilder) {
@@ -69,6 +79,10 @@ func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
+// Device the device property
+func (m *DirectoryObjectItemRequestBuilder) Device()(*iadd880b0451ceed1c56f4222bf84810bd71e3e6256cffc8bda5e75454887ccb7.DeviceRequestBuilder) {
+    return iadd880b0451ceed1c56f4222bf84810bd71e3e6256cffc8bda5e75454887ccb7.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
 func (m *DirectoryObjectItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -88,4 +102,20 @@ func (m *DirectoryObjectItemRequestBuilder) GetWithRequestConfigurationAndRespon
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
+}
+// Group the group property
+func (m *DirectoryObjectItemRequestBuilder) Group()(*i6dd67302a179aee00c77f964bfc2919e5b395d656670c728dd40bda32a2c90c8.GroupRequestBuilder) {
+    return i6dd67302a179aee00c77f964bfc2919e5b395d656670c728dd40bda32a2c90c8.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OrgContact the orgContact property
+func (m *DirectoryObjectItemRequestBuilder) OrgContact()(*i14340f924e5929771aaa186c84340e6e476fda052090628adf5842c405179a16.OrgContactRequestBuilder) {
+    return i14340f924e5929771aaa186c84340e6e476fda052090628adf5842c405179a16.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*iabfeca4445421409505b6f4fe1a71dfc9daa5aafdf70c75ec4698b6e48ac19f4.ServicePrincipalRequestBuilder) {
+    return iabfeca4445421409505b6f4fe1a71dfc9daa5aafdf70c75ec4698b6e48ac19f4.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *DirectoryObjectItemRequestBuilder) User()(*i6303ea5ea445030dc02f383340d84c37261726453ff2fa3ee1b5d7aa04cbb291.UserRequestBuilder) {
+    return i6303ea5ea445030dc02f383340d84c37261726453ff2fa3ee1b5d7aa04cbb291.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

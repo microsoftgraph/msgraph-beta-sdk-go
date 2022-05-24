@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     id07c90722ad0688242e77859cd090ff8c47280fe234fd1a48f6bc0104f5cca15 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/owners/count"
+    if6165a897e433e529e846d0cb8fe2e9839649ad09b949ff71a3b21dea2dbf2d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/owners/ref"
 )
 
 // OwnersRequestBuilder provides operations to manage the owners property of the microsoft.graph.servicePrincipal entity.
@@ -105,4 +106,8 @@ func (m *OwnersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(req
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *OwnersRequestBuilder) Ref()(*if6165a897e433e529e846d0cb8fe2e9839649ad09b949ff71a3b21dea2dbf2d3.RefRequestBuilder) {
+    return if6165a897e433e529e846d0cb8fe2e9839649ad09b949ff71a3b21dea2dbf2d3.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

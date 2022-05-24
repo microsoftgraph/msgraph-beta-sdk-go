@@ -4,6 +4,9 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    ib61108a68418eee1593a9f2a0bdfa80de0ea0cb287ee319bc7b4cc3ef3f6a67d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/registeredusers/item/endpoint"
+    ibdd675587f7e82f56ab6c3c5bd30ff7c95a9241ed6e37824a3071134d2677ede "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/registeredusers/item/serviceprincipal"
+    ic11233761da5ac31c2512b590b13b8b83834454e9fb17b5c2d0643c32a28bb58 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/registeredusers/item/user"
 )
 
 // DirectoryObjectItemRequestBuilder provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
@@ -69,6 +72,10 @@ func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
+// Endpoint the endpoint property
+func (m *DirectoryObjectItemRequestBuilder) Endpoint()(*ib61108a68418eee1593a9f2a0bdfa80de0ea0cb287ee319bc7b4cc3ef3f6a67d.EndpointRequestBuilder) {
+    return ib61108a68418eee1593a9f2a0bdfa80de0ea0cb287ee319bc7b4cc3ef3f6a67d.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *DirectoryObjectItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -88,4 +95,12 @@ func (m *DirectoryObjectItemRequestBuilder) GetWithRequestConfigurationAndRespon
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
+}
+// ServicePrincipal the servicePrincipal property
+func (m *DirectoryObjectItemRequestBuilder) ServicePrincipal()(*ibdd675587f7e82f56ab6c3c5bd30ff7c95a9241ed6e37824a3071134d2677ede.ServicePrincipalRequestBuilder) {
+    return ibdd675587f7e82f56ab6c3c5bd30ff7c95a9241ed6e37824a3071134d2677ede.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *DirectoryObjectItemRequestBuilder) User()(*ic11233761da5ac31c2512b590b13b8b83834454e9fb17b5c2d0643c32a28bb58.UserRequestBuilder) {
+    return ic11233761da5ac31c2512b590b13b8b83834454e9fb17b5c2d0643c32a28bb58.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

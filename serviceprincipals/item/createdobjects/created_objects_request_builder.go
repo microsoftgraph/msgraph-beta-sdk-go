@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i08719d38a3b05491b85da14c42c75fcbd6c34b192e45be770186965e10fdca6f "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/createdobjects/count"
+    i5e1495dfa470bf8cbbe56037708cd3c37e09719d80581e63a1adc3d1234f5572 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/createdobjects/serviceprincipal"
 )
 
 // CreatedObjectsRequestBuilder provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.
@@ -105,4 +106,8 @@ func (m *CreatedObjectsRequestBuilder) GetWithRequestConfigurationAndResponseHan
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
+}
+// ServicePrincipal the servicePrincipal property
+func (m *CreatedObjectsRequestBuilder) ServicePrincipal()(*i5e1495dfa470bf8cbbe56037708cd3c37e09719d80581e63a1adc3d1234f5572.ServicePrincipalRequestBuilder) {
+    return i5e1495dfa470bf8cbbe56037708cd3c37e09719d80581e63a1adc3d1234f5572.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

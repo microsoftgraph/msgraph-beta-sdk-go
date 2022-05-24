@@ -8,14 +8,14 @@ import (
 type CredentialUserRegistrationDetailsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAuthMethods()([]RegistrationAuthMethod)
+    GetAuthMethods()([]string)
     GetIsCapable()(*bool)
     GetIsEnabled()(*bool)
     GetIsMfaRegistered()(*bool)
     GetIsRegistered()(*bool)
     GetUserDisplayName()(*string)
     GetUserPrincipalName()(*string)
-    SetAuthMethods(value []RegistrationAuthMethod)()
+    SetAuthMethods(value []string)()
     SetIsCapable(value *bool)()
     SetIsEnabled(value *bool)()
     SetIsMfaRegistered(value *bool)()

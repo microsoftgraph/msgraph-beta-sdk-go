@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementScriptDeviceState 
+// DeviceManagementScriptDeviceState contains properties for device run state of the device management script.
 type DeviceManagementScriptDeviceState struct {
     Entity
     // Error code corresponding to erroneous execution of the device management script.

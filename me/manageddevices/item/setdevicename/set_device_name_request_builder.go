@@ -40,11 +40,11 @@ func NewSetDeviceNameRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewSetDeviceNameRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation set device name of the device.
-func (m *SetDeviceNameRequestBuilder) CreatePostRequestInformation(body SetDeviceNameRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetDeviceNameRequestBuilder) CreatePostRequestInformation(body SetDeviceNamePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration set device name of the device.
-func (m *SetDeviceNameRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetDeviceNameRequestBodyable, requestConfiguration *SetDeviceNameRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetDeviceNameRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetDeviceNamePostRequestBodyable, requestConfiguration *SetDeviceNameRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *SetDeviceNameRequestBuilder) CreatePostRequestInformationWithRequestCon
     return requestInfo, nil
 }
 // Post set device name of the device.
-func (m *SetDeviceNameRequestBuilder) Post(body SetDeviceNameRequestBodyable)(error) {
+func (m *SetDeviceNameRequestBuilder) Post(body SetDeviceNamePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler set device name of the device.
-func (m *SetDeviceNameRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetDeviceNameRequestBodyable, requestConfiguration *SetDeviceNameRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *SetDeviceNameRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetDeviceNamePostRequestBodyable, requestConfiguration *SetDeviceNameRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

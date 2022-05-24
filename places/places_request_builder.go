@@ -16,7 +16,7 @@ type PlacesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PlacesRequestBuilderGetQueryParameters get place
+// PlacesRequestBuilderGetQueryParameters get the properties and relationships of a [place](../resources/place.md) object specified by either its ID or email address.  The **place** object can be one of the following types: Both **room** and **roomList** are derived from the [place](../resources/place.md) object. 
 type PlacesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewPlacesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *PlacesRequestBuilder) Count()(*iab431c93f04e578a7b236d5928b58e98153eb39a2d0667392eca8d00bfc07863.CountRequestBuilder) {
     return iab431c93f04e578a7b236d5928b58e98153eb39a2d0667392eca8d00bfc07863.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get place
+// CreateGetRequestInformation get the properties and relationships of a [place](../resources/place.md) object specified by either its ID or email address.  The **place** object can be one of the following types: Both **room** and **roomList** are derived from the [place](../resources/place.md) object. 
 func (m *PlacesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get place
+// CreateGetRequestInformationWithRequestConfiguration get the properties and relationships of a [place](../resources/place.md) object specified by either its ID or email address.  The **place** object can be one of the following types: Both **room** and **roomList** are derived from the [place](../resources/place.md) object. 
 func (m *PlacesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PlacesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +110,11 @@ func (m *PlacesRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get get place
+// Get get the properties and relationships of a [place](../resources/place.md) object specified by either its ID or email address.  The **place** object can be one of the following types: Both **room** and **roomList** are derived from the [place](../resources/place.md) object. 
 func (m *PlacesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlaceCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get place
+// GetWithRequestConfigurationAndResponseHandler get the properties and relationships of a [place](../resources/place.md) object specified by either its ID or email address.  The **place** object can be one of the following types: Both **room** and **roomList** are derived from the [place](../resources/place.md) object. 
 func (m *PlacesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PlacesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlaceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

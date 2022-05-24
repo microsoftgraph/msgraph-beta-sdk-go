@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i370fec57d886107bbd85ee628d0ae239f8de31ea23f9aacec07ce6e297959347 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/shares/item/allowedgroups/count"
+    i6a6bfda29c34402dd3264b307964c188308767998fbd81fa5ad6333864c5067d "github.com/microsoftgraph/msgraph-beta-sdk-go/print/shares/item/allowedgroups/ref"
 )
 
 // AllowedGroupsRequestBuilder provides operations to manage the allowedGroups property of the microsoft.graph.printerShare entity.
@@ -105,4 +106,8 @@ func (m *AllowedGroupsRequestBuilder) GetWithRequestConfigurationAndResponseHand
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *AllowedGroupsRequestBuilder) Ref()(*i6a6bfda29c34402dd3264b307964c188308767998fbd81fa5ad6333864c5067d.RefRequestBuilder) {
+    return i6a6bfda29c34402dd3264b307964c188308767998fbd81fa5ad6333864c5067d.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -41,11 +41,11 @@ func NewResetPasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewResetPasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action resetPassword
-func (m *ResetPasswordRequestBuilder) CreatePostRequestInformation(body ResetPasswordRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ResetPasswordRequestBuilder) CreatePostRequestInformation(body ResetPasswordPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action resetPassword
-func (m *ResetPasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ResetPasswordRequestBodyable, requestConfiguration *ResetPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ResetPasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ResetPasswordPostRequestBodyable, requestConfiguration *ResetPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *ResetPasswordRequestBuilder) CreatePostRequestInformationWithRequestCon
     return requestInfo, nil
 }
 // Post invoke action resetPassword
-func (m *ResetPasswordRequestBuilder) Post(body ResetPasswordRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordResetResponseable, error) {
+func (m *ResetPasswordRequestBuilder) Post(body ResetPasswordPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordResetResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action resetPassword
-func (m *ResetPasswordRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ResetPasswordRequestBodyable, requestConfiguration *ResetPasswordRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordResetResponseable, error) {
+func (m *ResetPasswordRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ResetPasswordPostRequestBodyable, requestConfiguration *ResetPasswordRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordResetResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesAgent 
+// OnPremisesAgent provides operations to manage the collection of onPremisesPublishingProfile entities.
 type OnPremisesAgent struct {
     Entity
     // List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
@@ -16,7 +16,7 @@ type OnPremisesAgent struct {
     // Possible values are: active, inactive.
     status *AgentStatus
     // The supportedPublishingTypes property
-    supportedPublishingTypes []OnPremisesPublishingType
+    supportedPublishingTypes []string
 }
 // NewOnPremisesAgent instantiates a new onPremisesAgent and sets the default values.
 func NewOnPremisesAgent()(*OnPremisesAgent) {
@@ -93,14 +93,14 @@ func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["supportedPublishingTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseOnPremisesPublishingType)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]OnPremisesPublishingType, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*OnPremisesPublishingType))
+                res[i] = *(v.(*string))
             }
             m.SetSupportedPublishingTypes(res)
         }
@@ -125,7 +125,7 @@ func (m *OnPremisesAgent) GetStatus()(*AgentStatus) {
     }
 }
 // GetSupportedPublishingTypes gets the supportedPublishingTypes property value. The supportedPublishingTypes property
-func (m *OnPremisesAgent) GetSupportedPublishingTypes()([]OnPremisesPublishingType) {
+func (m *OnPremisesAgent) GetSupportedPublishingTypes()([]string) {
     if m == nil {
         return nil
     } else {
@@ -168,7 +168,7 @@ func (m *OnPremisesAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     if m.GetSupportedPublishingTypes() != nil {
-        err = writer.WriteCollectionOfStringValues("supportedPublishingTypes", SerializeOnPremisesPublishingType(m.GetSupportedPublishingTypes()))
+        err = writer.WriteCollectionOfStringValues("supportedPublishingTypes", m.GetSupportedPublishingTypes())
         if err != nil {
             return err
         }
@@ -200,7 +200,7 @@ func (m *OnPremisesAgent) SetStatus(value *AgentStatus)() {
     }
 }
 // SetSupportedPublishingTypes sets the supportedPublishingTypes property value. The supportedPublishingTypes property
-func (m *OnPremisesAgent) SetSupportedPublishingTypes(value []OnPremisesPublishingType)() {
+func (m *OnPremisesAgent) SetSupportedPublishingTypes(value []string)() {
     if m != nil {
         m.supportedPublishingTypes = value
     }

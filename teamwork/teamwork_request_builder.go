@@ -6,6 +6,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i3fce2babf7b4f0d1cb31c054814424b76c87dc90eadacea48f98134cc0ffe6e7 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/devices"
     ib9c577680442ee756cdbf50e3c2f2d61fc1877ecb12e13bf9ec9802c878f1b45 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/workforceintegrations"
+    id1ff05524188cf798ff28c962060e88b92f5555111be336cede7088f8719c6a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/sendactivitynotificationtorecipients"
     i17ffe63fafac127289aa66b154f468d1a6a27dee2b4568c67bf179cbf15811a8 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/devices/item"
     i75138276537be7f359112029ca90eee1631bb436b9f9db869b58bf15fd0cd092 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/workforceintegrations/item"
 )
@@ -151,6 +152,10 @@ func (m *TeamworkRequestBuilder) PatchWithRequestConfigurationAndResponseHandler
         return err
     }
     return nil
+}
+// SendActivityNotificationToRecipients the sendActivityNotificationToRecipients property
+func (m *TeamworkRequestBuilder) SendActivityNotificationToRecipients()(*id1ff05524188cf798ff28c962060e88b92f5555111be336cede7088f8719c6a6.SendActivityNotificationToRecipientsRequestBuilder) {
+    return id1ff05524188cf798ff28c962060e88b92f5555111be336cede7088f8719c6a6.NewSendActivityNotificationToRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WorkforceIntegrations the workforceIntegrations property
 func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*ib9c577680442ee756cdbf50e3c2f2d61fc1877ecb12e13bf9ec9802c878f1b45.WorkforceIntegrationsRequestBuilder) {

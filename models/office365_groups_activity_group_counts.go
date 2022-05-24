@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365GroupsActivityGroupCounts 
+// Office365GroupsActivityGroupCounts provides operations to call the getOffice365GroupsActivityGroupCounts method.
 type Office365GroupsActivityGroupCounts struct {
     Entity
     // The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.

@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CredentialUserRegistrationDetails 
+// CredentialUserRegistrationDetails provides operations to manage the print singleton.
 type CredentialUserRegistrationDetails struct {
     Entity
     // Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
-    authMethods []RegistrationAuthMethod
+    authMethods []string
     // Indicates whether the user is ready to perform self-service password reset or MFA.
     isCapable *bool
     // Indicates whether the user enabled to perform self-service password reset.
@@ -34,7 +34,7 @@ func CreateCredentialUserRegistrationDetailsFromDiscriminatorValue(parseNode i87
     return NewCredentialUserRegistrationDetails(), nil
 }
 // GetAuthMethods gets the authMethods property value. Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
-func (m *CredentialUserRegistrationDetails) GetAuthMethods()([]RegistrationAuthMethod) {
+func (m *CredentialUserRegistrationDetails) GetAuthMethods()([]string) {
     if m == nil {
         return nil
     } else {
@@ -45,14 +45,14 @@ func (m *CredentialUserRegistrationDetails) GetAuthMethods()([]RegistrationAuthM
 func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseRegistrationAuthMethod)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RegistrationAuthMethod, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*RegistrationAuthMethod))
+                res[i] = *(v.(*string))
             }
             m.SetAuthMethods(res)
         }
@@ -175,7 +175,7 @@ func (m *CredentialUserRegistrationDetails) Serialize(writer i878a80d2330e89d268
         return err
     }
     if m.GetAuthMethods() != nil {
-        err = writer.WriteCollectionOfStringValues("authMethods", SerializeRegistrationAuthMethod(m.GetAuthMethods()))
+        err = writer.WriteCollectionOfStringValues("authMethods", m.GetAuthMethods())
         if err != nil {
             return err
         }
@@ -219,7 +219,7 @@ func (m *CredentialUserRegistrationDetails) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAuthMethods sets the authMethods property value. Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
-func (m *CredentialUserRegistrationDetails) SetAuthMethods(value []RegistrationAuthMethod)() {
+func (m *CredentialUserRegistrationDetails) SetAuthMethods(value []string)() {
     if m != nil {
         m.authMethods = value
     }

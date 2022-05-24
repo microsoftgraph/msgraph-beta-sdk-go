@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i81974746075fd4cfcc5b4ec9638fe19bce6edcb8224e4edebd83783ed5d12b12 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/tokenissuancepolicies/ref"
     ie49adee9e95fdfe4bbe54d8bc31762b53264aae9ff3da9125bc85cc00e122756 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/tokenissuancepolicies/count"
 )
 
@@ -105,4 +106,8 @@ func (m *TokenIssuancePoliciesRequestBuilder) GetWithRequestConfigurationAndResp
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenIssuancePolicyCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *TokenIssuancePoliciesRequestBuilder) Ref()(*i81974746075fd4cfcc5b4ec9638fe19bce6edcb8224e4edebd83783ed5d12b12.RefRequestBuilder) {
+    return i81974746075fd4cfcc5b4ec9638fe19bce6edcb8224e4edebd83783ed5d12b12.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

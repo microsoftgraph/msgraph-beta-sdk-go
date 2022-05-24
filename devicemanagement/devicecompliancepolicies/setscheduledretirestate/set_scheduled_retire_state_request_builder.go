@@ -40,11 +40,11 @@ func NewSetScheduledRetireStateRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewSetScheduledRetireStateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action setScheduledRetireState
-func (m *SetScheduledRetireStateRequestBuilder) CreatePostRequestInformation(body SetScheduledRetireStateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetScheduledRetireStateRequestBuilder) CreatePostRequestInformation(body SetScheduledRetireStatePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action setScheduledRetireState
-func (m *SetScheduledRetireStateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetScheduledRetireStateRequestBodyable, requestConfiguration *SetScheduledRetireStateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetScheduledRetireStateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetScheduledRetireStatePostRequestBodyable, requestConfiguration *SetScheduledRetireStateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *SetScheduledRetireStateRequestBuilder) CreatePostRequestInformationWith
     return requestInfo, nil
 }
 // Post invoke action setScheduledRetireState
-func (m *SetScheduledRetireStateRequestBuilder) Post(body SetScheduledRetireStateRequestBodyable)(error) {
+func (m *SetScheduledRetireStateRequestBuilder) Post(body SetScheduledRetireStatePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action setScheduledRetireState
-func (m *SetScheduledRetireStateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetScheduledRetireStateRequestBodyable, requestConfiguration *SetScheduledRetireStateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *SetScheduledRetireStateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetScheduledRetireStatePostRequestBodyable, requestConfiguration *SetScheduledRetireStateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

@@ -41,11 +41,11 @@ func NewUploadCertificateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewUploadCertificateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action uploadCertificate
-func (m *UploadCertificateRequestBuilder) CreatePostRequestInformation(body UploadCertificateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UploadCertificateRequestBuilder) CreatePostRequestInformation(body UploadCertificatePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action uploadCertificate
-func (m *UploadCertificateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadCertificateRequestBodyable, requestConfiguration *UploadCertificateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UploadCertificateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadCertificatePostRequestBodyable, requestConfiguration *UploadCertificateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *UploadCertificateRequestBuilder) CreatePostRequestInformationWithReques
     return requestInfo, nil
 }
 // Post invoke action uploadCertificate
-func (m *UploadCertificateRequestBuilder) Post(body UploadCertificateRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
+func (m *UploadCertificateRequestBuilder) Post(body UploadCertificatePostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action uploadCertificate
-func (m *UploadCertificateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UploadCertificateRequestBodyable, requestConfiguration *UploadCertificateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
+func (m *UploadCertificateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UploadCertificatePostRequestBodyable, requestConfiguration *UploadCertificateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

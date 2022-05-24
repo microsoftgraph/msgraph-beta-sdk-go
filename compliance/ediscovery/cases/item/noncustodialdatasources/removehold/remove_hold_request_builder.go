@@ -40,11 +40,11 @@ func NewRemoveHoldRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewRemoveHoldRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action removeHold
-func (m *RemoveHoldRequestBuilder) CreatePostRequestInformation(body RemoveHoldRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemoveHoldRequestBuilder) CreatePostRequestInformation(body RemoveHoldPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action removeHold
-func (m *RemoveHoldRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveHoldRequestBodyable, requestConfiguration *RemoveHoldRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemoveHoldRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveHoldPostRequestBodyable, requestConfiguration *RemoveHoldRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *RemoveHoldRequestBuilder) CreatePostRequestInformationWithRequestConfig
     return requestInfo, nil
 }
 // Post invoke action removeHold
-func (m *RemoveHoldRequestBuilder) Post(body RemoveHoldRequestBodyable)(error) {
+func (m *RemoveHoldRequestBuilder) Post(body RemoveHoldPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action removeHold
-func (m *RemoveHoldRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveHoldRequestBodyable, requestConfiguration *RemoveHoldRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *RemoveHoldRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveHoldPostRequestBodyable, requestConfiguration *RemoveHoldRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

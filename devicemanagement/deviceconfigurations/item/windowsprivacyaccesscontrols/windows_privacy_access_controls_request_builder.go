@@ -40,11 +40,11 @@ func NewWindowsPrivacyAccessControlsRequestBuilder(rawUrl string, requestAdapter
     return NewWindowsPrivacyAccessControlsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action windowsPrivacyAccessControls
-func (m *WindowsPrivacyAccessControlsRequestBuilder) CreatePostRequestInformation(body WindowsPrivacyAccessControlsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WindowsPrivacyAccessControlsRequestBuilder) CreatePostRequestInformation(body WindowsPrivacyAccessControlsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action windowsPrivacyAccessControls
-func (m *WindowsPrivacyAccessControlsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body WindowsPrivacyAccessControlsRequestBodyable, requestConfiguration *WindowsPrivacyAccessControlsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *WindowsPrivacyAccessControlsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body WindowsPrivacyAccessControlsPostRequestBodyable, requestConfiguration *WindowsPrivacyAccessControlsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *WindowsPrivacyAccessControlsRequestBuilder) CreatePostRequestInformatio
     return requestInfo, nil
 }
 // Post invoke action windowsPrivacyAccessControls
-func (m *WindowsPrivacyAccessControlsRequestBuilder) Post(body WindowsPrivacyAccessControlsRequestBodyable)(error) {
+func (m *WindowsPrivacyAccessControlsRequestBuilder) Post(body WindowsPrivacyAccessControlsPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action windowsPrivacyAccessControls
-func (m *WindowsPrivacyAccessControlsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body WindowsPrivacyAccessControlsRequestBodyable, requestConfiguration *WindowsPrivacyAccessControlsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *WindowsPrivacyAccessControlsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body WindowsPrivacyAccessControlsPostRequestBodyable, requestConfiguration *WindowsPrivacyAccessControlsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

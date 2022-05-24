@@ -27,7 +27,7 @@ type ComanagedDevicesSummary struct {
     // Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.
     windowsUpdateForBusinessCount *int32
 }
-// NewComanagedDevicesSummary instantiates a new comanagedDevicesSummary and sets the default values.
+// NewComanagedDevicesSummary instantiates a new ComanagedDevicesSummary and sets the default values.
 func NewComanagedDevicesSummary()(*ComanagedDevicesSummary) {
     m := &ComanagedDevicesSummary{
     }

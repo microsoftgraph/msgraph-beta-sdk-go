@@ -40,11 +40,11 @@ func NewActivateServiceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewActivateServiceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action activateService
-func (m *ActivateServiceRequestBuilder) CreatePostRequestInformation(body ActivateServiceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ActivateServiceRequestBuilder) CreatePostRequestInformation(body ActivateServicePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action activateService
-func (m *ActivateServiceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ActivateServiceRequestBodyable, requestConfiguration *ActivateServiceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ActivateServiceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ActivateServicePostRequestBodyable, requestConfiguration *ActivateServiceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ActivateServiceRequestBuilder) CreatePostRequestInformationWithRequestC
     return requestInfo, nil
 }
 // Post invoke action activateService
-func (m *ActivateServiceRequestBuilder) Post(body ActivateServiceRequestBodyable)(error) {
+func (m *ActivateServiceRequestBuilder) Post(body ActivateServicePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action activateService
-func (m *ActivateServiceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ActivateServiceRequestBodyable, requestConfiguration *ActivateServiceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ActivateServiceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ActivateServicePostRequestBodyable, requestConfiguration *ActivateServiceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

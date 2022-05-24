@@ -11,7 +11,7 @@ type AssignmentFilterValidationResult struct {
     // Indicator to valid or invalid rule.
     isValidRule *bool
 }
-// NewAssignmentFilterValidationResult instantiates a new assignmentFilterValidationResult and sets the default values.
+// NewAssignmentFilterValidationResult instantiates a new AssignmentFilterValidationResult and sets the default values.
 func NewAssignmentFilterValidationResult()(*AssignmentFilterValidationResult) {
     m := &AssignmentFilterValidationResult{
     }

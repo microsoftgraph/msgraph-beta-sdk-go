@@ -59,18 +59,18 @@ func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder) C
     return requestInfo, nil
 }
 // Get invoke function getSkypeForBusinessParticipantActivityCounts
-func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder) Get()(GetSkypeForBusinessParticipantActivityCountsWithPeriodResponseable, error) {
+func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetWithRequestConfigurationAndResponseHandler invoke function getSkypeForBusinessParticipantActivityCounts
-func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSkypeForBusinessParticipantActivityCountsWithPeriodResponseable, error) {
+func (m *GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetSkypeForBusinessParticipantActivityCountsWithPeriodResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetSkypeForBusinessParticipantActivityCountsWithPeriodResponseable), nil
+    return res.([]byte), nil
 }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceAndAppManagementAssignmentFilter 
+// DeviceAndAppManagementAssignmentFilter a class containing the properties used for Assignment Filter.
 type DeviceAndAppManagementAssignmentFilter struct {
     Entity
     // Creation time of the Assignment Filter.
@@ -32,6 +32,25 @@ func NewDeviceAndAppManagementAssignmentFilter()(*DeviceAndAppManagementAssignme
 }
 // CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.deviceAndAppManagementAssignmentFilter":
+                        return NewDeviceAndAppManagementAssignmentFilter(), nil
+                }
+            }
+        }
+    }
     return NewDeviceAndAppManagementAssignmentFilter(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Creation time of the Assignment Filter.

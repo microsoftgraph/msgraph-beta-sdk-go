@@ -41,11 +41,11 @@ func NewRevokeGrantsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewRevokeGrantsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action revokeGrants
-func (m *RevokeGrantsRequestBuilder) CreatePostRequestInformation(body RevokeGrantsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RevokeGrantsRequestBuilder) CreatePostRequestInformation(body RevokeGrantsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action revokeGrants
-func (m *RevokeGrantsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RevokeGrantsRequestBodyable, requestConfiguration *RevokeGrantsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RevokeGrantsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RevokeGrantsPostRequestBodyable, requestConfiguration *RevokeGrantsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *RevokeGrantsRequestBuilder) CreatePostRequestInformationWithRequestConf
     return requestInfo, nil
 }
 // Post invoke action revokeGrants
-func (m *RevokeGrantsRequestBuilder) Post(body RevokeGrantsRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
+func (m *RevokeGrantsRequestBuilder) Post(body RevokeGrantsPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action revokeGrants
-func (m *RevokeGrantsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RevokeGrantsRequestBodyable, requestConfiguration *RevokeGrantsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
+func (m *RevokeGrantsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RevokeGrantsPostRequestBodyable, requestConfiguration *RevokeGrantsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

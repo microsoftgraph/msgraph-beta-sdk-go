@@ -2,6 +2,7 @@ package bulkreprovisioncloudpc
 
 import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 // BulkReprovisionCloudPcRequestBuilder provides operations to call the bulkReprovisionCloudPc method.
@@ -40,11 +41,11 @@ func NewBulkReprovisionCloudPcRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewBulkReprovisionCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action bulkReprovisionCloudPc
-func (m *BulkReprovisionCloudPcRequestBuilder) CreatePostRequestInformation(body BulkReprovisionCloudPcRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *BulkReprovisionCloudPcRequestBuilder) CreatePostRequestInformation(body BulkReprovisionCloudPcPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action bulkReprovisionCloudPc
-func (m *BulkReprovisionCloudPcRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body BulkReprovisionCloudPcRequestBodyable, requestConfiguration *BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *BulkReprovisionCloudPcRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body BulkReprovisionCloudPcPostRequestBodyable, requestConfiguration *BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +58,18 @@ func (m *BulkReprovisionCloudPcRequestBuilder) CreatePostRequestInformationWithR
     return requestInfo, nil
 }
 // Post invoke action bulkReprovisionCloudPc
-func (m *BulkReprovisionCloudPcRequestBuilder) Post(body BulkReprovisionCloudPcRequestBodyable)(error) {
+func (m *BulkReprovisionCloudPcRequestBuilder) Post(body BulkReprovisionCloudPcPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action bulkReprovisionCloudPc
-func (m *BulkReprovisionCloudPcRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body BulkReprovisionCloudPcRequestBodyable, requestConfiguration *BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *BulkReprovisionCloudPcRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body BulkReprovisionCloudPcPostRequestBodyable, requestConfiguration *BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
-        return err
+        return nil, err
     }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, nil)
+    res, err := m.requestAdapter.SendAsync(requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCloudPcBulkRemoteActionResultFromDiscriminatorValue, responseHandler, nil)
     if err != nil {
-        return err
+        return nil, err
     }
-    return nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable), nil
 }

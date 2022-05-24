@@ -40,11 +40,11 @@ func NewEvaluateAssignmentFilterRequestBuilder(rawUrl string, requestAdapter i2a
     return NewEvaluateAssignmentFilterRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action evaluateAssignmentFilter
-func (m *EvaluateAssignmentFilterRequestBuilder) CreatePostRequestInformation(body EvaluateAssignmentFilterRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EvaluateAssignmentFilterRequestBuilder) CreatePostRequestInformation(body EvaluateAssignmentFilterPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action evaluateAssignmentFilter
-func (m *EvaluateAssignmentFilterRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateAssignmentFilterRequestBodyable, requestConfiguration *EvaluateAssignmentFilterRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EvaluateAssignmentFilterRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateAssignmentFilterPostRequestBodyable, requestConfiguration *EvaluateAssignmentFilterRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *EvaluateAssignmentFilterRequestBuilder) CreatePostRequestInformationWit
     return requestInfo, nil
 }
 // Post invoke action evaluateAssignmentFilter
-func (m *EvaluateAssignmentFilterRequestBuilder) Post(body EvaluateAssignmentFilterRequestBodyable)(EvaluateAssignmentFilterResponseable, error) {
+func (m *EvaluateAssignmentFilterRequestBuilder) Post(body EvaluateAssignmentFilterPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action evaluateAssignmentFilter
-func (m *EvaluateAssignmentFilterRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EvaluateAssignmentFilterRequestBodyable, requestConfiguration *EvaluateAssignmentFilterRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(EvaluateAssignmentFilterResponseable, error) {
+func (m *EvaluateAssignmentFilterRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EvaluateAssignmentFilterPostRequestBodyable, requestConfiguration *EvaluateAssignmentFilterRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateEvaluateAssignmentFilterResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(EvaluateAssignmentFilterResponseable), nil
+    return res.([]byte), nil
 }

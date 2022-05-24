@@ -41,11 +41,11 @@ func NewBulkSetCloudPcReviewStatusRequestBuilder(rawUrl string, requestAdapter i
     return NewBulkSetCloudPcReviewStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action bulkSetCloudPcReviewStatus
-func (m *BulkSetCloudPcReviewStatusRequestBuilder) CreatePostRequestInformation(body BulkSetCloudPcReviewStatusRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *BulkSetCloudPcReviewStatusRequestBuilder) CreatePostRequestInformation(body BulkSetCloudPcReviewStatusPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action bulkSetCloudPcReviewStatus
-func (m *BulkSetCloudPcReviewStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body BulkSetCloudPcReviewStatusRequestBodyable, requestConfiguration *BulkSetCloudPcReviewStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *BulkSetCloudPcReviewStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body BulkSetCloudPcReviewStatusPostRequestBodyable, requestConfiguration *BulkSetCloudPcReviewStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *BulkSetCloudPcReviewStatusRequestBuilder) CreatePostRequestInformationW
     return requestInfo, nil
 }
 // Post invoke action bulkSetCloudPcReviewStatus
-func (m *BulkSetCloudPcReviewStatusRequestBuilder) Post(body BulkSetCloudPcReviewStatusRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
+func (m *BulkSetCloudPcReviewStatusRequestBuilder) Post(body BulkSetCloudPcReviewStatusPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action bulkSetCloudPcReviewStatus
-func (m *BulkSetCloudPcReviewStatusRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body BulkSetCloudPcReviewStatusRequestBodyable, requestConfiguration *BulkSetCloudPcReviewStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
+func (m *BulkSetCloudPcReviewStatusRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body BulkSetCloudPcReviewStatusPostRequestBodyable, requestConfiguration *BulkSetCloudPcReviewStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

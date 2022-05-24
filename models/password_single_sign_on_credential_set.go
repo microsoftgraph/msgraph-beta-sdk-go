@@ -13,7 +13,7 @@ type PasswordSingleSignOnCredentialSet struct {
     // The ID of the user or group this credential set belongs to.
     id *string
 }
-// NewPasswordSingleSignOnCredentialSet instantiates a new passwordSingleSignOnCredentialSet and sets the default values.
+// NewPasswordSingleSignOnCredentialSet instantiates a new PasswordSingleSignOnCredentialSet and sets the default values.
 func NewPasswordSingleSignOnCredentialSet()(*PasswordSingleSignOnCredentialSet) {
     m := &PasswordSingleSignOnCredentialSet{
     }

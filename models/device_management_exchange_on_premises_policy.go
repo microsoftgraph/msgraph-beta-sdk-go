@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementExchangeOnPremisesPolicy 
+// DeviceManagementExchangeOnPremisesPolicy singleton entity which represents the Exchange OnPremises policy configured for a tenant.
 type DeviceManagementExchangeOnPremisesPolicy struct {
     Entity
     // The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization

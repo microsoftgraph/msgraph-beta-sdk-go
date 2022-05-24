@@ -19,7 +19,7 @@ type ComanagementEligibleDevicesSummary struct {
     // Count of devices that will be eligible for Co-Management after an OS update
     needsOsUpdateCount *int32
 }
-// NewComanagementEligibleDevicesSummary instantiates a new comanagementEligibleDevicesSummary and sets the default values.
+// NewComanagementEligibleDevicesSummary instantiates a new ComanagementEligibleDevicesSummary and sets the default values.
 func NewComanagementEligibleDevicesSummary()(*ComanagementEligibleDevicesSummary) {
     m := &ComanagementEligibleDevicesSummary{
     }

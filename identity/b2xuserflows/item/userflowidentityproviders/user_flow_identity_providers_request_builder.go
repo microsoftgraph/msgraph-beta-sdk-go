@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    ic5c1a88dc5fc77efaac004a516d8984d4cd2f0c4875f51c372a13b2debc9f05e "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2xuserflows/item/userflowidentityproviders/ref"
     ifd8e3433cf23d063beca03199da97ae8f05d7164ba72b225cee8185b403f71f9 "github.com/microsoftgraph/msgraph-beta-sdk-go/identity/b2xuserflows/item/userflowidentityproviders/count"
 )
 
@@ -105,4 +106,8 @@ func (m *UserFlowIdentityProvidersRequestBuilder) GetWithRequestConfigurationAnd
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *UserFlowIdentityProvidersRequestBuilder) Ref()(*ic5c1a88dc5fc77efaac004a516d8984d4cd2f0c4875f51c372a13b2debc9f05e.RefRequestBuilder) {
+    return ic5c1a88dc5fc77efaac004a516d8984d4cd2f0c4875f51c372a13b2debc9f05e.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

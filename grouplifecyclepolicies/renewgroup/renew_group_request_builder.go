@@ -40,11 +40,11 @@ func NewRenewGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewRenewGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action renewGroup
-func (m *RenewGroupRequestBuilder) CreatePostRequestInformation(body RenewGroupRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RenewGroupRequestBuilder) CreatePostRequestInformation(body RenewGroupPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action renewGroup
-func (m *RenewGroupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RenewGroupRequestBodyable, requestConfiguration *RenewGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RenewGroupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RenewGroupPostRequestBodyable, requestConfiguration *RenewGroupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *RenewGroupRequestBuilder) CreatePostRequestInformationWithRequestConfig
     return requestInfo, nil
 }
 // Post invoke action renewGroup
-func (m *RenewGroupRequestBuilder) Post(body RenewGroupRequestBodyable)(RenewGroupResponseable, error) {
+func (m *RenewGroupRequestBuilder) Post(body RenewGroupPostRequestBodyable)(RenewGroupResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action renewGroup
-func (m *RenewGroupRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RenewGroupRequestBodyable, requestConfiguration *RenewGroupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(RenewGroupResponseable, error) {
+func (m *RenewGroupRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RenewGroupPostRequestBodyable, requestConfiguration *RenewGroupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(RenewGroupResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

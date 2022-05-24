@@ -4,6 +4,8 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i4332b2491dbec871cbd43ea40667c996efb312df1a01f009819b9873ea3e1a90 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/owneddevices/device"
+    i507c5938f145494956c8f404092d86bc45fb36732466de554c9b4ff5921ee9ec "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/owneddevices/endpoint"
     i8b7d9073db9925707cab3c3aa81caffdec75b8eb0e2aea61ec6ead265a48db9f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/owneddevices/count"
 )
 
@@ -85,6 +87,14 @@ func (m *OwnedDevicesRequestBuilder) CreateGetRequestInformationWithRequestConfi
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Device the device property
+func (m *OwnedDevicesRequestBuilder) Device()(*i4332b2491dbec871cbd43ea40667c996efb312df1a01f009819b9873ea3e1a90.DeviceRequestBuilder) {
+    return i4332b2491dbec871cbd43ea40667c996efb312df1a01f009819b9873ea3e1a90.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Endpoint the endpoint property
+func (m *OwnedDevicesRequestBuilder) Endpoint()(*i507c5938f145494956c8f404092d86bc45fb36732466de554c9b4ff5921ee9ec.EndpointRequestBuilder) {
+    return i507c5938f145494956c8f404092d86bc45fb36732466de554c9b4ff5921ee9ec.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get devices that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *OwnedDevicesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {

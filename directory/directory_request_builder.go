@@ -245,7 +245,7 @@ func (m *DirectoryRequestBuilder) InboundSharedUserProfiles()(*i77c0ae00685e8d9a
     return i77c0ae00685e8d9a81a4aecf1b394178c22d70b82eef43c63dc29f705d913689.NewInboundSharedUserProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // InboundSharedUserProfilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directory.inboundSharedUserProfiles.item collection
-func (m *DirectoryRequestBuilder) InboundSharedUserProfilesById(id string)(*i223f1150f57c5b2623641984f128295eead7dbc629507266bd840afb65dde273.InboundSharedUserProfileItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) InboundSharedUserProfilesById(id string)(*i223f1150f57c5b2623641984f128295eead7dbc629507266bd840afb65dde273.InboundSharedUserProfileUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -253,14 +253,14 @@ func (m *DirectoryRequestBuilder) InboundSharedUserProfilesById(id string)(*i223
     if id != "" {
         urlTplParams["inboundSharedUserProfile%2DuserId"] = id
     }
-    return i223f1150f57c5b2623641984f128295eead7dbc629507266bd840afb65dde273.NewInboundSharedUserProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i223f1150f57c5b2623641984f128295eead7dbc629507266bd840afb65dde273.NewInboundSharedUserProfileUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // OutboundSharedUserProfiles the outboundSharedUserProfiles property
 func (m *DirectoryRequestBuilder) OutboundSharedUserProfiles()(*ib4c7c90d94588a870946e877d26cfcd42ca3d90d8f00320757f06ef38d0c08ca.OutboundSharedUserProfilesRequestBuilder) {
     return ib4c7c90d94588a870946e877d26cfcd42ca3d90d8f00320757f06ef38d0c08ca.NewOutboundSharedUserProfilesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // OutboundSharedUserProfilesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.directory.outboundSharedUserProfiles.item collection
-func (m *DirectoryRequestBuilder) OutboundSharedUserProfilesById(id string)(*i9134fdf6cb6de8e59b19b19500831f6af1d8bb62e86076ee3571e1840ede40fb.OutboundSharedUserProfileItemRequestBuilder) {
+func (m *DirectoryRequestBuilder) OutboundSharedUserProfilesById(id string)(*i9134fdf6cb6de8e59b19b19500831f6af1d8bb62e86076ee3571e1840ede40fb.OutboundSharedUserProfileUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -268,7 +268,7 @@ func (m *DirectoryRequestBuilder) OutboundSharedUserProfilesById(id string)(*i91
     if id != "" {
         urlTplParams["outboundSharedUserProfile%2DuserId"] = id
     }
-    return i9134fdf6cb6de8e59b19b19500831f6af1d8bb62e86076ee3571e1840ede40fb.NewOutboundSharedUserProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return i9134fdf6cb6de8e59b19b19500831f6af1d8bb62e86076ee3571e1840ede40fb.NewOutboundSharedUserProfileUserItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update directory
 func (m *DirectoryRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Directoryable)(error) {

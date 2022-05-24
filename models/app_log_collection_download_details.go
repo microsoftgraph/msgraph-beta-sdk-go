@@ -15,7 +15,7 @@ type AppLogCollectionDownloadDetails struct {
     // Download SAS Url for completed AppLogUploadRequest
     downloadUrl *string
 }
-// NewAppLogCollectionDownloadDetails instantiates a new appLogCollectionDownloadDetails and sets the default values.
+// NewAppLogCollectionDownloadDetails instantiates a new AppLogCollectionDownloadDetails and sets the default values.
 func NewAppLogCollectionDownloadDetails()(*AppLogCollectionDownloadDetails) {
     m := &AppLogCollectionDownloadDetails{
     }
