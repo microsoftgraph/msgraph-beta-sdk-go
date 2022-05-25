@@ -10,7 +10,7 @@ import (
 
 var clientOptions = core.GraphClientOptions{
 	GraphServiceVersion:        "beta",
-	GraphServiceLibraryVersion: "0.24.0",
+	GraphServiceLibraryVersion: "0.24.1",
 }
 
 // GetDefaultClientOptions returns the default client options used by the GraphRequestAdapterBase and the middleware.
