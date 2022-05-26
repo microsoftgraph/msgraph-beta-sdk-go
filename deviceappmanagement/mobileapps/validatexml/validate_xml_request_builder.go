@@ -40,11 +40,11 @@ func NewValidateXmlRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewValidateXmlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action validateXml
-func (m *ValidateXmlRequestBuilder) CreatePostRequestInformation(body ValidateXmlRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ValidateXmlRequestBuilder) CreatePostRequestInformation(body ValidateXmlPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action validateXml
-func (m *ValidateXmlRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ValidateXmlRequestBodyable, requestConfiguration *ValidateXmlRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ValidateXmlRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ValidateXmlPostRequestBodyable, requestConfiguration *ValidateXmlRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ValidateXmlRequestBuilder) CreatePostRequestInformationWithRequestConfi
     return requestInfo, nil
 }
 // Post invoke action validateXml
-func (m *ValidateXmlRequestBuilder) Post(body ValidateXmlRequestBodyable)(ValidateXmlResponseable, error) {
+func (m *ValidateXmlRequestBuilder) Post(body ValidateXmlPostRequestBodyable)(ValidateXmlResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action validateXml
-func (m *ValidateXmlRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ValidateXmlRequestBodyable, requestConfiguration *ValidateXmlRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ValidateXmlResponseable, error) {
+func (m *ValidateXmlRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ValidateXmlPostRequestBodyable, requestConfiguration *ValidateXmlRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ValidateXmlResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

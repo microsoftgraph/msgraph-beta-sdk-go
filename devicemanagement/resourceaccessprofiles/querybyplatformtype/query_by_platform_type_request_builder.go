@@ -40,11 +40,11 @@ func NewQueryByPlatformTypeRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewQueryByPlatformTypeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action queryByPlatformType
-func (m *QueryByPlatformTypeRequestBuilder) CreatePostRequestInformation(body QueryByPlatformTypeRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *QueryByPlatformTypeRequestBuilder) CreatePostRequestInformation(body QueryByPlatformTypePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action queryByPlatformType
-func (m *QueryByPlatformTypeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body QueryByPlatformTypeRequestBodyable, requestConfiguration *QueryByPlatformTypeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *QueryByPlatformTypeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body QueryByPlatformTypePostRequestBodyable, requestConfiguration *QueryByPlatformTypeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *QueryByPlatformTypeRequestBuilder) CreatePostRequestInformationWithRequ
     return requestInfo, nil
 }
 // Post invoke action queryByPlatformType
-func (m *QueryByPlatformTypeRequestBuilder) Post(body QueryByPlatformTypeRequestBodyable)(QueryByPlatformTypeResponseable, error) {
+func (m *QueryByPlatformTypeRequestBuilder) Post(body QueryByPlatformTypePostRequestBodyable)(QueryByPlatformTypeResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action queryByPlatformType
-func (m *QueryByPlatformTypeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body QueryByPlatformTypeRequestBodyable, requestConfiguration *QueryByPlatformTypeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(QueryByPlatformTypeResponseable, error) {
+func (m *QueryByPlatformTypeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body QueryByPlatformTypePostRequestBodyable, requestConfiguration *QueryByPlatformTypeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(QueryByPlatformTypeResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

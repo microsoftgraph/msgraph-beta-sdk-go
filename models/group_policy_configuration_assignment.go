@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyConfigurationAssignment 
+// GroupPolicyConfigurationAssignment the group policy configuration assignment entity assigns one or more AAD groups to a specific group policy configuration.
 type GroupPolicyConfigurationAssignment struct {
     Entity
     // The date and time the entity was last modified.

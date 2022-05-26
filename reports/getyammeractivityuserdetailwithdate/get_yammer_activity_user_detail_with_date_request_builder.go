@@ -31,7 +31,7 @@ func NewGetYammerActivityUserDetailWithDateRequestBuilderInternal(pathParameters
         urlTplParams[idx] = item
     }
     if date != nil {
-        urlTplParams[""] = (*date).String()
+        urlTplParams["date"] = (*date).String()
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -60,18 +60,18 @@ func (m *GetYammerActivityUserDetailWithDateRequestBuilder) CreateGetRequestInfo
     return requestInfo, nil
 }
 // Get invoke function getYammerActivityUserDetail
-func (m *GetYammerActivityUserDetailWithDateRequestBuilder) Get()(GetYammerActivityUserDetailWithDateResponseable, error) {
+func (m *GetYammerActivityUserDetailWithDateRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetWithRequestConfigurationAndResponseHandler invoke function getYammerActivityUserDetail
-func (m *GetYammerActivityUserDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetYammerActivityUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetYammerActivityUserDetailWithDateResponseable, error) {
+func (m *GetYammerActivityUserDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetYammerActivityUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetYammerActivityUserDetailWithDateResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetYammerActivityUserDetailWithDateResponseable), nil
+    return res.([]byte), nil
 }

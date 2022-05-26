@@ -8,13 +8,13 @@ type DelegatedAdminRelationshipRequestStatus int
 const (
     CREATED_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS DelegatedAdminRelationshipRequestStatus = iota
     PENDING_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
-    COMPLETE_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
+    SUCCEEDED_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
     FAILED_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
     UNKNOWNFUTUREVALUE_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
 )
 
 func (i DelegatedAdminRelationshipRequestStatus) String() string {
-    return []string{"created", "pending", "complete", "failed", "unknownFutureValue"}[i]
+    return []string{"created", "pending", "succeeded", "failed", "unknownFutureValue"}[i]
 }
 func ParseDelegatedAdminRelationshipRequestStatus(v string) (interface{}, error) {
     result := CREATED_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
@@ -23,8 +23,8 @@ func ParseDelegatedAdminRelationshipRequestStatus(v string) (interface{}, error)
             result = CREATED_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
         case "pending":
             result = PENDING_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
-        case "complete":
-            result = COMPLETE_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
+        case "succeeded":
+            result = SUCCEEDED_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
         case "failed":
             result = FAILED_DELEGATEDADMINRELATIONSHIPREQUESTSTATUS
         case "unknownFutureValue":

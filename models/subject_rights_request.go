@@ -5,14 +5,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubjectRightsRequest 
+// SubjectRightsRequest provides operations to manage the privacy singleton.
 type SubjectRightsRequest struct {
     Entity
     // Identity that the request is assigned to.
     assignedTo Identityable
     // The date and time when the request was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     closedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The contentQuery property
+    // KQL based content query that should be used for search. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
     contentQuery *string
     // Identity information for the entity that created the request.
     createdBy IdentitySetable
@@ -26,13 +26,13 @@ type SubjectRightsRequest struct {
     description *string
     // The name of the request.
     displayName *string
-    // The externalId property
+    // The external ID for the request that is immutable after creation and is used for tracking the request for the external system. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
     externalId *string
     // Collection of history change events.
     history []SubjectRightsRequestHistoryable
-    // The includeAllVersions property
+    // Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions will include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
     includeAllVersions *bool
-    // The includeAuthoredContent property
+    // Include content authored by the data subject. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
     includeAuthoredContent *bool
     // Insight about the request.
     insight SubjectRightsRequestDetailable
@@ -44,9 +44,9 @@ type SubjectRightsRequest struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The mailboxlocations property
     mailboxlocations SubjectRightsRequestMailboxLocationable
-    // List of notes associcated with the request.
+    // List of notes associated with the request.
     notes []AuthoredNoteable
-    // The pauseAfterEstimate property
+    // Pause the request after estimate has finished. By default, the data estimate will run and then pause, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
     pauseAfterEstimate *bool
     // List of regulations that this request will fulfill.
     regulations []string
@@ -54,7 +54,7 @@ type SubjectRightsRequest struct {
     sitelocations SubjectRightsRequestSiteLocationable
     // Information about the different stages for the request.
     stages []SubjectRightsRequestStageDetailable
-    // The status of the request.. Possible values are: active, closed, unknownFutureValue.
+    // The status of the request. Possible values are: active, closed, unknownFutureValue.
     status *SubjectRightsRequestStatus
     // Information about the Microsoft Teams team that was created for the request.
     team Teamable
@@ -88,7 +88,7 @@ func (m *SubjectRightsRequest) GetClosedDateTime()(*i336074805fc853987abe6f7fe3a
         return m.closedDateTime
     }
 }
-// GetContentQuery gets the contentQuery property value. The contentQuery property
+// GetContentQuery gets the contentQuery property value. KQL based content query that should be used for search. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetContentQuery()(*string) {
     if m == nil {
         return nil
@@ -144,7 +144,7 @@ func (m *SubjectRightsRequest) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetExternalId gets the externalId property value. The externalId property
+// GetExternalId gets the externalId property value. The external ID for the request that is immutable after creation and is used for tracking the request for the external system. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetExternalId()(*string) {
     if m == nil {
         return nil
@@ -441,7 +441,7 @@ func (m *SubjectRightsRequest) GetHistory()([]SubjectRightsRequestHistoryable) {
         return m.history
     }
 }
-// GetIncludeAllVersions gets the includeAllVersions property value. The includeAllVersions property
+// GetIncludeAllVersions gets the includeAllVersions property value. Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions will include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetIncludeAllVersions()(*bool) {
     if m == nil {
         return nil
@@ -449,7 +449,7 @@ func (m *SubjectRightsRequest) GetIncludeAllVersions()(*bool) {
         return m.includeAllVersions
     }
 }
-// GetIncludeAuthoredContent gets the includeAuthoredContent property value. The includeAuthoredContent property
+// GetIncludeAuthoredContent gets the includeAuthoredContent property value. Include content authored by the data subject. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetIncludeAuthoredContent()(*bool) {
     if m == nil {
         return nil
@@ -497,7 +497,7 @@ func (m *SubjectRightsRequest) GetMailboxlocations()(SubjectRightsRequestMailbox
         return m.mailboxlocations
     }
 }
-// GetNotes gets the notes property value. List of notes associcated with the request.
+// GetNotes gets the notes property value. List of notes associated with the request.
 func (m *SubjectRightsRequest) GetNotes()([]AuthoredNoteable) {
     if m == nil {
         return nil
@@ -505,7 +505,7 @@ func (m *SubjectRightsRequest) GetNotes()([]AuthoredNoteable) {
         return m.notes
     }
 }
-// GetPauseAfterEstimate gets the pauseAfterEstimate property value. The pauseAfterEstimate property
+// GetPauseAfterEstimate gets the pauseAfterEstimate property value. Pause the request after estimate has finished. By default, the data estimate will run and then pause, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) GetPauseAfterEstimate()(*bool) {
     if m == nil {
         return nil
@@ -537,7 +537,7 @@ func (m *SubjectRightsRequest) GetStages()([]SubjectRightsRequestStageDetailable
         return m.stages
     }
 }
-// GetStatus gets the status property value. The status of the request.. Possible values are: active, closed, unknownFutureValue.
+// GetStatus gets the status property value. The status of the request. Possible values are: active, closed, unknownFutureValue.
 func (m *SubjectRightsRequest) GetStatus()(*SubjectRightsRequestStatus) {
     if m == nil {
         return nil
@@ -752,7 +752,7 @@ func (m *SubjectRightsRequest) SetClosedDateTime(value *i336074805fc853987abe6f7
         m.closedDateTime = value
     }
 }
-// SetContentQuery sets the contentQuery property value. The contentQuery property
+// SetContentQuery sets the contentQuery property value. KQL based content query that should be used for search. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetContentQuery(value *string)() {
     if m != nil {
         m.contentQuery = value
@@ -794,7 +794,7 @@ func (m *SubjectRightsRequest) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetExternalId sets the externalId property value. The externalId property
+// SetExternalId sets the externalId property value. The external ID for the request that is immutable after creation and is used for tracking the request for the external system. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetExternalId(value *string)() {
     if m != nil {
         m.externalId = value
@@ -806,13 +806,13 @@ func (m *SubjectRightsRequest) SetHistory(value []SubjectRightsRequestHistoryabl
         m.history = value
     }
 }
-// SetIncludeAllVersions sets the includeAllVersions property value. The includeAllVersions property
+// SetIncludeAllVersions sets the includeAllVersions property value. Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions will include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetIncludeAllVersions(value *bool)() {
     if m != nil {
         m.includeAllVersions = value
     }
 }
-// SetIncludeAuthoredContent sets the includeAuthoredContent property value. The includeAuthoredContent property
+// SetIncludeAuthoredContent sets the includeAuthoredContent property value. Include content authored by the data subject. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetIncludeAuthoredContent(value *bool)() {
     if m != nil {
         m.includeAuthoredContent = value
@@ -848,13 +848,13 @@ func (m *SubjectRightsRequest) SetMailboxlocations(value SubjectRightsRequestMai
         m.mailboxlocations = value
     }
 }
-// SetNotes sets the notes property value. List of notes associcated with the request.
+// SetNotes sets the notes property value. List of notes associated with the request.
 func (m *SubjectRightsRequest) SetNotes(value []AuthoredNoteable)() {
     if m != nil {
         m.notes = value
     }
 }
-// SetPauseAfterEstimate sets the pauseAfterEstimate property value. The pauseAfterEstimate property
+// SetPauseAfterEstimate sets the pauseAfterEstimate property value. Pause the request after estimate has finished. By default, the data estimate will run and then pause, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
 func (m *SubjectRightsRequest) SetPauseAfterEstimate(value *bool)() {
     if m != nil {
         m.pauseAfterEstimate = value
@@ -878,7 +878,7 @@ func (m *SubjectRightsRequest) SetStages(value []SubjectRightsRequestStageDetail
         m.stages = value
     }
 }
-// SetStatus sets the status property value. The status of the request.. Possible values are: active, closed, unknownFutureValue.
+// SetStatus sets the status property value. The status of the request. Possible values are: active, closed, unknownFutureValue.
 func (m *SubjectRightsRequest) SetStatus(value *SubjectRightsRequestStatus)() {
     if m != nil {
         m.status = value

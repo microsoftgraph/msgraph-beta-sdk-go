@@ -41,11 +41,11 @@ func NewInviteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewInviteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action invite
-func (m *InviteRequestBuilder) CreatePostRequestInformation(body InviteRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *InviteRequestBuilder) CreatePostRequestInformation(body InvitePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action invite
-func (m *InviteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body InviteRequestBodyable, requestConfiguration *InviteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *InviteRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body InvitePostRequestBodyable, requestConfiguration *InviteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *InviteRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     return requestInfo, nil
 }
 // Post invoke action invite
-func (m *InviteRequestBuilder) Post(body InviteRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InviteParticipantsOperationable, error) {
+func (m *InviteRequestBuilder) Post(body InvitePostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InviteParticipantsOperationable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action invite
-func (m *InviteRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body InviteRequestBodyable, requestConfiguration *InviteRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InviteParticipantsOperationable, error) {
+func (m *InviteRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body InvitePostRequestBodyable, requestConfiguration *InviteRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InviteParticipantsOperationable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -30,7 +30,7 @@ func NewCompareWithTemplateIdRequestBuilderInternal(pathParameters map[string]st
         urlTplParams[idx] = item
     }
     if templateId != nil {
-        urlTplParams[""] = *templateId
+        urlTplParams["templateId"] = *templateId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

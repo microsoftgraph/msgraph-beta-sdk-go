@@ -40,11 +40,11 @@ func NewAcquireAccessTokenRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewAcquireAccessTokenRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action acquireAccessToken
-func (m *AcquireAccessTokenRequestBuilder) CreatePostRequestInformation(body AcquireAccessTokenRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AcquireAccessTokenRequestBuilder) CreatePostRequestInformation(body AcquireAccessTokenPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action acquireAccessToken
-func (m *AcquireAccessTokenRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AcquireAccessTokenRequestBodyable, requestConfiguration *AcquireAccessTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AcquireAccessTokenRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AcquireAccessTokenPostRequestBodyable, requestConfiguration *AcquireAccessTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *AcquireAccessTokenRequestBuilder) CreatePostRequestInformationWithReque
     return requestInfo, nil
 }
 // Post invoke action acquireAccessToken
-func (m *AcquireAccessTokenRequestBuilder) Post(body AcquireAccessTokenRequestBodyable)(error) {
+func (m *AcquireAccessTokenRequestBuilder) Post(body AcquireAccessTokenPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action acquireAccessToken
-func (m *AcquireAccessTokenRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AcquireAccessTokenRequestBodyable, requestConfiguration *AcquireAccessTokenRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *AcquireAccessTokenRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AcquireAccessTokenPostRequestBodyable, requestConfiguration *AcquireAccessTokenRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

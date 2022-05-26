@@ -40,11 +40,11 @@ func NewAddToReviewSetRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewAddToReviewSetRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action addToReviewSet
-func (m *AddToReviewSetRequestBuilder) CreatePostRequestInformation(body AddToReviewSetRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddToReviewSetRequestBuilder) CreatePostRequestInformation(body AddToReviewSetPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addToReviewSet
-func (m *AddToReviewSetRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddToReviewSetRequestBodyable, requestConfiguration *AddToReviewSetRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddToReviewSetRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddToReviewSetPostRequestBodyable, requestConfiguration *AddToReviewSetRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *AddToReviewSetRequestBuilder) CreatePostRequestInformationWithRequestCo
     return requestInfo, nil
 }
 // Post invoke action addToReviewSet
-func (m *AddToReviewSetRequestBuilder) Post(body AddToReviewSetRequestBodyable)(error) {
+func (m *AddToReviewSetRequestBuilder) Post(body AddToReviewSetPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action addToReviewSet
-func (m *AddToReviewSetRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddToReviewSetRequestBodyable, requestConfiguration *AddToReviewSetRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *AddToReviewSetRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddToReviewSetPostRequestBodyable, requestConfiguration *AddToReviewSetRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

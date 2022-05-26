@@ -40,11 +40,11 @@ func NewAddLanguageFilesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewAddLanguageFilesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action addLanguageFiles
-func (m *AddLanguageFilesRequestBuilder) CreatePostRequestInformation(body AddLanguageFilesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddLanguageFilesRequestBuilder) CreatePostRequestInformation(body AddLanguageFilesPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addLanguageFiles
-func (m *AddLanguageFilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddLanguageFilesRequestBodyable, requestConfiguration *AddLanguageFilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddLanguageFilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddLanguageFilesPostRequestBodyable, requestConfiguration *AddLanguageFilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *AddLanguageFilesRequestBuilder) CreatePostRequestInformationWithRequest
     return requestInfo, nil
 }
 // Post invoke action addLanguageFiles
-func (m *AddLanguageFilesRequestBuilder) Post(body AddLanguageFilesRequestBodyable)(error) {
+func (m *AddLanguageFilesRequestBuilder) Post(body AddLanguageFilesPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action addLanguageFiles
-func (m *AddLanguageFilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddLanguageFilesRequestBodyable, requestConfiguration *AddLanguageFilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *AddLanguageFilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddLanguageFilesPostRequestBodyable, requestConfiguration *AddLanguageFilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

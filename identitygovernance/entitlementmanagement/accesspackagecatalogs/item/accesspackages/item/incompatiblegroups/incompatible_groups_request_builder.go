@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    ia7e19bf3a23afc291b6a6ab853fe137078f6d8d5665606df74debdbe522b63da "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackagecatalogs/item/accesspackages/item/incompatiblegroups/ref"
     ie3fba7ccd6b34526026790a4eefad029a410c562a68c582601ee5ba5cc3c8643 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackagecatalogs/item/accesspackages/item/incompatiblegroups/count"
 )
 
@@ -105,4 +106,8 @@ func (m *IncompatibleGroupsRequestBuilder) GetWithRequestConfigurationAndRespons
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *IncompatibleGroupsRequestBuilder) Ref()(*ia7e19bf3a23afc291b6a6ab853fe137078f6d8d5665606df74debdbe522b63da.RefRequestBuilder) {
+    return ia7e19bf3a23afc291b6a6ab853fe137078f6d8d5665606df74debdbe522b63da.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -31,10 +31,10 @@ func NewUsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesReques
         urlTplParams[idx] = item
     }
     if includedUserRoles != nil {
-        urlTplParams[""] = *includedUserRoles
+        urlTplParams["includedUserRoles"] = *includedUserRoles
     }
     if includedUserTypes != nil {
-        urlTplParams[""] = *includedUserTypes
+        urlTplParams["includedUserTypes"] = *includedUserTypes
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

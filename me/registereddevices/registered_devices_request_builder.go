@@ -4,7 +4,9 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i5213ea311e0df4f90d2c4dd380d4b7e5f4a37c4c373c882446a596a80320480e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/registereddevices/device"
     iae1984fb3fc141b0f414161e859e280d2f4ae41744529837c3922e8d5ba99818 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/registereddevices/count"
+    ic0f72fe7856899dc82b6839158f8473ef255e8bafe9d49bd69089e026e3559f4 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/registereddevices/endpoint"
 )
 
 // RegisteredDevicesRequestBuilder provides operations to manage the registeredDevices property of the microsoft.graph.user entity.
@@ -85,6 +87,14 @@ func (m *RegisteredDevicesRequestBuilder) CreateGetRequestInformationWithRequest
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Device the device property
+func (m *RegisteredDevicesRequestBuilder) Device()(*i5213ea311e0df4f90d2c4dd380d4b7e5f4a37c4c373c882446a596a80320480e.DeviceRequestBuilder) {
+    return i5213ea311e0df4f90d2c4dd380d4b7e5f4a37c4c373c882446a596a80320480e.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Endpoint the endpoint property
+func (m *RegisteredDevicesRequestBuilder) Endpoint()(*ic0f72fe7856899dc82b6839158f8473ef255e8bafe9d49bd69089e026e3559f4.EndpointRequestBuilder) {
+    return ic0f72fe7856899dc82b6839158f8473ef255e8bafe9d49bd69089e026e3559f4.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *RegisteredDevicesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {

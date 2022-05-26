@@ -40,11 +40,11 @@ func NewCreateGooglePlayWebTokenRequestBuilder(rawUrl string, requestAdapter i2a
     return NewCreateGooglePlayWebTokenRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation generates a web token that is used in an embeddable component.
-func (m *CreateGooglePlayWebTokenRequestBuilder) CreatePostRequestInformation(body CreateGooglePlayWebTokenRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateGooglePlayWebTokenRequestBuilder) CreatePostRequestInformation(body CreateGooglePlayWebTokenPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration generates a web token that is used in an embeddable component.
-func (m *CreateGooglePlayWebTokenRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateGooglePlayWebTokenRequestBodyable, requestConfiguration *CreateGooglePlayWebTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateGooglePlayWebTokenRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateGooglePlayWebTokenPostRequestBodyable, requestConfiguration *CreateGooglePlayWebTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *CreateGooglePlayWebTokenRequestBuilder) CreatePostRequestInformationWit
     return requestInfo, nil
 }
 // Post generates a web token that is used in an embeddable component.
-func (m *CreateGooglePlayWebTokenRequestBuilder) Post(body CreateGooglePlayWebTokenRequestBodyable)(CreateGooglePlayWebTokenResponseable, error) {
+func (m *CreateGooglePlayWebTokenRequestBuilder) Post(body CreateGooglePlayWebTokenPostRequestBodyable)(CreateGooglePlayWebTokenResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler generates a web token that is used in an embeddable component.
-func (m *CreateGooglePlayWebTokenRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateGooglePlayWebTokenRequestBodyable, requestConfiguration *CreateGooglePlayWebTokenRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CreateGooglePlayWebTokenResponseable, error) {
+func (m *CreateGooglePlayWebTokenRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateGooglePlayWebTokenPostRequestBodyable, requestConfiguration *CreateGooglePlayWebTokenRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(CreateGooglePlayWebTokenResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

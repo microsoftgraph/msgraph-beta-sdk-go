@@ -41,11 +41,11 @@ func NewTriggerDeviceScopeActionRequestBuilder(rawUrl string, requestAdapter i2a
     return NewTriggerDeviceScopeActionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action triggerDeviceScopeAction
-func (m *TriggerDeviceScopeActionRequestBuilder) CreatePostRequestInformation(body TriggerDeviceScopeActionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TriggerDeviceScopeActionRequestBuilder) CreatePostRequestInformation(body TriggerDeviceScopeActionPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action triggerDeviceScopeAction
-func (m *TriggerDeviceScopeActionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body TriggerDeviceScopeActionRequestBodyable, requestConfiguration *TriggerDeviceScopeActionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TriggerDeviceScopeActionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body TriggerDeviceScopeActionPostRequestBodyable, requestConfiguration *TriggerDeviceScopeActionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *TriggerDeviceScopeActionRequestBuilder) CreatePostRequestInformationWit
     return requestInfo, nil
 }
 // Post invoke action triggerDeviceScopeAction
-func (m *TriggerDeviceScopeActionRequestBuilder) Post(body TriggerDeviceScopeActionRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceScopeActionResultable, error) {
+func (m *TriggerDeviceScopeActionRequestBuilder) Post(body TriggerDeviceScopeActionPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceScopeActionResultable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action triggerDeviceScopeAction
-func (m *TriggerDeviceScopeActionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body TriggerDeviceScopeActionRequestBodyable, requestConfiguration *TriggerDeviceScopeActionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceScopeActionResultable, error) {
+func (m *TriggerDeviceScopeActionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body TriggerDeviceScopeActionPostRequestBodyable, requestConfiguration *TriggerDeviceScopeActionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceScopeActionResultable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

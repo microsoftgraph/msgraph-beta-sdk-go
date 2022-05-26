@@ -30,7 +30,7 @@ func NewGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal
         urlTplParams[idx] = item
     }
     if expiringBeforeDateTime != nil {
-        urlTplParams[""] = *expiringBeforeDateTime
+        urlTplParams["expiringBeforeDateTime"] = *expiringBeforeDateTime
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

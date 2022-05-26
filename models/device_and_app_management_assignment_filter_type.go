@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the compliance singleton.
+// Provides operations to manage the deviceAppManagement singleton.
 type DeviceAndAppManagementAssignmentFilterType int
 
 const (

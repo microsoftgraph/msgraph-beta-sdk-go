@@ -30,7 +30,7 @@ func NewFindRoomsWithRoomListRequestBuilderInternal(pathParameters map[string]st
         urlTplParams[idx] = item
     }
     if roomList != nil {
-        urlTplParams[""] = *roomList
+        urlTplParams["RoomList"] = *roomList
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

@@ -28,7 +28,7 @@ type PrivilegedRoleItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrivilegedRoleItemRequestBuilderGetQueryParameters get privilegedRole
+// PrivilegedRoleItemRequestBuilderGetQueryParameters retrieve the properties and relationships of privilegedRole object. 
 type PrivilegedRoleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -101,11 +101,11 @@ func (m *PrivilegedRoleItemRequestBuilder) CreateDeleteRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get privilegedRole
+// CreateGetRequestInformation retrieve the properties and relationships of privilegedRole object. 
 func (m *PrivilegedRoleItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get privilegedRole
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of privilegedRole object. 
 func (m *PrivilegedRoleItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PrivilegedRoleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -157,11 +157,11 @@ func (m *PrivilegedRoleItemRequestBuilder) DeleteWithRequestConfigurationAndResp
     }
     return nil
 }
-// Get get privilegedRole
+// Get retrieve the properties and relationships of privilegedRole object. 
 func (m *PrivilegedRoleItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get privilegedRole
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties and relationships of privilegedRole object. 
 func (m *PrivilegedRoleItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PrivilegedRoleItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

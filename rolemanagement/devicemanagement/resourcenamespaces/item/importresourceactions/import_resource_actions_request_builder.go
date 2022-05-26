@@ -41,11 +41,11 @@ func NewImportResourceActionsRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewImportResourceActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action importResourceActions
-func (m *ImportResourceActionsRequestBuilder) CreatePostRequestInformation(body ImportResourceActionsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ImportResourceActionsRequestBuilder) CreatePostRequestInformation(body ImportResourceActionsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action importResourceActions
-func (m *ImportResourceActionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ImportResourceActionsRequestBodyable, requestConfiguration *ImportResourceActionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ImportResourceActionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ImportResourceActionsPostRequestBodyable, requestConfiguration *ImportResourceActionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *ImportResourceActionsRequestBuilder) CreatePostRequestInformationWithRe
     return requestInfo, nil
 }
 // Post invoke action importResourceActions
-func (m *ImportResourceActionsRequestBuilder) Post(body ImportResourceActionsRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, error) {
+func (m *ImportResourceActionsRequestBuilder) Post(body ImportResourceActionsPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action importResourceActions
-func (m *ImportResourceActionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ImportResourceActionsRequestBodyable, requestConfiguration *ImportResourceActionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, error) {
+func (m *ImportResourceActionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ImportResourceActionsPostRequestBodyable, requestConfiguration *ImportResourceActionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

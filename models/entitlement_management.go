@@ -4,10 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EntitlementManagement 
+// EntitlementManagement provides operations to manage the identityGovernance singleton.
 type EntitlementManagement struct {
     Entity
-    // Approval stages for assignment requests.
+    // Approval stages for decisions associated with access package assignment requests.
     accessPackageAssignmentApprovals []Approvalable
     // Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
     accessPackageAssignmentPolicies []AccessPackageAssignmentPolicyable
@@ -15,9 +15,9 @@ type EntitlementManagement struct {
     accessPackageAssignmentRequests []AccessPackageAssignmentRequestable
     // Represents the resource-specific role which a subject has been assigned through an access package assignment.
     accessPackageAssignmentResourceRoles []AccessPackageAssignmentResourceRoleable
-    // Represents the grant of an access package to a subject (user or group).
+    // The assignment of an access package to a subject for a period of time.
     accessPackageAssignments []AccessPackageAssignmentable
-    // Represents a group of access packages.
+    // A container of access packages.
     accessPackageCatalogs []AccessPackageCatalogable
     // A reference to the geolocation environment in which a resource is located.
     accessPackageResourceEnvironments []AccessPackageResourceEnvironmentable
@@ -45,7 +45,7 @@ func NewEntitlementManagement()(*EntitlementManagement) {
 func CreateEntitlementManagementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEntitlementManagement(), nil
 }
-// GetAccessPackageAssignmentApprovals gets the accessPackageAssignmentApprovals property value. Approval stages for assignment requests.
+// GetAccessPackageAssignmentApprovals gets the accessPackageAssignmentApprovals property value. Approval stages for decisions associated with access package assignment requests.
 func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approvalable) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentResourceRoles()([]Acce
         return m.accessPackageAssignmentResourceRoles
     }
 }
-// GetAccessPackageAssignments gets the accessPackageAssignments property value. Represents the grant of an access package to a subject (user or group).
+// GetAccessPackageAssignments gets the accessPackageAssignments property value. The assignment of an access package to a subject for a period of time.
 func (m *EntitlementManagement) GetAccessPackageAssignments()([]AccessPackageAssignmentable) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignments()([]AccessPackageAss
         return m.accessPackageAssignments
     }
 }
-// GetAccessPackageCatalogs gets the accessPackageCatalogs property value. Represents a group of access packages.
+// GetAccessPackageCatalogs gets the accessPackageCatalogs property value. A container of access packages.
 func (m *EntitlementManagement) GetAccessPackageCatalogs()([]AccessPackageCatalogable) {
     if m == nil {
         return nil
@@ -466,7 +466,7 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAccessPackageAssignmentApprovals sets the accessPackageAssignmentApprovals property value. Approval stages for assignment requests.
+// SetAccessPackageAssignmentApprovals sets the accessPackageAssignmentApprovals property value. Approval stages for decisions associated with access package assignment requests.
 func (m *EntitlementManagement) SetAccessPackageAssignmentApprovals(value []Approvalable)() {
     if m != nil {
         m.accessPackageAssignmentApprovals = value
@@ -490,13 +490,13 @@ func (m *EntitlementManagement) SetAccessPackageAssignmentResourceRoles(value []
         m.accessPackageAssignmentResourceRoles = value
     }
 }
-// SetAccessPackageAssignments sets the accessPackageAssignments property value. Represents the grant of an access package to a subject (user or group).
+// SetAccessPackageAssignments sets the accessPackageAssignments property value. The assignment of an access package to a subject for a period of time.
 func (m *EntitlementManagement) SetAccessPackageAssignments(value []AccessPackageAssignmentable)() {
     if m != nil {
         m.accessPackageAssignments = value
     }
 }
-// SetAccessPackageCatalogs sets the accessPackageCatalogs property value. Represents a group of access packages.
+// SetAccessPackageCatalogs sets the accessPackageCatalogs property value. A container of access packages.
 func (m *EntitlementManagement) SetAccessPackageCatalogs(value []AccessPackageCatalogable)() {
     if m != nil {
         m.accessPackageCatalogs = value

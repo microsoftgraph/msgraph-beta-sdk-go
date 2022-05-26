@@ -31,7 +31,7 @@ func NewGetPolicySummaryWithPolicyIdRequestBuilderInternal(pathParameters map[st
         urlTplParams[idx] = item
     }
     if policyId != nil {
-        urlTplParams[""] = *policyId
+        urlTplParams["policyId"] = *policyId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

@@ -41,11 +41,11 @@ func NewSelfActivateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewSelfActivateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action selfActivate
-func (m *SelfActivateRequestBuilder) CreatePostRequestInformation(body SelfActivateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SelfActivateRequestBuilder) CreatePostRequestInformation(body SelfActivatePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action selfActivate
-func (m *SelfActivateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SelfActivateRequestBodyable, requestConfiguration *SelfActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SelfActivateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SelfActivatePostRequestBodyable, requestConfiguration *SelfActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *SelfActivateRequestBuilder) CreatePostRequestInformationWithRequestConf
     return requestInfo, nil
 }
 // Post invoke action selfActivate
-func (m *SelfActivateRequestBuilder) Post(body SelfActivateRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
+func (m *SelfActivateRequestBuilder) Post(body SelfActivatePostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action selfActivate
-func (m *SelfActivateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SelfActivateRequestBodyable, requestConfiguration *SelfActivateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
+func (m *SelfActivateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SelfActivatePostRequestBodyable, requestConfiguration *SelfActivateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

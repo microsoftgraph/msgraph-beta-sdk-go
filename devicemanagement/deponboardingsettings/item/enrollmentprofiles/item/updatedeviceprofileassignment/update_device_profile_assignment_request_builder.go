@@ -40,11 +40,11 @@ func NewUpdateDeviceProfileAssignmentRequestBuilder(rawUrl string, requestAdapte
     return NewUpdateDeviceProfileAssignmentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action updateDeviceProfileAssignment
-func (m *UpdateDeviceProfileAssignmentRequestBuilder) CreatePostRequestInformation(body UpdateDeviceProfileAssignmentRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateDeviceProfileAssignmentRequestBuilder) CreatePostRequestInformation(body UpdateDeviceProfileAssignmentPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateDeviceProfileAssignment
-func (m *UpdateDeviceProfileAssignmentRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateDeviceProfileAssignmentRequestBodyable, requestConfiguration *UpdateDeviceProfileAssignmentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateDeviceProfileAssignmentRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateDeviceProfileAssignmentPostRequestBodyable, requestConfiguration *UpdateDeviceProfileAssignmentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UpdateDeviceProfileAssignmentRequestBuilder) CreatePostRequestInformati
     return requestInfo, nil
 }
 // Post invoke action updateDeviceProfileAssignment
-func (m *UpdateDeviceProfileAssignmentRequestBuilder) Post(body UpdateDeviceProfileAssignmentRequestBodyable)(error) {
+func (m *UpdateDeviceProfileAssignmentRequestBuilder) Post(body UpdateDeviceProfileAssignmentPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action updateDeviceProfileAssignment
-func (m *UpdateDeviceProfileAssignmentRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateDeviceProfileAssignmentRequestBodyable, requestConfiguration *UpdateDeviceProfileAssignmentRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UpdateDeviceProfileAssignmentRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateDeviceProfileAssignmentPostRequestBodyable, requestConfiguration *UpdateDeviceProfileAssignmentRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

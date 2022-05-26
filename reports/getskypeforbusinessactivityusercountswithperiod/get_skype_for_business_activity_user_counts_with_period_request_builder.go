@@ -30,7 +30,7 @@ func NewGetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilderInternal(pa
         urlTplParams[idx] = item
     }
     if period != nil {
-        urlTplParams[""] = *period
+        urlTplParams["period"] = *period
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -59,18 +59,18 @@ func (m *GetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilder) CreateGe
     return requestInfo, nil
 }
 // Get invoke function getSkypeForBusinessActivityUserCounts
-func (m *GetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilder) Get()(GetSkypeForBusinessActivityUserCountsWithPeriodResponseable, error) {
+func (m *GetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetWithRequestConfigurationAndResponseHandler invoke function getSkypeForBusinessActivityUserCounts
-func (m *GetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSkypeForBusinessActivityUserCountsWithPeriodResponseable, error) {
+func (m *GetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetSkypeForBusinessActivityUserCountsWithPeriodResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetSkypeForBusinessActivityUserCountsWithPeriodResponseable), nil
+    return res.([]byte), nil
 }

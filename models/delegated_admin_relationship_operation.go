@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminRelationshipOperation 
+// DelegatedAdminRelationshipOperation provides operations to manage the tenantRelationship singleton.
 type DelegatedAdminRelationshipOperation struct {
     Entity
     // The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.
@@ -17,7 +17,7 @@ type DelegatedAdminRelationshipOperation struct {
     // The type of long-running operation. The possible values are: delegatedAdminAccessAssignmentUpdate, unknownFutureValue. Read-only.
     operationType *DelegatedAdminRelationshipOperationType
     // The status of the operation. Read-only. The possible values are: notStarted, running, complete, failed, unknownFutureValue. Read-only. Supports $orderBy.
-    status *DelegatedAdminRelationshipOperationStatus
+    status *LongRunningOperationStatus
 }
 // NewDelegatedAdminRelationshipOperation instantiates a new delegatedAdminRelationshipOperation and sets the default values.
 func NewDelegatedAdminRelationshipOperation()(*DelegatedAdminRelationshipOperation) {
@@ -90,12 +90,12 @@ func (m *DelegatedAdminRelationshipOperation) GetFieldDeserializers()(map[string
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDelegatedAdminRelationshipOperationStatus)
+        val, err := n.GetEnumValue(ParseLongRunningOperationStatus)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*DelegatedAdminRelationshipOperationStatus))
+            m.SetStatus(val.(*LongRunningOperationStatus))
         }
         return nil
     }
@@ -118,7 +118,7 @@ func (m *DelegatedAdminRelationshipOperation) GetOperationType()(*DelegatedAdmin
     }
 }
 // GetStatus gets the status property value. The status of the operation. Read-only. The possible values are: notStarted, running, complete, failed, unknownFutureValue. Read-only. Supports $orderBy.
-func (m *DelegatedAdminRelationshipOperation) GetStatus()(*DelegatedAdminRelationshipOperationStatus) {
+func (m *DelegatedAdminRelationshipOperation) GetStatus()(*LongRunningOperationStatus) {
     if m == nil {
         return nil
     } else {
@@ -190,7 +190,7 @@ func (m *DelegatedAdminRelationshipOperation) SetOperationType(value *DelegatedA
     }
 }
 // SetStatus sets the status property value. The status of the operation. Read-only. The possible values are: notStarted, running, complete, failed, unknownFutureValue. Read-only. Supports $orderBy.
-func (m *DelegatedAdminRelationshipOperation) SetStatus(value *DelegatedAdminRelationshipOperationStatus)() {
+func (m *DelegatedAdminRelationshipOperation) SetStatus(value *LongRunningOperationStatus)() {
     if m != nil {
         m.status = value
     }

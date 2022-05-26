@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDriverUpdateProfile 
+// WindowsDriverUpdateProfile windows Driver Update Profile
 type WindowsDriverUpdateProfile struct {
     Entity
     // Driver update profile approval type. For example, manual or automatic approval. Possible values are: manual, automatic.

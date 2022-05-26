@@ -30,7 +30,7 @@ func NewGetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBui
         urlTplParams[idx] = item
     }
     if period != nil {
-        urlTplParams[""] = *period
+        urlTplParams["period"] = *period
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -59,18 +59,18 @@ func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBu
     return requestInfo, nil
 }
 // Get invoke function getSkypeForBusinessDeviceUsageDistributionUserCounts
-func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilder) Get()(GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodResponseable, error) {
+func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetWithRequestConfigurationAndResponseHandler invoke function getSkypeForBusinessDeviceUsageDistributionUserCounts
-func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodResponseable, error) {
+func (m *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodResponseable), nil
+    return res.([]byte), nil
 }

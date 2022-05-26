@@ -8,6 +8,7 @@ import (
     i8050f70ff077aa7a00ee30e1a3c86c0f0615a85e77ec2d73dc4e1bafa3f4e16f "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/setupresourcesfolder"
     ib73813a5d39b89f70827c0fa1818289fccec256ca0ea65df5135c2bf448aa519 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/rubric"
     ic194e429a42abea4fc9457129ec19b14e4af236b99092c2a55f726379f0ecc39 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/submissions"
+    ic2a3e076d8a472670f100a3a5b21e48601cb518ecadb9218472f97f3606ae099 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/setupfeedbackresourcesfolder"
     idf7d52d5e40c4a2f0a279dbefcf41f586915062fc10338040bd70c8bde7211d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/publish"
     ie3e3ed607d0779e161141593c134093354a4e6852436b9197a40b9ac9a01eb0e "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/categories"
     i105c230efb20cac97a293b5469f4f607fe6cb947c167d5ee426b70bce49e9df5 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/users/item/assignments/item/submissions/item"
@@ -222,6 +223,10 @@ func (m *EducationAssignmentItemRequestBuilder) ResourcesById(id string)(*ibe13b
 // Rubric the rubric property
 func (m *EducationAssignmentItemRequestBuilder) Rubric()(*ib73813a5d39b89f70827c0fa1818289fccec256ca0ea65df5135c2bf448aa519.RubricRequestBuilder) {
     return ib73813a5d39b89f70827c0fa1818289fccec256ca0ea65df5135c2bf448aa519.NewRubricRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SetUpFeedbackResourcesFolder the setUpFeedbackResourcesFolder property
+func (m *EducationAssignmentItemRequestBuilder) SetUpFeedbackResourcesFolder()(*ic2a3e076d8a472670f100a3a5b21e48601cb518ecadb9218472f97f3606ae099.SetUpFeedbackResourcesFolderRequestBuilder) {
+    return ic2a3e076d8a472670f100a3a5b21e48601cb518ecadb9218472f97f3606ae099.NewSetUpFeedbackResourcesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SetUpResourcesFolder the setUpResourcesFolder property
 func (m *EducationAssignmentItemRequestBuilder) SetUpResourcesFolder()(*i8050f70ff077aa7a00ee30e1a3c86c0f0615a85e77ec2d73dc4e1bafa3f4e16f.SetUpResourcesFolderRequestBuilder) {

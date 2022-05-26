@@ -40,11 +40,11 @@ func NewUpdateSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewUpdateSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action updateSettings
-func (m *UpdateSettingsRequestBuilder) CreatePostRequestInformation(body UpdateSettingsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateSettingsRequestBuilder) CreatePostRequestInformation(body UpdateSettingsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateSettings
-func (m *UpdateSettingsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateSettingsRequestBodyable, requestConfiguration *UpdateSettingsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateSettingsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateSettingsPostRequestBodyable, requestConfiguration *UpdateSettingsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UpdateSettingsRequestBuilder) CreatePostRequestInformationWithRequestCo
     return requestInfo, nil
 }
 // Post invoke action updateSettings
-func (m *UpdateSettingsRequestBuilder) Post(body UpdateSettingsRequestBodyable)(error) {
+func (m *UpdateSettingsRequestBuilder) Post(body UpdateSettingsPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action updateSettings
-func (m *UpdateSettingsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateSettingsRequestBodyable, requestConfiguration *UpdateSettingsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UpdateSettingsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateSettingsPostRequestBodyable, requestConfiguration *UpdateSettingsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

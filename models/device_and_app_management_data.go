@@ -11,7 +11,7 @@ type DeviceAndAppManagementData struct {
     // Not yet documented
     content []byte
 }
-// NewDeviceAndAppManagementData instantiates a new deviceAndAppManagementData and sets the default values.
+// NewDeviceAndAppManagementData instantiates a new DeviceAndAppManagementData and sets the default values.
 func NewDeviceAndAppManagementData()(*DeviceAndAppManagementData) {
     m := &DeviceAndAppManagementData{
     }

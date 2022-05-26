@@ -40,11 +40,11 @@ func NewAddMembersByIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewAddMembersByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action addMembersById
-func (m *AddMembersByIdRequestBuilder) CreatePostRequestInformation(body AddMembersByIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddMembersByIdRequestBuilder) CreatePostRequestInformation(body AddMembersByIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action addMembersById
-func (m *AddMembersByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddMembersByIdRequestBodyable, requestConfiguration *AddMembersByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AddMembersByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AddMembersByIdPostRequestBodyable, requestConfiguration *AddMembersByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *AddMembersByIdRequestBuilder) CreatePostRequestInformationWithRequestCo
     return requestInfo, nil
 }
 // Post invoke action addMembersById
-func (m *AddMembersByIdRequestBuilder) Post(body AddMembersByIdRequestBodyable)(error) {
+func (m *AddMembersByIdRequestBuilder) Post(body AddMembersByIdPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action addMembersById
-func (m *AddMembersByIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddMembersByIdRequestBodyable, requestConfiguration *AddMembersByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *AddMembersByIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AddMembersByIdPostRequestBodyable, requestConfiguration *AddMembersByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

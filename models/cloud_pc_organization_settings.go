@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcOrganizationSettings 
+// CloudPcOrganizationSettings provides operations to manage the deviceManagement singleton.
 type CloudPcOrganizationSettings struct {
     Entity
     // The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.

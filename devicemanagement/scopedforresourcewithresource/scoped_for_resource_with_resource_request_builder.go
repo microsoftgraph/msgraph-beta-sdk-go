@@ -30,7 +30,7 @@ func NewScopedForResourceWithResourceRequestBuilderInternal(pathParameters map[s
         urlTplParams[idx] = item
     }
     if resource != nil {
-        urlTplParams[""] = *resource
+        urlTplParams["resource"] = *resource
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

@@ -40,11 +40,11 @@ func NewGetPolicySetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewGetPolicySetsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getPolicySets
-func (m *GetPolicySetsRequestBuilder) CreatePostRequestInformation(body GetPolicySetsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetPolicySetsRequestBuilder) CreatePostRequestInformation(body GetPolicySetsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getPolicySets
-func (m *GetPolicySetsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetPolicySetsRequestBodyable, requestConfiguration *GetPolicySetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetPolicySetsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetPolicySetsPostRequestBodyable, requestConfiguration *GetPolicySetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *GetPolicySetsRequestBuilder) CreatePostRequestInformationWithRequestCon
     return requestInfo, nil
 }
 // Post invoke action getPolicySets
-func (m *GetPolicySetsRequestBuilder) Post(body GetPolicySetsRequestBodyable)(GetPolicySetsResponseable, error) {
+func (m *GetPolicySetsRequestBuilder) Post(body GetPolicySetsPostRequestBodyable)(GetPolicySetsResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getPolicySets
-func (m *GetPolicySetsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetPolicySetsRequestBodyable, requestConfiguration *GetPolicySetsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetPolicySetsResponseable, error) {
+func (m *GetPolicySetsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetPolicySetsPostRequestBodyable, requestConfiguration *GetPolicySetsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetPolicySetsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

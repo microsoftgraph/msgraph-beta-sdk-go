@@ -40,11 +40,11 @@ func NewImportDeviceIdentityListRequestBuilder(rawUrl string, requestAdapter i2a
     return NewImportDeviceIdentityListRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action importDeviceIdentityList
-func (m *ImportDeviceIdentityListRequestBuilder) CreatePostRequestInformation(body ImportDeviceIdentityListRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ImportDeviceIdentityListRequestBuilder) CreatePostRequestInformation(body ImportDeviceIdentityListPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action importDeviceIdentityList
-func (m *ImportDeviceIdentityListRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ImportDeviceIdentityListRequestBodyable, requestConfiguration *ImportDeviceIdentityListRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ImportDeviceIdentityListRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ImportDeviceIdentityListPostRequestBodyable, requestConfiguration *ImportDeviceIdentityListRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ImportDeviceIdentityListRequestBuilder) CreatePostRequestInformationWit
     return requestInfo, nil
 }
 // Post invoke action importDeviceIdentityList
-func (m *ImportDeviceIdentityListRequestBuilder) Post(body ImportDeviceIdentityListRequestBodyable)(ImportDeviceIdentityListResponseable, error) {
+func (m *ImportDeviceIdentityListRequestBuilder) Post(body ImportDeviceIdentityListPostRequestBodyable)(ImportDeviceIdentityListResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action importDeviceIdentityList
-func (m *ImportDeviceIdentityListRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ImportDeviceIdentityListRequestBodyable, requestConfiguration *ImportDeviceIdentityListRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ImportDeviceIdentityListResponseable, error) {
+func (m *ImportDeviceIdentityListRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ImportDeviceIdentityListPostRequestBodyable, requestConfiguration *ImportDeviceIdentityListRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ImportDeviceIdentityListResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

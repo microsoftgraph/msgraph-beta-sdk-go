@@ -58,6 +58,7 @@ import (
     i66f18ccab4e34309d26d1056f0e7dd8b563a5f8ee6f8d9c6e8e77c5fac50f8b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamstemplates"
     i6b96a96c52bbdff1731b8a5490cd5f342e33866e0931912944d323bc79f663e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedsignupstatus"
     i6c3f8c4b4b571cf0fbb7c7c8791ae736e28cc3f4bb62262698b6291c13e127b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/auditlogs"
+    i6d2c3fffc7aebd12fdef5b2007fc7f46ca63eb50a7f6e28aed7b919ca27a698d "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceregistrationpolicy"
     i6e398703c86ec3814400d80161079e7253c4e25f4ba1adb0c8d31da236f7bcd7 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory"
     i712907ad27a66d6ac32a26e01f88de1ad6484585eb7ed65f84b3a30571cec55b "github.com/microsoftgraph/msgraph-beta-sdk-go/scopedrolememberships"
     i71438b4a3f9d4a17f8c873a44b8ac76600403f5ce0cce2423bde35e0191f2c17 "github.com/microsoftgraph/msgraph-beta-sdk-go/grouplifecyclepolicies"
@@ -96,6 +97,7 @@ import (
     icb4f253cb1cd35435f5752b611229032c618bbcfeb3be80ee4d6a06d404114fc "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork"
     icbfa8075dc5e1ad04a3bc48d231d9b422f250ca1e2b74477a880e0db7b0e7f95 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding"
     icd01c84a90833c55ac2309fd7034cb1962c60f59eb1ee2b2cf7b04c708402b6a "github.com/microsoftgraph/msgraph-beta-sdk-go/users"
+    id14bafb4ee71e1257662cacab67dd479e54eba65ce10c6816ee4676804caf821 "github.com/microsoftgraph/msgraph-beta-sdk-go/storage"
     id53bdaa191b823f3e2f4009f4cc095b46d1c7a433bde3b6d09ef0bd8df3514c2 "github.com/microsoftgraph/msgraph-beta-sdk-go/certificatebasedauthconfiguration"
     id5c2ef977a00dd1757d258dbbbfb4080031771e62e6c6b3b1339a0f03fc1c1f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships"
     id90d135edac1f1a3e952db4ad985001105d2e7c0133f8cc410765eb1af789cc0 "github.com/microsoftgraph/msgraph-beta-sdk-go/education"
@@ -591,6 +593,10 @@ func (m *GraphServiceClient) DeviceAppManagement()(*idc4afe653def183ef95500aa004
 // DeviceManagement the deviceManagement property
 func (m *GraphServiceClient) DeviceManagement()(*i09893664b20e7c846b2bc7aaaf1cd7f554ed3d2c00ac11336bea4c3c3d859e09.DeviceManagementRequestBuilder) {
     return i09893664b20e7c846b2bc7aaaf1cd7f554ed3d2c00ac11336bea4c3c3d859e09.NewDeviceManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// DeviceRegistrationPolicy the deviceRegistrationPolicy property
+func (m *GraphServiceClient) DeviceRegistrationPolicy()(*i6d2c3fffc7aebd12fdef5b2007fc7f46ca63eb50a7f6e28aed7b919ca27a698d.DeviceRegistrationPolicyRequestBuilder) {
+    return i6d2c3fffc7aebd12fdef5b2007fc7f46ca63eb50a7f6e28aed7b919ca27a698d.NewDeviceRegistrationPolicyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Devices the devices property
 func (m *GraphServiceClient) Devices()(*i0b4892b2f92a31e44541567b8065e8e7760cb336e17d7dacb9120a865d5b0a37.DevicesRequestBuilder) {
@@ -1387,6 +1393,10 @@ func (m *GraphServiceClient) SitesById(id string)(*ic557b65175a90fb05406286b014b
         urlTplParams["site%2Did"] = id
     }
     return ic557b65175a90fb05406286b014b07b096a266f27fc59e78636733800d66ff09.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Storage the storage property
+func (m *GraphServiceClient) Storage()(*id14bafb4ee71e1257662cacab67dd479e54eba65ce10c6816ee4676804caf821.StorageRequestBuilder) {
+    return id14bafb4ee71e1257662cacab67dd479e54eba65ce10c6816ee4676804caf821.NewStorageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // SubscribedSkus the subscribedSkus property
 func (m *GraphServiceClient) SubscribedSkus()(*ie934faa615fb56652e5964395b3dc205321ac84e8cf244796ebe59ba3713fbd9.SubscribedSkusRequestBuilder) {

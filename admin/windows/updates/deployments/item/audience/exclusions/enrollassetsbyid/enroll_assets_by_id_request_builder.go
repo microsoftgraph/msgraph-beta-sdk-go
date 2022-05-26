@@ -40,11 +40,11 @@ func NewEnrollAssetsByIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewEnrollAssetsByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action enrollAssetsById
-func (m *EnrollAssetsByIdRequestBuilder) CreatePostRequestInformation(body EnrollAssetsByIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EnrollAssetsByIdRequestBuilder) CreatePostRequestInformation(body EnrollAssetsByIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action enrollAssetsById
-func (m *EnrollAssetsByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EnrollAssetsByIdRequestBodyable, requestConfiguration *EnrollAssetsByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EnrollAssetsByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EnrollAssetsByIdPostRequestBodyable, requestConfiguration *EnrollAssetsByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *EnrollAssetsByIdRequestBuilder) CreatePostRequestInformationWithRequest
     return requestInfo, nil
 }
 // Post invoke action enrollAssetsById
-func (m *EnrollAssetsByIdRequestBuilder) Post(body EnrollAssetsByIdRequestBodyable)(error) {
+func (m *EnrollAssetsByIdRequestBuilder) Post(body EnrollAssetsByIdPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action enrollAssetsById
-func (m *EnrollAssetsByIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EnrollAssetsByIdRequestBodyable, requestConfiguration *EnrollAssetsByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *EnrollAssetsByIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EnrollAssetsByIdPostRequestBodyable, requestConfiguration *EnrollAssetsByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

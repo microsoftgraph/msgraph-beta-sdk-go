@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingBusiness 
+// BookingBusiness represents a Microsot Bookings Business.
 type BookingBusiness struct {
     BookingNamedEntity
     // The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
@@ -27,6 +27,8 @@ type BookingBusiness struct {
     email *string
     // The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
     isPublished *bool
+    // The languageTag property
+    languageTag *string
     // The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
     phone *string
     // The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.
@@ -246,6 +248,16 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["languageTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLanguageTag(val)
+        }
+        return nil
+    }
     res["phone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -322,6 +334,14 @@ func (m *BookingBusiness) GetIsPublished()(*bool) {
         return nil
     } else {
         return m.isPublished
+    }
+}
+// GetLanguageTag gets the languageTag property value. The languageTag property
+func (m *BookingBusiness) GetLanguageTag()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.languageTag
     }
 }
 // GetPhone gets the phone property value. The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
@@ -459,6 +479,12 @@ func (m *BookingBusiness) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
+        err = writer.WriteStringValue("languageTag", m.GetLanguageTag())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("phone", m.GetPhone())
         if err != nil {
             return err
@@ -562,6 +588,12 @@ func (m *BookingBusiness) SetEmail(value *string)() {
 func (m *BookingBusiness) SetIsPublished(value *bool)() {
     if m != nil {
         m.isPublished = value
+    }
+}
+// SetLanguageTag sets the languageTag property value. The languageTag property
+func (m *BookingBusiness) SetLanguageTag(value *string)() {
+    if m != nil {
+        m.languageTag = value
     }
 }
 // SetPhone sets the phone property value. The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.

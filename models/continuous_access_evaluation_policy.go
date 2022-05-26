@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ContinuousAccessEvaluationPolicy 
+// ContinuousAccessEvaluationPolicy provides operations to manage the identityContainer singleton.
 type ContinuousAccessEvaluationPolicy struct {
     Entity
     // Continuous access evaluation automatically blocks access to resources and applications in near real time when a user's access is removed or a client IP address changes. Read-only.

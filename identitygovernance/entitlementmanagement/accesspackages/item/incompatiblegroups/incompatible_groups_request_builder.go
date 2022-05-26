@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i2e19a02a8c19124167abd1e79ace5e94698d2ab3900fe155b0e3230ee40944a0 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackages/item/incompatiblegroups/count"
+    idf226034cc7d5cd73a15fdcbbd1f6456da91db833629deb43534cfa72a9751af "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackages/item/incompatiblegroups/ref"
 )
 
 // IncompatibleGroupsRequestBuilder provides operations to manage the incompatibleGroups property of the microsoft.graph.accessPackage entity.
@@ -105,4 +106,8 @@ func (m *IncompatibleGroupsRequestBuilder) GetWithRequestConfigurationAndRespons
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *IncompatibleGroupsRequestBuilder) Ref()(*idf226034cc7d5cd73a15fdcbbd1f6456da91db833629deb43534cfa72a9751af.RefRequestBuilder) {
+    return idf226034cc7d5cd73a15fdcbbd1f6456da91db833629deb43534cfa72a9751af.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

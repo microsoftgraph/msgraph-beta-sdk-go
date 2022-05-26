@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365ActiveUserDetail 
+// Office365ActiveUserDetail provides operations to call the getOffice365ActiveUserDetail method.
 type Office365ActiveUserDetail struct {
     Entity
     // All the products assigned for the user.

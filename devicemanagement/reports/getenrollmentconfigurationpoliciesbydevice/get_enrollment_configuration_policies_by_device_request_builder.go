@@ -40,11 +40,11 @@ func NewGetEnrollmentConfigurationPoliciesByDeviceRequestBuilder(rawUrl string, 
     return NewGetEnrollmentConfigurationPoliciesByDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getEnrollmentConfigurationPoliciesByDevice
-func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) CreatePostRequestInformation(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) CreatePostRequestInformation(body GetEnrollmentConfigurationPoliciesByDevicePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getEnrollmentConfigurationPoliciesByDevice
-func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable, requestConfiguration *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetEnrollmentConfigurationPoliciesByDevicePostRequestBodyable, requestConfiguration *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) CreatePostReq
     return requestInfo, nil
 }
 // Post invoke action getEnrollmentConfigurationPoliciesByDevice
-func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) Post(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable)(GetEnrollmentConfigurationPoliciesByDeviceResponseable, error) {
+func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) Post(body GetEnrollmentConfigurationPoliciesByDevicePostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getEnrollmentConfigurationPoliciesByDevice
-func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetEnrollmentConfigurationPoliciesByDeviceRequestBodyable, requestConfiguration *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetEnrollmentConfigurationPoliciesByDeviceResponseable, error) {
+func (m *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetEnrollmentConfigurationPoliciesByDevicePostRequestBodyable, requestConfiguration *GetEnrollmentConfigurationPoliciesByDeviceRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetEnrollmentConfigurationPoliciesByDeviceResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetEnrollmentConfigurationPoliciesByDeviceResponseable), nil
+    return res.([]byte), nil
 }

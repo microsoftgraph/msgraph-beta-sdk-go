@@ -16,7 +16,7 @@ type ProgramControlTypesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ProgramControlTypesRequestBuilderGetQueryParameters list programControlTypes
+// ProgramControlTypesRequestBuilderGetQueryParameters in the Azure AD access reviews feature, list all the programControlType objects.
 type ProgramControlTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewProgramControlTypesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ProgramControlTypesRequestBuilder) Count()(*i26c1b4b79769a238a86f08de582e0de3d33b3c4743de3766dc63e9d5b4cf60b3.CountRequestBuilder) {
     return i26c1b4b79769a238a86f08de582e0de3d33b3c4743de3766dc63e9d5b4cf60b3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list programControlTypes
+// CreateGetRequestInformation in the Azure AD access reviews feature, list all the programControlType objects.
 func (m *ProgramControlTypesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list programControlTypes
+// CreateGetRequestInformationWithRequestConfiguration in the Azure AD access reviews feature, list all the programControlType objects.
 func (m *ProgramControlTypesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ProgramControlTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +110,11 @@ func (m *ProgramControlTypesRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// Get list programControlTypes
+// Get in the Azure AD access reviews feature, list all the programControlType objects.
 func (m *ProgramControlTypesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlTypeCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler list programControlTypes
+// GetWithRequestConfigurationAndResponseHandler in the Azure AD access reviews feature, list all the programControlType objects.
 func (m *ProgramControlTypesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ProgramControlTypesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlTypeCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

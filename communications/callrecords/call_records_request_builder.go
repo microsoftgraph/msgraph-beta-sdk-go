@@ -1,9 +1,12 @@
 package callrecords
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f "github.com/microsoftgraph/msgraph-beta-sdk-go/models/callrecords"
+    i9866bb64377f626c40c20c888e042f137ab69337bc9d4c193294bd2290348854 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/callrecords/getdirectroutingcallswithfromdatetimewithtodatetime"
+    i9aaa587b3ca32fe9ecdac6c2983f86b775e7ccd5dec45fe0675769686f3794a2 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/callrecords/getpstncallswithfromdatetimewithtodatetime"
     ia3bed6bc6649d26c958d51e3c8f8c83880004d6947079b89b2480b14ecbd2d67 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications/callrecords/count"
 )
 
@@ -113,6 +116,14 @@ func (m *CallRecordsRequestBuilder) CreatePostRequestInformationWithRequestConfi
 // Get get callRecords from communications
 func (m *CallRecordsRequestBuilder) Get()(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.CallRecordCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetDirectRoutingCallsWithFromDateTimeWithToDateTime provides operations to call the getDirectRoutingCalls method.
+func (m *CallRecordsRequestBuilder) GetDirectRoutingCallsWithFromDateTimeWithToDateTime(fromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, toDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*i9866bb64377f626c40c20c888e042f137ab69337bc9d4c193294bd2290348854.GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder) {
+    return i9866bb64377f626c40c20c888e042f137ab69337bc9d4c193294bd2290348854.NewGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, fromDateTime, toDateTime);
+}
+// GetPstnCallsWithFromDateTimeWithToDateTime provides operations to call the getPstnCalls method.
+func (m *CallRecordsRequestBuilder) GetPstnCallsWithFromDateTimeWithToDateTime(fromDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, toDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*i9aaa587b3ca32fe9ecdac6c2983f86b775e7ccd5dec45fe0675769686f3794a2.GetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder) {
+    return i9aaa587b3ca32fe9ecdac6c2983f86b775e7ccd5dec45fe0675769686f3794a2.NewGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilderInternal(m.pathParameters, m.requestAdapter, fromDateTime, toDateTime);
 }
 // GetWithRequestConfigurationAndResponseHandler get callRecords from communications
 func (m *CallRecordsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CallRecordsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.CallRecordCollectionResponseable, error) {

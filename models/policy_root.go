@@ -32,6 +32,8 @@ type PolicyRoot struct {
     crossTenantAccessPolicy CrossTenantAccessPolicyable
     // The tenant-wide policy that enforces app management restrictions for all applications and service principals.
     defaultAppManagementPolicy TenantAppManagementPolicyable
+    // The deviceRegistrationPolicy property
+    deviceRegistrationPolicy DeviceRegistrationPolicyable
     // The directoryRoleAccessReviewPolicy property
     directoryRoleAccessReviewPolicy DirectoryRoleAccessReviewPolicyable
     // The externalIdentitiesPolicy property
@@ -172,6 +174,14 @@ func (m *PolicyRoot) GetDefaultAppManagementPolicy()(TenantAppManagementPolicyab
         return nil
     } else {
         return m.defaultAppManagementPolicy
+    }
+}
+// GetDeviceRegistrationPolicy gets the deviceRegistrationPolicy property value. The deviceRegistrationPolicy property
+func (m *PolicyRoot) GetDeviceRegistrationPolicy()(DeviceRegistrationPolicyable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.deviceRegistrationPolicy
     }
 }
 // GetDirectoryRoleAccessReviewPolicy gets the directoryRoleAccessReviewPolicy property value. The directoryRoleAccessReviewPolicy property
@@ -338,6 +348,16 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetDefaultAppManagementPolicy(val.(TenantAppManagementPolicyable))
+        }
+        return nil
+    }
+    res["deviceRegistrationPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDeviceRegistrationPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceRegistrationPolicy(val.(DeviceRegistrationPolicyable))
         }
         return nil
     }
@@ -688,6 +708,12 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err := writer.WriteObjectValue("deviceRegistrationPolicy", m.GetDeviceRegistrationPolicy())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("directoryRoleAccessReviewPolicy", m.GetDirectoryRoleAccessReviewPolicy())
         if err != nil {
             return err
@@ -889,6 +915,12 @@ func (m *PolicyRoot) SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyabl
 func (m *PolicyRoot) SetDefaultAppManagementPolicy(value TenantAppManagementPolicyable)() {
     if m != nil {
         m.defaultAppManagementPolicy = value
+    }
+}
+// SetDeviceRegistrationPolicy sets the deviceRegistrationPolicy property value. The deviceRegistrationPolicy property
+func (m *PolicyRoot) SetDeviceRegistrationPolicy(value DeviceRegistrationPolicyable)() {
+    if m != nil {
+        m.deviceRegistrationPolicy = value
     }
 }
 // SetDirectoryRoleAccessReviewPolicy sets the directoryRoleAccessReviewPolicy property value. The directoryRoleAccessReviewPolicy property

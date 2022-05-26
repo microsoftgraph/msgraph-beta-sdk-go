@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminRelationship 
+// DelegatedAdminRelationship provides operations to manage the tenantRelationship singleton.
 type DelegatedAdminRelationship struct {
     Entity
     // The access assignments associated with the delegated admin relationship.
@@ -28,8 +28,6 @@ type DelegatedAdminRelationship struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The long running operations associated with the delegated admin relationship.
     operations []DelegatedAdminRelationshipOperationable
-    // The partner property
-    partner DelegatedAdminRelationshipParticipantable
     // The requests associated with the delegated admin relationship.
     requests []DelegatedAdminRelationshipRequestable
     // The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
@@ -221,16 +219,6 @@ func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
-    res["partner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDelegatedAdminRelationshipParticipantFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPartner(val.(DelegatedAdminRelationshipParticipantable))
-        }
-        return nil
-    }
     res["requests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDelegatedAdminRelationshipRequestFromDiscriminatorValue)
         if err != nil {
@@ -271,14 +259,6 @@ func (m *DelegatedAdminRelationship) GetOperations()([]DelegatedAdminRelationshi
         return nil
     } else {
         return m.operations
-    }
-}
-// GetPartner gets the partner property value. The partner property
-func (m *DelegatedAdminRelationship) GetPartner()(DelegatedAdminRelationshipParticipantable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partner
     }
 }
 // GetRequests gets the requests property value. The requests associated with the delegated admin relationship.
@@ -371,12 +351,6 @@ func (m *DelegatedAdminRelationship) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
-    {
-        err = writer.WriteObjectValue("partner", m.GetPartner())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRequests()))
         for i, v := range m.GetRequests() {
@@ -454,12 +428,6 @@ func (m *DelegatedAdminRelationship) SetLastModifiedDateTime(value *i336074805fc
 func (m *DelegatedAdminRelationship) SetOperations(value []DelegatedAdminRelationshipOperationable)() {
     if m != nil {
         m.operations = value
-    }
-}
-// SetPartner sets the partner property value. The partner property
-func (m *DelegatedAdminRelationship) SetPartner(value DelegatedAdminRelationshipParticipantable)() {
-    if m != nil {
-        m.partner = value
     }
 }
 // SetRequests sets the requests property value. The requests associated with the delegated admin relationship.

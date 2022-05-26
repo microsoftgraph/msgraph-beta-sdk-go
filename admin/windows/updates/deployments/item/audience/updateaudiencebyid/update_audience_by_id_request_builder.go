@@ -40,11 +40,11 @@ func NewUpdateAudienceByIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewUpdateAudienceByIdRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action updateAudienceById
-func (m *UpdateAudienceByIdRequestBuilder) CreatePostRequestInformation(body UpdateAudienceByIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateAudienceByIdRequestBuilder) CreatePostRequestInformation(body UpdateAudienceByIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateAudienceById
-func (m *UpdateAudienceByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateAudienceByIdRequestBodyable, requestConfiguration *UpdateAudienceByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateAudienceByIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateAudienceByIdPostRequestBodyable, requestConfiguration *UpdateAudienceByIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UpdateAudienceByIdRequestBuilder) CreatePostRequestInformationWithReque
     return requestInfo, nil
 }
 // Post invoke action updateAudienceById
-func (m *UpdateAudienceByIdRequestBuilder) Post(body UpdateAudienceByIdRequestBodyable)(error) {
+func (m *UpdateAudienceByIdRequestBuilder) Post(body UpdateAudienceByIdPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action updateAudienceById
-func (m *UpdateAudienceByIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateAudienceByIdRequestBodyable, requestConfiguration *UpdateAudienceByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UpdateAudienceByIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateAudienceByIdPostRequestBodyable, requestConfiguration *UpdateAudienceByIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

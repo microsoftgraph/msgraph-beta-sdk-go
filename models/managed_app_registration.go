@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAppRegistration 
+// ManagedAppRegistration the ManagedAppEntity is the base entity type for all other entity types under app management workflow.
 type ManagedAppRegistration struct {
     Entity
     // The app package Identifier
@@ -29,7 +29,7 @@ type ManagedAppRegistration struct {
     // Host device type
     deviceType *string
     // Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-    flaggedReasons []ManagedAppFlaggedReason
+    flaggedReasons []string
     // Zero or more policies admin intended for the app as of now.
     intendedPolicies []ManagedAppPolicyable
     // Date and time of last the app synced with management service.
@@ -56,6 +56,25 @@ func NewManagedAppRegistration()(*ManagedAppRegistration) {
 }
 // CreateManagedAppRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateManagedAppRegistrationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.managedAppRegistration":
+                        return NewManagedAppRegistration(), nil
+                }
+            }
+        }
+    }
     return NewManagedAppRegistration(), nil
 }
 // GetAppIdentifier gets the appIdentifier property value. The app package Identifier
@@ -246,14 +265,14 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["flaggedReasons"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseManagedAppFlaggedReason)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ManagedAppFlaggedReason, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*ManagedAppFlaggedReason))
+                res[i] = *(v.(*string))
             }
             m.SetFlaggedReasons(res)
         }
@@ -350,7 +369,7 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetFlaggedReasons gets the flaggedReasons property value. Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-func (m *ManagedAppRegistration) GetFlaggedReasons()([]ManagedAppFlaggedReason) {
+func (m *ManagedAppRegistration) GetFlaggedReasons()([]string) {
     if m == nil {
         return nil
     } else {
@@ -492,7 +511,7 @@ func (m *ManagedAppRegistration) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     if m.GetFlaggedReasons() != nil {
-        err = writer.WriteCollectionOfStringValues("flaggedReasons", SerializeManagedAppFlaggedReason(m.GetFlaggedReasons()))
+        err = writer.WriteCollectionOfStringValues("flaggedReasons", m.GetFlaggedReasons())
         if err != nil {
             return err
         }
@@ -616,7 +635,7 @@ func (m *ManagedAppRegistration) SetDeviceType(value *string)() {
     }
 }
 // SetFlaggedReasons sets the flaggedReasons property value. Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-func (m *ManagedAppRegistration) SetFlaggedReasons(value []ManagedAppFlaggedReason)() {
+func (m *ManagedAppRegistration) SetFlaggedReasons(value []string)() {
     if m != nil {
         m.flaggedReasons = value
     }

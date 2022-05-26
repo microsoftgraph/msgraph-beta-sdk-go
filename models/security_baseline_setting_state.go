@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SecurityBaselineSettingState 
+// SecurityBaselineSettingState the security baseline compliance state of a setting for a device
 type SecurityBaselineSettingState struct {
     Entity
     // The policies that contribute to this setting instance

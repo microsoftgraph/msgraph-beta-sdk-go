@@ -15,7 +15,7 @@ type DeviceComplianceScriptValidationResult struct {
     // Errors in json for the script.
     scriptErrors []DeviceComplianceScriptErrorable
 }
-// NewDeviceComplianceScriptValidationResult instantiates a new deviceComplianceScriptValidationResult and sets the default values.
+// NewDeviceComplianceScriptValidationResult instantiates a new DeviceComplianceScriptValidationResult and sets the default values.
 func NewDeviceComplianceScriptValidationResult()(*DeviceComplianceScriptValidationResult) {
     m := &DeviceComplianceScriptValidationResult{
     }

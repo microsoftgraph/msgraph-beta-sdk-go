@@ -31,10 +31,10 @@ func NewGetTopMobileAppsWithStatusWithCountRequestBuilderInternal(pathParameters
         urlTplParams[idx] = item
     }
     if count != nil {
-        urlTplParams[""] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(*count, 10)
+        urlTplParams["count"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(*count, 10)
     }
     if status != nil {
-        urlTplParams[""] = *status
+        urlTplParams["status"] = *status
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

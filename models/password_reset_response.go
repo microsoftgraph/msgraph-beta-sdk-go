@@ -11,7 +11,7 @@ type PasswordResetResponse struct {
     // The newPassword property
     newPassword *string
 }
-// NewPasswordResetResponse instantiates a new passwordResetResponse and sets the default values.
+// NewPasswordResetResponse instantiates a new PasswordResetResponse and sets the default values.
 func NewPasswordResetResponse()(*PasswordResetResponse) {
     m := &PasswordResetResponse{
     }

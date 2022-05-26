@@ -17,7 +17,7 @@ type AssignmentFilterSupportedProperty struct {
     // Regex string to do validation on the property value.
     propertyRegexConstraint *string
     // List of all supported operators on this property.
-    supportedOperators []AssignmentFilterOperator
+    supportedOperators []string
     // List of all supported values for this propery, empty if everything is supported.
     supportedValues []string
 }
@@ -92,14 +92,14 @@ func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]f
         return nil
     }
     res["supportedOperators"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseAssignmentFilterOperator)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AssignmentFilterOperator, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AssignmentFilterOperator))
+                res[i] = *(v.(*string))
             }
             m.SetSupportedOperators(res)
         }
@@ -146,7 +146,7 @@ func (m *AssignmentFilterSupportedProperty) GetPropertyRegexConstraint()(*string
     }
 }
 // GetSupportedOperators gets the supportedOperators property value. List of all supported operators on this property.
-func (m *AssignmentFilterSupportedProperty) GetSupportedOperators()([]AssignmentFilterOperator) {
+func (m *AssignmentFilterSupportedProperty) GetSupportedOperators()([]string) {
     if m == nil {
         return nil
     } else {
@@ -188,7 +188,7 @@ func (m *AssignmentFilterSupportedProperty) Serialize(writer i878a80d2330e89d268
         }
     }
     if m.GetSupportedOperators() != nil {
-        err := writer.WriteCollectionOfStringValues("supportedOperators", SerializeAssignmentFilterOperator(m.GetSupportedOperators()))
+        err := writer.WriteCollectionOfStringValues("supportedOperators", m.GetSupportedOperators())
         if err != nil {
             return err
         }
@@ -238,7 +238,7 @@ func (m *AssignmentFilterSupportedProperty) SetPropertyRegexConstraint(value *st
     }
 }
 // SetSupportedOperators sets the supportedOperators property value. List of all supported operators on this property.
-func (m *AssignmentFilterSupportedProperty) SetSupportedOperators(value []AssignmentFilterOperator)() {
+func (m *AssignmentFilterSupportedProperty) SetSupportedOperators(value []string)() {
     if m != nil {
         m.supportedOperators = value
     }

@@ -41,11 +41,11 @@ func NewChangeDeploymentStatusRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewChangeDeploymentStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action changeDeploymentStatus
-func (m *ChangeDeploymentStatusRequestBuilder) CreatePostRequestInformation(body ChangeDeploymentStatusRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ChangeDeploymentStatusRequestBuilder) CreatePostRequestInformation(body ChangeDeploymentStatusPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action changeDeploymentStatus
-func (m *ChangeDeploymentStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ChangeDeploymentStatusRequestBodyable, requestConfiguration *ChangeDeploymentStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ChangeDeploymentStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ChangeDeploymentStatusPostRequestBodyable, requestConfiguration *ChangeDeploymentStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *ChangeDeploymentStatusRequestBuilder) CreatePostRequestInformationWithR
     return requestInfo, nil
 }
 // Post invoke action changeDeploymentStatus
-func (m *ChangeDeploymentStatusRequestBuilder) Post(body ChangeDeploymentStatusRequestBodyable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, error) {
+func (m *ChangeDeploymentStatusRequestBuilder) Post(body ChangeDeploymentStatusPostRequestBodyable)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action changeDeploymentStatus
-func (m *ChangeDeploymentStatusRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ChangeDeploymentStatusRequestBodyable, requestConfiguration *ChangeDeploymentStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, error) {
+func (m *ChangeDeploymentStatusRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ChangeDeploymentStatusPostRequestBodyable, requestConfiguration *ChangeDeploymentStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateStepDeploymentable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DataSet 
+// DataSet provides operations to manage the security singleton.
 type DataSet struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The createdBy property
@@ -25,6 +25,25 @@ func NewDataSet()(*DataSet) {
 }
 // CreateDataSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDataSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.security.dataSet":
+                        return NewDataSet(), nil
+                }
+            }
+        }
+    }
     return NewDataSet(), nil
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property

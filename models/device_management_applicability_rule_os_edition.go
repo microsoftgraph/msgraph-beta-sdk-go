@@ -11,7 +11,7 @@ type DeviceManagementApplicabilityRuleOsEdition struct {
     // Name for object.
     name *string
     // Applicability rule OS edition type.
-    osEditionTypes []Windows10EditionType
+    osEditionTypes []string
     // Applicability Rule type. Possible values are: include, exclude.
     ruleType *DeviceManagementApplicabilityRuleType
 }
@@ -48,14 +48,14 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetFieldDeserializers()(map
         return nil
     }
     res["osEditionTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseWindows10EditionType)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Windows10EditionType, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*Windows10EditionType))
+                res[i] = *(v.(*string))
             }
             m.SetOsEditionTypes(res)
         }
@@ -82,7 +82,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetName()(*string) {
     }
 }
 // GetOsEditionTypes gets the osEditionTypes property value. Applicability rule OS edition type.
-func (m *DeviceManagementApplicabilityRuleOsEdition) GetOsEditionTypes()([]Windows10EditionType) {
+func (m *DeviceManagementApplicabilityRuleOsEdition) GetOsEditionTypes()([]string) {
     if m == nil {
         return nil
     } else {
@@ -106,7 +106,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) Serialize(writer i878a80d23
         }
     }
     if m.GetOsEditionTypes() != nil {
-        err := writer.WriteCollectionOfStringValues("osEditionTypes", SerializeWindows10EditionType(m.GetOsEditionTypes()))
+        err := writer.WriteCollectionOfStringValues("osEditionTypes", m.GetOsEditionTypes())
         if err != nil {
             return err
         }
@@ -139,7 +139,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) SetName(value *string)() {
     }
 }
 // SetOsEditionTypes sets the osEditionTypes property value. Applicability rule OS edition type.
-func (m *DeviceManagementApplicabilityRuleOsEdition) SetOsEditionTypes(value []Windows10EditionType)() {
+func (m *DeviceManagementApplicabilityRuleOsEdition) SetOsEditionTypes(value []string)() {
     if m != nil {
         m.osEditionTypes = value
     }

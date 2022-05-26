@@ -40,11 +40,11 @@ func NewAssignedAccessMultiModeProfilesRequestBuilder(rawUrl string, requestAdap
     return NewAssignedAccessMultiModeProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action assignedAccessMultiModeProfiles
-func (m *AssignedAccessMultiModeProfilesRequestBuilder) CreatePostRequestInformation(body AssignedAccessMultiModeProfilesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AssignedAccessMultiModeProfilesRequestBuilder) CreatePostRequestInformation(body AssignedAccessMultiModeProfilesPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action assignedAccessMultiModeProfiles
-func (m *AssignedAccessMultiModeProfilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssignedAccessMultiModeProfilesRequestBodyable, requestConfiguration *AssignedAccessMultiModeProfilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AssignedAccessMultiModeProfilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body AssignedAccessMultiModeProfilesPostRequestBodyable, requestConfiguration *AssignedAccessMultiModeProfilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *AssignedAccessMultiModeProfilesRequestBuilder) CreatePostRequestInforma
     return requestInfo, nil
 }
 // Post invoke action assignedAccessMultiModeProfiles
-func (m *AssignedAccessMultiModeProfilesRequestBuilder) Post(body AssignedAccessMultiModeProfilesRequestBodyable)(error) {
+func (m *AssignedAccessMultiModeProfilesRequestBuilder) Post(body AssignedAccessMultiModeProfilesPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action assignedAccessMultiModeProfiles
-func (m *AssignedAccessMultiModeProfilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AssignedAccessMultiModeProfilesRequestBodyable, requestConfiguration *AssignedAccessMultiModeProfilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *AssignedAccessMultiModeProfilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body AssignedAccessMultiModeProfilesPostRequestBodyable, requestConfiguration *AssignedAccessMultiModeProfilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

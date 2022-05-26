@@ -40,11 +40,11 @@ func NewUpdateGlobalScriptRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewUpdateGlobalScriptRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation update the Proprietary Device Health Script
-func (m *UpdateGlobalScriptRequestBuilder) CreatePostRequestInformation(body UpdateGlobalScriptRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateGlobalScriptRequestBuilder) CreatePostRequestInformation(body UpdateGlobalScriptPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration update the Proprietary Device Health Script
-func (m *UpdateGlobalScriptRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateGlobalScriptRequestBodyable, requestConfiguration *UpdateGlobalScriptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateGlobalScriptRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateGlobalScriptPostRequestBodyable, requestConfiguration *UpdateGlobalScriptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UpdateGlobalScriptRequestBuilder) CreatePostRequestInformationWithReque
     return requestInfo, nil
 }
 // Post update the Proprietary Device Health Script
-func (m *UpdateGlobalScriptRequestBuilder) Post(body UpdateGlobalScriptRequestBodyable)(UpdateGlobalScriptResponseable, error) {
+func (m *UpdateGlobalScriptRequestBuilder) Post(body UpdateGlobalScriptPostRequestBodyable)(UpdateGlobalScriptResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler update the Proprietary Device Health Script
-func (m *UpdateGlobalScriptRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateGlobalScriptRequestBodyable, requestConfiguration *UpdateGlobalScriptRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(UpdateGlobalScriptResponseable, error) {
+func (m *UpdateGlobalScriptRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateGlobalScriptPostRequestBodyable, requestConfiguration *UpdateGlobalScriptRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(UpdateGlobalScriptResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

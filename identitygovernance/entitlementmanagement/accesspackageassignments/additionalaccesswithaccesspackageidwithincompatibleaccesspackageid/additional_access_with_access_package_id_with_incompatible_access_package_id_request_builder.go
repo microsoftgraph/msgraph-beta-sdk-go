@@ -30,10 +30,10 @@ func NewAdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdReques
         urlTplParams[idx] = item
     }
     if accessPackageId != nil {
-        urlTplParams[""] = *accessPackageId
+        urlTplParams["accessPackageId"] = *accessPackageId
     }
     if incompatibleAccessPackageId != nil {
-        urlTplParams[""] = *incompatibleAccessPackageId
+        urlTplParams["incompatibleAccessPackageId"] = *incompatibleAccessPackageId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

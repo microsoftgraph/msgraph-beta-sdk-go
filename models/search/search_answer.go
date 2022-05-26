@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// SearchAnswer 
+// SearchAnswer provides operations to manage the searchEntity singleton.
 type SearchAnswer struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Search answer description shown on search results page.
@@ -29,6 +29,25 @@ func NewSearchAnswer()(*SearchAnswer) {
 }
 // CreateSearchAnswerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSearchAnswerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.search.searchAnswer":
+                        return NewSearchAnswer(), nil
+                }
+            }
+        }
+    }
     return NewSearchAnswer(), nil
 }
 // GetDescription gets the description property value. Search answer description shown on search results page.

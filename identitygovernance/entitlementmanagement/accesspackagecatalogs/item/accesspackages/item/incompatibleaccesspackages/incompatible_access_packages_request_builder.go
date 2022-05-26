@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i94cfa1da50c4e4fd0beba278cccae98e1f433907fd214ad0e39c78e46d2a6678 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackagecatalogs/item/accesspackages/item/incompatibleaccesspackages/ref"
     iff6c3d3cd0dea30cee7799f69283dabf01613edce450c3a1ddc315fa3eb138e1 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackagecatalogs/item/accesspackages/item/incompatibleaccesspackages/count"
 )
 
@@ -105,4 +106,8 @@ func (m *IncompatibleAccessPackagesRequestBuilder) GetWithRequestConfigurationAn
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *IncompatibleAccessPackagesRequestBuilder) Ref()(*i94cfa1da50c4e4fd0beba278cccae98e1f433907fd214ad0e39c78e46d2a6678.RefRequestBuilder) {
+    return i94cfa1da50c4e4fd0beba278cccae98e1f433907fd214ad0e39c78e46d2a6678.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
