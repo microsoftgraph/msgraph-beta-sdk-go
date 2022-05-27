@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonName 
+// PersonName casts the previous resource to user.
 type PersonName struct {
     ItemFacet
     // Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.

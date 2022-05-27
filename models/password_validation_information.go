@@ -13,7 +13,7 @@ type PasswordValidationInformation struct {
     // The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
     validationResults []ValidationResultable
 }
-// NewPasswordValidationInformation instantiates a new passwordValidationInformation and sets the default values.
+// NewPasswordValidationInformation instantiates a new PasswordValidationInformation and sets the default values.
 func NewPasswordValidationInformation()(*PasswordValidationInformation) {
     m := &PasswordValidationInformation{
     }

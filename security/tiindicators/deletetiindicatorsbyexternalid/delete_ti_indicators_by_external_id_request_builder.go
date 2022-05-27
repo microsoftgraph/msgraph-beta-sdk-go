@@ -40,11 +40,11 @@ func NewDeleteTiIndicatorsByExternalIdRequestBuilder(rawUrl string, requestAdapt
     return NewDeleteTiIndicatorsByExternalIdRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action deleteTiIndicatorsByExternalId
-func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) CreatePostRequestInformation(body DeleteTiIndicatorsByExternalIdRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) CreatePostRequestInformation(body DeleteTiIndicatorsByExternalIdPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action deleteTiIndicatorsByExternalId
-func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DeleteTiIndicatorsByExternalIdRequestBodyable, requestConfiguration *DeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body DeleteTiIndicatorsByExternalIdPostRequestBodyable, requestConfiguration *DeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) CreatePostRequestInformat
     return requestInfo, nil
 }
 // Post invoke action deleteTiIndicatorsByExternalId
-func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) Post(body DeleteTiIndicatorsByExternalIdRequestBodyable)(DeleteTiIndicatorsByExternalIdResponseable, error) {
+func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) Post(body DeleteTiIndicatorsByExternalIdPostRequestBodyable)(DeleteTiIndicatorsByExternalIdResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action deleteTiIndicatorsByExternalId
-func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body DeleteTiIndicatorsByExternalIdRequestBodyable, requestConfiguration *DeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(DeleteTiIndicatorsByExternalIdResponseable, error) {
+func (m *DeleteTiIndicatorsByExternalIdRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body DeleteTiIndicatorsByExternalIdPostRequestBodyable, requestConfiguration *DeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(DeleteTiIndicatorsByExternalIdResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

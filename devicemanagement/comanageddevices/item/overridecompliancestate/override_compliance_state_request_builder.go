@@ -40,11 +40,11 @@ func NewOverrideComplianceStateRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewOverrideComplianceStateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action overrideComplianceState
-func (m *OverrideComplianceStateRequestBuilder) CreatePostRequestInformation(body OverrideComplianceStateRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *OverrideComplianceStateRequestBuilder) CreatePostRequestInformation(body OverrideComplianceStatePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action overrideComplianceState
-func (m *OverrideComplianceStateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body OverrideComplianceStateRequestBodyable, requestConfiguration *OverrideComplianceStateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *OverrideComplianceStateRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body OverrideComplianceStatePostRequestBodyable, requestConfiguration *OverrideComplianceStateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *OverrideComplianceStateRequestBuilder) CreatePostRequestInformationWith
     return requestInfo, nil
 }
 // Post invoke action overrideComplianceState
-func (m *OverrideComplianceStateRequestBuilder) Post(body OverrideComplianceStateRequestBodyable)(error) {
+func (m *OverrideComplianceStateRequestBuilder) Post(body OverrideComplianceStatePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action overrideComplianceState
-func (m *OverrideComplianceStateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body OverrideComplianceStateRequestBodyable, requestConfiguration *OverrideComplianceStateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *OverrideComplianceStateRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body OverrideComplianceStatePostRequestBodyable, requestConfiguration *OverrideComplianceStateRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

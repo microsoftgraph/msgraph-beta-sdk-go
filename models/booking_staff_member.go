@@ -4,13 +4,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingStaffMember 
+// BookingStaffMember represents a staff member who provides services in a business.
 type BookingStaffMember struct {
     BookingPerson
     // True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
     availabilityIsAffectedByPersonalCalendar *bool
     // Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
     colorIndex *int32
+    // The isEmailNotificationEnabled property
+    isEmailNotificationEnabled *bool
     // The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest and unknownFutureValue. Required.
     role *BookingStaffRole
     // The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
@@ -70,6 +72,16 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["isEmailNotificationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsEmailNotificationEnabled(val)
+        }
+        return nil
+    }
     res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBookingStaffRole)
         if err != nil {
@@ -115,6 +127,14 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetIsEmailNotificationEnabled gets the isEmailNotificationEnabled property value. The isEmailNotificationEnabled property
+func (m *BookingStaffMember) GetIsEmailNotificationEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isEmailNotificationEnabled
+    }
 }
 // GetRole gets the role property value. The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest and unknownFutureValue. Required.
 func (m *BookingStaffMember) GetRole()(*BookingStaffRole) {
@@ -166,6 +186,12 @@ func (m *BookingStaffMember) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("isEmailNotificationEnabled", m.GetIsEmailNotificationEnabled())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRole() != nil {
         cast := (*m.GetRole()).String()
         err = writer.WriteStringValue("role", &cast)
@@ -207,6 +233,12 @@ func (m *BookingStaffMember) SetAvailabilityIsAffectedByPersonalCalendar(value *
 func (m *BookingStaffMember) SetColorIndex(value *int32)() {
     if m != nil {
         m.colorIndex = value
+    }
+}
+// SetIsEmailNotificationEnabled sets the isEmailNotificationEnabled property value. The isEmailNotificationEnabled property
+func (m *BookingStaffMember) SetIsEmailNotificationEnabled(value *bool)() {
+    if m != nil {
+        m.isEmailNotificationEnabled = value
     }
 }
 // SetRole sets the role property value. The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest and unknownFutureValue. Required.

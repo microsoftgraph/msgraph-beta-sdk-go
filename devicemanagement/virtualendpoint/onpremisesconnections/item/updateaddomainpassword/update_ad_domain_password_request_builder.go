@@ -40,11 +40,11 @@ func NewUpdateAdDomainPasswordRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewUpdateAdDomainPasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action updateAdDomainPassword
-func (m *UpdateAdDomainPasswordRequestBuilder) CreatePostRequestInformation(body UpdateAdDomainPasswordRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateAdDomainPasswordRequestBuilder) CreatePostRequestInformation(body UpdateAdDomainPasswordPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateAdDomainPassword
-func (m *UpdateAdDomainPasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateAdDomainPasswordRequestBodyable, requestConfiguration *UpdateAdDomainPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateAdDomainPasswordRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateAdDomainPasswordPostRequestBodyable, requestConfiguration *UpdateAdDomainPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UpdateAdDomainPasswordRequestBuilder) CreatePostRequestInformationWithR
     return requestInfo, nil
 }
 // Post invoke action updateAdDomainPassword
-func (m *UpdateAdDomainPasswordRequestBuilder) Post(body UpdateAdDomainPasswordRequestBodyable)(error) {
+func (m *UpdateAdDomainPasswordRequestBuilder) Post(body UpdateAdDomainPasswordPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action updateAdDomainPassword
-func (m *UpdateAdDomainPasswordRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateAdDomainPasswordRequestBodyable, requestConfiguration *UpdateAdDomainPasswordRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UpdateAdDomainPasswordRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateAdDomainPasswordPostRequestBodyable, requestConfiguration *UpdateAdDomainPasswordRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

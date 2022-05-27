@@ -30,7 +30,7 @@ func NewGetMobileAppCountWithStatusRequestBuilderInternal(pathParameters map[str
         urlTplParams[idx] = item
     }
     if status != nil {
-        urlTplParams[""] = *status
+        urlTplParams["status"] = *status
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

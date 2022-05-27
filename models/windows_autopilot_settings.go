@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsAutopilotSettings 
+// WindowsAutopilotSettings the windowsAutopilotSettings resource represents a Windows Autopilot Account to sync data with Windows device data sync service.
 type WindowsAutopilotSettings struct {
     Entity
     // Last data sync date time with DDS service.

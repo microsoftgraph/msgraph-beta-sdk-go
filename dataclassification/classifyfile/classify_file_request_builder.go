@@ -41,11 +41,11 @@ func NewClassifyFileRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewClassifyFileRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action classifyFile
-func (m *ClassifyFileRequestBuilder) CreatePostRequestInformation(body ClassifyFileRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ClassifyFileRequestBuilder) CreatePostRequestInformation(body ClassifyFilePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action classifyFile
-func (m *ClassifyFileRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ClassifyFileRequestBodyable, requestConfiguration *ClassifyFileRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ClassifyFileRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ClassifyFilePostRequestBodyable, requestConfiguration *ClassifyFileRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *ClassifyFileRequestBuilder) CreatePostRequestInformationWithRequestConf
     return requestInfo, nil
 }
 // Post invoke action classifyFile
-func (m *ClassifyFileRequestBuilder) Post(body ClassifyFileRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClassificationJobResponseable, error) {
+func (m *ClassifyFileRequestBuilder) Post(body ClassifyFilePostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClassificationJobResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action classifyFile
-func (m *ClassifyFileRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ClassifyFileRequestBodyable, requestConfiguration *ClassifyFileRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClassificationJobResponseable, error) {
+func (m *ClassifyFileRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ClassifyFilePostRequestBodyable, requestConfiguration *ClassifyFileRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ClassificationJobResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

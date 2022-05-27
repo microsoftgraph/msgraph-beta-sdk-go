@@ -141,7 +141,6 @@ import (
     icccda8c1e029711a6c2c010bde446ea283c88f9167583edd4cb4b8891df462bd "github.com/microsoftgraph/msgraph-beta-sdk-go/me/contactfolders/item"
     id23f8c7e0c3929eeb36c197eb371fd7242f148f968513d3b42532b35904d2c7e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/item"
     id7edb04c2fe4b42c55656962bf3bb27391a93462cc5a89234df1ddf704bdf49d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mobileappintentandstates/item"
-    idfa7cbdcf3a4fd875b312422b4564830d91af1ad3d8dd44db9012918e850751f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/joinedgroups/item"
     ie23caf2134464ac7a439e71ae9e04c43d1e7edeb9f60834c6450c46b2a73ef3d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onlinemeetings/item"
     iedd9b42c61703c4f6442a904b683a6508ee4bf335825ff84ce57fb2616e2cce3 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/people/item"
     if68ffab8944bb223858e55142c815f29e64d6051ab2ef6f6ce0d495d4d87f4a9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item"
@@ -159,7 +158,7 @@ type MeRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MeRequestBuilderGetQueryParameters helpers (examples that aren't included in the docs)
+// MeRequestBuilderGetQueryParameters retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
 type MeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -428,11 +427,11 @@ func (m *MeRequestBuilder) CreatedObjectsById(id string)(*i36124d7f986d43728dd4e
     }
     return i36124d7f986d43728dd4e4ec2537be43e1bb06aafbfb36badf4c29a92469fb74.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateGetRequestInformation helpers (examples that aren't included in the docs)
+// CreateGetRequestInformation retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
 func (m *MeRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration helpers (examples that aren't included in the docs)
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
 func (m *MeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -447,11 +446,11 @@ func (m *MeRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(r
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update user
+// CreatePatchRequestInformation update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
 func (m *MeRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update user
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
 func (m *MeRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, requestConfiguration *MeRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -616,7 +615,7 @@ func (m *MeRequestBuilder) FollowedSitesById(id string)(*i0c7e22c7b3c700585549fd
     }
     return i0c7e22c7b3c700585549fd382bfa2115e0602d341e57daae7fcadf078a118fe1.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get helpers (examples that aren't included in the docs)
+// Get retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
 func (m *MeRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -656,7 +655,7 @@ func (m *MeRequestBuilder) GetMemberGroups()(*i3d2fc4aaa671f5674c171e95891301e78
 func (m *MeRequestBuilder) GetMemberObjects()(*ib30fb712d3d83e6954d3924903b95a5b7b6e5583943adf5f99bff52563c27b53.GetMemberObjectsRequestBuilder) {
     return ib30fb712d3d83e6954d3924903b95a5b7b6e5583943adf5f99bff52563c27b53.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler helpers (examples that aren't included in the docs)
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
 func (m *MeRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MeRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -695,17 +694,6 @@ func (m *MeRequestBuilder) IsManagedAppUserBlocked()(*i324d21921cd9355af9f2a6ec8
 // JoinedGroups the joinedGroups property
 func (m *MeRequestBuilder) JoinedGroups()(*i93405a8f89e4184693c09c0e84c792b9567480596ed3662ca8f3958b1922f361.JoinedGroupsRequestBuilder) {
     return i93405a8f89e4184693c09c0e84c792b9567480596ed3662ca8f3958b1922f361.NewJoinedGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// JoinedGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.joinedGroups.item collection
-func (m *MeRequestBuilder) JoinedGroupsById(id string)(*idfa7cbdcf3a4fd875b312422b4564830d91af1ad3d8dd44db9012918e850751f.GroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["group%2Did"] = id
-    }
-    return idfa7cbdcf3a4fd875b312422b4564830d91af1ad3d8dd44db9012918e850751f.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // JoinedTeams the joinedTeams property
 func (m *MeRequestBuilder) JoinedTeams()(*i9859a1065a4c497ab3647c006153457dba946e2848eb7a50b67818697c69417b.JoinedTeamsRequestBuilder) {
@@ -929,11 +917,11 @@ func (m *MeRequestBuilder) OwnedObjectsById(id string)(*i8ce653616e56cac134ff5b2
     }
     return i8ce653616e56cac134ff5b2659d920c1b77db0e8cb12f0164e596429c11be8d5.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch update user
+// Patch update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
 func (m *MeRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithRequestConfigurationAndResponseHandler update user
+// PatchWithRequestConfigurationAndResponseHandler update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
 func (m *MeRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, requestConfiguration *MeRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

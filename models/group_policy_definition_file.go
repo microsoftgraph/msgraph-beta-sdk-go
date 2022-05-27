@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyDefinitionFile 
+// GroupPolicyDefinitionFile the entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
 type GroupPolicyDefinitionFile struct {
     Entity
     // The group policy definitions associated with the file.
@@ -38,6 +38,25 @@ func NewGroupPolicyDefinitionFile()(*GroupPolicyDefinitionFile) {
 }
 // CreateGroupPolicyDefinitionFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGroupPolicyDefinitionFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.groupPolicyDefinitionFile":
+                        return NewGroupPolicyDefinitionFile(), nil
+                }
+            }
+        }
+    }
     return NewGroupPolicyDefinitionFile(), nil
 }
 // GetDefinitions gets the definitions property value. The group policy definitions associated with the file.

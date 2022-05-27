@@ -40,11 +40,11 @@ func NewUpdateSoftwareRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewUpdateSoftwareRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action updateSoftware
-func (m *UpdateSoftwareRequestBuilder) CreatePostRequestInformation(body UpdateSoftwareRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateSoftwareRequestBuilder) CreatePostRequestInformation(body UpdateSoftwarePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updateSoftware
-func (m *UpdateSoftwareRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateSoftwareRequestBodyable, requestConfiguration *UpdateSoftwareRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateSoftwareRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateSoftwarePostRequestBodyable, requestConfiguration *UpdateSoftwareRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UpdateSoftwareRequestBuilder) CreatePostRequestInformationWithRequestCo
     return requestInfo, nil
 }
 // Post invoke action updateSoftware
-func (m *UpdateSoftwareRequestBuilder) Post(body UpdateSoftwareRequestBodyable)(error) {
+func (m *UpdateSoftwareRequestBuilder) Post(body UpdateSoftwarePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action updateSoftware
-func (m *UpdateSoftwareRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateSoftwareRequestBodyable, requestConfiguration *UpdateSoftwareRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UpdateSoftwareRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateSoftwarePostRequestBodyable, requestConfiguration *UpdateSoftwareRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

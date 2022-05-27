@@ -9,7 +9,7 @@ type DeviceScopeActionResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // The triggered action name.
-    deviceScopeAction DeviceScopeActionable
+    deviceScopeAction *string
     // The unique identifier of the device scope the action was triggered on.
     deviceScopeId *string
     // The message indicates the reason the device scope action failed to trigger.
@@ -17,7 +17,7 @@ type DeviceScopeActionResult struct {
     // Indicates the status of the attempt device scope action. When succeeded, the action was succeessfully triggered, When failed, the action was failed to trigger.
     status *DeviceScopeActionStatus
 }
-// NewDeviceScopeActionResult instantiates a new deviceScopeActionResult and sets the default values.
+// NewDeviceScopeActionResult instantiates a new DeviceScopeActionResult and sets the default values.
 func NewDeviceScopeActionResult()(*DeviceScopeActionResult) {
     m := &DeviceScopeActionResult{
     }
@@ -37,7 +37,7 @@ func (m *DeviceScopeActionResult) GetAdditionalData()(map[string]interface{}) {
     }
 }
 // GetDeviceScopeAction gets the deviceScopeAction property value. The triggered action name.
-func (m *DeviceScopeActionResult) GetDeviceScopeAction()(DeviceScopeActionable) {
+func (m *DeviceScopeActionResult) GetDeviceScopeAction()(*string) {
     if m == nil {
         return nil
     } else {
@@ -64,12 +64,12 @@ func (m *DeviceScopeActionResult) GetFailedMessage()(*string) {
 func (m *DeviceScopeActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["deviceScopeAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceScopeActionFromDiscriminatorValue)
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeviceScopeAction(val.(DeviceScopeActionable))
+            m.SetDeviceScopeAction(val)
         }
         return nil
     }
@@ -116,7 +116,7 @@ func (m *DeviceScopeActionResult) GetStatus()(*DeviceScopeActionStatus) {
 // Serialize serializes information the current object
 func (m *DeviceScopeActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteObjectValue("deviceScopeAction", m.GetDeviceScopeAction())
+        err := writer.WriteStringValue("deviceScopeAction", m.GetDeviceScopeAction())
         if err != nil {
             return err
         }
@@ -155,7 +155,7 @@ func (m *DeviceScopeActionResult) SetAdditionalData(value map[string]interface{}
     }
 }
 // SetDeviceScopeAction sets the deviceScopeAction property value. The triggered action name.
-func (m *DeviceScopeActionResult) SetDeviceScopeAction(value DeviceScopeActionable)() {
+func (m *DeviceScopeActionResult) SetDeviceScopeAction(value *string)() {
     if m != nil {
         m.deviceScopeAction = value
     }

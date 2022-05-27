@@ -30,7 +30,7 @@ func NewGetLicensesForAppWithBundleIdRequestBuilderInternal(pathParameters map[s
         urlTplParams[idx] = item
     }
     if bundleId != nil {
-        urlTplParams[""] = *bundleId
+        urlTplParams["bundleId"] = *bundleId
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

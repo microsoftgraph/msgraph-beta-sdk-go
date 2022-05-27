@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    id92b8c81f110196b6d6c76fc33572834241d7e88ef5f13076a13a0a07f98054d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manager/ref"
 )
 
 // ManagerRequestBuilder provides operations to manage the manager property of the microsoft.graph.user entity.
@@ -88,4 +89,8 @@ func (m *ManagerRequestBuilder) GetWithRequestConfigurationAndResponseHandler(re
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
+}
+// Ref the ref property
+func (m *ManagerRequestBuilder) Ref()(*id92b8c81f110196b6d6c76fc33572834241d7e88ef5f13076a13a0a07f98054d.RefRequestBuilder) {
+    return id92b8c81f110196b6d6c76fc33572834241d7e88ef5f13076a13a0a07f98054d.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

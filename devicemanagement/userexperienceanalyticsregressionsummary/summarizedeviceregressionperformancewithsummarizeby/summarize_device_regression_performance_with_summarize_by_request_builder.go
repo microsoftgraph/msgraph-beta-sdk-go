@@ -31,7 +31,7 @@ func NewSummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilderInterna
         urlTplParams[idx] = item
     }
     if summarizeBy != nil {
-        urlTplParams[""] = *summarizeBy
+        urlTplParams["summarizeBy"] = *summarizeBy
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

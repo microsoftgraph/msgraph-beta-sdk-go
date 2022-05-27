@@ -40,11 +40,11 @@ func NewResizeCloudPcRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewResizeCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action resizeCloudPc
-func (m *ResizeCloudPcRequestBuilder) CreatePostRequestInformation(body ResizeCloudPcRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ResizeCloudPcRequestBuilder) CreatePostRequestInformation(body ResizeCloudPcPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action resizeCloudPc
-func (m *ResizeCloudPcRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ResizeCloudPcRequestBodyable, requestConfiguration *ResizeCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ResizeCloudPcRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ResizeCloudPcPostRequestBodyable, requestConfiguration *ResizeCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ResizeCloudPcRequestBuilder) CreatePostRequestInformationWithRequestCon
     return requestInfo, nil
 }
 // Post invoke action resizeCloudPc
-func (m *ResizeCloudPcRequestBuilder) Post(body ResizeCloudPcRequestBodyable)(error) {
+func (m *ResizeCloudPcRequestBuilder) Post(body ResizeCloudPcPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action resizeCloudPc
-func (m *ResizeCloudPcRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ResizeCloudPcRequestBodyable, requestConfiguration *ResizeCloudPcRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ResizeCloudPcRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ResizeCloudPcPostRequestBodyable, requestConfiguration *ResizeCloudPcRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

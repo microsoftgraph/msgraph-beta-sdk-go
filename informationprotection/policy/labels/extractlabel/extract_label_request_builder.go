@@ -41,11 +41,11 @@ func NewExtractLabelRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewExtractLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action extractLabel
-func (m *ExtractLabelRequestBuilder) CreatePostRequestInformation(body ExtractLabelRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ExtractLabelRequestBuilder) CreatePostRequestInformation(body ExtractLabelPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action extractLabel
-func (m *ExtractLabelRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ExtractLabelRequestBodyable, requestConfiguration *ExtractLabelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ExtractLabelRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ExtractLabelPostRequestBodyable, requestConfiguration *ExtractLabelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *ExtractLabelRequestBuilder) CreatePostRequestInformationWithRequestConf
     return requestInfo, nil
 }
 // Post invoke action extractLabel
-func (m *ExtractLabelRequestBuilder) Post(body ExtractLabelRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionContentLabelable, error) {
+func (m *ExtractLabelRequestBuilder) Post(body ExtractLabelPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionContentLabelable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action extractLabel
-func (m *ExtractLabelRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ExtractLabelRequestBodyable, requestConfiguration *ExtractLabelRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionContentLabelable, error) {
+func (m *ExtractLabelRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ExtractLabelPostRequestBodyable, requestConfiguration *ExtractLabelRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionContentLabelable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

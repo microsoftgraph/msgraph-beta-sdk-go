@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ExternalConnection 
+// ExternalConnection provides operations to manage the collection of externalConnection entities.
 type ExternalConnection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
@@ -16,7 +16,7 @@ type ExternalConnection struct {
     description *string
     // Read-only. Nullable.
     groups []ExternalGroupable
-    // The ingestedItemsCount property
+    // The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.
     ingestedItemsCount *int64
     // Read-only. Nullable.
     items []ExternalItemable
@@ -24,7 +24,7 @@ type ExternalConnection struct {
     name *string
     // Read-only. Nullable.
     operations []ConnectionOperationable
-    // The quota property
+    // Read-only. Nullable.
     quota ConnectionQuotaable
     // Read-only. Nullable.
     schema Schemaable
@@ -213,7 +213,7 @@ func (m *ExternalConnection) GetGroups()([]ExternalGroupable) {
         return m.groups
     }
 }
-// GetIngestedItemsCount gets the ingestedItemsCount property value. The ingestedItemsCount property
+// GetIngestedItemsCount gets the ingestedItemsCount property value. The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.
 func (m *ExternalConnection) GetIngestedItemsCount()(*int64) {
     if m == nil {
         return nil
@@ -245,7 +245,7 @@ func (m *ExternalConnection) GetOperations()([]ConnectionOperationable) {
         return m.operations
     }
 }
-// GetQuota gets the quota property value. The quota property
+// GetQuota gets the quota property value. Read-only. Nullable.
 func (m *ExternalConnection) GetQuota()(ConnectionQuotaable) {
     if m == nil {
         return nil
@@ -394,7 +394,7 @@ func (m *ExternalConnection) SetGroups(value []ExternalGroupable)() {
         m.groups = value
     }
 }
-// SetIngestedItemsCount sets the ingestedItemsCount property value. The ingestedItemsCount property
+// SetIngestedItemsCount sets the ingestedItemsCount property value. The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.
 func (m *ExternalConnection) SetIngestedItemsCount(value *int64)() {
     if m != nil {
         m.ingestedItemsCount = value
@@ -418,7 +418,7 @@ func (m *ExternalConnection) SetOperations(value []ConnectionOperationable)() {
         m.operations = value
     }
 }
-// SetQuota sets the quota property value. The quota property
+// SetQuota sets the quota property value. Read-only. Nullable.
 func (m *ExternalConnection) SetQuota(value ConnectionQuotaable)() {
     if m != nil {
         m.quota = value

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FilterOperatorSchema 
+// FilterOperatorSchema provides operations to call the filterOperators method.
 type FilterOperatorSchema struct {
     Entity
     // Arity of the operator. Possible values are: Binary, Unary. The default is Binary.
@@ -12,7 +12,7 @@ type FilterOperatorSchema struct {
     // Possible values are: All, Any. Applies only to multivalued attributes. All means that all values must satisfy the condition. Any means that at least one value has to satisfy the condition. The default is All.
     multivaluedComparisonType *ScopeOperatorMultiValuedComparisonType
     // Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
-    supportedAttributeTypes []AttributeType
+    supportedAttributeTypes []string
 }
 // NewFilterOperatorSchema instantiates a new filterOperatorSchema and sets the default values.
 func NewFilterOperatorSchema()(*FilterOperatorSchema) {
@@ -57,14 +57,14 @@ func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["supportedAttributeTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseAttributeType)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AttributeType, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
-                res[i] = *(v.(*AttributeType))
+                res[i] = *(v.(*string))
             }
             m.SetSupportedAttributeTypes(res)
         }
@@ -81,7 +81,7 @@ func (m *FilterOperatorSchema) GetMultivaluedComparisonType()(*ScopeOperatorMult
     }
 }
 // GetSupportedAttributeTypes gets the supportedAttributeTypes property value. Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
-func (m *FilterOperatorSchema) GetSupportedAttributeTypes()([]AttributeType) {
+func (m *FilterOperatorSchema) GetSupportedAttributeTypes()([]string) {
     if m == nil {
         return nil
     } else {
@@ -109,7 +109,7 @@ func (m *FilterOperatorSchema) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     if m.GetSupportedAttributeTypes() != nil {
-        err = writer.WriteCollectionOfStringValues("supportedAttributeTypes", SerializeAttributeType(m.GetSupportedAttributeTypes()))
+        err = writer.WriteCollectionOfStringValues("supportedAttributeTypes", m.GetSupportedAttributeTypes())
         if err != nil {
             return err
         }
@@ -129,7 +129,7 @@ func (m *FilterOperatorSchema) SetMultivaluedComparisonType(value *ScopeOperator
     }
 }
 // SetSupportedAttributeTypes sets the supportedAttributeTypes property value. Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
-func (m *FilterOperatorSchema) SetSupportedAttributeTypes(value []AttributeType)() {
+func (m *FilterOperatorSchema) SetSupportedAttributeTypes(value []string)() {
     if m != nil {
         m.supportedAttributeTypes = value
     }

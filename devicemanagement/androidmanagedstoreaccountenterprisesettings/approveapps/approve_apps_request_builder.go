@@ -40,11 +40,11 @@ func NewApproveAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewApproveAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action approveApps
-func (m *ApproveAppsRequestBuilder) CreatePostRequestInformation(body ApproveAppsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ApproveAppsRequestBuilder) CreatePostRequestInformation(body ApproveAppsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action approveApps
-func (m *ApproveAppsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ApproveAppsRequestBodyable, requestConfiguration *ApproveAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ApproveAppsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ApproveAppsPostRequestBodyable, requestConfiguration *ApproveAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ApproveAppsRequestBuilder) CreatePostRequestInformationWithRequestConfi
     return requestInfo, nil
 }
 // Post invoke action approveApps
-func (m *ApproveAppsRequestBuilder) Post(body ApproveAppsRequestBodyable)(error) {
+func (m *ApproveAppsRequestBuilder) Post(body ApproveAppsPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action approveApps
-func (m *ApproveAppsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ApproveAppsRequestBodyable, requestConfiguration *ApproveAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ApproveAppsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ApproveAppsPostRequestBodyable, requestConfiguration *ApproveAppsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

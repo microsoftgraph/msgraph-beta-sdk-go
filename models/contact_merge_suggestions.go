@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ContactMergeSuggestions 
+// ContactMergeSuggestions casts the previous resource to user.
 type ContactMergeSuggestions struct {
     Entity
     // true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.

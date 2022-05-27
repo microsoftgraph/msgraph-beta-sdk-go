@@ -4,7 +4,13 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i15f0acf69c1f94d0cffa676f0b8975c20c18b6c552b04d68a76581e9afa09261 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/transitivememberof/group"
+    i2316b8677bed58408cb783e97cd5ab93a72150cfad897f8194bfca1f459f3c88 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/transitivememberof/application"
+    i43191d9b3bb9e84d667449a5e60fbe3573180571d35e83d87148e79f3c8ce2a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/transitivememberof/orgcontact"
+    i532e0205821e5616613ca55a577a8befd9d05434acb46c40dbdaf674034591eb "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/transitivememberof/serviceprincipal"
+    i661ccd073445e20fc89ac80f3b9e662bffecf416cc228d996244dc2a24d89440 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/transitivememberof/device"
     i6baf921b48f0930af2059f171ffa80983f48d645b3a1a5bc9a62674aeaf86cab "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/transitivememberof/count"
+    i92b794a4a1efa4a7a610acdb311a296779b2b064e997807f4177c2a6e5793884 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/transitivememberof/user"
 )
 
 // TransitiveMemberOfRequestBuilder provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
@@ -43,6 +49,10 @@ type TransitiveMemberOfRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *TransitiveMemberOfRequestBuilderGetQueryParameters
+}
+// Application the application property
+func (m *TransitiveMemberOfRequestBuilder) Application()(*i2316b8677bed58408cb783e97cd5ab93a72150cfad897f8194bfca1f459f3c88.ApplicationRequestBuilder) {
+    return i2316b8677bed58408cb783e97cd5ab93a72150cfad897f8194bfca1f459f3c88.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewTransitiveMemberOfRequestBuilderInternal instantiates a new TransitiveMemberOfRequestBuilder and sets the default values.
 func NewTransitiveMemberOfRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TransitiveMemberOfRequestBuilder) {
@@ -86,6 +96,10 @@ func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
+// Device the device property
+func (m *TransitiveMemberOfRequestBuilder) Device()(*i661ccd073445e20fc89ac80f3b9e662bffecf416cc228d996244dc2a24d89440.DeviceRequestBuilder) {
+    return i661ccd073445e20fc89ac80f3b9e662bffecf416cc228d996244dc2a24d89440.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
 func (m *TransitiveMemberOfRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -105,4 +119,20 @@ func (m *TransitiveMemberOfRequestBuilder) GetWithRequestConfigurationAndRespons
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
+}
+// Group the group property
+func (m *TransitiveMemberOfRequestBuilder) Group()(*i15f0acf69c1f94d0cffa676f0b8975c20c18b6c552b04d68a76581e9afa09261.GroupRequestBuilder) {
+    return i15f0acf69c1f94d0cffa676f0b8975c20c18b6c552b04d68a76581e9afa09261.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OrgContact the orgContact property
+func (m *TransitiveMemberOfRequestBuilder) OrgContact()(*i43191d9b3bb9e84d667449a5e60fbe3573180571d35e83d87148e79f3c8ce2a3.OrgContactRequestBuilder) {
+    return i43191d9b3bb9e84d667449a5e60fbe3573180571d35e83d87148e79f3c8ce2a3.NewOrgContactRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *TransitiveMemberOfRequestBuilder) ServicePrincipal()(*i532e0205821e5616613ca55a577a8befd9d05434acb46c40dbdaf674034591eb.ServicePrincipalRequestBuilder) {
+    return i532e0205821e5616613ca55a577a8befd9d05434acb46c40dbdaf674034591eb.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *TransitiveMemberOfRequestBuilder) User()(*i92b794a4a1efa4a7a610acdb311a296779b2b064e997807f4177c2a6e5793884.UserRequestBuilder) {
+    return i92b794a4a1efa4a7a610acdb311a296779b2b064e997807f4177c2a6e5793884.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -40,11 +40,11 @@ func NewUpdateStatusRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewUpdateStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation set the task's status and attach a note.
-func (m *UpdateStatusRequestBuilder) CreatePostRequestInformation(body UpdateStatusRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateStatusRequestBuilder) CreatePostRequestInformation(body UpdateStatusPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration set the task's status and attach a note.
-func (m *UpdateStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateStatusRequestBodyable, requestConfiguration *UpdateStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdateStatusRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdateStatusPostRequestBodyable, requestConfiguration *UpdateStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UpdateStatusRequestBuilder) CreatePostRequestInformationWithRequestConf
     return requestInfo, nil
 }
 // Post set the task's status and attach a note.
-func (m *UpdateStatusRequestBuilder) Post(body UpdateStatusRequestBodyable)(error) {
+func (m *UpdateStatusRequestBuilder) Post(body UpdateStatusPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler set the task's status and attach a note.
-func (m *UpdateStatusRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateStatusRequestBodyable, requestConfiguration *UpdateStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UpdateStatusRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdateStatusPostRequestBodyable, requestConfiguration *UpdateStatusRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

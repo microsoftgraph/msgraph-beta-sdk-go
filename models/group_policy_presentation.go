@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyPresentation 
+// GroupPolicyPresentation the base entity for the display presentation of any of the additional options in a group policy definition.
 type GroupPolicyPresentation struct {
     Entity
     // The group policy definition associated with the presentation.
@@ -24,6 +24,25 @@ func NewGroupPolicyPresentation()(*GroupPolicyPresentation) {
 }
 // CreateGroupPolicyPresentationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGroupPolicyPresentationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.groupPolicyPresentation":
+                        return NewGroupPolicyPresentation(), nil
+                }
+            }
+        }
+    }
     return NewGroupPolicyPresentation(), nil
 }
 // GetDefinition gets the definition property value. The group policy definition associated with the presentation.

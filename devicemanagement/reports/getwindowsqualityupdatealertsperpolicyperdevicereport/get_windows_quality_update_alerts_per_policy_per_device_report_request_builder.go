@@ -40,11 +40,11 @@ func NewGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(rawU
     return NewGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
-func (m *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) CreatePostRequestInformation(body GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) CreatePostRequestInformation(body GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
-func (m *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBodyable, requestConfiguration *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBodyable, requestConfiguration *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) Cr
     return requestInfo, nil
 }
 // Post invoke action getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
-func (m *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) Post(body GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBodyable)(GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportResponseable, error) {
+func (m *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) Post(body GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
-func (m *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBodyable, requestConfiguration *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportResponseable, error) {
+func (m *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportPostRequestBodyable, requestConfiguration *GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportResponseable), nil
+    return res.([]byte), nil
 }

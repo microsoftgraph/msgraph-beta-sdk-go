@@ -11,7 +11,7 @@ type BufferDecryptionResult struct {
     // The decryptedBuffer property
     decryptedBuffer []byte
 }
-// NewBufferDecryptionResult instantiates a new bufferDecryptionResult and sets the default values.
+// NewBufferDecryptionResult instantiates a new BufferDecryptionResult and sets the default values.
 func NewBufferDecryptionResult()(*BufferDecryptionResult) {
     m := &BufferDecryptionResult{
     }

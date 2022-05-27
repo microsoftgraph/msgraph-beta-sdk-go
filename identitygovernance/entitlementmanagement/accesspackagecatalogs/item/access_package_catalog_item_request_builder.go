@@ -32,7 +32,7 @@ type AccessPackageCatalogItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AccessPackageCatalogItemRequestBuilderGetQueryParameters represents a group of access packages.
+// AccessPackageCatalogItemRequestBuilderGetQueryParameters a container of access packages.
 type AccessPackageCatalogItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -150,11 +150,11 @@ func (m *AccessPackageCatalogItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation represents a group of access packages.
+// CreateGetRequestInformation a container of access packages.
 func (m *AccessPackageCatalogItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents a group of access packages.
+// CreateGetRequestInformationWithRequestConfiguration a container of access packages.
 func (m *AccessPackageCatalogItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AccessPackageCatalogItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -221,11 +221,11 @@ func (m *AccessPackageCatalogItemRequestBuilder) DeleteWithRequestConfigurationA
     }
     return nil
 }
-// Get represents a group of access packages.
+// Get a container of access packages.
 func (m *AccessPackageCatalogItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCatalogable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler represents a group of access packages.
+// GetWithRequestConfigurationAndResponseHandler a container of access packages.
 func (m *AccessPackageCatalogItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageCatalogItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCatalogable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

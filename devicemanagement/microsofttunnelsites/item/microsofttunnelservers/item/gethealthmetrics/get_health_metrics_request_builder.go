@@ -40,11 +40,11 @@ func NewGetHealthMetricsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewGetHealthMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getHealthMetrics
-func (m *GetHealthMetricsRequestBuilder) CreatePostRequestInformation(body GetHealthMetricsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetHealthMetricsRequestBuilder) CreatePostRequestInformation(body GetHealthMetricsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getHealthMetrics
-func (m *GetHealthMetricsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetHealthMetricsRequestBodyable, requestConfiguration *GetHealthMetricsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetHealthMetricsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetHealthMetricsPostRequestBodyable, requestConfiguration *GetHealthMetricsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *GetHealthMetricsRequestBuilder) CreatePostRequestInformationWithRequest
     return requestInfo, nil
 }
 // Post invoke action getHealthMetrics
-func (m *GetHealthMetricsRequestBuilder) Post(body GetHealthMetricsRequestBodyable)(GetHealthMetricsResponseable, error) {
+func (m *GetHealthMetricsRequestBuilder) Post(body GetHealthMetricsPostRequestBodyable)(GetHealthMetricsResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getHealthMetrics
-func (m *GetHealthMetricsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetHealthMetricsRequestBodyable, requestConfiguration *GetHealthMetricsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetHealthMetricsResponseable, error) {
+func (m *GetHealthMetricsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetHealthMetricsPostRequestBodyable, requestConfiguration *GetHealthMetricsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetHealthMetricsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

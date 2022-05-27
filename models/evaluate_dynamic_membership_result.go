@@ -15,7 +15,7 @@ type EvaluateDynamicMembershipResult struct {
     // The value is true if the user or device is a member of the group. The value can also be true if a membership rule was provided and the user or device passes the rule evaluation; otherwise false.
     membershipRuleEvaluationResult *bool
 }
-// NewEvaluateDynamicMembershipResult instantiates a new evaluateDynamicMembershipResult and sets the default values.
+// NewEvaluateDynamicMembershipResult instantiates a new EvaluateDynamicMembershipResult and sets the default values.
 func NewEvaluateDynamicMembershipResult()(*EvaluateDynamicMembershipResult) {
     m := &EvaluateDynamicMembershipResult{
     }

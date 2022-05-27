@@ -30,10 +30,10 @@ func NewGetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilderIntern
         urlTplParams[idx] = item
     }
     if deviceId != nil {
-        urlTplParams[""] = *deviceId
+        urlTplParams["deviceId"] = *deviceId
     }
     if userPrincipalName != nil {
-        urlTplParams[""] = *userPrincipalName
+        urlTplParams["userPrincipalName"] = *userPrincipalName
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

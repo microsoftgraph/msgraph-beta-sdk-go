@@ -31,7 +31,7 @@ func NewGetOffice365ActiveUserDetailWithDateRequestBuilderInternal(pathParameter
         urlTplParams[idx] = item
     }
     if date != nil {
-        urlTplParams[""] = (*date).String()
+        urlTplParams["date"] = (*date).String()
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

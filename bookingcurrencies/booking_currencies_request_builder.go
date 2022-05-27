@@ -16,7 +16,7 @@ type BookingCurrenciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// BookingCurrenciesRequestBuilderGetQueryParameters list bookingCurrencies
+// BookingCurrenciesRequestBuilderGetQueryParameters get a list of bookingCurrency objects available to a Microsoft Bookings business.
 type BookingCurrenciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewBookingCurrenciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *BookingCurrenciesRequestBuilder) Count()(*i9126c3b602961c13565449f07a5f60925e0c7f39549ff3cc7b20defdda3ed01f.CountRequestBuilder) {
     return i9126c3b602961c13565449f07a5f60925e0c7f39549ff3cc7b20defdda3ed01f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list bookingCurrencies
+// CreateGetRequestInformation get a list of bookingCurrency objects available to a Microsoft Bookings business.
 func (m *BookingCurrenciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list bookingCurrencies
+// CreateGetRequestInformationWithRequestConfiguration get a list of bookingCurrency objects available to a Microsoft Bookings business.
 func (m *BookingCurrenciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *BookingCurrenciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +110,11 @@ func (m *BookingCurrenciesRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get list bookingCurrencies
+// Get get a list of bookingCurrency objects available to a Microsoft Bookings business.
 func (m *BookingCurrenciesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCurrencyCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler list bookingCurrencies
+// GetWithRequestConfigurationAndResponseHandler get a list of bookingCurrency objects available to a Microsoft Bookings business.
 func (m *BookingCurrenciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BookingCurrenciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCurrencyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

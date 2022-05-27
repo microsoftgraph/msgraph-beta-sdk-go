@@ -41,11 +41,11 @@ func NewStartBreakRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewStartBreakRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action startBreak
-func (m *StartBreakRequestBuilder) CreatePostRequestInformation(body StartBreakRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *StartBreakRequestBuilder) CreatePostRequestInformation(body StartBreakPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action startBreak
-func (m *StartBreakRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body StartBreakRequestBodyable, requestConfiguration *StartBreakRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *StartBreakRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body StartBreakPostRequestBodyable, requestConfiguration *StartBreakRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *StartBreakRequestBuilder) CreatePostRequestInformationWithRequestConfig
     return requestInfo, nil
 }
 // Post invoke action startBreak
-func (m *StartBreakRequestBuilder) Post(body StartBreakRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
+func (m *StartBreakRequestBuilder) Post(body StartBreakPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action startBreak
-func (m *StartBreakRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body StartBreakRequestBodyable, requestConfiguration *StartBreakRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
+func (m *StartBreakRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body StartBreakPostRequestBodyable, requestConfiguration *StartBreakRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

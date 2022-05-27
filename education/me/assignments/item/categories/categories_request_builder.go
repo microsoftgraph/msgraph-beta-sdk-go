@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i046f1bcd98f66ac6a12b9abfd5f3fd97c72d1611019bcdfd7d8266e34a3d64a9 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/assignments/item/categories/count"
+    i88cbe7b5d47be2066c688014cacf575b3cbb0ede4f50ef5a3fc24120ed1abc03 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/assignments/item/categories/ref"
     ie95c4ba5af512892aba5a1dfcf3b2897beddda81bc4f636b1086172a44ae04d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/education/me/assignments/item/categories/delta"
 )
 
@@ -154,4 +155,8 @@ func (m *CategoriesRequestBuilder) PostWithRequestConfigurationAndResponseHandle
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable), nil
+}
+// Ref the ref property
+func (m *CategoriesRequestBuilder) Ref()(*i88cbe7b5d47be2066c688014cacf575b3cbb0ede4f50ef5a3fc24120ed1abc03.RefRequestBuilder) {
+    return i88cbe7b5d47be2066c688014cacf575b3cbb0ede4f50ef5a3fc24120ed1abc03.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -40,11 +40,11 @@ func NewUploadDepTokenRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewUploadDepTokenRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation uploads a new Device Enrollment Program token
-func (m *UploadDepTokenRequestBuilder) CreatePostRequestInformation(body UploadDepTokenRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UploadDepTokenRequestBuilder) CreatePostRequestInformation(body UploadDepTokenPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration uploads a new Device Enrollment Program token
-func (m *UploadDepTokenRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadDepTokenRequestBodyable, requestConfiguration *UploadDepTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UploadDepTokenRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadDepTokenPostRequestBodyable, requestConfiguration *UploadDepTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UploadDepTokenRequestBuilder) CreatePostRequestInformationWithRequestCo
     return requestInfo, nil
 }
 // Post uploads a new Device Enrollment Program token
-func (m *UploadDepTokenRequestBuilder) Post(body UploadDepTokenRequestBodyable)(error) {
+func (m *UploadDepTokenRequestBuilder) Post(body UploadDepTokenPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler uploads a new Device Enrollment Program token
-func (m *UploadDepTokenRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UploadDepTokenRequestBodyable, requestConfiguration *UploadDepTokenRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UploadDepTokenRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UploadDepTokenPostRequestBodyable, requestConfiguration *UploadDepTokenRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

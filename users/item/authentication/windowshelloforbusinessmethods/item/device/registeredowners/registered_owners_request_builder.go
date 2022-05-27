@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i338d1b61dbaf2aade9b1857655b4087f295833dbe79026745f012c70c9bccf27 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/windowshelloforbusinessmethods/item/device/registeredowners/count"
+    id14cc5e14a110d66e57d7e206dcae0ff3e29cc1d5e2c4c5ba7af589ea6a725cb "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/windowshelloforbusinessmethods/item/device/registeredowners/ref"
 )
 
 // RegisteredOwnersRequestBuilder provides operations to manage the registeredOwners property of the microsoft.graph.device entity.
@@ -105,4 +106,8 @@ func (m *RegisteredOwnersRequestBuilder) GetWithRequestConfigurationAndResponseH
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *RegisteredOwnersRequestBuilder) Ref()(*id14cc5e14a110d66e57d7e206dcae0ff3e29cc1d5e2c4c5ba7af589ea6a725cb.RefRequestBuilder) {
+    return id14cc5e14a110d66e57d7e206dcae0ff3e29cc1d5e2c4c5ba7af589ea6a725cb.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

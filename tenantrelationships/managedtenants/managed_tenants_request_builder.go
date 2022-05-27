@@ -160,7 +160,7 @@ func (m *ManagedTenantsRequestBuilder) CloudPcsOverview()(*ic9cc0fcc7a3eb22d3fce
     return ic9cc0fcc7a3eb22d3fce4f7ca12420fe56e916b98e995471ceacfe67707ebaf2.NewCloudPcsOverviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // CloudPcsOverviewById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.cloudPcsOverview.item collection
-func (m *ManagedTenantsRequestBuilder) CloudPcsOverviewById(id string)(*if6d60fc8097e10a44124bc34967688bbbcf720e50c2b3034d3ecedc559f02741.CloudPcOverviewItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) CloudPcsOverviewById(id string)(*if6d60fc8097e10a44124bc34967688bbbcf720e50c2b3034d3ecedc559f02741.CloudPcOverviewTenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -168,7 +168,7 @@ func (m *ManagedTenantsRequestBuilder) CloudPcsOverviewById(id string)(*if6d60fc
     if id != "" {
         urlTplParams["cloudPcOverview%2DtenantId"] = id
     }
-    return if6d60fc8097e10a44124bc34967688bbbcf720e50c2b3034d3ecedc559f02741.NewCloudPcOverviewItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return if6d60fc8097e10a44124bc34967688bbbcf720e50c2b3034d3ecedc559f02741.NewCloudPcOverviewTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ConditionalAccessPolicyCoverages the conditionalAccessPolicyCoverages property
 func (m *ManagedTenantsRequestBuilder) ConditionalAccessPolicyCoverages()(*i0f79005843a77cfe19ad60950bc394afee89e8d9bc4b81f6b21b1a8097fbaf3b.ConditionalAccessPolicyCoveragesRequestBuilder) {
@@ -466,7 +466,7 @@ func (m *ManagedTenantsRequestBuilder) MyRoles()(*i71e724937f2266c62830468204cfd
     return i71e724937f2266c62830468204cfd18d9303a53fb8e960124d76a13f5477fb03.NewMyRolesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // MyRolesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.tenantRelationships.managedTenants.myRoles.item collection
-func (m *ManagedTenantsRequestBuilder) MyRolesById(id string)(*id8a75758c62dfd2efe128ae3797671432b468fe56c4706706dfeb1c3655c9799.MyRoleItemRequestBuilder) {
+func (m *ManagedTenantsRequestBuilder) MyRolesById(id string)(*id8a75758c62dfd2efe128ae3797671432b468fe56c4706706dfeb1c3655c9799.MyRoleTenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -474,7 +474,7 @@ func (m *ManagedTenantsRequestBuilder) MyRolesById(id string)(*id8a75758c62dfd2e
     if id != "" {
         urlTplParams["myRole%2DtenantId"] = id
     }
-    return id8a75758c62dfd2efe128ae3797671432b468fe56c4706706dfeb1c3655c9799.NewMyRoleItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return id8a75758c62dfd2efe128ae3797671432b468fe56c4706706dfeb1c3655c9799.NewMyRoleTenantItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update the navigation property managedTenants in tenantRelationships
 func (m *ManagedTenantsRequestBuilder) Patch(body i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantable)(error) {

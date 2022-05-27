@@ -31,7 +31,7 @@ func NewGetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderInternal(path
         urlTplParams[idx] = item
     }
     if enrollmentType != nil {
-        urlTplParams[""] = *enrollmentType
+        urlTplParams["enrollmentType"] = *enrollmentType
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationAssignment 
+// EducationAssignment provides operations to manage the educationRoot singleton.
 type EducationAssignment struct {
     Entity
     // Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.
@@ -36,6 +36,8 @@ type EducationAssignment struct {
     displayName *string
     // Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     dueDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The feedbackResourcesFolderUrl property
+    feedbackResourcesFolderUrl *string
     // How the assignment will be graded.
     grading EducationAssignmentGradeTypeable
     // Instructions for the assignment.  This along with the display name tell the student what to do.
@@ -182,6 +184,14 @@ func (m *EducationAssignment) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.dueDateTime
     }
 }
+// GetFeedbackResourcesFolderUrl gets the feedbackResourcesFolderUrl property value. The feedbackResourcesFolderUrl property
+func (m *EducationAssignment) GetFeedbackResourcesFolderUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.feedbackResourcesFolderUrl
+    }
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -326,6 +336,16 @@ func (m *EducationAssignment) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetDueDateTime(val)
+        }
+        return nil
+    }
+    res["feedbackResourcesFolderUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFeedbackResourcesFolderUrl(val)
         }
         return nil
     }
@@ -634,6 +654,12 @@ func (m *EducationAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("feedbackResourcesFolderUrl", m.GetFeedbackResourcesFolderUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("grading", m.GetGrading())
         if err != nil {
             return err
@@ -792,6 +818,12 @@ func (m *EducationAssignment) SetDisplayName(value *string)() {
 func (m *EducationAssignment) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.dueDateTime = value
+    }
+}
+// SetFeedbackResourcesFolderUrl sets the feedbackResourcesFolderUrl property value. The feedbackResourcesFolderUrl property
+func (m *EducationAssignment) SetFeedbackResourcesFolderUrl(value *string)() {
+    if m != nil {
+        m.feedbackResourcesFolderUrl = value
     }
 }
 // SetGrading sets the grading property value. How the assignment will be graded.

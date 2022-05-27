@@ -4,6 +4,9 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    ia3fa7372a45c09ac1b7b34eba9e20dc374b9817cffc1e34eea6afa985a7355cc "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/deleteditems/item/group"
+    ibb9768f289fbadec5f87cde24e363e0f2c3556f5ff9d970941d716894c9e54b3 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/deleteditems/item/application"
+    ifca3b2702985940d02d9e6addc2729a9cd9203e3486ed30cd6ac6c7b8fe62a10 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/deleteditems/item/user"
 )
 
 // DirectoryObjectItemRequestBuilder provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
@@ -44,6 +47,10 @@ type DirectoryObjectItemRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// Application the application property
+func (m *DirectoryObjectItemRequestBuilder) Application()(*ibb9768f289fbadec5f87cde24e363e0f2c3556f5ff9d970941d716894c9e54b3.ApplicationRequestBuilder) {
+    return ibb9768f289fbadec5f87cde24e363e0f2c3556f5ff9d970941d716894c9e54b3.NewApplicationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
 func NewDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryObjectItemRequestBuilder) {
@@ -156,6 +163,10 @@ func (m *DirectoryObjectItemRequestBuilder) GetWithRequestConfigurationAndRespon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
+// Group the group property
+func (m *DirectoryObjectItemRequestBuilder) Group()(*ia3fa7372a45c09ac1b7b34eba9e20dc374b9817cffc1e34eea6afa985a7355cc.GroupRequestBuilder) {
+    return ia3fa7372a45c09ac1b7b34eba9e20dc374b9817cffc1e34eea6afa985a7355cc.NewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Patch update the navigation property deletedItems in directory
 func (m *DirectoryObjectItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
@@ -175,4 +186,8 @@ func (m *DirectoryObjectItemRequestBuilder) PatchWithRequestConfigurationAndResp
         return err
     }
     return nil
+}
+// User the user property
+func (m *DirectoryObjectItemRequestBuilder) User()(*ifca3b2702985940d02d9e6addc2729a9cd9203e3486ed30cd6ac6c7b8fe62a10.UserRequestBuilder) {
+    return ifca3b2702985940d02d9e6addc2729a9cd9203e3486ed30cd6ac6c7b8fe62a10.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

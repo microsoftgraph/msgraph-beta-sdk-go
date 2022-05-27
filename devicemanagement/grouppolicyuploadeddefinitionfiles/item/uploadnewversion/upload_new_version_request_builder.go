@@ -40,11 +40,11 @@ func NewUploadNewVersionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewUploadNewVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action uploadNewVersion
-func (m *UploadNewVersionRequestBuilder) CreatePostRequestInformation(body UploadNewVersionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UploadNewVersionRequestBuilder) CreatePostRequestInformation(body UploadNewVersionPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action uploadNewVersion
-func (m *UploadNewVersionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadNewVersionRequestBodyable, requestConfiguration *UploadNewVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UploadNewVersionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UploadNewVersionPostRequestBodyable, requestConfiguration *UploadNewVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UploadNewVersionRequestBuilder) CreatePostRequestInformationWithRequest
     return requestInfo, nil
 }
 // Post invoke action uploadNewVersion
-func (m *UploadNewVersionRequestBuilder) Post(body UploadNewVersionRequestBodyable)(error) {
+func (m *UploadNewVersionRequestBuilder) Post(body UploadNewVersionPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action uploadNewVersion
-func (m *UploadNewVersionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UploadNewVersionRequestBodyable, requestConfiguration *UploadNewVersionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UploadNewVersionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UploadNewVersionPostRequestBodyable, requestConfiguration *UploadNewVersionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

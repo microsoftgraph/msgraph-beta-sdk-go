@@ -1866,7 +1866,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     return i46f6b730fa2bb030fa0b9c2d0af94ba03f8f2c25d6e086a7f55f47071f42fc09.NewUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId.item collection
-func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdById(id string)(*if17e2a5956a56b638a2e3705539e3fffab23e071699aea798a74f6960d1c2d94.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceItemRequestBuilder) {
+func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdById(id string)(*if17e2a5956a56b638a2e3705539e3fffab23e071699aea798a74f6960d1c2d94.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
@@ -1874,7 +1874,7 @@ func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplica
     if id != "" {
         urlTplParams["userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId%2Did"] = id
     }
-    return if17e2a5956a56b638a2e3705539e3fffab23e071699aea798a74f6960d1c2d94.NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return if17e2a5956a56b638a2e3705539e3fffab23e071699aea798a74f6960d1c2d94.NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UserExperienceAnalyticsAppHealthApplicationPerformanceById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.userExperienceAnalyticsAppHealthApplicationPerformance.item collection
 func (m *DeviceManagementRequestBuilder) UserExperienceAnalyticsAppHealthApplicationPerformanceById(id string)(*i3d07a1f6100ed36c14d2a9afa7264f0e89c09496ae196019939d092988af9317.UserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilder) {

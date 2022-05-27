@@ -41,11 +41,11 @@ func NewCreateUploadSessionRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewCreateUploadSessionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action createUploadSession
-func (m *CreateUploadSessionRequestBuilder) CreatePostRequestInformation(body CreateUploadSessionRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateUploadSessionRequestBuilder) CreatePostRequestInformation(body CreateUploadSessionPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action createUploadSession
-func (m *CreateUploadSessionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateUploadSessionRequestBodyable, requestConfiguration *CreateUploadSessionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateUploadSessionRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateUploadSessionPostRequestBodyable, requestConfiguration *CreateUploadSessionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *CreateUploadSessionRequestBuilder) CreatePostRequestInformationWithRequ
     return requestInfo, nil
 }
 // Post invoke action createUploadSession
-func (m *CreateUploadSessionRequestBuilder) Post(body CreateUploadSessionRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UploadSessionable, error) {
+func (m *CreateUploadSessionRequestBuilder) Post(body CreateUploadSessionPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UploadSessionable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action createUploadSession
-func (m *CreateUploadSessionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateUploadSessionRequestBodyable, requestConfiguration *CreateUploadSessionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UploadSessionable, error) {
+func (m *CreateUploadSessionRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateUploadSessionPostRequestBodyable, requestConfiguration *CreateUploadSessionRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UploadSessionable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

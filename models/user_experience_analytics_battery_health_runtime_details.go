@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthRuntimeDetails 
+// UserExperienceAnalyticsBatteryHealthRuntimeDetails the user experience analytics battery health runtime entity contains count of devices broken down into 3 categories - devices with runtime > 5 hours, devices with runtime 3-5 hours and devices with runtime < 3 hours.This API provides the count of devices in these 3 categories.
 type UserExperienceAnalyticsBatteryHealthRuntimeDetails struct {
     Entity
     // Number of active devices within the tenant. Valid values -2147483648 to 2147483647

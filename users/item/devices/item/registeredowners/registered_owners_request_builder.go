@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    id0930189df30c90be1194768f1e7d8eb9774a79a10f0954e39ea136e66f4999a "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devices/item/registeredowners/ref"
     ifdbff679d554ccd15fc4feab94b65d11d23e4b0b951f5f75dcb2eccb1fc0a44a "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devices/item/registeredowners/count"
 )
 
@@ -105,4 +106,8 @@ func (m *RegisteredOwnersRequestBuilder) GetWithRequestConfigurationAndResponseH
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *RegisteredOwnersRequestBuilder) Ref()(*id0930189df30c90be1194768f1e7d8eb9774a79a10f0954e39ea136e66f4999a.RefRequestBuilder) {
+    return id0930189df30c90be1194768f1e7d8eb9774a79a10f0954e39ea136e66f4999a.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingAppointment 
+// BookingAppointment represents a booked appointment of a service by a customer in a business.
 type BookingAppointment struct {
     Entity
     // Additional information that is sent to the customer when an appointment is confirmed.
     additionalInformation *string
+    // The anonymousJoinWebUrl property
+    anonymousJoinWebUrl *string
     // The SMTP address of the bookingCustomer who is booking the appointment.
     customerEmailAddress *string
     // The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
@@ -95,6 +97,14 @@ func (m *BookingAppointment) GetAdditionalInformation()(*string) {
         return nil
     } else {
         return m.additionalInformation
+    }
+}
+// GetAnonymousJoinWebUrl gets the anonymousJoinWebUrl property value. The anonymousJoinWebUrl property
+func (m *BookingAppointment) GetAnonymousJoinWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.anonymousJoinWebUrl
     }
 }
 // GetCustomerEmailAddress gets the customerEmailAddress property value. The SMTP address of the bookingCustomer who is booking the appointment.
@@ -187,6 +197,16 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetAdditionalInformation(val)
+        }
+        return nil
+    }
+    res["anonymousJoinWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAnonymousJoinWebUrl(val)
         }
         return nil
     }
@@ -749,6 +769,12 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("anonymousJoinWebUrl", m.GetAnonymousJoinWebUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("customerEmailAddress", m.GetCustomerEmailAddress())
         if err != nil {
             return err
@@ -968,6 +994,12 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *BookingAppointment) SetAdditionalInformation(value *string)() {
     if m != nil {
         m.additionalInformation = value
+    }
+}
+// SetAnonymousJoinWebUrl sets the anonymousJoinWebUrl property value. The anonymousJoinWebUrl property
+func (m *BookingAppointment) SetAnonymousJoinWebUrl(value *string)() {
+    if m != nil {
+        m.anonymousJoinWebUrl = value
     }
 }
 // SetCustomerEmailAddress sets the customerEmailAddress property value. The SMTP address of the bookingCustomer who is booking the appointment.

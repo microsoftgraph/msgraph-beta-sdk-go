@@ -40,11 +40,11 @@ func NewCompleteSignupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewCompleteSignupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action completeSignup
-func (m *CompleteSignupRequestBuilder) CreatePostRequestInformation(body CompleteSignupRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CompleteSignupRequestBuilder) CreatePostRequestInformation(body CompleteSignupPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action completeSignup
-func (m *CompleteSignupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CompleteSignupRequestBodyable, requestConfiguration *CompleteSignupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CompleteSignupRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CompleteSignupPostRequestBodyable, requestConfiguration *CompleteSignupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *CompleteSignupRequestBuilder) CreatePostRequestInformationWithRequestCo
     return requestInfo, nil
 }
 // Post invoke action completeSignup
-func (m *CompleteSignupRequestBuilder) Post(body CompleteSignupRequestBodyable)(error) {
+func (m *CompleteSignupRequestBuilder) Post(body CompleteSignupPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action completeSignup
-func (m *CompleteSignupRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CompleteSignupRequestBodyable, requestConfiguration *CompleteSignupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *CompleteSignupRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CompleteSignupPostRequestBodyable, requestConfiguration *CompleteSignupRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

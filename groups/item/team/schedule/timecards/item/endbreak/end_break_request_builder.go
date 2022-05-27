@@ -41,11 +41,11 @@ func NewEndBreakRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewEndBreakRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action endBreak
-func (m *EndBreakRequestBuilder) CreatePostRequestInformation(body EndBreakRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EndBreakRequestBuilder) CreatePostRequestInformation(body EndBreakPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action endBreak
-func (m *EndBreakRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EndBreakRequestBodyable, requestConfiguration *EndBreakRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EndBreakRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EndBreakPostRequestBodyable, requestConfiguration *EndBreakRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -58,11 +58,11 @@ func (m *EndBreakRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     return requestInfo, nil
 }
 // Post invoke action endBreak
-func (m *EndBreakRequestBuilder) Post(body EndBreakRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
+func (m *EndBreakRequestBuilder) Post(body EndBreakPostRequestBodyable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action endBreak
-func (m *EndBreakRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EndBreakRequestBodyable, requestConfiguration *EndBreakRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
+func (m *EndBreakRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EndBreakPostRequestBodyable, requestConfiguration *EndBreakRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeCardable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

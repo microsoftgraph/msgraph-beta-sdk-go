@@ -40,11 +40,11 @@ func NewSetScheduledActionsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewSetScheduledActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action setScheduledActions
-func (m *SetScheduledActionsRequestBuilder) CreatePostRequestInformation(body SetScheduledActionsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetScheduledActionsRequestBuilder) CreatePostRequestInformation(body SetScheduledActionsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action setScheduledActions
-func (m *SetScheduledActionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetScheduledActionsRequestBodyable, requestConfiguration *SetScheduledActionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SetScheduledActionsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body SetScheduledActionsPostRequestBodyable, requestConfiguration *SetScheduledActionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *SetScheduledActionsRequestBuilder) CreatePostRequestInformationWithRequ
     return requestInfo, nil
 }
 // Post invoke action setScheduledActions
-func (m *SetScheduledActionsRequestBuilder) Post(body SetScheduledActionsRequestBodyable)(SetScheduledActionsResponseable, error) {
+func (m *SetScheduledActionsRequestBuilder) Post(body SetScheduledActionsPostRequestBodyable)(SetScheduledActionsResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action setScheduledActions
-func (m *SetScheduledActionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetScheduledActionsRequestBodyable, requestConfiguration *SetScheduledActionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SetScheduledActionsResponseable, error) {
+func (m *SetScheduledActionsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body SetScheduledActionsPostRequestBodyable, requestConfiguration *SetScheduledActionsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(SetScheduledActionsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

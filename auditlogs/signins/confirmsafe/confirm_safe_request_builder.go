@@ -40,11 +40,11 @@ func NewConfirmSafeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewConfirmSafeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action confirmSafe
-func (m *ConfirmSafeRequestBuilder) CreatePostRequestInformation(body ConfirmSafeRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ConfirmSafeRequestBuilder) CreatePostRequestInformation(body ConfirmSafePostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action confirmSafe
-func (m *ConfirmSafeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ConfirmSafeRequestBodyable, requestConfiguration *ConfirmSafeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ConfirmSafeRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ConfirmSafePostRequestBodyable, requestConfiguration *ConfirmSafeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *ConfirmSafeRequestBuilder) CreatePostRequestInformationWithRequestConfi
     return requestInfo, nil
 }
 // Post invoke action confirmSafe
-func (m *ConfirmSafeRequestBuilder) Post(body ConfirmSafeRequestBodyable)(error) {
+func (m *ConfirmSafeRequestBuilder) Post(body ConfirmSafePostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action confirmSafe
-func (m *ConfirmSafeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ConfirmSafeRequestBodyable, requestConfiguration *ConfirmSafeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *ConfirmSafeRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ConfirmSafePostRequestBodyable, requestConfiguration *ConfirmSafeRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

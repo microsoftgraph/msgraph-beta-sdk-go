@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileAppInstallStatus 
+// MobileAppInstallStatus contains properties for the installation state of a mobile app for a device.
 type MobileAppInstallStatus struct {
     Entity
     // The navigation link to the mobile app.

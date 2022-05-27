@@ -31,7 +31,7 @@ func NewGetSkypeForBusinessActivityUserDetailWithDateRequestBuilderInternal(path
         urlTplParams[idx] = item
     }
     if date != nil {
-        urlTplParams[""] = (*date).String()
+        urlTplParams["date"] = (*date).String()
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -60,18 +60,18 @@ func (m *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) CreateGetR
     return requestInfo, nil
 }
 // Get invoke function getSkypeForBusinessActivityUserDetail
-func (m *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) Get()(GetSkypeForBusinessActivityUserDetailWithDateResponseable, error) {
+func (m *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetWithRequestConfigurationAndResponseHandler invoke function getSkypeForBusinessActivityUserDetail
-func (m *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSkypeForBusinessActivityUserDetailWithDateResponseable, error) {
+func (m *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSkypeForBusinessActivityUserDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetSkypeForBusinessActivityUserDetailWithDateResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetSkypeForBusinessActivityUserDetailWithDateResponseable), nil
+    return res.([]byte), nil
 }

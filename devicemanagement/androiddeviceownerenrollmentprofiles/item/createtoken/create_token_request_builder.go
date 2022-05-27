@@ -40,11 +40,11 @@ func NewCreateTokenRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewCreateTokenRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action createToken
-func (m *CreateTokenRequestBuilder) CreatePostRequestInformation(body CreateTokenRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateTokenRequestBuilder) CreatePostRequestInformation(body CreateTokenPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action createToken
-func (m *CreateTokenRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateTokenRequestBodyable, requestConfiguration *CreateTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *CreateTokenRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body CreateTokenPostRequestBodyable, requestConfiguration *CreateTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *CreateTokenRequestBuilder) CreatePostRequestInformationWithRequestConfi
     return requestInfo, nil
 }
 // Post invoke action createToken
-func (m *CreateTokenRequestBuilder) Post(body CreateTokenRequestBodyable)(error) {
+func (m *CreateTokenRequestBuilder) Post(body CreateTokenPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action createToken
-func (m *CreateTokenRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateTokenRequestBodyable, requestConfiguration *CreateTokenRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *CreateTokenRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body CreateTokenPostRequestBodyable, requestConfiguration *CreateTokenRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

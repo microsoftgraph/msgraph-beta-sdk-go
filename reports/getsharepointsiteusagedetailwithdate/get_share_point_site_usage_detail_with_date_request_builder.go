@@ -31,7 +31,7 @@ func NewGetSharePointSiteUsageDetailWithDateRequestBuilderInternal(pathParameter
         urlTplParams[idx] = item
     }
     if date != nil {
-        urlTplParams[""] = (*date).String()
+        urlTplParams["date"] = (*date).String()
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
@@ -60,18 +60,18 @@ func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) CreateGetRequestInf
     return requestInfo, nil
 }
 // Get invoke function getSharePointSiteUsageDetail
-func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) Get()(GetSharePointSiteUsageDetailWithDateResponseable, error) {
+func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) Get()([]byte, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
 // GetWithRequestConfigurationAndResponseHandler invoke function getSharePointSiteUsageDetail
-func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSharePointSiteUsageDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetSharePointSiteUsageDetailWithDateResponseable, error) {
+func (m *GetSharePointSiteUsageDetailWithDateRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *GetSharePointSiteUsageDetailWithDateRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetSharePointSiteUsageDetailWithDateResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetSharePointSiteUsageDetailWithDateResponseable), nil
+    return res.([]byte), nil
 }

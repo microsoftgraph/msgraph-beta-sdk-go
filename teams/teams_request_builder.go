@@ -18,7 +18,7 @@ type TeamsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TeamsRequestBuilderGetQueryParameters list teams
+// TeamsRequestBuilderGetQueryParameters list all teams in an organization.
 type TeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -80,11 +80,11 @@ func NewTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *TeamsRequestBuilder) Count()(*i290b2954fcfcdc9959dd3cff8dcbd4fa3b661d0b5767484275f07b942b234dc5.CountRequestBuilder) {
     return i290b2954fcfcdc9959dd3cff8dcbd4fa3b661d0b5767484275f07b942b234dc5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list teams
+// CreateGetRequestInformation list all teams in an organization.
 func (m *TeamsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list teams
+// CreateGetRequestInformationWithRequestConfiguration list all teams in an organization.
 func (m *TeamsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -99,11 +99,11 @@ func (m *TeamsRequestBuilder) CreateGetRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// CreatePostRequestInformation create team
+// CreatePostRequestInformation create a new team.
 func (m *TeamsRequestBuilder) CreatePostRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePostRequestInformationWithRequestConfiguration create team
+// CreatePostRequestInformationWithRequestConfiguration create a new team.
 func (m *TeamsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, requestConfiguration *TeamsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -116,7 +116,7 @@ func (m *TeamsRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get list teams
+// Get list all teams in an organization.
 func (m *TeamsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -124,7 +124,7 @@ func (m *TeamsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9
 func (m *TeamsRequestBuilder) GetAllMessages()(*i7b78a0d9ff5235a793f6c82f274435d13d05672f52fe62fdfba603896b34c9fe.GetAllMessagesRequestBuilder) {
     return i7b78a0d9ff5235a793f6c82f274435d13d05672f52fe62fdfba603896b34c9fe.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler list teams
+// GetWithRequestConfigurationAndResponseHandler list all teams in an organization.
 func (m *TeamsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TeamsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -140,11 +140,11 @@ func (m *TeamsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable), nil
 }
-// Post create team
+// Post create a new team.
 func (m *TeamsRequestBuilder) Post(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PostWithRequestConfigurationAndResponseHandler create team
+// PostWithRequestConfigurationAndResponseHandler create a new team.
 func (m *TeamsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, requestConfiguration *TeamsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

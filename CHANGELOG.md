@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.25.0] - 2022-05-27
+
+### Changed
+
+- Weekly generation
+- Updated graph core and kiota libraries reference to add support for enum and enum collections responses.
+
 ## [0.24.1] - 2022-05-25
 
 ### Changed

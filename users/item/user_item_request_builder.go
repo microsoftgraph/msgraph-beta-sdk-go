@@ -146,7 +146,6 @@ import (
     idbb158da6d78d676ea0c3d14f6ae7004f016a1bdc89a3da430f82196981f35af "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/memberof/item"
     ideab25898675089d3e174a0e5f0bde76aa4e227661b4518a256695e6a0500360 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/oauth2permissiongrants/item"
     ie132362db0baae23ad9567ff4032a62c165d8386308f8baec97ecbb60c10a021 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/scopedrolememberof/item"
-    ie39c35482440e2a813ce2612b19ea08745ca523bb7a24088144c3428169a006d "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedgroups/item"
     ifeea6837d24ad8765a5cb2092fe2e730b4403b36aa4e813a9cdfdb831a8f7974 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/approvals/item"
 )
 
@@ -166,7 +165,7 @@ type UserItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UserItemRequestBuilderGetQueryParameters helpers (examples that aren't included in the docs)
+// UserItemRequestBuilderGetQueryParameters retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
 type UserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -420,11 +419,11 @@ func (m *UserItemRequestBuilder) ContactsById(id string)(*i66ea18aba758406b3b710
     }
     return i66ea18aba758406b3b710707db096aa499334ab8141ff00b5817c0160d62f849.NewContactItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateDeleteRequestInformation tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
+// CreateDeleteRequestInformation delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
 func (m *UserItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
+// CreateDeleteRequestInformationWithRequestConfiguration delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
 func (m *UserItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *UserItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -451,11 +450,11 @@ func (m *UserItemRequestBuilder) CreatedObjectsById(id string)(*i8a8732491a2ce7d
     }
     return i8a8732491a2ce7d94fc7e324e6a38276076b912c30ea0094d5fb671dd11250f2.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateGetRequestInformation helpers (examples that aren't included in the docs)
+// CreateGetRequestInformation retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
 func (m *UserItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration helpers (examples that aren't included in the docs)
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
 func (m *UserItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -470,11 +469,11 @@ func (m *UserItemRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
+// CreatePatchRequestInformation update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
 func (m *UserItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
 func (m *UserItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, requestConfiguration *UserItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -487,11 +486,11 @@ func (m *UserItemRequestBuilder) CreatePatchRequestInformationWithRequestConfigu
     }
     return requestInfo, nil
 }
-// Delete tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
+// Delete delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
 func (m *UserItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles
+// DeleteWithRequestConfigurationAndResponseHandler delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
 func (m *UserItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *UserItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -659,7 +658,7 @@ func (m *UserItemRequestBuilder) FollowedSitesById(id string)(*i9bb18abda2da0890
     }
     return i9bb18abda2da0890104c07ce4b11694592a3ff71b3436063a29752ff07e0f525.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get helpers (examples that aren't included in the docs)
+// Get retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
 func (m *UserItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -699,7 +698,7 @@ func (m *UserItemRequestBuilder) GetMemberGroups()(*i633ead85dd41f6f9d94e9cf71e4
 func (m *UserItemRequestBuilder) GetMemberObjects()(*i751d3667ec77ce3a4b6544375d44e850f38ac8db37e3237ce66245e949ea015e.GetMemberObjectsRequestBuilder) {
     return i751d3667ec77ce3a4b6544375d44e850f38ac8db37e3237ce66245e949ea015e.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler helpers (examples that aren't included in the docs)
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
 func (m *UserItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -738,17 +737,6 @@ func (m *UserItemRequestBuilder) IsManagedAppUserBlocked()(*ieee72b0b162c07d3dde
 // JoinedGroups the joinedGroups property
 func (m *UserItemRequestBuilder) JoinedGroups()(*i235dd448b749bb3a1187ec0970cdeb5c226f7aee1c9e6c72733a9d1a15182ffe.JoinedGroupsRequestBuilder) {
     return i235dd448b749bb3a1187ec0970cdeb5c226f7aee1c9e6c72733a9d1a15182ffe.NewJoinedGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// JoinedGroupsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.joinedGroups.item collection
-func (m *UserItemRequestBuilder) JoinedGroupsById(id string)(*ie39c35482440e2a813ce2612b19ea08745ca523bb7a24088144c3428169a006d.GroupItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.pathParameters {
-        urlTplParams[idx] = item
-    }
-    if id != "" {
-        urlTplParams["group%2Did"] = id
-    }
-    return ie39c35482440e2a813ce2612b19ea08745ca523bb7a24088144c3428169a006d.NewGroupItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // JoinedTeams the joinedTeams property
 func (m *UserItemRequestBuilder) JoinedTeams()(*i4e8ad44991b185083366e107199ff13f6438a07cafd58ae36e0e862692bf9826.JoinedTeamsRequestBuilder) {
@@ -972,11 +960,11 @@ func (m *UserItemRequestBuilder) OwnedObjectsById(id string)(*i84c9cc6d33fc548d6
     }
     return i84c9cc6d33fc548d6b6b6210a170d3ce1e97e608f9af2ff36d66a133895c1e8b.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Patch assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
+// Patch update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
 func (m *UserItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithRequestConfigurationAndResponseHandler assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)
+// PatchWithRequestConfigurationAndResponseHandler update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
 func (m *UserItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, requestConfiguration *UserItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

@@ -5,12 +5,12 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Organization 
+// Organization provides operations to manage the collection of organization entities.
 type Organization struct {
     DirectoryObject
     // The collection of service plans associated with the tenant. Not nullable.
     assignedPlans []AssignedPlanable
-    // The branding property
+    // Resource to manage the default branding for the organization. Nullable.
     branding OrganizationalBrandingable
     // Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
     businessPhones []string
@@ -84,7 +84,7 @@ func (m *Organization) GetAssignedPlans()([]AssignedPlanable) {
         return m.assignedPlans
     }
 }
-// GetBranding gets the branding property value. The branding property
+// GetBranding gets the branding property value. Resource to manage the default branding for the organization. Nullable.
 func (m *Organization) GetBranding()(OrganizationalBrandingable) {
     if m == nil {
         return nil
@@ -828,7 +828,7 @@ func (m *Organization) SetAssignedPlans(value []AssignedPlanable)() {
         m.assignedPlans = value
     }
 }
-// SetBranding sets the branding property value. The branding property
+// SetBranding sets the branding property value. Resource to manage the default branding for the organization. Nullable.
 func (m *Organization) SetBranding(value OrganizationalBrandingable)() {
     if m != nil {
         m.branding = value

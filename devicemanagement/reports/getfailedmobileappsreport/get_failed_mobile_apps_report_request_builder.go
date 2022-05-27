@@ -40,11 +40,11 @@ func NewGetFailedMobileAppsReportRequestBuilder(rawUrl string, requestAdapter i2
     return NewGetFailedMobileAppsReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getFailedMobileAppsReport
-func (m *GetFailedMobileAppsReportRequestBuilder) CreatePostRequestInformation(body GetFailedMobileAppsReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetFailedMobileAppsReportRequestBuilder) CreatePostRequestInformation(body GetFailedMobileAppsReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getFailedMobileAppsReport
-func (m *GetFailedMobileAppsReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetFailedMobileAppsReportRequestBodyable, requestConfiguration *GetFailedMobileAppsReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetFailedMobileAppsReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetFailedMobileAppsReportPostRequestBodyable, requestConfiguration *GetFailedMobileAppsReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetFailedMobileAppsReportRequestBuilder) CreatePostRequestInformationWi
     return requestInfo, nil
 }
 // Post invoke action getFailedMobileAppsReport
-func (m *GetFailedMobileAppsReportRequestBuilder) Post(body GetFailedMobileAppsReportRequestBodyable)(GetFailedMobileAppsReportResponseable, error) {
+func (m *GetFailedMobileAppsReportRequestBuilder) Post(body GetFailedMobileAppsReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getFailedMobileAppsReport
-func (m *GetFailedMobileAppsReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetFailedMobileAppsReportRequestBodyable, requestConfiguration *GetFailedMobileAppsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetFailedMobileAppsReportResponseable, error) {
+func (m *GetFailedMobileAppsReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetFailedMobileAppsReportPostRequestBodyable, requestConfiguration *GetFailedMobileAppsReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetFailedMobileAppsReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetFailedMobileAppsReportResponseable), nil
+    return res.([]byte), nil
 }

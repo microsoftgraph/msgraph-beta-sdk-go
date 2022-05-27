@@ -40,11 +40,11 @@ func NewRemoveLanguageFilesRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewRemoveLanguageFilesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action removeLanguageFiles
-func (m *RemoveLanguageFilesRequestBuilder) CreatePostRequestInformation(body RemoveLanguageFilesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemoveLanguageFilesRequestBuilder) CreatePostRequestInformation(body RemoveLanguageFilesPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action removeLanguageFiles
-func (m *RemoveLanguageFilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveLanguageFilesRequestBodyable, requestConfiguration *RemoveLanguageFilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RemoveLanguageFilesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body RemoveLanguageFilesPostRequestBodyable, requestConfiguration *RemoveLanguageFilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *RemoveLanguageFilesRequestBuilder) CreatePostRequestInformationWithRequ
     return requestInfo, nil
 }
 // Post invoke action removeLanguageFiles
-func (m *RemoveLanguageFilesRequestBuilder) Post(body RemoveLanguageFilesRequestBodyable)(error) {
+func (m *RemoveLanguageFilesRequestBuilder) Post(body RemoveLanguageFilesPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action removeLanguageFiles
-func (m *RemoveLanguageFilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveLanguageFilesRequestBodyable, requestConfiguration *RemoveLanguageFilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *RemoveLanguageFilesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body RemoveLanguageFilesPostRequestBodyable, requestConfiguration *RemoveLanguageFilesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

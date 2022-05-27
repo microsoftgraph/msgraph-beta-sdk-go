@@ -10,10 +10,13 @@ const (
     ADMINISTRATOR_BOOKINGSTAFFROLE
     VIEWER_BOOKINGSTAFFROLE
     EXTERNALGUEST_BOOKINGSTAFFROLE
+    UNKNOWNFUTUREVALUE_BOOKINGSTAFFROLE
+    SCHEDULER_BOOKINGSTAFFROLE
+    TEAMMEMBER_BOOKINGSTAFFROLE
 )
 
 func (i BookingStaffRole) String() string {
-    return []string{"guest", "administrator", "viewer", "externalGuest"}[i]
+    return []string{"guest", "administrator", "viewer", "externalGuest", "unknownFutureValue", "scheduler", "teamMember"}[i]
 }
 func ParseBookingStaffRole(v string) (interface{}, error) {
     result := GUEST_BOOKINGSTAFFROLE
@@ -26,6 +29,12 @@ func ParseBookingStaffRole(v string) (interface{}, error) {
             result = VIEWER_BOOKINGSTAFFROLE
         case "externalGuest":
             result = EXTERNALGUEST_BOOKINGSTAFFROLE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_BOOKINGSTAFFROLE
+        case "scheduler":
+            result = SCHEDULER_BOOKINGSTAFFROLE
+        case "teamMember":
+            result = TEAMMEMBER_BOOKINGSTAFFROLE
         default:
             return 0, errors.New("Unknown BookingStaffRole value: " + v)
     }

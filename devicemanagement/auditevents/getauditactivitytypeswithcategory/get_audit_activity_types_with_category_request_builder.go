@@ -30,7 +30,7 @@ func NewGetAuditActivityTypesWithCategoryRequestBuilderInternal(pathParameters m
         urlTplParams[idx] = item
     }
     if category != nil {
-        urlTplParams[""] = *category
+        urlTplParams["category"] = *category
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

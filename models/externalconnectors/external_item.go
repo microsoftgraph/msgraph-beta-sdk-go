@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ExternalItem 
+// ExternalItem provides operations to manage the collection of externalConnection entities.
 type ExternalItem struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // An array of access control entries. Each entry specifies the access granted to a user or group. Required.

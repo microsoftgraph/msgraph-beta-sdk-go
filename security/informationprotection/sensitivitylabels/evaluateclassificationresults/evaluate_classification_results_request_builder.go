@@ -40,11 +40,11 @@ func NewEvaluateClassificationResultsRequestBuilder(rawUrl string, requestAdapte
     return NewEvaluateClassificationResultsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action evaluateClassificationResults
-func (m *EvaluateClassificationResultsRequestBuilder) CreatePostRequestInformation(body EvaluateClassificationResultsRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EvaluateClassificationResultsRequestBuilder) CreatePostRequestInformation(body EvaluateClassificationResultsPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action evaluateClassificationResults
-func (m *EvaluateClassificationResultsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateClassificationResultsRequestBodyable, requestConfiguration *EvaluateClassificationResultsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *EvaluateClassificationResultsRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body EvaluateClassificationResultsPostRequestBodyable, requestConfiguration *EvaluateClassificationResultsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *EvaluateClassificationResultsRequestBuilder) CreatePostRequestInformati
     return requestInfo, nil
 }
 // Post invoke action evaluateClassificationResults
-func (m *EvaluateClassificationResultsRequestBuilder) Post(body EvaluateClassificationResultsRequestBodyable)(EvaluateClassificationResultsResponseable, error) {
+func (m *EvaluateClassificationResultsRequestBuilder) Post(body EvaluateClassificationResultsPostRequestBodyable)(EvaluateClassificationResultsResponseable, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action evaluateClassificationResults
-func (m *EvaluateClassificationResultsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EvaluateClassificationResultsRequestBodyable, requestConfiguration *EvaluateClassificationResultsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(EvaluateClassificationResultsResponseable, error) {
+func (m *EvaluateClassificationResultsRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body EvaluateClassificationResultsPostRequestBodyable, requestConfiguration *EvaluateClassificationResultsRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(EvaluateClassificationResultsResponseable, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
+// Provides operations to manage the security singleton.
 type AccountStatus int
 
 const (

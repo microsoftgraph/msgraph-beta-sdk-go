@@ -16,7 +16,7 @@ type NotesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// NotesRequestBuilderGetQueryParameters list of notes associcated with the request.
+// NotesRequestBuilderGetQueryParameters list of notes associated with the request.
 type NotesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewNotesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *NotesRequestBuilder) Count()(*ia2e7fd41054d94d28f7c2a1164866ef19cae4496d15247a978d48b8885d6ce18.CountRequestBuilder) {
     return ia2e7fd41054d94d28f7c2a1164866ef19cae4496d15247a978d48b8885d6ce18.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation list of notes associcated with the request.
+// CreateGetRequestInformation list of notes associated with the request.
 func (m *NotesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration list of notes associcated with the request.
+// CreateGetRequestInformationWithRequestConfiguration list of notes associated with the request.
 func (m *NotesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *NotesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +110,11 @@ func (m *NotesRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get list of notes associcated with the request.
+// Get list of notes associated with the request.
 func (m *NotesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthoredNoteCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler list of notes associcated with the request.
+// GetWithRequestConfigurationAndResponseHandler list of notes associated with the request.
 func (m *NotesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *NotesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthoredNoteCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

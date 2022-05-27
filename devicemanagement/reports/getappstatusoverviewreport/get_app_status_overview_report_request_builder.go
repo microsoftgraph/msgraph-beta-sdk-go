@@ -40,11 +40,11 @@ func NewGetAppStatusOverviewReportRequestBuilder(rawUrl string, requestAdapter i
     return NewGetAppStatusOverviewReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action getAppStatusOverviewReport
-func (m *GetAppStatusOverviewReportRequestBuilder) CreatePostRequestInformation(body GetAppStatusOverviewReportRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetAppStatusOverviewReportRequestBuilder) CreatePostRequestInformation(body GetAppStatusOverviewReportPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action getAppStatusOverviewReport
-func (m *GetAppStatusOverviewReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetAppStatusOverviewReportRequestBodyable, requestConfiguration *GetAppStatusOverviewReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *GetAppStatusOverviewReportRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body GetAppStatusOverviewReportPostRequestBodyable, requestConfiguration *GetAppStatusOverviewReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,18 +57,18 @@ func (m *GetAppStatusOverviewReportRequestBuilder) CreatePostRequestInformationW
     return requestInfo, nil
 }
 // Post invoke action getAppStatusOverviewReport
-func (m *GetAppStatusOverviewReportRequestBuilder) Post(body GetAppStatusOverviewReportRequestBodyable)(GetAppStatusOverviewReportResponseable, error) {
+func (m *GetAppStatusOverviewReportRequestBuilder) Post(body GetAppStatusOverviewReportPostRequestBodyable)([]byte, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action getAppStatusOverviewReport
-func (m *GetAppStatusOverviewReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetAppStatusOverviewReportRequestBodyable, requestConfiguration *GetAppStatusOverviewReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(GetAppStatusOverviewReportResponseable, error) {
+func (m *GetAppStatusOverviewReportRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body GetAppStatusOverviewReportPostRequestBodyable, requestConfiguration *GetAppStatusOverviewReportRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)([]byte, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.requestAdapter.SendAsync(requestInfo, CreateGetAppStatusOverviewReportResponseFromDiscriminatorValue, responseHandler, nil)
+    res, err := m.requestAdapter.SendPrimitiveAsync(requestInfo, "byte", responseHandler, nil)
     if err != nil {
         return nil, err
     }
-    return res.(GetAppStatusOverviewReportResponseable), nil
+    return res.([]byte), nil
 }

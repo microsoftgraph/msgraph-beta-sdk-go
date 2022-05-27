@@ -30,7 +30,7 @@ func NewGetPlatformSupportedPropertiesWithPlatformRequestBuilderInternal(pathPar
         urlTplParams[idx] = item
     }
     if platform != nil {
-        urlTplParams[""] = *platform
+        urlTplParams["platform"] = *platform
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

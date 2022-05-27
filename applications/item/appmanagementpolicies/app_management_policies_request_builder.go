@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i494befe9e10024b14b7a34c156ca01699d6c87fdb1afdafa57b3483cbc4b0025 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/appmanagementpolicies/count"
+    if8d921a2197e1c2db547d5610111532d1766c5db9692b825698130064c138c12 "github.com/microsoftgraph/msgraph-beta-sdk-go/applications/item/appmanagementpolicies/ref"
 )
 
 // AppManagementPoliciesRequestBuilder provides operations to manage the appManagementPolicies property of the microsoft.graph.application entity.
@@ -105,4 +106,8 @@ func (m *AppManagementPoliciesRequestBuilder) GetWithRequestConfigurationAndResp
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyCollectionResponseable), nil
+}
+// Ref the ref property
+func (m *AppManagementPoliciesRequestBuilder) Ref()(*if8d921a2197e1c2db547d5610111532d1766c5db9692b825698130064c138c12.RefRequestBuilder) {
+    return if8d921a2197e1c2db547d5610111532d1766c5db9692b825698130064c138c12.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

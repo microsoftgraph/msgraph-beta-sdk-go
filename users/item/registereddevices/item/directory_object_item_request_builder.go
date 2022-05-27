@@ -4,6 +4,8 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i9c5d56d852a0daa48eadf2c109088ff67d3de340df3b90ecb715459a28c56125 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/registereddevices/item/endpoint"
+    ic559b2a9b1b4941d9d91231df3649df5f0f775ff111c185f3a63c9c8a0bdabe6 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/registereddevices/item/device"
 )
 
 // DirectoryObjectItemRequestBuilder provides operations to manage the registeredDevices property of the microsoft.graph.user entity.
@@ -68,6 +70,14 @@ func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformationWithReque
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Device the device property
+func (m *DirectoryObjectItemRequestBuilder) Device()(*ic559b2a9b1b4941d9d91231df3649df5f0f775ff111c185f3a63c9c8a0bdabe6.DeviceRequestBuilder) {
+    return ic559b2a9b1b4941d9d91231df3649df5f0f775ff111c185f3a63c9c8a0bdabe6.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Endpoint the endpoint property
+func (m *DirectoryObjectItemRequestBuilder) Endpoint()(*i9c5d56d852a0daa48eadf2c109088ff67d3de340df3b90ecb715459a28c56125.EndpointRequestBuilder) {
+    return i9c5d56d852a0daa48eadf2c109088ff67d3de340df3b90ecb715459a28c56125.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *DirectoryObjectItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {

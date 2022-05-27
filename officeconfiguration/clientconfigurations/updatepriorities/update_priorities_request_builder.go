@@ -40,11 +40,11 @@ func NewUpdatePrioritiesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewUpdatePrioritiesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action updatePriorities
-func (m *UpdatePrioritiesRequestBuilder) CreatePostRequestInformation(body UpdatePrioritiesRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdatePrioritiesRequestBuilder) CreatePostRequestInformation(body UpdatePrioritiesPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action updatePriorities
-func (m *UpdatePrioritiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdatePrioritiesRequestBodyable, requestConfiguration *UpdatePrioritiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *UpdatePrioritiesRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body UpdatePrioritiesPostRequestBodyable, requestConfiguration *UpdatePrioritiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -57,11 +57,11 @@ func (m *UpdatePrioritiesRequestBuilder) CreatePostRequestInformationWithRequest
     return requestInfo, nil
 }
 // Post invoke action updatePriorities
-func (m *UpdatePrioritiesRequestBuilder) Post(body UpdatePrioritiesRequestBodyable)(error) {
+func (m *UpdatePrioritiesRequestBuilder) Post(body UpdatePrioritiesPostRequestBodyable)(error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action updatePriorities
-func (m *UpdatePrioritiesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdatePrioritiesRequestBodyable, requestConfiguration *UpdatePrioritiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
+func (m *UpdatePrioritiesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body UpdatePrioritiesPostRequestBodyable, requestConfiguration *UpdatePrioritiesRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return err

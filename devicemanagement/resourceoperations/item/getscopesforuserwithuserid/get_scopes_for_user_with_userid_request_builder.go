@@ -30,7 +30,7 @@ func NewGetScopesForUserWithUseridRequestBuilderInternal(pathParameters map[stri
         urlTplParams[idx] = item
     }
     if userid != nil {
-        urlTplParams[""] = *userid
+        urlTplParams["userid"] = *userid
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;

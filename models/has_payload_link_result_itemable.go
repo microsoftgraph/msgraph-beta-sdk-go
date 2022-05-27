@@ -11,9 +11,9 @@ type HasPayloadLinkResultItemable interface {
     GetError()(*string)
     GetHasLink()(*bool)
     GetPayloadId()(*string)
-    GetSources()([]DeviceAndAppManagementAssignmentSource)
+    GetSources()([]string)
     SetError(value *string)()
     SetHasLink(value *bool)()
     SetPayloadId(value *string)()
-    SetSources(value []DeviceAndAppManagementAssignmentSource)()
+    SetSources(value []string)()
 }

@@ -30,7 +30,7 @@ func NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal(pathParameters map[st
         urlTplParams[idx] = item
     }
     if ids != nil {
-        urlTplParams[""] = *ids
+        urlTplParams["ids"] = *ids
     }
     m.pathParameters = urlTplParams;
     m.requestAdapter = requestAdapter;
