@@ -11,8 +11,10 @@ type Updatesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCatalog()(Catalogable)
     GetDeployments()([]Deploymentable)
+    GetResourceConnections()([]ResourceConnectionable)
     GetUpdatableAssets()([]UpdatableAssetable)
     SetCatalog(value Catalogable)()
     SetDeployments(value []Deploymentable)()
+    SetResourceConnections(value []ResourceConnectionable)()
     SetUpdatableAssets(value []UpdatableAssetable)()
 }

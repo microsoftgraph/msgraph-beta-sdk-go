@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the commsApplication singleton.
+// Casts the previous resource to group.
 type OperationStatus int
 
 const (

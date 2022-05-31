@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the appCatalogs singleton.
+// Casts the previous resource to group.
 type TeamsAppInstallationScopes int
 
 const (

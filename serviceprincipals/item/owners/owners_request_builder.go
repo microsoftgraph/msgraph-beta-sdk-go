@@ -4,6 +4,9 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i93ef759c0e28cdc3c60e0a07e1aa51f5753d0620552b81815b0f256154c44040 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/owners/user"
+    ib38e1ffd94712b28166b02f16b2e83d55d42618641811fe9972045de7fb9a7bc "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/owners/endpoint"
+    ic260a1a9f0014e6557bfcccd22b9fcf95023f8eb041dd35c794d63c782327c02 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/owners/serviceprincipal"
     id07c90722ad0688242e77859cd090ff8c47280fe234fd1a48f6bc0104f5cca15 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/owners/count"
     if6165a897e433e529e846d0cb8fe2e9839649ad09b949ff71a3b21dea2dbf2d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals/item/owners/ref"
 )
@@ -87,6 +90,10 @@ func (m *OwnersRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
+// Endpoint the endpoint property
+func (m *OwnersRequestBuilder) Endpoint()(*ib38e1ffd94712b28166b02f16b2e83d55d42618641811fe9972045de7fb9a7bc.EndpointRequestBuilder) {
+    return ib38e1ffd94712b28166b02f16b2e83d55d42618641811fe9972045de7fb9a7bc.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
 func (m *OwnersRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -110,4 +117,12 @@ func (m *OwnersRequestBuilder) GetWithRequestConfigurationAndResponseHandler(req
 // Ref the ref property
 func (m *OwnersRequestBuilder) Ref()(*if6165a897e433e529e846d0cb8fe2e9839649ad09b949ff71a3b21dea2dbf2d3.RefRequestBuilder) {
     return if6165a897e433e529e846d0cb8fe2e9839649ad09b949ff71a3b21dea2dbf2d3.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *OwnersRequestBuilder) ServicePrincipal()(*ic260a1a9f0014e6557bfcccd22b9fcf95023f8eb041dd35c794d63c782327c02.ServicePrincipalRequestBuilder) {
+    return ic260a1a9f0014e6557bfcccd22b9fcf95023f8eb041dd35c794d63c782327c02.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *OwnersRequestBuilder) User()(*i93ef759c0e28cdc3c60e0a07e1aa51f5753d0620552b81815b0f256154c44040.UserRequestBuilder) {
+    return i93ef759c0e28cdc3c60e0a07e1aa51f5753d0620552b81815b0f256154c44040.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

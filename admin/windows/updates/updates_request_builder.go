@@ -6,8 +6,10 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i0475d54fef399e8dd6955c2d001134c125fb7788ce83c57eedfc935bfa992080 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/catalog"
     i387197d5cc2dce8dbb3b5340ab9e1213cb3d3d425caddd84e7d1c7ddb338d669 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/deployments"
+    i7cae3c278653078cae7988a372360ebcb6c74f0411ceaac446eafc4ca93af9cd "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/resourceconnections"
     id8360e8943a0ee251dee4de20317b335abdd17663b8ed227f06c1426f54dc863 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/updatableassets"
     i6ba3b57fd9faa032676b28e7c1ba8fbcadca736ef31ae441fd9cb31c54634f6b "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/updatableassets/item"
+    i9e5b5674962e012065869f341294454794369040a3317c85d1086b58099d937b "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/resourceconnections/item"
     ibf1ad675b59509c5f3216e9d430e98ab3b887534afb4bca984ab70b32d39075b "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows/updates/deployments/item"
 )
 
@@ -199,6 +201,21 @@ func (m *UpdatesRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(
         return err
     }
     return nil
+}
+// ResourceConnections the resourceConnections property
+func (m *UpdatesRequestBuilder) ResourceConnections()(*i7cae3c278653078cae7988a372360ebcb6c74f0411ceaac446eafc4ca93af9cd.ResourceConnectionsRequestBuilder) {
+    return i7cae3c278653078cae7988a372360ebcb6c74f0411ceaac446eafc4ca93af9cd.NewResourceConnectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ResourceConnectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.admin.windows.updates.resourceConnections.item collection
+func (m *UpdatesRequestBuilder) ResourceConnectionsById(id string)(*i9e5b5674962e012065869f341294454794369040a3317c85d1086b58099d937b.ResourceConnectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["resourceConnection%2Did"] = id
+    }
+    return i9e5b5674962e012065869f341294454794369040a3317c85d1086b58099d937b.NewResourceConnectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // UpdatableAssets the updatableAssets property
 func (m *UpdatesRequestBuilder) UpdatableAssets()(*id8360e8943a0ee251dee4de20317b335abdd17663b8ed227f06c1426f54dc863.UpdatableAssetsRequestBuilder) {

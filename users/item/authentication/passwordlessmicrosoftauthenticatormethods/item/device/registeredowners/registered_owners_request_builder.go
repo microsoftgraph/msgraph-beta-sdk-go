@@ -5,6 +5,9 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i13239617028916720aed841d567aa66638402a9a5d4daa9a92802bca5f83f159 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/passwordlessmicrosoftauthenticatormethods/item/device/registeredowners/ref"
+    i8628a57a938c115efec1dffc75312aaeab35a870437a67bc82444c75b14d9716 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/passwordlessmicrosoftauthenticatormethods/item/device/registeredowners/endpoint"
+    ia2281096d6482a22610b2997dfae453ef6adf1a4b40e17f172b63c82a3c94b44 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/passwordlessmicrosoftauthenticatormethods/item/device/registeredowners/serviceprincipal"
+    ib42a97630dccadc2665adc4e27349687a426599c9587a661cd5c955b7fb3059c "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/passwordlessmicrosoftauthenticatormethods/item/device/registeredowners/user"
     id556bb95da201867ef8555d02d7818bd59f4cbb4142154c9bc5bf082b4569f01 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/passwordlessmicrosoftauthenticatormethods/item/device/registeredowners/count"
 )
 
@@ -87,6 +90,10 @@ func (m *RegisteredOwnersRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
+// Endpoint the endpoint property
+func (m *RegisteredOwnersRequestBuilder) Endpoint()(*i8628a57a938c115efec1dffc75312aaeab35a870437a67bc82444c75b14d9716.EndpointRequestBuilder) {
+    return i8628a57a938c115efec1dffc75312aaeab35a870437a67bc82444c75b14d9716.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
 func (m *RegisteredOwnersRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -110,4 +117,12 @@ func (m *RegisteredOwnersRequestBuilder) GetWithRequestConfigurationAndResponseH
 // Ref the ref property
 func (m *RegisteredOwnersRequestBuilder) Ref()(*i13239617028916720aed841d567aa66638402a9a5d4daa9a92802bca5f83f159.RefRequestBuilder) {
     return i13239617028916720aed841d567aa66638402a9a5d4daa9a92802bca5f83f159.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *RegisteredOwnersRequestBuilder) ServicePrincipal()(*ia2281096d6482a22610b2997dfae453ef6adf1a4b40e17f172b63c82a3c94b44.ServicePrincipalRequestBuilder) {
+    return ia2281096d6482a22610b2997dfae453ef6adf1a4b40e17f172b63c82a3c94b44.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *RegisteredOwnersRequestBuilder) User()(*ib42a97630dccadc2665adc4e27349687a426599c9587a661cd5c955b7fb3059c.UserRequestBuilder) {
+    return ib42a97630dccadc2665adc4e27349687a426599c9587a661cd5c955b7fb3059c.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

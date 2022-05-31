@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintJob casts the previous resource to user.
+// PrintJob casts the previous resource to group.
 type PrintJob struct {
     Entity
     // A group of settings that a printer should use to print a job.

@@ -2,7 +2,7 @@ package termstore
 import (
     "errors"
 )
-// Casts the previous resource to user.
+// Casts the previous resource to group.
 type RelationType int
 
 const (
