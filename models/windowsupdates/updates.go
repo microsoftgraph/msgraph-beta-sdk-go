@@ -12,6 +12,8 @@ type Updates struct {
     catalog Catalogable
     // Deployments created using the deployment service. Read-only.
     deployments []Deploymentable
+    // The resourceConnections property
+    resourceConnections []ResourceConnectionable
     // Assets registered with the deployment service that can receive updates. Read-only.
     updatableAssets []UpdatableAssetable
 }
@@ -69,6 +71,20 @@ func (m *Updates) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["resourceConnections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateResourceConnectionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ResourceConnectionable, len(val))
+            for i, v := range val {
+                res[i] = v.(ResourceConnectionable)
+            }
+            m.SetResourceConnections(res)
+        }
+        return nil
+    }
     res["updatableAssets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUpdatableAssetFromDiscriminatorValue)
         if err != nil {
@@ -84,6 +100,14 @@ func (m *Updates) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     return res
+}
+// GetResourceConnections gets the resourceConnections property value. The resourceConnections property
+func (m *Updates) GetResourceConnections()([]ResourceConnectionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.resourceConnections
+    }
 }
 // GetUpdatableAssets gets the updatableAssets property value. Assets registered with the deployment service that can receive updates. Read-only.
 func (m *Updates) GetUpdatableAssets()([]UpdatableAssetable) {
@@ -115,6 +139,16 @@ func (m *Updates) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetResourceConnections() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceConnections()))
+        for i, v := range m.GetResourceConnections() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("resourceConnections", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUpdatableAssets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUpdatableAssets()))
         for i, v := range m.GetUpdatableAssets() {
@@ -137,6 +171,12 @@ func (m *Updates) SetCatalog(value Catalogable)() {
 func (m *Updates) SetDeployments(value []Deploymentable)() {
     if m != nil {
         m.deployments = value
+    }
+}
+// SetResourceConnections sets the resourceConnections property value. The resourceConnections property
+func (m *Updates) SetResourceConnections(value []ResourceConnectionable)() {
+    if m != nil {
+        m.resourceConnections = value
     }
 }
 // SetUpdatableAssets sets the updatableAssets property value. Assets registered with the deployment service that can receive updates. Read-only.

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of chat entities.
+// Casts the previous resource to group.
 type ChatMessagePolicyViolationVerdictDetailsTypes int
 
 const (

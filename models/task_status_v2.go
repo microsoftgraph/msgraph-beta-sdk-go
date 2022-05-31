@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Casts the previous resource to user.
+// Casts the previous resource to group.
 type TaskStatus_v2 int
 
 const (

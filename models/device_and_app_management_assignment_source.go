@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the deviceAppManagement singleton.
+// Casts the previous resource to group.
 type DeviceAndAppManagementAssignmentSource int
 
 const (

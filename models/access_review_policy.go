@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewPolicy provides operations to manage the identityGovernance singleton.
+// AccessReviewPolicy provides operations to manage the policyRoot singleton.
 type AccessReviewPolicy struct {
     Entity
     // Description for this policy. Read-only.

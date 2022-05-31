@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the dataClassificationService singleton.
+// Casts the previous resource to group.
 type SensitivityLabelTarget int
 
 const (

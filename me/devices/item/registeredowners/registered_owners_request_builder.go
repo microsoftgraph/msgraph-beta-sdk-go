@@ -4,8 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i1899b7e13854b3778db3f5f7edb9ade8a4185ce9a51bf3ba208a95cd493c06f9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/item/registeredowners/user"
     i2c7750e06c79d8339612e3d39e6b9041ef6d4cfc722dca53982c568a5e633af8 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/item/registeredowners/count"
     i829726ef21b3588a9a77f949352dc8f77c545209b639216b0ad08b34c5975e94 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/item/registeredowners/ref"
+    i8db14723b40d42d797a67706acc08e676812f7f8668757c1aab74b68f8326e18 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/item/registeredowners/serviceprincipal"
+    ifece9d42f0b7efad8d2539a98978314cf66f8772ecadace1b9f6f02972b45148 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/item/registeredowners/endpoint"
 )
 
 // RegisteredOwnersRequestBuilder provides operations to manage the registeredOwners property of the microsoft.graph.device entity.
@@ -87,6 +90,10 @@ func (m *RegisteredOwnersRequestBuilder) CreateGetRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
+// Endpoint the endpoint property
+func (m *RegisteredOwnersRequestBuilder) Endpoint()(*ifece9d42f0b7efad8d2539a98978314cf66f8772ecadace1b9f6f02972b45148.EndpointRequestBuilder) {
+    return ifece9d42f0b7efad8d2539a98978314cf66f8772ecadace1b9f6f02972b45148.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
 func (m *RegisteredOwnersRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -110,4 +117,12 @@ func (m *RegisteredOwnersRequestBuilder) GetWithRequestConfigurationAndResponseH
 // Ref the ref property
 func (m *RegisteredOwnersRequestBuilder) Ref()(*i829726ef21b3588a9a77f949352dc8f77c545209b639216b0ad08b34c5975e94.RefRequestBuilder) {
     return i829726ef21b3588a9a77f949352dc8f77c545209b639216b0ad08b34c5975e94.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ServicePrincipal the servicePrincipal property
+func (m *RegisteredOwnersRequestBuilder) ServicePrincipal()(*i8db14723b40d42d797a67706acc08e676812f7f8668757c1aab74b68f8326e18.ServicePrincipalRequestBuilder) {
+    return i8db14723b40d42d797a67706acc08e676812f7f8668757c1aab74b68f8326e18.NewServicePrincipalRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// User the user property
+func (m *RegisteredOwnersRequestBuilder) User()(*i1899b7e13854b3778db3f5f7edb9ade8a4185ce9a51bf3ba208a95cd493c06f9.UserRequestBuilder) {
+    return i1899b7e13854b3778db3f5f7edb9ade8a4185ce9a51bf3ba208a95cd493c06f9.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
