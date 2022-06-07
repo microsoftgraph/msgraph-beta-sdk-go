@@ -18,13 +18,13 @@ type UserExperienceAnalyticsDeviceScope struct {
     isBuiltIn *bool
     // Indicates the last updated date and time for the custom device scope.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals.
+    // Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals. Possible values are: none, equals, unknownFutureValue.
     operator *DeviceScopeOperator
     // The unique identifier of the person (admin) who created the device scope configuration.
     ownerId *string
-    // Device scope configuration parameter. It will be extended in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag.
+    // Device scope configuration parameter. It will be extended in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag. Possible values are: none, scopeTag, unknownFutureValue.
     parameter *DeviceScopeParameter
-    // Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.
+    // Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none. Possible values are: none, computing, insufficientData, completed, unknownFutureValue.
     status *DeviceScopeStatus
     // The device scope configuration query clause value.
     value *string
@@ -197,7 +197,7 @@ func (m *UserExperienceAnalyticsDeviceScope) GetLastModifiedDateTime()(*i3360748
         return m.lastModifiedDateTime
     }
 }
-// GetOperator gets the operator property value. Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals.
+// GetOperator gets the operator property value. Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals. Possible values are: none, equals, unknownFutureValue.
 func (m *UserExperienceAnalyticsDeviceScope) GetOperator()(*DeviceScopeOperator) {
     if m == nil {
         return nil
@@ -213,7 +213,7 @@ func (m *UserExperienceAnalyticsDeviceScope) GetOwnerId()(*string) {
         return m.ownerId
     }
 }
-// GetParameter gets the parameter property value. Device scope configuration parameter. It will be extended in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag.
+// GetParameter gets the parameter property value. Device scope configuration parameter. It will be extended in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag. Possible values are: none, scopeTag, unknownFutureValue.
 func (m *UserExperienceAnalyticsDeviceScope) GetParameter()(*DeviceScopeParameter) {
     if m == nil {
         return nil
@@ -221,7 +221,7 @@ func (m *UserExperienceAnalyticsDeviceScope) GetParameter()(*DeviceScopeParamete
         return m.parameter
     }
 }
-// GetStatus gets the status property value. Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.
+// GetStatus gets the status property value. Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none. Possible values are: none, computing, insufficientData, completed, unknownFutureValue.
 func (m *UserExperienceAnalyticsDeviceScope) GetStatus()(*DeviceScopeStatus) {
     if m == nil {
         return nil
@@ -352,7 +352,7 @@ func (m *UserExperienceAnalyticsDeviceScope) SetLastModifiedDateTime(value *i336
         m.lastModifiedDateTime = value
     }
 }
-// SetOperator sets the operator property value. Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals.
+// SetOperator sets the operator property value. Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals. Possible values are: none, equals, unknownFutureValue.
 func (m *UserExperienceAnalyticsDeviceScope) SetOperator(value *DeviceScopeOperator)() {
     if m != nil {
         m.operator = value
@@ -364,13 +364,13 @@ func (m *UserExperienceAnalyticsDeviceScope) SetOwnerId(value *string)() {
         m.ownerId = value
     }
 }
-// SetParameter sets the parameter property value. Device scope configuration parameter. It will be extended in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag.
+// SetParameter sets the parameter property value. Device scope configuration parameter. It will be extended in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag. Possible values are: none, scopeTag, unknownFutureValue.
 func (m *UserExperienceAnalyticsDeviceScope) SetParameter(value *DeviceScopeParameter)() {
     if m != nil {
         m.parameter = value
     }
 }
-// SetStatus sets the status property value. Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.
+// SetStatus sets the status property value. Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none. Possible values are: none, computing, insufficientData, completed, unknownFutureValue.
 func (m *UserExperienceAnalyticsDeviceScope) SetStatus(value *DeviceScopeStatus)() {
     if m != nil {
         m.status = value

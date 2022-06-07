@@ -6,7 +6,6 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i6170658a0d5b58db8b79dacb601c4d22e30a4c4ae87b850f6f7f68c09f444c89 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/deviceenrollmentconfigurations/item/assign"
     iaa0d710f90b1a32f5cd84646584587a42f6739141a218233692f0fa578073ccc "github.com/microsoftgraph/msgraph-beta-sdk-go/me/deviceenrollmentconfigurations/item/setpriority"
-    id926cc83590c84f85ae75bb06ce75a181ffce858489901d6286c5f306a6940a9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/deviceenrollmentconfigurations/item/createenrollmentnotificationconfiguration"
     if2a3d3b427cb31b340e4c2412c17e0640a24dc599137ce6be0cc982589e4deb0 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/deviceenrollmentconfigurations/item/assignments"
     i934f161901d6bdad15cab7b3c6bac23e288fe9d7ada1f9c5697626905ea96d9b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/deviceenrollmentconfigurations/item/assignments/item"
 )
@@ -104,10 +103,6 @@ func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreateDeleteRequestInf
     }
     return requestInfo, nil
 }
-// CreateEnrollmentNotificationConfiguration the createEnrollmentNotificationConfiguration property
-func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreateEnrollmentNotificationConfiguration()(*id926cc83590c84f85ae75bb06ce75a181ffce858489901d6286c5f306a6940a9.CreateEnrollmentNotificationConfigurationRequestBuilder) {
-    return id926cc83590c84f85ae75bb06ce75a181ffce858489901d6286c5f306a6940a9.NewCreateEnrollmentNotificationConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
 // CreateGetRequestInformation get enrollment configurations targeted to the user
 func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
@@ -118,6 +113,7 @@ func (m *DeviceEnrollmentConfigurationItemRequestBuilder) CreateGetRequestInform
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

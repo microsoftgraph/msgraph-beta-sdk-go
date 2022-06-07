@@ -12,7 +12,7 @@ type ContentInfo struct {
     format *ContentFormat
     // Identifier used for Azure Information Protection Analytics.
     identifier *string
-    // Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
+    // Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
     metadata []KeyValuePairable
     // Possible values are: rest, motion, use.
     state *ContentState
@@ -101,7 +101,7 @@ func (m *ContentInfo) GetIdentifier()(*string) {
         return m.identifier
     }
 }
-// GetMetadata gets the metadata property value. Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
+// GetMetadata gets the metadata property value. Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
 func (m *ContentInfo) GetMetadata()([]KeyValuePairable) {
     if m == nil {
         return nil
@@ -175,7 +175,7 @@ func (m *ContentInfo) SetIdentifier(value *string)() {
         m.identifier = value
     }
 }
-// SetMetadata sets the metadata property value. Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
+// SetMetadata sets the metadata property value. Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
 func (m *ContentInfo) SetMetadata(value []KeyValuePairable)() {
     if m != nil {
         m.metadata = value

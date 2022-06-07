@@ -16,7 +16,7 @@ type RulesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RulesRequestBuilderGetQueryParameters the collection of rules like approval rules and expiration rules.
+// RulesRequestBuilderGetQueryParameters the collection of rules like approval rules and expiration rules. Supports $expand.
 type RulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,16 +74,17 @@ func NewRulesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *RulesRequestBuilder) Count()(*i019984caa7c646b90649fc3e00d4ba9e6842d921ceb9e34fb82fd7a8d967d792.CountRequestBuilder) {
     return i019984caa7c646b90649fc3e00d4ba9e6842d921ceb9e34fb82fd7a8d967d792.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of rules like approval rules and expiration rules.
+// CreateGetRequestInformation the collection of rules like approval rules and expiration rules. Supports $expand.
 func (m *RulesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of rules like approval rules and expiration rules.
+// CreateGetRequestInformationWithRequestConfiguration the collection of rules like approval rules and expiration rules. Supports $expand.
 func (m *RulesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -103,6 +104,7 @@ func (m *RulesRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -110,11 +112,11 @@ func (m *RulesRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get the collection of rules like approval rules and expiration rules.
+// Get the collection of rules like approval rules and expiration rules. Supports $expand.
 func (m *RulesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementPolicyRuleCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the collection of rules like approval rules and expiration rules.
+// GetWithRequestConfigurationAndResponseHandler the collection of rules like approval rules and expiration rules. Supports $expand.
 func (m *RulesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RulesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementPolicyRuleCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

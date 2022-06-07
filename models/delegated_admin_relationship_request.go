@@ -14,7 +14,7 @@ type DelegatedAdminRelationshipRequest struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The date and time in ISO 8601 format and UTC time when this relationship request was last modified. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The status of the request. Read-only. The possible values are: created, pending, complete, failed, unknownFutureValue.
+    // The status of the request. Read-only. The possible values are: created, pending, succeeded, failed, unknownFutureValue.
     status *DelegatedAdminRelationshipRequestStatus
 }
 // NewDelegatedAdminRelationshipRequest instantiates a new delegatedAdminRelationshipRequest and sets the default values.
@@ -97,7 +97,7 @@ func (m *DelegatedAdminRelationshipRequest) GetLastModifiedDateTime()(*i33607480
         return m.lastModifiedDateTime
     }
 }
-// GetStatus gets the status property value. The status of the request. Read-only. The possible values are: created, pending, complete, failed, unknownFutureValue.
+// GetStatus gets the status property value. The status of the request. Read-only. The possible values are: created, pending, succeeded, failed, unknownFutureValue.
 func (m *DelegatedAdminRelationshipRequest) GetStatus()(*DelegatedAdminRelationshipRequestStatus) {
     if m == nil {
         return nil
@@ -157,7 +157,7 @@ func (m *DelegatedAdminRelationshipRequest) SetLastModifiedDateTime(value *i3360
         m.lastModifiedDateTime = value
     }
 }
-// SetStatus sets the status property value. The status of the request. Read-only. The possible values are: created, pending, complete, failed, unknownFutureValue.
+// SetStatus sets the status property value. The status of the request. Read-only. The possible values are: created, pending, succeeded, failed, unknownFutureValue.
 func (m *DelegatedAdminRelationshipRequest) SetStatus(value *DelegatedAdminRelationshipRequestStatus)() {
     if m != nil {
         m.status = value

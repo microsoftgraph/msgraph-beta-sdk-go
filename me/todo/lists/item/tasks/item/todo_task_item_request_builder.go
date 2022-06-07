@@ -6,10 +6,14 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i3adc90057c795befd8028e54019c8fc8d20d74d0cdd16cef85704caf4cba6c78 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/todo/lists/item/tasks/item/checklistitems"
     i4b453bade987cdc7d78bf2dbba94d4dbc45a5e405d3622a58a4d26c09b49e08a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/todo/lists/item/tasks/item/linkedresources"
+    i94c464ae9becaf7479cf2935acbe8a764ff170c65f1299d8c2f8152ac0ef8388 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/todo/lists/item/tasks/item/attachments"
+    i9ac6ffef48c0d16af625b1cc43c9a117dc8983e6f0457047611dfe061f21a24b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/todo/lists/item/tasks/item/attachmentsessions"
     ie7794ee0bc0caebd554d994f150a0b208c084c890b7636d17ca1336d19fff68c "github.com/microsoftgraph/msgraph-beta-sdk-go/me/todo/lists/item/tasks/item/extensions"
     i18fbd397aecd69882835c79225e981ebfe516d7af8083583884fb5e571c16f72 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/todo/lists/item/tasks/item/checklistitems/item"
     i6918a4356d3d8463417391beae7e08e9b5cea2610411228e7577257cbc0e08e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/todo/lists/item/tasks/item/extensions/item"
     i6ffb4522698e1ae7e78c00250910de6f003132aa52ac20af42871bdf610bd8fa "github.com/microsoftgraph/msgraph-beta-sdk-go/me/todo/lists/item/tasks/item/linkedresources/item"
+    i87ee5bc633819ad2b48229ea64c8ee26fe5d521912a1bf87f7bb378baec3c015 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/todo/lists/item/tasks/item/attachmentsessions/item"
+    ie4fa256cb1392f2daea5ba99c46b598b458d0445c15f594926f1794476e636d6 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/todo/lists/item/tasks/item/attachments/item"
 )
 
 // TodoTaskItemRequestBuilder provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
@@ -50,6 +54,36 @@ type TodoTaskItemRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// Attachments the attachments property
+func (m *TodoTaskItemRequestBuilder) Attachments()(*i94c464ae9becaf7479cf2935acbe8a764ff170c65f1299d8c2f8152ac0ef8388.AttachmentsRequestBuilder) {
+    return i94c464ae9becaf7479cf2935acbe8a764ff170c65f1299d8c2f8152ac0ef8388.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.todo.lists.item.tasks.item.attachments.item collection
+func (m *TodoTaskItemRequestBuilder) AttachmentsById(id string)(*ie4fa256cb1392f2daea5ba99c46b598b458d0445c15f594926f1794476e636d6.Attachment_v2ItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["attachment_v2%2Did"] = id
+    }
+    return ie4fa256cb1392f2daea5ba99c46b598b458d0445c15f594926f1794476e636d6.NewAttachment_v2ItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// AttachmentSessions the attachmentSessions property
+func (m *TodoTaskItemRequestBuilder) AttachmentSessions()(*i9ac6ffef48c0d16af625b1cc43c9a117dc8983e6f0457047611dfe061f21a24b.AttachmentSessionsRequestBuilder) {
+    return i9ac6ffef48c0d16af625b1cc43c9a117dc8983e6f0457047611dfe061f21a24b.NewAttachmentSessionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AttachmentSessionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.todo.lists.item.tasks.item.attachmentSessions.item collection
+func (m *TodoTaskItemRequestBuilder) AttachmentSessionsById(id string)(*i87ee5bc633819ad2b48229ea64c8ee26fe5d521912a1bf87f7bb378baec3c015.AttachmentSessionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["attachmentSession%2Did"] = id
+    }
+    return i87ee5bc633819ad2b48229ea64c8ee26fe5d521912a1bf87f7bb378baec3c015.NewAttachmentSessionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // ChecklistItems the checklistItems property
 func (m *TodoTaskItemRequestBuilder) ChecklistItems()(*i3adc90057c795befd8028e54019c8fc8d20d74d0cdd16cef85704caf4cba6c78.ChecklistItemsRequestBuilder) {
@@ -111,6 +145,7 @@ func (m *TodoTaskItemRequestBuilder) CreateGetRequestInformationWithRequestConfi
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

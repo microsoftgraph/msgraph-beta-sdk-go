@@ -15,7 +15,7 @@ type CredentialUserRegistrationsSummary struct {
     mfaAndSsprCapableUserCount *int32
     // The state of a conditional access policy that enforces multi-factor authentication. Optional. Read-only.
     mfaConditionalAccessPolicyState *string
-    // The mfaExcludedUserCount property
+    // The number of users in the multi-factor authentication exclusion security group (Microsoft 365 Lighthouse - MFA exclusions). Optional. Read-only.
     mfaExcludedUserCount *int32
     // The number of users registered for multi-factor authentication. Optional. Read-only.
     mfaRegisteredUserCount *int32
@@ -182,7 +182,7 @@ func (m *CredentialUserRegistrationsSummary) GetMfaConditionalAccessPolicyState(
         return m.mfaConditionalAccessPolicyState
     }
 }
-// GetMfaExcludedUserCount gets the mfaExcludedUserCount property value. The mfaExcludedUserCount property
+// GetMfaExcludedUserCount gets the mfaExcludedUserCount property value. The number of users in the multi-factor authentication exclusion security group (Microsoft 365 Lighthouse - MFA exclusions). Optional. Read-only.
 func (m *CredentialUserRegistrationsSummary) GetMfaExcludedUserCount()(*int32) {
     if m == nil {
         return nil
@@ -338,7 +338,7 @@ func (m *CredentialUserRegistrationsSummary) SetMfaConditionalAccessPolicyState(
         m.mfaConditionalAccessPolicyState = value
     }
 }
-// SetMfaExcludedUserCount sets the mfaExcludedUserCount property value. The mfaExcludedUserCount property
+// SetMfaExcludedUserCount sets the mfaExcludedUserCount property value. The number of users in the multi-factor authentication exclusion security group (Microsoft 365 Lighthouse - MFA exclusions). Optional. Read-only.
 func (m *CredentialUserRegistrationsSummary) SetMfaExcludedUserCount(value *int32)() {
     if m != nil {
         m.mfaExcludedUserCount = value

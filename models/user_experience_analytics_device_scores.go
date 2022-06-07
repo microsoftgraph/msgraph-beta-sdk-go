@@ -9,6 +9,8 @@ type UserExperienceAnalyticsDeviceScores struct {
     Entity
     // The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     appReliabilityScore *float64
+    // The user experience analytics device battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    batteryHealthScore *float64
     // The user experience analytics device name.
     deviceName *string
     // The user experience analytics device score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -43,6 +45,14 @@ func (m *UserExperienceAnalyticsDeviceScores) GetAppReliabilityScore()(*float64)
         return m.appReliabilityScore
     }
 }
+// GetBatteryHealthScore gets the batteryHealthScore property value. The user experience analytics device battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsDeviceScores) GetBatteryHealthScore()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.batteryHealthScore
+    }
+}
 // GetDeviceName gets the deviceName property value. The user experience analytics device name.
 func (m *UserExperienceAnalyticsDeviceScores) GetDeviceName()(*string) {
     if m == nil {
@@ -69,6 +79,16 @@ func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string
         }
         if val != nil {
             m.SetAppReliabilityScore(val)
+        }
+        return nil
+    }
+    res["batteryHealthScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetFloat64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBatteryHealthScore(val)
         }
         return nil
     }
@@ -197,6 +217,12 @@ func (m *UserExperienceAnalyticsDeviceScores) Serialize(writer i878a80d2330e89d2
         }
     }
     {
+        err = writer.WriteFloat64Value("batteryHealthScore", m.GetBatteryHealthScore())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("deviceName", m.GetDeviceName())
         if err != nil {
             return err
@@ -245,6 +271,12 @@ func (m *UserExperienceAnalyticsDeviceScores) Serialize(writer i878a80d2330e89d2
 func (m *UserExperienceAnalyticsDeviceScores) SetAppReliabilityScore(value *float64)() {
     if m != nil {
         m.appReliabilityScore = value
+    }
+}
+// SetBatteryHealthScore sets the batteryHealthScore property value. The user experience analytics device battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsDeviceScores) SetBatteryHealthScore(value *float64)() {
+    if m != nil {
+        m.batteryHealthScore = value
     }
 }
 // SetDeviceName sets the deviceName property value. The user experience analytics device name.

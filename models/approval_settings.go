@@ -8,13 +8,13 @@ import (
 type ApprovalSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // One of NoApproval, SingleStage or Serial. The NoApproval is used when isApprovalRequired is false.
+    // One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.
     approvalMode *string
     // If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
     approvalStages []ApprovalStageable
-    // If false, then approval is not required for requests in this policy.
+    // Indicates whether approval is required for requests in this policy.
     isApprovalRequired *bool
-    // If false, then approval is not required for a user who already has an assignment to extend their assignment.
+    // Indicates whether approval is required for a user to extend their assignment.
     isApprovalRequiredForExtension *bool
     // Indicates whether the requestor is required to supply a justification in their request.
     isRequestorJustificationRequired *bool
@@ -38,7 +38,7 @@ func (m *ApprovalSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetApprovalMode gets the approvalMode property value. One of NoApproval, SingleStage or Serial. The NoApproval is used when isApprovalRequired is false.
+// GetApprovalMode gets the approvalMode property value. One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.
 func (m *ApprovalSettings) GetApprovalMode()(*string) {
     if m == nil {
         return nil
@@ -113,7 +113,7 @@ func (m *ApprovalSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIsApprovalRequired gets the isApprovalRequired property value. If false, then approval is not required for requests in this policy.
+// GetIsApprovalRequired gets the isApprovalRequired property value. Indicates whether approval is required for requests in this policy.
 func (m *ApprovalSettings) GetIsApprovalRequired()(*bool) {
     if m == nil {
         return nil
@@ -121,7 +121,7 @@ func (m *ApprovalSettings) GetIsApprovalRequired()(*bool) {
         return m.isApprovalRequired
     }
 }
-// GetIsApprovalRequiredForExtension gets the isApprovalRequiredForExtension property value. If false, then approval is not required for a user who already has an assignment to extend their assignment.
+// GetIsApprovalRequiredForExtension gets the isApprovalRequiredForExtension property value. Indicates whether approval is required for a user to extend their assignment.
 func (m *ApprovalSettings) GetIsApprovalRequiredForExtension()(*bool) {
     if m == nil {
         return nil
@@ -187,7 +187,7 @@ func (m *ApprovalSettings) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetApprovalMode sets the approvalMode property value. One of NoApproval, SingleStage or Serial. The NoApproval is used when isApprovalRequired is false.
+// SetApprovalMode sets the approvalMode property value. One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.
 func (m *ApprovalSettings) SetApprovalMode(value *string)() {
     if m != nil {
         m.approvalMode = value
@@ -199,13 +199,13 @@ func (m *ApprovalSettings) SetApprovalStages(value []ApprovalStageable)() {
         m.approvalStages = value
     }
 }
-// SetIsApprovalRequired sets the isApprovalRequired property value. If false, then approval is not required for requests in this policy.
+// SetIsApprovalRequired sets the isApprovalRequired property value. Indicates whether approval is required for requests in this policy.
 func (m *ApprovalSettings) SetIsApprovalRequired(value *bool)() {
     if m != nil {
         m.isApprovalRequired = value
     }
 }
-// SetIsApprovalRequiredForExtension sets the isApprovalRequiredForExtension property value. If false, then approval is not required for a user who already has an assignment to extend their assignment.
+// SetIsApprovalRequiredForExtension sets the isApprovalRequiredForExtension property value. Indicates whether approval is required for a user to extend their assignment.
 func (m *ApprovalSettings) SetIsApprovalRequiredForExtension(value *bool)() {
     if m != nil {
         m.isApprovalRequiredForExtension = value

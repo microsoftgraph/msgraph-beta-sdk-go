@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i404f2a658b96471f7e640ee1aff3ce804dac339f7c20778f0f7df7abb86ad56c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceenrollmentconfigurations/createenrollmentnotificationconfiguration"
     i4c32b0dc226fd7bd00fee850d6a7954caf9d688cbae41c39a774b7c52501abb2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceenrollmentconfigurations/haspayloadlinks"
     i9a2603788fb1870e286b37321ee11747d8894e6b78760f5a9aff40d68f7c7f41 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceenrollmentconfigurations/count"
 )
@@ -75,6 +76,10 @@ func NewDeviceEnrollmentConfigurationsRequestBuilder(rawUrl string, requestAdapt
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) Count()(*i9a2603788fb1870e286b37321ee11747d8894e6b78760f5a9aff40d68f7c7f41.CountRequestBuilder) {
     return i9a2603788fb1870e286b37321ee11747d8894e6b78760f5a9aff40d68f7c7f41.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// CreateEnrollmentNotificationConfiguration the createEnrollmentNotificationConfiguration property
+func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreateEnrollmentNotificationConfiguration()(*i404f2a658b96471f7e640ee1aff3ce804dac339f7c20778f0f7df7abb86ad56c.CreateEnrollmentNotificationConfigurationRequestBuilder) {
+    return i404f2a658b96471f7e640ee1aff3ce804dac339f7c20778f0f7df7abb86ad56c.NewCreateEnrollmentNotificationConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // CreateGetRequestInformation the list of device enrollment configurations
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
@@ -85,6 +90,7 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreateGetRequestInformati
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -104,6 +110,7 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreatePostRequestInformat
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)

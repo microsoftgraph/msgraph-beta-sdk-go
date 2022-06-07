@@ -87,6 +87,7 @@ type Groupable interface {
     GetUnseenCount()(*int32)
     GetUnseenMessagesCount()(*int32)
     GetVisibility()(*string)
+    GetWritebackConfiguration()(GroupWritebackConfigurationable)
     SetAcceptedSenders(value []DirectoryObjectable)()
     SetAccessType(value *GroupAccessType)()
     SetAllowExternalSenders(value *bool)()
@@ -165,4 +166,5 @@ type Groupable interface {
     SetUnseenCount(value *int32)()
     SetUnseenMessagesCount(value *int32)()
     SetVisibility(value *string)()
+    SetWritebackConfiguration(value GroupWritebackConfigurationable)()
 }

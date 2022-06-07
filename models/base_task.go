@@ -10,7 +10,7 @@ type BaseTask struct {
     Entity
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     bodyLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // A collection of checklistItems linked to a task.
+    // A collection of smaller subtasks linked to the more complex parent task.
     checklistItems []ChecklistItemable
     // The date when the task was finished.
     completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -79,7 +79,7 @@ func (m *BaseTask) GetBodyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
         return m.bodyLastModifiedDateTime
     }
 }
-// GetChecklistItems gets the checklistItems property value. A collection of checklistItems linked to a task.
+// GetChecklistItems gets the checklistItems property value. A collection of smaller subtasks linked to the more complex parent task.
 func (m *BaseTask) GetChecklistItems()([]ChecklistItemable) {
     if m == nil {
         return nil
@@ -500,7 +500,7 @@ func (m *BaseTask) SetBodyLastModifiedDateTime(value *i336074805fc853987abe6f7fe
         m.bodyLastModifiedDateTime = value
     }
 }
-// SetChecklistItems sets the checklistItems property value. A collection of checklistItems linked to a task.
+// SetChecklistItems sets the checklistItems property value. A collection of smaller subtasks linked to the more complex parent task.
 func (m *BaseTask) SetChecklistItems(value []ChecklistItemable)() {
     if m != nil {
         m.checklistItems = value

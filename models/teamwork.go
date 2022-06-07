@@ -7,6 +7,8 @@ import (
 // Teamwork provides operations to manage the teamwork singleton.
 type Teamwork struct {
     Entity
+    // The deletedTeams property
+    deletedTeams []DeletedTeamable
     // The Teams devices provisioned for the tenant.
     devices []TeamworkDeviceable
     // A workforce integration with shifts.
@@ -23,6 +25,14 @@ func NewTeamwork()(*Teamwork) {
 func CreateTeamworkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamwork(), nil
 }
+// GetDeletedTeams gets the deletedTeams property value. The deletedTeams property
+func (m *Teamwork) GetDeletedTeams()([]DeletedTeamable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.deletedTeams
+    }
+}
 // GetDevices gets the devices property value. The Teams devices provisioned for the tenant.
 func (m *Teamwork) GetDevices()([]TeamworkDeviceable) {
     if m == nil {
@@ -34,6 +44,20 @@ func (m *Teamwork) GetDevices()([]TeamworkDeviceable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["deletedTeams"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeletedTeamFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeletedTeamable, len(val))
+            for i, v := range val {
+                res[i] = v.(DeletedTeamable)
+            }
+            m.SetDeletedTeams(res)
+        }
+        return nil
+    }
     res["devices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamworkDeviceFromDiscriminatorValue)
         if err != nil {
@@ -78,6 +102,16 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if err != nil {
         return err
     }
+    if m.GetDeletedTeams() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeletedTeams()))
+        for i, v := range m.GetDeletedTeams() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("deletedTeams", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDevices() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDevices()))
         for i, v := range m.GetDevices() {
@@ -99,6 +133,12 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     return nil
+}
+// SetDeletedTeams sets the deletedTeams property value. The deletedTeams property
+func (m *Teamwork) SetDeletedTeams(value []DeletedTeamable)() {
+    if m != nil {
+        m.deletedTeams = value
+    }
 }
 // SetDevices sets the devices property value. The Teams devices provisioned for the tenant.
 func (m *Teamwork) SetDevices(value []TeamworkDeviceable)() {

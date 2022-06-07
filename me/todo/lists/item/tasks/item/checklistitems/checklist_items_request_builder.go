@@ -16,7 +16,7 @@ type ChecklistItemsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ChecklistItemsRequestBuilderGetQueryParameters get checklistItems from me
+// ChecklistItemsRequestBuilderGetQueryParameters a collection of smaller subtasks linked to the more complex parent task.
 type ChecklistItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,16 +74,17 @@ func NewChecklistItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *ChecklistItemsRequestBuilder) Count()(*i914e6f99843460d783aa04426d39d68b59f939e80f3c93381b4c80dc456f1e30.CountRequestBuilder) {
     return i914e6f99843460d783aa04426d39d68b59f939e80f3c93381b4c80dc456f1e30.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get checklistItems from me
+// CreateGetRequestInformation a collection of smaller subtasks linked to the more complex parent task.
 func (m *ChecklistItemsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get checklistItems from me
+// CreateGetRequestInformationWithRequestConfiguration a collection of smaller subtasks linked to the more complex parent task.
 func (m *ChecklistItemsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ChecklistItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -103,6 +104,7 @@ func (m *ChecklistItemsRequestBuilder) CreatePostRequestInformationWithRequestCo
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -110,11 +112,11 @@ func (m *ChecklistItemsRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Get get checklistItems from me
+// Get a collection of smaller subtasks linked to the more complex parent task.
 func (m *ChecklistItemsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get checklistItems from me
+// GetWithRequestConfigurationAndResponseHandler a collection of smaller subtasks linked to the more complex parent task.
 func (m *ChecklistItemsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChecklistItemsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

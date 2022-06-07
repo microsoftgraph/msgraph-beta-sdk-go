@@ -164,6 +164,8 @@ type Group struct {
     unseenMessagesCount *int32
     // Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
     visibility *string
+    // The writebackConfiguration property
+    writebackConfiguration GroupWritebackConfigurationable
 }
 // NewGroup instantiates a new group and sets the default values.
 func NewGroup()(*Group) {
@@ -1251,6 +1253,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["writebackConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateGroupWritebackConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWritebackConfiguration(val.(GroupWritebackConfigurationable))
+        }
+        return nil
+    }
     return res
 }
 // GetGroupLifecyclePolicies gets the groupLifecyclePolicies property value. The collection of lifecycle policies for this group. Read-only. Nullable.
@@ -1699,6 +1711,14 @@ func (m *Group) GetVisibility()(*string) {
         return nil
     } else {
         return m.visibility
+    }
+}
+// GetWritebackConfiguration gets the writebackConfiguration property value. The writebackConfiguration property
+func (m *Group) GetWritebackConfiguration()(GroupWritebackConfigurationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.writebackConfiguration
     }
 }
 // Serialize serializes information the current object
@@ -2272,6 +2292,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("writebackConfiguration", m.GetWritebackConfiguration())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAcceptedSenders sets the acceptedSenders property value. The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
@@ -2740,5 +2766,11 @@ func (m *Group) SetUnseenMessagesCount(value *int32)() {
 func (m *Group) SetVisibility(value *string)() {
     if m != nil {
         m.visibility = value
+    }
+}
+// SetWritebackConfiguration sets the writebackConfiguration property value. The writebackConfiguration property
+func (m *Group) SetWritebackConfiguration(value GroupWritebackConfigurationable)() {
+    if m != nil {
+        m.writebackConfiguration = value
     }
 }

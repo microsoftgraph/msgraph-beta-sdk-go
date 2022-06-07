@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i933c3a687d41d5b45c0c6ebb4fbf566132a111fdd0a5e8fb12b8e63e8c92ea1b "github.com/microsoftgraph/msgraph-beta-sdk-go/places/room"
     iab431c93f04e578a7b236d5928b58e98153eb39a2d0667392eca8d00bfc07863 "github.com/microsoftgraph/msgraph-beta-sdk-go/places/count"
 )
 
@@ -84,6 +85,7 @@ func (m *PlacesRequestBuilder) CreateGetRequestInformationWithRequestConfigurati
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -103,6 +105,7 @@ func (m *PlacesRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -149,4 +152,8 @@ func (m *PlacesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(bo
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable), nil
+}
+// Room the room property
+func (m *PlacesRequestBuilder) Room()(*i933c3a687d41d5b45c0c6ebb4fbf566132a111fdd0a5e8fb12b8e63e8c92ea1b.RoomRequestBuilder) {
+    return i933c3a687d41d5b45c0c6ebb4fbf566132a111fdd0a5e8fb12b8e63e8c92ea1b.NewRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

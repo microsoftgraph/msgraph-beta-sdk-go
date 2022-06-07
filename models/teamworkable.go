@@ -8,8 +8,10 @@ import (
 type Teamworkable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeletedTeams()([]DeletedTeamable)
     GetDevices()([]TeamworkDeviceable)
     GetWorkforceIntegrations()([]WorkforceIntegrationable)
+    SetDeletedTeams(value []DeletedTeamable)()
     SetDevices(value []TeamworkDeviceable)()
     SetWorkforceIntegrations(value []WorkforceIntegrationable)()
 }

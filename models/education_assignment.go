@@ -36,7 +36,7 @@ type EducationAssignment struct {
     displayName *string
     // Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     dueDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The feedbackResourcesFolderUrl property
+    // Folder URL where all the feedback file resources for this assignment are stored.
     feedbackResourcesFolderUrl *string
     // How the assignment will be graded.
     grading EducationAssignmentGradeTypeable
@@ -184,7 +184,7 @@ func (m *EducationAssignment) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.dueDateTime
     }
 }
-// GetFeedbackResourcesFolderUrl gets the feedbackResourcesFolderUrl property value. The feedbackResourcesFolderUrl property
+// GetFeedbackResourcesFolderUrl gets the feedbackResourcesFolderUrl property value. Folder URL where all the feedback file resources for this assignment are stored.
 func (m *EducationAssignment) GetFeedbackResourcesFolderUrl()(*string) {
     if m == nil {
         return nil
@@ -820,7 +820,7 @@ func (m *EducationAssignment) SetDueDateTime(value *i336074805fc853987abe6f7fe3a
         m.dueDateTime = value
     }
 }
-// SetFeedbackResourcesFolderUrl sets the feedbackResourcesFolderUrl property value. The feedbackResourcesFolderUrl property
+// SetFeedbackResourcesFolderUrl sets the feedbackResourcesFolderUrl property value. Folder URL where all the feedback file resources for this assignment are stored.
 func (m *EducationAssignment) SetFeedbackResourcesFolderUrl(value *string)() {
     if m != nil {
         m.feedbackResourcesFolderUrl = value

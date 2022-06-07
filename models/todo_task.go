@@ -8,13 +8,17 @@ import (
 // TodoTask casts the previous resource to group.
 type TodoTask struct {
     Entity
+    // The attachments property
+    attachments []Attachment_v2able
+    // The attachmentSessions property
+    attachmentSessions []AttachmentSessionable
     // The task body that typically contains information about the task.
     body ItemBodyable
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     bodyLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The categories property
+    // The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
     categories []string
-    // The checklistItems property
+    // A collection of smaller subtasks linked to the more complex parent task.
     checklistItems []ChecklistItemable
     // The date in the specified time zone that the task was finished.
     completedDateTime DateTimeTimeZoneable
@@ -24,6 +28,8 @@ type TodoTask struct {
     dueDateTime DateTimeTimeZoneable
     // The collection of open extensions defined for the task. Nullable.
     extensions []Extensionable
+    // The hasAttachments property
+    hasAttachments *bool
     // The importance of the task. Possible values are: low, normal, high.
     importance *Importance
     // Set to true if an alert is set to remind the user of the task.
@@ -52,6 +58,22 @@ func NewTodoTask()(*TodoTask) {
 func CreateTodoTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTodoTask(), nil
 }
+// GetAttachments gets the attachments property value. The attachments property
+func (m *TodoTask) GetAttachments()([]Attachment_v2able) {
+    if m == nil {
+        return nil
+    } else {
+        return m.attachments
+    }
+}
+// GetAttachmentSessions gets the attachmentSessions property value. The attachmentSessions property
+func (m *TodoTask) GetAttachmentSessions()([]AttachmentSessionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.attachmentSessions
+    }
+}
 // GetBody gets the body property value. The task body that typically contains information about the task.
 func (m *TodoTask) GetBody()(ItemBodyable) {
     if m == nil {
@@ -68,7 +90,7 @@ func (m *TodoTask) GetBodyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
         return m.bodyLastModifiedDateTime
     }
 }
-// GetCategories gets the categories property value. The categories property
+// GetCategories gets the categories property value. The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
 func (m *TodoTask) GetCategories()([]string) {
     if m == nil {
         return nil
@@ -76,7 +98,7 @@ func (m *TodoTask) GetCategories()([]string) {
         return m.categories
     }
 }
-// GetChecklistItems gets the checklistItems property value. The checklistItems property
+// GetChecklistItems gets the checklistItems property value. A collection of smaller subtasks linked to the more complex parent task.
 func (m *TodoTask) GetChecklistItems()([]ChecklistItemable) {
     if m == nil {
         return nil
@@ -119,6 +141,34 @@ func (m *TodoTask) GetExtensions()([]Extensionable) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["attachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAttachment_v2FromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Attachment_v2able, len(val))
+            for i, v := range val {
+                res[i] = v.(Attachment_v2able)
+            }
+            m.SetAttachments(res)
+        }
+        return nil
+    }
+    res["attachmentSessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAttachmentSessionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AttachmentSessionable, len(val))
+            for i, v := range val {
+                res[i] = v.(AttachmentSessionable)
+            }
+            m.SetAttachmentSessions(res)
+        }
+        return nil
+    }
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
@@ -211,6 +261,16 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["hasAttachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHasAttachments(val)
+        }
+        return nil
+    }
     res["importance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseImportance)
         if err != nil {
@@ -297,6 +357,14 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
+// GetHasAttachments gets the hasAttachments property value. The hasAttachments property
+func (m *TodoTask) GetHasAttachments()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.hasAttachments
+    }
+}
 // GetImportance gets the importance property value. The importance of the task. Possible values are: low, normal, high.
 func (m *TodoTask) GetImportance()(*Importance) {
     if m == nil {
@@ -367,6 +435,26 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if err != nil {
         return err
     }
+    if m.GetAttachments() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttachments()))
+        for i, v := range m.GetAttachments() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("attachments", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAttachmentSessions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttachmentSessions()))
+        for i, v := range m.GetAttachmentSessions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("attachmentSessions", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("body", m.GetBody())
         if err != nil {
@@ -419,6 +507,12 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err = writer.WriteCollectionOfObjectValues("extensions", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("hasAttachments", m.GetHasAttachments())
         if err != nil {
             return err
         }
@@ -479,6 +573,18 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
+// SetAttachments sets the attachments property value. The attachments property
+func (m *TodoTask) SetAttachments(value []Attachment_v2able)() {
+    if m != nil {
+        m.attachments = value
+    }
+}
+// SetAttachmentSessions sets the attachmentSessions property value. The attachmentSessions property
+func (m *TodoTask) SetAttachmentSessions(value []AttachmentSessionable)() {
+    if m != nil {
+        m.attachmentSessions = value
+    }
+}
 // SetBody sets the body property value. The task body that typically contains information about the task.
 func (m *TodoTask) SetBody(value ItemBodyable)() {
     if m != nil {
@@ -491,13 +597,13 @@ func (m *TodoTask) SetBodyLastModifiedDateTime(value *i336074805fc853987abe6f7fe
         m.bodyLastModifiedDateTime = value
     }
 }
-// SetCategories sets the categories property value. The categories property
+// SetCategories sets the categories property value. The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
 func (m *TodoTask) SetCategories(value []string)() {
     if m != nil {
         m.categories = value
     }
 }
-// SetChecklistItems sets the checklistItems property value. The checklistItems property
+// SetChecklistItems sets the checklistItems property value. A collection of smaller subtasks linked to the more complex parent task.
 func (m *TodoTask) SetChecklistItems(value []ChecklistItemable)() {
     if m != nil {
         m.checklistItems = value
@@ -525,6 +631,12 @@ func (m *TodoTask) SetDueDateTime(value DateTimeTimeZoneable)() {
 func (m *TodoTask) SetExtensions(value []Extensionable)() {
     if m != nil {
         m.extensions = value
+    }
+}
+// SetHasAttachments sets the hasAttachments property value. The hasAttachments property
+func (m *TodoTask) SetHasAttachments(value *bool)() {
+    if m != nil {
+        m.hasAttachments = value
     }
 }
 // SetImportance sets the importance property value. The importance of the task. Possible values are: low, normal, high.

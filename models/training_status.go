@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the security singleton.
+// Provides operations to call the getAttackSimulationTrainingUserCoverage method.
 type TrainingStatus int
 
 const (

@@ -9,6 +9,8 @@ type UserExperienceAnalyticsModelScores struct {
     Entity
     // The user experience analytics model app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     appReliabilityScore *float64
+    // The user experience analytics model battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    batteryHealthScore *float64
     // The user experience analytics model score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     endpointAnalyticsScore *float64
     // The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
@@ -43,6 +45,14 @@ func (m *UserExperienceAnalyticsModelScores) GetAppReliabilityScore()(*float64) 
         return m.appReliabilityScore
     }
 }
+// GetBatteryHealthScore gets the batteryHealthScore property value. The user experience analytics model battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsModelScores) GetBatteryHealthScore()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.batteryHealthScore
+    }
+}
 // GetEndpointAnalyticsScore gets the endpointAnalyticsScore property value. The user experience analytics model score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsModelScores) GetEndpointAnalyticsScore()(*float64) {
     if m == nil {
@@ -61,6 +71,16 @@ func (m *UserExperienceAnalyticsModelScores) GetFieldDeserializers()(map[string]
         }
         if val != nil {
             m.SetAppReliabilityScore(val)
+        }
+        return nil
+    }
+    res["batteryHealthScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetFloat64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBatteryHealthScore(val)
         }
         return nil
     }
@@ -197,6 +217,12 @@ func (m *UserExperienceAnalyticsModelScores) Serialize(writer i878a80d2330e89d26
         }
     }
     {
+        err = writer.WriteFloat64Value("batteryHealthScore", m.GetBatteryHealthScore())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteFloat64Value("endpointAnalyticsScore", m.GetEndpointAnalyticsScore())
         if err != nil {
             return err
@@ -245,6 +271,12 @@ func (m *UserExperienceAnalyticsModelScores) Serialize(writer i878a80d2330e89d26
 func (m *UserExperienceAnalyticsModelScores) SetAppReliabilityScore(value *float64)() {
     if m != nil {
         m.appReliabilityScore = value
+    }
+}
+// SetBatteryHealthScore sets the batteryHealthScore property value. The user experience analytics model battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+func (m *UserExperienceAnalyticsModelScores) SetBatteryHealthScore(value *float64)() {
+    if m != nil {
+        m.batteryHealthScore = value
     }
 }
 // SetEndpointAnalyticsScore sets the endpointAnalyticsScore property value. The user experience analytics model score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308

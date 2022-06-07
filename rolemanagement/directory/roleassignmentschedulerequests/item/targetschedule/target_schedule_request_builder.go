@@ -15,7 +15,7 @@ type TargetScheduleRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TargetScheduleRequestBuilderGetQueryParameters property indicating the schedule for an eligible role assignment.
+// TargetScheduleRequestBuilderGetQueryParameters the schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
 type TargetScheduleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,16 +50,17 @@ func NewTargetScheduleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewTargetScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation property indicating the schedule for an eligible role assignment.
+// CreateGetRequestInformation the schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
 func (m *TargetScheduleRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration property indicating the schedule for an eligible role assignment.
+// CreateGetRequestInformationWithRequestConfiguration the schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
 func (m *TargetScheduleRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TargetScheduleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -69,11 +70,11 @@ func (m *TargetScheduleRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Get property indicating the schedule for an eligible role assignment.
+// Get the schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
 func (m *TargetScheduleRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler property indicating the schedule for an eligible role assignment.
+// GetWithRequestConfigurationAndResponseHandler the schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
 func (m *TargetScheduleRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TargetScheduleRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
