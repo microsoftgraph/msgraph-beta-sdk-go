@@ -12,8 +12,10 @@ type DeviceManagementDerivedCredentialSettingsable interface {
     GetHelpUrl()(*string)
     GetIssuer()(*DeviceManagementDerivedCredentialIssuer)
     GetNotificationType()(*DeviceManagementDerivedCredentialNotificationType)
+    GetRenewalThresholdPercentage()(*int32)
     SetDisplayName(value *string)()
     SetHelpUrl(value *string)()
     SetIssuer(value *DeviceManagementDerivedCredentialIssuer)()
     SetNotificationType(value *DeviceManagementDerivedCredentialNotificationType)()
+    SetRenewalThresholdPercentage(value *int32)()
 }

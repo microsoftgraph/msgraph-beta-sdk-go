@@ -8,13 +8,13 @@ import (
 type DeviceScopeActionResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The triggered action name.
+    // The triggered action name. Possible values are: .
     deviceScopeAction *string
     // The unique identifier of the device scope the action was triggered on.
     deviceScopeId *string
     // The message indicates the reason the device scope action failed to trigger.
     failedMessage *string
-    // Indicates the status of the attempt device scope action. When succeeded, the action was succeessfully triggered, When failed, the action was failed to trigger.
+    // Indicates the status of the attempt device scope action. When succeeded, the action was succeessfully triggered, When failed, the action was failed to trigger. Possible values are: failed, succeeded, unknownFutureValue.
     status *DeviceScopeActionStatus
 }
 // NewDeviceScopeActionResult instantiates a new DeviceScopeActionResult and sets the default values.
@@ -36,7 +36,7 @@ func (m *DeviceScopeActionResult) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDeviceScopeAction gets the deviceScopeAction property value. The triggered action name.
+// GetDeviceScopeAction gets the deviceScopeAction property value. The triggered action name. Possible values are: .
 func (m *DeviceScopeActionResult) GetDeviceScopeAction()(*string) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *DeviceScopeActionResult) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetStatus gets the status property value. Indicates the status of the attempt device scope action. When succeeded, the action was succeessfully triggered, When failed, the action was failed to trigger.
+// GetStatus gets the status property value. Indicates the status of the attempt device scope action. When succeeded, the action was succeessfully triggered, When failed, the action was failed to trigger. Possible values are: failed, succeeded, unknownFutureValue.
 func (m *DeviceScopeActionResult) GetStatus()(*DeviceScopeActionStatus) {
     if m == nil {
         return nil
@@ -154,7 +154,7 @@ func (m *DeviceScopeActionResult) SetAdditionalData(value map[string]interface{}
         m.additionalData = value
     }
 }
-// SetDeviceScopeAction sets the deviceScopeAction property value. The triggered action name.
+// SetDeviceScopeAction sets the deviceScopeAction property value. The triggered action name. Possible values are: .
 func (m *DeviceScopeActionResult) SetDeviceScopeAction(value *string)() {
     if m != nil {
         m.deviceScopeAction = value
@@ -172,7 +172,7 @@ func (m *DeviceScopeActionResult) SetFailedMessage(value *string)() {
         m.failedMessage = value
     }
 }
-// SetStatus sets the status property value. Indicates the status of the attempt device scope action. When succeeded, the action was succeessfully triggered, When failed, the action was failed to trigger.
+// SetStatus sets the status property value. Indicates the status of the attempt device scope action. When succeeded, the action was succeessfully triggered, When failed, the action was failed to trigger. Possible values are: failed, succeeded, unknownFutureValue.
 func (m *DeviceScopeActionResult) SetStatus(value *DeviceScopeActionStatus)() {
     if m != nil {
         m.status = value

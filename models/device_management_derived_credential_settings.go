@@ -15,6 +15,8 @@ type DeviceManagementDerivedCredentialSettings struct {
     issuer *DeviceManagementDerivedCredentialIssuer
     // The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
     notificationType *DeviceManagementDerivedCredentialNotificationType
+    // The nominal percentage of time before certificate renewal is initiated by the client.
+    renewalThresholdPercentage *int32
 }
 // NewDeviceManagementDerivedCredentialSettings instantiates a new deviceManagementDerivedCredentialSettings and sets the default values.
 func NewDeviceManagementDerivedCredentialSettings()(*DeviceManagementDerivedCredentialSettings) {
@@ -78,6 +80,16 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["renewalThresholdPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRenewalThresholdPercentage(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHelpUrl gets the helpUrl property value. The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
@@ -102,6 +114,14 @@ func (m *DeviceManagementDerivedCredentialSettings) GetNotificationType()(*Devic
         return nil
     } else {
         return m.notificationType
+    }
+}
+// GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. The nominal percentage of time before certificate renewal is initiated by the client.
+func (m *DeviceManagementDerivedCredentialSettings) GetRenewalThresholdPercentage()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.renewalThresholdPercentage
     }
 }
 // Serialize serializes information the current object
@@ -136,6 +156,12 @@ func (m *DeviceManagementDerivedCredentialSettings) Serialize(writer i878a80d233
             return err
         }
     }
+    {
+        err = writer.WriteInt32Value("renewalThresholdPercentage", m.GetRenewalThresholdPercentage())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDisplayName sets the displayName property value. The display name for the profile.
@@ -160,5 +186,11 @@ func (m *DeviceManagementDerivedCredentialSettings) SetIssuer(value *DeviceManag
 func (m *DeviceManagementDerivedCredentialSettings) SetNotificationType(value *DeviceManagementDerivedCredentialNotificationType)() {
     if m != nil {
         m.notificationType = value
+    }
+}
+// SetRenewalThresholdPercentage sets the renewalThresholdPercentage property value. The nominal percentage of time before certificate renewal is initiated by the client.
+func (m *DeviceManagementDerivedCredentialSettings) SetRenewalThresholdPercentage(value *int32)() {
+    if m != nil {
+        m.renewalThresholdPercentage = value
     }
 }

@@ -75,6 +75,8 @@ type DefaultManagedAppProtection struct {
     faceIdBlocked *bool
     // Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False. (iOS Only)
     filterOpenInToOnlyManagedApps *bool
+    // Indicate to the client to enable both biometrics and fingerprints for the app.
+    fingerprintAndBiometricEnabled *bool
     // Minimum version of the Company portal that must be installed on the device or app access will be blocked
     minimumRequiredCompanyPortalVersion *string
     // Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
@@ -93,12 +95,16 @@ type DefaultManagedAppProtection struct {
     minimumWipeSdkVersion *string
     // Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps. (iOS Only)
     protectInboundDataFromUnknownSources *bool
+    // Require user to apply Class 3 Biometrics on their Android device.
+    requireClass3Biometrics *bool
     // Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
     requiredAndroidSafetyNetAppsVerificationType *AndroidManagedAppSafetyNetAppsVerificationType
     // Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.
     requiredAndroidSafetyNetDeviceAttestationType *AndroidManagedAppSafetyNetDeviceAttestationType
     // Defines the Android SafetyNet evaluation type requirement for a managed app to work. (Android Only). Possible values are: basic, hardwareBacked.
     requiredAndroidSafetyNetEvaluationType *AndroidManagedAppSafetyNetEvaluationType
+    // A PIN prompt will override biometric prompts if class 3 biometrics are updated on the device.
+    requirePinAfterBiometricChange *bool
     // Indicates whether screen capture is blocked. (Android only)
     screenCaptureBlocked *bool
     // Defines if third party keyboards are allowed while accessing a managed app. (iOS Only)
@@ -746,6 +752,16 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["fingerprintAndBiometricEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFingerprintAndBiometricEnabled(val)
+        }
+        return nil
+    }
     res["minimumRequiredCompanyPortalVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -836,6 +852,16 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["requireClass3Biometrics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequireClass3Biometrics(val)
+        }
+        return nil
+    }
     res["requiredAndroidSafetyNetAppsVerificationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAndroidManagedAppSafetyNetAppsVerificationType)
         if err != nil {
@@ -863,6 +889,16 @@ func (m *DefaultManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetRequiredAndroidSafetyNetEvaluationType(val.(*AndroidManagedAppSafetyNetEvaluationType))
+        }
+        return nil
+    }
+    res["requirePinAfterBiometricChange"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequirePinAfterBiometricChange(val)
         }
         return nil
     }
@@ -914,6 +950,14 @@ func (m *DefaultManagedAppProtection) GetFilterOpenInToOnlyManagedApps()(*bool) 
         return nil
     } else {
         return m.filterOpenInToOnlyManagedApps
+    }
+}
+// GetFingerprintAndBiometricEnabled gets the fingerprintAndBiometricEnabled property value. Indicate to the client to enable both biometrics and fingerprints for the app.
+func (m *DefaultManagedAppProtection) GetFingerprintAndBiometricEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.fingerprintAndBiometricEnabled
     }
 }
 // GetMinimumRequiredCompanyPortalVersion gets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
@@ -988,6 +1032,14 @@ func (m *DefaultManagedAppProtection) GetProtectInboundDataFromUnknownSources()(
         return m.protectInboundDataFromUnknownSources
     }
 }
+// GetRequireClass3Biometrics gets the requireClass3Biometrics property value. Require user to apply Class 3 Biometrics on their Android device.
+func (m *DefaultManagedAppProtection) GetRequireClass3Biometrics()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requireClass3Biometrics
+    }
+}
 // GetRequiredAndroidSafetyNetAppsVerificationType gets the requiredAndroidSafetyNetAppsVerificationType property value. Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
 func (m *DefaultManagedAppProtection) GetRequiredAndroidSafetyNetAppsVerificationType()(*AndroidManagedAppSafetyNetAppsVerificationType) {
     if m == nil {
@@ -1010,6 +1062,14 @@ func (m *DefaultManagedAppProtection) GetRequiredAndroidSafetyNetEvaluationType(
         return nil
     } else {
         return m.requiredAndroidSafetyNetEvaluationType
+    }
+}
+// GetRequirePinAfterBiometricChange gets the requirePinAfterBiometricChange property value. A PIN prompt will override biometric prompts if class 3 biometrics are updated on the device.
+func (m *DefaultManagedAppProtection) GetRequirePinAfterBiometricChange()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requirePinAfterBiometricChange
     }
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether screen capture is blocked. (Android only)
@@ -1281,6 +1341,12 @@ func (m *DefaultManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteBoolValue("fingerprintAndBiometricEnabled", m.GetFingerprintAndBiometricEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("minimumRequiredCompanyPortalVersion", m.GetMinimumRequiredCompanyPortalVersion())
         if err != nil {
             return err
@@ -1334,6 +1400,12 @@ func (m *DefaultManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("requireClass3Biometrics", m.GetRequireClass3Biometrics())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRequiredAndroidSafetyNetAppsVerificationType() != nil {
         cast := (*m.GetRequiredAndroidSafetyNetAppsVerificationType()).String()
         err = writer.WriteStringValue("requiredAndroidSafetyNetAppsVerificationType", &cast)
@@ -1351,6 +1423,12 @@ func (m *DefaultManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
     if m.GetRequiredAndroidSafetyNetEvaluationType() != nil {
         cast := (*m.GetRequiredAndroidSafetyNetEvaluationType()).String()
         err = writer.WriteStringValue("requiredAndroidSafetyNetEvaluationType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("requirePinAfterBiometricChange", m.GetRequirePinAfterBiometricChange())
         if err != nil {
             return err
         }
@@ -1585,6 +1663,12 @@ func (m *DefaultManagedAppProtection) SetFilterOpenInToOnlyManagedApps(value *bo
         m.filterOpenInToOnlyManagedApps = value
     }
 }
+// SetFingerprintAndBiometricEnabled sets the fingerprintAndBiometricEnabled property value. Indicate to the client to enable both biometrics and fingerprints for the app.
+func (m *DefaultManagedAppProtection) SetFingerprintAndBiometricEnabled(value *bool)() {
+    if m != nil {
+        m.fingerprintAndBiometricEnabled = value
+    }
+}
 // SetMinimumRequiredCompanyPortalVersion sets the minimumRequiredCompanyPortalVersion property value. Minimum version of the Company portal that must be installed on the device or app access will be blocked
 func (m *DefaultManagedAppProtection) SetMinimumRequiredCompanyPortalVersion(value *string)() {
     if m != nil {
@@ -1639,6 +1723,12 @@ func (m *DefaultManagedAppProtection) SetProtectInboundDataFromUnknownSources(va
         m.protectInboundDataFromUnknownSources = value
     }
 }
+// SetRequireClass3Biometrics sets the requireClass3Biometrics property value. Require user to apply Class 3 Biometrics on their Android device.
+func (m *DefaultManagedAppProtection) SetRequireClass3Biometrics(value *bool)() {
+    if m != nil {
+        m.requireClass3Biometrics = value
+    }
+}
 // SetRequiredAndroidSafetyNetAppsVerificationType sets the requiredAndroidSafetyNetAppsVerificationType property value. Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
 func (m *DefaultManagedAppProtection) SetRequiredAndroidSafetyNetAppsVerificationType(value *AndroidManagedAppSafetyNetAppsVerificationType)() {
     if m != nil {
@@ -1655,6 +1745,12 @@ func (m *DefaultManagedAppProtection) SetRequiredAndroidSafetyNetDeviceAttestati
 func (m *DefaultManagedAppProtection) SetRequiredAndroidSafetyNetEvaluationType(value *AndroidManagedAppSafetyNetEvaluationType)() {
     if m != nil {
         m.requiredAndroidSafetyNetEvaluationType = value
+    }
+}
+// SetRequirePinAfterBiometricChange sets the requirePinAfterBiometricChange property value. A PIN prompt will override biometric prompts if class 3 biometrics are updated on the device.
+func (m *DefaultManagedAppProtection) SetRequirePinAfterBiometricChange(value *bool)() {
+    if m != nil {
+        m.requirePinAfterBiometricChange = value
     }
 }
 // SetScreenCaptureBlocked sets the screenCaptureBlocked property value. Indicates whether screen capture is blocked. (Android only)

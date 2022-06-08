@@ -17,6 +17,7 @@ import (
     i2abf29284e813349f3083b2dc57f6553c2b467c8f68ad9c82e8950ce8d0afd2d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigurationsettingsreport"
     i2cbf3d93d72f9416ce29a9ac2774ddf6c3cceadcccbd462303a2ff5215c59622 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getpolicynoncompliancemetadata"
     i2d1fa8bbec4edb544879f637766d18e684b3ebd9bc8ab7dc1f62547a9cc9f6a0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getcompliancesettingdetailsreport"
+    i2fd8397e3f98434ca086fb32193c27fc2a226132ab5d78ecbbc4c3348c1e72fa "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getzebrafotadeploymentreport"
     i3e013f91ac3d040684b27abcd0dc56839c52d2faa6d92ef0d2295a7fefa96a5b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getappstatusoverviewreport"
     i3f11f18462beffdea839437cba5610e05b58902433c635e68fdfdfb6e5f1c4b7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigurationpolicydevicesummaryreport"
     i45eba99273cfc2518cc265806b0cba99d31c259eee99db3fa9a93ca6fbd11d28 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getcompliancepolicynoncompliancereport"
@@ -163,6 +164,7 @@ func (m *ReportsRequestBuilder) CreateGetRequestInformationWithRequestConfigurat
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -459,6 +461,10 @@ func (m *ReportsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(re
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable), nil
+}
+// GetZebraFotaDeploymentReport the getZebraFotaDeploymentReport property
+func (m *ReportsRequestBuilder) GetZebraFotaDeploymentReport()(*i2fd8397e3f98434ca086fb32193c27fc2a226132ab5d78ecbbc4c3348c1e72fa.GetZebraFotaDeploymentReportRequestBuilder) {
+    return i2fd8397e3f98434ca086fb32193c27fc2a226132ab5d78ecbbc4c3348c1e72fa.NewGetZebraFotaDeploymentReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Patch update the navigation property reports in deviceManagement
 func (m *ReportsRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable)(error) {

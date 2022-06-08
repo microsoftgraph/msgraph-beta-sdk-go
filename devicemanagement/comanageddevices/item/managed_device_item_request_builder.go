@@ -6,6 +6,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i0265d37d4c192c128f26295070675911ea6710cb341155b618c000a508cfa91d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/shutdown"
     i06f050446fb7bd265e92527bb85f6f2a987efadd05b06c81151de522ed58e0ef "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/revokeapplevpplicenses"
+    i0d2b90ec2e1995c1697221c10b1418a5810dd79575163d0c5a2001dc9d6d9858 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/removedevicefirmwareconfigurationinterfacemanagement"
     i145cd047a0f177065361e7e02b132b0f8ce1e436d675e88c887b86e5f37651a9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/windowsdefenderscan"
     i155c4a30ec87223697d0afd5c81bef559d728417cc1bde95d7dabed695d3d9a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/assignmentfilterevaluationstatusdetails"
     i1947898e3bbb95e8575558ada088e5fe3120b250ffef60fca81cfa321a720d05 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item/getnoncompliantsettings"
@@ -179,6 +180,7 @@ func (m *ManagedDeviceItemRequestBuilder) CreateGetRequestInformationWithRequest
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -415,6 +417,10 @@ func (m *ManagedDeviceItemRequestBuilder) Reenable()(*ida779665108e67dcd8e766def
 // RemoteLock the remoteLock property
 func (m *ManagedDeviceItemRequestBuilder) RemoteLock()(*ifbbfe5c6464ce13a6e4499ee4f52892cd67d8abbfdced67cc6d8065e47e9249b.RemoteLockRequestBuilder) {
     return ifbbfe5c6464ce13a6e4499ee4f52892cd67d8abbfdced67cc6d8065e47e9249b.NewRemoteLockRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// RemoveDeviceFirmwareConfigurationInterfaceManagement the removeDeviceFirmwareConfigurationInterfaceManagement property
+func (m *ManagedDeviceItemRequestBuilder) RemoveDeviceFirmwareConfigurationInterfaceManagement()(*i0d2b90ec2e1995c1697221c10b1418a5810dd79575163d0c5a2001dc9d6d9858.RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder) {
+    return i0d2b90ec2e1995c1697221c10b1418a5810dd79575163d0c5a2001dc9d6d9858.NewRemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ReprovisionCloudPc the reprovisionCloudPc property
 func (m *ManagedDeviceItemRequestBuilder) ReprovisionCloudPc()(*i5c1b61352546e0e98f55231ab68a18b6252bb9ae9d227682a4961bb808486269.ReprovisionCloudPcRequestBuilder) {

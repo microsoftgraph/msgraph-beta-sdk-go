@@ -14,10 +14,12 @@ type UserExperienceAnalyticsBatteryHealthModelPerformanceable interface {
     GetAverageMaxCapacityPercentage()(*int32)
     GetManufacturer()(*string)
     GetModel()(*string)
+    GetModelBatteryHealthScore()(*int32)
     SetActiveDevices(value *int32)()
     SetAverageBatteryAgeInDays(value *int32)()
     SetAverageEstimatedRuntimeInMinutes(value *int32)()
     SetAverageMaxCapacityPercentage(value *int32)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
+    SetModelBatteryHealthScore(value *int32)()
 }

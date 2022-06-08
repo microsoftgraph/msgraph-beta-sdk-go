@@ -23,6 +23,7 @@ import (
     i63940f883f70d79c9f036190af3786b785aa38e88077dee0da7d8bdd443ffb95 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/windowsinformationprotectiondeviceregistrations"
     i76773835ad298178375c61fd2bb3db2a00f6d1b79d366e5235fc02cd5a71d5ef "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mdmwindowsinformationprotectionpolicies"
     i869aad9b4b95674254fbc32234cd41bc975fb5a270d41358d0b38c0a515d0e76 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/windowsinformationprotectionwipeactions"
+    i8a7bfb66981c3705fc722431b193f3e44e826ce2810493e2e72e1e467da50afe "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/windowsmanagedappprotections"
     i8b9340bb6f8a5fae484feebe60a0c77ea793398c1470ee9294c37011a384a585 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/wdacsupplementalpolicies"
     i9b677b07864604eb0a1dc7960a42ddf4914647e3fa83a6d2cfea3e12250a4704 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/windowsmanagementapp"
     ib1493941e0d94862b2a07650ec9a7a40216e313891ffb7e2b502884c5d0796df "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/managedapppolicies"
@@ -39,6 +40,7 @@ import (
     i3b0fefd7a08f40697f53b6e4e31c5e2c9753528a64f9b232b76ca8f31a4e944e "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/androidmanagedappprotections/item"
     i3b995f6d41023e3b43346c95c0f59fe84cb19f9a05efc8999cbbd88c8e143b9c "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/vpptokens/item"
     i40679b07c9d7f966f341b0ef7533a4761cd0fc2dd66e199f9bb9bef68c64cdeb "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/mdmwindowsinformationprotectionpolicies/item"
+    i44473706b331f2d537e163fc3fa4898396ab987197ef5e3c981091f7f519037a "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/windowsmanagedappprotections/item"
     i492539e1cc50966c62570b7b76059bb701558d85482e3ca95c396dc36c10607a "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/policysets/item"
     i587ff2c64043a8d6a7ba7b62c47e4c87fddaaad70ec6796eb827a7be948a9033 "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/defaultmanagedappprotections/item"
     i6b77a717f9ad30ec5ef2cbce04e89b2244f69b8e725f39fb3990beeed77e175d "github.com/microsoftgraph/msgraph-beta-sdk-go/deviceappmanagement/sideloadingkeys/item"
@@ -131,6 +133,7 @@ func (m *DeviceAppManagementRequestBuilder) CreateGetRequestInformationWithReque
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -534,6 +537,21 @@ func (m *DeviceAppManagementRequestBuilder) WindowsInformationProtectionWipeActi
         urlTplParams["windowsInformationProtectionWipeAction%2Did"] = id
     }
     return ib4dcb1c692a4cab02e05d87e0707aa4831b962f34cad5157cb939f82a9345efb.NewWindowsInformationProtectionWipeActionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// WindowsManagedAppProtections the windowsManagedAppProtections property
+func (m *DeviceAppManagementRequestBuilder) WindowsManagedAppProtections()(*i8a7bfb66981c3705fc722431b193f3e44e826ce2810493e2e72e1e467da50afe.WindowsManagedAppProtectionsRequestBuilder) {
+    return i8a7bfb66981c3705fc722431b193f3e44e826ce2810493e2e72e1e467da50afe.NewWindowsManagedAppProtectionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// WindowsManagedAppProtectionsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceAppManagement.windowsManagedAppProtections.item collection
+func (m *DeviceAppManagementRequestBuilder) WindowsManagedAppProtectionsById(id string)(*i44473706b331f2d537e163fc3fa4898396ab987197ef5e3c981091f7f519037a.WindowsManagedAppProtectionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["windowsManagedAppProtection%2Did"] = id
+    }
+    return i44473706b331f2d537e163fc3fa4898396ab987197ef5e3c981091f7f519037a.NewWindowsManagedAppProtectionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WindowsManagementApp the windowsManagementApp property
 func (m *DeviceAppManagementRequestBuilder) WindowsManagementApp()(*i9b677b07864604eb0a1dc7960a42ddf4914647e3fa83a6d2cfea3e12250a4704.WindowsManagementAppRequestBuilder) {

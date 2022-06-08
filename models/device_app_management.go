@@ -34,7 +34,7 @@ type DeviceAppManagement struct {
     managedEBooks []ManagedEBookable
     // Windows information protection for apps running on devices which are MDM enrolled.
     mdmWindowsInformationProtectionPolicies []MdmWindowsInformationProtectionPolicyable
-    // The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -<country/regioncode2>, where  is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
+    // The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is <languagecode2>-<country/regioncode2>, where <languagecode2> is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
     microsoftStoreForBusinessLanguage *string
     // The last time an application sync from the Microsoft Store for Business was completed.
     microsoftStoreForBusinessLastCompletedApplicationSyncTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -66,6 +66,8 @@ type DeviceAppManagement struct {
     windowsInformationProtectionPolicies []WindowsInformationProtectionPolicyable
     // Windows information protection wipe actions.
     windowsInformationProtectionWipeActions []WindowsInformationProtectionWipeActionable
+    // Windows managed app policies.
+    windowsManagedAppProtections []WindowsManagedAppProtectionable
     // Windows management app.
     windowsManagementApp WindowsManagementAppable
 }
@@ -497,6 +499,20 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["windowsManagedAppProtections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsManagedAppProtectionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]WindowsManagedAppProtectionable, len(val))
+            for i, v := range val {
+                res[i] = v.(WindowsManagedAppProtectionable)
+            }
+            m.SetWindowsManagedAppProtections(res)
+        }
+        return nil
+    }
     res["windowsManagementApp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWindowsManagementAppFromDiscriminatorValue)
         if err != nil {
@@ -581,7 +597,7 @@ func (m *DeviceAppManagement) GetMdmWindowsInformationProtectionPolicies()([]Mdm
         return m.mdmWindowsInformationProtectionPolicies
     }
 }
-// GetMicrosoftStoreForBusinessLanguage gets the microsoftStoreForBusinessLanguage property value. The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -<country/regioncode2>, where  is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
+// GetMicrosoftStoreForBusinessLanguage gets the microsoftStoreForBusinessLanguage property value. The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is <languagecode2>-<country/regioncode2>, where <languagecode2> is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
 func (m *DeviceAppManagement) GetMicrosoftStoreForBusinessLanguage()(*string) {
     if m == nil {
         return nil
@@ -707,6 +723,14 @@ func (m *DeviceAppManagement) GetWindowsInformationProtectionWipeActions()([]Win
         return nil
     } else {
         return m.windowsInformationProtectionWipeActions
+    }
+}
+// GetWindowsManagedAppProtections gets the windowsManagedAppProtections property value. Windows managed app policies.
+func (m *DeviceAppManagement) GetWindowsManagedAppProtections()([]WindowsManagedAppProtectionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.windowsManagedAppProtections
     }
 }
 // GetWindowsManagementApp gets the windowsManagementApp property value. Windows management app.
@@ -990,6 +1014,16 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    if m.GetWindowsManagedAppProtections() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindowsManagedAppProtections()))
+        for i, v := range m.GetWindowsManagedAppProtections() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("windowsManagedAppProtections", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("windowsManagementApp", m.GetWindowsManagementApp())
         if err != nil {
@@ -1076,7 +1110,7 @@ func (m *DeviceAppManagement) SetMdmWindowsInformationProtectionPolicies(value [
         m.mdmWindowsInformationProtectionPolicies = value
     }
 }
-// SetMicrosoftStoreForBusinessLanguage sets the microsoftStoreForBusinessLanguage property value. The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -<country/regioncode2>, where  is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
+// SetMicrosoftStoreForBusinessLanguage sets the microsoftStoreForBusinessLanguage property value. The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is <languagecode2>-<country/regioncode2>, where <languagecode2> is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
 func (m *DeviceAppManagement) SetMicrosoftStoreForBusinessLanguage(value *string)() {
     if m != nil {
         m.microsoftStoreForBusinessLanguage = value
@@ -1170,6 +1204,12 @@ func (m *DeviceAppManagement) SetWindowsInformationProtectionPolicies(value []Wi
 func (m *DeviceAppManagement) SetWindowsInformationProtectionWipeActions(value []WindowsInformationProtectionWipeActionable)() {
     if m != nil {
         m.windowsInformationProtectionWipeActions = value
+    }
+}
+// SetWindowsManagedAppProtections sets the windowsManagedAppProtections property value. Windows managed app policies.
+func (m *DeviceAppManagement) SetWindowsManagedAppProtections(value []WindowsManagedAppProtectionable)() {
+    if m != nil {
+        m.windowsManagedAppProtections = value
     }
 }
 // SetWindowsManagementApp sets the windowsManagementApp property value. Windows management app.

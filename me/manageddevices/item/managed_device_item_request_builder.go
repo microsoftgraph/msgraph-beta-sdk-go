@@ -15,6 +15,7 @@ import (
     i13639623e2dbbc8263977fb93102819219d2c34ab64843715747f7af29c46bab "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/securitybaselinestates"
     i167c255245cd6e8951c54a9c2135998064837b89b7d4d0e0f1c42f2c557b5b8e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/retire"
     i16de495ce65b087460ba21136c9b72e3b2ff9a664a0756760685c434e52936ab "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/bypassactivationlock"
+    i186b653434f13d6f68f59e5101c7347bca64c5d54c32438393e9e563d87e9a03 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/removedevicefirmwareconfigurationinterfacemanagement"
     i1f766465498501463348486d49874ef974c6aa6e056820a5caf1c3a5e2690c21 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/logcollectionrequests"
     i2895d06145d6f77d60b53e7a17c29b5b08ec73440e1edd1592e6b4e58dfd3bcc "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/rebootnow"
     i2a07ab69055107ffdc042942f8b812f851c28433435fb264c6d61d6e456d4a76 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/manageddevices/item/restorecloudpc"
@@ -179,6 +180,7 @@ func (m *ManagedDeviceItemRequestBuilder) CreateGetRequestInformationWithRequest
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -415,6 +417,10 @@ func (m *ManagedDeviceItemRequestBuilder) Reenable()(*i0a5aa6fcc00963be9687eacfa
 // RemoteLock the remoteLock property
 func (m *ManagedDeviceItemRequestBuilder) RemoteLock()(*i36fc8a6a1f1f21ea4c3b8e036968cd4b9f64fe509db56f6ee2a10b53e5e23daa.RemoteLockRequestBuilder) {
     return i36fc8a6a1f1f21ea4c3b8e036968cd4b9f64fe509db56f6ee2a10b53e5e23daa.NewRemoteLockRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// RemoveDeviceFirmwareConfigurationInterfaceManagement the removeDeviceFirmwareConfigurationInterfaceManagement property
+func (m *ManagedDeviceItemRequestBuilder) RemoveDeviceFirmwareConfigurationInterfaceManagement()(*i186b653434f13d6f68f59e5101c7347bca64c5d54c32438393e9e563d87e9a03.RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder) {
+    return i186b653434f13d6f68f59e5101c7347bca64c5d54c32438393e9e563d87e9a03.NewRemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ReprovisionCloudPc the reprovisionCloudPc property
 func (m *ManagedDeviceItemRequestBuilder) ReprovisionCloudPc()(*iaac25517cf1038417a09bf97f681ffe842dcbe5678bf131e589ee9fbac0c73b9.ReprovisionCloudPcRequestBuilder) {

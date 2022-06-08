@@ -38,6 +38,7 @@ type DeviceAppManagementable interface {
     GetWindowsInformationProtectionDeviceRegistrations()([]WindowsInformationProtectionDeviceRegistrationable)
     GetWindowsInformationProtectionPolicies()([]WindowsInformationProtectionPolicyable)
     GetWindowsInformationProtectionWipeActions()([]WindowsInformationProtectionWipeActionable)
+    GetWindowsManagedAppProtections()([]WindowsManagedAppProtectionable)
     GetWindowsManagementApp()(WindowsManagementAppable)
     SetAndroidManagedAppProtections(value []AndroidManagedAppProtectionable)()
     SetDefaultManagedAppProtections(value []DefaultManagedAppProtectionable)()
@@ -68,5 +69,6 @@ type DeviceAppManagementable interface {
     SetWindowsInformationProtectionDeviceRegistrations(value []WindowsInformationProtectionDeviceRegistrationable)()
     SetWindowsInformationProtectionPolicies(value []WindowsInformationProtectionPolicyable)()
     SetWindowsInformationProtectionWipeActions(value []WindowsInformationProtectionWipeActionable)()
+    SetWindowsManagedAppProtections(value []WindowsManagedAppProtectionable)()
     SetWindowsManagementApp(value WindowsManagementAppable)()
 }

@@ -8,7 +8,7 @@ import (
 type LoginPageTextVisibilitySettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The hideAccountResetCredentials property
+    // Option to hide the self-service password reset (SSPR) hyperlinks such as 'Can't access your account?', 'Forgot my password' and 'Reset it now' on the sign-in form.
     hideAccountResetCredentials *bool
     // Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.
     hideCannotAccessYourAccount *bool
@@ -105,7 +105,7 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetHideAccountResetCredentials gets the hideAccountResetCredentials property value. The hideAccountResetCredentials property
+// GetHideAccountResetCredentials gets the hideAccountResetCredentials property value. Option to hide the self-service password reset (SSPR) hyperlinks such as 'Can't access your account?', 'Forgot my password' and 'Reset it now' on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) GetHideAccountResetCredentials()(*bool) {
     if m == nil {
         return nil
@@ -205,7 +205,7 @@ func (m *LoginPageTextVisibilitySettings) SetAdditionalData(value map[string]int
         m.additionalData = value
     }
 }
-// SetHideAccountResetCredentials sets the hideAccountResetCredentials property value. The hideAccountResetCredentials property
+// SetHideAccountResetCredentials sets the hideAccountResetCredentials property value. Option to hide the self-service password reset (SSPR) hyperlinks such as 'Can't access your account?', 'Forgot my password' and 'Reset it now' on the sign-in form.
 func (m *LoginPageTextVisibilitySettings) SetHideAccountResetCredentials(value *bool)() {
     if m != nil {
         m.hideAccountResetCredentials = value

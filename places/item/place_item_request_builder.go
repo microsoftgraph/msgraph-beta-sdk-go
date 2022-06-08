@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i444e47c21a23373ca68a94b91a7edced40016014b6b3a2f0b3800778e2aed0a4 "github.com/microsoftgraph/msgraph-beta-sdk-go/places/item/room"
 )
 
 // PlaceItemRequestBuilder provides operations to manage the collection of place entities.
@@ -90,6 +91,7 @@ func (m *PlaceItemRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -175,4 +177,8 @@ func (m *PlaceItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandle
         return err
     }
     return nil
+}
+// Room the room property
+func (m *PlaceItemRequestBuilder) Room()(*i444e47c21a23373ca68a94b91a7edced40016014b6b3a2f0b3800778e2aed0a4.RoomRequestBuilder) {
+    return i444e47c21a23373ca68a94b91a7edced40016014b6b3a2f0b3800778e2aed0a4.NewRoomRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

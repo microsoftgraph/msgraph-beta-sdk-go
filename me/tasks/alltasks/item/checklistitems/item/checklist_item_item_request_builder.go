@@ -22,7 +22,7 @@ type ChecklistItemItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ChecklistItemItemRequestBuilderGetQueryParameters a collection of checklistItems linked to a task.
+// ChecklistItemItemRequestBuilderGetQueryParameters a collection of smaller subtasks linked to the more complex parent task.
 type ChecklistItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,16 +80,17 @@ func (m *ChecklistItemItemRequestBuilder) CreateDeleteRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation a collection of checklistItems linked to a task.
+// CreateGetRequestInformation a collection of smaller subtasks linked to the more complex parent task.
 func (m *ChecklistItemItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of checklistItems linked to a task.
+// CreateGetRequestInformationWithRequestConfiguration a collection of smaller subtasks linked to the more complex parent task.
 func (m *ChecklistItemItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ChecklistItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -136,11 +137,11 @@ func (m *ChecklistItemItemRequestBuilder) DeleteWithRequestConfigurationAndRespo
     }
     return nil
 }
-// Get a collection of checklistItems linked to a task.
+// Get a collection of smaller subtasks linked to the more complex parent task.
 func (m *ChecklistItemItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler a collection of checklistItems linked to a task.
+// GetWithRequestConfigurationAndResponseHandler a collection of smaller subtasks linked to the more complex parent task.
 func (m *ChecklistItemItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChecklistItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

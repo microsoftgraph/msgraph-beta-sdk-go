@@ -16,7 +16,7 @@ type ChecklistItemsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ChecklistItemsRequestBuilderGetQueryParameters a collection of checklistItems linked to a task.
+// ChecklistItemsRequestBuilderGetQueryParameters a collection of smaller subtasks linked to the more complex parent task.
 type ChecklistItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,16 +74,17 @@ func NewChecklistItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 func (m *ChecklistItemsRequestBuilder) Count()(*ie1c5e8d63c8dbd8f683b8208b98bfd0e389da04a5da25d6283c05736910efae3.CountRequestBuilder) {
     return ie1c5e8d63c8dbd8f683b8208b98bfd0e389da04a5da25d6283c05736910efae3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation a collection of checklistItems linked to a task.
+// CreateGetRequestInformation a collection of smaller subtasks linked to the more complex parent task.
 func (m *ChecklistItemsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration a collection of checklistItems linked to a task.
+// CreateGetRequestInformationWithRequestConfiguration a collection of smaller subtasks linked to the more complex parent task.
 func (m *ChecklistItemsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ChecklistItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
+    requestInfo.Headers["Accept"] = "application/json"
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -103,6 +104,7 @@ func (m *ChecklistItemsRequestBuilder) CreatePostRequestInformationWithRequestCo
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
+    requestInfo.Headers["Accept"] = "application/json"
     requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
     if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
@@ -110,11 +112,11 @@ func (m *ChecklistItemsRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Get a collection of checklistItems linked to a task.
+// Get a collection of smaller subtasks linked to the more complex parent task.
 func (m *ChecklistItemsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler a collection of checklistItems linked to a task.
+// GetWithRequestConfigurationAndResponseHandler a collection of smaller subtasks linked to the more complex parent task.
 func (m *ChecklistItemsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChecklistItemsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

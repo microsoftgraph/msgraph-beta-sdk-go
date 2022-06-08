@@ -19,6 +19,8 @@ type UserExperienceAnalyticsBatteryHealthModelPerformance struct {
     manufacturer *string
     // The model name of the device.
     model *string
+    // A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+    modelBatteryHealthScore *int32
 }
 // NewUserExperienceAnalyticsBatteryHealthModelPerformance instantiates a new userExperienceAnalyticsBatteryHealthModelPerformance and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthModelPerformance()(*UserExperienceAnalyticsBatteryHealthModelPerformance) {
@@ -126,6 +128,16 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetFieldDeseriali
         }
         return nil
     }
+    res["modelBatteryHealthScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetModelBatteryHealthScore(val)
+        }
+        return nil
+    }
     return res
 }
 // GetManufacturer gets the manufacturer property value. Name of the device manufacturer.
@@ -142,6 +154,14 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetModel()(*strin
         return nil
     } else {
         return m.model
+    }
+}
+// GetModelBatteryHealthScore gets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetModelBatteryHealthScore()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modelBatteryHealthScore
     }
 }
 // Serialize serializes information the current object
@@ -186,6 +206,12 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) Serialize(writer 
             return err
         }
     }
+    {
+        err = writer.WriteInt32Value("modelBatteryHealthScore", m.GetModelBatteryHealthScore())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveDevices sets the activeDevices property value. Number of active devices for that model. Valid values -2147483648 to 2147483647
@@ -222,5 +248,11 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetManufacturer(v
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetModel(value *string)() {
     if m != nil {
         m.model = value
+    }
+}
+// SetModelBatteryHealthScore sets the modelBatteryHealthScore property value. A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetModelBatteryHealthScore(value *int32)() {
+    if m != nil {
+        m.modelBatteryHealthScore = value
     }
 }

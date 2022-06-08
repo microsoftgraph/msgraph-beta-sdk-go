@@ -16,7 +16,7 @@ type DelegatedAdminRelationshipOperation struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The type of long-running operation. The possible values are: delegatedAdminAccessAssignmentUpdate, unknownFutureValue. Read-only.
     operationType *DelegatedAdminRelationshipOperationType
-    // The status of the operation. Read-only. The possible values are: notStarted, running, complete, failed, unknownFutureValue. Read-only. Supports $orderBy.
+    // The status of the operation. Read-only. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only. Supports $orderBy.
     status *LongRunningOperationStatus
 }
 // NewDelegatedAdminRelationshipOperation instantiates a new delegatedAdminRelationshipOperation and sets the default values.
@@ -117,7 +117,7 @@ func (m *DelegatedAdminRelationshipOperation) GetOperationType()(*DelegatedAdmin
         return m.operationType
     }
 }
-// GetStatus gets the status property value. The status of the operation. Read-only. The possible values are: notStarted, running, complete, failed, unknownFutureValue. Read-only. Supports $orderBy.
+// GetStatus gets the status property value. The status of the operation. Read-only. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only. Supports $orderBy.
 func (m *DelegatedAdminRelationshipOperation) GetStatus()(*LongRunningOperationStatus) {
     if m == nil {
         return nil
@@ -189,7 +189,7 @@ func (m *DelegatedAdminRelationshipOperation) SetOperationType(value *DelegatedA
         m.operationType = value
     }
 }
-// SetStatus sets the status property value. The status of the operation. Read-only. The possible values are: notStarted, running, complete, failed, unknownFutureValue. Read-only. Supports $orderBy.
+// SetStatus sets the status property value. The status of the operation. Read-only. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only. Supports $orderBy.
 func (m *DelegatedAdminRelationshipOperation) SetStatus(value *LongRunningOperationStatus)() {
     if m != nil {
         m.status = value
