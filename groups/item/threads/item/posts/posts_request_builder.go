@@ -16,7 +16,7 @@ type PostsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PostsRequestBuilderGetQueryParameters read-only. Nullable.
+// PostsRequestBuilderGetQueryParameters get posts from groups
 type PostsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,11 +72,11 @@ func NewPostsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *PostsRequestBuilder) Count()(*idb2162b607e6d4e2db51a68583bb707b1c06f9497c7c9cc138c0a018783a4f73.CountRequestBuilder) {
     return idb2162b607e6d4e2db51a68583bb707b1c06f9497c7c9cc138c0a018783a4f73.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get posts from groups
 func (m *PostsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get posts from groups
 func (m *PostsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PostsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -110,11 +110,11 @@ func (m *PostsRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get get posts from groups
 func (m *PostsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PostCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get posts from groups
 func (m *PostsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PostsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PostCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

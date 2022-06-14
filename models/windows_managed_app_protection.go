@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsManagedAppProtection policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on a Windows device
+// WindowsManagedAppProtection 
 type WindowsManagedAppProtection struct {
     ManagedAppPolicy
     // Indicates the sources from which data is allowed to be transferred. Some possible values are allApps or none. Possible values are: allApps, none.
@@ -56,7 +56,7 @@ type WindowsManagedAppProtection struct {
     // When TRUE, indicates that printing is blocked from managed apps. When FALSE, indicates that printing is allowed from managed apps. Default value is FALSE.
     printBlocked *bool
 }
-// NewWindowsManagedAppProtection instantiates a new windowsManagedAppProtection and sets the default values.
+// NewWindowsManagedAppProtection instantiates a new WindowsManagedAppProtection and sets the default values.
 func NewWindowsManagedAppProtection()(*WindowsManagedAppProtection) {
     m := &WindowsManagedAppProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),

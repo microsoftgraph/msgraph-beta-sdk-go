@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DlpEvaluatePoliciesJobResponse provides operations to call the evaluate method.
+// DlpEvaluatePoliciesJobResponse 
 type DlpEvaluatePoliciesJobResponse struct {
     JobResponseBase
     // The result property
     result DlpPoliciesJobResultable
 }
-// NewDlpEvaluatePoliciesJobResponse instantiates a new dlpEvaluatePoliciesJobResponse and sets the default values.
+// NewDlpEvaluatePoliciesJobResponse instantiates a new DlpEvaluatePoliciesJobResponse and sets the default values.
 func NewDlpEvaluatePoliciesJobResponse()(*DlpEvaluatePoliciesJobResponse) {
     m := &DlpEvaluatePoliciesJobResponse{
         JobResponseBase: *NewJobResponseBase(),

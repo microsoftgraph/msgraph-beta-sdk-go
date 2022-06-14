@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Casts the previous resource to group.
+// Provides operations to manage the collection of administrativeUnit entities.
 type TaskStatus_v2 int
 
 const (

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DepEnrollmentBaseProfile the DepEnrollmentBaseProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
+// DepEnrollmentBaseProfile 
 type DepEnrollmentBaseProfile struct {
     EnrollmentProfile
     // Indicates if Apple id setup pane is disabled
@@ -46,7 +46,7 @@ type DepEnrollmentBaseProfile struct {
     // Indicates if touch id setup pane is disabled
     touchIdDisabled *bool
 }
-// NewDepEnrollmentBaseProfile instantiates a new depEnrollmentBaseProfile and sets the default values.
+// NewDepEnrollmentBaseProfile instantiates a new DepEnrollmentBaseProfile and sets the default values.
 func NewDepEnrollmentBaseProfile()(*DepEnrollmentBaseProfile) {
     m := &DepEnrollmentBaseProfile{
         EnrollmentProfile: *NewEnrollmentProfile(),
@@ -68,8 +68,10 @@ func CreateDepEnrollmentBaseProfileFromDiscriminatorValue(parseNode i878a80d2330
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.depEnrollmentBaseProfile":
-                        return NewDepEnrollmentBaseProfile(), nil
+                    case "#microsoft.graph.depIOSEnrollmentProfile":
+                        return NewDepIOSEnrollmentProfile(), nil
+                    case "#microsoft.graph.depMacOSEnrollmentProfile":
+                        return NewDepMacOSEnrollmentProfile(), nil
                 }
             }
         }

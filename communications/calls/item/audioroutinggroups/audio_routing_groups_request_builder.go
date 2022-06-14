@@ -16,7 +16,7 @@ type AudioRoutingGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AudioRoutingGroupsRequestBuilderGetQueryParameters read-only. Nullable.
+// AudioRoutingGroupsRequestBuilderGetQueryParameters get audioRoutingGroups from communications
 type AudioRoutingGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewAudioRoutingGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *AudioRoutingGroupsRequestBuilder) Count()(*ib898ea4f2a3a722cbcc2e19966acb4e33c0886f3be4b862b30f88522260b0065.CountRequestBuilder) {
     return ib898ea4f2a3a722cbcc2e19966acb4e33c0886f3be4b862b30f88522260b0065.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get audioRoutingGroups from communications
 func (m *AudioRoutingGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get audioRoutingGroups from communications
 func (m *AudioRoutingGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AudioRoutingGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *AudioRoutingGroupsRequestBuilder) CreatePostRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get get audioRoutingGroups from communications
 func (m *AudioRoutingGroupsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get audioRoutingGroups from communications
 func (m *AudioRoutingGroupsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AudioRoutingGroupsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

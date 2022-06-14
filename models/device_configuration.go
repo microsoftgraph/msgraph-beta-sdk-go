@@ -65,8 +65,176 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.deviceConfiguration":
-                        return NewDeviceConfiguration(), nil
+                    case "#microsoft.graph.androidCertificateProfileBase":
+                        return NewAndroidCertificateProfileBase(), nil
+                    case "#microsoft.graph.androidCustomConfiguration":
+                        return NewAndroidCustomConfiguration(), nil
+                    case "#microsoft.graph.androidDeviceOwnerCertificateProfileBase":
+                        return NewAndroidDeviceOwnerCertificateProfileBase(), nil
+                    case "#microsoft.graph.androidDeviceOwnerDerivedCredentialAuthenticationConfiguration":
+                        return NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration(), nil
+                    case "#microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration":
+                        return NewAndroidDeviceOwnerGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.androidDeviceOwnerTrustedRootCertificate":
+                        return NewAndroidDeviceOwnerTrustedRootCertificate(), nil
+                    case "#microsoft.graph.androidDeviceOwnerWiFiConfiguration":
+                        return NewAndroidDeviceOwnerWiFiConfiguration(), nil
+                    case "#microsoft.graph.androidEasEmailProfileConfiguration":
+                        return NewAndroidEasEmailProfileConfiguration(), nil
+                    case "#microsoft.graph.androidForWorkCertificateProfileBase":
+                        return NewAndroidForWorkCertificateProfileBase(), nil
+                    case "#microsoft.graph.androidForWorkCustomConfiguration":
+                        return NewAndroidForWorkCustomConfiguration(), nil
+                    case "#microsoft.graph.androidForWorkEasEmailProfileBase":
+                        return NewAndroidForWorkEasEmailProfileBase(), nil
+                    case "#microsoft.graph.androidForWorkGeneralDeviceConfiguration":
+                        return NewAndroidForWorkGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.androidForWorkTrustedRootCertificate":
+                        return NewAndroidForWorkTrustedRootCertificate(), nil
+                    case "#microsoft.graph.androidForWorkVpnConfiguration":
+                        return NewAndroidForWorkVpnConfiguration(), nil
+                    case "#microsoft.graph.androidForWorkWiFiConfiguration":
+                        return NewAndroidForWorkWiFiConfiguration(), nil
+                    case "#microsoft.graph.androidGeneralDeviceConfiguration":
+                        return NewAndroidGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.androidOmaCpConfiguration":
+                        return NewAndroidOmaCpConfiguration(), nil
+                    case "#microsoft.graph.androidTrustedRootCertificate":
+                        return NewAndroidTrustedRootCertificate(), nil
+                    case "#microsoft.graph.androidVpnConfiguration":
+                        return NewAndroidVpnConfiguration(), nil
+                    case "#microsoft.graph.androidWiFiConfiguration":
+                        return NewAndroidWiFiConfiguration(), nil
+                    case "#microsoft.graph.androidWorkProfileCertificateProfileBase":
+                        return NewAndroidWorkProfileCertificateProfileBase(), nil
+                    case "#microsoft.graph.androidWorkProfileCustomConfiguration":
+                        return NewAndroidWorkProfileCustomConfiguration(), nil
+                    case "#microsoft.graph.androidWorkProfileEasEmailProfileBase":
+                        return NewAndroidWorkProfileEasEmailProfileBase(), nil
+                    case "#microsoft.graph.androidWorkProfileGeneralDeviceConfiguration":
+                        return NewAndroidWorkProfileGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.androidWorkProfileTrustedRootCertificate":
+                        return NewAndroidWorkProfileTrustedRootCertificate(), nil
+                    case "#microsoft.graph.androidWorkProfileVpnConfiguration":
+                        return NewAndroidWorkProfileVpnConfiguration(), nil
+                    case "#microsoft.graph.androidWorkProfileWiFiConfiguration":
+                        return NewAndroidWorkProfileWiFiConfiguration(), nil
+                    case "#microsoft.graph.aospDeviceOwnerCertificateProfileBase":
+                        return NewAospDeviceOwnerCertificateProfileBase(), nil
+                    case "#microsoft.graph.aospDeviceOwnerDeviceConfiguration":
+                        return NewAospDeviceOwnerDeviceConfiguration(), nil
+                    case "#microsoft.graph.aospDeviceOwnerTrustedRootCertificate":
+                        return NewAospDeviceOwnerTrustedRootCertificate(), nil
+                    case "#microsoft.graph.aospDeviceOwnerWiFiConfiguration":
+                        return NewAospDeviceOwnerWiFiConfiguration(), nil
+                    case "#microsoft.graph.appleDeviceFeaturesConfigurationBase":
+                        return NewAppleDeviceFeaturesConfigurationBase(), nil
+                    case "#microsoft.graph.appleExpeditedCheckinConfigurationBase":
+                        return NewAppleExpeditedCheckinConfigurationBase(), nil
+                    case "#microsoft.graph.appleVpnConfiguration":
+                        return NewAppleVpnConfiguration(), nil
+                    case "#microsoft.graph.easEmailProfileConfigurationBase":
+                        return NewEasEmailProfileConfigurationBase(), nil
+                    case "#microsoft.graph.editionUpgradeConfiguration":
+                        return NewEditionUpgradeConfiguration(), nil
+                    case "#microsoft.graph.iosCertificateProfile":
+                        return NewIosCertificateProfile(), nil
+                    case "#microsoft.graph.iosCustomConfiguration":
+                        return NewIosCustomConfiguration(), nil
+                    case "#microsoft.graph.iosDerivedCredentialAuthenticationConfiguration":
+                        return NewIosDerivedCredentialAuthenticationConfiguration(), nil
+                    case "#microsoft.graph.iosEducationDeviceConfiguration":
+                        return NewIosEducationDeviceConfiguration(), nil
+                    case "#microsoft.graph.iosEduDeviceConfiguration":
+                        return NewIosEduDeviceConfiguration(), nil
+                    case "#microsoft.graph.iosGeneralDeviceConfiguration":
+                        return NewIosGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.iosTrustedRootCertificate":
+                        return NewIosTrustedRootCertificate(), nil
+                    case "#microsoft.graph.iosUpdateConfiguration":
+                        return NewIosUpdateConfiguration(), nil
+                    case "#microsoft.graph.iosWiFiConfiguration":
+                        return NewIosWiFiConfiguration(), nil
+                    case "#microsoft.graph.macOSCertificateProfileBase":
+                        return NewMacOSCertificateProfileBase(), nil
+                    case "#microsoft.graph.macOSCustomAppConfiguration":
+                        return NewMacOSCustomAppConfiguration(), nil
+                    case "#microsoft.graph.macOSCustomConfiguration":
+                        return NewMacOSCustomConfiguration(), nil
+                    case "#microsoft.graph.macOSEndpointProtectionConfiguration":
+                        return NewMacOSEndpointProtectionConfiguration(), nil
+                    case "#microsoft.graph.macOSExtensionsConfiguration":
+                        return NewMacOSExtensionsConfiguration(), nil
+                    case "#microsoft.graph.macOSGeneralDeviceConfiguration":
+                        return NewMacOSGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.macOSSoftwareUpdateConfiguration":
+                        return NewMacOSSoftwareUpdateConfiguration(), nil
+                    case "#microsoft.graph.macOSTrustedRootCertificate":
+                        return NewMacOSTrustedRootCertificate(), nil
+                    case "#microsoft.graph.macOSWiFiConfiguration":
+                        return NewMacOSWiFiConfiguration(), nil
+                    case "#microsoft.graph.macOSWiredNetworkConfiguration":
+                        return NewMacOSWiredNetworkConfiguration(), nil
+                    case "#microsoft.graph.sharedPCConfiguration":
+                        return NewSharedPCConfiguration(), nil
+                    case "#microsoft.graph.unsupportedDeviceConfiguration":
+                        return NewUnsupportedDeviceConfiguration(), nil
+                    case "#microsoft.graph.vpnConfiguration":
+                        return NewVpnConfiguration(), nil
+                    case "#microsoft.graph.windows10CustomConfiguration":
+                        return NewWindows10CustomConfiguration(), nil
+                    case "#microsoft.graph.windows10DeviceFirmwareConfigurationInterface":
+                        return NewWindows10DeviceFirmwareConfigurationInterface(), nil
+                    case "#microsoft.graph.windows10EndpointProtectionConfiguration":
+                        return NewWindows10EndpointProtectionConfiguration(), nil
+                    case "#microsoft.graph.windows10EnterpriseModernAppManagementConfiguration":
+                        return NewWindows10EnterpriseModernAppManagementConfiguration(), nil
+                    case "#microsoft.graph.windows10GeneralConfiguration":
+                        return NewWindows10GeneralConfiguration(), nil
+                    case "#microsoft.graph.windows10NetworkBoundaryConfiguration":
+                        return NewWindows10NetworkBoundaryConfiguration(), nil
+                    case "#microsoft.graph.windows10PFXImportCertificateProfile":
+                        return NewWindows10PFXImportCertificateProfile(), nil
+                    case "#microsoft.graph.windows10SecureAssessmentConfiguration":
+                        return NewWindows10SecureAssessmentConfiguration(), nil
+                    case "#microsoft.graph.windows10TeamGeneralConfiguration":
+                        return NewWindows10TeamGeneralConfiguration(), nil
+                    case "#microsoft.graph.windows81GeneralConfiguration":
+                        return NewWindows81GeneralConfiguration(), nil
+                    case "#microsoft.graph.windows81TrustedRootCertificate":
+                        return NewWindows81TrustedRootCertificate(), nil
+                    case "#microsoft.graph.windows81WifiImportConfiguration":
+                        return NewWindows81WifiImportConfiguration(), nil
+                    case "#microsoft.graph.windowsCertificateProfileBase":
+                        return NewWindowsCertificateProfileBase(), nil
+                    case "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration":
+                        return NewWindowsDefenderAdvancedThreatProtectionConfiguration(), nil
+                    case "#microsoft.graph.windowsDeliveryOptimizationConfiguration":
+                        return NewWindowsDeliveryOptimizationConfiguration(), nil
+                    case "#microsoft.graph.windowsDomainJoinConfiguration":
+                        return NewWindowsDomainJoinConfiguration(), nil
+                    case "#microsoft.graph.windowsHealthMonitoringConfiguration":
+                        return NewWindowsHealthMonitoringConfiguration(), nil
+                    case "#microsoft.graph.windowsIdentityProtectionConfiguration":
+                        return NewWindowsIdentityProtectionConfiguration(), nil
+                    case "#microsoft.graph.windowsKioskConfiguration":
+                        return NewWindowsKioskConfiguration(), nil
+                    case "#microsoft.graph.windowsPhone81CertificateProfileBase":
+                        return NewWindowsPhone81CertificateProfileBase(), nil
+                    case "#microsoft.graph.windowsPhone81CustomConfiguration":
+                        return NewWindowsPhone81CustomConfiguration(), nil
+                    case "#microsoft.graph.windowsPhone81GeneralConfiguration":
+                        return NewWindowsPhone81GeneralConfiguration(), nil
+                    case "#microsoft.graph.windowsPhone81TrustedRootCertificate":
+                        return NewWindowsPhone81TrustedRootCertificate(), nil
+                    case "#microsoft.graph.windowsUpdateForBusinessConfiguration":
+                        return NewWindowsUpdateForBusinessConfiguration(), nil
+                    case "#microsoft.graph.windowsVpnConfiguration":
+                        return NewWindowsVpnConfiguration(), nil
+                    case "#microsoft.graph.windowsWifiConfiguration":
+                        return NewWindowsWifiConfiguration(), nil
+                    case "#microsoft.graph.windowsWiredNetworkConfiguration":
+                        return NewWindowsWiredNetworkConfiguration(), nil
                 }
             }
         }

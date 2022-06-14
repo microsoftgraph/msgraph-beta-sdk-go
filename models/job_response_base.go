@@ -45,8 +45,12 @@ func CreateJobResponseBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.jobResponseBase":
-                        return NewJobResponseBase(), nil
+                    case "#microsoft.graph.classificationJobResponse":
+                        return NewClassificationJobResponse(), nil
+                    case "#microsoft.graph.dlpEvaluatePoliciesJobResponse":
+                        return NewDlpEvaluatePoliciesJobResponse(), nil
+                    case "#microsoft.graph.evaluateLabelJobResponse":
+                        return NewEvaluateLabelJobResponse(), nil
                 }
             }
         }

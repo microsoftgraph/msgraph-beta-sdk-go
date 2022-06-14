@@ -16,7 +16,7 @@ type MyRolesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// MyRolesRequestBuilderGetQueryParameters get myRoles from tenantRelationships
+// MyRolesRequestBuilderGetQueryParameters the collection of role assignments to a signed-in user for a managed tenant.
 type MyRolesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewMyRolesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *MyRolesRequestBuilder) Count()(*idae3ef9fda344b7d634da8f56a936cde826f63de30c6abae51bc5e6a4090ec53.CountRequestBuilder) {
     return idae3ef9fda344b7d634da8f56a936cde826f63de30c6abae51bc5e6a4090ec53.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get myRoles from tenantRelationships
+// CreateGetRequestInformation the collection of role assignments to a signed-in user for a managed tenant.
 func (m *MyRolesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get myRoles from tenantRelationships
+// CreateGetRequestInformationWithRequestConfiguration the collection of role assignments to a signed-in user for a managed tenant.
 func (m *MyRolesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MyRolesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *MyRolesRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get get myRoles from tenantRelationships
+// Get the collection of role assignments to a signed-in user for a managed tenant.
 func (m *MyRolesRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.MyRoleCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get myRoles from tenantRelationships
+// GetWithRequestConfigurationAndResponseHandler the collection of role assignments to a signed-in user for a managed tenant.
 func (m *MyRolesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MyRolesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.MyRoleCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

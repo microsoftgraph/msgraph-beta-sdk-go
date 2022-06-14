@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ClassificationJobResponse provides operations to call the classifyFile method.
+// ClassificationJobResponse 
 type ClassificationJobResponse struct {
     JobResponseBase
     // The result property
     result DetectedSensitiveContentWrapperable
 }
-// NewClassificationJobResponse instantiates a new classificationJobResponse and sets the default values.
+// NewClassificationJobResponse instantiates a new ClassificationJobResponse and sets the default values.
 func NewClassificationJobResponse()(*ClassificationJobResponse) {
     m := &ClassificationJobResponse{
         JobResponseBase: *NewJobResponseBase(),

@@ -4,15 +4,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoveryReviewSet provides operations to manage the security singleton.
+// EdiscoveryReviewSet 
 type EdiscoveryReviewSet struct {
     DataSet
-    // The files property
+    // Represents files within the review set.
     files []EdiscoveryFileable
-    // The queries property
+    // Represents queries within the review set.
     queries []EdiscoveryReviewSetQueryable
 }
-// NewEdiscoveryReviewSet instantiates a new ediscoveryReviewSet and sets the default values.
+// NewEdiscoveryReviewSet instantiates a new EdiscoveryReviewSet and sets the default values.
 func NewEdiscoveryReviewSet()(*EdiscoveryReviewSet) {
     m := &EdiscoveryReviewSet{
         DataSet: *NewDataSet(),
@@ -56,7 +56,7 @@ func (m *EdiscoveryReviewSet) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetFiles gets the files property value. The files property
+// GetFiles gets the files property value. Represents files within the review set.
 func (m *EdiscoveryReviewSet) GetFiles()([]EdiscoveryFileable) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *EdiscoveryReviewSet) GetFiles()([]EdiscoveryFileable) {
         return m.files
     }
 }
-// GetQueries gets the queries property value. The queries property
+// GetQueries gets the queries property value. Represents queries within the review set.
 func (m *EdiscoveryReviewSet) GetQueries()([]EdiscoveryReviewSetQueryable) {
     if m == nil {
         return nil
@@ -100,13 +100,13 @@ func (m *EdiscoveryReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetFiles sets the files property value. The files property
+// SetFiles sets the files property value. Represents files within the review set.
 func (m *EdiscoveryReviewSet) SetFiles(value []EdiscoveryFileable)() {
     if m != nil {
         m.files = value
     }
 }
-// SetQueries sets the queries property value. The queries property
+// SetQueries sets the queries property value. Represents queries within the review set.
 func (m *EdiscoveryReviewSet) SetQueries(value []EdiscoveryReviewSetQueryable)() {
     if m != nil {
         m.queries = value

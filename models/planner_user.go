@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerUser casts the previous resource to group.
+// PlannerUser 
 type PlannerUser struct {
     PlannerDelta
     // The all property
@@ -24,7 +24,7 @@ type PlannerUser struct {
     // Read-only. Nullable. Returns the plannerTasks assigned to the user.
     tasks []PlannerTaskable
 }
-// NewPlannerUser instantiates a new plannerUser and sets the default values.
+// NewPlannerUser instantiates a new PlannerUser and sets the default values.
 func NewPlannerUser()(*PlannerUser) {
     m := &PlannerUser{
         PlannerDelta: *NewPlannerDelta(),

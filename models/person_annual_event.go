@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonAnnualEvent casts the previous resource to group.
+// PersonAnnualEvent 
 type PersonAnnualEvent struct {
     ItemFacet
     // The date property
@@ -14,7 +14,7 @@ type PersonAnnualEvent struct {
     // The type property
     type_escaped *PersonAnnualEventType
 }
-// NewPersonAnnualEvent instantiates a new personAnnualEvent and sets the default values.
+// NewPersonAnnualEvent instantiates a new PersonAnnualEvent and sets the default values.
 func NewPersonAnnualEvent()(*PersonAnnualEvent) {
     m := &PersonAnnualEvent{
         ItemFacet: *NewItemFacet(),

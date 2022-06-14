@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityProviderBase provides operations to manage the directory singleton.
+// IdentityProviderBase provides operations to manage the collection of domain entities.
 type IdentityProviderBase struct {
     Entity
     // The display name of the identity provider.
@@ -32,8 +32,16 @@ func CreateIdentityProviderBaseFromDiscriminatorValue(parseNode i878a80d2330e89d
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.identityProviderBase":
-                        return NewIdentityProviderBase(), nil
+                    case "#microsoft.graph.appleManagedIdentityProvider":
+                        return NewAppleManagedIdentityProvider(), nil
+                    case "#microsoft.graph.builtInIdentityProvider":
+                        return NewBuiltInIdentityProvider(), nil
+                    case "#microsoft.graph.openIdConnectIdentityProvider":
+                        return NewOpenIdConnectIdentityProvider(), nil
+                    case "#microsoft.graph.samlOrWsFedProvider":
+                        return NewSamlOrWsFedProvider(), nil
+                    case "#microsoft.graph.socialIdentityProvider":
+                        return NewSocialIdentityProvider(), nil
                 }
             }
         }

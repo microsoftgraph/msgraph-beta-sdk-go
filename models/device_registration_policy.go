@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceRegistrationPolicy provides operations to manage the policyRoot singleton.
+// DeviceRegistrationPolicy provides operations to manage the deviceRegistrationPolicy singleton.
 type DeviceRegistrationPolicy struct {
     Entity
     // Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.

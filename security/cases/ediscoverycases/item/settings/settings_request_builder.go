@@ -23,7 +23,7 @@ type SettingsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SettingsRequestBuilderGetQueryParameters get settings from security
+// SettingsRequestBuilderGetQueryParameters returns a list of eDIscoverySettings objects in the case.
 type SettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *SettingsRequestBuilder) CreateDeleteRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get settings from security
+// CreateGetRequestInformation returns a list of eDIscoverySettings objects in the case.
 func (m *SettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get settings from security
+// CreateGetRequestInformationWithRequestConfiguration returns a list of eDIscoverySettings objects in the case.
 func (m *SettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,11 +138,11 @@ func (m *SettingsRequestBuilder) DeleteWithRequestConfigurationAndResponseHandle
     }
     return nil
 }
-// Get get settings from security
+// Get returns a list of eDIscoverySettings objects in the case.
 func (m *SettingsRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseSettingsable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get settings from security
+// GetWithRequestConfigurationAndResponseHandler returns a list of eDIscoverySettings objects in the case.
 func (m *SettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

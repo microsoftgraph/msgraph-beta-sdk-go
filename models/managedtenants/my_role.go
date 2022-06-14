@@ -8,9 +8,9 @@ import (
 type MyRole struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The assignments property
+    // A collection of role assignments for the managed tenant.
     assignments []RoleAssignmentable
-    // The tenantId property
+    // The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
     tenantId *string
 }
 // NewMyRole instantiates a new myRole and sets the default values.
@@ -32,7 +32,7 @@ func (m *MyRole) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAssignments gets the assignments property value. The assignments property
+// GetAssignments gets the assignments property value. A collection of role assignments for the managed tenant.
 func (m *MyRole) GetAssignments()([]RoleAssignmentable) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *MyRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *MyRole) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -109,13 +109,13 @@ func (m *MyRole) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetAssignments sets the assignments property value. The assignments property
+// SetAssignments sets the assignments property value. A collection of role assignments for the managed tenant.
 func (m *MyRole) SetAssignments(value []RoleAssignmentable)() {
     if m != nil {
         m.assignments = value
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *MyRole) SetTenantId(value *string)() {
     if m != nil {
         m.tenantId = value

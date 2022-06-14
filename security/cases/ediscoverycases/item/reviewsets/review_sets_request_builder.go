@@ -16,7 +16,7 @@ type ReviewSetsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ReviewSetsRequestBuilderGetQueryParameters get reviewSets from security
+// ReviewSetsRequestBuilderGetQueryParameters returns a list of eDiscoveryReviewSet objects in the case.
 type ReviewSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewReviewSetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ReviewSetsRequestBuilder) Count()(*i450ad3e9843586171b95462074feaf9755afe8cba2e12d2c63f098059668d134.CountRequestBuilder) {
     return i450ad3e9843586171b95462074feaf9755afe8cba2e12d2c63f098059668d134.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get reviewSets from security
+// CreateGetRequestInformation returns a list of eDiscoveryReviewSet objects in the case.
 func (m *ReviewSetsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get reviewSets from security
+// CreateGetRequestInformationWithRequestConfiguration returns a list of eDiscoveryReviewSet objects in the case.
 func (m *ReviewSetsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ReviewSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *ReviewSetsRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get get reviewSets from security
+// Get returns a list of eDiscoveryReviewSet objects in the case.
 func (m *ReviewSetsRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get reviewSets from security
+// GetWithRequestConfigurationAndResponseHandler returns a list of eDiscoveryReviewSet objects in the case.
 func (m *ReviewSetsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ReviewSetsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

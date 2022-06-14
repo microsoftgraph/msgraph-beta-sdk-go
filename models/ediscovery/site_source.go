@@ -5,13 +5,13 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// SiteSource provides operations to manage the compliance singleton.
+// SiteSource 
 type SiteSource struct {
     DataSource
     // The site property
     site ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable
 }
-// NewSiteSource instantiates a new siteSource and sets the default values.
+// NewSiteSource instantiates a new SiteSource and sets the default values.
 func NewSiteSource()(*SiteSource) {
     m := &SiteSource{
         DataSource: *NewDataSource(),

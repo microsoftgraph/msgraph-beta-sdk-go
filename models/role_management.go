@@ -12,7 +12,7 @@ type RoleManagement struct {
     cloudPC RbacApplicationMultipleable
     // The RbacApplication for Device Management
     deviceManagement RbacApplicationMultipleable
-    // Read-only. Nullable.
+    // The directory property
     directory RbacApplicationable
     // Container for roles and assignments for entitlement management resources.
     entitlementManagement RbacApplicationable
@@ -52,7 +52,7 @@ func (m *RoleManagement) GetDeviceManagement()(RbacApplicationMultipleable) {
         return m.deviceManagement
     }
 }
-// GetDirectory gets the directory property value. Read-only. Nullable.
+// GetDirectory gets the directory property value. The directory property
 func (m *RoleManagement) GetDirectory()(RbacApplicationable) {
     if m == nil {
         return nil
@@ -165,7 +165,7 @@ func (m *RoleManagement) SetDeviceManagement(value RbacApplicationMultipleable)(
         m.deviceManagement = value
     }
 }
-// SetDirectory sets the directory property value. Read-only. Nullable.
+// SetDirectory sets the directory property value. The directory property
 func (m *RoleManagement) SetDirectory(value RbacApplicationable)() {
     if m != nil {
         m.directory = value

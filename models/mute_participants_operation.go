@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MuteParticipantsOperation provides operations to call the muteAll method.
+// MuteParticipantsOperation 
 type MuteParticipantsOperation struct {
     CommsOperation
     // The participants property
     participants []string
 }
-// NewMuteParticipantsOperation instantiates a new muteParticipantsOperation and sets the default values.
+// NewMuteParticipantsOperation instantiates a new MuteParticipantsOperation and sets the default values.
 func NewMuteParticipantsOperation()(*MuteParticipantsOperation) {
     m := &MuteParticipantsOperation{
         CommsOperation: *NewCommsOperation(),

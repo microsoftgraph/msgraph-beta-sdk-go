@@ -4,8 +4,10 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i0a02a0c28cacd2bf32065b7e26a8b68341b526257ef139d2807c2f4374bfc6d6 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedaccess/item/roleassignmentrequests/item/updaterequest"
     i3000050d43ca916d1fc4f7af69b6eae1a7ad773a63a08777915365cedd6c6514 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedaccess/item/roleassignmentrequests/item/resource"
     i3aa91578e04a924c446f9e55694205f49eeac917b836d297bf7e8a1373a85b88 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedaccess/item/roleassignmentrequests/item/subject"
+    i4737e82829fcabb60ac1e844be9362f89516b650c51cc1b39a6c4b80bacf43c2 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedaccess/item/roleassignmentrequests/item/cancel"
     ib22d2ea7bd95ab9701839eba5d00b97c027e9b32625f8cc3e59cee9b36565b0b "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedaccess/item/roleassignmentrequests/item/roledefinition"
 )
 
@@ -47,6 +49,10 @@ type GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration 
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// Cancel the cancel property
+func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Cancel()(*i4737e82829fcabb60ac1e844be9362f89516b650c51cc1b39a6c4b80bacf43c2.CancelRequestBuilder) {
+    return i4737e82829fcabb60ac1e844be9362f89516b650c51cc1b39a6c4b80bacf43c2.NewCancelRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewGovernanceRoleAssignmentRequestItemRequestBuilderInternal instantiates a new GovernanceRoleAssignmentRequestItemRequestBuilder and sets the default values.
 func NewGovernanceRoleAssignmentRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GovernanceRoleAssignmentRequestItemRequestBuilder) {
@@ -191,4 +197,8 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) RoleDefinition()(*ib
 // Subject the subject property
 func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Subject()(*i3aa91578e04a924c446f9e55694205f49eeac917b836d297bf7e8a1373a85b88.SubjectRequestBuilder) {
     return i3aa91578e04a924c446f9e55694205f49eeac917b836d297bf7e8a1373a85b88.NewSubjectRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// UpdateRequest the updateRequest property
+func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) UpdateRequest()(*i0a02a0c28cacd2bf32065b7e26a8b68341b526257ef139d2807c2f4374bfc6d6.UpdateRequestRequestBuilder) {
+    return i0a02a0c28cacd2bf32065b7e26a8b68341b526257ef139d2807c2f4374bfc6d6.NewUpdateRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

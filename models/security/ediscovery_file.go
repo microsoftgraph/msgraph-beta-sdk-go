@@ -4,15 +4,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoveryFile provides operations to manage the security singleton.
+// EdiscoveryFile 
 type EdiscoveryFile struct {
     File
-    // The custodian property
+    // Custodians associated with the file.
     custodian EdiscoveryCustodianable
-    // The tags property
+    // Tags associated with the file.
     tags []EdiscoveryReviewTagable
 }
-// NewEdiscoveryFile instantiates a new ediscoveryFile and sets the default values.
+// NewEdiscoveryFile instantiates a new EdiscoveryFile and sets the default values.
 func NewEdiscoveryFile()(*EdiscoveryFile) {
     m := &EdiscoveryFile{
         File: *NewFile(),
@@ -23,7 +23,7 @@ func NewEdiscoveryFile()(*EdiscoveryFile) {
 func CreateEdiscoveryFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryFile(), nil
 }
-// GetCustodian gets the custodian property value. The custodian property
+// GetCustodian gets the custodian property value. Custodians associated with the file.
 func (m *EdiscoveryFile) GetCustodian()(EdiscoveryCustodianable) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *EdiscoveryFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetTags gets the tags property value. The tags property
+// GetTags gets the tags property value. Tags associated with the file.
 func (m *EdiscoveryFile) GetTags()([]EdiscoveryReviewTagable) {
     if m == nil {
         return nil
@@ -92,13 +92,13 @@ func (m *EdiscoveryFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetCustodian sets the custodian property value. The custodian property
+// SetCustodian sets the custodian property value. Custodians associated with the file.
 func (m *EdiscoveryFile) SetCustodian(value EdiscoveryCustodianable)() {
     if m != nil {
         m.custodian = value
     }
 }
-// SetTags sets the tags property value. The tags property
+// SetTags sets the tags property value. Tags associated with the file.
 func (m *EdiscoveryFile) SetTags(value []EdiscoveryReviewTagable)() {
     if m != nil {
         m.tags = value

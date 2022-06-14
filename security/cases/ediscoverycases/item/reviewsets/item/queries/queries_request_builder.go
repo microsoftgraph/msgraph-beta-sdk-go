@@ -16,7 +16,7 @@ type QueriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// QueriesRequestBuilderGetQueryParameters get queries from security
+// QueriesRequestBuilderGetQueryParameters represents queries within the review set.
 type QueriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewQueriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *QueriesRequestBuilder) Count()(*ib445c82941cadc82b27b9969641db7b29233937612482fa27c0173ef3a265eee.CountRequestBuilder) {
     return ib445c82941cadc82b27b9969641db7b29233937612482fa27c0173ef3a265eee.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get queries from security
+// CreateGetRequestInformation represents queries within the review set.
 func (m *QueriesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get queries from security
+// CreateGetRequestInformationWithRequestConfiguration represents queries within the review set.
 func (m *QueriesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *QueriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *QueriesRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get get queries from security
+// Get represents queries within the review set.
 func (m *QueriesRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetQueryCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get queries from security
+// GetWithRequestConfigurationAndResponseHandler represents queries within the review set.
 func (m *QueriesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *QueriesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetQueryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

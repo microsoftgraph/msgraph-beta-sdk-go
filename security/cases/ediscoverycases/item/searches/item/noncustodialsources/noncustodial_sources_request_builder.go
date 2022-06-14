@@ -16,7 +16,7 @@ type NoncustodialSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// NoncustodialSourcesRequestBuilderGetQueryParameters get noncustodialSources from security
+// NoncustodialSourcesRequestBuilderGetQueryParameters noncustodialDataSource sources that are included in the eDiscovery search
 type NoncustodialSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,11 +67,11 @@ func NewNoncustodialSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *NoncustodialSourcesRequestBuilder) Count()(*ia13ef04f69cdc5dc1bf24a4514d5853b82a49b503d35ba8e48dd4651f9baf7c3.CountRequestBuilder) {
     return ia13ef04f69cdc5dc1bf24a4514d5853b82a49b503d35ba8e48dd4651f9baf7c3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get noncustodialSources from security
+// CreateGetRequestInformation noncustodialDataSource sources that are included in the eDiscovery search
 func (m *NoncustodialSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get noncustodialSources from security
+// CreateGetRequestInformationWithRequestConfiguration noncustodialDataSource sources that are included in the eDiscovery search
 func (m *NoncustodialSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *NoncustodialSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -87,11 +87,11 @@ func (m *NoncustodialSourcesRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// Get get noncustodialSources from security
+// Get noncustodialDataSource sources that are included in the eDiscovery search
 func (m *NoncustodialSourcesRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get noncustodialSources from security
+// GetWithRequestConfigurationAndResponseHandler noncustodialDataSource sources that are included in the eDiscovery search
 func (m *NoncustodialSourcesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *NoncustodialSourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

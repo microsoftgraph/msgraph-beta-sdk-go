@@ -8,11 +8,11 @@ import (
 // EdiscoveryCaseSettings provides operations to manage the security singleton.
 type EdiscoveryCaseSettings struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The ocr property
+    // The OCR (Optical Character Recognition) settings for the case.
     ocr OcrSettingsable
-    // The redundancyDetection property
+    // The redundancy (near duplicate and email threading) detection settings for the case.
     redundancyDetection RedundancyDetectionSettingsable
-    // The topicModeling property
+    // The Topic Modeling (Themes) settings for the case.
     topicModeling TopicModelingSettingsable
 }
 // NewEdiscoveryCaseSettings instantiates a new ediscoveryCaseSettings and sets the default values.
@@ -61,7 +61,7 @@ func (m *EdiscoveryCaseSettings) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetOcr gets the ocr property value. The ocr property
+// GetOcr gets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
 func (m *EdiscoveryCaseSettings) GetOcr()(OcrSettingsable) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *EdiscoveryCaseSettings) GetOcr()(OcrSettingsable) {
         return m.ocr
     }
 }
-// GetRedundancyDetection gets the redundancyDetection property value. The redundancyDetection property
+// GetRedundancyDetection gets the redundancyDetection property value. The redundancy (near duplicate and email threading) detection settings for the case.
 func (m *EdiscoveryCaseSettings) GetRedundancyDetection()(RedundancyDetectionSettingsable) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *EdiscoveryCaseSettings) GetRedundancyDetection()(RedundancyDetectionSet
         return m.redundancyDetection
     }
 }
-// GetTopicModeling gets the topicModeling property value. The topicModeling property
+// GetTopicModeling gets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
 func (m *EdiscoveryCaseSettings) GetTopicModeling()(TopicModelingSettingsable) {
     if m == nil {
         return nil
@@ -111,19 +111,19 @@ func (m *EdiscoveryCaseSettings) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetOcr sets the ocr property value. The ocr property
+// SetOcr sets the ocr property value. The OCR (Optical Character Recognition) settings for the case.
 func (m *EdiscoveryCaseSettings) SetOcr(value OcrSettingsable)() {
     if m != nil {
         m.ocr = value
     }
 }
-// SetRedundancyDetection sets the redundancyDetection property value. The redundancyDetection property
+// SetRedundancyDetection sets the redundancyDetection property value. The redundancy (near duplicate and email threading) detection settings for the case.
 func (m *EdiscoveryCaseSettings) SetRedundancyDetection(value RedundancyDetectionSettingsable)() {
     if m != nil {
         m.redundancyDetection = value
     }
 }
-// SetTopicModeling sets the topicModeling property value. The topicModeling property
+// SetTopicModeling sets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
 func (m *EdiscoveryCaseSettings) SetTopicModeling(value TopicModelingSettingsable)() {
     if m != nil {
         m.topicModeling = value

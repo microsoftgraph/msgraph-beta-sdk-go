@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrinterShare casts the previous resource to group.
+// PrinterShare 
 type PrinterShare struct {
     PrinterBase
     // If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
@@ -21,7 +21,7 @@ type PrinterShare struct {
     // The viewPoint property
     viewPoint PrinterShareViewpointable
 }
-// NewPrinterShare instantiates a new printerShare and sets the default values.
+// NewPrinterShare instantiates a new PrinterShare and sets the default values.
 func NewPrinterShare()(*PrinterShare) {
     m := &PrinterShare{
         PrinterBase: *NewPrinterBase(),

@@ -56,8 +56,8 @@ func CreateFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.security.file":
-                        return NewFile(), nil
+                    case "#microsoft.graph.security.ediscoveryFile":
+                        return NewEdiscoveryFile(), nil
                 }
             }
         }

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the identityGovernance singleton.
+// Provides operations to manage the collection of administrativeUnit entities.
 type ExpirationPatternType int
 
 const (

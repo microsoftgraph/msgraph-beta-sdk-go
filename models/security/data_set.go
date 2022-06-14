@@ -38,8 +38,8 @@ func CreateDataSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.security.dataSet":
-                        return NewDataSet(), nil
+                    case "#microsoft.graph.security.ediscoveryReviewSet":
+                        return NewEdiscoveryReviewSet(), nil
                 }
             }
         }

@@ -16,7 +16,7 @@ type FilesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// FilesRequestBuilderGetQueryParameters get files from security
+// FilesRequestBuilderGetQueryParameters represents files within the review set.
 type FilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewFilesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 func (m *FilesRequestBuilder) Count()(*i3413d3b23c1959c732cd3e445d63294e08d0204b61bdfaba6c78805c46b2feb0.CountRequestBuilder) {
     return i3413d3b23c1959c732cd3e445d63294e08d0204b61bdfaba6c78805c46b2feb0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get files from security
+// CreateGetRequestInformation represents files within the review set.
 func (m *FilesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get files from security
+// CreateGetRequestInformationWithRequestConfiguration represents files within the review set.
 func (m *FilesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *FilesRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
-// Get get files from security
+// Get represents files within the review set.
 func (m *FilesRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryFileCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get files from security
+// GetWithRequestConfigurationAndResponseHandler represents files within the review set.
 func (m *FilesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FilesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryFileCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

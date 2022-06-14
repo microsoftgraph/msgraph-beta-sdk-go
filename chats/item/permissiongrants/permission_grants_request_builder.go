@@ -4,7 +4,10 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i2aecea7dfb6c50737820d8b76a8e8ed1d635ac802df400325a0debf5aee96bb6 "github.com/microsoftgraph/msgraph-beta-sdk-go/chats/item/permissiongrants/getbyids"
+    ia54d7ef47a0e325a525e632c40ccc90c8a401d9dd04b46fa1841ef1924efe94c "github.com/microsoftgraph/msgraph-beta-sdk-go/chats/item/permissiongrants/validateproperties"
     ibd27ee9d5b07185cc06bb4b3f9b55317081a87b1d144fb17211fc4639858cb44 "github.com/microsoftgraph/msgraph-beta-sdk-go/chats/item/permissiongrants/count"
+    id860d5b4edf81ceb55d69f9afe071dc33bd1aa178cb23bbf2faadb2548324e80 "github.com/microsoftgraph/msgraph-beta-sdk-go/chats/item/permissiongrants/getuserownedobjects"
 )
 
 // PermissionGrantsRequestBuilder provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.
@@ -116,6 +119,14 @@ func (m *PermissionGrantsRequestBuilder) CreatePostRequestInformationWithRequest
 func (m *PermissionGrantsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetByIds the getByIds property
+func (m *PermissionGrantsRequestBuilder) GetByIds()(*i2aecea7dfb6c50737820d8b76a8e8ed1d635ac802df400325a0debf5aee96bb6.GetByIdsRequestBuilder) {
+    return i2aecea7dfb6c50737820d8b76a8e8ed1d635ac802df400325a0debf5aee96bb6.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetUserOwnedObjects the getUserOwnedObjects property
+func (m *PermissionGrantsRequestBuilder) GetUserOwnedObjects()(*id860d5b4edf81ceb55d69f9afe071dc33bd1aa178cb23bbf2faadb2548324e80.GetUserOwnedObjectsRequestBuilder) {
+    return id860d5b4edf81ceb55d69f9afe071dc33bd1aa178cb23bbf2faadb2548324e80.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler a collection of permissions granted to apps for the chat.
 func (m *PermissionGrantsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PermissionGrantsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -151,4 +162,8 @@ func (m *PermissionGrantsRequestBuilder) PostWithRequestConfigurationAndResponse
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable), nil
+}
+// ValidateProperties the validateProperties property
+func (m *PermissionGrantsRequestBuilder) ValidateProperties()(*ia54d7ef47a0e325a525e632c40ccc90c8a401d9dd04b46fa1841ef1924efe94c.ValidatePropertiesRequestBuilder) {
+    return ia54d7ef47a0e325a525e632c40ccc90c8a401d9dd04b46fa1841ef1924efe94c.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

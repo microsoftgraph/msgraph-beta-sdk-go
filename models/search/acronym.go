@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Acronym provides operations to manage the searchEntity singleton.
+// Acronym 
 type Acronym struct {
     SearchAnswer
     // What the acronym stands for.
@@ -12,7 +12,7 @@ type Acronym struct {
     // State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.
     state *AnswerState
 }
-// NewAcronym instantiates a new acronym and sets the default values.
+// NewAcronym instantiates a new Acronym and sets the default values.
 func NewAcronym()(*Acronym) {
     m := &Acronym{
         SearchAnswer: *NewSearchAnswer(),

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ThreatAssessmentRequest casts the previous resource to group.
+// ThreatAssessmentRequest provides operations to manage the collection of administrativeUnit entities.
 type ThreatAssessmentRequest struct {
     Entity
     // The threat category. Possible values are: spam, phishing, malware.
@@ -47,8 +47,14 @@ func CreateThreatAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.threatAssessmentRequest":
-                        return NewThreatAssessmentRequest(), nil
+                    case "#microsoft.graph.emailFileAssessmentRequest":
+                        return NewEmailFileAssessmentRequest(), nil
+                    case "#microsoft.graph.fileAssessmentRequest":
+                        return NewFileAssessmentRequest(), nil
+                    case "#microsoft.graph.mailAssessmentRequest":
+                        return NewMailAssessmentRequest(), nil
+                    case "#microsoft.graph.urlAssessmentRequest":
+                        return NewUrlAssessmentRequest(), nil
                 }
             }
         }

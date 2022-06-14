@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemPatent casts the previous resource to group.
+// ItemPatent 
 type ItemPatent struct {
     ItemFacet
     // Descpription of the patent or filing.
@@ -22,7 +22,7 @@ type ItemPatent struct {
     // URL referencing the patent or filing.
     webUrl *string
 }
-// NewItemPatent instantiates a new itemPatent and sets the default values.
+// NewItemPatent instantiates a new ItemPatent and sets the default values.
 func NewItemPatent()(*ItemPatent) {
     m := &ItemPatent{
         ItemFacet: *NewItemFacet(),

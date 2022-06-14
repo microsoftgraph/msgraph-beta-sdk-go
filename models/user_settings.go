@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserSettings casts the previous resource to group.
+// UserSettings provides operations to manage the collection of administrativeUnit entities.
 type UserSettings struct {
     Entity
     // The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.

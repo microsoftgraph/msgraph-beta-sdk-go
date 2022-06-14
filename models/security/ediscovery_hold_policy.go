@@ -4,21 +4,21 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoveryHoldPolicy provides operations to manage the security singleton.
+// EdiscoveryHoldPolicy 
 type EdiscoveryHoldPolicy struct {
     PolicyBase
-    // The contentQuery property
+    // KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
     contentQuery *string
-    // The errors property
+    // Lists any errors that happened while placing the hold.
     errors []string
-    // The isEnabled property
+    // Indicates whether the hold is enabled and actively holding content.
     isEnabled *bool
     // The siteSources property
     siteSources []SiteSourceable
     // The userSources property
     userSources []UserSourceable
 }
-// NewEdiscoveryHoldPolicy instantiates a new ediscoveryHoldPolicy and sets the default values.
+// NewEdiscoveryHoldPolicy instantiates a new EdiscoveryHoldPolicy and sets the default values.
 func NewEdiscoveryHoldPolicy()(*EdiscoveryHoldPolicy) {
     m := &EdiscoveryHoldPolicy{
         PolicyBase: *NewPolicyBase(),
@@ -29,7 +29,7 @@ func NewEdiscoveryHoldPolicy()(*EdiscoveryHoldPolicy) {
 func CreateEdiscoveryHoldPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryHoldPolicy(), nil
 }
-// GetContentQuery gets the contentQuery property value. The contentQuery property
+// GetContentQuery gets the contentQuery property value. KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
 func (m *EdiscoveryHoldPolicy) GetContentQuery()(*string) {
     if m == nil {
         return nil
@@ -37,7 +37,7 @@ func (m *EdiscoveryHoldPolicy) GetContentQuery()(*string) {
         return m.contentQuery
     }
 }
-// GetErrors gets the errors property value. The errors property
+// GetErrors gets the errors property value. Lists any errors that happened while placing the hold.
 func (m *EdiscoveryHoldPolicy) GetErrors()([]string) {
     if m == nil {
         return nil
@@ -112,7 +112,7 @@ func (m *EdiscoveryHoldPolicy) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Indicates whether the hold is enabled and actively holding content.
 func (m *EdiscoveryHoldPolicy) GetIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -182,19 +182,19 @@ func (m *EdiscoveryHoldPolicy) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetContentQuery sets the contentQuery property value. The contentQuery property
+// SetContentQuery sets the contentQuery property value. KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
 func (m *EdiscoveryHoldPolicy) SetContentQuery(value *string)() {
     if m != nil {
         m.contentQuery = value
     }
 }
-// SetErrors sets the errors property value. The errors property
+// SetErrors sets the errors property value. Lists any errors that happened while placing the hold.
 func (m *EdiscoveryHoldPolicy) SetErrors(value []string)() {
     if m != nil {
         m.errors = value
     }
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Indicates whether the hold is enabled and actively holding content.
 func (m *EdiscoveryHoldPolicy) SetIsEnabled(value *bool)() {
     if m != nil {
         m.isEnabled = value

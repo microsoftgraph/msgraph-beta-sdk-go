@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonName casts the previous resource to group.
+// PersonName 
 type PersonName struct {
     ItemFacet
     // Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.
@@ -30,7 +30,7 @@ type PersonName struct {
     // Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)
     title *string
 }
-// NewPersonName instantiates a new personName and sets the default values.
+// NewPersonName instantiates a new PersonName and sets the default values.
 func NewPersonName()(*PersonName) {
     m := &PersonName{
         ItemFacet: *NewItemFacet(),

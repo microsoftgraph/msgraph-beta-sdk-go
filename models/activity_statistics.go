@@ -40,8 +40,16 @@ func CreateActivityStatisticsFromDiscriminatorValue(parseNode i878a80d2330e89d26
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.activityStatistics":
-                        return NewActivityStatistics(), nil
+                    case "#microsoft.graph.callActivityStatistics":
+                        return NewCallActivityStatistics(), nil
+                    case "#microsoft.graph.chatActivityStatistics":
+                        return NewChatActivityStatistics(), nil
+                    case "#microsoft.graph.emailActivityStatistics":
+                        return NewEmailActivityStatistics(), nil
+                    case "#microsoft.graph.focusActivityStatistics":
+                        return NewFocusActivityStatistics(), nil
+                    case "#microsoft.graph.meetingActivityStatistics":
+                        return NewMeetingActivityStatistics(), nil
                 }
             }
         }

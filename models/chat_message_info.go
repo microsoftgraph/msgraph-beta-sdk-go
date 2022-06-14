@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChatMessageInfo casts the previous resource to group.
+// ChatMessageInfo provides operations to manage the collection of administrativeUnit entities.
 type ChatMessageInfo struct {
     Entity
     // Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.

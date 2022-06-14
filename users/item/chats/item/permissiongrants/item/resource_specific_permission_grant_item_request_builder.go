@@ -4,6 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i0fe519b4cee3d98fcef83ad87b8d65e904351820fb3dcc1b46fcf400bd19cfa1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/chats/item/permissiongrants/item/restore"
+    i2a254e51eb302104527e4cb7b70e6fba3a26bc1f673fb595a469e9e213b60230 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/chats/item/permissiongrants/item/getmemberobjects"
+    i6a82658abd67828f034ed1af14d598f1d71d47cbef5c8e3e9283435209942ddc "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/chats/item/permissiongrants/item/checkmemberobjects"
+    id79c8a095488c38cfa47beb73a334ed58f015b7c106f5b571d633a49400b7090 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/chats/item/permissiongrants/item/getmembergroups"
+    ifbc434c249b1be589c1ef306abd75c7ad26c524381020682e0ce18f99fec93a5 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/chats/item/permissiongrants/item/checkmembergroups"
 )
 
 // ResourceSpecificPermissionGrantItemRequestBuilder provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.
@@ -44,6 +49,14 @@ type ResourceSpecificPermissionGrantItemRequestBuilderPatchRequestConfiguration 
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// CheckMemberGroups the checkMemberGroups property
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CheckMemberGroups()(*ifbc434c249b1be589c1ef306abd75c7ad26c524381020682e0ce18f99fec93a5.CheckMemberGroupsRequestBuilder) {
+    return ifbc434c249b1be589c1ef306abd75c7ad26c524381020682e0ce18f99fec93a5.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CheckMemberObjects the checkMemberObjects property
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) CheckMemberObjects()(*i6a82658abd67828f034ed1af14d598f1d71d47cbef5c8e3e9283435209942ddc.CheckMemberObjectsRequestBuilder) {
+    return i6a82658abd67828f034ed1af14d598f1d71d47cbef5c8e3e9283435209942ddc.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewResourceSpecificPermissionGrantItemRequestBuilderInternal instantiates a new ResourceSpecificPermissionGrantItemRequestBuilder and sets the default values.
 func NewResourceSpecificPermissionGrantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceSpecificPermissionGrantItemRequestBuilder) {
@@ -141,6 +154,14 @@ func (m *ResourceSpecificPermissionGrantItemRequestBuilder) DeleteWithRequestCon
 func (m *ResourceSpecificPermissionGrantItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetMemberGroups the getMemberGroups property
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetMemberGroups()(*id79c8a095488c38cfa47beb73a334ed58f015b7c106f5b571d633a49400b7090.GetMemberGroupsRequestBuilder) {
+    return id79c8a095488c38cfa47beb73a334ed58f015b7c106f5b571d633a49400b7090.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetMemberObjects the getMemberObjects property
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetMemberObjects()(*i2a254e51eb302104527e4cb7b70e6fba3a26bc1f673fb595a469e9e213b60230.GetMemberObjectsRequestBuilder) {
+    return i2a254e51eb302104527e4cb7b70e6fba3a26bc1f673fb595a469e9e213b60230.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler a collection of permissions granted to apps for the chat.
 func (m *ResourceSpecificPermissionGrantItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ResourceSpecificPermissionGrantItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -176,4 +197,8 @@ func (m *ResourceSpecificPermissionGrantItemRequestBuilder) PatchWithRequestConf
         return err
     }
     return nil
+}
+// Restore the restore property
+func (m *ResourceSpecificPermissionGrantItemRequestBuilder) Restore()(*i0fe519b4cee3d98fcef83ad87b8d65e904351820fb3dcc1b46fcf400bd19cfa1.RestoreRequestBuilder) {
+    return i0fe519b4cee3d98fcef83ad87b8d65e904351820fb3dcc1b46fcf400bd19cfa1.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

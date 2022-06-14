@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BaseTaskList casts the previous resource to group.
+// BaseTaskList provides operations to manage the collection of administrativeUnit entities.
 type BaseTaskList struct {
     Entity
     // The name of the task list.
@@ -36,8 +36,10 @@ func CreateBaseTaskListFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.baseTaskList":
-                        return NewBaseTaskList(), nil
+                    case "#microsoft.graph.taskList":
+                        return NewTaskList(), nil
+                    case "#microsoft.graph.wellKnownTaskList":
+                        return NewWellKnownTaskList(), nil
                 }
             }
         }

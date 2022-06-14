@@ -46,8 +46,10 @@ func CreateSearchFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.security.search":
-                        return NewSearch(), nil
+                    case "#microsoft.graph.security.ediscoveryReviewSetQuery":
+                        return NewEdiscoveryReviewSetQuery(), nil
+                    case "#microsoft.graph.security.ediscoverySearch":
+                        return NewEdiscoverySearch(), nil
                 }
             }
         }

@@ -18,7 +18,7 @@ type CustodiansRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CustodiansRequestBuilderGetQueryParameters get custodians from security
+// CustodiansRequestBuilderGetQueryParameters returns a list of case ediscoveryCustodian objects for this case.
 type CustodiansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -80,11 +80,11 @@ func NewCustodiansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *CustodiansRequestBuilder) Count()(*i093dfa6c1dfd76f58134cddd4cc20ceca6eedec821952381ee3fa8a7416ff39f.CountRequestBuilder) {
     return i093dfa6c1dfd76f58134cddd4cc20ceca6eedec821952381ee3fa8a7416ff39f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get custodians from security
+// CreateGetRequestInformation returns a list of case ediscoveryCustodian objects for this case.
 func (m *CustodiansRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get custodians from security
+// CreateGetRequestInformationWithRequestConfiguration returns a list of case ediscoveryCustodian objects for this case.
 func (m *CustodiansRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CustodiansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,11 +118,11 @@ func (m *CustodiansRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get get custodians from security
+// Get returns a list of case ediscoveryCustodian objects for this case.
 func (m *CustodiansRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCustodianCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get custodians from security
+// GetWithRequestConfigurationAndResponseHandler returns a list of case ediscoveryCustodian objects for this case.
 func (m *CustodiansRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CustodiansRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCustodianCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WebAccount casts the previous resource to group.
+// WebAccount 
 type WebAccount struct {
     ItemFacet
     // Contains the description the user has provided for the account on the service being referenced.
@@ -20,7 +20,7 @@ type WebAccount struct {
     // Contains a link to the user's profile on the cloud service if one exists.
     webUrl *string
 }
-// NewWebAccount instantiates a new webAccount and sets the default values.
+// NewWebAccount instantiates a new WebAccount and sets the default values.
 func NewWebAccount()(*WebAccount) {
     m := &WebAccount{
         ItemFacet: *NewItemFacet(),

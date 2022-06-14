@@ -26,7 +26,7 @@ type EdiscoveryHoldPolicyItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryHoldPolicyItemRequestBuilderGetQueryParameters get legalHolds from security
+// EdiscoveryHoldPolicyItemRequestBuilderGetQueryParameters returns a list of case eDiscoveryHoldPolicy objects for this case.
 type EdiscoveryHoldPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -84,11 +84,11 @@ func (m *EdiscoveryHoldPolicyItemRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get legalHolds from security
+// CreateGetRequestInformation returns a list of case eDiscoveryHoldPolicy objects for this case.
 func (m *EdiscoveryHoldPolicyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get legalHolds from security
+// CreateGetRequestInformationWithRequestConfiguration returns a list of case eDiscoveryHoldPolicy objects for this case.
 func (m *EdiscoveryHoldPolicyItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EdiscoveryHoldPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -141,11 +141,11 @@ func (m *EdiscoveryHoldPolicyItemRequestBuilder) DeleteWithRequestConfigurationA
     }
     return nil
 }
-// Get get legalHolds from security
+// Get returns a list of case eDiscoveryHoldPolicy objects for this case.
 func (m *EdiscoveryHoldPolicyItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryHoldPolicyable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get legalHolds from security
+// GetWithRequestConfigurationAndResponseHandler returns a list of case eDiscoveryHoldPolicy objects for this case.
 func (m *EdiscoveryHoldPolicyItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EdiscoveryHoldPolicyItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryHoldPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -7,7 +7,7 @@ import (
 // AccessPackageResourceScope provides operations to manage the identityGovernance singleton.
 type AccessPackageResourceScope struct {
     Entity
-    // Read-only. Nullable.
+    // The accessPackageResource property
     accessPackageResource AccessPackageResourceable
     // The description of the scope.
     description *string
@@ -35,7 +35,7 @@ func NewAccessPackageResourceScope()(*AccessPackageResourceScope) {
 func CreateAccessPackageResourceScopeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageResourceScope(), nil
 }
-// GetAccessPackageResource gets the accessPackageResource property value. Read-only. Nullable.
+// GetAccessPackageResource gets the accessPackageResource property value. The accessPackageResource property
 func (m *AccessPackageResourceScope) GetAccessPackageResource()(AccessPackageResourceable) {
     if m == nil {
         return nil
@@ -240,7 +240,7 @@ func (m *AccessPackageResourceScope) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAccessPackageResource sets the accessPackageResource property value. Read-only. Nullable.
+// SetAccessPackageResource sets the accessPackageResource property value. The accessPackageResource property
 func (m *AccessPackageResourceScope) SetAccessPackageResource(value AccessPackageResourceable)() {
     if m != nil {
         m.accessPackageResource = value

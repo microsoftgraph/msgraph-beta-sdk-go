@@ -8,13 +8,13 @@ import (
 type RedundancyDetectionSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The isEnabled property
+    // Indicates whether email threading and near duplicate detection are enabled.
     isEnabled *bool
-    // The maxWords property
+    // Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
     maxWords *int32
-    // The minWords property
+    // Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
     minWords *int32
-    // The similarityThreshold property
+    // Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
     similarityThreshold *int32
 }
 // NewRedundancyDetectionSettings instantiates a new redundancyDetectionSettings and sets the default values.
@@ -81,7 +81,7 @@ func (m *RedundancyDetectionSettings) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Indicates whether email threading and near duplicate detection are enabled.
 func (m *RedundancyDetectionSettings) GetIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *RedundancyDetectionSettings) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// GetMaxWords gets the maxWords property value. The maxWords property
+// GetMaxWords gets the maxWords property value. Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
 func (m *RedundancyDetectionSettings) GetMaxWords()(*int32) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *RedundancyDetectionSettings) GetMaxWords()(*int32) {
         return m.maxWords
     }
 }
-// GetMinWords gets the minWords property value. The minWords property
+// GetMinWords gets the minWords property value. Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
 func (m *RedundancyDetectionSettings) GetMinWords()(*int32) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *RedundancyDetectionSettings) GetMinWords()(*int32) {
         return m.minWords
     }
 }
-// GetSimilarityThreshold gets the similarityThreshold property value. The similarityThreshold property
+// GetSimilarityThreshold gets the similarityThreshold property value. Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
 func (m *RedundancyDetectionSettings) GetSimilarityThreshold()(*int32) {
     if m == nil {
         return nil
@@ -153,25 +153,25 @@ func (m *RedundancyDetectionSettings) SetAdditionalData(value map[string]interfa
         m.additionalData = value
     }
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Indicates whether email threading and near duplicate detection are enabled.
 func (m *RedundancyDetectionSettings) SetIsEnabled(value *bool)() {
     if m != nil {
         m.isEnabled = value
     }
 }
-// SetMaxWords sets the maxWords property value. The maxWords property
+// SetMaxWords sets the maxWords property value. Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
 func (m *RedundancyDetectionSettings) SetMaxWords(value *int32)() {
     if m != nil {
         m.maxWords = value
     }
 }
-// SetMinWords sets the minWords property value. The minWords property
+// SetMinWords sets the minWords property value. Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
 func (m *RedundancyDetectionSettings) SetMinWords(value *int32)() {
     if m != nil {
         m.minWords = value
     }
 }
-// SetSimilarityThreshold sets the similarityThreshold property value. The similarityThreshold property
+// SetSimilarityThreshold sets the similarityThreshold property value. Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
 func (m *RedundancyDetectionSettings) SetSimilarityThreshold(value *int32)() {
     if m != nil {
         m.similarityThreshold = value

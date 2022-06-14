@@ -36,8 +36,10 @@ func CreateDeviceManagementSettingCategoryFromDiscriminatorValue(parseNode i878a
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.deviceManagementSettingCategory":
-                        return NewDeviceManagementSettingCategory(), nil
+                    case "#microsoft.graph.deviceManagementIntentSettingCategory":
+                        return NewDeviceManagementIntentSettingCategory(), nil
+                    case "#microsoft.graph.deviceManagementTemplateSettingCategory":
+                        return NewDeviceManagementTemplateSettingCategory(), nil
                 }
             }
         }

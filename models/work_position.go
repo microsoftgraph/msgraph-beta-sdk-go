@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkPosition casts the previous resource to group.
+// WorkPosition 
 type WorkPosition struct {
     ItemFacet
     // Categories that the user has associated with this position.
@@ -18,7 +18,7 @@ type WorkPosition struct {
     // Contains detail of the user's manager in this position.
     manager RelatedPersonable
 }
-// NewWorkPosition instantiates a new workPosition and sets the default values.
+// NewWorkPosition instantiates a new WorkPosition and sets the default values.
 func NewWorkPosition()(*WorkPosition) {
     m := &WorkPosition{
         ItemFacet: *NewItemFacet(),

@@ -13,6 +13,8 @@ type CloudPcOnPremisesConnection struct {
     adDomainPassword *string
     // The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.
     adDomainUsername *string
+    // The alternateResourceUrl property
+    alternateResourceUrl *string
     // The display name for the Azure network connection.
     displayName *string
     // The status of the most recent health check done on the Azure network connection. For example, if status is 'passed', the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
@@ -73,6 +75,14 @@ func (m *CloudPcOnPremisesConnection) GetAdDomainUsername()(*string) {
         return m.adDomainUsername
     }
 }
+// GetAlternateResourceUrl gets the alternateResourceUrl property value. The alternateResourceUrl property
+func (m *CloudPcOnPremisesConnection) GetAlternateResourceUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.alternateResourceUrl
+    }
+}
 // GetDisplayName gets the displayName property value. The display name for the Azure network connection.
 func (m *CloudPcOnPremisesConnection) GetDisplayName()(*string) {
     if m == nil {
@@ -111,6 +121,16 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetAdDomainUsername(val)
+        }
+        return nil
+    }
+    res["alternateResourceUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAlternateResourceUrl(val)
         }
         return nil
     }
@@ -349,6 +369,12 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("alternateResourceUrl", m.GetAlternateResourceUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -441,6 +467,12 @@ func (m *CloudPcOnPremisesConnection) SetAdDomainPassword(value *string)() {
 func (m *CloudPcOnPremisesConnection) SetAdDomainUsername(value *string)() {
     if m != nil {
         m.adDomainUsername = value
+    }
+}
+// SetAlternateResourceUrl sets the alternateResourceUrl property value. The alternateResourceUrl property
+func (m *CloudPcOnPremisesConnection) SetAlternateResourceUrl(value *string)() {
+    if m != nil {
+        m.alternateResourceUrl = value
     }
 }
 // SetDisplayName sets the displayName property value. The display name for the Azure network connection.

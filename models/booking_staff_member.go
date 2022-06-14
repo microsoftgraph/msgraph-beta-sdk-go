@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingStaffMember represents a staff member who provides services in a business.
+// BookingStaffMember 
 type BookingStaffMember struct {
     BookingPerson
     // True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
@@ -22,7 +22,7 @@ type BookingStaffMember struct {
     // The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
     workingHours []BookingWorkHoursable
 }
-// NewBookingStaffMember instantiates a new bookingStaffMember and sets the default values.
+// NewBookingStaffMember instantiates a new BookingStaffMember and sets the default values.
 func NewBookingStaffMember()(*BookingStaffMember) {
     m := &BookingStaffMember{
         BookingPerson: *NewBookingPerson(),

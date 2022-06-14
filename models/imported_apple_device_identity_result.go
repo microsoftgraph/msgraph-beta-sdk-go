@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ImportedAppleDeviceIdentityResult the importedAppleDeviceIdentityResult resource represents the result of attempting to import Apple devices identities.
+// ImportedAppleDeviceIdentityResult 
 type ImportedAppleDeviceIdentityResult struct {
     ImportedAppleDeviceIdentity
     // Status of imported device identity
     status *bool
 }
-// NewImportedAppleDeviceIdentityResult instantiates a new importedAppleDeviceIdentityResult and sets the default values.
+// NewImportedAppleDeviceIdentityResult instantiates a new ImportedAppleDeviceIdentityResult and sets the default values.
 func NewImportedAppleDeviceIdentityResult()(*ImportedAppleDeviceIdentityResult) {
     m := &ImportedAppleDeviceIdentityResult{
         ImportedAppleDeviceIdentity: *NewImportedAppleDeviceIdentity(),

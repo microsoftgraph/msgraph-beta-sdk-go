@@ -15,7 +15,7 @@ type Directory struct {
     customSecurityAttributeDefinitions []CustomSecurityAttributeDefinitionable
     // Recently deleted items. Read-only. Nullable.
     deletedItems []DirectoryObjectable
-    // Nullable.
+    // The featureRolloutPolicies property
     featureRolloutPolicies []FeatureRolloutPolicyable
     // Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
     federationConfigurations []IdentityProviderBaseable
@@ -73,7 +73,7 @@ func (m *Directory) GetDeletedItems()([]DirectoryObjectable) {
         return m.deletedItems
     }
 }
-// GetFeatureRolloutPolicies gets the featureRolloutPolicies property value. Nullable.
+// GetFeatureRolloutPolicies gets the featureRolloutPolicies property value. The featureRolloutPolicies property
 func (m *Directory) GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable) {
     if m == nil {
         return nil
@@ -430,7 +430,7 @@ func (m *Directory) SetDeletedItems(value []DirectoryObjectable)() {
         m.deletedItems = value
     }
 }
-// SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. Nullable.
+// SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. The featureRolloutPolicies property
 func (m *Directory) SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)() {
     if m != nil {
         m.featureRolloutPolicies = value

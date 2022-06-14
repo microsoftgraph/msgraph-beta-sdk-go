@@ -8,11 +8,11 @@ import (
 type RoleDefinition struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The description property
+    // The description for the role.
     description *string
-    // The displayName property
+    // The display name for the role assignment.
     displayName *string
-    // The templateId property
+    // The unique identifier for the template.
     templateId *string
 }
 // NewRoleDefinition instantiates a new roleDefinition and sets the default values.
@@ -34,7 +34,7 @@ func (m *RoleDefinition) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description for the role.
 func (m *RoleDefinition) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -42,7 +42,7 @@ func (m *RoleDefinition) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name for the role assignment.
 func (m *RoleDefinition) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetTemplateId gets the templateId property value. The templateId property
+// GetTemplateId gets the templateId property value. The unique identifier for the template.
 func (m *RoleDefinition) GetTemplateId()(*string) {
     if m == nil {
         return nil
@@ -127,19 +127,19 @@ func (m *RoleDefinition) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description for the role.
 func (m *RoleDefinition) SetDescription(value *string)() {
     if m != nil {
         m.description = value
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name for the role assignment.
 func (m *RoleDefinition) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
     }
 }
-// SetTemplateId sets the templateId property value. The templateId property
+// SetTemplateId sets the templateId property value. The unique identifier for the template.
 func (m *RoleDefinition) SetTemplateId(value *string)() {
     if m != nil {
         m.templateId = value

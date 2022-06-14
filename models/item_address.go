@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemAddress casts the previous resource to group.
+// ItemAddress 
 type ItemAddress struct {
     ItemFacet
     // The detail property
@@ -14,7 +14,7 @@ type ItemAddress struct {
     // The geocoordinates of the address.
     geoCoordinates GeoCoordinatesable
 }
-// NewItemAddress instantiates a new itemAddress and sets the default values.
+// NewItemAddress instantiates a new ItemAddress and sets the default values.
 func NewItemAddress()(*ItemAddress) {
     m := &ItemAddress{
         ItemFacet: *NewItemFacet(),

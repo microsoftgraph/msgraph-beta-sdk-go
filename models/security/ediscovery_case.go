@@ -6,33 +6,33 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// EdiscoveryCase provides operations to manage the security singleton.
+// EdiscoveryCase 
 type EdiscoveryCase struct {
     Case_escaped
-    // The closedBy property
+    // The user who closed the case.
     closedBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable
-    // The closedDateTime property
+    // The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     closedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The custodians property
+    // Returns a list of case ediscoveryCustodian objects for this case.
     custodians []EdiscoveryCustodianable
-    // The externalId property
+    // The external case number for customer reference.
     externalId *string
-    // The legalHolds property
+    // Returns a list of case eDiscoveryHoldPolicy objects for this case.
     legalHolds []EdiscoveryHoldPolicyable
-    // The noncustodialDataSources property
+    // Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
     noncustodialDataSources []EdiscoveryNoncustodialDataSourceable
-    // The operations property
+    // Returns a list of case caseOperation objects for this case.
     operations []CaseOperationable
-    // The reviewSets property
+    // Returns a list of eDiscoveryReviewSet objects in the case.
     reviewSets []EdiscoveryReviewSetable
-    // The searches property
+    // Returns a list of eDiscoverySearch objects associated with this case.
     searches []EdiscoverySearchable
-    // The settings property
+    // Returns a list of eDIscoverySettings objects in the case.
     settings EdiscoveryCaseSettingsable
-    // The tags property
+    // Returns a list of ediscoveryReviewTag objects associated to this case.
     tags []EdiscoveryReviewTagable
 }
-// NewEdiscoveryCase instantiates a new ediscoveryCase and sets the default values.
+// NewEdiscoveryCase instantiates a new EdiscoveryCase and sets the default values.
 func NewEdiscoveryCase()(*EdiscoveryCase) {
     m := &EdiscoveryCase{
         Case_escaped: *NewCase_escaped(),
@@ -43,7 +43,7 @@ func NewEdiscoveryCase()(*EdiscoveryCase) {
 func CreateEdiscoveryCaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryCase(), nil
 }
-// GetClosedBy gets the closedBy property value. The closedBy property
+// GetClosedBy gets the closedBy property value. The user who closed the case.
 func (m *EdiscoveryCase) GetClosedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     if m == nil {
         return nil
@@ -51,7 +51,7 @@ func (m *EdiscoveryCase) GetClosedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697
         return m.closedBy
     }
 }
-// GetClosedDateTime gets the closedDateTime property value. The closedDateTime property
+// GetClosedDateTime gets the closedDateTime property value. The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EdiscoveryCase) GetClosedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *EdiscoveryCase) GetClosedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
         return m.closedDateTime
     }
 }
-// GetCustodians gets the custodians property value. The custodians property
+// GetCustodians gets the custodians property value. Returns a list of case ediscoveryCustodian objects for this case.
 func (m *EdiscoveryCase) GetCustodians()([]EdiscoveryCustodianable) {
     if m == nil {
         return nil
@@ -67,7 +67,7 @@ func (m *EdiscoveryCase) GetCustodians()([]EdiscoveryCustodianable) {
         return m.custodians
     }
 }
-// GetExternalId gets the externalId property value. The externalId property
+// GetExternalId gets the externalId property value. The external case number for customer reference.
 func (m *EdiscoveryCase) GetExternalId()(*string) {
     if m == nil {
         return nil
@@ -218,7 +218,7 @@ func (m *EdiscoveryCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetLegalHolds gets the legalHolds property value. The legalHolds property
+// GetLegalHolds gets the legalHolds property value. Returns a list of case eDiscoveryHoldPolicy objects for this case.
 func (m *EdiscoveryCase) GetLegalHolds()([]EdiscoveryHoldPolicyable) {
     if m == nil {
         return nil
@@ -226,7 +226,7 @@ func (m *EdiscoveryCase) GetLegalHolds()([]EdiscoveryHoldPolicyable) {
         return m.legalHolds
     }
 }
-// GetNoncustodialDataSources gets the noncustodialDataSources property value. The noncustodialDataSources property
+// GetNoncustodialDataSources gets the noncustodialDataSources property value. Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 func (m *EdiscoveryCase) GetNoncustodialDataSources()([]EdiscoveryNoncustodialDataSourceable) {
     if m == nil {
         return nil
@@ -234,7 +234,7 @@ func (m *EdiscoveryCase) GetNoncustodialDataSources()([]EdiscoveryNoncustodialDa
         return m.noncustodialDataSources
     }
 }
-// GetOperations gets the operations property value. The operations property
+// GetOperations gets the operations property value. Returns a list of case caseOperation objects for this case.
 func (m *EdiscoveryCase) GetOperations()([]CaseOperationable) {
     if m == nil {
         return nil
@@ -242,7 +242,7 @@ func (m *EdiscoveryCase) GetOperations()([]CaseOperationable) {
         return m.operations
     }
 }
-// GetReviewSets gets the reviewSets property value. The reviewSets property
+// GetReviewSets gets the reviewSets property value. Returns a list of eDiscoveryReviewSet objects in the case.
 func (m *EdiscoveryCase) GetReviewSets()([]EdiscoveryReviewSetable) {
     if m == nil {
         return nil
@@ -250,7 +250,7 @@ func (m *EdiscoveryCase) GetReviewSets()([]EdiscoveryReviewSetable) {
         return m.reviewSets
     }
 }
-// GetSearches gets the searches property value. The searches property
+// GetSearches gets the searches property value. Returns a list of eDiscoverySearch objects associated with this case.
 func (m *EdiscoveryCase) GetSearches()([]EdiscoverySearchable) {
     if m == nil {
         return nil
@@ -258,7 +258,7 @@ func (m *EdiscoveryCase) GetSearches()([]EdiscoverySearchable) {
         return m.searches
     }
 }
-// GetSettings gets the settings property value. The settings property
+// GetSettings gets the settings property value. Returns a list of eDIscoverySettings objects in the case.
 func (m *EdiscoveryCase) GetSettings()(EdiscoveryCaseSettingsable) {
     if m == nil {
         return nil
@@ -266,7 +266,7 @@ func (m *EdiscoveryCase) GetSettings()(EdiscoveryCaseSettingsable) {
         return m.settings
     }
 }
-// GetTags gets the tags property value. The tags property
+// GetTags gets the tags property value. Returns a list of ediscoveryReviewTag objects associated to this case.
 func (m *EdiscoveryCase) GetTags()([]EdiscoveryReviewTagable) {
     if m == nil {
         return nil
@@ -376,67 +376,67 @@ func (m *EdiscoveryCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetClosedBy sets the closedBy property value. The closedBy property
+// SetClosedBy sets the closedBy property value. The user who closed the case.
 func (m *EdiscoveryCase) SetClosedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
     if m != nil {
         m.closedBy = value
     }
 }
-// SetClosedDateTime sets the closedDateTime property value. The closedDateTime property
+// SetClosedDateTime sets the closedDateTime property value. The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *EdiscoveryCase) SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.closedDateTime = value
     }
 }
-// SetCustodians sets the custodians property value. The custodians property
+// SetCustodians sets the custodians property value. Returns a list of case ediscoveryCustodian objects for this case.
 func (m *EdiscoveryCase) SetCustodians(value []EdiscoveryCustodianable)() {
     if m != nil {
         m.custodians = value
     }
 }
-// SetExternalId sets the externalId property value. The externalId property
+// SetExternalId sets the externalId property value. The external case number for customer reference.
 func (m *EdiscoveryCase) SetExternalId(value *string)() {
     if m != nil {
         m.externalId = value
     }
 }
-// SetLegalHolds sets the legalHolds property value. The legalHolds property
+// SetLegalHolds sets the legalHolds property value. Returns a list of case eDiscoveryHoldPolicy objects for this case.
 func (m *EdiscoveryCase) SetLegalHolds(value []EdiscoveryHoldPolicyable)() {
     if m != nil {
         m.legalHolds = value
     }
 }
-// SetNoncustodialDataSources sets the noncustodialDataSources property value. The noncustodialDataSources property
+// SetNoncustodialDataSources sets the noncustodialDataSources property value. Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 func (m *EdiscoveryCase) SetNoncustodialDataSources(value []EdiscoveryNoncustodialDataSourceable)() {
     if m != nil {
         m.noncustodialDataSources = value
     }
 }
-// SetOperations sets the operations property value. The operations property
+// SetOperations sets the operations property value. Returns a list of case caseOperation objects for this case.
 func (m *EdiscoveryCase) SetOperations(value []CaseOperationable)() {
     if m != nil {
         m.operations = value
     }
 }
-// SetReviewSets sets the reviewSets property value. The reviewSets property
+// SetReviewSets sets the reviewSets property value. Returns a list of eDiscoveryReviewSet objects in the case.
 func (m *EdiscoveryCase) SetReviewSets(value []EdiscoveryReviewSetable)() {
     if m != nil {
         m.reviewSets = value
     }
 }
-// SetSearches sets the searches property value. The searches property
+// SetSearches sets the searches property value. Returns a list of eDiscoverySearch objects associated with this case.
 func (m *EdiscoveryCase) SetSearches(value []EdiscoverySearchable)() {
     if m != nil {
         m.searches = value
     }
 }
-// SetSettings sets the settings property value. The settings property
+// SetSettings sets the settings property value. Returns a list of eDIscoverySettings objects in the case.
 func (m *EdiscoveryCase) SetSettings(value EdiscoveryCaseSettingsable)() {
     if m != nil {
         m.settings = value
     }
 }
-// SetTags sets the tags property value. The tags property
+// SetTags sets the tags property value. Returns a list of ediscoveryReviewTag objects associated to this case.
 func (m *EdiscoveryCase) SetTags(value []EdiscoveryReviewTagable)() {
     if m != nil {
         m.tags = value

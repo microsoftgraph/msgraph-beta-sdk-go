@@ -22,7 +22,7 @@ type MyRoleTenantItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MyRoleTenantItemRequestBuilderGetQueryParameters get myRoles from tenantRelationships
+// MyRoleTenantItemRequestBuilderGetQueryParameters the collection of role assignments to a signed-in user for a managed tenant.
 type MyRoleTenantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *MyRoleTenantItemRequestBuilder) CreateDeleteRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get myRoles from tenantRelationships
+// CreateGetRequestInformation the collection of role assignments to a signed-in user for a managed tenant.
 func (m *MyRoleTenantItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get myRoles from tenantRelationships
+// CreateGetRequestInformationWithRequestConfiguration the collection of role assignments to a signed-in user for a managed tenant.
 func (m *MyRoleTenantItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *MyRoleTenantItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *MyRoleTenantItemRequestBuilder) DeleteWithRequestConfigurationAndRespon
     }
     return nil
 }
-// Get get myRoles from tenantRelationships
+// Get the collection of role assignments to a signed-in user for a managed tenant.
 func (m *MyRoleTenantItemRequestBuilder) Get()(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.MyRoleable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get myRoles from tenantRelationships
+// GetWithRequestConfigurationAndResponseHandler the collection of role assignments to a signed-in user for a managed tenant.
 func (m *MyRoleTenantItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *MyRoleTenantItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.MyRoleable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

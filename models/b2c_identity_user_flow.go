@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// B2cIdentityUserFlow provides operations to manage the identityContainer singleton.
+// B2cIdentityUserFlow 
 type B2cIdentityUserFlow struct {
     IdentityUserFlow
     // Configuration for enabling an API connector for use as part of the user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
@@ -22,7 +22,7 @@ type B2cIdentityUserFlow struct {
     // The userFlowIdentityProviders property
     userFlowIdentityProviders []IdentityProviderBaseable
 }
-// NewB2cIdentityUserFlow instantiates a new b2cIdentityUserFlow and sets the default values.
+// NewB2cIdentityUserFlow instantiates a new B2cIdentityUserFlow and sets the default values.
 func NewB2cIdentityUserFlow()(*B2cIdentityUserFlow) {
     m := &B2cIdentityUserFlow{
         IdentityUserFlow: *NewIdentityUserFlow(),

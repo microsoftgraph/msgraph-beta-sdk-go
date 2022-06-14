@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ListItemVersion casts the previous resource to group.
+// ListItemVersion 
 type ListItemVersion struct {
     BaseItemVersion
     // A collection of the fields and values for this version of the list item.
     fields FieldValueSetable
 }
-// NewListItemVersion instantiates a new listItemVersion and sets the default values.
+// NewListItemVersion instantiates a new ListItemVersion and sets the default values.
 func NewListItemVersion()(*ListItemVersion) {
     m := &ListItemVersion{
         BaseItemVersion: *NewBaseItemVersion(),
@@ -32,8 +32,8 @@ func CreateListItemVersionFromDiscriminatorValue(parseNode i878a80d2330e89d26896
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.listItemVersion":
-                        return NewListItemVersion(), nil
+                    case "#microsoft.graph.documentSetVersion":
+                        return NewDocumentSetVersion(), nil
                 }
             }
         }

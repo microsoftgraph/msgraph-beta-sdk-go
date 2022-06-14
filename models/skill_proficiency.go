@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SkillProficiency casts the previous resource to group.
+// SkillProficiency 
 type SkillProficiency struct {
     ItemFacet
     // Contains categories a user has associated with the skill (for example, personal, professional, hobby).
@@ -20,7 +20,7 @@ type SkillProficiency struct {
     // Contains a link to an information source about the skill.
     webUrl *string
 }
-// NewSkillProficiency instantiates a new skillProficiency and sets the default values.
+// NewSkillProficiency instantiates a new SkillProficiency and sets the default values.
 func NewSkillProficiency()(*SkillProficiency) {
     m := &SkillProficiency{
         ItemFacet: *NewItemFacet(),

@@ -51,8 +51,8 @@ func CreateRiskyServicePrincipalFromDiscriminatorValue(parseNode i878a80d2330e89
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.riskyServicePrincipal":
-                        return NewRiskyServicePrincipal(), nil
+                    case "#microsoft.graph.riskyServicePrincipalHistoryItem":
+                        return NewRiskyServicePrincipalHistoryItem(), nil
                 }
             }
         }

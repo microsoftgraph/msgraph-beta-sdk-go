@@ -5,16 +5,16 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintJob casts the previous resource to group.
+// PrintJob provides operations to manage the collection of administrativeUnit entities.
 type PrintJob struct {
     Entity
     // A group of settings that a printer should use to print a job.
     configuration PrintJobConfigurationable
-    // Read-only. Nullable.
+    // The createdBy property
     createdBy UserIdentityable
     // The DateTimeOffset when the job was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Read-only.
+    // The documents property
     documents []PrintDocumentable
     // If true, document can be fetched by printer.
     isFetchable *bool
@@ -46,7 +46,7 @@ func (m *PrintJob) GetConfiguration()(PrintJobConfigurationable) {
         return m.configuration
     }
 }
-// GetCreatedBy gets the createdBy property value. Read-only. Nullable.
+// GetCreatedBy gets the createdBy property value. The createdBy property
 func (m *PrintJob) GetCreatedBy()(UserIdentityable) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *PrintJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
         return m.createdDateTime
     }
 }
-// GetDocuments gets the documents property value. Read-only.
+// GetDocuments gets the documents property value. The documents property
 func (m *PrintJob) GetDocuments()([]PrintDocumentable) {
     if m == nil {
         return nil
@@ -289,7 +289,7 @@ func (m *PrintJob) SetConfiguration(value PrintJobConfigurationable)() {
         m.configuration = value
     }
 }
-// SetCreatedBy sets the createdBy property value. Read-only. Nullable.
+// SetCreatedBy sets the createdBy property value. The createdBy property
 func (m *PrintJob) SetCreatedBy(value UserIdentityable)() {
     if m != nil {
         m.createdBy = value
@@ -301,7 +301,7 @@ func (m *PrintJob) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
         m.createdDateTime = value
     }
 }
-// SetDocuments sets the documents property value. Read-only.
+// SetDocuments sets the documents property value. The documents property
 func (m *PrintJob) SetDocuments(value []PrintDocumentable)() {
     if m != nil {
         m.documents = value

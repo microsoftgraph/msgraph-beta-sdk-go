@@ -15,7 +15,7 @@ type AddToReviewSetOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AddToReviewSetOperationRequestBuilderGetQueryParameters get addToReviewSetOperation from security
+// AddToReviewSetOperationRequestBuilderGetQueryParameters adds the results of the eDiscovery search to the specified reviewSet.
 type AddToReviewSetOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,11 +50,11 @@ func NewAddToReviewSetOperationRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewAddToReviewSetOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get addToReviewSetOperation from security
+// CreateGetRequestInformation adds the results of the eDiscovery search to the specified reviewSet.
 func (m *AddToReviewSetOperationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get addToReviewSetOperation from security
+// CreateGetRequestInformationWithRequestConfiguration adds the results of the eDiscovery search to the specified reviewSet.
 func (m *AddToReviewSetOperationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AddToReviewSetOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,11 +70,11 @@ func (m *AddToReviewSetOperationRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Get get addToReviewSetOperation from security
+// Get adds the results of the eDiscovery search to the specified reviewSet.
 func (m *AddToReviewSetOperationRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryAddToReviewSetOperationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get addToReviewSetOperation from security
+// GetWithRequestConfigurationAndResponseHandler adds the results of the eDiscovery search to the specified reviewSet.
 func (m *AddToReviewSetOperationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AddToReviewSetOperationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryAddToReviewSetOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

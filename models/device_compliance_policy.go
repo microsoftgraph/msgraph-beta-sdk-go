@@ -57,8 +57,30 @@ func CreateDeviceCompliancePolicyFromDiscriminatorValue(parseNode i878a80d2330e8
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.deviceCompliancePolicy":
-                        return NewDeviceCompliancePolicy(), nil
+                    case "#microsoft.graph.androidCompliancePolicy":
+                        return NewAndroidCompliancePolicy(), nil
+                    case "#microsoft.graph.androidDeviceOwnerCompliancePolicy":
+                        return NewAndroidDeviceOwnerCompliancePolicy(), nil
+                    case "#microsoft.graph.androidForWorkCompliancePolicy":
+                        return NewAndroidForWorkCompliancePolicy(), nil
+                    case "#microsoft.graph.androidWorkProfileCompliancePolicy":
+                        return NewAndroidWorkProfileCompliancePolicy(), nil
+                    case "#microsoft.graph.aospDeviceOwnerCompliancePolicy":
+                        return NewAospDeviceOwnerCompliancePolicy(), nil
+                    case "#microsoft.graph.defaultDeviceCompliancePolicy":
+                        return NewDefaultDeviceCompliancePolicy(), nil
+                    case "#microsoft.graph.iosCompliancePolicy":
+                        return NewIosCompliancePolicy(), nil
+                    case "#microsoft.graph.macOSCompliancePolicy":
+                        return NewMacOSCompliancePolicy(), nil
+                    case "#microsoft.graph.windows10CompliancePolicy":
+                        return NewWindows10CompliancePolicy(), nil
+                    case "#microsoft.graph.windows10MobileCompliancePolicy":
+                        return NewWindows10MobileCompliancePolicy(), nil
+                    case "#microsoft.graph.windows81CompliancePolicy":
+                        return NewWindows81CompliancePolicy(), nil
+                    case "#microsoft.graph.windowsPhone81CompliancePolicy":
+                        return NewWindowsPhone81CompliancePolicy(), nil
                 }
             }
         }

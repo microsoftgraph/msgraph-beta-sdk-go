@@ -15,7 +15,7 @@ type ReviewSet struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The review set name. The name is unique with a maximum limit of 64 characters.
     displayName *string
-    // Read-only. Nullable.
+    // The queries property
     queries []ReviewSetQueryable
 }
 // NewReviewSet instantiates a new reviewSet and sets the default values.
@@ -102,7 +102,7 @@ func (m *ReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetQueries gets the queries property value. Read-only. Nullable.
+// GetQueries gets the queries property value. The queries property
 func (m *ReviewSet) GetQueries()([]ReviewSetQueryable) {
     if m == nil {
         return nil
@@ -164,7 +164,7 @@ func (m *ReviewSet) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetQueries sets the queries property value. Read-only. Nullable.
+// SetQueries sets the queries property value. The queries property
 func (m *ReviewSet) SetQueries(value []ReviewSetQueryable)() {
     if m != nil {
         m.queries = value

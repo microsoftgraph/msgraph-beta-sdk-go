@@ -2,7 +2,7 @@ package security
 import (
     "errors"
 )
-// Provides operations to call the export method.
+// Provides operations to manage the security singleton.
 type ExportFileStructure int
 
 const (

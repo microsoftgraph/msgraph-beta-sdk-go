@@ -7,19 +7,19 @@ import (
 // EdiscoveryEstimateOperation provides operations to manage the security singleton.
 type EdiscoveryEstimateOperation struct {
     CaseOperation
-    // The indexedItemCount property
+    // The estimated count of items for the search that matched the content query.
     indexedItemCount *int64
-    // The indexedItemsSize property
+    // The estimated size of items for the search that matched the content query.
     indexedItemsSize *int64
-    // The mailboxCount property
+    // The number of mailboxes that had search hits.
     mailboxCount *int32
-    // The search property
+    // eDiscovery search.
     search EdiscoverySearchable
-    // The siteCount property
+    // The number of mailboxes that had search hits.
     siteCount *int32
-    // The unindexedItemCount property
+    // The estimated count of unindexed items for the collection.
     unindexedItemCount *int64
-    // The unindexedItemsSize property
+    // The estimated size of unindexed items for the collection.
     unindexedItemsSize *int64
 }
 // NewEdiscoveryEstimateOperation instantiates a new ediscoveryEstimateOperation and sets the default values.
@@ -108,7 +108,7 @@ func (m *EdiscoveryEstimateOperation) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetIndexedItemCount gets the indexedItemCount property value. The indexedItemCount property
+// GetIndexedItemCount gets the indexedItemCount property value. The estimated count of items for the search that matched the content query.
 func (m *EdiscoveryEstimateOperation) GetIndexedItemCount()(*int64) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *EdiscoveryEstimateOperation) GetIndexedItemCount()(*int64) {
         return m.indexedItemCount
     }
 }
-// GetIndexedItemsSize gets the indexedItemsSize property value. The indexedItemsSize property
+// GetIndexedItemsSize gets the indexedItemsSize property value. The estimated size of items for the search that matched the content query.
 func (m *EdiscoveryEstimateOperation) GetIndexedItemsSize()(*int64) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *EdiscoveryEstimateOperation) GetIndexedItemsSize()(*int64) {
         return m.indexedItemsSize
     }
 }
-// GetMailboxCount gets the mailboxCount property value. The mailboxCount property
+// GetMailboxCount gets the mailboxCount property value. The number of mailboxes that had search hits.
 func (m *EdiscoveryEstimateOperation) GetMailboxCount()(*int32) {
     if m == nil {
         return nil
@@ -132,7 +132,7 @@ func (m *EdiscoveryEstimateOperation) GetMailboxCount()(*int32) {
         return m.mailboxCount
     }
 }
-// GetSearch gets the search property value. The search property
+// GetSearch gets the search property value. eDiscovery search.
 func (m *EdiscoveryEstimateOperation) GetSearch()(EdiscoverySearchable) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *EdiscoveryEstimateOperation) GetSearch()(EdiscoverySearchable) {
         return m.search
     }
 }
-// GetSiteCount gets the siteCount property value. The siteCount property
+// GetSiteCount gets the siteCount property value. The number of mailboxes that had search hits.
 func (m *EdiscoveryEstimateOperation) GetSiteCount()(*int32) {
     if m == nil {
         return nil
@@ -148,7 +148,7 @@ func (m *EdiscoveryEstimateOperation) GetSiteCount()(*int32) {
         return m.siteCount
     }
 }
-// GetUnindexedItemCount gets the unindexedItemCount property value. The unindexedItemCount property
+// GetUnindexedItemCount gets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
 func (m *EdiscoveryEstimateOperation) GetUnindexedItemCount()(*int64) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *EdiscoveryEstimateOperation) GetUnindexedItemCount()(*int64) {
         return m.unindexedItemCount
     }
 }
-// GetUnindexedItemsSize gets the unindexedItemsSize property value. The unindexedItemsSize property
+// GetUnindexedItemsSize gets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
 func (m *EdiscoveryEstimateOperation) GetUnindexedItemsSize()(*int64) {
     if m == nil {
         return nil
@@ -214,43 +214,43 @@ func (m *EdiscoveryEstimateOperation) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetIndexedItemCount sets the indexedItemCount property value. The indexedItemCount property
+// SetIndexedItemCount sets the indexedItemCount property value. The estimated count of items for the search that matched the content query.
 func (m *EdiscoveryEstimateOperation) SetIndexedItemCount(value *int64)() {
     if m != nil {
         m.indexedItemCount = value
     }
 }
-// SetIndexedItemsSize sets the indexedItemsSize property value. The indexedItemsSize property
+// SetIndexedItemsSize sets the indexedItemsSize property value. The estimated size of items for the search that matched the content query.
 func (m *EdiscoveryEstimateOperation) SetIndexedItemsSize(value *int64)() {
     if m != nil {
         m.indexedItemsSize = value
     }
 }
-// SetMailboxCount sets the mailboxCount property value. The mailboxCount property
+// SetMailboxCount sets the mailboxCount property value. The number of mailboxes that had search hits.
 func (m *EdiscoveryEstimateOperation) SetMailboxCount(value *int32)() {
     if m != nil {
         m.mailboxCount = value
     }
 }
-// SetSearch sets the search property value. The search property
+// SetSearch sets the search property value. eDiscovery search.
 func (m *EdiscoveryEstimateOperation) SetSearch(value EdiscoverySearchable)() {
     if m != nil {
         m.search = value
     }
 }
-// SetSiteCount sets the siteCount property value. The siteCount property
+// SetSiteCount sets the siteCount property value. The number of mailboxes that had search hits.
 func (m *EdiscoveryEstimateOperation) SetSiteCount(value *int32)() {
     if m != nil {
         m.siteCount = value
     }
 }
-// SetUnindexedItemCount sets the unindexedItemCount property value. The unindexedItemCount property
+// SetUnindexedItemCount sets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
 func (m *EdiscoveryEstimateOperation) SetUnindexedItemCount(value *int64)() {
     if m != nil {
         m.unindexedItemCount = value
     }
 }
-// SetUnindexedItemsSize sets the unindexedItemsSize property value. The unindexedItemsSize property
+// SetUnindexedItemsSize sets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
 func (m *EdiscoveryEstimateOperation) SetUnindexedItemsSize(value *int64)() {
     if m != nil {
         m.unindexedItemsSize = value

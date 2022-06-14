@@ -32,8 +32,12 @@ func CreateBookingNamedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.bookingNamedEntity":
-                        return NewBookingNamedEntity(), nil
+                    case "#microsoft.graph.bookingBusiness":
+                        return NewBookingBusiness(), nil
+                    case "#microsoft.graph.bookingPerson":
+                        return NewBookingPerson(), nil
+                    case "#microsoft.graph.bookingService":
+                        return NewBookingService(), nil
                 }
             }
         }

@@ -5,12 +5,15 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i2614d5d0103e56ecf04c6c4fd0f822c8bb4169f41348567e3129b7e490bdcb9a "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/activities"
+    i487f0b8b175da4af103a9145d96acb6aae9893982d8774d3214a8a384cbe2a11 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/sharedwithme"
     i692dc1e6a84b3d3b12e09ff20f40b589907efa560331c264538bc5f6da13ea56 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/following"
     i6d6ca41bea7345d62c2fc6e26c5908930f4248e99145e3f29e99138769e35ea0 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/root"
     i8fbeebc4eccf2cac5b307c6dad40201406826338e23db27d5b7087fb1c511a33 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/list"
+    i945b7af17e70a5c153ccf5092279ad0695fca3f162777d31443b1146f7af0d9c "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/searchwithq"
     i9db81101a247c2f318c6dc980b57fdc41219ff102a02f4565abf58a7bd25bc02 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/special"
     i9e8763d19a0b58b31ba068155ad48ccdd03e35f21e9127fbc08402fba4782f21 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/items"
     iab65ab63810b85ddf181f3ceb253e41e673d177c55f9296e466f666d335ba752 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/bundles"
+    ie9dfbaaf9ea9c76631f653acff17130b359159e7c2a776a1a54cddc7f6167506 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/recent"
     i0b052b85d2b65a8720c50aace6ba162194917e9b48b1ec21fb26a7b992f49f80 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/bundles/item"
     i0b84d05595dd5ab19113571f05d199f7f8beafb687e2428e652e75b880a8ae37 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/items/item"
     i1710ef6dc790d2d92c9e3a08bd60c6151b7b10afd1f76d824029788ceef4b4d6 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/drives/item/special/item"
@@ -253,9 +256,21 @@ func (m *DriveItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandle
     }
     return nil
 }
+// Recent provides operations to call the recent method.
+func (m *DriveItemRequestBuilder) Recent()(*ie9dfbaaf9ea9c76631f653acff17130b359159e7c2a776a1a54cddc7f6167506.RecentRequestBuilder) {
+    return ie9dfbaaf9ea9c76631f653acff17130b359159e7c2a776a1a54cddc7f6167506.NewRecentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Root the root property
 func (m *DriveItemRequestBuilder) Root()(*i6d6ca41bea7345d62c2fc6e26c5908930f4248e99145e3f29e99138769e35ea0.RootRequestBuilder) {
     return i6d6ca41bea7345d62c2fc6e26c5908930f4248e99145e3f29e99138769e35ea0.NewRootRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SearchWithQ provides operations to call the search method.
+func (m *DriveItemRequestBuilder) SearchWithQ(q *string)(*i945b7af17e70a5c153ccf5092279ad0695fca3f162777d31443b1146f7af0d9c.SearchWithQRequestBuilder) {
+    return i945b7af17e70a5c153ccf5092279ad0695fca3f162777d31443b1146f7af0d9c.NewSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q);
+}
+// SharedWithMe provides operations to call the sharedWithMe method.
+func (m *DriveItemRequestBuilder) SharedWithMe()(*i487f0b8b175da4af103a9145d96acb6aae9893982d8774d3214a8a384cbe2a11.SharedWithMeRequestBuilder) {
+    return i487f0b8b175da4af103a9145d96acb6aae9893982d8774d3214a8a384cbe2a11.NewSharedWithMeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Special the special property
 func (m *DriveItemRequestBuilder) Special()(*i9db81101a247c2f318c6dc980b57fdc41219ff102a02f4565abf58a7bd25bc02.SpecialRequestBuilder) {

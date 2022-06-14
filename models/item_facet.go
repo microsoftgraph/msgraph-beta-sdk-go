@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemFacet casts the previous resource to group.
+// ItemFacet provides operations to manage the collection of administrativeUnit entities.
 type ItemFacet struct {
     Entity
     // The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
@@ -47,8 +47,46 @@ func CreateItemFacetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.itemFacet":
-                        return NewItemFacet(), nil
+                    case "#microsoft.graph.educationalActivity":
+                        return NewEducationalActivity(), nil
+                    case "#microsoft.graph.itemAddress":
+                        return NewItemAddress(), nil
+                    case "#microsoft.graph.itemEmail":
+                        return NewItemEmail(), nil
+                    case "#microsoft.graph.itemPatent":
+                        return NewItemPatent(), nil
+                    case "#microsoft.graph.itemPhone":
+                        return NewItemPhone(), nil
+                    case "#microsoft.graph.itemPublication":
+                        return NewItemPublication(), nil
+                    case "#microsoft.graph.languageProficiency":
+                        return NewLanguageProficiency(), nil
+                    case "#microsoft.graph.personAnnotation":
+                        return NewPersonAnnotation(), nil
+                    case "#microsoft.graph.personAnnualEvent":
+                        return NewPersonAnnualEvent(), nil
+                    case "#microsoft.graph.personAward":
+                        return NewPersonAward(), nil
+                    case "#microsoft.graph.personCertification":
+                        return NewPersonCertification(), nil
+                    case "#microsoft.graph.personInterest":
+                        return NewPersonInterest(), nil
+                    case "#microsoft.graph.personName":
+                        return NewPersonName(), nil
+                    case "#microsoft.graph.personResponsibility":
+                        return NewPersonResponsibility(), nil
+                    case "#microsoft.graph.personWebsite":
+                        return NewPersonWebsite(), nil
+                    case "#microsoft.graph.projectParticipation":
+                        return NewProjectParticipation(), nil
+                    case "#microsoft.graph.skillProficiency":
+                        return NewSkillProficiency(), nil
+                    case "#microsoft.graph.userAccountInformation":
+                        return NewUserAccountInformation(), nil
+                    case "#microsoft.graph.webAccount":
+                        return NewWebAccount(), nil
+                    case "#microsoft.graph.workPosition":
+                        return NewWorkPosition(), nil
                 }
             }
         }

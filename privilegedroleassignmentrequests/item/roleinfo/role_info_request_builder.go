@@ -7,6 +7,8 @@ import (
     i1721b0eaada2dd5efbd4a95951797885d4f2d3cde7447b79ef6372d21be0a6bf "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignmentrequests/item/roleinfo/summary"
     i3fe6caa29a2409f68e98f1a04bf1f86d4284ac6cc7508637c3461dae6ebb41cc "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignmentrequests/item/roleinfo/settings"
     i9a7b7ed52442792951b363d33df86a53ea6b293e88308fbeb15e56b47a4a39d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignmentrequests/item/roleinfo/assignments"
+    icf5a99f187b3caa046cd63542f946400cb9a0c7d4870bbafefdae9cab6db72b6 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignmentrequests/item/roleinfo/selfdeactivate"
+    ie89f568cd53dfcd03f3a71171ccb9a7afeecf2eb06b5e7b0dbecbbaf1fd2bf74 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignmentrequests/item/roleinfo/selfactivate"
     i5793653b0cfb9d5b0eedc68e4dc192fa8343ad2b1ebc4a9031ffee56bd6ac846 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignmentrequests/item/roleinfo/assignments/item"
 )
 
@@ -195,6 +197,14 @@ func (m *RoleInfoRequestBuilder) PatchWithRequestConfigurationAndResponseHandler
         return err
     }
     return nil
+}
+// SelfActivate the selfActivate property
+func (m *RoleInfoRequestBuilder) SelfActivate()(*ie89f568cd53dfcd03f3a71171ccb9a7afeecf2eb06b5e7b0dbecbbaf1fd2bf74.SelfActivateRequestBuilder) {
+    return ie89f568cd53dfcd03f3a71171ccb9a7afeecf2eb06b5e7b0dbecbbaf1fd2bf74.NewSelfActivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SelfDeactivate the selfDeactivate property
+func (m *RoleInfoRequestBuilder) SelfDeactivate()(*icf5a99f187b3caa046cd63542f946400cb9a0c7d4870bbafefdae9cab6db72b6.SelfDeactivateRequestBuilder) {
+    return icf5a99f187b3caa046cd63542f946400cb9a0c7d4870bbafefdae9cab6db72b6.NewSelfDeactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Settings the settings property
 func (m *RoleInfoRequestBuilder) Settings()(*i3fe6caa29a2409f68e98f1a04bf1f86d4284ac6cc7508637c3461dae6ebb41cc.SettingsRequestBuilder) {

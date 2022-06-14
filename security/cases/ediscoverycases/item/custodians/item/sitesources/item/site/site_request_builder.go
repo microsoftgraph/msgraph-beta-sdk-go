@@ -15,7 +15,7 @@ type SiteRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SiteRequestBuilderGetQueryParameters get site from security
+// SiteRequestBuilderGetQueryParameters the SharePoint site associated with the siteSource.
 type SiteRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,11 +50,11 @@ func NewSiteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewSiteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get site from security
+// CreateGetRequestInformation the SharePoint site associated with the siteSource.
 func (m *SiteRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get site from security
+// CreateGetRequestInformationWithRequestConfiguration the SharePoint site associated with the siteSource.
 func (m *SiteRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SiteRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,11 +70,11 @@ func (m *SiteRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// Get get site from security
+// Get the SharePoint site associated with the siteSource.
 func (m *SiteRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get site from security
+// GetWithRequestConfigurationAndResponseHandler the SharePoint site associated with the siteSource.
 func (m *SiteRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SiteRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

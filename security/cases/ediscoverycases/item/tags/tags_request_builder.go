@@ -17,7 +17,7 @@ type TagsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TagsRequestBuilderGetQueryParameters get tags from security
+// TagsRequestBuilderGetQueryParameters returns a list of ediscoveryReviewTag objects associated to this case.
 type TagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,11 +79,11 @@ func NewTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
 func (m *TagsRequestBuilder) Count()(*ic3f5681ebb2ed927d44e68aeb94445f701b4a3d11a85d7fbd8362f9f307e93f2.CountRequestBuilder) {
     return ic3f5681ebb2ed927d44e68aeb94445f701b4a3d11a85d7fbd8362f9f307e93f2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get tags from security
+// CreateGetRequestInformation returns a list of ediscoveryReviewTag objects associated to this case.
 func (m *TagsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get tags from security
+// CreateGetRequestInformationWithRequestConfiguration returns a list of ediscoveryReviewTag objects associated to this case.
 func (m *TagsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -117,11 +117,11 @@ func (m *TagsRequestBuilder) CreatePostRequestInformationWithRequestConfiguratio
     }
     return requestInfo, nil
 }
-// Get get tags from security
+// Get returns a list of ediscoveryReviewTag objects associated to this case.
 func (m *TagsRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewTagCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get tags from security
+// GetWithRequestConfigurationAndResponseHandler returns a list of ediscoveryReviewTag objects associated to this case.
 func (m *TagsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TagsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewTagCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

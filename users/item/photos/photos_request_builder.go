@@ -16,7 +16,7 @@ type PhotosRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// PhotosRequestBuilderGetQueryParameters read-only. Nullable.
+// PhotosRequestBuilderGetQueryParameters get photos from users
 type PhotosRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,11 +70,11 @@ func NewPhotosRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *PhotosRequestBuilder) Count()(*i3dd87cba366903c9c6533640439e283fd33cd24524dadfecfe203eaad1b8e6ad.CountRequestBuilder) {
     return i3dd87cba366903c9c6533640439e283fd33cd24524dadfecfe203eaad1b8e6ad.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get photos from users
 func (m *PhotosRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get photos from users
 func (m *PhotosRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *PhotosRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -108,11 +108,11 @@ func (m *PhotosRequestBuilder) CreatePostRequestInformationWithRequestConfigurat
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get get photos from users
 func (m *PhotosRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get photos from users
 func (m *PhotosRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PhotosRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

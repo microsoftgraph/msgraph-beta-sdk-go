@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Qna provides operations to manage the searchEntity singleton.
+// Qna 
 type Qna struct {
     SearchAnswer
     // Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
@@ -27,7 +27,7 @@ type Qna struct {
     // Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
     targetedVariations []AnswerVariantable
 }
-// NewQna instantiates a new qna and sets the default values.
+// NewQna instantiates a new Qna and sets the default values.
 func NewQna()(*Qna) {
     m := &Qna{
         SearchAnswer: *NewSearchAnswer(),

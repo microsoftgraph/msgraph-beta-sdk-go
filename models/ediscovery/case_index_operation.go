@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CaseIndexOperation provides operations to manage the compliance singleton.
+// CaseIndexOperation 
 type CaseIndexOperation struct {
     CaseOperation
 }
-// NewCaseIndexOperation instantiates a new caseIndexOperation and sets the default values.
+// NewCaseIndexOperation instantiates a new CaseIndexOperation and sets the default values.
 func NewCaseIndexOperation()(*CaseIndexOperation) {
     m := &CaseIndexOperation{
         CaseOperation: *NewCaseOperation(),

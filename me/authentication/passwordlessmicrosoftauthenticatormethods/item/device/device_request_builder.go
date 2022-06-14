@@ -5,10 +5,15 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i0d77d51762afb312051a66ff0d072f74d0909b7c015efd76b8c87d6199efcd1d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/commands"
+    i1ccd3df7113f97343af430d44f11e377fc121fea842ecd13d6a0eac2d8df62a3 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/getmembergroups"
+    i316a2809ecbe95bd6d19e6fb3baa109c20bd786118202ac73cfae9587b1ffd82 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/checkmembergroups"
     i3ae2ea8d1d90288fb8ea35208974c20c615b958fec4c4fea281e67b3a30d2afc "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/extensions"
     i49e6fcb2e2cf0668d1248ae85a527c962538c5823c682d7a25ce5ab7d66135df "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/registeredusers"
+    i6923d5d5845179d0f2228eda4df0c06d6cbe742911d2cb3f4d859a8174583802 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/getmemberobjects"
     i7b5c03f4ebc84cd9bea96eb81cb23ff553fc1b89118a37d39d936b330a174741 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/usagerights"
     i82e0bfd631f1395cab6648abb3d02b84625769cb19a4cb645643ac9dbfa78493 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/memberof"
+    ib1f08da31f969f38211f649137aa9a851218f9e5558c966356f514646332d2de "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/restore"
+    ib7582d692353533164bc65a742f450acac35afb3224cbb8e2a6d2fc95e95ff4a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/checkmemberobjects"
     ifa4e774d5efc34701cae0e2e08aba1c7394850169af9b3b8ad42e136d0f9b094 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/transitivememberof"
     ifefac0fd089930b8fe8970089acd25ab0fe668bc606cc17f5b80b5f6a1182f6b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/registeredowners"
     i0771763c1b5cca0306c9e5b023f9aaf9e6e827c5c6a03a24c9c990ee6ba9f8ee "github.com/microsoftgraph/msgraph-beta-sdk-go/me/authentication/passwordlessmicrosoftauthenticatormethods/item/device/usagerights/item"
@@ -58,6 +63,14 @@ type DeviceRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// CheckMemberGroups the checkMemberGroups property
+func (m *DeviceRequestBuilder) CheckMemberGroups()(*i316a2809ecbe95bd6d19e6fb3baa109c20bd786118202ac73cfae9587b1ffd82.CheckMemberGroupsRequestBuilder) {
+    return i316a2809ecbe95bd6d19e6fb3baa109c20bd786118202ac73cfae9587b1ffd82.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CheckMemberObjects the checkMemberObjects property
+func (m *DeviceRequestBuilder) CheckMemberObjects()(*ib7582d692353533164bc65a742f450acac35afb3224cbb8e2a6d2fc95e95ff4a.CheckMemberObjectsRequestBuilder) {
+    return ib7582d692353533164bc65a742f450acac35afb3224cbb8e2a6d2fc95e95ff4a.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Commands the commands property
 func (m *DeviceRequestBuilder) Commands()(*i0d77d51762afb312051a66ff0d072f74d0909b7c015efd76b8c87d6199efcd1d.CommandsRequestBuilder) {
@@ -185,6 +198,14 @@ func (m *DeviceRequestBuilder) ExtensionsById(id string)(*i7c508c2ddf5785fc71c98
 func (m *DeviceRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetMemberGroups the getMemberGroups property
+func (m *DeviceRequestBuilder) GetMemberGroups()(*i1ccd3df7113f97343af430d44f11e377fc121fea842ecd13d6a0eac2d8df62a3.GetMemberGroupsRequestBuilder) {
+    return i1ccd3df7113f97343af430d44f11e377fc121fea842ecd13d6a0eac2d8df62a3.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetMemberObjects the getMemberObjects property
+func (m *DeviceRequestBuilder) GetMemberObjects()(*i6923d5d5845179d0f2228eda4df0c06d6cbe742911d2cb3f4d859a8174583802.GetMemberObjectsRequestBuilder) {
+    return i6923d5d5845179d0f2228eda4df0c06d6cbe742911d2cb3f4d859a8174583802.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler get device from me
 func (m *DeviceRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -265,6 +286,10 @@ func (m *DeviceRequestBuilder) RegisteredUsersById(id string)(*i5cf89751a8a47595
         urlTplParams["directoryObject%2Did"] = id
     }
     return i5cf89751a8a4759507d179d3ea66878ec8f62d21121c4a534234e7f625595433.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Restore the restore property
+func (m *DeviceRequestBuilder) Restore()(*ib1f08da31f969f38211f649137aa9a851218f9e5558c966356f514646332d2de.RestoreRequestBuilder) {
+    return ib1f08da31f969f38211f649137aa9a851218f9e5558c966356f514646332d2de.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TransitiveMemberOf the transitiveMemberOf property
 func (m *DeviceRequestBuilder) TransitiveMemberOf()(*ifa4e774d5efc34701cae0e2e08aba1c7394850169af9b3b8ad42e136d0f9b094.TransitiveMemberOfRequestBuilder) {

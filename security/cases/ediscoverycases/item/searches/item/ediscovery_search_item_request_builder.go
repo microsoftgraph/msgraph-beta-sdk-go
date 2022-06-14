@@ -32,7 +32,7 @@ type EdiscoverySearchItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoverySearchItemRequestBuilderGetQueryParameters get searches from security
+// EdiscoverySearchItemRequestBuilderGetQueryParameters returns a list of eDiscoverySearch objects associated with this case.
 type EdiscoverySearchItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -109,11 +109,11 @@ func (m *EdiscoverySearchItemRequestBuilder) CreateDeleteRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get searches from security
+// CreateGetRequestInformation returns a list of eDiscoverySearch objects associated with this case.
 func (m *EdiscoverySearchItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get searches from security
+// CreateGetRequestInformationWithRequestConfiguration returns a list of eDiscoverySearch objects associated with this case.
 func (m *EdiscoverySearchItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EdiscoverySearchItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -185,11 +185,11 @@ func (m *EdiscoverySearchItemRequestBuilder) DeleteWithRequestConfigurationAndRe
 func (m *EdiscoverySearchItemRequestBuilder) EstimateStatistics()(*i84bdda408caa738046f53eaffe4066b7e8cbbac60c83398b34aafb24b42d5e9c.EstimateStatisticsRequestBuilder) {
     return i84bdda408caa738046f53eaffe4066b7e8cbbac60c83398b34aafb24b42d5e9c.NewEstimateStatisticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get searches from security
+// Get returns a list of eDiscoverySearch objects associated with this case.
 func (m *EdiscoverySearchItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoverySearchable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get searches from security
+// GetWithRequestConfigurationAndResponseHandler returns a list of eDiscoverySearch objects associated with this case.
 func (m *EdiscoverySearchItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EdiscoverySearchItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoverySearchable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

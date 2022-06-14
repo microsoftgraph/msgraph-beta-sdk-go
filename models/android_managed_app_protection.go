@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidManagedAppProtection policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
+// AndroidManagedAppProtection 
 type AndroidManagedAppProtection struct {
     TargetedManagedAppProtection
     // Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.
@@ -90,7 +90,7 @@ type AndroidManagedAppProtection struct {
     // Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
     wipeAfterCompanyPortalUpdateDeferralInDays *int32
 }
-// NewAndroidManagedAppProtection instantiates a new androidManagedAppProtection and sets the default values.
+// NewAndroidManagedAppProtection instantiates a new AndroidManagedAppProtection and sets the default values.
 func NewAndroidManagedAppProtection()(*AndroidManagedAppProtection) {
     m := &AndroidManagedAppProtection{
         TargetedManagedAppProtection: *NewTargetedManagedAppProtection(),

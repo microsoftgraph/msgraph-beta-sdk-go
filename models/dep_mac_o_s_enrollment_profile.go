@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DepMacOSEnrollmentProfile the DepMacOSEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile specific to macOS configuration. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
+// DepMacOSEnrollmentProfile 
 type DepMacOSEnrollmentProfile struct {
     DepEnrollmentBaseProfile
     // Indicates if Accessibility screen is disabled
@@ -26,7 +26,7 @@ type DepMacOSEnrollmentProfile struct {
     // Indicates if zoom setup pane is disabled
     zoomDisabled *bool
 }
-// NewDepMacOSEnrollmentProfile instantiates a new depMacOSEnrollmentProfile and sets the default values.
+// NewDepMacOSEnrollmentProfile instantiates a new DepMacOSEnrollmentProfile and sets the default values.
 func NewDepMacOSEnrollmentProfile()(*DepMacOSEnrollmentProfile) {
     m := &DepMacOSEnrollmentProfile{
         DepEnrollmentBaseProfile: *NewDepEnrollmentBaseProfile(),

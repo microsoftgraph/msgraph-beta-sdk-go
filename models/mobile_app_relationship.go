@@ -40,8 +40,10 @@ func CreateMobileAppRelationshipFromDiscriminatorValue(parseNode i878a80d2330e89
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.mobileAppRelationship":
-                        return NewMobileAppRelationship(), nil
+                    case "#microsoft.graph.mobileAppDependency":
+                        return NewMobileAppDependency(), nil
+                    case "#microsoft.graph.mobileAppSupersedence":
+                        return NewMobileAppSupersedence(), nil
                 }
             }
         }

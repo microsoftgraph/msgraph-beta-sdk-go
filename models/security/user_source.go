@@ -4,17 +4,17 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserSource provides operations to manage the security singleton.
+// UserSource 
 type UserSource struct {
     DataSource
-    // The email property
+    // Email address of the user's mailbox.
     email *string
-    // The includedSources property
+    // Specifies which sources are included in this group. Possible values are: mailbox, site.
     includedSources *SourceType
-    // The siteWebUrl property
+    // The URL of the user's OneDrive for Business site. Read-only.
     siteWebUrl *string
 }
-// NewUserSource instantiates a new userSource and sets the default values.
+// NewUserSource instantiates a new UserSource and sets the default values.
 func NewUserSource()(*UserSource) {
     m := &UserSource{
         DataSource: *NewDataSource(),
@@ -25,7 +25,7 @@ func NewUserSource()(*UserSource) {
 func CreateUserSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserSource(), nil
 }
-// GetEmail gets the email property value. The email property
+// GetEmail gets the email property value. Email address of the user's mailbox.
 func (m *UserSource) GetEmail()(*string) {
     if m == nil {
         return nil
@@ -68,7 +68,7 @@ func (m *UserSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetIncludedSources gets the includedSources property value. The includedSources property
+// GetIncludedSources gets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
 func (m *UserSource) GetIncludedSources()(*SourceType) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *UserSource) GetIncludedSources()(*SourceType) {
         return m.includedSources
     }
 }
-// GetSiteWebUrl gets the siteWebUrl property value. The siteWebUrl property
+// GetSiteWebUrl gets the siteWebUrl property value. The URL of the user's OneDrive for Business site. Read-only.
 func (m *UserSource) GetSiteWebUrl()(*string) {
     if m == nil {
         return nil
@@ -111,19 +111,19 @@ func (m *UserSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetEmail sets the email property value. The email property
+// SetEmail sets the email property value. Email address of the user's mailbox.
 func (m *UserSource) SetEmail(value *string)() {
     if m != nil {
         m.email = value
     }
 }
-// SetIncludedSources sets the includedSources property value. The includedSources property
+// SetIncludedSources sets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
 func (m *UserSource) SetIncludedSources(value *SourceType)() {
     if m != nil {
         m.includedSources = value
     }
 }
-// SetSiteWebUrl sets the siteWebUrl property value. The siteWebUrl property
+// SetSiteWebUrl sets the siteWebUrl property value. The URL of the user's OneDrive for Business site. Read-only.
 func (m *UserSource) SetSiteWebUrl(value *string)() {
     if m != nil {
         m.siteWebUrl = value

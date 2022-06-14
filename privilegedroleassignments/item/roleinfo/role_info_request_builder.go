@@ -5,6 +5,8 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i14d3b1099c12de821235b9046c0fe443f0d08af3ef9196da3852f7c9096a9456 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignments/item/roleinfo/summary"
+    i1be213330230666a7f78e848b631064650ba359f512cbfcef9054acfcd95000d "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignments/item/roleinfo/selfactivate"
+    i5d9b0586636a3cb17b9fc6b4b07b708ddf8a4c94f548693caab3ae95df11297d "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignments/item/roleinfo/selfdeactivate"
     i7be4f06094555e6d1ed283d4812cebe44786b3a3896c5d67fcf9b8066bfaeb8e "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignments/item/roleinfo/settings"
     iddbd5b0e7375a8b731ea7c30727a2839cc1fe6936313d8f9fb36762191a4a258 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignments/item/roleinfo/assignments"
     id336737ac0abd6bb7b542bc7f6e733eee4b4936acef3152c3b4beee97311be81 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroleassignments/item/roleinfo/assignments/item"
@@ -195,6 +197,14 @@ func (m *RoleInfoRequestBuilder) PatchWithRequestConfigurationAndResponseHandler
         return err
     }
     return nil
+}
+// SelfActivate the selfActivate property
+func (m *RoleInfoRequestBuilder) SelfActivate()(*i1be213330230666a7f78e848b631064650ba359f512cbfcef9054acfcd95000d.SelfActivateRequestBuilder) {
+    return i1be213330230666a7f78e848b631064650ba359f512cbfcef9054acfcd95000d.NewSelfActivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SelfDeactivate the selfDeactivate property
+func (m *RoleInfoRequestBuilder) SelfDeactivate()(*i5d9b0586636a3cb17b9fc6b4b07b708ddf8a4c94f548693caab3ae95df11297d.SelfDeactivateRequestBuilder) {
+    return i5d9b0586636a3cb17b9fc6b4b07b708ddf8a4c94f548693caab3ae95df11297d.NewSelfDeactivateRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Settings the settings property
 func (m *RoleInfoRequestBuilder) Settings()(*i7be4f06094555e6d1ed283d4812cebe44786b3a3896c5d67fcf9b8066bfaeb8e.SettingsRequestBuilder) {

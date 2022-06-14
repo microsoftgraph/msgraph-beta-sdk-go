@@ -16,7 +16,7 @@ type ApplicationsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ApplicationsRequestBuilderGetQueryParameters read-only. Nullable.
+// ApplicationsRequestBuilderGetQueryParameters get applications from onPremisesPublishingProfiles
 type ApplicationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,11 +67,11 @@ func NewApplicationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ApplicationsRequestBuilder) Count()(*i4cc5fdeaf7ecb904537f212f814b1602ee68ef6f0d38f58d3130da45ec06ba88.CountRequestBuilder) {
     return i4cc5fdeaf7ecb904537f212f814b1602ee68ef6f0d38f58d3130da45ec06ba88.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get applications from onPremisesPublishingProfiles
 func (m *ApplicationsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get applications from onPremisesPublishingProfiles
 func (m *ApplicationsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ApplicationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -87,11 +87,11 @@ func (m *ApplicationsRequestBuilder) CreateGetRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get get applications from onPremisesPublishingProfiles
 func (m *ApplicationsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get applications from onPremisesPublishingProfiles
 func (m *ApplicationsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ApplicationsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

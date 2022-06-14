@@ -42,7 +42,7 @@ type ManagedTenant struct {
     managementTemplateSteps []ManagementTemplateStepable
     // The managementTemplateStepVersions property
     managementTemplateStepVersions []ManagementTemplateStepVersionable
-    // The myRoles property
+    // The collection of role assignments to a signed-in user for a managed tenant.
     myRoles []MyRoleable
     // The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
     tenantGroups []TenantGroupable
@@ -561,7 +561,7 @@ func (m *ManagedTenant) GetManagementTemplateStepVersions()([]ManagementTemplate
         return m.managementTemplateStepVersions
     }
 }
-// GetMyRoles gets the myRoles property value. The myRoles property
+// GetMyRoles gets the myRoles property value. The collection of role assignments to a signed-in user for a managed tenant.
 func (m *ManagedTenant) GetMyRoles()([]MyRoleable) {
     if m == nil {
         return nil
@@ -985,7 +985,7 @@ func (m *ManagedTenant) SetManagementTemplateStepVersions(value []ManagementTemp
         m.managementTemplateStepVersions = value
     }
 }
-// SetMyRoles sets the myRoles property value. The myRoles property
+// SetMyRoles sets the myRoles property value. The collection of role assignments to a signed-in user for a managed tenant.
 func (m *ManagedTenant) SetMyRoles(value []MyRoleable)() {
     if m != nil {
         m.myRoles = value

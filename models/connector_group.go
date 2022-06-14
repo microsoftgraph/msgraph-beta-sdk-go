@@ -4,16 +4,16 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConnectorGroup casts the previous resource to application.
+// ConnectorGroup provides operations to manage the collection of administrativeUnit entities.
 type ConnectorGroup struct {
     Entity
-    // Read-only. Nullable.
+    // The applications property
     applications []Applicationable
     // Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.
     connectorGroupType *ConnectorGroupType
     // Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
     isDefault *bool
-    // Read-only. Nullable.
+    // The members property
     members []Connectorable
     // The name associated with the connectorGroup.
     name *string
@@ -31,7 +31,7 @@ func NewConnectorGroup()(*ConnectorGroup) {
 func CreateConnectorGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnectorGroup(), nil
 }
-// GetApplications gets the applications property value. Read-only. Nullable.
+// GetApplications gets the applications property value. The applications property
 func (m *ConnectorGroup) GetApplications()([]Applicationable) {
     if m == nil {
         return nil
@@ -128,7 +128,7 @@ func (m *ConnectorGroup) GetIsDefault()(*bool) {
         return m.isDefault
     }
 }
-// GetMembers gets the members property value. Read-only. Nullable.
+// GetMembers gets the members property value. The members property
 func (m *ConnectorGroup) GetMembers()([]Connectorable) {
     if m == nil {
         return nil
@@ -206,7 +206,7 @@ func (m *ConnectorGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetApplications sets the applications property value. Read-only. Nullable.
+// SetApplications sets the applications property value. The applications property
 func (m *ConnectorGroup) SetApplications(value []Applicationable)() {
     if m != nil {
         m.applications = value
@@ -224,7 +224,7 @@ func (m *ConnectorGroup) SetIsDefault(value *bool)() {
         m.isDefault = value
     }
 }
-// SetMembers sets the members property value. Read-only. Nullable.
+// SetMembers sets the members property value. The members property
 func (m *ConnectorGroup) SetMembers(value []Connectorable)() {
     if m != nil {
         m.members = value

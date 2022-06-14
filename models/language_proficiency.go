@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LanguageProficiency casts the previous resource to group.
+// LanguageProficiency 
 type LanguageProficiency struct {
     ItemFacet
     // Contains the long-form name for the language.
@@ -22,7 +22,7 @@ type LanguageProficiency struct {
     // Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
     written *LanguageProficiencyLevel
 }
-// NewLanguageProficiency instantiates a new languageProficiency and sets the default values.
+// NewLanguageProficiency instantiates a new LanguageProficiency and sets the default values.
 func NewLanguageProficiency()(*LanguageProficiency) {
     m := &LanguageProficiency{
         ItemFacet: *NewItemFacet(),

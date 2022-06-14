@@ -31,8 +31,10 @@ func CreateUpdatableAssetFromDiscriminatorValue(parseNode i878a80d2330e89d268963
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.windowsUpdates.updatableAsset":
-                        return NewUpdatableAsset(), nil
+                    case "#microsoft.graph.windowsUpdates.azureADDevice":
+                        return NewAzureADDevice(), nil
+                    case "#microsoft.graph.windowsUpdates.updatableAssetGroup":
+                        return NewUpdatableAssetGroup(), nil
                 }
             }
         }

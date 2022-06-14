@@ -7,7 +7,6 @@ import (
     i18f0f3d80ebc26c14d0b298a950e35a82ff4632a691418331bc5c8ae9f7e1749 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/attachments"
     i25ba706e121e0ece5ebf98516c94795df9564057f989070249206d4cfb86fd93 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/mentions"
     i38bd3b59f483648cf474b3f78ca224a4030f1ccdc95d8b3eca57afa7733c4cdc "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/createreplyall"
-    i56e6bf2f80d7479fcf2b474c3916c0c636102e2f6f6405a2dd2c51ff45359403 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/calendarsharingmessage"
     i97f19227de75a13e8bce2a9f2f0fe826731ce9d14c85ded6e3178da92ad9f8e1 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/move"
     i98dfc01c9609a1f92d8d40b05cc6915fe1b5f42504125809b5cbadd5bac1be4a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/extensions"
     ia085204d95108fdfba3f30179e84fe9d56d2a41f0196b3faaccac5933897f4d8 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/multivalueextendedproperties"
@@ -15,7 +14,6 @@ import (
     iaff702774cc3e61c13d7e163970e1629db453df271cbb59488849ed2a3ae0ec7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/createforward"
     ib47eb4bd511bd586fac1efd76227784d7f819cd4b070f8b6ebf528e44d879c62 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/copy"
     ic04bbf54cf6a3374e1844545b8f1fbb2c3e149b51fc1b499324271cb325f7593 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/forward"
-    ic14505206271e848bd0b9454c10f984b045b8d95d2098c58abdc8853bee7b8e9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/eventmessagerequest"
     ic2eb00d9cef4107c8d86f41b9ef42043e0038c1234cf6e8fb334c17ec24dd276 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/createreply"
     ic57b0d8e565c4fbad1c8bb7680c7f1bebe14d763e641b8aaef0cf7ed6e29b08a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/send"
     idb7f86c95ef4ba5d0a0f2d5e20325af74620e389e5d247f6967baca5d122864a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/childfolders/item/messages/item/reply"
@@ -82,10 +80,6 @@ func (m *MessageItemRequestBuilder) AttachmentsById(id string)(*i12ca9076148c4a8
         urlTplParams["attachment%2Did"] = id
     }
     return i12ca9076148c4a8f67d38f9a192b8c7b772df3687a3cc8863d5e5956f3e8e836.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// CalendarSharingMessage the calendarSharingMessage property
-func (m *MessageItemRequestBuilder) CalendarSharingMessage()(*i56e6bf2f80d7479fcf2b474c3916c0c636102e2f6f6405a2dd2c51ff45359403.CalendarSharingMessageRequestBuilder) {
-    return i56e6bf2f80d7479fcf2b474c3916c0c636102e2f6f6405a2dd2c51ff45359403.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewMessageItemRequestBuilderInternal instantiates a new MessageItemRequestBuilder and sets the default values.
 func NewMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessageItemRequestBuilder) {
@@ -198,10 +192,6 @@ func (m *MessageItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHan
         return err
     }
     return nil
-}
-// EventMessageRequest the eventMessageRequest property
-func (m *MessageItemRequestBuilder) EventMessageRequest()(*ic14505206271e848bd0b9454c10f984b045b8d95d2098c58abdc8853bee7b8e9.EventMessageRequestRequestBuilder) {
-    return ic14505206271e848bd0b9454c10f984b045b8d95d2098c58abdc8853bee7b8e9.NewEventMessageRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Extensions the extensions property
 func (m *MessageItemRequestBuilder) Extensions()(*i98dfc01c9609a1f92d8d40b05cc6915fe1b5f42504125809b5cbadd5bac1be4a.ExtensionsRequestBuilder) {

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PasswordlessMicrosoftAuthenticatorAuthenticationMethod casts the previous resource to group.
+// PasswordlessMicrosoftAuthenticatorAuthenticationMethod 
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethod struct {
     AuthenticationMethod
     // The createdDateTime property
@@ -17,7 +17,7 @@ type PasswordlessMicrosoftAuthenticatorAuthenticationMethod struct {
     // The display name of the mobile device as given by the user.
     displayName *string
 }
-// NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod instantiates a new passwordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
+// NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod instantiates a new PasswordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
 func NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod()(*PasswordlessMicrosoftAuthenticatorAuthenticationMethod) {
     m := &PasswordlessMicrosoftAuthenticatorAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

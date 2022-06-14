@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistration provides operations to manage the commsApplication singleton.
+// MeetingRegistration 
 type MeetingRegistration struct {
     MeetingRegistrationBase
     // Custom registration questions.
@@ -25,7 +25,7 @@ type MeetingRegistration struct {
     // The subject of the meeting.
     subject *string
 }
-// NewMeetingRegistration instantiates a new meetingRegistration and sets the default values.
+// NewMeetingRegistration instantiates a new MeetingRegistration and sets the default values.
 func NewMeetingRegistration()(*MeetingRegistration) {
     m := &MeetingRegistration{
         MeetingRegistrationBase: *NewMeetingRegistrationBase(),

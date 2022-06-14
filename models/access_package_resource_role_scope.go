@@ -10,13 +10,13 @@ type AccessPackageResourceRoleScope struct {
     Entity
     // Read-only. Nullable. Supports $expand.
     accessPackageResourceRole AccessPackageResourceRoleable
-    // Read-only. Nullable.
+    // The accessPackageResourceScope property
     accessPackageResourceScope AccessPackageResourceScopeable
-    // Read-only.
+    // The createdBy property
     createdBy *string
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Read-only.
+    // The modifiedBy property
     modifiedBy *string
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -40,7 +40,7 @@ func (m *AccessPackageResourceRoleScope) GetAccessPackageResourceRole()(AccessPa
         return m.accessPackageResourceRole
     }
 }
-// GetAccessPackageResourceScope gets the accessPackageResourceScope property value. Read-only. Nullable.
+// GetAccessPackageResourceScope gets the accessPackageResourceScope property value. The accessPackageResourceScope property
 func (m *AccessPackageResourceRoleScope) GetAccessPackageResourceScope()(AccessPackageResourceScopeable) {
     if m == nil {
         return nil
@@ -48,7 +48,7 @@ func (m *AccessPackageResourceRoleScope) GetAccessPackageResourceScope()(AccessP
         return m.accessPackageResourceScope
     }
 }
-// GetCreatedBy gets the createdBy property value. Read-only.
+// GetCreatedBy gets the createdBy property value. The createdBy property
 func (m *AccessPackageResourceRoleScope) GetCreatedBy()(*string) {
     if m == nil {
         return nil
@@ -129,7 +129,7 @@ func (m *AccessPackageResourceRoleScope) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetModifiedBy gets the modifiedBy property value. Read-only.
+// GetModifiedBy gets the modifiedBy property value. The modifiedBy property
 func (m *AccessPackageResourceRoleScope) GetModifiedBy()(*string) {
     if m == nil {
         return nil
@@ -195,13 +195,13 @@ func (m *AccessPackageResourceRoleScope) SetAccessPackageResourceRole(value Acce
         m.accessPackageResourceRole = value
     }
 }
-// SetAccessPackageResourceScope sets the accessPackageResourceScope property value. Read-only. Nullable.
+// SetAccessPackageResourceScope sets the accessPackageResourceScope property value. The accessPackageResourceScope property
 func (m *AccessPackageResourceRoleScope) SetAccessPackageResourceScope(value AccessPackageResourceScopeable)() {
     if m != nil {
         m.accessPackageResourceScope = value
     }
 }
-// SetCreatedBy sets the createdBy property value. Read-only.
+// SetCreatedBy sets the createdBy property value. The createdBy property
 func (m *AccessPackageResourceRoleScope) SetCreatedBy(value *string)() {
     if m != nil {
         m.createdBy = value
@@ -213,7 +213,7 @@ func (m *AccessPackageResourceRoleScope) SetCreatedDateTime(value *i336074805fc8
         m.createdDateTime = value
     }
 }
-// SetModifiedBy sets the modifiedBy property value. Read-only.
+// SetModifiedBy sets the modifiedBy property value. The modifiedBy property
 func (m *AccessPackageResourceRoleScope) SetModifiedBy(value *string)() {
     if m != nil {
         m.modifiedBy = value

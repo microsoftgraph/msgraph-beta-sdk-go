@@ -55,8 +55,8 @@ func CreateDeviceManagementTemplateFromDiscriminatorValue(parseNode i878a80d2330
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.deviceManagementTemplate":
-                        return NewDeviceManagementTemplate(), nil
+                    case "#microsoft.graph.securityBaselineTemplate":
+                        return NewSecurityBaselineTemplate(), nil
                 }
             }
         }

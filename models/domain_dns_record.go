@@ -40,8 +40,16 @@ func CreateDomainDnsRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.domainDnsRecord":
-                        return NewDomainDnsRecord(), nil
+                    case "#microsoft.graph.domainDnsCnameRecord":
+                        return NewDomainDnsCnameRecord(), nil
+                    case "#microsoft.graph.domainDnsMxRecord":
+                        return NewDomainDnsMxRecord(), nil
+                    case "#microsoft.graph.domainDnsSrvRecord":
+                        return NewDomainDnsSrvRecord(), nil
+                    case "#microsoft.graph.domainDnsTxtRecord":
+                        return NewDomainDnsTxtRecord(), nil
+                    case "#microsoft.graph.domainDnsUnavailableRecord":
+                        return NewDomainDnsUnavailableRecord(), nil
                 }
             }
         }

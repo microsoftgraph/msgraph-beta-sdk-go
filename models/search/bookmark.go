@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Bookmark provides operations to manage the searchEntity singleton.
+// Bookmark 
 type Bookmark struct {
     SearchAnswer
     // Timestamp of when the bookmark will stop to appear as a search result. Set as null for always available.
@@ -31,7 +31,7 @@ type Bookmark struct {
     // Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
     targetedVariations []AnswerVariantable
 }
-// NewBookmark instantiates a new bookmark and sets the default values.
+// NewBookmark instantiates a new Bookmark and sets the default values.
 func NewBookmark()(*Bookmark) {
     m := &Bookmark{
         SearchAnswer: *NewSearchAnswer(),

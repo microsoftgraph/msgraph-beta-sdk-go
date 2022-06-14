@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerDelta casts the previous resource to group.
+// PlannerDelta provides operations to manage the collection of administrativeUnit entities.
 type PlannerDelta struct {
     Entity
 }
@@ -30,8 +30,24 @@ func CreatePlannerDeltaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.plannerDelta":
-                        return NewPlannerDelta(), nil
+                    case "#microsoft.graph.plannerAssignedToTaskBoardTaskFormat":
+                        return NewPlannerAssignedToTaskBoardTaskFormat(), nil
+                    case "#microsoft.graph.plannerBucket":
+                        return NewPlannerBucket(), nil
+                    case "#microsoft.graph.plannerBucketTaskBoardTaskFormat":
+                        return NewPlannerBucketTaskBoardTaskFormat(), nil
+                    case "#microsoft.graph.plannerPlan":
+                        return NewPlannerPlan(), nil
+                    case "#microsoft.graph.plannerPlanDetails":
+                        return NewPlannerPlanDetails(), nil
+                    case "#microsoft.graph.plannerProgressTaskBoardTaskFormat":
+                        return NewPlannerProgressTaskBoardTaskFormat(), nil
+                    case "#microsoft.graph.plannerTask":
+                        return NewPlannerTask(), nil
+                    case "#microsoft.graph.plannerTaskDetails":
+                        return NewPlannerTaskDetails(), nil
+                    case "#microsoft.graph.plannerUser":
+                        return NewPlannerUser(), nil
                 }
             }
         }

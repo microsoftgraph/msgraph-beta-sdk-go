@@ -4,6 +4,9 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i043e64354107b81e130cb0e2cabe11f0bda8e655a316d82ee09cb6a9c5b25ac7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/validateproperties"
+    i245c5456e4cc807d8fa25704c2cef0dba9f2ccf01d2300b9c3629d105091c2c8 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/getbyids"
+    i44a571a0fe599c6bd5f243624597c6fdee6573e59a4ebefc1ac2ef51eec120f2 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/getuserownedobjects"
     i7393203adc985ae5ef34cb7b4b188efc1efe5551337636069d48dbc9e246c5b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/count"
 )
 
@@ -116,6 +119,14 @@ func (m *DevicesRequestBuilder) CreatePostRequestInformationWithRequestConfigura
 func (m *DevicesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetByIds the getByIds property
+func (m *DevicesRequestBuilder) GetByIds()(*i245c5456e4cc807d8fa25704c2cef0dba9f2ccf01d2300b9c3629d105091c2c8.GetByIdsRequestBuilder) {
+    return i245c5456e4cc807d8fa25704c2cef0dba9f2ccf01d2300b9c3629d105091c2c8.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetUserOwnedObjects the getUserOwnedObjects property
+func (m *DevicesRequestBuilder) GetUserOwnedObjects()(*i44a571a0fe599c6bd5f243624597c6fdee6573e59a4ebefc1ac2ef51eec120f2.GetUserOwnedObjectsRequestBuilder) {
+    return i44a571a0fe599c6bd5f243624597c6fdee6573e59a4ebefc1ac2ef51eec120f2.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler get devices from me
 func (m *DevicesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DevicesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -151,4 +162,8 @@ func (m *DevicesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(b
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
+}
+// ValidateProperties the validateProperties property
+func (m *DevicesRequestBuilder) ValidateProperties()(*i043e64354107b81e130cb0e2cabe11f0bda8e655a316d82ee09cb6a9c5b25ac7.ValidatePropertiesRequestBuilder) {
+    return i043e64354107b81e130cb0e2cabe11f0bda8e655a316d82ee09cb6a9c5b25ac7.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

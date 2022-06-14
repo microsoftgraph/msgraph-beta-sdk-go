@@ -9,17 +9,17 @@ import (
 // DataSourceContainer provides operations to manage the security singleton.
 type DataSourceContainer struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The createdDateTime property
+    // Created date and time of the dataSourceContainer entity.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The displayName property
+    // Display name of the dataSourceContainer entity.
     displayName *string
-    // The holdStatus property
+    // The hold status of the dataSourceContainer.The possible values are: notApplied, applied, applying, removing, partial
     holdStatus *DataSourceHoldStatus
-    // The lastModifiedDateTime property
+    // Last modified date and time of the dataSourceContainer.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The releasedDateTime property
+    // Date and time that the dataSourceContainer was released from the case.
     releasedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The status property
+    // Latest status of the dataSourceContainer. Possible values are: Active, Released.
     status *DataSourceContainerStatus
 }
 // NewDataSourceContainer instantiates a new dataSourceContainer and sets the default values.
@@ -44,15 +44,17 @@ func CreateDataSourceContainerFromDiscriminatorValue(parseNode i878a80d2330e89d2
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.security.dataSourceContainer":
-                        return NewDataSourceContainer(), nil
+                    case "#microsoft.graph.security.ediscoveryCustodian":
+                        return NewEdiscoveryCustodian(), nil
+                    case "#microsoft.graph.security.ediscoveryNoncustodialDataSource":
+                        return NewEdiscoveryNoncustodialDataSource(), nil
                 }
             }
         }
     }
     return NewDataSourceContainer(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Created date and time of the dataSourceContainer entity.
 func (m *DataSourceContainer) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -60,7 +62,7 @@ func (m *DataSourceContainer) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
         return m.createdDateTime
     }
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name of the dataSourceContainer entity.
 func (m *DataSourceContainer) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -133,7 +135,7 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetHoldStatus gets the holdStatus property value. The holdStatus property
+// GetHoldStatus gets the holdStatus property value. The hold status of the dataSourceContainer.The possible values are: notApplied, applied, applying, removing, partial
 func (m *DataSourceContainer) GetHoldStatus()(*DataSourceHoldStatus) {
     if m == nil {
         return nil
@@ -141,7 +143,7 @@ func (m *DataSourceContainer) GetHoldStatus()(*DataSourceHoldStatus) {
         return m.holdStatus
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date and time of the dataSourceContainer.
 func (m *DataSourceContainer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -149,7 +151,7 @@ func (m *DataSourceContainer) GetLastModifiedDateTime()(*i336074805fc853987abe6f
         return m.lastModifiedDateTime
     }
 }
-// GetReleasedDateTime gets the releasedDateTime property value. The releasedDateTime property
+// GetReleasedDateTime gets the releasedDateTime property value. Date and time that the dataSourceContainer was released from the case.
 func (m *DataSourceContainer) GetReleasedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -157,7 +159,7 @@ func (m *DataSourceContainer) GetReleasedDateTime()(*i336074805fc853987abe6f7fe3
         return m.releasedDateTime
     }
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.
 func (m *DataSourceContainer) GetStatus()(*DataSourceContainerStatus) {
     if m == nil {
         return nil
@@ -211,37 +213,37 @@ func (m *DataSourceContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Created date and time of the dataSourceContainer entity.
 func (m *DataSourceContainer) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name of the dataSourceContainer entity.
 func (m *DataSourceContainer) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
     }
 }
-// SetHoldStatus sets the holdStatus property value. The holdStatus property
+// SetHoldStatus sets the holdStatus property value. The hold status of the dataSourceContainer.The possible values are: notApplied, applied, applying, removing, partial
 func (m *DataSourceContainer) SetHoldStatus(value *DataSourceHoldStatus)() {
     if m != nil {
         m.holdStatus = value
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified date and time of the dataSourceContainer.
 func (m *DataSourceContainer) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value
     }
 }
-// SetReleasedDateTime sets the releasedDateTime property value. The releasedDateTime property
+// SetReleasedDateTime sets the releasedDateTime property value. Date and time that the dataSourceContainer was released from the case.
 func (m *DataSourceContainer) SetReleasedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.releasedDateTime = value
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.
 func (m *DataSourceContainer) SetStatus(value *DataSourceContainerStatus)() {
     if m != nil {
         m.status = value

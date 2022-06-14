@@ -28,7 +28,7 @@ type EdiscoveryReviewSetItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryReviewSetItemRequestBuilderGetQueryParameters get reviewSets from security
+// EdiscoveryReviewSetItemRequestBuilderGetQueryParameters returns a list of eDiscoveryReviewSet objects in the case.
 type EdiscoveryReviewSetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -90,11 +90,11 @@ func (m *EdiscoveryReviewSetItemRequestBuilder) CreateDeleteRequestInformationWi
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get reviewSets from security
+// CreateGetRequestInformation returns a list of eDiscoveryReviewSet objects in the case.
 func (m *EdiscoveryReviewSetItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get reviewSets from security
+// CreateGetRequestInformationWithRequestConfiguration returns a list of eDiscoveryReviewSet objects in the case.
 func (m *EdiscoveryReviewSetItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EdiscoveryReviewSetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -166,11 +166,11 @@ func (m *EdiscoveryReviewSetItemRequestBuilder) FilesById(id string)(*i043c81170
     }
     return i043c811701556dc7039d9829366dfbd791bad059dc33385fdc660c2cb4fe3c7e.NewEdiscoveryFileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get reviewSets from security
+// Get returns a list of eDiscoveryReviewSet objects in the case.
 func (m *EdiscoveryReviewSetItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get reviewSets from security
+// GetWithRequestConfigurationAndResponseHandler returns a list of eDiscoveryReviewSet objects in the case.
 func (m *EdiscoveryReviewSetItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EdiscoveryReviewSetItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

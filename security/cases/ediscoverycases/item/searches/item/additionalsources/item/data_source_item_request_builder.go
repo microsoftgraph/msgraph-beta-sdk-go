@@ -22,7 +22,7 @@ type DataSourceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DataSourceItemRequestBuilderGetQueryParameters get additionalSources from security
+// DataSourceItemRequestBuilderGetQueryParameters adds an additional source to the eDiscovery search.
 type DataSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *DataSourceItemRequestBuilder) CreateDeleteRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get additionalSources from security
+// CreateGetRequestInformation adds an additional source to the eDiscovery search.
 func (m *DataSourceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get additionalSources from security
+// CreateGetRequestInformationWithRequestConfiguration adds an additional source to the eDiscovery search.
 func (m *DataSourceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DataSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *DataSourceItemRequestBuilder) DeleteWithRequestConfigurationAndResponse
     }
     return nil
 }
-// Get get additionalSources from security
+// Get adds an additional source to the eDiscovery search.
 func (m *DataSourceItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get additionalSources from security
+// GetWithRequestConfigurationAndResponseHandler adds an additional source to the eDiscovery search.
 func (m *DataSourceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DataSourceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

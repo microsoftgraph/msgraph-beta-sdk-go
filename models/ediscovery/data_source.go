@@ -40,8 +40,12 @@ func CreateDataSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.ediscovery.dataSource":
-                        return NewDataSource(), nil
+                    case "#microsoft.graph.ediscovery.siteSource":
+                        return NewSiteSource(), nil
+                    case "#microsoft.graph.ediscovery.unifiedGroupSource":
+                        return NewUnifiedGroupSource(), nil
+                    case "#microsoft.graph.ediscovery.userSource":
+                        return NewUserSource(), nil
                 }
             }
         }

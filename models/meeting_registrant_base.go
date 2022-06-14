@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistrantBase provides operations to manage the commsApplication singleton.
+// MeetingRegistrantBase provides operations to manage the collection of administrativeUnit entities.
 type MeetingRegistrantBase struct {
     Entity
     // A unique web URL for the registrant to join the meeting. Read-only.
@@ -32,8 +32,10 @@ func CreateMeetingRegistrantBaseFromDiscriminatorValue(parseNode i878a80d2330e89
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.meetingRegistrantBase":
-                        return NewMeetingRegistrantBase(), nil
+                    case "#microsoft.graph.externalMeetingRegistrant":
+                        return NewExternalMeetingRegistrant(), nil
+                    case "#microsoft.graph.meetingRegistrant":
+                        return NewMeetingRegistrant(), nil
                 }
             }
         }

@@ -18,7 +18,7 @@ type NoncustodialDataSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// NoncustodialDataSourcesRequestBuilderGetQueryParameters get noncustodialDataSources from security
+// NoncustodialDataSourcesRequestBuilderGetQueryParameters returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 type NoncustodialDataSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -80,11 +80,11 @@ func NewNoncustodialDataSourcesRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *NoncustodialDataSourcesRequestBuilder) Count()(*iee8c9df871e99835b8cb942549b2048d831445eea844e4d9e151ee8e7131f7a9.CountRequestBuilder) {
     return iee8c9df871e99835b8cb942549b2048d831445eea844e4d9e151ee8e7131f7a9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get noncustodialDataSources from security
+// CreateGetRequestInformation returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 func (m *NoncustodialDataSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get noncustodialDataSources from security
+// CreateGetRequestInformationWithRequestConfiguration returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 func (m *NoncustodialDataSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *NoncustodialDataSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,11 +118,11 @@ func (m *NoncustodialDataSourcesRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// Get get noncustodialDataSources from security
+// Get returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 func (m *NoncustodialDataSourcesRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get noncustodialDataSources from security
+// GetWithRequestConfigurationAndResponseHandler returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 func (m *NoncustodialDataSourcesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *NoncustodialDataSourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

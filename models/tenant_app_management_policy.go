@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TenantAppManagementPolicy provides operations to manage the policyRoot singleton.
+// TenantAppManagementPolicy 
 type TenantAppManagementPolicy struct {
     PolicyBase
     // Restrictions that apply as default to all application objects in the tenant.
@@ -14,7 +14,7 @@ type TenantAppManagementPolicy struct {
     // Restrictions that apply as default to all service principal objects in the tenant.
     servicePrincipalRestrictions AppManagementConfigurationable
 }
-// NewTenantAppManagementPolicy instantiates a new tenantAppManagementPolicy and sets the default values.
+// NewTenantAppManagementPolicy instantiates a new TenantAppManagementPolicy and sets the default values.
 func NewTenantAppManagementPolicy()(*TenantAppManagementPolicy) {
     m := &TenantAppManagementPolicy{
         PolicyBase: *NewPolicyBase(),

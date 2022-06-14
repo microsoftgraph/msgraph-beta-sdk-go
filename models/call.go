@@ -11,7 +11,7 @@ type Call struct {
     activeModalities []string
     // The participant that answered the call. Read-only.
     answeredBy ParticipantInfoable
-    // Read-only. Nullable.
+    // The audioRoutingGroups property
     audioRoutingGroups []AudioRoutingGroupable
     // The callback URL on which callbacks will be delivered. Must be https.
     callbackUri *string
@@ -23,7 +23,7 @@ type Call struct {
     callRoutes []CallRouteable
     // The chat information. Required information for meeting scenarios.
     chatInfo ChatInfoable
-    // Read-only. Nullable.
+    // The contentSharingSessions property
     contentSharingSessions []ContentSharingSessionable
     // The direction of the call. The possible value are incoming or outgoing. Read-only.
     direction *CallDirection
@@ -39,9 +39,9 @@ type Call struct {
     meetingInfo MeetingInfoable
     // The myParticipantId property
     myParticipantId *string
-    // Read-only. Nullable.
+    // The operations property
     operations []CommsOperationable
-    // Read-only. Nullable.
+    // The participants property
     participants []Participantable
     // The requestedModalities property
     requestedModalities []string
@@ -95,7 +95,7 @@ func (m *Call) GetAnsweredBy()(ParticipantInfoable) {
         return m.answeredBy
     }
 }
-// GetAudioRoutingGroups gets the audioRoutingGroups property value. Read-only. Nullable.
+// GetAudioRoutingGroups gets the audioRoutingGroups property value. The audioRoutingGroups property
 func (m *Call) GetAudioRoutingGroups()([]AudioRoutingGroupable) {
     if m == nil {
         return nil
@@ -143,7 +143,7 @@ func (m *Call) GetChatInfo()(ChatInfoable) {
         return m.chatInfo
     }
 }
-// GetContentSharingSessions gets the contentSharingSessions property value. Read-only. Nullable.
+// GetContentSharingSessions gets the contentSharingSessions property value. The contentSharingSessions property
 func (m *Call) GetContentSharingSessions()([]ContentSharingSessionable) {
     if m == nil {
         return nil
@@ -548,7 +548,7 @@ func (m *Call) GetMyParticipantId()(*string) {
         return m.myParticipantId
     }
 }
-// GetOperations gets the operations property value. Read-only. Nullable.
+// GetOperations gets the operations property value. The operations property
 func (m *Call) GetOperations()([]CommsOperationable) {
     if m == nil {
         return nil
@@ -556,7 +556,7 @@ func (m *Call) GetOperations()([]CommsOperationable) {
         return m.operations
     }
 }
-// GetParticipants gets the participants property value. Read-only. Nullable.
+// GetParticipants gets the participants property value. The participants property
 func (m *Call) GetParticipants()([]Participantable) {
     if m == nil {
         return nil
@@ -886,7 +886,7 @@ func (m *Call) SetAnsweredBy(value ParticipantInfoable)() {
         m.answeredBy = value
     }
 }
-// SetAudioRoutingGroups sets the audioRoutingGroups property value. Read-only. Nullable.
+// SetAudioRoutingGroups sets the audioRoutingGroups property value. The audioRoutingGroups property
 func (m *Call) SetAudioRoutingGroups(value []AudioRoutingGroupable)() {
     if m != nil {
         m.audioRoutingGroups = value
@@ -922,7 +922,7 @@ func (m *Call) SetChatInfo(value ChatInfoable)() {
         m.chatInfo = value
     }
 }
-// SetContentSharingSessions sets the contentSharingSessions property value. Read-only. Nullable.
+// SetContentSharingSessions sets the contentSharingSessions property value. The contentSharingSessions property
 func (m *Call) SetContentSharingSessions(value []ContentSharingSessionable)() {
     if m != nil {
         m.contentSharingSessions = value
@@ -970,13 +970,13 @@ func (m *Call) SetMyParticipantId(value *string)() {
         m.myParticipantId = value
     }
 }
-// SetOperations sets the operations property value. Read-only. Nullable.
+// SetOperations sets the operations property value. The operations property
 func (m *Call) SetOperations(value []CommsOperationable)() {
     if m != nil {
         m.operations = value
     }
 }
-// SetParticipants sets the participants property value. Read-only. Nullable.
+// SetParticipants sets the participants property value. The participants property
 func (m *Call) SetParticipants(value []Participantable)() {
     if m != nil {
         m.participants = value

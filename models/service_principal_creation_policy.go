@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipalCreationPolicy provides operations to manage the policyRoot singleton.
+// ServicePrincipalCreationPolicy 
 type ServicePrincipalCreationPolicy struct {
     PolicyBase
     // The excludes property
@@ -14,7 +14,7 @@ type ServicePrincipalCreationPolicy struct {
     // The isBuiltIn property
     isBuiltIn *bool
 }
-// NewServicePrincipalCreationPolicy instantiates a new servicePrincipalCreationPolicy and sets the default values.
+// NewServicePrincipalCreationPolicy instantiates a new ServicePrincipalCreationPolicy and sets the default values.
 func NewServicePrincipalCreationPolicy()(*ServicePrincipalCreationPolicy) {
     m := &ServicePrincipalCreationPolicy{
         PolicyBase: *NewPolicyBase(),

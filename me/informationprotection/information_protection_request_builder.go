@@ -6,10 +6,14 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i0277c2a76ea648d8b78b47eb740e4426e8b70cafa779ae7cfc25d4423af78cd7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/informationprotection/bitlocker"
     i216e4fe6427aea6a66c8bb5a2498b41402122929dcc455372eacd46b1a7f45b8 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/informationprotection/sensitivitypolicysettings"
+    i3c0f3ab885d1a2b5bb576c66913afacde53d0caedb5b3e62b9864d6d1605e6c3 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/informationprotection/encryptbuffer"
     i6ce06805c7dd5778af7b3657ba097e40ca55b94215fb7f2d731ec82a57198d25 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/informationprotection/threatassessmentrequests"
     i8810e040e3ab5580410e10af11c08bbf8c2f5d7c936b0901f09b6047e80747f4 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/informationprotection/policy"
+    i887c6e3513fe8deb9361380e9dae0ff6250fbff3d359b09b0c29fa267ad2c54d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/informationprotection/signdigest"
+    ia5d970f40f5f11acbbf7c4c3d6e7738dd51c3bf2c573229303c2abe077dc02c5 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/informationprotection/verifysignature"
     ia8c5de9643bc2b5ba04000acd631436eef2e4037d151c2c9be0fa9de45b5db4e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/informationprotection/sensitivitylabels"
     ib9aa15bb15b353f1d239567b5090a9ed690a845fd979fc5fc5236c37f2c040ec "github.com/microsoftgraph/msgraph-beta-sdk-go/me/informationprotection/datalosspreventionpolicies"
+    ie0c1168264f5eac590d561fa25a9a500334fb3a43cc4d1d63344029b3fd58680 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/informationprotection/decryptbuffer"
     i400f881fad4edba6edc2afa2747654d483b40cd2db34116a77814ec312135432 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/informationprotection/threatassessmentrequests/item"
     iafc786e37c049dc894b91f10f3a1a6a1d5d6c2a2aadbde9b9478f38371b96dd6 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/informationprotection/datalosspreventionpolicies/item"
     ic2a0f6c7e03401afbd27ed2c227884da9fe6f7c80345dc54e72b4c6d67543da9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/informationprotection/sensitivitylabels/item"
@@ -145,6 +149,10 @@ func (m *InformationProtectionRequestBuilder) DataLossPreventionPoliciesById(id 
     }
     return iafc786e37c049dc894b91f10f3a1a6a1d5d6c2a2aadbde9b9478f38371b96dd6.NewDataLossPreventionPolicyItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// DecryptBuffer the decryptBuffer property
+func (m *InformationProtectionRequestBuilder) DecryptBuffer()(*ie0c1168264f5eac590d561fa25a9a500334fb3a43cc4d1d63344029b3fd58680.DecryptBufferRequestBuilder) {
+    return ie0c1168264f5eac590d561fa25a9a500334fb3a43cc4d1d63344029b3fd58680.NewDecryptBufferRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Delete delete navigation property informationProtection for me
 func (m *InformationProtectionRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -164,6 +172,10 @@ func (m *InformationProtectionRequestBuilder) DeleteWithRequestConfigurationAndR
         return err
     }
     return nil
+}
+// EncryptBuffer the encryptBuffer property
+func (m *InformationProtectionRequestBuilder) EncryptBuffer()(*i3c0f3ab885d1a2b5bb576c66913afacde53d0caedb5b3e62b9864d6d1605e6c3.EncryptBufferRequestBuilder) {
+    return i3c0f3ab885d1a2b5bb576c66913afacde53d0caedb5b3e62b9864d6d1605e6c3.NewEncryptBufferRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get informationProtection from me
 func (m *InformationProtectionRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionable, error) {
@@ -228,6 +240,10 @@ func (m *InformationProtectionRequestBuilder) SensitivityLabelsById(id string)(*
 func (m *InformationProtectionRequestBuilder) SensitivityPolicySettings()(*i216e4fe6427aea6a66c8bb5a2498b41402122929dcc455372eacd46b1a7f45b8.SensitivityPolicySettingsRequestBuilder) {
     return i216e4fe6427aea6a66c8bb5a2498b41402122929dcc455372eacd46b1a7f45b8.NewSensitivityPolicySettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// SignDigest the signDigest property
+func (m *InformationProtectionRequestBuilder) SignDigest()(*i887c6e3513fe8deb9361380e9dae0ff6250fbff3d359b09b0c29fa267ad2c54d.SignDigestRequestBuilder) {
+    return i887c6e3513fe8deb9361380e9dae0ff6250fbff3d359b09b0c29fa267ad2c54d.NewSignDigestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // ThreatAssessmentRequests the threatAssessmentRequests property
 func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequests()(*i6ce06805c7dd5778af7b3657ba097e40ca55b94215fb7f2d731ec82a57198d25.ThreatAssessmentRequestsRequestBuilder) {
     return i6ce06805c7dd5778af7b3657ba097e40ca55b94215fb7f2d731ec82a57198d25.NewThreatAssessmentRequestsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -242,4 +258,8 @@ func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequestsById(id st
         urlTplParams["threatAssessmentRequest%2Did"] = id
     }
     return i400f881fad4edba6edc2afa2747654d483b40cd2db34116a77814ec312135432.NewThreatAssessmentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// VerifySignature the verifySignature property
+func (m *InformationProtectionRequestBuilder) VerifySignature()(*ia5d970f40f5f11acbbf7c4c3d6e7738dd51c3bf2c573229303c2abe077dc02c5.VerifySignatureRequestBuilder) {
+    return ia5d970f40f5f11acbbf7c4c3d6e7738dd51c3bf2c573229303c2abe077dc02c5.NewVerifySignatureRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

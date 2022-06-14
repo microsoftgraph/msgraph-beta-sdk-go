@@ -47,8 +47,32 @@ func CreatePolicySetItemFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.policySetItem":
-                        return NewPolicySetItem(), nil
+                    case "#microsoft.graph.deviceCompliancePolicyPolicySetItem":
+                        return NewDeviceCompliancePolicyPolicySetItem(), nil
+                    case "#microsoft.graph.deviceConfigurationPolicySetItem":
+                        return NewDeviceConfigurationPolicySetItem(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationPolicyPolicySetItem":
+                        return NewDeviceManagementConfigurationPolicyPolicySetItem(), nil
+                    case "#microsoft.graph.deviceManagementScriptPolicySetItem":
+                        return NewDeviceManagementScriptPolicySetItem(), nil
+                    case "#microsoft.graph.enrollmentRestrictionsConfigurationPolicySetItem":
+                        return NewEnrollmentRestrictionsConfigurationPolicySetItem(), nil
+                    case "#microsoft.graph.iosLobAppProvisioningConfigurationPolicySetItem":
+                        return NewIosLobAppProvisioningConfigurationPolicySetItem(), nil
+                    case "#microsoft.graph.managedAppProtectionPolicySetItem":
+                        return NewManagedAppProtectionPolicySetItem(), nil
+                    case "#microsoft.graph.managedDeviceMobileAppConfigurationPolicySetItem":
+                        return NewManagedDeviceMobileAppConfigurationPolicySetItem(), nil
+                    case "#microsoft.graph.mdmWindowsInformationProtectionPolicyPolicySetItem":
+                        return NewMdmWindowsInformationProtectionPolicyPolicySetItem(), nil
+                    case "#microsoft.graph.mobileAppPolicySetItem":
+                        return NewMobileAppPolicySetItem(), nil
+                    case "#microsoft.graph.targetedManagedAppConfigurationPolicySetItem":
+                        return NewTargetedManagedAppConfigurationPolicySetItem(), nil
+                    case "#microsoft.graph.windows10EnrollmentCompletionPageConfigurationPolicySetItem":
+                        return NewWindows10EnrollmentCompletionPageConfigurationPolicySetItem(), nil
+                    case "#microsoft.graph.windowsAutopilotDeploymentProfilePolicySetItem":
+                        return NewWindowsAutopilotDeploymentProfilePolicySetItem(), nil
                 }
             }
         }

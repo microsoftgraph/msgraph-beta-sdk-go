@@ -5,15 +5,15 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// UnifiedGroupSource provides operations to manage the security singleton.
+// UnifiedGroupSource 
 type UnifiedGroupSource struct {
     DataSource
     // The group property
     group ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable
-    // The includedSources property
+    // Specifies which sources are included in this group. Possible values are: mailbox, site.
     includedSources *SourceType
 }
-// NewUnifiedGroupSource instantiates a new unifiedGroupSource and sets the default values.
+// NewUnifiedGroupSource instantiates a new UnifiedGroupSource and sets the default values.
 func NewUnifiedGroupSource()(*UnifiedGroupSource) {
     m := &UnifiedGroupSource{
         DataSource: *NewDataSource(),
@@ -57,7 +57,7 @@ func (m *UnifiedGroupSource) GetGroup()(ie233ee762e29b4ba6970aa2a2efce4b7fde1169
         return m.group
     }
 }
-// GetIncludedSources gets the includedSources property value. The includedSources property
+// GetIncludedSources gets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
 func (m *UnifiedGroupSource) GetIncludedSources()(*SourceType) {
     if m == nil {
         return nil
@@ -92,7 +92,7 @@ func (m *UnifiedGroupSource) SetGroup(value ie233ee762e29b4ba6970aa2a2efce4b7fde
         m.group = value
     }
 }
-// SetIncludedSources sets the includedSources property value. The includedSources property
+// SetIncludedSources sets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
 func (m *UnifiedGroupSource) SetIncludedSources(value *SourceType)() {
     if m != nil {
         m.includedSources = value

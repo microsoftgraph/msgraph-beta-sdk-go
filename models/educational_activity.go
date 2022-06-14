@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationalActivity casts the previous resource to group.
+// EducationalActivity 
 type EducationalActivity struct {
     ItemFacet
     // The month and year the user graduated or completed the activity.
@@ -18,7 +18,7 @@ type EducationalActivity struct {
     // The month and year the user commenced the activity referenced.
     startMonthYear *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
-// NewEducationalActivity instantiates a new educationalActivity and sets the default values.
+// NewEducationalActivity instantiates a new EducationalActivity and sets the default values.
 func NewEducationalActivity()(*EducationalActivity) {
     m := &EducationalActivity{
         ItemFacet: *NewItemFacet(),

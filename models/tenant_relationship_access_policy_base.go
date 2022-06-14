@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TenantRelationshipAccessPolicyBase provides operations to manage the policyRoot singleton.
+// TenantRelationshipAccessPolicyBase 
 type TenantRelationshipAccessPolicyBase struct {
     PolicyBase
     // The definition property
     definition []string
 }
-// NewTenantRelationshipAccessPolicyBase instantiates a new tenantRelationshipAccessPolicyBase and sets the default values.
+// NewTenantRelationshipAccessPolicyBase instantiates a new TenantRelationshipAccessPolicyBase and sets the default values.
 func NewTenantRelationshipAccessPolicyBase()(*TenantRelationshipAccessPolicyBase) {
     m := &TenantRelationshipAccessPolicyBase{
         PolicyBase: *NewPolicyBase(),
@@ -32,8 +32,8 @@ func CreateTenantRelationshipAccessPolicyBaseFromDiscriminatorValue(parseNode i8
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.tenantRelationshipAccessPolicyBase":
-                        return NewTenantRelationshipAccessPolicyBase(), nil
+                    case "#microsoft.graph.crossTenantAccessPolicy":
+                        return NewCrossTenantAccessPolicy(), nil
                 }
             }
         }

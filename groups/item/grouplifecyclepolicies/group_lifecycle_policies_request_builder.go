@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i52c0fd4afda9ce1c2acfe3243b4d73285db937c44edaf90736e497bd5752d2b4 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/grouplifecyclepolicies/count"
+    iaa407d49590d88aab26c493fc0c47ab7b8972e4c890aebcf9acf600a19c85b7f "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/grouplifecyclepolicies/renewgroup"
 )
 
 // GroupLifecyclePoliciesRequestBuilder provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.
@@ -151,4 +152,8 @@ func (m *GroupLifecyclePoliciesRequestBuilder) PostWithRequestConfigurationAndRe
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable), nil
+}
+// RenewGroup the renewGroup property
+func (m *GroupLifecyclePoliciesRequestBuilder) RenewGroup()(*iaa407d49590d88aab26c493fc0c47ab7b8972e4c890aebcf9acf600a19c85b7f.RenewGroupRequestBuilder) {
+    return iaa407d49590d88aab26c493fc0c47ab7b8972e4c890aebcf9acf600a19c85b7f.NewRenewGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
