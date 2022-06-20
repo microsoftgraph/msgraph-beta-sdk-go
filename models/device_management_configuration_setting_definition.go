@@ -66,8 +66,14 @@ func CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue(
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.deviceManagementConfigurationSettingDefinition":
-                        return NewDeviceManagementConfigurationSettingDefinition(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition":
+                        return NewDeviceManagementConfigurationChoiceSettingDefinition(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationRedirectSettingDefinition":
+                        return NewDeviceManagementConfigurationRedirectSettingDefinition(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationSettingGroupDefinition":
+                        return NewDeviceManagementConfigurationSettingGroupDefinition(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition":
+                        return NewDeviceManagementConfigurationSimpleSettingDefinition(), nil
                 }
             }
         }

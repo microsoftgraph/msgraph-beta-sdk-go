@@ -4,7 +4,10 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i433f5193df99eb2fbcb629099b03df211c3f17d604931a79fc22988d8153b3ce "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/permissiongrants/getbyids"
+    i71ad4808dfe48714c08a909373b1f9a9845ec259c19450981a5b18052b67cf40 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/permissiongrants/validateproperties"
     i7b0dc01c1700cb9b4f24990e86c681be629a548c5f012910c734c9b35c253ed6 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/permissiongrants/count"
+    ibacba567d1be908a95670628282ede9d39797ee49d673446eb096c7c2cf171d8 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/permissiongrants/getuserownedobjects"
 )
 
 // PermissionGrantsRequestBuilder provides operations to manage the permissionGrants property of the microsoft.graph.group entity.
@@ -116,6 +119,14 @@ func (m *PermissionGrantsRequestBuilder) CreatePostRequestInformationWithRequest
 func (m *PermissionGrantsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetByIds the getByIds property
+func (m *PermissionGrantsRequestBuilder) GetByIds()(*i433f5193df99eb2fbcb629099b03df211c3f17d604931a79fc22988d8153b3ce.GetByIdsRequestBuilder) {
+    return i433f5193df99eb2fbcb629099b03df211c3f17d604931a79fc22988d8153b3ce.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetUserOwnedObjects the getUserOwnedObjects property
+func (m *PermissionGrantsRequestBuilder) GetUserOwnedObjects()(*ibacba567d1be908a95670628282ede9d39797ee49d673446eb096c7c2cf171d8.GetUserOwnedObjectsRequestBuilder) {
+    return ibacba567d1be908a95670628282ede9d39797ee49d673446eb096c7c2cf171d8.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler the permissions that have been granted for a group to a specific application. Supports $expand.
 func (m *PermissionGrantsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PermissionGrantsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -151,4 +162,8 @@ func (m *PermissionGrantsRequestBuilder) PostWithRequestConfigurationAndResponse
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable), nil
+}
+// ValidateProperties the validateProperties property
+func (m *PermissionGrantsRequestBuilder) ValidateProperties()(*i71ad4808dfe48714c08a909373b1f9a9845ec259c19450981a5b18052b67cf40.ValidatePropertiesRequestBuilder) {
+    return i71ad4808dfe48714c08a909373b1f9a9845ec259c19450981a5b18052b67cf40.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

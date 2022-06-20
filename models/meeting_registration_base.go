@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistrationBase provides operations to manage the commsApplication singleton.
+// MeetingRegistrationBase provides operations to manage the collection of administrativeUnit entities.
 type MeetingRegistrationBase struct {
     Entity
     // Specifies who can register for the meeting.
@@ -34,8 +34,10 @@ func CreateMeetingRegistrationBaseFromDiscriminatorValue(parseNode i878a80d2330e
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.meetingRegistrationBase":
-                        return NewMeetingRegistrationBase(), nil
+                    case "#microsoft.graph.externalMeetingRegistration":
+                        return NewExternalMeetingRegistration(), nil
+                    case "#microsoft.graph.meetingRegistration":
+                        return NewMeetingRegistration(), nil
                 }
             }
         }

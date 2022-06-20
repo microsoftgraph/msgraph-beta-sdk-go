@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserInsightsSettings casts the previous resource to group.
+// UserInsightsSettings provides operations to manage the collection of administrativeUnit entities.
 type UserInsightsSettings struct {
     Entity
     // true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.

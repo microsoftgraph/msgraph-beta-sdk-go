@@ -4,7 +4,10 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i000920950afec74ee3236bcb1b56a6ffbcbd168697e8e421d9bf377c179b2c97 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devices/getuserownedobjects"
+    i5b99a93dfadae89dd1a0250b13e44b39be4c40435f5b5670c19cb96ba87b1810 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devices/getbyids"
     i800566844fcfb7cc1f53476272e8c00a3364179482887ce17eebdf7c1b5e75b6 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devices/count"
+    ic4620257c5f6a7211c4eade0d12c8e243a7b9c5be5d1552436c6b6aa91e2ec48 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devices/validateproperties"
 )
 
 // DevicesRequestBuilder provides operations to manage the devices property of the microsoft.graph.user entity.
@@ -116,6 +119,14 @@ func (m *DevicesRequestBuilder) CreatePostRequestInformationWithRequestConfigura
 func (m *DevicesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetByIds the getByIds property
+func (m *DevicesRequestBuilder) GetByIds()(*i5b99a93dfadae89dd1a0250b13e44b39be4c40435f5b5670c19cb96ba87b1810.GetByIdsRequestBuilder) {
+    return i5b99a93dfadae89dd1a0250b13e44b39be4c40435f5b5670c19cb96ba87b1810.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetUserOwnedObjects the getUserOwnedObjects property
+func (m *DevicesRequestBuilder) GetUserOwnedObjects()(*i000920950afec74ee3236bcb1b56a6ffbcbd168697e8e421d9bf377c179b2c97.GetUserOwnedObjectsRequestBuilder) {
+    return i000920950afec74ee3236bcb1b56a6ffbcbd168697e8e421d9bf377c179b2c97.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler get devices from users
 func (m *DevicesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DevicesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -151,4 +162,8 @@ func (m *DevicesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(b
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
+}
+// ValidateProperties the validateProperties property
+func (m *DevicesRequestBuilder) ValidateProperties()(*ic4620257c5f6a7211c4eade0d12c8e243a7b9c5be5d1552436c6b6aa91e2ec48.ValidatePropertiesRequestBuilder) {
+    return ic4620257c5f6a7211c4eade0d12c8e243a7b9c5be5d1552436c6b6aa91e2ec48.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

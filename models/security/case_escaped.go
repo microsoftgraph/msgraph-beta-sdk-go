@@ -44,8 +44,8 @@ func CreateCase_escapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.security.case":
-                        return NewCase_escaped(), nil
+                    case "#microsoft.graph.security.ediscoveryCase":
+                        return NewEdiscoveryCase(), nil
                 }
             }
         }

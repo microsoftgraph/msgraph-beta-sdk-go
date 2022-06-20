@@ -46,8 +46,10 @@ func CreateDataSourceContainerFromDiscriminatorValue(parseNode i878a80d2330e89d2
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.ediscovery.dataSourceContainer":
-                        return NewDataSourceContainer(), nil
+                    case "#microsoft.graph.ediscovery.custodian":
+                        return NewCustodian(), nil
+                    case "#microsoft.graph.ediscovery.noncustodialDataSource":
+                        return NewNoncustodialDataSource(), nil
                 }
             }
         }

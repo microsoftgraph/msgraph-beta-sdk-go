@@ -4,6 +4,8 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i60f6140206d27f9a4f4fb8d44cd9fd8a17cc02e9b38e6d641ae34ca5c2027fab "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/grouplifecyclepolicies/item/removegroup"
+    id578b75b638e2d1c100ab43bcd9857ac1ced07788ea32ad127ea9e8eacad0056 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/grouplifecyclepolicies/item/addgroup"
 )
 
 // GroupLifecyclePolicyItemRequestBuilder provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.
@@ -44,6 +46,10 @@ type GroupLifecyclePolicyItemRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// AddGroup the addGroup property
+func (m *GroupLifecyclePolicyItemRequestBuilder) AddGroup()(*id578b75b638e2d1c100ab43bcd9857ac1ced07788ea32ad127ea9e8eacad0056.AddGroupRequestBuilder) {
+    return id578b75b638e2d1c100ab43bcd9857ac1ced07788ea32ad127ea9e8eacad0056.NewAddGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewGroupLifecyclePolicyItemRequestBuilderInternal instantiates a new GroupLifecyclePolicyItemRequestBuilder and sets the default values.
 func NewGroupLifecyclePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupLifecyclePolicyItemRequestBuilder) {
@@ -176,4 +182,8 @@ func (m *GroupLifecyclePolicyItemRequestBuilder) PatchWithRequestConfigurationAn
         return err
     }
     return nil
+}
+// RemoveGroup the removeGroup property
+func (m *GroupLifecyclePolicyItemRequestBuilder) RemoveGroup()(*i60f6140206d27f9a4f4fb8d44cd9fd8a17cc02e9b38e6d641ae34ca5c2027fab.RemoveGroupRequestBuilder) {
+    return i60f6140206d27f9a4f4fb8d44cd9fd8a17cc02e9b38e6d641ae34ca5c2027fab.NewRemoveGroupRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

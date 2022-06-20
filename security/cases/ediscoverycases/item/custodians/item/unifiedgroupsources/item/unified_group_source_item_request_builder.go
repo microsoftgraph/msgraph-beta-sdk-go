@@ -23,7 +23,7 @@ type UnifiedGroupSourceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UnifiedGroupSourceItemRequestBuilderGetQueryParameters get unifiedGroupSources from security
+// UnifiedGroupSourceItemRequestBuilderGetQueryParameters data source entity for groups associated with the custodian.
 type UnifiedGroupSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *UnifiedGroupSourceItemRequestBuilder) CreateDeleteRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get unifiedGroupSources from security
+// CreateGetRequestInformation data source entity for groups associated with the custodian.
 func (m *UnifiedGroupSourceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get unifiedGroupSources from security
+// CreateGetRequestInformationWithRequestConfiguration data source entity for groups associated with the custodian.
 func (m *UnifiedGroupSourceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UnifiedGroupSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,11 +138,11 @@ func (m *UnifiedGroupSourceItemRequestBuilder) DeleteWithRequestConfigurationAnd
     }
     return nil
 }
-// Get get unifiedGroupSources from security
+// Get data source entity for groups associated with the custodian.
 func (m *UnifiedGroupSourceItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UnifiedGroupSourceable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get unifiedGroupSources from security
+// GetWithRequestConfigurationAndResponseHandler data source entity for groups associated with the custodian.
 func (m *UnifiedGroupSourceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedGroupSourceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UnifiedGroupSourceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

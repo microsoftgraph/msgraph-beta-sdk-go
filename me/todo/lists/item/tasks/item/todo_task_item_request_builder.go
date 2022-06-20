@@ -60,15 +60,15 @@ func (m *TodoTaskItemRequestBuilder) Attachments()(*i94c464ae9becaf7479cf2935acb
     return i94c464ae9becaf7479cf2935acbe8a764ff170c65f1299d8c2f8152ac0ef8388.NewAttachmentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // AttachmentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.todo.lists.item.tasks.item.attachments.item collection
-func (m *TodoTaskItemRequestBuilder) AttachmentsById(id string)(*ie4fa256cb1392f2daea5ba99c46b598b458d0445c15f594926f1794476e636d6.Attachment_v2ItemRequestBuilder) {
+func (m *TodoTaskItemRequestBuilder) AttachmentsById(id string)(*ie4fa256cb1392f2daea5ba99c46b598b458d0445c15f594926f1794476e636d6.AttachmentBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.pathParameters {
         urlTplParams[idx] = item
     }
     if id != "" {
-        urlTplParams["attachment_v2%2Did"] = id
+        urlTplParams["attachmentBase%2Did"] = id
     }
-    return ie4fa256cb1392f2daea5ba99c46b598b458d0445c15f594926f1794476e636d6.NewAttachment_v2ItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+    return ie4fa256cb1392f2daea5ba99c46b598b458d0445c15f594926f1794476e636d6.NewAttachmentBaseItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AttachmentSessions the attachmentSessions property
 func (m *TodoTaskItemRequestBuilder) AttachmentSessions()(*i9ac6ffef48c0d16af625b1cc43c9a117dc8983e6f0457047611dfe061f21a24b.AttachmentSessionsRequestBuilder) {

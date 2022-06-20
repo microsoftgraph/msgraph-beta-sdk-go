@@ -16,7 +16,7 @@ type UserSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UserSourcesRequestBuilderGetQueryParameters get userSources from security
+// UserSourcesRequestBuilderGetQueryParameters data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 type UserSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewUserSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *UserSourcesRequestBuilder) Count()(*i6a2548333ed21f5f79f40a4e6b03dcd0d7f7046a811d060ddb04dba6f4fe5dfd.CountRequestBuilder) {
     return i6a2548333ed21f5f79f40a4e6b03dcd0d7f7046a811d060ddb04dba6f4fe5dfd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get userSources from security
+// CreateGetRequestInformation data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *UserSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get userSources from security
+// CreateGetRequestInformationWithRequestConfiguration data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *UserSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *UserSourcesRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get get userSources from security
+// Get data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *UserSourcesRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UserSourceCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get userSources from security
+// GetWithRequestConfigurationAndResponseHandler data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *UserSourcesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserSourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UserSourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

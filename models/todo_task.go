@@ -5,11 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TodoTask casts the previous resource to group.
+// TodoTask provides operations to manage the collection of administrativeUnit entities.
 type TodoTask struct {
     Entity
     // The attachments property
-    attachments []Attachment_v2able
+    attachments []AttachmentBaseable
     // The attachmentSessions property
     attachmentSessions []AttachmentSessionable
     // The task body that typically contains information about the task.
@@ -59,7 +59,7 @@ func CreateTodoTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     return NewTodoTask(), nil
 }
 // GetAttachments gets the attachments property value. The attachments property
-func (m *TodoTask) GetAttachments()([]Attachment_v2able) {
+func (m *TodoTask) GetAttachments()([]AttachmentBaseable) {
     if m == nil {
         return nil
     } else {
@@ -142,14 +142,14 @@ func (m *TodoTask) GetExtensions()([]Extensionable) {
 func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["attachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAttachment_v2FromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateAttachmentBaseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Attachment_v2able, len(val))
+            res := make([]AttachmentBaseable, len(val))
             for i, v := range val {
-                res[i] = v.(Attachment_v2able)
+                res[i] = v.(AttachmentBaseable)
             }
             m.SetAttachments(res)
         }
@@ -574,7 +574,7 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     return nil
 }
 // SetAttachments sets the attachments property value. The attachments property
-func (m *TodoTask) SetAttachments(value []Attachment_v2able)() {
+func (m *TodoTask) SetAttachments(value []AttachmentBaseable)() {
     if m != nil {
         m.attachments = value
     }

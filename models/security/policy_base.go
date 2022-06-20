@@ -46,8 +46,8 @@ func CreatePolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.security.policyBase":
-                        return NewPolicyBase(), nil
+                    case "#microsoft.graph.security.ediscoveryHoldPolicy":
+                        return NewEdiscoveryHoldPolicy(), nil
                 }
             }
         }

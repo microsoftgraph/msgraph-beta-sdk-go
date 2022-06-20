@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemEmail casts the previous resource to group.
+// ItemEmail 
 type ItemEmail struct {
     ItemFacet
     // The email address itself.
@@ -14,7 +14,7 @@ type ItemEmail struct {
     // The type of email address. Possible values are: unknown, work, personal, main, other.
     type_escaped *EmailType
 }
-// NewItemEmail instantiates a new itemEmail and sets the default values.
+// NewItemEmail instantiates a new ItemEmail and sets the default values.
 func NewItemEmail()(*ItemEmail) {
     m := &ItemEmail{
         ItemFacet: *NewItemFacet(),

@@ -4,9 +4,13 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i427417357745b8948faf1189b247d6d7532aaf80f445dbe4ae64088c48d587ef "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews/item/instances/item/stop"
+    i582c25d0b7cb97c8a565f6cf5d70558f6ba5b94d6324ffe4eadbd370e08df083 "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews/item/instances/item/resetdecisions"
     i65c01fa596a41558434812572afb4c05db36b5cfbea9355b7b2d68eba6548691 "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews/item/instances/item/mydecisions"
     i7bc12143e353b4d4f5d4853894578fef285042b09d3a2bf02a3b93e71752ac83 "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews/item/instances/item/reviewers"
     i8ab53548eb87e2b488fd6dda1768c4ad29fd4e638c24a409daf072d07ff44804 "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews/item/instances/item/decisions"
+    i961781b3050f29063663fdf5b0570296ccb6be6f13a899851a5ba688dca06f3c "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews/item/instances/item/sendreminder"
+    ic27c7952d00624c2da5fd2be5a0a7aacc4f5e7a14917639e6c7f5b726f99ce45 "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews/item/instances/item/applydecisions"
     i701f07b747d69019caad4740f3b1724263906917267c5af3244d67f4509f2b99 "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews/item/instances/item/reviewers/item"
     i8daa9a485197443d7a67077ab2f41041a6f8236cb9437bc2446ae5f14432ea51 "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews/item/instances/item/mydecisions/item"
     id3fe44f01780fcde4c699a6a202fc6e147e89515315aba30b2594c57bab487ac "github.com/microsoftgraph/msgraph-beta-sdk-go/accessreviews/item/instances/item/decisions/item"
@@ -50,6 +54,10 @@ type AccessReviewItemRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// ApplyDecisions the applyDecisions property
+func (m *AccessReviewItemRequestBuilder) ApplyDecisions()(*ic27c7952d00624c2da5fd2be5a0a7aacc4f5e7a14917639e6c7f5b726f99ce45.ApplyDecisionsRequestBuilder) {
+    return ic27c7952d00624c2da5fd2be5a0a7aacc4f5e7a14917639e6c7f5b726f99ce45.NewApplyDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewAccessReviewItemRequestBuilderInternal instantiates a new AccessReviewItemRequestBuilder and sets the default values.
 func NewAccessReviewItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewItemRequestBuilder) {
@@ -213,6 +221,10 @@ func (m *AccessReviewItemRequestBuilder) PatchWithRequestConfigurationAndRespons
     }
     return nil
 }
+// ResetDecisions the resetDecisions property
+func (m *AccessReviewItemRequestBuilder) ResetDecisions()(*i582c25d0b7cb97c8a565f6cf5d70558f6ba5b94d6324ffe4eadbd370e08df083.ResetDecisionsRequestBuilder) {
+    return i582c25d0b7cb97c8a565f6cf5d70558f6ba5b94d6324ffe4eadbd370e08df083.NewResetDecisionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Reviewers the reviewers property
 func (m *AccessReviewItemRequestBuilder) Reviewers()(*i7bc12143e353b4d4f5d4853894578fef285042b09d3a2bf02a3b93e71752ac83.ReviewersRequestBuilder) {
     return i7bc12143e353b4d4f5d4853894578fef285042b09d3a2bf02a3b93e71752ac83.NewReviewersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -227,4 +239,12 @@ func (m *AccessReviewItemRequestBuilder) ReviewersById(id string)(*i701f07b747d6
         urlTplParams["accessReviewReviewer%2Did"] = id
     }
     return i701f07b747d69019caad4740f3b1724263906917267c5af3244d67f4509f2b99.NewAccessReviewReviewerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// SendReminder the sendReminder property
+func (m *AccessReviewItemRequestBuilder) SendReminder()(*i961781b3050f29063663fdf5b0570296ccb6be6f13a899851a5ba688dca06f3c.SendReminderRequestBuilder) {
+    return i961781b3050f29063663fdf5b0570296ccb6be6f13a899851a5ba688dca06f3c.NewSendReminderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Stop the stop property
+func (m *AccessReviewItemRequestBuilder) Stop()(*i427417357745b8948faf1189b247d6d7532aaf80f445dbe4ae64088c48d587ef.StopRequestBuilder) {
+    return i427417357745b8948faf1189b247d6d7532aaf80f445dbe4ae64088c48d587ef.NewStopRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

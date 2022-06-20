@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchDataStore provides operations to manage the dataClassificationService singleton.
+// ExactMatchDataStore 
 type ExactMatchDataStore struct {
     ExactMatchDataStoreBase
     // The sessions property
     sessions []ExactMatchSessionable
 }
-// NewExactMatchDataStore instantiates a new exactMatchDataStore and sets the default values.
+// NewExactMatchDataStore instantiates a new ExactMatchDataStore and sets the default values.
 func NewExactMatchDataStore()(*ExactMatchDataStore) {
     m := &ExactMatchDataStore{
         ExactMatchDataStoreBase: *NewExactMatchDataStoreBase(),

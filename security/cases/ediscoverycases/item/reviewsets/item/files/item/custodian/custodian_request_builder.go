@@ -15,7 +15,7 @@ type CustodianRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CustodianRequestBuilderGetQueryParameters get custodian from security
+// CustodianRequestBuilderGetQueryParameters custodians associated with the file.
 type CustodianRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,11 +50,11 @@ func NewCustodianRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewCustodianRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get custodian from security
+// CreateGetRequestInformation custodians associated with the file.
 func (m *CustodianRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get custodian from security
+// CreateGetRequestInformationWithRequestConfiguration custodians associated with the file.
 func (m *CustodianRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CustodianRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,11 +70,11 @@ func (m *CustodianRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get get custodian from security
+// Get custodians associated with the file.
 func (m *CustodianRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCustodianable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get custodian from security
+// GetWithRequestConfigurationAndResponseHandler custodians associated with the file.
 func (m *CustodianRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CustodianRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCustodianable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

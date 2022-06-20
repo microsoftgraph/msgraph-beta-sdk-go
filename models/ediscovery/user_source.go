@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserSource provides operations to manage the compliance singleton.
+// UserSource 
 type UserSource struct {
     DataSource
     // Email address of the user's mailbox.
@@ -14,7 +14,7 @@ type UserSource struct {
     // The URL of the user's OneDrive for Business site. Read-only.
     siteWebUrl *string
 }
-// NewUserSource instantiates a new userSource and sets the default values.
+// NewUserSource instantiates a new UserSource and sets the default values.
 func NewUserSource()(*UserSource) {
     m := &UserSource{
         DataSource: *NewDataSource(),

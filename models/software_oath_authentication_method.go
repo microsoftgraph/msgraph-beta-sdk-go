@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SoftwareOathAuthenticationMethod casts the previous resource to group.
+// SoftwareOathAuthenticationMethod 
 type SoftwareOathAuthenticationMethod struct {
     AuthenticationMethod
     // The secret key of the method. Always returns null.
     secretKey *string
 }
-// NewSoftwareOathAuthenticationMethod instantiates a new softwareOathAuthenticationMethod and sets the default values.
+// NewSoftwareOathAuthenticationMethod instantiates a new SoftwareOathAuthenticationMethod and sets the default values.
 func NewSoftwareOathAuthenticationMethod()(*SoftwareOathAuthenticationMethod) {
     m := &SoftwareOathAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

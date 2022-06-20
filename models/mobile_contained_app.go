@@ -30,8 +30,10 @@ func CreateMobileContainedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.mobileContainedApp":
-                        return NewMobileContainedApp(), nil
+                    case "#microsoft.graph.microsoftStoreForBusinessContainedApp":
+                        return NewMicrosoftStoreForBusinessContainedApp(), nil
+                    case "#microsoft.graph.windowsUniversalAppXContainedApp":
+                        return NewWindowsUniversalAppXContainedApp(), nil
                 }
             }
         }

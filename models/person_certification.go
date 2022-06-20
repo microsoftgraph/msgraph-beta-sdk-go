@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonCertification casts the previous resource to group.
+// PersonCertification 
 type PersonCertification struct {
     ItemFacet
     // The referenceable identifier for the certification.
@@ -28,7 +28,7 @@ type PersonCertification struct {
     // URL referencing the certification.
     webUrl *string
 }
-// NewPersonCertification instantiates a new personCertification and sets the default values.
+// NewPersonCertification instantiates a new PersonCertification and sets the default values.
 func NewPersonCertification()(*PersonCertification) {
     m := &PersonCertification{
         ItemFacet: *NewItemFacet(),

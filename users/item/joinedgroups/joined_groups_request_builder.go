@@ -4,6 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i0674cf0527a848b5986f3a53c384773f88bd5e8c2d3afea1e622a5ae746b4dbd "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedgroups/getuserownedobjects"
+    i171b181e36fbf7b41352fc29fba26dbe0008f0bd7d3f6fbceb31919fcc9866ff "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedgroups/validateproperties"
+    i3f57c1ceec7f528c27ff19be63f0e9d48225fd907beb4bbedf279f35769ff893 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedgroups/getbyids"
+    i88857d6c6dbe9d9e7c50f2e09673dd0d012411f1b08616d9d2d304c958fcead1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedgroups/evaluatedynamicmembership"
+    ide9e4ec7463b93fefb042f46f8edd992d184d05d68ef23ca96b5c17a45c5d6cb "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedgroups/delta"
 )
 
 // JoinedGroupsRequestBuilder provides operations to manage the joinedGroups property of the microsoft.graph.user entity.
@@ -15,7 +20,7 @@ type JoinedGroupsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// JoinedGroupsRequestBuilderGetQueryParameters read-only. Nullable.
+// JoinedGroupsRequestBuilderGetQueryParameters get joinedGroups from users
 type JoinedGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -65,11 +70,11 @@ func NewJoinedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewJoinedGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get joinedGroups from users
 func (m *JoinedGroupsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get joinedGroups from users
 func (m *JoinedGroupsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *JoinedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,11 +108,27 @@ func (m *JoinedGroupsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Delta provides operations to call the delta method.
+func (m *JoinedGroupsRequestBuilder) Delta()(*ide9e4ec7463b93fefb042f46f8edd992d184d05d68ef23ca96b5c17a45c5d6cb.DeltaRequestBuilder) {
+    return ide9e4ec7463b93fefb042f46f8edd992d184d05d68ef23ca96b5c17a45c5d6cb.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// EvaluateDynamicMembership the evaluateDynamicMembership property
+func (m *JoinedGroupsRequestBuilder) EvaluateDynamicMembership()(*i88857d6c6dbe9d9e7c50f2e09673dd0d012411f1b08616d9d2d304c958fcead1.EvaluateDynamicMembershipRequestBuilder) {
+    return i88857d6c6dbe9d9e7c50f2e09673dd0d012411f1b08616d9d2d304c958fcead1.NewEvaluateDynamicMembershipRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Get get joinedGroups from users
 func (m *JoinedGroupsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetByIds the getByIds property
+func (m *JoinedGroupsRequestBuilder) GetByIds()(*i3f57c1ceec7f528c27ff19be63f0e9d48225fd907beb4bbedf279f35769ff893.GetByIdsRequestBuilder) {
+    return i3f57c1ceec7f528c27ff19be63f0e9d48225fd907beb4bbedf279f35769ff893.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetUserOwnedObjects the getUserOwnedObjects property
+func (m *JoinedGroupsRequestBuilder) GetUserOwnedObjects()(*i0674cf0527a848b5986f3a53c384773f88bd5e8c2d3afea1e622a5ae746b4dbd.GetUserOwnedObjectsRequestBuilder) {
+    return i0674cf0527a848b5986f3a53c384773f88bd5e8c2d3afea1e622a5ae746b4dbd.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetWithRequestConfigurationAndResponseHandler get joinedGroups from users
 func (m *JoinedGroupsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *JoinedGroupsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -142,4 +163,8 @@ func (m *JoinedGroupsRequestBuilder) PostWithRequestConfigurationAndResponseHand
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable), nil
+}
+// ValidateProperties the validateProperties property
+func (m *JoinedGroupsRequestBuilder) ValidateProperties()(*i171b181e36fbf7b41352fc29fba26dbe0008f0bd7d3f6fbceb31919fcc9866ff.ValidatePropertiesRequestBuilder) {
+    return i171b181e36fbf7b41352fc29fba26dbe0008f0bd7d3f6fbceb31919fcc9866ff.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

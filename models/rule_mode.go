@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the evaluate method.
+// Provides operations to manage the dataClassificationService singleton.
 type RuleMode int
 
 const (

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the policyRoot singleton.
+// Provides operations to manage the collection of administrativeUnit entities.
 type CrossTenantAccessPolicyTargetConfigurationAccessType int
 
 const (

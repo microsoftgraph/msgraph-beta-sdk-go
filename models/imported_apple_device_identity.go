@@ -53,8 +53,8 @@ func CreateImportedAppleDeviceIdentityFromDiscriminatorValue(parseNode i878a80d2
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.importedAppleDeviceIdentity":
-                        return NewImportedAppleDeviceIdentity(), nil
+                    case "#microsoft.graph.importedAppleDeviceIdentityResult":
+                        return NewImportedAppleDeviceIdentityResult(), nil
                 }
             }
         }

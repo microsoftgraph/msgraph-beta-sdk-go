@@ -16,7 +16,7 @@ type FeatureRolloutPoliciesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// FeatureRolloutPoliciesRequestBuilderGetQueryParameters nullable.
+// FeatureRolloutPoliciesRequestBuilderGetQueryParameters get featureRolloutPolicies from directory
 type FeatureRolloutPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewFeatureRolloutPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *FeatureRolloutPoliciesRequestBuilder) Count()(*i49a55c198fad26579d6ec8bf4aa4be5b0830ce206ffce29a3f3b86385fd1607c.CountRequestBuilder) {
     return i49a55c198fad26579d6ec8bf4aa4be5b0830ce206ffce29a3f3b86385fd1607c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation nullable.
+// CreateGetRequestInformation get featureRolloutPolicies from directory
 func (m *FeatureRolloutPoliciesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration nullable.
+// CreateGetRequestInformationWithRequestConfiguration get featureRolloutPolicies from directory
 func (m *FeatureRolloutPoliciesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FeatureRolloutPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *FeatureRolloutPoliciesRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Get nullable.
+// Get get featureRolloutPolicies from directory
 func (m *FeatureRolloutPoliciesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FeatureRolloutPolicyCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler nullable.
+// GetWithRequestConfigurationAndResponseHandler get featureRolloutPolicies from directory
 func (m *FeatureRolloutPoliciesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FeatureRolloutPoliciesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FeatureRolloutPolicyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

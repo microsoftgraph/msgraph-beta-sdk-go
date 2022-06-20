@@ -8,7 +8,7 @@ import (
 // AccessPackageResourceRequest provides operations to manage the identityGovernance singleton.
 type AccessPackageResourceRequest struct {
     Entity
-    // Nullable.
+    // The accessPackageResource property
     accessPackageResource AccessPackageResourceable
     // The unique ID of the access package catalog.
     catalogId *string
@@ -24,7 +24,7 @@ type AccessPackageResourceRequest struct {
     requestor AccessPackageSubjectable
     // The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
     requestState *string
-    // Read-only.
+    // The requestStatus property
     requestStatus *string
     // Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.
     requestType *string
@@ -40,7 +40,7 @@ func NewAccessPackageResourceRequest()(*AccessPackageResourceRequest) {
 func CreateAccessPackageResourceRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageResourceRequest(), nil
 }
-// GetAccessPackageResource gets the accessPackageResource property value. Nullable.
+// GetAccessPackageResource gets the accessPackageResource property value. The accessPackageResource property
 func (m *AccessPackageResourceRequest) GetAccessPackageResource()(AccessPackageResourceable) {
     if m == nil {
         return nil
@@ -209,7 +209,7 @@ func (m *AccessPackageResourceRequest) GetRequestState()(*string) {
         return m.requestState
     }
 }
-// GetRequestStatus gets the requestStatus property value. Read-only.
+// GetRequestStatus gets the requestStatus property value. The requestStatus property
 func (m *AccessPackageResourceRequest) GetRequestStatus()(*string) {
     if m == nil {
         return nil
@@ -293,7 +293,7 @@ func (m *AccessPackageResourceRequest) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetAccessPackageResource sets the accessPackageResource property value. Nullable.
+// SetAccessPackageResource sets the accessPackageResource property value. The accessPackageResource property
 func (m *AccessPackageResourceRequest) SetAccessPackageResource(value AccessPackageResourceable)() {
     if m != nil {
         m.accessPackageResource = value
@@ -341,7 +341,7 @@ func (m *AccessPackageResourceRequest) SetRequestState(value *string)() {
         m.requestState = value
     }
 }
-// SetRequestStatus sets the requestStatus property value. Read-only.
+// SetRequestStatus sets the requestStatus property value. The requestStatus property
 func (m *AccessPackageResourceRequest) SetRequestStatus(value *string)() {
     if m != nil {
         m.requestStatus = value

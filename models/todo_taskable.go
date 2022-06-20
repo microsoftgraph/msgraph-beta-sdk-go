@@ -9,7 +9,7 @@ import (
 type TodoTaskable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAttachments()([]Attachment_v2able)
+    GetAttachments()([]AttachmentBaseable)
     GetAttachmentSessions()([]AttachmentSessionable)
     GetBody()(ItemBodyable)
     GetBodyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -28,7 +28,7 @@ type TodoTaskable interface {
     GetReminderDateTime()(DateTimeTimeZoneable)
     GetStatus()(*TaskStatus)
     GetTitle()(*string)
-    SetAttachments(value []Attachment_v2able)()
+    SetAttachments(value []AttachmentBaseable)()
     SetAttachmentSessions(value []AttachmentSessionable)()
     SetBody(value ItemBodyable)()
     SetBodyLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

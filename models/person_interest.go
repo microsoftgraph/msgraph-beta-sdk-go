@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonInterest casts the previous resource to group.
+// PersonInterest 
 type PersonInterest struct {
     ItemFacet
     // Contains categories a user has associated with the interest (for example, personal, recipies).
@@ -20,7 +20,7 @@ type PersonInterest struct {
     // Contains a link to a web page or resource about the interest.
     webUrl *string
 }
-// NewPersonInterest instantiates a new personInterest and sets the default values.
+// NewPersonInterest instantiates a new PersonInterest and sets the default values.
 func NewPersonInterest()(*PersonInterest) {
     m := &PersonInterest{
         ItemFacet: *NewItemFacet(),

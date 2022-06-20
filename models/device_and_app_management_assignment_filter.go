@@ -45,8 +45,8 @@ func CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue(parseNod
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.deviceAndAppManagementAssignmentFilter":
-                        return NewDeviceAndAppManagementAssignmentFilter(), nil
+                    case "#microsoft.graph.payloadCompatibleAssignmentFilter":
+                        return NewPayloadCompatibleAssignmentFilter(), nil
                 }
             }
         }

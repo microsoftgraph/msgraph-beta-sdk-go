@@ -9,13 +9,13 @@ import (
 // DataSource provides operations to manage the security singleton.
 type DataSource struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The createdBy property
+    // The user who created the dataSource.
     createdBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable
-    // The createdDateTime property
+    // The date and time the dataSource was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The displayName property
+    // The display name of the dataSource. This will be the name of the SharePoint site.
     displayName *string
-    // The holdStatus property
+    // The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial
     holdStatus *DataSourceHoldStatus
 }
 // NewDataSource instantiates a new dataSource and sets the default values.
@@ -40,15 +40,19 @@ func CreateDataSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.security.dataSource":
-                        return NewDataSource(), nil
+                    case "#microsoft.graph.security.siteSource":
+                        return NewSiteSource(), nil
+                    case "#microsoft.graph.security.unifiedGroupSource":
+                        return NewUnifiedGroupSource(), nil
+                    case "#microsoft.graph.security.userSource":
+                        return NewUserSource(), nil
                 }
             }
         }
     }
     return NewDataSource(), nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. The user who created the dataSource.
 func (m *DataSource) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     if m == nil {
         return nil
@@ -56,7 +60,7 @@ func (m *DataSource) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9
         return m.createdBy
     }
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time the dataSource was created.
 func (m *DataSource) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -64,7 +68,7 @@ func (m *DataSource) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
         return m.createdDateTime
     }
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the dataSource. This will be the name of the SharePoint site.
 func (m *DataSource) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -117,7 +121,7 @@ func (m *DataSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetHoldStatus gets the holdStatus property value. The holdStatus property
+// GetHoldStatus gets the holdStatus property value. The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial
 func (m *DataSource) GetHoldStatus()(*DataSourceHoldStatus) {
     if m == nil {
         return nil
@@ -158,25 +162,25 @@ func (m *DataSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. The user who created the dataSource.
 func (m *DataSource) SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
     if m != nil {
         m.createdBy = value
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time the dataSource was created.
 func (m *DataSource) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the dataSource. This will be the name of the SharePoint site.
 func (m *DataSource) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
     }
 }
-// SetHoldStatus sets the holdStatus property value. The holdStatus property
+// SetHoldStatus sets the holdStatus property value. The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial
 func (m *DataSource) SetHoldStatus(value *DataSourceHoldStatus)() {
     if m != nil {
         m.holdStatus = value

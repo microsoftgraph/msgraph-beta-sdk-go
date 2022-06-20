@@ -8,9 +8,9 @@ import (
 type RoleAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The assignmentType property
+    // The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
     assignmentType *DelegatedPrivilegeStatus
-    // The roles property
+    // The collection of roles assigned.
     roles []RoleDefinitionable
 }
 // NewRoleAssignment instantiates a new roleAssignment and sets the default values.
@@ -32,7 +32,7 @@ func (m *RoleAssignment) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAssignmentType gets the assignmentType property value. The assignmentType property
+// GetAssignmentType gets the assignmentType property value. The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
 func (m *RoleAssignment) GetAssignmentType()(*DelegatedPrivilegeStatus) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetRoles gets the roles property value. The roles property
+// GetRoles gets the roles property value. The collection of roles assigned.
 func (m *RoleAssignment) GetRoles()([]RoleDefinitionable) {
     if m == nil {
         return nil
@@ -110,13 +110,13 @@ func (m *RoleAssignment) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetAssignmentType sets the assignmentType property value. The assignmentType property
+// SetAssignmentType sets the assignmentType property value. The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
 func (m *RoleAssignment) SetAssignmentType(value *DelegatedPrivilegeStatus)() {
     if m != nil {
         m.assignmentType = value
     }
 }
-// SetRoles sets the roles property value. The roles property
+// SetRoles sets the roles property value. The collection of roles assigned.
 func (m *RoleAssignment) SetRoles(value []RoleDefinitionable)() {
     if m != nil {
         m.roles = value

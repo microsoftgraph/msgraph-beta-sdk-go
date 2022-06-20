@@ -37,8 +37,24 @@ func CreateGroupPolicyPresentationFromDiscriminatorValue(parseNode i878a80d2330e
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.groupPolicyPresentation":
-                        return NewGroupPolicyPresentation(), nil
+                    case "#microsoft.graph.groupPolicyPresentationCheckBox":
+                        return NewGroupPolicyPresentationCheckBox(), nil
+                    case "#microsoft.graph.groupPolicyPresentationComboBox":
+                        return NewGroupPolicyPresentationComboBox(), nil
+                    case "#microsoft.graph.groupPolicyPresentationDecimalTextBox":
+                        return NewGroupPolicyPresentationDecimalTextBox(), nil
+                    case "#microsoft.graph.groupPolicyPresentationDropdownList":
+                        return NewGroupPolicyPresentationDropdownList(), nil
+                    case "#microsoft.graph.groupPolicyPresentationListBox":
+                        return NewGroupPolicyPresentationListBox(), nil
+                    case "#microsoft.graph.groupPolicyPresentationLongDecimalTextBox":
+                        return NewGroupPolicyPresentationLongDecimalTextBox(), nil
+                    case "#microsoft.graph.groupPolicyPresentationMultiTextBox":
+                        return NewGroupPolicyPresentationMultiTextBox(), nil
+                    case "#microsoft.graph.groupPolicyPresentationText":
+                        return NewGroupPolicyPresentationText(), nil
+                    case "#microsoft.graph.groupPolicyPresentationTextBox":
+                        return NewGroupPolicyPresentationTextBox(), nil
                 }
             }
         }

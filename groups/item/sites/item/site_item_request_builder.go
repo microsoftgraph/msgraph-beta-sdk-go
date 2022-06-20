@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i21357f81dd67d1f048d315ac01f454d176950dd54ea7804555e588cd3eff8c41 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/termstore"
+    i30365f7545fb0bfa84213c73d2831a20632673b88b79579fecb0fbdf47714c92 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/getbypathwithpath"
     i39ed30b8a944c4df2cb1c7d7719a6e16eed74f779bf8c7f46e7ec330dc32490d "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/drives"
     i48525d077819c844d3854d1d3ed447d8615dae48edb552ae208e6dadac2913df "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/contenttypes"
     i48ea2a845dc13dbdbaaf728c5005ec957407a596f9bdb13c97ff6a9c23bb80c6 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/permissions"
@@ -12,11 +13,13 @@ import (
     i70ffe9e61c8e968ae0dc889d6f9ca1d946f32f80c595c1b4cfc51668c4ae18f3 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/drive"
     i71869306bbdbc613872f0a8f42f33a73181332142694f31c6ca16a38d27b5022 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/columns"
     iaff8ef3298b8a50022c41f0588c95ecabe270d388a402d0debfb273bb76823d1 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/onenote"
+    ib3a7728f14558a828657cc0b2022eb065932c8bdf52b373d5242cfcb39017929 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/getapplicablecontenttypesforlistwithlistid"
     ibc4bf0f224e96734ea6c3e1ccc8784d21b398ae8904db6f204237b6482921a0c "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/operations"
     ic74a7f8d1e57a8da50add8729c911139b5ce66432f0fd2005e45756231bf7e06 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/lists"
     ida491665689c206cec14e94c4ba2d1a53e5513fecd63f74d6f168640b02f0598 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/pages"
     ie4755f3ab2b3be7e0faaa8f804ac25658f750fa0888f86c64b1acb46498e6d15 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/sites"
     ie550bbbe668a53a0aac5fe9ee9f3ac9fc9d9d3c06204956f7c3d7dd3a17445a8 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/externalcolumns"
+    ief47e71fa531377bc96a38300a71ed5155d7aa8f72f080267a5c03dc19037638 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/getactivitiesbyintervalwithstartdatetimewithenddatetimewithinterval"
     ifb02c18e8f70a2a669af59896c7c40e851e9d0ff30f6df756f8d8eeafa69a2a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/items"
     i053597ae2fca36945f3da0e944bf07318cb94bde79534f0ef588eac99861007f "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/externalcolumns/item"
     i161351685aba3b02962a6a41ccbc3125edc0df60596b473175fadb0ca4ee50c2 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/item/pages/item"
@@ -38,13 +41,6 @@ type SiteItemRequestBuilder struct {
     requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter
     // Url template to use to build the URL for the current request builder
     urlTemplate string
-}
-// SiteItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type SiteItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // SiteItemRequestBuilderGetQueryParameters the list of SharePoint sites in this group. Access the default site with /sites/root.
 type SiteItemRequestBuilderGetQueryParameters struct {
@@ -122,22 +118,6 @@ func (m *SiteItemRequestBuilder) ContentTypesById(id string)(*i73e8a92b70513f051
     }
     return i73e8a92b70513f051da5d1a665c9c5c97d07dcfc0bc14436b3e9ddae0a733601.NewContentTypeItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateDeleteRequestInformation delete navigation property sites for groups
-func (m *SiteItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property sites for groups
-func (m *SiteItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *SiteItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // CreateGetRequestInformation the list of SharePoint sites in this group. Access the default site with /sites/root.
 func (m *SiteItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
@@ -174,26 +154,6 @@ func (m *SiteItemRequestBuilder) CreatePatchRequestInformationWithRequestConfigu
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
-}
-// Delete delete navigation property sites for groups
-func (m *SiteItemRequestBuilder) Delete()(error) {
-    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// DeleteWithRequestConfigurationAndResponseHandler delete navigation property sites for groups
-func (m *SiteItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *SiteItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }
 // Drive the drive property
 func (m *SiteItemRequestBuilder) Drive()(*i70ffe9e61c8e968ae0dc889d6f9ca1d946f32f80c595c1b4cfc51668c4ae18f3.DriveRequestBuilder) {
@@ -232,6 +192,18 @@ func (m *SiteItemRequestBuilder) ExternalColumnsById(id string)(*i053597ae2fca36
 // Get the list of SharePoint sites in this group. Access the default site with /sites/root.
 func (m *SiteItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
+func (m *SiteItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*ief47e71fa531377bc96a38300a71ed5155d7aa8f72f080267a5c03dc19037638.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return ief47e71fa531377bc96a38300a71ed5155d7aa8f72f080267a5c03dc19037638.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime);
+}
+// GetApplicableContentTypesForListWithListId provides operations to call the getApplicableContentTypesForList method.
+func (m *SiteItemRequestBuilder) GetApplicableContentTypesForListWithListId(listId *string)(*ib3a7728f14558a828657cc0b2022eb065932c8bdf52b373d5242cfcb39017929.GetApplicableContentTypesForListWithListIdRequestBuilder) {
+    return ib3a7728f14558a828657cc0b2022eb065932c8bdf52b373d5242cfcb39017929.NewGetApplicableContentTypesForListWithListIdRequestBuilderInternal(m.pathParameters, m.requestAdapter, listId);
+}
+// GetByPathWithPath provides operations to call the getByPath method.
+func (m *SiteItemRequestBuilder) GetByPathWithPath(path *string)(*i30365f7545fb0bfa84213c73d2831a20632673b88b79579fecb0fbdf47714c92.GetByPathWithPathRequestBuilder) {
+    return i30365f7545fb0bfa84213c73d2831a20632673b88b79579fecb0fbdf47714c92.NewGetByPathWithPathRequestBuilderInternal(m.pathParameters, m.requestAdapter, path);
 }
 // GetWithRequestConfigurationAndResponseHandler the list of SharePoint sites in this group. Access the default site with /sites/root.
 func (m *SiteItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SiteItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {

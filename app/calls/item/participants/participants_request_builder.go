@@ -18,7 +18,7 @@ type ParticipantsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ParticipantsRequestBuilderGetQueryParameters read-only. Nullable.
+// ParticipantsRequestBuilderGetQueryParameters get participants from app
 type ParticipantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,11 +76,11 @@ func NewParticipantsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ParticipantsRequestBuilder) Count()(*i4b4d6f19f11d5bb38c222ff758c52e11208508b662432c0d4da6e28c37562d97.CountRequestBuilder) {
     return i4b4d6f19f11d5bb38c222ff758c52e11208508b662432c0d4da6e28c37562d97.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get participants from app
 func (m *ParticipantsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get participants from app
 func (m *ParticipantsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ParticipantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -114,11 +114,11 @@ func (m *ParticipantsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get get participants from app
 func (m *ParticipantsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParticipantCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get participants from app
 func (m *ParticipantsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ParticipantsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParticipantCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

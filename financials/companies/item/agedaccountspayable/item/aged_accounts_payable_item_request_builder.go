@@ -15,13 +15,6 @@ type AgedAccountsPayableItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AgedAccountsPayableItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type AgedAccountsPayableItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // AgedAccountsPayableItemRequestBuilderGetQueryParameters get agedAccountsPayable from financials
 type AgedAccountsPayableItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
@@ -37,13 +30,6 @@ type AgedAccountsPayableItemRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *AgedAccountsPayableItemRequestBuilderGetQueryParameters
-}
-// AgedAccountsPayableItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type AgedAccountsPayableItemRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // NewAgedAccountsPayableItemRequestBuilderInternal instantiates a new AgedAccountsPayableItemRequestBuilder and sets the default values.
 func NewAgedAccountsPayableItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AgedAccountsPayableItemRequestBuilder) {
@@ -63,22 +49,6 @@ func NewAgedAccountsPayableItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAgedAccountsPayableItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// CreateDeleteRequestInformation delete navigation property agedAccountsPayable for financials
-func (m *AgedAccountsPayableItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property agedAccountsPayable for financials
-func (m *AgedAccountsPayableItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *AgedAccountsPayableItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
 }
 // CreateGetRequestInformation get agedAccountsPayable from financials
 func (m *AgedAccountsPayableItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -100,43 +70,6 @@ func (m *AgedAccountsPayableItemRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update the navigation property agedAccountsPayable in financials
-func (m *AgedAccountsPayableItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsPayableable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property agedAccountsPayable in financials
-func (m *AgedAccountsPayableItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsPayableable, requestConfiguration *AgedAccountsPayableItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// Delete delete navigation property agedAccountsPayable for financials
-func (m *AgedAccountsPayableItemRequestBuilder) Delete()(error) {
-    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// DeleteWithRequestConfigurationAndResponseHandler delete navigation property agedAccountsPayable for financials
-func (m *AgedAccountsPayableItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *AgedAccountsPayableItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
-}
 // Get get agedAccountsPayable from financials
 func (m *AgedAccountsPayableItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsPayableable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -156,24 +89,4 @@ func (m *AgedAccountsPayableItemRequestBuilder) GetWithRequestConfigurationAndRe
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsPayableable), nil
-}
-// Patch update the navigation property agedAccountsPayable in financials
-func (m *AgedAccountsPayableItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsPayableable)(error) {
-    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PatchWithRequestConfigurationAndResponseHandler update the navigation property agedAccountsPayable in financials
-func (m *AgedAccountsPayableItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgedAccountsPayableable, requestConfiguration *AgedAccountsPayableItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }

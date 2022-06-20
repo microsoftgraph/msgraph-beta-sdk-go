@@ -16,7 +16,7 @@ type SearchesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SearchesRequestBuilderGetQueryParameters get searches from security
+// SearchesRequestBuilderGetQueryParameters returns a list of eDiscoverySearch objects associated with this case.
 type SearchesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewSearchesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *SearchesRequestBuilder) Count()(*i224493675d6d95761c799d9c6ff2a186526d17c14dc4372ff500e6a4fea9a70b.CountRequestBuilder) {
     return i224493675d6d95761c799d9c6ff2a186526d17c14dc4372ff500e6a4fea9a70b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get searches from security
+// CreateGetRequestInformation returns a list of eDiscoverySearch objects associated with this case.
 func (m *SearchesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get searches from security
+// CreateGetRequestInformationWithRequestConfiguration returns a list of eDiscoverySearch objects associated with this case.
 func (m *SearchesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SearchesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *SearchesRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get get searches from security
+// Get returns a list of eDiscoverySearch objects associated with this case.
 func (m *SearchesRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoverySearchCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get searches from security
+// GetWithRequestConfigurationAndResponseHandler returns a list of eDiscoverySearch objects associated with this case.
 func (m *SearchesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SearchesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoverySearchCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

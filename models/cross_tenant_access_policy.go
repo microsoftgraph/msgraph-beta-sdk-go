@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CrossTenantAccessPolicy provides operations to manage the policyRoot singleton.
+// CrossTenantAccessPolicy 
 type CrossTenantAccessPolicy struct {
     TenantRelationshipAccessPolicyBase
     // Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
@@ -14,7 +14,7 @@ type CrossTenantAccessPolicy struct {
     // Defines partner-specific configurations for external Azure Active Directory organizations.
     partners []CrossTenantAccessPolicyConfigurationPartnerable
 }
-// NewCrossTenantAccessPolicy instantiates a new crossTenantAccessPolicy and sets the default values.
+// NewCrossTenantAccessPolicy instantiates a new CrossTenantAccessPolicy and sets the default values.
 func NewCrossTenantAccessPolicy()(*CrossTenantAccessPolicy) {
     m := &CrossTenantAccessPolicy{
         TenantRelationshipAccessPolicyBase: *NewTenantRelationshipAccessPolicyBase(),

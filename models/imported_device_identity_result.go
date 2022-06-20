@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ImportedDeviceIdentityResult the importedDeviceIdentityResult resource represents the result of attempting to import a device identity.
+// ImportedDeviceIdentityResult 
 type ImportedDeviceIdentityResult struct {
     ImportedDeviceIdentity
     // Status of imported device identity
     status *bool
 }
-// NewImportedDeviceIdentityResult instantiates a new importedDeviceIdentityResult and sets the default values.
+// NewImportedDeviceIdentityResult instantiates a new ImportedDeviceIdentityResult and sets the default values.
 func NewImportedDeviceIdentityResult()(*ImportedDeviceIdentityResult) {
     m := &ImportedDeviceIdentityResult{
         ImportedDeviceIdentity: *NewImportedDeviceIdentity(),

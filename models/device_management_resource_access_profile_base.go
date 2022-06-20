@@ -45,8 +45,14 @@ func CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue(parse
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.deviceManagementResourceAccessProfileBase":
-                        return NewDeviceManagementResourceAccessProfileBase(), nil
+                    case "#microsoft.graph.windows10XCertificateProfile":
+                        return NewWindows10XCertificateProfile(), nil
+                    case "#microsoft.graph.windows10XTrustedRootCertificate":
+                        return NewWindows10XTrustedRootCertificate(), nil
+                    case "#microsoft.graph.windows10XVpnConfiguration":
+                        return NewWindows10XVpnConfiguration(), nil
+                    case "#microsoft.graph.windows10XWifiConfiguration":
+                        return NewWindows10XWifiConfiguration(), nil
                 }
             }
         }

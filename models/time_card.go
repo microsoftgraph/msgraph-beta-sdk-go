@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TimeCard casts the previous resource to group.
+// TimeCard 
 type TimeCard struct {
     ChangeTrackedEntity
     // The list of breaks associated with the timeCard.
@@ -24,7 +24,7 @@ type TimeCard struct {
     // User ID to which  the timeCard belongs.
     userId *string
 }
-// NewTimeCard instantiates a new timeCard and sets the default values.
+// NewTimeCard instantiates a new TimeCard and sets the default values.
 func NewTimeCard()(*TimeCard) {
     m := &TimeCard{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),

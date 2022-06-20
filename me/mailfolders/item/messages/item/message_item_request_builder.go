@@ -7,10 +7,8 @@ import (
     i05e8b869ffc519fee49d0ac259a1f1eea9becc6ebc1c5a37c2f85196b6ee8ee3 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/messages/item/createforward"
     i062177ea9220fd8df21c532fe25b898767dfd98ec54bcfa1a849d01a69301aad "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/messages/item/replyall"
     i0c991f94222b3272f1430d5abdc8d769cea7a432edd8c195e8ed7efd98dbe501 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/messages/item/singlevalueextendedproperties"
-    i0fccf38aca2f46144aa036d0c0fa6ee24e01b5a7a3993c6f341c44efcb5232f7 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/messages/item/calendarsharingmessage"
     i17a9af3ebcd424a0f4a7360aa860cfe25fccbd6f75d1f08e88b91b99baffe208 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/messages/item/reply"
     i272e002e7b409e74d18f258c8a21d69615f41c0248b18a4763a968e49aa9f78c "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/messages/item/forward"
-    i36ba3a15f9b3d43bd01853e14f11e541cd30846655c1041d1198a48d07a44b2f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/messages/item/eventmessagerequest"
     i3bfc69f268f92d3eb51d630e84bcf0e900efda493e2ca9cded7df23eadb96f04 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/messages/item/createreplyall"
     i537e97523a2d84f6e4e5d67a6432c411a6c3d123670344981076f6bca0acd27f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/messages/item/multivalueextendedproperties"
     i6757d54d5c87cd028537643e1cb39a47e345c91ea192c6abd02e016c98bbc3d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mailfolders/item/messages/item/extensions"
@@ -82,10 +80,6 @@ func (m *MessageItemRequestBuilder) AttachmentsById(id string)(*i671b494222abfe9
         urlTplParams["attachment%2Did"] = id
     }
     return i671b494222abfe980bb8d667f8d3d2047da5dddc998c20eab8bb67f1d8672de6.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// CalendarSharingMessage the calendarSharingMessage property
-func (m *MessageItemRequestBuilder) CalendarSharingMessage()(*i0fccf38aca2f46144aa036d0c0fa6ee24e01b5a7a3993c6f341c44efcb5232f7.CalendarSharingMessageRequestBuilder) {
-    return i0fccf38aca2f46144aa036d0c0fa6ee24e01b5a7a3993c6f341c44efcb5232f7.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewMessageItemRequestBuilderInternal instantiates a new MessageItemRequestBuilder and sets the default values.
 func NewMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessageItemRequestBuilder) {
@@ -198,10 +192,6 @@ func (m *MessageItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHan
         return err
     }
     return nil
-}
-// EventMessageRequest the eventMessageRequest property
-func (m *MessageItemRequestBuilder) EventMessageRequest()(*i36ba3a15f9b3d43bd01853e14f11e541cd30846655c1041d1198a48d07a44b2f.EventMessageRequestRequestBuilder) {
-    return i36ba3a15f9b3d43bd01853e14f11e541cd30846655c1041d1198a48d07a44b2f.NewEventMessageRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Extensions the extensions property
 func (m *MessageItemRequestBuilder) Extensions()(*i6757d54d5c87cd028537643e1cb39a47e345c91ea192c6abd02e016c98bbc3d3.ExtensionsRequestBuilder) {

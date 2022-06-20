@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DocumentSetVersion casts the previous resource to group.
+// DocumentSetVersion 
 type DocumentSetVersion struct {
     ListItemVersion
     // Comment about the captured version.
@@ -19,7 +19,7 @@ type DocumentSetVersion struct {
     // If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
     shouldCaptureMinorVersion *bool
 }
-// NewDocumentSetVersion instantiates a new documentSetVersion and sets the default values.
+// NewDocumentSetVersion instantiates a new DocumentSetVersion and sets the default values.
 func NewDocumentSetVersion()(*DocumentSetVersion) {
     m := &DocumentSetVersion{
         ListItemVersion: *NewListItemVersion(),

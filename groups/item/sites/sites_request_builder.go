@@ -4,7 +4,10 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i032f38299eb5e40683af93f6c784b710b3b5b086b76bd0ee59541f4d416334e7 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/remove"
     i94f4c3f907e63a555f457f8cef2f5323479fd57616082399625c4718c0769a01 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/count"
+    iad4cabfe6e7b8c85c1ffb269d1fdb8abda5143efeab385fa69d6bf9a7bdc0205 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/add"
+    id2234db9309f4c891a5adff1ae424657d5a8438f5b1cd8b39b3c365ca0f7dece "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/sites/delta"
 )
 
 // SitesRequestBuilder provides operations to manage the sites property of the microsoft.graph.group entity.
@@ -50,6 +53,10 @@ type SitesRequestBuilderPostRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// Add the add property
+func (m *SitesRequestBuilder) Add()(*iad4cabfe6e7b8c85c1ffb269d1fdb8abda5143efeab385fa69d6bf9a7bdc0205.AddRequestBuilder) {
+    return iad4cabfe6e7b8c85c1ffb269d1fdb8abda5143efeab385fa69d6bf9a7bdc0205.NewAddRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewSitesRequestBuilderInternal instantiates a new SitesRequestBuilder and sets the default values.
 func NewSitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SitesRequestBuilder) {
@@ -112,6 +119,10 @@ func (m *SitesRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
     }
     return requestInfo, nil
 }
+// Delta provides operations to call the delta method.
+func (m *SitesRequestBuilder) Delta()(*id2234db9309f4c891a5adff1ae424657d5a8438f5b1cd8b39b3c365ca0f7dece.DeltaRequestBuilder) {
+    return id2234db9309f4c891a5adff1ae424657d5a8438f5b1cd8b39b3c365ca0f7dece.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get the list of SharePoint sites in this group. Access the default site with /sites/root.
 func (m *SitesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
@@ -151,4 +162,8 @@ func (m *SitesRequestBuilder) PostWithRequestConfigurationAndResponseHandler(bod
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable), nil
+}
+// Remove the remove property
+func (m *SitesRequestBuilder) Remove()(*i032f38299eb5e40683af93f6c784b710b3b5b086b76bd0ee59541f4d416334e7.RemoveRequestBuilder) {
+    return i032f38299eb5e40683af93f6c784b710b3b5b086b76bd0ee59541f4d416334e7.NewRemoveRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

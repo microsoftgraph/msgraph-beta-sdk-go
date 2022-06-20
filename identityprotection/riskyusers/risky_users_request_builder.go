@@ -4,6 +4,8 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i0d24887ad1424b46fdf5a180eff9f454bf58befa467ded8aaa4caf97b26af372 "github.com/microsoftgraph/msgraph-beta-sdk-go/identityprotection/riskyusers/confirmcompromised"
+    i6b4cbdd3c802c9249b42efb0eed9d285216ec8b1a67757dcf9ce82340b5e095e "github.com/microsoftgraph/msgraph-beta-sdk-go/identityprotection/riskyusers/dismiss"
     iae05aaaedd9fb6fe6a4b91f7c5862ca13d272f03849d9ea53cf90acf281bb95c "github.com/microsoftgraph/msgraph-beta-sdk-go/identityprotection/riskyusers/count"
 )
 
@@ -50,6 +52,10 @@ type RiskyUsersRequestBuilderPostRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// ConfirmCompromised the confirmCompromised property
+func (m *RiskyUsersRequestBuilder) ConfirmCompromised()(*i0d24887ad1424b46fdf5a180eff9f454bf58befa467ded8aaa4caf97b26af372.ConfirmCompromisedRequestBuilder) {
+    return i0d24887ad1424b46fdf5a180eff9f454bf58befa467ded8aaa4caf97b26af372.NewConfirmCompromisedRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewRiskyUsersRequestBuilderInternal instantiates a new RiskyUsersRequestBuilder and sets the default values.
 func NewRiskyUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyUsersRequestBuilder) {
@@ -111,6 +117,10 @@ func (m *RiskyUsersRequestBuilder) CreatePostRequestInformationWithRequestConfig
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Dismiss the dismiss property
+func (m *RiskyUsersRequestBuilder) Dismiss()(*i6b4cbdd3c802c9249b42efb0eed9d285216ec8b1a67757dcf9ce82340b5e095e.DismissRequestBuilder) {
+    return i6b4cbdd3c802c9249b42efb0eed9d285216ec8b1a67757dcf9ce82340b5e095e.NewDismissRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get users that are flagged as at-risk by Azure AD Identity Protection.
 func (m *RiskyUsersRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserCollectionResponseable, error) {

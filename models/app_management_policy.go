@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppManagementPolicy casts the previous resource to application.
+// AppManagementPolicy 
 type AppManagementPolicy struct {
     PolicyBase
     // The appliesTo property
@@ -14,7 +14,7 @@ type AppManagementPolicy struct {
     // The restrictions property
     restrictions AppManagementConfigurationable
 }
-// NewAppManagementPolicy instantiates a new appManagementPolicy and sets the default values.
+// NewAppManagementPolicy instantiates a new AppManagementPolicy and sets the default values.
 func NewAppManagementPolicy()(*AppManagementPolicy) {
     m := &AppManagementPolicy{
         PolicyBase: *NewPolicyBase(),

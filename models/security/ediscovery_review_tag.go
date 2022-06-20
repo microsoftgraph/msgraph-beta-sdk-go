@@ -4,17 +4,17 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoveryReviewTag provides operations to manage the security singleton.
+// EdiscoveryReviewTag 
 type EdiscoveryReviewTag struct {
     Tag
-    // The childSelectability property
+    // Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
     childSelectability *ChildSelectability
-    // The childTags property
+    // Returns the tags that are a child of a tag.
     childTags []EdiscoveryReviewTagable
-    // The parent property
+    // Returns the parent tag of the specified tag.
     parent EdiscoveryReviewTagable
 }
-// NewEdiscoveryReviewTag instantiates a new ediscoveryReviewTag and sets the default values.
+// NewEdiscoveryReviewTag instantiates a new EdiscoveryReviewTag and sets the default values.
 func NewEdiscoveryReviewTag()(*EdiscoveryReviewTag) {
     m := &EdiscoveryReviewTag{
         Tag: *NewTag(),
@@ -25,7 +25,7 @@ func NewEdiscoveryReviewTag()(*EdiscoveryReviewTag) {
 func CreateEdiscoveryReviewTagFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryReviewTag(), nil
 }
-// GetChildSelectability gets the childSelectability property value. The childSelectability property
+// GetChildSelectability gets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
 func (m *EdiscoveryReviewTag) GetChildSelectability()(*ChildSelectability) {
     if m == nil {
         return nil
@@ -33,7 +33,7 @@ func (m *EdiscoveryReviewTag) GetChildSelectability()(*ChildSelectability) {
         return m.childSelectability
     }
 }
-// GetChildTags gets the childTags property value. The childTags property
+// GetChildTags gets the childTags property value. Returns the tags that are a child of a tag.
 func (m *EdiscoveryReviewTag) GetChildTags()([]EdiscoveryReviewTagable) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *EdiscoveryReviewTag) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetParent gets the parent property value. The parent property
+// GetParent gets the parent property value. Returns the parent tag of the specified tag.
 func (m *EdiscoveryReviewTag) GetParent()(EdiscoveryReviewTagable) {
     if m == nil {
         return nil
@@ -119,19 +119,19 @@ func (m *EdiscoveryReviewTag) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetChildSelectability sets the childSelectability property value. The childSelectability property
+// SetChildSelectability sets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
 func (m *EdiscoveryReviewTag) SetChildSelectability(value *ChildSelectability)() {
     if m != nil {
         m.childSelectability = value
     }
 }
-// SetChildTags sets the childTags property value. The childTags property
+// SetChildTags sets the childTags property value. Returns the tags that are a child of a tag.
 func (m *EdiscoveryReviewTag) SetChildTags(value []EdiscoveryReviewTagable)() {
     if m != nil {
         m.childTags = value
     }
 }
-// SetParent sets the parent property value. The parent property
+// SetParent sets the parent property value. Returns the parent tag of the specified tag.
 func (m *EdiscoveryReviewTag) SetParent(value EdiscoveryReviewTagable)() {
     if m != nil {
         m.parent = value

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the record method.
+// Provides operations to manage the commsApplication singleton.
 type RecordCompletionReason int
 
 const (

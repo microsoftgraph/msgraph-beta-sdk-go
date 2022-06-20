@@ -8,14 +8,12 @@ import (
     i25c967d20ec85be402e1a7c6d121a8aa4bd088c230867e82dd4528d524fe2b62 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/copy"
     i25d6ea23f29436bc3a139a769323a75062479cfc6f4911effd52f88f00991149 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/mentions"
     i3ffb0826c99fc33b6dcbba6441448cbc6a4ecc20d5ef53f1cf27d694abb3f34f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/move"
-    i5a5621f64056659fd70ac642a8529ade985d1f0cc1dd08f36ddba20deeda0930 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/calendarsharingmessage"
     i9a5d009080ecc4a3753fb5c03ffb0cba6bf87135dffa76209c8e925c7465820b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/unsubscribe"
     ia02e177b92e83647b153fece558ac26faee0de4a3cf44fb885497858dc7ab92a "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/extensions"
     ia0f4e54b2ec34c3c2ef48b17a17fd53c26182a272b8e7a1b90ae44c73540b466 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/createreply"
     ia5ef716c57bbcc97067064429a1b0cabc40577038c19d17ec373d9d9d3acb49b "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/singlevalueextendedproperties"
     iac432dfcc94115868ef80393dd9192f38b599425feb55dd1dfe9a9cd4d0abb7d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/forward"
     iae74de854139dabd76aa9dccb352cc3ca74352ebd7b498cb514e46847b2a6d8c "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/multivalueextendedproperties"
-    iafe3c53978f020c73991af93d711edee6038e959ba51d882849f967994ca66be "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/eventmessagerequest"
     ic7f35c75b6e62e54c20816e6b842b525069091b3705f0eda5abb2f06698b2e46 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/attachments"
     id409f9b5c6726c0f1e4f275d9c3ccf1d7a84bf2ecd174e775a18be8fcb6c6a43 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/send"
     idba2d70212ff30cbe1857bf8f733677622af732ef7e26a5c94efed97901ff29f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/messages/item/createreplyall"
@@ -80,10 +78,6 @@ func (m *MessageItemRequestBuilder) AttachmentsById(id string)(*i9dfb9baf1034d4d
         urlTplParams["attachment%2Did"] = id
     }
     return i9dfb9baf1034d4d76f7676658c28a48bb59e8a78be7fe78076e5c63c401df6ee.NewAttachmentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// CalendarSharingMessage the calendarSharingMessage property
-func (m *MessageItemRequestBuilder) CalendarSharingMessage()(*i5a5621f64056659fd70ac642a8529ade985d1f0cc1dd08f36ddba20deeda0930.CalendarSharingMessageRequestBuilder) {
-    return i5a5621f64056659fd70ac642a8529ade985d1f0cc1dd08f36ddba20deeda0930.NewCalendarSharingMessageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewMessageItemRequestBuilderInternal instantiates a new MessageItemRequestBuilder and sets the default values.
 func NewMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MessageItemRequestBuilder) {
@@ -196,10 +190,6 @@ func (m *MessageItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHan
         return err
     }
     return nil
-}
-// EventMessageRequest the eventMessageRequest property
-func (m *MessageItemRequestBuilder) EventMessageRequest()(*iafe3c53978f020c73991af93d711edee6038e959ba51d882849f967994ca66be.EventMessageRequestRequestBuilder) {
-    return iafe3c53978f020c73991af93d711edee6038e959ba51d882849f967994ca66be.NewEventMessageRequestRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Extensions the extensions property
 func (m *MessageItemRequestBuilder) Extensions()(*ia02e177b92e83647b153fece558ac26faee0de4a3cf44fb885497858dc7ab92a.ExtensionsRequestBuilder) {

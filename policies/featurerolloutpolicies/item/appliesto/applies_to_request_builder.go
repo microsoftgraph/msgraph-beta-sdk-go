@@ -4,7 +4,10 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i3809bf5a815ba8341911f9c14d10dcc2e0908d9844bad77509e9a7d3491addd3 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/featurerolloutpolicies/item/appliesto/getuserownedobjects"
+    i584eac26962b4c1a7cc3da52cab3ff75c1dcd5de7c55d04806e92c93303f1078 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/featurerolloutpolicies/item/appliesto/validateproperties"
     iad7363c3259db2eccccc112f2046a68eca15f24d5a945e5ab580ab5b6de375ca "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/featurerolloutpolicies/item/appliesto/ref"
+    ica49017735592fe590b124a828a86da2bad25bbb1592780f50852fa47831013d "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/featurerolloutpolicies/item/appliesto/getbyids"
     id9684777bc505a8dde441ebd8fd6e37133a287b67304155053c52f6d5a99fa95 "github.com/microsoftgraph/msgraph-beta-sdk-go/policies/featurerolloutpolicies/item/appliesto/count"
 )
 
@@ -117,6 +120,14 @@ func (m *AppliesToRequestBuilder) CreatePostRequestInformationWithRequestConfigu
 func (m *AppliesToRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetByIds the getByIds property
+func (m *AppliesToRequestBuilder) GetByIds()(*ica49017735592fe590b124a828a86da2bad25bbb1592780f50852fa47831013d.GetByIdsRequestBuilder) {
+    return ica49017735592fe590b124a828a86da2bad25bbb1592780f50852fa47831013d.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetUserOwnedObjects the getUserOwnedObjects property
+func (m *AppliesToRequestBuilder) GetUserOwnedObjects()(*i3809bf5a815ba8341911f9c14d10dcc2e0908d9844bad77509e9a7d3491addd3.GetUserOwnedObjectsRequestBuilder) {
+    return i3809bf5a815ba8341911f9c14d10dcc2e0908d9844bad77509e9a7d3491addd3.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler nullable. Specifies a list of directoryObjects that feature is enabled for.
 func (m *AppliesToRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AppliesToRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -156,4 +167,8 @@ func (m *AppliesToRequestBuilder) PostWithRequestConfigurationAndResponseHandler
 // Ref the ref property
 func (m *AppliesToRequestBuilder) Ref()(*iad7363c3259db2eccccc112f2046a68eca15f24d5a945e5ab580ab5b6de375ca.RefRequestBuilder) {
     return iad7363c3259db2eccccc112f2046a68eca15f24d5a945e5ab580ab5b6de375ca.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ValidateProperties the validateProperties property
+func (m *AppliesToRequestBuilder) ValidateProperties()(*i584eac26962b4c1a7cc3da52cab3ff75c1dcd5de7c55d04806e92c93303f1078.ValidatePropertiesRequestBuilder) {
+    return i584eac26962b4c1a7cc3da52cab3ff75c1dcd5de7c55d04806e92c93303f1078.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -4,7 +4,6 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/security"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i236b0c3643b661ffb53ca179eb578e423f5079eec1e1ef905901055f41c77064 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/cases/ediscoverycases/item/operations/item/ediscoveryexportoperation"
 )
 
 // CaseOperationItemRequestBuilder provides operations to manage the operations property of the microsoft.graph.security.ediscoveryCase entity.
@@ -23,7 +22,7 @@ type CaseOperationItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CaseOperationItemRequestBuilderGetQueryParameters get operations from security
+// CaseOperationItemRequestBuilderGetQueryParameters returns a list of case caseOperation objects for this case.
 type CaseOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +80,11 @@ func (m *CaseOperationItemRequestBuilder) CreateDeleteRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get operations from security
+// CreateGetRequestInformation returns a list of case caseOperation objects for this case.
 func (m *CaseOperationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get operations from security
+// CreateGetRequestInformationWithRequestConfiguration returns a list of case caseOperation objects for this case.
 func (m *CaseOperationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *CaseOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,15 +137,11 @@ func (m *CaseOperationItemRequestBuilder) DeleteWithRequestConfigurationAndRespo
     }
     return nil
 }
-// EdiscoveryExportOperation the ediscoveryExportOperation property
-func (m *CaseOperationItemRequestBuilder) EdiscoveryExportOperation()(*i236b0c3643b661ffb53ca179eb578e423f5079eec1e1ef905901055f41c77064.EdiscoveryExportOperationRequestBuilder) {
-    return i236b0c3643b661ffb53ca179eb578e423f5079eec1e1ef905901055f41c77064.NewEdiscoveryExportOperationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// Get get operations from security
+// Get returns a list of case caseOperation objects for this case.
 func (m *CaseOperationItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CaseOperationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get operations from security
+// GetWithRequestConfigurationAndResponseHandler returns a list of case caseOperation objects for this case.
 func (m *CaseOperationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *CaseOperationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CaseOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationMethod casts the previous resource to group.
+// AuthenticationMethod provides operations to manage the collection of administrativeUnit entities.
 type AuthenticationMethod struct {
     Entity
 }
@@ -30,8 +30,24 @@ func CreateAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.authenticationMethod":
-                        return NewAuthenticationMethod(), nil
+                    case "#microsoft.graph.emailAuthenticationMethod":
+                        return NewEmailAuthenticationMethod(), nil
+                    case "#microsoft.graph.fido2AuthenticationMethod":
+                        return NewFido2AuthenticationMethod(), nil
+                    case "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod":
+                        return NewMicrosoftAuthenticatorAuthenticationMethod(), nil
+                    case "#microsoft.graph.passwordAuthenticationMethod":
+                        return NewPasswordAuthenticationMethod(), nil
+                    case "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod":
+                        return NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod(), nil
+                    case "#microsoft.graph.phoneAuthenticationMethod":
+                        return NewPhoneAuthenticationMethod(), nil
+                    case "#microsoft.graph.softwareOathAuthenticationMethod":
+                        return NewSoftwareOathAuthenticationMethod(), nil
+                    case "#microsoft.graph.temporaryAccessPassAuthenticationMethod":
+                        return NewTemporaryAccessPassAuthenticationMethod(), nil
+                    case "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod":
+                        return NewWindowsHelloForBusinessAuthenticationMethod(), nil
                 }
             }
         }

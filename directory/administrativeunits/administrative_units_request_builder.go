@@ -4,7 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i5fa7b64aa6142ff292e3f0644ab1d67e40eac1742234ae6bf52e76e4cdd9ce4f "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/delta"
+    i6fdf952a13d3bf5e2725a8748ddb345d4f83a1d2c1c529831cbbfaaf3599bda4 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/getbyids"
+    ib65039236519e98f2d3381a87efa569a52065c857d8bc16bb710d38c1c34c284 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/getuserownedobjects"
     ib910fc8e3ef31ccf35067c62fd0b776445b7ab73b338461ef5cf0a08778690a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/count"
+    ic6e781877101851bed034ecabc173993cfa8cb600356f6608ec0620dba3fedde "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/validateproperties"
 )
 
 // AdministrativeUnitsRequestBuilder provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
@@ -112,9 +116,21 @@ func (m *AdministrativeUnitsRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
+// Delta provides operations to call the delta method.
+func (m *AdministrativeUnitsRequestBuilder) Delta()(*i5fa7b64aa6142ff292e3f0644ab1d67e40eac1742234ae6bf52e76e4cdd9ce4f.DeltaRequestBuilder) {
+    return i5fa7b64aa6142ff292e3f0644ab1d67e40eac1742234ae6bf52e76e4cdd9ce4f.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get conceptual container for user and group directory objects.
 func (m *AdministrativeUnitsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetByIds the getByIds property
+func (m *AdministrativeUnitsRequestBuilder) GetByIds()(*i6fdf952a13d3bf5e2725a8748ddb345d4f83a1d2c1c529831cbbfaaf3599bda4.GetByIdsRequestBuilder) {
+    return i6fdf952a13d3bf5e2725a8748ddb345d4f83a1d2c1c529831cbbfaaf3599bda4.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetUserOwnedObjects the getUserOwnedObjects property
+func (m *AdministrativeUnitsRequestBuilder) GetUserOwnedObjects()(*ib65039236519e98f2d3381a87efa569a52065c857d8bc16bb710d38c1c34c284.GetUserOwnedObjectsRequestBuilder) {
+    return ib65039236519e98f2d3381a87efa569a52065c857d8bc16bb710d38c1c34c284.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetWithRequestConfigurationAndResponseHandler conceptual container for user and group directory objects.
 func (m *AdministrativeUnitsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AdministrativeUnitsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitCollectionResponseable, error) {
@@ -151,4 +167,8 @@ func (m *AdministrativeUnitsRequestBuilder) PostWithRequestConfigurationAndRespo
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable), nil
+}
+// ValidateProperties the validateProperties property
+func (m *AdministrativeUnitsRequestBuilder) ValidateProperties()(*ic6e781877101851bed034ecabc173993cfa8cb600356f6608ec0620dba3fedde.ValidatePropertiesRequestBuilder) {
+    return ic6e781877101851bed034ecabc173993cfa8cb600356f6608ec0620dba3fedde.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AddToReviewSetOperation provides operations to manage the compliance singleton.
+// AddToReviewSetOperation 
 type AddToReviewSetOperation struct {
     CaseOperation
     // The review set to which items matching the source collection query are added to.
@@ -12,7 +12,7 @@ type AddToReviewSetOperation struct {
     // The sourceCollection that items are being added from.
     sourceCollection SourceCollectionable
 }
-// NewAddToReviewSetOperation instantiates a new addToReviewSetOperation and sets the default values.
+// NewAddToReviewSetOperation instantiates a new AddToReviewSetOperation and sets the default values.
 func NewAddToReviewSetOperation()(*AddToReviewSetOperation) {
     m := &AddToReviewSetOperation{
         CaseOperation: *NewCaseOperation(),

@@ -15,7 +15,7 @@ type EdiscoveryReviewTagItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// EdiscoveryReviewTagItemRequestBuilderGetQueryParameters get tags from security
+// EdiscoveryReviewTagItemRequestBuilderGetQueryParameters tags associated with the file.
 type EdiscoveryReviewTagItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,11 +50,11 @@ func NewEdiscoveryReviewTagItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryReviewTagItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get tags from security
+// CreateGetRequestInformation tags associated with the file.
 func (m *EdiscoveryReviewTagItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get tags from security
+// CreateGetRequestInformationWithRequestConfiguration tags associated with the file.
 func (m *EdiscoveryReviewTagItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EdiscoveryReviewTagItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,11 +70,11 @@ func (m *EdiscoveryReviewTagItemRequestBuilder) CreateGetRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Get get tags from security
+// Get tags associated with the file.
 func (m *EdiscoveryReviewTagItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewTagable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get tags from security
+// GetWithRequestConfigurationAndResponseHandler tags associated with the file.
 func (m *EdiscoveryReviewTagItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EdiscoveryReviewTagItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewTagable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

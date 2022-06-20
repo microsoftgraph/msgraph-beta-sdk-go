@@ -25,7 +25,7 @@ type EdiscoveryReviewSetQueryItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryReviewSetQueryItemRequestBuilderGetQueryParameters get queries from security
+// EdiscoveryReviewSetQueryItemRequestBuilderGetQueryParameters represents queries within the review set.
 type EdiscoveryReviewSetQueryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -87,11 +87,11 @@ func (m *EdiscoveryReviewSetQueryItemRequestBuilder) CreateDeleteRequestInformat
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get queries from security
+// CreateGetRequestInformation represents queries within the review set.
 func (m *EdiscoveryReviewSetQueryItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get queries from security
+// CreateGetRequestInformationWithRequestConfiguration represents queries within the review set.
 func (m *EdiscoveryReviewSetQueryItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EdiscoveryReviewSetQueryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -148,11 +148,11 @@ func (m *EdiscoveryReviewSetQueryItemRequestBuilder) DeleteWithRequestConfigurat
 func (m *EdiscoveryReviewSetQueryItemRequestBuilder) Export()(*i9e1e4e7e8e8cd680826d746191f2ddd4e1784912c6628647895647279baf2784.ExportRequestBuilder) {
     return i9e1e4e7e8e8cd680826d746191f2ddd4e1784912c6628647895647279baf2784.NewExportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get queries from security
+// Get represents queries within the review set.
 func (m *EdiscoveryReviewSetQueryItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetQueryable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get queries from security
+// GetWithRequestConfigurationAndResponseHandler represents queries within the review set.
 func (m *EdiscoveryReviewSetQueryItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EdiscoveryReviewSetQueryItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewSetQueryable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

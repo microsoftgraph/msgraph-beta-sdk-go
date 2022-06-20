@@ -16,7 +16,7 @@ type AdditionalSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AdditionalSourcesRequestBuilderGetQueryParameters get additionalSources from security
+// AdditionalSourcesRequestBuilderGetQueryParameters adds an additional source to the eDiscovery search.
 type AdditionalSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewAdditionalSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *AdditionalSourcesRequestBuilder) Count()(*i8eb285c92496b2719cec8c93bd78f6b0138a26d02ad459e545f41b90a443de1c.CountRequestBuilder) {
     return i8eb285c92496b2719cec8c93bd78f6b0138a26d02ad459e545f41b90a443de1c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get additionalSources from security
+// CreateGetRequestInformation adds an additional source to the eDiscovery search.
 func (m *AdditionalSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get additionalSources from security
+// CreateGetRequestInformationWithRequestConfiguration adds an additional source to the eDiscovery search.
 func (m *AdditionalSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AdditionalSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *AdditionalSourcesRequestBuilder) CreatePostRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get get additionalSources from security
+// Get adds an additional source to the eDiscovery search.
 func (m *AdditionalSourcesRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get additionalSources from security
+// GetWithRequestConfigurationAndResponseHandler adds an additional source to the eDiscovery search.
 func (m *AdditionalSourcesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AdditionalSourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

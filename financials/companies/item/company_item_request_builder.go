@@ -85,13 +85,6 @@ type CompanyItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// CompanyItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type CompanyItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // CompanyItemRequestBuilderGetQueryParameters get companies from financials
 type CompanyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
@@ -107,13 +100,6 @@ type CompanyItemRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *CompanyItemRequestBuilderGetQueryParameters
-}
-// CompanyItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type CompanyItemRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers map[string]string
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Accounts the accounts property
 func (m *CompanyItemRequestBuilder) Accounts()(*ibe5eb65fe22e268725128bcf2845841605d9d1eef38f8068c89a3ccafdcb245d.AccountsRequestBuilder) {
@@ -209,22 +195,6 @@ func (m *CompanyItemRequestBuilder) CountriesRegionsById(id string)(*ib417325891
     }
     return ib4173258919a2470076856e048a74747e88c26282e025907c42dbae5ec6030ca.NewCountryRegionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// CreateDeleteRequestInformation delete navigation property companies for financials
-func (m *CompanyItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
-}
-// CreateDeleteRequestInformationWithRequestConfiguration delete navigation property companies for financials
-func (m *CompanyItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *CompanyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
-    if requestConfiguration != nil {
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
 // CreateGetRequestInformation get companies from financials
 func (m *CompanyItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
@@ -240,23 +210,6 @@ func (m *CompanyItemRequestBuilder) CreateGetRequestInformationWithRequestConfig
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
         }
-        requestInfo.AddRequestHeaders(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    return requestInfo, nil
-}
-// CreatePatchRequestInformation update the navigation property companies in financials
-func (m *CompanyItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Companyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
-}
-// CreatePatchRequestInformationWithRequestConfiguration update the navigation property companies in financials
-func (m *CompanyItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Companyable, requestConfiguration *CompanyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
-    requestInfo.UrlTemplate = m.urlTemplate
-    requestInfo.PathParameters = m.pathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.SetContentFromParsable(m.requestAdapter, "application/json", body)
-    if requestConfiguration != nil {
         requestInfo.AddRequestHeaders(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
@@ -321,26 +274,6 @@ func (m *CompanyItemRequestBuilder) CustomersById(id string)(*i0a22f9350aef91493
         urlTplParams["customer%2Did"] = id
     }
     return i0a22f9350aef914933c2bf7011f507fef010436ad65aed8403b06d3550b3f89d.NewCustomerItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Delete delete navigation property companies for financials
-func (m *CompanyItemRequestBuilder) Delete()(error) {
-    return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
-}
-// DeleteWithRequestConfigurationAndResponseHandler delete navigation property companies for financials
-func (m *CompanyItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *CompanyItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
-    requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }
 // Dimensions the dimensions property
 func (m *CompanyItemRequestBuilder) Dimensions()(*if536310c607589fc4a894ef1c998601061419a56a998c732127ea6b48db63d8c.DimensionsRequestBuilder) {
@@ -481,26 +414,6 @@ func (m *CompanyItemRequestBuilder) JournalsById(id string)(*ie72c90b132e5b7adcd
         urlTplParams["journal%2Did"] = id
     }
     return ie72c90b132e5b7adcd798955c629efd15447d563e9da1b63bdf14accfee955b3.NewJournalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
-}
-// Patch update the navigation property companies in financials
-func (m *CompanyItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Companyable)(error) {
-    return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
-}
-// PatchWithRequestConfigurationAndResponseHandler update the navigation property companies in financials
-func (m *CompanyItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Companyable, requestConfiguration *CompanyItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
-    requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.requestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }
 // PaymentMethods the paymentMethods property
 func (m *CompanyItemRequestBuilder) PaymentMethods()(*i0b33ef160f8fead222ec024e8840780deb4ab2dbfa92a870ae77d1cc4968234c.PaymentMethodsRequestBuilder) {

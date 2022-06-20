@@ -16,7 +16,7 @@ type ChildTagsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ChildTagsRequestBuilderGetQueryParameters get childTags from security
+// ChildTagsRequestBuilderGetQueryParameters returns the tags that are a child of a tag.
 type ChildTagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,11 +67,11 @@ func NewChildTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *ChildTagsRequestBuilder) Count()(*i8130c5bedb712070a6880266c5c04f45334d293d03ca4b4f29383ea622be776d.CountRequestBuilder) {
     return i8130c5bedb712070a6880266c5c04f45334d293d03ca4b4f29383ea622be776d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get childTags from security
+// CreateGetRequestInformation returns the tags that are a child of a tag.
 func (m *ChildTagsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get childTags from security
+// CreateGetRequestInformationWithRequestConfiguration returns the tags that are a child of a tag.
 func (m *ChildTagsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ChildTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -87,11 +87,11 @@ func (m *ChildTagsRequestBuilder) CreateGetRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get get childTags from security
+// Get returns the tags that are a child of a tag.
 func (m *ChildTagsRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewTagCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get childTags from security
+// GetWithRequestConfigurationAndResponseHandler returns the tags that are a child of a tag.
 func (m *ChildTagsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChildTagsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewTagCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamInfo casts the previous resource to group.
+// TeamInfo provides operations to manage the collection of administrativeUnit entities.
 type TeamInfo struct {
     Entity
     // The name of the team.
@@ -36,8 +36,10 @@ func CreateTeamInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.teamInfo":
-                        return NewTeamInfo(), nil
+                    case "#microsoft.graph.associatedTeamInfo":
+                        return NewAssociatedTeamInfo(), nil
+                    case "#microsoft.graph.sharedWithChannelTeamInfo":
+                        return NewSharedWithChannelTeamInfo(), nil
                 }
             }
         }

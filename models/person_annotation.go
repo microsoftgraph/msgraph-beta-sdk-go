@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonAnnotation casts the previous resource to group.
+// PersonAnnotation 
 type PersonAnnotation struct {
     ItemFacet
     // Contains the detail of the note itself.
@@ -14,7 +14,7 @@ type PersonAnnotation struct {
     // The thumbnailUrl property
     thumbnailUrl *string
 }
-// NewPersonAnnotation instantiates a new personAnnotation and sets the default values.
+// NewPersonAnnotation instantiates a new PersonAnnotation and sets the default values.
 func NewPersonAnnotation()(*PersonAnnotation) {
     m := &PersonAnnotation{
         ItemFacet: *NewItemFacet(),

@@ -8,13 +8,13 @@ import (
 type TopicModelingSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The dynamicallyAdjustTopicCount property
+    // To learn more, see Adjust maximum number of themes dynamically.
     dynamicallyAdjustTopicCount *bool
-    // The ignoreNumbers property
+    // To learn more, see Include numbers in themes.
     ignoreNumbers *bool
-    // The isEnabled property
+    // Indicates whether themes is enabled for the case.
     isEnabled *bool
-    // The topicCount property
+    // To learn more, see Maximum number of themes.
     topicCount *int32
 }
 // NewTopicModelingSettings instantiates a new topicModelingSettings and sets the default values.
@@ -36,7 +36,7 @@ func (m *TopicModelingSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetDynamicallyAdjustTopicCount gets the dynamicallyAdjustTopicCount property value. The dynamicallyAdjustTopicCount property
+// GetDynamicallyAdjustTopicCount gets the dynamicallyAdjustTopicCount property value. To learn more, see Adjust maximum number of themes dynamically.
 func (m *TopicModelingSettings) GetDynamicallyAdjustTopicCount()(*bool) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *TopicModelingSettings) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetIgnoreNumbers gets the ignoreNumbers property value. The ignoreNumbers property
+// GetIgnoreNumbers gets the ignoreNumbers property value. To learn more, see Include numbers in themes.
 func (m *TopicModelingSettings) GetIgnoreNumbers()(*bool) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *TopicModelingSettings) GetIgnoreNumbers()(*bool) {
         return m.ignoreNumbers
     }
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Indicates whether themes is enabled for the case.
 func (m *TopicModelingSettings) GetIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *TopicModelingSettings) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// GetTopicCount gets the topicCount property value. The topicCount property
+// GetTopicCount gets the topicCount property value. To learn more, see Maximum number of themes.
 func (m *TopicModelingSettings) GetTopicCount()(*int32) {
     if m == nil {
         return nil
@@ -153,25 +153,25 @@ func (m *TopicModelingSettings) SetAdditionalData(value map[string]interface{})(
         m.additionalData = value
     }
 }
-// SetDynamicallyAdjustTopicCount sets the dynamicallyAdjustTopicCount property value. The dynamicallyAdjustTopicCount property
+// SetDynamicallyAdjustTopicCount sets the dynamicallyAdjustTopicCount property value. To learn more, see Adjust maximum number of themes dynamically.
 func (m *TopicModelingSettings) SetDynamicallyAdjustTopicCount(value *bool)() {
     if m != nil {
         m.dynamicallyAdjustTopicCount = value
     }
 }
-// SetIgnoreNumbers sets the ignoreNumbers property value. The ignoreNumbers property
+// SetIgnoreNumbers sets the ignoreNumbers property value. To learn more, see Include numbers in themes.
 func (m *TopicModelingSettings) SetIgnoreNumbers(value *bool)() {
     if m != nil {
         m.ignoreNumbers = value
     }
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Indicates whether themes is enabled for the case.
 func (m *TopicModelingSettings) SetIsEnabled(value *bool)() {
     if m != nil {
         m.isEnabled = value
     }
 }
-// SetTopicCount sets the topicCount property value. The topicCount property
+// SetTopicCount sets the topicCount property value. To learn more, see Maximum number of themes.
 func (m *TopicModelingSettings) SetTopicCount(value *int32)() {
     if m != nil {
         m.topicCount = value

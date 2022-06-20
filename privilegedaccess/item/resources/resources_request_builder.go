@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i26bd431120016d3e91b673a997f40c442a2ddf52b01503c786ee0a6c202706aa "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedaccess/item/resources/count"
+    id2568c58ae144d12d8fbb9d446d879b3bedec1cc0405a2be995c0a2a9518b04d "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedaccess/item/resources/register"
 )
 
 // ResourcesRequestBuilder provides operations to manage the resources property of the microsoft.graph.privilegedAccess entity.
@@ -151,4 +152,8 @@ func (m *ResourcesRequestBuilder) PostWithRequestConfigurationAndResponseHandler
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable), nil
+}
+// Register the register property
+func (m *ResourcesRequestBuilder) Register()(*id2568c58ae144d12d8fbb9d446d879b3bedec1cc0405a2be995c0a2a9518b04d.RegisterRequestBuilder) {
+    return id2568c58ae144d12d8fbb9d446d879b3bedec1cc0405a2be995c0a2a9518b04d.NewRegisterRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

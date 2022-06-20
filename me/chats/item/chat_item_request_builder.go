@@ -4,8 +4,13 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i0bafb1debfff9bf875c891125572344c403e42dae31d9f4889de4d6f1774a3f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/markchatunreadforuser"
     i1bcde115488e1362c679009fc0d5cf62474b9a7ba3d051b9bd8214ab3f0c2c35 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/operations"
+    i2b860dec50e5faa8f825fb8103a2b27cedc04224865564cb96149aa6bb97d7d5 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/sendactivitynotification"
     i38e5134ffce5124e21fd0f668bb73e5568b24566a9e956b4d12afef11bee220f "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/permissiongrants"
+    i75244b45b923891db6e9b0b23e8f43de1095113f335d4507e9c0b54ebcd0c21e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/markchatreadforuser"
+    i81f518d742ed9b6a68e2df0007e45cc345d66defa6db59a94afc19f8c01870d9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/hideforuser"
+    i8791640889cb2a0ec1b53c3db460f3f7c82671cef2a627f7fc2649c53e0bb14e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/unhideforuser"
     ia4a5a30ed707af790b1c2b15936fcf68a4ac1eaee6407d4e5837f9dee33d2717 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/installedapps"
     ib32e501e2ee14b9c518eef16cdd1655db30b5806e5f4be17957c21a66e36c695 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/pinnedmessages"
     ibcd033263282f46cf08c9ffed250e454bfe93a5f0d41ede7466f3725b012808c "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item/members"
@@ -172,6 +177,10 @@ func (m *ChatItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Chatable), nil
 }
+// HideForUser the hideForUser property
+func (m *ChatItemRequestBuilder) HideForUser()(*i81f518d742ed9b6a68e2df0007e45cc345d66defa6db59a94afc19f8c01870d9.HideForUserRequestBuilder) {
+    return i81f518d742ed9b6a68e2df0007e45cc345d66defa6db59a94afc19f8c01870d9.NewHideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // InstalledApps the installedApps property
 func (m *ChatItemRequestBuilder) InstalledApps()(*ia4a5a30ed707af790b1c2b15936fcf68a4ac1eaee6407d4e5837f9dee33d2717.InstalledAppsRequestBuilder) {
     return ia4a5a30ed707af790b1c2b15936fcf68a4ac1eaee6407d4e5837f9dee33d2717.NewInstalledAppsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -190,6 +199,14 @@ func (m *ChatItemRequestBuilder) InstalledAppsById(id string)(*i7cae322e7e19ac03
 // LastMessagePreview the lastMessagePreview property
 func (m *ChatItemRequestBuilder) LastMessagePreview()(*idead0084f5300487c412f0afd4cb69c96dab7aa445fdb45feba337598ba6e4a4.LastMessagePreviewRequestBuilder) {
     return idead0084f5300487c412f0afd4cb69c96dab7aa445fdb45feba337598ba6e4a4.NewLastMessagePreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MarkChatReadForUser the markChatReadForUser property
+func (m *ChatItemRequestBuilder) MarkChatReadForUser()(*i75244b45b923891db6e9b0b23e8f43de1095113f335d4507e9c0b54ebcd0c21e.MarkChatReadForUserRequestBuilder) {
+    return i75244b45b923891db6e9b0b23e8f43de1095113f335d4507e9c0b54ebcd0c21e.NewMarkChatReadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// MarkChatUnreadForUser the markChatUnreadForUser property
+func (m *ChatItemRequestBuilder) MarkChatUnreadForUser()(*i0bafb1debfff9bf875c891125572344c403e42dae31d9f4889de4d6f1774a3f1.MarkChatUnreadForUserRequestBuilder) {
+    return i0bafb1debfff9bf875c891125572344c403e42dae31d9f4889de4d6f1774a3f1.NewMarkChatUnreadForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Members the members property
 func (m *ChatItemRequestBuilder) Members()(*ibcd033263282f46cf08c9ffed250e454bfe93a5f0d41ede7466f3725b012808c.MembersRequestBuilder) {
@@ -286,6 +303,10 @@ func (m *ChatItemRequestBuilder) PinnedMessagesById(id string)(*ib7358fe28b26b0d
     }
     return ib7358fe28b26b0df886473cc1c746ecee1f749db40a9123335298a7e8ff8c07b.NewPinnedChatMessageInfoItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// SendActivityNotification the sendActivityNotification property
+func (m *ChatItemRequestBuilder) SendActivityNotification()(*i2b860dec50e5faa8f825fb8103a2b27cedc04224865564cb96149aa6bb97d7d5.SendActivityNotificationRequestBuilder) {
+    return i2b860dec50e5faa8f825fb8103a2b27cedc04224865564cb96149aa6bb97d7d5.NewSendActivityNotificationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Tabs the tabs property
 func (m *ChatItemRequestBuilder) Tabs()(*if345d5c48676b774a18852c60a5c6a74c7235e1f5439793ed859b22d9c6e5d11.TabsRequestBuilder) {
     return if345d5c48676b774a18852c60a5c6a74c7235e1f5439793ed859b22d9c6e5d11.NewTabsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -300,4 +321,8 @@ func (m *ChatItemRequestBuilder) TabsById(id string)(*i1608545c1b63cdff025064ae1
         urlTplParams["teamsTab%2Did"] = id
     }
     return i1608545c1b63cdff025064ae1096d8c51ba0eae3a6adeffca8ec30d3f85d8859.NewTeamsTabItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// UnhideForUser the unhideForUser property
+func (m *ChatItemRequestBuilder) UnhideForUser()(*i8791640889cb2a0ec1b53c3db460f3f7c82671cef2a627f7fc2649c53e0bb14e.UnhideForUserRequestBuilder) {
+    return i8791640889cb2a0ec1b53c3db460f3f7c82671cef2a627f7fc2649c53e0bb14e.NewUnhideForUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

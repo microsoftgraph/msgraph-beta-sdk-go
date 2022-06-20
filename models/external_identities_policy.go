@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternalIdentitiesPolicy provides operations to manage the policyRoot singleton.
+// ExternalIdentitiesPolicy 
 type ExternalIdentitiesPolicy struct {
     PolicyBase
     // The allowDeletedIdentitiesDataRemoval property
@@ -12,7 +12,7 @@ type ExternalIdentitiesPolicy struct {
     // The allowExternalIdentitiesToLeave property
     allowExternalIdentitiesToLeave *bool
 }
-// NewExternalIdentitiesPolicy instantiates a new externalIdentitiesPolicy and sets the default values.
+// NewExternalIdentitiesPolicy instantiates a new ExternalIdentitiesPolicy and sets the default values.
 func NewExternalIdentitiesPolicy()(*ExternalIdentitiesPolicy) {
     m := &ExternalIdentitiesPolicy{
         PolicyBase: *NewPolicyBase(),

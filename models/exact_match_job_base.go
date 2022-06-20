@@ -41,8 +41,10 @@ func CreateExactMatchJobBaseFromDiscriminatorValue(parseNode i878a80d2330e89d268
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.exactMatchJobBase":
-                        return NewExactMatchJobBase(), nil
+                    case "#microsoft.graph.exactMatchLookupJob":
+                        return NewExactMatchLookupJob(), nil
+                    case "#microsoft.graph.exactMatchSessionBase":
+                        return NewExactMatchSessionBase(), nil
                 }
             }
         }

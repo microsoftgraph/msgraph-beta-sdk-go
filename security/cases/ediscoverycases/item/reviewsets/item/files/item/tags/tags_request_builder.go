@@ -16,7 +16,7 @@ type TagsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TagsRequestBuilderGetQueryParameters get tags from security
+// TagsRequestBuilderGetQueryParameters tags associated with the file.
 type TagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -67,11 +67,11 @@ func NewTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
 func (m *TagsRequestBuilder) Count()(*i89aad5d3bbd836e994e6fc70aa1990daeff19d2eb03c89888f1aa71bfdd972c1.CountRequestBuilder) {
     return i89aad5d3bbd836e994e6fc70aa1990daeff19d2eb03c89888f1aa71bfdd972c1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get tags from security
+// CreateGetRequestInformation tags associated with the file.
 func (m *TagsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get tags from security
+// CreateGetRequestInformationWithRequestConfiguration tags associated with the file.
 func (m *TagsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -87,11 +87,11 @@ func (m *TagsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// Get get tags from security
+// Get tags associated with the file.
 func (m *TagsRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewTagCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get tags from security
+// GetWithRequestConfigurationAndResponseHandler tags associated with the file.
 func (m *TagsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TagsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryReviewTagCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

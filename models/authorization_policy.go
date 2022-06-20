@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthorizationPolicy provides operations to manage the policyRoot singleton.
+// AuthorizationPolicy 
 type AuthorizationPolicy struct {
     PolicyBase
     // Indicates whether users can sign up for email based subscriptions.
@@ -28,7 +28,7 @@ type AuthorizationPolicy struct {
     // Indicates if user consent to apps is allowed, and if it is, which app consent policy (permissionGrantPolicy) governs the permission for users to grant consent. Values should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
     permissionGrantPolicyIdsAssignedToDefaultUserRole []string
 }
-// NewAuthorizationPolicy instantiates a new authorizationPolicy and sets the default values.
+// NewAuthorizationPolicy instantiates a new AuthorizationPolicy and sets the default values.
 func NewAuthorizationPolicy()(*AuthorizationPolicy) {
     m := &AuthorizationPolicy{
         PolicyBase: *NewPolicyBase(),

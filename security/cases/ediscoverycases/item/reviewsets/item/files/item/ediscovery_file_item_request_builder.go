@@ -27,7 +27,7 @@ type EdiscoveryFileItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryFileItemRequestBuilderGetQueryParameters get files from security
+// EdiscoveryFileItemRequestBuilderGetQueryParameters represents files within the review set.
 type EdiscoveryFileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -89,11 +89,11 @@ func (m *EdiscoveryFileItemRequestBuilder) CreateDeleteRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get files from security
+// CreateGetRequestInformation represents files within the review set.
 func (m *EdiscoveryFileItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get files from security
+// CreateGetRequestInformationWithRequestConfiguration represents files within the review set.
 func (m *EdiscoveryFileItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EdiscoveryFileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -154,11 +154,11 @@ func (m *EdiscoveryFileItemRequestBuilder) DeleteWithRequestConfigurationAndResp
 func (m *EdiscoveryFileItemRequestBuilder) ExtractedTextContent()(*i5a85cec846ca2d02e5b3f3a52074e96d47dd250564beef04af2dec6728824bc3.ExtractedTextContentRequestBuilder) {
     return i5a85cec846ca2d02e5b3f3a52074e96d47dd250564beef04af2dec6728824bc3.NewExtractedTextContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get files from security
+// Get represents files within the review set.
 func (m *EdiscoveryFileItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryFileable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get files from security
+// GetWithRequestConfigurationAndResponseHandler represents files within the review set.
 func (m *EdiscoveryFileItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EdiscoveryFileItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryFileable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

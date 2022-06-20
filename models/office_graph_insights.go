@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OfficeGraphInsights casts the previous resource to group.
+// OfficeGraphInsights provides operations to manage the collection of administrativeUnit entities.
 type OfficeGraphInsights struct {
     Entity
     // Access this property from the derived type itemInsights.
@@ -36,8 +36,8 @@ func CreateOfficeGraphInsightsFromDiscriminatorValue(parseNode i878a80d2330e89d2
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.officeGraphInsights":
-                        return NewOfficeGraphInsights(), nil
+                    case "#microsoft.graph.itemInsights":
+                        return NewItemInsights(), nil
                 }
             }
         }

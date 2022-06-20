@@ -2,7 +2,7 @@ package ediscovery
 import (
     "errors"
 )
-// Provides operations to call the export method.
+// Provides operations to manage the compliance singleton.
 type ExportFileStructure int
 
 const (

@@ -8,6 +8,7 @@ import (
     i5f853021bcd09dc31bcfe1b81013b0b4476658eb54310db69fef8d76e06b714a "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/deletedteams"
     ib9c577680442ee756cdbf50e3c2f2d61fc1877ecb12e13bf9ec9802c878f1b45 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/workforceintegrations"
     id1ff05524188cf798ff28c962060e88b92f5555111be336cede7088f8719c6a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/sendactivitynotificationtorecipients"
+    idad6e2713a756a61b26caca3cc1da42b705a499834ed5b89ca8f4eade11dac1d "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamsappsettings"
     i17ffe63fafac127289aa66b154f468d1a6a27dee2b4568c67bf179cbf15811a8 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/devices/item"
     i75138276537be7f359112029ca90eee1631bb436b9f9db869b58bf15fd0cd092 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/workforceintegrations/item"
     ic86fd621ddc51f4cb681ecef66a6c6bbfecda42d24db8e141175f82fdabf74d2 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/deletedteams/item"
@@ -174,6 +175,10 @@ func (m *TeamworkRequestBuilder) PatchWithRequestConfigurationAndResponseHandler
 // SendActivityNotificationToRecipients the sendActivityNotificationToRecipients property
 func (m *TeamworkRequestBuilder) SendActivityNotificationToRecipients()(*id1ff05524188cf798ff28c962060e88b92f5555111be336cede7088f8719c6a6.SendActivityNotificationToRecipientsRequestBuilder) {
     return id1ff05524188cf798ff28c962060e88b92f5555111be336cede7088f8719c6a6.NewSendActivityNotificationToRecipientsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TeamsAppSettings the teamsAppSettings property
+func (m *TeamworkRequestBuilder) TeamsAppSettings()(*idad6e2713a756a61b26caca3cc1da42b705a499834ed5b89ca8f4eade11dac1d.TeamsAppSettingsRequestBuilder) {
+    return idad6e2713a756a61b26caca3cc1da42b705a499834ed5b89ca8f4eade11dac1d.NewTeamsAppSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // WorkforceIntegrations the workforceIntegrations property
 func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*ib9c577680442ee756cdbf50e3c2f2d61fc1877ecb12e13bf9ec9802c878f1b45.WorkforceIntegrationsRequestBuilder) {

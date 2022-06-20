@@ -15,7 +15,7 @@ type DataSourceItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DataSourceItemRequestBuilderGetQueryParameters get custodianSources from security
+// DataSourceItemRequestBuilderGetQueryParameters custodian sources that are included in the eDiscovery search.
 type DataSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,11 +50,11 @@ func NewDataSourceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewDataSourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get custodianSources from security
+// CreateGetRequestInformation custodian sources that are included in the eDiscovery search.
 func (m *DataSourceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get custodianSources from security
+// CreateGetRequestInformationWithRequestConfiguration custodian sources that are included in the eDiscovery search.
 func (m *DataSourceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DataSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,11 +70,11 @@ func (m *DataSourceItemRequestBuilder) CreateGetRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// Get get custodianSources from security
+// Get custodian sources that are included in the eDiscovery search.
 func (m *DataSourceItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get custodianSources from security
+// GetWithRequestConfigurationAndResponseHandler custodian sources that are included in the eDiscovery search.
 func (m *DataSourceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DataSourceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EmailAuthenticationMethod casts the previous resource to group.
+// EmailAuthenticationMethod 
 type EmailAuthenticationMethod struct {
     AuthenticationMethod
     // The email address registered to this user.
     emailAddress *string
 }
-// NewEmailAuthenticationMethod instantiates a new emailAuthenticationMethod and sets the default values.
+// NewEmailAuthenticationMethod instantiates a new EmailAuthenticationMethod and sets the default values.
 func NewEmailAuthenticationMethod()(*EmailAuthenticationMethod) {
     m := &EmailAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),

@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SignInFrequencySessionControl provides operations to manage the policyRoot singleton.
+// SignInFrequencySessionControl provides operations to manage the identityContainer singleton.
 type SignInFrequencySessionControl struct {
     ConditionalAccessSessionControl
-    // The authenticationType property
+    // The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
     authenticationType *SignInFrequencyAuthenticationType
-    // The frequencyInterval property
+    // The possible values are timeBased, everyTime, unknownFutureValue.
     frequencyInterval *SignInFrequencyInterval
-    // Possible values are: days, hours.
+    // Possible values are: days, hours, or null if frequencyInterval is everyTime .
     type_escaped *SigninFrequencyType
     // The number of days or hours.
     value *int32
@@ -27,7 +27,7 @@ func NewSignInFrequencySessionControl()(*SignInFrequencySessionControl) {
 func CreateSignInFrequencySessionControlFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSignInFrequencySessionControl(), nil
 }
-// GetAuthenticationType gets the authenticationType property value. The authenticationType property
+// GetAuthenticationType gets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
 func (m *SignInFrequencySessionControl) GetAuthenticationType()(*SignInFrequencyAuthenticationType) {
     if m == nil {
         return nil
@@ -80,7 +80,7 @@ func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetFrequencyInterval gets the frequencyInterval property value. The frequencyInterval property
+// GetFrequencyInterval gets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue.
 func (m *SignInFrequencySessionControl) GetFrequencyInterval()(*SignInFrequencyInterval) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *SignInFrequencySessionControl) GetFrequencyInterval()(*SignInFrequencyI
         return m.frequencyInterval
     }
 }
-// GetType gets the type property value. Possible values are: days, hours.
+// GetType gets the type property value. Possible values are: days, hours, or null if frequencyInterval is everyTime .
 func (m *SignInFrequencySessionControl) GetType()(*SigninFrequencyType) {
     if m == nil {
         return nil
@@ -139,19 +139,19 @@ func (m *SignInFrequencySessionControl) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetAuthenticationType sets the authenticationType property value. The authenticationType property
+// SetAuthenticationType sets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
 func (m *SignInFrequencySessionControl) SetAuthenticationType(value *SignInFrequencyAuthenticationType)() {
     if m != nil {
         m.authenticationType = value
     }
 }
-// SetFrequencyInterval sets the frequencyInterval property value. The frequencyInterval property
+// SetFrequencyInterval sets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue.
 func (m *SignInFrequencySessionControl) SetFrequencyInterval(value *SignInFrequencyInterval)() {
     if m != nil {
         m.frequencyInterval = value
     }
 }
-// SetType sets the type property value. Possible values are: days, hours.
+// SetType sets the type property value. Possible values are: days, hours, or null if frequencyInterval is everyTime .
 func (m *SignInFrequencySessionControl) SetType(value *SigninFrequencyType)() {
     if m != nil {
         m.type_escaped = value

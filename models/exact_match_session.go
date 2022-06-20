@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchSession provides operations to manage the dataClassificationService singleton.
+// ExactMatchSession 
 type ExactMatchSession struct {
     ExactMatchSessionBase
     // The checksum property
@@ -24,7 +24,7 @@ type ExactMatchSession struct {
     // The uploadAgentId property
     uploadAgentId *string
 }
-// NewExactMatchSession instantiates a new exactMatchSession and sets the default values.
+// NewExactMatchSession instantiates a new ExactMatchSession and sets the default values.
 func NewExactMatchSession()(*ExactMatchSession) {
     m := &ExactMatchSession{
         ExactMatchSessionBase: *NewExactMatchSessionBase(),

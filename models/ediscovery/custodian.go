@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Custodian provides operations to manage the compliance singleton.
+// Custodian 
 type Custodian struct {
     DataSourceContainer
     // Date and time the custodian acknowledged a hold notification.
@@ -21,7 +21,7 @@ type Custodian struct {
     // Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
     userSources []UserSourceable
 }
-// NewCustodian instantiates a new custodian and sets the default values.
+// NewCustodian instantiates a new Custodian and sets the default values.
 func NewCustodian()(*Custodian) {
     m := &Custodian{
         DataSourceContainer: *NewDataSourceContainer(),

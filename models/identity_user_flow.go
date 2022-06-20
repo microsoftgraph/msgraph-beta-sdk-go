@@ -34,8 +34,10 @@ func CreateIdentityUserFlowFromDiscriminatorValue(parseNode i878a80d2330e89d2689
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.identityUserFlow":
-                        return NewIdentityUserFlow(), nil
+                    case "#microsoft.graph.b2cIdentityUserFlow":
+                        return NewB2cIdentityUserFlow(), nil
+                    case "#microsoft.graph.b2xIdentityUserFlow":
+                        return NewB2xIdentityUserFlow(), nil
                 }
             }
         }

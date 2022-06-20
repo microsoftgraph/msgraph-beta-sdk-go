@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i334c41831d8aa39d2eb97c99a39e2e5d732b6dcb80b9bca493ed07074555542a "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedaccess/item/roleassignments/count"
+    ib43f9c9c96e8803e0a6dcc7f505e321e14b49389f81434fc0940b1e55fe32164 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedaccess/item/roleassignments/export"
 )
 
 // RoleAssignmentsRequestBuilder provides operations to manage the roleAssignments property of the microsoft.graph.privilegedAccess entity.
@@ -111,6 +112,10 @@ func (m *RoleAssignmentsRequestBuilder) CreatePostRequestInformationWithRequestC
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Export provides operations to call the export method.
+func (m *RoleAssignmentsRequestBuilder) Export()(*ib43f9c9c96e8803e0a6dcc7f505e321e14b49389f81434fc0940b1e55fe32164.ExportRequestBuilder) {
+    return ib43f9c9c96e8803e0a6dcc7f505e321e14b49389f81434fc0940b1e55fe32164.NewExportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get a collection of role assignments for the provider.
 func (m *RoleAssignmentsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentCollectionResponseable, error) {

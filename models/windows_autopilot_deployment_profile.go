@@ -61,8 +61,10 @@ func CreateWindowsAutopilotDeploymentProfileFromDiscriminatorValue(parseNode i87
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.windowsAutopilotDeploymentProfile":
-                        return NewWindowsAutopilotDeploymentProfile(), nil
+                    case "#microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile":
+                        return NewActiveDirectoryWindowsAutopilotDeploymentProfile(), nil
+                    case "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile":
+                        return NewAzureADWindowsAutopilotDeploymentProfile(), nil
                 }
             }
         }

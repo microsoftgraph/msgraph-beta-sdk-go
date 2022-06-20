@@ -28,7 +28,7 @@ type EdiscoveryNoncustodialDataSourceItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters get noncustodialDataSources from security
+// EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 type EdiscoveryNoncustodialDataSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -90,11 +90,11 @@ func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) CreateDeleteRequest
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get noncustodialDataSources from security
+// CreateGetRequestInformation returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get noncustodialDataSources from security
+// CreateGetRequestInformationWithRequestConfiguration returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EdiscoveryNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -151,11 +151,11 @@ func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) DeleteWithRequestCo
     }
     return nil
 }
-// Get get noncustodialDataSources from security
+// Get returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get noncustodialDataSources from security
+// GetWithRequestConfigurationAndResponseHandler returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 func (m *EdiscoveryNoncustodialDataSourceItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EdiscoveryNoncustodialDataSourceItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryNoncustodialDataSourceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

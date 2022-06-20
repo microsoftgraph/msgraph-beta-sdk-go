@@ -16,7 +16,7 @@ type ApplicationItemRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ApplicationItemRequestBuilderGetQueryParameters read-only. Nullable.
+// ApplicationItemRequestBuilderGetQueryParameters get applications from onPremisesPublishingProfiles
 type ApplicationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -51,11 +51,11 @@ func NewApplicationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get applications from onPremisesPublishingProfiles
 func (m *ApplicationItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get applications from onPremisesPublishingProfiles
 func (m *ApplicationItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ApplicationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -71,11 +71,11 @@ func (m *ApplicationItemRequestBuilder) CreateGetRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get get applications from onPremisesPublishingProfiles
 func (m *ApplicationItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get applications from onPremisesPublishingProfiles
 func (m *ApplicationItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ApplicationItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

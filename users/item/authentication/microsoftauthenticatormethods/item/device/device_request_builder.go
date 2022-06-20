@@ -5,12 +5,17 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i186a00d6e190ee44b59cb52b2cbb4c5c0e47f4d72116bd6b1da6de384881c08e "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/commands"
+    i27f4b430aacffbb9c09340fb213d3dca19564ef62fe87089f6d22b63c6009190 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/getmembergroups"
     i2ae675744e7c5905c45d460c202d11a216b3c7c9d20f9264fe84ce7a04e110da "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/extensions"
     i3b6c87bee9c969d862bdc49f70ea362910c62419e153e0685f52625f7a803479 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/transitivememberof"
     i3f75e283f93adc34307cee52455495562302f05091753601e046cd8c3ff5e5e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/registeredowners"
     i48aa20320178c82e2e8f666df3f90fb1f6496339199f27116bfcba3534b13080 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/usagerights"
     ibf189e89ede49641c79a70453e1d230533963f2b8a6c72dd1ad73aa7a5332fa1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/memberof"
+    ic0e905bac7fefe65b6b4d5265c0ca73f5432d70b85d3d40aa6e6e9c91fda2253 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/checkmembergroups"
+    ic5de27bd0684fb655beb903a5c0ad722ed0ae116a5a2bef5c8e346ec362c9eac "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/restore"
+    ide9faaf6b48f38793dc4fd115dc54c24b71364bc6cf526270dd5da710542518a "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/getmemberobjects"
     iedfcd156ad299ae13dae1c8af8bc8cbe82d7425c1128044331087d655eb24eb8 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/registeredusers"
+    if8a64262654d2ada6f123b1b4619632a5f442670467dff5e1f0997d2c3f87018 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/checkmemberobjects"
     i0f2cb8b49c6b0197389304f256cc1a3e004770ad5046740ffdc903a1dd455fb1 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/extensions/item"
     i7afbbaff323d87ab8e17e5373dd8819609ea24f3dfa6a5fd80bf5e2bef24e903 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/memberof/item"
     i7ced72d91d89c5a743c604951ea2edf1b4f4e23f9aa3eaf023cc171df6a3901e "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/authentication/microsoftauthenticatormethods/item/device/commands/item"
@@ -58,6 +63,14 @@ type DeviceRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// CheckMemberGroups the checkMemberGroups property
+func (m *DeviceRequestBuilder) CheckMemberGroups()(*ic0e905bac7fefe65b6b4d5265c0ca73f5432d70b85d3d40aa6e6e9c91fda2253.CheckMemberGroupsRequestBuilder) {
+    return ic0e905bac7fefe65b6b4d5265c0ca73f5432d70b85d3d40aa6e6e9c91fda2253.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CheckMemberObjects the checkMemberObjects property
+func (m *DeviceRequestBuilder) CheckMemberObjects()(*if8a64262654d2ada6f123b1b4619632a5f442670467dff5e1f0997d2c3f87018.CheckMemberObjectsRequestBuilder) {
+    return if8a64262654d2ada6f123b1b4619632a5f442670467dff5e1f0997d2c3f87018.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Commands the commands property
 func (m *DeviceRequestBuilder) Commands()(*i186a00d6e190ee44b59cb52b2cbb4c5c0e47f4d72116bd6b1da6de384881c08e.CommandsRequestBuilder) {
@@ -185,6 +198,14 @@ func (m *DeviceRequestBuilder) ExtensionsById(id string)(*i0f2cb8b49c6b019738930
 func (m *DeviceRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetMemberGroups the getMemberGroups property
+func (m *DeviceRequestBuilder) GetMemberGroups()(*i27f4b430aacffbb9c09340fb213d3dca19564ef62fe87089f6d22b63c6009190.GetMemberGroupsRequestBuilder) {
+    return i27f4b430aacffbb9c09340fb213d3dca19564ef62fe87089f6d22b63c6009190.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetMemberObjects the getMemberObjects property
+func (m *DeviceRequestBuilder) GetMemberObjects()(*ide9faaf6b48f38793dc4fd115dc54c24b71364bc6cf526270dd5da710542518a.GetMemberObjectsRequestBuilder) {
+    return ide9faaf6b48f38793dc4fd115dc54c24b71364bc6cf526270dd5da710542518a.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler the registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
 func (m *DeviceRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeviceRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -265,6 +286,10 @@ func (m *DeviceRequestBuilder) RegisteredUsersById(id string)(*i988d77edabc56601
         urlTplParams["directoryObject%2Did"] = id
     }
     return i988d77edabc56601ca7b0974888b531d5ed1a3768b98c2a382f93071485c031f.NewDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Restore the restore property
+func (m *DeviceRequestBuilder) Restore()(*ic5de27bd0684fb655beb903a5c0ad722ed0ae116a5a2bef5c8e346ec362c9eac.RestoreRequestBuilder) {
+    return ic5de27bd0684fb655beb903a5c0ad722ed0ae116a5a2bef5c8e346ec362c9eac.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TransitiveMemberOf the transitiveMemberOf property
 func (m *DeviceRequestBuilder) TransitiveMemberOf()(*i3b6c87bee9c969d862bdc49f70ea362910c62419e153e0685f52625f7a803479.TransitiveMemberOfRequestBuilder) {

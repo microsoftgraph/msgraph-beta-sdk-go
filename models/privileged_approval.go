@@ -24,7 +24,7 @@ type PrivilegedApproval struct {
     requestorReason *string
     // The roleId property
     roleId *string
-    // Read-only. Nullable.
+    // The roleInfo property
     roleInfo PrivilegedRoleable
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -221,7 +221,7 @@ func (m *PrivilegedApproval) GetRoleId()(*string) {
         return m.roleId
     }
 }
-// GetRoleInfo gets the roleInfo property value. Read-only. Nullable.
+// GetRoleInfo gets the roleInfo property value. The roleInfo property
 func (m *PrivilegedApproval) GetRoleInfo()(PrivilegedRoleable) {
     if m == nil {
         return nil
@@ -368,7 +368,7 @@ func (m *PrivilegedApproval) SetRoleId(value *string)() {
         m.roleId = value
     }
 }
-// SetRoleInfo sets the roleInfo property value. Read-only. Nullable.
+// SetRoleInfo sets the roleInfo property value. The roleInfo property
 func (m *PrivilegedApproval) SetRoleInfo(value PrivilegedRoleable)() {
     if m != nil {
         m.roleInfo = value

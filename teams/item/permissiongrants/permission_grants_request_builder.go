@@ -4,7 +4,10 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i1a625e10aabbf5c4a31b1d9cc528aa53d67ede60c1f8bd97fd007dbb6a4a2189 "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/permissiongrants/getuserownedobjects"
     i28f94d0e9eca0c7cb482c21b35811b617ce21a754b0da440004c62a5f2478b2b "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/permissiongrants/count"
+    i50d4a71dabea8b5b3fd086fa51a466f7cfdb57afd7d91e7bcb6bcc80cd7d99ed "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/permissiongrants/validateproperties"
+    i6818d719c02f3aa456643a7d27de984f3fda3ba75a287e843f200e4b04df3b0a "github.com/microsoftgraph/msgraph-beta-sdk-go/teams/item/permissiongrants/getbyids"
 )
 
 // PermissionGrantsRequestBuilder provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
@@ -116,6 +119,14 @@ func (m *PermissionGrantsRequestBuilder) CreatePostRequestInformationWithRequest
 func (m *PermissionGrantsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetByIds the getByIds property
+func (m *PermissionGrantsRequestBuilder) GetByIds()(*i6818d719c02f3aa456643a7d27de984f3fda3ba75a287e843f200e4b04df3b0a.GetByIdsRequestBuilder) {
+    return i6818d719c02f3aa456643a7d27de984f3fda3ba75a287e843f200e4b04df3b0a.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetUserOwnedObjects the getUserOwnedObjects property
+func (m *PermissionGrantsRequestBuilder) GetUserOwnedObjects()(*i1a625e10aabbf5c4a31b1d9cc528aa53d67ede60c1f8bd97fd007dbb6a4a2189.GetUserOwnedObjectsRequestBuilder) {
+    return i1a625e10aabbf5c4a31b1d9cc528aa53d67ede60c1f8bd97fd007dbb6a4a2189.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler a collection of permissions granted to apps to access the team.
 func (m *PermissionGrantsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *PermissionGrantsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -151,4 +162,8 @@ func (m *PermissionGrantsRequestBuilder) PostWithRequestConfigurationAndResponse
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable), nil
+}
+// ValidateProperties the validateProperties property
+func (m *PermissionGrantsRequestBuilder) ValidateProperties()(*i50d4a71dabea8b5b3fd086fa51a466f7cfdb57afd7d91e7bcb6bcc80cd7d99ed.ValidatePropertiesRequestBuilder) {
+    return i50d4a71dabea8b5b3fd086fa51a466f7cfdb57afd7d91e7bcb6bcc80cd7d99ed.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

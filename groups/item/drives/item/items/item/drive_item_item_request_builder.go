@@ -4,15 +4,31 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i07b471b5bafcb166afc807037d8dca3bdcfce89c630e1f472f35241f937766d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/checkout"
     i217423aac1c727efdab2e5c54952470b0921f5b13d098bdf8b94800ab37d04ff "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/versions"
     i2960dd668f9d968328a1273c3905b10cd1454ba2be4d2d2518d741e39d34cb1a "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/permissions"
+    i3902be54e62f5079f0ed69218f21f0975e7e00f321907137ffaf2bab27d5ce6b "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/extractsensitivitylabels"
     i465b2509f766b56413a989b9b1093c9dd885bd5ad9db93359e73becb56b4c8ed "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/subscriptions"
+    i58ed6f131b10b06780d1ea2df19e365e95a719a3fae87e2d329f879f79982e2c "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/createlink"
+    i6269317abc0b6e5c9803549f001b49914559564d4e0e8925af00cee0a9f962e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/follow"
+    i665e64b386f667323a17f15408c03a41c4bbf6c57b33a3bb5c2ef9c2a59a89a8 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/unfollow"
+    i72e51e0fc013425d48885922454ee34dbb8d4c67dd8e586706e0731e06e927eb "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/searchwithq"
+    i75f959b4e251aa6fc4d58408e8f6ad4d90b04f678c2d5865b2bb00ddc543d577 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/invite"
+    i7cd979a1135fa526bb0775b1fe3e6db8a84c98bb45e14a90ed979ce4b9fe1a23 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/preview"
     i81e3ed87008521c326b3ac3c0fc74dbb4bb9dde9ae30e3d99226e6c7ba4eb8f5 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/thumbnails"
     i92430ec89e7e973775f796d4ac8a8d9780b1bc0d5ad60e7cd57a383e6eef3d5d "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/children"
     ia251bf4684ce6c652f9eb3c25934c42fe972ed1dd2719fe5854f1afbc301666a "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/listitem"
+    iad395222d19c225316722cb38722f8b7da3d5f20975a099108596127caf6c6fd "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/delta"
     iaeabdcfc742f6374216f8726dbe42c3ec126484f5bc5c2b32acc5da0596d09ea "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/content"
+    ibb2924ce4ae728b75cf62004f1f8878598fef9529ab8ba8de2f9c554e3591178 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/restore"
+    ic42ef09192fb45a9bc79a029a037222c3ed47782a3d3fc03f7992b62465b21a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/createuploadsession"
+    id227a8ee2058982dcd1edd822aaf329d207e2ebbdf0a996a1f0a43952e1e4914 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/checkin"
+    id376c2ee4463875800fde0bd7871a64ea129ca4a963393950fa963b6045c2b79 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/deltawithtoken"
+    id7af1634662a3667e2519e43a9966c001812bce63e54a87d04dc5ce0a920b5e5 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/validatepermission"
+    id7edf73240a09746f687259da2696c96a0bb4b0b25e7251ea5334efcfc767d7c "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/copy"
     idba818df722d655b17638c47b441ec5821743a8896803f37a5aab7f7e02a3c0a "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/activities"
     idce2f25461c814df9cbddafba89d9ae2f557d73761223fcda23c80b4f5f3ee97 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/analytics"
+    if80a1dc70b76d38f62d13149533b0cbd572868ce071b457f1a7383667be61ef2 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/getactivitiesbyintervalwithstartdatetimewithenddatetimewithinterval"
     i461ab09785c4611bbf76605b4487a9f56eecb53b5d26bfb47eb14a0eadbe1bb0 "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/children/item"
     i46b6ddeff5b488527d3295386cc098d2c87ca02641d9736e959f2cf64b66f45f "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/versions/item"
     i55d3cce86d6128683aaeda467695b6cc98199af11165ef0493911461655f52da "github.com/microsoftgraph/msgraph-beta-sdk-go/groups/item/drives/item/items/item/subscriptions/item"
@@ -79,6 +95,14 @@ func (m *DriveItemItemRequestBuilder) ActivitiesById(id string)(*i8b6ef88519f11f
 func (m *DriveItemItemRequestBuilder) Analytics()(*idce2f25461c814df9cbddafba89d9ae2f557d73761223fcda23c80b4f5f3ee97.AnalyticsRequestBuilder) {
     return idce2f25461c814df9cbddafba89d9ae2f557d73761223fcda23c80b4f5f3ee97.NewAnalyticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Checkin the checkin property
+func (m *DriveItemItemRequestBuilder) Checkin()(*id227a8ee2058982dcd1edd822aaf329d207e2ebbdf0a996a1f0a43952e1e4914.CheckinRequestBuilder) {
+    return id227a8ee2058982dcd1edd822aaf329d207e2ebbdf0a996a1f0a43952e1e4914.NewCheckinRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Checkout the checkout property
+func (m *DriveItemItemRequestBuilder) Checkout()(*i07b471b5bafcb166afc807037d8dca3bdcfce89c630e1f472f35241f937766d7.CheckoutRequestBuilder) {
+    return i07b471b5bafcb166afc807037d8dca3bdcfce89c630e1f472f35241f937766d7.NewCheckoutRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Children the children property
 func (m *DriveItemItemRequestBuilder) Children()(*i92430ec89e7e973775f796d4ac8a8d9780b1bc0d5ad60e7cd57a383e6eef3d5d.ChildrenRequestBuilder) {
     return i92430ec89e7e973775f796d4ac8a8d9780b1bc0d5ad60e7cd57a383e6eef3d5d.NewChildrenRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -117,6 +141,10 @@ func NewDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *DriveItemItemRequestBuilder) Content()(*iaeabdcfc742f6374216f8726dbe42c3ec126484f5bc5c2b32acc5da0596d09ea.ContentRequestBuilder) {
     return iaeabdcfc742f6374216f8726dbe42c3ec126484f5bc5c2b32acc5da0596d09ea.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
+// Copy the copy property
+func (m *DriveItemItemRequestBuilder) Copy()(*id7edf73240a09746f687259da2696c96a0bb4b0b25e7251ea5334efcfc767d7c.CopyRequestBuilder) {
+    return id7edf73240a09746f687259da2696c96a0bb4b0b25e7251ea5334efcfc767d7c.NewCopyRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // CreateDeleteRequestInformation delete navigation property items for groups
 func (m *DriveItemItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
@@ -153,6 +181,10 @@ func (m *DriveItemItemRequestBuilder) CreateGetRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
+// CreateLink the createLink property
+func (m *DriveItemItemRequestBuilder) CreateLink()(*i58ed6f131b10b06780d1ea2df19e365e95a719a3fae87e2d329f879f79982e2c.CreateLinkRequestBuilder) {
+    return i58ed6f131b10b06780d1ea2df19e365e95a719a3fae87e2d329f879f79982e2c.NewCreateLinkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // CreatePatchRequestInformation update the navigation property items in groups
 func (m *DriveItemItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
@@ -169,6 +201,10 @@ func (m *DriveItemItemRequestBuilder) CreatePatchRequestInformationWithRequestCo
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// CreateUploadSession the createUploadSession property
+func (m *DriveItemItemRequestBuilder) CreateUploadSession()(*ic42ef09192fb45a9bc79a029a037222c3ed47782a3d3fc03f7992b62465b21a7.CreateUploadSessionRequestBuilder) {
+    return ic42ef09192fb45a9bc79a029a037222c3ed47782a3d3fc03f7992b62465b21a7.NewCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Delete delete navigation property items for groups
 func (m *DriveItemItemRequestBuilder) Delete()(error) {
@@ -190,9 +226,29 @@ func (m *DriveItemItemRequestBuilder) DeleteWithRequestConfigurationAndResponseH
     }
     return nil
 }
+// Delta provides operations to call the delta method.
+func (m *DriveItemItemRequestBuilder) Delta()(*iad395222d19c225316722cb38722f8b7da3d5f20975a099108596127caf6c6fd.DeltaRequestBuilder) {
+    return iad395222d19c225316722cb38722f8b7da3d5f20975a099108596127caf6c6fd.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// DeltaWithToken provides operations to call the delta method.
+func (m *DriveItemItemRequestBuilder) DeltaWithToken(token *string)(*id376c2ee4463875800fde0bd7871a64ea129ca4a963393950fa963b6045c2b79.DeltaWithTokenRequestBuilder) {
+    return id376c2ee4463875800fde0bd7871a64ea129ca4a963393950fa963b6045c2b79.NewDeltaWithTokenRequestBuilderInternal(m.pathParameters, m.requestAdapter, token);
+}
+// ExtractSensitivityLabels the extractSensitivityLabels property
+func (m *DriveItemItemRequestBuilder) ExtractSensitivityLabels()(*i3902be54e62f5079f0ed69218f21f0975e7e00f321907137ffaf2bab27d5ce6b.ExtractSensitivityLabelsRequestBuilder) {
+    return i3902be54e62f5079f0ed69218f21f0975e7e00f321907137ffaf2bab27d5ce6b.NewExtractSensitivityLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Follow the follow property
+func (m *DriveItemItemRequestBuilder) Follow()(*i6269317abc0b6e5c9803549f001b49914559564d4e0e8925af00cee0a9f962e4.FollowRequestBuilder) {
+    return i6269317abc0b6e5c9803549f001b49914559564d4e0e8925af00cee0a9f962e4.NewFollowRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Get all items contained in the drive. Read-only. Nullable.
 func (m *DriveItemItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval provides operations to call the getActivitiesByInterval method.
+func (m *DriveItemItemRequestBuilder) GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(endDateTime *string, interval *string, startDateTime *string)(*if80a1dc70b76d38f62d13149533b0cbd572868ce071b457f1a7383667be61ef2.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder) {
+    return if80a1dc70b76d38f62d13149533b0cbd572868ce071b457f1a7383667be61ef2.NewGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderInternal(m.pathParameters, m.requestAdapter, endDateTime, interval, startDateTime);
 }
 // GetWithRequestConfigurationAndResponseHandler all items contained in the drive. Read-only. Nullable.
 func (m *DriveItemItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DriveItemItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
@@ -209,6 +265,10 @@ func (m *DriveItemItemRequestBuilder) GetWithRequestConfigurationAndResponseHand
         return nil, err
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
+}
+// Invite the invite property
+func (m *DriveItemItemRequestBuilder) Invite()(*i75f959b4e251aa6fc4d58408e8f6ad4d90b04f678c2d5865b2bb00ddc543d577.InviteRequestBuilder) {
+    return i75f959b4e251aa6fc4d58408e8f6ad4d90b04f678c2d5865b2bb00ddc543d577.NewInviteRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ListItem the listItem property
 func (m *DriveItemItemRequestBuilder) ListItem()(*ia251bf4684ce6c652f9eb3c25934c42fe972ed1dd2719fe5854f1afbc301666a.ListItemRequestBuilder) {
@@ -249,6 +309,18 @@ func (m *DriveItemItemRequestBuilder) PermissionsById(id string)(*id992d48f7a333
     }
     return id992d48f7a3335ca926bd5d1d61ee50b229fce67be95588ae2b9110f96ad30d8.NewPermissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Preview the preview property
+func (m *DriveItemItemRequestBuilder) Preview()(*i7cd979a1135fa526bb0775b1fe3e6db8a84c98bb45e14a90ed979ce4b9fe1a23.PreviewRequestBuilder) {
+    return i7cd979a1135fa526bb0775b1fe3e6db8a84c98bb45e14a90ed979ce4b9fe1a23.NewPreviewRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Restore the restore property
+func (m *DriveItemItemRequestBuilder) Restore()(*ibb2924ce4ae728b75cf62004f1f8878598fef9529ab8ba8de2f9c554e3591178.RestoreRequestBuilder) {
+    return ibb2924ce4ae728b75cf62004f1f8878598fef9529ab8ba8de2f9c554e3591178.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SearchWithQ provides operations to call the search method.
+func (m *DriveItemItemRequestBuilder) SearchWithQ(q *string)(*i72e51e0fc013425d48885922454ee34dbb8d4c67dd8e586706e0731e06e927eb.SearchWithQRequestBuilder) {
+    return i72e51e0fc013425d48885922454ee34dbb8d4c67dd8e586706e0731e06e927eb.NewSearchWithQRequestBuilderInternal(m.pathParameters, m.requestAdapter, q);
+}
 // Subscriptions the subscriptions property
 func (m *DriveItemItemRequestBuilder) Subscriptions()(*i465b2509f766b56413a989b9b1093c9dd885bd5ad9db93359e73becb56b4c8ed.SubscriptionsRequestBuilder) {
     return i465b2509f766b56413a989b9b1093c9dd885bd5ad9db93359e73becb56b4c8ed.NewSubscriptionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
@@ -278,6 +350,14 @@ func (m *DriveItemItemRequestBuilder) ThumbnailsById(id string)(*i730e2e95d5c36a
         urlTplParams["thumbnailSet%2Did"] = id
     }
     return i730e2e95d5c36abb56a8162182bfcf1bdb4f3d68c9721d0c03062451b2f30c28.NewThumbnailSetItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Unfollow the unfollow property
+func (m *DriveItemItemRequestBuilder) Unfollow()(*i665e64b386f667323a17f15408c03a41c4bbf6c57b33a3bb5c2ef9c2a59a89a8.UnfollowRequestBuilder) {
+    return i665e64b386f667323a17f15408c03a41c4bbf6c57b33a3bb5c2ef9c2a59a89a8.NewUnfollowRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ValidatePermission the validatePermission property
+func (m *DriveItemItemRequestBuilder) ValidatePermission()(*id7af1634662a3667e2519e43a9966c001812bce63e54a87d04dc5ce0a920b5e5.ValidatePermissionRequestBuilder) {
+    return id7af1634662a3667e2519e43a9966c001812bce63e54a87d04dc5ce0a920b5e5.NewValidatePermissionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Versions the versions property
 func (m *DriveItemItemRequestBuilder) Versions()(*i217423aac1c727efdab2e5c54952470b0921f5b13d098bdf8b94800ab37d04ff.VersionsRequestBuilder) {

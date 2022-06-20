@@ -6,7 +6,10 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i2589430a289fe8e95a7acdf2d80ee9813ad5587a9980306516875cdabb3a3cb4 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/deleteditems/group"
     i42ef6142cdf65b13c8c619b92627f1ec8b7b6fce8f4b66e55c2b57da753f54e6 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/deleteditems/user"
+    i4389b9aaa346a5fdf53bb167cf00b6bdc4aa52db66b0adf49337c8a1c78f8a32 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/deleteditems/getuserownedobjects"
     i582b3dfc89fb8335c62d5c1b642f724197229635d5f263e6cc636b61190df708 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/deleteditems/count"
+    i59e6d9a924e0e45d290fd3bf7915868207b145fc6d55661a4adb34ab83d49d96 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/deleteditems/validateproperties"
+    ie1025c6f61e31a1860f913437eacc721e9877d2b918c5dd29552da8ecb803f5f "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/deleteditems/getbyids"
     ifd1aec9b29d58b8b58e8239f298c349cd212a89eb493ad01299f5fbb91de0bc5 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/deleteditems/application"
 )
 
@@ -123,6 +126,14 @@ func (m *DeletedItemsRequestBuilder) CreatePostRequestInformationWithRequestConf
 func (m *DeletedItemsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetByIds the getByIds property
+func (m *DeletedItemsRequestBuilder) GetByIds()(*ie1025c6f61e31a1860f913437eacc721e9877d2b918c5dd29552da8ecb803f5f.GetByIdsRequestBuilder) {
+    return ie1025c6f61e31a1860f913437eacc721e9877d2b918c5dd29552da8ecb803f5f.NewGetByIdsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetUserOwnedObjects the getUserOwnedObjects property
+func (m *DeletedItemsRequestBuilder) GetUserOwnedObjects()(*i4389b9aaa346a5fdf53bb167cf00b6bdc4aa52db66b0adf49337c8a1c78f8a32.GetUserOwnedObjectsRequestBuilder) {
+    return i4389b9aaa346a5fdf53bb167cf00b6bdc4aa52db66b0adf49337c8a1c78f8a32.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler recently deleted items. Read-only. Nullable.
 func (m *DeletedItemsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeletedItemsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -166,4 +177,8 @@ func (m *DeletedItemsRequestBuilder) PostWithRequestConfigurationAndResponseHand
 // User the user property
 func (m *DeletedItemsRequestBuilder) User()(*i42ef6142cdf65b13c8c619b92627f1ec8b7b6fce8f4b66e55c2b57da753f54e6.UserRequestBuilder) {
     return i42ef6142cdf65b13c8c619b92627f1ec8b7b6fce8f4b66e55c2b57da753f54e6.NewUserRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ValidateProperties the validateProperties property
+func (m *DeletedItemsRequestBuilder) ValidateProperties()(*i59e6d9a924e0e45d290fd3bf7915868207b145fc6d55661a4adb34ab83d49d96.ValidatePropertiesRequestBuilder) {
+    return i59e6d9a924e0e45d290fd3bf7915868207b145fc6d55661a4adb34ab83d49d96.NewValidatePropertiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -16,7 +16,7 @@ type ContentSharingSessionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ContentSharingSessionsRequestBuilderGetQueryParameters read-only. Nullable.
+// ContentSharingSessionsRequestBuilderGetQueryParameters get contentSharingSessions from app
 type ContentSharingSessionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewContentSharingSessionsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ContentSharingSessionsRequestBuilder) Count()(*i68341c8bce89cd129fe768442df3396b0d82f6a0aed9f38f83498fec363f4003.CountRequestBuilder) {
     return i68341c8bce89cd129fe768442df3396b0d82f6a0aed9f38f83498fec363f4003.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get contentSharingSessions from app
 func (m *ContentSharingSessionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get contentSharingSessions from app
 func (m *ContentSharingSessionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ContentSharingSessionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *ContentSharingSessionsRequestBuilder) CreatePostRequestInformationWithR
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get get contentSharingSessions from app
 func (m *ContentSharingSessionsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentSharingSessionCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get contentSharingSessions from app
 func (m *ContentSharingSessionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ContentSharingSessionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentSharingSessionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -16,7 +16,7 @@ type QueriesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// QueriesRequestBuilderGetQueryParameters read-only. Nullable.
+// QueriesRequestBuilderGetQueryParameters get queries from compliance
 type QueriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewQueriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *QueriesRequestBuilder) Count()(*ib7ff565749ebb5ab4336f08f5307fe29814532abbe0e74ae47e394fd8b9d60f7.CountRequestBuilder) {
     return ib7ff565749ebb5ab4336f08f5307fe29814532abbe0e74ae47e394fd8b9d60f7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable.
+// CreateGetRequestInformation get queries from compliance
 func (m *QueriesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get queries from compliance
 func (m *QueriesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *QueriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *QueriesRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable.
+// Get get queries from compliance
 func (m *QueriesRequestBuilder) Get()(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetQueryCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get queries from compliance
 func (m *QueriesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *QueriesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetQueryCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

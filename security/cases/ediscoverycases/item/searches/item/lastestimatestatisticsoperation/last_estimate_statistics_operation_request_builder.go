@@ -15,7 +15,7 @@ type LastEstimateStatisticsOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// LastEstimateStatisticsOperationRequestBuilderGetQueryParameters get lastEstimateStatisticsOperation from security
+// LastEstimateStatisticsOperationRequestBuilderGetQueryParameters the last estimate operation associated with the eDiscovery search.
 type LastEstimateStatisticsOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,11 +50,11 @@ func NewLastEstimateStatisticsOperationRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewLastEstimateStatisticsOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get lastEstimateStatisticsOperation from security
+// CreateGetRequestInformation the last estimate operation associated with the eDiscovery search.
 func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get lastEstimateStatisticsOperation from security
+// CreateGetRequestInformationWithRequestConfiguration the last estimate operation associated with the eDiscovery search.
 func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,11 +70,11 @@ func (m *LastEstimateStatisticsOperationRequestBuilder) CreateGetRequestInformat
     }
     return requestInfo, nil
 }
-// Get get lastEstimateStatisticsOperation from security
+// Get the last estimate operation associated with the eDiscovery search.
 func (m *LastEstimateStatisticsOperationRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryEstimateOperationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get lastEstimateStatisticsOperation from security
+// GetWithRequestConfigurationAndResponseHandler the last estimate operation associated with the eDiscovery search.
 func (m *LastEstimateStatisticsOperationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LastEstimateStatisticsOperationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryEstimateOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

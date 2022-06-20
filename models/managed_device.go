@@ -209,8 +209,8 @@ func CreateManagedDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.managedDevice":
-                        return NewManagedDevice(), nil
+                    case "#microsoft.graph.windowsManagedDevice":
+                        return NewWindowsManagedDevice(), nil
                 }
             }
         }

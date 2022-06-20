@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileAppTroubleshootingEvent event representing a users device application install status.
+// MobileAppTroubleshootingEvent 
 type MobileAppTroubleshootingEvent struct {
     DeviceManagementTroubleshootingEvent
     // Intune application identifier.
@@ -18,7 +18,7 @@ type MobileAppTroubleshootingEvent struct {
     // Identifier for the user that tried to enroll the device.
     userId *string
 }
-// NewMobileAppTroubleshootingEvent instantiates a new mobileAppTroubleshootingEvent and sets the default values.
+// NewMobileAppTroubleshootingEvent instantiates a new MobileAppTroubleshootingEvent and sets the default values.
 func NewMobileAppTroubleshootingEvent()(*MobileAppTroubleshootingEvent) {
     m := &MobileAppTroubleshootingEvent{
         DeviceManagementTroubleshootingEvent: *NewDeviceManagementTroubleshootingEvent(),

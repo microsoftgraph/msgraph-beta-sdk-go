@@ -16,7 +16,7 @@ type SiteSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// SiteSourcesRequestBuilderGetQueryParameters get siteSources from security
+// SiteSourcesRequestBuilderGetQueryParameters data source entity for SharePoint sites associated with the custodian.
 type SiteSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewSiteSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *SiteSourcesRequestBuilder) Count()(*ica04a14968df7b5c9906eb27e8d4181599884e60a95919cdf9433d00f50a6904.CountRequestBuilder) {
     return ica04a14968df7b5c9906eb27e8d4181599884e60a95919cdf9433d00f50a6904.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get siteSources from security
+// CreateGetRequestInformation data source entity for SharePoint sites associated with the custodian.
 func (m *SiteSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get siteSources from security
+// CreateGetRequestInformationWithRequestConfiguration data source entity for SharePoint sites associated with the custodian.
 func (m *SiteSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SiteSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *SiteSourcesRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get get siteSources from security
+// Get data source entity for SharePoint sites associated with the custodian.
 func (m *SiteSourcesRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SiteSourceCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get siteSources from security
+// GetWithRequestConfigurationAndResponseHandler data source entity for SharePoint sites associated with the custodian.
 func (m *SiteSourcesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SiteSourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SiteSourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

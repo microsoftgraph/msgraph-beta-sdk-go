@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemPublication casts the previous resource to group.
+// ItemPublication 
 type ItemPublication struct {
     ItemFacet
     // Description of the publication.
@@ -20,7 +20,7 @@ type ItemPublication struct {
     // URL referencing the publication.
     webUrl *string
 }
-// NewItemPublication instantiates a new itemPublication and sets the default values.
+// NewItemPublication instantiates a new ItemPublication and sets the default values.
 func NewItemPublication()(*ItemPublication) {
     m := &ItemPublication{
         ItemFacet: *NewItemFacet(),

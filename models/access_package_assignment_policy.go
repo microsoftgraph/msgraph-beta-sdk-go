@@ -18,7 +18,7 @@ type AccessPackageAssignmentPolicy struct {
     accessReviewSettings AssignmentReviewSettingsable
     // Indicates whether a user can extend the access package assignment duration after approval.
     canExtend *bool
-    // Read-only.
+    // The createdBy property
     createdBy *string
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -32,7 +32,7 @@ type AccessPackageAssignmentPolicy struct {
     durationInDays *int32
     // The expiration date for assignments created in this policy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Read-only.
+    // The modifiedBy property
     modifiedBy *string
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -94,7 +94,7 @@ func (m *AccessPackageAssignmentPolicy) GetCanExtend()(*bool) {
         return m.canExtend
     }
 }
-// GetCreatedBy gets the createdBy property value. Read-only.
+// GetCreatedBy gets the createdBy property value. The createdBy property
 func (m *AccessPackageAssignmentPolicy) GetCreatedBy()(*string) {
     if m == nil {
         return nil
@@ -333,7 +333,7 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetModifiedBy gets the modifiedBy property value. Read-only.
+// GetModifiedBy gets the modifiedBy property value. The modifiedBy property
 func (m *AccessPackageAssignmentPolicy) GetModifiedBy()(*string) {
     if m == nil {
         return nil
@@ -521,7 +521,7 @@ func (m *AccessPackageAssignmentPolicy) SetCanExtend(value *bool)() {
         m.canExtend = value
     }
 }
-// SetCreatedBy sets the createdBy property value. Read-only.
+// SetCreatedBy sets the createdBy property value. The createdBy property
 func (m *AccessPackageAssignmentPolicy) SetCreatedBy(value *string)() {
     if m != nil {
         m.createdBy = value
@@ -563,7 +563,7 @@ func (m *AccessPackageAssignmentPolicy) SetExpirationDateTime(value *i336074805f
         m.expirationDateTime = value
     }
 }
-// SetModifiedBy sets the modifiedBy property value. Read-only.
+// SetModifiedBy sets the modifiedBy property value. The modifiedBy property
 func (m *AccessPackageAssignmentPolicy) SetModifiedBy(value *string)() {
     if m != nil {
         m.modifiedBy = value

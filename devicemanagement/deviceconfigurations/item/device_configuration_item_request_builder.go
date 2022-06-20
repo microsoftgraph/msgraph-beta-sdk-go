@@ -5,7 +5,6 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i1f5027d4a0b3340e9b76763ff24f75e1048bb0e622b30753747dac9656c128ac "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/item/assignedaccessmultimodeprofiles"
-    i209aefe482b229a24f905c3b3df1cfd2ceae762805e5c2a6fe3e7f25cc4eaaca "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/item/windowsupdateforbusinessconfiguration"
     i2b1a7ee7081880857923ce04764b008e8e3a4ab9ca045409530a83ca51bae662 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/item/windowsprivacyaccesscontrols"
     i2e953dd8de78572f5e28792284839af62e550fdedcfa0f926825b76cf5b55055 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/item/devicestatusoverview"
     i36d04c87e83326af850beeca83554e31e36b4f1009ebc093f35a9f220fa0a4fe "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/deviceconfigurations/item/devicestatuses"
@@ -292,8 +291,4 @@ func (m *DeviceConfigurationItemRequestBuilder) UserStatusOverview()(*i3e5a9c6ab
 // WindowsPrivacyAccessControls the windowsPrivacyAccessControls property
 func (m *DeviceConfigurationItemRequestBuilder) WindowsPrivacyAccessControls()(*i2b1a7ee7081880857923ce04764b008e8e3a4ab9ca045409530a83ca51bae662.WindowsPrivacyAccessControlsRequestBuilder) {
     return i2b1a7ee7081880857923ce04764b008e8e3a4ab9ca045409530a83ca51bae662.NewWindowsPrivacyAccessControlsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
-}
-// WindowsUpdateForBusinessConfiguration the windowsUpdateForBusinessConfiguration property
-func (m *DeviceConfigurationItemRequestBuilder) WindowsUpdateForBusinessConfiguration()(*i209aefe482b229a24f905c3b3df1cfd2ceae762805e5c2a6fe3e7f25cc4eaaca.WindowsUpdateForBusinessConfigurationRequestBuilder) {
-    return i209aefe482b229a24f905c3b3df1cfd2ceae762805e5c2a6fe3e7f25cc4eaaca.NewWindowsUpdateForBusinessConfigurationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

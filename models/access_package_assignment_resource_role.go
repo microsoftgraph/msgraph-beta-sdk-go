@@ -9,9 +9,9 @@ type AccessPackageAssignmentResourceRole struct {
     Entity
     // The access package assignments resulting in this role assignment. Read-only. Nullable.
     accessPackageAssignments []AccessPackageAssignmentable
-    // Read-only. Nullable.
+    // The accessPackageResourceRole property
     accessPackageResourceRole AccessPackageResourceRoleable
-    // Read-only. Nullable.
+    // The accessPackageResourceScope property
     accessPackageResourceScope AccessPackageResourceScopeable
     // Read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
     accessPackageSubject AccessPackageSubjectable
@@ -41,7 +41,7 @@ func (m *AccessPackageAssignmentResourceRole) GetAccessPackageAssignments()([]Ac
         return m.accessPackageAssignments
     }
 }
-// GetAccessPackageResourceRole gets the accessPackageResourceRole property value. Read-only. Nullable.
+// GetAccessPackageResourceRole gets the accessPackageResourceRole property value. The accessPackageResourceRole property
 func (m *AccessPackageAssignmentResourceRole) GetAccessPackageResourceRole()(AccessPackageResourceRoleable) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *AccessPackageAssignmentResourceRole) GetAccessPackageResourceRole()(Acc
         return m.accessPackageResourceRole
     }
 }
-// GetAccessPackageResourceScope gets the accessPackageResourceScope property value. Read-only. Nullable.
+// GetAccessPackageResourceScope gets the accessPackageResourceScope property value. The accessPackageResourceScope property
 func (m *AccessPackageAssignmentResourceRole) GetAccessPackageResourceScope()(AccessPackageResourceScopeable) {
     if m == nil {
         return nil
@@ -228,13 +228,13 @@ func (m *AccessPackageAssignmentResourceRole) SetAccessPackageAssignments(value 
         m.accessPackageAssignments = value
     }
 }
-// SetAccessPackageResourceRole sets the accessPackageResourceRole property value. Read-only. Nullable.
+// SetAccessPackageResourceRole sets the accessPackageResourceRole property value. The accessPackageResourceRole property
 func (m *AccessPackageAssignmentResourceRole) SetAccessPackageResourceRole(value AccessPackageResourceRoleable)() {
     if m != nil {
         m.accessPackageResourceRole = value
     }
 }
-// SetAccessPackageResourceScope sets the accessPackageResourceScope property value. Read-only. Nullable.
+// SetAccessPackageResourceScope sets the accessPackageResourceScope property value. The accessPackageResourceScope property
 func (m *AccessPackageAssignmentResourceRole) SetAccessPackageResourceScope(value AccessPackageResourceScopeable)() {
     if m != nil {
         m.accessPackageResourceScope = value

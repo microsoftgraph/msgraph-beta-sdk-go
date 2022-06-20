@@ -1,0 +1,358 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Windows10EnrollmentCompletionPageConfiguration 
+type Windows10EnrollmentCompletionPageConfiguration struct {
+    DeviceEnrollmentConfiguration
+    // Allow or block device reset on installation failure
+    allowDeviceResetOnInstallFailure *bool
+    // Allow the user to continue using the device on installation failure
+    allowDeviceUseOnInstallFailure *bool
+    // Allow or block log collection on installation failure
+    allowLogCollectionOnInstallFailure *bool
+    // Allow the user to retry the setup on installation failure
+    blockDeviceSetupRetryByUser *bool
+    // Set custom error message to show upon installation failure
+    customErrorMessage *string
+    // Only show installation progress for first user post enrollment
+    disableUserStatusTrackingAfterFirstUser *bool
+    // Set installation progress timeout in minutes
+    installProgressTimeoutInMinutes *int32
+    // Selected applications to track the installation status
+    selectedMobileAppIds []string
+    // Show or hide installation progress to user
+    showInstallationProgress *bool
+    // Only show installation progress for Autopilot enrollment scenarios
+    trackInstallProgressForAutopilotOnly *bool
+}
+// NewWindows10EnrollmentCompletionPageConfiguration instantiates a new Windows10EnrollmentCompletionPageConfiguration and sets the default values.
+func NewWindows10EnrollmentCompletionPageConfiguration()(*Windows10EnrollmentCompletionPageConfiguration) {
+    m := &Windows10EnrollmentCompletionPageConfiguration{
+        DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
+    }
+    return m
+}
+// CreateWindows10EnrollmentCompletionPageConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateWindows10EnrollmentCompletionPageConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewWindows10EnrollmentCompletionPageConfiguration(), nil
+}
+// GetAllowDeviceResetOnInstallFailure gets the allowDeviceResetOnInstallFailure property value. Allow or block device reset on installation failure
+func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowDeviceResetOnInstallFailure()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.allowDeviceResetOnInstallFailure
+    }
+}
+// GetAllowDeviceUseOnInstallFailure gets the allowDeviceUseOnInstallFailure property value. Allow the user to continue using the device on installation failure
+func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowDeviceUseOnInstallFailure()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.allowDeviceUseOnInstallFailure
+    }
+}
+// GetAllowLogCollectionOnInstallFailure gets the allowLogCollectionOnInstallFailure property value. Allow or block log collection on installation failure
+func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowLogCollectionOnInstallFailure()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.allowLogCollectionOnInstallFailure
+    }
+}
+// GetBlockDeviceSetupRetryByUser gets the blockDeviceSetupRetryByUser property value. Allow the user to retry the setup on installation failure
+func (m *Windows10EnrollmentCompletionPageConfiguration) GetBlockDeviceSetupRetryByUser()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.blockDeviceSetupRetryByUser
+    }
+}
+// GetCustomErrorMessage gets the customErrorMessage property value. Set custom error message to show upon installation failure
+func (m *Windows10EnrollmentCompletionPageConfiguration) GetCustomErrorMessage()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.customErrorMessage
+    }
+}
+// GetDisableUserStatusTrackingAfterFirstUser gets the disableUserStatusTrackingAfterFirstUser property value. Only show installation progress for first user post enrollment
+func (m *Windows10EnrollmentCompletionPageConfiguration) GetDisableUserStatusTrackingAfterFirstUser()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.disableUserStatusTrackingAfterFirstUser
+    }
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *Windows10EnrollmentCompletionPageConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
+    res["allowDeviceResetOnInstallFailure"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowDeviceResetOnInstallFailure(val)
+        }
+        return nil
+    }
+    res["allowDeviceUseOnInstallFailure"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowDeviceUseOnInstallFailure(val)
+        }
+        return nil
+    }
+    res["allowLogCollectionOnInstallFailure"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowLogCollectionOnInstallFailure(val)
+        }
+        return nil
+    }
+    res["blockDeviceSetupRetryByUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBlockDeviceSetupRetryByUser(val)
+        }
+        return nil
+    }
+    res["customErrorMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomErrorMessage(val)
+        }
+        return nil
+    }
+    res["disableUserStatusTrackingAfterFirstUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisableUserStatusTrackingAfterFirstUser(val)
+        }
+        return nil
+    }
+    res["installProgressTimeoutInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInstallProgressTimeoutInMinutes(val)
+        }
+        return nil
+    }
+    res["selectedMobileAppIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetSelectedMobileAppIds(res)
+        }
+        return nil
+    }
+    res["showInstallationProgress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetShowInstallationProgress(val)
+        }
+        return nil
+    }
+    res["trackInstallProgressForAutopilotOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTrackInstallProgressForAutopilotOnly(val)
+        }
+        return nil
+    }
+    return res
+}
+// GetInstallProgressTimeoutInMinutes gets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
+func (m *Windows10EnrollmentCompletionPageConfiguration) GetInstallProgressTimeoutInMinutes()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.installProgressTimeoutInMinutes
+    }
+}
+// GetSelectedMobileAppIds gets the selectedMobileAppIds property value. Selected applications to track the installation status
+func (m *Windows10EnrollmentCompletionPageConfiguration) GetSelectedMobileAppIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.selectedMobileAppIds
+    }
+}
+// GetShowInstallationProgress gets the showInstallationProgress property value. Show or hide installation progress to user
+func (m *Windows10EnrollmentCompletionPageConfiguration) GetShowInstallationProgress()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.showInstallationProgress
+    }
+}
+// GetTrackInstallProgressForAutopilotOnly gets the trackInstallProgressForAutopilotOnly property value. Only show installation progress for Autopilot enrollment scenarios
+func (m *Windows10EnrollmentCompletionPageConfiguration) GetTrackInstallProgressForAutopilotOnly()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.trackInstallProgressForAutopilotOnly
+    }
+}
+// Serialize serializes information the current object
+func (m *Windows10EnrollmentCompletionPageConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.DeviceEnrollmentConfiguration.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteBoolValue("allowDeviceResetOnInstallFailure", m.GetAllowDeviceResetOnInstallFailure())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("allowDeviceUseOnInstallFailure", m.GetAllowDeviceUseOnInstallFailure())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("allowLogCollectionOnInstallFailure", m.GetAllowLogCollectionOnInstallFailure())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("blockDeviceSetupRetryByUser", m.GetBlockDeviceSetupRetryByUser())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("customErrorMessage", m.GetCustomErrorMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("disableUserStatusTrackingAfterFirstUser", m.GetDisableUserStatusTrackingAfterFirstUser())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("installProgressTimeoutInMinutes", m.GetInstallProgressTimeoutInMinutes())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSelectedMobileAppIds() != nil {
+        err = writer.WriteCollectionOfStringValues("selectedMobileAppIds", m.GetSelectedMobileAppIds())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("showInstallationProgress", m.GetShowInstallationProgress())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("trackInstallProgressForAutopilotOnly", m.GetTrackInstallProgressForAutopilotOnly())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetAllowDeviceResetOnInstallFailure sets the allowDeviceResetOnInstallFailure property value. Allow or block device reset on installation failure
+func (m *Windows10EnrollmentCompletionPageConfiguration) SetAllowDeviceResetOnInstallFailure(value *bool)() {
+    if m != nil {
+        m.allowDeviceResetOnInstallFailure = value
+    }
+}
+// SetAllowDeviceUseOnInstallFailure sets the allowDeviceUseOnInstallFailure property value. Allow the user to continue using the device on installation failure
+func (m *Windows10EnrollmentCompletionPageConfiguration) SetAllowDeviceUseOnInstallFailure(value *bool)() {
+    if m != nil {
+        m.allowDeviceUseOnInstallFailure = value
+    }
+}
+// SetAllowLogCollectionOnInstallFailure sets the allowLogCollectionOnInstallFailure property value. Allow or block log collection on installation failure
+func (m *Windows10EnrollmentCompletionPageConfiguration) SetAllowLogCollectionOnInstallFailure(value *bool)() {
+    if m != nil {
+        m.allowLogCollectionOnInstallFailure = value
+    }
+}
+// SetBlockDeviceSetupRetryByUser sets the blockDeviceSetupRetryByUser property value. Allow the user to retry the setup on installation failure
+func (m *Windows10EnrollmentCompletionPageConfiguration) SetBlockDeviceSetupRetryByUser(value *bool)() {
+    if m != nil {
+        m.blockDeviceSetupRetryByUser = value
+    }
+}
+// SetCustomErrorMessage sets the customErrorMessage property value. Set custom error message to show upon installation failure
+func (m *Windows10EnrollmentCompletionPageConfiguration) SetCustomErrorMessage(value *string)() {
+    if m != nil {
+        m.customErrorMessage = value
+    }
+}
+// SetDisableUserStatusTrackingAfterFirstUser sets the disableUserStatusTrackingAfterFirstUser property value. Only show installation progress for first user post enrollment
+func (m *Windows10EnrollmentCompletionPageConfiguration) SetDisableUserStatusTrackingAfterFirstUser(value *bool)() {
+    if m != nil {
+        m.disableUserStatusTrackingAfterFirstUser = value
+    }
+}
+// SetInstallProgressTimeoutInMinutes sets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
+func (m *Windows10EnrollmentCompletionPageConfiguration) SetInstallProgressTimeoutInMinutes(value *int32)() {
+    if m != nil {
+        m.installProgressTimeoutInMinutes = value
+    }
+}
+// SetSelectedMobileAppIds sets the selectedMobileAppIds property value. Selected applications to track the installation status
+func (m *Windows10EnrollmentCompletionPageConfiguration) SetSelectedMobileAppIds(value []string)() {
+    if m != nil {
+        m.selectedMobileAppIds = value
+    }
+}
+// SetShowInstallationProgress sets the showInstallationProgress property value. Show or hide installation progress to user
+func (m *Windows10EnrollmentCompletionPageConfiguration) SetShowInstallationProgress(value *bool)() {
+    if m != nil {
+        m.showInstallationProgress = value
+    }
+}
+// SetTrackInstallProgressForAutopilotOnly sets the trackInstallProgressForAutopilotOnly property value. Only show installation progress for Autopilot enrollment scenarios
+func (m *Windows10EnrollmentCompletionPageConfiguration) SetTrackInstallProgressForAutopilotOnly(value *bool)() {
+    if m != nil {
+        m.trackInstallProgressForAutopilotOnly = value
+    }
+}

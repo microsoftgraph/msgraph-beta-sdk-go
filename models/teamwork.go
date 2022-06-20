@@ -11,6 +11,8 @@ type Teamwork struct {
     deletedTeams []DeletedTeamable
     // The Teams devices provisioned for the tenant.
     devices []TeamworkDeviceable
+    // The teamsAppSettings property
+    teamsAppSettings TeamsAppSettingsable
     // A workforce integration with shifts.
     workforceIntegrations []WorkforceIntegrationable
 }
@@ -72,6 +74,16 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["teamsAppSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamsAppSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTeamsAppSettings(val.(TeamsAppSettingsable))
+        }
+        return nil
+    }
     res["workforceIntegrations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkforceIntegrationFromDiscriminatorValue)
         if err != nil {
@@ -87,6 +99,14 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     return res
+}
+// GetTeamsAppSettings gets the teamsAppSettings property value. The teamsAppSettings property
+func (m *Teamwork) GetTeamsAppSettings()(TeamsAppSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.teamsAppSettings
+    }
 }
 // GetWorkforceIntegrations gets the workforceIntegrations property value. A workforce integration with shifts.
 func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegrationable) {
@@ -122,6 +142,12 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("teamsAppSettings", m.GetTeamsAppSettings())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetWorkforceIntegrations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkforceIntegrations()))
         for i, v := range m.GetWorkforceIntegrations() {
@@ -144,6 +170,12 @@ func (m *Teamwork) SetDeletedTeams(value []DeletedTeamable)() {
 func (m *Teamwork) SetDevices(value []TeamworkDeviceable)() {
     if m != nil {
         m.devices = value
+    }
+}
+// SetTeamsAppSettings sets the teamsAppSettings property value. The teamsAppSettings property
+func (m *Teamwork) SetTeamsAppSettings(value TeamsAppSettingsable)() {
+    if m != nil {
+        m.teamsAppSettings = value
     }
 }
 // SetWorkforceIntegrations sets the workforceIntegrations property value. A workforce integration with shifts.

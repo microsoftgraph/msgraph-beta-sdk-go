@@ -15,7 +15,7 @@ type LastIndexOperationRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// LastIndexOperationRequestBuilderGetQueryParameters get lastIndexOperation from security
+// LastIndexOperationRequestBuilderGetQueryParameters operation entity that represents the latest indexing for the non-custodial data source.
 type LastIndexOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,11 +50,11 @@ func NewLastIndexOperationRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewLastIndexOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation get lastIndexOperation from security
+// CreateGetRequestInformation operation entity that represents the latest indexing for the non-custodial data source.
 func (m *LastIndexOperationRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get lastIndexOperation from security
+// CreateGetRequestInformationWithRequestConfiguration operation entity that represents the latest indexing for the non-custodial data source.
 func (m *LastIndexOperationRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LastIndexOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,11 +70,11 @@ func (m *LastIndexOperationRequestBuilder) CreateGetRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// Get get lastIndexOperation from security
+// Get operation entity that represents the latest indexing for the non-custodial data source.
 func (m *LastIndexOperationRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryIndexOperationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get lastIndexOperation from security
+// GetWithRequestConfigurationAndResponseHandler operation entity that represents the latest indexing for the non-custodial data source.
 func (m *LastIndexOperationRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LastIndexOperationRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryIndexOperationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

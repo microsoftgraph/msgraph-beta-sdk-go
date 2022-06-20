@@ -4,7 +4,9 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i03afe566fa8115fd82d662228b9d71bfa54b39492f56c7a531c71dd46a804654 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/getallmessages"
     i60d1bec9eb21039511a2df7dfa46d2e90974c46d829caf256eaa2c3c7bdf4c21 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/count"
+    if8d114998b945f02bc4b0cbac97657ad9d5c40896b7598336f9ee36fea226cf0 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/allmessages"
 )
 
 // ChatsRequestBuilder provides operations to manage the chats property of the microsoft.graph.user entity.
@@ -50,6 +52,10 @@ type ChatsRequestBuilderPostRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// AllMessages provides operations to call the allMessages method.
+func (m *ChatsRequestBuilder) AllMessages()(*if8d114998b945f02bc4b0cbac97657ad9d5c40896b7598336f9ee36fea226cf0.AllMessagesRequestBuilder) {
+    return if8d114998b945f02bc4b0cbac97657ad9d5c40896b7598336f9ee36fea226cf0.NewAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewChatsRequestBuilderInternal instantiates a new ChatsRequestBuilder and sets the default values.
 func NewChatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ChatsRequestBuilder) {
@@ -115,6 +121,10 @@ func (m *ChatsRequestBuilder) CreatePostRequestInformationWithRequestConfigurati
 // Get get chats from me
 func (m *ChatsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetAllMessages provides operations to call the getAllMessages method.
+func (m *ChatsRequestBuilder) GetAllMessages()(*i03afe566fa8115fd82d662228b9d71bfa54b39492f56c7a531c71dd46a804654.GetAllMessagesRequestBuilder) {
+    return i03afe566fa8115fd82d662228b9d71bfa54b39492f56c7a531c71dd46a804654.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetWithRequestConfigurationAndResponseHandler get chats from me
 func (m *ChatsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChatsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatCollectionResponseable, error) {

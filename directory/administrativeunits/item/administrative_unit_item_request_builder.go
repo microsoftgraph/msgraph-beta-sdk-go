@@ -4,9 +4,14 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i162499125dee18a8c32afea0c335b92a83c8bfbf514f6c85bec33a36bdaf7ca3 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/item/getmemberobjects"
     i29c75035d87e1e3a958b91c43025f79430cd4c9d3b0cc664ffe065bc407fda28 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/item/scopedrolemembers"
+    i8dcb8bc7850e64bb1fd90771daf6714da6fc512dd4adae05039d541e9bb9419c "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/item/restore"
+    i98d18deca5882a7f1ef7bba571654837ca98c441bb0eaa212a79efbf51074283 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/item/checkmembergroups"
     i9a39d6011e7f6e52d0463e43f4affbe7fe566deec74cb2cfa89d0164876f73fb "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/item/members"
     ib3392aac80c6073c1b4cb66c1c9a59ef64a733b53d9fbe3bb2fdeea43b1e8ed0 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/item/extensions"
+    ib744a95755b350bc30b575b7a619bbb35c32385d740a0feca8f31cddc0e3af5d "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/item/getmembergroups"
+    icfc4b43cabbf84440085018bda409b58924c8286c1e14bce978493163ca182b6 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/item/checkmemberobjects"
     i348fc6817b120c2ca4453cfe220f3a31e3dd76b71234d51b3cf59448c038898e "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/item/extensions/item"
     ibb066ad55db4b7866d16a995539af863ab771176674fded378a94af09016fc1b "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/item/scopedrolemembers/item"
     id21ccd20a38c8c744ae37c53448fd59c79e0a14764716cf4113d7e8fd6f62db0 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory/administrativeunits/item/members/item"
@@ -50,6 +55,14 @@ type AdministrativeUnitItemRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// CheckMemberGroups the checkMemberGroups property
+func (m *AdministrativeUnitItemRequestBuilder) CheckMemberGroups()(*i98d18deca5882a7f1ef7bba571654837ca98c441bb0eaa212a79efbf51074283.CheckMemberGroupsRequestBuilder) {
+    return i98d18deca5882a7f1ef7bba571654837ca98c441bb0eaa212a79efbf51074283.NewCheckMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// CheckMemberObjects the checkMemberObjects property
+func (m *AdministrativeUnitItemRequestBuilder) CheckMemberObjects()(*icfc4b43cabbf84440085018bda409b58924c8286c1e14bce978493163ca182b6.CheckMemberObjectsRequestBuilder) {
+    return icfc4b43cabbf84440085018bda409b58924c8286c1e14bce978493163ca182b6.NewCheckMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewAdministrativeUnitItemRequestBuilderInternal instantiates a new AdministrativeUnitItemRequestBuilder and sets the default values.
 func NewAdministrativeUnitItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdministrativeUnitItemRequestBuilder) {
@@ -162,6 +175,14 @@ func (m *AdministrativeUnitItemRequestBuilder) ExtensionsById(id string)(*i348fc
 func (m *AdministrativeUnitItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
+// GetMemberGroups the getMemberGroups property
+func (m *AdministrativeUnitItemRequestBuilder) GetMemberGroups()(*ib744a95755b350bc30b575b7a619bbb35c32385d740a0feca8f31cddc0e3af5d.GetMemberGroupsRequestBuilder) {
+    return ib744a95755b350bc30b575b7a619bbb35c32385d740a0feca8f31cddc0e3af5d.NewGetMemberGroupsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetMemberObjects the getMemberObjects property
+func (m *AdministrativeUnitItemRequestBuilder) GetMemberObjects()(*i162499125dee18a8c32afea0c335b92a83c8bfbf514f6c85bec33a36bdaf7ca3.GetMemberObjectsRequestBuilder) {
+    return i162499125dee18a8c32afea0c335b92a83c8bfbf514f6c85bec33a36bdaf7ca3.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // GetWithRequestConfigurationAndResponseHandler conceptual container for user and group directory objects.
 func (m *AdministrativeUnitItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AdministrativeUnitItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
@@ -212,6 +233,10 @@ func (m *AdministrativeUnitItemRequestBuilder) PatchWithRequestConfigurationAndR
         return err
     }
     return nil
+}
+// Restore the restore property
+func (m *AdministrativeUnitItemRequestBuilder) Restore()(*i8dcb8bc7850e64bb1fd90771daf6714da6fc512dd4adae05039d541e9bb9419c.RestoreRequestBuilder) {
+    return i8dcb8bc7850e64bb1fd90771daf6714da6fc512dd4adae05039d541e9bb9419c.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ScopedRoleMembers the scopedRoleMembers property
 func (m *AdministrativeUnitItemRequestBuilder) ScopedRoleMembers()(*i29c75035d87e1e3a958b91c43025f79430cd4c9d3b0cc664ffe065bc407fda28.ScopedRoleMembersRequestBuilder) {

@@ -10,9 +10,9 @@ type AccessPackage struct {
     Entity
     // Read-only. Nullable. Supports $expand.
     accessPackageAssignmentPolicies []AccessPackageAssignmentPolicyable
-    // Read-only. Nullable.
+    // The accessPackageCatalog property
     accessPackageCatalog AccessPackageCatalogable
-    // Nullable.
+    // The accessPackageResourceRoleScopes property
     accessPackageResourceRoleScopes []AccessPackageResourceRoleScopeable
     // The access packages that are incompatible with this package. Read-only.
     accessPackagesIncompatibleWith []AccessPackageable
@@ -58,7 +58,7 @@ func (m *AccessPackage) GetAccessPackageAssignmentPolicies()([]AccessPackageAssi
         return m.accessPackageAssignmentPolicies
     }
 }
-// GetAccessPackageCatalog gets the accessPackageCatalog property value. Read-only. Nullable.
+// GetAccessPackageCatalog gets the accessPackageCatalog property value. The accessPackageCatalog property
 func (m *AccessPackage) GetAccessPackageCatalog()(AccessPackageCatalogable) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *AccessPackage) GetAccessPackageCatalog()(AccessPackageCatalogable) {
         return m.accessPackageCatalog
     }
 }
-// GetAccessPackageResourceRoleScopes gets the accessPackageResourceRoleScopes property value. Nullable.
+// GetAccessPackageResourceRoleScopes gets the accessPackageResourceRoleScopes property value. The accessPackageResourceRoleScopes property
 func (m *AccessPackage) GetAccessPackageResourceRoleScopes()([]AccessPackageResourceRoleScopeable) {
     if m == nil {
         return nil
@@ -469,13 +469,13 @@ func (m *AccessPackage) SetAccessPackageAssignmentPolicies(value []AccessPackage
         m.accessPackageAssignmentPolicies = value
     }
 }
-// SetAccessPackageCatalog sets the accessPackageCatalog property value. Read-only. Nullable.
+// SetAccessPackageCatalog sets the accessPackageCatalog property value. The accessPackageCatalog property
 func (m *AccessPackage) SetAccessPackageCatalog(value AccessPackageCatalogable)() {
     if m != nil {
         m.accessPackageCatalog = value
     }
 }
-// SetAccessPackageResourceRoleScopes sets the accessPackageResourceRoleScopes property value. Nullable.
+// SetAccessPackageResourceRoleScopes sets the accessPackageResourceRoleScopes property value. The accessPackageResourceRoleScopes property
 func (m *AccessPackage) SetAccessPackageResourceRoleScopes(value []AccessPackageResourceRoleScopeable)() {
     if m != nil {
         m.accessPackageResourceRoleScopes = value

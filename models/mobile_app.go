@@ -81,8 +81,44 @@ func CreateMobileAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.mobileApp":
-                        return NewMobileApp(), nil
+                    case "#microsoft.graph.androidForWorkApp":
+                        return NewAndroidForWorkApp(), nil
+                    case "#microsoft.graph.androidManagedStoreApp":
+                        return NewAndroidManagedStoreApp(), nil
+                    case "#microsoft.graph.androidStoreApp":
+                        return NewAndroidStoreApp(), nil
+                    case "#microsoft.graph.iosiPadOSWebClip":
+                        return NewIosiPadOSWebClip(), nil
+                    case "#microsoft.graph.iosStoreApp":
+                        return NewIosStoreApp(), nil
+                    case "#microsoft.graph.iosVppApp":
+                        return NewIosVppApp(), nil
+                    case "#microsoft.graph.macOSMdatpApp":
+                        return NewMacOSMdatpApp(), nil
+                    case "#microsoft.graph.macOSMicrosoftEdgeApp":
+                        return NewMacOSMicrosoftEdgeApp(), nil
+                    case "#microsoft.graph.macOSOfficeSuiteApp":
+                        return NewMacOSOfficeSuiteApp(), nil
+                    case "#microsoft.graph.macOsVppApp":
+                        return NewMacOsVppApp(), nil
+                    case "#microsoft.graph.managedApp":
+                        return NewManagedApp(), nil
+                    case "#microsoft.graph.microsoftStoreForBusinessApp":
+                        return NewMicrosoftStoreForBusinessApp(), nil
+                    case "#microsoft.graph.mobileLobApp":
+                        return NewMobileLobApp(), nil
+                    case "#microsoft.graph.officeSuiteApp":
+                        return NewOfficeSuiteApp(), nil
+                    case "#microsoft.graph.webApp":
+                        return NewWebApp(), nil
+                    case "#microsoft.graph.windowsMicrosoftEdgeApp":
+                        return NewWindowsMicrosoftEdgeApp(), nil
+                    case "#microsoft.graph.windowsPhone81StoreApp":
+                        return NewWindowsPhone81StoreApp(), nil
+                    case "#microsoft.graph.windowsStoreApp":
+                        return NewWindowsStoreApp(), nil
+                    case "#microsoft.graph.windowsWebApp":
+                        return NewWindowsWebApp(), nil
                 }
             }
         }

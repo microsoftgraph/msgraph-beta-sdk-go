@@ -49,8 +49,20 @@ func CreateDeviceEnrollmentConfigurationFromDiscriminatorValue(parseNode i878a80
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.deviceEnrollmentConfiguration":
-                        return NewDeviceEnrollmentConfiguration(), nil
+                    case "#microsoft.graph.deviceComanagementAuthorityConfiguration":
+                        return NewDeviceComanagementAuthorityConfiguration(), nil
+                    case "#microsoft.graph.deviceEnrollmentLimitConfiguration":
+                        return NewDeviceEnrollmentLimitConfiguration(), nil
+                    case "#microsoft.graph.deviceEnrollmentNotificationConfiguration":
+                        return NewDeviceEnrollmentNotificationConfiguration(), nil
+                    case "#microsoft.graph.deviceEnrollmentPlatformRestrictionConfiguration":
+                        return NewDeviceEnrollmentPlatformRestrictionConfiguration(), nil
+                    case "#microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration":
+                        return NewDeviceEnrollmentPlatformRestrictionsConfiguration(), nil
+                    case "#microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration":
+                        return NewDeviceEnrollmentWindowsHelloForBusinessConfiguration(), nil
+                    case "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration":
+                        return NewWindows10EnrollmentCompletionPageConfiguration(), nil
                 }
             }
         }

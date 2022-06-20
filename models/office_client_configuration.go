@@ -46,8 +46,10 @@ func CreateOfficeClientConfigurationFromDiscriminatorValue(parseNode i878a80d233
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.officeClientConfiguration":
-                        return NewOfficeClientConfiguration(), nil
+                    case "#microsoft.graph.windowsOfficeClientConfiguration":
+                        return NewWindowsOfficeClientConfiguration(), nil
+                    case "#microsoft.graph.windowsOfficeClientSecurityConfiguration":
+                        return NewWindowsOfficeClientSecurityConfiguration(), nil
                 }
             }
         }

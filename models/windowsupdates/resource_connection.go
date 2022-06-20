@@ -33,8 +33,8 @@ func CreateResourceConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.windowsUpdates.resourceConnection":
-                        return NewResourceConnection(), nil
+                    case "#microsoft.graph.windowsUpdates.operationalInsightsConnection":
+                        return NewOperationalInsightsConnection(), nil
                 }
             }
         }

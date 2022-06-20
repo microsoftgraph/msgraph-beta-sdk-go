@@ -16,7 +16,7 @@ type AccessPackageResourceRoleScopesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AccessPackageResourceRoleScopesRequestBuilderGetQueryParameters nullable.
+// AccessPackageResourceRoleScopesRequestBuilderGetQueryParameters get accessPackageResourceRoleScopes from identityGovernance
 type AccessPackageResourceRoleScopesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewAccessPackageResourceRoleScopesRequestBuilder(rawUrl string, requestAdap
 func (m *AccessPackageResourceRoleScopesRequestBuilder) Count()(*i4b668990b20d502d4e628dcfe0b8d03a1dcd5d6a0a108bc6a7cc5d9b70b025d3.CountRequestBuilder) {
     return i4b668990b20d502d4e628dcfe0b8d03a1dcd5d6a0a108bc6a7cc5d9b70b025d3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation nullable.
+// CreateGetRequestInformation get accessPackageResourceRoleScopes from identityGovernance
 func (m *AccessPackageResourceRoleScopesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration nullable.
+// CreateGetRequestInformationWithRequestConfiguration get accessPackageResourceRoleScopes from identityGovernance
 func (m *AccessPackageResourceRoleScopesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AccessPackageResourceRoleScopesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *AccessPackageResourceRoleScopesRequestBuilder) CreatePostRequestInforma
     }
     return requestInfo, nil
 }
-// Get nullable.
+// Get get accessPackageResourceRoleScopes from identityGovernance
 func (m *AccessPackageResourceRoleScopesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler nullable.
+// GetWithRequestConfigurationAndResponseHandler get accessPackageResourceRoleScopes from identityGovernance
 func (m *AccessPackageResourceRoleScopesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AccessPackageResourceRoleScopesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

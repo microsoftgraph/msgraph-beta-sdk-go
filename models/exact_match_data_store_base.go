@@ -39,8 +39,8 @@ func CreateExactMatchDataStoreBaseFromDiscriminatorValue(parseNode i878a80d2330e
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
-                    case "#microsoft.graph.exactMatchDataStoreBase":
-                        return NewExactMatchDataStoreBase(), nil
+                    case "#microsoft.graph.exactMatchDataStore":
+                        return NewExactMatchDataStore(), nil
                 }
             }
         }

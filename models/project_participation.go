@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProjectParticipation casts the previous resource to group.
+// ProjectParticipation 
 type ProjectParticipation struct {
     ItemFacet
     // Contains categories a user has associated with the project (for example, digital transformation, oil rig).
@@ -24,7 +24,7 @@ type ProjectParticipation struct {
     // The thumbnailUrl property
     thumbnailUrl *string
 }
-// NewProjectParticipation instantiates a new projectParticipation and sets the default values.
+// NewProjectParticipation instantiates a new ProjectParticipation and sets the default values.
 func NewProjectParticipation()(*ProjectParticipation) {
     m := &ProjectParticipation{
         ItemFacet: *NewItemFacet(),
