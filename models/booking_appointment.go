@@ -9,7 +9,7 @@ type BookingAppointment struct {
     Entity
     // Additional information that is sent to the customer when an appointment is confirmed.
     additionalInformation *string
-    // The anonymousJoinWebUrl property
+    // Url of meeting to join anonymously.
     anonymousJoinWebUrl *string
     // The SMTP address of the bookingCustomer who is booking the appointment.
     customerEmailAddress *string
@@ -99,7 +99,7 @@ func (m *BookingAppointment) GetAdditionalInformation()(*string) {
         return m.additionalInformation
     }
 }
-// GetAnonymousJoinWebUrl gets the anonymousJoinWebUrl property value. The anonymousJoinWebUrl property
+// GetAnonymousJoinWebUrl gets the anonymousJoinWebUrl property value. Url of meeting to join anonymously.
 func (m *BookingAppointment) GetAnonymousJoinWebUrl()(*string) {
     if m == nil {
         return nil
@@ -996,7 +996,7 @@ func (m *BookingAppointment) SetAdditionalInformation(value *string)() {
         m.additionalInformation = value
     }
 }
-// SetAnonymousJoinWebUrl sets the anonymousJoinWebUrl property value. The anonymousJoinWebUrl property
+// SetAnonymousJoinWebUrl sets the anonymousJoinWebUrl property value. Url of meeting to join anonymously.
 func (m *BookingAppointment) SetAnonymousJoinWebUrl(value *string)() {
     if m != nil {
         m.anonymousJoinWebUrl = value

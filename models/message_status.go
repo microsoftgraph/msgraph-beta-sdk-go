@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of messageRecipient entities.
+// Provides operations to manage the collection of messageTrace entities.
 type MessageStatus int
 
 const (

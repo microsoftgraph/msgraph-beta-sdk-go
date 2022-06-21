@@ -8,9 +8,9 @@ import (
 type PreAuthorizedApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The unique identifier for the application.
+    // The unique identifier for the client application.
     appId *string
-    // The unique identifier for the oauth2PermissionScopes the application requires.
+    // The unique identifier for the scopes the client application is granted.
     permissionIds []string
 }
 // NewPreAuthorizedApplication instantiates a new preAuthorizedApplication and sets the default values.
@@ -32,7 +32,7 @@ func (m *PreAuthorizedApplication) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAppId gets the appId property value. The unique identifier for the application.
+// GetAppId gets the appId property value. The unique identifier for the client application.
 func (m *PreAuthorizedApplication) GetAppId()(*string) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *PreAuthorizedApplication) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetPermissionIds gets the permissionIds property value. The unique identifier for the oauth2PermissionScopes the application requires.
+// GetPermissionIds gets the permissionIds property value. The unique identifier for the scopes the client application is granted.
 func (m *PreAuthorizedApplication) GetPermissionIds()([]string) {
     if m == nil {
         return nil
@@ -105,13 +105,13 @@ func (m *PreAuthorizedApplication) SetAdditionalData(value map[string]interface{
         m.additionalData = value
     }
 }
-// SetAppId sets the appId property value. The unique identifier for the application.
+// SetAppId sets the appId property value. The unique identifier for the client application.
 func (m *PreAuthorizedApplication) SetAppId(value *string)() {
     if m != nil {
         m.appId = value
     }
 }
-// SetPermissionIds sets the permissionIds property value. The unique identifier for the oauth2PermissionScopes the application requires.
+// SetPermissionIds sets the permissionIds property value. The unique identifier for the scopes the client application is granted.
 func (m *PreAuthorizedApplication) SetPermissionIds(value []string)() {
     if m != nil {
         m.permissionIds = value

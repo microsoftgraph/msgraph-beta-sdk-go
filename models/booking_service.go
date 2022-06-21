@@ -23,13 +23,13 @@ type BookingService struct {
     defaultReminders []BookingReminderable
     // A text description for the service.
     description *string
-    // The isAnonymousJoinEnabled property
+    // True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.
     isAnonymousJoinEnabled *bool
     // True means this service is not available to customers for booking.
     isHiddenFromCustomers *bool
     // True indicates that the appointments for the service will be held online. Default value is false.
     isLocationOnline *bool
-    // The languageTag property
+    // The language of the self service booking page.
     languageTag *string
     // The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.
     maximumAttendeesCount *int32
@@ -340,7 +340,7 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetIsAnonymousJoinEnabled gets the isAnonymousJoinEnabled property value. The isAnonymousJoinEnabled property
+// GetIsAnonymousJoinEnabled gets the isAnonymousJoinEnabled property value. True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.
 func (m *BookingService) GetIsAnonymousJoinEnabled()(*bool) {
     if m == nil {
         return nil
@@ -364,7 +364,7 @@ func (m *BookingService) GetIsLocationOnline()(*bool) {
         return m.isLocationOnline
     }
 }
-// GetLanguageTag gets the languageTag property value. The languageTag property
+// GetLanguageTag gets the languageTag property value. The language of the self service booking page.
 func (m *BookingService) GetLanguageTag()(*string) {
     if m == nil {
         return nil
@@ -621,7 +621,7 @@ func (m *BookingService) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetIsAnonymousJoinEnabled sets the isAnonymousJoinEnabled property value. The isAnonymousJoinEnabled property
+// SetIsAnonymousJoinEnabled sets the isAnonymousJoinEnabled property value. True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.
 func (m *BookingService) SetIsAnonymousJoinEnabled(value *bool)() {
     if m != nil {
         m.isAnonymousJoinEnabled = value
@@ -639,7 +639,7 @@ func (m *BookingService) SetIsLocationOnline(value *bool)() {
         m.isLocationOnline = value
     }
 }
-// SetLanguageTag sets the languageTag property value. The languageTag property
+// SetLanguageTag sets the languageTag property value. The language of the self service booking page.
 func (m *BookingService) SetLanguageTag(value *string)() {
     if m != nil {
         m.languageTag = value

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserCredentialUsageDetails provides operations to manage the print singleton.
+// UserCredentialUsageDetails provides operations to manage the reportRoot singleton.
 type UserCredentialUsageDetails struct {
     Entity
     // Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue

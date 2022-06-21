@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the print singleton.
+// Provides operations to manage the reportRoot singleton.
 type FeatureType int
 
 const (

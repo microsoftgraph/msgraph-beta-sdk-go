@@ -28,7 +28,7 @@ type Team struct {
     group Groupable
     // Settings to configure whether guests can create, update, or delete channels in the team.
     guestSettings TeamGuestSettingsable
-    // The incomingChannels property
+    // List of channels shared with the team.
     incomingChannels []Channelable
     // The apps installed in this team.
     installedApps []TeamsAppInstallationable
@@ -513,7 +513,7 @@ func (m *Team) GetGuestSettings()(TeamGuestSettingsable) {
         return m.guestSettings
     }
 }
-// GetIncomingChannels gets the incomingChannels property value. The incomingChannels property
+// GetIncomingChannels gets the incomingChannels property value. List of channels shared with the team.
 func (m *Team) GetIncomingChannels()([]Channelable) {
     if m == nil {
         return nil
@@ -973,7 +973,7 @@ func (m *Team) SetGuestSettings(value TeamGuestSettingsable)() {
         m.guestSettings = value
     }
 }
-// SetIncomingChannels sets the incomingChannels property value. The incomingChannels property
+// SetIncomingChannels sets the incomingChannels property value. List of channels shared with the team.
 func (m *Team) SetIncomingChannels(value []Channelable)() {
     if m != nil {
         m.incomingChannels = value
