@@ -7,11 +7,11 @@ import (
 // CloudPcProvisioningPolicy provides operations to manage the deviceManagement singleton.
 type CloudPcProvisioningPolicy struct {
     Entity
-    // The alternateResourceUrl property
+    // The URL of the alternate resource that links to this provisioning policy. Read-only.
     alternateResourceUrl *string
     // A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
     assignments []CloudPcProvisioningPolicyAssignmentable
-    // The cloudPcGroupDisplayName property
+    // The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
     cloudPcGroupDisplayName *string
     // The provisioning policy description.
     description *string
@@ -19,7 +19,7 @@ type CloudPcProvisioningPolicy struct {
     displayName *string
     // Specifies how Cloud PCs will join Azure Active Directory.
     domainJoinConfiguration CloudPcDomainJoinConfigurationable
-    // The gracePeriodInHours property
+    // The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
     gracePeriodInHours *int32
     // The display name for the OS image you’re provisioning.
     imageDisplayName *string
@@ -27,9 +27,9 @@ type CloudPcProvisioningPolicy struct {
     imageId *string
     // The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
     imageType *CloudPcProvisioningPolicyImageType
-    // The localAdminEnabled property
+    // Indicates whether the local admin option is enabled. If the local admin option is enabled, the end user can be an admin of the Cloud PC device. Read-only.
     localAdminEnabled *bool
-    // The managedBy property
+    // Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
     managedBy *CloudPcManagementService
     // The specific settings for the Microsoft Managed Desktop, which enables customers to get a managed device experience for the Cloud PC. Before you can enable Microsoft Managed Desktop, an admin must configure it.
     microsoftManagedDesktop MicrosoftManagedDesktopable
@@ -49,7 +49,7 @@ func NewCloudPcProvisioningPolicy()(*CloudPcProvisioningPolicy) {
 func CreateCloudPcProvisioningPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcProvisioningPolicy(), nil
 }
-// GetAlternateResourceUrl gets the alternateResourceUrl property value. The alternateResourceUrl property
+// GetAlternateResourceUrl gets the alternateResourceUrl property value. The URL of the alternate resource that links to this provisioning policy. Read-only.
 func (m *CloudPcProvisioningPolicy) GetAlternateResourceUrl()(*string) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *CloudPcProvisioningPolicy) GetAssignments()([]CloudPcProvisioningPolicy
         return m.assignments
     }
 }
-// GetCloudPcGroupDisplayName gets the cloudPcGroupDisplayName property value. The cloudPcGroupDisplayName property
+// GetCloudPcGroupDisplayName gets the cloudPcGroupDisplayName property value. The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
 func (m *CloudPcProvisioningPolicy) GetCloudPcGroupDisplayName()(*string) {
     if m == nil {
         return nil
@@ -256,7 +256,7 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetGracePeriodInHours gets the gracePeriodInHours property value. The gracePeriodInHours property
+// GetGracePeriodInHours gets the gracePeriodInHours property value. The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
 func (m *CloudPcProvisioningPolicy) GetGracePeriodInHours()(*int32) {
     if m == nil {
         return nil
@@ -288,7 +288,7 @@ func (m *CloudPcProvisioningPolicy) GetImageType()(*CloudPcProvisioningPolicyIma
         return m.imageType
     }
 }
-// GetLocalAdminEnabled gets the localAdminEnabled property value. The localAdminEnabled property
+// GetLocalAdminEnabled gets the localAdminEnabled property value. Indicates whether the local admin option is enabled. If the local admin option is enabled, the end user can be an admin of the Cloud PC device. Read-only.
 func (m *CloudPcProvisioningPolicy) GetLocalAdminEnabled()(*bool) {
     if m == nil {
         return nil
@@ -296,7 +296,7 @@ func (m *CloudPcProvisioningPolicy) GetLocalAdminEnabled()(*bool) {
         return m.localAdminEnabled
     }
 }
-// GetManagedBy gets the managedBy property value. The managedBy property
+// GetManagedBy gets the managedBy property value. Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
 func (m *CloudPcProvisioningPolicy) GetManagedBy()(*CloudPcManagementService) {
     if m == nil {
         return nil
@@ -432,7 +432,7 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetAlternateResourceUrl sets the alternateResourceUrl property value. The alternateResourceUrl property
+// SetAlternateResourceUrl sets the alternateResourceUrl property value. The URL of the alternate resource that links to this provisioning policy. Read-only.
 func (m *CloudPcProvisioningPolicy) SetAlternateResourceUrl(value *string)() {
     if m != nil {
         m.alternateResourceUrl = value
@@ -444,7 +444,7 @@ func (m *CloudPcProvisioningPolicy) SetAssignments(value []CloudPcProvisioningPo
         m.assignments = value
     }
 }
-// SetCloudPcGroupDisplayName sets the cloudPcGroupDisplayName property value. The cloudPcGroupDisplayName property
+// SetCloudPcGroupDisplayName sets the cloudPcGroupDisplayName property value. The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
 func (m *CloudPcProvisioningPolicy) SetCloudPcGroupDisplayName(value *string)() {
     if m != nil {
         m.cloudPcGroupDisplayName = value
@@ -468,7 +468,7 @@ func (m *CloudPcProvisioningPolicy) SetDomainJoinConfiguration(value CloudPcDoma
         m.domainJoinConfiguration = value
     }
 }
-// SetGracePeriodInHours sets the gracePeriodInHours property value. The gracePeriodInHours property
+// SetGracePeriodInHours sets the gracePeriodInHours property value. The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
 func (m *CloudPcProvisioningPolicy) SetGracePeriodInHours(value *int32)() {
     if m != nil {
         m.gracePeriodInHours = value
@@ -492,13 +492,13 @@ func (m *CloudPcProvisioningPolicy) SetImageType(value *CloudPcProvisioningPolic
         m.imageType = value
     }
 }
-// SetLocalAdminEnabled sets the localAdminEnabled property value. The localAdminEnabled property
+// SetLocalAdminEnabled sets the localAdminEnabled property value. Indicates whether the local admin option is enabled. If the local admin option is enabled, the end user can be an admin of the Cloud PC device. Read-only.
 func (m *CloudPcProvisioningPolicy) SetLocalAdminEnabled(value *bool)() {
     if m != nil {
         m.localAdminEnabled = value
     }
 }
-// SetManagedBy sets the managedBy property value. The managedBy property
+// SetManagedBy sets the managedBy property value. Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
 func (m *CloudPcProvisioningPolicy) SetManagedBy(value *CloudPcManagementService)() {
     if m != nil {
         m.managedBy = value

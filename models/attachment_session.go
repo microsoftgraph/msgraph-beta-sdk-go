@@ -12,8 +12,8 @@ type AttachmentSession struct {
     content []byte
     // The expirationDateTime property
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The nextExpectedRange property
-    nextExpectedRange []string
+    // The nextExpectedRanges property
+    nextExpectedRanges []string
 }
 // NewAttachmentSession instantiates a new attachmentSession and sets the default values.
 func NewAttachmentSession()(*AttachmentSession) {
@@ -65,7 +65,7 @@ func (m *AttachmentSession) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
-    res["nextExpectedRange"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["nextExpectedRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
@@ -75,18 +75,18 @@ func (m *AttachmentSession) GetFieldDeserializers()(map[string]func(i878a80d2330
             for i, v := range val {
                 res[i] = *(v.(*string))
             }
-            m.SetNextExpectedRange(res)
+            m.SetNextExpectedRanges(res)
         }
         return nil
     }
     return res
 }
-// GetNextExpectedRange gets the nextExpectedRange property value. The nextExpectedRange property
-func (m *AttachmentSession) GetNextExpectedRange()([]string) {
+// GetNextExpectedRanges gets the nextExpectedRanges property value. The nextExpectedRanges property
+func (m *AttachmentSession) GetNextExpectedRanges()([]string) {
     if m == nil {
         return nil
     } else {
-        return m.nextExpectedRange
+        return m.nextExpectedRanges
     }
 }
 // Serialize serializes information the current object
@@ -107,8 +107,8 @@ func (m *AttachmentSession) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    if m.GetNextExpectedRange() != nil {
-        err = writer.WriteCollectionOfStringValues("nextExpectedRange", m.GetNextExpectedRange())
+    if m.GetNextExpectedRanges() != nil {
+        err = writer.WriteCollectionOfStringValues("nextExpectedRanges", m.GetNextExpectedRanges())
         if err != nil {
             return err
         }
@@ -127,9 +127,9 @@ func (m *AttachmentSession) SetExpirationDateTime(value *i336074805fc853987abe6f
         m.expirationDateTime = value
     }
 }
-// SetNextExpectedRange sets the nextExpectedRange property value. The nextExpectedRange property
-func (m *AttachmentSession) SetNextExpectedRange(value []string)() {
+// SetNextExpectedRanges sets the nextExpectedRanges property value. The nextExpectedRanges property
+func (m *AttachmentSession) SetNextExpectedRanges(value []string)() {
     if m != nil {
-        m.nextExpectedRange = value
+        m.nextExpectedRanges = value
     }
 }

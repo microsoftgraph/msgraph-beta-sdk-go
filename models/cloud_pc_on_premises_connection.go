@@ -13,23 +13,23 @@ type CloudPcOnPremisesConnection struct {
     adDomainPassword *string
     // The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.
     adDomainUsername *string
-    // The alternateResourceUrl property
+    // The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
     alternateResourceUrl *string
     // The display name for the Azure network connection.
     displayName *string
-    // The status of the most recent health check done on the Azure network connection. For example, if status is 'passed', the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+    // The status of the most recent health check done on the Azure network connection. For example, if status is passed, the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
     healthCheckStatus *CloudPcOnPremisesConnectionStatus
-    // The details of the connection's health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+    // The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
     healthCheckStatusDetails CloudPcOnPremisesConnectionStatusDetailsable
     // When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
     inUse *bool
-    // Specifies which services manage the Azure network connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
+    // Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
     managedBy *CloudPcManagementService
     // The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
     organizationalUnit *string
-    // The ID of the target resource group. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'.
+    // The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.
     resourceGroupId *string
-    // The ID of the target subnet. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}'.
+    // The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.
     subnetId *string
     // The ID of the target Azure subscription that’s associated with your tenant.
     subscriptionId *string
@@ -37,7 +37,7 @@ type CloudPcOnPremisesConnection struct {
     subscriptionName *string
     // Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
     type_escaped *CloudPcOnPremisesConnectionType
-    // The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
+    // The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
     virtualNetworkId *string
 }
 // NewCloudPcOnPremisesConnection instantiates a new cloudPcOnPremisesConnection and sets the default values.
@@ -75,7 +75,7 @@ func (m *CloudPcOnPremisesConnection) GetAdDomainUsername()(*string) {
         return m.adDomainUsername
     }
 }
-// GetAlternateResourceUrl gets the alternateResourceUrl property value. The alternateResourceUrl property
+// GetAlternateResourceUrl gets the alternateResourceUrl property value. The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
 func (m *CloudPcOnPremisesConnection) GetAlternateResourceUrl()(*string) {
     if m == nil {
         return nil
@@ -256,7 +256,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetHealthCheckStatus gets the healthCheckStatus property value. The status of the most recent health check done on the Azure network connection. For example, if status is 'passed', the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+// GetHealthCheckStatus gets the healthCheckStatus property value. The status of the most recent health check done on the Azure network connection. For example, if status is passed, the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
 func (m *CloudPcOnPremisesConnection) GetHealthCheckStatus()(*CloudPcOnPremisesConnectionStatus) {
     if m == nil {
         return nil
@@ -264,7 +264,7 @@ func (m *CloudPcOnPremisesConnection) GetHealthCheckStatus()(*CloudPcOnPremisesC
         return m.healthCheckStatus
     }
 }
-// GetHealthCheckStatusDetails gets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// GetHealthCheckStatusDetails gets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetails()(CloudPcOnPremisesConnectionStatusDetailsable) {
     if m == nil {
         return nil
@@ -280,7 +280,7 @@ func (m *CloudPcOnPremisesConnection) GetInUse()(*bool) {
         return m.inUse
     }
 }
-// GetManagedBy gets the managedBy property value. Specifies which services manage the Azure network connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
+// GetManagedBy gets the managedBy property value. Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
 func (m *CloudPcOnPremisesConnection) GetManagedBy()(*CloudPcManagementService) {
     if m == nil {
         return nil
@@ -296,7 +296,7 @@ func (m *CloudPcOnPremisesConnection) GetOrganizationalUnit()(*string) {
         return m.organizationalUnit
     }
 }
-// GetResourceGroupId gets the resourceGroupId property value. The ID of the target resource group. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'.
+// GetResourceGroupId gets the resourceGroupId property value. The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.
 func (m *CloudPcOnPremisesConnection) GetResourceGroupId()(*string) {
     if m == nil {
         return nil
@@ -304,7 +304,7 @@ func (m *CloudPcOnPremisesConnection) GetResourceGroupId()(*string) {
         return m.resourceGroupId
     }
 }
-// GetSubnetId gets the subnetId property value. The ID of the target subnet. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}'.
+// GetSubnetId gets the subnetId property value. The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.
 func (m *CloudPcOnPremisesConnection) GetSubnetId()(*string) {
     if m == nil {
         return nil
@@ -336,7 +336,7 @@ func (m *CloudPcOnPremisesConnection) GetType()(*CloudPcOnPremisesConnectionType
         return m.type_escaped
     }
 }
-// GetVirtualNetworkId gets the virtualNetworkId property value. The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
+// GetVirtualNetworkId gets the virtualNetworkId property value. The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
 func (m *CloudPcOnPremisesConnection) GetVirtualNetworkId()(*string) {
     if m == nil {
         return nil
@@ -469,7 +469,7 @@ func (m *CloudPcOnPremisesConnection) SetAdDomainUsername(value *string)() {
         m.adDomainUsername = value
     }
 }
-// SetAlternateResourceUrl sets the alternateResourceUrl property value. The alternateResourceUrl property
+// SetAlternateResourceUrl sets the alternateResourceUrl property value. The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
 func (m *CloudPcOnPremisesConnection) SetAlternateResourceUrl(value *string)() {
     if m != nil {
         m.alternateResourceUrl = value
@@ -481,13 +481,13 @@ func (m *CloudPcOnPremisesConnection) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetHealthCheckStatus sets the healthCheckStatus property value. The status of the most recent health check done on the Azure network connection. For example, if status is 'passed', the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+// SetHealthCheckStatus sets the healthCheckStatus property value. The status of the most recent health check done on the Azure network connection. For example, if status is passed, the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatus(value *CloudPcOnPremisesConnectionStatus)() {
     if m != nil {
         m.healthCheckStatus = value
     }
 }
-// SetHealthCheckStatusDetails sets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select.For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// SetHealthCheckStatusDetails sets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetails(value CloudPcOnPremisesConnectionStatusDetailsable)() {
     if m != nil {
         m.healthCheckStatusDetails = value
@@ -499,7 +499,7 @@ func (m *CloudPcOnPremisesConnection) SetInUse(value *bool)() {
         m.inUse = value
     }
 }
-// SetManagedBy sets the managedBy property value. Specifies which services manage the Azure network connection. Possible values are: windows365, devBox and unknownFutureValue. Read-only.
+// SetManagedBy sets the managedBy property value. Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
 func (m *CloudPcOnPremisesConnection) SetManagedBy(value *CloudPcManagementService)() {
     if m != nil {
         m.managedBy = value
@@ -511,13 +511,13 @@ func (m *CloudPcOnPremisesConnection) SetOrganizationalUnit(value *string)() {
         m.organizationalUnit = value
     }
 }
-// SetResourceGroupId sets the resourceGroupId property value. The ID of the target resource group. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}'.
+// SetResourceGroupId sets the resourceGroupId property value. The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.
 func (m *CloudPcOnPremisesConnection) SetResourceGroupId(value *string)() {
     if m != nil {
         m.resourceGroupId = value
     }
 }
-// SetSubnetId sets the subnetId property value. The ID of the target subnet. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}'.
+// SetSubnetId sets the subnetId property value. The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.
 func (m *CloudPcOnPremisesConnection) SetSubnetId(value *string)() {
     if m != nil {
         m.subnetId = value
@@ -541,7 +541,7 @@ func (m *CloudPcOnPremisesConnection) SetType(value *CloudPcOnPremisesConnection
         m.type_escaped = value
     }
 }
-// SetVirtualNetworkId sets the virtualNetworkId property value. The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
+// SetVirtualNetworkId sets the virtualNetworkId property value. The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
 func (m *CloudPcOnPremisesConnection) SetVirtualNetworkId(value *string)() {
     if m != nil {
         m.virtualNetworkId = value

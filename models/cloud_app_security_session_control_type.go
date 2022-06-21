@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the identityContainer singleton.
+// Provides operations to manage the policyRoot singleton.
 type CloudAppSecuritySessionControlType int
 
 const (

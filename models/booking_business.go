@@ -27,7 +27,7 @@ type BookingBusiness struct {
     email *string
     // The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
     isPublished *bool
-    // The languageTag property
+    // The language of the self service booking page
     languageTag *string
     // The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
     phone *string
@@ -336,7 +336,7 @@ func (m *BookingBusiness) GetIsPublished()(*bool) {
         return m.isPublished
     }
 }
-// GetLanguageTag gets the languageTag property value. The languageTag property
+// GetLanguageTag gets the languageTag property value. The language of the self service booking page
 func (m *BookingBusiness) GetLanguageTag()(*string) {
     if m == nil {
         return nil
@@ -590,7 +590,7 @@ func (m *BookingBusiness) SetIsPublished(value *bool)() {
         m.isPublished = value
     }
 }
-// SetLanguageTag sets the languageTag property value. The languageTag property
+// SetLanguageTag sets the languageTag property value. The language of the self service booking page
 func (m *BookingBusiness) SetLanguageTag(value *string)() {
     if m != nil {
         m.languageTag = value

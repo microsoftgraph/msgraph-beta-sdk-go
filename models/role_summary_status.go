@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of privilegedRoleAssignment entities.
+// Provides operations to manage the collection of privilegedApproval entities.
 type RoleSummaryStatus int
 
 const (

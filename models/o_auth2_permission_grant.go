@@ -14,9 +14,9 @@ type OAuth2PermissionGrant struct {
     consentType *string
     // Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
     expiryTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
+    // The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).
     principalId *string
-    // The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+    // The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
     resourceId *string
     // A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
     scope *string
@@ -133,7 +133,7 @@ func (m *OAuth2PermissionGrant) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetPrincipalId gets the principalId property value. The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
+// GetPrincipalId gets the principalId property value. The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).
 func (m *OAuth2PermissionGrant) GetPrincipalId()(*string) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *OAuth2PermissionGrant) GetPrincipalId()(*string) {
         return m.principalId
     }
 }
-// GetResourceId gets the resourceId property value. The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+// GetResourceId gets the resourceId property value. The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
 func (m *OAuth2PermissionGrant) GetResourceId()(*string) {
     if m == nil {
         return nil
@@ -233,13 +233,13 @@ func (m *OAuth2PermissionGrant) SetExpiryTime(value *i336074805fc853987abe6f7fe3
         m.expiryTime = value
     }
 }
-// SetPrincipalId sets the principalId property value. The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
+// SetPrincipalId sets the principalId property value. The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).
 func (m *OAuth2PermissionGrant) SetPrincipalId(value *string)() {
     if m != nil {
         m.principalId = value
     }
 }
-// SetResourceId sets the resourceId property value. The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
+// SetResourceId sets the resourceId property value. The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
 func (m *OAuth2PermissionGrant) SetResourceId(value *string)() {
     if m != nil {
         m.resourceId = value

@@ -32,6 +32,8 @@ type User struct {
     assignedPlans []AssignedPlanable
     // The authentication methods that are supported for the user.
     authentication Authenticationable
+    // The authorizationInfo property
+    authorizationInfo AuthorizationInfoable
     // The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
     birthday *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
@@ -252,6 +254,8 @@ type User struct {
     schools []string
     // The scoped-role administrative unit memberships for this user. Read-only. Nullable.
     scopedRoleMemberOf []ScopedRoleMembershipable
+    // The securityIdentifier property
+    securityIdentifier *string
     // The settings property
     settings UserSettingsable
     // Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -394,6 +398,14 @@ func (m *User) GetAuthentication()(Authenticationable) {
         return nil
     } else {
         return m.authentication
+    }
+}
+// GetAuthorizationInfo gets the authorizationInfo property value. The authorizationInfo property
+func (m *User) GetAuthorizationInfo()(AuthorizationInfoable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.authorizationInfo
     }
 }
 // GetBirthday gets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
@@ -840,6 +852,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetAuthentication(val.(Authenticationable))
+        }
+        return nil
+    }
+    res["authorizationInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAuthorizationInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthorizationInfo(val.(AuthorizationInfoable))
         }
         return nil
     }
@@ -2143,6 +2165,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["securityIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecurityIdentifier(val)
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUserSettingsFromDiscriminatorValue)
         if err != nil {
@@ -2929,6 +2961,14 @@ func (m *User) GetScopedRoleMemberOf()([]ScopedRoleMembershipable) {
         return m.scopedRoleMemberOf
     }
 }
+// GetSecurityIdentifier gets the securityIdentifier property value. The securityIdentifier property
+func (m *User) GetSecurityIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.securityIdentifier
+    }
+}
 // GetSettings gets the settings property value. The settings property
 func (m *User) GetSettings()(UserSettingsable) {
     if m == nil {
@@ -3175,6 +3215,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     {
         err = writer.WriteObjectValue("authentication", m.GetAuthentication())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("authorizationInfo", m.GetAuthorizationInfo())
         if err != nil {
             return err
         }
@@ -4004,6 +4050,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteStringValue("securityIdentifier", m.GetSecurityIdentifier())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
             return err
@@ -4199,6 +4251,12 @@ func (m *User) SetAssignedPlans(value []AssignedPlanable)() {
 func (m *User) SetAuthentication(value Authenticationable)() {
     if m != nil {
         m.authentication = value
+    }
+}
+// SetAuthorizationInfo sets the authorizationInfo property value. The authorizationInfo property
+func (m *User) SetAuthorizationInfo(value AuthorizationInfoable)() {
+    if m != nil {
+        m.authorizationInfo = value
     }
 }
 // SetBirthday sets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
@@ -4859,6 +4917,12 @@ func (m *User) SetSchools(value []string)() {
 func (m *User) SetScopedRoleMemberOf(value []ScopedRoleMembershipable)() {
     if m != nil {
         m.scopedRoleMemberOf = value
+    }
+}
+// SetSecurityIdentifier sets the securityIdentifier property value. The securityIdentifier property
+func (m *User) SetSecurityIdentifier(value *string)() {
+    if m != nil {
+        m.securityIdentifier = value
     }
 }
 // SetSettings sets the settings property value. The settings property
